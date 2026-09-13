@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T11:43+02:00|
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
+| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -113,6 +113,15 @@ with the contract field. The door itself survives in its own journal and is read
 rule adds a fallback reader: both narrow recovery to the current canonical authority plus exact
 retained evidence.
 
+Since 260913-LCA-L1 the same pairing is also inside the memory-content commit object, not only in the
+ledger row recovery reads. `_direct_memory_commit` commits
+`direct_landing_input(...).effectiveInput.memory_content_message(operation_input.codeCommit)`, so the
+memory-content commit carries exactly one `Code-Commit: <sha>` trailer naming the verified code
+commit; it renders from the single `models/closeout/input.py` definition that the worktree closeout
+route also uses, and the `memory.md`-only ledger commit deliberately carries none. The trailer is
+written at creation because `prove_git_commit` journals that exact object on the next statement, so a
+later append could only rewrite a proved commit.
+
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
 Closeout integration separates four owners: the contract lifecycle lease serializes filesystem writers; closeout admission stabilizes and normalizes candidate/plan before lifecycle compatibility; candidate identity binds accepted effective input and Git provenance; mutation evidence and recovery projection own crash classification. The typed integrate caller owns integrate retention, authority, and candidate derivation, while lease-bound closeout admission is the sole closeout candidate owner. The shared controller requires the supplied candidate and explicit authority, then separates generation creation/conflict/terminal replacement from recovery/launch/projection; it cannot recapture closeout provenance or infer kind-specific authority from ambient state. For closeout, reconciliation precedes durable journal publication. Worker authority survives every non-terminal phase and may be cleared only after exact termination proof; a failed or denied termination retains the PID and blocks replacement. The store is strict schema 3.0 and relies on model/public fill-only boundaries for impossible leg-set or proven-commit rewrites while retaining transition-specific identity/state/pre-state checks. Duplicates validate against the immutable accepted plan, and generation retention requires commit-proven mutation or exact canonical contract-finalization publication. The disposable queue projection owns no retry, recover, cancel, revise, claim, or commit evidence.
@@ -132,7 +141,7 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:80-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:181-267 |
 | Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
 | Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165 |
-| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:113-170 |
+| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-115; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:118-175 |
 | Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:582-592; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:661-693 |
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
@@ -350,6 +359,15 @@ repair came from is inventoried on [the worktrees route overview](../overview.md
 [`memory_quality/overview.md`](../../memory_quality/overview.md).
 
 ## Update History
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): the
+  branch-addressed route's memory-content commit is now attributed in the object —
+  `_direct_memory_commit` takes the verified `code_commit` and commits
+  `effectiveInput.memory_content_message(code_commit)`, one `Code-Commit: <sha>` trailer from the same
+  single `models/closeout/input.py` rendering the worktree closeout route uses, while the
+  `memory.md`-only ledger commit carries none. Recorded it beside the ordered-authority paragraph
+  whose ledger row recovery reads, and rebound the stale direct-landing evidence row (`73-115`;
+  `118-175`). Verification metadata remains closeout-owned; no acceptance claim and no verification
+  stamp advanced.
 - 2026-09-13T17:56+02:00 — 260831-LOCR-L36: corrected the checkpoint-route paragraph. The route is a
   partial **publication** rather than a pause, its capture proves its ledger mapping through
   `exact_series_memory_closeout` (the exact-mapping reader), and the *final* series route may

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T22:00:40+00:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
+| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Owns the external-memory and ledger phase of journaled worktree closeout after code acceptance. It refreshes governed memory, proves or creates the memory-content commit, then proves or creates the ledger commit using the immutable normalized messages.
+Owns the external-memory and ledger phase of journaled worktree closeout after code acceptance. It refreshes governed memory, proves or creates the memory-content commit, then proves or creates the ledger commit using the immutable normalized messages. The memory-content commit carries the attribution: its message is rendered with the closeout's own body plus exactly one `Code-Commit:` trailer naming the code commit this same closeout landed, while the ledger commit keeps the raw ledger message and carries none.
 
 ## CCR-R12@v5 Current External Transaction Boundary
 
@@ -29,6 +29,16 @@ with `--no-verify`, so configured pre-commit hooks are not invoked by these tran
 the focused transaction test proves this boundary. A crash between the two commits remains
 journal-recoverable.
 
+The two commits are not interchangeable, and the attribution is what distinguishes them. The
+memory-content commit's message is `effective_input.memory_content_message(code_commit)`: the
+closeout's own memory message verbatim, then `\n\n` and one `Code-Commit: <sha>` trailer naming the
+commit this closeout accepted (`change.commit`). That rendering happens here, at the commit seam,
+because the message is hashed into the object: `commit_verified_staged` passes it straight to
+`git commit --no-verify -m`, and `prove_git_commit` journals that exact sha immediately afterwards,
+so a later append could only rewrite an already-proved object. The ledger commit is the
+`memory.md`-only commit and deliberately carries no trailer — it names no code commit, and a second
+trailered commit for one code commit would project a duplicate row.
+
 ## Code Commentary
 
 ### Logic
@@ -37,9 +47,10 @@ For ordinary external-memory leaves, `external_closeout_commits` receives the al
 `EffectiveCloseoutInput` and the accepted code change. It first resumes any proven output, then
 refreshes onboarding metadata, entity fingerprints, route overview metadata, and generated route
 indexes. No helper reruns memory quality or reparses a curator report on this path. If content is
-dirty it stages and commits with the effective memory message; if content is already mapped or
-clean, it proves reachability and reports a verified-existing outcome instead of fabricating
-mutation evidence.
+dirty it stages and commits the memory content with `effective_input.memory_content_message(code_commit)`
+— the effective memory message with its `Code-Commit:` trailer already in it; if content is already
+mapped or clean, it proves reachability and reports a verified-existing outcome instead of
+fabricating mutation evidence.
 
 The ledger leg follows sequentially: an existing exact mapping is reused; otherwise the function announces ledger intent, writes and stages `memory.md`, binds the expected tree, commits with the explicit ledger message, and proves the commit. There is no generated ledger subject or `or` fallback. Series closeout is delegated before any leaf leg: a `series` contract returns through `series_memory_closeout`, the series reader that records the exact pair when the landed ledger maps the code tip and otherwise the **reconciled** pair a `worktree_sync` produced (260831-LOCR-L36).
 
@@ -47,7 +58,7 @@ The ledger leg follows sequentially: an existing exact mapping is reused; otherw
 
 - Memory and ledger are two sequential Git commits, not an atomic transaction.
 - A `series` contract never enters the leaf legs: `external_closeout_commits` routes it to the series reader before the leaf memory-worktree assertion, so this module owns no completion proof and no series memory worktree.
-- Both enabled legs use the accepted stripped messages from `args.closeout_input`.
+- Both enabled legs use the accepted stripped messages from `args.closeout_input`, but only the memory-content leg renders one: `_commit_memory_content` takes the accepted `code_commit` and commits `memory_content_message(code_commit)`, so the attribution is in the object rather than recorded beside it. The ledger leg commits `message_for("ledger")` unchanged and carries no trailer.
 - Recovery facts must agree with mutation evidence and ledger ancestry.
 - Refresh may consume only the no-impact identities already accepted during reversible closeout
   admission; it cannot invent, widen, or silently omit them.
@@ -65,9 +76,11 @@ See task `260821-CLIVE-L1` L1-R3, L1-R4, and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External refresh and every external commit consumer receive one effective input explicitly. | `_refresh_external_memory`; `_commit_memory_content`; `_commit_ledger_mapping` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:106-134; mcp/src/agents_remember/worktrees/modules/closeout_external.py:135-188; mcp/src/agents_remember/worktrees/modules/closeout_external.py:202-243 |
-| Proven recovery consumes that same input rather than rereading transport or overwriting evidence. | `_resumed_external_outcome` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:262-284 |
-| Ledger commit intent and proof bracket its Git mutation using the explicit ledger message. | `_commit_ledger_mapping` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:202-243 |
+| External refresh and every external commit consumer receive one effective input explicitly. | `_refresh_external_memory`; `_commit_memory_content`; `_commit_ledger_mapping` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:107-133; mcp/src/agents_remember/worktrees/modules/closeout_external.py:136-196; mcp/src/agents_remember/worktrees/modules/closeout_external.py:212-251 |
+| The entry point hands the memory-content leg the accepted code commit, which is the code half of the attribution. | "code_commit=code_commit,"; `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:65-71; mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-90 |
+| Only the memory-content commit is attributed: it commits `memory_content_message(code_commit)` and proves that exact object, while the ledger commit keeps the raw ledger message. | `memory_content_message`; `message_for("ledger")`; `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:165-167; mcp/src/agents_remember/worktrees/modules/closeout_external.py:241-243; mcp/src/agents_remember/worktrees/modules/git.py:188-198 |
+| Proven recovery consumes that same input rather than rereading transport or overwriting evidence. | `_resumed_external_outcome` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:272-294 |
+| Ledger commit intent and proof bracket its Git mutation using the explicit ledger message. | `_commit_ledger_mapping` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:212-251 |
 
 ## Cross-Repo References
 
@@ -81,10 +94,11 @@ The current source seams include `external_closeout_commits`. Closeout uses clos
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Series closeout is not a leaf leg: the entry point returns the series reader's outcome before the leaf memory-worktree assertion. | "return series_memory_closeout(contract, code_commit)" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:53-56 |
-| The current module exposes `external_closeout_commits` at this ownership boundary, and that entry point routes a `series` contract to the series reader before any leaf leg. | "def external_closeout_commits(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-92 |
+| Series closeout is not a leaf leg: the entry point returns the series reader's outcome before the leaf memory-worktree assertion. | "return series_memory_closeout(contract, code_commit)" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:53-54 |
+| The current module exposes `external_closeout_commits` at this ownership boundary, and that entry point routes a `series` contract to the series reader before any leaf leg. | "def external_closeout_commits(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-90 |
 
 ## Update History
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): `_commit_memory_content` now takes the accepted code commit (`code_commit=change.commit` from the entry point) and commits `EffectiveCloseoutInput.memory_content_message(code_commit)`, so the memory-content commit object carries exactly one `Code-Commit: <sha>` trailer naming the code commit this same closeout landed; the ledger leg deliberately keeps `message_for("ledger")` and no trailer. Rebound every stale range on this card to the post-change source (`external_closeout_commits` 44-90, `_refresh_external_memory` 107-133, `_commit_memory_content` 136-196, `_commit_ledger_mapping` 212-251, `_resumed_external_outcome` 272-294) and added the attribution rows. Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T17:40+02:00 — 260831-LOCR-L36 curator reconciliation: the series leg of `external_closeout_commits` now returns through `series_memory_closeout` (the reconciled-pair reader), not `exact_series_memory_closeout`; recorded that a `series` contract is routed before the leaf memory-worktree assertion and that this module therefore owns no completion proof and no series memory worktree. Re-cited the two rows whose ranges had been written by a 2026-09-11 mechanical projection: the effective-input row is rebound to the exact consumers that carry the input (`_refresh_external_memory`, `_commit_memory_content`, `_commit_ledger_mapping`), and the ownership-boundary row to the literal declaration `def external_closeout_commits(` at its current location, so both ranges are the curator's own reading of the current source rather than a projected symbol mention. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_commit_memory_content`, `external_closeout_commits` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:135-186, mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-89. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `external_closeout_commits` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-89. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

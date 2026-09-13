@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
+| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,15 @@ Normal closeout/integration do not require strict code quality, memory quality, 
 certification, curator coherence, or independent review; full suites are only an explicit developer
 request.
 
+Since 260913-LCA-L1 it also proves the memory attribution on the public closeout path. Its
+`_assert_memory_attribution` reader takes the real shas the closeout returned and asserts the
+memory-content commit's `%B` is `MESSAGES.memory` plus `\n\nCode-Commit: <code commit>`, that the
+literal `Code-Commit:` occurs exactly once, and that both `git interpret-trailers --parse` and
+`git log --format=%(trailers:key=Code-Commit)` read that trailer out of the object, while the
+`memory.md`-only ledger commit returns `""` from the same reader. Assertions only: the change added no
+test function and no parametrized case, and the sibling `test_direct_landing.py` carries the same
+checks for the branch-addressed route.
+
 ## Retained Behavioral Routes
 
 | Concern | Current starting point | Boundary |
@@ -63,7 +72,7 @@ request.
 | Canonical terminal-evidence mapping | `test_terminal_evidence_mapping.py`, `test_conversation_native_ingestion.py` | Native projectors remain the terminal-outcome authority; malformed or open frames make no terminal claim and do not hide a later canonical outcome. |
 | Protocol framing | `test_codex_native_history.py`, `test_pi_rpc_process.py` | Bounded paging/correlation and real fixture subprocess behavior. |
 | L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate. The activation admission is contract-scoped: a refusal carries no `classification`/`blocking`/`sourcePair*` key and never names a foreign master as blocker or retry precondition. Preparation evidence only. |
-| CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, and configured-hook non-invocation; focused behavior evidence only. |
+| CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, configured-hook non-invocation, and the memory-content commit's one `Code-Commit:` trailer read back out of the object (the `memory.md`-only ledger commit carrying none); focused behavior evidence only. |
 | Closeout auto-carry and parked candidate | `test_source_lineage.py` (`CloseoutSourceLineageHealTests`), `test_sync_parked_candidate.py` | The closeout boundary carries a settleable stale break, refuses a preview without mutating, escalates an unprovable break, and returns a parked dirty candidate through the sync transaction (restore on completed/resume/cancel, kept unmerged-index refusal); transaction-level detail lives in the new unit-lane module. |
 
 | Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
@@ -257,6 +266,15 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): the
+  CCR-R12@v5 transaction-only route now also proves the memory attribution — the new
+  `_assert_memory_attribution` reader checks the memory-content commit's `%B`, the exactly-one
+  `Code-Commit:` count, `git interpret-trailers --parse`, and
+  `git log --format=%(trailers:key=Code-Commit)` against the real shas public closeout returned, and
+  asserts the `memory.md`-only ledger commit returns `""`; `test_direct_landing.py` carries the same
+  checks for the branch-addressed route. Assertions only: no new test module, test function, or
+  parametrized case, so the retained population and both case budgets are unchanged. Verification
+  metadata remains closeout-owned; no execution, acceptance, or certification claim.
 - 2026-09-13T20:42+02:00 — Child-admission seal removal and the already-vacant stop (uncommitted
   260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): registered the new
   `test_lifecycle_playthrough_end_to_end.py` (integration) in the retained route table and the

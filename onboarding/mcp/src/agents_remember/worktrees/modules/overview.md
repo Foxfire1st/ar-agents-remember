@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
+| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1015,11 +1015,12 @@ The parity candidate composes the sidecar and governing route body/history check
 The closeout/integration module route now treats normal delivery as a transaction boundary. Closeout
 preserves explicit approval, candidate/source identity, Git safety, and recovery evidence, commits
 code through the staged-index transaction helper, performs raw external-memory metadata/entity/index
-refresh, then commits memory content and the ledger mapping. Integration validates and publishes a
-prepared pair with ref/tree compare-and-swap and no merge commit. Normal routes do not automatically
-run strict code quality, memory quality, selected certification, curator coherence, or independent
-review; full suites are an explicit developer request. The older quality-altitude sections remain
-historical context for pre-R12 behavior.
+refresh, then commits memory content and the ledger mapping — the memory-content commit carrying its
+`Code-Commit:` attribution and the ledger commit deliberately carrying none. Integration validates and
+publishes a prepared pair with ref/tree compare-and-swap and no merge commit. Normal routes do not
+automatically run strict code quality, memory quality, selected certification, curator coherence, or
+independent review; full suites are an explicit developer request. The older quality-altitude
+sections remain historical context for pre-R12 behavior.
 
 ## 260831-LOCR-L30/L34 Checkpoint Landing In This Route
 
@@ -1138,7 +1139,44 @@ its `require_series_accepting_leaves` predicate are deleted, so no closeout/inte
 refuses a leaf and a master that took a checkpoint landing can still admit the next one.
 `mcp/tests/test_lifecycle_playthrough_end_to_end.py` plays the whole lifecycle in order and proves it.
 
+## 260913-LCA-L1 Memory-Content Commit Attribution
+
+A closeout's memory content is now attributed inside the commit object rather than only beside it in
+the tracked ledger table. `EffectiveCloseoutInput.memory_content_message(code_commit)`
+(`models/closeout/input.py`, with `CODE_COMMIT_TRAILER_KEY = "Code-Commit"`) returns the closeout's own
+message verbatim and appends the trailer as its own final paragraph, so
+`git interpret-trailers --parse` and `git log --format='%(trailers:key=Code-Commit)'` both read it as
+data and `Code-Commit: <sha>` names the code commit that same closeout landed.
+
+That is the one definition, and both sanctioned routes render through it: this route's
+`_commit_memory_content` (`closeout_external.py`, handed `code_commit=change.commit` by
+`external_closeout_commits`) and the branch-addressed direct-landing route's `_direct_memory_commit`
+(`integration/direct_landing/direct_landing_execution.py`, handed
+`code_commit=operation_input.codeCommit`). Neither rewrites the closeout message; the trailer is
+appended, never substituted.
+
+The seam is the message construction rather than a later step because the message is hashed into the
+object: `commit_verified_staged` runs `git commit --no-verify -m <message>` on the already-staged tree
+(returning HEAD unchanged when nothing is staged) and `commit_if_dirty` is `git add -A` plus
+`git commit -m <message>`, so the rendered string *is* the commit's message, and `prove_git_commit`
+journals that exact sha on the next statement. Adding the attribution afterwards could only be
+`git commit --amend`, which rewrites an object already proved and recorded as `memoryContentCommit`.
+`git notes` was rejected for the same reason — notes are not bound by the hash.
+
+The `memory.md`-only ledger commit is deliberately excluded: it has no code counterpart to name, and a
+second trailered commit for one code commit would project a duplicate row. Absence is the detection,
+not a legacy state to tolerate.
+
 ## Update History
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): recorded
+  that the memory-content commit closeout creates is now attributed inside the object — exactly one
+  `Code-Commit: <sha>` trailer naming the code commit that same closeout landed, rendered by the single
+  `EffectiveCloseoutInput.memory_content_message(code_commit)` definition and used by both the worktree
+  route (`closeout_external.py::_commit_memory_content`) and the direct-landing route, with the
+  `memory.md`-only ledger commit deliberately left unattributed. Corrected the CCR-R12@v5 transaction
+  boundary paragraph, which described the two commits without saying which one carries the
+  attribution. Verification metadata remains closeout-owned; no acceptance claim and no verification
+  stamp advanced.
 - 2026-09-13T20:42+02:00 — Child-admission seal removal and the already-vacant stop (uncommitted
   260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): corrected the L37 paragraph
   that said a contract with no selection "refuses as `atomic-series-activation-selection-missing`" — the
