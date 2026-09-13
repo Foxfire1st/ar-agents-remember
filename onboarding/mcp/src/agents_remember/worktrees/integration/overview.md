@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-12T19:50+02:00|
-| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
-| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00|
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -319,21 +319,45 @@ master is reclaimed with `worktree_abandon` and is never closed out. And
 "this organizational master is abandoned, not completed" rather than the generic
 not-durably-published message.
 
-## 260831-LOCR-L30 Checkpoint Landing On This Route
+## 260831-LOCR-L30/L34 Checkpoint Landing On This Route
 
 `worktrees/series_closeout.py` gained `publish_series_checkpoint_under_authority`, the non-final
 master exit, and `worktrees/modules/integrate.py` gained the `checkpoint_landing_result` route that
-reaches it through the keyword-only `checkpoint` flag. The route keeps every ref-protecting authority
-this overview describes — the series contract binding, the atomic landing authority, the
-replay/ff source-state gate, the source-lineage proof and the master-handover gate — and drops only
-the two completion assumptions the final series route proves (`_require_atomic_master_complete`,
-`_require_every_atomic_leaf_landed`). It runs no cleanup and records `checkpointed` rather than
-`completed`, so the master keeps its worktrees, branches and enclosure. A master that is already
-`Completed` is refused with `atomic-series-checkpoint-master-complete`, so a checkpoint can never
-downgrade a finished integration. Detail lives on the `series_closeout.py`, `integrate.py`,
-`landing_record.py` and `integration_branch_authority.py` file cards.
+reaches it. The route keeps every ref-protecting authority this overview describes — the series
+contract binding, the atomic landing authority, the replay/ff source-state gate, the source-lineage
+proof and the master-handover gate — and drops only the completion assumptions the final series route
+proves (`_require_atomic_master_complete`, `_require_every_atomic_leaf_landed`, and the completed
+closeout). It runs no cleanup and records `checkpointed` rather than `completed`, so the master keeps
+its worktrees, branches and enclosure. A master that is already `Completed` is refused with
+`atomic-series-checkpoint-master-complete`, so a checkpoint can never downgrade a finished integration.
+Detail lives on the `series_closeout.py`, `integrate.py`, `landing_record.py`,
+`integration_ref_transaction.py` and `integration_branch_authority.py` file cards.
+
+**260831-LOCR-L34 repaired this route's reachability and its fail-open hole.** The L30 form read the
+commits to land from the contract's closeout cells — the very completion facts a paused master does not
+have — and required `closeout_status == "completed"`, so the route was unreachable in both directions.
+It now captures its own candidate (`capture_series_checkpoint_refs`: the live code and memory
+work-branch tips, with their ledger mapping proved through the same `exact_series_memory_closeout` the
+final route uses) and publication **requires** that `expected` value, revalidating it against the live
+tips immediately before the ref move (`atomic-series-checkpoint-candidate-moved`). The transaction on
+this route carries the route difference as data: `LandingAdmission` holds either the finished
+leaf-chain prefix or the checkpoint's own captured candidate, and `_require_preserved_ledger_history`
+takes the leaf projection form for a paused master because the completed census is one of the
+completion facts its route deliberately does not require. The preview/apply parity invariant this
+repair came from is inventoried on [the worktrees route overview](../overview.md) and in
+[`memory_quality/overview.md`](../../memory_quality/overview.md).
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded the checkpoint reachability repair on this route
+  — the route had required a completed closeout it also made unreachable, so it could not be entered
+  from either side; it now captures its own live candidate refs and revalidates them at publication,
+  the route difference travels as `LandingAdmission` data through one transaction, and a paused
+  master's ledger is proved as the leaf projection form rather than against the completion census.
+  Corrected the section's "two completion assumptions" to include the completed-closeout gate, and
+  pointed to the preview/apply parity invariant inventory on the worktrees route overview and in
+  `memory_quality/overview.md`. Content change, not a range repoint; verification metadata remains
+  closeout-owned and no acceptance claim is made.
 - 2026-09-12T19:50+02:00 — 260831-LOCR-L31 route impact: integration no longer reclaims. Replaced the
   "cleanup is automatic on a successful integration" boundary with the landed-and-stop account, and
   recorded **why** the ownership moved: reclaiming inline completed the enclosure's cleanup cell before

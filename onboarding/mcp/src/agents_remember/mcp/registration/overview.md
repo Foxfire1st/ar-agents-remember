@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -101,7 +101,11 @@ entry against a probe `FastMCP` and compares the live `list_tools()` order again
 schema, and description, so a tool missing from that list is a surface violation until both sides
 agree. The L29 repair is what made the sets agree — before it `worktree_record_landing` was
 registered by `closeout.py` while absent from `PUBLIC_TOOLS` — and 260831-LOCR-L30 added
-`worktree_checkpoint_landing` to both sides at once.
+`worktree_checkpoint_landing` to both sides at once. 260831-LOCR-L34 changed only that tool's
+**published docstring**: it had listed two of the three completion assumptions the checkpoint route
+drops, omitting the completed-closeout requirement, which is why the route was unreachable from both
+sides. A published refusal list is a promise about what will *not* happen, so it is kept complete
+whenever the gate changes; the tool surface, registration order and payload owners are unchanged.
 
 ## Hot Path Summary
 
@@ -317,6 +321,13 @@ are unchanged. A reader looking for the operation set in the published schema wi
 the description is the contract.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded that this route's only change is the corrected
+  published docstring for `worktree_checkpoint_landing` — it had listed two of the three completion
+  assumptions the checkpoint route drops, omitting the completed-closeout requirement that made the
+  route unreachable — plus the rule that a published refusal list stays complete. Tool surface,
+  registration order and payload ownership are unchanged. Verification metadata remains
+  closeout-owned; no acceptance claim.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the new step-plane vocabulary the
   `task_doc` description advertises (`add_step`/`remove_step`/`read_steps`, `set_step` update-only,
   `add_step` create-only, `remove_step` delete-only with a mandatory reason, one exact addressing

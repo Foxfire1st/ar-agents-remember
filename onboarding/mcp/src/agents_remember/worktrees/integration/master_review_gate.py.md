@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/master_review_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:10+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080`|
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No relevant domain documentation was configured for this repository-internal int
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Typed blocked-integration payload projection. The former `master_route_review_block` / `master_route_review_refusal` pair is gone from this module; the refusal projection now lives in `worktrees/route_review.py` as `route_review_refusal_projection` / `route_review_refusal_fields`. | `blocked_integration_payload` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-39 |
-| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:403-426; mcp/src/agents_remember/worktrees/modules/integrate.py:551-614; mcp/src/agents_remember/worktrees/series_closeout.py:53-69 |
+| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:636-661; mcp/src/agents_remember/worktrees/modules/integrate.py:846-921; mcp/src/agents_remember/worktrees/series_closeout.py:74-92 |
 
 ## Cross-Repo References
 
@@ -81,6 +81,7 @@ with this file's SHA-256 recorded as
 is retained as historical composition evidence and is not the active identity for this card.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of the `closeout.py` / `integrate.py` anchors after the closeout auto-carry change shifted their lines; the cited symbols and claims are unchanged.
 
 - 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `dd51ab6200088274352370fc8830b1d05df291feb43f5a46f19ccd3b163efff4`, `3248` bytes, `102` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-10T15:06+02:00|
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00|
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -313,18 +313,39 @@ phase alone.
 
 No external Domain Documentation source is configured for this memory repo.
 
+## The Closeout Preview Reads The Same Completion Gate As The Apply (260831-LOCR-L34)
+
+`closeout_preview_payload` cit:([`closeout_preview_payload`], mcp/src/agents_remember/worktrees/modules/closeout.py:235-294) now calls
+`require_closeout_publication_authority(contract)`
+cit:([`require_closeout_publication_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:34-60) immediately after `refuse_series_workbench_commit`, so **the preview refuses
+exactly what the apply refuses**.
+
+**Why this was a real defect, not a tidy-up.** The atomic-completion gate (master `Completed`, every
+canonical leaf landed) existed only behind the apply, in `publish_closeout_under_authority`. A partial
+master's preview therefore answered `state: "would-closeout"` with a plan, and the apply then refused
+on every completion blocker — 19 of them on LOCR. That misleading plan is what led a human to write a
+false note about the series being closable. The gate is now one definition with two callers (the
+preview and the apply), and its first statement is `if contract.kind == "leaf": return`, so **no leaf
+closeout preview changes** — a leaf owes nothing there, exactly as it owed nothing to the old
+publication wrapper.
+
+This is instance 1 of the preview/apply parity invariant recorded on the `worktrees/overview.md`
+route; the full instance inventory lives there and in `memory_quality/overview.md`. The reason it
+belongs in memory at all is that a preview is a *plan* and plans are read by humans and by agents:
+when the two surfaces are two implementations, the plan is a promise nobody enforces.
+
 ## A Checkpointed Series Passes Its Own Landed Source Head (260831-LOCR-L30)
 
 `_validate_closeout_source_heads` asserts that the live source-branch head is one *this contract's
 own landing legitimately produced*: the recorded base, plus the commit the contract records as
 landed. That set is computed by `_landed_source_heads(contract, base, integrated)`
-cit:([`_landed_source_heads`], mcp/src/agents_remember/worktrees/modules/closeout.py:144-160) — the
+cit:([`_landed_source_heads`], mcp/src/agents_remember/worktrees/modules/closeout.py:145-161) — the
 former `_completed_integration_source_heads`, renamed because its condition is no longer about
 "completed" integration.
 
 The condition widened from `contract.integration_status == "completed"` to
 `contract.integration_status in {"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"} and integrated"], mcp/src/agents_remember/worktrees/modules/closeout.py:156-156).
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"} and integrated"], mcp/src/agents_remember/worktrees/modules/closeout.py:157-157).
 
 **Why the old form was wrong.** A checkpoint also moves the source branch forward, and it records the
 commit it moved the branch to. Keying the expected set on `completed` alone therefore made the
@@ -334,8 +355,8 @@ move. A source that genuinely moved anywhere else still matches neither head and
 the widening admits exactly one additional head, the one the checkpoint recorded.
 
 **Why the refused party is exactly the checkpointed master.** `closeout_result`
-cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:715-752) is the single closeout entry point and dispatches on nothing; `_closeout_entry`
-cit:([`_closeout_entry`], mcp/src/agents_remember/worktrees/modules/closeout.py:825-848) reaches the
+cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:724-770) is the single closeout entry point and dispatches on nothing; `_closeout_entry`
+cit:([`_closeout_entry`], mcp/src/agents_remember/worktrees/modules/closeout.py:834-857) reaches the
 validator for **series** contracts too — its only `kind` branch (the leaf-only binding refusal) is
 `if contract.kind == "leaf":` at line 831 and returns early for leaves rather than excluding series.
 And a checkpointed contract is always `kind == "series"`: `integrate.py:456` refuses anything else
@@ -386,12 +407,12 @@ point of the state. They are reviewed and deliberately unchanged; do not "fix" t
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:25-30 |
 | Closeout imports the self-healing lineage guard that carries a settleable stale break through the existing sync. | "heal_current_source_lineage," | mcp/src/agents_remember/worktrees/modules/closeout.py:37-37 |
 | Closeout's import block takes the queue preview and recovery owners and imports no code-quality gate; the staged-quality owner `gate_staged_code` lives only in its own module. | "from agents_remember.worktrees.queue.closeout_preview import ("; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:65-69; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
-| Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. | "def _revalidate_candidate("; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:610-610; mcp/src/agents_remember/worktrees/modules/closeout.py:715-715 |
+| Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. | "def _revalidate_candidate("; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:619-619; mcp/src/agents_remember/worktrees/modules/closeout.py:724-724 |
 | The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-139 |
 | The closeout transaction runs no code-quality gate and no memory pre-refresh; the memory-quality phase owners remain standalone in their own module. | "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-54; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-172; mcp/src/agents_remember/worktrees/modules/guidance.py:494-496 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
-| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:440-476 |
+| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:459-505 |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -466,11 +487,11 @@ The current source seams include `closeout_changed_paths`, `closeout_preview_pay
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. | `closeout_changed_paths`; `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:93-111; mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:705-739 |
-| The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. | `_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate` | mcp/src/agents_remember/worktrees/modules/closeout.py:316-328; mcp/src/agents_remember/worktrees/modules/closeout.py:286-315; mcp/src/agents_remember/worktrees/modules/closeout.py:610-622 |
-| The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. | `_landed_source_heads`; "contract.integration_status in {\"completed\", \"checkpointed\"} and integrated" | mcp/src/agents_remember/worktrees/modules/closeout.py:144-160; mcp/src/agents_remember/worktrees/modules/closeout.py:156-156 |
-| The single closeout entry and the entry helper that reaches the validator for series contracts too. | `closeout_result`; `_closeout_entry` | mcp/src/agents_remember/worktrees/modules/closeout.py:715-752; mcp/src/agents_remember/worktrees/modules/closeout.py:825-848 |
-| The closeout entry threads the healed contract through preflight and the locked publication callback. | `closeout_result`; `_publish_closeout_candidate`; `_closeout_entry` | mcp/src/agents_remember/worktrees/modules/closeout.py:705-739; mcp/src/agents_remember/worktrees/modules/closeout.py:752-812; mcp/src/agents_remember/worktrees/modules/closeout.py:815-838 |
+| The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. | `closeout_changed_paths`; `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:94-114; mcp/src/agents_remember/worktrees/modules/closeout.py:235-294; mcp/src/agents_remember/worktrees/modules/closeout.py:724-770 |
+| The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. | `_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate` | mcp/src/agents_remember/worktrees/modules/closeout.py:325-337; mcp/src/agents_remember/worktrees/modules/closeout.py:295-324; mcp/src/agents_remember/worktrees/modules/closeout.py:619-638 |
+| The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. | `_landed_source_heads`; "contract.integration_status in {\"completed\", \"checkpointed\"} and integrated" | mcp/src/agents_remember/worktrees/modules/closeout.py:145-161; mcp/src/agents_remember/worktrees/modules/closeout.py:156-156 |
+| The single closeout entry and the entry helper that reaches the validator for series contracts too. | `closeout_result`; `_closeout_entry` | mcp/src/agents_remember/worktrees/modules/closeout.py:724-770; mcp/src/agents_remember/worktrees/modules/closeout.py:834-857 |
+| The closeout entry threads the healed contract through preflight and the locked publication callback. | `closeout_result`; `_publish_closeout_candidate`; `_closeout_entry` | mcp/src/agents_remember/worktrees/modules/closeout.py:724-770; mcp/src/agents_remember/worktrees/modules/closeout.py:771-833; mcp/src/agents_remember/worktrees/modules/closeout.py:834-857 |
 
 ## 260821-CLIVE Journal-Owned Claim Boundary
 
@@ -499,6 +520,16 @@ stale after commits; it never re-resolves from repository id. The pair policy li
 closeout pairing module rather than adding another resolver to this orchestration module.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T08:49:05+00:00: Generated citation repair: "contract.integration_status in {\"completed\", \"checkpointed\"} and integrated" repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:157-157. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T08:45+00:00 — 260831-LOCR-L34 preview/apply parity: recorded that
+  `closeout_preview_payload` now calls `require_closeout_publication_authority`, so the preview
+  refuses exactly what the apply refuses — previously the atomic-completion gate existed only behind
+  the apply, and a partial master's preview promised `would-closeout` before refusing on every
+  completion blocker (19 on LOCR). Recorded the leaf exemption in the shared gate that keeps every
+  leaf closeout preview unchanged, and that this is instance 1 of the preview/apply parity invariant
+  inventoried on the `worktrees/overview.md` route and in `memory_quality/overview.md`. Re-derived
+  this card's reference ranges. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: `_completed_integration_source_heads` renamed
   to `_landed_source_heads` and its condition widened from `== "completed"` to
   `in {"completed", "checkpointed"}`. Recorded why the old form was wrong (a checkpoint moves the

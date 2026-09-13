@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T12:02+02:00|
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00|
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Seals an atomic block only after every canonical leaf forms one exact journaled code-and-memory landing chain, then records the named series refs without ambient workbench commits. Since 260831-LOCR-L30 it also owns the *non-final* series exit: `publish_series_checkpoint_under_authority` records a partial master's landed line under the same ref-protecting authority while dropping only the two completion assumptions, so a paused master can land without being closed.
+Seals an atomic block only after every canonical leaf forms one exact journaled code-and-memory landing chain, then records the named series refs without ambient workbench commits. Since 260831-LOCR-L30 it also owns the *non-final* series exit: `publish_series_checkpoint_under_authority` records a partial master's landed line under the same ref-protecting authority while dropping only the completion assumptions, so a paused master can land without being closed. 260831-LOCR-L34 repaired that exit's reachability and closed its fail-open hole: the checkpoint now captures its own candidate refs (`capture_series_checkpoint_refs`) instead of reading closeout cells it cannot have, and `expected` is required and revalidated at publication, so the refs that land are exactly the refs the preview showed.
 
 ## CCR-R12@v5 Current Series Boundary
 
@@ -51,30 +51,74 @@ master/leaf re-proof and no projection row is completion authority.
 
 Since 260831-closeout-door-cut the master/leaf re-proof carries no door dimension at all.
 
-## 260831-LOCR-L30 Checkpoint Authority: The Missing Partial-Master Verb
+## 260831-LOCR-L30/L34 Checkpoint Authority: The Missing Partial-Master Verb, Made Reachable
 
-`publish_series_checkpoint_under_authority(contract, publication)` cit:([`publish_series_checkpoint_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:72-108) is the non-final
-master exit. `publish_series_integration_under_authority` proves the atomic master is a **finished
-unit** — its task document is `Completed` and `_require_every_atomic_leaf_landed` finds a landed
-enclosure for every canonical leaf. A master being paused has neither, so before this route existed
-a partial master had no way to land its accumulated line at all: the only route that could move a
-series' integration refs structurally required the master to be complete.
+`publish_series_integration_under_authority` proves the atomic master is a **finished unit** — its
+task document is `Completed`, `_require_every_atomic_leaf_landed` finds a landed enclosure for every
+canonical leaf, and (since 260831-LOCR-L34, because the closeout apply now evaluates
+`require_closeout_publication_authority`) it has closed out. A master being paused has none of those,
+so a partial master could not land its accumulated line at all through that route.
+
+**L30 wrote the checkpoint route; L34 is what made it reachable and closed its fail-open hole.**
+L30's route kept every ref-protecting authority but read the commits to land from the contract's
+closeout cells, which are exactly the completion facts a paused master does not have; its own note
+admitted the real ref move was never proven end to end. L34 changes two things and nothing else:
+
+- **The checkpoint captures its own candidate.**
+  `capture_series_checkpoint_refs(contract)` cit:([`capture_series_checkpoint_refs`], mcp/src/agents_remember/worktrees/series_closeout.py:106-138) returns the frozen
+  `SeriesCheckpointRefs` cit:([`SeriesCheckpointRefs`], mcp/src/agents_remember/worktrees/series_closeout.py:93-103) built from the **live** `code_work_branch` tip and the live
+  `memory_work_branch` tip — captured, never inherited from a stale contract cell. It proves the
+  code-to-memory mapping through `exact_series_memory_closeout`, **the same reader the final series
+  closeout uses**, so the two routes cannot drift into two definitions of "the ledger maps this
+  code". A capture that cannot prove the mapping raises, which makes "the refs are recorded only once
+  their ledger mapping holds" a property of the value rather than a separate check a caller could
+  skip. A non-`series` contract raises; an unresolvable code branch refuses
+  (`atomic-series-checkpoint-no-code-ref`).
+- **Publication revalidates that candidate.** `publish_series_checkpoint_under_authority(contract,
+  publication, expected)` cit:([`publish_series_checkpoint_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:161-194) now takes `expected` as a **required, never
+  defaulted** third argument. A default would be a fail-open hole in exactly the repair it was
+  written for: an omitted argument would silently admit whatever the live refs happened to be, i.e. a
+  pair the preview never showed. `_require_checkpoint_candidate_unchanged` re-reads the live refs and
+  re-proves their ledger mapping at the protected boundary, immediately before the irreversible ref
+  move, and refuses `atomic-series-checkpoint-candidate-moved` when they differ.
 
 The checkpoint route keeps every authority that protects *other* owners' refs — the series contract
 binding, the atomic landing authority, the source-lineage proof, the replay/ff source-state gate and
-the master-handover gate all still run in the caller (`integrate.py::checkpoint_landing_result`) —
-and drops only those two completion assumptions. It retires nothing: no cleanup runs, and the
-recorded state is `checkpointed` rather than `completed`.
+the master-handover gate all still run in the caller (`integrate.py::checkpoint_landing_result`) — and
+drops only the completion assumptions. It retires nothing: no cleanup runs, and the recorded state is
+`checkpointed` rather than `completed`.
 
-It still refuses, and the refusal is what keeps the weaker claim from becoming a replacement for the
+It still refuses, and the refusals are what keep the weaker claim from becoming a replacement for the
 stronger one:
 
-- `contract.kind != "series"` raises (an ordinary leaf lands through `worktree_integrate`).
+- `contract.kind != "series"` raises on both the capture and the authority (an ordinary leaf lands
+  through `worktree_integrate`).
 - A master whose task document already reads `Completed` raises
   `CloseoutQueueError("atomic-series-checkpoint-master-complete", ...)` and is pointed at the final
-  route, so a checkpoint can never downgrade a finished integration.
+  route, so a checkpoint can never downgrade a finished integration. Since L34 that refusal lives in
+  `require_series_checkpoint_authority` cit:([`require_series_checkpoint_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:139-160), **one definition with two callers**: the
+  checkpoint's preflight (`integrate.py::checkpoint_landing_eligibility`) evaluates it so the dry run
+  and the apply refuse identically and for the same named reason, and publication re-evaluates it so a
+  master that completes *between* preflight and the ref move is refused there too.
 - The contract is re-read after the master check and must still equal the passed contract, so the
   protected landing cannot run against a contract that changed underneath it.
+
+## The One Closeout Gate Both Surfaces Read (260831-LOCR-L34)
+
+`require_closeout_publication_authority(contract)` cit:([`require_closeout_publication_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:34-60) is the extracted body of the old
+`publish_closeout_under_authority` gate. Its first statement is `if contract.kind == "leaf": return`,
+which is exactly the shape the publication had, so no leaf closeout changes. Two callers read it:
+
+- `publish_closeout_under_authority` (the apply) cit:([`publish_closeout_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:61-73), which is now a thin wrapper; and
+- `worktrees/modules/closeout.py::closeout_preview_payload` (the dry run), which previously ran the
+  workbench-commit refusal and nothing else.
+
+Before L34 the atomic-completion gate existed **only behind the apply**, which is why a partial
+master's closeout preview answered `would-closeout` and then refused on every completion blocker (19
+of them on LOCR). Closeout does not move a protected integration ref, so this gate deliberately does
+not acquire the landing-only integration authority lock. **This is instance 1 of the preview/apply
+parity invariant recorded on the `worktrees/overview.md` route and in
+`memory_quality/overview.md`.**
 
 ## Invariants And Boundaries
 
@@ -89,17 +133,28 @@ stronger one:
   complete: the two routes exist precisely so that "landed" and "finished" stay separate claims, and
   the checkpoint route's `atomic-series-checkpoint-master-complete` refusal is the boundary between
   them.
+- **The checkpoint's `expected` argument must never gain a default (260831-LOCR-L34).** It is the
+  candidate the preview showed; defaulting it would re-open the fail-open hole the repair closed, by
+  admitting whatever the live refs happen to be at publication time. Revalidation against the live
+  tips immediately before the ref move is the entire reason the route can promise a pair.
+- **The closeout gate has exactly one definition (260831-LOCR-L34).** `closeout_preview_payload` and
+  `publish_closeout_under_authority` both call `require_closeout_publication_authority`; do not
+  re-inline a copy behind either surface. A preview that plans a closeout its apply refuses is the
+  defect this extraction removed, and it misled a human into writing a false note on LOCR.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout re-proves canonical completion without the landing lock; integration repeats it under the narrow protected-landing lock; the checkpoint route keeps every ref authority and drops only the two completion assumptions. | `publish_closeout_under_authority`, `publish_series_integration_under_authority`, `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:33-52; mcp/src/agents_remember/worktrees/series_closeout.py:53-71; mcp/src/agents_remember/worktrees/series_closeout.py:72-108 |
-| A checkpoint of an already-completed master is refused, so it can never downgrade a finished integration. | "atomic-series-checkpoint-master-complete" | mcp/src/agents_remember/worktrees/series_closeout.py:99-104 |
-| The complete leaf set and exact pair chain are proved before sealing. | `_require_every_atomic_leaf_landed`, `_require_exact_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:109-112; mcp/src/agents_remember/worktrees/series_closeout.py:138-168 |
-| Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:202-242; mcp/src/agents_remember/worktrees/series_closeout.py:243-273; mcp/src/agents_remember/worktrees/series_closeout.py:274-309; mcp/src/agents_remember/worktrees/series_closeout.py:310-339 |
-| Atomic-master completion resolves the effective nature under the atomic-sequential default. | `_require_atomic_master_complete` | mcp/src/agents_remember/worktrees/series_closeout.py:346-385 |
-| Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:386-404; mcp/src/agents_remember/worktrees/series_closeout.py:405-437 |
+| Closeout re-proves canonical completion without the landing lock; integration repeats it under the narrow protected-landing lock; the checkpoint route keeps every ref authority and drops only the completion assumptions. | `publish_closeout_under_authority`, `publish_series_integration_under_authority`, `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:61-73; mcp/src/agents_remember/worktrees/series_closeout.py:74-92; mcp/src/agents_remember/worktrees/series_closeout.py:161-194 |
+| The closeout completion gate is extracted into one definition with one body, and its first statement exempts a leaf, so the closeout preview and the closeout apply refuse identically. | `require_closeout_publication_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:34-60 |
+| The checkpoint captures its own live candidate refs and proves their ledger mapping through the same reader the final series closeout uses. | `SeriesCheckpointRefs`; `capture_series_checkpoint_refs`; `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:93-103; mcp/src/agents_remember/worktrees/series_closeout.py:106-138; mcp/src/agents_remember/worktrees/series_closeout.py:508-540 |
+| A checkpoint of an already-completed master is refused, and that refusal is one definition read by both the checkpoint preflight and publication. | `require_series_checkpoint_authority`; "atomic-series-checkpoint-master-complete" | mcp/src/agents_remember/worktrees/series_closeout.py:139-160 |
+| Publication revalidates the captured candidate against the live tips at the protected boundary and refuses a candidate that moved. | `_require_checkpoint_candidate_unchanged`; "atomic-series-checkpoint-candidate-moved" | mcp/src/agents_remember/worktrees/series_closeout.py:195-211 |
+| The complete leaf set and exact pair chain are proved before sealing. | `_require_every_atomic_leaf_landed`, `_require_exact_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:212-215; mcp/src/agents_remember/worktrees/series_closeout.py:241-271 |
+| Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:305-345; mcp/src/agents_remember/worktrees/series_closeout.py:346-376; mcp/src/agents_remember/worktrees/series_closeout.py:377-412; mcp/src/agents_remember/worktrees/series_closeout.py:413-448 |
+| Atomic-master completion resolves the effective nature under the atomic-sequential default. | `_require_atomic_master_complete` | mcp/src/agents_remember/worktrees/series_closeout.py:449-488 |
+| Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:489-506; mcp/src/agents_remember/worktrees/series_closeout.py:508-540 |
 
 ## Documentation References
 
@@ -115,6 +170,18 @@ comparison was deleted with the contract field by the closeout-door cut (commit 
 Scheduling projection absence is irrelevant to atomic completion truth.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T08:40+00:00 — 260831-LOCR-L34 reachability repair: recorded that the L30 checkpoint
+  route was unreachable in both directions (a partial master could not reach the closeout-gated
+  route; a complete one was refused) and never proved its real ref move, and what L34 changed —
+  `capture_series_checkpoint_refs`/`SeriesCheckpointRefs` capturing the live code and memory work
+  branch tips and proving their mapping through the same `exact_series_memory_closeout` the final
+  route uses, the now-required and revalidated `expected` argument with its
+  `atomic-series-checkpoint-candidate-moved` refusal, and `require_series_checkpoint_authority` as one
+  definition with two callers. Recorded the closeout gate's extraction into
+  `require_closeout_publication_authority` (leaf-exempt, read by both the preview and the apply) as
+  instance 1 of the preview/apply parity invariant. Re-derived every reference range in this card for
+  the new symbol block. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `publish_series_checkpoint_under_authority`,
   the missing partial-master verb that keeps every ref-protecting authority while dropping the
   "master is complete" and "every atomic leaf landed" assumptions; recorded the
