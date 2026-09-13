@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -27,12 +27,15 @@ export by `__all__` at L19.
 
 ### Logic
 
-**`PUBLIC_TOOLS` is no longer defined here (260831-LOCR-L32).** The exact ordered 62-name tuple now
-lives at `mcp/src/agents_remember/models/tools/public_roster.py:22-85`; L14 imports it and L19's
+**`PUBLIC_TOOLS` is no longer defined here (260831-LOCR-L32).** The exact ordered tuple now
+lives at `mcp/src/agents_remember/models/tools/public_roster.py` — 62 names at L32, **63** since
+260831-LOCR-L37 added `worktree_pause`, extent `L22-L86`; L14 imports it and L19's
 `__all__` declares the re-export, because this is not an `__init__.py` (where ruff exempts the `X as
 X` idiom) and a bare import would otherwise read as unused. The object is identical — same tuple,
-same order, same 62 unique names — so `agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the
-same object and every existing consumer is unchanged.
+same order, and 62 unique names at the time of the move — so
+`agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the same object and every existing
+consumer is unchanged. The later membership change (63 names) was made in the roster leaf and the
+worktree registrar together.
 
 The relocation is what made the roster readable from `models`: a `models → mcp` import is a
 `layers.toml` violation (models = 2, mcp = 22; the `mcp` charter forbids any import from below), a

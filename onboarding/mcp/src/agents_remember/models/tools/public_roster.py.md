@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tools/public_roster.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,14 +16,18 @@
 
 ## Purpose
 
-`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the 62 tool
-names the MCP server advertises as its public surface. It is a **zero-runtime-import leaf**: it
+`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the 63 tool
+names the MCP server advertises as its public surface (62 until 260831-LOCR-L37 added
+`worktree_pause`). It is a **zero-runtime-import leaf**: it
 imports nothing, defines nothing else, and exists only so a `models` response model can read the
 roster without importing `mcp`.
 
 Since 260831-LOCR-L32 the tuple lives here rather than in `mcp/tools/base.py`, which now re-exports
-it. The object is unchanged — same tuple, same order, same 62 unique names — so every consumer is
-unchanged and `agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the identical object.
+it. The relocation changed the object's home and nothing else — same tuple, same order — so every
+consumer is unchanged and `agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the identical
+object. The tuple held 62 unique names from L30 until 260831-LOCR-L37 added `worktree_pause`
+immediately after `worktree_sync`, which is a membership change made here and in
+`mcp/registration/worktrees.py` in the same leaf.
 
 ## Code Commentary
 
@@ -39,7 +43,7 @@ PUBLIC_TOOLS = (
 )
 ```
 
-`PUBLIC_TOOLS` spans **L22-L85**; the file is 85 lines. The only other statement is
+`PUBLIC_TOOLS` spans **L22-L86**; the file is 86 lines. The only other statement is
 `from __future__ import annotations` at L20 — no imports, no helpers, no package-level side effects.
 
 ### Conventions
@@ -90,7 +94,8 @@ violations with no `models → mcp` edge and no new cycle.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The roster's single definition, 62 ordered names, in a module that imports nothing. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
+| The roster's single definition, 63 ordered names, in a module that imports nothing. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
+| The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:58-58 |
 | The adapter re-exports this object through `__all__` instead of declaring its own tuple. | "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 | The response model that reads the roster to enforce the worktree surface's next-move vocabulary. | `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-369 |
 | The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. | `TOOL_RESPONSE_MODELS`; `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-139; mcp/src/agents_remember/models/tools/tool_registry.py:147-225 |
@@ -102,6 +107,12 @@ violations with no `models → mcp` edge and no new cycle.
 No cross-repository implementation dependency governs this repository-local tuple.
 
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: the advertised tuple gained `worktree_pause` (63 ordered
+  names, extent `L22-L86`, the name at `:58` immediately after `worktree_sync`) in the same leaf that
+  registered the tool and gave it a response model, so the roster, the registrar and the registry never
+  disagreed. The relocation account above is unchanged: the object still has one definition and
+  `mcp/tools/base.py` still re-exports it. Verification metadata remains closeout-owned; no acceptance
+  claim.
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: created the card for the new zero-import `models`
   leaf. Recorded that the relocation is what makes the worktree next-move vocabulary enforceable at
   the model boundary (the `models → mcp` layering violation, the unwritable `PLC0415` local import,

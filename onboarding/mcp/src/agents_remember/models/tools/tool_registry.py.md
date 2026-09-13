@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tools/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -59,10 +59,11 @@ No external domain source governs this repository-local registry.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141 |
-| The complete registry includes structural agent and gate responses alongside internal exact models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:149-229 |
-| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
-| The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. | `worktree_checkpoint_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:189-189 |
-| The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:190-190 |
+| The complete registry includes structural agent and gate responses alongside internal exact models. | "\"dispatch_agent\": DispatchAgentResponse,"; "\"gate_decide\": GateDecideResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:150-231 |
+| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:233-237 |
+| The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. | `worktree_checkpoint_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:191-191 |
+| The stop tool's response model is registered immediately after its sync sibling, matching the advertised order. | `worktree_pause` | mcp/src/agents_remember/models/tools/tool_registry.py:187-187 |
+| The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:192-192 |
 | The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 
 ## L23 Lifecycle Model Package Review
@@ -86,7 +87,7 @@ The current source seams include the module-level vocabulary. The model change k
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the module-level vocabulary at this ownership boundary. | `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141; mcp/src/agents_remember/models/tools/tool_registry.py:149-229; mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
+| The current module exposes the module-level vocabulary at this ownership boundary. | "INTERNAL_COMPAT_TOOL_NAMES = frozenset("; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {" | mcp/src/agents_remember/models/tools/tool_registry.py:121-148; mcp/src/agents_remember/models/tools/tool_registry.py:233-237 |
 
 ## 260821-CLIVE Strict Door Response
 
@@ -136,7 +137,33 @@ registry and their payloads differ only in the operation literal, so
 `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` drives one `finalize_tool_response` call per
 name as well as comparing registered names to the advertised tuple.
 
+## 260831-LOCR-L37 Pause Registration Row
+
+`TOOL_RESPONSE_MODELS` now maps `worktree_pause` to `WorktreePauseResponse` (imported from
+`models.worktree`), inserted between `worktree_sync` and `worktree_closeout_preview` so the registry
+order matches that name's position in `mcp.tools.PUBLIC_TOOLS`.
+
+The row is mandatory for the same reason the checkpoint's is: `mcp/registration/worktrees.py`
+registers and FastMCP advertises the name, and `finalize_tool_response` indexes this registry by tool
+name, so a missing row raises `KeyError` inside the handler instead of returning a payload. The
+envelope it maps to is the one whose only own field is `paused`, which the stop's route claims and a
+publication's envelope cannot express.
+
 ## Update History
+- 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_checkpoint_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:191-191. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical
+  projection): re-read the two `TOOL_RESPONSE_MODELS` claims and the module-level vocabulary row against
+  the current source and re-cited them to the extents those constructs now occupy —
+  `INTERNAL_COMPAT_TOOL_NAMES` `121-148`, `TOOL_RESPONSE_MODELS` `150-231`,
+  `PUBLIC_TOOL_RESPONSE_MODELS` `233-237`. The ranges cover the constructs the claims name and the
+  wording holds unchanged. The previous ranges had arrived from generated anchor-range projections,
+  which are not evidence that a claim still holds; these are curator-confirmed.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: registered `worktree_pause` →
+  `WorktreePauseResponse` between the sync and closeout-preview rows, recorded the by-name registry
+  lookup as the reason the row is mandatory, and re-derived this card's reference ranges
+  (`TOOL_RESPONSE_MODELS` 150-231, `PUBLIC_TOOL_RESPONSE_MODELS` 233-237, checkpoint row 190,
+  record-landing row 191). Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: registered
   `worktree_checkpoint_landing` → `WorktreeCheckpointLandingResponse` between the integrate and

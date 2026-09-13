@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-06T21:48:32+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae`|
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,13 +26,13 @@ Ruff targets Python 3.13 and enforces C901 and the PLR complexity rules. E501 an
 
 Pyright covers the checkout, with explicit import environments for source, verification support, tests and scripts. The selected interpreter is supplied by the quality owner. Coverage measurement includes branches and Python subprocesses for delivery reports; ordinary pytest is unmeasured. Product and verification package roots are classified separately, and the file-size detector remains armed.
 
-Pytest defaults to four workers and excludes the integration marker. It collects the repository's class naming convention, excludes imported test classes, treats xfail success strictly, and requires registered markers/configuration. Budgets are 1000 unit and 150 integration collected cases, including parametrization. The single testpaths declaration is mcp/tests. Warning policy has three explicit third-party exceptions. Current marker declarations distinguish integration, evidence categories and the inherited fitness selector; the removed environment-gated runner and old vendor matrix are not current execution routes.
+Pytest defaults to four workers and excludes the integration marker. It collects the repository's class naming convention, excludes imported test classes, treats xfail success strictly, and requires registered markers/configuration. Budgets are 1000 unit and **250** integration collected cases, including parametrization — the integration ceiling was raised 200 -> 250 by 260831-LOCR-L37 on explicit developer authorization, and the raise carries a dated tradeoff block in the source naming the distinct protection each added case buys, the case count, the support cost, and the measured elapsed runtime. The single testpaths declaration is mcp/tests. Warning policy has three explicit third-party exceptions. Current marker declarations distinguish integration, evidence categories and the inherited fitness selector; the removed environment-gated runner and old vendor matrix are not current execution routes.
 
 Radon configuration shapes diagnostic reports. Coverage has no acceptance percentage floor; production CRAP20 review and exact report integrity belong to the quality owner, not a numerical floor in this file.
 
 ### Conventions
 
-Keep configuration ownership singular. Changes to budgets require the protection and cost tradeoff specified by repository policy. Do not restore retired source-text census tests or infer their continued protection from historical comments.
+Keep configuration ownership singular. Changes to budgets require the protection and cost tradeoff specified by repository policy — the `integration_case_budget` raise to 250 is the worked example: the block above the key states the distinct protection, the case count, the support size and the measured runtime cost, and `mcp/tests/test_suite_budget.py` pins the same values. Do not restore retired source-text census tests or infer their continued protection from historical comments.
 
 ### Invariants And Boundaries
 
@@ -56,8 +56,8 @@ No new configuration or test obligation is introduced here.
 | Type-checker scope and import environments. | "[tool.pyright]" | pyproject.toml:43-66 |
 | Measurement and operational package ownership. | "[tool.coverage.run]" | pyproject.toml:68-88 |
 | Radon reports. | "[tool.radon]" | pyproject.toml:90-119 |
-| Budgets, populations, collection and strictness. | "[tool.pytest.ini_options]" | pyproject.toml:121-150 |
-| Warning exceptions and current evidence markers. | `filterwarnings` | pyproject.toml:165-198 |
+| Budgets, populations, collection and strictness, including the integration ceiling raise and its tradeoff block. | "[tool.pytest.ini_options]"; `integration_case_budget`; `unit_case_budget` | pyproject.toml:121-150; pyproject.toml:149-150 |
+| Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. | "ignore::starlette.exceptions.StarletteDeprecationWarning" | pyproject.toml:189-201 |
 
 ## Cross-Repo References
 
@@ -67,6 +67,13 @@ No new configuration or test obligation is introduced here.
 
 ## Update History
 
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the developer-authorized
+  `integration_case_budget` raise 200 -> 250 and the dated tradeoff block that now precedes the key
+  (the distinct protection each added case buys, the case count, the support cost — the existing
+  `QueueFixture` plus five measurement helpers inside one new module, no new support artifact — and
+  the measured runtime). Corrected the stale "1000 unit and 150 integration" statement to the actual
+  pinned pair, and re-derived the `filterwarnings` extent (189-222). Verification metadata remains
+  closeout-owned; no acceptance claim.
 - 2026-09-06T21:48:32+00:00 — Reconciled current IAS testing and configuration policy against source; removed obsolete active coverage, host-refusal and deleted-test claims. Existing verification pins and all prior history remain unchanged.
 
 - 2026-08-29T16:12+02:00 — Replaced the former multi-minor 3.11-floor contract with the single

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated            | 2026-09-13T19:02+02:00                     |
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -32,7 +32,8 @@ the worktree domain functions.
 The MCP path still calls result-returning service functions such as
 `start_result()`, `sync_result()` (GitHub #54 sub-task D, re-exported from
 `worktrees/modules/sync.py`), `closeout_result()`, `integrate_result()`,
-`checkpoint_landing_result()` (260831-LOCR-L30), and
+`checkpoint_landing_result()` (260831-LOCR-L30), `pause_result()`
+(260831-LOCR-L37, from `worktrees/modules/pause.py`), and
 `cleanup_result()`. Dashboard task 14 adds `FinalizeArgs` and
 `finalize_result()` from `worktrees/modules/finalize.py`; callers use this
 facade for terminal lifecycle finalization so cleanup plus task-document
@@ -83,7 +84,10 @@ documented by the `modules/overview.md` route overview.
 - Onboarding sidecar/catalog probes must tolerate long Windows paths that Git
   can report but normal `Path.exists()`/`Path.is_file()` may miss.
 - The facade is the stable public surface for `worktrees/modules/`: a module extracted there is
-  re-exported here and listed in `__all__`. The most recent addition is `checkpoint_landing_result`
+  re-exported here and listed in `__all__`. The most recent addition is `pause_result`
+  from `worktrees/modules/pause.py` (260831-LOCR-L37), so the public `worktree_pause` tool reaches
+  the stop-only route through the same stable facade path as its siblings. Before it, the facade
+  re-exported `checkpoint_landing_result`
   from `worktrees/modules/integrate.py` (260831-LOCR-L30), so the public
   `worktree_checkpoint_landing` tool reaches the partial-master landing route through the same
   stable facade path as `integrate_result`. Before it, the facade re-exported `record_landing_result`
@@ -98,7 +102,8 @@ documented by the `modules/overview.md` route overview.
 | Provider setup performs isolated provider seed and runtime preparation. | `ProviderSetupRequest`; `prepare_enabled_providers`; `write_isolated_provider_settings` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:219-233; mcp/src/agents_remember/providers/provider_setup.py:591-629 |
 | Worktree status packets project lifecycle payloads into context packets. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:61-143 |
 | Worktree contract serialization lives in the package worktree contract module. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder and the checkpoint landing route. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:98-172 |
+| The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
+| The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path. | "from agents_remember.worktrees.modules.pause import pause_result"; "\"pause_result\"," | mcp/src/agents_remember/worktrees/git_worktree_manager.py:86-86; mcp/src/agents_remember/worktrees/git_worktree_manager.py:154-154 |
 | Terminal lifecycle finalization is implemented in the extracted module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:55-141 |
 | Long-path-safe filesystem wrappers live in the kernel filesystem helper. | `extended_path`; `exists`; `is_file` | mcp/src/agents_remember/kernel/filesystem.py:16-25; mcp/src/agents_remember/kernel/filesystem.py:28-29; mcp/src/agents_remember/kernel/filesystem.py:32-33 |
 
@@ -107,6 +112,11 @@ documented by the `modules/overview.md` route overview.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: re-exported `pause_result` from
+  `worktrees/modules/pause.py` and added it to `__all__`, so the public `worktree_pause` tool reaches
+  the stop-only route through the stable facade path; updated the facade-surface invariant and
+  re-derived the `__all__` extent (99-173). Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: re-exported `checkpoint_landing_result` from
   `worktrees/modules/integrate.py` and added it to `__all__`, so the public
   `worktree_checkpoint_landing` tool reaches the partial-master landing route through the stable

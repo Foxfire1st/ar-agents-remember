@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## IAS Frozen Worktree Payload Boundary
@@ -276,7 +276,8 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141 |
-| The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. | `worktree_checkpoint_landing`; `worktree_record_landing` | mcp/src/agents_remember/models/tools/public_roster.py:62-63 |
+| The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. | `worktree_checkpoint_landing`; `worktree_record_landing` | mcp/src/agents_remember/models/tools/public_roster.py:63-64 |
+| The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:58-58 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
@@ -393,7 +394,7 @@ Tool payload composition preserves the closed application result vocabulary. The
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. | `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:188-197 |
+| Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. | `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:199-206 |
 
 ## 260821-DAGQC-L2 Typed Memory-Quality Adapters
 
@@ -421,7 +422,8 @@ without adding polling, retry, cancellation, cursor advancement or journal mutat
 ## 260831-LOCR-L30 Checkpoint-Landing Tool
 
 This route's advertised surface grew by one name: `worktree_checkpoint_landing`, listed in
-`base.py`'s `PUBLIC_TOOLS` immediately after `worktree_integrate` (the tuple now holds 62 names) and
+`base.py`'s `PUBLIC_TOOLS` immediately after `worktree_integrate` (the tuple held 62 names at L30; it
+holds 63 since 260831-LOCR-L37) and
 built by `mcp/tools/worktree.py::worktree_checkpoint_landing_payload`, which forwards to
 `application/worktree_tools.py::worktree_checkpoint_landing_tool`. It is registered by
 `mcp/registration/closeout.py`'s `_register_integration_command_tools` and carries
@@ -431,6 +433,21 @@ built by `mcp/tools/worktree.py::worktree_checkpoint_landing_payload`, which for
 The three-part requirement is the L29 lesson applied by construction rather than by repair, and the
 two landing tools are why the inventory suite drives one `finalize_tool_response` call per name:
 their payloads differ only in the operation literal, so a set comparison would pass a registry swap.
+
+## 260831-LOCR-L37 Pause Payload
+
+This route gained one builder and one advertised name. `worktree_pause_payload` takes only
+`contract_path`, forwards it to `application/worktree_tools.py::worktree_pause_tool`, and wraps the
+result under the operation name `worktree_pause`; `worktree_pause` sits in `PUBLIC_TOOLS` immediately
+after `worktree_sync` (the tuple now holds 63 names) and carries `WorktreePauseResponse` through
+`TOOL_RESPONSE_MODELS`. All three places a public tool must appear were added together, which is the
+L29 lesson applied by construction rather than by repair.
+
+The builder owns no decision, and specifically not the one the split exists to protect: whether
+anything is **published**. That decision does not exist on this path at all — the route it forwards to
+cannot reach a publication module — and the publication this route also carries
+(`worktree_checkpoint_landing_payload`, in the same module) is a different builder for a different
+tool. Two names, two builders, two routes.
 
 ## 260831-LOCR-L29 Public-Inventory Repair
 
@@ -452,9 +469,11 @@ this tuple.
 ## 260831-LOCR-L32 The Advertised Tuple Moves To `models`; This Route Re-Exports It
 
 `PUBLIC_TOOLS` is no longer **defined** in `base.py`. Its one definition is now the zero-import `models`
-leaf `mcp/src/agents_remember/models/tools/public_roster.py:22-85`; `base.py` imports it at L14 and
+leaf `mcp/src/agents_remember/models/tools/public_roster.py` — the tuple's extent is `L22-L86` since
+260831-LOCR-L37 added `worktree_pause`, and was `L22-L85` at L32; `base.py` imports it at L14 and
 declares the re-export through `__all__` at L19, so `agents_remember.mcp.tools.PUBLIC_TOOLS` still
-resolves the identical object — same tuple, same order, same 62 unique names — and every builder,
+resolves the identical object — same tuple, same order, 62 unique names at the move and 63 since
+260831-LOCR-L37 — and every builder,
 registration path, and conformance comparison in this route is unchanged. `base.py` shrank from 79
 lines to 24; `TRANSPORT` is now L16, `RESERVED_TOOLS` L17, and `_tool_payload` L22-L24.
 
@@ -477,6 +496,14 @@ accurate history; the names, counts and registry rules they record still hold. O
 location changed, and it is now `models/tools/public_roster.py`.
 
 ## Update History
+- 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_operation_control_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:199-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new `worktree_pause_payload` builder and the
+  `worktree_pause` name, its position in `PUBLIC_TOOLS` immediately after `worktree_sync`, and its
+  `WorktreePauseResponse` registry row — the three placements a public tool must occupy, all added at
+  once. Stated that the builder owns no publication decision and that the publication in this module
+  (`worktree_checkpoint_landing_payload`) is a different builder for a different tool. Corrected the L30
+  count sentence, which pinned the tuple at 62 names. Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: this route's behavior is unchanged — the
   `task_doc.py` builder stays transport-thin and still accepts `operation` as a plain `str` — but the
   Layout row's operation vocabulary was stale, so it now carries the step-plane operations

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,8 @@ without depending on a readable task document for its in-flight journal. Schedul
 cross-master exclusion: a graph-less sprint's `atomic-sequential` default describes the sprint's
 shape — every commanded master executes atomically — and serializes nothing, because such a sprint
 declares no dependencies, and per-contract activation never pauses or excludes a sibling.
+Since 260831-LOCR-L37 the route also owns the **stop**: `modules/pause.py` releases one master's
+activation selection, publishes nothing, and hands the turn back.
 
 ## Hot Path Summary
 
@@ -160,6 +162,7 @@ memory-carryover vehicle.
 | `activation/atomic_series_activation_release.py` | selector transition | exact cancellation and terminal vacancy | covered |
 | `activation/atomic_series_activation_transaction.py` | admission state machine | binds selection to exact sync-before-exposure | covered |
 | `activation/atomic_series_activation_terminal.py` | terminal bridge | releases only this exact contract's record | covered |
+| `modules/pause.py` | stop-only pause | the developer's stop verb: releases this contract's selection, publishes nothing, proposes no next call | covered |
 | `sync_source_refresh.py` | pre-lock evidence | shared bounded upstream refresh without local authority | covered |
 | `sync_transaction.py` | transaction driver | public start/resume/continue/cancel routing | covered |
 | `sync_transaction_state.py` | stable journal | state survives task/contract readability failures | covered |
@@ -190,6 +193,11 @@ memory-carryover vehicle.
   accepts repeated code commits; the newest matching row remains current authority.
 - Cleanup may release only an exact selected terminal contract and must do so before deleting the
   canonical contract pointer needed to prove identity.
+- **The stop is not a publication (260831-LOCR-L37).** The pause releases this contract's activation
+  selection and writes nothing else; it moves no ref, creates no commit, lands nothing, writes no
+  ledger row and advances no unstarted leaf, and the result proposes no continued execution. Publishing
+  a partial master is the separate `worktree_checkpoint_landing` route, which lands refs under
+  explicitly required developer approval. The two must never be presented or reached as each other.
 
 ## Repo-Internal References
 
@@ -197,6 +205,8 @@ memory-carryover vehicle.
 | --- | --- | --- |
 | Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:111-128; mcp/src/agents_remember/worktrees/services.py:131-141; mcp/src/agents_remember/worktrees/services.py:144-151 |
 | The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
+| The route's stop: release this contract's selection, refuse a non-series contract, and report a paused master with no proposed next call. | `pause_result`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:66-109; mcp/src/agents_remember/worktrees/modules/pause.py:112-129; mcp/src/agents_remember/worktrees/modules/pause.py:132-148 |
+| The stop cannot reach a publication, asserted structurally over the module's import closure. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
 | Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. | `observe_atomic_series`; `_require_record_identity`; "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142 |
 | Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; "def atomic_series_admission_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
 | The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
@@ -221,6 +231,7 @@ No Domain Documentation source is configured for this memory root.
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
+| `modules/pause.py` | [`modules/pause.py.md`](modules/pause.py.md) | covered | the stop-only pause: release one selection, publish nothing |
 | `sync_source_refresh.py` | [`sync_source_refresh.py.md`](sync_source_refresh.py.md) | covered | shared pre-lock fetch evidence |
 | `sync_transaction.py` | [`sync_transaction.py.md`](sync_transaction.py.md) | covered | transaction driver |
 | `sync_transaction_authority.py` | [`sync_transaction_authority.py.md`](sync_transaction_authority.py.md) | covered | source/contract authority |
@@ -450,7 +461,58 @@ names the checkpoint as the tool to re-run, and the closeout preview/apply parit
 for the recorded `UNREPRODUCED FLAKE` note above
 `test_checkpoint_landing_requires_explicit_developer_approval`.
 
+## Route Impact: Stop-Only Pause (260831-LOCR-L37)
+
+This route gained the developer's **stop**. `worktrees/modules/pause.py::pause_result` is the entire
+route: it asserts the addressed contract is the one it was given, refuses any contract whose `kind` is
+not `series` (`pause-requires-atomic-master` — an ordinary leaf owns no selection of its own), delegates
+the actual release to the existing `release_atomic_series_selection` authority, and returns a payload
+whose `state`/`status` are `paused`, whose `paused` is `True`, whose `atomicSeriesActivation` echoes the
+released record, and whose `nextStep` carries a summary and **no** `nextTool`/`nextArgs`/`nextOperation`.
+The application entry point, payload builder, registrar declaration, `PUBLIC_TOOLS` entry and
+`WorktreePauseResponse` row are its five public edges; `git_worktree_manager` re-exports `pause_result`
+so the stop reaches the route through the same stable facade as its siblings.
+
+**Why the boundary is the feature.** The activation selection is the one durable fact that says this
+master is the one exposing implementation work, so releasing it is what makes the stop real — marking
+the master without releasing it would stop nothing. And because the record is addressed per contract by
+`activation_path(...)`, releasing one master leaves every other master's record byte-identical: the
+pause cannot make a sibling ineligible, and the retired cross-master waiting vocabulary has nothing to
+say about it.
+
+**The pause cannot publish, and that is structural.** `modules/pause.py` imports and calls none of the
+integration, landing, closeout or ledger planes and runs no Git; the activation snapshot it writes while
+releasing is its one legitimate write and is not a publication. `mcp/tests/test_pause_is_not_publication.py`
+builds the module's static source-level import graph and asserts it is disjoint from all twelve
+publication modules. Measured on this candidate: the closure holds **60** modules including the root,
+the pause's **5** direct imports, **54** modules beyond them, and **0 of 12** publication modules; the
+case adds non-vacuity checks and named witnesses so a walker that stopped at the direct imports would
+fail instead of pass. The guard is a static AST reading — dynamic imports are not followed and it is
+per-module rather than process-wide, which the test states and which a future reader must not read as
+completeness. See that test's card.
+
+**The checkpoint is the separate publication, and L30/L34's route is untouched by this leaf.**
+`worktree_checkpoint_landing` still lands a partial master's accumulated line onto its super branch under
+explicit developer approval and records `checkpointed`. The pause must never be routed through it, and
+no pause surface may describe it as the pause. Its registered description already says it is a
+publication and denies being the pause (L36); L37 adds the stop the description points at.
+
+`mcp/tests/test_pause_stop_only_end_to_end.py` (integration lane) is the boundary proof over one real
+temporary Git world holding two atomic masters: it measures both repositories' refs and complete object
+databases, the coordination tree, both worktrees and every task document before and after the public
+pause, and covers the hand-back payload, the three refusals, leave-idempotence, per-contract record
+isolation and resume.
+
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the stop-only pause on this route — the
+  `modules/pause.py` delegation to the existing release authority, the paused payload and its
+  proposal-free `nextStep`, the per-contract isolation that leaves a sibling's record byte-identical, the
+  structural exclusion of publication (measured closure 60 modules including the root, 5 direct
+  imports, 54 beyond them, 0 of 12 publication modules reached, with non-vacuity checks and named
+  witnesses so a depth-1 walker fails), and the explicit statement that
+  `worktree_checkpoint_landing` remains the separate publication. Added the load-bearing
+  file row, the local invariant, the reference row, and the route-impact section. Verification metadata
+  remains closeout-owned; no acceptance claim.
 - 2026-09-13T17:56+02:00 — 260831-LOCR-L36: corrected the checkpoint-route paragraph and recorded
   the reconciled series completion. The checkpoint is a partial **publication** (it moves the master's
   committed code and memory refs onto the protected source branch under explicit developer approval),

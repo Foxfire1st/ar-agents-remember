@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -168,11 +168,22 @@ The docstring was corrected by 260831-LOCR-L34, and the correction is the point 
 cosmetics: it had said the route "drops only the two assumptions that the master is finished", which
 was true of L30's intent and false of its behavior — the route also required the master to have
 **closed out**, which is why it was unreachable from both directions. It now states that
-`worktree_integrate` proves the master complete *and* that it has closed out, that a paused master has
-none of those, that the checkpoint captures the master's own committed refs (the live series code
-work branch tip and the live memory work branch tip), proves the existing ledger maps the code ref,
-lands exactly those, requires the same explicit developer approval (`dry_run=False`), and keeps the
-master's worktrees, branches and enclosure.
+`worktree_integrate` proves the master complete *and* that it has closed out, that an unfinished
+master has none of those, that the checkpoint captures the master's own committed refs (the live
+series code work branch tip and the live memory work branch tip), proves the existing ledger maps the
+code ref, lands exactly those, requires the same explicit developer approval (`dry_run=False`), and
+keeps the master's worktrees, branches and enclosure.
+
+**Residual naming collision this leaf could not clear (260831-LOCR-L37, recorded not fixed).** The
+entry-point docstring above the code still reads "A master being paused has none of those" — the
+pre-L36 sense of "paused", meaning an unfinished master. The **registered** description, which is what
+an agent actually reads, was corrected by L36 and now says the route is a publication and that pausing
+is a separate matter and is NOT this call; L37 then gave "paused" a real public meaning (a master whose
+activation selection has been released). So the application docstring is the one surface still using
+the retired word, and it sits in `mcp/src/`, which curation must not edit. Do not propagate its wording
+here: an unfinished master is **unfinished**, a master landed at a checkpoint is **checkpointed**, and a
+**paused** master is one stopped by `worktree_pause` with nothing published. Flagged for the code owner
+rather than repaired by memory.
 
 The entry point adds no behavior of its own beyond admission and argument building: whether the
 master is eligible to land without being complete, which series authority runs, which refs are
@@ -182,6 +193,31 @@ captured and revalidated, and what state is recorded all live in
 It does **not** run the
 auto-land seat hook that follows a successful final `worktree_integrate_tool` call, because nothing
 is being retired.
+
+## 260831-LOCR-L37 Pause Entry Point
+
+`worktree_pause_tool(config, *, contract_path)` is the application entry point for the stop-only
+pause. It is the shortest adapter in this module on purpose: it admits the configured contract
+through the shared `admit_configured_contract` gate (projecting a refusal with
+`operation="worktree_pause"`), builds the same typed `WorktreeArgs` the other contract-addressed
+entry points build — `contract_path` plus `config.orchestration.gate_policy` — and delegates to
+`git_worktree_manager.pause_result(args, configured.contract)`.
+
+It adds nothing else, and that is the contract: the entry point performs no Git, no ref move, no
+commit, no landing and no ledger write, so reaching the stop cannot publish. It also runs no
+auto-land seat hook, because nothing is being retired — the mirror of the checkpoint entry point
+above, which skips that hook because nothing is finished.
+
+The docstring carries the distinction an agent needs and states it in the route's own terms: the
+stop publishes nothing and the master keeps its branches, worktrees, enclosure and unstarted
+leaves; `worktree_checkpoint_landing` is the separate, explicitly requested **publication**, and
+pausing never does that.
+
+**The pause and the publication are two verbs with two entry points.** `worktree_checkpoint_landing_tool`
+above lands a partial master's committed refs under an explicitly required developer approval;
+`worktree_pause_tool` releases the master's atomic-series activation selection and hands the turn
+back. Neither is reachable from the other, and no surface may present the stop as the publication
+or the publication as the stop.
 
 ## Invariants And Boundaries
 
@@ -236,10 +272,11 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 | Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:277-302 |
 | Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:319-338 |
 | The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:427-469 |
+| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool` | mcp/src/agents_remember/application/worktree_tools.py:470-499 |
 | Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | Worktree service behavior is owned by the worktree manager and modules. | "from agents_remember.worktrees.modules.finalize import FinalizeArgs" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:31-37 |
-| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`, `WorktreeCommandResponse`, `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:232-286; mcp/src/agents_remember/models/worktree.py:289-352; mcp/src/agents_remember/models/worktree.py:458-463 |
-| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | "def route_review_refusal_fields("; "def _worktree_closeout(" | mcp/src/agents_remember/application/worktree_tools.py:889-889; mcp/src/agents_remember/worktrees/route_review.py:253-253 |
+| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`, `WorktreeCommandResponse`, `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:232-286; mcp/src/agents_remember/models/worktree.py:289-352; mcp/src/agents_remember/models/worktree.py:459-466; mcp/src/agents_remember/models/worktree.py:467-476 |
+| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | "def route_review_refusal_fields("; "def _worktree_closeout(" | mcp/src/agents_remember/application/worktree_tools.py:921-921; mcp/src/agents_remember/worktrees/route_review.py:253-253 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:20-28; mcp/src/agents_remember/kernel/authority.py:31-39 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:58-157 |
 | The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:103-103; mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189 |
@@ -314,6 +351,14 @@ revalidates independently before mutation.
 Status now delegates its contract/terminal projection to `application.worktree_status.project_contract_status`. Closeout apply forwards typed `corrective_dispositions` into durable admission, and certification contract refusals are translated through the shared certification refusal owner. Preview does not launch the operation.
 
 ## Update History
+- 2026-09-13T17:20:55+00:00: Generated citation repair: "def route_review_refusal_fields("; "def _worktree_closeout(" repointed to mcp/src/agents_remember/worktrees/route_review.py:253-253; mcp/src/agents_remember/application/worktree_tools.py:921-921. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new `worktree_pause_tool` application entry
+  point — configured-contract admission with `operation="worktree_pause"`, typed `WorktreeArgs` with
+  the configured gate policy, delegation to `git_worktree_manager.pause_result`, no auto-land hook
+  because nothing is retired, and no Git/ref/commit/landing/ledger work of its own — and stated that
+  the stop and the checkpoint publication are two verbs with two entry points, neither reachable from
+  the other. Added the entry point's reference row. Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shrank `models/worktree.py`: the public envelope/context-summary row was rebound to `models/worktree.py:232-286`, `289-352` and `458-463`. Claim wording unchanged.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T08:50+00:00 — 260831-LOCR-L34: recorded the corrected entry-point docstring. It had

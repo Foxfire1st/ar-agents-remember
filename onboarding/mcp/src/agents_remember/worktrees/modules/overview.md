@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -69,7 +69,8 @@ registered consumer ownership in the evidence catalog.
 The `worktrees/modules` package contains the extracted implementation modules
 behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycle
 status guidance, start preparation, onboarding refresh, strict code-quality gating, closeout, integration,
-cleanup, cleanup report shaping, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
+cleanup, cleanup report shaping, lifecycle finalization, abandon, the stop-only master pause,
+provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
 `task_reopen` enters through the task-doc application route and executes `worktrees/reopen.py`; this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
@@ -1025,8 +1026,8 @@ historical context for pre-R12 behavior.
 `integrate.py` gained `checkpoint_landing_result` and `_checkpoint_result`, and
 `landing_record.py`'s single writer gained `LandedIntegration` plus a `checkpoint` flag. The checkpoint
 path selects `series_closeout.publish_series_checkpoint_under_authority`, records `checkpointed`
-through the shared writer, and runs no automatic cleanup, so a paused master keeps its worktrees,
-branches and enclosure. `record_landing.py` (the PR route) calls the same writer with the bundled
+through the shared writer, and runs no automatic cleanup, so an unfinished master landed at a
+checkpoint keeps its worktrees, branches and enclosure. `record_landing.py` (the PR route) calls the same writer with the bundled
 `LandedIntegration` and no checkpoint flag, so the terminal `integration` cell still has exactly one
 definition. `git_worktree_manager.py` re-exports `checkpoint_landing_result`.
 
@@ -1034,7 +1035,8 @@ definition. `git_worktree_manager.py` re-exports `checkpoint_landing_result`.
 `checkpoint: bool` flag is gone; `checkpoint_landing_result` now reads the `CheckpointLanding` value
 built by `checkpoint_landing_eligibility` — the route's own capture of the live series code and memory
 work-branch tips plus their proved ledger mapping — because the old path read the contract's closeout
-cells, which a paused master does not have and which made the route unreachable in both directions. The
+cells, which an unfinished master does not have and which made the route unreachable in both
+directions. The
 checkpoint no longer calls `validate_integrate_contract`. L34 also made the ledger projection a
 preview-side proof for **both** routes (`_require_ledger_projection` runs before the dry-run branch),
 gave the protected-ref edge a required `operation` name so a checkpoint's `integration-ref-race`
@@ -1093,7 +1095,38 @@ graph-less sprint scheduling default is unchanged: `atomic-sequential` describes
 sprint — while attaching a master to a graph-less sprint still reports graphNode
 `deferred-no-graph-default`.
 
+## 260831-LOCR-L37 The Stop-Only Pause Module
+
+`pause.py` is a new module in this route and the whole of it is one operation:
+`pause_result(args, current_contract)` releases one atomic master's selection, publishes nothing and
+hands the turn back. It belongs in `modules/` because it is an operation a public tool reaches through
+the facade — `git_worktree_manager` imports and re-exports `pause_result` — not a helper inside another
+module's seam.
+
+It adds no authority. The release is delegated to the existing
+`activation/atomic_series_activation_release.py::release_atomic_series_selection`, the same call sync
+cancellation and terminal cleanup already make; the pause contributes the caller-facing shape, not a
+second scheduling or vacancy mechanism. The module performs no Git, imports no integration, landing,
+closeout or ledger module, and writes exactly one thing — the activation snapshot recording that this
+contract is no longer selected.
+
+The refusals come from the release authority and are explained, never suppressed: an addressed record
+this contract does not own refuses as `atomic-series-activation-release-unreadable`, a contract with no
+selection refuses as `atomic-series-activation-selection-missing`, and a non-series contract is refused
+here as `pause-requires-atomic-master` because a leaf owns no selection of its own. Every refusal
+returns `paused: False` and, like the success payload, proposes no next call.
+
+Read the file's own card ([`pause.py.md`](pause.py.md)) for the split against
+`worktree_checkpoint_landing`, which remains the separate publication in `integrate.py`, and for the
+measured import-closure evidence that the stop cannot reach a publication.
+
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new `modules/pause.py` — the stop-only pause
+  that delegates to the existing release authority, adds no second scheduling or publication authority,
+  performs no Git, and returns a proposal-free result. Corrected two paragraphs that still used the
+  retired sense of "paused" for an unfinished/checkpointed master ("a paused master keeps its
+  worktrees", "cells, which a paused master does not have") now that "paused" names the released
+  state. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: the checkpoint landing is a partial
   publication of an unfinished master, not a pause, so this route's cleanup paragraph now says "an
   unfinished master landed at a checkpoint" where it said "a paused master". Wording only; the

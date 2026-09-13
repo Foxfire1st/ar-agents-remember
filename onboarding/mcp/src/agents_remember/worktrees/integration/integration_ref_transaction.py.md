@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ entry points no longer exist: after a crash between the two ref moves the operat
 - Atomic-series ledger publication either preserves an already-current exact pair or prepends one
   exact row over the entire prior history; global code-key uniqueness is not an invariant.
 - **The route difference is data, never a second transaction (260831-LOCR-L34).** One
-  `prepare_integration_ref_move` serves both the final and the paused series route; which commits are
+  `prepare_integration_ref_move` serves both the final route and the checkpoint route; which commits are
   admitted, and which ledger history form is owed, travel in `LandingAdmission`. Do not fork the
   transaction or re-derive the admission at the boundary.
 - **A checkpoint's ledger is proved as a projection, never against the completion census.** The

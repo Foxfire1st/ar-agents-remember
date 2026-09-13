@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T18:07+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, and 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause — and 260831-LOCR-L37 added the matching case for the stop: `worktree_pause`'s description must present a stop that publishes NOTHING and must name `worktree_checkpoint_landing` as the separate, explicitly requested PUBLICATION. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
 
 ## Code Commentary
 
@@ -66,8 +66,9 @@ to removed methods are superseded by this current inventory.
 | Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-240 |
 | The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-259 |
 | The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish | `test_worktree_checkpoint_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:261-280 |
-| The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-305 |
-| The permissive registration-time config stub both cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:307-322 |
+| The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-304 |
+| The pause description presents a stop that publishes NOTHING and names the checkpoint landing as the separate publication. | `test_the_pause_advertises_a_stop_that_publishes_nothing` | mcp/tests/test_tools.py:306-330 |
+| The permissive registration-time config stub the registration cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:332-347 |
 
 ## Cross-Repo References
 
@@ -113,7 +114,29 @@ returned operation, which is what pins the name to the model that declares its l
 The general rule the two cases establish: one validating call per public tool name, not one for the
 whole registry.
 
+### The Stop's Half Of The Split (260831-LOCR-L37)
+
+`test_the_pause_advertises_a_stop_that_publishes_nothing` is the L36 case's counterpart, and the two
+are deliberately a pair. The checkpoint case pins the publication's side of the split; this one pins
+the stop's. It registers every registrar against a probe `FastMCP("pause-surface-probe")`, reads the
+advertised descriptions, and asserts that `worktree_pause` is a `PUBLIC_TOOLS` member, that
+`worktree_checkpoint_landing` is too, and that the stop's text says all three things an agent needs:
+that it is a pause of an atomic master, that it **publishes NOTHING**, and that the publication it
+must not reach for is named and separate.
+
+Neither case would catch the other's regression. The L36 case cannot see the stop's wording because
+it reads only the checkpoint's text, and a description-only edit is invisible to the set comparison
+and to the per-name response-model cases. Together they are what makes "two registered tools, not one
+verb with two names" an enforced claim rather than a comment.
+
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new case
+  `test_the_pause_advertises_a_stop_that_publishes_nothing`, which pins the stop's published
+  description (a pause of an atomic master, "Publishes NOTHING", and the checkpoint named as the
+  separate, explicitly requested publication) and both roster memberships, and recorded why it is the
+  L36 checkpoint case's counterpart rather than a duplicate. Re-derived the retained-test and stub
+  ranges (`_permissive_registration_config` 332-347). Verification metadata remains closeout-owned; no
+  execution or acceptance claim.
 - 2026-09-13T18:07+02:00 — 260831-LOCR-L36: recorded the new case
   `test_the_checkpoint_description_publishes_rather_than_pausing`, which registers every tool against
   a probe `FastMCP` and pins the checkpoint description: it must present a partial **publication** and

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/__init__.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-09-12T22:55+02:00                                       |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d`                   |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae`                   |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -59,7 +59,9 @@ instance) and nothing else; every `@server.tool()` definition lives in a family 
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: renamed the roster's home. `PUBLIC_TOOLS` is no
   longer declared in `mcp/tools/base.py`; its one definition is the zero-import leaf
   `models/tools/public_roster.py:22-85`, which the adapter re-exports unchanged (same object, same
-  order, same 62 names), so this package's exact-order comparison is unaffected. Repointed the
+  order, same 62 names), so this package's exact-order comparison is unaffected; 260831-LOCR-L37 added
+  `worktree_pause` to that tuple (63 names) and to `worktrees.py`'s registrars in the same leaf, so the
+  exact-order comparison still holds and neither side was left ahead of the other. Repointed the
   invariant prose and the reference row; no behavioral claim changed. Verification metadata remains
   closeout-owned; no acceptance claim.
 

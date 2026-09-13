@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T17:38+02:00|
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -100,11 +100,16 @@ the master-handover gate all still run in the caller (`integrate.py::checkpoint_
 drops only the completion assumptions. It retires nothing: no cleanup runs, and the recorded state is
 `checkpointed` rather than `completed`.
 
-**This route is a publication, not a pause (260831-LOCR-L36).** A pause is an ordinary stop: it
-publishes nothing, moves no ref, and leaves the master's branch, worktrees and enclosure private —
-no worktree tool performs it. Nothing about the checkpoint's weaker claim licenses calling it the
-pause, and its agent-facing description now says so explicitly
-(`mcp/registration/closeout.py::worktree_checkpoint_landing`).
+**This route is a publication, not a pause (260831-LOCR-L36; the stop itself arrived in
+260831-LOCR-L37).** A pause publishes nothing, moves no ref, and leaves the master's branch, worktrees
+and enclosure private. At L36 no worktree tool performed it, and the registered description was
+corrected to stop inviting an agent to reach this publication for an ordinary stop. L37 then added the
+stop as its own verb — `worktree_pause`, in the working half of the surface, releasing the master's
+activation selection and proposing no next call — so the sentence "no tool performs it" is no longer the
+state of the tree and must not be repeated. Nothing about this checkpoint's weaker claim licenses
+calling it the pause; the two are separate operations with separate registered descriptions
+(`mcp/registration/worktrees.py::worktree_pause` and
+`mcp/registration/closeout.py::worktree_checkpoint_landing`).
 
 It still refuses, and the refusals are what keep the weaker claim from becoming a replacement for the
 stronger one:
@@ -282,6 +287,11 @@ comparison was deleted with the contract field by the closeout-door cut (commit 
 Scheduling projection absence is irrelevant to atomic completion truth.
 
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: corrected this card's L36 sentence that "no worktree tool
+  performs it". The stop now exists as its own public verb (`worktree_pause`, registered by the
+  working-half registrar), so the card states the L36 state as history and names the two separate
+  registered descriptions that now point at each other. The checkpoint's own publication account is
+  unchanged. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T17:38+02:00 -- 260831-LOCR-L36 curator reconciliation against the changed code
   candidate. Recorded that the atomic completion proof no longer anchors the leaf chain at
   `series.code_base_commit`/`series.memory_base_commit` (which `worktree_sync` advances): the order
