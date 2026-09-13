@@ -114,8 +114,8 @@ No Domain Documentation source is configured for this memory root.
 | The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses. | `test_the_pause_cannot_reach_any_publication_module`; `_import_path` | mcp/tests/test_pause_is_not_publication.py:165-202; mcp/tests/test_pause_is_not_publication.py:156-162 |
 | The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide. | "What it measures is a STATIC, source-level graph" | mcp/tests/test_pause_is_not_publication.py:8-14 |
 | The route this guard exists to keep the stop away from. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:180-209 |
-| The stop module whose closure is measured, and the release authority the closure is required to reach. | "def pause_result("; "def release_atomic_series_selection(" | mcp/src/agents_remember/worktrees/modules/pause.py:66-109; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-54 |
-| The lane this module is registered in. | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:184-190 |
+| The stop module whose closure is measured, and the release authority the closure is required to reach. | "def pause_result("; "def release_atomic_series_selection(" | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-54 |
+| The lane this module is registered in. | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:191-191 |
 
 ## Cross-Repo References
 
@@ -125,6 +125,16 @@ No meaningful cross-repository reference applies to this repository-owned struct
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-13T20:42+02:00 — Citation repair only (uncommitted 260831-LOCR change set on
+  `ar/260831_lifecycle-owned-completion-relay`): `pause.py` grew from 148 to 209 lines when the
+  already-vacant stop was added, so the closure source row was repointed from
+  `modules/pause.py:66-109` to `:80-128`, and the lane row from `test-evidence-lanes.toml:184-190` to
+  `:191-191` after the new integration row shifted the architecture-fitness block. **No content
+  impact**: the pause module's set of imported modules is unchanged — the added
+  `observe_atomic_series` import comes from
+  `agents_remember.worktrees.activation.atomic_series_activation`, which the module already imported
+  for `AtomicSeriesActivationError` — so the measured 60 / 5 / 54 / 0-of-12 closure figures still
+  describe this source. They were not re-measured in this pass, and no verification stamp advanced.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: created the card for the new architecture-fitness
   guard, against the **final** candidate and therefore against the repaired walker.
   `_runtime_import_closure` now marks a module expanded only when its own imports are read, so the

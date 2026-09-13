@@ -107,6 +107,36 @@ activation waiting reason is `atomic-series-reconciling`. A retained conflict or
 authority returns the transaction's resolvable/refused result and `_build_start_contract` does not
 construct or expose a leaf beneath it.
 
+**No lifecycle cell seals leaf admission (260831-LOCR child-admission seal removal).** The seal that
+used to stand at this boundary — `worktrees/atomic_series_seal.py::require_series_accepting_leaves`,
+called from `ensure_master_series_contract` in both the dry-run and the locked apply arm and again
+from `_parent_series_contract` — is deleted, together with its module. It refused a new or reopened
+atomic child leaf whenever the parent series' `(closeout_status, integration_status, cleanup)` was
+not `("not-started", "not-started", "pending")`; once `checkpointed` joined the integration
+vocabulary the same predicate also sealed every master that took a checkpoint landing, so a master
+could never admit another leaf after its first landing. The developer ruled the guard out rather than
+narrowing it: a master is meant to be paused and resumed, never locked by its own landing. This
+module's three call sites are gone and no replacement admission predicate was added.
+
+What survives here:
+
+- `leaf_admission_operation` (parameter at code line 219) still labels the master-series admission
+  refusals with the operation the caller performed
+  (`operation=leaf_admission_operation or "worktree_start"` at 243, 260 and 290). Only the seal call
+  was removed, not the operation label.
+- `_parent_series_contract` (code lines 739-796) still builds or recovers the leaf's parent series
+  through `ensure_master_series_contract`, but now returns it directly. The former
+  `isinstance(series, WorktreeCommandResult)` short-circuit and the follow-up seal check are gone, so
+  a `WorktreeCommandResult` the parent builder returns is no longer filtered here.
+- Leaf admission still requires the parent's contract-keyed activation to have reconciled and become
+  `active`. That is activation authority, not a lifecycle-cell seal, and it is unchanged.
+
+`mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof for the removal: it
+plays the whole lifecycle in order on one real temporary Git world — master open, leaf commanded and
+started, leaf closed out, leaf landed through the public `worktree_integrate`, unfinished master
+checkpointed through the public `worktree_checkpoint_landing`, master paused, master resumed through
+the ordinary attach route — and then starts a leaf commanded *after* that landing.
+
 `dry_run` remains planning-only: it returns an existing or planned contract without fetching,
 publishing the selector, writing the bootstrap journal, creating branches, or starting a sync
 generation. Organizational semantics still exist only under an authored execution graph; a
@@ -152,6 +182,11 @@ observed evidence and contract-bound status action without rewriting the persist
   never this contract's reason to wait.
 - A leaf under an atomic master is not admitted until its parent selection has reconciled and become
   active; neither task prose nor closeout queue state supplies that authority.
+- **No serial-lifecycle cell refuses a leaf.** Closeout, integration and cleanup cells do not gate
+  leaf admission. The `atomic_series_seal.py` predicate that read them as a seal is deleted, so a
+  master that took a checkpoint landing (`integration_status="checkpointed"`) still admits the next
+  leaf; `mcp/tests/test_lifecycle_playthrough_end_to_end.py` proves it end to end. Do not reintroduce
+  a lifecycle-cell admission predicate here or in the parent-series helpers.
 - Apply-time bootstrap preflight and bootstrap publication use the same per-master store lock; the
   unlocked planning-only dry run never writes lock or lifecycle state.
 - Integration authority and the per-master bootstrap store lock do not nest with another store lock.
@@ -173,6 +208,9 @@ No Domain Documentation source is configured for this memory root.
 | The admission error type gives persisted master-edge mismatches a typed, contract-bound payload before branch-protection projection. | `MasterSeriesContractAdmissionError` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:68-78 |
 | The start preflight projects a persisted master-edge refusal before protected-surface calculation. | `_existing_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:940-984 |
 | The start builder performs the pre-protected-surface admission check and returns its refusal result. | `_build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:987-1062 |
+| The parent-series builder that no longer short-circuits on a command result and no longer re-checks a child-admission seal: it returns the series `ensure_master_series_contract` produced. | `_parent_series_contract`; `_parent_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:739-796 |
+| The leaf-admission operation label that survives the seal removal and still names the caller's operation inside the master-series admission refusals. | `leaf_admission_operation`; "operation=leaf_admission_operation or \"worktree_start\"" | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:219-219; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:243-243 |
+| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-169 |
 | Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:134-161; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
@@ -229,6 +267,18 @@ Read the docstring for the mechanism it describes; it is now the same per-contra
 documents.
 
 ## Update History
+- 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
+  `ar/260831_lifecycle-owned-completion-relay`): recorded that
+  `worktrees/atomic_series_seal.py::require_series_accepting_leaves` is deleted and that this module's
+  three call sites — the dry-run arm, the locked apply arm of `ensure_master_series_contract`, and
+  `_parent_series_contract` — are gone, together with the `isinstance(series, WorktreeCommandResult)`
+  short-circuit that preceded the third. Recorded why: the predicate read closeout/integration/cleanup
+  cells as a seal, so once `checkpointed` existed it also refused every master that took a checkpoint
+  landing, and a master is meant to be paused and resumed rather than locked by its own landing. Kept
+  `leaf_admission_operation` in the card because it survives as the refusal label (code line 219, used
+  at 243, 260 and 290), re-cited `_parent_series_contract` at 739-796, and added the invariant that no
+  serial-lifecycle cell refuses a leaf plus the playthrough module as the proof. Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T15:03:18+02:00 — Removed the round-1 source-side wording-debt section: the frozen `start_contract.py` was corrected this round, so the card now records the corrected source instead of flagging it. Verified in the code worktree that `ensure_master_series_contract`'s docstring reads "it publishes that contract's own activation as reconciling (no other master's record is touched), syncs its pinned source pair, and publishes it active before returning implementation authority" (lines 227-232) and that the lock-order comment now names "the per-contract activation store" (line 279); the retired "exact protected source pair ... logically pausing the previous selection" and "source-pair activation store" phrasings no longer occur in the module. Re-worded the `ensure_master_series_contract` reference claim to that contract's-own-activation behavior and re-cited its exact range 215-307 (declaration at 215, `reconcile_selected_series_under_authority(...)` return at 304-307). Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T15:03:18+02:00 — Curator verification of the mechanically repointed `ensure_master_series_contract` claim, clearing its reopened-citation finding; this entry takes the place of the auto-generated mechanical repair line for that claim, and the provenance it carried is preserved in prose here. Mechanical provenance retained in prose: the ccr-r10@v1 anchor-range projection bound the claim to mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:215-307 against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830 with claim bytes unchanged at that time. I re-read the construct at that exact range — `def ensure_master_series_contract(` at 215 through its `reconcile_selected_series_under_authority(...)` return at 304-307 — and its docstring and body support the claim's own words: durable contract creation is separate from that contract's own disposable activation selection, which is published as `reconciling` for that contract alone ("no other master's record is touched"), refreshed and committed after repository integration authority, and returned only through reconciliation. The claim is curator-verified as current, not merely mechanically repointed.
 - 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36: corrected this card to the contract-keyed activation runtime. Purpose, the "Source-pair activation replaces the old global sequential lane" heading, the `reconcile_selected_series_under_authority` paragraph, the protected-source-pair invariant, the DAG-L4 sentence, and the `ensure_master_series_contract` reference row no longer describe one selection per protected source pair or a logically paused previous selection; they now state that each series contract owns its record, that a foreign master's record can never be adopted (`atomic-series-activation-contract-mismatch`), and that the only surviving activation waiting reason is `atomic-series-reconciling`. Added a section recording the source-side wording debt this re-keying left in the FROZEN file: `ensure_master_series_contract`'s docstring still says "the exact protected source pair ... logically pausing the previous selection" (lines 231-232) and the lock comment still says "the source-pair activation store" (line 279). The code file was not edited by this pass and no reference row was changed for it. Verification metadata remains closeout-owned; no acceptance claim.
