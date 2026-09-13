@@ -6,8 +6,8 @@
   "repoName": "agents-remember",
   "baseCodeCommit": "9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e",
   "baseMemoryCommit": "988e2a452846ced092d4d477e80f4a2207c88d21",
-  "lastVerifiedCodeCommit": "c4fc0ee2418ccef5a02de3823141a82092b84080",
-  "lastMemoryContentCommit": "011457ef83a8bdb850604a8105dae7fae4ed4db4",
+  "lastVerifiedCodeCommit": "707847206d02e2ff27b11c1f674a510d85f3b972",
+  "lastMemoryContentCommit": "ef5fb0b6319a2cfb41c4cbb88dd436b1623c8b58",
   "sortOrder": "newest-first"
 }
 ```
@@ -16,6 +16,7 @@ Newest entries are always inserted at the top.
 
 | Code commit | Memory commit |
 | ----------- | ------------- |
+| 707847206d02e2ff27b11c1f674a510d85f3b972 | ef5fb0b6319a2cfb41c4cbb88dd436b1623c8b58 |
 | c4fc0ee2418ccef5a02de3823141a82092b84080 | 011457ef83a8bdb850604a8105dae7fae4ed4db4 |
 | 723fd2f1becc130d85d7a6b285b93115be0df852 | 0f97cf70b4bb3a8e80f8e44ec7e3f35e30e4e85c |
 | 5a7bd5779935d1a7e24e978b52638edfd300ac4d | a8777e840fd26da47e54591b15400ac5a4611b89 |
