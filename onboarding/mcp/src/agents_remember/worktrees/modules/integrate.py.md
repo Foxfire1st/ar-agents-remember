@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
+| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
