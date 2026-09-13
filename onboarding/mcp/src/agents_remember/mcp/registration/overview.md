@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
+| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -300,7 +300,29 @@ registered routes do not automatically invoke strict code quality, memory qualit
 certification, curator coherence, or independent review; full suites are an explicit developer
 request. The historical altitude-ladder section above remains context for the superseded contract.
 
+## 260831-LOCR-L33 Step-Plane Vocabulary
+
+`registration/tasks.py`'s `_TASK_DOC_TOOL_DESCRIPTION` now advertises the step plane split by intent:
+`set_step` updates exactly one existing unit and never creates, `add_step` creates exactly one and
+refuses an existing id, `remove_step` deletes exactly one behind a mandatory nonblank reason, and
+`read_steps` is the read-only focused checklist read. All of them address one exact existing unit by
+`step={id, parent?}`, where `parent` selects the namespace. The description also states the two
+developer rulings: a reasoned `remove_step` may remove a `done` unit and may operate on a `Completed`
+document.
+
+Nothing else on this route moved. `operation` is a plain `str`, not an enum and not a schema member,
+so the operation vocabulary exists **only** in this description text — the change touched no
+signature, no `PUBLIC_TOOLS` entry, and no response model, and the tool count and registration order
+are unchanged. A reader looking for the operation set in the published schema will not find it;
+the description is the contract.
+
 ## Update History
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the new step-plane vocabulary the
+  `task_doc` description advertises (`add_step`/`remove_step`/`read_steps`, `set_step` update-only,
+  `add_step` create-only, `remove_step` delete-only with a mandatory reason, one exact addressing
+  rule, and the `done`-unit / `Completed`-document rulings) and that the vocabulary exists only in
+  the description because `operation` is a plain `str`. No registrar, family module, tool name,
+  signature, or registration order changed.
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: no route impact on registration behavior;
   `PUBLIC_TOOLS` moved its definition out of `mcp/tools/base.py` into the zero-import `models` leaf
   `models/tools/public_roster.py` (L22-L85) and is re-exported unchanged, so the exact-order

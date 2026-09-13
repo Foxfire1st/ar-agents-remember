@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
+| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -107,6 +107,15 @@ A `Step` also carries an optional `outcome` (R2): the checkbox-line deliverable,
 `title`. It is `None`-defaulted so `exclude_none` keeps existing step JSON byte-identical; the renderer puts
 `outcome` on the `- [ ]` line (a bare step with neither `outcome` nor substeps renders as just its heading).
 
+Since 260831-LOCR-L33 a `Step` also carries an optional `note` — the same free prose `SubStep`
+already carried, `None`-defaulted for the same byte-identical `exclude_none` reason. **This field is
+a root-cause fix, not an additive nicety**: before it existed the schema had nowhere to put a
+top-level note, so `task_doc`'s `set_step` accepted a caller's `note` and silently discarded it
+regardless of the update key set. Any future "the caller's field vanished" report on a persisted
+model should first ask whether the field is declared here at all. `Step.note` is classified `AUDIT`
+in `document_field_effects.py`; that taxonomy is exhaustive and fails closed, so an unclassified new
+field refuses validation before write.
+
 A leaf doc also carries an optional `codeExamplesNote` (R3): a free string explaining why `codeExamples`
 is empty (e.g. "Drafted at the plan gate."), so a deferred planning slice reads as *deferred* rather than
 as if no examples are needed. It is `None`-defaulted (`exclude_none` keeps existing JSON byte-identical);
@@ -186,6 +195,7 @@ No Domain Documentation sources are configured for this repository-internal pers
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. | `Step` | mcp/src/agents_remember/tasks/document.py:111-129 |
 | Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
 | The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:344-397 |
 | Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:285-306 |
@@ -216,6 +226,13 @@ exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 
 ## Update History
+
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: `Step` gained the optional `note` field
+  (`None`-defaulted, `exclude_none`-preserving), recorded as the root cause of the observed
+  loss — the schema had no field for a top-level note, so `set_step` accepted it and silently
+  dropped it whatever the update key set did. Also recorded that `Step.note` is classified `AUDIT`
+  in `document_field_effects.py` and that the taxonomy fails closed for an unclassified field.
+  Verification metadata remains closeout-owned; no acceptance claim.
 
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: `derived_leaf_placement` and `_latest_unblocked_segment` now take `resolved_refs` (terminal masters — `Completed` or `abandoned`) instead of `completed_refs`, and the invariant plus its source row record that a segment blocked only by an abandoned master schedules instead of blocking forever. Content change, not a range repoint.
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

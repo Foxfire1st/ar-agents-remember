@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
+| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -73,6 +73,22 @@ request.
 ## Fixture Roles And Claims
 
 `test_agent_notifier.py` and `test_agent_notifier_ladder.py` supply row/topology builders. `test_codex_app_server_adapter.py` and `test_codex_adapter_thread_demux.py` supply transport/observation helpers. `test_closeout_queue.py`, `test_closeout_projection_member_helpers.py`, `test_final_codex_models.py`, `test_gate_certification_evidence.py`, `test_memory_citation_fix.py` and `test_observer_projection.py` likewise retain shared setup rather than their former standalone matrices.
+
+**The citation fixtures now build real Git provenance (260831-LOCR-L33).** The continuity rule the
+leaf introduced — a tree-wide relocation is admitted only when no cited file survives and the anchor
+existed in a cited file at the document's `lastVerifiedCommitHash` with the same extent kind — is
+only expressible against a real repository, so `test_memory_citation_fix.py`'s shared `Tree` gained
+`history()`, `stamp()` and `remove_source()`, and its `document()`/`card()` accept a `stamp` that
+lands a `lastVerifiedCommitHash` row **inside** the metadata table (never below the citation header,
+where it would parse as another claim). `Tree.row()` locates a citation row by its table header
+rather than a fixed index, so card metadata cannot shift it. `test_citation_document_transaction.py`'s
+`Scenario` carries the same stamp and its fixture commits the verified tree before deleting both
+cited files; the TypeScript move fixtures in `test_memory_citation_grammars.py` and the
+`_two_failing_cards` helper in `test_memory_citation_fix_scopes.py` were given provenance the same
+way. The previously pinned relocation tests therefore still test the legitimate kind-preserving move
+instead of having their expectations relaxed, and `test_memory_citation_resolution.py` adds
+`MechanicallyProjectedRangeTests`, which pins that a range written by the mechanical projection is
+surfaced with the support question rather than an assertion that the citation is current.
 
 Preserve useful shared fixtures only for real consumers. Fake inspectors, synthetic profile inputs, hand-built report payloads and pending finalizers must stay labeled as such. A source-range citation proves the described assertion exists; only a retained execution record proves it ran. Whole-master review and aggregation must assess actual protection rather than historical test names or counts.
 
@@ -200,6 +216,13 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded in the route body that the citation
+  fixtures now build real Git provenance (`Tree.history`/`stamp`/`remove_source`, the `stamp`
+  metadata row written inside the metadata table, and the header-anchored `Tree.row` locator;
+  `Scenario` stamping its verified tree before deleting both cited files), so the previously pinned
+  relocation tests still exercise the legitimate kind-preserving move rather than relaxed
+  expectations, and recorded the new `MechanicallyProjectedRangeTests`. Content change in the
+  Fixture Roles And Claims body, not a range repoint.
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: added a `Retained Behavioral Routes` row and a
   Public-Surface Inventory Contract paragraph for the new integration module
   `test_worktree_status_terminal_next_tool.py`, which is the first coverage of the
