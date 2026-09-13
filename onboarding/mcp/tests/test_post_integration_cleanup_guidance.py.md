@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_post_integration_cleanup_guidance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-12T19:50+02:00 |
-| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
-| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
+| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
+| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
