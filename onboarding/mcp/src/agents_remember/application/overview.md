@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -31,6 +31,27 @@ Application adapters translate failures into bounded tool results; they do not r
 from task prose, queue rows, or ambient Git. Task-document mutation remains an upstream application
 flow: it publishes canonical truth, invalidates projections for semantic/readiness mutations, and never asks queue or
 activation state for permission.
+
+## 260831-LOCR-L37 The Stop-Only Application Boundary
+
+This route gained one application entry point and no authority. `worktree_tools.py::worktree_pause_tool`
+admits the configured contract through the shared gate (projecting a refusal under the operation name
+`worktree_pause`), builds the same typed `WorktreeArgs` the other contract-addressed entry points build
+— the contract path plus `config.orchestration.gate_policy` — and delegates to
+`git_worktree_manager.pause_result`. It performs no Git, moves no ref, creates no commit, lands
+nothing, writes no ledger row, and runs no auto-land seat hook, because nothing is retired and nothing
+is finished.
+
+That shape is the boundary. Every other mutating entry point on this route hands work to a worktree
+owner that may publish; this one hands work to a route whose publication modules are structurally
+unreachable (see `worktrees/modules/pause.py.md` and `mcp/tests/test_pause_is_not_publication.py`). The
+application layer therefore does not decide whether to publish — there is no such decision on this
+path to make.
+
+`worktree_pause_tool` is the counterpart of `worktree_checkpoint_landing_tool` on the same file and the
+opposite side of it: the checkpoint is the explicitly requested **publication** of an unfinished
+master's accumulated line, and the pause is the stop that publishes nothing. Two entry points, two
+registered tools, neither reachable from the other.
 
 ## CCR-R25 Actionable Refusal Boundary
 
@@ -460,6 +481,15 @@ than comment. The preview/apply parity invariant that produced this repair is in
 `worktrees/overview.md` route and in `memory_quality/overview.md`.
 
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: added the stop-only application boundary to the body. The
+  route gained `worktree_pause_tool`, which admits the configured contract, builds the same typed
+  `WorktreeArgs` its siblings build and delegates to `git_worktree_manager.pause_result` — performing no
+  Git, no ref move, no commit, no landing, no ledger write and no auto-land hook, because nothing is
+  retired and nothing is finished. Recorded that this is the one mutating entry point here whose
+  delegate cannot reach a publication module, so the application layer makes no publish-or-not decision
+  on that path, and that it is the counterpart of `worktree_checkpoint_landing_tool` on the opposite
+  side of the pause/publication split. Verification metadata remains closeout-owned; no acceptance
+  claim.
 - 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected the IAS application
   boundary from one source-pair activation authority to the per-contract activation record — each
   canonical series contract owns its record, sibling masters sharing a protected source pair never

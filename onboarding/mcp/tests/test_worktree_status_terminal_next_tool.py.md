@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_status_terminal_next_tool.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ surface (`TaskDocResponse.model_validate(...).nextTool == "session_retire"`).
 | The advertised roster the validator enforces membership against. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
 | The terminal-archive refusal producer that makes the protected state reachable. | `terminal_archive_required_result` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:86-150 |
 | The projector whose write this file protects. | `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:377-419 |
-| The non-public name that must stay non-public on the worktree surface, and the registry row that still registers it. | `session_retire` | mcp/src/agents_remember/models/tools/tool_registry.py:133-133; mcp/src/agents_remember/models/tools/tool_registry.py:157-157 |
+| The non-public name that must stay non-public on the worktree surface, and the registry row that still registers it. | "\"session_retire\","; "\"session_retire\": SessionRetireResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:134-134; mcp/src/agents_remember/models/tools/tool_registry.py:158-158 |
 
 ## Cross-Repo References
 

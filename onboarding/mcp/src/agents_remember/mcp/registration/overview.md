@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -82,7 +82,7 @@ for keeping registration declarations separate from implementation.
 | `memory.py`         | `drift_check`, `citation_fix`, strict discriminated-request `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
 | `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
-| `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
+| `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync`, `worktree_pause` — the working half of a task, including the stop. |
 | `closeout.py`       | `direct_landing`, `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_checkpoint_landing`, `worktree_record_landing`, `worktree_operation_control`, `worktree_cleanup`, `worktree_abandon` — the landing half. `worktree_legacy_operation` was removed from this registrar and exists nowhere in the tree. |
 | `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `curator_coherence`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph), the classification/wave previews, and the policy-gated `branch_addressed` direct-execution mode (L16-R6), while closeout-queue mutations use a strict action-specific request and the hosted seat or — when none exists — a request-carried declared caller (L16-R2). `closeout_door` was deleted from this registrar with the door-operation-journal cut (commit `6982c6a7`). |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
@@ -90,8 +90,10 @@ for keeping registration declarations separate from implementation.
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; an ambient caller with no plane seat declares `caller` (role + task_document_ref) on each (L16-R3); public gate/lifecycle ids are absent. |
 | `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
 
-Twelve registrars and 62 tools registered by decorator, and the advertised tuple `PUBLIC_TOOLS` lists
-the same 62 names. Since 260831-LOCR-L32 that tuple's one definition is
+Twelve registrars and 63 tools registered by decorator, and the advertised tuple `PUBLIC_TOOLS` lists
+the same 63 names. 260831-LOCR-L37 added the last one: `worktree_pause`, declared by
+`worktrees.py::_register_worktree_stop_tools`, which is the fourth registrar in that family. It went to
+both sides at once — the decorator and the tuple — for the reason the L29 repair exists. Since 260831-LOCR-L32 that tuple's one definition is
 `mcp/src/agents_remember/models/tools/public_roster.py:22-85`, a zero-import `models` leaf;
 `mcp/tools/base.py` re-exports the identical object, so nothing in this route changed. The two sets
 are equal, and since 260831-LOCR-L29 that equality is checked
@@ -113,9 +115,23 @@ request: the call moves the master's committed code and memory refs onto its sup
 other master sees them, under an explicitly required developer approval. It is a partial
 **publication**, and the description now says so and states that pausing is a separate matter which is
 NOT this call — a pause stops the master's work, publishes nothing, moves no ref, and leaves its
-branch, worktrees and enclosure private, and no tool on this route performs it. Only the description
-changed: the signature, the registration order, the payload owner and `PUBLIC_TOOLS` are untouched,
-and `mcp/tests/test_tools.py` pins the new wording.
+branch, worktrees and enclosure private, and no tool on this route performs it — at that point no tool
+anywhere did, which L37 then changed by adding the stop to the sibling working-half registrar. Only the
+description changed at L36: the signature, the registration order, the payload owner and `PUBLIC_TOOLS`
+were untouched, and `mcp/tests/test_tools.py` pins the new wording.
+
+260831-LOCR-L37 then **added the stop that correction pointed at**, as its own verb rather than as a
+reinterpretation of the publication. `worktree_pause` lives in the working half of the surface
+(`worktrees.py`), not in `closeout.py` beside the checkpoint, and its description carries the three
+claims an agent needs: it **PAUSES an atomic master** and hands control back to the developer; it
+**publishes NOTHING** — no ref move, no commit, no landing, no ledger row — while releasing the
+master's atomic-series activation selection and leaving the master's code and memory work branches,
+worktrees, enclosure and every unstarted leaf exactly as they were; and it proposes no next step, so
+resuming is the ordinary attach/start route. It names `worktree_checkpoint_landing` as the separate,
+explicitly requested PUBLICATION and states that pausing never does that. The two descriptions are now
+a matched pair pointing at each other across the two halves, and `mcp/tests/test_tools.py` pins both:
+the checkpoint's case from L36 and the pause's case from L37. Signature, family placement and the
+`PUBLIC_TOOLS`/response-model rows were added together, so no advertised name is unanswerable.
 
 ## Hot Path Summary
 
@@ -182,7 +198,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | --- | --- | --- |
 | `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| `PUBLIC_TOOLS` — the advertised name list this package must match (62 names), defined in `models` and re-exported by the adapter. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
+| `PUBLIC_TOOLS` — the advertised name list this package must match (63 names), defined in `models` and re-exported by the adapter. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
@@ -264,7 +280,7 @@ This route composes public signatures only. It exposes the one closed applicatio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree registration composition. | `register_worktree_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:25-29 |
+| Worktree registration composition, re-read and re-cited by the L37 curator at the current declaration. | "def register_worktree_tools(" | mcp/src/agents_remember/mcp/registration/worktrees.py:26-31 |
 | Public payload builders — the enclosure-adoption payload builder was removed; this route now consumes the start, attach, status and sync builders. | "worktree_attach_payload," | mcp/src/agents_remember/mcp/registration/worktrees.py:17-22 |
 
 ## 260821-DAGQC-L2 Published Quality Schema
@@ -331,6 +347,18 @@ are unchanged. A reader looking for the operation set in the published schema wi
 the description is the contract.
 
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical
+  projection): re-read the worktree-registration claim against the current source and re-cited it to the
+  declaration itself, `"def register_worktree_tools("` at
+  `mcp/src/agents_remember/mcp/registration/worktrees.py:26-31`. The construct the range now covers is
+  the function the claim names, and the wording holds unchanged. Recorded because the previous range
+  arrived from a generated anchor-range projection, which is not evidence that a claim still holds.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 route impact: recorded the new `worktree_pause`
+  declaration in `worktrees.py::_register_worktree_stop_tools` (the family's fourth registrar), the
+  advertised count moving 62 -> 63 on both sides together, the description's three claims and its
+  naming of `worktree_checkpoint_landing` as the separate publication, and the fact that the two
+  descriptions now point at each other across the two halves of the surface. The family table and the
+  count line were corrected; verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T17:44+02:00 — 260831-LOCR-L36 route impact: the published description of
   `worktree_checkpoint_landing` now names the route a partial **publication** and denies it is the
   pause. The old opening ("Use this to pause a master") invited an agent to publish unfinished work

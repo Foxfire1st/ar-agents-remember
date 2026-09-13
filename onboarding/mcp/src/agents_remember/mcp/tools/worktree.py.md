@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ L23 types integration strategy at the payload edge and adds task-addressed lifec
 ### Logic
 
 Holds `worktree_start_payload`, `worktree_attach_payload`,
-`worktree_status_payload`, `worktree_closeout_preview_payload`,
+`worktree_pause_payload`, `worktree_status_payload`, `worktree_closeout_preview_payload`,
 `worktree_closeout_apply_payload`, `worktree_integrate_payload`,
 `worktree_checkpoint_landing_payload`, `worktree_record_landing_payload`,
 `worktree_cleanup_payload`, and `worktree_abandon_payload`. Each forwards typed
@@ -40,6 +40,13 @@ tool surface (issue #62): closeout is worktree-only.
 `strategy`, `ledger_commit_message`, and `dry_run` to `worktree_checkpoint_landing_tool`, the
 partial-master landing route; like its integrate sibling it is transport-thin and owns no authority
 or completion decision of its own.
+
+`worktree_pause_payload` (260831-LOCR-L37) is the thinnest builder in the module: it takes only
+`contract_path`, forwards it to `worktree_pause_tool`, and wraps the result through `_tool_payload`
+under the operation name `worktree_pause`. It owns no decision — not whether the master may be
+paused, not what the release writes, and above all not whether anything is published. The
+publication in this same module is `worktree_checkpoint_landing_payload`; the two are separate
+builders for separate tools and neither routes to the other.
 
 `worktree_start_payload` now wraps its application entry point result with
 `summarize_command_logs` (imported from `providers.lifecycle.log_capture`)
@@ -104,8 +111,9 @@ The source itself and its governing route are sufficient for this thin payload a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, sync, attach, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:42-54; mcp/src/agents_remember/mcp/tools/worktree.py:55-74; mcp/src/agents_remember/mcp/tools/worktree.py:75-86; mcp/src/agents_remember/mcp/tools/worktree.py:87-98 |
-| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:150-169 |
+| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_pause_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-55; mcp/src/agents_remember/mcp/tools/worktree.py:56-75; mcp/src/agents_remember/mcp/tools/worktree.py:76-87; mcp/src/agents_remember/mcp/tools/worktree.py:88-95; mcp/src/agents_remember/mcp/tools/worktree.py:98-109 |
+| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:161-179 |
+| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | `worktree_pause_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:88-95 |
 
 ## Cross-Repo References
 
@@ -135,12 +143,19 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 ## 260831-CCR-L15 Status-Wait Payload Export
 
-The module now imports `LifecycleStatusWaitRequest` /
-`worktree_status_wait_tool` and exports
-`worktree_status_wait_payload`, which wraps the read-only wait application tool into the
-standard `_tool_payload` envelope for the public `worktree_status_wait` tool.
+**Superseded.** The `worktree_status_wait_payload` builder and the `worktree_status_wait` tool it
+served were removed; this module exports no wait payload today and the name appears nowhere in the
+worktree payload surface. Recorded so the L15 paragraph above is not read as current.
 
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded `worktree_pause_payload` — one `contract_path`
+  forwarded to `worktree_pause_tool` under the `worktree_pause` operation name, owning no decision,
+  and explicitly not the publication that `worktree_checkpoint_landing_payload` performs. Re-derived
+  the shifted payload-builder ranges (`worktree_start_payload` 43-55, `worktree_sync_payload` 56-75,
+  `worktree_attach_payload` 76-87, `worktree_pause_payload` 88-95, `worktree_status_payload` 98-109,
+  `worktree_checkpoint_landing_payload` 161-179). Reference health: the
+  `260831-CCR-L15 Status-Wait Payload Export` section is marked superseded — the builder and its tool
+  are gone. Verification metadata remains closeout-owned; no acceptance claim.
 
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing_payload` to
   the builder inventory and its reference row, and re-derived the payload-builder ranges shifted by
