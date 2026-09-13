@@ -6,8 +6,8 @@
 | path | `skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
+| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
 | governingOverview | `skills/c-09-git-worktree-manager/overview.md` |
 
 ## Governing Overview
@@ -27,18 +27,22 @@ prerequisites.
 
 ### Logic
 
-Atomic-series implementation admission is separate from task planning. For one normalized
-code/external-memory source pair, manager/worker dispatch and atomic start/attach select a master;
-reviewer/curator inspection does not. A selecting operation records `reconciling`, automatically
-pauses the former selection without suspending or deleting its durable work, reconciles the exact
-recorded source bases, and records `active` only when both are current. A source move during sync
-leaves the selection reconciling. Explicit cancellation publishes durable `vacant`.
+Atomic-series implementation admission is separate from task planning and is a contract-scoped
+authority: each canonical series contract owns its own activation record, so masters that share one
+exact code/memory source pair never share this state. Manager dispatch, worker dispatch, atomic
+`worktree_start`, and `worktree_attach` are selecting operations; reviewer and curator inspection is
+not. Selection first publishes `reconciling` for that exact contract, which suspends nothing — not
+its chat, process, worktree, contract, or already-claimed lifecycle journal — then reconciles both
+protected source tips and publishes `active` only when both are current. One master's selection
+never pauses or excludes another, and multiple nonterminal contracts remain valid. A completed sync
+pass whose source moved again remains reconciling. Explicit cancellation publishes durable `vacant`.
 
-The task-document plane remains upstream and never reads selector or queue state. Queue rows are a
-disposable projection of current waiting facts and own no claim, commit, certification,
-integration, or activation transition. Malformed selector bytes invalidate only affected runtime
-projection/admission; the next exact selecting operation archives the bytes and replaces the
-record. Contract-presence fallback and tolerant readers are prohibited.
+The task-document plane remains upstream and never reads activation or queue state. The closeout
+queue merely projects active, reconciling, or vacant waiting candidates and owns no claim, commit,
+certification, integration, or activation transition. Malformed selection bytes invalidate only the
+affected runtime projection/admission; an exact selecting operation archives the bytes with evidence
+and replaces the record. Contract presence never elects an owner. Contract-presence fallback and
+tolerant readers are prohibited.
 
 `worktree_sync` reconciles the exact source pair as a journaled transaction. It pins recorded bases,
 pre-sync branch heads, and admitted source tips before merge mutation. A code or memory conflict is
@@ -64,8 +68,10 @@ architect.
 
 ### Invariants And Boundaries
 
-- Multiple live series may coexist; exactly one is selected per source pair.
-- Selection pauses, rather than terminalizes, the former master.
+- Multiple live series may coexist; each canonical series contract owns its own activation record,
+  and multiple nonterminal contracts remain valid.
+- Selection publishes `reconciling` and suspends nothing — not the contract, its chat, process,
+  worktree, or already-claimed lifecycle journal.
 - The enclosure-root journal survives a missing or unreadable task contract.
 - The queue never owns operation lifecycle or commit evidence.
 - No compatibility reader or contract-presence election exists.
@@ -92,9 +98,9 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source-pair admission and task/queue separation. | "Atomic-series implementation admission is a separate, source-pair-scoped authority." | skills/c-09-git-worktree-manager/SKILL.md:237-237 |
-| Resumable retained-conflict transaction and explicit cancellation doctrine. | `## Mid-Task Sync` | skills/c-09-git-worktree-manager/SKILL.md:254-290 |
-| Exact cleanup/finalization boundary. | `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:377-456 |
+| Canonical contract-scoped admission and task/queue separation. | "Atomic-series implementation admission is a separate, contract-scoped authority." | skills/c-09-git-worktree-manager/SKILL.md:237-249 |
+| Resumable retained-conflict transaction and explicit cancellation doctrine. | `## Mid-Task Sync` | skills/c-09-git-worktree-manager/SKILL.md:256-300 |
+| Exact cleanup/finalization boundary. | `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:430-508 |
 | Public implementation facade preserves the same contract-addressed API. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
 
 ## Cross-Repo References
@@ -104,7 +110,29 @@ No meaningful cross-repository reference applies to this repository-owned lifecy
 | Finding | Anchor | Source |
 | --- | --- | --- |
 
+## Ungoverned Mirror Status (known defect)
+
+This card lives in the `onboarding/skills/**` tree, which mirrors the code repository's `skills/**`
+route. `skills/**` is absent from `settings.json`'s `pathRules.include`, so this whole onboarding
+tree sits outside normal onboarding census coverage: it is legacy and ungoverned. It is retained here
+only because the contract-scoped memory-quality checker still validates these documents whenever
+`skills/**` is part of a leaf's changed set, which is exactly why this card was updated by hand
+rather than by a governed maintenance pass. The remaining sibling sidecars under
+`onboarding/skills/**` — the other role, criteria, and template cards — are knowingly stale and are
+deliberately left untouched pending a follow-up decision on whether this mirror should be governed or
+removed. That mismatch between the declared path rules and the enforced checking scope is itself the
+recorded defect.
+
 ## Update History
+- 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: removed the dead
+  `source-pair-scoped` admission claim and reworded the logic to the shipped contract-scoped
+  authority; rebound the citation to `"Atomic-series implementation admission is a separate,
+  contract-scoped authority."` at SKILL.md:237-249, and rebound `## Mid-Task Sync` to :256-300 and
+  `## Lifecycle Finalization And Cleanup` to :430-508 after grepping the frozen source. Body now
+  records per-contract activation (selection publishes `reconciling` for that contract and suspends
+  nothing; one master's selection never pauses or excludes another; multiple nonterminal contracts
+  remain valid) and the queue's active/reconciling/vacant projection. Added the Ungoverned Mirror
+  Status defect statement. Verification metadata remains closeout-owned.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `sync_result` repointed to mcp/src/agents_remember/worktrees/modules/sync.py:28-67. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "Atomic-series implementation admission is a separate, source-pair-scoped authority." repointed to skills/c-09-git-worktree-manager/SKILL.md:237-237. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.

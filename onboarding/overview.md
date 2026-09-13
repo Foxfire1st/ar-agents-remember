@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 
 > **Status:** active baseline
 
@@ -70,11 +70,11 @@ onboarding pass.
 | File and entity onboarding maintenance | File-level sidecars, inline onboarding adapter rules, repo entity catalogs, deterministic entity fingerprints, reference health checks, and generated route indexes driven by one Git/path-rule census. | `c-05-create-or-update-onboarding-files` skill, `route_index_refresh`, `kernel/route_index.py`, `kernel/route_index_census.py` |
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
 | Workflow modes | The `l-01-agent-lifecycles` architect lifecycle's build decision at `decide`: a research-only exit for no-code answers, otherwise a `w-02-light-task-workflow` skill task — chat is never a build route, so one-session edits take the minimal artifact — escalating to a master + light sub-task series for larger phased work (the retired heavy workflow and the retired chat build are no longer modes). | `l-01-agent-lifecycles` skill, `w-02-light-task-workflow` skill |
-| Agent lifecycles (one per role) | Developer-requested multi-agent series run through the unified `l-01-agent-lifecycles` skill. Spawn-role env and fresh briefs select role seats; otherwise free chat remains a launcher. Ordinary role-shaped work compiles the canonical architect brief and calls `dispatch_agent` once on the sprint document; an explicit developer-declared task-seat takeover instead targets the named role at its canonical altitude. The identity-free call uses target-document/role-altitude authority; after handoff, hosted seats use plane identity and direct-child scope, with no plane-to-ambient fallback. Architect owns the initial plan loop and recommends the developer-approved strategist when the evidence-backed topology/classification reasoning is missing or stale — graph absence alone is not a trigger. A reviewed graph-less atomic-sequential choice is valid: one source-pair-selected atomic master is active for implementation while other live masters are paused and preserved, and a selection remains `reconciling` until its exact code/memory sources are current. A sanctioned strategist skip transfers the complete dependency, route, seam, classification, priority, and topology-reasoning duty to the orchestrator, which adopts a graph only when present. One effective priority governs a candidate (candidate override, otherwise master default), while the orchestrator retains portfolio comparison. Graph adoption from a graph-less sprint first attaches every master, then publishes one complete nodes-plus-evidence-edges batch. Exact proposed completion candidates are reviewed before refs move; handover cites canonical candidate/code ancestry/memory ancestry/per-leaf ledger refs rather than copying maps, and failed review routes to a leaf rather than an integration workbench. | `l-01-agent-lifecycles` skill, `skills/l-01-agent-lifecycles/templates/architect-brief.md`, `skills/l-01-agent-lifecycles/roles/architect.md`, `skills/l-01-agent-lifecycles/roles/orchestrator.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, `system/git-workflow.md` |
+| Agent lifecycles (one per role) | Developer-requested multi-agent series run through the unified `l-01-agent-lifecycles` skill. Spawn-role env and fresh briefs select role seats; otherwise free chat remains a launcher. Ordinary role-shaped work compiles the canonical architect brief and calls `dispatch_agent` once on the sprint document; an explicit developer-declared task-seat takeover instead targets the named role at its canonical altitude. The identity-free call uses target-document/role-altitude authority; after handoff, hosted seats use plane identity and direct-child scope, with no plane-to-ambient fallback. Architect owns the initial plan loop and recommends the developer-approved strategist when the evidence-backed topology/classification reasoning is missing or stale — graph absence alone is not a trigger. A reviewed graph-less atomic-sequential choice is valid, but its runtime admission is no longer exclusive: the activation record is keyed per canonical series contract, so a master that is `reconciling` holds only its own activation until its exact code/memory sources are current, and two atomic masters that share one protected source pair keep independent records rather than pausing one another. A sanctioned strategist skip transfers the complete dependency, route, seam, classification, priority, and topology-reasoning duty to the orchestrator, which adopts a graph only when present. One effective priority governs a candidate (candidate override, otherwise master default), while the orchestrator retains portfolio comparison. Graph adoption from a graph-less sprint first attaches every master, then publishes one complete nodes-plus-evidence-edges batch. Exact proposed completion candidates are reviewed before refs move; handover cites canonical candidate/code ancestry/memory ancestry/per-leaf ledger refs rather than copying maps, and failed review routes to a leaf rather than an integration workbench. | `l-01-agent-lifecycles` skill, `skills/l-01-agent-lifecycles/templates/architect-brief.md`, `skills/l-01-agent-lifecycles/roles/architect.md`, `skills/l-01-agent-lifecycles/roles/orchestrator.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, `system/git-workflow.md` |
 | Approval-gated closeout | Applicable authority gates for implementation, worktree-backed closeout, memory refresh, memory quality, and ledger alignment: standalone/final work uses explicit developer approval, while subordinate accepted-series work can proceed under recorded delegated series authority. Closeout itself is worktree-only — the retired direct current-checkout closeout path remains removed (issue #62). The separate `direct_landing` operation is only the explicitly selected delivery route for a leaf implemented without its own enclosure; ordinary master/series closeout and integration never require `directExecutionEnabled`. Since 260731-EFA-L4, where the quality gate runs it first resets the index and stages the whole task worktree, so the gate is shown the commit's content rather than only the paths already tracked; two refusals guard that step (not a task worktree, or unresolved merge conflicts). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*`, `direct_landing` |
-| Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. Atomic implementation admission uses one disposable selector per exact code/external-memory source pair: switching preserves and pauses the previous live master, publishes the selected master as `reconciling`, and exposes it as active only after sync. Sync evidence survives in the enclosure-root journal and pinned Git refs; real conflicts are retained for staged `continue`, while explicit `cancel` restores operation-owned pre-sync heads. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
+| Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. Atomic implementation admission uses one disposable activation record per canonical series contract: it publishes this contract's own `reconciling` state and exposes it as active only after sync, so atomic masters that share one protected code/external-memory source pair never share that state and a foreign master is never a waiting reason. Sync evidence survives in the enclosure-root journal and pinned Git refs; real conflicts are retained for staged `continue`, while explicit `cancel` restores operation-owned pre-sync heads. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
 | Observable session lifecycle | The observer event log and projection retain trust provenance, lifecycle status, metrics, attention and task context. Public tool completion passes through application-owned enrichment and the single model finalizer; `nextStep` is bounded and optional, rather than attached unconditionally to every response. Lifecycle gate decisions and turn-end notification have distinct contracts. | `agents_remember.observer`, `application/tool_response.py`, `models/tool_response.py`, `mcp/tools/base.py` |
-| JSON-primary task documents | The `ar-task-document/v1` document is the source of truth for a task's plan + progress and `task.md` is its deterministic render. Sprint documents carry the canonical `executionGraph`; master documents carry explicit `executionNature` (`organizational` or `atomic`). A sprint without an `executionGraph` uses the atomic-sequential default, whose runtime admission is source-pair selection rather than a task-authoring lock or permanent series lane. Task mutations publish their authored state; field classification invalidates closeout evidence for semantic/readiness changes, while observation-only updates do not invalidate task intent. `task_doc.author_execution_graph` bootstraps or edits the graph, and there is no implicit inference or compatibility reader. The `task_doc` MCP tool validates cross-document graph references, authors/replaces documents, and republishes the affected JSON/Markdown set atomically; observer projection exposes the same topology. | `agents_remember.tasks`, `task_doc` tool, `tasks/` route overview |
+| JSON-primary task documents | The `ar-task-document/v1` document is the source of truth for a task's plan + progress and `task.md` is its deterministic render. Sprint documents carry the canonical `executionGraph`; master documents carry explicit `executionNature` (`organizational` or `atomic`). A sprint without an `executionGraph` uses the atomic-sequential default, which describes the sprint's shape — every commanded master executes atomically — and serializes nothing; its runtime admission is this contract's own per-contract activation record rather than a task-authoring lock, permanent series lane, or shared per-source-pair slot. Task mutations publish their authored state; field classification invalidates closeout evidence for semantic/readiness changes, while observation-only updates do not invalidate task intent. `task_doc.author_execution_graph` bootstraps or edits the graph, and there is no implicit inference or compatibility reader. The `task_doc` MCP tool validates cross-document graph references, authors/replaces documents, and republishes the affected JSON/Markdown set atomically; observer projection exposes the same topology. | `agents_remember.tasks`, `task_doc` tool, `tasks/` route overview |
 | Gate control plane | The durable, attributed record of decision points on a lifecycle (closeout/integration/cleanup approvals, agent questions, alarm acks): an append-only `ar-gate-record/v1` `GateRecord` + `GateStore` co-located with the observer event log. The public agent-facing MCP junction is `lifecycle_gate`: it creates the typed durable gate, blocks the active lifecycle with the developer-facing ask, waits for a developer decision or gate-specific inbox response, and can carry `required_decision`; lower-level gate payloads/stores remain the implementation substrate. `controlplane/enforcement.py` binds `worktree_closeout_apply` to a developer-approved `closeout-approval` gate, or to an opt-in delegated orchestration approval that passes the `gate_policy.py` rules; model self-approval and owner lifecycle self-approval remain non-binding. The default policy is all-human, human-pinned integration/push/cleanup gates are not configurable away, and delegated decisions can require reviewer-verdict evidence refs that surface on gate records/projections. Task 19 adds the single-current-gate invariant (new lifecycle gates expire older open lifecycle gates) plus targeted dashboard decisions via `gate_decide_for_lifecycle`. Lifecycle skills now raise `lifecycle_gate(kind=...)`, handle the returned developer decision or operator-inbox message from that public junction, and clear with `lifecycle_resume`, split across plan/worktree/closeout/push/integration/cleanup/agent-question gate kinds. Dashboard gate projection is live and now renders human-readable previews with raw JSON as diagnostics. | `agents_remember.controlplane`, `lifecycle_gate`, `gate_*` stores/tools, `controlplane/` route overview |
 | Dashboard serving layer | `agents-remember dashboard` serves projection snapshots/deltas, raw retained events, typed operator actions, the packaged frontend, and hosted harness sessions. The serving package composes protocol, catalog, submission, conversation and bridge authorities as well as HTTP/WebSocket transport. Controlled chats use a structured conversation surface with a read-only diagnostic line log. Optional settings discovery, supervised daemon start/status/stop, and version-aware daemon reconciliation remain CLI/runtime concerns. | `agents_remember.serving`, `agents-remember dashboard`, `serving/overview.md`, `dashboard/src/overview.md` |
 | Dashboard frontend | The root React dashboard exposes Operations and the canonical Chats cockpit, plus task, requirement, artifact, lifecycle, event and provider views. Controlled sessions submit through the typed submission authority and render structured conversation history; inspector tabs retain evidence and capabilities without inventing missing telemetry. Grammar components and route-local overviews own the detailed current layout and behavior. Earlier slice-by-slice frontend descriptions are retained below as historical development context. | `dashboard/src/overview.md`, `dashboard/src/panels/overview.md`, `dashboard/src/data/overview.md`, `dashboard/src/grammar/overview.md` |
@@ -720,7 +720,7 @@ acceptance. Pull requests keep deterministic non-test validation, and the tag wo
 reachability before publishing. Generic runtime doctrine resolves each repository's concrete
 acceptance policy from its own memory rather than embedding this repository's Dagger command.
 
-## IAS Source-Pair Activation And Disposable Queue Boundary
+## IAS Contract-Scoped Activation And Disposable Queue Boundary
 
 The task topology has a mechanistic closeout-door surface, but the queue is only a disposable
 projection of current task truth and current waiting door generations. It owns ordering and
@@ -729,22 +729,59 @@ evidence. An otherwise-valid task mutation never waits on queue or activation st
 completes first, invalidates the affected projection to explicit invalid-empty, and rebuilds waiting
 candidates from authoritative task/door inputs.
 
-Atomic implementation admission belongs to one replace-in-place selector per normalized code and
-external-memory source pair. Selecting another live master preserves the former and makes it
-observably paused; the selected master enters `reconciling` until its exact source pair is current,
-then becomes `active`. Missing or malformed selector authority fails closed only for affected
-runtime admission/projection. Normal readers never reconstruct it from task prose, queue rows,
-legacy files, or ambient Git.
+Atomic implementation admission belongs to one replace-in-place activation record per canonical
+series contract, addressed by a fingerprint of that contract path. A contract enters `reconciling`
+until its exact source pair is current, then becomes `active`; the record is never shared, so one
+master's state cannot pause another master that merely shares the sprint's code and memory source
+branches. The only activation waiting reason is `atomic-series-reconciling`: a vacant, `active`, or
+foreign-master record is never this contract's reason to wait, and a record that does not name the
+addressed contract is unreadable rather than adopted. Missing or malformed activation authority
+fails closed only for affected runtime admission/projection. Real wave dependencies still gate
+through the sprint execution graph's own `predecessor-incomplete:` reasons. Normal readers never
+reconstruct activation from task prose, queue rows, legacy files, or ambient Git.
+
+### Atomic-Sequential Default — Developer Ruling (Nothing Serializes A Graph-Less Sprint)
+
+A sprint without an `executionGraph` declares no dependencies, so there is nothing to honour:
+**nothing serializes a graph-less sprint.** Independent atomic masters proceed concurrently, no
+master is held because another master is selected, and `atomic-sequential` describes the sprint's
+SHAPE — every commanded master executes atomically — not a serialization mechanism.
+`resolve_scheduling_mode` (`mcp/src/agents_remember/worktrees/scheduling_mode.py`) returns that mode
+with both commanded masters in `mode.masters` and a single `facts` string that now states the ruling
+("executionGraph absent: atomic-sequential default — every commanded master executes atomically and
+no dependency is declared, so nothing serializes the masters"); `commanded_sprint_masters` likewise
+records that neither contract presence nor the absence of a graph adds a dependency. Activation stays
+per contract — each canonical series contract owns its own record, so two masters that share one
+protected source pair keep independent records and one master's `reconciling` state is never a
+sibling's waiting reason — and an explicit `executionGraph` wake is unchanged: a graph-backed sprint
+still gates its masters on real predecessors (`predecessor-incomplete:`). No new serialization
+authority was introduced and no unrelated scheduling semantics changed.
+
+### Known Defect — The Ungoverned `onboarding/skills/**` Tree
+
+`onboarding/skills/**` is a legacy mirror of the code repository's root `skills/**`. The source path
+`skills/**` is absent from this memory root's `system/settings.json` `pathRules.include` (the include
+set lists `AGENTS.md`, `README.md`, `dashboard/src/**`, `examples/mcp/**`, `installer/**`, `mcp/**`,
+`runtime/**` and `scripts/**`), so the tree sits outside normal census coverage — yet the
+contract-scoped memory-quality checker still validates it and enforces findings inside it. The tree
+is therefore ungated by path rules while still being graded, which is a follow-up decision rather than
+a settled design: either bring it into `pathRules` and govern it like any other route, or retire it.
+The contradiction is the concrete reason the decision cannot wait: the tree's sibling sidecars (beyond
+the four gate-required files) still describe the retired source-pair exclusivity rule — the superseded
+"one selected master / paused by the selected master" activation story — while the corrected shipped
+skills under `mcp/src/agents_remember/package_data/runtime/skills/**` now state per-contract
+activation and the ruling above. Two onboarding trees describing opposite activation semantics is a
+known defect of this memory root, not an accepted current-state description.
 
 ## IAS Sync And Protected-Source Authority Boundary
 
 Integration and sync remain journaled Git transactions over task-derived protected source refs, but
-task-document publication is not serialized behind their long-lived state. A source-pair selection
-starts or resumes a contract-addressed sync whose durable record lives at the worktree enclosure
-root and whose exact base, source, and pre-sync commits are pinned in Git refs. Automatic sync is
-only phase one: a genuine code or memory merge conflict is retained for agent resolution and staged
-`continue`; explicit `cancel` restores provably operation-owned pre-sync heads. Cleanup vacates only
-the exact selected terminal contract before its canonical pointer is removed.
+task-document publication is not serialized behind their long-lived state. This contract's own
+activation record starts or resumes a contract-addressed sync whose durable record lives at the
+worktree enclosure root and whose exact base, source, and pre-sync commits are pinned in Git refs.
+Automatic sync is only phase one: a genuine code or memory merge conflict is retained for agent
+resolution and staged `continue`; explicit `cancel` restores provably operation-owned pre-sync heads.
+Cleanup vacates only the exact selected terminal contract before its canonical pointer is removed.
 
 ## Historical milestone context: 260815-DAG-L14 Sprint Structure Route Impact
 
@@ -846,7 +883,8 @@ integration branch also changed: it now requires the master's own terminal task 
 only an enclosure census, because a child that was never started has no enclosure to walk.
 
 ## Update History
-- 2026-09-11T23:05:00+00:00: Repository-impact curation: recorded `abandoned` as a second terminal `DocStatus` with its two distinct meanings and its single shared judgement, and recorded the new `worktree_record_landing` tool plus the terminal-task-state requirement for integration-branch retirement. Content change, not a range repoint.
+- 2026-09-13T15:00:56+02:00 — 260831-LOCR-L36 curator (round 2): stated the developer ruling on the graph-less default — nothing serializes a graph-less sprint; `atomic-sequential` describes sprint shape (every commanded master executes atomically), not a serialization mechanism; activation stays per contract and a real graph wave still gates on `predecessor-incomplete:`. Added a new explicit **known defect** note for the ungoverned `onboarding/skills/**` tree (a mirror of the code repo's `skills/**` that is absent from `system/settings.json` `pathRules.include` and from normal census coverage yet is still validated by the contract-scoped memory-quality checker, with sibling sidecars still describing the retired source-pair exclusivity rule and contradicting the corrected shipped skills — needs a follow-up decision: govern it or retire it), cross-referenced from `## Key Invariants`, and corrected the JSON-primary task-documents feature row to say the default serializes nothing. No verification-metadata change; no execution or acceptance claim.
+
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the `PreparedMemoryCertificationAdapter` citation to `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, where commit `deb032fb` moved the adapter out of `memory_quality/`. Citation path only; the cited claim is unchanged and verification metadata remains pinned.
 - 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the staged-quality row: the boundary still owns exact-candidate staging and targeted quality, but the transaction-only closeout no longer imports it. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
@@ -2091,6 +2129,16 @@ These current source and policy ranges establish the development/certification d
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
 ## Key Invariants
+
+- **Nothing serializes a graph-less sprint** (developer ruling): a sprint without an `executionGraph`
+  declares no dependencies, so `atomic-sequential` names the sprint SHAPE (every commanded master
+  executes atomically) rather than a serialization mechanism; activation is per canonical series
+  contract, and a real graph wave still gates through `predecessor-incomplete:`.
+- **Known defect: `onboarding/skills/**` is ungated by `pathRules` yet still graded.** The legacy
+  mirror of the code repo's `skills/**` is absent from `system/settings.json` `pathRules.include` and
+  from normal census coverage, but the contract-scoped memory-quality checker validates it, and its
+  sibling sidecars still carry the retired source-pair exclusivity rule. Needs a follow-up decision
+  (govern it or retire it); see the boundary section above.
 
 - Controlled prompt delivery has one epoch-bound authority. Request identity/payload is immutable;
   only certified pre-dispatch failure retries; full operation refs complete work; pop-back is an

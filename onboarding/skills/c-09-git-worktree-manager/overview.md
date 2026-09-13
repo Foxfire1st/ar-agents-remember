@@ -6,8 +6,8 @@
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
+| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
 
 ## Purpose
 
@@ -18,12 +18,21 @@ not move private journal, ref, or queue identity into agent prompts.
 
 ## Hot Path Summary
 
-Atomic-series admission is scoped to an exact code/external-memory source pair. Manager/worker
-dispatch plus atomic start/attach are selecting operations. Selection publishes `reconciling`,
-logically pauses the former selection without destroying its task/worktree/journal, reconciles both
-recorded source tips, and publishes `active` only when the exact pair is current. Multiple live but
-paused series are valid. Task authoring never consults the selector, and the queue only projects its
-waiting facts.
+Atomic-series admission is a contract-scoped authority: each canonical series contract owns its own
+activation record, so masters that share one exact code/memory source pair never share that state.
+Manager dispatch, worker dispatch, and atomic start/attach are selecting operations; reviewer and
+curator inspection is not. Selection publishes `reconciling` for that exact contract, which suspends
+nothing — not its chat, process, worktree, contract, or already-claimed lifecycle journal — then
+reconciles both protected source tips and publishes `active` only when they are current. One master's
+selection never pauses or excludes another, and multiple nonterminal contracts remain valid. Task
+authoring never consults the activation authority, and the closeout queue merely projects active,
+reconciling, or vacant waiting candidates.
+
+Nothing serializes a graph-less sprint. A sprint without an `executionGraph` declares no
+dependencies, so the shipped `atomic-sequential` default describes the sprint's SHAPE — every
+commanded master executes atomically — and is not a serialization mechanism: independent atomic
+masters proceed concurrently and no master is held because another master is selected. Only an
+explicit `executionGraph` gates masters on real predecessors.
 
 `worktree_sync` is one durable enclosure-root transaction. It pins pre-sync heads and source tips,
 retains code or memory conflicts in operation-owned `.sync` worktrees, and advertises
@@ -54,7 +63,8 @@ returns through the architect.
 
 ## Invariants And Boundaries
 
-- One disposable selector record owns activation for one exact source pair.
+- Each canonical series contract owns its own activation record; multiple nonterminal contracts
+  remain valid and one master's selection excludes no other.
 - Contract presence, task order, and queue rows never elect a selected master.
 - Conflicts are retained, resumable, and cancellable; they are not silently aborted.
 - Cleanup releases only the exact selected terminal pointer and preserves newer selections.
@@ -78,12 +88,37 @@ Closeout and integration are authorized Git transactions over code, memory-conte
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical skill owns source-pair admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:254-290; skills/c-09-git-worktree-manager/SKILL.md:386-465 |
-| Ordinary series integration and leaf direct landing remain distinct policy routes. | "An ordinary master/series integration has no leaf closeout door of its own"; `directExecutionEnabled` | skills/c-09-git-worktree-manager/SKILL.md:376-376; skills/c-09-git-worktree-manager/SKILL.md:379-379 |
+| The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:256-300; skills/c-09-git-worktree-manager/SKILL.md:430-508 |
+| Ordinary series integration and leaf direct landing remain distinct policy routes. | "An ordinary master/series integration has no leaf closeout door of its own"; `directExecutionEnabled` | skills/c-09-git-worktree-manager/SKILL.md:377-377; skills/c-09-git-worktree-manager/SKILL.md:380-380 |
+| The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters. | "nothing serializes the masters" | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:158-160 |
 | Public sync composes the selection and transaction owners without exposing private ids. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
-| Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305 |
+| Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-305 |
+
+## Ungoverned Mirror Status (known defect)
+
+This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's
+`skills/**` route. `skills/**` is absent from `settings.json`'s `pathRules.include`, so this whole
+onboarding tree sits outside normal onboarding census coverage: it is legacy and ungoverned. It is
+retained here only because the contract-scoped memory-quality checker still validates these documents
+whenever `skills/**` is part of a leaf's changed set, which is exactly why this overview was updated
+by hand rather than by a governed maintenance pass. The remaining sibling sidecars under
+`onboarding/skills/**` — the other role, criteria, and template cards — are knowingly stale and are
+deliberately left untouched pending a follow-up decision on whether this mirror should be governed or
+removed. That mismatch between the declared path rules and the enforced checking scope is itself the
+recorded defect.
 
 ## Update History
+- 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: rebound the route's citation
+  rows against the frozen source after `grep -n` verification — `## Mid-Task Sync` to
+  SKILL.md:256-300, `## Lifecycle Finalization And Cleanup` to SKILL.md:430-508, and the ordinary
+  master/series integration anchors `"An ordinary master/series integration has no leaf closeout door
+  of its own"` and `directExecutionEnabled` from :376-376/:379-379 to :377-377/:380-380 (their only
+  real change is the line shift); tightened `SyncOperationStore` to sync_transaction_state.py:172-305.
+  Rewrote the hot-path admission summary to per-contract activation (each contract owns its own
+  activation record, `reconciling` suspends nothing, one selection excludes no other, multiple
+  nonterminal contracts remain valid) and added the explicit developer ruling that nothing serializes
+  a graph-less sprint — `atomic-sequential` describes sprint shape, not a serialization mechanism.
+  Added the Ungoverned Mirror Status defect statement. Verification metadata remains closeout-owned.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "An ordinary master/series integration has no leaf closeout door of its own", `directExecutionEnabled` repointed to skills/c-09-git-worktree-manager/SKILL.md:376-376, skills/c-09-git-worktree-manager/SKILL.md:379-379. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `sync_result` repointed to mcp/src/agents_remember/worktrees/modules/sync.py:28-67. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_checkpoint_landing_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T11:10+02:00 |
-| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
-| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,12 +44,13 @@ it: `closeout_status == "not-started"`, `approved_for_commit is False`, empty co
 
 The helpers exist so that no case can cheat the property under test:
 
-- `_checkpoint(fixture, series, *, dry_run)` cit:([`_checkpoint`], mcp/tests/test_checkpoint_landing_end_to_end.py:235-245) calls
+- `_checkpoint(fixture, series, *, dry_run)` cit:([`_checkpoint`], mcp/tests/test_checkpoint_landing_end_to_end.py:373-383) calls
   `worktree_tools.worktree_checkpoint_landing_tool` — the registered public entry point — rather than
   `checkpoint_landing_result` or any inner helper. The module docstring states this as a
   prohibition, not a preference.
 - `_accumulate_master_line` cit:([`_accumulate_master_line`], mcp/tests/test_checkpoint_landing_end_to_end.py:125-141) authors a real code+memory-content+ledger triple on the master's own
-  work branches using the repository's own ledger helpers, which is the state a paused master is
+  work branches using the repository's own ledger helpers, which is the state an unfinished master
+  landed at a checkpoint is
   actually in and the projection the landing re-proves.
 - `_branch_checkout` checks out a branch into a disposable worktree so a commit can be authored
   directly on a work branch a series contract has no live worktree for.
@@ -71,7 +72,7 @@ Twelve cases in the one class:
 | `test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate` (`:518-532`) | the leaf arm of the same entry gate: `validate_integrate_contract` is untouched for the ordinary routes, so the exemption really is local to the checkpoint preflight. |
 | `test_a_completed_master_is_still_refused_by_the_checkpoint` (`:534-545`) | the surviving downgrade guard, through the public operation, at preview **and** apply: `atomic-series-checkpoint-master-complete`. |
 | `test_a_candidate_whose_ledger_does_not_map_the_code_ref_is_refused` (`:547-563`) | the capture's own proof: a code branch advanced with no mapping row for its new tip is refused instead of captured, and nothing moves. |
-| `test_a_hand_edited_master_ledger_is_refused_by_the_preview_and_the_apply` (`:565-596`) | **instance 4**: a paused master is exactly where someone might hand-edit `memory.md`, so the projection refusal fires at both surfaces, with the row the capture needs deliberately kept so this is genuinely the projection refusal and not an earlier one. |
+| `test_a_hand_edited_master_ledger_is_refused_by_the_preview_and_the_apply` (`:565-596`) | **instance 4**: an unfinished master landed at a checkpoint is exactly where someone might hand-edit `memory.md`, so the projection refusal fires at both surfaces, with the row the capture needs deliberately kept so this is genuinely the projection refusal and not an earlier one. |
 | `test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun` (`:598-624`) | **instance 3**: with `_compare_and_swap_ref` patched to lose, the `integration-ref-race` payload names `worktree_checkpoint_landing` — the tool that attempted the move — with `nextArgs` the contract path, and no ref or cell moved. |
 | `test_checkpoint_landing_requires_explicit_developer_approval` (`:638-656`) | `approved=False` on a non-dry-run raises "explicit developer approval": the closeout exemption was not traded for the approval channel. |
 
@@ -123,10 +124,10 @@ the direct evidence.
 | --- | --- | --- |
 | The public checkpoint entry point this module drives instead of an inner helper. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:427-469 |
 | The one eligibility decision the preview and the apply both read, and the captured candidate it revalidates. | "class CheckpointLanding:"; "def checkpoint_landing_eligibility(contract: WorktreeContract) -> CheckpointLanding:"; "class SeriesCheckpointRefs:"; "def capture_series_checkpoint_refs(contract: WorktreeContract) -> SeriesCheckpointRefs:" | mcp/src/agents_remember/worktrees/modules/integrate.py:371-405; mcp/src/agents_remember/worktrees/modules/integrate.py:406-453; mcp/src/agents_remember/worktrees/series_closeout.py:94-105; mcp/src/agents_remember/worktrees/series_closeout.py:106-138 |
-| The shared ledger proof whose preview-side evaluation instances 4 and 5 depend on. | `_require_ledger_projection`; `_route_commits` | mcp/src/agents_remember/worktrees/modules/integrate.py:479-507; mcp/src/agents_remember/worktrees/modules/integrate.py:508-521 |
+| The shared ledger proof whose preview-side evaluation instances 4 and 5 depend on. | `_require_ledger_projection`; `_route_commits` | mcp/src/agents_remember/worktrees/modules/integrate.py:498-526; mcp/src/agents_remember/worktrees/modules/integrate.py:527-539 |
 | The required operation name that makes instance 3's `nextTool` the checkpoint. | `_publish_integration_edge` | mcp/src/agents_remember/worktrees/modules/integrate.py:846-921 |
 | The closeout gate the preview and the apply now both read (instance 1) and its leaf exemption. | "def require_closeout_publication_authority(contract: WorktreeContract) -> None:"; "def closeout_preview_payload(contract, args: WorktreeArgs) -> dict[str, object]:" | mcp/src/agents_remember/worktrees/series_closeout.py:34-60; mcp/src/agents_remember/worktrees/modules/closeout.py:235-294 |
-| The projection proof a paused master's ledger owes, and the fact that it is the leaf form. | `_require_preserved_ledger_history`; `LandingAdmission` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:344-399; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:92-106 |
+| The projection proof a checkpoint's ledger owes, and the fact that it is the leaf form. | `_require_preserved_ledger_history`; `LandingAdmission` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:344-399; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:92-106 |
 | The lane row the fail-closed manifest requires. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:132-132 |
 | The two shared-support consumer edges this module adds to the lifecycle catalog, in both artifact blocks. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-333; mcp/tests/evidence-lifecycle.toml:336-386 |
 
@@ -143,7 +144,7 @@ by the module's own fixture; no sibling repository or external system participat
 
 An `UNREPRODUCED FLAKE` comment dated 2026-09-13 (leaf 260831-LOCR-L34) sits above
 `test_checkpoint_landing_requires_explicit_developer_approval`
-cit:(["UNREPRODUCED FLAKE, RECORDED 2026-09-13"], mcp/tests/test_checkpoint_landing_end_to_end.py:626-637).
+cit:(["UNREPRODUCED FLAKE, RECORDED 2026-09-13"], mcp/tests/test_checkpoint_landing_end_to_end.py:1162-1162).
 It records that the case was reported FAILED **once** during a mutation run that deleted the shared
 preflight ledger proof while checking that the mutation fails exactly the two ledger-divergence cases.
 The flake was seen **only on that mutated build, never on the real tree**; the case passes in
@@ -153,6 +154,14 @@ rather than dropped so the next person who sees it does not start from zero — 
 the assertion text and treat it as a real flake in this case rather than in the closeout/landing code.
 
 ## Update History
+- 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: the checkpoint route partially publishes an
+  unfinished master, so `_accumulate_master_line`'s state, instance 4's hand-edit scenario, and the
+  `_require_preserved_ledger_history` reference row now say "an unfinished master landed at a
+  checkpoint" / "a checkpoint's ledger" where they said "a paused master". Wording only; the cases,
+  their ranges and the projection proof are unchanged and no verification stamp advanced.
+- 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shifted `modules/integrate.py`: the shared-ledger-proof row was rebound to `integrate.py:498-526` (`_require_ledger_projection`) and `integrate.py:527-539` (`_route_commits`). Claim wording unchanged.
+- 2026-09-13T12:29:52+00:00: Generated citation repair: `_checkpoint` repointed to mcp/tests/test_checkpoint_landing_end_to_end.py:373-383. No content impact: mechanical anchor-range projection bound to citation source snapshot 608ec827a174d194b141ff2daa61dd8e3b6b44611d03fb561dc0b7bb0223223f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T12:29:52+00:00: Generated citation repair: "UNREPRODUCED FLAKE, RECORDED 2026-09-13" repointed to mcp/tests/test_checkpoint_landing_end_to_end.py:1162-1162. No content impact: mechanical anchor-range projection bound to citation source snapshot 608ec827a174d194b141ff2daa61dd8e3b6b44611d03fb561dc0b7bb0223223f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T09:10+00:00 — Created by the 260831-LOCR-L34 curator pass. Documents the module as the
   boundary proof for plan/apply parity: the twelve cases and what each pins, the public-operation and
   never-pre-populate prohibitions the module docstring states, the fixture composition

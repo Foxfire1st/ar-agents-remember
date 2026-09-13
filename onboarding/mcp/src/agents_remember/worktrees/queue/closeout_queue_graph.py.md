@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ including leaf-to-node resolution, predecessor reasons, and deterministic member
 `graph_context` resolves and validates bounded sprint topology, accepts task-document overrides for
 preview, computes node/leaf indexes and incomplete predecessors once, and carries canonical
 planning authorities. A reviewed graph-less sprint is the valid atomic-sequential default rather
-than an error; graph-backed membership and order remain strict when a graph exists.
+than an error; that default describes the sprint's shape — every commanded master executes
+atomically — and serializes nothing, so the graph never introduces a dependency between its
+masters. Graph-backed membership and order remain strict when a graph exists.
 `incomplete_predecessor_map` uses one adjacency construction and one traversal over
 graph nodes and edges; completion stays master-granular — a node counts complete when its master
 document is `Completed`, so an edge into a segment blocks exactly that segment's leafs until the
@@ -54,8 +56,11 @@ topology validator remains the canonical reference-integrity authority.
   `abandoned` resolves exactly like a `Completed` one and stops blocking its successors. Leaving
   dependents blocked forever would make abandoning a master worse than doing nothing.
 - No acquisition or in-flight lane facts are owned here.
-- For a graph-less sprint, the migration refusal describes source-pair-selected implementation
-  exposure; series-contract presence is not a lane owner.
+- For a graph-less sprint, the user-facing `task-execution-topology-migration-required` refusal now
+  states the ruling: "sprint has no executionGraph; the sprint runs atomic-sequentially by default
+  (every commanded master executes atomically and no dependency is declared, so nothing serializes
+  the masters)". Series-contract presence is not a lane owner and per-contract activation excludes
+  no sibling master.
 
 ### Todos
 
@@ -97,6 +102,8 @@ Ready order remains effective priority rank, graph declaration order, then leaf 
 graph-less atomic-sequential sprint is valid; the graph never owns in-flight lane state.
 
 ## Update History
+- 2026-09-13T15:03:18+02:00 — Removed the round-1 source-side-debt note: the frozen module's graph-less refusal was corrected this round. Re-read `closeout_queue_graph.py` 155-162 and the card now records the current user-facing string — "sprint has no executionGraph; the sprint runs atomic-sequentially by default (every commanded master executes atomically and no dependency is declared, so nothing serializes the masters)" (lines 158-160) — and states the ruling that the atomic-sequential default describes sprint shape and introduces no dependency, so per-contract activation excludes no sibling master. Corrected the graph-less Logic sentence the same way. Re-verified the four reference rows against the file (`graph_context` 62-128, `incomplete_predecessor_map` 341-369, `candidate_node`/`candidate_predecessors` 266-273/276-289, `ready_sort_key`/`predecessor_waiting_reasons` 309-324/299-306) and the L2 row (`graph_context`/`_validated_graph_documents` 62-128/130-193); all anchors still resolve inside their ranges. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:38+02:00 — Recorded the source-side debt in the graph-less refusal string: `closeout_queue_graph.py:159` still says "one source-pair-selected atomic master exposes implementation at a time" although activation is now keyed per series contract. Card prose corrected; the frozen source is untouched and no source change is claimed.
 
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: predecessor resolution now consumes `master_is_terminal` (terminal masters — `Completed` or `abandoned`), so an abandoned predecessor stops blocking its successors. Added the invariant and corrected the `incomplete_predecessor_map` row to its current extent. Content change, not a range repoint.
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: documented the caller-authored graph

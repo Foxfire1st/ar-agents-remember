@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,11 +31,22 @@ from `agents_remember.worktrees.modules.args`), replacing the former
 
 `attach_result` rejects a series contract as a workbench, admits the ordinary leaf contract and its
 exact lifecycle location, then resolves any parent series. When a parent exists it calls
-`activate_atomic_series_contract` before source-lineage projection: a different live series is
-logically paused, the requested parent is reconciled for its protected source pair, and attach
-returns the selecting transaction's conflict/refusal rather than exposing stale implementation.
+`activate_atomic_series_contract` before source-lineage projection: that call transitions the
+requested parent's OWN activation record (`reconciling`, reconcile its pinned source pair, then
+`active`) because the record is keyed per series contract, not per protected source pair. No other
+master is named, selected, or paused on this contract's behalf, and attach returns the selecting
+transaction's conflict/refusal rather than exposing stale implementation.
 Only an active/current parent reaches the existing lineage check and `attached` result. Dry-run
 activation remains observation-only.
+
+**260831-LOCR-L36 re-keyed the activation record from per protected source pair to per series
+contract.** Start/attach/dispatch/sync still share one selecting transaction, but the record it
+writes is addressed by `contract_fingerprint(contract)`; a foreign master's record is read only by
+that foreign contract, so two atomic masters that share one sprint's code/memory source branches
+hold independent records and both may be `active`. `activation_waiting_reason(observation)` now
+takes the observation alone and returns only `atomic-series-reconciling`; a vacant record, an
+`active` record, and a foreign master are all explicitly not waiting reasons. Genuine wave
+dependencies remain with the sprint execution graph's own `predecessor-incomplete:` reasons.
 
 **`start_result()` is now four lines (260731-EFA-L2)** — resolve context, build the contract, then
 three stages, each of which owns one decision and can return early:
@@ -237,13 +248,13 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:167-207 |
-| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502; mcp/src/agents_remember/worktrees/modules/start.py:137-164 |
-| The selecting transaction owns pause/reconcile/active behavior rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
+| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:137-164; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-445 |
+| The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:32-113 |
 | Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:130-146; mcp/src/agents_remember/worktrees/modules/guidance.py:147-172; mcp/src/agents_remember/worktrees/modules/guidance.py:494-496 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-172; mcp/src/agents_remember/worktrees/modules/guidance.py:130-146; mcp/src/agents_remember/worktrees/modules/guidance.py:502-504 |
 | `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 
 ## Cross-Repo References
@@ -259,8 +270,9 @@ pair already documented by the repository-owned contract.
 For master task starts, `start_contract.py` creates or loads the root series contract, creates the
 integration branch from the protected/source branch, selects and reconciles that exact series, and
 only then builds the leaf contract from the integration branch with canonical doc-id `leaf_id`
-recorded. Multiple root series contracts may remain live; selection is disposable source-pair
-authority, not a global contract census. Both root and leaf `memory_base_commit` values come from
+recorded. Multiple root series contracts may remain live; selection is that one contract's own
+`reconciling -> active` activation transition — never a global contract census, and never a claim on
+a shared protected source pair. Both root and leaf `memory_base_commit` values come from
 `memory_base_for_source` — the tip of the **memory source branch** the worktree is created from, not
 the memory repo's ambient HEAD.
 
@@ -282,8 +294,8 @@ after accepted task truth publishes, affected projections are refreshed independ
 
 Task-derived integration refs remain mechanically non-ordinary. The exact configured locator and
 task CAS remain the leaf publication boundary; the parent atomic series is separately selected and
-reconciled under source-pair integration authority before start/attach exposes the leaf. A mutable
-queue lane is absent from both decisions.
+reconciled under repository integration authority in its own contract-keyed activation record before
+start/attach exposes the leaf. A mutable queue lane is absent from both decisions.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -299,14 +311,16 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 
 Leaf publication still competes with discard-unstarted under the short task-publication CAS. It proves the exact
 current parent/leaf binding and reserves the configured contract locator before code, memory,
-provider, or lifecycle task mutation. Parent-series selection is a preceding source-pair operation,
-not part of this task-authoring CAS.
+provider, or lifecycle task mutation. Parent-series selection is a preceding contract-keyed activation
+operation, not part of this task-authoring CAS.
 Memory preparation must reproduce the reserved contract bytes or refuse. Lifecycle task restamping
 uses the shared task-fact publisher and returns independent projection effects. Retry converges on
 the same reservation; conflicts name task-authority or recovery actions. A successor start requires
 the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
+
+- 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36: re-keyed the atomic-series activation account from per protected source pair to per series contract. Attach/start now describe `activate_atomic_series_contract` as transitioning the requested parent's OWN contract-keyed activation record to `reconciling` and then `active`, with no foreign master paused, selected, or named as a reason to wait; `activation_waiting_reason` takes the observation alone and returns only `atomic-series-reconciling`. Corrected the Series-Contract Notes claim that selection is "disposable source-pair authority", the DAG-L4 "source-pair integration authority" wording, and the CLIVE "source-pair operation" wording. Rebound two stale reference rows: `atomic_series_status_projection` now cites `atomic_series_activation.py:434-445` (was `502-502`, where the symbol no longer appears) and `status_payload` now cites `guidance.py:502-504` (was `494-496`, which is `projected_status_payload`'s range); the guidance row's source order was aligned with its anchors. This records source documentation only; verification metadata remains closeout-owned and no acceptance claim is made.
 
 - 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: corrected three stale reference rows against the current source — `status_payload` now cites `guidance.py:472-474`, `amend_contract` cites `worktree_contract.py:197-227`, and this module's public start boundary cites `start.py:94-102; 105-106; 109-134`. This leaf replaced the unconditional `kind == "series"` attach refusal with `_attach_series_result`, which is the state-grounded resume; that behaviour is recorded in the attach row rather than added here. Verification metadata remains closeout-owned.
 

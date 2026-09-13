@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ partial landing used to hide — the master's line was already upstream while th
   protected series admission remain distinct branches.
 - **A landed line blocks abandonment, in either landing state.** The abandon arm must keep refusing
   whenever the integration cell records that work left the master — `completed` or `checkpointed` —
-  because `checkpointed` exists to keep a paused master's landed content honest and therefore cannot
+  because `checkpointed` exists to keep an unfinished master's landed content honest and therefore cannot
   be treated as "nothing was taken".
 
 ## Repo-Internal References
@@ -128,6 +128,9 @@ Topology collision and deleted-owner repair logic moved into dedicated owners; t
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+- 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: `checkpointed` keeps an unfinished master's
+  landed content honest (the checkpoint is a partial publication, not a pause). Wording only; the
+  abandon refusal this invariant protects is unchanged and no verification stamp advanced.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded that the shared
   `_require_series_task_terminal` guard now refuses abandon when the integration cell reads
   `checkpointed` as well as `completed`, why a landed line blocks abandonment in both landing states,

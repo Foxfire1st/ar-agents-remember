@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a`|
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -95,8 +95,12 @@ owner-never-self-approves still holds.
 
 The strategist question is driven by missing or stale evidence-backed topology/classification
 reasoning, not by graph absence. A reviewed graph-less atomic-sequential activation choice is
-valid: canonical commanded-master order is an equal-priority tie-break and exact source-pair
-selection may pause a former master without integration or retirement. When the
+valid: canonical commanded-master order is an equal-priority tie-break, and per-contract activation
+lets two sprint-commanded atomic masters sharing one protected source pair hold independent records
+without integration or retirement. Nothing serializes such a sprint (developer ruling): a graph-less
+sprint declares no dependencies, so `atomic-sequential` names the sprint's shape — every commanded
+master executes atomically — rather than a scheduling mechanism, independent masters proceed
+concurrently, and only an explicit `executionGraph`'s `predecessor-incomplete:` waves gate. When the
 developer sanctions a strategist skip, the orchestrator inherits the complete reasoning duty and
 must author the reasoned plan plus explicit topology choice before manager dispatch; that choice
 may remain graph-less. Adding a master remains one atomic `attach_master` operation, with graph-node
@@ -109,8 +113,9 @@ membership equality required only when a graph exists.
 - Strategist dispatch and the tiny-work short root are explicit developer decisions proposed by
   the architect, never silent defaults.
 - Graph absence alone is neither a strategist trigger nor a defect. The accepted topology choice
-  may be the reviewed graph-less source-pair-selected atomic-sequential default.
-- Task authoring is upstream of selector and queue state; valid planning changes invalidate and
+  may be the reviewed graph-less per-contract-activated atomic-sequential default, which describes
+  sprint shape and serializes nothing across masters.
+- Task authoring is upstream of activation and queue state; valid planning changes invalidate and
   rebuild affected disposable projections rather than waiting for runtime scheduling permission.
 - A sanctioned strategist skip transfers the full reasoned-plan and topology-choice duty to the
   orchestrator; it never permits an unreasoned implicit choice.
@@ -138,13 +143,14 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| This package-data artifact contains the synchronized architect lifecycle. | `# Lifecycle — Architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-306 |
+| This package-data artifact contains the synchronized architect lifecycle. | `# Lifecycle — Architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-391 |
 | Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:36-36 |
-| Master attachment keeps graph-node equality conditional on graph presence. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:95-132 |
+| Master attachment keeps graph-node equality conditional on graph presence and states that the graph-less default serializes nothing. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:123-160 |
 | Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:187-187 |
 | The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:123-123 |
-| The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
+| The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-182 |
 | The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
+| The shipped architect role now names the graph-less default instead of the removed source-pair-selected wording. | "where nothing serializes the masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:134-143 |
 
 ## Cross-Repo References
 
@@ -193,12 +199,27 @@ The role treats a graph-less sprint as the atomic-sequential default, not as an 
 graph-less sprint; the removed `migrate_execution_topology` is no longer named as the legacy
 cutover path.
 
-## IAS Source-Pair Activation Planning Boundary
+## IAS Per-Contract Activation Planning Boundary
 
-The synchronized role now defines that graph-less default through source-pair selection rather
-than full-integration serialization. Selecting another atomic master logically pauses the former
-without deleting its task, branch, worktree, or journal. Dependency truth remains an architect
-judgment, and otherwise-valid task authoring never consults selector or closeout-queue state.
+The synchronized role now defines that graph-less default through per-contract activation rather
+than full-integration serialization. The activation record is keyed by the canonical series
+contract, so activating one atomic master never pauses, replaces, or blocks a sibling master that
+shares the same protected source pair, and the only activation waiting reason is
+`atomic-series-reconciling` for that contract's own in-flight reconciliation. Dependency truth
+remains an architect planning judgment, while runtime wave gating stays with the sprint execution
+graph's own `predecessor-incomplete:` reasons. Otherwise-valid task authoring never consults
+activation or closeout-queue state.
+
+**Shipped text corrected (260831-LOCR-L36 round 2).** The mirrored runtime role this card
+describes — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` —
+now names the graph-less default correctly in its own text at `:142-143`: a first graph bootstrap
+onto a graph-less sprint runs "the graph-less atomic-sequential default, where nothing serializes
+the masters". Do not confuse this with a scheduling claim: the sprint without an `executionGraph`
+declares no dependency, so independent atomic masters proceed concurrently and only explicit graph
+waves gate on `predecessor-incomplete:` (developer ruling). The earlier shipped-source debt note is
+therefore removed — a repo-wide grep for `source-pair-scoped`, `source-pair-selected`, the "logically
+pauses the former master" admission, one-selected-master-at-a-time and source-pair activation wording
+returns 0 hits in the code worktree.
 
 ## 260821-DAGQC-L4 Topology-Choice Closure
 
@@ -220,6 +241,27 @@ verified requirement contradiction to developer-approved semantic revision. Work
 classification never rewrites the canonical packet.
 
 ## Update History
+- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
+  shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
+  the frozen architect role now says a first graph bootstrap onto a graph-less sprint runs "the
+  graph-less atomic-sequential default, where nothing serializes the masters" at `:142-143`, cited
+  as `:134-143`. Body prose now states the developer ruling (nothing serializes a graph-less sprint;
+  `atomic-sequential` is sprint shape; independent atomic masters proceed concurrently;
+  per-contract activation records each contract's own `reconciling -> active`; only explicit
+  `executionGraph` waves gate on `predecessor-incomplete:`), and the document-scope and
+  `## Adding A Master To A Running Sprint` ranges were re-grepped and repointed to `:1-391` and
+  `:123-160`, with the orchestrator relay ranges repointed to `:1-21`/`:135-182`. Source
+  documentation only; verification metadata remains closeout-owned and no acceptance or test claim
+  is made.
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote this card's graph-less
+  planning boundary from source-pair selection with a paused former master to the per-contract
+  activation record — each series contract owns its record, the only waiting reason is
+  `atomic-series-reconciling`, and a sibling master that shares the protected source pair is never
+  paused or waited on — and recorded the shipped-source debt that the frozen mirrored architect role
+  still names the removed source-pair-selected graph-less default at its own `:142`, flagged for a
+  future code leaf. That debt observation is superseded by the 260831-LOCR-L36 round-2 entry above:
+  the shipped text is corrected and the debt note is removed. Source documentation only; verification metadata remains closeout-owned and no
+  acceptance or test claim is made.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "Sprint attach" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:187-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-13T18:07+02:00 |
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, and 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
 
 ## Code Commentary
 
@@ -66,7 +66,8 @@ to removed methods are superseded by this current inventory.
 | Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-240 |
 | The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-259 |
 | The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish | `test_worktree_checkpoint_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:261-280 |
-| The permissive registration-time config stub both cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:283-296 |
+| The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-305 |
+| The permissive registration-time config stub both cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:307-322 |
 
 ## Cross-Repo References
 
@@ -113,6 +114,13 @@ The general rule the two cases establish: one validating call per public tool na
 whole registry.
 
 ## Update History
+- 2026-09-13T18:07+02:00 — 260831-LOCR-L36: recorded the new case
+  `test_the_checkpoint_description_publishes_rather_than_pausing`, which registers every tool against
+  a probe `FastMCP` and pins the checkpoint description: it must present a partial **publication** and
+  deny being the pause (no "Use this to pause", and the pause is named as a "separate matter and is NOT
+  this call"). The case exists because the old invitation routed an ordinary stop request into a
+  protected-branch publication. Rebound `_permissive_registration_config` to its current range.
+  Verification metadata remains closeout-owned; no execution or acceptance claim.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added the
   `test_worktree_checkpoint_landing_has_a_response_model_that_validates` case, recorded why a per-name
   case is required (the two landing envelopes differ only in the operation literal, so a set

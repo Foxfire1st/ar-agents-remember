@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
-| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -162,18 +162,18 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wire vocabulary declares integration and cleanup states, including the `checkpointed` member this route's checkpoint path records. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:39-40 |
+| The wire vocabulary declares integration and cleanup states, including the `checkpointed` member this route's checkpoint path records. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:38-39 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:197-197 |
 | This module reaches the persisted vocabulary writes through two owners: the blocked cell here and the landing cells in the shared writer the final and checkpoint results both call. | "def blocked_integration_payload("; `_integrated_result`; `_checkpoint_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14; mcp/src/agents_remember/worktrees/modules/integrate.py:598-635; mcp/src/agents_remember/worktrees/modules/integrate.py:922-963 |
-| Landing publishes the integration cell and stops: the refs are landed, no removal inventory is produced, and the payload's `cleanup` key is the untouched contract cell. Reclamation belongs to `lifecycle_finalize_task`, whose `_run_or_verify_cleanup` runs the same terminal procedure and shapes its report. | "def _integrated_result("; "are reclaimed when the task edge is finalized." | mcp/src/agents_remember/worktrees/modules/integrate.py:598-635; mcp/src/agents_remember/worktrees/modules/integrate.py:622-623; mcp/src/agents_remember/worktrees/modules/finalize.py:277-311 |
-| A checkpoint landing records `checkpointed` through the same writer and reclaims nothing either, so the open master keeps its worktrees, branches and enclosure; a paused master is never finalized. | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:922-963 |
-| The checkpoint's one eligibility decision: it captures the master's own live refs, proves their ledger mapping, and is read by both the preview and the apply. | `CheckpointLanding`; `checkpoint_landing_eligibility`; `_route_commits` | mcp/src/agents_remember/worktrees/modules/integrate.py:370-403; mcp/src/agents_remember/worktrees/modules/integrate.py:406-453; mcp/src/agents_remember/worktrees/modules/integrate.py:508-521 |
+| Landing publishes the integration cell and stops: the refs are landed, no removal inventory is produced, and the payload's `cleanup` key is the untouched contract cell. Reclamation belongs to `lifecycle_finalize_task`, whose `_run_or_verify_cleanup` runs the same terminal procedure and shapes its report. | "def _integrated_result("; "are reclaimed when the task edge is finalized." | mcp/src/agents_remember/worktrees/modules/integrate.py:617-635; mcp/src/agents_remember/worktrees/modules/integrate.py:643-643; mcp/src/agents_remember/worktrees/modules/finalize.py:277-311 |
+| A checkpoint landing records `checkpointed` through the same writer and reclaims nothing either, so the open master keeps its worktrees, branches and enclosure; an unfinished master landed at a checkpoint is never finalized. | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:922-963 |
+| The checkpoint's one eligibility decision: it captures the master's own live refs, proves their ledger mapping, and is read by both the preview and the apply. | `CheckpointLanding`; `checkpoint_landing_eligibility`; `_route_commits` | mcp/src/agents_remember/worktrees/modules/integrate.py:390-424; mcp/src/agents_remember/worktrees/modules/integrate.py:425-461; mcp/src/agents_remember/worktrees/modules/integrate.py:527-539 |
 | The ledger projection is proved on the preview as well as the apply, for both routes, from one derived admission record. | `_require_ledger_projection`; `_landing_admission` | mcp/src/agents_remember/worktrees/modules/integrate.py:479-507; mcp/src/agents_remember/worktrees/modules/integrate.py:454-478 |
 | The protected-ref edge names the operation it performs, so a checkpoint's ref-race payload routes the operator back to the checkpoint rather than to `worktree_integrate`. | `_publish_integration_edge`; `"nextTool": operation` | mcp/src/agents_remember/worktrees/modules/integrate.py:846-921 |
 | The checkpoint preview reports the same eligibility the apply enforces. | `_checkpoint_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:522-569 |
 | The checkpoint route's series authority keeps every ref guard and drops only the completion assumptions, refusing an already-completed master and revalidating the captured candidate against the live refs. | `publish_series_checkpoint_under_authority`; `require_series_checkpoint_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:161-194; mcp/src/agents_remember/worktrees/series_closeout.py:139-160 |
-| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:301-318 |
+| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:320-338 |
 | Historical/removed: leaf integration reused its closeout proof without calling a gate, and series/master integration alone ran the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. The cited `integration_quality.py` was deleted by the closeout-door cut (commit `fad9808e`). | — | — |
 
 
@@ -268,10 +268,10 @@ lost its `intent` field for the same reason.
 
 ## 260831-LOCR-L30 Checkpoint Landing (The Partial-Master Verb)
 
-`integrate_result` closes a finished master. `checkpoint_landing_result(args, current_contract)` cit:([`checkpoint_landing_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:662-696) pauses an unfinished one: it lands that master's accumulated line into its super branch
-and keeps the master open. Before it existed a partial master could not land at all, because
+`integrate_result` closes a finished master. `checkpoint_landing_result(args, current_contract)` cit:([`checkpoint_landing_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:662-696) partially publishes an unfinished one: it lands that master's accumulated line into its super branch
+and keeps the master open — a publication, not a pause. Before it existed a partial master could not land at all, because
 `publish_series_integration_under_authority` structurally proves the master is complete — its task
-document `Completed` and one landed enclosure per canonical leaf — and a paused master has neither.
+document `Completed` and one landed enclosure per canonical leaf — and an unfinished master has neither.
 
 It shares the entire preflight and the ref move with the final route. As L30 wrote it, it differed in
 exactly two places; **the first of those is superseded by 260831-LOCR-L34** (see the section below),
@@ -293,7 +293,8 @@ which replaced the closeout-cell read and the `checkpoint: bool` flag with the c
   completion that has not happened. Since 260831-LOCR-L31 that "reclaims nothing" clause is the
   property of **both** landing routes rather than the checkpoint's distinguishing feature — its
   docstring was corrected accordingly, because the old phrasing ("does not run the automatic
-  cleanup") had become vacuous once no landing route reclaims. A paused master is never finalized, so
+  cleanup") had become vacuous once no landing route reclaims. An unfinished master landed at a
+  checkpoint is never finalized, so
   it is never reclaimed. Its payload summary states this in operator language: the line landed, the
   master stays open, nothing was retired and no cleanup ran.
 
@@ -341,7 +342,7 @@ Three parity repairs ride with it, and all three are instances of the invariant 
 - **The ledger projection is now proved on both surfaces.** `_require_ledger_projection(...)`
   cit:([`_require_ledger_projection`], mcp/src/agents_remember/worktrees/modules/integrate.py:479-507) runs in `_handover_or_apply_integration` **before the dry-run branch**, for both routes, on
   the commits `_route_commits(contract, checkpoint)`
-  cit:([`_route_commits`], mcp/src/agents_remember/worktrees/modules/integrate.py:508-521) selects. Before this the
+  cit:([`_route_commits`], mcp/src/agents_remember/worktrees/modules/integrate.py:527-539) selects. Before this the
   checkpoint's preview said `would-checkpoint` while its apply refused on the projection
   (**instance 4**), and the ordinary `worktree_integrate` dry run did not evaluate the projection at
   all (**instance 5**). The protected boundary inside the transaction still re-takes the read; this
@@ -366,6 +367,12 @@ The `integration-ref-race` case is covered end to end by the new
 `mcp/tests/test_checkpoint_landing_end_to_end.py::test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun`.
 
 ## Update History
+- 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: `checkpoint_landing_result` partially
+  publishes an unfinished master; the card no longer says it "pauses" one or calls the route's subject
+  a "paused master". The mechanism is unchanged (it lands the accumulated line, keeps the master open,
+  records `checkpointed`, retires nothing), and pausing remains a separate matter that moves no ref.
+  Wording only; no verification stamp advanced.
+- 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shrank `models/worktree.py`: rebound the wire-vocabulary row to `mcp/src/agents_remember/models/worktree.py:38-39`, `_blocked_non_ff_result` to `integrate.py:320-338`, the checkpoint eligibility row (`CheckpointLanding`, `checkpoint_landing_eligibility`, `_route_commits`) to `integrate.py:390-424`, `425-461` and `527-539`, the `_route_commits` mention to `527-539`, and the `are reclaimed when the task edge is finalized.` quote to `integrate.py:643`. Claim wording unchanged; the cited declarations moved without changing what each claim states.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T08:45+00:00 — 260831-LOCR-L34 reachability repair: recorded the `CheckpointLanding`
   value and `checkpoint_landing_eligibility` as the one eligibility decision both surfaces read, the

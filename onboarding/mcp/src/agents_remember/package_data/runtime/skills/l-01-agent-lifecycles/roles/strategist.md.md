@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -33,11 +33,21 @@ After developer approval, the architect may dispatch `(sprint document, strategi
 reasoned topology choice or portfolio classification is absent/stale—not merely because a valid
 graph-less sprint has no persisted graph. The strategist is read-only: it analyzes portfolio
 dependencies, derives one effective priority per candidate, chooses either an evidence-backed
-explicit graph or the graph-less source-pair-selected atomic-sequential default, and drafts the
+explicit graph or the graph-less atomic-sequential default, and drafts the
 orchestration task.
 `message_parent` carries clarification or quo-vadis escalation to the architect, the architect rules
 the plan, and the orchestrator adopts it. The role never edits task docs, raises gates, mutates Git,
 or addresses an orchestrator occupant.
+
+The developer ruling governs that default: nothing serializes a graph-less sprint, because a sprint
+with no `executionGraph` declares no dependencies to honour — `atomic-sequential` describes the
+sprint's shape (every commanded master executes atomically), not a serialization mechanism, so
+independent atomic masters proceed concurrently, no master is held because another is selected, and
+no work is retired. Per-contract activation records each canonical contract's own
+`reconciling -> active` transition, so masters that share one protected source pair never share that
+state and one master's selection never pauses or excludes another; the closeout queue only projects
+each contract's own active/reconciling/vacant waiting candidates. Only an explicit graph's
+`predecessor-incomplete:` waves gate anything.
 
 ### Conventions
 
@@ -75,11 +85,12 @@ adoption.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-247 |
-| The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:116-133; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:213-392 |
-| The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-589 |
-| The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-198 |
-| The plan-review criteria re-derive effective priority and validate either topology choice. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-134 |
+| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-263 |
+| The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:119-136; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:218-421 |
+| The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-619 |
+| The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-215 |
+| The plan-review criteria re-derive effective priority and validate either topology choice. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-140 |
+| The shipped strategist role now states the graph-less default correctly: canonical commanded-master order is the stable tie-break and nothing serializes the masters. | "nothing serializes the masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:133-136 |
 
 ## Cross-Repo References
 
@@ -106,16 +117,22 @@ topology choice, and records dependency meaning, blast radius, priority, blocker
 reprioritization, and leaf moves in one canonical Judgment Register. When an explicit
 activity-on-node graph is justified, every selected relation cites evidence and its owning judgment
 id; otherwise the artifact records the reasoned graph-less atomic-sequential default. In that
-default canonical order is an equal-priority tie-break and selecting another master may logically
-pause the former without integration, retirement, or a fabricated dependency. Large size alone
+default canonical commanded-master order is the stable equal-priority tie-break and nothing
+serializes the masters — a graph-less sprint declares no dependencies, so independent masters
+proceed concurrently, no master is held because another is selected, and no work is retired — and no
+full-integration edge may be fabricated from the activation boundary. Large size alone
 never makes a master atomic.
 
 ## IAS Graph-Less Activation Choice
 
 The synchronized strategist role keeps dependency planning separate from runtime selection.
-Source-pair activation exposes one atomic master at a time but preserves the paused master's task,
-branch, worktree, and journal. Queue or selector state cannot veto task authoring or substitute for
-an evidence-backed relation judgment.
+Per-contract activation records each canonical contract's own `reconciling -> active` transition and
+serializes nothing across masters: masters that share one protected source pair hold independent
+records, so one master's selection never pauses, replaces, or excludes another, and the only
+activation waiting reason is `atomic-series-reconciling` for that contract's own in-flight
+reconciliation. The corrected shipped text says the same at its own `:133-136` — "canonical
+commanded-master order is the stable tie-break and nothing serializes the masters". Queue or
+selector state cannot veto task authoring or substitute for an evidence-backed relation judgment.
 
 ## 260821-DAGQC-L4 Optional Graph And Adoption Sequence
 
@@ -135,6 +152,21 @@ If an explicit graph is later chosen, complete every master attachment first and
 A successor strategy review now carries the sealed issue list, fixed/unfixed dispositions, and subset rule; it cannot perform a new portfolio sweep, add a lens or route, or turn an outside-list observation into a finding. Three rounds remain the ordinary maximum and further work requires developer authorization.
 
 ## Update History
+- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction (real body update for
+  this changed source): removed the stale source-pair-selected/source-pair-activation prose from the
+  Logic paragraph, the 260815-DAG-L2 topology paragraph ("selecting another master may logically
+  pause the former"), and the IAS Graph-Less Activation Choice section, and replaced it with the
+  developer ruling — nothing serializes a graph-less sprint, `atomic-sequential` describes sprint
+  shape (every commanded master executes atomically) rather than a serialization mechanism,
+  independent masters proceed concurrently, per-contract activation records each contract's own
+  `reconciling -> active` transition so masters sharing one code/memory source pair never share that
+  state, the queue only projects each contract's own active/reconciling/vacant waiting candidates,
+  and only explicit `executionGraph` waves gate on `predecessor-incomplete:`. Added the corrected
+  shipped citation at `strategist.md:133-136` ("nothing serializes the masters") and re-grepped every
+  other range: canonical `strategist.md:1-263`, `l-01 SKILL.md:119-136` and `:218-421`,
+  `orchestrator.md:1-619`, `orchestration-task.md:1-215`, `plan-review.md:1-140`. Source
+  documentation only; verification metadata remains closeout-owned and no acceptance or test claim
+  is made.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: A successor strategy review now carries the sealed issue list, fixed/unfixed dispositions, and subset rule; it cannot perform a new portfolio sweep, add a lens or route, or turn an outside-list observation into a finding. Three rounds remain the ordinary maximum and further work requires developer authorization.
 

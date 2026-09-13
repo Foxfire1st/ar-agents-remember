@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,9 @@ adoption. Edit the canonical template, then synchronize.
 - Each candidate has one effective priority: candidate override when present, otherwise the
   owning-master default; the two grades are never combined.
 - A graph-less atomic-sequential topology is valid: canonical order is an equal-priority tie-break,
-  while source-pair selection exposes one master and may pause/resume durable work. First graph
+  while per-contract activation lets sibling masters that share one protected source pair proceed
+  independently and serializes nothing, because a graph-less sprint declares no dependencies. First
+  graph
   adoption occurs only after every master attachment and uses one complete nodes-plus-evidence-edges
   batch.
 - This packaged artifact must remain byte-identical to the canonical template.
@@ -67,9 +69,10 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-198 |
-| The strategist role that fills this template as method phase 8 and chooses either topology. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-247 |
-| The plan-review criteria re-derive effective priority and validate either explicit-graph or graph-less topology. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-134 |
+| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-215 |
+| The strategist role that fills this template as method phase 8 and chooses either topology. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-263 |
+| The plan-review criteria re-derive effective priority and validate either explicit-graph or graph-less topology. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-140 |
+| The shipped template's derived-wave walk now says nothing serializes a graph-less sprint instead of the removed source-pair-selected exposure walk. | "nothing serializes a graph-less" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174 |
 
 ## Cross-Repo References
 
@@ -96,8 +99,11 @@ nature, relation, blast-radius, priority, blocker, and leaf-move sections are pr
 their owning judgment rows. When present, `executionGraph` carries exact `TaskDocumentRef` nodes
 and evidence-backed predecessor edges; deterministic waves and blocker positions are derived
 rather than persisted. Without it, the reasoned atomic-sequential default uses canonical
-commanded-master order only as an equal-priority tie-break and source-pair activation as the
-implementation-exposure boundary; another selection may pause durable work. Runtime
+commanded-master order only as an equal-priority tie-break and serializes nothing — a graph-less
+sprint declares no dependencies, so independent atomic masters proceed concurrently and no master is
+held because another is selected — while per-contract activation records each contract's own
+`reconciling -> active` transition and the queue only projects each contract's own
+active/reconciling/vacant waiting candidates. Runtime
 reprioritization records rationale, evidence, author, confidence,
 and supersession before queue selection changes.
 
@@ -128,15 +134,50 @@ all attachments and publish every node plus all evidence-backed edges in one bat
 
 ## IAS Graph-Less Walk Correction
 
-The generated template now asks the plan to record canonical tie-break order plus one
-source-pair-selected implementation exposure at a time. It explicitly permits logical pause and
-later resume, so graph absence cannot be misread as full-integration dependency.
+The generated template now asks the plan to record canonical tie-break order plus per-contract
+activation as the implementation-exposure boundary, where each canonical series contract owns its
+own record and the only waiting reason is `atomic-series-reconciling` for that contract's own
+in-flight reconciliation. A plan therefore may not treat a foreign master as a pause or a blocker,
+so graph absence cannot be misread as full-integration dependency.
+
+**Shipped text corrected (260831-LOCR-L36 round 2).** The mirrored runtime template this card
+describes —
+`mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` —
+now states the corrected rule in its own text at `:172-174`: the graph-less default is "canonical
+commanded-master tie-break; nothing serializes a graph-less sprint — it declares no dependencies, so
+independent atomic masters proceed concurrently and no master is held because another is selected".
+The graph-less choice therefore describes sprint shape (every commanded master executes atomically),
+not a scheduling mechanism; only an explicit `executionGraph`'s `predecessor-incomplete:` waves gate
+(developer ruling). The earlier shipped-source debt note is therefore removed — a repo-wide grep for
+`source-pair-scoped`, `source-pair-selected`, the "logically pauses the former master" admission,
+one-selected-master-at-a-time and source-pair activation wording returns 0 hits in the code worktree.
 
 ## CCR-L42 current candidate
 
 The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
 
 ## Update History
+- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
+  shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
+  the template's derived-wave walk now reads "nothing serializes a graph-less sprint — it declares no
+  dependencies, so independent atomic masters proceed concurrently and no master is held because
+  another is selected" at `:172-174`. Body prose now states the developer ruling (nothing serializes
+  a graph-less sprint; `atomic-sequential` is sprint shape, not a serialization mechanism;
+  per-contract activation records each contract's own `reconciling -> active` and the queue projects
+  only each contract's own active/reconciling/vacant waiting candidates; only explicit
+  `executionGraph` waves gate on `predecessor-incomplete:`), and every other range was re-grepped and
+  repointed to canonical `orchestration-task.md:1-215`, `strategist.md:1-263`, and
+  `plan-review.md:1-140`. Source documentation only; verification metadata remains closeout-owned and
+  no acceptance or test claim is made.
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote this card's graph-less
+  walk from one source-pair-selected implementation exposure with pause/resume to the per-contract
+  activation record — a sibling master sharing the protected source pair is never paused or blocked,
+  and the only waiting reason is `atomic-series-reconciling` — and recorded the shipped-source debt
+  that the frozen mirrored template still shows the removed source-pair-selected walk at its own
+  `:172-173`, flagged for a future code leaf. That debt observation is superseded by the
+  260831-LOCR-L36 round-2 entry above: the shipped text is corrected and the debt note is removed.
+  Source documentation only; verification metadata
+  remains closeout-owned and no acceptance or test claim is made.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
 

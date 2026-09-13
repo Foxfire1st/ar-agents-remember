@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ Each `VALID_*` frozenset is `frozenset(get_args(<Alias>))`, derived rather than 
 can only ever be added in one place. `VALID_MEMORY_MODES` was previously a hand-written set literal;
 `VALID_KINDS` is unchanged and is still a plain set (`kind` has no `Literal`).
 
-**These aliases are now declared in `models/worktree.py`** cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:30-32; mcp/src/agents_remember/models/worktree.py:39-40) and imported back here
+**These aliases are now declared in `models/worktree.py`** cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:29-39) and imported back here
 cit:(["from agents_remember.models.worktree import ("], mcp/src/agents_remember/worktrees/worktree_contract.py:19-26); this module derives the runtime `VALID_*` frozensets from them. The members are still
 added in exactly one place, which is the property this section describes — adding one here instead
 would recreate the drift it was written to prevent. `checkpointed` reached the persisted contract
@@ -443,6 +443,7 @@ contract publication; `closeout_door.update-provenance` is likewise no longer a 
 refusal. No compatibility reader for a legacy door was retained.
 
 ## Update History
+- 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shrank `models/worktree.py`: the wire-vocabulary alias citation (`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`) now resolves to the single range `models/worktree.py:29-39`, which holds every named alias. Claim wording unchanged.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: `IntegrationStatus` gained `checkpointed` in the
   persisted vocabulary, so `VALID_INTEGRATION_STATUSES` accepts the value the checkpoint landing
   route writes. Corrected this section's framing — the six `Literal` aliases are declared in
