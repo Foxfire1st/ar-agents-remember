@@ -193,11 +193,16 @@ memory-carryover vehicle.
   accepts repeated code commits; the newest matching row remains current authority.
 - Cleanup may release only an exact selected terminal contract and must do so before deleting the
   canonical contract pointer needed to prove identity.
-- **The stop is not a publication (260831-LOCR-L37).** The pause releases this contract's activation
-  selection and writes nothing else; it moves no ref, creates no commit, lands nothing, writes no
-  ledger row and advances no unstarted leaf, and the result proposes no continued execution. Publishing
-  a partial master is the separate `worktree_checkpoint_landing` route, which lands refs under
-  explicitly required developer approval. The two must never be presented or reached as each other.
+- **The stop is not a publication (260831-LOCR-L37), and a master is not sealed by its own landing
+  (260831-LOCR seal removal).** The pause releases this contract's activation selection — or reports
+  `atomic-series-already-vacant` when it holds none — and writes nothing else; it moves no ref,
+  creates no commit, lands nothing, writes no ledger row and advances no unstarted leaf, and the result
+  proposes no continued execution. Publishing a partial master is the separate
+  `worktree_checkpoint_landing` route, which lands refs under explicitly required developer approval.
+  The two must never be presented or reached as each other. No closeout, integration or cleanup cell
+  refuses a leaf either: the deleted `atomic_series_seal.py` predicate that read those cells as a
+  child-admission seal is gone, so a master that took a checkpoint landing
+  (`integration_status="checkpointed"`) still admits the next leaf.
 
 ## Repo-Internal References
 
@@ -205,7 +210,8 @@ memory-carryover vehicle.
 | --- | --- | --- |
 | Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:111-128; mcp/src/agents_remember/worktrees/services.py:131-141; mcp/src/agents_remember/worktrees/services.py:144-151 |
 | The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
-| The route's stop: release this contract's selection, refuse a non-series contract, and report a paused master with no proposed next call. | `pause_result`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:66-109; mcp/src/agents_remember/worktrees/modules/pause.py:112-129; mcp/src/agents_remember/worktrees/modules/pause.py:132-148 |
+| The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. | `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/modules/pause.py:131-151; mcp/src/agents_remember/worktrees/modules/pause.py:153-171; mcp/src/agents_remember/worktrees/modules/pause.py:173-191; mcp/src/agents_remember/worktrees/modules/pause.py:193-209 |
+| The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
 | The stop cannot reach a publication, asserted structurally over the module's import closure. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
 | Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. | `observe_atomic_series`; `_require_record_identity`; "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142 |
 | Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; "def atomic_series_admission_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
@@ -500,10 +506,58 @@ publication and denies being the pause (L36); L37 adds the stop the description 
 `mcp/tests/test_pause_stop_only_end_to_end.py` (integration lane) is the boundary proof over one real
 temporary Git world holding two atomic masters: it measures both repositories' refs and complete object
 databases, the coordination tree, both worktrees and every task document before and after the public
-pause, and covers the hand-back payload, the three refusals, leave-idempotence, per-contract record
-isolation and resume.
+pause, and covers the hand-back payload, the already-stopped success a never-selected master produces,
+the leaf and foreign-record refusals, leave-idempotence, per-contract record isolation and resume.
+
+## Route Impact: Child-Admission Seal Removal And The Already-Vacant Stop (260831-LOCR)
+
+**The seal is deleted, and a master is no longer locked by its own landing.** L37 added a test in its
+own boundary suite. This pass removed the guard it revealed:
+`mcp/src/agents_remember/worktrees/atomic_series_seal.py` (the whole module, including its zero-caller
+`require_series_path_accepting_leaves`) was the "one irreversible child-admission seal for an atomic
+series". `require_series_accepting_leaves` refused a new or reopened atomic child leaf whenever the
+parent series' `(closeout_status, integration_status, cleanup)` was not
+`("not-started", "not-started", "pending")`. When `checkpointed` joined the integration vocabulary,
+that same predicate also sealed every master that took a checkpoint landing — so after its first
+landing a master could never admit another leaf, and a paused master was a dead master. The developer
+ruled the seal out entirely: a master is meant to be paused and resumed, never locked by its own
+landing. Its call sites in `start_contract.py` (`ensure_master_series_contract`'s dry-run and locked
+apply arms, and `_parent_series_contract`), `start.py`, `reopen.py` and
+`integration_branch_authority.py` are gone; the helper formerly named
+`require_parent_series_accepting_leaves` is now `require_parent_series` and resolves and validates the
+exact parent series without deciding whether it accepts leaves. `leaf_admission_operation` survives as
+the refusal label.
+
+**The pause now succeeds when the master holds no selection.** `worktrees/modules/pause.py` answers
+`atomic-series-activation-selection-missing` itself: after `observe_atomic_series` confirms the record
+is `vacant` (the ordinary state of a master between landings, and the state a release leaves behind),
+it returns `state`/`status` `atomic-series-already-vacant`, `paused: true`, the same stop next step,
+and publishes nothing — explicitly, never silently. An unreadable record and a record naming another
+master stay refusals, because neither proves the master is inactive, and
+`release_atomic_series_selection` is unchanged because explicit sync cancellation still requires an
+existing exact selection.
+
+**`mcp/tests/test_lifecycle_playthrough_end_to_end.py` (integration lane) is the regression proof.**
+It plays the lifecycle in order on one real temporary Git world — master open and unselected → leaf
+commanded and started → leaf closed out → leaf landed through the public `worktree_integrate` →
+unfinished master checkpointed through the public `worktree_checkpoint_landing` → master paused through
+the public `worktree_pause` with both repositories' ref maps unchanged → master resumed through the
+ordinary attach route → a leaf commanded *after* the landing still starts on a new base. Step 8 is the
+regression: no single-boundary case could have seen it, because every operation was correct on its
+own. Leaf start and closeout use the fixture's structural equivalents, which the module docstring
+states; the master-level beats are the registered tools.
 
 ## Update History
+- 2026-09-13T20:42+02:00 — Recorded the child-admission seal removal and the already-vacant stop on this
+  route (uncommitted 260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): the
+  deleted `atomic_series_seal.py` and its call sites, the `require_parent_series` rename, the pause's
+  `atomic-series-already-vacant` success for a master holding no selection (with the unreadable/foreign
+  refusals kept and `release_atomic_series_selection` unchanged), and the new ordered playthrough as
+  the regression proof. Widened the stop invariant to state that no lifecycle cell refuses a leaf,
+  updated the load-bearing reference rows (`pause_result` and friends to `pause.py:80-128`/`173-191`/`193-209`
+  after the module grew to 209 lines, plus a `require_parent_series` row), and corrected the
+  `test_pause_stop_only_end_to_end.py` description. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the stop-only pause on this route — the
   `modules/pause.py` delegation to the existing release authority, the paused payload and its
   proposal-free `nextStep`, the per-contract isolation that leaves a sibling's record byte-identical, the

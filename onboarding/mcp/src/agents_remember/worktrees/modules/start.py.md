@@ -48,6 +48,24 @@ takes the observation alone and returns only `atomic-series-reconciling`; a vaca
 `active` record, and a foreign master are all explicitly not waiting reasons. Genuine wave
 dependencies remain with the sprint execution graph's own `predecessor-incomplete:` reasons.
 
+**The child-admission seal is gone, so this module's parent-series guards are resolution only
+(260831-LOCR seal removal).** Both call sites — `attach_result` (code line 176) and the apply-time
+start preflight inside `_plan_start_enclosure` (code line 757) — now import and call
+`require_parent_series` cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330)
+instead of `require_parent_series_accepting_leaves`. The helper still resolves and validates the
+leaf's exact parent series (organizational direct-super work under a sprint graph returns `None`;
+`_require_atomic_master` refuses a non-atomic master; a missing parent contract and a stale series
+identity still raise), but it no longer decides whether that series accepts leaves. The guard it
+used to call, `worktrees/atomic_series_seal.py::require_series_accepting_leaves`, is deleted with its
+module: it read the parent's `(closeout_status, integration_status, cleanup)` cells as a seal, which
+once `checkpointed` existed also sealed every master that took a checkpoint landing. A master is
+meant to be paused and resumed, never locked by its own landing, so neither `worktree_attach` nor
+`worktree_start` refuses a leaf because of a lifecycle cell.
+
+`mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof: it walks master open →
+leaf start → leaf closeout → leaf landing → checkpoint → pause → attach, then starts a leaf commanded
+*after* the landing.
+
 **`start_result()` is now four lines (260731-EFA-L2)** — resolve context, build the contract, then
 three stages, each of which owns one decision and can return early:
 
@@ -248,6 +266,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:167-207 |
+| The renamed parent-series resolver both start-side guards now call (attach at code line 176, the `_plan_start_enclosure` preflight at code line 757); it resolves and validates the exact parent series and no longer accepts or refuses leaves. | `require_parent_series`; `require_parent_series` | mcp/src/agents_remember/worktrees/modules/start.py:176-179; mcp/src/agents_remember/worktrees/modules/start.py:757-757 |
+| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-169 |
 | Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:137-164; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-445 |
 | The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:32-113 |
@@ -319,6 +339,16 @@ the same reservation; conflicts name task-authority or recovery actions. A succe
 the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
+
+- 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
+  `ar/260831_lifecycle-owned-completion-relay`): recorded that both start-side parent-series guards —
+  `attach_result` (code line 176) and the apply-time preflight inside `_plan_start_enclosure` (code
+  line 757) — now call `require_parent_series` instead of `require_parent_series_accepting_leaves`,
+  that the guard they replace (`worktrees/atomic_series_seal.py::require_series_accepting_leaves`) is
+  deleted with its module, and that neither `worktree_attach` nor `worktree_start` can now refuse a
+  leaf because of a parent lifecycle cell. Added the reference row and the playthrough module as the
+  regression proof. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 
 - 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36: re-keyed the atomic-series activation account from per protected source pair to per series contract. Attach/start now describe `activate_atomic_series_contract` as transitioning the requested parent's OWN contract-keyed activation record to `reconciling` and then `active`, with no foreign master paused, selected, or named as a reason to wait; `activation_waiting_reason` takes the observation alone and returns only `atomic-series-reconciling`. Corrected the Series-Contract Notes claim that selection is "disposable source-pair authority", the DAG-L4 "source-pair integration authority" wording, and the CLIVE "source-pair operation" wording. Rebound two stale reference rows: `atomic_series_status_projection` now cites `atomic_series_activation.py:434-445` (was `502-502`, where the symbol no longer appears) and `status_payload` now cites `guidance.py:502-504` (was `494-496`, which is `projected_status_payload`'s range); the guidance row's source order was aligned with its anchors. This records source documentation only; verification metadata remains closeout-owned and no acceptance claim is made.
 

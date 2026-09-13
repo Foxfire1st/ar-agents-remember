@@ -51,10 +51,10 @@ ordinary workbench or weakening its task-derived ownership.
 
 ## 260831-LOCR-L30 Abandon Refuses A Checkpointed Master
 
-`_require_series_task_terminal` cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:233-279) is the guard shared by the cleanup and abandon arms of
+`_require_series_task_terminal` cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-278) is the guard shared by the cleanup and abandon arms of
 `require_terminal_worktree`. It refuses to retire a series' integration branch when the master's task
 document is `abandoned` **and** `contract.integration_status` is in `{"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:266-266).
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265).
 
 Abandoning a master asserts that none of its work was taken. Once part of it landed — finally
 (`completed`) or at a checkpoint of a master that is still open (`checkpointed`) — that assertion is
@@ -63,6 +63,38 @@ and complete the master. The refusal message was widened with the value to match
 master already landed work into its source branch", because `checkpointed` is precisely the case a
 partial landing used to hide — the master's line was already upstream while the contract still read
 `not-started`, and that is what made a partial master's retirement look safe.
+
+## Child-Admission Seal Removal And The `require_parent_series` Rename
+
+The function formerly named `require_parent_series_accepting_leaves` is now
+`require_parent_series` (code lines 309-330), and the seal call inside it is gone. The helper resolves
+an atomic leaf's exact parent series and validates its identity: it returns `None` for organizational
+direct-super work under a sprint graph
+cit:(["authority.sprint_ref is not None and authority.execution_nature == \"organizational\""], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:317-317),
+refuses a non-atomic master through `_require_atomic_master`, raises
+`"{operation} requires its exact parent series contract"` when the parent contract file is missing,
+loads it, and proves the series identity against the leaf's task root and sprint branch. It no longer
+decides whether that series accepts leaves, because the guard it used to call — the deleted
+`worktrees/atomic_series_seal.py::require_series_accepting_leaves` — is gone together with its import.
+
+The deleted predicate refused a new or reopened atomic child leaf whenever the parent series'
+`(closeout_status, integration_status, cleanup)` was not `("not-started", "not-started", "pending")`.
+Once `checkpointed` joined the integration vocabulary, that same reading sealed every master that took
+a checkpoint landing, so a master could never admit another leaf after its first landing. The
+developer ruled the seal out entirely — a master is meant to be paused and resumed, never locked by
+its own landing — so the module was deleted rather than narrowed. Two docstrings here lost the word
+"open" with it: `require_parent_series` now reads "Return an atomic leaf's parent series, or None for
+organizational direct-super work", and `atomic_leaf_parent` (code lines 333-345) reads "Resolve the
+exact atomic owner before deferring leaf-wide acceptance".
+
+Both in-module callers follow the rename and nothing else changes: `atomic_leaf_parent` at line 342
+and `_leaf_target` at line 829. Leaf admission still requires the parent's contract-keyed activation
+to have reconciled and become `active`; that authority lives in the activation plane, not in a
+lifecycle-cell seal.
+
+`mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof: it plays the lifecycle
+in order on one real temporary Git world and asserts that a leaf commanded after a checkpoint landing
+still starts.
 
 ## Invariants And Boundaries
 
@@ -83,11 +115,14 @@ partial landing used to hide — the master's line was already upstream while th
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public census and target projection derive exact protected surfaces. | `integration_surfaces`, `integration_targets` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:65-68; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:69-134 |
-| Topology publication validates candidate ownership before task facts can create a protected collision. | `require_topology_publication_authority`, `require_topology_migration_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:443-478; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:479-506 |
-| New-surface validation recognizes only the exact canonical atomic series contract and branch. | `_atomic_surface_has_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:584-600 |
-| Sync admits either an ordinary leaf workbench or exact task-owned series authority. | `require_sync_worktree` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:350-361 |
-| The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state. | `_require_series_task_terminal`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:233-279; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:266-266 |
+| Public census and target projection derive exact protected surfaces. | `integration_surfaces`, `integration_targets` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:64-67; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:68-133 |
+| Topology publication validates candidate ownership before task facts can create a protected collision. | `require_topology_publication_authority`, `require_topology_migration_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:441-476; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:477-504 |
+| New-surface validation recognizes only the exact canonical atomic series contract and branch. | `_atomic_surface_has_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:582-598 |
+| Sync admits either an ordinary leaf workbench or exact task-owned series authority. | `require_sync_worktree` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:348-359 |
+| The parent-series resolver renamed from `require_parent_series_accepting_leaves`: it resolves and validates the exact parent series (organizational direct-super returns `None`; a missing contract and a stale identity raise) and no longer consults a child-admission seal. | `require_parent_series`; "authority.sprint_ref is not None and authority.execution_nature == \"organizational\"" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:317-317 |
+| The atomic-owner resolver that follows the rename at its call site, and the leaf target that follows it at integration. | `atomic_leaf_parent`; `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:333-345; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:829-833 |
+| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-169 |
+| The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state. | `_require_series_task_terminal`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-278; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265 |
 
 ## Docs References
 
@@ -111,7 +146,7 @@ the exact accepted task generation remains the input to one resolver boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | `require_topology_publication_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:443-478 |
+| Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | `require_topology_publication_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:441-476 |
 
 ## 260821-CLIVE Queue-Binding Removal
 
@@ -128,6 +163,25 @@ Topology collision and deleted-owner repair logic moved into dedicated owners; t
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+- 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
+  `ar/260831_lifecycle-owned-completion-relay`): recorded that
+  `require_parent_series_accepting_leaves` is renamed `require_parent_series` (code lines 309-330),
+  that the deleted `worktrees/atomic_series_seal.py::require_series_accepting_leaves` call and its
+  import are gone, and that the helper now resolves and validates the exact parent series without
+  deciding whether it accepts leaves. Recorded the two docstring corrections that dropped the word
+  "open", the surviving behaviour (organizational direct-super returns `None`, `_require_atomic_master`
+  refuses a non-atomic master, a missing parent contract and a stale series identity still raise), the
+  two in-module call sites (lines 342 and 829), and the playthrough module as the proof that a master
+  is not locked by its own landing. Added two reference rows. Also re-derived every other citation on
+  this card: the change removed one import above the former line 233 and one call above the former
+  line 330, so ranges before that call shifted by one and ranges after it by two —
+  `_require_series_task_terminal` 233-279 → 232-278 with its
+  `contract.integration_status in {"completed", "checkpointed"}` anchor 266-266 → 265-265,
+  `integration_surfaces`/`integration_targets` 65-68 and 69-134 → 64-67 and 68-133,
+  `require_sync_worktree` 350-361 → 348-359, `require_topology_publication_authority` 443-478 →
+  441-476, `require_topology_migration_authority` 479-506 → 477-504 and `_atomic_surface_has_series`
+  584-600 → 582-598. Claim wording is unchanged for those rows; only the ranges moved. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: `checkpointed` keeps an unfinished master's
   landed content honest (the checkpoint is a partial publication, not a pause). Wording only; the
   abandon refusal this invariant protects is unchanged and no verification stamp advanced.

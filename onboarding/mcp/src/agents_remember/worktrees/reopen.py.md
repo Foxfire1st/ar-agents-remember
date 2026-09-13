@@ -36,6 +36,16 @@ and cleanup all `completed`, and neither the code nor memory worktree may still 
 on disk — anything else returns a `blocked` payload (returncode 2) listing every
 blocker.
 
+`_reopen_preflight_refusal` (code lines 315-388) is the gate both `reopen_task` (line 220) and its
+apply publication (line 527) run before anything is rewritten. It returns the `blocked` payload for a
+non-terminal leaf, then resolves the leaf's parent series through
+`require_parent_series(contract, operation="task_reopen")` and converts a `RuntimeError` into a
+`blocked` result whose summary reads "Reopen refused before resetting task state", then proves the
+external-memory ledger mapping. The helper this call names was renamed from
+`require_parent_series_accepting_leaves`; it still resolves and validates the parent series, and it no
+longer decides whether that series accepts leaves
+cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330).
+
 On the happy path the contract rewrite is now **two nested calls, split by what the
 type checker can see**:
 
@@ -90,6 +100,8 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:75-89; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:184-198; mcp/src/agents_remember/tasks/leaf_doc.py:201-226 |
 | The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:570-570 |
 | Reopen publishes the frozen-landing clear, task resets, and contract rewrite under one task-fact CAS and reports projection refresh separately. | `_publish_reopen_transition`; "published = publish_task_fact_mutation(" | mcp/src/agents_remember/worktrees/reopen.py:471-492 |
+| The shared preflight gate: the terminal-leaf blocker list, the parent-series resolution the seal removal renamed, and the external-ledger mapping proof. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:315-388 |
+| The parent-series resolver the preflight now names: it resolves and validates the exact parent series and no longer accepts or refuses leaves. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
 | The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
 | The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. | "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:39-39 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
@@ -147,7 +159,34 @@ exact original-source validation and rollback-safe document writes. Accepted tas
 authoritative; dry-run and apply report the same affected projection scopes/effects, and a rebuild
 failure does not undo the reopen batch.
 
+## Child-Admission Seal Removal (260831-LOCR)
+
+Reopen no longer consults the deleted `worktrees/atomic_series_seal.py`. That module refused a new or
+reopened atomic child leaf whenever the parent series' `(closeout_status, integration_status,
+cleanup)` was not `("not-started", "not-started", "pending")`; once `checkpointed` joined the
+integration vocabulary, the same predicate also sealed every master that took a checkpoint landing.
+The developer ruled the seal out entirely — a master is meant to be paused and resumed, never locked
+by its own landing — so the module is gone rather than narrowed.
+
+This module's single call site is the rename only: `_reopen_preflight_refusal` now calls
+`require_parent_series` cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330)
+in place of `require_parent_series_accepting_leaves`. The helper resolves the exact parent series
+(still refusing an organizational-versus-atomic mismatch, a missing parent contract, or a stale
+series identity) and returns it; it no longer accepts or refuses leaves. Reopen's own gate is
+unchanged: `_reopen_blockers` still requires a fully landed leaf, and the parent-series `RuntimeError`
+still becomes a `blocked` result.
+
+`mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof for the removal.
+
 ## Update History
+- 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
+  `ar/260831_lifecycle-owned-completion-relay`): recorded that the import and call in
+  `_reopen_preflight_refusal` now name `require_parent_series` instead of
+  `require_parent_series_accepting_leaves`, described what that preflight gate actually does (blocker
+  list, parent-series resolution, external-ledger mapping), and recorded that the deleted
+  `atomic_series_seal.py` no longer seals reopen — a master that took a checkpoint landing no longer
+  locks its own leaves. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 - 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shifted `models/worktree.py`: the `class ContractCells:` / `def amend_contract(` / `CleanupStatus = Literal[` anchors were re-paired with the files that actually carry them — `worktrees/worktree_contract.py:180-189`, `worktrees/worktree_contract.py:197-225` and `models/worktree.py:39-39`. Claim wording unchanged.
 - 2026-09-13T12:29:52+00:00: Generated citation repair: "CleanupStatus = Literal[" repointed to mcp/src/agents_remember/models/worktree.py:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot 608ec827a174d194b141ff2daa61dd8e3b6b44611d03fb561dc0b7bb0223223f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T20:53:11+00:00: Generated citation repair: "CleanupStatus = Literal[" repointed to mcp/src/agents_remember/models/worktree.py:40-40. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.

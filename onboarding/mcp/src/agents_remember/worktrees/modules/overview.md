@@ -1111,16 +1111,42 @@ closeout or ledger module, and writes exactly one thing — the activation snaps
 contract is no longer selected.
 
 The refusals come from the release authority and are explained, never suppressed: an addressed record
-this contract does not own refuses as `atomic-series-activation-release-unreadable`, a contract with no
-selection refuses as `atomic-series-activation-selection-missing`, and a non-series contract is refused
-here as `pause-requires-atomic-master` because a leaf owns no selection of its own. Every refusal
-returns `paused: False` and, like the success payload, proposes no next call.
+this contract does not own refuses as `atomic-series-activation-release-unreadable`, and a non-series
+contract is refused here as `pause-requires-atomic-master` because a leaf owns no selection of its own.
+Every refusal returns `paused: False` and, like the success payload, proposes no next call.
 
 Read the file's own card ([`pause.py.md`](pause.py.md)) for the split against
 `worktree_checkpoint_landing`, which remains the separate publication in `integrate.py`, and for the
 measured import-closure evidence that the stop cannot reach a publication.
 
+## 260831-LOCR-L38 The Already-Vacant Stop
+
+A master holding no selection is already stopped — that is the ordinary state of a master between
+landings — so the pause reports it as the success it is instead of failing an intent it has just
+satisfied. `_already_stopped_result` answers the release authority's
+`atomic-series-activation-selection-missing` status itself, but only after `observe_atomic_series`
+confirms the record is `vacant`; the success is explicit (`atomic-series-already-vacant`, `paused: true`,
+`_ALREADY_VACANT_SUMMARY` naming that no selection was held) so a caller can tell it apart from a real
+release, and it writes nothing at all. This is the one release outcome the pause answers itself:
+`_RELEASE_REFUSAL_DETAIL` no longer carries a `selection-missing` entry. An unreadable record and a
+record naming another master stay refusals, because neither proves the master is inactive, and
+`release_atomic_series_selection` is unchanged because explicit sync cancellation still requires an
+existing exact selection.
+
+The companion change is the removal of the child-admission seal: `worktrees/atomic_series_seal.py` and
+its `require_series_accepting_leaves` predicate are deleted, so no closeout/integration/cleanup cell
+refuses a leaf and a master that took a checkpoint landing can still admit the next one.
+`mcp/tests/test_lifecycle_playthrough_end_to_end.py` plays the whole lifecycle in order and proves it.
+
 ## Update History
+- 2026-09-13T20:42+02:00 — Child-admission seal removal and the already-vacant stop (uncommitted
+  260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): corrected the L37 paragraph
+  that said a contract with no selection "refuses as `atomic-series-activation-selection-missing`" — the
+  pause now answers that status itself as the `atomic-series-already-vacant` success after confirming
+  the observation is `vacant`, so it is no longer among the explained refusals. Added the L38 section
+  recording the already-stopped branch, the unchanged release authority, and the deleted
+  `atomic_series_seal.py` child-admission seal with the ordered playthrough as its regression proof.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new `modules/pause.py` — the stop-only pause
   that delegates to the existing release authority, adds no second scheduling or publication authority,
   performs no Git, and returns a proposal-free result. Corrected two paragraphs that still used the
