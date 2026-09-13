@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
-| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -18,18 +18,23 @@
 
 This route owns the durable worktree-enclosure and protected-source coordination primitives beneath
 the public lifecycle modules. The current architecture adds two related but distinct owners:
-source-pair-scoped atomic-series activation decides which live master may expose implementation
+contract-scoped atomic-series activation decides whether each live master may expose implementation
 work, while a contract-addressed sync transaction reconciles code and external-memory sources
-without depending on a readable task document for its in-flight journal.
+without depending on a readable task document for its in-flight journal. Scheduling itself carries no
+cross-master exclusion: a graph-less sprint's `atomic-sequential` default describes the sprint's
+shape — every commanded master executes atomically — and serializes nothing, because such a sprint
+declares no dependencies, and per-contract activation never pauses or excludes a sibling.
 
 ## Hot Path Summary
 
-`activation/atomic_series_activation.py` is the single disposable selection authority for one
-normalized source pair; its release and terminal siblings own exact vacancy. The selecting
-transaction publishes `reconciling`, runs exact source sync, and publishes `active` only after both
-required bases are current. Root-level `sync_transaction.py` drives the journaled state machine;
-focused state, authority, Git, recovery, result, and source-refresh modules own their respective
-proof and response boundaries.
+`activation/atomic_series_activation.py` is the single disposable selection authority, keyed per
+series contract by `contract_fingerprint`; its release and terminal siblings own exact vacancy. The
+selecting transaction publishes `reconciling`, runs exact source sync, and publishes `active` only
+after both required bases are current. Two sprint-commanded masters that share one protected source
+pair therefore hold independent records, and neither one's state is the other's reason to wait; the
+graph-less `atomic-sequential` default adds no dependency between them and serializes nothing.
+Root-level `sync_transaction.py` drives the journaled state machine; focused state, authority, Git,
+recovery, result, and source-refresh modules own their respective proof and response boundaries.
 
 Master-series bootstrap observes its transient root journal and durable series contract under the
 same existing per-master bootstrap mutex on apply. A concurrent starter therefore sees either the
@@ -43,7 +48,7 @@ The route-review owner now supplies one pure projection for observed review refu
 start/admission and direct closeout reuse it to preserve the concrete status, expected/observed
 facts, and exact contract-bound task-document address; the caller supplies any review payload. The
 projection does not alter route altitude, create review records, or weaken candidate currentness.
-The activation owner likewise exposes source-pair observations and bounded admission evidence while
+The activation owner likewise exposes per-contract observations and bounded admission evidence while
 leaving selector and sync mutation in their existing transaction owners.
 
 ## L30 Quality Publication Boundary
@@ -56,7 +61,7 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
 
 | Path | Role |
 | --- | --- |
-| `activation/` | source-pair selector, selecting transaction, exact release, and terminal bridge |
+| `activation/` | contract-scoped selector, selecting transaction, exact release, and terminal bridge |
 | `sync_transaction*.py` | resumable source synchronization, journal, Git proof, authority refs, and recovery |
 | `worktree_contract.py` and enclosure helpers | canonical worktree/enclosure authority used by child lifecycle routes |
 | `modules/` | public lifecycle command composition |
@@ -74,7 +79,8 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
 
 ## Structures Found Here
 
-- `AtomicSeriesSourcePair` and one fingerprint-addressed activation record per protected pair.
+- One `contract_fingerprint`-addressed activation record per series contract, so masters that share
+  one protected source pair stay independent.
 - `vacant`, `reconciling`, and `active` selector states; `unreadable` is an observation, not a
   selectable state.
 - One stable `.lifecycle/sync-operation.json` record per worktree enclosure plus pinned
@@ -86,8 +92,9 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
 
 1. A selecting public start/attach/dispatch or sync operation identifies one canonical series
    contract and derives its normalized code/memory source pair.
-2. Selection atomically replaces the pair's prior snapshot with this master in `reconciling`.
-   Other live series remain intact and merely project as paused.
+2. Selection atomically replaces this contract's own activation record with this master in
+   `reconciling`. Another contract's record is untouched, and only this contract's reconciling
+   state makes it wait.
 3. The sync transaction pins exact base, pre-sync, and source commits, journals admission below the
    enclosure root, and advances code then memory under repository integration authority.
 4. A dirty moving side's candidate is parked into the transaction before the carry and returned
@@ -98,10 +105,10 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
 5. Finalization writes the new base pair and terminal journal before removing temporary worktrees
    and authority refs. If the official source moves again, the completed generation reports that
    fact and a new generation may be admitted.
-6. Atomic implementation becomes visible only after exact current bases are proven and selection
-   advances to `active`.
-7. Terminal cleanup attempts to vacate only the exact selected terminal contract. A missing,
-   unreadable, vacant, or different selection is preserved and cannot be cleared by the old master.
+6. Atomic implementation becomes visible only after exact current bases are proven and this
+   contract's selection advances to `active`.
+7. Terminal cleanup attempts to vacate only this exact contract's own record. A missing, unreadable,
+   vacant, or non-matching record is preserved and cannot be cleared by another master.
 8. A fresh ordinary series integration has no leaf closeout door and records that authority as
    `not-applicable`; it is not direct execution. Direct landing remains the policy-gated delivery
    route for an explicitly selected leaf without an enclosure, while fresh leaf integration still
@@ -132,7 +139,7 @@ memory-carryover vehicle.
 
 1. Refresh remote-tracking evidence outside the integration lock.
 2. Re-read the canonical contract under source-pair integration authority.
-3. Publish exact selection as `reconciling`.
+3. Publish this contract's exact selection as `reconciling` in its own fingerprinted record.
 4. Complete or resume the source-pair sync transaction.
 5. Publish `active` only when contract bases equal current admitted source tips.
 
@@ -149,10 +156,10 @@ memory-carryover vehicle.
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
-| `activation/atomic_series_activation.py` | selector store | single source-pair activation authority and strict observation | covered |
+| `activation/atomic_series_activation.py` | selector store | single per-contract activation authority and strict observation | covered |
 | `activation/atomic_series_activation_release.py` | selector transition | exact cancellation and terminal vacancy | covered |
 | `activation/atomic_series_activation_transaction.py` | admission state machine | binds selection to exact sync-before-exposure | covered |
-| `activation/atomic_series_activation_terminal.py` | terminal bridge | prevents paused cleanup from clearing a newer selection | covered |
+| `activation/atomic_series_activation_terminal.py` | terminal bridge | releases only this exact contract's record | covered |
 | `sync_source_refresh.py` | pre-lock evidence | shared bounded upstream refresh without local authority | covered |
 | `sync_transaction.py` | transaction driver | public start/resume/continue/cancel routing | covered |
 | `sync_transaction_state.py` | stable journal | state survives task/contract readability failures | covered |
@@ -165,9 +172,15 @@ memory-carryover vehicle.
 
 - Task authoring is upstream of scheduling and selection; neither activation nor queue state
   may veto it. Its exact source publication still uses the canonical task-publication lock.
-- The activation snapshot is disposable selection, not a lifecycle journal or retirement record.
-- Multiple live series contracts for one source pair are normal. Selection change auto-pauses old
-  work without deleting or terminalizing it.
+- The activation snapshot is disposable per-contract selection, not a lifecycle journal or
+  retirement record; `reconciling` is the only waiting reason, and vacant/active records are normal
+  rather than waits.
+- Multiple live series contracts for one protected source pair are normal, and each owns its own
+  activation record. Selecting one master neither pauses, deletes, nor terminalizes another.
+- A graph-less sprint carries no serialization authority: `atomic-sequential` describes the sprint's
+  shape (every commanded master executes atomically) and declares no dependency, so nothing
+  serializes its masters. Source-pair wording on this route belongs to the sync/integration plane,
+  which genuinely remains per pair.
 - Sync owns lifecycle evidence in the stable enclosure-root journal and Git refs; the queue owns
   none of it.
 - Normal readers never infer selection or sync state from legacy files, task text, queue rows, or
@@ -183,9 +196,9 @@ memory-carryover vehicle.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:111-128; mcp/src/agents_remember/worktrees/services.py:131-141; mcp/src/agents_remember/worktrees/services.py:144-151 |
-| The activation record is a strict source-pair fingerprinted snapshot with explicit selection states. | `AtomicSeriesSourceRef`; `AtomicSeriesSourcePair`; `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-30; mcp/src/agents_remember/models/structural/atomic_series_activation.py:33-39; mcp/src/agents_remember/models/structural/atomic_series_activation.py:42-54; mcp/src/agents_remember/models/structural/atomic_series_activation.py:57-72 |
-| Selection observation treats absence as vacant and validates the exact canonical series/source pair rather than inferring from task or queue state. | `atomic_series_source_pair`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:131-153; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-213 |
-| Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121 |
+| The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
+| Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. | `observe_atomic_series`; `_require_record_identity`; "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142 |
+| Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; "def atomic_series_admission_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
 | The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570 |
 | Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-264; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:267-284 |
@@ -220,7 +233,7 @@ No Domain Documentation source is configured for this memory root.
 
 | Route | Why It Has Its Own Overview |
 | --- | --- |
-| [`activation/overview.md`](activation/overview.md) | source-pair selector, reconciliation-bound admission, and exact vacancy |
+| [`activation/overview.md`](activation/overview.md) | contract-scoped selector, reconciliation-bound admission, and exact vacancy |
 | [`integration/overview.md`](integration/overview.md) | protected-source integration and lifecycle journals |
 | [`modules/overview.md`](modules/overview.md) | public worktree command composition |
 | [`queue/overview.md`](queue/overview.md) | disposable closeout scheduling projection |
@@ -292,7 +305,7 @@ with typed status/detail; no worktree-local fallback remains.
 
 ## Integrated IAS Recovery Contract
 
-The default application bundle installs `PreparedCloseoutContinuation`, composing the memory-certification producer and prepared finalizer through the existing downward port. The closeout child owns resumption of selected private outputs and original C/M/L publication. Source-pair selection, synchronization, ledger authority and coordinator isolation are unchanged; an absent capability in an incomplete custom composition still refuses.
+The default application bundle installs `PreparedCloseoutContinuation`, composing the memory-certification producer and prepared finalizer through the existing downward port. The closeout child owns resumption of selected private outputs and original C/M/L publication. Per-contract activation selection, synchronization, ledger authority and coordinator isolation are unchanged; an absent capability in an incomplete custom composition still refuses.
 
 ## CCR-L42 Refresh Validation Parity
 
@@ -397,12 +410,15 @@ already-`Completed` master. L30's own note admitted the real ref move was never 
 which is how it survived.
 
 - `worktrees/series_closeout.py` gained `SeriesCheckpointRefs` / `capture_series_checkpoint_refs`
-  (the live code and memory work-branch tips plus their proved ledger mapping, proved through the same
-  `exact_series_memory_closeout` the final route uses) and `require_series_checkpoint_authority` (the
-  master-complete refusal, one definition with two callers). `publish_series_checkpoint_under_authority`
+  (the live code and memory work-branch tips plus their proved ledger mapping, proved through
+  `exact_series_memory_closeout`, the exact-mapping reader) and `require_series_checkpoint_authority`
+  (the master-complete refusal, one definition with two callers). `publish_series_checkpoint_under_authority`
   now **requires** `expected` and revalidates it against the live tips at publication
   (`atomic-series-checkpoint-candidate-moved`), so a candidate that moves between preview and apply
-  refuses instead of landing a pair the preview never showed.
+  refuses instead of landing a pair the preview never showed. This route is a partial **publication**,
+  not a pause: the ref move puts the master's committed line on the protected source branch under
+  explicit developer approval, while pausing a master publishes nothing and moves no ref
+  (260831-LOCR-L36).
 - `worktrees/modules/integrate.py` gained `CheckpointLanding` and
   `checkpoint_landing_eligibility` — **the ONE eligibility decision both the preview and the apply
   read** — plus `_checkpoint_dry_run_result`, the shared `_require_ledger_projection`, `_route_commits`,
@@ -435,6 +451,22 @@ for the recorded `UNREPRODUCED FLAKE` note above
 `test_checkpoint_landing_requires_explicit_developer_approval`.
 
 ## Update History
+- 2026-09-13T17:56+02:00 — 260831-LOCR-L36: corrected the checkpoint-route paragraph and recorded
+  the reconciled series completion. The checkpoint is a partial **publication** (it moves the master's
+  committed code and memory refs onto the protected source branch under explicit developer approval),
+  not a pause, and the checkpoint capture proves its ledger mapping through
+  `exact_series_memory_closeout`, the exact-mapping reader, while the final series route may accept the
+  reconciled pair through `series_memory_closeout`. Recorded that the atomic completion proof no longer
+  anchors the leaf chain at the recorded base pair — `worktree_sync` advances that pair, so the chain
+  is ordered by the leaves' own landed ancestry and each step is admitted only when it adds nothing
+  beyond the previous landing and the official positions this contract synced with — and that a
+  master's own reconciliation merges enter `atomic_series_ledger_prefix` as proved rows. The recorded
+  pair for a reconciled master is the reconciled code tip against the memory ref the same sync landed,
+  accepted only when the landed table is the exact projection of its source plus this line's own true
+  rows; recording that row is an agent-owned `memory.md` write with no public tool. Verification
+  metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T15:03:18+02:00 — 260831-LOCR-L36 round 2: stated the developer ruling on this route. "What This Area Is", the Hot Path Summary, and the local invariants now say that a graph-less sprint's `atomic-sequential` default describes the sprint's shape (every commanded master executes atomically) and serializes nothing, because such a sprint declares no dependencies, and that per-contract activation never pauses or excludes a sibling; the same ruling is recorded on the sibling `modules/overview.md` route. Source-pair wording was kept only where the sync/integration plane is genuinely per pair (the `Select And Admit An Atomic Master` flow steps and the sync-transaction paragraphs). The per-contract activation account itself is unchanged. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:19+02:00 — Per-contract activation curation on this route: rewrote the area purpose, hot path, R25 observation boundary, structures, operating model steps 2/6/7, main-flow selection step, load-bearing rows, invariants, child-overview row and the Integrated-IAS sentence so atomic-series activation is described as one `contract_fingerprint`-keyed record per series contract rather than one selection per protected source pair — selecting one master no longer pauses, clears, or terminalizes another, and `reconciling` is the only waiting reason. Replaced the retired `AtomicSeriesSourceRef`/`AtomicSeriesSourcePair`/`atomic_series_source_pair` rows with the `AtomicSeriesActivationRecord`/`AtomicSeriesActivationArchiveEvidence` and `observe_atomic_series`/`_require_record_identity`/`contract_fingerprint`/`activation_path`/`atomic_series_admission_projection` citations at models/structural/atomic_series_activation.py:16-27 and :30-45 and atomic_series_activation.py:145-152, :360-372, :130-134, :137-142, and atomic_series_admission.py:33-74. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
   with its full instance inventory (five fixed; `worktree_start` and the memory-carryover pair

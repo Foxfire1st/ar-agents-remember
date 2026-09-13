@@ -6,23 +6,25 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
 
-## IAS Frozen Activation And Sync Vocabulary
+## IAS Contract-Scoped Activation And Sync Vocabulary
 
-The frozen IAS candidate introduces closed models for one source-pair activation snapshot and one
-stable sync generation. The activation vocabulary now lives under
-`models/structural/atomic_series_activation.py`: it separates selectable state
-(`reconciling|active`) from observed
-state (`vacant|unreadable|reconciling|active`) and binds the selected master plus canonical contract
-path to normalized code/memory source identities and a fingerprint. This is disposable selection,
-not task truth, queue membership, or lifecycle evidence.
+The activation vocabulary lives under `models/structural/atomic_series_activation.py` and is keyed by
+the canonical series contract, not by a protected source pair. It separates selectable state
+(`reconciling|active`) from observed state (`vacant|unreadable|reconciling|active`) and binds the
+selected master plus canonical contract path to `contractFingerprint` — the SHA-256 of the canonical
+resolved contract path. Each activation record is `schemaVersion "2.0"`; the former
+`AtomicSeriesSourceRef` / `AtomicSeriesSourcePair` models and the `sourcePairFingerprint` field they
+fed are gone, because two atomic masters commanded by one sprint derive the same protected source pair
+and must nonetheless hold independent selection. This is disposable selection, not task truth, queue
+membership, or lifecycle evidence.
 
 Sync models project the stable enclosure-root journal without requiring task-document parsing.
 Public status distinguishes a retained resolution, automatic resume, cancellation, terminal
@@ -32,11 +34,15 @@ needs to continue, cancel, or repair. Exact field membership is reconciled to th
 verification metadata remains closeout-owned until the new code commit exists.
 
 CCR-R25 extends the public worktree wire vocabulary with optional
-`AtomicSeriesActivationFact` and `AtomicSeriesAdmission` fields. Status can carry the exact
-source-pair observation; admission responses can explain a logical blocker or corrective state,
-expected/observed evidence, retry precondition, and contract-bound read-only status action. These
-models validate the projection shape only; selector mutation and recovery remain owned by the
-activation and lifecycle domains.
+`AtomicSeriesActivationFact` and `AtomicSeriesAdmission` fields; the contract-scoped re-key makes them
+per-contract. Status carries the addressed contract's activation address, `contractFingerprint`,
+observed state, and record/error evidence. Admission responses explain the addressed contract's own
+corrective state, the nested activation snapshot, expected/observed evidence, retry precondition, and
+a contract-bound read-only status action. They no longer carry a `classification`, a `sourcePair*`
+field or a `blocking` blocker — with them went the `AtomicSeriesAdmissionBlocking` model — because a
+foreign live master is never this contract's wait, blocker, or retry precondition. These models
+validate the projection shape only; selector mutation and recovery remain owned by the activation and
+lifecycle domains.
 
 ## Current Structural Wire Vocabulary
 
@@ -258,11 +264,11 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | --- | --- | --- |
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
-| The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:334-340; mcp/src/agents_remember/models/worktree.py:367-376 |
+| The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-328; mcp/src/agents_remember/models/worktree.py:355-364 |
 | The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
-| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:478-478 |
-| The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:470-470 |
+| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:467-467 |
+| The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:459-459 |
 | The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:189-189; mcp/src/agents_remember/models/tools/tool_registry.py:190-190 |
 | Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:236-247; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:250-256; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-315 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
@@ -271,8 +277,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-137 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:30-40 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:41-41; mcp/src/agents_remember/models/worktree.py:51-51; mcp/src/agents_remember/models/worktree.py:60-60 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:29-40 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:40-40; mcp/src/agents_remember/models/worktree.py:50-50; mcp/src/agents_remember/models/worktree.py:59-59 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 
@@ -547,7 +553,7 @@ the coherent lifecycle projection. It introduces no public worker PID or private
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:404-404 |
+| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:393-393 |
 | Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:185-185 |
 
 
@@ -575,7 +581,7 @@ still validate as a set. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` 
 `finalize_tool_response` call per name for that reason.
 
 **260831-LOCR-L34** adds `worktree_checkpoint_landing` to the `NextTool` vocabulary
-cit:([`NextTool`], mcp/src/agents_remember/models/worktree.py:60-74) — the checkpoint's preview and its
+cit:([`NextTool`], mcp/src/agents_remember/models/worktree.py:59-73) — the checkpoint's preview and its
 `integration-ref-race` refusal both emit it, and it is a registered public tool — while deliberately
 leaving `NextOperation` unchanged, because pausing a master is the existing
 `request_integration_decision` intent rather than a lifecycle phase. The reasoning and the
@@ -614,9 +620,9 @@ and the `public_surface` pin all still name the same tuple with no consumer chan
 
 The roster lives here because a model needs to read it. `models/worktree.py::WorktreeCommandResponse`
 now declares `nextAction` / `nextTool` / `nextArgs`
-cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:334-340) and refuses a `nextTool` outside
+cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:322-328) and refuses a `nextTool` outside
 `PUBLIC_TOOLS` through `_require_registered_public_next_tool`
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:367-376). Before this leaf the
+cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:355-364). Before this leaf the
 envelope inherited `extra="allow"` and declared none of those keys, so
 `application/worktree_status.py::_project_terminal_contract_status`'s write crossed the wire verbatim
 and unchecked — `worktree_abandon` reached the wire as a `nextTool` without ever being a `NextTool`
@@ -629,7 +635,34 @@ returned to its exact baseline of 16 violations with no `models → mcp` edge an
 tool; the `task_doc` surface may name the registered-but-non-public `session_retire`
 (`TaskDocResponse` is not a `WorktreeCommandResponse`). Do not widen `PUBLIC_TOOLS` to cover it.
 
+## 260831-LOCR-L36 The Activation Vocabulary Becomes Contract-Scoped
+
+The atomic-series activation record was re-keyed from the protected source pair to the canonical
+series contract, and this route's wire models moved with it. Two atomic masters commanded by one
+sprint derive the *same* protected pair (same code repository/branch and memory repository/branch;
+only the work branches differ), so a one-record-per-pair store made the second master's selection
+replace the first. `models/structural/atomic_series_activation.py` is now 45 lines and declares only
+`AtomicSeriesActivationRecord` (16) and `AtomicSeriesActivationArchiveEvidence` (30), both
+`schemaVersion "2.0"` with `contractFingerprint`.
+
+On the worktree wire vocabulary (`models/worktree.py`, 514 lines):
+
+- `AtomicSeriesActivationFact.contractFingerprint` replaces `sourcePairFingerprint`, so status
+  evidence names the contract whose record was read.
+- `AtomicSeriesAdmissionActivation.contractFingerprint` replaces `sourcePairFingerprint`.
+- `AtomicSeriesAdmission` lost `classification`, `sourcePair`, `sourcePairFingerprint` and `blocking`,
+  and gained `contractFingerprint`. The `AtomicSeriesAdmissionBlocking` model was deleted, so a
+  foreign live master is no longer expressible as this contract's blocker or retry precondition.
+- No model on this route declares `AtomicSeriesSourceRef` / `AtomicSeriesSourcePair`.
+
+The wait vocabulary narrowed with it: the activation domain now returns only
+`atomic-series-reconciling`, so a vacant record and another master's active selection are never
+waiting reasons. Real wave dependencies still gate through the sprint execution graph's own
+`predecessor-incomplete:` reasons, and everything under `worktrees/integration/**` is untouched by
+this change.
+
 ## Update History
+- 2026-09-13T14:21:37+02:00 — LOCR-L36 contract-scoped activation re-key: rewrote the route's activation section (retitled `## IAS Contract-Scoped Activation And Sync Vocabulary`) and the CCR-R25 paragraph to state that the activation fact, the nested activation snapshot, and the admission envelope are keyed by the addressed contract's `contractFingerprint`; recorded that `AtomicSeriesSourceRef` / `AtomicSeriesSourcePair` and the `sourcePairFingerprint` field are gone, that `AtomicSeriesAdmission` lost `classification` / `sourcePair*` / `blocking`, and that `AtomicSeriesAdmissionBlocking` was deleted so a foreign master is never a blocker. Added the `## 260831-LOCR-L36 The Activation Vocabulary Becomes Contract-Scoped` route-impact section with the exact declared line map. Rebound the 12 citations that shifted when `models/worktree.py` shrank from 533 to 514 lines: the next-move triple 322-328, `_require_registered_public_next_tool` 355-364, `WorktreeRecordLandingResponse` 466, `WorktreeCheckpointLandingResponse` 458, `WorktreeStatusWaitResponse` 392, `WorkflowKind` 29-40, `WorktreePhase` 40, `NextOperation` 50, `NextTool` 59 and the `NextTool` literal range 59-73. No verification stamp advanced.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded on this route that `NextTool` gained
   `worktree_checkpoint_landing` while `NextOperation` was deliberately left unchanged (pausing a

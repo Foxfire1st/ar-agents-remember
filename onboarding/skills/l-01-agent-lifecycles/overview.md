@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a`|
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 
 ## Purpose
 
@@ -24,13 +24,21 @@ author otherwise-valid task changes without asking a closeout queue or atomic-se
 permission. A material task change invalidates the affected disposable projection and causes the
 waiting frontier to be recomputed from current truth; it does not freeze task authoring.
 
-Multiple live atomic masters on one protected source pair are normal. Runtime selection exposes one
-master, auto-pauses the previous selection without retiring its task or branch, and requires the new
-selection to reconcile current code/memory sources before implementation admission. Role doctrine
-must treat retained sync conflicts as agent-resolvable, resumable, or cancellable worktree state,
-never as a reason to rewrite planning around a stuck queue. Exact changed doctrine files and
-synchronized copies are reconciled to the frozen candidate; commit verification remains
-closeout-owned.
+Multiple live atomic masters on one protected source pair are normal. Implementation admission is
+contract-scoped: each canonical series contract owns its own activation record, so selection
+publishes `reconciling` for that exact contract — which suspends nothing and excludes no other
+master — and the contract becomes `active` only when both of its own protected source tips are
+current. One master's selection never pauses another, and multiple nonterminal contracts remain
+valid. Role doctrine must treat retained sync conflicts as agent-resolvable, resumable, or
+cancellable worktree state, never as a reason to rewrite planning around a stuck queue. Exact changed
+doctrine files and synchronized copies are reconciled to the frozen candidate; commit verification
+remains closeout-owned.
+
+Nothing serializes a graph-less sprint. A sprint without an `executionGraph` declares no
+dependencies, so the shipped `atomic-sequential` default describes the sprint's SHAPE — every
+commanded master executes atomically — and is not a serialization mechanism: independent atomic
+masters proceed concurrently and no master is held because another is selected. Only an explicit
+`executionGraph` gates masters on real predecessors (`predecessor-incomplete:`).
 
 Free chat launches ordinary role-shaped work by compiling `templates/architect-brief.md` from
 current sprint truth and calling `dispatch_agent` exactly once on the sprint document. An explicit
@@ -48,10 +56,12 @@ durable address at every altitude.
 
 An organizational master is a logical grouping whose ordinary leaves branch directly from the
 current super line and may land independently. An atomic master keeps its own integration branch
-and exposes no partial result; exact source-pair selection controls current implementation
-exposure, while a separate landing authority serializes conflicting protected-ref movement.
-Mechanisms publish facts and candidate sets; architect, strategist, orchestrator, and manager seats
-retain their explicit judgment boundaries. Integration lines are not repair workbenches.
+and exposes no partial result; each contract's own activation record controls that master's
+implementation exposure, while a separate landing authority serializes conflicting protected-ref
+movement. That ref-landing exclusion is not sprint scheduling: nothing serializes a graph-less
+sprint's masters. Mechanisms publish facts and candidate sets; architect, strategist, orchestrator,
+and manager seats retain their explicit judgment boundaries. Integration lines are not repair
+workbenches.
 
 Role continuity is task-document and artifact based. Workers build and report, reviewers provide
 independent verdict evidence, curators reconcile system intent and memory, managers decide
@@ -134,7 +144,8 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:473-473; skills/l-01-agent-lifecycles/SKILL.md:422-422; skills/l-01-agent-lifecycles/SKILL.md:466-466 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:422-422; skills/l-01-agent-lifecycles/SKILL.md:466-466; skills/l-01-agent-lifecycles/SKILL.md:473-473 |
+| The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. | "nothing serializes a graph-less"; "nothing serializes its masters" | skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-172; skills/l-01-agent-lifecycles/roles/orchestrator.md:265-265 |
 | The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
 | Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
@@ -175,7 +186,31 @@ The `templates/orchestration-task.md` heading was restored to `## Canonical exec
 No lifecycle topology or authority changed. The curator brief now demonstrates the canonical
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
+## Ungoverned Mirror Status (known defect)
+
+This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's
+`skills/**` route. `skills/**` is absent from `settings.json`'s `pathRules.include`, so this whole
+onboarding tree sits outside normal onboarding census coverage: it is legacy and ungoverned. It is
+retained here only because the contract-scoped memory-quality checker still validates these documents
+whenever `skills/**` is part of a leaf's changed set, which is exactly why this overview was updated
+by hand rather than by a governed maintenance pass. The remaining sibling sidecars under
+`onboarding/skills/**` — the other role, criteria, and template cards — are knowingly stale and are
+deliberately left untouched pending a follow-up decision on whether this mirror should be governed or
+removed. That mismatch between the declared path rules and the enforced checking scope is itself the
+recorded defect.
+
 ## Update History
+- 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: rewrote the planning/runtime
+  boundary to the shipped per-contract activation (each canonical series contract owns its own
+  activation record; `reconciling` suspends nothing and excludes no other master; multiple
+  nonterminal contracts remain valid) and added the explicit developer ruling that nothing serializes
+  a graph-less sprint — `atomic-sequential` describes sprint SHAPE, not a serialization mechanism.
+  Repaired the rotated citation row after `grep -n` verification: `"## Delegated Series Authority"`
+  → SKILL.md:422-422, `"Caller kind comes only from process context"` → SKILL.md:466-466, `"Every
+  launcher or role that dispatches a hosted role calls"` → SKILL.md:473-473 (all three had been bound
+  to each other's line), and added the graph-less ruling row citing
+  templates/orchestration-task.md:172-172 and roles/orchestrator.md:265-265. Added the Ungoverned
+  Mirror Status defect statement. Verification metadata remains closeout-owned.
 - 2026-09-10T09:58+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the curator reference row against the rewritten `skills/l-01-agent-lifecycles/roles/curator.md` — section 4 is now `### 4 — Repair Affected Onboarding, Then Publish`, so the row carries the current heading and its 153-195 extent. Verification metadata remains closeout-owned.
 
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

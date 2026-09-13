@@ -6,17 +6,17 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T11:43+02:00|
-| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
-| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [worktrees overview](../overview.md)
 
-## IAS Frozen Source-Pair Serialization Boundary
+## IAS Frozen Contract-Activation Serialization Boundary
 
-The source-pair selector and sync transaction run under the same repository integration authority
+The per-contract activation record and the sync transaction run under the same repository integration authority
 that serializes protected-source movement. Remote refresh is evidence gathered before the lock;
 the admitted local source tips, pinned authority refs, contract re-read, selection transition, and
 base-pair finalization are proven under authority. No ambient checkout or prior queue row becomes a
@@ -334,20 +334,29 @@ Detail lives on the `series_closeout.py`, `integrate.py`, `landing_record.py`,
 `integration_ref_transaction.py` and `integration_branch_authority.py` file cards.
 
 **260831-LOCR-L34 repaired this route's reachability and its fail-open hole.** The L30 form read the
-commits to land from the contract's closeout cells — the very completion facts a paused master does not
+commits to land from the contract's closeout cells — the very completion facts an unfinished master does not
 have — and required `closeout_status == "completed"`, so the route was unreachable in both directions.
 It now captures its own candidate (`capture_series_checkpoint_refs`: the live code and memory
-work-branch tips, with their ledger mapping proved through the same `exact_series_memory_closeout` the
-final route uses) and publication **requires** that `expected` value, revalidating it against the live
-tips immediately before the ref move (`atomic-series-checkpoint-candidate-moved`). The transaction on
+work-branch tips, with their ledger mapping proved through `exact_series_memory_closeout`, the
+exact-mapping reader; the *final* series route may additionally accept the reconciled pair through
+`series_memory_closeout`, 260831-LOCR-L36) and publication **requires** that `expected` value,
+revalidating it against the live tips immediately before the ref move
+(`atomic-series-checkpoint-candidate-moved`). The transaction on
 this route carries the route difference as data: `LandingAdmission` holds either the finished
 leaf-chain prefix or the checkpoint's own captured candidate, and `_require_preserved_ledger_history`
-takes the leaf projection form for a paused master because the completed census is one of the
+takes the leaf projection form for an unfinished master because the completed census is one of the
 completion facts its route deliberately does not require. The preview/apply parity invariant this
 repair came from is inventoried on [the worktrees route overview](../overview.md) and in
 [`memory_quality/overview.md`](../../memory_quality/overview.md).
 
 ## Update History
+- 2026-09-13T17:56+02:00 — 260831-LOCR-L36: corrected the checkpoint-route paragraph. The route is a
+  partial **publication** rather than a pause, its capture proves its ledger mapping through
+  `exact_series_memory_closeout` (the exact-mapping reader), and the *final* series route may
+  additionally accept the reconciled pair a `worktree_sync` produced through `series_memory_closeout`.
+  The conserved integration plane is unchanged; what changed is which reader each route may claim.
+  Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:44+02:00 — Retitled and corrected the serialization-boundary section to the per-contract activation record now that activation is keyed per series contract; the frozen integration plane itself (protected-ref compare-and-swap, ancestry proof, source-state gate, clean-checkout proof, ledger-mapping proof) is unchanged by that re-keying and no change to it is claimed. Content change; `lastVerifiedCommitHash` remains closeout-owned.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded the checkpoint reachability repair on this route
   — the route had required a completed closeout it also made unreachable, so it could not be entered

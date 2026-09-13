@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -23,7 +23,7 @@ claimed lifecycle after admission.
 ## Hot Path Summary
 
 Canonical changes invalidate affected sprint projections to invalid-empty. A complete rebuild is
-computed off-side from current task topology, canonical waiting doors, and source-pair activation;
+computed off-side from current task topology, canonical waiting doors, and per-contract activation;
 publication occurs only after an exact-current source recheck. `closeout_queue.py` exposes status,
 rebuild, and the short first-ready claim-admission fence. Projection member and graph helpers own
 only deterministic readiness and order.
@@ -40,8 +40,10 @@ only deterministic readiness and order.
 - Task authoring never waits on or seeks permission from projection state.
 - Claim, certification, commit, blocker, integration, and lifecycle evidence never live here.
 - Graph-less atomic-sequential topology is valid; a graph, when present, contributes bounded order.
-- Activation is read-only input: the selected master can be active or reconciling, and every other
-  live series projects as paused. The queue cannot select, release, or repair that authority.
+- Activation is read-only input: each live series is read from its own contract-keyed record, and
+  only a reconciling record makes that series wait. Vacant and active are never waits, another
+  master's state is never this contract's reason to wait, and the queue cannot select, release, or
+  repair that authority.
 
 ## IAS Closeout-Recovery Ledger Boundary
 
@@ -50,13 +52,17 @@ not queue authority. It reuses an exact current code/memory edge idempotently an
 ledger row when unchanged code acquires a later memory state. Older same-code rows remain audit
 history; malformed bytes, wrong heads, and unreachable content still fail closed.
 
-## IAS Source-Pair Activation Projection
+## IAS Per-Contract Activation Projection
 
-Multiple live atomic-series contracts for one protected source pair are normal. The queue observes
-the single disposable activation snapshot and derives only a waiting reason: unselected,
-reconciling, or paused by another selected master. A malformed snapshot becomes a typed projection
-source problem with an explicit selecting repair; rebuild does not infer a winner from prior queue
-rows, task ordering, a contract census, or ambient Git.
+Multiple live atomic-series contracts for one protected source pair are normal, and each contract
+owns its own activation record keyed by `contract_fingerprint` (the digest of its resolved contract
+path). The closeout projection is a read-only observer of those records: it derives only
+`atomic-series-reconciling` as a waiting reason, treats vacant and active as normal rather than
+waits, and never treats another master's state as this contract's reason to wait. A snapshot that is
+not this exact contract, or is otherwise malformed, becomes a typed projection source problem with an
+explicit selecting repair; rebuild does not infer a winner from prior queue rows, task ordering, a
+contract census, or ambient Git. The projection never owns an activation transition — it cannot
+publish, release, or archive a record.
 
 This does not subordinate task authoring to selection. Task mutation publishes canonical truth; classified semantic/readiness changes
 invalidate affected projections to empty, and causes a rebuild from that new truth. Selection
@@ -147,6 +153,7 @@ nothing. `closeout_projection.py::capture_projection_source` uses the same judge
 sprint source as `terminal`. Master-granular resolution is unchanged; only the terminal set widened.
 
 ## Update History
+- 2026-09-13T14:19+02:00 — Per-contract activation curation on this route: the queue now reads each live series' own contract-keyed activation record, so the invariant, hot-path and projection sections state that `atomic-series-reconciling` is the only waiting reason, vacant/active are never waits, a foreign master is never this contract's blocker, and the closeout projection remains a read-only observer that owns no transition. Retitled the section from source-pair to per-contract activation. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded that queue graph resolution and projection classification consume `master_is_terminal`, so an abandoned predecessor stops blocking its successors and a sprint with an abandoned master classifies as terminal. Content change, not a range repoint.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 

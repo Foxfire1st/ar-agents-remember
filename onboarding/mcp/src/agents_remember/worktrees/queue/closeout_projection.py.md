@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,9 +25,10 @@ Builds the exact canonical source census for disposable closeout scheduling proj
 It captures task, sprint, every live series contract, dependency, priority, readiness, activation,
 and door source facts; unreadable sources become bounded problems and invalid-empty output rather
 than stale rows. Multiple live series contracts are valid census input. For each live atomic master,
-`project_series_activation` observes the independent source-pair selector and contributes only a
-source fact, optional bounded problem, and candidate-local waiting reasons. The projection no longer
-derives a global owner from contract presence or reports a multi-live-series conflict.
+`project_series_activation(contract)` observes that master's own contract-keyed activation record and
+contributes only a source fact, optional bounded problem, and candidate-local waiting reasons. The
+projection no longer derives a global owner from contract presence or reports a multi-live-series
+conflict, and another master's state is never a candidate's reason to wait.
 
 Since the closeout-door cut (commit `fad9808e`) a series contributes its door source fact only when it
 has a live door: `_series_source` reads `live_closeout_door(contract)` instead of the removed
@@ -35,12 +36,12 @@ has a live door: `_series_source` reads `live_closeout_door(contract)` instead o
 source" branch were deleted with it. A series with no live door simply contributes no door source.
 
 Since 260831-CCR (commit `99dc249b`) every projected member source fact binds the canonical
-task-intent identity of its leaf: `_projection_members` (line 520-552) computes
-`task_intent_identity(contract.task_root, leaf)` (line 526-527), records it as
-`source_fact["taskIntent"]` (line 538), and passes it into the member context (line 551). A leaf
+task-intent identity of its leaf: `_projection_members` (line 467-607) computes
+`task_intent_identity(contract.task_root, leaf)` (line 528), records it as
+`source_fact["taskIntent"]` (line 539), and passes it into the member context (line 552). A leaf
 whose intent cannot be projected (master resolved, schema unsupported, taxonomy unclassified)
 refuses the source with a `task`-kind `ProjectionSourceProblem` carrying the exact error type
-and repair action (line 529-537), so the disposable projection never offers a member whose intent is
+and repair action (line 529-538), so the disposable projection never offers a member whose intent is
 unknown.
 
 ### Conventions
@@ -51,8 +52,9 @@ the public function or model instead of re-deriving its lower-level state machin
 ### Invariants And Boundaries
 
 - Projection input is rebuilt from current canonical sources; missing/invalid sources empty the projection; no lifecycle or commit history is retained here.
-- Activation is an observed scheduling input, not queue-owned selection. Unselected, paused, or
-  reconciling candidates wait; queue recomputation cannot publish or release the selector.
+- Activation is an observed scheduling input, not queue-owned selection. Reconciling is the only
+  candidate waiting reason — vacant and active are never waits, and a foreign master is never this
+  candidate's blocker; queue recomputation cannot publish or release the selector.
 - Multiple live series contracts are normal and must not become a source problem by census alone.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
@@ -78,9 +80,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65 |
-| Every live series is observed independently; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local. | `_projection_members`; `_observe_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:467-566; mcp/src/agents_remember/worktrees/queue/closeout_projection.py:637-649 |
+| Every live series is observed independently from its own contract-keyed record; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local. | `_projection_members`; `_observe_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:467-607; mcp/src/agents_remember/worktrees/queue/closeout_projection.py:637-649 |
 | Member source facts bind the canonical task-intent identity. | "intent = task_intent_identity(contract.task_root, leaf)"; "source_fact[\"taskIntent\"]" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:526-551 |
-| The focused adapter converts strict selector observation into disposable source facts/waits/problems without lifecycle ownership. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:30-53 |
+| The focused adapter converts strict per-contract selector observation into disposable source facts/waits/problems without lifecycle ownership. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:29-51 |
 
 ## Cross-Repo References
 
@@ -99,6 +101,7 @@ queue cannot recompute a stale identity or offer a member whose intent is absent
 L25 candidate `99dc249b`.
 
 ## Update History
+- 2026-09-13T14:19+02:00 — Per-contract activation curation: the census now calls `project_series_activation(contract)` for each live atomic master against that master's own contract-keyed record, so the card states that reconciling is the only candidate waiting reason (vacant/active are never waits and a foreign master is never a blocker). Rebound the `_projection_members` range to 467-607, the focused adapter to closeout_projection_activation.py:29-51, and re-read the task-intent prose line numbers (467-607 / 528 / 539 / 552 / 529-538). Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: The member-source-facts row anchored the bare symbol `task_intent_identity`, which resolved twice at verification and again now (the import and the call), and its second anchor `source_fact["taskIntent"]` was a backticked expression the anchor grammar cannot read. Both are now exact quoted source texts — the identity call and the `taskIntent` assignment — each occurring once inside `closeout_projection.py:526-551`; claim wording and extent unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_PRIORITY_RANK` repointed to mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_PRIORITY_RANK` repointed to mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

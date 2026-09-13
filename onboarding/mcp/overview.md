@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-10T06:03:57+00:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -33,20 +33,25 @@ agents-remember-mcp@latest`. Only the disposable acceptance process pins exact l
 launching `@latest` there would certify PyPI instead of the candidate. These are complementary
 proofs, not alternative starter strategies.
 
-## IAS Source-Pair Coordination Boundary
+## IAS Contract-Scoped Activation Boundary
 
 Task documents remain upstream canonical planning truth and are always authorable. A task mutation
 never waits on queue or atomic-series activation state: it publishes first, invalidates semantic/readiness-affected
 disposable scheduling projection, and lets current waiting candidates be recomputed.
 
-Atomic implementation admission uses one source-pair-scoped replace-in-place selector. Multiple
-live series are normal; selecting one pauses the previous series without retiring it. The selected
-master remains `reconciling` until a contract-addressed sync brings the exact code/external-memory
-base pair current, and only then becomes `active`. Genuine Git conflicts are retained in an
-operation-owned worktree and stable enclosure-root journal for agent resolution, continuation, or
-explicit cancellation.
+Atomic implementation admission uses one replace-in-place activation record per canonical series
+contract, addressed by a fingerprint of that contract path. Multiple live series are normal, and
+because the record is per contract rather than per protected source pair, two atomic masters that
+share one sprint's code and memory source branches keep independent records: neither one's
+`reconciling` or `active` state pauses the other. A contract remains `reconciling` until a
+contract-addressed sync brings the exact code/external-memory base pair current, and only then
+becomes `active`. The only activation waiting reason is `atomic-series-reconciling`; a vacant,
+`active`, or foreign-master record is never this contract's reason to wait, and a record that does
+not name the addressed contract is unreadable rather than adopted. Genuine Git conflicts are
+retained in an operation-owned worktree and stable enclosure-root journal for agent resolution,
+continuation, or explicit cancellation.
 
-The selector is not a lifecycle ledger, and the queue owns no claim, commit, certification,
+The activation record is not a lifecycle ledger, and the queue owns no claim, commit, certification,
 integration, recovery, or terminal evidence. Terminal cleanup vacates only an exact selected owner
 before its canonical contract pointer is deleted. Normal readers never fall back to task prose,
 queue rows, old files, or ambient Git when activation/journal authority is absent or unreadable.
@@ -69,8 +74,12 @@ rows fail closed before they can grade or order a candidate. Since 260815-DAG-L1
 side is the write/mutation path: sprint creation scaffolds the empty canonical registers,
 `task_doc` writes validate register shape, and the queue's `status` read instead degrades to a
 facts projection (absent/ok/malformed per register). Graph-less sprints project the
-atomic-sequential default with waiting reasons derived from the source-pair selector; the retired
-series-lane owner is not reconstructed.
+atomic-sequential default — the sprint's shape, in which every commanded master executes
+atomically — and it serializes nothing: the sprint declares no dependencies, so no master is held
+because another is selected, and activation waiting reasons come per contract from each canonical
+series contract's own activation record (a vacant, `active`, or foreign-master record is never this
+contract's reason to wait). A real authored graph still gates its masters on genuine predecessors.
+The retired series-lane owner is not reconstructed.
 
 ## Current Structural Agent Boundary
 
@@ -1131,6 +1140,8 @@ preparation or diagnostic routes, and retained certification models/documentatio
 explicit evidence rather than a normal closeout prerequisite.
 
 ## Update History
+- 2026-09-13T15:00:56+02:00 — 260831-LOCR-L36 curator (round 2): stated the developer ruling where this route describes the graph-less default and per-contract activation — the `atomic-sequential` default is the sprint's SHAPE (every commanded master executes atomically) and serializes nothing, no master is held because another is selected, waiting reasons are per contract from that contract's own activation record, and a real authored graph still gates on genuine predecessors. The shipped-skill side of the change is documented on the skill routes, not restated here. No verification-metadata change; no execution or acceptance claim.
+
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_closeout_apply_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:109-126. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/mcp/registration/tasks.py:59-71. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 

@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
-| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -16,18 +16,26 @@
 
 ## IAS Frozen Public Lifecycle Composition
 
-Start, attach, dispatch, and explicit sync share one atomic-series selecting transaction. A new
-selection auto-pauses the prior live series, publishes `reconciling`, reconciles the exact protected
-code/memory source pair, and publishes `active` only after current-base proof. `worktree_sync`
-becomes a resumable contract-addressed operation: genuine conflicts remain available for agent
-resolution, `continue` validates the staged result, and `cancel` restores only pinned
-operation-owned heads.
+Start, attach, dispatch, and explicit sync share one atomic-series selecting transaction. The
+activation record it writes is keyed **per series contract** (`contract_fingerprint` over the
+canonical resolved contract path), so a new selection transitions only that contract's own record:
+`reconciling`, reconcile its pinned protected code/memory source pair, then `active` only after
+current-base proof. Cross-master exclusivity between atomic masters that share one sprint's code and
+memory source branches is gone — every refusal the admission projection describes is corrective
+action on the addressed contract, a foreign master is never named as a blocker, and the only
+surviving activation waiting reason is `atomic-series-reconciling`. The graph-less default is not a
+serialization authority either: `atomic-sequential` describes the sprint's shape — every commanded
+master executes atomically — and serializes nothing, because a graph-less sprint declares no
+dependencies. Real wave dependencies still gate through the sprint execution graph's own
+`predecessor-incomplete:` reasons. `worktree_sync` becomes a
+resumable contract-addressed operation: genuine conflicts remain available for agent resolution,
+`continue` validates the staged result, and `cancel` restores only pinned operation-owned heads.
 
 Cleanup and abandon remain terminal lifecycle operations, not scheduling mutations. After their
 terminal publication and outside lifecycle/store locks, they may vacate only the exact selected
-terminal contract before destructive contract cleanup. A paused series cannot clear a newer
-selection. Missing or malformed activation/journal authority is not replaced by a legacy or
-queue-derived fallback reader.
+terminal contract before destructive contract cleanup. The terminal release addresses exactly the
+contract it was given and never clears another contract's record. Missing or malformed
+activation/journal authority is not replaced by a legacy or queue-derived fallback reader.
 
 Master-series bootstrap also treats the transient-journal to durable-contract handoff as one
 observation boundary. On apply, `startup/start_contract.py` evaluates
@@ -313,7 +321,8 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   A refused or partial integration cleans up nothing — that is when the enclosure evidence is still
   needed — and a cleanup refusal at finalization now **blocks the task-edge close** instead of being
   reported after a landing that already claimed to be done. A checkpoint landing reclaims nothing
-  either, and a paused master is never finalized, so it keeps its worktrees, branches and enclosure.
+  either, and an unfinished master landed at a checkpoint is never finalized, so it keeps its
+  worktrees, branches and enclosure.
   The report shaper is gated by its caller: a dry run or a nonzero cleanup return code is passed
   through in cleanup's own words, because a preview must not assert a reclamation that never happened
   and a refusal must keep its `blockers` and partial inventory.
@@ -445,10 +454,10 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
 | Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:598-635; mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:267-267; mcp/src/agents_remember/models/worktree.py:41-41 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:184-236 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:256-256; mcp/src/agents_remember/models/worktree.py:40-40 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
-| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
+| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval`; `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:206-209 |
 
 ## Historical 260731-EFA-L2 Lifecycle Parameter Objects
 
@@ -827,9 +836,12 @@ Terminal series artifacts are ignored and reported through `startup/start_result
 `staleSeriesArtifact` fact. `integrate.py` surfaces the queue consume's stale-by-evidence siblings
 on the result payload (`staleByEvidence`, each naming `worktree_sync`).
 
-IAS supersedes that lane owner. Current start/attach/dispatch selects one master per exact source
-pair, pauses the former without retirement, reconciles before exposure, and leaves task authoring
-upstream. Current queue projection observes the selector and never recreates the old owner from
+IAS supersedes that lane owner. Current start/attach/dispatch reconciles the commanded master in its
+own contract-keyed activation record, without pausing any other master and without claiming a shared
+source pair, and leaves task authoring upstream. Under the graph-less default nothing serializes the
+masters: `atomic-sequential` describes the sprint's shape (every commanded master executes
+atomically) and declares no dependency, so independent masters proceed concurrently. Current queue
+projection observes the addressed contract's own record and never recreates the old owner from
 contract census.
 
 ## 260815-DAG Master Full-Gate Repair Route Impact
@@ -1056,7 +1068,39 @@ The remaining `integration_status == "completed"` sites are deliberate: they ask
 complete?", and a checkpoint must read as not complete. They are listed and dispositioned on the
 `closeout.py` card.
 
+## 260831-LOCR-L36 Contract-Keyed Atomic-Series Activation
+
+The activation record behind start/attach/dispatch/sync moved from one file per **protected source
+pair** to one file per **series contract**. Two atomic masters commanded by one sprint derive the
+same protected source pair (same code/memory repository and branch; only the work branches differ),
+so the older key let the second master's selection replace the first and report the first as
+paused-by. Each contract now owns its record at
+`controlplane/atomic-series-activation/<contract_fingerprint>.json`, where `contract_fingerprint` is
+the sha256 of the canonical resolved contract path. `AtomicSeriesActivationRecord` is
+`schemaVersion "2.0"` carrying `contractFingerprint` and no `sourcePair`/`sourcePairFingerprint`;
+`AtomicSeriesActivationObservation` carries `contract_path` + `contract_fingerprint`; and
+`observe_atomic_series`/`observe_atomic_series_path` take the contract rather than a pair.
+`_require_record_identity` refuses to adopt any record that is not this exact contract
+(`atomic-series-activation-contract-mismatch`). `atomic_series_admission_projection` emits
+`contractFingerprint` and no `classification`, `blocking`, or `sourcePair`, and
+`activation_waiting_reason(observation)` takes only the observation and returns only
+`atomic-series-reconciling`. The terminal release, the cancellation-owner guard, the
+sync-continuation guard, the terminal-contract selection refusal, the corrupt-record archive path,
+and the bounded 8192-char diagnostic detail are unchanged in semantics and are now addressed per
+contract. Everything under `worktrees/integration/**` and `worktree_integrate` is untouched, and the
+graph-less sprint scheduling default is unchanged: `atomic-sequential` describes the sprint's shape
+(every commanded master executes atomically) and serializes nothing — nothing serializes a graph-less
+sprint — while attaching a master to a graph-less sprint still reports graphNode
+`deferred-no-graph-default`.
+
 ## Update History
+- 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: the checkpoint landing is a partial
+  publication of an unfinished master, not a pause, so this route's cleanup paragraph now says "an
+  unfinished master landed at a checkpoint" where it said "a paused master". Wording only; the
+  reclamation account (a checkpoint reclaims nothing and is never finalized) is unchanged and no
+  verification stamp advanced.
+- 2026-09-13T15:03:18+02:00 — 260831-LOCR-L36 round 2: stated the developer ruling where this route describes the graph-less default and selection. The IAS composition section now says the graph-less default is not a serialization authority — `atomic-sequential` describes the sprint's shape (every commanded master executes atomically) and serializes nothing, because a graph-less sprint declares no dependencies — the superseded DAG-L13 section records the same under IAS, and the L36 section corrects its closing sentence: the graph-less scheduling default is unchanged (nothing serializes it) while the `deferred-no-graph-default` value belongs to `attach_master`'s graphNode reporting, not to scheduling. No per-contract activation text was weakened: a foreign master is still never named as a blocker and `atomic-series-reconciling` is still the only waiting reason. Source-pair wording is retained only where the sync/integration plane genuinely remains per pair. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36 route impact: recorded the contract-keyed atomic-series activation that replaces the per-protected-source-pair record. The IAS lifecycle section no longer says a new selection "auto-pauses the prior live series"; it now states the record is keyed per series contract, that a foreign master is never a waiting reason, that the only surviving activation waiting reason is `atomic-series-reconciling`, and that real wave dependencies remain the sprint execution graph's `predecessor-incomplete:` reasons. Replaced the "a paused series cannot clear a newer selection" sentence with the per-contract terminal-release statement, corrected the superseded DAG-L13 paragraph's "selects one master per exact source pair, pauses the former", and added a route-level account of the re-keying. Rebound three stale reference rows: the route-index row's `kernel/route_index.py` range (now anchors `build_route_indexes` at `184-236`), the two `models/worktree.py` cells (`phase: WorktreePhase` → `255-255`, `WorktreePhase = Literal[` → `40-40`), and the approval-retention cells (now anchored `CONSUMED_APPROVAL_GATE_KINDS` at `interaction_retention.py:52-54` and `:206-209`). Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded that the L30 checkpoint route was unreachable in
   both directions and what replaced its mechanism — the `CheckpointLanding` value from

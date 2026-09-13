@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,7 +19,7 @@ returns a list it becomes the status payload's `landing` block, and `reducer._en
 composes that onto `EngineProcessNode.landing`.
 
 Two callers reach the probe, and neither is the projection tick: the interactive `status_payload`
-cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:495-495; mcp/src/agents_remember/worktrees/modules/guidance.py:497-497), and `observer/landing_state.LandingStateRefresher`, which holds it as
+cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:503-503; mcp/src/agents_remember/worktrees/modules/guidance.py:505-505), and `observer/landing_state.LandingStateRefresher`, which holds it as
 `observe: LandingObserver = landing_refs` and sweeps landing-active contracts on its own
 `LANDING_REFRESH_INTERVAL_SECONDS = 30.0` cadence with `LANDING_REFRESH_CONCURRENCY = 4`. The
 recurring projection never spawns anything: it renders `unobserved_landing_refs` until the
@@ -133,13 +133,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:432-486; mcp/src/agents_remember/worktrees/modules/guidance.py:494-496 |
+| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:440-441; mcp/src/agents_remember/worktrees/modules/guidance.py:502-504 |
 | The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:947-969 |
 | The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304-304 |
 | The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:146-350 |
 
 ## Update History
+- 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shifted `modules/guidance.py`: `def status_payload` now resolves at `guidance.py:502-502`, the `landing_refs(contract)` call at `guidance.py:504-504`, and `_status_payload_with_landing` at `guidance.py:440-441`, so both affected rows were rebound. Claim wording unchanged.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "def status_payload", "landing_refs(contract)", `_status_payload_with_landing`, `status_payload` repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:410-462, mcp/src/agents_remember/worktrees/modules/guidance.py:472-472, mcp/src/agents_remember/worktrees/modules/guidance.py:472-474, mcp/src/agents_remember/worktrees/modules/guidance.py:474-474. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

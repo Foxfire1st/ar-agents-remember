@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-26T05:20+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,9 @@ re-intersect the per-leaf surface lists — existing AND declared-new, including
 shared parent route — and hunt omitted pairs), **PR-3 blast-radius re-derivation** (re-derive at
 least the HIGH entries with `cgc_dependencies`/`cgc_callers`/`cgc_callees`; spot-check the rest;
 resolve one effective priority per candidate), **PR-4 topology agreement** (validate either an
-explicit graph or the reasoned graph-less source-pair-selected atomic-sequential default),
+explicit graph or the reasoned graph-less per-contract-activated atomic-sequential default — a
+sprint shape that serializes nothing, since a graph-less sprint declares no dependencies and
+independent atomic masters proceed concurrently),
 **PR-5 findings honesty**,
 **PR-6 detection-versus-judgment ownership**, and **PR-8 review independence plus evidence-class
 matching**. A **Candidate Criteria** tier carries **PR-7 scaling & reclamation at design time**:
@@ -80,11 +82,12 @@ No external domain documentation applies to this repository-local catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| This package-data catalog copy defines the complete current plan-review floor, including effective-priority resolution and explicit-graph or graph-less topology review. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-134 |
+| This package-data catalog copy defines the complete current plan-review floor, including effective-priority resolution and explicit-graph or graph-less topology review. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-140 |
 | Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | "class SkillTarget" | scripts/sync-skills.py:27-27 |
-| The reviewer role binds `plan-review` with `report-verification` for orchestration-task plan reviews, and keeps the promotion ratchet as the catalog amendment path. | `# Lifecycle — Adversarial Reviewer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:1-232 |
-| The orchestration-task template requires cited shown work, one effective priority per candidate, an explicit topology choice, and complete graph bootstrap when a graph is adopted. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-198 |
-| The strategist lifecycle produces the orchestration task and treats a persisted graph as optional while keeping topology reasoning mandatory. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-247 |
+| The reviewer role binds `plan-review` with `report-verification` for orchestration-task plan reviews, and keeps the promotion ratchet as the catalog amendment path. | `# Lifecycle — Adversarial Reviewer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:1-390 |
+| The orchestration-task template requires cited shown work, one effective priority per candidate, an explicit topology choice, and complete graph bootstrap when a graph is adopted. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-215 |
+| The strategist lifecycle produces the orchestration task and treats a persisted graph as optional while keeping topology reasoning mandatory. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-263 |
+| The shipped plan-review catalog now states the corrected graph-less rule instead of the removed source-pair exposure wording. | "proceed concurrently and no master is held because another is selected" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:64-68 |
 
 ## Cross-Repo References
 
@@ -126,24 +129,63 @@ equal-grade tie-break.
 
 PR-4 reviews the topology actually chosen. An explicit graph needs exact membership, cited edges,
 acyclic derived waves, and correct atomic-blocker placement. A reasoned graph-less sprint is also
-valid: canonical commanded-master order is the stable equal-priority tie-break and source-pair
-activation exposes one atomic master at a time. Selecting another may pause the former without full
-integration, retirement, or an invented dependency. Graph absence does not waive classification,
+valid: canonical commanded-master order is the stable equal-priority tie-break, and per-contract
+activation means two sprint-commanded atomic masters sharing one protected source pair hold
+independent records, so activating one never pauses, replaces, or blocks the other and never invents
+a dependency. Graph absence does not waive classification,
 priority, dependency, or coherence work. A sanctioned strategist skip changes the plan author to
 the orchestrator, not the completeness standard. The repository-wide `add_edge`
 example census already found `judgmentId` on every example, so L4 made no fabricated example edit.
 
 ## IAS Graph-Less Review Correction
 
-Runtime activation serialization is not dependency evidence. PR-4 must reject a plan that turns
-the selector's one-exposed-master property into a false full-integration edge or implies that a
-paused master was terminalized.
+Per-contract activation is admission state, not dependency evidence, and it serializes nothing
+across masters. PR-4 must reject a plan that turns the per-contract activation boundary into a
+false full-integration edge, treats a sibling master sharing the protected source pair as blocked
+by the selected one, or implies that a nonterminal master was terminalized. The only activation
+waiting reason is `atomic-series-reconciling` for a contract's own in-flight reconciliation, so a
+plan may not cite a foreign master as a reason to wait; and because a graph-less sprint declares no
+dependencies, PR-4 must not read its `atomic-sequential` shape as a serialization mechanism —
+independent atomic masters proceed concurrently, and only explicit `executionGraph` waves gate on
+`predecessor-incomplete:` (developer ruling).
+
+**Shipped text corrected (260831-LOCR-L36 round 2).** The mirrored runtime catalog this card
+describes — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` —
+now states the corrected doctrine in its own text at `:64-68`: "canonical commanded-master order is
+the stable tie-break and nothing serializes the masters. A graph-less sprint declares no
+dependencies, so independent atomic masters proceed concurrently and no master is held because
+another is selected; graph absence must not be misrepresented as a dependency requiring full
+integration before another master can proceed." The earlier shipped-source debt note is therefore
+removed — a repo-wide grep for `source-pair-scoped`, `source-pair-selected`, the "logically pauses
+the former master" admission, one-selected-master-at-a-time and source-pair activation wording
+returns 0 hits in the code worktree.
 
 ## CCR-L42 current candidate
 
 The plan-review criteria now apply exploratory and promotion duties only to a baseline review. Fix-verification uses the sealed plan issue IDs and cannot recensus the plan, add a criterion, or broaden an issue.
 
 ## Update History
+- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
+  shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
+  the catalog now says "nothing serializes the masters" and that a graph-less sprint "declares no
+  dependencies, so independent atomic masters proceed concurrently and no master is held because
+  another is selected" at `:64-68`, cited via a single-line anchor. Body prose now states the
+  developer ruling (nothing serializes a graph-less sprint; `atomic-sequential` is sprint shape, not
+  a serialization mechanism; per-contract activation is admission state, not dependency evidence and
+  serializes nothing across masters; only explicit `executionGraph` waves gate on
+  `predecessor-incomplete:`), and every other range was re-grepped and repointed to
+  `plan-review.md:1-140`, `reviewer.md:1-390`, `orchestration-task.md:1-215`, and
+  `strategist.md:1-263`. Source documentation only; verification metadata remains closeout-owned and
+  no acceptance or test claim is made.
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote PR-4's graph-less
+  guidance from source-pair activation exposing one master at a time to the per-contract activation
+  record — a sibling master sharing the protected source pair is never paused, replaced, or blocked,
+  and the only waiting reason is `atomic-series-reconciling` — and recorded the shipped-source debt
+  that the frozen mirrored plan-review catalog still states the removed source-pair rule at its own
+  `:66-67`, flagged for a future code leaf. That debt observation is superseded by the
+  260831-LOCR-L36 round-2 entry above: the shipped text is corrected and the debt note is removed.
+  Source documentation only; verification metadata remains
+  closeout-owned and no acceptance or test claim is made.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The plan-review criteria now apply exploratory and promotion duties only to a baseline review. Fix-verification uses the sealed plan issue IDs and cannot recensus the plan, add a criterion, or broaden an issue.
 

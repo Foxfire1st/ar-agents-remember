@@ -6,21 +6,25 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
 
-## IAS Frozen Source-Pair Application Boundary
+## IAS Per-Contract Activation Application Boundary
 
-The application layer composes selecting operations around one source-pair activation authority.
-An atomic master is not exposed merely because its series contract exists: selection becomes
-`reconciling`, the exact code/external-memory pair is synchronized, and only an exact-current result
-becomes `active`. A retained conflict returns agent-owned continue/cancel guidance and leaves the
-integration lock free between calls.
+The application layer composes selecting operations around one per-contract activation authority.
+An atomic master is not exposed merely because its series contract exists: activation becomes
+`reconciling`, that contract's exact code/external-memory bases are synchronized, and only an
+exact-current result becomes `active`. The record is keyed by the canonical series contract, not the
+protected source pair, so two atomic masters commanded by one sprint and sharing its code/memory
+source branches hold independent records: the only activation waiting reason is
+`atomic-series-reconciling` for a contract's own in-flight reconciliation, and a foreign master is
+never a reason to wait. A retained conflict returns agent-owned continue/cancel guidance and leaves
+the integration lock free between calls.
 
 Status observes the stable enclosure-root sync journal independently from task-document health.
 Application adapters translate failures into bounded tool results; they do not recreate the journal
@@ -456,6 +460,12 @@ than comment. The preview/apply parity invariant that produced this repair is in
 `worktrees/overview.md` route and in `memory_quality/overview.md`.
 
 ## Update History
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected the IAS application
+  boundary from one source-pair activation authority to the per-contract activation record — each
+  canonical series contract owns its record, sibling masters sharing a protected source pair never
+  wait on one another, and the only waiting reason is `atomic-series-reconciling` — with no shipped
+  document quoted by this route claim. Source documentation only; verification metadata remains
+  closeout-owned and no acceptance or test claim is made.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded the corrected `worktree_checkpoint_landing_tool`
   docstring on this route — the published text had omitted the completed-closeout requirement, which

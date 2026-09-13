@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a`|
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 
 ## Purpose
 
@@ -25,9 +25,15 @@ packaged role projections are synchronized from the canonical role file rather t
 
 Architect, strategist, and orchestrator responsibilities operate on canonical task documents, not
 on a queue-owned copy of the plan. They may change approved planning whenever their role authority
-allows; downstream closeout projections are invalidated and rebuilt. For atomic work, selecting a
-different live master pauses the old one and reconciles the new source pair before implementation
-is exposed. No role should discard or terminalize a valid master merely to free scheduling state.
+allows; downstream closeout projections are invalidated and rebuilt. For atomic work, implementation
+admission is contract-scoped: each canonical series contract owns its own activation record, so
+selecting a master publishes `reconciling` for that contract only — which suspends nothing and
+excludes no other master — and it becomes `active` only when its own two protected source tips are
+current. Nothing serializes a graph-less sprint: a sprint without an `executionGraph` declares no
+dependencies, so the shipped `atomic-sequential` default describes sprint SHAPE (every commanded
+master executes atomically) rather than a serialization mechanism, and no master is held because
+another is selected. No role should discard or terminalize a valid master merely to free scheduling
+state.
 
 When source reconciliation retains a conflict, the assigned agent resolves and stages it in the
 reported worktree, then continues the same contract-addressed operation or explicitly cancels it.
@@ -122,6 +128,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:119-119 |
 | Worker and reviewer roles define the two independent halves of per-ID acceptance. | `### 4 — Per-Requirement Acceptance Envelope And Delivery Attempt`; `## Per-Requirement Independent Attempt Adjudication` | skills/l-01-agent-lifecycles/roles/worker.md:77-145; skills/l-01-agent-lifecycles/roles/reviewer.md:101-160 |
+| The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. | "nothing serializes the masters"; "nothing serializes its masters" | skills/l-01-agent-lifecycles/roles/architect.md:143-143; skills/l-01-agent-lifecycles/roles/orchestrator.md:265-265 |
 
 ## L23 Role Recovery Semantics
 
@@ -176,7 +183,30 @@ review, atomic child leaves defer to the accumulated master integration review, 
 document applicable targeted checks before handoff. Task-document authority and the three-round
 review limit remain in force.
 
+## Ungoverned Mirror Status (known defect)
+
+This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's
+`skills/**` route. `skills/**` is absent from `settings.json`'s `pathRules.include`, so this whole
+onboarding tree sits outside normal onboarding census coverage: it is legacy and ungoverned. It is
+retained here only because the contract-scoped memory-quality checker still validates these documents
+whenever `skills/**` is part of a leaf's changed set, which is exactly why this overview was updated
+by hand rather than by a governed maintenance pass. The remaining sibling sidecars under
+`onboarding/skills/**` — the other role, criteria, and template cards — are knowingly stale and are
+deliberately left untouched pending a follow-up decision on whether this mirror should be governed or
+removed. That mismatch between the declared path rules and the enforced checking scope is itself the
+recorded defect.
+
 ## Update History
+- 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: rewrote the frozen role
+  boundary to the shipped per-contract activation (selecting a master publishes `reconciling` for
+  that contract only, which suspends nothing and excludes no other master; `active` requires its own
+  two protected source tips) and added the explicit developer ruling that nothing serializes a
+  graph-less sprint, with `atomic-sequential` describing sprint SHAPE rather than a serialization
+  mechanism. Added the graph-less ruling citation row against
+  roles/architect.md:143-143 and roles/orchestrator.md:265-265, both `grep -n`-verified. Re-checked
+  the remaining role rows against the frozen role files and they still hold (curator.md:1-6/153-195,
+  manager.md:1-47, worker.md:1-33, SKILL.md:119-119, worker.md:77-145, reviewer.md:101-160). Added the
+  Ungoverned Mirror Status defect statement. Verification metadata remains closeout-owned.
 - 2026-09-10T09:58+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the curator reference row against the rewritten `skills/l-01-agent-lifecycles/roles/curator.md` — section 4 is now `### 4 — Repair Affected Onboarding, Then Publish`, so the row carries the current heading and its 153-195 extent. Verification metadata remains closeout-owned.
 
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

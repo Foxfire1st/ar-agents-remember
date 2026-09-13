@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:20+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,8 +33,9 @@ and publication effects delegate to the projection modules.
 
 Judgment and priority are read from canonical sources during projection construction. Equal
 effective priority uses graph declaration order and then leaf identity. A graph-less
-atomic-sequential sprint remains valid; its waiting reasons observe the strict source-pair
-activation snapshot rather than electing a series from contract presence.
+atomic-sequential sprint remains valid; its waiting reasons observe this contract's own strict
+activation snapshot rather than electing a series from contract presence, and a sibling master's
+selection is never one of them.
 
 ### Invariants And Boundaries
 
@@ -93,6 +94,7 @@ Projection access now recognizes the exact sprint planning actor and commanded m
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+- 2026-09-13T14:36+02:00 — Corrected the graph-less waiting-reason prose to contract-scoped activation: the queue observes the addressed contract's own activation record, and a sibling master's selection is not a waiting reason. Content change after the activation re-keying; `lastVerifiedCommitHash` remains closeout-owned.
 
 - 2026-08-26T08:20+02:00 — Final frozen reconciliation: the queue observes activation only as
   disposable projection input and retains no transition or lifecycle authority.

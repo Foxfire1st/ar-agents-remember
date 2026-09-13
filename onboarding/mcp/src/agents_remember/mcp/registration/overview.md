@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -106,6 +106,16 @@ registered by `closeout.py` while absent from `PUBLIC_TOOLS` — and 260831-LOCR
 drops, omitting the completed-closeout requirement, which is why the route was unreachable from both
 sides. A published refusal list is a promise about what will *not* happen, so it is kept complete
 whenever the gate changes; the tool surface, registration order and payload owners are unchanged.
+
+260831-LOCR-L36 corrected the same description's **name for the route**. It opened "Use this to pause
+a master", which invited an agent to reach for a protected-branch publication on an ordinary stop
+request: the call moves the master's committed code and memory refs onto its super branch, where every
+other master sees them, under an explicitly required developer approval. It is a partial
+**publication**, and the description now says so and states that pausing is a separate matter which is
+NOT this call — a pause stops the master's work, publishes nothing, moves no ref, and leaves its
+branch, worktrees and enclosure private, and no tool on this route performs it. Only the description
+changed: the signature, the registration order, the payload owner and `PUBLIC_TOOLS` are untouched,
+and `mcp/tests/test_tools.py` pins the new wording.
 
 ## Hot Path Summary
 
@@ -321,6 +331,14 @@ are unchanged. A reader looking for the operation set in the published schema wi
 the description is the contract.
 
 ## Update History
+- 2026-09-13T17:44+02:00 — 260831-LOCR-L36 route impact: the published description of
+  `worktree_checkpoint_landing` now names the route a partial **publication** and denies it is the
+  pause. The old opening ("Use this to pause a master") invited an agent to publish unfinished work
+  for an ordinary stop request, because the call moves the master's committed code and memory refs
+  onto its super branch under explicit developer approval. Recorded in the public-surface section
+  that only the description changed — signature, registration order, payload owner and `PUBLIC_TOOLS`
+  are untouched — and that `mcp/tests/test_tools.py` pins the new wording. Verification metadata
+  remains closeout-owned; no acceptance claim.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded that this route's only change is the corrected
   published docstring for `worktree_checkpoint_landing` — it had listed two of the three completion

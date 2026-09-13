@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-09-05T07:10+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 
 ## Purpose
 
@@ -103,15 +103,21 @@ from the memory-quality request's separate sync/start/poll result contract below
 
 ## IAS Execution-Topology Reference Impact
 
-`execution-topology-migration.md` now describes graph-less scheduling as exact source-pair
-activation, not a requirement that every master integrate fully before another begins. Canonical
-commanded-master order is only the stable equal-priority tie-break. Selecting another atomic master
-logically pauses and preserves the former while the new selection stays `reconciling` until its
-exact code/memory bases are current.
+`execution-topology-migration.md` now describes graph-less scheduling through per-contract
+activation, not a requirement that every master integrate fully before another begins. The guide
+states the default's own scope: a missing `executionGraph` selects `atomic-sequential`, which
+describes the sprint's shape — every commanded master executes atomically — and serializes nothing,
+because a graph-less sprint declares no dependencies, so nothing serializes the masters. Canonical
+commanded-master order is only the stable equal-priority tie-break. The activation record is keyed
+by the canonical series contract, so two atomic masters that share one sprint's protected code and
+memory source branches hold independent records: activating one never pauses or replaces the
+other, and only a contract's own in-flight reconciliation is a waiting reason
+(`atomic-series-reconciling`) until its exact code/memory bases are current. A foreign master is
+never a reason to wait.
 
-The reference also makes the ownership boundary explicit: task authoring never reads selector or
-queue state; queue projection observes active/reconciling/paused/vacant facts but owns no lifecycle
-transition; and malformed selector state fails closed only for affected runtime projection or
+The reference also makes the ownership boundary explicit: task authoring never reads activation or
+queue state; queue projection observes active/reconciling/vacant facts but owns no lifecycle
+transition; and malformed activation state fails closed only for affected runtime projection or
 admission before an exact selecting operation archives and replaces it. No contract-presence or
 tolerant-reader fallback is documented.
 
@@ -258,6 +264,16 @@ review. Complexity and loop settings do not disable or move that atomic integrat
 the route-review rule does not replace certifying evidence requirements.
 
 ## Update History
+- 2026-09-13T15:03:18+02:00 — 260831-LOCR-L36 round 2: corrected this route's description of `execution-topology-migration.md` so it agrees with the guide's corrected text. The IAS execution-topology impact now carries the developer ruling — a missing `executionGraph` selects `atomic-sequential`, which describes the sprint's shape (every commanded master executes atomically) and serializes nothing, because a graph-less sprint declares no dependencies — alongside the per-contract activation account. Read the corrected guide to confirm: the intro's "describes the sprint's shape and serializes nothing" and "selecting one never pauses another" (guide lines 5-11) and the release-notes "a sprint shape, not a serialization mechanism (nothing serializes a graph-less sprint)" (guide lines 122-125). No route ownership changed; verification metadata remains closeout-owned and no acceptance claim is made.
+
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected the IAS
+  execution-topology reference impact so it matches the rewritten `execution-topology-migration.md`
+  — graph-less scheduling is documented as per-contract activation (each series contract owns its
+  record; the sole waiting reason is `atomic-series-reconciling`; a foreign master is never a reason
+  to wait), not as one source-pair-scoped selection that pauses a former master. The 2026-08-26
+  history entry below still carries the superseded source-pair wording and is retained as history,
+  not as a current claim. Source documentation only; verification metadata remains closeout-owned and
+  no acceptance or test claim is made.
 
 - 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current applicable-review
   and atomic-integration semantics from `docs/reference/settings-json.md`. Source inspection only;

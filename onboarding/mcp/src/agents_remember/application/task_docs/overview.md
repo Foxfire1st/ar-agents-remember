@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:05+00:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -33,13 +33,14 @@ the armed 1,200-line hard limit.
 ## Hot Path Summary
 
 Task-document authoring is the source-of-truth publication plane. An otherwise-valid mutation is
-never subordinate to queue or atomic-series activation state. The exact transaction rechecks accepted source bytes, writes task
+never subordinate to queue or per-contract atomic-series activation state. The exact transaction rechecks accepted source bytes, writes task
 truth and invalidates every affected waiting projection under the task-publication lock, then
 rebuilds each disposable projection independently from current closeout-door facts. The closed field-effect classifier excludes observation-only updates from invalidation;
 semantic/planning changes invalidate their old/new affected sprint union. A planning
 change therefore yields a clear invalidation/rebuild signal without freezing unrelated task-doc
-authoring, changing selector state, or claiming lifecycle evidence for an operation already
-underway. Selection and retained sync state are downstream worktree authorities that re-evaluate
+authoring, changing activation state, or claiming lifecycle evidence for an operation already
+underway. Per-contract activation and retained sync state are downstream worktree authorities that
+re-evaluate
 the changed plan at their next admission boundary.
 
 `task_doc` MCP calls dispatch through `task_doc_tool` to one operation (create/replace/edits/special
@@ -133,6 +134,14 @@ full-document `replace`. `remove_step` ("this step should never have existed") a
 ("this planned unit was deliberately not done") remain distinct and are not interchangeable.
 
 ## Update History
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected this route's
+  remaining source-pair/selector phrasing to per-contract activation — an otherwise-valid task
+  mutation is never subordinate to queue or per-contract activation state, and per-contract
+  activation plus retained sync state are the downstream worktree authorities that re-evaluate the
+  changed plan at their next admission boundary. The dated history entry below that names
+  "source-pair activation" is retained as superseded history, not as a current claim. Source
+  documentation only; verification metadata remains closeout-owned and no acceptance or test claim
+  is made.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the new `task_doc_steps` sibling in the
   route purpose and conventions (the step plane is a shared-contract owner, and the dispatcher must
   not grow a second addressing rule), added the step-plane source-evidence row, and added this

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `707847206d02e2ff27b11c1f674a510d85f3b972` |
-| lastVerifiedCommitDate | 2026-09-13T13:20:21+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,8 +25,8 @@ Moves exact code and external-memory integration refs with prepared-capability c
 **Since 260831-LOCR-L34 the route-specific landing facts travel as one value.**
 `LandingAdmission` cit:([`LandingAdmission`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:92-106) replaces `prepare_integration_ref_move`'s single keyword-only
 `expected_series_ledger_prefix` argument. It carries the completed-leaf-chain prefix the **final**
-series route must carry and the captured `checkpoint_candidate` a **paused** master lands (mutually
-exclusive: a paused master has no finished chain to prefix against). The difference between the two
+series route must carry and the captured `checkpoint_candidate` a **checkpoint** lands (mutually
+exclusive: an unfinished master landed at a checkpoint has no finished chain to prefix against). The difference between the two
 routes therefore lives in the transaction's data rather than in a second copy of the transaction.
 `_require_landing_output_authority`
 cit:([`_require_landing_output_authority`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:400-433) is the one place that decides which authorization the output
@@ -74,7 +74,7 @@ entry points no longer exist: after a crash between the two ref moves the operat
   `prepare_integration_ref_move` serves both the final and the paused series route; which commits are
   admitted, and which ledger history form is owed, travel in `LandingAdmission`. Do not fork the
   transaction or re-derive the admission at the boundary.
-- **A paused master's ledger is proved as a projection, never against the completion census.** The
+- **A checkpoint's ledger is proved as a projection, never against the completion census.** The
   ordered leaf-landing prefix is a completion fact the checkpoint route deliberately does not
   require, so `_require_preserved_ledger_history` takes the leaf projection form for it. The rows are
   still recomputed from the world, so a hand-edited table is still refused.
@@ -87,7 +87,7 @@ entry points no longer exist: after a crash between the two ref moves the operat
 | The route-specific admission a landing owes: the finished-chain prefix, or the checkpoint's own captured candidate. | `LandingAdmission`; `_require_landing_output_authority` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:92-106; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:400-433 |
 | The integration transaction owns ordered CAS and pair recovery facts. | `merge_integrated_commits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:180-254 |
 | Ledger mapping and ancestry are re-proved at the irreversible owner, in the history form the landing shape names. | `require_integrated_ledger_mapping`; `_LedgerLanding`; `_require_preserved_ledger_history` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:282-328; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:329-341; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:344-399 |
-| Recovery and checkout refresh: mid-crash integration-ref recovery is deleted, and checkout refresh is exact and idempotent. | `refresh_owned_checkout` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:518-545 |
+| Recovery and checkout refresh: mid-crash integration-ref recovery is deleted, and checkout refresh is exact and idempotent. | `refresh_owned_checkout` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:566-594 |
 
 ## Documentation References
 
@@ -104,13 +104,19 @@ The current source seams include `IntegrationSources`, `IntegrationRefRace`, `In
 | The current module exposes `IntegrationSources`, `IntegrationRefRace`, `IntegratedCommits` at this ownership boundary. | `IntegrationSources`; `IntegrationRefRace`; `IntegratedCommits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:40-51; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:54-66; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:72-78 |
 
 ## Update History
+- 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: the checkpoint route's subject is an
+  unfinished master that is partially published, not a paused one, so `LandingAdmission`'s
+  `checkpoint_candidate` is described as what a checkpoint lands and the leaf-projection invariant as
+  "a checkpoint's ledger". Wording only; the transaction's data-carried route difference is unchanged
+  and no verification stamp advanced.
+- 2026-09-13T12:29:52+00:00: Generated citation repair: `refresh_owned_checkout` repointed to mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:566-594. No content impact: mechanical anchor-range projection bound to citation source snapshot 608ec827a174d194b141ff2daa61dd8e3b6b44611d03fb561dc0b7bb0223223f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T08:45+00:00 — 260831-LOCR-L34: recorded `LandingAdmission` replacing the single
   keyword-only prefix argument — the route difference (finished leaf-chain prefix vs the checkpoint's
   own captured candidate) now travels as data through one transaction — plus
   `_require_landing_output_authority` as the one place the output authorization is chosen, the
   `checkpoint` flag on `require_integrated_ledger_mapping`/`_LedgerLanding`, and
-  `_require_preserved_ledger_history` taking the leaf projection form for a paused master because the
+  `_require_preserved_ledger_history` taking the leaf projection form for an unfinished master because the
   completion census is one of the facts its route does not require. Recorded that the boundary read
   stays authoritative and the preview-side proof exists only for parity. Re-derived the reference
   ranges. Verification metadata remains closeout-owned; no acceptance claim.
