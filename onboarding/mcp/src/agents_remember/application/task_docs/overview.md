@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:05+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
+| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,9 +22,13 @@ reference), `task_reopen` (leaf reopen), `task_doc_route_review` (candidate-boun
 authority), `task_doc_publication` (task-first exact publication plus projection refresh),
 `task_doc_graph_titles` (zero-or-one graph-bearing batch authority),
 `task_doc_section_scaffolding` (atomic raw-section shape boundary),
-`task_execution_topology` (graph authoring/edits), and `task_sprint_linkage`
+`task_execution_topology` (graph authoring/edits), `task_doc_steps` (the step plane: one exact
+addressing rule plus `set_step`/`add_step`/`remove_step`/`skip_step` and the `read_steps`
+projection), and `task_sprint_linkage`
 (sprint↔master attach/detach/linkage facts). The modules moved here from `application/` (flat) so
-the task-document authoring seam owns one package.
+the task-document authoring seam owns one package; `task_doc_steps` was added later
+(260831-LOCR-L33) when keeping the step plane inline took `task_doc_tools.py` to 1,243 lines against
+the armed 1,200-line hard limit.
 
 ## Hot Path Summary
 
@@ -59,6 +63,9 @@ be a list of mappings before any missing canonical register scaffolds are append
 - Shared contracts are explicit owners, not copied private helpers: graph cardinality/title context
   lives in `task_doc_graph_titles.py`, raw-section scaffolding in
   `task_doc_section_scaffolding.py`, and publication ordering in `task_doc_publication.py`.
+- The step plane is one such contract owner: `task_doc_tools.py` registers the step operations and
+  keeps thin `_apply_*` adapters, while `task_doc_steps.py` owns the addressing rule and the four
+  operations. A second addressing rule must not appear in the dispatcher.
 
 ## Invariants And Boundaries
 
@@ -88,6 +95,7 @@ contract per concern.
 | Task-first transactional publication and independent projection refresh. | `publish_task_doc_set`; `publish_prepared_task_documents`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173 |
 | Zero-or-one graph-bearing publication batch and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
 | Atomic raw-section shape validation and missing-register scaffolding. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
+| The extracted step plane owns one exact addressing rule and the four step operations. | `exact_step_target`; `set_step`; `add_step`; `remove_step`; `step_payloads` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:97-124; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:153-165; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:168-190; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:193-223; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:264-275 |
 
 ## 260824-PDLS Final Task-Recovery Boundary
 
@@ -110,7 +118,26 @@ planes consume, so a commanded master is incomplete only when it is neither `Com
 abandonment now counts as a terminal decision here as it does everywhere else, from one definition
 rather than a locally spelled-out set.
 
+## 260831-LOCR-L33 Step Plane Extraction
+
+The step plane left `task_doc_tools.py` for the new sibling `task_doc_steps.py` so the dispatcher
+stayed under the armed 1,200-line hard limit (it had reached 1,243). The extraction is a size
+decision with a semantic payoff: the operations are now split by intent — `set_step` updates exactly
+one existing unit and never creates, `add_step` creates exactly one, `remove_step` deletes exactly
+one with a mandatory reason, and `skip_step` keeps and resolves one — all sharing a single addressing
+rule where `parent` selects the namespace and zero or multiple matches refuse. `read_steps` is the
+read-only focused checklist read. Two developer rulings are in force: a reasoned `remove_step` may
+remove a `done` unit and may operate on a `Completed` document, because the reason plus the appended
+decision are the audited substitute for the guard and gating on document status would have forced a
+full-document `replace`. `remove_step` ("this step should never have existed") and `skip_step`
+("this planned unit was deliberately not done") remain distinct and are not interchangeable.
+
 ## Update History
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the new `task_doc_steps` sibling in the
+  route purpose and conventions (the step plane is a shared-contract owner, and the dispatcher must
+  not grow a second addressing rule), added the step-plane source-evidence row, and added this
+  section describing the extraction, the operations split by intent, and the two developer rulings
+  for a reasoned `remove_step`. Route ownership, publication, and queue semantics are unchanged.
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: `require_commanded_masters_completed` now resolves commanded masters through `master_is_terminal` instead of a local `!= "Completed"` test, so an abandoned commanded master counts as terminal. Content change, not a range repoint.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `preview_task_doc_projection_effects`, `preview_task_doc_transaction_projection_effects`, `publish_prepared_task_documents`, `publish_task_doc_set`, `publish_task_doc_transaction_and_refresh` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.

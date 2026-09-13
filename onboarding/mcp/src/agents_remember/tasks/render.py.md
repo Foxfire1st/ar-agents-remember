@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
+| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,7 +33,13 @@ schema), an optional `statusNote` suffix on the
 Implementation Steps, Proposed Code Examples, Decision Log, Open Questions,
 References). `subTask` docs get a `(Sub-task <id>)` title suffix. A step renders as a `### {id} — {title}` heading;
 the checkbox line carries the distinct `outcome` (`- [{x}] {outcome or title}`, R2) with two-space-indented
-substeps, and a **bare** step (no `outcome`, no substeps) is just its heading — no redundant title echo.
+substeps, and a **bare** step (no `outcome`, no substeps, and — since 260831-LOCR-L33 — no `note`) is
+just its heading, so there is no redundant title echo. Since 260831-LOCR-L33 a top-level step's `note`
+suffixes its checkbox line (`- [{x}] {outcome or title} — {note}`) exactly as a substep's does, AND
+`step.note` joined the condition that draws that line at all: a step carrying only a note would
+otherwise render as a bare heading and lose the note a second time, after it had already been lost in
+the schema. The two halves of that fix belong together — persisting a field the renderer cannot show
+still leaves it invisible to the human-facing view.
 Decisions render as a markdown table with `_cell()` escaping pipes/newlines; empty sections emit explicit
 placeholders. For an empty "Proposed Code Examples" section, `_code_example_lines` renders the doc's
 `codeExamplesNote` when set (e.g. "Drafted at the plan gate.") instead of the default
@@ -115,6 +121,7 @@ No Domain Documentation sources are configured for this repository-internal rend
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to. | `_step_lines` | mcp/src/agents_remember/tasks/render.py:438-466 |
 | The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245 |
 | Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:310-328; mcp/src/agents_remember/tasks/render.py:331-345; mcp/src/agents_remember/tasks/render.py:348-363; mcp/src/agents_remember/tasks/render.py:366-382 |
 | The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
@@ -141,6 +148,13 @@ and renders typed approved-packet refs / acceptance obligations in their section
 and one-way; markdown never becomes authority.
 
 ## Update History
+
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: `_step_lines` now suffixes a top-level step's
+  `note` onto its checkbox line exactly as a substep's note is rendered, and `step.note` joined the
+  condition that draws that line so a step carrying only a note no longer renders as a bare heading
+  (which would have lost the note a second time). Recorded that persisting a field the renderer
+  cannot show still leaves it invisible, so both halves of the fix belong together. Verification
+  metadata remains closeout-owned; no acceptance claim.
 
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: `_MARKER` now carries `abandoned` (`⛔`) and is documented as a direct lookup, so every `DocStatus` must have a marker or rendering raises. Added the invariant and its source row. Content change, not a range repoint.
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.

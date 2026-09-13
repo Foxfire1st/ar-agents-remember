@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/tasks/document_field_effects.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash |  `723fd2f1becc130d85d7a6b285b93115be0df852`|
+| lastVerifiedCommitDate |  2026-09-13T02:07:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,12 @@ discovers the live Pydantic schema and refuses missing models, missing or stale 
 effect memberships. `TaskDocumentFieldEffectProjector` validates the runtime model before projecting
 only fields carrying one requested effect; nested models and containers are projected recursively.
 
+Since 260831-LOCR-L33 `Step` carries a `note` field (`tasks/document.py`), classified here as
+`AUDIT`: free prose about one unit is an operational-audit fact, so an audit-only edit can never
+invalidate a closeout projection. Nothing else about the taxonomy changed — the point of recording
+the classification is that the taxonomy is **exhaustive and fails closed**, so adding a persisted
+field without a classification refuses before write rather than silently widening an effect plane.
+
 The mutation half maps each effect plane to exactly one `TaskDocumentMutationClass`:
 `STRUCTURAL_TOPOLOGY` to `topology`, `NORMATIVE_INTENT` to `intent`,
 `COMPLETION_READINESS`/`PROGRESS` to `completion-readiness`, `EVIDENCE` to `acceptance-evidence`, and
@@ -56,6 +62,8 @@ before write.
 ### Invariants And Boundaries
 
 - The live persisted schema and taxonomy must match exactly; future nested schema changes fail closed.
+  The L33 `Step.note` addition is the worked example: it was classified `AUDIT` in the same change that
+  declared the field, because leaving it unclassified refuses the write.
 - One field may belong to multiple effects, but no persisted field may have an empty classification.
 - Projection selects schema-owned semantic fields; it does not decide queue policy or delivery state.
 - `TaskDocument.id` and `TaskDocument.kind` are each explicitly classified as both normative and
@@ -98,6 +106,12 @@ evidenced by the repository-owned references below.
 None; this is the task-schema authority inside agents-remember.
 
 ## Update History
+
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the classification of the new persisted
+  `Step.note` field as `AUDIT`, and used it as the worked example of the taxonomy's exhaustive,
+  fail-closed rule (a persisted field without a classification refuses before write). No mutation-class
+  mapping or projection policy changed, because `AUDIT` already maps to `operational-audit`.
+  Verification metadata remains closeout-owned; no acceptance claim.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
