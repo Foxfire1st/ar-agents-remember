@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,11 @@ topology validator remains the canonical reference-integrity authority.
 ### Invariants And Boundaries
 
 - An absent graph is valid atomic-sequential topology; malformed or over-capacity authored graphs
-  refuse.
+  refuse. The surviving capacity refusals bound graph *shape* only and name their own codes —
+  `closeout-queue-master-capacity-exceeded` above `MAX_CLOSEOUT_MASTERS` graph nodes and
+  `closeout-queue-edge-capacity-exceeded` above `MAX_CLOSEOUT_GRAPH_EDGES` dependency edges. No
+  refusal bounds how many leaves the sprint's masters declare: that candidate ceiling and its
+  `closeout-queue-capacity-exceeded` code were removed by 260913-LCA-L6.
 - Graph revision changes when execution structure or a master's execution nature changes.
 - Predecessor completion is a mechanistic fact, not a priority judgment.
 - **Predecessor resolution is terminal, not Completed-only (master abandonment):** the blocking set
@@ -74,7 +78,7 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction binds the caller's authored graph to one validated deep-immutable semantic index, then derives the exact queue revision and indexes with the strict/tolerant register split. | `graph_context`; `_sprint_with_bound_graph` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:62-128 |
+| Graph construction binds the caller's authored graph to one validated deep-immutable semantic index, then derives the exact queue revision and indexes with the strict/tolerant register split. | `graph_context`; `_sprint_with_bound_graph` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:60-116 |
 | Incomplete predecessors are built in one bounded adjacency pass with master-granular terminal resolution. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:341-369 |
 | Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:266-273; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:276-289 |
 | The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:309-324; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:299-306 |
@@ -92,7 +96,8 @@ remains transitional until L3's waiting-only projection rewrite.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction bounds failures at sprint, semantic topology, and planning-register stages. | `graph_context`; `_validated_graph_documents` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:62-128; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:130-193 |
+| Graph construction bounds failures at sprint, semantic topology, and planning-register stages. | `graph_context`; `_validated_graph_documents` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:60-116; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:128-183 |
+| Graph admission refuses only graph-shape capacity (masters, then edges) before topology validation; the declared-leaf count is no longer summed or bounded. | `MAX_CLOSEOUT_MASTERS`; `MAX_CLOSEOUT_GRAPH_EDGES`; `closeout-queue-master-capacity-exceeded`; `closeout-queue-edge-capacity-exceeded` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:160-169 |
 
 ## 260821-CLIVE Projection Ordering Only
 
@@ -102,6 +107,7 @@ Ready order remains effective priority rank, graph declaration order, then leaf 
 graph-less atomic-sequential sprint is valid; the graph never owns in-flight lane state.
 
 ## Update History
+- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the graph no longer refuses a sprint for declaring too many leaf candidates. The `sum(len(master.subTasks)) > MAX_CLOSEOUT_CANDIDATES` block and its `closeout-queue-capacity-exceeded` code are deleted, so the invariant now names the capacity refusals that survive — graph shape only, `closeout-queue-master-capacity-exceeded` (graph nodes above `MAX_CLOSEOUT_MASTERS`) and `closeout-queue-edge-capacity-exceeded` (dependency edges above `MAX_CLOSEOUT_GRAPH_EDGES`), read directly from source at 160-169 — and gains the evidence row for them. Rebound two now-stale anchors: `graph_context` 62-128 → 60-116 and `_validated_graph_documents` 130-193 → 128-183. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 - 2026-09-13T15:03:18+02:00 — Removed the round-1 source-side-debt note: the frozen module's graph-less refusal was corrected this round. Re-read `closeout_queue_graph.py` 155-162 and the card now records the current user-facing string — "sprint has no executionGraph; the sprint runs atomic-sequentially by default (every commanded master executes atomically and no dependency is declared, so nothing serializes the masters)" (lines 158-160) — and states the ruling that the atomic-sequential default describes sprint shape and introduces no dependency, so per-contract activation excludes no sibling master. Corrected the graph-less Logic sentence the same way. Re-verified the four reference rows against the file (`graph_context` 62-128, `incomplete_predecessor_map` 341-369, `candidate_node`/`candidate_predecessors` 266-273/276-289, `ready_sort_key`/`predecessor_waiting_reasons` 309-324/299-306) and the L2 row (`graph_context`/`_validated_graph_documents` 62-128/130-193); all anchors still resolve inside their ranges. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T14:38+02:00 — Recorded the source-side debt in the graph-less refusal string: `closeout_queue_graph.py:159` still says "one source-pair-selected atomic master exposes implementation at a time" although activation is now keyed per series contract. Card prose corrected; the frozen source is untouched and no source change is claimed.
 

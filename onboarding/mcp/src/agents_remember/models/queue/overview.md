@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/queue` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

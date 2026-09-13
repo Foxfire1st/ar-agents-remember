@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,11 +27,15 @@ closeout projection.
 `CloseoutQueueResponse` reports revision, service condition, source classification/fingerprint,
 bounded source problems, deterministic waiting-generation members, the first ready generation, and
 next action. Projection members carry classification, priority, order, and reasons; no lifecycle or
-commit state is modeled.
+commit state is modeled. Since 260913-LCA-L6 the response's `members` list is unbounded — the
+candidate ceiling was removed with its enforcement sites — while `reasons`, `sourceProblems` and
+the queue's own master/edge caps keep their bounds.
 
 ### Conventions
 
-All nested models are extra-forbid and every public collection/text field is bounded. One effective
+All nested models are extra-forbid and every public text field is bounded; `CloseoutQueueResponse.members`
+is the one public collection without an item ceiling, because it reports however many leaves a sprint
+declares. One effective
 priority is projected from candidate override or master default; portfolio comparison remains an
 orchestrator decision outside this model.
 
@@ -56,7 +60,7 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The request permits only status and rebuild. | `CloseoutQueueRequest` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38 |
-| The response carries effective projection condition, source identity, problems, and members. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:41-62 |
+| The response carries effective projection condition, source identity, problems, and members. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:41-59 |
 
 ## Cross-Repo References
 
@@ -76,6 +80,8 @@ actions have been removed. A projection is only `invalid-empty` or `valid-built`
 scheduling view, never an operation ledger.
 
 ## Update History
+
+- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the response no longer caps how many closeout candidates a sprint may report. `CloseoutQueueResponse.members` is `Field(default_factory=list)` with the `MAX_CLOSEOUT_CANDIDATES` import dropped, so the Logic and Conventions claims that every public collection is bounded are corrected to name the one unbounded collection; `reasons`, `sourceProblems`, `MAX_CLOSEOUT_MASTERS` and `MAX_CLOSEOUT_GRAPH_EDGES` are untouched. Rebound the `CloseoutQueueResponse` row to its current extent 41-59. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; queue status/rebuild projection semantics are unchanged.
 

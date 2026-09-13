@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -770,6 +770,14 @@ The generated lifecycle phase union and schema now include `recovering-private-p
   those types instead of duplicating them. The e2e/perf suites and Playwright configs are now
   type-checked at all, as is `panda.config.ts`. Corrected the stale "two files" claim about `dev/`.
   Verification metadata pinned until closeout stamps the L2 commit.
+- 2026-09-13T22:22+02:00 — No route impact: 260913-LCA-L6 removed the closeout candidate cap, and its
+  only `dashboard/src` footprint is regenerated content inside the existing `types/` artifacts — the
+  `maxItems: 256` refinement on `CloseoutQueueNode.members` in `types/projection.schema.json` and its
+  matching comment in `types/projection.ts` (regenerated via `scripts/sync-projection-types.py`, never
+  hand-edited). No route, module layout, component tree or transport boundary changed; the generated
+  artifacts keep their ownership and the dashboard still renders whatever rows the producer serves.
+  Detail lives in the `types/projection.ts` and `types/projection.schema.json` sidecars. Verification
+  metadata remains closeout-owned; no stamp advanced.
 - 2026-07-30T12:51+02:00 — No route-level architecture change for
   260727-CHATS-IM-L2. Roster identity narrowing is owned by `data/conversation/`; the sparse
   Engine Room effects overlay is owned by `panels/engine-room/`; structured child-history

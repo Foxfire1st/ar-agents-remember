@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -61,10 +61,10 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pickup and expectation analytics carry structural references. | `AgentPickupNode` | mcp/src/agents_remember/observer/projection.py:392-431 |
+| Pickup and expectation analytics carry structural references. | `AgentPickupNode` | mcp/src/agents_remember/observer/projection.py:397-436 |
 | Task documents remain the real projected hierarchy. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:736-801 |
-| The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | mcp/src/agents_remember/observer/projection.py:639-658; mcp/src/agents_remember/observer/projection.py:661-677 |
-| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
+| The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | mcp/src/agents_remember/observer/projection.py:666-684; mcp/src/agents_remember/observer/projection.py:644-664 |
+| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1140-1162 |
 
 ## Cross-Repo References
 
@@ -97,8 +97,23 @@ Task/master and series nodes also expose typed discarded-unstarted history and c
 distinguishes a non-master from a master with an empty audit. The shared discard node/proof models
 come from the dedicated closeout projection module.
 
+## 260913-LCA-L6 Unbounded Closeout Queue Member Population
+
+`CloseoutQueueNode` serves one exact-current disposable scheduling projection to the dashboard:
+service condition, optional source classification/fingerprint, bounded `sourceProblems`, and
+`members` as `CloseoutCandidateNode` rows. Since 260913-LCA-L6 the `members` array carries no item
+ceiling — the `max_length=256` was removed with the candidate cap, so the served node reports
+however many candidates the sprint has waiting. `sourceProblems` keeps `max_length=256` and
+`CloseoutCandidateNode.reasons` keeps its own `max_length=256`; nothing else on this node is bounded
+by that number.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The served closeout-queue node's member population is unbounded while its problem and reason lists keep their item ceilings. | `CloseoutQueueNode`; `CloseoutCandidateNode` | mcp/src/agents_remember/observer/projection.py:719-733 |
+
 ## Update History
 
+- 2026-09-13T22:22+02:00 — L6 (260913-LCA): recorded that `CloseoutQueueNode.members` lost its `max_length=256` item ceiling with the closeout candidate cap, so the served dashboard node reports an unbounded candidate population while `sourceProblems` and `CloseoutCandidateNode.reasons` keep their 256-item bounds; added the source row for the node at 719-733. Rebound four drifted anchors against the current source — `AgentPickupNode` 392-431 → 397-436, `TaskExecutionNode` 639-658 → 666-684, `TaskExecutionEndpointNode` 661-677 → 644-664 and `WorkspaceProjection` 1131-1153 → 1140-1162 — and re-verified `TaskDocNode` 736-801, which still holds. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for projection attention and process-state vocabularies and confirmed that their documented values and ownership are unchanged. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: reconciled projection models with waiting-only closeout state and audited discarded task history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.

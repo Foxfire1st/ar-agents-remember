@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-06T21:51:23+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -34,8 +34,14 @@ remain the hierarchy authority; lifecycle and hosted-occupant fields are optiona
 attachments.
 
 `LifecycleOperationProjection` gains the optional `taskIntent?: TaskIntentIdentity` (line 349),
-and the new `TaskIntentIdentity` interface (line 687-693) mirrors the JSON Schema refinements:
+and the new `TaskIntentIdentity` interface (line 750-754) mirrors the JSON Schema refinements:
 the required 64-hex `digest` and the closed `schema: "task-intent/v1"` union.
+
+Since 260913-LCA-L6 the mirror carries no refinement comment on `CloseoutQueueNode.members`: the
+candidate population is unbounded, so the generated interface declares the array as a plain
+`members: CloseoutCandidateNode[]` (line 144). The 256-entry refinements that remain in this
+generated file belong to other collections — `CloseoutCandidateNode.reasons` (line 130) and
+`CloseoutQueueNode.sourceProblems` (line 149).
 
 ### Conventions
 
@@ -47,6 +53,9 @@ rather than hand-maintaining parallel declarations.
 - The task-document reference is repository-qualified and level-explicit.
 - Runtime ids remain projections/correlation, not structural seat identity.
 - Generated TypeScript and schema artifacts must remain synchronized.
+- Only refinements the producer's Python schema actually carries are emitted, so a collection the
+  producer leaves unbounded (today `CloseoutQueueNode.members`) gets no bound comment here either;
+  the dashboard never adds a limit the server does not enforce.
 - The task-intent identity is observation-only: the dashboard never mints or mutates a digest.
 
 ### Todos
@@ -61,15 +70,16 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:699-702 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:648-682 |
+| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:698-701 |
+| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:647-681 |
 | Execution nodes name their kind, leaf-id segment and task reference. | "export interface TaskExecutionNode {" | dashboard/src/types/projection.ts:725-729 |
 | An execution endpoint carries a task reference and optional leaf id. | "export interface TaskExecutionEndpointNode {" | dashboard/src/types/projection.ts:711-714 |
 | Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | "export interface TaskExecutionEdgeNode {" | dashboard/src/types/projection.ts:704-709 |
 | The graph contains typed node and edge arrays. | "export interface TaskExecutionGraphNode {" | dashboard/src/types/projection.ts:716-719 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:817-830 |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:816-829 |
 | The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:362-362 |
-| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:751-755 |
+| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:750-754 |
+| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | `CloseoutQueueNode`; "export interface CloseoutCandidateNode {" | dashboard/src/types/projection.ts:143-152; dashboard/src/types/projection.ts:124-133 |
 
 ## Cross-Repo References
 
@@ -109,13 +119,28 @@ The generated mirror removes `AtomicBlockerNode` and the old mutable queue candi
 `CloseoutQueueNode` now exposes exact-current service/source condition, bounded problems, and
 generation-keyed `CloseoutProjectionMemberNode` rows; member classification is the closed
 `ready | waiting | blocked` display vocabulary. These interfaces describe a disposable producer view
-only and transfer no scheduling or operation authority to the browser.
+only and transfer no scheduling or operation authority to the browser. The `members` array itself
+carries no item ceiling since 260913-LCA-L6 — see that section below — while `sourceProblems` and
+each row's `reasons` keep their 256-entry refinements.
 
 `DiscardUnstartedProofNode` and `DiscardedSubTaskNode` expose audited discard-before-start evidence.
 Required series and optional task-document discard count/history fields remain distinct from live
 subtasks and completed progress. Supported runtime-only schema constraints are emitted immediately
 above their TypeScript properties as stable `JSON Schema refinements` comments, including nested item
 constraints; TypeScript shape alone is not runtime validation.
+
+## 260913-LCA-L6 Unbounded Closeout Queue Members
+
+The regenerated mirror no longer documents a `maxItems` refinement on `CloseoutQueueNode.members`:
+`members: CloseoutCandidateNode[]` is emitted with no refinement comment because the producer's
+Python schema dropped the candidate cap, and a sprint may now declare any number of leaves. The
+neighbouring refinements are untouched — `CloseoutCandidateNode.reasons` keeps
+`{"maxItems":256}` and `CloseoutQueueNode.sourceProblems` keeps its own. No dashboard-side behaviour
+changes: the panel still renders whatever rows the producer serves.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The removed refinement and the two that remain, in the generated mirror. | "export interface CloseoutQueueNode {"; "\"maxItems\":256" comments | dashboard/src/types/projection.ts:143-152; dashboard/src/types/projection.ts:124-133 |
 
 ## 260824-PDLS Invalidation Outcome Mirror
 
@@ -146,6 +171,7 @@ returns on snapshots.
 
 ## Update History
 
+- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the regenerated mirror dropped the `JSON Schema refinements: {"maxItems":256}` comment from `CloseoutQueueNode.members` with the closeout candidate cap, so the mirror now states that the candidate population is unbounded and only `CloseoutCandidateNode.reasons` and `CloseoutQueueNode.sourceProblems` keep 256-entry refinements. Added the L6 section plus two evidence rows (queue node 143-152, candidate node 124-133) and rebound the drifted anchors `TaskDocumentRef` 699-702 → 698-701, `TaskDocNode` 648-682 → 647-681, `TaskIntentIdentity` 751-755 → 750-754 and `WorkspaceProjection` 817-830 → 816-829. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 - 2026-09-06T21:51:23+00:00 — Reconciled the landed IAS source delta and actual preparation/fixture boundaries; existing verification pins and history are preserved.
 
 - 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
@@ -153,10 +179,10 @@ returns on snapshots.
 
 - 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocumentRef` repointed to dashboard/src/types/projection.ts:699-702. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocNode` repointed to dashboard/src/types/projection.ts:648-682. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocNode` repointed to dashboard/src/types/projection.ts:647-681. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `WorkspaceProjection` repointed to dashboard/src/types/projection.ts:817-830. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `taskIntent` repointed to dashboard/src/types/projection.ts:362-362. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskIntentIdentity` repointed to dashboard/src/types/projection.ts:751-755. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskIntentIdentity` repointed to dashboard/src/types/projection.ts:750-754. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the optional `meaningfulRevision` field on the generated `LifecycleOperationProjection` interface.
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the regenerated lifecycle envelope types (schema/state-matrix versions, incoherent status, identity/componentBindings/worker/approval/recommendedAction cells). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.

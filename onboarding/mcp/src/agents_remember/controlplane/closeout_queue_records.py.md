@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,13 +24,15 @@ projection.
 ### Logic
 
 `CloseoutProjectionBuild` binds the sprint ref, exact source fingerprint and classification,
-bounded members, and build timestamp. Validation requires terminal source classifications to carry
+members, and build timestamp. The member list carries no item ceiling since 260913-LCA-L6.
+Validation requires terminal source classifications to carry
 no members and keeps the entire candidate self-contained for one later exact-current publication.
 
 ### Conventions
 
-The record inherits the repository durable-record schema and bounds every persisted text and
-collection field.
+The record inherits the repository durable-record schema and bounds its text fields (`builtAt` is a
+bounded string). Its `members` collection carries no item ceiling since 260913-LCA-L6, so how many
+leaves a sprint declares never reaches this build guard.
 
 ### Invariants And Boundaries
 
@@ -60,11 +62,15 @@ No meaningful cross-repository reference applies.
 
 `CloseoutProjectionBuild` replaces the former queue-owned WAL transaction vocabulary. One build is
 a complete off-side projection candidate binding the sprint ref, canonical source fingerprint and
-classification, bounded members, and build timestamp. Terminal source classifications require an
+classification, members, and build timestamp. Terminal source classifications require an
 empty member set. These records never own claims, commits, lifecycle transitions, certification,
-blockers, or task locks; they are disposable publication input only.
+blockers, or task locks; they are disposable publication input only. The member list was bounded to
+256 at the time this section was written; 260913-LCA-L6 removed that ceiling, so only the
+terminal-classification emptiness rule limits membership today.
 
 ## Update History
+
+- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the off-side build record no longer caps its member population. `CloseoutProjectionBuild.members` is `Field(default_factory=list)` and the literal `max_length=256` is gone; both "bounded members" claims are corrected and the terminal-classification emptiness rule is unchanged. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; disposable projection-build record behavior is unchanged.
 

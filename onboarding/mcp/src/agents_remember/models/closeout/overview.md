@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6`|
-| lastVerifiedCommitDate |  2026-09-13T22:07:53+02:00|
+| lastVerifiedCommitHash |  `9f0309447d6820d90e59279abc84f87f1ccbb3b3`|
+| lastVerifiedCommitDate |  2026-09-13T22:28:36+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -29,14 +29,17 @@ message through it, and `message_for` stays the raw public echo that the ledger 
 
 ## Hot Path Summary
 
-`projection.py` defines the `valid-built` / `invalid-empty` state machine and bounded member,
-source-problem, invalidation, rebuild, and task-doc effect payloads.
+`projection.py` defines the `valid-built` / `invalid-empty` state machine and its source-problem,
+invalidation, rebuild, and task-doc effect payloads. Its member list is unbounded — how many leaves a
+sprint declares is not a projection-model concern.
 
 ## Local Invariants And Traps
 
 - A projection is disposable scheduling state, never lifecycle/commit evidence.
 - Invalid means empty; stale rows are not transitioned into a second lifecycle database.
-- Text and population bounds are enforced at model construction.
+- Text and payload bounds are enforced at model construction; the member population carries no ceiling
+  since 260913-LCA-L6, so membership uniqueness (one row per waiting generation and task) is the guard
+  that remains.
 
 ## File-Level Onboarding Map
 
@@ -50,6 +53,14 @@ No configured external source applies. Queue producers and application consumers
 through same-repository source references.
 
 ## Update History
+
+- 2026-09-13T22:22+02:00 — 260913-LCA-L6 route refresh (uncommitted change set on `ar/260913-lca-l6-ar`):
+  corrected the Hot Path Summary and the population-bound invariant, which claimed the projection
+  models bound candidate populations. `CloseoutQueueState.members` is now `Field(default_factory=list)`
+  with no `max_length`, so the route's member list is unbounded while `sourceProblems` keeps
+  `MAX_CLOSEOUT_SOURCE_PROBLEMS`; membership uniqueness stays enforced by the state validator. The
+  child card `projection.py.md` was updated in the same pass.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 
 - 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): recorded
   that `input.py` now owns the single rendering of the memory-content commit message —

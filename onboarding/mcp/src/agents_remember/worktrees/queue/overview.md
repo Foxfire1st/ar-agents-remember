@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
+| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
