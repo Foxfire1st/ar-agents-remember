@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
-| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
+| lastUpdated | 2026-09-13T23:52+02:00 |
+| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
+| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -74,6 +74,8 @@ checks for the branch-addressed route.
 | L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate. The activation admission is contract-scoped: a refusal carries no `classification`/`blocking`/`sourcePair*` key and never names a foreign master as blocker or retry precondition. Preparation evidence only. |
 | CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, configured-hook non-invocation, and the memory-content commit's one `Code-Commit:` trailer read back out of the object (the `memory.md`-only ledger commit carrying none); focused behavior evidence only. |
 | Ledger attribution and the projected source ledger | `test_memory_ledger.py`, `test_worktree_sync.py` | The projection equals the rows the tracked table carried at every checkpoint of an attributed line, a hand edit to the table cannot move it, the pre-trailer history reads its own blob, the bootstrap source contributes no rows, and a code tip the official memory line does not map still refuses by name without advancing the work branch. The ledger cases are the `unit-regression` lane and the sync case is the `integration` lane; the mid-cycle case's refusal comes from the named-ref ledger read, not from the projected source. |
+| Producer census and the one renderer | `test_memory_attribution_producers.py` | Five memory-content producers and zero untrailered, measured from source: the trailer key identifier and its interpolation appear in exactly one production module, no production module spells the trailer as a quoted literal, each of the five producers reaches a shared renderer entry, and a hostile multi-paragraph caller body survives byte for byte with the trailer appended as its own final block. The two non-closeout producers are driven end to end through the public `memory_carryover_apply` and `memory_baseline_adopt`. Source census plus real-repository cases; **the module has no lane row yet**, so `load_lane_manifest` fails closed on it — see the `test-evidence-lanes.toml` card. |
+| Closeout recovery attribution | `test_transaction_only_worktree_delivery.py` | A real public closeout interrupted after its code commit is resumed through the journalled `LifecycleOperationRecoveryCommits` cell — a wrong cell is asserted to refuse first — and both documented git readers are asserted against the resumed shas, while the `memory.md`-only ledger commit returns none. The behavioural half of the census for the route that has no memory commit site of its own. |
 | Closeout auto-carry and parked candidate | `test_source_lineage.py` (`CloseoutSourceLineageHealTests`), `test_sync_parked_candidate.py` | The closeout boundary carries a settleable stale break, refuses a preview without mutating, escalates an unprovable break, and returns a parked dirty candidate through the sync transaction (restore on completed/resume/cancel, kept unmerged-index refusal); transaction-level detail lives in the new unit-lane module. |
 
 | Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
@@ -266,6 +268,43 @@ branch at its pre-sync head, and syncs once the pair is completed. That refusal 
 projected source ledger, so the case is the regression guard that this leaf's reader change left the
 detection where it was.
 
+## 260913-LCA-L4 Producer Census And The One Renderer
+
+`test_memory_attribution_producers.py` is the leaf's new module and the census that makes the trailer
+transition total. A memory commit with no `Code-Commit:` trailer contributes no ledger row, and the
+projected ledger cannot tell that apart from a producer that kept the old shape, so the surface is either
+complete or silently holey. The module holds five cases: a one-definition census (the key identifier and
+its interpolation appear in exactly one production module, and no module spells the trailer as a quoted
+literal), a producer census (five producers, each asserted to reach a shared renderer entry), a dialect
+case (a hostile multi-paragraph body survives byte for byte with the trailer as its own final block), and
+two end-to-end cases driving the public `memory_carryover_apply` and `memory_baseline_adopt` on real
+disposable repositories.
+
+The census is measured at base `5bb124d4` and **corrects** the master's 2026-09-13T22:05 decision in two
+places: `worktrees/queue/closeout_recovery.py:209` is the recovery route's CODE leg, not a producer, and
+the producer the first census missed is `preparation/memory_output.py:92`. The corrected result is 5
+memory-content producers and 0 untrailered — `closeout_external.py:165`,
+`direct_landing_execution.py:270`, `preparation/memory_output.py:92` (memory-content leg only),
+`carryover.py:846`, `baseline.py:210` — with every trailerless site carrying a recorded reason: each
+ledger leg, `closeout_recovery.py:209` as a code commit, `sync_transaction_git.py:304`/`:333` memory merge
+commits (two memory parents, no single code commit to name), and carryover's nothing-to-carry path, which
+creates no commit.
+
+Two durable rules the module enforces from source: the trailer key is declared once and must never be
+spelled as a quoted literal in a second production module, and the trailer is **appended as its own final
+block** rather than woven into the caller's body — because carryover and baseline take that body as a
+public argument of another tool and a caller may pass a multi-paragraph message whose last paragraph is
+itself `Key: value` lines.
+
+`test_transaction_only_worktree_delivery.py` gained the behavioural half for the route that has no memory
+commit site of its own: `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` interrupts a
+real public closeout after its code commit, resumes it through the journalled recovery cell (a wrong cell
+is asserted to refuse first), and reads both documented git readers against the resumed shas. The leaf
+also moved one import in `test_memory_ledger.py` — `CODE_COMMIT_TRAILER_KEY` now comes from
+`kernel.memory_attribution`, because the writing model stopped naming it — and registered the new module
+as an exact consumer of two shared-support artifacts in `mcp/tests/evidence-lifecycle.toml`; no case and
+no assertion in `test_memory_ledger.py` changed.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
@@ -303,6 +342,20 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): route refresh. Registered the leaf's new module
+  `test_memory_attribution_producers.py` (the producer census: one-definition guard, five producers each
+  reaching the shared renderer, the append-as-final-block dialect, and the two public-tool end-to-end
+  cases) and the recovery case the leaf added to `test_transaction_only_worktree_delivery.py` in a new
+  route section and two `Retained Behavioral Routes` rows, recorded the corrected census (5 producers and
+  0 untrailered, correcting the master's 2026-09-13T22:05 decision in two places), the trailerless-by-rule
+  sites with their reasons, and the two durable rules the census enforces. Also recorded the
+  `test_memory_ledger.py` import move (no case or assertion changed) and the new module's registration as
+  a consumer in `mcp/tests/evidence-lifecycle.toml`. **Open item recorded, not repaired:** the new module
+  still has no lane row, so `load_lane_manifest` fails closed — the measurement and the consequence are in
+  the new section above and on the `test-evidence-lanes.toml` card; the repair is code work, not memory
+  work. Added a new file card for the new module. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 - 2026-09-13T23:25+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the ledger
   attribution group gained a tenth case, `test_the_rendered_trailer_is_the_one_the_reader_parses`,
   after the writer and the reader were found to hold two separate `Code-Commit` literals (found by

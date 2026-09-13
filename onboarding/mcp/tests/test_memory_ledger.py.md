@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T23:24+02:00 |
-| lastVerifiedCommitHash |  `5bb124d43ea7b234edd570cf3995521e708714bd`|
-| lastVerifiedCommitDate |  2026-09-13T23:22:52+02:00|
+| lastVerifiedCommitHash |  `52875e7a8695fc7b67bff21ebb07a67268213967`|
+| lastVerifiedCommitDate |  2026-09-14T00:06:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,8 +51,8 @@ it is still an ancestor.
 
 The tenth case is the cross-boundary one:
 cit:([`test_the_rendered_trailer_is_the_one_the_reader_parses`], mcp/tests/test_memory_ledger.py:562-597) renders the trailer through the
-**real writer** (`EffectiveCloseoutInput.memory_content_message`, which reaches the key through the
-import added in this change set), commits that message as a real memory commit, and reads the code
+**real writer** (`EffectiveCloseoutInput.memory_content_message`, which since 260913-LCA-L4 delegates to
+the kernel's one renderer), commits that message as a real memory commit, and reads the code
 commit back out with `attributed_commits` / `ledger_rows_from_attribution` /
 `parse_code_commit_trailer`. It exists because the writer and the reader had briefly held two separate
 `Code-Commit` literals: a writer whose key the reader does not parse loses the row entirely, and that
@@ -64,8 +64,12 @@ could not catch a changed constant.
 
 The scenario uses the public immutable ledger helpers directly, plus the attribution module's public
 readers (`attributed_commits`, `ledger_rows_from_attribution`, `parse_code_commit_trailer`) and, for
-the round-trip case, the writer's `EffectiveCloseoutInput`/`EnabledCloseoutLeg` and the imported
-`CODE_COMMIT_TRAILER_KEY`. The
+the round-trip case, the writer's `EffectiveCloseoutInput`/`EnabledCloseoutLeg` and
+`CODE_COMMIT_TRAILER_KEY`. Since 260913-LCA-L4 that constant is imported from
+`agents_remember.kernel.memory_attribution` rather than from `agents_remember.models.closeout.input`
+(`:11`): the writing model no longer names the key at all, so the kernel module is the only place the
+module under test can read it from — the key's declaration and its one interpolation now live there
+together. The
 attribution fixture writes real 40-character object names rather than labels, because git reads a
 trailing block as a trailer only when the value looks like an object name; `CODE_ONE`/`CODE_TWO`/
 `CODE_OWN` are those names. Each checkpoint records an immutable `tuple` snapshot of its rows, so a
@@ -124,7 +128,9 @@ No Domain Documentation source is configured for this repository-local ledger fo
 | A merged-in mapping is still an ancestor, and the case asserts the second parent really is off the first-parent line so a first-parent walk could not have found it. | `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:600-630 |
 | The readers under test: the attribution walk, the row map, and the message parse. | `attributed_commits`; `ledger_rows_from_attribution`; `parse_code_commit_trailer` | mcp/src/agents_remember/kernel/memory_attribution.py:119-150; mcp/src/agents_remember/kernel/memory_attribution.py:184-203; mcp/src/agents_remember/kernel/memory_attribution.py:103-116 |
 | The cross-boundary case: the real writer renders the trailer, the message is committed, and the real reader resolves the code commit out of it — the guard against the writer and the reader holding two `Code-Commit` literals. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:562-597 |
-| The single key both sides now use, declared in the kernel reader and imported by the writing model. | `CODE_COMMIT_TRAILER_KEY` | mcp/src/agents_remember/kernel/memory_attribution.py:55-55; mcp/src/agents_remember/models/closeout/input.py:9-9 |
+| The single key both sides use: declared in the kernel reader **and rendered there**, and imported by this test module from that kernel module (`:11`) rather than from the writing model, which stopped naming it at 260913-LCA-L4. | `CODE_COMMIT_TRAILER_KEY`; `render_memory_content_message` | mcp/src/agents_remember/kernel/memory_attribution.py:56-56; mcp/src/agents_remember/kernel/memory_attribution.py:72-97; mcp/tests/test_memory_ledger.py:11-11 |
+| The producer census that now owns the one-definition rule the round-trip case guards behaviourally. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:86-137 |
+| The writer path the round-trip case drives, now a delegation to the kernel renderer instead of a local f-string. | `memory_content_message` | mcp/src/agents_remember/models/closeout/input.py:148-166 |
 | The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_memory_ledger.py" | mcp/tests/test-evidence-lanes.toml:73-73 |
 
 ## Cross-Repo References
@@ -135,6 +141,15 @@ No cross-repository implementation source governs this focused unit.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
+  base `5bb124d4`): one import moved. `CODE_COMMIT_TRAILER_KEY` is now imported from
+  `agents_remember.kernel.memory_attribution` (`:11`) instead of from
+  `agents_remember.models.closeout.input`, because the writing model stopped naming the constant when it
+  began delegating to the kernel's renderer. No case changed and no assertion changed — the round-trip
+  case still renders through the real writer and reads the code commit back out through the real reader —
+  so the module's evidence and the oracle rule both stand; recorded the import's source and added the
+  census case that owns the one-definition rule behaviourally as a reference. Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T23:24+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the module gained
   its tenth added case, `test_the_rendered_trailer_is_the_one_the_reader_parses`, after the writer and
   the reader were found to hold two separate `Code-Commit` literals. The case renders through the real

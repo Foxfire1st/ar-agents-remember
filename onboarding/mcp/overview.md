@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-10T06:03:57+00:00|
-| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
-| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
+| lastUpdated | 2026-09-13T23:52+02:00|
+| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
+| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1170,20 +1170,68 @@ tracked ledger commit is **not** retired: `memory.md` is still written, committe
 closeout family, and retiring that tracked form across closeout, direct landing, queue recovery,
 series closeout, integration and sync is a separate leaf of the same master.
 
-The key is declared once, here in the kernel, and the model imports it. The first version of this
-change set left two literals — one in this module and one in `models/closeout/input.py`, which
-declared its own `CODE_COMMIT_TRAILER_KEY = "Code-Commit"` while claiming to import it — and that
-shape fails silently, because a writer emitting trailers the reader ignores looks like "no attribution
-exists" rather than like a bug. The model now imports the constant (`input.py:9`), so
-`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit, this module's declaration, and
-every other occurrence is prose. The direction is the one `layers.toml` permits rather than a
+The key is declared once, here in the kernel, and since 260913-LCA-L4 it is also **written** here, by the
+same module. The first version of this change set left two literals — one in this module and one in
+`models/closeout/input.py`, which declared its own `CODE_COMMIT_TRAILER_KEY = "Code-Commit"` while
+claiming to import it — and that shape fails silently, because a writer emitting trailers the reader
+ignores looks like "no attribution exists" rather than like a bug. L2 made the model import the constant
+(`input.py:9`); L4 went the rest of the way and made the model import the **renderer**
+(`render_memory_content_message`, `kernel/memory_attribution.py:72-97`) instead of naming the key at all,
+because a key that is one literal in two directions should have one function that interpolates it. So
+`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit, this module's declaration, and that
+hit is now the only place the format exists — the identifier *and* its interpolation. The direction is the one `layers.toml` permits rather than a
 preference: `order = [errors, kernel, models, ...]` with "a module in package P may import package Q
 only when rank(Q) < rank(P)" means a kernel module importing a model would import upward, and a grep
 over `mcp/src/agents_remember/kernel/` finds zero imports of `agents_remember.models`. The round trip
 is guarded by a case that renders through the real writer, commits the message and reads the code
 commit back out through the real reader.
 
+### The Producer Surface Is Total, And It Is Five Sites
+
+L4 closed the transition rather than leaving it three-quarters done, because a projected ledger cannot
+tell "this producer kept the old shape" apart from "no attribution exists": the pairing is simply gone.
+The census was taken at base `5bb124d4` from source and **corrects** the master's 2026-09-13T22:05
+decision in two places — `worktrees/queue/closeout_recovery.py:209` is that route's CODE leg, not a
+memory-content producer (a resumed closeout still owing its memory commit goes through
+`closeout_external.py`, the producer the first attempt uses), and the producer the first census missed is
+`worktrees/integration/closeout/preparation/memory_output.py:92`, the preparation route's memory-content
+leg. The five memory-content producers are:
+
+| Producer | Code commit it names |
+| --- | --- |
+| `worktrees/modules/closeout_external.py:165` | the accepted commit of the same closeout (and, transitively, a resumed closeout that still owes its memory commit) |
+| `worktrees/integration/direct_landing/direct_landing_execution.py:270` | `operation_input.codeCommit` |
+| `worktrees/integration/closeout/preparation/memory_output.py:92` | the candidate's certified code commit |
+| `memory/carryover.py:846` | `official_head`, the commit its mapping already names |
+| `memory/baseline.py:210` | the code source-branch commit its initial ledger row maps |
+
+Every other commit site is trailerless **by rule, with a recorded reason** rather than by omission: each
+ledger leg; `closeout_recovery.py:209` as a code commit; `sync_transaction_git.py`'s memory merge commits
+(two memory parents, no single code commit to name); and carryover's nothing-to-carry path, which creates
+no commit at all. Two of the five take their message as a **public argument of another tool**
+(`memory_carryover_apply`, `memory_baseline_adopt`), which is why the renderer appends the trailer as its
+own final block after a blank line instead of weaving it into the body — the caller's multi-paragraph
+message survives byte for byte. `mcp/tests/test_memory_attribution_producers.py` holds the census: it
+requires the key identifier and its interpolation in exactly one production module, forbids the trailer
+being spelled as a quoted literal anywhere in production, and asserts each of the five producers reaches
+a shared renderer entry. Its residual gap is stated rather than hidden — a future producer building the
+string some third way is caught only by its own route's behavioural case, and the prepared leg has none.
+
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
+  attribution plane. The kernel module now **writes** the trailer as well as reading it
+  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
+  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
+  only interpolation as well as the only declaration. Added the producer-surface subsection: the
+  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
+  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
+  trailerless-by-rule sites with their reasons, why carryover and baseline force the
+  append-as-final-block shape, and the census case that enforces it. This route also governs
+  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
+  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
+  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T23:23+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the measured
   two-literal defect the entry below records is fixed, so this section now states the resolved shape —
   `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`

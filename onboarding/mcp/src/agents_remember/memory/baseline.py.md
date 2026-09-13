@@ -5,15 +5,17 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastUpdated            | 2026-09-13T23:52+02:00 |
+| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
+| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
 
 `baseline.py` is the package-local `c-10-adopt-memory-baseline` skill implementation for inspecting and
-adopting an existing external-memory onboarding baseline.
+adopting an existing external-memory onboarding baseline. The memory commit it creates when adopting is
+attributed: since 260913-LCA-L4 it carries the `Code-Commit:` trailer naming the code source-branch
+commit the initial ledger row maps.
 
 ## Code Commentary
 
@@ -30,6 +32,44 @@ inside a `CoordinationHints(...)` (260731-EFA-L2) — the resolver no longer acc
 `requested_topology=` / `coordination_root=` as individual keywords. `code_repository_name`,
 `workspace_root` and `code_repository_root` are still passed directly.
 
+### Attribution At The Commit Seam (260913-LCA-L4)
+
+Baseline adoption writes the first mapping a repository's memory has, and it takes a commit message
+from nobody: its adopt subject is a hard-coded string built from the code repository's name. Before L4
+that subject was the whole message, so the memory commit pair — the only memory commit a fresh baseline
+has — carried no attribution and the projected ledger would simply have no first row.
+
+In `adopt_initial_baseline` (`:169-232`) the code commit is now resolved **once** and used twice
+(`:204-221`):
+
+```python
+code_source_commit = branch_commit(context.code_repository_root, source_branch)
+require_git(context.memory_root, ["add", *existing_paths])
+memory_content_commit = commit_if_dirty(
+    context.memory_root,
+    render_memory_content_message(
+        f"[adopt-{context.code_repository_name}-memory-baseline] Adopt external memory content",
+        code_source_commit,
+    ),
+)
+ledger = create_initial_ledger(
+    context.code_repository_name,
+    code_source_commit,
+    memory_content_commit,
+)
+```
+
+Two independent resolutions of "the code source-branch commit" is exactly how a trailer and its ledger
+row come to disagree, so hoisting it is the point rather than a tidy-up. The trailer is rendered by
+`kernel.memory_attribution.render_memory_content_message` — the package's one writer, so this route does
+not own a format — and it names `branch_commit(code_repository_root, source_branch)`, the same value
+`create_initial_ledger` maps. The adoption still requires external topology, still blocks on actionable
+drift unless it is explicitly accepted, and still refuses in the same places; only the memory-content
+message gained the trailer.
+
+The `memory.md`-only ledger commit (`:224`) is deliberately left unattributed: it names no code commit,
+and a second trailered commit for one code commit would project a duplicate row.
+
 ### Invariants And Boundaries
 
 - Adoption requires external topology.
@@ -42,19 +82,37 @@ inside a `CoordinationHints(...)` (260731-EFA-L2) — the resolver no longer acc
   package; the old top-level `drift` package is no longer present.
 - `baseline_adopt`'s `dry_run` defaults to `False` (act-by-default); `dry_run=true`
   previews the adoption plan without committing.
+- The adopting memory commit is attributed to the code source-branch commit, and the initial ledger row
+  maps that same resolved value — one resolution, so the trailer cannot disagree with the ledger. The
+  attribution is rendered by `kernel.memory_attribution.render_memory_content_message`, never by a
+  route-local format, and the `memory.md`-only ledger commit stays unattributed by rule.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:353-360; mcp/src/agents_remember/application/memory_tools.py:363-379 |
+| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:353-361; mcp/src/agents_remember/application/memory_tools.py:363-379 |
 | Ledger parsing and writing live in the kernel. | `load_ledger`; `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:202-205; mcp/src/agents_remember/kernel/memory_ledger.py:216-238 |
+| The adopting memory commit is attributed to the code source-branch commit through the kernel's one renderer, and that same resolved value is what `create_initial_ledger` maps. | `render_memory_content_message`; `code_source_commit`; `create_initial_ledger` | mcp/src/agents_remember/memory/baseline.py:208-221; mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
+| The end-to-end case that drives the public `memory_baseline_adopt` on a real disposable repository and asserts both documented git readers see the trailer, and that the ledger commit sees none. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch` | mcp/tests/test_memory_attribution_producers.py:289-345 |
 
 ## 260815-DAG-L4 Authority Boundary
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
+  base `5bb124d4`): baseline adoption became one of the five memory-content producers, and it was the
+  one whose commit message is nobody's argument — its hard-coded adopt subject was the whole message, so
+  a fresh baseline's only memory commit carried no attribution and the projected ledger had no first
+  row. Recorded that the code source-branch commit is now resolved once (`:208`) and used twice — the
+  renderer call (`:210-216`) and `create_initial_ledger` (`:217-221`) — that the trailer is rendered by
+  `kernel.memory_attribution.render_memory_content_message` rather than by a route-local format, that the
+  `memory.md`-only ledger commit (`:224`) stays unattributed by rule, and the public end-to-end case that
+  proves both documented git readers see the trailer. Rebound the stale `memory_baseline_status_tool`
+  range (353-360 → 353-361). Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `load_ledger`, `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:202-205, mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.

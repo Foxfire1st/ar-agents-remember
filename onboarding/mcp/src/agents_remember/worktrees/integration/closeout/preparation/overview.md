@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/preparation` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-13T23:52+02:00 |
+| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967`|
+| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,18 @@ Code intent selection precedes private execution. Exact raw outputs remain selec
 ## Ownership And Boundaries
 
 `policy.py` observes actual configuration/hooks. `private_execution.py` owns command ordering through kernel capabilities, while `output_selection.py` retains exact raw outputs. `code_view.py` separates physical read roots from logical pair identity. `memory_execution.py` reopens certification results and `memory_output.py` prepares ordered M/L outputs. `finalization.py` separately owns guarded ref publication and contract completion; `continuation.py` composes the installed memory producer with that finalizer. Current documentation records implementation, not a passing suite or aggregate acceptance.
+
+Since 260913-LCA-L4 this route owns one of the five memory-content producers, and it is the one with no
+reachable public entry point. `memory_output.py` renders the **memory-content** leg's `normalizedMessage`
+through `kernel.memory_attribution.render_memory_content_message` against
+`result.candidate.codeView.codeCommit` — the kernel's one writer of the `Code-Commit:` trailer — while the
+**ledger** leg keeps the plain `effective.message_for("ledger")` and carries none. The rendered message is
+what `private_execution.py` creates the private commit with, and `finalization.py` publishes that exact
+object to the live memory ref, so the attribution is inside the object the ref receives and cannot be
+appended afterwards without rewriting it. Because `certification/execution.execute_selected_closeout` has
+no production caller today, this leg's protection is the source census in
+`mcp/tests/test_memory_attribution_producers.py` rather than a behavioural case of its own — a residual gap
+that is stated on the kernel card rather than hidden.
 
 ## File-Level Onboarding Map
 
@@ -57,6 +69,16 @@ The parity candidate composes the sidecar and governing route body/history check
 
 
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): route impact. `memory_output.py` became one of the five memory-content producers when
+  `_intent` began rendering the memory-content leg through
+  `kernel.memory_attribution.render_memory_content_message` against the candidate's certified code commit
+  (the ledger leg stays plain), which is also the producer the master's 2026-09-13T22:05 census missed and
+  the 2026-09-13T23:50 decision added. Recorded on `Ownership And Boundaries`: the memory-content leg is
+  attributed and the ledger leg is not, the message is hashed into the private commit that finalization
+  publishes to the live memory ref, and this leg's only protection is the source census because
+  `execute_selected_closeout` has no production caller. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 - 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored `select_preparation_intent`
   to its current selection and state-persistence range; route ownership and verification metadata
   remain unchanged.

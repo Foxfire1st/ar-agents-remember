@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `5bb124d43ea7b234edd570cf3995521e708714bd`|
-| lastVerifiedCommitDate |  2026-09-13T23:22:52+02:00|
+| lastUpdated | 2026-09-13T23:52+02:00 |
+| lastVerifiedCommitHash |  `52875e7a8695fc7b67bff21ebb07a67268213967`|
+| lastVerifiedCommitDate |  2026-09-14T00:06:58+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -19,18 +19,20 @@
 Strict wire and persistence models for closeout inputs, door sources, disposable queue
 projections, and task-publication effects.
 
-`input.py` is the route's message-bearing contract and, since 260913-LCA-L1, the one definition of the
-attribution a memory commit carries. `EffectiveCloseoutInput.memory_content_message(code_commit)`
+`input.py` is the route's message-bearing contract and, since 260913-LCA-L1, the closeout-shaped way in
+to the attribution a memory commit carries. `EffectiveCloseoutInput.memory_content_message(code_commit)`
 returns the closeout's own message verbatim plus exactly one final-paragraph `Code-Commit: <sha>`
 trailer naming the code commit that same closeout landed; both sanctioned closeout routes — worktree
 closeout in `worktrees/modules/closeout_external.py` and branch-addressed direct landing in
 `worktrees/integration/direct_landing/direct_landing_execution.py` — render their memory-content commit
 message through it, and `message_for` stays the raw public echo that the ledger leg still uses.
 
-**This route renders the attribution; it no longer owns the key.** Since 260913-LCA-L2 the trailer key
-is declared once in `kernel/memory_attribution.py` — the reader of the hashed object, one rank below
-`models` in `layers.toml` — and `input.py` imports it (`input.py:9`), so
-`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit. The direction is fixed by the
+**This route renders the attribution; it does not own the rendering, and it no longer owns the key.**
+Since 260913-LCA-L2 the trailer key is declared once in `kernel/memory_attribution.py` — the reader of
+the hashed object, one rank below `models` in `layers.toml`. Since 260913-LCA-L4 this route imports the
+kernel's one renderer (`input.py:9`) and `memory_content_message` is a delegation to it, so
+`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit in a module that both declares **and**
+interpolates the key. The direction is fixed by the
 layer contract rather than by preference: a kernel module importing a model would import upward.
 
 ## Hot Path Summary
@@ -59,6 +61,17 @@ No configured external source applies. Queue producers and application consumers
 through same-repository source references.
 
 ## Update History
+
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 route refresh (uncommitted change set on `ar/260913-lca-l4-ar`,
+  base `5bb124d4`): the ownership sentence this route inherited from L1/L2 needed its last step. L4 moved
+  the *rendering* into the kernel too: `input.py:9` now imports
+  `render_memory_content_message` instead of `CODE_COMMIT_TRAILER_KEY`, and
+  `memory_content_message` is a delegation, so this route renders the attribution **through** the
+  kernel's one writer rather than owning the format, and the single production hit for
+  `"Code-Commit"` is now a module that both declares and interpolates the key. Corrected the two
+  sentences that said otherwise; the file-level map's `projection.py`-only state is a pre-existing gap
+  and was left alone, as were the child cards for files this leaf did not change. Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
 
 - 2026-09-13T23:20+02:00 — 260913-LCA-L2 route refresh (uncommitted change set on
   `ar/260913-lca-l2-ar`): corrected the ownership sentence this route inherited from 260913-LCA-L1.

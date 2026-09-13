@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-13T11:43+02:00|
-| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
-| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
+| lastUpdated | 2026-09-13T23:52+02:00|
+| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
+| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -117,10 +117,11 @@ Since 260913-LCA-L1 the same pairing is also inside the memory-content commit ob
 ledger row recovery reads. `_direct_memory_commit` commits
 `direct_landing_input(...).effectiveInput.memory_content_message(operation_input.codeCommit)`, so the
 memory-content commit carries exactly one `Code-Commit: <sha>` trailer naming the verified code
-commit; it renders from the single `models/closeout/input.py` definition that the worktree closeout
-route also uses, and the `memory.md`-only ledger commit deliberately carries none. The trailer is
-written at creation because `prove_git_commit` journals that exact object on the next statement, so a
-later append could only rewrite a proved commit.
+commit; since 260913-LCA-L4 that method delegates to
+`kernel.memory_attribution.render_memory_content_message`, the one shared renderer all five
+memory-content producers use, and the `memory.md`-only ledger commit deliberately carries none. The
+trailer is written at creation because `prove_git_commit` journals that exact object on the next
+statement, so a later append could only rewrite a proved commit.
 
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
@@ -359,6 +360,16 @@ repair came from is inventoried on [the worktrees route overview](../overview.md
 [`memory_quality/overview.md`](../../memory_quality/overview.md).
 
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): corrected the one sentence above that placed the rendering definition in
+  `models/closeout/input.py`. Since L4 that method is a delegation to
+  `kernel.memory_attribution.render_memory_content_message`, the one writer for all five memory-content
+  producers, so this route's direct-landing leg (`_direct_memory_commit`, commit site `:270`, naming
+  `operation_input.codeCommit` at `:272`) reaches the shared renderer through the closeout model rather
+  than through a route-local or model-local format. Nothing else on this route changed: the trailer is
+  still written at creation, before `prove_git_commit` journals the object, and the `memory.md`-only
+  ledger commit still carries none. Verification metadata remains closeout-owned; no acceptance claim
+  and no verification stamp advanced.
 - 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): the
   branch-addressed route's memory-content commit is now attributed in the object —
   `_direct_memory_commit` takes the verified `code_commit` and commits

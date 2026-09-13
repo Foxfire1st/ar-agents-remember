@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-13T23:52+02:00 |
+| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
+| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,29 @@ existing lanes, plus `test_memory_quality_is_independent_of_the_closeout_plane.p
 hermetic focused suites and the integration lane is capped at 200 collected cases
 (`pyproject.toml:135`; the "150" this card's earlier entries recorded is stale), so nothing was
 moved into it beyond the one module that genuinely exercises an integration boundary.
+## 260913-LCA-L4 Pending Lane Row (Open, Not Yet Declared)
+
+The L4 change set added `mcp/tests/test_memory_attribution_producers.py` and did **not** register it in
+this manifest, so the closed population the `Logic` section below describes does not hold for the current
+uncommitted tree. Measured at base `5bb124d4` plus the change set, by diffing the file list against the
+manifest:
+
+- 203 `mcp/tests/test_*.py` modules exist on disk; the manifest declares 202 (114 unit-regression, 2
+  public-contract, 57 integration, 16 architecture-fitness, 13 provider-conformance, 0 stress-durability,
+  0 migration).
+- The single undeclared path is `mcp/tests/test_memory_attribution_producers.py` — the one file in the
+  disk set with no manifest row — and there is no stale row naming a file that is gone.
+
+This is not a documentation gap but the hard failure this card already records from 260831-LOCR-L30:
+`load_lane_manifest` derives the repository's actual test modules and refuses a manifest that omits one.
+The derivation reaches the new module — `testpaths = ["mcp/tests"]` in the repository-root
+`pyproject.toml:155` puts it inside the test roots, and its `test_` prefix classifies it as a test module
+— and `mcp/test_support/agents_remember_test_support/code_quality/check.py:677` is a manifest consumer, so
+every consumer fails rather than mis-classifying. The lane the module belongs in is the builder's call and
+is **not** asserted here: the module is hermetic except for its two cases that compose `QueueFixture` over
+real temporary Git repositories. The row is recorded as pending so the next reader finds the gap rather
+than a claim of completeness.
+
 ## Code Commentary
 
 ### Logic
@@ -136,6 +159,18 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository authority is established by this file.
 
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): **flagged an open gap rather than repairing it, because the file itself is unchanged and
+  the repair is code work.** The change set added `mcp/tests/test_memory_attribution_producers.py` and
+  declared no lane row for it, so the manifest's closed population no longer holds: measured by diffing
+  the disk file list against the manifest, 203 `test_*.py` modules exist and 202 are declared, the one
+  undeclared path being the new module, with no stale row pointing at a missing file. Because
+  `load_lane_manifest` refuses a manifest that omits a module, this is the same hard load failure the
+  card already records from 260831-LOCR-L30, and `code_quality/check.py:677` is a consumer. Recorded in
+  a new section with the measurement method, the derivation path (`testpaths` in the repository-root
+  `pyproject.toml:155`), the consumer that fails, and the explicit statement that the lane choice is the
+  builder's and is not asserted here. The manifest file itself is **not** modified by this curator pass.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
   `ar/260831_lifecycle-owned-completion-relay`): registered the change set's new
   `mcp/tests/test_lifecycle_playthrough_end_to_end.py` in the **integration** lane (entry row 153) —

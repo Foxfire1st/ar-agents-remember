@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
-| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
+| lastUpdated | 2026-09-13T23:52+02:00 |
+| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
+| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1156,12 +1156,15 @@ The key itself is declared once, and not here: since 260913-LCA-L2 it lives in
 therefore cannot drift into two literals, which is the failure this section's whole design is about:
 a writer whose key the reader does not parse looks like "no attribution exists" rather than like a bug.
 
-That is the one definition, and both sanctioned routes render through it: this route's
-`_commit_memory_content` (`closeout_external.py`, handed `code_commit=change.commit` by
-`external_closeout_commits`) and the branch-addressed direct-landing route's `_direct_memory_commit`
-(`integration/direct_landing/direct_landing_execution.py`, handed
+That is the closeout-shaped way in to the one definition, and both sanctioned closeout routes render
+through it: this route's `_commit_memory_content` (`closeout_external.py`, handed
+`code_commit=change.commit` by `external_closeout_commits`) and the branch-addressed direct-landing
+route's `_direct_memory_commit` (`integration/direct_landing/direct_landing_execution.py`, handed
 `code_commit=operation_input.codeCommit`). Neither rewrites the closeout message; the trailer is
-appended, never substituted.
+appended, never substituted. Since 260913-LCA-L4 the method delegates to
+`kernel.memory_attribution.render_memory_content_message`, which is the one writer for all five
+producers — the production/maintenance/direct-landing `worktrees` family included — so the format is not
+owned anywhere under `worktrees/` (see the producer-surface section below).
 
 The seam is the message construction rather than a later step because the message is hashed into the
 object: `commit_verified_staged` runs `git commit --no-verify -m <message>` on the already-staged tree
@@ -1175,7 +1178,47 @@ The `memory.md`-only ledger commit is deliberately excluded: it has no code coun
 second trailered commit for one code commit would project a duplicate row. Absence is the detection,
 not a legacy state to tolerate.
 
+## 260913-LCA-L4 The Producer Surface Is Total (5 Producers, 0 Untrailered)
+
+A memory commit that names no code commit contributes no ledger row, and the projected ledger cannot tell
+that apart from a producer that kept the old shape — the pairing is simply gone. So the transition is
+either total or it is a silent hole in the map, and L4 made it total. The census below was measured at
+base `5bb124d4` from source and **corrects** the master's 2026-09-13T22:05 decision in two places:
+`worktrees/queue/closeout_recovery.py:209` is that route's CODE leg rather than a memory-content producer,
+and the producer the first census missed is `worktrees/integration/closeout/preparation/memory_output.py`.
+
+This route's own producer is `_commit_memory_content` (`closeout_external.py`, commit site `:165`): it
+commits `effective_input.memory_content_message(code_commit)` (`:167`), which is now a delegation to
+`kernel.memory_attribution.render_memory_content_message` — the one writer of the trailer. Nothing about
+the route changed apart from that delegation: same message body, same leg, same gates, same refusals. A
+resumed closeout that still owes its memory commit reaches this same producer, which is why the recovery
+route is attributed without owning a commit site of its own.
+
+The five producers, each reaching the shared renderer, are: `closeout_external.py:165` (this route);
+`integration/direct_landing/direct_landing_execution.py:270`; `preparation/memory_output.py:92` (its
+memory-content leg only); `memory/carryover.py:846`; and `memory/baseline.py:210`. Every other commit site
+is trailerless **by rule with a recorded reason**, not by omission: every ledger leg; the recovery route's
+code commit; `sync_transaction_git.py`'s memory merge commits (two memory parents and no single code
+commit to name); and carryover's nothing-to-carry path, which creates no commit at all.
+
+Two of the five take their commit message as a **public argument of another tool** — carryover's
+`CarryoverCommitMessages.memory` and baseline's hard-coded adopt subject — which is why the renderer
+appends the attribution as its own final block after a blank line rather than weaving it into the caller's
+body: the body may be several paragraphs and its own last paragraph may itself be `Key: value` lines, and
+a producer must never edit the string it was handed. The census is enforced from source by
+`mcp/tests/test_memory_attribution_producers.py`, and the recovery route's behavioural half lives in
+`mcp/tests/test_transaction_only_worktree_delivery.py::test_closeout_recovery_attributes_the_memory_commit_it_still_owed`.
+
 ## Update History
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): added the producer-surface section above. This route's `_commit_memory_content` now reaches
+  the kernel's one renderer through the closeout model, and the section records the corrected census
+  (5 producers, 0 untrailered) with the two corrections, the five producer sites, the
+  trailerless-by-rule sites with their reasons, and the append-as-final-block rule the public-argument
+  producers force. The attribution section above already carried the L1/L2 ownership corrections; its
+  statement that "both sanctioned routes render through" `EffectiveCloseoutInput.memory_content_message`
+  remains true and is now additionally true of three producers that never see that type. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T23:22+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`): corrected
   the ownership sentence in the attribution section above, which placed
   `CODE_COMMIT_TRAILER_KEY = "Code-Commit"` in `models/closeout/input.py`. The key is declared once in
