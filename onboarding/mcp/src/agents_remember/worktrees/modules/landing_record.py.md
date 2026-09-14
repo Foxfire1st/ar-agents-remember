@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing_record.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-12T00:33+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated            | 2026-09-14T15:05+02:00 |
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ repository-internal contract semantics, so the exact retained source is the dire
 | The local final route calls this writer instead of amending the contract inline. | "def _integrated_result(" | mcp/src/agents_remember/worktrees/modules/integrate.py:598-633 |
 | The local checkpoint route calls the same writer with `checkpoint=True`. | "def _checkpoint_result(" | mcp/src/agents_remember/worktrees/modules/integrate.py:922-961 |
 | The pull-request route calls the same writer. | "record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/record_landing.py:121-121 |
-| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:664-664 |
+| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:665-665 |
 | The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:233-279 |
 
 ## Cross-Repo References
@@ -127,6 +127,11 @@ there is no cross-repository protocol to cite.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
+  260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting the
+  `integration_status` refusal read from line 664 to 665. The anchor was re-read at
+  `cleanup.py:665-665`, where `if contract.integration_status != "completed":` still sits; the cited
+  construct and its meaning are unchanged.
 - 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: `checkpoint` distinguishes an unfinished
   master landed at a checkpoint from a finished one, not a "paused" master from a finished one.
   Wording only; the two recorded cells (`checkpointed` without cleanup, `completed` with cleanup

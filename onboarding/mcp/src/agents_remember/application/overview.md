@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview

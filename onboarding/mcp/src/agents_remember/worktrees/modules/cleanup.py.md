@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T15:05+02:00 |
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -67,6 +67,17 @@ they are actually empty after the worktree/provider teardown steps run.
 `provider_async.provider_setup_running(contract)` reports a live background
 setup — teardown must not race the setup thread; a dead thread surfaces as a
 stale heartbeat and does not block (GitHub #53).
+
+**Terminal result validation (260913-LCA-L8).** `_cleanup_outputs_result` builds a `TerminalResult`
+from the operation's five output collections and passes `preview=args.dry_run`; that flag is what
+keeps a dry run's `would_remove` entries from being read as blockages, because a preview states what
+cleanup would reclaim rather than what it did. `_cleanup_terminal_outputs` stages each successive
+step's outputs through the same bundle without the flag, since each of those checks runs only on a
+real cleanup. Every blockage the builder emits now names its component and carries a non-empty
+reason, and a result item that reports no usable reason is answered in operator language instead of
+reaching an operator as `reason: null`. The cleanup contract itself is unchanged: a genuinely
+blocked cleanup still blocks with its own reason, and a dry run still reports `would-cleanup` where
+the apply reports `cleanup-blocked`.
 
 ### Slice 05m + Task 14: carryover-before-cleanup hard guard + child-edge work-branch cleanup
 
@@ -182,17 +193,19 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707 |
+| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-708 |
 | The bridge releases only an exact selected series and reports durable release failure. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
 | Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:33-33 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
-| Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:77-115 |
+| Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:78-116 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:482-482 |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:480-480 |
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:93-93 |
 | `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
+| The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:229-242; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:245-287 |
+| The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220 |
 | Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
@@ -216,7 +229,7 @@ The current source seams include `remove_registered_worktree`, `delete_branch_if
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:177-198; mcp/src/agents_remember/worktrees/modules/cleanup.py:201-223; mcp/src/agents_remember/worktrees/modules/cleanup.py:226-262 |
+| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:178-199; mcp/src/agents_remember/worktrees/modules/cleanup.py:202-224; mcp/src/agents_remember/worktrees/modules/cleanup.py:227-263 |
 
 ## 260821-CLIVE Archive-Before-Cleanup
 
@@ -228,6 +241,16 @@ the ephemeral terminal permit/release seam. Already-completed status returns the
 proof and never reconstructs deleted live state.
 
 ## Update History
+- 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: documented that `_cleanup_outputs_result` and
+  `_cleanup_terminal_outputs` now stage their outputs through `TerminalResult`, with
+  `preview=args.dry_run` on the outputs result, so a dry run's `would_remove` entries are read as
+  what cleanup would reclaim rather than as blockages, and that every blockage the builder emits
+  names its component and a non-empty reason. Recorded that the cleanup contract is otherwise
+  unchanged: a genuinely blocked cleanup still blocks with its own reason. Re-derived every anchor
+  against the current file — the `TerminalResult` import line moved `cleanup_result` 632-707 →
+  633-708, `_terminal_mutation_authority` 77-115 → 78-116, and the three helper rows and the
+  `_abandon_branches` row in `abandon.py` by their own shifts — and added the bundle/builder and
+  forced-case rows. Verification metadata remains closeout-owned.
 - 2026-09-13T14:44+02:00 — Corrected the terminal-release prose to this contract's own activation record: the bridge still releases only the exact terminal contract it addresses, but the record is now keyed per series contract rather than per protected source pair. Content change; `lastVerifiedCommitHash` remains closeout-owned.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `delete_branch_if_merged_into`, `delete_branch_if_merged`, `remove_registered_worktree` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:177-198, mcp/src/agents_remember/worktrees/modules/cleanup.py:201-223, mcp/src/agents_remember/worktrees/modules/cleanup.py:226-262. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `cleanup_result` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

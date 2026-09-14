@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T14:20+02:00 |
-| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
-| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
+| lastUpdated | 2026-09-14T15:05+02:00 |
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -87,6 +87,7 @@ checks for the branch-addressed route.
 | Sub-task index reachability across a writer skew | `test_task_documents_graph_projection.py` (`SubTaskIndexReachabilityTests`) | Projection-only unit evidence that a completed leaf whose durable JSON carries a field this reader's schema does not know stays reachable from the master's sub-task index, an unstarted row keeps resolving, and a document with a required field deleted is still withheld. `_index_doc` reproduces the dashboard's own index rule (`sliceForRef`) rather than approximating it. Hermetic temporary task root; one case, one helper, no lane change. |
 | Cross-master concurrency on one protected source pair | `test_cross_master_concurrency.py`, `test_atomic_series_activation.py` | One sprint commands every atomic master from its own source branches, so two atomic masters share one protected source pair; each keeps its own activation record. Both masters stay ready and progress, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks no sibling (the same statement the stop-only pause now makes as a real public operation, `worktree_pause`, proved separately in `test_pause_stop_only_end_to_end.py`), a conflicting or stale publication is refused at the pair (`blocked-non-ff`, `atomic-series-checkpoint-candidate-moved`), and a master that reconciles with a landed sibling finishes through ordinary public closeout and final integration rather than a checkpoint. A graph-less sprint serializes nothing — `executionGraph=None` resolves to the `atomic-sequential` sprint shape (every commanded master executes atomically, no dependency is declared) and both masters hold their own activation concurrently with no waiting reason. Only a real sprint-graph wave edge still gates (`predecessor-incomplete:`). Integration lane: real temporary Git repositories and the public operations. |
 | Capacity refusal source classification | `test_closeout_projection_source_classification.py` | The three states of a projected source stay distinct on the code its own raiser published. `graph_context` refuses a sprint whose authored graph is one node past `MAX_CLOSEOUT_MASTERS` with `closeout-queue-master-capacity-exceeded` — its own declared code, read back from the refusal rather than retyped — and that code classifies `invalid`, because the source was read and is past its bound; `contract-unreadable` and `atomic-series-contract-unreadable` still report `unreadable`; and the ordinary projected source stays readable with no problems and classifies `active`. The classifier tests membership of `closeout_queue_errors.py`'s `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains. Integration lane: real temporary Git repositories through `QueueFixture` and the production graph admission path. |
+| Terminal blocker reasons | `test_terminal_blocker_reasons.py` | A cleanup or finalize blockage always names the component it stopped on and a non-empty reason. The L6 shape — terminal archive proven, provider runtime already gone — finalizes on the first call with an empty `notRemoved` inventory; a real permission failure on the provider tree blocks with `remove_tree`'s own `permission denied: ...` reason, closes nothing and refuses identically on retry; and both invariant owners are driven directly (`_blocker` refuses a missing, blank or non-string reason, and `remove_tree` names a reason whenever it reclaimed nothing). The L6 payload is reproduced through the provider port boundary, not by re-enacting the original physical event. Integration lane; one new module, no deleted module. |
 
 ## Fixture Roles And Claims
 
@@ -168,6 +169,16 @@ the real `QueueFixture` over temporary Git repositories and drives the productio
 projection path, so that is its behaviour-preserving lane. The `test-evidence-lanes.toml` card owns the
 per-lane brackets; membership is selection and cost classification only, never execution or
 acceptance evidence.
+
+**Current counts (260913-LCA-L8 curator, measured at the current change set):** the L7 paragraph
+above is superseded. The manifest now holds 206 modules on disk and 206 entries — 115 unit-regression
+(entry rows 5-120), 2 public-contract (122-124), 60 integration (126-186), 16 architecture-fitness
+(188-204), 13 provider-conformance (206-219), with stress-durability and migration empty. The single
+addition is this leaf's `test_terminal_blocker_reasons.py`, registered in the **integration** lane at
+entry row 177 by the same change set that created it: it drives the public landing, integration and
+`lifecycle_finalize_task` routes over real temporary repositories and worktrees, so that is its
+behaviour-preserving lane. The `test-evidence-lanes.toml` card owns the per-lane brackets;
+membership is selection and cost classification only, never execution or acceptance evidence.
 
 260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
 load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
@@ -451,9 +462,64 @@ refusal and asserts the mid-flight identity is stated **before** the refusal's o
 caller reads the state it must resolve rather than the symptom. Neither addition created a module or
 moved a lane: both files already carried their rows.
 
+## 260913-LCA-L8 A Cleanup Blocker Always Names Its Reason
+
+**One new module, no deleted module, no lane moved.** The leaf's new module is
+`mcp/tests/test_terminal_blocker_reasons.py`, registered in the **integration** lane at entry row 177
+by the same change set that created it.
+
+The defect was an operator-facing contradiction. `lifecycle_finalize_task` on one leaf's enclosure
+answered `state: cleanup-blocked` with `blockers: [{"provider": "providerRuntime", "reason": null}]`,
+while the same payload proved the terminal archive, reported the providers `torn-down` with their
+runtime already removed, and said in its own summary that enclosure deletion may continue. Cleanup
+stopped on that blockage anyway, preserved the citation-source index with `terminal-operation-failed`,
+and left the leaf un-finalized; an immediate retry reclaimed two worktrees, two branches, the reports
+directory and the enclosure root, and finalized the edge. Read from source, the **first call was
+wrong**, not a real cause the retry re-observed as resolved: the blocker was constructed in
+`worktrees/modules/terminal_validation.py`, where a result dict with no `reason` key became `None` and
+the item still counted as blocked, and the only producer able to hand it `{"removed": False}` with no
+reason at all was `application/provider_runtime.py::remove_tree`'s post-reclaim "still present"
+branch — every other non-removal path already named a reason.
+
+The change makes a reasonless blocker impossible to emit rather than merely unlikely.
+`terminal_validation._blocker(component, reason)` is now the only construction path for a terminal
+blockage and raises `RuntimeError` naming the component when the reason is missing, blank or not a
+string; `_blocked_reason(item)` answers a reasonless or malformed item in operator language
+(`no reason reported by the terminal result`, `invalid-result`); and every call site routes through
+both. `TerminalResult` and `TerminalExpectation` bundle the outputs with preview-versus-real, which is
+also what lets the dry-run path read preflight previews as previews and replaced the five-keyword
+builder signature with one bundle argument at every call site; the change set adds no `# noqa` and no
+per-file ignore. On the producer side, `remove_tree` sets a non-empty reason on every
+`removed: False` result. This adds no teardown capability: a genuinely blocked teardown still blocks,
+with its own reason.
+
+The module holds seven cases in two groups. The whole-tool cases build a real landed leaf through the
+shared external-memory authority fixture, complete the integration through the public
+`worktree_integrate_tool`, and call the public `lifecycle_finalize_task_tool`: the L6 shape — provider
+runtime already gone, the port answering `already-absent` — must finalize on the **first** call with
+an empty `notRemoved` inventory, both worktrees and the enclosure root really gone and the leaf
+document `Completed`; and a real permission failure on the provider-runtime tree must refuse as
+`cleanup-blocked` / `blocked` with `remove_tree`'s own `permission denied: ...` reason as its single
+blocker, close nothing, and refuse identically on the retry. **The L6 payload is reproduced through
+the provider port boundary rather than by triggering the original physical event**: the case
+substitutes the teardown answer the port would return, so it pins the decision the tool makes given
+that answer. The remaining cases drive the two invariant owners directly — the reasonless
+`{"removed": False}`, a blank producer reason, an unnameable reason refused at its own source, the
+`remove_tree` result shape, and the post-reclaim branch that could answer silently.
+
+The module is a declared exact consumer of nine `mcp/tests/evidence-lifecycle.toml` artifacts —
+`closeout_input_test_support.py` (`:331`), `curator_coherence_test_support.py` (`:391`),
+`integration_branch_authority_test_support.py` (`:435`), `repository_profile_test_support.py`
+(`:565`), the two `repository_profiles/node` fixture files (`:604`, `:643`),
+`gate_certification_test_support.py` (`:955`), `source_selection_test_support.py` (`:1012`) and
+`selected_lifecycle_test_support.py` (`:1038`) — and of the ambient-role runner in
+`dependency_ownership.py` (`:82`). Consumer declarations are ownership accounting only; they are not
+execution or acceptance evidence.
+
 ## Repo-Internal References
 
-These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
+These current source and policy ranges establish the development/certification distinction and the
+existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -471,32 +537,57 @@ These current source and policy ranges establish the development/certification d
 | **260913-LCA-L11:** the three cases that changed direction — a reordered source region lands while the untrue row still refuses, a reversed superseding pair lands (the hazard, recorded in the docstring), and the interleaved projection lands on the leaf route with the refs really moving. | `test_a_unioned_master_line_still_refuses_a_content_difference`; `test_a_reversed_repeated_code_mapping_now_lands_and_the_hazard_is_recorded`; `test_the_leaf_route_lands_the_ledger_the_checkpoint_accepts` | mcp/tests/test_checkpoint_landing_end_to_end.py:556-622; mcp/tests/test_checkpoint_landing_end_to_end.py:787-840; mcp/tests/test_checkpoint_landing_end_to_end.py:969-1033 |
 | **260913-LCA-L11:** the landing's clause inventory, including the dropped and duplicated source rows now asserted as **accepted** and the two module-level `_require_true_rows` cases. | `test_ledger_refuses_a_ledger_that_does_not_map_the_landed_code_commit`; `test_ledger_refuses_memory_content_that_does_not_descend_from_the_source`; `test_ledger_refuses_untrue_rows_and_accepts_a_rebuilt_source_region`; `test_the_landed_ledger_commit_must_carry_the_memory_content_it_maps`; `test_the_landed_ledger_must_name_a_code_commit_the_repository_holds`; `require_integrated_ledger_mapping`; `_require_true_rows` | mcp/tests/test_integration_branch_authority.py:295-329; mcp/tests/test_integration_branch_authority.py:331-382; mcp/tests/test_integration_branch_authority.py:384-527; mcp/tests/test_integration_branch_authority.py:581-614; mcp/tests/test_integration_branch_authority.py:617-642; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-344; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:345-380 |
 | **260913-LCA-L11:** the reader's two new cases — the row a source cannot prove is excluded with its reason, and a partially trailered source still reads its pre-rule rows. | `test_a_source_row_the_source_cannot_carry_is_reported_not_kept`; `test_a_partially_trailered_source_still_reads_its_pre_rule_rows`; `read_ledger_source` | mcp/tests/test_memory_ledger.py:473-502; mcp/tests/test_memory_ledger.py:503-532; mcp/src/agents_remember/worktrees/ledger_projection.py:299-349 |
-| The recorded flake note the L34 module carries. | "UNREPRODUCED FLAKE, RECORDED 2026-09-13" | mcp/tests/test_checkpoint_landing_end_to_end.py:1162-1175 |
+| The recorded flake note the L34 module carries. | "UNREPRODUCED FLAKE, RECORDED 2026-09-13" | mcp/tests/test_checkpoint_landing_end_to_end.py:1181-1192 |
 | The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
 | The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:465-512; mcp/tests/test_cross_master_concurrency.py:529-563; mcp/tests/test_cross_master_concurrency.py:565-623; mcp/tests/test_cross_master_concurrency.py:786-854; mcp/tests/test_cross_master_concurrency.py:754-782 |
-| The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:144-144 |
+| The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:145-145 |
 | The L37 stop boundary proof: the public pause, the measured world, the eight independently-failing cases and the refusals. Its never-selected case now asserts the already-vacant success rather than a refusal. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing` | mcp/tests/test_pause_stop_only_end_to_end.py:84-116; mcp/tests/test_pause_stop_only_end_to_end.py:148-166; mcp/tests/test_pause_stop_only_end_to_end.py:201-232; mcp/tests/test_pause_stop_only_end_to_end.py:234-261; mcp/tests/test_pause_stop_only_end_to_end.py:263-284 |
 | The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The L37 lane registrations the fail-closed manifest requires, one per new module (both rows shifted by the L4 census row and the L5 integration row). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:161-161; mcp/tests/test-evidence-lanes.toml:193-193 |
+| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:162-162; mcp/tests/test-evidence-lanes.toml:195-195 |
 | The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. | `LifecyclePlaythroughTests`; `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-74; mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-169 |
-| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:155-155 |
+| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:156-156 |
 | The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
-| The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:152-152 |
+| The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:153-153 |
+| **260913-LCA-L8:** the new module's lane registration, added by the same change set that created it — integration, because it drives the public landing, integration and finalization routes over real temporary repositories and worktrees. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:177-177 |
+| **260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason`; `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220; mcp/tests/test_terminal_blocker_reasons.py:223-243; mcp/tests/test_terminal_blocker_reasons.py:246-259 |
+| **260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item. | `_blocker`; `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:639-655; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:624-636 |
+| **260913-LCA-L8:** the producer whose result could answer `removed: False` with no reason, now naming every non-removal. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
+| **260913-LCA-L8:** the nine exact-consumer rows the new module's change set adds to the evidence registry. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/evidence-lifecycle.toml:331-331; mcp/tests/evidence-lifecycle.toml:391-391; mcp/tests/evidence-lifecycle.toml:435-435; mcp/tests/evidence-lifecycle.toml:565-565; mcp/tests/evidence-lifecycle.toml:604-604; mcp/tests/evidence-lifecycle.toml:643-643; mcp/tests/evidence-lifecycle.toml:955-955; mcp/tests/evidence-lifecycle.toml:1012-1012; mcp/tests/evidence-lifecycle.toml:1038-1038 |
+| **260913-LCA-L8:** the declaration that gives the new module ownership of the ambient-role runner for targeted selection. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:82-82 |
 | The removed case's scenario, now refused by design: the guard that makes a task root with no master document unbindable. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:619-649 |
 | The refusal the two corrected closeout fixtures had to satisfy. | `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
 | **The sync half of the ledger ruling:** a descendant memory ledger that dropped a source row is `already-current`, nothing moved, and no `dropped parent mapping` text is reported. | `test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current` | mcp/tests/test_worktree_sync.py:206-243 |
 | **The mid-flight reporting boundary:** a completed pass beside a reconciling selection is not this call's success, and a refusal left beside one leads with the mid-flight state. | `ReconcilingResultTests`; `test_a_completed_pass_beside_a_mid_flight_selection_is_not_success`; `test_a_refusal_that_left_a_record_mid_flight_leads_with_that_state`; `_reconciling_result` | mcp/tests/test_atomic_series_activation.py:231-297; mcp/tests/test_atomic_series_activation.py:255-274; mcp/tests/test_atomic_series_activation.py:276-297; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294 |
 | The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. | `class ActivationFixture`; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:63-111; mcp/tests/test_atomic_series_activation.py:122-145; mcp/tests/test_atomic_series_activation.py:179-214 |
 | The registered admission refusal now addresses only the addressed contract's own state. | `test_registered_sync_refusal_addresses_only_this_contracts_own_state` | mcp/tests/test_activation_admission_registered.py:178-221 |
-| The L2 attributed fixture line and the ten ledger-attribution cases: the every-checkpoint closed loop, the hand edit that cannot move the projection, the pre-trailer blob fallback, the bootstrap source, `exclude`, the last-block-wins parse, the unknown-code-commit drop, the by-key multi-trailer read, the merged-in mapping, and the writer/reader key round trip. | `_AttributedWorld`; `test_projection_is_the_ledger_the_attributed_history_records`; `test_projection_reads_the_trailer_and_never_the_live_table`; `test_projection_reads_an_unattributed_commit_from_its_own_ledger`; `test_projection_contributes_nothing_for_a_source_that_says_nothing`; `test_attribution_reads_only_the_commits_a_caller_asks_for`; `test_trailer_parse_takes_the_last_block_and_ignores_a_body_mention`; `test_attribution_reports_only_commits_the_code_repository_holds`; `test_attribution_reads_a_message_whose_final_block_carries_several_trailers`; `test_the_rendered_trailer_is_the_one_the_reader_parses`; `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:323-379; mcp/tests/test_memory_ledger.py:382-409; mcp/tests/test_memory_ledger.py:412-431; mcp/tests/test_memory_ledger.py:434-458; mcp/tests/test_memory_ledger.py:461-467; mcp/tests/test_memory_ledger.py:470-486; mcp/tests/test_memory_ledger.py:489-512; mcp/tests/test_memory_ledger.py:515-527; mcp/tests/test_memory_ledger.py:530-559; mcp/tests/test_memory_ledger.py:562-597; mcp/tests/test_memory_ledger.py:600-630 |
+| The L2 attributed fixture line and the ten ledger-attribution cases: the every-checkpoint closed loop, the hand edit that cannot move the projection, the pre-trailer blob fallback, the bootstrap source, `exclude`, the last-block-wins parse, the unknown-code-commit drop, the by-key multi-trailer read, the merged-in mapping, and the writer/reader key round trip. | `_AttributedWorld`; `test_projection_is_the_ledger_the_attributed_history_records`; `test_projection_reads_the_trailer_and_never_the_live_table`; `test_projection_reads_an_unattributed_commit_from_its_own_ledger`; `test_projection_contributes_nothing_for_a_source_that_says_nothing`; `test_attribution_reads_only_the_commits_a_caller_asks_for`; `test_trailer_parse_takes_the_last_block_and_ignores_a_body_mention`; `test_attribution_reports_only_commits_the_code_repository_holds`; `test_attribution_reads_a_message_whose_final_block_carries_several_trailers`; `test_the_rendered_trailer_is_the_one_the_reader_parses`; `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:345-401; mcp/tests/test_memory_ledger.py:404-431; mcp/tests/test_memory_ledger.py:434-453; mcp/tests/test_memory_ledger.py:456-485; mcp/tests/test_memory_ledger.py:597-603; mcp/tests/test_memory_ledger.py:606-622; mcp/tests/test_memory_ledger.py:625-648; mcp/tests/test_memory_ledger.py:651-663; mcp/tests/test_memory_ledger.py:666-695; mcp/tests/test_memory_ledger.py:698-733; mcp/tests/test_memory_ledger.py:736-766 |
 | The L2 mid-cycle case: the refusal by name, the unmoved work branch, and the completed pair that then syncs. | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `map_official_memory` | mcp/tests/test_worktree_sync.py:176-204; mcp/tests/test_worktree_sync.py:101-110 |
-| The named-ref refusal the mid-cycle case guards, and the reader under test on the other side. | `preflight_official_pair`; `attributed_commits` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_attribution.py:113-144 |
+| The named-ref refusal the mid-cycle case guards, and the reader under test on the other side. | `preflight_official_pair`; `attributed_commits` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_attribution.py:148-179 |
 
 ## Docs And Cross-Repo References
 
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator (uncommitted change set on `ar/260913-lca-l8-ar`):
+  registered the leaf's new `test_terminal_blocker_reasons.py` in the retained route table
+  (integration lane, entry row 177) — a cleanup or finalize blockage always names its component and a
+  non-empty reason, the L6 shape finalizes on the first call, a real permission failure blocks with
+  its own reason and refuses identically on retry, and both invariant owners are driven directly —
+  added the route section recording the measured defect and its source diagnosis, and reconciled the
+  population to the current manifest, measured rather than carried: 206 modules on disk and 206
+  entries, 115 unit-regression (5-120), 2 public-contract (122-124), 60 integration (126-186), 16
+  architecture-fitness (188-204), 13 provider-conformance (206-219), with stress-durability and
+  migration empty. Superseded the L7 paragraph by adding the current counts beside it; the
+  `test-evidence-lanes.toml` card remains the owner of record for lane membership. Re-derived every
+  manifest anchor in the reference table (the L36 row `:144` → `:145`, the L37 rows `:161`/`:193` →
+  `:162`/`:195`, the playthrough `:155` → `:156`, the L5 row `:152` → `:153`) and, while re-deriving,
+  corrected three rows whose cited ranges no longer hold their anchors at all: the L34 flake note
+  (`1181-1192`), the L2 ledger cases in `test_memory_ledger.py` (all eleven ranges, moved by later
+  insertions in that file) and `attributed_commits` in `kernel/memory_attribution.py` (`148-179`).
+  Those three are pre-existing drift from other leaves, not consequences of this change. Membership
+  is selection and cost classification only; no execution or acceptance claim, and the verification
+  stamps remain closeout-owned.
 - 2026-09-14T14:20+02:00 — 260913-LCA-L7 curator (uncommitted change set on `ar/260913-lca-l7`):
   registered the leaf's new `test_closeout_projection_source_classification.py` in the retained route
   table (integration lane, entry row 137) — it refuses a sprint whose authored graph is one node past

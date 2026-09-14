@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_record_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-12T00:33+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-14T15:05+02:00 |
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ concern this repository's own contract write, so the retained source is the dire
 | The widened `already-recorded` guard the new case pins: a checkpointed series is not upgraded into a reclaimable integration. | "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/modules/record_landing.py:70-70 |
 | The shared writer whose cell the happy path asserts, now taking the bundled `LandedIntegration` record (260831-LOCR-L30). | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
 | The contract fields the recorded commits land in. | `integration_strategy`; `integrated_code_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:260-263 |
-| The consumer-side guard that reads the cell this route sets. | "integration_status != \"completed\"" | mcp/src/agents_remember/worktrees/modules/cleanup.py:664-664 |
+| The consumer-side guard that reads the cell this route sets. | "integration_status != \"completed\"" | mcp/src/agents_remember/worktrees/modules/cleanup.py:665-665 |
 | The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared. | "mcp/tests/fixtures/repository_profiles/node/package.json" | mcp/tests/evidence-lifecycle.toml:551-582 |
 
 ## Cross-Repo References
@@ -116,6 +116,11 @@ directory; no sibling repository or external system participates.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
+  260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting the
+  `integration_status != "completed"` guard from line 664 to 665. The anchor was re-read at
+  `cleanup.py:665-665`, where that expression still sits; the cited construct and its meaning are
+  unchanged.
 - 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: added
   `test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration` (the suite now holds
   seven cases), recorded what it pins and why, added the guard's reference row, and re-derived every

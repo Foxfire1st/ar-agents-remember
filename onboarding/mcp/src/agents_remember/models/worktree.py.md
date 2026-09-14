@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-14T15:05+02:00 |
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -160,9 +160,9 @@ Also not outliers, for the avoidance of doubt: `normalize_closeout_input` and `w
 **The branch is reachable, and it is now covered.** The terminal archive and receipt are published
 (locator → `terminal-archived`) *before* the surviving contract is amended: `cleanup.py` completes its
 guard around `amend_contract(contract, ContractCells(cleanup="completed"))`
-cit:(["amend_contract(contract, ContractCells(cleanup=\"completed\"))"], mcp/src/agents_remember/worktrees/modules/cleanup.py:925-930),
+cit:(["amend_contract(contract, ContractCells(cleanup=\"completed\"))"], mcp/src/agents_remember/worktrees/modules/cleanup.py:929-934),
 and `abandon.py` does the same around `cleanup="abandoned"`
-cit:(["amend_contract(contract, ContractCells(cleanup=\"abandoned\"))"], mcp/src/agents_remember/worktrees/modules/abandon.py:344-349).
+cit:(["amend_contract(contract, ContractCells(cleanup=\"abandoned\"))"], mcp/src/agents_remember/worktrees/modules/abandon.py:347-352).
 Both writes are wrapped in `guard.complete(..., rollback_publish=...)`, so a **failed publication
 deliberately restores the archived contract while the locator stays `terminal-archived`** — exactly
 the state the projector serves, `"terminal-archive-ready"`
@@ -343,7 +343,7 @@ all-snake payload shape.
 | The executor for the declared-and-enforced next move: it reaches the archive-ready state through real production calls for both cleanup verbs, binds the emitted args to the real tool signature, and drives the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool`; `test_the_worktree_surface_refuses_a_registered_but_non_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244; mcp/tests/test_worktree_status_terminal_next_tool.py:247-278 |
 | The `nextAction` literal this file **does** declare, and which stays honest because its only producer hard-codes it — do not widen it. | "developer-decision" | mcp/src/agents_remember/models/worktree.py:278-278 |
 | The reachable terminal state the projector serves once a failed contract amendment is rolled back while the locator stays `terminal-archived`. | "terminal-archive-ready" | mcp/src/agents_remember/application/worktree_status.py:384-384 |
-| The two guarded contract amendments whose rolled-back publication produces that state, for cleanup and abandon respectively. | "amend_contract(contract, ContractCells(cleanup=\"completed\"))"; "amend_contract(contract, ContractCells(cleanup=\"abandoned\"))" | mcp/src/agents_remember/worktrees/modules/cleanup.py:925-930; mcp/src/agents_remember/worktrees/modules/abandon.py:344-349 |
+| The two guarded contract amendments whose rolled-back publication produces that state, for cleanup and abandon respectively. | "amend_contract(contract, ContractCells(cleanup=\"completed\"))"; "amend_contract(contract, ContractCells(cleanup=\"abandoned\"))" | mcp/src/agents_remember/worktrees/modules/cleanup.py:929-934; mcp/src/agents_remember/worktrees/modules/abandon.py:347-352 |
 | The module that should enforce produced == declared for `NextTool` and currently has **zero** test bodies — only this docstring, helpers and "moved verbatim" breadcrumbs remain. | "R10: every value a producer can emit validates at the wire boundary it crosses." | mcp/tests/test_wire_vocabulary_exhaustiveness.py:1-230 |
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading optional next and activation fields without inventing values. | `worktree_status_packet`; `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:65-151; mcp/src/agents_remember/application/worktree_status.py:217-277 |
 | The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:70-75; mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
@@ -560,6 +560,13 @@ not widen `PUBLIC_TOOLS`; do not special-case the name here.
 part of this leaf.
 
 ## Update History
+- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
+  260913-LCA-L8 change set shifted the two guarded contract amendments — `cleanup.py:925-930` →
+  `929-934` (the `TerminalResult` import line plus the `_cleanup_outputs_result` rewrite) and
+  `abandon.py:344-349` → `347-352` (the `TerminalResult` import line). Both ranges were re-read at
+  their new positions, where each `amend_contract(contract, ContractCells(cleanup=...))` statement
+  and its `guard.complete(...)` publication block still sit; the cited constructs and their meanings
+  are unchanged. History entries below keep their as-of values.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "TOOL_RESPONSE_MODELS[tool_name].model_validate(payload)"; "\"worktree_status\": WorktreeStatusResponse" repointed to mcp/src/agents_remember/models/tools/tool_response.py:23-23; mcp/src/agents_remember/models/tools/tool_registry.py:185-185. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded `WorktreePauseResponse` (operation literal
   `worktree_pause`, `paused: bool = False`, everything else inherited from `WorktreeCommandResponse`)

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-12T19:50+02:00 |
-| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
-| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
+| lastUpdated            | 2026-09-14T15:05+02:00 |
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Final result releases exact terminal selection before root task archival and reports retryable release failure. | `_finalized_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:143-219 |
 | Exact terminal release is independent of queue/task scheduling state. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
-| Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-632 |
+| Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-633 |
 | The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/finalize.py:310-310 |
 | The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule. | `cleanup_report`; "ALREADY_CLEAN = \"already-clean\"" | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-53 |
 | Carryover completion is proven against the official memory ledger here. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
@@ -128,6 +128,10 @@ before bytes move. Projection refresh failure is reported separately and never r
 accepted finalization write.
 
 ## Update History
+- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
+  260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting
+  `def cleanup_result` from line 632 to 633. The anchor was re-read at `cleanup.py:633-633`, where the
+  definition still sits; the cited symbol and its meaning are unchanged.
 - 2026-09-12T19:50+02:00 — 260831-LOCR-L31 root integration to `lifecycle_finalize_task`: this
   module is now the **only** landing-side route that reclaims, because `worktree_integrate` stopped
   running cleanup inside itself. Recorded the two-part `_run_or_verify_cleanup` seam: the unchanged

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-12T19:50+02:00|
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated            | 2026-09-14T15:05+02:00|
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -272,7 +272,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Context packet worktree status consumes the facade-exported status payload. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-152 |
 | `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:502-504 |
 | `carryover_done` reads the exact task-derived memory source ref, requires the row's memory commit to equal the recorded integrated content, and proves that content is reachable from the ledger tip. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:191-222 |
-| Cleanup hard-guards on `carryover_done` before deleting the parked memory branch. | "carryover_done(contract)" | mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669 |
+| Cleanup hard-guards on `carryover_done` before deleting the parked memory branch. | "carryover_done(contract)" | mcp/src/agents_remember/worktrees/modules/cleanup.py:670-670 |
 | Guidance imports the `WorktreePhase` / `NextOperation` / `NextTool` aliases from the wire model in one grouped import rather than restating them. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The six persisted contract vocabularies (declared in models/worktree.py / kernel) imported for `WorktreeStatusFacts`. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/worktree_contract.py:19-19 |
 | `unknown_cells` is the source of `unknown_contract_cells`. | `unknown_cells` | mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
@@ -322,6 +322,10 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 Pre-integration guidance stays contract-pure. It publishes only the static orchestration requirement `intent_note` and tells the caller that exact commit-message requirements are resolved from the current candidate by closeout preview or apply. It deliberately does not inspect the worktree, derive a candidate-sensitive plan, or restate message applicability: the normalizer owns that decision after candidate capture.
 
 ## Update History
+- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
+  260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting
+  `carryover_done(contract)` from line 669 to 670. The anchor was re-read at
+  `cleanup.py:670-670`, where that call still sits; the cited symbol and its meaning are unchanged.
 - 2026-09-13T17:48+02:00 — 260831-LOCR-L36 pause wording: the `_post_integration_phase` comment above
   the `checkpointed` branch was reworded to stop reading the landing as a pause. Pausing a master is a
   separate matter that stops the master's work and returns control while publishing nothing, keeping

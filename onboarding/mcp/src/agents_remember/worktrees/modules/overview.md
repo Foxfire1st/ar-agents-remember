@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-14T11:58+02:00 |
-| lastVerifiedCommitHash | `91a2a6e1d6b198a97a8de7eed3c2eed530aa0c55` |
-| lastVerifiedCommitDate | 2026-09-14T12:22:32+02:00|
+| lastUpdated | 2026-09-14T15:05+02:00 |
+| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
+| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -864,7 +864,7 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:705-739 |
-| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707 |
+| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-708 |
 | Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
 
@@ -1223,6 +1223,15 @@ a producer must never edit the string it was handed. The census is enforced from
 `mcp/tests/test_transaction_only_worktree_delivery.py::test_closeout_recovery_attributes_the_memory_commit_it_still_owed`.
 
 ## Update History
+- 2026-09-14T15:05+02:00 — No route impact: 260913-LCA-L8 made a terminal blockage unrepresentable
+  without a name and a reason inside `modules/terminal_validation.py`, named every non-removal result
+  in `application/provider_runtime.py::remove_tree`, and moved the `cleanup.py` / `abandon.py` call
+  sites onto the `TerminalResult` bundle. The route's purpose, its terminal cleanup and abandon
+  operations, their entry points and their refusals are unchanged: a genuinely blocked cleanup or
+  abandon still blocks with its own reason. The only route-level repair is the re-derived
+  `cleanup_result` anchor (`cleanup.py:632-707` → `633-708`) after the import line shifted it; the
+  enforcement detail lives on the three file cards. Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
   `ar/260913-lca-l11-ar`, base `4214d7a1`): recorded that the shared landing proof on this route lost
   its ledger-history dimension under the developer's 2026-09-14T08:15+02:00 ruling — `_landing_admission`
