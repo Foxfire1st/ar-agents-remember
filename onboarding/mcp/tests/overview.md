@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T11:58+02:00 |
+| lastUpdated | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash | `91a2a6e1d6b198a97a8de7eed3c2eed530aa0c55` |
 | lastVerifiedCommitDate | 2026-09-14T12:22:32+02:00|
 | governingOverview | `../overview.md` |
@@ -73,7 +73,7 @@ checks for the branch-addressed route.
 | Protocol framing | `test_codex_native_history.py`, `test_pi_rpc_process.py` | Bounded paging/correlation and real fixture subprocess behavior. |
 | L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate. The activation admission is contract-scoped: a refusal carries no `classification`/`blocking`/`sourcePair*` key and never names a foreign master as blocker or retry precondition. Preparation evidence only. |
 | CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, configured-hook non-invocation, and the memory-content commit's one `Code-Commit:` trailer read back out of the object (the `memory.md`-only ledger commit carrying none); focused behavior evidence only. |
-| Ledger attribution and the projected source ledger | `test_memory_ledger.py`, `test_worktree_sync.py` | The projection equals the rows the tracked table carried at every checkpoint of an attributed line, a hand edit to the table cannot move it, the source's own recorded table is read on every path with the attributed rows merged into it (a row the source cannot prove is excluded with its reason and its count, and a partially trailered line still reads its pre-rule rows), the bootstrap source contributes no rows, and a code tip the official memory line does not map still refuses by name without advancing the work branch. The ledger cases are the `unit-regression` lane and the sync case is the `integration` lane; the mid-cycle case's refusal comes from the named-ref ledger read, not from the projected source. |
+| Ledger attribution and the projected source ledger | `test_memory_ledger.py`, `test_worktree_sync.py` | The projection equals the rows the tracked table carried at every checkpoint of an attributed line, a hand edit to the table cannot move it, the source's own recorded table is read on every path with the attributed rows merged into it (a row the source cannot prove is excluded with its reason and its count, and a partially trailered line still reads its pre-rule rows), the bootstrap source contributes no rows, and a code tip the official memory line does not map still refuses by name without advancing the work branch. A descendant memory ledger that dropped a source row syncs as `already-current` instead of being refused, which is the transaction's half of the same ruling. The ledger cases are the `unit-regression` lane and the sync case is the `integration` lane; the mid-cycle case's refusal comes from the named-ref ledger read, not from the projected source. |
 | Producer census and the one renderer | `test_memory_attribution_producers.py` | Five memory-content producers and zero untrailered, measured from source: the trailer key identifier and its interpolation appear in exactly one production module, no production module spells the trailer as a quoted literal, each of the five producers reaches a shared renderer entry, and a hostile multi-paragraph caller body survives byte for byte with the trailer appended as its own final block. The two non-closeout producers are driven end to end through the public `memory_carryover_apply` and `memory_baseline_adopt`. Source census plus real-repository cases. **Superseding the note this row used to carry: the module's `unit-regression` lane row now exists** (`mcp/tests/test-evidence-lanes.toml:68`, added by the commit that landed L4), so the manifest loads. |
 | Leaf document master-link binding | `test_leaf_doc_master_link_binding.py` | The derived master link, end to end on real repositories: a leaf authored through `task_doc` with no series contract acquires `seriesContractPath` and its one `enclosures[]` ref when it is started; an already-damaged document (`lifecycleId` stale, no link) is repaired by its next start with objective, requirements, steps and title unchanged; a leaf under a task root with no master document is refused with `seriesContractPath`, the exact missing `task.json` and the remedy, writing nothing; and the planning flow (master plus two leaves, no start) still succeeds, still unstamped. Integration lane: one disposable code repository and one external memory repository per case. The restamp decision table is the unit half in `test_task_document_application_1.py`. |
 | Closeout recovery attribution | `test_transaction_only_worktree_delivery.py` | A real public closeout interrupted after its code commit is resumed through the journalled `LifecycleOperationRecoveryCommits` cell — a wrong cell is asserted to refuse first — and both documented git readers are asserted against the resumed shas, while the `memory.md`-only ledger commit returns none. The behavioural half of the census for the route that has no memory commit site of its own. |
@@ -417,6 +417,28 @@ independent defect — a 479-row source with one trailered commit read as a ONE-
 "looks like no attribution exists" failure in its most expensive form. The `_content_commit` helper
 exists because a row's memory cell must now name a commit git can resolve.
 
+## The Sync Half Of The Ledger Rule And The Mid-Flight Result
+
+**The sync half of the same ruling is proved in the transaction.** `test_worktree_sync.py` gained
+`test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current`
+(`:206-243`): it commits a memory content commit, rewrites `memory.md` so its one row maps the code
+base to that newer content commit — the stale-duplicate shape a recomputed table produces — and
+asserts the public `sync_result` returns `already-current` with no `dropped parent mapping` text
+anywhere in the payload and the memory work branch unmoved. Under the removed rule the source's own
+row had to survive in the resolution, which is why that same thirteen-row shape left a correctly
+closed master permanently unsyncable. The case is the transaction's regression guard; the
+projection's own exclusion reporting stays with `test_memory_ledger.py`.
+
+`test_atomic_series_activation.py` gained `ReconcilingResultTests` (`:231-297`) and two cases that
+drive `_reconciling_result`, the reporting boundary the public selecting operation composes, against
+a mid-flight `reconciling` record. The first asserts a `synced` pass is **not** reported as success:
+return code 2, state `atomic-series-reconciling`, the activation observation attached unchanged, and
+a summary naming the master's task-document ref and contract path, its publication time, its
+revision, both `worktree_sync` exits, and the pass's own message last. The second uses a `blocked`
+refusal and asserts the mid-flight identity is stated **before** the refusal's own words, so the
+caller reads the state it must resolve rather than the symptom. Neither addition created a module or
+moved a lane: both files already carried their rows.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
@@ -450,7 +472,9 @@ These current source and policy ranges establish the development/certification d
 | The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:152-152 |
 | The removed case's scenario, now refused by design: the guard that makes a task root with no master document unbindable. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:619-649 |
 | The refusal the two corrected closeout fixtures had to satisfy. | `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
-| The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. | `class ActivationFixture`; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:58-106; mcp/tests/test_atomic_series_activation.py:117-140; mcp/tests/test_atomic_series_activation.py:174-209 |
+| **The sync half of the ledger ruling:** a descendant memory ledger that dropped a source row is `already-current`, nothing moved, and no `dropped parent mapping` text is reported. | `test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current` | mcp/tests/test_worktree_sync.py:206-243 |
+| **The mid-flight reporting boundary:** a completed pass beside a reconciling selection is not this call's success, and a refusal left beside one leads with the mid-flight state. | `ReconcilingResultTests`; `test_a_completed_pass_beside_a_mid_flight_selection_is_not_success`; `test_a_refusal_that_left_a_record_mid_flight_leads_with_that_state`; `_reconciling_result` | mcp/tests/test_atomic_series_activation.py:231-297; mcp/tests/test_atomic_series_activation.py:255-274; mcp/tests/test_atomic_series_activation.py:276-297; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294 |
+| The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. | `class ActivationFixture`; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:63-111; mcp/tests/test_atomic_series_activation.py:122-145; mcp/tests/test_atomic_series_activation.py:179-214 |
 | The registered admission refusal now addresses only the addressed contract's own state. | `test_registered_sync_refusal_addresses_only_this_contracts_own_state` | mcp/tests/test_activation_admission_registered.py:178-221 |
 | The L2 attributed fixture line and the ten ledger-attribution cases: the every-checkpoint closed loop, the hand edit that cannot move the projection, the pre-trailer blob fallback, the bootstrap source, `exclude`, the last-block-wins parse, the unknown-code-commit drop, the by-key multi-trailer read, the merged-in mapping, and the writer/reader key round trip. | `_AttributedWorld`; `test_projection_is_the_ledger_the_attributed_history_records`; `test_projection_reads_the_trailer_and_never_the_live_table`; `test_projection_reads_an_unattributed_commit_from_its_own_ledger`; `test_projection_contributes_nothing_for_a_source_that_says_nothing`; `test_attribution_reads_only_the_commits_a_caller_asks_for`; `test_trailer_parse_takes_the_last_block_and_ignores_a_body_mention`; `test_attribution_reports_only_commits_the_code_repository_holds`; `test_attribution_reads_a_message_whose_final_block_carries_several_trailers`; `test_the_rendered_trailer_is_the_one_the_reader_parses`; `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:323-379; mcp/tests/test_memory_ledger.py:382-409; mcp/tests/test_memory_ledger.py:412-431; mcp/tests/test_memory_ledger.py:434-458; mcp/tests/test_memory_ledger.py:461-467; mcp/tests/test_memory_ledger.py:470-486; mcp/tests/test_memory_ledger.py:489-512; mcp/tests/test_memory_ledger.py:515-527; mcp/tests/test_memory_ledger.py:530-559; mcp/tests/test_memory_ledger.py:562-597; mcp/tests/test_memory_ledger.py:600-630 |
 | The L2 mid-cycle case: the refusal by name, the unmoved work branch, and the completed pair that then syncs. | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `map_official_memory` | mcp/tests/test_worktree_sync.py:176-204; mcp/tests/test_worktree_sync.py:101-110 |
@@ -461,6 +485,17 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-14T13:20+02:00 — The sync half of the ledger ruling and the mid-flight result (curator on the
+  landed `ab47182` change set of the 260913 ledger line): **no module was added or deleted and no lane
+  row moved.** Added the route section recording two additions — `test_worktree_sync.py`'s
+  `test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current`, which proves the transaction
+  reports a row its source cannot carry as `already-current` rather than refusing it, and
+  `test_atomic_series_activation.py`'s `ReconcilingResultTests`, which pins a completed pass beside a
+  mid-flight selection as `atomic-series-reconciling` with the stuck contract, its publication time,
+  its revision and both exits named, and a refusal beside one as leading with that state. Added three
+  reference rows, corrected the activation suite's stale fixture/case anchors, and noted the sync case
+  in the ledger-row of the routing table. Verification metadata remains closeout-owned; no execution
+  or acceptance claim and no verification stamp advanced.
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
   `ar/260913-lca-l11-ar`, base `4214d7a1`): three test modules gained cases and **no module was added
   or deleted**, so the route population and lane membership are unchanged. Added the route section

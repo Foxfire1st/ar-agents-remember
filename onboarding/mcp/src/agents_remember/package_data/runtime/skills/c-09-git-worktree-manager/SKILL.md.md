@@ -5,7 +5,7 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-31T20:30+02:00 |
+| lastUpdated            | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
 | lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../../../overview.md`             |
@@ -60,9 +60,10 @@ section: `worktree_sync` reconciles an exact moved code/memory source pair as a 
 resumable transaction. The new code tip must be ledger-mapped at the admitted memory tip; sync
 early before memory work; retained code or memory conflicts resume through
 `resolution_action=continue`, while explicit `cancel` restores pinned heads and releases an exact
-reconciling selection. It states that `c-09-git-worktree-manager` skill
-Memory continuation preserves every exact parent ledger row and accepts repeated code commits as
-newest-first state history; it does not impose a globally unique code key.
+reconciling selection. Its Mid-Task Sync section states that memory resolution is not re-judged
+against either parent's row list — the ledger is derived state, its rebuild is its authority, and a
+row the rebuild cannot resolve is reported as an exclusion — while repeated code commits stay valid
+newest-first state history and no globally unique code key is imposed.
 
 begins after the normal intake and onboarding gate, uses context resolved by the `c-08-ar-coordination-context-resolver` skill
 through the MCP worktree tools, refuses external-memory worktree start while
@@ -210,7 +211,8 @@ prose or queue ownership. Task-document authoring is always upstream. The queue 
 operation, commit, certification, or integration evidence. There is no tolerant selector reader or
 contract-presence election. Terminal cleanup may release only the exact still-selected contract and
 must preserve a newer selection.
-Memory-merge validation preserves exact parent rows; older same-code rows remain audit history.
+Memory-merge validation proves the pinned Git history only; older same-code rows remain audit history
+and a row the projection cannot resolve is reported there rather than refused by the sync.
 
 
 ### Todos
@@ -320,8 +322,12 @@ paragraph at `:258-260` was re-checked: its "moved code/memory source pair" phra
 `worktree_sync` reconciling one contract's two protected branches, which is still true
 (`source_pair(contract)` derives that pair from the contract), so it is not a serialization claim.
 
-Memory resolution keeps every exact parent row and accepts repeated code commits as ordered history;
-the newest row is current authority. No global ledger-key uniqueness rule is admitted.
+Memory resolution proves the admitted Git history and requires no row list of the `memory.md` it
+commits: the ledger is derived state and its rebuild reports the rows it cannot resolve. Repeated code
+commits stay valid ordered history, the newest row is current authority, and no global ledger-key
+uniqueness rule is admitted. The packaged source text at `:293-299` was corrected together with the
+canonical skill, so it no longer asserts that continuation validates every exact parent ledger row
+survives.
 
 ## Direct-Execution Boundary
 
@@ -334,6 +340,12 @@ source, and an already-journaled no-door operation remains recoverable only as t
 generation.
 
 ## Update History
+- 2026-09-14T13:20+02:00 — Corrected the packaged skill's sync doctrine as this card states it: the
+  transaction no longer re-judges a memory resolution against either parent's row list, because the
+  ledger is derived state, its rebuild is its authority, and a row the rebuild cannot resolve is
+  reported as an exclusion rather than refused. The packaged source text at `:293-299` was corrected
+  with the canonical skill and its generated copies, so it no longer carries the removed parent-row
+  validation, and the three body statements that asserted the removed rule were corrected. Verification metadata remains closeout-owned.
 - 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
   shipped-source debt row and the debt paragraph from this card and replaced them with the corrected
   shipped ranges — the frozen `SKILL.md` now states the contract-scoped admission rule at

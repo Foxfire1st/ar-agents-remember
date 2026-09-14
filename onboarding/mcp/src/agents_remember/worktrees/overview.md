@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T11:58+02:00 |
+| lastUpdated | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash | `91a2a6e1d6b198a97a8de7eed3c2eed530aa0c55` |
 | lastVerifiedCommitDate | 2026-09-14T12:22:32+02:00|
 | governingOverview | `../../../overview.md` |
@@ -189,8 +189,12 @@ memory-carryover vehicle.
 - Normal readers never infer selection or sync state from legacy files, task text, queue rows, or
   ambient Git. Missing/corrupt authority fails closed and is repaired only by explicit bounded
   selection/cancellation paths.
-- External-memory ledgers are newest-first state history. Sync preserves every exact parent row and
-  accepts repeated code commits; the newest matching row remains current authority.
+- External-memory ledgers are newest-first state history. Sync proves Git state and the admitted
+  mapping only: it requires no row list of the `memory.md` a resolution carries, because the ledger is
+  derived state and its rebuild is its authority. A row the rebuild cannot resolve is a reported
+  exclusion (`sourceRowsExcluded`, `sourceExcludedRows`, `sourceExcludedReasons`), never a refusal
+  here. Repeated code commits remain valid newest-first history, and the newest matching row remains
+  current authority.
 - **The source ledger is the source's own recorded table with the attributed rows merged into it
   (260913-LCA-L2, corrected by 260913-LCA-L11).** `read_ledger_source` reads the table the source
   commit carried on every path and merges the reachable memory commits' own `Code-Commit:` trailers
@@ -232,8 +236,10 @@ memory-carryover vehicle.
 | Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. | `observe_atomic_series`; `_require_record_identity`; "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142 |
 | Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; "def atomic_series_admission_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
 | The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
-| The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570 |
-| Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-264; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:267-284 |
+| The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110; mcp/src/agents_remember/worktrees/sync_transaction.py:540-571 |
+| Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
+| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution, and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:304-326; mcp/src/agents_remember/worktrees/sync_transaction.py:336-362; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
+| A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
 
 ## Cross-Repo References
 
@@ -714,7 +720,48 @@ and duplicated source rows it now asserts as accepted, and the two new module-le
 `_require_true_rows` directly. `mcp/tests/test_memory_ledger.py` gained the exclusion case and the
 partially-trailered-source case. No new test module was added and none was deleted.
 
+## Route Impact: A Dropped Ledger Row Is Reported, Not Refused By The Sync
+
+**The same ruling that removed the integration gate removed the sync gate.** The resumable sync
+transaction was the file rule's second keeper: a descendant or merged `memory.md` had to contain
+every row its source carried, and anything else refused with the state `sync-work-branch-invalid` and
+`resolved memory ledger dropped parent mapping(s): ...`. Measured on this master: thirteen
+unresolvable rows (eleven stale duplicates whose code commits map to a different memory commit, two
+naming memory commits that exist nowhere) had been dropped from the ledger by the master's own
+closeouts, so the same rows refused the integration gate and this one, and every later leaf start of
+that master refused permanently while both sides were already current — there was no merge left to
+resolve and nothing the operator could do. `sync_transaction_git.py` lost
+`validate_current_memory_side`, `validate_completed_side`, `_validate_parent_ledgers`,
+`_validate_required_ledger_rows` and `_ledger_rows` together with their call sites in
+`sync_transaction.py` (`_already_current_result`) and `sync_transaction_recovery.py`
+(`_require_completed_branches`), and the refusal state `sync-work-branch-invalid` no longer exists
+anywhere in the repository. Every sync proof is now about Git state — the admitted fast-forward or
+the exact two-parent commit, and the staged resolution — so both routes answer the same way and no
+surface restates the projection's judgement where it can drift from the reasons it classifies.
+
+**A selection left mid-flight now says so.** `_reconciling_result` rewrites a pass that itself
+returned `synced` or `already-current` to `atomic-series-reconciling` rather than presenting that
+pass's success beside a mid-flight record, and its new `_mid_flight_summary` leads with the stuck
+master's task-document ref and contract path, when its record was published, its revision, the
+incomplete source reconciliation, and both exits (`worktree_sync(contract_path=..., dry_run=false)`,
+or `worktree_sync(..., resolution_action='cancel', dry_run=false)`), keeping the refused pass's own
+message last. Before this the only thing said about that state was the refused pass's branch
+complaint, which named neither the stuck contract nor what it was doing.
+
 ## Update History
+- 2026-09-14T13:20+02:00 — A dropped ledger row is reported, not refused by the sync (curator on the
+  landed `ab47182` change set of the 260913 ledger line): the sync-side row-preservation rule is
+  removed — `validate_current_memory_side`, `validate_completed_side`, `_validate_parent_ledgers`,
+  `_validate_required_ledger_rows` and `_ledger_rows`, with their call sites in
+  `sync_transaction.py::_already_current_result` and
+  `sync_transaction_recovery.py::_require_completed_branches` — so every sync proof is about Git
+  state and one answer applies on both routes. Recorded the measured thirteen-row trigger and the
+  permanently-unsyncable master it produced, the mid-flight reporting rewrite
+  (`_reconciling_result` → `atomic-series-reconciling` with `_mid_flight_summary` naming the stuck
+  contract, its publication time, its revision and both exits), and corrected the false local
+  invariant that had stated the file rule. Re-derived the sync/activation reference anchors on this
+  route. Verification metadata remains closeout-owned; no execution or acceptance claim and no
+  verification stamp advanced.
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
   `ar/260913-lca-l11-ar`, base `4214d7a1`): recorded the developer's 2026-09-14T08:15+02:00 ruling
   that the rebuild outranks the tracked ledger file, and the removal it ordered — the

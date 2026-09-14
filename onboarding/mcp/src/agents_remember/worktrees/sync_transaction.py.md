@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
+| lastUpdated | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
 | lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
@@ -35,7 +35,11 @@ pinned, writes the journal, creates temporary `.sync` worktrees for series sides
 then memory. A genuine merge conflict records the side and conflict files without aborting. Continue
 validates the exact staged merge and advances the same generation; cancel delegates exact rollback.
 Automatic replay reconciles a side whose operation-owned commit already exists and finalizes only
-after both participating sides are proven.
+after both participating sides are proven. `_already_current_result` reports a pair whose recorded
+bases and work branches already carry the source on that Git evidence alone: a memory branch that
+already descends from its source is current whatever its `memory.md` says, because the ledger is
+derived state, its rebuild is its authority, and the rows the rebuild cannot resolve are reported
+there rather than refused here.
 
 ### Conventions
 
@@ -49,6 +53,8 @@ or journal refusal is not collapsed into a generic status.
 ### Invariants And Boundaries
 
 - One active generation is addressed by canonical contract, never a public operation id.
+- A current pair is proved from its recorded bases and branch ancestry, never from the rows the
+  carried `memory.md` happens to hold.
 - Pinned source/base/pre-sync refs plus the stable journal are recovery authority.
 - Retained conflicts are agent-owned action, not terminal failure.
 - Continue/cancel cannot change the admitted memory-sync choice.
@@ -100,13 +106,14 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- |
 | Strict journal records and read-only status projection live at the enclosure root. | `SyncSideRecord`; `SyncOperationRecord`; `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67; mcp/src/agents_remember/worktrees/sync_transaction_state.py:70-87; mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | Admission and pinned identity validate contract/source/ledger authority. | `preflight_official_pair`; `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:161-166; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:169-183 |
-| Git operations retain conflicts and prove exact staged, completed, or rolled-back heads. | `start_side_merge`; `continue_side_merge`; `validate_staged_resolution`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:253-293; mcp/src/agents_remember/worktrees/sync_transaction_git.py:318-344; mcp/src/agents_remember/worktrees/sync_transaction_git.py:345-368; mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-399 |
-| Finalization, cancellation, quarantine, and damaged-journal escape are separate recovery ownership. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:57-93; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-264; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:267-284 |
+| Git operations retain conflicts and prove exact staged, completed, or rolled-back heads. | `start_side_merge`; `continue_side_merge`; `validate_staged_resolution`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:264-301; mcp/src/agents_remember/worktrees/sync_transaction_git.py:329-350; mcp/src/agents_remember/worktrees/sync_transaction_git.py:353-372; mcp/src/agents_remember/worktrees/sync_transaction_git.py:375-403 |
+| Finalization, cancellation, quarantine, and damaged-journal escape are separate recovery ownership. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
 | Public result constructors keep recovery guidance consistent across phases. | `memory_choice_required`; `resolution_required`; `active_preview`; `cancel_preview`; `terminal_resolution_replay`; `quarantine_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:28-50; mcp/src/agents_remember/worktrees/sync_transaction_results.py:71-113; mcp/src/agents_remember/worktrees/sync_transaction_results.py:173-187; mcp/src/agents_remember/worktrees/sync_transaction_results.py:190-207; mcp/src/agents_remember/worktrees/sync_transaction_results.py:210-245; mcp/src/agents_remember/worktrees/sync_transaction_results.py:248-261 |
-| The parkability preflight, the park-and-journal admission, and the stash message are the driver's new pre-journal boundary. | `_admit_participating_sides`; `_park_participating_wip`; `_side_parks_wip`; `_wip_stash_message`; `_restore_already_parked` | mcp/src/agents_remember/worktrees/sync_transaction.py:241-255; mcp/src/agents_remember/worktrees/sync_transaction.py:264-301; mcp/src/agents_remember/worktrees/sync_transaction.py:258-261; mcp/src/agents_remember/worktrees/sync_transaction.py:304-310; mcp/src/agents_remember/worktrees/sync_transaction.py:313-334 |
-| A dirty moving side is parked; only an unmerged index or an unprovable checkout refuses. | `_preflight_participating_sides`; `_require_parkable_worktree` | mcp/src/agents_remember/worktrees/sync_transaction.py:389-404; mcp/src/agents_remember/worktrees/sync_transaction.py:407-415 |
-| Restore runs on the completed path, on resume, and through the agent-resolved parked continuation. | `_run_side`; `_continue_resolution`; `_continue_parked_wip_restore`; `_reconcile_completed_sides` | mcp/src/agents_remember/worktrees/sync_transaction.py:508-536; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570; mcp/src/agents_remember/worktrees/sync_transaction.py:573-594; mcp/src/agents_remember/worktrees/sync_transaction.py:597-629 |
-| The parked-candidate path sample is bounded and the true count is journaled beside it. | `WIP_PATH_SAMPLE_LIMIT` | mcp/src/agents_remember/worktrees/sync_transaction.py:80-80 |
+| The parkability preflight, the park-and-journal admission, and the stash message are the driver's new pre-journal boundary. | `_admit_participating_sides`; `_park_participating_wip`; `_side_parks_wip`; `_wip_stash_message`; `_restore_already_parked` | mcp/src/agents_remember/worktrees/sync_transaction.py:240-254; mcp/src/agents_remember/worktrees/sync_transaction.py:263-300; mcp/src/agents_remember/worktrees/sync_transaction.py:257-260; mcp/src/agents_remember/worktrees/sync_transaction.py:303-309; mcp/src/agents_remember/worktrees/sync_transaction.py:312-333 |
+| A dirty moving side is parked; only an unmerged index or an unprovable checkout refuses. | `_preflight_participating_sides`; `_require_parkable_worktree` | mcp/src/agents_remember/worktrees/sync_transaction.py:390-405; mcp/src/agents_remember/worktrees/sync_transaction.py:408-416 |
+| Restore runs on the completed path, on resume, and through the agent-resolved parked continuation. | `_run_side`; `_continue_resolution`; `_continue_parked_wip_restore`; `_reconcile_completed_sides` | mcp/src/agents_remember/worktrees/sync_transaction.py:509-537; mcp/src/agents_remember/worktrees/sync_transaction.py:540-571; mcp/src/agents_remember/worktrees/sync_transaction.py:574-595; mcp/src/agents_remember/worktrees/sync_transaction.py:598-630 |
+| The parked-candidate path sample is bounded and the true count is journaled beside it. | `WIP_PATH_SAMPLE_LIMIT` | mcp/src/agents_remember/worktrees/sync_transaction.py:79-79 |
+| An already-current pair is decided by recorded bases and branch ancestry, not by the rows the carried ledger holds. | `_already_current_result` | mcp/src/agents_remember/worktrees/sync_transaction.py:336-362 |
 
 ## Cross-Repo References
 
@@ -116,6 +123,14 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-14T13:20+02:00 — The ledger ruling reaches the driver: `_already_current_result` reports an
+  already-descendant pair as `already-current` on its recorded bases and branch ancestry alone, and
+  the `validate_current_memory_side` call that used to refuse it with `sync-work-branch-invalid` is
+  gone. Recorded that boundary in Logic and as a local invariant, and re-derived every reference
+  anchor (the Git, recovery, park-boundary, and driver ranges all moved). Verification remains
+  closeout-owned.
+
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationRecord`, `SyncOperationStore`, `SyncSideRecord`, `observe_sync_operation` repointed to mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385, mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67, mcp/src/agents_remember/worktrees/sync_transaction_state.py:70-87. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-10T15:06+02:00 — Parked-candidate curation: recorded the new pre-journal admission (`_admit_participating_sides`, `_park_participating_wip`, `_side_parks_wip`, `_wip_stash_message`, `_restore_already_parked`), the narrowed parkability preflight (`_require_parkable_worktree`), the completed/resume/agent-resolved restore paths, and the bounded `WIP_PATH_SAMPLE_LIMIT`. A dirty moving side is now parked rather than refused; unmerged index entries and unprovable checkouts still refuse. Re-derived every cited range against the current working tree. Verification remains closeout-owned.

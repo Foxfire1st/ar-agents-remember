@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-09-11T10:26:37+02:00|
+| lastUpdated | 2026-09-14T13:20+02:00|
 | lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
 | lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00 |
 | status      | active                 |
@@ -168,8 +168,8 @@ CCR cumulative source verification: No content impact: the changed settings exam
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category                     | Memory compatibility artifact                                                                                                                                           |
 | Represents In Reality        | The `memory.md` mapping between code commits and external memory commits.                                                                                               |
-| Description                  | The helper parses and writes the fenced `json ar-memory-ledger` metadata plus newest-first code-to-memory state history. Repeated code commits are valid: a settings-only memory change creates a new memory content commit and a newer ledger row for unchanged code while preserving older exact edges as audit history. `find_mapping` returns current newest-first authority; `contains_mapping` answers exact historical containment. Journaled worktree closeout and direct landing use explicit messages and journal evidence to create memory then ledger commits; exact current edges are idempotent, while changed memory state appends history. Source-pair admission requires a newest current mapping, divergent memory resolution preserves every exact parent row, integration accepts an already-current pair or exactly one new prefix row, and organizational completion proves both current sibling authority and exact final-ledger containment. Malformed bytes, missing mappings, broken ancestry, and dropped parent history still fail closed. The durable authority is the committed Git object; there is no generated subject, blank fallback, compatibility reader, or queue-owned lifecycle evidence. |
-| Canonical Source Of Truth    | `mcp/src/agents_remember/kernel/memory_ledger.py` plus mutation/proof owners in `mcp/src/agents_remember/worktrees/modules/closeout_external.py`, `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py`, `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py`, `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py`, `mcp/src/agents_remember/worktrees/integration/organizational_completion.py`, `mcp/src/agents_remember/worktrees/sync_transaction_authority.py`, and `mcp/src/agents_remember/worktrees/sync_transaction_git.py`; coordinators do not redefine the ledger format. |
+| Description                  | The helper parses and writes the fenced `json ar-memory-ledger` metadata plus newest-first code-to-memory state history. Repeated code commits are valid: a settings-only memory change creates a new memory content commit and a newer ledger row for unchanged code while preserving older exact edges as audit history. `find_mapping` returns current newest-first authority; `contains_mapping` answers exact historical containment. Journaled worktree closeout and direct landing use explicit messages and journal evidence to create memory then ledger commits; exact current edges are idempotent, while changed memory state appends history. Source-pair admission requires a newest current mapping, integration accepts an already-current pair or exactly one new prefix row, and organizational completion proves both current sibling authority and exact final-ledger containment. Divergent memory resolution proves the pinned Git history only: the ledger is derived state, its rebuild is its authority, and a row the rebuild cannot resolve is a reported exclusion (`sourceRowsExcluded`, `sourceExcludedRows`, `sourceExcludedReasons`) rather than a refusal by the sync or the integration gate. Malformed bytes, missing mappings, and broken ancestry still fail closed. The durable authority is the committed Git object; there is no generated subject, blank fallback, compatibility reader, or queue-owned lifecycle evidence. |
+| Canonical Source Of Truth    | `mcp/src/agents_remember/kernel/memory_ledger.py` plus mutation/proof owners in `mcp/src/agents_remember/worktrees/modules/closeout_external.py`, `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py`, `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py`, `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py`, `mcp/src/agents_remember/worktrees/integration/organizational_completion.py`, `mcp/src/agents_remember/worktrees/sync_transaction_authority.py`, and `mcp/src/agents_remember/worktrees/sync_transaction_git.py` (the latter commits the divergent memory merge; it proves Git parents, not ledger rows); coordinators do not redefine the ledger format. |
 | Current Naming Drift         | The parser/writer lives in the MCP package; CLI commands are now adapters around service functions. `LedgerError` now subclasses the shared `AgentsRememberError` (still a `ValueError`), so it is part of the package typed-error family rather than a bare `ValueError`.                               |
 | Key Identifiers              | `schema`, `repoName`, `lastVerifiedCodeCommit`, `lastMemoryContentCommit`, table rows.                                                                                  |
 | Parent / Child Relationships | Belongs to one external memory repo and is consumed by `c-09-git-worktree-manager` skill worktree lifecycle, baseline adoption, and cross-repo resolution.                                                                                  |
@@ -514,6 +514,19 @@ CCR cumulative source verification: Current execution routes the repository-owne
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
+
+- 2026-09-14T13:20+02:00 — 260913 ledger line (landed `ab47182`): the **External Memory Ledger**
+  entry no longer states the removed rule that divergent memory resolution preserves every exact
+  parent row and that dropped parent history fails closed. It now states that a divergent memory
+  resolution proves the pinned Git history only — the ledger is derived state, its rebuild is the
+  authority, and a row the rebuild cannot resolve is a reported exclusion (`sourceRowsExcluded`,
+  `sourceExcludedRows`, `sourceExcludedReasons`) rather than a refusal by the sync or the integration
+  gate — and its `Canonical Source Of Truth` row qualifies `sync_transaction_git.py` as the committer
+  of the divergent memory merge rather than a ledger-row prover. **No evidence path, fingerprint
+  value, or other entity row was touched, and no fingerprint was hand-advanced:** this change removes
+  a proof surface inside `worktrees/sync_transaction_git.py`, which is not one of the entry's curated
+  evidence paths, so all stored `git-blob-set-v1` values still resolve from committed `HEAD` blobs.
+  Verification metadata remains closeout-owned; no acceptance claim is made.
 
 - 2026-09-13T19:02+02:00 — LOCR-L37 stop-only pause curation: reviewed every entity whose curated evidence
   set includes a file this leaf touched — **Closeout Effective Input**, **Source Lineage** and **Seat

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastUpdated | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
 | lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
 
@@ -40,7 +40,9 @@ retains code or memory conflicts in operation-owned `.sync` worktrees, and adver
 resumes; cancel restores pinned heads, removes retained temporary worktrees, terminalizes the
 journal, and releases an exact reconciling selection to durable `vacant`. No direct-Git recovery,
 tolerant reader, or contract-presence fallback is part of the doctrine. For external memory,
-continuation proves that every exact parent ledger row survives. Repeated code commits are valid
+continuation proves the admitted Git history and leaves the ledger to its rebuild: the transaction
+requires no row list of the `memory.md` it commits, because the ledger is derived state and a row the
+rebuild cannot resolve is reported as an exclusion. Repeated code commits are valid
 newest-first state history; the newest row supplies current authority and older same-code rows
 remain audit evidence.
 
@@ -69,7 +71,8 @@ returns through the architect.
 - Conflicts are retained, resumable, and cancellable; they are not silently aborted.
 - Cleanup releases only the exact selected terminal pointer and preserves newer selections.
 - No fallback reader or duplicated lifecycle evidence is allowed.
-- Memory-merge validation preserves exact parent rows and never imposes global code-key uniqueness.
+- Memory-merge validation proves Git state only: it requires no row list and never imposes global
+  code-key uniqueness. A row the projection cannot resolve is the projection's to report.
 - Ordinary series integration is never reclassified as direct execution merely because it uses a
   root series contract.
 
@@ -108,6 +111,12 @@ removed. That mismatch between the declared path rules and the enforced checking
 recorded defect.
 
 ## Update History
+- 2026-09-14T13:20+02:00 — Corrected the route's external-memory doctrine: the sync transaction proves
+  the admitted Git history and requires no row list of the `memory.md` it commits, because the ledger
+  is derived state and its rebuild reports the exclusions it cannot resolve. The source skill text at
+  `SKILL.md:293-299` was corrected with the code, so the skill no longer carries the removed
+parent-row validation; the matching route invariant now
+  states the current behaviour. Verification metadata remains closeout-owned.
 - 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: rebound the route's citation
   rows against the frozen source after `grep -n` verification — `## Mid-Task Sync` to
   SKILL.md:256-300, `## Lifecycle Finalization And Cleanup` to SKILL.md:430-508, and the ordinary

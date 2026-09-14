@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastUpdated | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
 | lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
 | governingOverview | `skills/c-09-git-worktree-manager/overview.md` |
@@ -50,9 +50,13 @@ retained in its exact `.sync` worktree and returned as resolution-required. The 
 stages derivable conflicts, then calls `resolution_action=continue`; the journal supports resuming
 across tool calls and process restarts. `resolution_action=cancel` restores pinned heads, removes
 temporary worktrees, terminalizes the journal, and releases an exact reconciling selection.
-Memory resolution preserves every exact parent ledger row. Repeated code commits remain valid
-newest-first memory history; neither the skill nor the sync transaction collapses them into a
-globally unique code key.
+Memory resolution is not re-judged against either parent's row list: the ledger is derived state, its
+rebuild is its authority, and a row the rebuild cannot resolve is reported as an exclusion rather
+than refused by the sync. Repeated code commits remain valid newest-first memory history; neither the
+skill nor the sync transaction collapses them into a globally unique code key. The shared source text
+at `SKILL.md:293-299` says the same: it and its generated copies were corrected together with the
+code, because they had told agents that continuation validates every exact parent ledger row
+survives.
 
 Cleanup releases an exact selected terminal contract before removing the authority needed to name
 it and never clears a newer selection. Integration conflicts use the same evidence boundary:
@@ -76,7 +80,8 @@ architect.
 - The queue never owns operation lifecycle or commit evidence.
 - No compatibility reader or contract-presence election exists.
 - Ledger order selects current memory authority, while retained exact rows preserve audit history.
-  Merge validation requires parent-row preservation, not one row per code commit.
+  The sync proves Git state and the admitted mapping only: merge validation requires no row list and
+  imposes no global code-key uniqueness.
 
 ### Todos
 
@@ -124,6 +129,13 @@ removed. That mismatch between the declared path rules and the enforced checking
 recorded defect.
 
 ## Update History
+- 2026-09-14T13:20+02:00 — Corrected the sync doctrine this card states: the transaction no longer
+  re-judges a memory resolution against either parent's row list, because the ledger is derived state
+  and its rebuild is its authority, so a row the rebuild cannot resolve is reported as an exclusion
+  rather than refused. The shared source text at `SKILL.md:293-299` was corrected in the same change,
+  together with its eight generated copies, so the skill no longer carries the removed parent-row
+  validation; the matching invariant was reworded.
+  Verification remains closeout-owned.
 - 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: removed the dead
   `source-pair-scoped` admission claim and reworded the logic to the shipped contract-scoped
   authority; rebound the citation to `"Atomic-series implementation admission is a separate,

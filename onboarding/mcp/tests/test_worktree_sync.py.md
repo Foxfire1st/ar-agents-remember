@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-13T23:09+02:00 |
+| lastUpdated | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd`                         |
 | lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview | `overview.md` |
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Exercises real code/external-memory synchronization: a pure fast-forward advances both sides and contract, a code merge conflict stays recoverable and can continue, a code tip the official memory line does not map refuses **by name** and succeeds once the pair is completed, and a nonregular journal is renamed/quarantined without following it. Recovery uses the exact contract and ledger pair, not an inferred ambient checkout.
+Exercises real code/external-memory synchronization: a pure fast-forward advances both sides and contract, a code merge conflict stays recoverable and can continue, a code tip the official memory line does not map refuses **by name** and succeeds once the pair is completed, and a nonregular journal is renamed/quarantined without following it. A memory work branch that already descends from its source syncs as `already-current` even when its recomputed ledger dropped a row the source carried, because the projection owns that judgement and the sync is not a second place to restate it. Recovery uses the exact contract and ledger pair, not an inferred ambient checkout.
 
 ## Code Commentary
 
@@ -40,6 +40,16 @@ official memory ledger blob at the named ref and resolves the code tip with `fin
 the named-ref read path, and this leaf's change to the *source*-ledger reader does not touch it. The
 case is the suite's first coverage of the refusal at all, and it is the regression guard that the
 source-reader change left the detection where it was.
+
+A descendant memory ledger that dropped a source row is current, not refused
+cit:([`test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current`], mcp/tests/test_worktree_sync.py:206-243). The case
+commits a memory content commit and then rewrites `memory.md` so its one row maps the code base to
+that newer content commit — the stale-duplicate shape a closeout's recomputed table produces — and
+asserts the same call returns `already-current`, that no `dropped parent mapping` text appears
+anywhere in the payload, and that the memory work branch did not move. The removed rule required the
+resolution to carry every row its source carried, so this case is the regression guard for the ruling
+that the ledger is derived state and its rebuild reports the exclusions it cannot resolve; the
+projection's own exclusion reporting is pinned in `test_memory_ledger.py`.
 
 The source-listed behavior below is the current evidence boundary. Earlier coverage claims in history
 describe prior populations and must not be used to recreate removed tests or claim they still run.
@@ -83,8 +93,9 @@ to removed methods are superseded by this current inventory.
 | Code merge conflict is retained and can continue | `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:139-174 |
 | A code tip the official memory line does not map refuses by name, leaves the work branch where it was, and succeeds once the pair is completed | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `move_official_code`; `map_official_memory` | mcp/tests/test_worktree_sync.py:176-204; mcp/tests/test_worktree_sync.py:97-99; mcp/tests/test_worktree_sync.py:101-110 |
 | The refusal this case guards is the named-ref ledger read, not the projected source ledger | `preflight_official_pair`; `find_mapping` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_ledger.py:255-257 |
-| Nonregular journal is renamed without following and quarantined | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:206-225 |
-| The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_worktree_sync.py" | mcp/tests/test-evidence-lanes.toml:182-182 |
+| A descendant memory ledger that dropped a source row is current, nothing moved, and no `dropped parent mapping` text is reported | `test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current` | mcp/tests/test_worktree_sync.py:206-243 |
+| Nonregular journal is renamed without following and quarantined | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:245-264 |
+| The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_worktree_sync.py" | mcp/tests/test-evidence-lanes.toml:184-184 |
 
 ## Cross-Repo References
 
@@ -95,6 +106,16 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T13:20+02:00 — Recorded the added dropped-row case: a memory work branch that already
+  descends from its source and whose recomputed `memory.md` maps the code base to a newer content
+  commit syncs as `already-current` with no `dropped parent mapping` text and no branch movement,
+  which is the regression guard for the ruling that the ledger is derived state and the projection
+  reports its own exclusions. Added the Purpose and Logic statements, the new reference row, and
+  repointed `test_nonregular_journal_is_renamed_without_following_and_quarantined` (206-225 →
+  245-264) and the evidence-lane row (182 → 184) after the insertion and the current manifest.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp
+  advanced.
 
 - 2026-09-13T23:09+02:00 — 260913-LCA-L2 curator (uncommitted change set on `ar/260913-lca-l2-ar`):
   recorded the added mid-cycle case — a code tip the official memory line does not map refuses with

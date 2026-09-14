@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_git.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
+| lastUpdated | 2026-09-14T13:20+02:00 |
 | lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
 | lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
@@ -17,8 +17,10 @@
 ## Purpose
 
 This file owns every exact Git mutation and proof for resumable sync. It makes retained conflicts,
-agent continuation, exact result attribution, rollback, temporary worktree cleanup, and
-external-memory ledger preservation mechanical rather than caller-specific.
+agent continuation, exact result attribution, rollback, temporary worktree cleanup, and the
+resolution of a divergent memory merge mechanical rather than caller-specific. Every proof here is
+about Git state — which head a merge may create, which refs the operation pinned, and whether a
+resolution is staged — and deliberately none of them judges what the ledger file says.
 
 ## Code Commentary
 
@@ -34,9 +36,10 @@ Checkout proof compares repository identity and branch, while helpers inspect st
 and unmerged paths.
 
 `start_side_merge` attempts the pinned source merge and leaves a genuine conflict in place. A
-divergent memory merge is staged without auto-commit until both parent ledgers are validated.
-`validate_staged_resolution` proves the exact MERGE_HEAD, zero unmerged/unstaged paths, index
-sanity, and memory-ledger preservation before `continue_side_merge` commits. Completion accepts
+divergent memory merge is staged without auto-commit and `_finish_staged_memory_merge` commits
+Git's own resolution of the two pinned parents as they stand; the staged `memory.md` is not re-judged
+against either parent's row list. `validate_staged_resolution` proves the exact MERGE_HEAD, zero
+unmerged/unstaged paths, and index sanity before `continue_side_merge` commits. Completion accepts
 only the admitted fast-forward or a two-parent commit with exact pre-sync/source parents.
 `rollback_side` restores only an active or completed operation-owned delta and refuses later work.
 
@@ -51,8 +54,11 @@ than weakening the proof.
 - A conflict is retained only when MERGE_HEAD equals the pinned source and unmerged paths exist.
 - Missing exact refs are distinct from invalid ref names and Git inspection failures.
 - Continue commits only a fully staged exact retained merge.
-- Memory resolution must contain every exact parent ledger row. Repeated code rows are valid
-  newest-first history and are not collapsed during merge validation.
+- A memory resolution is proved as Git history alone: the admitted fast-forward or the exact
+  two-parent commit, with no row list required of the `memory.md` it carries. The ledger is derived
+  state and its rebuild is its authority, so a row the rebuild cannot resolve is a reported
+  exclusion — `ledger_projection` publishes `sourceRowsExcluded`, `sourceExcludedRows` and
+  `sourceExcludedReasons` for it — never a sync refusal.
 - Automatic rollback refuses unrelated/later commits or dirty post-sync work.
 - Temporary worktree removal and ref deletion are evidence-checked, never best-effort deletion.
 
@@ -90,9 +96,10 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Side records carry the exact repository, worktree, commits, refs, plan, and conflict set proven here. | `SyncSideRecord` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67 |
-| The driver records retained conflicts and delegates continue through these proof functions. | `_continue_resolution`; `continue_side_merge`; `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:539-570; mcp/src/agents_remember/worktrees/sync_transaction_git.py:318-342; mcp/src/agents_remember/worktrees/sync_transaction_git.py:345-366 |
-| Recovery uses exact-created-head and rollback proof before restoring or finalizing. | `_recover_from_refs`; `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:316-374; mcp/src/agents_remember/worktrees/sync_transaction_git.py:400-408; mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-397 |
-| The parked-candidate Git primitives read exact dirty paths, park with untracked files, reapply with conflict classification, prove restoration, drop exactly the recorded stash, and clear a cancel-only conflicted reapply. | `worktree_dirty_paths`; `park_worktree_wip`; `apply_parked_wip`; `prove_parked_wip_restored`; `drop_parked_wip`; `discard_conflicted_wip_reapply` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:112-134; mcp/src/agents_remember/worktrees/sync_transaction_git.py:137-150; mcp/src/agents_remember/worktrees/sync_transaction_git.py:153-166; mcp/src/agents_remember/worktrees/sync_transaction_git.py:169-185; mcp/src/agents_remember/worktrees/sync_transaction_git.py:202-218; mcp/src/agents_remember/worktrees/sync_transaction_git.py:188-199 |
+| The driver records retained conflicts and delegates continue through these proof functions. | `_continue_resolution`; `continue_side_merge`; `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:540-571; mcp/src/agents_remember/worktrees/sync_transaction_git.py:329-350; mcp/src/agents_remember/worktrees/sync_transaction_git.py:353-372 |
+| Recovery uses exact-created-head and rollback proof before restoring or finalizing. | `_recover_from_refs`; `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:315-373; mcp/src/agents_remember/worktrees/sync_transaction_git.py:406-414; mcp/src/agents_remember/worktrees/sync_transaction_git.py:375-403 |
+| The parked-candidate Git primitives read exact dirty paths, park with untracked files, reapply with conflict classification, prove restoration, drop exactly the recorded stash, and clear a cancel-only conflicted reapply. | `worktree_dirty_paths`; `park_worktree_wip`; `apply_parked_wip`; `prove_parked_wip_restored`; `drop_parked_wip`; `discard_conflicted_wip_reapply` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:126-148; mcp/src/agents_remember/worktrees/sync_transaction_git.py:151-164; mcp/src/agents_remember/worktrees/sync_transaction_git.py:167-180; mcp/src/agents_remember/worktrees/sync_transaction_git.py:183-199; mcp/src/agents_remember/worktrees/sync_transaction_git.py:216-232; mcp/src/agents_remember/worktrees/sync_transaction_git.py:202-213 |
+| The automatic memory merge commits Git's own resolution and proves only its pinned parents; the module's docstring records the ledger ruling. | `_finish_staged_memory_merge`; "Developer ruling on the 260913 ledger line" | mcp/src/agents_remember/worktrees/sync_transaction_git.py:304-326; mcp/src/agents_remember/worktrees/sync_transaction_git.py:7-15 |
 
 ## Cross-Repo References
 
@@ -102,6 +109,17 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-14T13:20+02:00 — The ledger ruling reaches the sync: removed the sync-side row-preservation
+  rule (`validate_current_memory_side`, `validate_completed_side`, `_validate_parent_ledgers`,
+  `_validate_required_ledger_rows`, `_ledger_rows` and their call sites), so this module proves Git
+  state only — `_finish_staged_memory_merge` commits the pinned memory merge without re-judging
+  either parent's row list, and `validate_staged_resolution` proves the staged resolution alone. The
+  ledger is derived state and its rebuild is its authority, so a row the rebuild cannot resolve is
+  reported by `ledger_projection` rather than refused here. Rewrote the Purpose, the merge/continue
+  Logic, and the parent-row invariant, and re-derived every reference anchor against the current
+  source (the module docstring grew and the parked-candidate primitives moved with it). Verification
+  remains closeout-owned.
 
 - 2026-09-10T15:06+02:00 — Parked-candidate Git primitives: recorded `worktree_dirty_paths`, `park_worktree_wip`, `apply_parked_wip`, `prove_parked_wip_restored`, `drop_parked_wip`, and the cancel-only `discard_conflicted_wip_reapply`, including the restore proof's exact-content branch. Re-derived the retained proof anchors against the current working tree. Verification remains closeout-owned.
 
