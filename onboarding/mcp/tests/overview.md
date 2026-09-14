@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash | `91a2a6e1d6b198a97a8de7eed3c2eed530aa0c55` |
-| lastVerifiedCommitDate | 2026-09-14T12:22:32+02:00|
+| lastUpdated | 2026-09-14T14:20+02:00 |
+| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
+| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -86,6 +86,7 @@ checks for the branch-addressed route.
 | Checkpoint landing plan/apply parity | `test_checkpoint_landing_end_to_end.py` | The public `worktree_checkpoint_landing` route checkpoints an unfinished master (`closeout_status` still `not-started`) end to end over real temporary Git repositories — both destination refs and the ledger verified, retry idempotent, continued work advancing the refs again — and every refusal (a candidate whose ledger does not map the code ref, a master ledger carrying a row the world contradicts, a divergent leaf ledger on the ordinary route, a completed master) fires at **both** the preview and the apply, including the original closeout `would-closeout`-vs-refusal instance. Since 260913-LCA-L11 three of its cases changed **direction** — a reordered source region, a reversed superseding pair, and the interleaved projection on the leaf route now land, asserted as landings (the leaf case by the destination refs really moving) rather than dropped, with the reversal's hazard recorded in the case and on the transaction card. Integration lane. The preview/apply parity invariant and its instance inventory live on the `worktrees/overview.md` route and in `memory_quality/overview.md`. |
 | Sub-task index reachability across a writer skew | `test_task_documents_graph_projection.py` (`SubTaskIndexReachabilityTests`) | Projection-only unit evidence that a completed leaf whose durable JSON carries a field this reader's schema does not know stays reachable from the master's sub-task index, an unstarted row keeps resolving, and a document with a required field deleted is still withheld. `_index_doc` reproduces the dashboard's own index rule (`sliceForRef`) rather than approximating it. Hermetic temporary task root; one case, one helper, no lane change. |
 | Cross-master concurrency on one protected source pair | `test_cross_master_concurrency.py`, `test_atomic_series_activation.py` | One sprint commands every atomic master from its own source branches, so two atomic masters share one protected source pair; each keeps its own activation record. Both masters stay ready and progress, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks no sibling (the same statement the stop-only pause now makes as a real public operation, `worktree_pause`, proved separately in `test_pause_stop_only_end_to_end.py`), a conflicting or stale publication is refused at the pair (`blocked-non-ff`, `atomic-series-checkpoint-candidate-moved`), and a master that reconciles with a landed sibling finishes through ordinary public closeout and final integration rather than a checkpoint. A graph-less sprint serializes nothing — `executionGraph=None` resolves to the `atomic-sequential` sprint shape (every commanded master executes atomically, no dependency is declared) and both masters hold their own activation concurrently with no waiting reason. Only a real sprint-graph wave edge still gates (`predecessor-incomplete:`). Integration lane: real temporary Git repositories and the public operations. |
+| Capacity refusal source classification | `test_closeout_projection_source_classification.py` | The three states of a projected source stay distinct on the code its own raiser published. `graph_context` refuses a sprint whose authored graph is one node past `MAX_CLOSEOUT_MASTERS` with `closeout-queue-master-capacity-exceeded` — its own declared code, read back from the refusal rather than retyped — and that code classifies `invalid`, because the source was read and is past its bound; `contract-unreadable` and `atomic-series-contract-unreadable` still report `unreadable`; and the ordinary projected source stays readable with no problems and classifies `active`. The classifier tests membership of `closeout_queue_errors.py`'s `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains. Integration lane: real temporary Git repositories through `QueueFixture` and the production graph admission path. |
 
 ## Fixture Roles And Claims
 
@@ -156,6 +157,17 @@ pre-L4 population. The manifest now holds 204 modules on disk and 204 entries �
 stress-durability and migration empty — the growth being L4's `test_memory_attribution_producers.py`
 (row 68, unit-regression) and L5's `test_leaf_doc_master_link_binding.py` (row 152, integration). The
 `test-evidence-lanes.toml` card carries the per-lane brackets and is the owner of record.d it does not restore any retired matrix.
+
+**Current counts (260913-LCA-L7 curator, measured at the current change set):** the L5 paragraph
+above is superseded. The manifest now holds 205 modules on disk and 205 entries — 115
+unit-regression (entry rows 5-120), 2 public-contract (122-124), 59 integration (126-185), 16
+architecture-fitness (187-203), 13 provider-conformance (205-218), with stress-durability and
+migration empty. The single addition is this leaf's `test_closeout_projection_source_classification.py`,
+registered in the **integration** lane at row 137 by the same change set that created it: it composes
+the real `QueueFixture` over temporary Git repositories and drives the production graph admission and
+projection path, so that is its behaviour-preserving lane. The `test-evidence-lanes.toml` card owns the
+per-lane brackets; membership is selection and cost classification only, never execution or
+acceptance evidence.
 
 260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
 load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
@@ -485,6 +497,18 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-14T14:20+02:00 — 260913-LCA-L7 curator (uncommitted change set on `ar/260913-lca-l7`):
+  registered the leaf's new `test_closeout_projection_source_classification.py` in the retained route
+  table (integration lane, entry row 137) — it refuses a sprint whose authored graph is one node past
+  the master bound with the raiser's own declared code, proves that code classifies `invalid` rather
+  than `unreadable`, keeps the genuinely unreadable codes reporting `unreadable`, and leaves the
+  ordinary source readable with no problems — and reconciled the population to the current manifest,
+  measured rather than carried: 205 modules on disk and 205 entries, 115 unit-regression (5-120), 2
+  public-contract (122-124), 59 integration (126-185), 16 architecture-fitness (187-203), 13
+  provider-conformance (205-218), with stress-durability and migration empty. Superseded the L5
+  paragraph by adding the current counts beside it; the `test-evidence-lanes.toml` card remains the
+  owner of record for lane membership. Membership is selection and cost classification only; no
+  execution or acceptance claim, and the verification stamps remain closeout-owned.
 - 2026-09-14T13:20+02:00 — The sync half of the ledger ruling and the mid-flight result (curator on the
   landed `ab47182` change set of the 260913 ledger line): **no module was added or deleted and no lane
   row moved.** Added the route section recording two additions — `test_worktree_sync.py`'s

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
-| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
+| lastUpdated | 2026-09-14T14:20+02:00 |
+| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
+| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,13 +36,26 @@ has a live door: `_series_source` reads `live_closeout_door(contract)` instead o
 source" branch were deleted with it. A series with no live door simply contributes no door source.
 
 Since 260831-CCR (commit `99dc249b`) every projected member source fact binds the canonical
-task-intent identity of its leaf: `_projection_members` (line 467-607) computes
-`task_intent_identity(contract.task_root, leaf)` (line 528), records it as
-`source_fact["taskIntent"]` (line 539), and passes it into the member context (line 552). A leaf
+task-intent identity of its leaf: `_projection_members` (line 461-560) computes
+`task_intent_identity(contract.task_root, leaf)` (line 522), records it as
+`source_fact["taskIntent"]` (line 533), and passes it into the member context (line 546). A leaf
 whose intent cannot be projected (master resolved, schema unsupported, taxonomy unclassified)
 refuses the source with a `task`-kind `ProjectionSourceProblem` carrying the exact error type
-and repair action (line 529-538), so the disposable projection never offers a member whose intent is
+and repair action (line 523-532), so the disposable projection never offers a member whose intent is
 unknown.
+
+Since 260913-LCA-L7 `_problem` classifies a capacity refusal from the code set its own raiser
+published instead of from a substring of the code's spelling. The classifier tests membership of
+`CAPACITY_REFUSAL_CODES` — the declaration shared with `closeout_queue_errors.py` — so
+`closeout-queue-master-capacity-exceeded`, `closeout-queue-edge-capacity-exceeded` and the module's
+own `source-problem-cap-exceeded` overflow code all report `invalid`: the source was read and is too
+large for its bound. The previous substring test was `cap-exceeded`, which neither surviving capacity
+code contains, so a sprint past its graph bound was reported as a source that could not be read. The
+change is exactly this: the capacity family classifies correctly and the other vocabularies' markers
+(`missing`, `not-found`, `invalid`, `mismatch`, `conflict`, `sprint-required`) are untouched, so a
+genuinely unreadable source is still reported `unreadable` in the other direction.
+`_bounded_problems` builds its overflow problem from the same `SOURCE_PROBLEM_CAP_EXCEEDED` constant
+rather than a literal. No refusal code was renamed.
 
 ### Conventions
 
@@ -72,7 +85,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65 |
+| No external domain source is required to establish this repository-owned implementation. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:68-68 |
 
 ## Repo-Internal References
 
@@ -80,11 +93,12 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65 |
-| Every live series is observed independently from its own contract-keyed record; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local. | `_projection_members`; `_observe_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:467-607; mcp/src/agents_remember/worktrees/queue/closeout_projection.py:637-649 |
-| Member source facts bind the canonical task-intent identity. | "intent = task_intent_identity(contract.task_root, leaf)"; "source_fact[\"taskIntent\"]" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:526-551 |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:68-68 |
+| Every live series is observed independently from its own contract-keyed record; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local. | `_projection_members`; `_observe_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:461-560; mcp/src/agents_remember/worktrees/queue/closeout_projection.py:631-643 |
+| Member source facts bind the canonical task-intent identity. | "intent = task_intent_identity(contract.task_root, leaf)"; "source_fact[\"taskIntent\"]" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:522-545 |
 | The focused adapter converts strict per-contract selector observation into disposable source facts/waits/problems without lifecycle ownership. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:29-51 |
-| Waiting-door admission refuses only an identity conflict (a repeated generation id or task reference); no population ceiling remains. | `_require_waiting_door_identities`; "waiting-door-identity-conflict" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:439-454 |
+| A capacity refusal is classified `invalid` from the declaration that owns the code, while a genuinely unreadable source still reports `unreadable`. | `_problem`; "error_type in CAPACITY_REFUSAL_CODES" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:835-856 |
+| Waiting-door admission refuses only an identity conflict (a repeated generation id or task reference); no population ceiling remains. | `_require_waiting_door_identities`; "waiting-door-identity-conflict" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:443-458 |
 
 ## Cross-Repo References
 
@@ -93,7 +107,7 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65 |
+| No meaningful cross-repository reference applies. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:68-68 |
 
 ## CCR-R02@v2 Intent-Bound Projection Sources
 
@@ -103,6 +117,7 @@ queue cannot recompute a stale identity or offer a member whose intent is absent
 L25 candidate `99dc249b`.
 
 ## Update History
+- 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the capacity family is now classified from its own declaration. `_problem` tests membership of `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains, so a sprint past its graph bound reported `invalid` rather than `unreadable`; `_bounded_problems` uses the `SOURCE_PROBLEM_CAP_EXCEEDED` constant. The card states exactly that and that the other vocabularies' markers are unchanged, so an unreadable source still reports `unreadable`. Re-derived every range against the current 890-line source: `_PRIORITY_RANK` 65-65 → 68-68, `_projection_members` 467-607 → 461-560, `_observe_series_activation` 637-649 → 631-643, the task-intent call 528 → 522 and its `taskIntent` assignment 539 → 533, the typed refusal 529-538 → 523-532, and `_require_waiting_door_identities` 439-454 → 443-458. Added the evidence row for the classification. Verification metadata remains closeout-owned; no stamp advanced.
 - 2026-09-13T22:22+02:00 — L6 (260913-LCA): the census no longer refuses a wait set that exceeds a candidate ceiling. The `len(waiting) > MAX_CLOSEOUT_CANDIDATES` branch and its `waiting-door-cap-exceeded` problem are deleted while the identity-conflict branch of `_require_waiting_door_identities` is kept, so the invariant notes the unbounded population and the surviving refusal, and a reference row records that branch at 439-454. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 - 2026-09-13T14:19+02:00 — Per-contract activation curation: the census now calls `project_series_activation(contract)` for each live atomic master against that master's own contract-keyed record, so the card states that reconciling is the only candidate waiting reason (vacant/active are never waits and a foreign master is never a blocker). Rebound the `_projection_members` range to 467-607, the focused adapter to closeout_projection_activation.py:29-51, and re-read the task-intent prose line numbers (467-607 / 528 / 539 / 552 / 529-538). Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: The member-source-facts row anchored the bare symbol `task_intent_identity`, which resolved twice at verification and again now (the import and the call), and its second anchor `source_fact["taskIntent"]` was a backticked expression the anchor grammar cannot read. Both are now exact quoted source texts — the identity call and the `taskIntent` assignment — each occurring once inside `closeout_projection.py:526-551`; claim wording and extent unchanged.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
-| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
+| lastUpdated | 2026-09-14T14:20+02:00 |
+| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
+| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -30,7 +30,10 @@ only deterministic readiness and order.
 
 ## Conventions
 
-- Projection errors and source problems are bounded and typed.
+- Projection errors and source problems are bounded and typed. A capacity refusal is `invalid`, not
+  `unreadable`: the source was read and is past its bound, and the codes that say so are declared
+  once with that classification in `closeout_queue_errors.py` so a raiser and the projection's
+  classifier cannot drift apart.
 - The projection is evictable; canonical task, door, register, and journal sources are not copied
   into permanent queue authority.
 
@@ -153,6 +156,7 @@ nothing. `closeout_projection.py::capture_projection_source` uses the same judge
 sprint source as `terminal`. Master-granular resolution is unchanged; only the terminal set widened.
 
 ## Update History
+- 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the route's conventions now state that a capacity refusal is an `invalid` source rather than an unreadable one, and that the refusal codes and that classification are one declaration in `closeout_queue_errors.py`. `closeout_queue_graph.py` raises its master- and edge-capacity refusals through those constants and `closeout_projection._problem` classifies by membership of `CAPACITY_REFUSAL_CODES`, so a sprint past its graph bound is no longer reported as a source that could not be read; no refusal code was renamed and the other classifiers are unchanged. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T14:19+02:00 — Per-contract activation curation on this route: the queue now reads each live series' own contract-keyed activation record, so the invariant, hot-path and projection sections state that `atomic-series-reconciling` is the only waiting reason, vacant/active are never waits, a foreign master is never this contract's blocker, and the closeout projection remains a read-only observer that owns no transition. Retitled the section from source-pair to per-contract activation. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded that queue graph resolution and projection classification consume `master_is_terminal`, so an abandoned predecessor stops blocking its successors and a sprint with an abandoned master classifies as terminal. Content change, not a range repoint.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

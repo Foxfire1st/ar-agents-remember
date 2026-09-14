@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastUpdated | 2026-09-14T14:20+02:00 |
+| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
+| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,13 +61,14 @@ The exact source declarations below establish the current behavior; this invento
 | Profile support and current consumer declarations | "repository-certification-profile-test-port" | mcp/tests/evidence-lifecycle.toml:512-548 |
 | Closeout-input support declares the activation/admission and route-review registered consumers. | "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-283 |
 | Curator-coherence support declares the activation/admission and route-review registered consumers. | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:341-341 |
-| The enclosure/worktree fixture composition the L32 suite imports; the artifact's `path` cell is the unique anchor because the bare quoted path also appears in consumer lists. | "path = \"mcp/tests/lifecycle_enclosure_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:454-454 |
-| The L32 suite is a registered consumer in both shared-support artifacts. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-338; mcp/tests/evidence-lifecycle.toml:340-396 |
-| The L34 boundary suite is a registered consumer in both shared-support artifacts. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-338; mcp/tests/evidence-lifecycle.toml:340-396 |
-| The L37 pause boundary suite is a registered consumer in both shared-support artifacts (its consumer entries are at `:321` and `:379`); the leaf's AST-only architecture guard consumes neither. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-338; mcp/tests/evidence-lifecycle.toml:340-396 |
-| The L5 master-link binding suite is a registered consumer of both shared-support artifacts (its consumer entries are at `:315` and `:373`), reached transitively through `test_worktree_support`'s `initialized_memory_repo`, which imports both. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-338; mcp/tests/evidence-lifecycle.toml:340-396 |
-| The L4 producer census is a registered consumer of the closeout fixture composition and of the closeout-input support (`:318`, `:376`), both reached through `QueueFixture`. | "mcp/tests/closeout_fixture_test_support.py"; "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:318-318; mcp/tests/evidence-lifecycle.toml:376-376; mcp/tests/evidence-lifecycle.toml:265-265; mcp/tests/evidence-lifecycle.toml:283-283 |
-| The seal-removal change set's ordered playthrough is a registered consumer in both shared-support artifacts (its consumer entries are at `:317` and `:375`), reached transitively through the same `QueueFixture` composition. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:317-317; mcp/tests/evidence-lifecycle.toml:375-375 |
+| The enclosure/worktree fixture composition the L32 suite imports; the artifact's `path` cell is the unique anchor because the bare quoted path also appears in consumer lists. | "path = \"mcp/tests/lifecycle_enclosure_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:456-456 |
+| The L32 suite is a registered consumer in both shared-support artifacts. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-339; mcp/tests/evidence-lifecycle.toml:341-398 |
+| The L34 boundary suite is a registered consumer in both shared-support artifacts. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-339; mcp/tests/evidence-lifecycle.toml:341-398 |
+| The L37 pause boundary suite is a registered consumer in both shared-support artifacts (its consumer entries are at `:322` and `:381`); the leaf's AST-only architecture guard consumes neither. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-339; mcp/tests/evidence-lifecycle.toml:341-398 |
+| The L5 master-link binding suite is a registered consumer of both shared-support artifacts (its consumer entries are at `:316` and `:375`), reached transitively through `test_worktree_support`'s `initialized_memory_repo`, which imports both. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-339; mcp/tests/evidence-lifecycle.toml:341-398 |
+| The L4 producer census is a registered consumer of the closeout fixture composition and of the closeout-input support (`:320`, `:379`), both reached through `QueueFixture`. | "mcp/tests/closeout_fixture_test_support.py"; "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:319-319; mcp/tests/evidence-lifecycle.toml:378-378; mcp/tests/evidence-lifecycle.toml:265-265; mcp/tests/evidence-lifecycle.toml:283-283 |
+| The seal-removal change set's ordered playthrough is a registered consumer in both shared-support artifacts (its consumer entries are at `:318` and `:377`), reached transitively through the same `QueueFixture` composition. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:318-318; mcp/tests/evidence-lifecycle.toml:377-377 |
+| The L7 capacity-classification suite is a registered consumer of both shared-support artifacts (its consumer entries are at `:307` and `:366`), reached transitively through `test_closeout_queue`, whose own imports carry both supports. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:307-307; mcp/tests/evidence-lifecycle.toml:366-366; mcp/tests/evidence-lifecycle.toml:282-339; mcp/tests/evidence-lifecycle.toml:341-398 |
 
 ## Cross-Repo References
 
@@ -85,9 +86,9 @@ re-categorised, so the catalog's population is unchanged:
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:334` |
-| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:391` |
-| `mcp/tests/lifecycle_enclosure_test_support.py` | `publish_test_enclosure` — the suite's terminal-archive fixture is a real published enclosure | `mcp/tests/evidence-lifecycle.toml:467` |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:336` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:395` |
+| `mcp/tests/lifecycle_enclosure_test_support.py` | `publish_test_enclosure` — the suite's terminal-archive fixture is a real published enclosure | `mcp/tests/evidence-lifecycle.toml:471` |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
 The L4 producer-census insertion shifted all three rows by one line (from `:330`/`:383`/`:461`), and this
@@ -102,8 +103,8 @@ unchanged; the insertion did shift the later consumer rows, which are re-derived
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:304` |
-| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:357` |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:305` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:364` |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
 The L4 producer-census insertion moved all of these rows by one line: the L32 rows now resolve at `:334`,
@@ -120,8 +121,8 @@ re-derived below.
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:320` |
-| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:377` |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:322` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:380` |
 
 The leaf's other new module, `mcp/tests/test_pause_is_not_publication.py`, is deliberately **not** a
 consumer of any artifact here: it parses the source tree with `ast` and resolves module paths, so it
@@ -144,8 +145,8 @@ rows, which are re-derived below.
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:316` |
-| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:373` |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:322` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:375` |
 
 The L4 producer-census insertion did **not** move these two rows: it was added after them in both lists,
 so their positions are unchanged. Consumer
@@ -160,8 +161,8 @@ stays 42 shared-support artifacts and four executable replacement contracts:
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_fixture_test_support.py` | transitive closeout/lifecycle fixture composition the carryover case's `QueueFixture` relies on | `mcp/tests/evidence-lifecycle.toml:317` |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition, same fixture | `mcp/tests/evidence-lifecycle.toml:374` |
+| `mcp/tests/closeout_fixture_test_support.py` | transitive closeout/lifecycle fixture composition the carryover case's `QueueFixture` relies on | `mcp/tests/evidence-lifecycle.toml:319` |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition, same fixture | `mcp/tests/evidence-lifecycle.toml:378` |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
 
@@ -175,8 +176,8 @@ declared population stays 42 shared-support artifacts and four executable replac
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition `test_worktree_support` imports | `mcp/tests/evidence-lifecycle.toml:315` |
-| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same import | `mcp/tests/evidence-lifecycle.toml:373` |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition `test_worktree_support` imports | `mcp/tests/evidence-lifecycle.toml:316` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same import | `mcp/tests/evidence-lifecycle.toml:375` |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
 Two insertions — one in each consumer list — shift everything after them, so the current positions,
@@ -185,7 +186,51 @@ its block now `282-338`, the curator-coherence `path` cell `:341` with its block
 `lifecycle_enclosure_test_support.py` `path` cell `:454`. The earlier per-leaf sections above record
 their own as-of positions and should be read that way; the reference table above names the current ones.
 
+## 260913-LCA-L7 Two More Consumer Rows
+
+The leaf's new `mcp/tests/test_closeout_projection_source_classification.py` was added as an exact
+consumer of the same two shared-support artifacts every other closeout boundary suite consumes. The
+module imports `QueueFixture`, `REPO` and `SPRINT` from the sibling `test_closeout_queue` fixture
+rather than rebuilding the world, and that fixture's own imports carry both supports —
+`curator_coherence_test_support` directly and `closeout_input_test_support` through
+`test_worktree_support`, whose `initialized_memory_repo` imports it. No artifact row was added, removed
+or re-categorised, so the declared population is unchanged (measured: 42 `[[artifact]]` and 4
+`[[contract]]`).
+
+| Artifact | Why the suite consumes it | Consumer row |
+| --- | --- | --- |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the shared `QueueFixture` relies on | `mcp/tests/evidence-lifecycle.toml:307` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same fixture | `mcp/tests/evidence-lifecycle.toml:366` |
+
+Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
+Two insertions — one in each consumer list — shift everything after them, so the current positions,
+measured by line number in the current file, are: the closeout-input `path` cell `:283` (unchanged) with
+its block now `282-339`, the curator-coherence `path` cell `:342` with its block now `341-398`, and the
+`lifecycle_enclosure_test_support.py` `path` cell `:456`. Every later row moved by one line: the L5
+entries `:315` → `:316` and `:373` → `:375`; the L4 census `:318` → `:319` and `:376` → `:378`; the
+playthrough `:317` → `:318` and `:376` → `:377`; the pause suite `:321` → `:322` and `:380` → `:381`;
+the L32 suite `:335` → `:336`, `:394` → `:395` and `:470` → `:471`; the L36 suite `:308` → `:309` and
+`:367` → `:368`; and the L34 suite `:304` → `:305` and `:363` → `:364`. The earlier per-leaf sections
+above record their own as-of positions and should be read that way; the reference table above names the
+current ones.
+
 ## Update History
+- 2026-09-14T14:20+02:00 — 260913-LCA-L7 curator (uncommitted change set on `ar/260913-lca-l7`):
+  registered the leaf's new `mcp/tests/test_closeout_projection_source_classification.py` as an exact
+  consumer of `closeout_input_test_support.py` (row 307) and `curator_coherence_test_support.py` (row
+  366), both reached transitively through the sibling `test_closeout_queue` fixture it imports its
+  world from. No artifact row was added, removed or re-categorised, so the declared population is
+  unchanged (measured: 42 `[[artifact]]`, 4 `[[contract]]`). Re-derived every position this card cites
+  against the current file: the closeout-input `path` cell stays `:283` with its block `282-339`, the
+  curator-coherence `path` cell is `:342` with its block `341-398`, and
+  `lifecycle_enclosure_test_support.py` is `:456`; among consumer rows the L5 suite moved to
+  `:316`/`:375`, the L4 census to `:319`/`:378`, the playthrough to `:318`/`:377`, the pause suite to
+  `:322`/`:381`, the L32 suite to `:336`/`:395`/`:471` and the L36 suite to `:309`/`:368`. Corrected
+  four reference rows that named pre-insertion values (the two artifact block ranges
+  `282-338`/`340-396` → `282-339`/`341-398`, the L5 consumer entries `:315`/`:373` → `:316`/`:375`, the
+  L4 census `:318`/`:376` → `:319`/`:378`, and the playthrough `:317`/`:375` → `:318`/`:377`) and added
+  the row for the new consumer edge. Verification metadata is **not** advanced: the code commit does
+  not exist and closeout owns the stamp; no acceptance claim.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): registered the leaf's new `mcp/tests/test_leaf_doc_master_link_binding.py` as an exact
   consumer of `closeout_input_test_support.py` (row 315) and `curator_coherence_test_support.py`

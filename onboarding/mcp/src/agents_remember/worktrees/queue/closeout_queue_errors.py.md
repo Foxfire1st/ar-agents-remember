@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-14T14:20+02:00 |
+| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
+| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,18 @@ and detached worker diagnostics.
 request-carried task-document reference, failing closed with `closeout-queue-reference-required` /
 `closeout-queue-reference-invalid`.
 
+Since 260913-LCA-L7 this module is also the one declaration of the capacity-refusal family. Capacity
+refusals are the one family whose source was read perfectly and is invalid — the graph, or the
+problem list built from it, is larger than its bound admits — so the module publishes the codes
+`MASTER_CAPACITY_EXCEEDED` (`closeout-queue-master-capacity-exceeded`), `EDGE_CAPACITY_EXCEEDED`
+(`closeout-queue-edge-capacity-exceeded`) and `SOURCE_PROBLEM_CAP_EXCEEDED`
+(`source-problem-cap-exceeded`), and the set `CAPACITY_REFUSAL_CODES` that names all three. The
+classification the closeout projection applies lives beside the codes on purpose: deriving it from a
+code's spelling is how the projection came to test the substring `cap-exceeded` and miss every code
+that spells the bound `capacity-exceeded`, reporting a sprint past its graph bound as a source that
+could not be read. A rename here moves the raiser in `closeout_queue_graph.py` and the classifier in
+`closeout_projection.py` together, which a substring test never did. No refusal code was renamed.
+
 ### Conventions
 
 Queue refusal sites use stable status strings rather than exposing internal exception classes.
@@ -37,6 +49,8 @@ Queue refusal sites use stable status strings rather than exposing internal exce
 ### Invariants And Boundaries
 
 - Every refusal has both a status and a detail.
+- Each capacity code is declared once with the classification the closeout projection applies, so a
+  raiser and the classifier cannot drift apart.
 - This module contains no recovery or policy logic beyond reference validation.
 
 ### Todos
@@ -52,7 +66,8 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared queue error stores exact public status and detail as direct typed attributes. | `CloseoutQueueError` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:17-23 |
-| Request-carried task references validate fail-closed in one place. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:46-67 |
+| Request-carried task references validate fail-closed in one place. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:64-85 |
+| The capacity-refusal family is declared once, codes beside the classification the projection applies. | `CAPACITY_REFUSAL_CODES`; `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED`; `SOURCE_PROBLEM_CAP_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:26-40 |
 
 ## Cross-Repo References
 
@@ -67,10 +82,19 @@ queue consumer's local exception formatting.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Queue consumers share one bounded, stable failure-detail constructor. | `bounded_queue_failure_detail` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:25-43 |
-| Task-reference validation also uses that constructor instead of echoing the supplied value. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:46-67 |
+| Queue consumers share one bounded, stable failure-detail constructor. | `bounded_queue_failure_detail` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:43-61 |
+| Task-reference validation also uses that constructor instead of echoing the supplied value. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:64-85 |
 
 ## Update History
+
+- 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the module
+  now declares the capacity-refusal family — `MASTER_CAPACITY_EXCEEDED`, `EDGE_CAPACITY_EXCEEDED`,
+  `SOURCE_PROBLEM_CAP_EXCEEDED` and the `CAPACITY_REFUSAL_CODES` set — beside the reason a code and
+  its classification are one declaration, so `closeout_queue_graph.py` raises through the constants
+  and `closeout_projection._problem` classifies by membership instead of by the substring
+  `cap-exceeded`. Re-derived the module's own ranges against the current 85-line source:
+  `bounded_queue_failure_detail` 25-43 → 43-61 and `queue_task_ref` 46-67 → 64-85; added the
+  declaration's evidence row. Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: made exact refusal `detail` a direct typed
   attribute so semantic-topology adapters preserve status and detail without reparsing exception
