@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404` |
+| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -84,6 +84,7 @@ checks for the branch-addressed route.
 | Worktree next-move typing and enforcement | `test_worktree_status_terminal_next_tool.py` | The `terminal-archive-ready` branch of `worktree_status` names the accepted cleanup operation, its emitted args bind to the real tool signature (checked with `inspect.signature(...).bind`), the envelope declares `nextAction`/`nextTool`/`nextArgs`, and the `PUBLIC_TOOLS` membership validator is driven in both directions. Integration lane: real worktree services and a real repository under `tmp_path`. First coverage of that branch. |
 | Stop-only pause, and the pause/publication split | `test_pause_stop_only_end_to_end.py`, `test_pause_is_not_publication.py` | The public `worktree_pause` stops an atomic master over one real temporary Git world holding two masters: it releases only this contract's activation record to `vacant`, leaves the other master's record byte-identical and still `active`, moves no ref and creates no commit (both repositories' tips, complete object databases, coordination tree, both worktrees, the enclosure and every task document measured identical before and after), reports `paused: true` with **no** `nextTool`/`nextArgs`/`nextOperation` at the top level or inside `nextStep`, reports a never-selected master as the explicit `atomic-series-already-vacant` success (that case asserted a refusal before the 260831-LOCR-L38 change set) while still refusing a leaf contract / a record naming another contract without writing anything, is idempotent, and resumes through `worktree_sync` with nothing published. Its sibling is the structural half: `test_pause_is_not_publication.py` (architecture-fitness) asserts the pause module's static import closure is disjoint from all twelve publication modules — measured 60 modules including the root, 5 direct imports, 54 beyond them — with non-vacuity assertions and named witnesses so a walker stopping at the direct imports fails rather than passes, so the stop cannot become the checkpoint publication. `worktree_checkpoint_landing` is the separate, explicitly requested publication and no case here reaches it. Integration + architecture-fitness lanes. |
 | Checkpoint landing plan/apply parity | `test_checkpoint_landing_end_to_end.py` | The public `worktree_checkpoint_landing` route checkpoints an unfinished master (`closeout_status` still `not-started`) end to end over real temporary Git repositories — both destination refs and the ledger verified, retry idempotent, continued work advancing the refs again — and every refusal (a candidate whose ledger does not map the code ref, a hand-edited master ledger, a divergent leaf ledger on the ordinary route, a completed master) fires at **both** the preview and the apply, including the original closeout `would-closeout`-vs-refusal instance. Integration lane. The preview/apply parity invariant and its instance inventory live on the `worktrees/overview.md` route and in `memory_quality/overview.md`. |
+| Sub-task index reachability across a writer skew | `test_task_documents_graph_projection.py` (`SubTaskIndexReachabilityTests`) | Projection-only unit evidence that a completed leaf whose durable JSON carries a field this reader's schema does not know stays reachable from the master's sub-task index, an unstarted row keeps resolving, and a document with a required field deleted is still withheld. `_index_doc` reproduces the dashboard's own index rule (`sliceForRef`) rather than approximating it. Hermetic temporary task root; one case, one helper, no lane change. |
 | Cross-master concurrency on one protected source pair | `test_cross_master_concurrency.py`, `test_atomic_series_activation.py` | One sprint commands every atomic master from its own source branches, so two atomic masters share one protected source pair; each keeps its own activation record. Both masters stay ready and progress, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks no sibling (the same statement the stop-only pause now makes as a real public operation, `worktree_pause`, proved separately in `test_pause_stop_only_end_to_end.py`), a conflicting or stale publication is refused at the pair (`blocked-non-ff`, `atomic-series-checkpoint-candidate-moved`), and a master that reconciles with a landed sibling finishes through ordinary public closeout and final integration rather than a checkpoint. A graph-less sprint serializes nothing — `executionGraph=None` resolves to the `atomic-sequential` sprint shape (every commanded master executes atomically, no dependency is declared) and both masters hold their own activation concurrently with no waiting reason. Only a real sprint-graph wave edge still gates (`predecessor-incomplete:`). Integration lane: real temporary Git repositories and the public operations. |
 
 ## Fixture Roles And Claims
@@ -351,6 +352,33 @@ fail-closed, and both new-module rows (the L4 census and this leaf's binding sui
 manifest loads. Detail lives on the `test-evidence-lanes.toml` card, the owner of record for lane
 membership.
 
+## 260913-LCA-L10 Sub-Task Index Reachability
+
+The projection reads durable task documents written by other, independently versioned processes, so one
+of them may carry a field this reader's schema has never heard of. Until this leaf each of the reader's
+five parse sites caught `ValueError` and **dropped the whole document**, so a completed leaf written by a
+newer build disappeared from `analytics.taskDocuments` and the dashboard's sub-task row rendered as dead
+text while unstarted rows stayed live — a version skew that presented as a status filter. The read edge
+now tolerates exactly that skew (purely `extra_forbidden` keys pruned and re-validated) and nothing else.
+Authoring did not move: `write_task_doc` still takes a validated `TaskDocument`, so it must refuse such a
+document.
+
+`test_task_documents_graph_projection.py` carries the behavioural proof. Its new
+`SubTaskIndexReachabilityTests::test_completed_leaf_written_by_another_build_stays_reachable_from_the_index`
+builds one master with three rows over a temporary task root, republishes the completed leaf's durable
+JSON with an unknown field at the step level, writes a second document with a required field deleted, and
+asserts through `read_task_documents`: the skewed completed row resolves with its real identity and
+progress (`("01_DONE", "Completed", 1, 1)`), the unstarted row resolves as before, and the broken row is
+`None`. The helper `_index_doc` reproduces the dashboard's own index rule (`sliceForRef`) rather than
+approximating it, so the assertion is the property the projection owes an authored row; reverting the
+single tolerant condition fails exactly this case.
+
+Two mechanics a future reader must not "fix": the skewed JSON is written with `Path.write_text`, not
+`write_task_doc`, precisely because `write_task_doc` must refuse it; and the unknown field is spelled
+`checkpoint` on a step, mirroring where the live skew landed (`step.note`, `tasks/document.py:121`)
+without depending on a field this reader may later learn. The module gained one case and one helper,
+its lane row is unchanged, and no budget moved.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
@@ -392,6 +420,20 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l10-ar`, base `4214d7a1`): added a route section and a `Retained Behavioral Routes` row
+  for the reachability case this change set adds to the existing
+  `test_task_documents_graph_projection.py` — `SubTaskIndexReachabilityTests` with its `_index_doc` helper,
+  proving through `read_task_documents` that a completed leaf written by a newer build stays reachable
+  from the master's sub-task index, that an unstarted row keeps resolving, and that a document with a
+  required field deleted is still withheld. Recorded the two mechanics that must not be "fixed" later (the
+  direct `Path.write_text` because `write_task_doc` must refuse the skewed document, and the `checkpoint`
+  field on a step mirroring where the live skew landed), and recorded for the route that the pre-change
+  parse sites **deleted the whole document** rather than skipping it — which is what produced the
+  dead-text sub-task rows — while the authoring plane was never loosened. The module
+  gained one case and one helper, its lane row (`mcp/tests/test-evidence-lanes.toml:108`) and both case
+  budgets are unchanged, and no new module was added. Verification metadata remains closeout-owned; no
+  verification stamp advanced and no execution or acceptance claim is made here.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
   `ar/260913-lca-l5-ar`, base `52875e7a`): added a route section and a `Retained Behavioral Routes` row
   for the change set's new `test_leaf_doc_master_link_binding.py` (integration lane, row 152) — the

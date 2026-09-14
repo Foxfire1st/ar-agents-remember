@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated            | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404` |
+| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
 
 ## What This Area Is
 
@@ -82,6 +82,11 @@ observer write side through `kernel/primitives/observer_paths.py`).
 ## Local Invariants And Traps
 
 - Readers reuse the producing subsystem's own parser rather than re-parsing.
+- **A projection reader must not delete durable truth over one unknown field.** These readers consume
+  documents written by other, independently versioned processes, so an unknown key is a version skew,
+  not corruption: the reader tolerates it (260913-LCA-L10, `snapshots_impl/_task_documents.py`), while
+  every genuine invalidity still withholds the document. The strict end of that split stays with
+  authoring and with the enforcement folds, exactly as `snapshots_impl/_runtime.py:121-123` states it.
 - Projection writes are atomic; readers never observe half-written state.
 - Readers may consume observer projection/reducer APIs; observer event mutation remains
   with its write-side owner. Layering permits serving to consume lower observer APIs.
@@ -185,7 +190,35 @@ four values publish together. A heartbeat therefore retries an interrupted task 
 waiting for a second task mutation. This is part of the route's bounded-retention and atomic
 publication contract, not a cache optimization.
 
+## 260913-LCA-L10 Tolerant Read Edge (Route Impact)
+
+`snapshots_impl/_task_documents.py` stopped deleting a durable task document over a field this reader's
+schema does not know. All five read-edge call sites now route through one `_projected_document`, which
+validates strictly and then, only for pydantic's `extra_forbidden`, drops exactly the addressed keys and
+validates again; every other failure still withholds the document. The route-level consequence is the
+one this overview now carries as an invariant: the projection edge reads tolerantly because it renders,
+and the strict read remains with authoring and the enforcement folds.
+
+Why it mattered at route level: a completed leaf whose JSON carried a step-level `note` from a newer
+build vanished from `analytics.taskDocuments`, so the dashboard's sub-task index rendered that row as
+dead text while unstarted rows stayed live — a version skew that presented as a status filter. Nothing
+about the summary window was involved: `TASK_DOCUMENT_SUMMARY_LIMIT = 250` was measured irrelevant and is
+unchanged, and no dashboard file is in this change set.
+
+Two things stay out of scope deliberately, recorded on the reader's card rather than repaired here: a
+sixth same-class drop site at `snapshots_impl/_closeout_queue.py:33-36`, and the residual unprunable-loc
+gap (a loc pydantic augments, such as the legacy `ref`), which stays fail-closed.
+
 ## Update History
+
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l10-ar`, base `4214d7a1`): the task-document reader's five read-edge call sites now share
+  one tolerant parse that tolerates only `extra_forbidden` and still withholds every genuinely invalid
+  document, with authoring and the enforcement folds unchanged. Added the route invariant that a
+  projection reader must not delete durable truth over one unknown field, and recorded that the 250-document
+  summary window was measured irrelevant and that the dashboard renderer was correct and untouched. No
+  budget, limit or dashboard file changed. Verification metadata remains closeout-owned; no verification
+  stamp advanced and no execution or acceptance claim is made here.
 
 - 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added typed requirement/question rendering with semantic body identity and clarified observer read API imports. Verification records source review, not execution or acceptance.
 

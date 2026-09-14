@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`       |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404`       |
+| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,6 +64,8 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 curator: citation-shift note, no content change. The `cit:(...)` span in the 260731-EFA-L3 entry above (the one naming the task readers) points into `snapshots_impl/_task_documents.py` at that file's pre-L10 line numbers, and this change set grew that file by 52–57 lines for the tolerant read edge. The recorded numbers are historical; read them as `read_task_documents` 69-69 → now 126-126, `read_series_documents` 212-212 → now 267-267, `_series_subtask_nodes` 260-260 → now 314-314, `_task_doc_node` 528-528 → now 580-580. The entry itself was preserved verbatim rather than rewritten, per the append-only history rule. None of this section's own test sources is in that change set. Verification metadata unchanged; no verification stamp advanced.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

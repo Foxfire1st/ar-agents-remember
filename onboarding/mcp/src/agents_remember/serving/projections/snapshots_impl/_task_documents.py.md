@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404` |
+| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
 | governingOverview      | `../overview.md`                                       |
 
 ## Governing Overview
@@ -18,6 +18,13 @@
 
 Task-document and series readers: summaries, full bodies, lifecycle binding. Task JSON is the source of truth (never the rendered markdown). These readers project task documents and the series checklist, resolve cross-folder lifecycle links, and hash full bodies for the on-demand body endpoint.
 
+Since 260913-LCA-L10 the durable-data **read** edge is deliberately tolerant of a field a newer build
+wrote: all five read-edge call sites route through `_projected_document`, which drops only the keys
+pydantic reports as `extra_forbidden` and re-validates, while every other validation failure still
+withholds the document. This is the read half of one split, not a relaxation of authoring — the
+document model, `task_doc`'s write-time validation and `write_task_doc` all stay strict, matching
+`snapshots_impl/_runtime.py:121-123`.
+
 ## Code Commentary
 
 - `read_task_documents`
@@ -25,6 +32,9 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
 - `_task_document_lifecycle_maps`
 - `_task_doc_lifecycle_id`
 - `_doc_enclosure_lifecycle`
+- `_UNKNOWN_FIELD_PASSES` (since 260913-LCA-L10; the pruning pass bound, `= 4`)
+- `_projected_document` (since 260913-LCA-L10; the module's only `TaskDocument.model_validate` site)
+- `_without_paths` (since 260913-LCA-L10; targeted pruning of exactly the addressed keys)
 - `read_series_documents`
 - `_series_subtask_nodes`
 - `_series_subtask_created_at`
@@ -37,11 +47,11 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
   `TaskSubTaskRefNode.masterRef` and projects `doc.seats` as `TaskSeatNode` rows
 
 Since 260831-CCR (commit `99dc249b`) the readers canonicalize the typed requirement and open-question
-slots into stable reader strings: `_requirement_reader_text` (line 494) renders an
+slots into stable reader strings: `_requirement_reader_text` (line 546) renders an
 `ApprovedRequirementPacketRef` as `{stableId}@{version} — {path}`, `_question_reader_text`
-(line 500) renders an `AcceptanceObligationQuestion` as `Acceptance obligation {id}: {question}`,
-and `_task_doc_body_revision` (line 606) hashes typed intent slots through a stable by-alias dump
-(`_task_intent_body_value`, line 631) so a change to a packet version or an obligation question
+(line 552) renders an `AcceptanceObligationQuestion` as `Acceptance obligation {id}: {question}`,
+and `_task_doc_body_revision` (line 658) hashes typed intent slots through a stable by-alias dump
+(`_task_intent_body_value`, line 683) so a change to a packet version or an obligation question
 text alters the body revision and open readers refetch.
 
 ## Invariants And Boundaries
@@ -49,15 +59,35 @@ text alters the body revision and open readers refetch.
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py`.
 - Type-preserving intent slots must keep their canonicalized text stable: the reader surface is a
   string projection, while the digest path uses the typed by-alias dump.
+- **Read tolerance is keyed on one error type only.** `_projected_document` tolerates
+  `extra_forbidden` and nothing else; a missing required field, a bad enum or a malformed nested value
+  still withholds the document. Do not widen it into a blanket `try`/`except` or a per-key ignore list.
+- **Authoring is the strict end of the split.** The document model keeps `extra="forbid"`, `task_doc`'s
+  write-time validation is untouched, and `write_task_doc` takes an already-validated `TaskDocument`.
+  A read-edge tolerance change must never be read as permission to write an unknown key.
+- `_projected_document` must remain the module's single `TaskDocument.model_validate` site, so no future
+  caller can reintroduce the strict-only parse that deleted a whole document.
+- The residual unprunable-loc gap (a loc pydantic augments, such as the legacy `ref`) stays fail-closed
+  and must be changed only deliberately: closing it re-opens the proven fix's semantics.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
-| Canonicalized requirement text reader for typed packet refs. | `_requirement_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:494-498 |
-| Canonicalized open-question reader for typed acceptance obligations. | `_question_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:500-504 |
-| Body revision hashing of typed intent slots. | `_task_doc_body_revision`; `_task_intent_body_value` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:606-623; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:631-636 |
+| Canonicalized requirement text reader for typed packet refs. | `_requirement_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:546-549 |
+| Canonicalized open-question reader for typed acceptance obligations. | `_question_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:552-555 |
+| Body revision hashing of typed intent slots. | `_task_doc_body_revision`; `_task_intent_body_value` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:658-680; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:683-688 |
+| The tolerant read edge: strict first, only `extra_forbidden` keys dropped, every other failure still `None`. | `_projected_document` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:81-105 |
+| Targeted pruning of exactly the addressed keys from a deep copy. | `_without_paths` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:108-123 |
+| The pruning pass bound and the residual unprunable-loc gap it exists to stop. | `_UNKNOWN_FIELD_PASSES` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:71-78 |
+| The repository's own stated read-versus-enforcement split this change follows. | "The read is deliberately the TOLERANT one" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:121-123 |
+| Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes. | `_Doc`; `Step.note` | mcp/src/agents_remember/tasks/document.py:73-76; mcp/src/agents_remember/tasks/document.py:111-121 |
+| The durable-data writer takes an already-validated document, so it can write no unknown key. | `write_task_doc` | mcp/src/agents_remember/tasks/store.py:108-109 |
+| The bound measured irrelevant to this defect and left unchanged; the reader's payload window. | `TASK_DOCUMENT_SUMMARY_LIMIT` | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:24-24 |
+| The dead-text element a withheld document produced, unchanged by this leaf. | "not authored as a task document yet" | dashboard/src/panels/detail-panel/taskReader.tsx:434-434 |
+| The legacy-bare-node `ref` synthesis that leaves one loc path unprunable. | `_lift_legacy_ref` | mcp/src/agents_remember/tasks/document.py:212-219 |
+| The sixth same-class drop site, in the closeout-queue reader rather than this leaf's five and left unchanged. | `read_closeout_queues` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:22-38 |
 
 
 ## 260815-DAG-L12 Render-Ready Graph View Wiring
@@ -80,7 +110,83 @@ typed `ApprovedRequirementPacketRef` and `AcceptanceObligationQuestion` slots (n
 reprs) and includes them in body-revision identity, so served bodies and revision tokens reflect
 normative intent content exactly.
 
+## 260913-LCA-L10 Tolerant Read Edge For Durable Task Documents
+
+A document a newer build wrote stays readable by this reader. All five read-edge call sites —
+`read_task_documents` (line 151), `read_task_document_body` (191), `read_series_documents` (289),
+`_series_subtask_created_at` (359) and `_master_docs_by_ref` (462) — now call `_projected_document`
+(81-105) instead of each wrapping `TaskDocument.model_validate` in its own
+`except ValueError: continue|return None`. `_projected_document` is the module's **only**
+`TaskDocument.model_validate` site (line 99), so a future caller cannot reintroduce the strict-only
+parse by accident. Pre-change, each of those five sites **deleted the whole document** rather than
+marking it unreadable.
+
+What it does: validate strictly first; on a `ValidationError` whose reports include `extra_forbidden`,
+drop exactly those addressed keys with `_without_paths` (108-123) and validate again; any other failure
+(missing required field, bad enum, malformed nested value) still yields `None`, exactly as before. Why
+the old behavior read like a status filter: a completed leaf whose durable JSON carried a step-level
+`note` (`tasks/document.py:121`, a field a newer build writes) was refused whole, so it never reached
+`analytics.taskDocuments` and the master's sub-task row fell to the non-clickable
+`title="not authored as a task document yet"` branch
+(`dashboard/src/panels/detail-panel/taskReader.tsx:434`) while unstarted rows stayed live. Status was
+correlated, never causal: notes are written when a step advances, so completed leaves fell out first.
+
+**Authoring stays strict, and that is the deliberate split.** `_Doc` keeps `extra="forbid"`
+(`tasks/document.py:73-76`), `task_doc`'s write-time validation and `application/task_docs` are
+untouched, and `write_task_doc` (`tasks/store.py:108`) takes an already-validated `TaskDocument`, so it
+can write no file carrying a key the model refuses. Only the durable-data **read** edge became
+version-tolerant — this repository's own stated doctrine, not a new precedent: "The read is
+deliberately the TOLERANT one ... the STRICT read is what the enforcement fold uses, and it still
+raises" (`snapshots_impl/_runtime.py:121-123`).
+
+`_UNKNOWN_FIELD_PASSES = 4` (line 78) is **unproven-but-generous, not derived.** No measurement in this
+change produced a prunable shape needing more than two passes, and the patch's original comment — one
+retry per nesting level — was measured false and corrected: pydantic reports `extra_forbidden` for
+every nesting level in a single error report (re-measured for this card: one report carried four
+`extra_forbidden` locs across document, step, substep and section level, and the instrumented loop
+reached a valid document in two passes). The bound's real job is to stop a loc this reader cannot
+address from looping, so it is a stop, not a computation.
+
+**Residual gap, documented in the code comment and deliberately not changed.** `_without_paths` walks
+the raw payload by the loc's own keys; a loc pydantic *augments* has no raw key to walk and prunes
+nothing, so the document is still withheld once the bound is spent. That is reachable for the `ref`
+`SprintExecutionNode._lift_legacy_ref` invents for a legacy bare node (`tasks/document.py:212-219`) or
+for a union branch label in an edge endpoint. It is fail-closed, not corruption; no writer produces
+those shapes today; and closing it would change the semantics of the proven fix, so it is recorded
+rather than repaired.
+
+**Not the cause and not the fix:** `TASK_DOCUMENT_SUMMARY_LIMIT = 250`
+(`snapshots_impl/_common.py:24`) is unchanged and was measured irrelevant — the withheld documents sat
+well inside the summary window, so the missing rows were never an eviction or a tightened bound and
+raising the limit would not have restored them. The dashboard renderer was not changed either; it was
+correct, and a truthy `match` is what the projection owed it.
+
+**Found for follow-up, not changed here:** a sixth same-class drop site outside this leaf's five, at
+`snapshots_impl/_closeout_queue.py:33-36`.
+
 ## Update History
+
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 (curator, uncommitted change set on `ar/260913-lca-l10-ar`,
+  base `4214d7a1`): the module's read edge became version-tolerant. Documented `_projected_document`
+  as the module's single `TaskDocument.model_validate` site and the five call sites now routed through
+  it, the `extra_forbidden`-only tolerance with every other failure still withheld, the unchanged
+  authoring strictness (`extra="forbid"`, `task_doc`, `write_task_doc`) and its doctrine precedent at
+  `_runtime.py:121-123`, `_UNKNOWN_FIELD_PASSES = 4` as **unproven-but-generous** (no prunable shape
+  needed more than two passes; the original "one retry per nesting level" rationale was measured false),
+  and the residual unprunable-loc gap left fail-closed on purpose. The card previously recorded only
+  that these readers project task documents, never that an unparseable one was deleted whole; the new
+  section states the read edge's actual contract instead — it withholds only what fails for a reason
+  other than an unknown key, and no authoring refusal was loosened. Recorded that
+  `TASK_DOCUMENT_SUMMARY_LIMIT = 250` is unchanged and measured irrelevant, and that the dashboard
+  renderer (`taskReader.tsx:434`) was correct and untouched. **Re-pointed the card's own citations**,
+  which this change shifted by the +52…+57 lines its helper block and five call-site rewrites added
+  (`_requirement_reader_text` 494 → 546, `_question_reader_text` 500 → 552, `_task_doc_body_revision`
+  606 → 658, `_task_intent_body_value` 631 → 683), and added the nine rows above. Metadata stamps
+  remain closeout-owned; no verification stamp advanced and the code commit does not exist yet.
+  Measurement method for the re-measured pass bound: both files of this change set plus the module's
+  published helpers imported from the code worktree under the repo's Python 3.13 venv with
+  `PYTHONDONTWRITEBYTECODE=1`, a four-nesting-site unknown-key payload validated, and the pruning loop
+  instrumented to count passes.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the serving task-document readers now canonicalize typed requirement/accepted-obligation slots and

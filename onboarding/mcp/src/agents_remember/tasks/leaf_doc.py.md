@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404` |
+| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -116,7 +116,7 @@ the new `master-link-missing` state for an exact address whose derived link is a
 | The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers. | `task_resolver.py` module surface | mcp/src/agents_remember/worktrees/task_resolver.py:21-49 |
 | The package order this module's import direction must respect, with no baseline and no exception. | "a module in package P may import package Q only when rank(Q) < rank(P)" | layers.toml:25-25 |
 | The armed rail step that runs the layering fitness function on every check — the measurement that found and then confirmed the fix. | `_layering_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:310-319 |
-| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:69-69 |
+| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:126-126 |
 
 ## 260815-DAG-L3 Governed Lifecycle Restamp
 
@@ -189,6 +189,7 @@ those 16 are pre-existing and the rail was already red before this change set ex
 untouched, and there is no `# noqa`, per-file ignore or widened limit anywhere in the resolution.
 
 ## Update History
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 curator: re-anchored one citation into `snapshots_impl/_task_documents.py` after that file grew by 52–57 lines for the tolerant read edge (`read_task_documents` moved 69-69 → 126-126; the cited file changed, this card's own source did not). The observer join this row records is unchanged. Verification metadata unchanged; no verification stamp advanced.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): corrected the false premise this card carried and recorded the derived-binding fix. The
   Purpose, Logic and Invariants sections now state that planning authors leaf docs before the series
