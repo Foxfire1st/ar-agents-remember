@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_pause_is_not_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T19:02+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,11 +111,11 @@ No Domain Documentation source is configured for this memory root.
 | The twelve modules the pause must not reach: ref transactions, landings, integrate, record-landing, landing-record, the closeout family and direct landing. | `PUBLICATION_MODULES` | mcp/tests/test_pause_is_not_publication.py:37-52 |
 | The measurement: module index, dotted-name resolution, `TYPE_CHECKING`-skipping AST dependency walk, and the one-step direct-import reading. | `_module_files`; `_resolve`; `_is_type_checking`; `_dependencies`; `_runtime_imports_of` | mcp/tests/test_pause_is_not_publication.py:55-65; mcp/tests/test_pause_is_not_publication.py:68-76; mcp/tests/test_pause_is_not_publication.py:79-85; mcp/tests/test_pause_is_not_publication.py:88-106; mcp/tests/test_pause_is_not_publication.py:109-119 |
 | The walk itself, whose docstring records that expanding a module is what counts and that discovery must not stop it. | `_runtime_import_closure` | mcp/tests/test_pause_is_not_publication.py:122-153 |
-| The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses. | `test_the_pause_cannot_reach_any_publication_module`; `_import_path` | mcp/tests/test_pause_is_not_publication.py:165-202; mcp/tests/test_pause_is_not_publication.py:156-162 |
+| The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses. | `test_the_pause_cannot_reach_any_publication_module`; `_import_path` | mcp/tests/test_pause_is_not_publication.py:156-162; mcp/tests/test_pause_is_not_publication.py:165-202 |
 | The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide. | "What it measures is a STATIC, source-level graph" | mcp/tests/test_pause_is_not_publication.py:8-14 |
 | The route this guard exists to keep the stop away from. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:180-209 |
 | The stop module whose closure is measured, and the release authority the closure is required to reach. | "def pause_result("; "def release_atomic_series_selection(" | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-54 |
-| The lane this module is registered in. | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:191-191 |
+| The lane this module is registered in. | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:196-196 |
 
 ## Cross-Repo References
 
@@ -125,6 +125,12 @@ No meaningful cross-repository reference applies to this repository-owned struct
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T20:42+02:00 — Citation repair only (uncommitted 260831-LOCR change set on
   `ar/260831_lifecycle-owned-completion-relay`): `pause.py` grew from 148 to 209 lines when the
   already-vacant stop was added, so the closure source row was repointed from

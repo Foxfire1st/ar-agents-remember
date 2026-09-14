@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T11:58+02:00 |
-| lastVerifiedCommitHash | `187414cef8150a8004fc1b023a8377f77b24e873` |
-| lastVerifiedCommitDate | 2026-09-14T12:13:50+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,7 +21,7 @@ Moves exact code and external-memory integration refs with prepared-capability c
 ## Code Commentary
 
 `IntegrationSources` is a frozen dataclass with a `replay_required` property.
-`require_integrated_ledger_mapping` cit:([`require_integrated_ledger_mapping`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-344) takes the memory source commit and
+`require_integrated_ledger_mapping` cit:([`require_integrated_ledger_mapping`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-359) takes the memory source commit and
 proves the landed commits on their own terms. Its `expected_series_prefix` and `checkpoint`
 parameters are **gone** (260913-LCA-L11): the route difference no longer reaches the ledger proof
 at all, because the ledger-history form it used to select was the tracked file's.
@@ -50,7 +50,7 @@ each with its own mutation proof recorded by the worker:
 1. **the landed ledger maps the landed code commit to the landed memory content** —
    `find_mapping`; a table that names the code commit with different memory content is refused too,
    so the entry must be *this landing's*;
-2. **every row of the landed table is true** — `_require_true_rows` cit:([`_require_true_rows`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:345-380) checks each row against the two
+2. **every row of the landed table is true** — `_require_true_rows` cit:([`_require_true_rows`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:362-395) checks each row against the two
    repositories: the code commit must exist (`code_commit_exists`) and the memory content must be
    reachable from the landed ledger commit. A fabricated or stale row cannot ride along on a
    landing whose own pair happens to be correct, and the offending row is named in the refusal;
@@ -59,7 +59,7 @@ each with its own mutation proof recorded by the worker:
    the condition the file rule used to carry silently. Once the refs have moved, the memory source
    branch *is* the landed ledger commit, and asking the question then would refuse the idempotent
    retry that must converge;
-4. **the ledger header names its own first row** — `_integrated_ledger` cit:([`_integrated_ledger`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:245-273) reads the landed ledger with the
+4. **the ledger header names its own first row** — `_integrated_ledger` cit:([`_integrated_ledger`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:245-271) reads the landed ledger with the
    **validated** parse (`parse_ledger_text`), and its refusal now carries the closeout re-run remedy
    itself rather than borrowing the projection check's message.
 
@@ -89,7 +89,7 @@ captured `checkpoint_candidate` a **checkpoint** lands, or `None` for the final 
 the closeout candidate recorded on the contract. The difference between the two routes therefore
 lives in the transaction's data rather than in a second copy of the transaction.
 `_require_landing_output_authority`
-cit:([`_require_landing_output_authority`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:381-414) is the one place that decides which authorization the output
+cit:([`_require_landing_output_authority`], mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:398-429) is the one place that decides which authorization the output
 owes: the ordinary route lands the closeout candidate recorded on the contract
 (`require_authorized_integration_commits`), while the checkpoint route's output must equal exactly the
 candidate its own live capture admitted — re-proved against the live refs immediately before this
@@ -143,12 +143,12 @@ entry points no longer exist: after a crash between the two ref moves the operat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Preparation binds current sources, exact targets, and journal authority. | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:110-169 |
-| The route-specific admission a landing owes: the checkpoint's own captured candidate, or nothing extra for the final routes. | `LandingAdmission`; `_require_landing_output_authority` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:88-98; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:381-414 |
-| The integration transaction owns ordered CAS and pair recovery facts. | `merge_integrated_commits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:170-243 |
-| Ledger mapping and ancestry are re-proved at the irreversible owner. The landed table is judged on its own rows rather than against the source file, and the source-ancestry clause is asked only while the landing is still to happen. | `require_integrated_ledger_mapping`; `_integrated_ledger`; `_require_true_rows` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-344; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:245-273; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:345-380 |
-| The two repository-level row-truth clauses whose refusals name the offending row. | "which the code repository does not hold"; "does not name memory content the landed ledger commit carries" | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:367-378 |
-| Recovery and checkout refresh: mid-crash integration-ref recovery is deleted, and checkout refresh is exact and idempotent. | `refresh_owned_checkout` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:429-459 |
+| Preparation binds current sources, exact targets, and journal authority. | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:110-167 |
+| The route-specific admission a landing owes: the checkpoint's own captured candidate, or nothing extra for the final routes. | `LandingAdmission`; `_require_landing_output_authority` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:88-98; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:398-429 |
+| The integration transaction owns ordered CAS and pair recovery facts. | `merge_integrated_commits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:170-242 |
+| Ledger mapping and ancestry are re-proved at the irreversible owner. The landed table is judged on its own rows rather than against the source file, and the source-ancestry clause is asked only while the landing is still to happen. | `require_integrated_ledger_mapping`; `_integrated_ledger`; `_require_true_rows` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:245-271; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-359; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:362-395 |
+| The two repository-level row-truth clauses whose refusals name the offending row. | "which the code repository does not hold"; "does not name memory content the landed ledger commit carries" | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:387-387; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:393-393 |
+| Recovery and checkout refresh: mid-crash integration-ref recovery is deleted, and checkout refresh is exact and idempotent. | `refresh_owned_checkout` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:446-474 |
 
 ## Documentation References
 
@@ -162,9 +162,15 @@ The current source seams include `IntegrationSources`, `IntegrationRefRace`, `In
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IntegrationSources`, `IntegrationRefRace`, `IntegratedCommits` at this ownership boundary. | `IntegrationSources`; `IntegrationRefRace`; `IntegratedCommits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:36-49; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:50-67; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:68-76 |
+| The current module exposes `IntegrationSources`, `IntegrationRefRace`, `IntegratedCommits` at this ownership boundary. | `IntegrationSources`; `IntegrationRefRace`; `IntegratedCommits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:36-47; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:50-62; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:68-74 |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 10 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 curator (uncommitted change set on `ar/260913-lca-l11-ar`,
   base `4214d7a1`): recorded the developer ruling of 2026-09-14T08:15+02:00 and the removal it
   ordered. The integration-side ledger-preservation check is **gone, not weakened** — the file rule

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/certification/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -55,13 +55,13 @@ Read `observation.py` and `admission.py` for actual candidate admission, `select
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Admission freezes actual preparation and current owner input; selection binds the exact originals. | `prepare_closeout_certification`; `initial_certification_state` | mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:75-142; mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:217-283 |
-| Currentness rechecks the profile, owner semantics and route review. | `validate_selected_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:341-384 |
+| Admission freezes actual preparation and current owner input; selection binds the exact originals. | `prepare_closeout_certification`; `initial_certification_state` | mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:86-172; mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:274-340 |
+| Currentness rechecks the profile, owner semantics and route review. | `validate_selected_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:343-386 |
 | Recovery derives actual input changes and requires complete prior-red correction. | `derive_certificate_input_changes`; `build_prior_red_context` | mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py:123-152; mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py:155-203 |
-| Journal selection reopens the complete original graph before its live-owner CAS. | `require_selected_certification`; `select_certification_state` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:127-131; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:579-597 |
+| Journal selection reopens the complete original graph before its live-owner CAS. | `require_selected_certification`; `select_certification_state` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:128-132; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:580-598 |
 | Execution admits only the selected suffix and current memory/finalization boundary. | `execute_selected_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:344-384 |
-| Retained output permits only the selected physically proven code commit. | `require_retained_output_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py:24-108 |
-| The ordinary service construction installs the prepared closeout continuation. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:199-206 |
+| Retained output permits only the selected physically proven code commit. | `require_retained_output_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py:28-77 |
+| The ordinary service construction installs the prepared closeout continuation. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:203-211 |
 
 ## Docs And Cross-Repo References
 
@@ -74,8 +74,26 @@ Execution first resumes an already claimed prepared publication, before attempti
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  admission/selection/service ranges the earlier entry re-derived were re-checked and hold; the
+  retained-output row is corrected in the entry above. No other wording changed. Verification
+  metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the retained-output row
+  cited a range that begins at the module imports and ends inside the next function. Repointed
+  `require_retained_output_currentness` to `:28-77`, its own extent. Noting that this staleness is
+  pre-existing — it did not come from this master's change. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/worktrees/integration/closeout/certification/` route changed since the
+  recorded verification commit. Re-read the card against the frozen on-disk source and re-checked
+  its claims and cited ranges: nothing this card asserts is falsified by the change, so no wording
+  changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): route files moved since
+  the recorded verification commit (the live door read, plus an earlier import shift). Re-derived
+  the cited admission, selection and service-bundle ranges against the current source; no claim text
+  changed. Verification metadata remains closeout-owned.
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `validate_selected_currentness` repointed to mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:341-384. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `validate_selected_currentness` repointed to mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:343-386. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `execute_selected_closeout` repointed to mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:344-384. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration/closeout/certification`, so no route/member/prose/invariant change is required. route-member-count=7; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.

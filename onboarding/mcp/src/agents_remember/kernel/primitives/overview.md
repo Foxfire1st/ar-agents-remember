@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 
 ## What This Area Is
 
@@ -158,6 +158,15 @@ Runtime configuration is part of protected-ref authority: code and memory Git co
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/kernel/primitives/` route changed since the recorded verification commit.
+  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
+  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
+  remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit (the source-checkout fallback advanced to `3.0.0rc8`). Re-read
+  the route card: its live claim names no version literal and the old literal survives only in dated
+  history. No wording changed; verification metadata remains closeout-owned.
 - 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added configured profile-reference admission and qualified opt-in memory-cap planning. Verification records current source claims, not execution or acceptance.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `runtime_config.py` gains the

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/closeout/projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `9f0309447d6820d90e59279abc84f87f1ccbb3b3`|
-| lastVerifiedCommitDate |  2026-09-13T22:28:36+02:00|
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ protocol claim.
 
 ## Update History
 
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
 - 2026-09-13T22:55+02:00 — L6 (260913-LCA): re-anchored the three reference rows off the deleted `MAX_CLOSEOUT_CANDIDATES` onto `MAX_CLOSEOUT_SOURCE_PROBLEMS` and corrected the Logic claim that the models bound candidate populations; the candidate ceiling was removed with its two enforcement sites.
 - 2026-09-13T22:22+02:00 — L6 (260913-LCA) curation close-out of this card: added the concrete repo-internal row for `CloseoutQueueState` — `members` is now `Field(default_factory=list)` with no `max_length` while `sourceProblems` keeps `MAX_CLOSEOUT_SOURCE_PROBLEMS`, and membership stays unique by the `_condition_is_exact` validator (source `mcp/src/agents_remember/models/closeout/projection.py:59-85`). The worker's `MAX_CLOSEOUT_CANDIDATES` re-anchor and Logic correction are preserved unchanged. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

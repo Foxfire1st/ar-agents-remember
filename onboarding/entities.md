@@ -515,6 +515,14 @@ CCR cumulative source verification: Current execution routes the repository-owne
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the gate reports two
+  entity rows whose stored fingerprint no longer matches the current blob set — **Curator Coherence
+  Authority** and **Worktree Contract**. Re-read both entries and measured their evidence paths
+  against the code worktree: every file in both sets is clean against `HEAD`, so the rows are behind
+  committed history rather than disturbed by this leaf, exactly as the 2026-09-13 note already
+  records for the coherence row. Left as found on purpose: a fingerprint is generated authority, so
+  it is re-derived by the catalog owner or by closeout, never hand-written here. Flagged for the
+  owner; no acceptance claim and no verification stamp advanced.
 - 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
   `ar/260913-lca-l3-ar`, base `7317108b`): the **External Memory Ledger** entry's description of the
   migration was corrected. It no longer says the tool was "proven closed-loop on a scratch clone" and

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-14T18:20+02:00|
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1326,6 +1326,17 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
+  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
+  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
+  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
+  overview: it names none of those constructs, and the constructs it does describe still hold, so no
+  wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): `mcp` carries local
+  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
 - 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
   `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
   both are fixed, so the L3 section above was corrected rather than extended. The selection is no

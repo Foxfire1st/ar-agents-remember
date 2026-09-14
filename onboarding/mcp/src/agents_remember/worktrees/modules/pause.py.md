@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/pause.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T19:02+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -214,6 +214,21 @@ The change is local to this module and is one branch:
 `mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the companion proof at the lifecycle level.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the already-vacant
+  release branch is the frozen change and the earlier entry records it. Re-checked every cited range
+  and every prose claim: they hold. No wording changed. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/modules/pause.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  already-vacant release branch the card already documents. Re-read the card against the current
+  source: every prose claim holds; three cited helper ranges end one line before their closing line
+  but still contain each whole definition, and no claim depends on the missing line. No wording
+  changed; verification metadata remains closeout-owned.
 - 2026-09-13T20:42+02:00 — 260831-LOCR-L38 (uncommitted change set on
   `ar/260831_lifecycle-owned-completion-relay`): recorded the already-vacant success.
   `pause_result` now has four outcomes rather than three, with

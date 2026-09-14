@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,9 +31,18 @@ declared empty set is distinct from an absent declaration: only observed-empty e
 `verified-repository-input-no-consumers`. Unknown inputs still retain unresolved ownership;
 empty declarations cannot hide an actual consumer.
 
-`REPOSITORY_TEST_INPUT_CONSUMERS` gained one exact declaration for the 260913-LCA-L8 module:
-`mcp/tests/test_terminal_blocker_reasons.py` is now a declared consumer of the ambient-role runner
-`scripts/e2e_harness/run.py`. The declaration is the manifest-side half of that module's route
+`REPOSITORY_TEST_INPUT_CONSUMERS` gained twelve exact declarations in the same change set — the
+260913-LCA-L8 module and eleven sibling suites that the extracted shared fixtures now reach — so
+`mcp/tests/test_terminal_blocker_reasons.py`, `mcp/tests/test_checkpoint_landing_end_to_end.py`,
+`mcp/tests/test_cross_master_concurrency.py`, `mcp/tests/test_lifecycle_playthrough_end_to_end.py`,
+`mcp/tests/test_memory_attribution_producers.py`, `mcp/tests/test_pause_stop_only_end_to_end.py`,
+`mcp/tests/test_leaf_doc_master_link_binding.py`,
+`mcp/tests/test_closeout_projection_source_classification.py`,
+`mcp/tests/test_automatic_post_integration_cleanup.py`,
+`mcp/tests/test_retired_door_publication_fields.py`,
+`mcp/tests/test_terminal_enclosure_archive_sync_journal.py` and
+`mcp/tests/test_worktree_status_terminal_next_tool.py` are all declared consumers of the ambient-role
+runner `scripts/e2e_harness/run.py`. The declarations are the manifest-side half of those modules' routes
 registration; it records ownership for targeted selection and claims nothing about execution.
 
 Global inputs and conftest roots deliberately invalidate the full population and are separately recorded. Otherwise observed import/literal relationships are preferred; filename matching remains a labeled heuristic. ownership_configuration_digest binds the versioned global inputs, declarations, irrelevant roots/suffixes and dashboard test patterns, so selection authority changes are visible.
@@ -71,7 +80,7 @@ The source owners below establish these file-local behaviors; this read does not
 | Observed and declared ownership, exact-empty distinction and refusals | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:225-519 |
 | Transitive importer closure | `transitive_importers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:522-542 |
 | Digest binds declarations and classification authority | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:593-614 |
-| The repository-owned declaration table; the L8 module is declared as an exact consumer of the ambient-role runner. | `REPOSITORY_TEST_INPUT_CONSUMERS`; `AMBIENT_ROLE_RUNNER_PATH` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-163; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47 |
+| The repository-owned declaration table; the L8 module is declared as an exact consumer of the ambient-role runner. | `REPOSITORY_TEST_INPUT_CONSUMERS`; `AMBIENT_ROLE_RUNNER_PATH` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-175; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47 |
 
 ## Cross-Repo References
 
@@ -84,6 +93,11 @@ No separate cross-repository protocol is established by this file. In-tree fixtu
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source added
+  twelve consumer rows to `REPOSITORY_TEST_INPUT_CONSUMERS`, which now ends at `:175`. Re-read the
+  card and corrected both: the table range (56-163 → 56-175) and the sentence that still said one
+  declaration was gained, which now names the twelve modules the extracted shared fixtures reach.
+  Verification metadata remains closeout-owned.
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: recorded the one exact declaration this change set
   adds to `REPOSITORY_TEST_INPUT_CONSUMERS` — `mcp/tests/test_terminal_blocker_reasons.py` as a
   consumer of `AMBIENT_ROLE_RUNNER_PATH` (`scripts/e2e_harness/run.py`), the manifest-side half of

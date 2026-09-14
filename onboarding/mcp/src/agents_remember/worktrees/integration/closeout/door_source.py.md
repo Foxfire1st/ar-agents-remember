@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/door_source.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,6 +92,19 @@ dependency staleness (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the door is read live
+  through `live_closeout_door` and a new `_live_task_document_ref` was added. Re-read the card: its
+  source-of-truth prose is untouched and its three cited ranges still contain their constructs. No
+  wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/integration/closeout/door_source.py` changed since the recorded
+  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
+  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the door is now read live through `live_closeout_door`). Re-read
+  the card: its claims stay consistent and its three cited ranges still cover their constructs. No
+  wording changed; verification metadata remains closeout-owned.
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the Code Commentary cit forms as plain prose and fixed the `_door_policy_provenance` range to 483-513 (the file ends at 550).
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the source-generation dependency declaration, the provenance-resolution refactor, and the transition dependency re-requirement; prior graph-binding and identity prose preserved.

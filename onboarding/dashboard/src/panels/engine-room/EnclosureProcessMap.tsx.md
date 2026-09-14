@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.tsx`  |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -92,16 +92,16 @@ is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-147 |
+| `EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:67-152 |
 | The G6 backdrop (`backdrop`/`backdropVideo`/`stageContent`) mounted only when effects are on. | "className={backdrop}"; "className={backdropVideo}"; "className={stageContent}" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:105-105; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:108-108; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:118-118 |
-| The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-147 |
+| The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:67-152 |
 | The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
 | The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices. | "prunes the stale base node and raises a fleeting block with BOTH recovery choices" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:352-360 |
 | The bird's-eye scene (the render body, given `workspaceEngines`). | `workspaceEngines` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:50-50 |
 | The honest-motion gate. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:234-275 |
-| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:514-525 |
-| GateNode is the generated projection contract consumed by this surface. | "export interface GateNode {" | dashboard/src/types/projection.ts:290-300 |
+| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:233-233 |
+| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:513-513 |
+| GateNode is the generated projection contract consumed by this surface. | "export interface GateNode {" | dashboard/src/types/projection.ts:289-289 |
 
 ## Current L5I Maintenance
 
@@ -110,6 +110,11 @@ blueprint video, then resumes playback on re-show without unmounting the map.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
+  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.

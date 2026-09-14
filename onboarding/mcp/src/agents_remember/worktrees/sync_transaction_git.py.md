@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_git.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,8 +96,8 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Side records carry the exact repository, worktree, commits, refs, plan, and conflict set proven here. | `SyncSideRecord` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67 |
-| The driver records retained conflicts and delegates continue through these proof functions. | `_continue_resolution`; `continue_side_merge`; `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:540-571; mcp/src/agents_remember/worktrees/sync_transaction_git.py:329-350; mcp/src/agents_remember/worktrees/sync_transaction_git.py:353-372 |
-| Recovery uses exact-created-head and rollback proof before restoring or finalizing. | `_recover_from_refs`; `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:315-373; mcp/src/agents_remember/worktrees/sync_transaction_git.py:406-414; mcp/src/agents_remember/worktrees/sync_transaction_git.py:375-403 |
+| The driver records retained conflicts and delegates continue through these proof functions. | "def _continue_resolution("; "def continue_side_merge("; "def validate_staged_resolution(" | mcp/src/agents_remember/worktrees/sync_transaction.py:540-571; mcp/src/agents_remember/worktrees/sync_transaction_git.py:329-350; mcp/src/agents_remember/worktrees/sync_transaction_git.py:353-372 |
+| Recovery uses exact-created-head and rollback proof before restoring or finalizing. | "def _recover_from_refs("; "def exact_created_head("; "def rollback_side(" | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:315-373; mcp/src/agents_remember/worktrees/sync_transaction_git.py:406-414; mcp/src/agents_remember/worktrees/sync_transaction_git.py:375-403 |
 | The parked-candidate Git primitives read exact dirty paths, park with untracked files, reapply with conflict classification, prove restoration, drop exactly the recorded stash, and clear a cancel-only conflicted reapply. | `worktree_dirty_paths`; `park_worktree_wip`; `apply_parked_wip`; `prove_parked_wip_restored`; `drop_parked_wip`; `discard_conflicted_wip_reapply` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:126-148; mcp/src/agents_remember/worktrees/sync_transaction_git.py:151-164; mcp/src/agents_remember/worktrees/sync_transaction_git.py:167-180; mcp/src/agents_remember/worktrees/sync_transaction_git.py:183-199; mcp/src/agents_remember/worktrees/sync_transaction_git.py:216-232; mcp/src/agents_remember/worktrees/sync_transaction_git.py:202-213 |
 | The automatic memory merge commits Git's own resolution and proves only its pinned parents; the module's docstring records the ledger ruling. | `_finish_staged_memory_merge`; "Developer ruling on the 260913 ledger line" | mcp/src/agents_remember/worktrees/sync_transaction_git.py:304-326; mcp/src/agents_remember/worktrees/sync_transaction_git.py:7-15 |
 
@@ -110,6 +110,20 @@ No cross-repository source is configured for this memory root.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the ledger-ruling changes
+  this card records are the frozen ones. Re-checked the cited ranges and the prose: they hold. No
+  wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the deleted ledger validators and the parked-WIP primitives).
+  Re-read the card against the current source: all twelve cited ranges hold and the history already
+  names every deletion. No wording changed; verification metadata remains closeout-owned.
 - 2026-09-14T13:20+02:00 — The ledger ruling reaches the sync: removed the sync-side row-preservation
   rule (`validate_current_memory_side`, `validate_completed_side`, `_validate_parent_ledgers`,
   `_validate_required_ledger_rows`, `_ledger_rows` and their call sites), so this module proves Git

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_input.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T04:55+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,10 +58,10 @@ contract is needed for this repository-owned adapter.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. | `capture_closeout_candidate` | mcp/src/agents_remember/worktrees/closeout_input.py:198-212 |
-| Enabled/not-applicable legs derive from validated route, contract, and candidate facts. | `resolve_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:79-118 |
-| Typed refusal and corrected-call data are emitted together. | `CloseoutInputError`; `normalize_closeout_input` | mcp/src/agents_remember/worktrees/closeout_input.py:49-76; mcp/src/agents_remember/worktrees/closeout_input.py:121-175 |
-| Retried durable input is checked against its accepted plan. | `require_effective_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:178-195 |
+| Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. | `capture_closeout_candidate` | mcp/src/agents_remember/worktrees/closeout_input.py:200-214 |
+| Enabled/not-applicable legs derive from validated route, contract, and candidate facts. | `resolve_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:81-120 |
+| Typed refusal and corrected-call data are emitted together. | `CloseoutInputError`; `normalize_closeout_input` | mcp/src/agents_remember/worktrees/closeout_input.py:51-79; mcp/src/agents_remember/worktrees/closeout_input.py:123-177 |
+| Retried durable input is checked against its accepted plan. | `require_effective_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:180-197 |
 
 ## Cross-Repo References
 
@@ -73,6 +73,17 @@ No meaningful cross-repository reference applies.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): all four Repo-Internal
+  rows started about two lines before their construct and ended short of it. Re-read the frozen
+  source and repointed each range at its declaration (`resolve_closeout_plan` 81-120,
+  `CloseoutInputError` 51-79, `normalize_closeout_input` 123-177, `require_effective_closeout_plan`
+  180-197, `capture_closeout_candidate` 200-214). The offset predates the imported relocation, so
+  the earlier entry's "every cited range still covers its anchor" was too generous; the claims
+  themselves are unchanged. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the future-code-candidate import relocated to `memory_quality`,
+  a net-zero line change). Re-read the card against the current source: every cited range still
+  covers its anchor. No wording changed; verification metadata remains closeout-owned.
 - 2026-08-29T04:55+02:00 — MCAR-L02 citation maintenance: normalized all evidence tables to
   canonical finding/anchor/source cells after the full memory-quality check rejected the obsolete
   link-and-line format.

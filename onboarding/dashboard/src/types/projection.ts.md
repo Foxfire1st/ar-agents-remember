@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:51:23+00:00 |
-| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
-| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -72,12 +72,12 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:698-701 |
 | Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:647-681 |
-| Execution nodes name their kind, leaf-id segment and task reference. | "export interface TaskExecutionNode {" | dashboard/src/types/projection.ts:725-729 |
-| An execution endpoint carries a task reference and optional leaf id. | "export interface TaskExecutionEndpointNode {" | dashboard/src/types/projection.ts:711-714 |
-| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | "export interface TaskExecutionEdgeNode {" | dashboard/src/types/projection.ts:704-709 |
-| The graph contains typed node and edge arrays. | "export interface TaskExecutionGraphNode {" | dashboard/src/types/projection.ts:716-719 |
+| Execution nodes name their kind, leaf-id segment and task reference. | "export interface TaskExecutionNode {" | dashboard/src/types/projection.ts:724-724 |
+| An execution endpoint carries a task reference and optional leaf id. | "export interface TaskExecutionEndpointNode {" | dashboard/src/types/projection.ts:710-710 |
+| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | "export interface TaskExecutionEdgeNode {" | dashboard/src/types/projection.ts:703-703 |
+| The graph contains typed node and edge arrays. | "export interface TaskExecutionGraphNode {" | dashboard/src/types/projection.ts:715-715 |
 | Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:816-829 |
-| The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:362-362 |
+| The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:361-361 |
 | The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:750-754 |
 | The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | `CloseoutQueueNode`; "export interface CloseoutCandidateNode {" | dashboard/src/types/projection.ts:143-152; dashboard/src/types/projection.ts:124-133 |
 
@@ -111,7 +111,7 @@ they do not make the dashboard or disposable closeout projection an operation au
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:331-349 |
+| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 
@@ -171,6 +171,11 @@ returns on snapshots.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 5
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T22:22+02:00 — L6 (260913-LCA): the regenerated mirror dropped the `JSON Schema refinements: {"maxItems":256}` comment from `CloseoutQueueNode.members` with the closeout candidate cap, so the mirror now states that the candidate population is unbounded and only `CloseoutCandidateNode.reasons` and `CloseoutQueueNode.sourceProblems` keep 256-entry refinements. Added the L6 section plus two evidence rows (queue node 143-152, candidate node 124-133) and rebound the drifted anchors `TaskDocumentRef` 699-702 → 698-701, `TaskDocNode` 648-682 → 647-681, `TaskIntentIdentity` 751-755 → 750-754 and `WorkspaceProjection` 817-830 → 816-829. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 - 2026-09-06T21:51:23+00:00 — Reconciled the landed IAS source delta and actual preparation/fixture boundaries; existing verification pins and history are preserved.
 

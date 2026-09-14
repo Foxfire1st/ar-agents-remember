@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_leaf_doc_master_link_binding.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6`|
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -113,16 +113,18 @@ repository's own source, the real `task_doc` plane and real Git objects.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pre-contract authoring path and the exact sequence that lost the master link: master and leaf authored through `task_doc` with no series contract, then started. | `test_leaf_authored_before_its_series_contract_gets_its_link_at_start`; `_author_master`; `_author_leaf`; `_start_leaf` | mcp/tests/test_leaf_doc_master_link_binding.py:163-195; mcp/tests/test_leaf_doc_master_link_binding.py:78-108; mcp/tests/test_leaf_doc_master_link_binding.py:143-159 |
-| The repair path for an already-damaged document, asserted additive (authored content unchanged). | `test_an_existing_damaged_document_is_repaired_by_its_next_start`; `_write_leaf_document` | mcp/tests/test_leaf_doc_master_link_binding.py:197-233; mcp/tests/test_leaf_doc_master_link_binding.py:110-141 |
+| The pre-contract authoring path and the exact sequence that lost the master link: master and leaf authored through `task_doc` with no series contract, then started. | `test_leaf_authored_before_its_series_contract_gets_its_link_at_start`; `_author_master`; `_author_leaf`; `_start_leaf` | mcp/tests/test_leaf_doc_master_link_binding.py:78-93; mcp/tests/test_leaf_doc_master_link_binding.py:95-108; mcp/tests/test_leaf_doc_master_link_binding.py:143-159; mcp/tests/test_leaf_doc_master_link_binding.py:163-195 |
+| The repair path for an already-damaged document, asserted additive (authored content unchanged). | `test_an_existing_damaged_document_is_repaired_by_its_next_start`; `_write_leaf_document` | mcp/tests/test_leaf_doc_master_link_binding.py:110-141; mcp/tests/test_leaf_doc_master_link_binding.py:197-233 |
 | The fail-closed half: a leaf under a task root with no master document is refused with its remedy and writes nothing. | `test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy` | mcp/tests/test_leaf_doc_master_link_binding.py:235-250 |
 | The counter-case that keeps planning usable: master plus two leaves before any start, still unstamped. | `test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds` | mcp/tests/test_leaf_doc_master_link_binding.py:252-268 |
 | The refusal this module asserts, with its remedy text. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:619-649 |
-| The start publisher that binds the missing link, entered from the real start path. | `_publish_leaf_task_enclosure_binding`; `plan_current_leaf_enclosure_registration`; `plan_leaf_doc_enclosure_registration` | mcp/src/agents_remember/worktrees/modules/start.py:912-975; mcp/src/agents_remember/worktrees/task_leaf_binding.py:178-202; mcp/src/agents_remember/tasks/leaf_doc.py:332-391 |
+| The start publisher that binds the missing link, entered from the real start path. | "def _publish_leaf_task_enclosure_binding(" | mcp/src/agents_remember/worktrees/modules/start.py:858-933 |
+| The worktree-side wrapper that resolves the canonical parent row and delegates to the task-domain planner. | "def plan_current_leaf_enclosure_registration(" | mcp/src/agents_remember/worktrees/task_leaf_binding.py:178-202 |
+| The task-domain planner that decides whether the derived master link is bound. | "def plan_leaf_doc_enclosure_registration(" | mcp/src/agents_remember/tasks/leaf_doc.py:332-391 |
 | The focused restamp decision-table class in the sibling module, which this module's docstring points at. | `LeafDocMasterLinkBindingTests` | mcp/tests/test_task_document_application_1.py:577-663 |
-| The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:315-315; mcp/tests/evidence-lifecycle.toml:373-373 |
-| The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:379-379 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:152-152 |
+| The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363 |
+| The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:379-407 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
 
 ## Cross-Repo References
 
@@ -132,10 +134,35 @@ cross-repository authority is claimed by this focused module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The external-memory side of each case is a real second repository created by the fixture, not a mock. | `init_repo`; `initialized_memory_repo` | mcp/tests/test_worktree_support.py:97-97; mcp/tests/test_worktree_support.py:379-379 |
+| The external-memory side of each case is a real second repository created by the fixture, not a mock. | `init_repo`; `initialized_memory_repo` | mcp/tests/test_worktree_support.py:97-117; mcp/tests/test_worktree_support.py:379-407 |
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because two of its three anchors appeared in both a
+  definition and an import in their own files, so no historical location was unique. Repaired the
+  citation, not the claim: the row is now three rows, each naming one exact declaration, so the
+  publisher, the worktree-side wrapper and the task-domain planner each resolve once. Verification
+  metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (flag resolved): the code worktree is frozen, so
+  the earlier flag is now measured rather than conditional. `mcp/tests/evidence-lifecycle.toml`
+  carries the inserted `checkpoint_landing_test_support.py` artifact block at `:342-361`, which
+  leaves `path = "mcp/tests/curator_coherence_test_support.py"` at `:363` — the position this row
+  already cites — and `path = "mcp/tests/closeout_input_test_support.py"` at `:283`. The pair
+  `283-283` / `363-363` is confirmed against the frozen tree, and the flag above stands as the
+  record of the interim state it described. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this row cites the
+  curator-coherence artifact path at `mcp/tests/evidence-lifecycle.toml:363`, which is its position
+  in the current working tree, where the in-flight `checkpoint_landing_test_support.py` artifact
+  block sits above it. The committed HEAD still carries that path at `:343`; the two forms differ
+  only by that uncommitted insertion, so the citation is correct for the tree this leaf is being
+  curated against and must be re-measured if the insertion does not land. Flagged rather than
+  silently chosen; verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
+  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): created this one-to-one sidecar for the leaf's new integration module. Recorded the exact
   sequence the leaf exists for (author master and leaf through `task_doc` with no series contract, then

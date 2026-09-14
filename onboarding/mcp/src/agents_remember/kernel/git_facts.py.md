@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_facts.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`                         |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`                         |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -138,6 +138,12 @@ code repos and external-memory repos, but its contract is local to this file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 2 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): the timeout class this card describes is now carried by an options object rather than
   by a keyword argument — `run_git(root, [...], GitRunnerOptions(timeout=GIT_METADATA_TIMEOUT_SECONDS))`
@@ -185,8 +191,8 @@ code repos and external-memory repos, but its contract is local to this file.
   `(repo_root, args, *, timeout: float)` — keyword-only and **required** (L106) — so no call here can
   take the default by omission. Recorded the four assignments as a table: `rev-parse
   --is-inside-work-tree`, `rev-parse HEAD` and `branch --show-current` at
-  `GIT_METADATA_TIMEOUT_SECONDS` (30) (cit:([`GIT_METADATA_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:73-73)); `status --porcelain` at `GIT_LOCAL_TIMEOUT_SECONDS`
-  (300) (cit:([`GIT_LOCAL_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:71-71)) because it stats the whole work tree. Added the surviving degrade-to-data note
+  `GIT_METADATA_TIMEOUT_SECONDS` (30) (cit:([`GIT_METADATA_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:94-94)); `status --porcelain` at `GIT_LOCAL_TIMEOUT_SECONDS`
+  (300) (cit:([`GIT_LOCAL_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:92-92)) because it stats the whole work tree. Added the surviving degrade-to-data note
   (`TimeoutExpired` is a `SubprocessError`, caught at L32). Citations: the Logic paragraph gained
   line ranges for all five functions (`read_git_facts` L28-L33, `_read_git_facts` L36-L89,
   `git_facts_to_packet` L92-L103, `_git_stdout` L106-L112, `_git_error` L115-L116) — the file grew

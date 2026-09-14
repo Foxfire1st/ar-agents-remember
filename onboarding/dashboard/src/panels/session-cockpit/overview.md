@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T06:21+00:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -416,7 +416,16 @@ The session-cockpit forcing suites hardened teardown: async `afterEach` clears f
 
 ## Update History
 
-
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `dashboard/src/panels/session-cockpit/` route changed since the recorded verification commit.
+  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
+  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
+  remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit — `sessions-view/lifecycle.test.tsx` gained the
+  planned-retirement window suite. Re-read the route card: it makes no claim about that suite, so no
+  wording changed. The drift predates this task line (the change landed with an earlier route
+  change, not with this master). Verification metadata remains closeout-owned.
 - 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
 - 2026-08-26T10:44:52+02:00 — No route impact: refreshed the `VOCABULARIES` forcing range after test growth; Chats cockpit ownership and behavior are unchanged.

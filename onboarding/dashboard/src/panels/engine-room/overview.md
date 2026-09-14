@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T06:21+00:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -151,8 +151,10 @@ route before editing.
   `groupEngines` fallback.
 - `engineRoomTypes.ts` — `EngineRoomModel` + `EngineProcessView` (node, lifecycle, `gate`,
   `enclosureKey`).
-- `engineRoomStyles.ts` — Panda recipes: the semantic-axis `cva`s, the SVG conduit recipe
-  (`conduitSvg`/`conduitLine`), the §4.2 full-bleed room layout atoms, and the §2.1 fleeting-banner atoms.
+- `styles.ts` — the re-export barrel over the six semantic-axis style domains (`layout`, `stage`,
+  `ledger`, `flow`, `remote`, `backdrop`), so callers keep one import surface; the SVG conduit recipe
+  (`conduitSvg`/`conduitLine`) lives in `layout.styles.ts` and the flow atoms, including the
+  fleeting-banner ones, in `flow.styles.ts`.
 - `useShouldAnimate.ts` — the honest-motion gate; also used by the cockpit rail transition.
 - `useEngineTimeline.ts` — the **05k/05n** GSAP motion substrate: one `gsap.context` per enclosure (scoped to
   the `<svg>` root) that draws `[data-draw='on']` lanes with **DrawSVG** (05n — once per lane via a `data-drawn`
@@ -239,12 +241,12 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The server composer of the process nodes the client renders. | "def build_analytics("; "def _start_process_node(entry: dict[str"; "def _process_edges(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129; mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543 |
-| The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:913-972 |
+| The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:981-1050 |
 | The honest-motion gate the GSAP/Motion read. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:447-453 |
-| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:925-969 |
+| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:934-953 |
 | "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. | "def _seed_edge_state("; "_DECISIVE_SETUP_EDGE_STATES: dict[str" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:631-631; mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638; mcp/src/agents_remember/observer/reducer.py:73-73 |
-| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:224-232 |
+| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:223-231 |
 
 ## Current L5I Route State
 
@@ -305,6 +307,22 @@ stale enclosure context.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the Route Model bullet
+  still named `engineRoomStyles.ts`, which the L8 split deleted. Corrected it to the `styles.ts`
+  re-export barrel and named where the two recipes it described actually live
+  (`conduitSvg`/`conduitLine` in `layout.styles.ts`, the fleeting atoms in `flow.styles.ts`). Noting
+  plainly that this staleness is pre-existing — it came from the L8 split, not from this master —
+  and that the card's own L8 section already described the split correctly. Verification metadata
+  remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit — `fixtures.ts` now carries `nextAction: "retry_cleanup"` instead
+  of the retired `request_cleanup_decision`. Re-read the card: it names neither literal and its
+  fixture sentences stay accurate. No wording changed; verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
 - 2026-08-12T20:20+02:00 — L23 curator: documented lineage projection and blocked-state rendering in Engine Room; verification remains closeout-owned.
@@ -322,7 +340,7 @@ stale enclosure context.
   the "Derived Refused-Conduit Polarity" section and the matching invariant, and corrected the Purpose
   paragraph's two stale mode descriptions — T9B's "refused clone lane" is the `failed` lane and T9C's
   amber flash rides the `stale` seed lane. Evidence for the whole change: `EngineProcessEdge`
-  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:925-969) is `extra="forbid"`, declares no `refusedPolarity`, and its state
+  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:934-953) is `extra="forbid"`, declares no `refusedPolarity`, and its state
   comment (L778, above `state: str` at L779) lists
   nominal/running/blocked/failed/stale/skipped/complete/planned/unknown with no
   `refused`; `git log --all -S 'state="refused"'` returns 0 commits in all of history; and

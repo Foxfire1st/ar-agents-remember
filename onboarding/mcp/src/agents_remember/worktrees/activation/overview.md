@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/activation` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
-| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -105,6 +105,16 @@ The parity candidate composes the sidecar and governing route body/history check
 
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/worktrees/activation/` route changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit (the mid-flight reconciling state and summary). Re-read the route
+  card: it already documents that state and its summary fields, and every cited range still holds.
+  No wording changed; verification metadata remains closeout-owned.
 - 2026-09-14T13:20+02:00 — Mid-flight reporting: recorded that the transaction reports a selection
   left mid-flight as `atomic-series-reconciling` rather than as the pass's own `synced` success, with
   `_mid_flight_summary` naming the stuck contract, its publication time, its revision and both exits.

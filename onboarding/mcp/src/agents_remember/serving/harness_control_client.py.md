@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-30T21:25+02:00               |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ Every request carries protocol version and exact catalog identity. Capability an
 strictly parsed through the normalized type layer; setter calls use a bound above Claude's native
 correlated acceptance window. Submit sends the complete message and caller request id once.
 
-cit:([`_exchange_control`], mcp/src/agents_remember/serving/harness_control_client.py:534-568) distinguishes connect/pre-write failure from any failure after the socket
+cit:([`_exchange_control`], mcp/src/agents_remember/serving/harness_control_client.py:541-577) distinguishes connect/pre-write failure from any failure after the socket
 accepts the first byte. Pre-write failure raises as unavailable (`may_have_sent=False`) and may be
 retried by policy. The remainder write is CONDITIONAL: `send` usually accepts the whole request, and
 `sendall` is a do-while over its buffer, so calling it with an empty remainder still issued one
@@ -47,7 +47,7 @@ zero-length send. Once the server had answered and closed with the request drain
 and that pointless write raised `EPIPE` — turning an exchange the server actually completed into a
 `may_have_sent=True` disconnect that forces reconciliation. Only a non-empty remainder is written now
 (260727-CHATS-IM-L4). A connect failure routes through
-cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:520-540): `ECONNREFUSED` records that a socket exists but no runner is listening, while `ENOENT`
+cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:520-537): `ECONNREFUSED` records that a socket exists but no runner is listening, while `ENOENT`
 records only that the socket is absent. Neither proves that a newly spawned runner already exited:
 absence is also the normal endpoint-creation race. A refused stale socket is best-effort unlinked so
 the next probe sees the clean absent state; a timeout and any other error keep distinct honest
@@ -73,7 +73,7 @@ a present value must be non-empty text or the read fails typed, so the projector
 read fails typed, and an absent key yields `None` — the parent thread — so the multiplexed demux
 key the models serialize reaches the projector verbatim.
 
-Two multiplex seams live here. cit:([`read_control_native_page`], mcp/src/agents_remember/serving/harness_control_client.py:369-401) gained the
+Two multiplex seams live here. cit:([`read_control_native_page`], mcp/src/agents_remember/serving/harness_control_client.py:375-407) gained the
 additive `thread_id` selector: it rides the payload as `threadId` only when set (cit:([`read_control_native_page`, "threadId"], mcp/src/agents_remember/serving/harness_control_client.py:375-407)), so a
 `None` reads the parent/session thread with the exact pre-multiplexing request shape. And `_snapshot` now
 parses the plural pending set (cit:(["def _snapshot(raw: Mapping[str", `pendingInteractions`], mcp/src/agents_remember/serving/_harness_control_parsing.py:641-641; mcp/src/agents_remember/serving/_harness_control_parsing.py:658-658)): the singular `pendingInteraction`
@@ -155,8 +155,8 @@ unknown/reconcile contract without a second submission.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The private server dispatches advertise/set/submit/reconcile against one bridge identity. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
-| Request id is the idempotency key and retained reconciliation truth comes back from the authority directly, with no facade in the path since 260731-EFA-L6. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
+| The private server dispatches advertise/set/submit/reconcile against one bridge identity. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:103-416 |
+| Request id is the idempotency key and retained reconciliation truth comes back from the authority directly, with no facade in the path since 260731-EFA-L6. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:118-1025 |
 
 | Connect refusal reports honest unavailability and best-effort removes the stale socket; it does not establish process death. | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:520-537 |
 
@@ -231,6 +231,13 @@ conversation tree reaches this client only through `ControlPlanePort` in `servin
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 6 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 corrected control-connect diagnostics so absent/refused sockets no longer falsely prove that a newly spawned runner exited. Verification remains closeout-owned.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the `ControlSubmission` move and the
@@ -276,7 +283,7 @@ conversation tree reaches this client only through `ControlPlanePort` in `servin
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the evidence `nativeMethod`
   deserialization on the frame round trip (present-must-be-non-empty-text, cit:(["def _evidence_page(result: object"], mcp/src/agents_remember/serving/_harness_control_parsing.py:352-352)). R6 —
-  documented `_connect_unavailable_detail` (cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:520-540)): `ECONNREFUSED`/`ENOENT` map to the honest
+  documented `_connect_unavailable_detail` (cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:520-537)): `ECONNREFUSED`/`ENOENT` map to the honest
   "already exited" note, the stale socket is unlinked on `ECONNREFUSED`, and no raw errno leaks
   (pre-write `may_have_sent=False`); added both invariants and the R6 regression citation.
   Verification metadata stays pinned until closeout stamps the candidate commit.

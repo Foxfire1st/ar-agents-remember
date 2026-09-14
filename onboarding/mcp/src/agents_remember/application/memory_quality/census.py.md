@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_quality/census.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -88,10 +88,26 @@ No cross-repository implementation or external-system boundary is owned here.
 ## Source File Binding
 
 The current uncommitted source bytes are SHA-256
-`98de0b239e531461170820d022e4901a873f250cde7d6587bd64cdd065863143` (`6245` bytes, `153` lines).
+`e34ba2fde7498ce60c0bbf5cd2a195e410f9190cd836c0dbb96c5f3ddc6422cd` (`6229` bytes, `153` lines).
 Verification metadata remains blank until closeout creates a genuine code commit.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the import rewrite
+  changed the source bytes, so the byte-binding in this card was stale. Re-measured: SHA-256
+  `e34ba2fde7498ce60c0bbf5cd2a195e410f9190cd836c0dbb96c5f3ddc6422cd`, `6229` bytes, `153` lines. The
+  function ranges are unaffected because the move is net-zero. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/application/memory_quality/census.py` changed since the recorded
+  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
+  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the `MemoryCensusScope` import now comes from
+  `memory_quality.memory_census_scope`). Re-read the card against the current source: every cited
+  function range (34-46, 49-81, 84-106, 109-136, 139-153) still holds and no claim names that module
+  path. No wording changed; verification metadata remains closeout-owned.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 provenance repair: the current census source bytes match the existing code commit `01f1f85d90d2123764a4029d9ed17db28e540eed`; the real source provenance is recorded without asserting task closeout or acceptance.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/final_certification/certify.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T22:39:30+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -74,6 +74,15 @@ None.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/memory_quality/final_certification/certify.py` changed since the recorded
+  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
+  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the validated-coherence value now comes from the model module).
+  Re-read the card: no claim names a home module and every cited range still holds. No wording
+  changed; verification metadata remains closeout-owned.
 - 2026-09-09T22:39:30+02:00 — CCR-L42 failed-Gate1 repair: refreshed current certification function extents after the behavior-identical typed-model move; verification remains closeout-owned.
 
 - 2026-09-05T07:12:23Z — CCR L31 independent-review correction: reread the complete module at

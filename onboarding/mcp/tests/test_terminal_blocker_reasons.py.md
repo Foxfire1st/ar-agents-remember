@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_terminal_blocker_reasons.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073`|
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -140,16 +140,16 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 | The sole provider-runtime producer answers with a reason whenever it reclaimed nothing. | `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` | mcp/tests/test_terminal_blocker_reasons.py:288-311 |
 | The post-reclaim branch that could answer silently now names its own cause. | `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` | mcp/tests/test_terminal_blocker_reasons.py:314-352 |
 | The landed fixture and the public calls the whole-tool cases drive. | `_landed_leaf`; `_landed_leaf_config`; `_landed_leaf_document`; `_finalize` | mcp/tests/test_terminal_blocker_reasons.py:84-86; mcp/tests/test_terminal_blocker_reasons.py:89-100; mcp/tests/test_terminal_blocker_reasons.py:103-106; mcp/tests/test_terminal_blocker_reasons.py:109-113 |
-| The service rebinding and the citation-guard double the whole-tool cases run against. | `bound_worktree_services`; `_NoManagedCitationCache` | mcp/tests/test_terminal_blocker_reasons.py:73-81; mcp/tests/test_terminal_blocker_reasons.py:59-69 |
+| The service rebinding and the citation-guard double the whole-tool cases run against. | `bound_worktree_services`; `_NoManagedCitationCache` | mcp/tests/test_terminal_blocker_reasons.py:59-69; mcp/tests/test_terminal_blocker_reasons.py:72-81 |
 | The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason. | `_blocker` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:639-655 |
 | The operator-language answer for a reasonless or malformed result item. | `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:624-636 |
-| The bundle and the builder the invariant-owner cases drive directly. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:229-242; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:245-287 |
+| The bundle and the builder the invariant-owner cases drive directly. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:228-242; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:245-287 |
 | The producer whose reason the refusal carries, including the post-reclaim branch this module forces. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
-| The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:54-96; mcp/src/agents_remember/application/worktree_services.py:203-203 |
+| The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:54-96; mcp/src/agents_remember/application/worktree_services.py:203-211 |
 | The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:862-893 |
 | The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:157-316; mcp/tests/integration_branch_authority_test_support.py:67-118; mcp/tests/test_transaction_only_worktree_delivery.py:66-90 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:177-177 |
-| The exact-consumer declaration that gives this module ownership for targeted selection. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:82-82 |
+| The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:127-188 |
+| The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. | "REPOSITORY_TEST_INPUT_CONSUMERS: dict[Path, frozenset[Path]]" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-175 |
 
 ## Cross-Repo References
 
@@ -163,6 +163,17 @@ routes run at all. No production cross-repository authority is claimed by this f
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because the anchor was a quoted path string that
+  occurs many times in evidence-lifecycle.toml and twice in the ownership catalog, so no historical
+  location was unique. Repaired the citations, not the claims: the lane row now anchors the lane
+  block that declares this module, and the ownership row anchors the repository-test-input mapping
+  that carries its entry. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: created this one-to-one sidecar for the leaf's new
   integration module. Recorded the measured defect (a `providerRuntime` blockage with `reason: null`
   stopped a cleanup whose own payload proved the archive and an already torn-down provider runtime),

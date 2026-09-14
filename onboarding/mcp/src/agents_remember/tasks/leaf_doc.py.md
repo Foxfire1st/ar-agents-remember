@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404` |
-| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -105,17 +105,17 @@ the new `master-link-missing` state for an exact address whose derived link is a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:427-468 |
-| Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:686-718 |
-| The start/attach publisher that actually binds a missing master link — the live repair path, since `restamp_leaf_doc_lifecycle` has no caller. | `_publish_leaf_task_enclosure_binding` | mcp/src/agents_remember/worktrees/modules/start.py:912-985 |
+| Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:632-664 |
+| The start/attach publisher that actually binds a missing master link — the live repair path, since `restamp_leaf_doc_lifecycle` has no caller. | `_publish_leaf_task_enclosure_binding` | mcp/src/agents_remember/worktrees/modules/start.py:858-931 |
 | The worktree-side wrapper that resolves the canonical parent row and delegates to this module's enclosure-registration planner. | `plan_current_leaf_enclosure_registration`; `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:178-202; mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
-| Start's read-only restamp preflight, the one `plan_leaf_doc_lifecycle_restamp` caller in `mcp/src`. | `_start_restamp_preflight`; `_start_will_restamp` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:870-879; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:862-867 |
+| Start's read-only restamp preflight, the one `plan_leaf_doc_lifecycle_restamp` caller in `mcp/src`. | `_start_restamp_preflight`; `_start_will_restamp` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:865-870; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:873-882 |
 | The two derived-field computations: absent-only binding, never a rewire. | `_derived_bindings`; `_derived_leaf_bindings` | mcp/src/agents_remember/tasks/leaf_doc.py:198-221; mcp/src/agents_remember/tasks/leaf_doc.py:224-234 |
 | The start/reopen planner that now returns a candidate when only a derived field is missing, and the publisher it feeds. | `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:237-260; mcp/src/agents_remember/tasks/leaf_doc.py:263-292 |
-| The enclosure-registration planner whose exact no-op now requires the derived link, plus the candidate builder and the state classifier that names `master-link-missing`. | `plan_leaf_doc_enclosure_registration`; `_enclosure_registration_candidate`; `_enclosure_registration_state` | mcp/src/agents_remember/tasks/leaf_doc.py:332-391; mcp/src/agents_remember/tasks/leaf_doc.py:295-309; mcp/src/agents_remember/tasks/leaf_doc.py:312-329 |
-| The path helpers this module imports — now from the task domain, which is what keeps the package order intact. | `series_contract_path`; `leaf_enclosure_path`; `leaf_enclosure_dir` | mcp/src/agents_remember/tasks/task_paths.py:31-34; mcp/src/agents_remember/tasks/task_paths.py:43-46; mcp/src/agents_remember/tasks/task_paths.py:37-40 |
-| The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers. | `task_resolver.py` module surface | mcp/src/agents_remember/worktrees/task_resolver.py:21-49 |
+| The enclosure-registration planner whose exact no-op now requires the derived link, plus the candidate builder and the state classifier that names `master-link-missing`. | `plan_leaf_doc_enclosure_registration`; `_enclosure_registration_candidate`; `_enclosure_registration_state` | mcp/src/agents_remember/tasks/leaf_doc.py:295-309; mcp/src/agents_remember/tasks/leaf_doc.py:312-329; mcp/src/agents_remember/tasks/leaf_doc.py:332-391 |
+| The path helpers this module imports — now from the task domain, which is what keeps the package order intact. | `series_contract_path`; `leaf_enclosure_path`; `leaf_enclosure_dir` | mcp/src/agents_remember/tasks/task_paths.py:31-34; mcp/src/agents_remember/tasks/task_paths.py:37-40; mcp/src/agents_remember/tasks/task_paths.py:43-46 |
+| The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers. | `__all__` | mcp/src/agents_remember/worktrees/task_resolver.py:29-50 |
 | The package order this module's import direction must respect, with no baseline and no exception. | "a module in package P may import package Q only when rank(Q) < rank(P)" | layers.toml:25-25 |
-| The armed rail step that runs the layering fitness function on every check — the measurement that found and then confirmed the fix. | `_layering_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:310-319 |
+| The armed rail step that runs the layering fitness function on every check — the measurement that found and then confirmed the fix. | `_layering_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:310-320 |
 | The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:126-126 |
 
 ## 260815-DAG-L3 Governed Lifecycle Restamp
@@ -189,6 +189,12 @@ those 16 are pre-existing and the rail was already red before this change set ex
 untouched, and there is no `# noqa`, per-file ignore or widened limit anywhere in the resolution.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 0
+  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T10:16+02:00 — 260913-LCA-L10 curator: re-anchored one citation into `snapshots_impl/_task_documents.py` after that file grew by 52–57 lines for the tolerant read edge (`read_task_documents` moved 69-69 → 126-126; the cited file changed, this card's own source did not). The observer join this row records is unchanged. Verification metadata unchanged; no verification stamp advanced.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): corrected the false premise this card carried and recorded the derived-binding fix. The

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -749,6 +749,12 @@ message last. Before this the only thing said about that state was the refused p
 complaint, which named neither the stuck contract nor what it was doing.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees` carries local unstaged changes not represented in HEAD.
+  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
+  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
+  remains closeout-owned; no verification stamp advanced.
 - 2026-09-14T13:20+02:00 — A dropped ledger row is reported, not refused by the sync (curator on the
   landed `ab47182` change set of the 260913 ledger line): the sync-side row-preservation rule is
   removed — `validate_current_memory_side`, `validate_completed_side`, `_validate_parent_ledgers`,

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/taskHierarchy.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,11 +58,11 @@ No Domain Documentation entries are configured in this memory worktree's source 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tests define normalization, precedence, and identity-cache expectations. | "normalizes ..-relative ref files across folders"; "prefers the first series in list order when two series name the same doc"; "prefers the earliest ref by creation order within a series"; "caches per seriesList identity: a fresh array observes new refs" | dashboard/src/data/taskHierarchy.test.ts:43-52; dashboard/src/data/taskHierarchy.test.ts:54-60; dashboard/src/data/taskHierarchy.test.ts:62-74; dashboard/src/data/taskHierarchy.test.ts:97-105 |
+| Tests define normalization, precedence, and identity-cache expectations. | "normalizes ..-relative ref files across folders"; "prefers the first series in list order when two series name the same doc"; "prefers the earliest ref by creation order within a series"; "caches per seriesList identity: a fresh array observes new refs" | dashboard/src/data/taskHierarchy.test.ts:45-54; dashboard/src/data/taskHierarchy.test.ts:56-62; dashboard/src/data/taskHierarchy.test.ts:64-76; dashboard/src/data/taskHierarchy.test.ts:99-107 |
 | The `ref` / `series` factories, typed against the mirror rather than asserted past it. | "function ref("; "function series(" | dashboard/src/data/taskHierarchy.test.ts:9-9; dashboard/src/data/taskHierarchy.test.ts:13-13 |
 | The production lookup owns the WeakMap index and calls `orderedByCreation` over `series.subTasks`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The master task reference declares linkedLifecycleId and masterRef, with no createdAt field. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:793-801 |
-| The series row declares optional createdAt and no linkedLifecycleId. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
+| The master task reference declares linkedLifecycleId and masterRef, with no createdAt field. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:792-792 |
+| The series row declares optional createdAt and no linkedLifecycleId. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:560-560 |
 
 ## Cross-Repo References
 
@@ -80,6 +80,11 @@ matching, creation-order tie breaking, and the per-list cache boundary remain un
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
+  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 
 - 2026-08-24T15:04+02:00 — No content impact: added the required empty discard-history cells to
@@ -102,7 +107,7 @@ matching, creation-order tie breaking, and the per-list cache boundary remain un
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: the `ref` factory changed type from
   `TaskSubTaskRefNode` to cit:([`SeriesSubTaskNode`], dashboard/src/data/taskHierarchy.test.ts:9-9), so recorded WHY in Conventions — the mirror
   split the two once-collapsed models and removed `createdAt` from the master row, and the
-  cit:(["prefers the earliest ref by creation order within a series"], dashboard/src/data/taskHierarchy.test.ts:62-74) case sets `createdAt`, so under the old
+  cit:(["prefers the earliest ref by creation order within a series"], dashboard/src/data/taskHierarchy.test.ts:64-76) case sets `createdAt`, so under the old
   typing that case's fixture claimed a field its declared model no longer has. Verified against the
   diff that no case was added, removed or renamed and that every asserted value is unchanged (the
   factory body is still `{ name: overrides.number, status: "open", scope: "", ...overrides }`), and

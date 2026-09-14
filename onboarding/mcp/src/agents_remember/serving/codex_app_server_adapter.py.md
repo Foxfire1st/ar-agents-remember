@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T10:13+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,12 +64,12 @@ does not depend on text matching or retroactive vendor-id guessing. Foreign/sub-
 remain operation-free and therefore do not acquire a durable inbox request identity.
 
 Evidence forwarding places the full `params` of each previously trimmed emit under the reserved
-`arEvidence` raw key — consolidated through the `_emit_notification` helper cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728),
+`arEvidence` raw key — consolidated through the `_emit_notification` helper cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778),
 with the parent-thread `thread/status/changed`/`thread/settings/updated` state emits keeping their
 direct path — while every pre-existing raw key (`codexMethod`, `turnId`) keeps its exact shape; the
 bridge diverts the payload so no projection changes. It additionally sets
-`AR_EVIDENCE_METHOD_KEY: method` inside `_emit_notification` cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728), which also serves
-the item/completed evidence path cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866), so the notification's native method reaches the
+`AR_EVIDENCE_METHOD_KEY: method` inside `_emit_notification` cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778), which also serves
+the item/completed evidence path cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:838-867), so the notification's native method reaches the
 projector as typed evidence rather than being stripped with the trimmed event; the bridge preserves
 it onto `EvidenceFrame.native_method` and strips the reserved key, keeping the redacted snapshot
 byte-identical. `codexMethod` still rides for diagnostics; the method-carry key is the discriminator
@@ -110,10 +110,10 @@ Turn writes stay parent-only, so agent turn completions record `None` as the ope
 touch `_active_operation` or the submission ledger. `learn_collab_identity` cit:([`learn_collab_identity`], mcp/src/agents_remember/serving/codex_app_server_threads.py:231-245) (now a
 dispatcher over `_learn_sub_agent_activity` + `_learn_collab_tool_call`) binds
 agent identity from parent-thread `collabAgentToolCall` (`receiverThreadIds`/`agentsStates`) and
-`subAgentActivity` (`agentThreadId`/`agentPath`) items, and `_publish_agent_registry` cit:([`_publish_agent_registry`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1125-1133)
+`subAgentActivity` (`agentThreadId`/`agentPath`) items, and `_publish_agent_registry` cit:([`_publish_agent_registry`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1126-1134)
 mirrors the bounded registry into `snapshot.raw.agentRegistry` for the serving projector.
 
-Server requests demux per thread and MULTIPLEX within a thread. `_handle_server_request` cit:([`_handle_server_request`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:818-890)
+Server requests demux per thread and MULTIPLEX within a thread. `_handle_server_request` cit:([`_handle_server_request`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:869-941)
 decides by METHOD first: an unknown/experimental request method (anything outside the
 stable grammar `STABLE_SERVER_REQUESTS`) is vendor traffic, never a bridge failure — it is answered
 with decline semantics (`respond_error` -32601 when the rpc id is answerable; the vendor maps an
@@ -127,8 +127,8 @@ pending map keyed by approval id, so concurrent pendings on one thread are norma
 register, never raise; a full per-thread map (16) declines + degrades the NEW request, never a
 bridge failure and never a silent loss of an older unanswered one; a vendor rpc-id REUSE overwrites
 the older pending, which then becomes honestly unanswerable later (a JSON-RPC violation the vendor
-owns). `_handle_server_request_resolved` cit:([`_handle_server_request_resolved`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:942-958) pops the pending by rpc id.
-`_sync_pending_snapshot` cit:([`_sync_pending_snapshot`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:960-972) rebuilds `AdapterSnapshot.pending_interactions` from EVERY
+owns). `_handle_server_request_resolved` cit:([`_handle_server_request_resolved`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:943-959) pops the pending by rpc id.
+`_sync_pending_snapshot` cit:([`_sync_pending_snapshot`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:961-973) rebuilds `AdapterSnapshot.pending_interactions` from EVERY
 thread's full map (agent entries carry `raw.threadId` plus the bound `agentLabel`; concurrent
 parent entries beyond the oldest ride the tuple plainly), keeping the singular slot on the parent's
 OLDEST pending for back-compat. `respond` cit:([`respond`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:376-403) routes by interaction id via
@@ -137,7 +137,7 @@ active-operation match is enforced only for parent-thread responses (the parent-
 guard). `read_native_page` cit:([`read_native_page`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:445-471)
 gains an additive `thread_id` selector: `None` reads the parent thread exactly as
 before, an explicit id pages that sub-agent thread through the same `thread/read` echo check.
-`_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866) stamps agent transcripts with `raw.threadId` (parent entries
+`_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:838-867) stamps agent transcripts with `raw.threadId` (parent entries
 deliberately carry none, keeping the pre-multiplexing parent transcript shape byte-identical — fix-round
 review finding 12), while `learn_item_thread` cit:([`learn_item_thread`, `route_delta_params`], mcp/src/agents_remember/serving/codex_app_server_threads.py:200-213; mcp/src/agents_remember/serving/codex_app_server_threads.py:215-229) + `route_delta_params`
 bind thread-less delta frames (`item/.../delta`, `patchUpdated`) to their item's learned thread
@@ -146,18 +146,18 @@ the message loop catches (`_run_messages` cit:([`_run_messages`], mcp/src/agents
 with the failure noted; a missing or parent threadId re-raises and still fails the bridge — unless
 `force=True` (the unknown-request-METHOD path above), which degrades on any thread. The four
 white-box parent views (`_active_turn_id`, `_turn_operations`, `_unbound_completions`,
-`_completed_turns` cit:([`_completed_turns`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1121-1123)) keep the original correlation-test surface as live mappings over the
+`_completed_turns` cit:([`_completed_turns`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1122-1124)) keep the original correlation-test surface as live mappings over the
 parent `_ThreadState`.
 
-The event queue is a bounded LOAD-SHED queue, not a kill seam. `CodexEventQueue` cit:([`CodexEventQueue`], mcp/src/agents_remember/serving/codex_app_server_events.py:24-118) uses `offer` cit:([`offer`], mcp/src/agents_remember/serving/codex_app_server_events.py:59-72) and never
-raises at saturation: `_evict_for_space` cit:([`_evict_for_space`], mcp/src/agents_remember/serving/codex_app_server_events.py:94-109) evicts the oldest HIGH-VOLUME delta event
+The event queue is a bounded LOAD-SHED queue, not a kill seam. `CodexEventQueue` cit:([`CodexEventQueue`], mcp/src/agents_remember/serving/codex_app_server_events.py:26-120) uses `offer` cit:([`offer`], mcp/src/agents_remember/serving/codex_app_server_events.py:61-74) and never
+raises at saturation: `_evict_for_space` cit:([`_evict_for_space`], mcp/src/agents_remember/serving/codex_app_server_events.py:96-111) evicts the oldest HIGH-VOLUME delta event
 first (the `_LOAD_SHED_DELTA_METHODS` set — `item/agentMessage/delta`, `item/plan/delta`,
 reasoning deltas, `item/commandExecution/outputDelta`, `item/fileChange/patchUpdated`), structural
 events (turns, completions, interactions, failures, the close sentinel) shed only when nothing else
-remains, and every shed is counted in `_dropped_events`. `_flush_notice` cit:([`_flush_notice`], mcp/src/agents_remember/serving/codex_app_server_events.py:111-118)
+remains, and every shed is counted in `_dropped_events`. `_flush_notice` cit:([`_flush_notice`], mcp/src/agents_remember/serving/codex_app_server_events.py:113-120)
 mints exactly one `codex-notification` carrying `ar/load-shed` with the shed count
 once the queue has room again — producer-side after an enqueue that leaves space, consumer-side in
-`stream` cit:([`stream`], mcp/src/agents_remember/serving/codex_app_server_events.py:74-84) after each drained yield (a silent producer must not strand the
+`stream` cit:([`stream`], mcp/src/agents_remember/serving/codex_app_server_events.py:76-86) after each drained yield (a silent producer must not strand the
 accounting), and always BEFORE the close sentinel (the enqueue path for `None` first makes room for
 notice + sentinel, so the subscriber sees the loss account before termination). The queue limit
 rose 256 → `ADAPTER_EVENT_QUEUE_LIMIT = 1024` cit:([`ADAPTER_EVENT_QUEUE_LIMIT`], mcp/src/agents_remember/serving/codex_app_server_events.py:12-12). The shed notice rides the same monotonic
@@ -273,15 +273,15 @@ the follow-on concurrency and queue-shed remediation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence. | `CodexAppServerSession` | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458 |
-| Submission evidence captures the exact model/effort pair accepted at reservation time. | `SubmissionEvidence` | mcp/src/agents_remember/serving/codex_app_server_state.py:74-80 |
-| The stable server-request grammar (`STABLE_SERVER_REQUESTS`) the method-first degrade split keys on: methods outside it parse as experimental/unsupported traffic, never protocol violations. | `STABLE_SERVER_REQUESTS` | mcp/src/agents_remember/serving/codex_app_server_state.py:27-34 |
-| The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | `CodexStdioTransport` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:60-305 |
-| The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:173-206 |
-| Model pages preserve display/description metadata and model-local reasoning effort options. | `parse_model_page` | mcp/src/agents_remember/serving/codex_app_server_state.py:156-227 |
-| The thread flatten helper enforces unique typed item identity for native paging. | `native_evidence_frames_from_thread` | mcp/src/agents_remember/serving/codex_app_server_state.py:378-413 |
+| Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence. | `CodexAppServerSession` | mcp/src/agents_remember/serving/codex_app_server_session.py:105-462 |
+| Submission evidence captures the exact model/effort pair accepted at reservation time. | `SubmissionEvidence` | mcp/src/agents_remember/serving/codex_app_server_state.py:79-85 |
+| The stable server-request grammar (`STABLE_SERVER_REQUESTS`) the method-first degrade split keys on: methods outside it parse as experimental/unsupported traffic, never protocol violations. | `STABLE_SERVER_REQUESTS` | mcp/src/agents_remember/serving/codex_app_server_state.py:31-38 |
+| The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | `CodexStdioTransport` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:65-310 |
+| The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:175-208 |
+| Model pages preserve display/description metadata and model-local reasoning effort options. | `parse_model_page` | mcp/src/agents_remember/serving/codex_app_server_state.py:165-236 |
+| The thread flatten helper enforces unique typed item identity for native paging. | `native_evidence_frames_from_thread` | mcp/src/agents_remember/serving/codex_app_server_state.py:387-422 |
 | The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key. | `AdapterSnapshot`, `EvidenceFrame` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151; mcp/src/agents_remember/models/conversations/evidence.py:79-102 |
-| The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector. | `native_page`, `_evidence_thread_id` | mcp/src/agents_remember/serving/harness_control_bridge.py:226-271; mcp/src/agents_remember/serving/harness_control_bridge.py:491-503 |
+| The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector. | `native_page`, `_evidence_thread_id` | mcp/src/agents_remember/serving/harness_control_bridge.py:230-275; mcp/src/agents_remember/serving/harness_control_bridge.py:495-507 |
 
 
 | The structural sub-protocols this adapter implements; the caller's identity guards ride the write. | `InterruptCapableAdapter`, `AssetSubmitCapable` | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_adapter.py:109-113 |
@@ -335,6 +335,13 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 27 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: parent Codex completion now projects
   its exact operation/request id alongside the native turn id, allowing queued durable inbox
   receipts to become completed without heuristic correlation. Verification remains closeout-owned.
@@ -384,13 +391,13 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   multiplexed `pending_interactions` with the parent-only operation guard on `respond`, per-thread
   `read_native_page(thread_id=...)`, agent-transcript `threadId` stamping with byte-identical parent
   entries, item→thread delta routing, bounded eviction, and degrade-not-fatal malformed agent frames.
-  Fixed stale emit-site citations (`_emit_notification` cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728) +
-  `_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866), refreshed the protocol-cancellation (`CodexStdioTransport` cit:([`CodexStdioTransport`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:60-305)) and
-  launch-refusal (`apply_launch_knobs` cit:([`apply_launch_knobs`], mcp/src/agents_remember/serving/harness_launch.py:173-206)) citations, and added rows for the models grammar and the
+  Fixed stale emit-site citations (`_emit_notification` cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778) +
+  `_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:838-867), refreshed the protocol-cancellation (`CodexStdioTransport` cit:([`CodexStdioTransport`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:65-310)) and
+  launch-refusal (`apply_launch_knobs` cit:([`apply_launch_knobs`], mcp/src/agents_remember/serving/harness_launch.py:175-208)) citations, and added rows for the models grammar and the
   `test_codex_adapter_thread_demux.py` regression suite. Verification metadata stays pinned: the L7
   change is uncommitted, so no commit hash can attest it.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the native-method carry: the
-  `codex-notification`/`item/completed` emits cit:([`_emit_notification`, `_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778; mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866) now set
+  `codex-notification`/`item/completed` emits cit:([`_emit_notification`, `_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778; mcp/src/agents_remember/serving/codex_app_server_adapter.py:838-867) now set
   `AR_EVIDENCE_METHOD_KEY: method` so the codex projector recognizes the 0.144.5 startup burst by
   method instead of re-guessing from params shape; added the emit-only invariant. Verification
   metadata stays pinned until closeout stamps the candidate commit.

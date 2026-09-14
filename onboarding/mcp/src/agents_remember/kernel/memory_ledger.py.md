@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -45,10 +45,10 @@ it from the projection keep working unchanged, while the kernel's own reader of 
 
 ### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
 
-cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:216-238) is two statements — `mkdir(parents=True, exist_ok=True)`
+cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:222-244) is two statements — `mkdir(parents=True, exist_ok=True)`
 then `path.write_text(...)`. It got no lock, no temp-and-rename and no `fsync` in the leaf that gave
 all six control-plane JSONL stores exactly those things, and L5 records why in the function's own
-docstring cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:216-238) rather than leaving the omission to be re-litigated. The ruling is **degraded,
+docstring cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:222-244) rather than leaving the omission to be re-litigated. The ruling is **degraded,
 not unrecoverable**, and it rests on two properties of the callers, both of which are checkable:
 
 - **Every call commits within two statements.** Six call sites across five modules —
@@ -149,6 +149,14 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 | The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-359 |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 2 claim(s) whose anchor no longer sat in its cited range and normalised 3 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): `LEDGER_RELATIVE_PATH = "memory.md"` is now declared here, beside the schema, the row
   type and the parser, instead of in `worktrees/ledger_projection.py`. The reason is recorded in
@@ -205,9 +213,9 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   this leaf's test cards do, because a number that was wrong within the hour is worse than no
   number. The row's claim is unchanged and was re-read at the new location. The four citations into
   this module's own source were re-read and are correct: L17-L41 (`LEDGER_SCHEMA` L17, `LedgerRow`
-  L23, "def parse_ledger_text(text: str) -> MemoryLedger:" L29, "class LedgerError(AgentsRememberError):" L40), "def parse_ledger_text(text: str) -> MemoryLedger:" L51-L104 cit:(["def parse_ledger_text(text: str) -> MemoryLedger:"], mcp/src/agents_remember/kernel/memory_ledger.py:52-52),
+  L23, "def parse_ledger_text(text: str) -> MemoryLedger:" L29, "class LedgerError(AgentsRememberError):" L40), "def parse_ledger_text(text: str) -> MemoryLedger:" L51-L104 cit:(["def parse_ledger_text(text: str) -> MemoryLedger:"], mcp/src/agents_remember/kernel/memory_ledger.py:58-58),
   `validate_ledger` L147 / `ledger_to_text` L159 / `prepend_mapping` L218, and `write_ledger`
-  L193-L215 cit:(["def write_ledger(path: Path"], mcp/src/agents_remember/kernel/memory_ledger.py:193-193). Nothing on this card asserts a measured figure.
+  L193-L215 cit:(["def write_ledger(path: Path"], mcp/src/agents_remember/kernel/memory_ledger.py:222-222). Nothing on this card asserts a measured figure.
 
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: the only source change here is a 20-line docstring
   on `write_ledger`, and it is a **ruling**, not a description — so the card now records the ruling,
@@ -231,7 +239,7 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   `L142-L179; L193-L204` → `validate_ledger` **L147-L156**, `ledger_to_text` **L159-L184**,
   `prepend_mapping` **L218-L229**. Note the old range was already defective in the shape the L4
   audit found — `L142-L179` began at `_is_separator_row` and stopped 5 lines short of the end of
-  `ledger_to_text` cit:([`ledger_to_text`], mcp/src/agents_remember/kernel/memory_ledger.py:159-184), and `L193-L204` began at `def write_ledger` and stopped 5 lines short of
+  `ledger_to_text` cit:([`ledger_to_text`], mcp/src/agents_remember/kernel/memory_ledger.py:180-205), and `L193-L204` began at `def write_ledger` and stopped 5 lines short of
   the end of `prepend_mapping`; both symbols the claim names are now fully inside their ranges.
   Added a row for `write_ledger` itself and one for the contract it was measured against.
   Verification metadata pinned until closeout stamps the L5 code commit.

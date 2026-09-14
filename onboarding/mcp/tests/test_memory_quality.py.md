@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_memory_quality.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-09T18:57+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,6 +67,19 @@ No cross-repository implementation evidence is required for these local test and
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the census-scope import
+  move is the frozen change. Re-checked all six case ranges: they hold. No wording changed.
+  Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/tests/test_memory_quality.py` changed since the recorded verification commit. Re-read the
+  card against the frozen on-disk source and re-checked its claims and cited ranges: nothing this
+  card asserts is falsified by the change, so no wording changed. Verification metadata remains
+  closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the `MemoryCensusScope` import). Re-read the card against the
+  current source: all six case ranges (94-196, 198-221, 223-251, 253-280, 282-300, 302-312) still
+  hold and the ordering claim is still asserted. No wording changed; verification metadata remains
+  closeout-owned.
 - 2026-09-09T23:45:19+02:00 — CCR-L42 census regression reconciliation: documented the four current-versus-historical census cases, including absent historical rows without an extra removal declaration and moved old/new row preservation, and refreshed all current test ranges. Verification metadata remains unchanged until closeout.
 
 - 2026-09-09T18:57:35+02:00 — CCR-L42 census repair: documented the three current-versus-historical metadata regression cases and the two retained entity-catalog tests, and refreshed current source citations. Verification metadata remains unchanged until closeout.

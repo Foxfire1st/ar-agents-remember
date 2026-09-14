@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T17:20+02:00|
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -133,13 +133,19 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:441-441; mcp/src/agents_remember/worktrees/modules/guidance.py:503-505 |
-| The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:956-975 |
+| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:441-493; mcp/src/agents_remember/worktrees/modules/guidance.py:503-505 |
+| The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:956-978 |
 | The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304-304 |
 | The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:55-64; mcp/src/agents_remember/kernel/git_command.py:92-92; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
-| The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:148-422 |
+| The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:148-352 |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 4 claim(s) whose anchor no longer sat in its cited range and normalised 3 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `_remote_branch` and `_default_branch` now pass their probe bound as `GitRunnerOptions(timeout=_PROBE_TIMEOUT_SECONDS)`, the timeout keyword having become a field of the runner's one options object; the 8-second class each probe names is unchanged and still overrides the runner's 300s local default. Re-derived the anchors the migration shifted (`_remote_branch` 47-66 → 47-68, `_default_branch` 69-90 → 71-94, `_pr_for` 93-150 → 97-154, the `gh` occurrence L106 → L110, the `landing_active` caller lines L237/L268 → L241/L272, and the runner row `33-42; 70-70; 76-82; 85-151` → `55-64; 92-92; 140-146; 149-213`).
 - 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shifted `modules/guidance.py`: `def status_payload` now resolves at `guidance.py:502-502`, the `landing_refs(contract)` call at `guidance.py:504-504`, and `_status_payload_with_landing` at `guidance.py:440-441`, so both affected rows were rebound. Claim wording unchanged.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "def status_payload", "landing_refs(contract)", `_status_payload_with_landing`, `status_payload` repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:410-462, mcp/src/agents_remember/worktrees/modules/guidance.py:472-472, mcp/src/agents_remember/worktrees/modules/guidance.py:472-474, mcp/src/agents_remember/worktrees/modules/guidance.py:474-474. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
@@ -154,7 +160,7 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-07-31T21:34+02:00 — 260731-EFA-L3 curator: the earlier L3 entry below described the
   `GIT_DIR`-family scrub as something only the two git probes gained, and said the `gh` probe merely
   "still inlines its own `subprocess.run` … with the same 8-second bound and DEVNULL stdin". `_pr_for`
-  now also passes `env=git_environment()` cit:(["env=git_environment()"], mcp/src/agents_remember/worktrees/modules/landing.py:124-124), so all three probes run scrubbed. Rewrote that
+  now also passes `env=git_environment()` cit:(["env=git_environment()"], mcp/src/agents_remember/worktrees/modules/landing.py:128-128), so all three probes run scrubbed. Rewrote that
   paragraph to say so and to give the reason from the code's own comment — `gh` resolves the
   repository *through* git, so an inherited `GIT_DIR` would have it list another repository's PRs
   under this branch's name — plus the fact that the package-wide AST sweep cannot cover it
@@ -164,7 +170,7 @@ No external Domain Documentation source is configured for this memory repo.
   Added the matching invariant. Two further claims were false against current code and were fixed:
   the gate was named `_landing_active` but the function is `landing_active` (L34-L44, no underscore,
   callers L237/L268), and Purpose still said the probe "re-fires every projector tick (~1s)" — it
-  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:465-465) and by `LandingStateRefresher(observe=landing_refs)` at
+  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:503-503) and by `LandingStateRefresher(observe=landing_refs)` at
   `LANDING_REFRESH_INTERVAL_SECONDS = 30.0`, while the recurring projection renders
   `unobserved_landing_refs`. Corrected "the package's **first** `gh` use" to "only" (one occurrence
   in `src/`, L106). Verified `_PROBE_TIMEOUT_SECONDS = 8` and the DEVNULL/timeout claims still hold
@@ -172,7 +178,7 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-07-31T21:34+02:00 — 260731-EFA-L3 curator: the earlier L3 entry below described the
   `GIT_DIR`-family scrub as something only the two git probes gained, and said the `gh` probe merely
   "still inlines its own `subprocess.run` … with the same 8-second bound and DEVNULL stdin". `_pr_for`
-  now also passes `env=git_environment()` cit:(["env=git_environment()"], mcp/src/agents_remember/worktrees/modules/landing.py:124-124), so all three probes run scrubbed. Rewrote that
+  now also passes `env=git_environment()` cit:(["env=git_environment()"], mcp/src/agents_remember/worktrees/modules/landing.py:128-128), so all three probes run scrubbed. Rewrote that
   paragraph to say so and to give the reason from the code's own comment — `gh` resolves the
   repository *through* git, so an inherited `GIT_DIR` would have it list another repository's PRs
   under this branch's name — plus the fact that the package-wide AST sweep cannot cover it
@@ -182,7 +188,7 @@ No external Domain Documentation source is configured for this memory repo.
   Added the matching invariant. Two further claims were false against current code and were fixed:
   the gate was named `_landing_active` but the function is `landing_active` (L34-L44, no underscore,
   callers L237/L268), and Purpose still said the probe "re-fires every projector tick (~1s)" — it
-  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:465-465) and by `LandingStateRefresher(observe=landing_refs)` at
+  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:503-503) and by `LandingStateRefresher(observe=landing_refs)` at
   `LANDING_REFRESH_INTERVAL_SECONDS = 30.0`, while the recurring projection renders
   `unobserved_landing_refs`. Corrected "the package's **first** `gh` use" to "only" (one occurrence
   in `src/`, L106). Verified `_PROBE_TIMEOUT_SECONDS = 8` and the DEVNULL/timeout claims still hold

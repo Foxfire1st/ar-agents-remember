@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -97,8 +97,8 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:75-89; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:184-198; mcp/src/agents_remember/tasks/leaf_doc.py:201-226 |
-| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:570-570 |
+| The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:89-103; mcp/src/agents_remember/tasks/leaf_doc.py:237-260; mcp/src/agents_remember/tasks/leaf_doc.py:263-292 |
+| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:516-516 |
 | Reopen publishes the frozen-landing clear, task resets, and contract rewrite under one task-fact CAS and reports projection refresh separately. | `_publish_reopen_transition`; "published = publish_task_fact_mutation(" | mcp/src/agents_remember/worktrees/reopen.py:471-492 |
 | The shared preflight gate: the terminal-leaf blocker list, the parent-series resolution the seal removal renamed, and the external-ledger mapping proof. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:315-388 |
 | The parent-series resolver the preflight now names: it resolves and validates the exact parent series and no longer accepts or refuses leaves. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
@@ -106,7 +106,7 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. | "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:39-39 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:197-197 |
-| The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:230-284 |
+| The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:233-287 |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -179,6 +179,26 @@ still becomes a `blocked` result.
 `mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof for the removal.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the parent-series rename
+  is the frozen change and this card already records it in three places. Re-checked its ranges: they
+  hold. No wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/reopen.py` changed since the recorded verification commit.
+  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
+  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
+  remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (reopened-claim judgement): the checker reopened
+  the restamp-helper claim because `plan_leaf_doc_lifecycle_restamp` and
+  `restamp_leaf_doc_lifecycle` changed after verification. Re-read the claim against
+  `tasks/leaf_doc.py`: `find_leaf_doc` is at `:89`, the planner at `:237` and the publisher at
+  `:263`, and the regenerated ranges cover each. The claim that this module shares those helpers
+  with worktree start still holds. Retained; verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
   `ar/260831_lifecycle-owned-completion-relay`): recorded that the import and call in
   `_reopen_preflight_refusal` now name `require_parent_series` instead of

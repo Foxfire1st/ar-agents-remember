@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/engine-room/fixtures.ts`   |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-12T19:50+02:00                           |
-| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743`|
-| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
+| lastUpdated            | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ Provides the scenario fixtures for the enclosure-centered Engine Room process ma
 
 ### Logic
 
-cit:([`EngineRoomScenario`], dashboard/src/panels/engine-room/fixtures.ts:19-23) names a `{ name, processes, workspace }` triple; `ENGINE_ROOM_SCENARIOS` cit:([`ENGINE_ROOM_SCENARIOS`], dashboard/src/panels/engine-room/fixtures.ts:721-1197) is the exported array consumed downstream. Node shaping is factory-driven: cit:([`wsEngine`], dashboard/src/panels/engine-room/fixtures.ts:26-35) builds a ready workspace `ProviderNode` (role inferred from id — memory/grepai → `memory`, else `code`), and cit:([`WORKSPACE`], dashboard/src/panels/engine-room/fixtures.ts:37-37) is the shared `[codegraphcontext-code, grepai-memory]` stack reused by every scenario. cit:([`ref`], dashboard/src/panels/engine-room/fixtures.ts:108-110) wraps a `CommitRefNode` defaulting `factState: "observed"`; cit:([`boot`], dashboard/src/panels/engine-room/fixtures.ts:112-119) builds a `ProviderBootNode` for the code/memory role; `edges` cit:([`edges`], dashboard/src/panels/engine-room/fixtures.ts:141-212) emits the `EngineProcessEdge[]` graph (worktree-add, cgc-seed, and — when `external` — ledger-map + grepai-clone, plus an optional sync edge), each edge state overridable via cit:([`EdgeStates`], dashboard/src/panels/engine-room/fixtures.ts:131-138). `engineProcess` cit:([`engineProcess`], dashboard/src/panels/engine-room/fixtures.ts:214-268) is the core builder: it derives the worktree group path from `repoName`/`id`, fills a nominal `worktree-started` enclosure (leaf id, commit refs, external memory, provider boots, completed phases, source files), then spreads `over` last so each scenario overrides only the fields it varies. `bootStages` are the six `engine-boot-*` build-up frames, **renumbered B0→B5 in slice 5i** to match the
+cit:([`EngineRoomScenario`], dashboard/src/panels/engine-room/fixtures.ts:19-23) names a `{ name, processes, workspace }` triple; `ENGINE_ROOM_SCENARIOS` cit:([`ENGINE_ROOM_SCENARIOS`], dashboard/src/panels/engine-room/fixtures.ts:721-1197) is the exported array consumed downstream. Node shaping is factory-driven: cit:([`wsEngine`], dashboard/src/panels/engine-room/fixtures.ts:26-35) builds a ready workspace `ProviderNode` (role inferred from id — memory/grepai → `memory`, else `code`), and cit:([`WORKSPACE`], dashboard/src/panels/engine-room/fixtures.ts:37-37) is the shared `[codegraphcontext-code, grepai-memory]` stack reused by every scenario. cit:([`ref`], dashboard/src/panels/engine-room/fixtures.ts:108-110) wraps a `CommitRefNode` defaulting `factState: "observed"`; cit:([`boot`], dashboard/src/panels/engine-room/fixtures.ts:112-119) builds a `ProviderBootNode` for the code/memory role; `edges` cit:([`edges`], dashboard/src/panels/engine-room/fixtures.ts:144-215) emits the `EngineProcessEdge[]` graph (worktree-add, cgc-seed, and — when `external` — ledger-map + grepai-clone, plus an optional sync edge), each edge state overridable via cit:([`EdgeStates`], dashboard/src/panels/engine-room/fixtures.ts:131-138). `engineProcess` cit:([`engineProcess`], dashboard/src/panels/engine-room/fixtures.ts:217-271) is the core builder: it derives the worktree group path from `repoName`/`id`, fills a nominal `worktree-started` enclosure (leaf id, commit refs, external memory, provider boots, completed phases, source files), then spreads `over` last so each scenario overrides only the fields it varies. `bootStages` are the six `engine-boot-*` build-up frames, **renumbered B0→B5 in slice 5i** to match the
 scenario-player beats: `engine-boot-0-main-only` (the official line at rest — worktree refs `planned`, no
 providers, every edge planned, no `missingFacts`: a not-yet-created enclosure is not an alarm) →
 `-1-code-worktree` (code worktree forks in; `worktree-add` complete) → `-2-memory-contract` (memory copies
@@ -48,7 +48,7 @@ reports the terminal contract status's own next action instead.
 
 Nothing fails from the mismatch, and that is worth stating rather than quietly "fixing": `nextAction`
 is a plain `string` on the dashboard's projection type
-cit:([`nextAction`], dashboard/src/types/projection.ts:262-262) — not a closed union — so the renderer
+cit:(["missingFacts: string[];"], dashboard/src/types/projection.ts:260-261) — not a closed union — so the renderer
 accepts any token and no type or component gate can see the drift. These are presentation fixtures
 with no live server counterpart, and updating them is **deliberately out of scope** for the memory
 change set that reconciled this leaf. They are recorded here as stale demo data so a later reader
@@ -64,24 +64,38 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:224-232 |
-| `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:925-969 |
+| Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:223-231 |
+| `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:934-953 |
 | `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
 | `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | `EngineRoomScenario`, `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:19-23; dashboard/src/panels/engine-room/fixtures.ts:721-1197 |
-| `engineProcess` core builder (override-last spread) | `engineProcess` | dashboard/src/panels/engine-room/fixtures.ts:214-268 |
-| `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. | `edges`, `EdgeStates` | dashboard/src/panels/engine-room/fixtures.ts:132-139; dashboard/src/panels/engine-room/fixtures.ts:141-212 |
+| `engineProcess` core builder (override-last spread) | `engineProcess` | dashboard/src/panels/engine-room/fixtures.ts:217-271 |
+| `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. | `edges`, `EdgeStates` | dashboard/src/panels/engine-room/fixtures.ts:132-139; dashboard/src/panels/engine-room/fixtures.ts:131-138; dashboard/src/panels/engine-room/fixtures.ts:144-215 |
 | `engine-cgc-seed-refused` — the T9C scenario, now `edges({ cgc: "stale", … })` with `seedFallback: true`. | "engine-cgc-seed-refused" | dashboard/src/panels/engine-room/fixtures.ts:834-834 |
-| `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail | `bootStages` | dashboard/src/panels/engine-room/fixtures.ts:275-417 |
+| `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail | `bootStages` | dashboard/src/panels/engine-room/fixtures.ts:276-418 |
 | `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) | "engine-retired" | dashboard/src/panels/engine-room/fixtures.ts:991-991 |
 | `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split | "engine-landing-pushed" | dashboard/src/panels/engine-room/fixtures.ts:1165-1165 |
-| The two cleanup-pending scenarios carry the retired `retry_cleanup` next action — stale demo data the untyped `nextAction: string` cannot flag. | "engine-cleanup-pending"; "Replayed onto moved main" | dashboard/src/panels/engine-room/fixtures.ts:955-955; dashboard/src/panels/engine-room/fixtures.ts:982-982; dashboard/src/panels/engine-room/fixtures.ts:1133-1155 |
-| The dashboard type that makes the stale literal unobservable: a plain `string`, not a closed union of server-producible actions. | `nextAction` | dashboard/src/types/projection.ts:262-262 |
+| The two cleanup-pending scenarios carry the retired `retry_cleanup` next action — stale demo data the untyped `nextAction: string` cannot flag. | "engine-cleanup-pending"; "Replayed onto moved main" | dashboard/src/panels/engine-room/fixtures.ts:955-955; dashboard/src/panels/engine-room/fixtures.ts:982-982; dashboard/src/panels/engine-room/fixtures.ts:1133-1157 |
+| The dashboard type that makes the stale literal unobservable: a plain `string`, not a closed union of server-producible actions. The anchor is the declaration immediately above `nextAction?` inside `EngineProcessNode`, because a bare `nextAction` is not unique in this file (it also declares the `TaskDocProjectionEffect` field). | "missingFacts: string[];" | dashboard/src/types/projection.ts:260-261 |
 
 ## Series-Contract Notes
 
 Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<repo>/<task>/enclosures/<leaf-id>/series-contract.md`) in both `enclosure` and `sourceFiles`, and seed `leafId` from the fixture id by default. This keeps fixture source traces and rendered labels aligned with the backend resolver.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because the anchor `nextAction` appears twice in
+  dashboard/src/types/projection.ts, so no historical location was unique. Repaired the citation,
+  not the claim: the anchor is now the unique declaration immediately above `nextAction?` inside
+  `EngineProcessNode`, and the range covers it. The claim — that this route's scenarios carry an
+  untyped `nextAction` string the gate cannot flag — is unchanged. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 7 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). 2 claim(s) were declined as ambiguous or not the subject
+  and were left for a reading curator. No claim wording changed; every rewritten range was read back
+  at its current position. Verification metadata remains closeout-owned.
 - 2026-09-12T19:50+02:00 — 260831-LOCR-L31: re-labelled this file's cleanup-vocabulary section as
   **stale demo data, deliberately left**. The two scenarios still carry
   `nextAction: "retry_cleanup"`, a move the server projection can no longer emit now that
@@ -106,7 +120,7 @@ Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<r
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the reference row and the restatement in the 10:56 entry
-  below. `EngineProcessEdge` cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:925-969)
+  below. `EngineProcessEdge` cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:934-953)
   is the class with the `extra="forbid"` model and the documented state vocabulary. No body claim changed.
 
 - 2026-08-01T10:56+02:00 — 260731-EFA-L4 curator: corrected the T9C fixture description. `EdgeStates`

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/task_leaf_binding.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash |  `4214d7a103dcc120481c6fe0059b322396ec9be6`|
-| lastVerifiedCommitDate |  2026-09-14T07:21:45+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,13 +53,13 @@ No configured domain-documentation source applies to this repository-internal ro
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Binding models and resolution establish the canonical leaf identity through the shared pure task-domain owner. | `LeafTaskBinding`; `resolve_leaf_task_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:46-61; mcp/src/agents_remember/worktrees/task_leaf_binding.py:64-103 |
+| Binding models and resolution establish the canonical leaf identity through the shared pure task-domain owner. | `LeafTaskBinding`; `resolve_leaf_task_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:45-61; mcp/src/agents_remember/worktrees/task_leaf_binding.py:64-103 |
 | Parent and child source readers enforce exact regular-file authority after canonical row/source derivation. | `_load_leaf_parent`; `_read_leaf_source` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:106-116; mcp/src/agents_remember/worktrees/task_leaf_binding.py:119-143 |
 | Start admission rechecks the same canonical composite binding before reserving lifecycle authority. | `require_current_start_task_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:160-175 |
 | The registration planner this module delegates to, and the admission gate that now names the missing master link instead of reading it as present. | `plan_current_leaf_enclosure_registration`; `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:178-202; mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
 | The typed facts carried by the new refusal, including the named recovery operation. | `_enclosure_binding_facts` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:353-364 |
-| The planner whose `master-link-missing` state this gate reads. | `plan_leaf_doc_enclosure_registration`; `_enclosure_registration_state` | mcp/src/agents_remember/tasks/leaf_doc.py:332-391; mcp/src/agents_remember/tasks/leaf_doc.py:312-329 |
-| The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field. | `_publish_leaf_task_enclosure_binding` | mcp/src/agents_remember/worktrees/modules/start.py:912-985 |
+| The planner whose `master-link-missing` state this gate reads. | `plan_leaf_doc_enclosure_registration`; `_enclosure_registration_state` | mcp/src/agents_remember/tasks/leaf_doc.py:312-329; mcp/src/agents_remember/tasks/leaf_doc.py:332-391 |
+| The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field. | `_publish_leaf_task_enclosure_binding` | mcp/src/agents_remember/worktrees/modules/start.py:858-931 |
 | The two shared fixtures that had to carry the derived fields once this refusal existed, because they were modelling the damage state. | `_leaf`; `_bind_task_without_review` | mcp/tests/test_closeout_queue.py:107-156; mcp/tests/test_transaction_only_worktree_delivery.py:93-116 |
 
 ## Cross-Repo References
@@ -71,6 +71,12 @@ No meaningful cross-repository boundary is owned by this file.
 Leaf binding now resolves the canonical parent row to one exact JSON task document, plans enclosure registration, and returns typed repair facts before closeout. Missing or mismatched bindings fail closed without sibling scans or compatibility fallbacks.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 2 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): recorded the new `task-enclosure-binding-master-link-missing` refusal. The card now states
   that a document with an exact enclosure address but no `seriesContractPath` refuses by name with the

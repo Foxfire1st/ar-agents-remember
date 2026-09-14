@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`       |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,6 +63,13 @@ No cross-repository implementation evidence is required for these local test and
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 5 claim(s) whose anchor no longer sat in its cited range and normalised 2 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 3 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 
 
@@ -73,19 +80,19 @@ No cross-repository implementation evidence is required for these local test and
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 12 table citations and 14 prose citation repairs for gate records, policy, closeout ordering, retention fixtures, and conformance coverage; fixer-generated ranges verified.
 
 - 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates_closeout.py:191-262) now
-  exercises `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:474-525)) wherever it used to call
+  exercises `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:393-444)) wherever it used to call
   `_enforce_closeout_gate`, and the two blocking cases **additionally** assert that
-  `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:448-471)) raises for the same seeded gate.
+  `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:367-390)) raises for the same seeded gate.
   `_mark_closeout_gate_applied` was **deleted rather than deprecated**, so
   `test_developer_approved_permits_and_marks_applied` no longer calls a second step — it asserts the
   gate reads `applied` straight after the single permitting call, which is the point: permitting and
   marking applied are one step and there is no arrangement of two lines that leaves the approval
   spendable in between. Recorded the two rungs as distinct rather than redundant — the claim sits
-  before the first journaled mutation intent and Git act (cit:([`_closeout_commit_phase`], mcp/src/agents_remember/worktrees/modules/closeout.py:869-927)) while the early read sits
-  before staging and the strict code-quality gate (cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129)), and the early rung is safe only because it
+  before the first journaled mutation intent and Git act (cit:([`_closeout_commit_phase`], mcp/src/agents_remember/worktrees/modules/closeout.py:639-691)) while the early read sits
+  before staging and the strict code-quality gate (cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165)), and the early rung is safe only because it
   can exclusively DENY: its unlocked read is stale on return, but a stale refusal costs a rerun and
   consumes nothing while a stale permit is re-evaluated under the lock. Recorded the mechanism
-  underneath: `GateStore.claim_approval` (cit:([`claim_approval`], mcp/src/agents_remember/controlplane/store.py:190-234)) folds, evaluates policy
+  underneath: `GateStore.claim_approval` (cit:([`claim_approval`], mcp/src/agents_remember/controlplane/store.py:199-246)) folds, evaluates policy
   and appends the `applied` snapshot inside **one** held `exclusive_access`, making
   `approved -> applied` a compare-and-swap, and with it the deliberate semantic change — **an
   approval now authorises one attempt, not one success** — together with why the fail-closed side is
@@ -94,11 +101,11 @@ No cross-repository implementation evidence is required for these local test and
   something for a reclaim pass to drop, and since R1 such a record is retained at any age
   (`CONSUMED_APPROVAL_GATE_KINDS`), so leaving them would have made a compaction with nothing
   prunable skip its rewrite and quietly turn those harnesses into no-ops. All three moved to
-  `expired`: `_store_durability.py::GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:191-218)),
+  `expired`: `_store_durability.py::GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:110-132)),
   `test_durable_store_contract.py::GateReclaimOwnershipTests.setUp` (cit:([`GateReclaimOwnershipTests`], mcp/tests/test_durable_store_contract.py:854-918)) and
   `test_gate_replay_window.py::_prunable_gate` (cit:([`_prunable_gate`], mcp/tests/test_gate_replay_window.py:116-130)), the last also moving off
   `closeout-approval` onto `alarm-ack`. **Citations:** every range added here was opened and checked
-  against each symbol the claim names, ends included — cit:([`evaluate_gate`], mcp/src/agents_remember/controlplane/enforcement.py:52-94) with its `applied`
+  against each symbol the claim names, ends included — cit:([`evaluate_gate`], mcp/src/agents_remember/controlplane/enforcement.py:59-107) with its `applied`
   branch, both closeout helpers with their call sites, and each of the three fixtures.
   The reference table is two-column by construction, so citations are carried inline in the Finding
   cells rather than by widening it. Verification metadata untouched.

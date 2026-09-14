@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_attribution_producers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash |  `52875e7a8695fc7b67bff21ebb07a67268213967`|
-| lastVerifiedCommitDate |  2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -158,17 +158,17 @@ trailer rendering plus this repository's source.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one-definition guard: the key identifier and its interpolation in exactly one production module, and no module spelling the trailer as a quoted literal. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `_ONE_MODULE`; `_KEY_NAME`; `_production_source` | mcp/tests/test_memory_attribution_producers.py:86-117; mcp/tests/test_memory_attribution_producers.py:64-70 |
-| The census: five producers, each asserted to reach the named shared renderer entry. | `test_every_census_producer_reaches_the_shared_renderer`; `_PRODUCERS` | mcp/tests/test_memory_attribution_producers.py:119-137; mcp/tests/test_memory_attribution_producers.py:55-63 |
-| The dialect: a hostile multi-paragraph caller body survives byte for byte, the trailer is its own final block, and the reader takes ours not the caller's lookalike. | `test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final` | mcp/tests/test_memory_attribution_producers.py:140-163 |
-| Carryover end to end through the public tool, with the ledger row agreeing and the ledger commit unattributed. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head`; `_carryover_world` | mcp/tests/test_memory_attribution_producers.py:237-287; mcp/tests/test_memory_attribution_producers.py:165-236 |
+| The one-definition guard: the key identifier and its interpolation in exactly one production module, and no module spelling the trailer as a quoted literal. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `_ONE_MODULE`; `_KEY_NAME`; `_production_source` | mcp/tests/test_memory_attribution_producers.py:64-65; mcp/tests/test_memory_attribution_producers.py:68-69; mcp/tests/test_memory_attribution_producers.py:86-116 |
+| The census: five producers, each asserted to reach the named shared renderer entry. | `test_every_census_producer_reaches_the_shared_renderer`; `_PRODUCERS` | mcp/tests/test_memory_attribution_producers.py:55-63; mcp/tests/test_memory_attribution_producers.py:119-137 |
+| The dialect: a hostile multi-paragraph caller body survives byte for byte, the trailer is its own final block, and the reader takes ours not the caller's lookalike. | `test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final` | mcp/tests/test_memory_attribution_producers.py:140-162 |
+| Carryover end to end through the public tool, with the ledger row agreeing and the ledger commit unattributed. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head`; `_carryover_world` | mcp/tests/test_memory_attribution_producers.py:165-234; mcp/tests/test_memory_attribution_producers.py:237-286 |
 | Baseline adoption end to end through the public tool, attributed to the code source-branch commit its initial ledger row maps. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch` | mcp/tests/test_memory_attribution_producers.py:289-345 |
-| The one renderer and the one key the census defends. | `render_memory_content_message`; `CODE_COMMIT_TRAILER_KEY` | mcp/src/agents_remember/kernel/memory_attribution.py:72-97; mcp/src/agents_remember/kernel/memory_attribution.py:56-56 |
+| The one renderer and the one key the census defends. | `render_memory_content_message`; `CODE_COMMIT_TRAILER_KEY` | mcp/src/agents_remember/kernel/memory_attribution.py:56-56; mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
 | The closeout-shaped way in to the renderer, which two of the five producers call. | `memory_content_message` | mcp/src/agents_remember/models/closeout/input.py:148-166 |
-| The recovery route's own commit sites, which the census deliberately leaves untrailered or attributes through `closeout_external.py`. | `commit_verified_staged`; `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:209-211; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:236-236; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:278-281; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:357-360 |
-| The sync memory merge commits, whose two memory parents are why they are trailerless by rule. | `_finish_staged_memory_merge`; `continue_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:294-311; mcp/src/agents_remember/worktrees/sync_transaction_git.py:318-342 |
-| The end-to-end closeout-recovery case in the sibling module, which is the behavioural half for the route that has no commit site of its own. | `test_closeout_recovery_attributes_the_memory_commit_it_still_owed`; `_assert_memory_attribution` | mcp/tests/test_transaction_only_worktree_delivery.py:321-445; mcp/tests/test_transaction_only_worktree_delivery.py:176-221 |
-| The artifact rows that now declare this module as an exact consumer, both through `QueueFixture`. | "path = \"mcp/tests/closeout_fixture_test_support.py\""; "path = \"mcp/tests/closeout_input_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:265-265; mcp/tests/evidence-lifecycle.toml:282-282; mcp/tests/evidence-lifecycle.toml:317-317; mcp/tests/evidence-lifecycle.toml:374-374 |
+| The recovery route's own commit sites, which the census deliberately leaves untrailered or attributes through `closeout_external.py`. | `commit_verified_staged`; `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:209-211; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:236-303; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:278-281; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:357-360 |
+| The sync memory merge commits, whose two memory parents are why they are trailerless by rule. | `_finish_staged_memory_merge`; `continue_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:304-326; mcp/src/agents_remember/worktrees/sync_transaction_git.py:329-350 |
+| The end-to-end closeout-recovery case in the sibling module, which is the behavioural half for the route that has no commit site of its own. | `test_closeout_recovery_attributes_the_memory_commit_it_still_owed`; `_assert_memory_attribution` | mcp/tests/test_transaction_only_worktree_delivery.py:328-452; mcp/tests/test_transaction_only_worktree_delivery.py:183-227 |
+| The artifact rows that now declare this module as an exact consumer, both through `QueueFixture`. | "path = \"mcp/tests/closeout_fixture_test_support.py\""; "path = \"mcp/tests/closeout_input_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:265-265; mcp/tests/evidence-lifecycle.toml:283-283 |
 
 ## Cross-Repo References
 
@@ -179,10 +179,22 @@ authority is claimed by this focused module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The external-memory side of each case is a real second repository created by the fixture, not a mock. | `init_repo`; `QueueFixture` | mcp/tests/test_worktree_support.py:1-40; mcp/tests/test_closeout_queue.py:1-60 |
+| The external-memory side of each case is a real second repository created by the fixture, not a mock. | `init_repo`; "class QueueFixture:" | mcp/tests/test_closeout_queue.py:52-52; mcp/tests/test_closeout_queue.py:186-727; mcp/tests/test_worktree_support.py:97-117 |
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
+  claim(s) whose anchor no longer sat in its cited range and normalised 8 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): created this one-to-one sidecar for the leaf's new test module, which is the census
   the leaf is really about. Recorded the corrected census (5 producers, 0 untrailered, with the

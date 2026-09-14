@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,6 +100,21 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the removed
+  `validate_completed_side` call is the frozen change and the earlier entries record it. Re-checked
+  `_require_completed_branches` `:516-536`: it holds. No wording changed. Verification metadata
+  remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` changed since the recorded
+  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
+  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the `validate_completed_side` call and import were removed).
+  Re-read the card against the current source: the card already records that removal, and the cited
+  `_require_completed_branches` range (516-536) still holds. No wording changed; verification
+  metadata remains closeout-owned.
 - 2026-09-14T13:20+02:00 — The ledger ruling reaches the completed-branch proof:
   `_require_completed_branches` no longer calls `validate_completed_side`, so finalization proves each
   final head is the exact operation-created head and reads no ledger rows from the memory side it

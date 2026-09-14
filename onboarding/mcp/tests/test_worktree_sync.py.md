@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd`                         |
-| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`                         |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,11 +91,11 @@ to removed methods are superseded by this current inventory.
 | --- | --- | --- |
 | Pure fast forward sync advances both sides and contract | `test_pure_fast_forward_sync_advances_both_sides_and_contract` | mcp/tests/test_worktree_sync.py:117-137 |
 | Code merge conflict is retained and can continue | `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:139-174 |
-| A code tip the official memory line does not map refuses by name, leaves the work branch where it was, and succeeds once the pair is completed | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `move_official_code`; `map_official_memory` | mcp/tests/test_worktree_sync.py:176-204; mcp/tests/test_worktree_sync.py:97-99; mcp/tests/test_worktree_sync.py:101-110 |
-| The refusal this case guards is the named-ref ledger read, not the projected source ledger | `preflight_official_pair`; `find_mapping` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_ledger.py:255-257 |
+| A code tip the official memory line does not map refuses by name, leaves the work branch where it was, and succeeds once the pair is completed | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `move_official_code`; `map_official_memory` | mcp/tests/test_worktree_sync.py:97-99; mcp/tests/test_worktree_sync.py:101-110; mcp/tests/test_worktree_sync.py:176-204 |
+| The refusal this case guards is the named-ref ledger read, not the projected source ledger | `preflight_official_pair`; "def find_mapping(ledger: MemoryLedger, code_commit: str)" | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_ledger.py:261-263 |
 | A descendant memory ledger that dropped a source row is current, nothing moved, and no `dropped parent mapping` text is reported | `test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current` | mcp/tests/test_worktree_sync.py:206-243 |
 | Nonregular journal is renamed without following and quarantined | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:245-264 |
-| The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_worktree_sync.py" | mcp/tests/test-evidence-lanes.toml:184-184 |
+| The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_worktree_sync.py" | mcp/tests/test-evidence-lanes.toml:187-187 |
 
 ## Cross-Repo References
 
@@ -107,6 +107,26 @@ This card establishes test behavior, not a separate cross-repository protocol or
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the case this card
+  documents was added by the frozen change set. Re-read the card: the new case and every cited range
+  hold, including `find_mapping` at `memory_ledger.py:261-263`. No wording changed. Verification
+  metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  descendant-ledger case the card already documents. Re-read the card against the current source:
+  every cited range (97-99, 101-110, 117-137, 139-174, 176-204, 206-243, 245-264) still holds. No
+  wording changed; verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T13:20+02:00 — Recorded the added dropped-row case: a memory work branch that already
   descends from its source and whose recomputed `memory.md` maps the code base to a newer content
   commit syncs as `already-current` with no `dropped parent mapping` text and no branch movement,

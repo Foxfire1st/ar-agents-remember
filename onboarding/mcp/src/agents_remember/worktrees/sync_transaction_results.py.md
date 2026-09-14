@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_results.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,9 +69,9 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sync driver selects these result builders from exact journal phases. | `_route_sync_record`; `_resume_active` | mcp/src/agents_remember/worktrees/sync_transaction.py:155-175; mcp/src/agents_remember/worktrees/sync_transaction.py:418-438 |
-| Read-only staged-resolution proof and unmerged-path enumeration are Git-owned. | `validate_staged_resolution`; `unmerged_paths` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:235-239; mcp/src/agents_remember/worktrees/sync_transaction_git.py:345-366 |
-| Completed result reconstruction and manual repair remain recovery-owned. | `completed_sync_result`; `manual_repair_result` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:96-157; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:300-313 |
+| The sync driver selects these result builders from exact journal phases. | `_route_sync_record`; `_resume_active` | mcp/src/agents_remember/worktrees/sync_transaction.py:154-174; mcp/src/agents_remember/worktrees/sync_transaction.py:419-439 |
+| Read-only staged-resolution proof and unmerged-path enumeration are Git-owned. | `validate_staged_resolution`; `unmerged_paths` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:235-239; mcp/src/agents_remember/worktrees/sync_transaction_git.py:249-253; mcp/src/agents_remember/worktrees/sync_transaction_git.py:353-372 |
+| Completed result reconstruction and manual repair remain recovery-owned. | `completed_sync_result`; `manual_repair_result` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:95-156; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:299-312 |
 | The retained-conflict builder marks a parked-candidate reapply, and a read-only preview gates settling it. | `resolution_required`; `parked_wip_validation_preview`; `resolution_validation_preview` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:71-113; mcp/src/agents_remember/worktrees/sync_transaction_results.py:116-143; mcp/src/agents_remember/worktrees/sync_transaction_results.py:146-170 |
 | The remaining public result builders keep the phase vocabulary stable. | `memory_choice_required`; `sync_preview`; `active_preview`; `cancel_preview`; `terminal_resolution_replay`; `quarantine_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:28-50; mcp/src/agents_remember/worktrees/sync_transaction_results.py:53-68; mcp/src/agents_remember/worktrees/sync_transaction_results.py:173-187; mcp/src/agents_remember/worktrees/sync_transaction_results.py:190-207; mcp/src/agents_remember/worktrees/sync_transaction_results.py:210-245; mcp/src/agents_remember/worktrees/sync_transaction_results.py:248-261 |
 
@@ -84,6 +84,19 @@ No cross-repository source is configured for this memory root.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the parked-candidate
+  result surface is the frozen change and the card documents it. Re-checked all nine cited ranges:
+  they hold. No wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/sync_transaction_results.py` changed since the recorded
+  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
+  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-10T15:06+02:00 — Parked-candidate result surface: recorded the `wipRestore` marker and parked-specific summary on `resolution_required`, and the read-only `parked_wip_validation_preview`. Re-derived the builder anchors against the current working tree. Verification remains closeout-owned.
 
 - 2026-08-26T08:20+02:00 — Final frozen reconciliation of preview, retained-resolution,

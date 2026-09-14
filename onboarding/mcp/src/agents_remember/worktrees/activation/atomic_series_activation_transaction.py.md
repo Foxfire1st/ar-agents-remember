@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
-| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,6 +119,17 @@ No cross-repository source is configured for this memory root.
 Atomic-series admission refusals now preserve the full source detail directly in retry arguments and public summary/detail; the former bounded-detail truncation wrapper is gone, while activation ownership and retry routing remain unchanged.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py` changed
+  since the recorded verification commit. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the mid-flight reconciling rewrite and summary the card already
+  documents). Re-read the card against the current source: `_reconciling_result` (280-294),
+  `_mid_flight_summary` (297), `_admission_refusal` (229) and the sync authority range (82-110) all
+  still hold. No wording changed; verification metadata remains closeout-owned.
 - 2026-09-14T13:20+02:00 — Mid-flight reporting: recorded `_reconciling_result` rewriting a
   `synced`/`already-current` pass to `atomic-series-reconciling` and the new `_mid_flight_summary`,
   which leads with the stuck master's task-document ref and contract path, its publication time, its

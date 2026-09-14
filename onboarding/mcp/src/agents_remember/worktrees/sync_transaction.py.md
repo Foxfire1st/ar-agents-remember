@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -124,6 +124,19 @@ No cross-repository source is configured for this memory root.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the already-current
+  branch no longer validates the parent memory side, as the earlier entry records. Re-checked all
+  fourteen cited ranges against the frozen source: they hold. No wording changed. Verification
+  metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/sync_transaction.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the already-current branch no longer validates the parent memory
+  side). Re-read the card: it already records that removal and all fourteen cited ranges still hold.
+  No wording changed; verification metadata remains closeout-owned.
 - 2026-09-14T13:20+02:00 — The ledger ruling reaches the driver: `_already_current_result` reports an
   already-descendant pair as `already-current` on its recorded bases and branch ancestry alone, and
   the `validate_current_memory_side` call that used to refuse it with `sync-work-branch-invalid` is

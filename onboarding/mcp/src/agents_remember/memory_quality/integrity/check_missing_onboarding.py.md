@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-29T11:00+02:00                     |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -94,10 +94,22 @@ code and refresh the new sidecars to the real code commit hash.
 | Resolver helpers provide storage/path-rule decisions. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-129 |
 | The checker owns source/onboarding absence classification; deleted case inventories are not current coverage evidence. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:50-77 |
 | The kernel filesystem helper handles long-path sidecar and source probes. | "def absolute_path" | mcp/src/agents_remember/kernel/filesystem.py:10-10 |
-| `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:94-145 |
+| `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (reopened-claim judgement): the citation checker
+  reopened the `run_git` claim because that construct changed after verification. Re-read the claim
+  against the current `kernel/git_command.py`: `run_git` is the single runner this module wraps, it
+  owns the DEVNULL stdin guard and selects the three timeout classes through `GitRunnerOptions`, and
+  it scrubs the selector environment by calling `git_environment()` — the wording stands, and the
+  regenerated range (149-213) is the function itself. Retained, not re-stamped; verification
+  metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-08-29T11:00+02:00 — Candidate discovery now diffs one isolated add-all tree against
   `HEAD`. This removes stale index residue from the missing-onboarding decision while preserving
   untracked and rename-target coverage; the real worktree index remains untouched.

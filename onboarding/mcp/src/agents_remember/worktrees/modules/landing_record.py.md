@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing_record.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,9 +24,9 @@ has only the landed commit to record.
 
 This file exists because the cell it writes is read as an authority, not as a report.
 `worktree_cleanup` refuses until `integration_status == "completed"`
-cit:([`cleanup_result`], mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707), and the series
+cit:([`cleanup_result`], mcp/src/agents_remember/worktrees/modules/cleanup.py:637-712), and the series
 abandon guard reads the same cell to decide whether a master's work has left it
-cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:233-279).
+cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276).
 Two writers would therefore mean two definitions of "landed", and the one that was never called is
 the one that matters when someone later decides a half-finished master's work was discarded.
 
@@ -36,7 +36,7 @@ the one that matters when someone later decides a half-finished master's work wa
 
 The landed facts travel as one frozen record,
 `LandedIntegration(strategy, code_commit, memory_content_commit="", ledger_commit="")`
-cit:([`LandedIntegration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:28-36), and the
+cit:([`LandedIntegration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:27-34), and the
 writer is
 `record_landed_integration(contract, *, landed: LandedIntegration, checkpoint: bool = False)`
 cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68).
@@ -63,7 +63,7 @@ Three callers reach it and no others: the local final integration result
 cit:(["def _integrated_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:598-633), the local
 checkpoint result cit:(["def _checkpoint_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:922-961),
 and the pull-request entry point
-cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-131).
+cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-143).
 `LandedIntegration` is why the signature could gain `checkpoint` at all: threading a fifth keyword
 onto the writer would have pushed it past the enabled argument-count rule, and bundling the landed
 facts keeps the one writer the single definition of "landed" that this module exists to be.
@@ -110,12 +110,12 @@ repository-internal contract semantics, so the exact retained source is the dire
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The cell, commit triple, and strategy this function writes are declared here. | `integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`; `integrated_ledger_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:260-263 |
-| The landed facts this writer now takes as one frozen record. | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:28-36 |
+| The landed facts this writer now takes as one frozen record. | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-34 |
 | The local final route calls this writer instead of amending the contract inline. | "def _integrated_result(" | mcp/src/agents_remember/worktrees/modules/integrate.py:598-633 |
 | The local checkpoint route calls the same writer with `checkpoint=True`. | "def _checkpoint_result(" | mcp/src/agents_remember/worktrees/modules/integrate.py:922-961 |
 | The pull-request route calls the same writer. | "record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/record_landing.py:121-121 |
-| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:665-665 |
-| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:233-279 |
+| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669 |
+| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276 |
 
 ## Cross-Repo References
 
@@ -127,6 +127,12 @@ there is no cross-repository protocol to cite.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
+  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
   260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting the
   `integration_status` refusal read from line 664 to 665. The anchor was re-read at

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
-| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -447,13 +447,13 @@ references informed product framing only; current code truth stays in agents-rem
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
-| State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-405 |
-| Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
-| Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
+| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:860-910; dashboard/src/cockpit/Cockpit.tsx:850-850 |
+| State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-491 |
+| Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-932 |
+| Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-584 |
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
-| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:459-475 |
+| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:460-464 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
 | JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66 |
 
@@ -556,7 +556,7 @@ fields; the task-artifact takeover remains independently discriminated by notes/
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The generated lifecycle mirror carries the cursor beside coherent identity and version fields. | "export interface LifecycleOperationProjection {" | dashboard/src/types/projection.ts:335-360 |
+| The generated lifecycle mirror carries the cursor beside coherent identity and version fields. | "export interface LifecycleOperationProjection {" | dashboard/src/types/projection.ts:334-334 |
 | The fixture supplies a meaningful revision for the sample operation. | "\"meaningfulRevision\": 1," | dashboard/src/fixtures/snapshot.json:1225-1225 |
 
 
@@ -566,6 +566,20 @@ The generated lifecycle phase union and schema now include `recovering-private-p
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
+  and were left for a reading curator. No claim wording changed; every rewritten range was read back
+  at its current position. Verification metadata remains closeout-owned.
+- 2026-09-13T22:22+02:00 — No route impact: 260913-LCA-L6 removed the closeout candidate cap, and its
+  only `dashboard/src` footprint is regenerated content inside the existing `types/` artifacts — the
+  `maxItems: 256` refinement on `CloseoutQueueNode.members` in `types/projection.schema.json` and its
+  matching comment in `types/projection.ts` (regenerated via `scripts/sync-projection-types.py`, never
+  hand-edited). No route, module layout, component tree or transport boundary changed; the generated
+  artifacts keep their ownership and the dashboard still renders whatever rows the producer serves.
+  Detail lives in the `types/projection.ts` and `types/projection.schema.json` sidecars. Verification
+  metadata remains closeout-owned; no stamp advanced.
 - 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
 
 
@@ -770,14 +784,6 @@ The generated lifecycle phase union and schema now include `recovering-private-p
   those types instead of duplicating them. The e2e/perf suites and Playwright configs are now
   type-checked at all, as is `panda.config.ts`. Corrected the stale "two files" claim about `dev/`.
   Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-09-13T22:22+02:00 — No route impact: 260913-LCA-L6 removed the closeout candidate cap, and its
-  only `dashboard/src` footprint is regenerated content inside the existing `types/` artifacts — the
-  `maxItems: 256` refinement on `CloseoutQueueNode.members` in `types/projection.schema.json` and its
-  matching comment in `types/projection.ts` (regenerated via `scripts/sync-projection-types.py`, never
-  hand-edited). No route, module layout, component tree or transport boundary changed; the generated
-  artifacts keep their ownership and the dashboard still renders whatever rows the producer serves.
-  Detail lives in the `types/projection.ts` and `types/projection.schema.json` sidecars. Verification
-  metadata remains closeout-owned; no stamp advanced.
 - 2026-07-30T12:51+02:00 — No route-level architecture change for
   260727-CHATS-IM-L2. Roster identity narrowing is owned by `data/conversation/`; the sparse
   Engine Room effects overlay is owned by `panels/engine-room/`; structured child-history

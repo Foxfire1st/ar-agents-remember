@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
-| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -104,12 +104,15 @@ one-to-one package move of the existing typed contracts, not a compatibility nam
 accepted plan shape, source owns exact candidate provenance, and projection owns disposable
 scheduling facts while journal models retain lifecycle evidence.
 
-`models/closeout/input.py` also owns the one rendering of the memory-content commit message
-(260913-LCA-L1): `EffectiveCloseoutInput.memory_content_message(code_commit)` returns the closeout's
-own message verbatim plus exactly one final-paragraph `Code-Commit: <sha>` trailer naming the code
-commit that same closeout landed. Both closeout routes render through it — worktree closeout and the
-branch-addressed direct landing — so the attribution has a single definition, and the `memory.md`-only
-ledger commit, which names no code commit, carries none.
+`models/closeout/input.py` no longer owns the rendering of the memory-content commit message.
+Since 260913-LCA-L4 the one writer is `kernel.memory_attribution.render_memory_content_message`
+(kernel/memory_attribution.py:72-97), and `EffectiveCloseoutInput.memory_content_message(code_commit)`
+(input.py:148-166) is the closeout-shaped way in to it: the closeout's own message verbatim plus
+exactly one final-paragraph `Code-Commit: <sha>` trailer naming the code commit that same closeout
+landed. Both closeout routes still render through that wrapper — worktree closeout and the
+branch-addressed direct landing — while the prepared memory-content leg, carryover, baseline adoption
+and backfill call the kernel renderer directly, so the attribution has a single definition in kernel.
+The `memory.md`-only ledger commit, which names no code commit, carries none.
 
 ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
 role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
@@ -273,7 +276,7 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 | The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-328; mcp/src/agents_remember/models/worktree.py:355-364 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:233-237 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
 | The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:479-479 |
 | The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:459-459 |
@@ -509,7 +512,7 @@ Registered tool request/response contracts now live under `models/tools/`; the m
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Strict lifecycle operation record/projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:311-403; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
-| Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38; mcp/src/agents_remember/models/queue/closeout_queue.py:41-62 |
+| Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:32-37; mcp/src/agents_remember/models/queue/closeout_queue.py:40-59 |
 
 ## 260821-DAGQC-L2 Closed Quality And Landing Models
 
@@ -589,7 +592,7 @@ still validate as a set. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` 
 `finalize_tool_response` call per name for that reason.
 
 **260831-LOCR-L34** adds `worktree_checkpoint_landing` to the `NextTool` vocabulary
-cit:([`NextTool`], mcp/src/agents_remember/models/worktree.py:59-73) — the checkpoint's preview and its
+cit:([`NextTool`], mcp/src/agents_remember/models/worktree.py:59-74) — the checkpoint's preview and its
 `integration-ref-race` refusal both emit it, and it is a registered public tool — while deliberately
 leaving `NextOperation` unchanged, because pausing a master is the existing
 `request_integration_decision` intent rather than a lifecycle phase. The reasoning and the
@@ -621,7 +624,7 @@ to that tuple and drives one `finalize_tool_response` call for the repaired name
 
 This route's `tools/` leaf gained `public_roster.py` — a zero-import module whose whole body is the
 62-name literal `PUBLIC_TOOLS`
-cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-85). It is the tuple's **single definition**; `mcp/tools/base.py`
+cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-86). It is the tuple's **single definition**; `mcp/tools/base.py`
 now re-exports that identical object instead of declaring its own, so
 `agents_remember.mcp.tools.PUBLIC_TOOLS`, `PUBLIC_TOOL_RESPONSE_MODELS`, the live registration order,
 and the `public_surface` pin all still name the same tuple with no consumer change.
@@ -630,7 +633,7 @@ The roster lives here because a model needs to read it. `models/worktree.py::Wor
 now declares `nextAction` / `nextTool` / `nextArgs`
 cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:322-328) and refuses a `nextTool` outside
 `PUBLIC_TOOLS` through `_require_registered_public_next_tool`
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:355-364). Before this leaf the
+cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:354-365). Before this leaf the
 envelope inherited `extra="allow"` and declared none of those keys, so
 `application/worktree_status.py::_project_terminal_contract_status`'s write crossed the wire verbatim
 and unchecked — `worktree_abandon` reached the wire as a `nextTool` without ever being a `NextTool`
@@ -670,6 +673,27 @@ waiting reasons. Real wave dependencies still gate through the sprint execution 
 this change.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): corrected the change-set
+  attribution in the renderer paragraph — the one-writer move is `260913-LCA-L4`, not L5, as the
+  sibling cards and this repository's own overview record. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/models/` route changed since the recorded verification commit. Re-read
+  the card against the frozen on-disk source and re-checked its claims and cited ranges: nothing
+  this card asserts is falsified by the change, so no wording changed. Verification metadata remains
+  closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this master moved the one
+  memory-content-message renderer out of `models/closeout/input.py` into
+  `kernel/memory_attribution.py`. Corrected the route claim: the model method is now the
+  closeout-shaped wrapper around the kernel renderer, which is the single definition, and the other
+  memory-content producers call the kernel renderer directly. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T23:21+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`):
   correction to the entry below, which is kept as the record of what was true when L1 wrote it. This
   route renders the memory-content attribution but no longer owns its key: `CODE_COMMIT_TRAILER_KEY`

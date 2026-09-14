@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,9 +27,9 @@ but never owns the repair lifecycle.
 
 `record_organizational_completion_repair` persists exact repair evidence at the gate-failure seam.
 The evidence binds operation identity, contract/task refs, claimed door, sprint/candidate/master,
-exact commits, and deterministic successor bytes. Preparation re-reads canonical journal and task
-authority under the short task-publication lock, proves the failure and worker/commit state, then
-publishes the exact waiting successor and projection effects.
+exact commits, and deterministic successor bytes. Preparation re-reads canonical journal and
+contract authority, proves the failure and worker/commit state, then publishes the exact waiting
+successor and projection effects.
 
 ### Invariants And Boundaries
 
@@ -68,8 +68,8 @@ The current source seams include `OrganizationalRepairPublicationError`, `Organi
 
 ## 260821-CLIVE Repair Successor Publication
 
-Repair uses the short task-publication lock and the claimed door's task refs rather than a queue
-binding or long integration lock. Failed organizational quality creates a fresh deterministic
+Repair resolves the claimed door's task refs live through `live_closeout_door` rather than a queue
+binding or long integration lock; the short task-publication lock was removed from this route. Failed organizational quality creates a fresh deterministic
 waiting successor from the exact claimed predecessor and repair-journal timestamp. Operation state,
 commits, refs, and repair evidence must still match; a claimed generation is never mutated into a
 pseudo-cancelled door.
@@ -83,11 +83,25 @@ This change preserves the file's existing authority boundary. No threshold excep
 fallback, or compatibility reader was added.
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the lock removal and the
+  live door disposition are the frozen changes and the earlier entry records them. Re-checked the
+  cited ranges (`record_…` `:150`, the evidence builder `:174`, `prepare_…` `:210`,
+  `_require_operation_identity` `:442`, `_quality_repair_contract` `:621`): they hold. No wording
+  changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` changed since
+  the recorded verification commit. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit — the short task-publication lock was removed and the door
+  disposition is now resolved live. Corrected the Logic sentence, the repair section and the
+  2026-08-24 history wording to match. Verification metadata remains closeout-owned.
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.
 
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded exact repair-backed waiting-successor publication under task CAS. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded exact repair-backed waiting-successor publication under the then-current task CAS. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

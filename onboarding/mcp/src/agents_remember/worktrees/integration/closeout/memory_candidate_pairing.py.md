@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T21:46+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,5 +52,15 @@ No cross-repository implementation reference applies.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py` changed since
+  the recorded verification commit. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (a pure import relocation of `resolve_memory_candidate_pair`).
+  Re-read the card against the current source: its three cited ranges (30-41, 44-55, 58-65) still
+  hold and the prose names no import path. No wording changed; verification metadata remains
+  closeout-owned.
 - 2026-08-29T21:46+02:00 — MCAR-L03: created the shared preview/apply/recovery pairing adapter.
   Verification remains closeout-owned.

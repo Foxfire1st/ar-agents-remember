@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/worktrees/task_resolver.py`     |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash |                                                         `4214d7a103dcc120481c6fe0059b322396ec9be6`|
-| lastVerifiedCommitDate |                                                         2026-09-14T07:21:45+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash |                                                         `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |                                                         2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../overview.md`                                  |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ Same-repository source and tests define the supported task-folder and series-con
 | Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names. | `iter_active_series_contracts`; `resolve_active_task_root` | mcp/src/agents_remember/worktrees/task_resolver.py:79-85; mcp/src/agents_remember/worktrees/task_resolver.py:88-114 |
 | Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist. | `resolve_leaf_enclosure_contract` | mcp/src/agents_remember/worktrees/task_resolver.py:117-144 |
 | `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. | "def resolve_leaf_ref" | mcp/src/agents_remember/worktrees/leaf_refs.py:88-88 |
-| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:105-105 |
+| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:106-106 |
 | `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. | `archive_completed_root_task` | mcp/src/agents_remember/worktrees/task_resolver.py:147-184 |
 | Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 | The package order that makes `tasks` the correct home for the vocabulary this module re-exports. | "a module in package P may import package Q only when rank(Q) < rank(P)" | layers.toml:25-25 |
@@ -113,6 +113,14 @@ No cross-repo boundary is required to explain this local resolver.
 | No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 2 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): corrected the ownership statement this card carried. The module no longer "owns the
   filesystem vocabulary for the new task layout": the ten path rules moved DOWN into the new

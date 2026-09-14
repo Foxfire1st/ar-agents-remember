@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -30,7 +30,11 @@ from `agents_remember.worktrees.modules.args`), replacing the former
 `argparse.Namespace`; `import argparse` is gone.
 
 `attach_result` rejects a series contract as a workbench, admits the ordinary leaf contract and its
-exact lifecycle location, then resolves any parent series. When a parent exists it calls
+exact lifecycle location, then resolves any parent series. The series branch itself now lives in
+`startup/series_attach.py` as `series_attach_result`, moved there verbatim under the size rail, and
+this module calls it (`:174-175`): it resumes a live series whose integration branch still exists and
+otherwise refuses with `series-terminal` (the contract's cleanup is already terminal) or
+`series-branch-missing` (the work branch is gone locally). When a parent exists it calls
 `activate_atomic_series_contract` before source-lineage projection: that call transitions the
 requested parent's OWN activation record (`reconciling`, reconcile its pinned source pair, then
 `active`) because the record is keyed per series contract, not per protected source pair. No other
@@ -49,8 +53,8 @@ takes the observation alone and returns only `atomic-series-reconciling`; a vaca
 dependencies remain with the sprint execution graph's own `predecessor-incomplete:` reasons.
 
 **The child-admission seal is gone, so this module's parent-series guards are resolution only
-(260831-LOCR seal removal).** Both call sites — `attach_result` (code line 176) and the apply-time
-start preflight inside `_plan_start_enclosure` (code line 757) — now import and call
+(260831-LOCR seal removal).** Both call sites — `attach_result` (code line 177) and the apply-time
+start preflight inside `_plan_start_enclosure` (code line 703) — now import and call
 `require_parent_series` cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330)
 instead of `require_parent_series_accepting_leaves`. The helper still resolves and validates the
 leaf's exact parent series (organizational direct-super work under a sprint graph returns `None`;
@@ -265,10 +269,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:167-207 |
-| The renamed parent-series resolver both start-side guards now call (attach at code line 176, the `_plan_start_enclosure` preflight at code line 757); it resolves and validates the exact parent series and no longer accepts or refuses leaves. | `require_parent_series`; `require_parent_series` | mcp/src/agents_remember/worktrees/modules/start.py:176-179; mcp/src/agents_remember/worktrees/modules/start.py:757-757 |
-| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-169 |
-| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:137-164; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-445 |
+| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:168-208 |
+| The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves. | "parent_series = require_parent_series("; "require_parent_series(contract, operation=\"worktree_start\")" | mcp/src/agents_remember/worktrees/modules/start.py:177-179; mcp/src/agents_remember/worktrees/modules/start.py:703-703 |
+| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
+| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:138-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-445 |
 | The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:32-113 |
 | Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
@@ -340,6 +344,29 @@ the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the series-attach
+  extraction removed 55 lines, so the two guard call sites moved to `:177` and `:703`,
+  `status_result` now spans `:138-165` and `attach_result` `:168-208`. Repointed every one of them,
+  plus the playthrough row to `:62-173`. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source
+  extracted its series-attach branch into `startup/series_attach.py` as `series_attach_result`,
+  moved verbatim and renamed, and now calls it from `attach_result` (`:174-175`). Recorded that in
+  the attach paragraph, with the two refusal states that branch owns; every other claim about this
+  module still holds and the cited ranges were re-read. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the parent-series resolver rename and the deleted seal). Re-read
+  the card: its rename claim and call-site references hold at the current source. Note that this
+  file also carries another worker's in-flight edit, so on-disk line numbers may differ from the
+  committed ones; no card claim depends on the shifted region. Verification metadata remains
+  closeout-owned.
 - 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
   `ar/260831_lifecycle-owned-completion-relay`): recorded that both start-side parent-series guards —
   `attach_result` (code line 176) and the apply-time preflight inside `_plan_start_enclosure` (code

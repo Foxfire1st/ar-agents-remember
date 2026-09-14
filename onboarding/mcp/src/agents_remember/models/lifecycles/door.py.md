@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/door.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T14:54:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,6 +101,15 @@ currentness time (worker handover: notes/reports/260902-CCR-L03-worker-delivery.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/models/lifecycles/door.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the retired contract-byte digests are stripped on load). Re-read
+  the card: it already records the journal-owned door and the retired-digest strip, and every cited
+  range matches. No wording changed; verification metadata remains closeout-owned.
 - 2026-09-11T14:54:00+02:00 — Retired contract-byte digests stay readable at code commit `76ce662a`: recorded the `model_validator(mode="before")` that strips `expectedBeforeContractSha256` / `expectedPublishedContractSha256` / `observedPublishedContractSha256` from persisted `DoorPublicationEvidence` records, so older operation journals load while every other unknown key remains an `extra_forbidden` failure. Corrected the Purpose to the journal-owned door and repointed the `DoorPublicationEvidence` range (234-253 → 244-274). Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed `closeout-door/v1` direct-dependency declaration on the immutable door generation and the new door dependency builders/currentness guards; prior disposition, identity, and provenance prose preserved.

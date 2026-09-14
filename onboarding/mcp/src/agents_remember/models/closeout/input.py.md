@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/closeout/input.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,14 +54,14 @@ See task `260821-CLIVE-L1`, especially L1-R1 through L1-R3 and L1-R5.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw observations and typed refusal vocabulary are public data. | `CloseoutMessageInput`, `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:47-55; mcp/src/agents_remember/models/closeout/input.py:79-88 |
-| Effective legs are a discriminated union. | `EnabledCloseoutLeg`, `NotApplicableCloseoutLeg` | mcp/src/agents_remember/models/closeout/input.py:99-127 |
+| Raw observations and typed refusal vocabulary are public data. | `CloseoutMessageInput`, `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:47-54; mcp/src/agents_remember/models/closeout/input.py:79-87 |
+| Effective legs are a discriminated union. | `EnabledCloseoutLeg`, `NotApplicableCloseoutLeg` | mcp/src/agents_remember/models/closeout/input.py:99-114; mcp/src/agents_remember/models/closeout/input.py:117-121 |
 | Only enabled legs can return a raw commit message; this stays the public echo. | `message_for` | mcp/src/agents_remember/models/closeout/input.py:142-146 |
 | The attribution is delegated rather than formatted here: this model imports the kernel's one renderer at `input.py:9` and calls it at `:166`; the key's single declaration and the trailer's single interpolation both live in the kernel. | `render_memory_content_message` | mcp/src/agents_remember/models/closeout/input.py:9-9; mcp/src/agents_remember/models/closeout/input.py:148-166; mcp/src/agents_remember/kernel/memory_attribution.py:56-56; mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
 | The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. | "a module in package P may import package Q only when rank(Q) < rank(P)"; `order` | layers.toml:25-25; layers.toml:32-59 |
-| The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:562-597 |
-| The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:86-117; mcp/tests/test_memory_attribution_producers.py:119-137; mcp/tests/test_memory_attribution_producers.py:55-65 |
-| The memory-content message is rendered at the commit seams through the model method: the worktree route and the direct-landing route both call `memory_content_message` (each handing it the code commit it landed), while the ledger leg keeps `message_for("ledger")` and no trailer. | `_commit_memory_content`; `_direct_memory_commit`; `_commit_ledger_mapping` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:165-167; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:270-274; mcp/src/agents_remember/worktrees/modules/closeout_external.py:241-243 |
+| The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:698-733 |
+| The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:86-116; mcp/tests/test_memory_attribution_producers.py:119-137; mcp/tests/test_memory_attribution_producers.py:55-65 |
+| The memory-content message is rendered at the commit seams through the model method: the worktree route and the direct-landing route both call `memory_content_message` (each handing it the code commit it landed), while the ledger leg keeps `message_for("ledger")` and no trailer. | `_commit_memory_content`; `_direct_memory_commit`; `_commit_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:215-275; mcp/src/agents_remember/worktrees/modules/closeout_external.py:136-196; mcp/src/agents_remember/worktrees/modules/closeout_external.py:212-251 |
 
 ## Cross-Repo References
 
@@ -69,6 +69,12 @@ No meaningful cross-repository reference applies.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
+  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
+  and were left for a reading curator. No claim wording changed; every rewritten range was read back
+  at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): the delegation moved one rank down. This model no longer names the trailer key at
   all — `input.py:9` imports `render_memory_content_message` instead of

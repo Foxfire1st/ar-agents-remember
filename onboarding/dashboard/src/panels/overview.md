@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T07:24+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -326,6 +326,17 @@ viewer change; file-level detail lives in the panel sidecars.
 260831-CCR-L18 updated the Hangar render-test fixture so its hand-built `lifecycleOperation` sample carries the new `schemaVersion` and `stateMatrixVersion` literals required by the generated mirror. File-level detail lives in that sidecar.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `dashboard/src/panels/` route changed since the recorded verification commit. Re-read the card
+  against the frozen on-disk source and re-checked its claims and cited ranges: nothing this card
+  asserts is falsified by the change, so no wording changed. Verification metadata remains
+  closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit — `sprint-graph/styles.ts` gained the `abandoned` frontier
+  variant in the dormant tone. Re-read the route card: it makes no claim about that variant, so no
+  wording changed. The drift predates this task line (the change landed with an earlier route
+  change, not with this master). Verification metadata remains closeout-owned.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `RailChatImpl`, `buildLeafContextPackage`, `findSessionForTask` repointed to dashboard/src/data/sessions.ts:596-608, dashboard/src/panels/RailChat.tsx:255-289, dashboard/src/panels/RailChat.tsx:469-537. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 

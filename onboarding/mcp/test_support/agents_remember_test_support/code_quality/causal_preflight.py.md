@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Owner outcomes and source-derived exact dependents form the causal report. | `evaluate_preflights`; `_blocked_consumers` | mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py:57-99; mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py:132-146 |
-| Candidate identity binds the complete Git working candidate. | `candidate_identity`; `_candidate_tree` | mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py:263-291 |
+| Candidate identity binds the complete Git working candidate. | `candidate_identity`; `_candidate_tree` | mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py:265-293 |
 
 ## Cross-Repo References
 
@@ -70,10 +70,20 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `PREFLIGHTS` | mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py:237-249 |
+| No meaningful cross-repository reference applies. | `PREFLIGHTS` | mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py:237-251 |
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py` changed since the
+  recorded verification commit. Re-read the card against the frozen on-disk source and re-checked
+  its claims and cited ranges: nothing this card asserts is falsified by the change, so no wording
+  changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `terminal_operation_record` owner moved to the synchronous lifecycle store, adding two lines
+  inside `PREFLIGHTS`. Repointed the `PREFLIGHTS` range (237-249 → 237-251) and the
+  `candidate_identity`/`_candidate_tree` range (263-291 → 265-293). Verification metadata remains
+  closeout-owned.
 - 2026-08-27T11:14+02:00 — Reconciled source-derived exact-node chains, observer-edge exclusion,
   same-file independent execution, and non-accepting report ownership.
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and

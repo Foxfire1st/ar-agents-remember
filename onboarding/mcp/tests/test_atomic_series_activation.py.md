@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_atomic_series_activation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
-| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -116,8 +116,8 @@ or percentage targets.
 | A release addresses only the released contract and still requires its exact selection. | `test_release_addresses_only_the_released_contract` | mcp/tests/test_atomic_series_activation.py:157-177 |
 | Another contract's record can never be adopted, in either direction, and only an explicit selecting repair recovers it. | `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:179-214 |
 | A terminal contract cannot be selected. | `test_a_terminal_contract_cannot_be_selected` | mcp/tests/test_atomic_series_activation.py:216-228 |
-| A completed pass beside a mid-flight selection is not this call's success: the state is `atomic-series-reconciling` and the summary names the stuck master, its publication time, its revision, both exits, and the pass's own message last. | `ReconcilingResultTests`; `test_a_completed_pass_beside_a_mid_flight_selection_is_not_success` | mcp/tests/test_atomic_series_activation.py:231-297; mcp/tests/test_atomic_series_activation.py:255-274 |
-| A refusal that left a record mid-flight leads with that state before the refusal's own words. | `test_a_refusal_that_left_a_record_mid_flight_leads_with_that_state`; `_reconciling_result`; `_mid_flight_summary` | mcp/tests/test_atomic_series_activation.py:276-297; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
+| A completed pass beside a mid-flight selection is not this call's success: the state is `atomic-series-reconciling` and the summary names the stuck master, its publication time, its revision, both exits, and the pass's own message last. | `ReconcilingResultTests`; `test_a_completed_pass_beside_a_mid_flight_selection_is_not_success` | mcp/tests/test_atomic_series_activation.py:231-300; mcp/tests/test_atomic_series_activation.py:255-274 |
+| A refusal that left a record mid-flight leads with that state before the refusal's own words. | `test_a_refusal_that_left_a_record_mid_flight_leads_with_that_state`; "def _reconciling_result("; "def _mid_flight_summary(" | mcp/tests/test_atomic_series_activation.py:276-300; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
 | The record identity is the contract, so the record path is keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134 |
 | A record whose fingerprint or contract path belongs to another contract is refused on read. | `_require_record_identity` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372 |
 | Only this contract's own reconciling state is projected as a waiting reason. | `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:275-287 |
@@ -132,6 +132,21 @@ No cross-repository implementation evidence is required for these local test and
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the mid-flight
+  reconciling cases this card documents are the frozen addition. Re-checked `ActivationFixture` and
+  every case range, including the reconciling class at `:231-300`: they hold. No wording changed.
+  Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  mid-flight reconciling cases since the recorded verification commit, so `ReconcilingResultTests`
+  now spans 231-300. Corrected the two reference ranges; the claims themselves were already
+  accurate. Verification metadata remains closeout-owned.
 - 2026-09-14T13:20+02:00 — Recorded the new `ReconcilingResultTests` class: a `synced` pass beside a
   `reconciling` selection returns 2 with state `atomic-series-reconciling` and a summary naming the
   master, its contract path, its publication time, its revision, both `worktree_sync` exits and the

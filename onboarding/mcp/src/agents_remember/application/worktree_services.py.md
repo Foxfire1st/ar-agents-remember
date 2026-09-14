@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/worktree_services.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ The default application bundle installs `PreparedCloseoutContinuation` and `Prep
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `build_default_worktree_services` boundary implements the preparation contract above. | "def build_default_worktree_services" | mcp/src/agents_remember/application/worktree_services.py:199-207 |
+| The current `build_default_worktree_services` boundary implements the preparation contract above. | "def build_default_worktree_services" | mcp/src/agents_remember/application/worktree_services.py:203-211 |
 
 ## Docs References
 
@@ -63,10 +63,10 @@ The cited source establishes the current contracts and boundaries described abov
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Provider translation/delegation | `ProviderLifecycleAdapter` | mcp/src/agents_remember/application/worktree_services.py:25-129 |
-| Memory-rail and memory-quality adapters | `CertificationMemoryRailsAdapter`; `MemoryQualityAdapter` | mcp/src/agents_remember/application/worktree_services.py:132-174 |
-| The citation guard delegates terminal namespace protection. | `CitationGuardAdapter` | mcp/src/agents_remember/application/worktree_services.py:184-196 |
-| The default bundle composes the declared worktree services. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:199-207 |
+| Provider translation/delegation | `ProviderLifecycleAdapter` | mcp/src/agents_remember/application/worktree_services.py:33-139 |
+| Memory-rail and memory-quality adapters | `CertificationMemoryRailsAdapter`; `MemoryQualityAdapter` | mcp/src/agents_remember/application/worktree_services.py:140-187 |
+| The citation guard delegates terminal namespace protection. | `CitationGuardAdapter` | mcp/src/agents_remember/application/worktree_services.py:188-202 |
+| The default bundle composes the declared worktree services. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:203-211 |
 | The canonical binding owner installs the explicit service bundle. | `bind_worktree_services` | mcp/src/agents_remember/worktrees/services.py:181-184 |
 
 ## Cross-Repo References
@@ -79,6 +79,19 @@ No separate cross-repository protocol is established by this file. The configure
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  prepared-certification adapter import moved to the closeout plane. Re-read every cited range
+  against the frozen source: the adapter and bundle ranges hold as the earlier entry records, and no
+  claim names the moved module. No wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/application/worktree_services.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved the
+  prepared-certification adapter import to the closeout plane. Re-derived the adapter and bundle
+  ranges against the current source (they were offset before this diff as well); no claim text
+  changed. Verification metadata remains closeout-owned.
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=179eb40af2203494e4402efc7bf9c478d044c3199ce787062c6f7a990eff576e; verification metadata remains unchanged because commit-owned realization is pending.
 
 

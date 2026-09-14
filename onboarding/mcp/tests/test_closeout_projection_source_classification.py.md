@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_projection_source_classification.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T14:20+02:00 |
-| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2`|
-| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -106,12 +106,12 @@ repository's own source and its own declared refusal codes.
 | The real raiser refuses the sprint's own authored graph, and its declared code classifies `invalid`. | `test_a_graph_past_its_bound_refuses_by_its_own_declared_code` | mcp/tests/test_closeout_projection_source_classification.py:59-86 |
 | The ordinary source stays readable with no problems, and unreadable sources still report `unreadable`. | `test_an_unreadable_source_and_the_ordinary_case_are_unchanged` | mcp/tests/test_closeout_projection_source_classification.py:89-100 |
 | Every declared capacity code classifies `invalid`. | `test_every_declared_capacity_code_classifies_as_invalid` | mcp/tests/test_closeout_projection_source_classification.py:103-108 |
-| The classification the module pins: membership of the declared set, with the other vocabularies' markers untouched. | `_problem`; "error_type in CAPACITY_REFUSAL_CODES" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:835-856 |
-| The single declaration that owns the capacity codes and their classification. | `CAPACITY_REFUSAL_CODES`; `MASTER_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:26-40 |
+| The classification the module pins: membership of the declared set, with the other vocabularies' markers untouched. | `_problem`; "error_type in CAPACITY_REFUSAL_CODES" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:835-863 |
+| The single declaration that owns the capacity codes and their classification. | `CAPACITY_REFUSAL_CODES`; `MASTER_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:34-34; mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:38-40 |
 | The raiser that publishes the code the first case reads back. | `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:165-174 |
-| The fixture this module composes instead of rebuilding the world. | `QueueFixture`; `REPO`; `SPRINT` | mcp/tests/test_closeout_queue.py:186-727 |
-| The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:307-307; mcp/tests/evidence-lifecycle.toml:366-366 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:137-137 |
+| The fixture this module composes instead of rebuilding the world. | `QueueFixture`; `REPO`; `SPRINT` | mcp/tests/test_closeout_queue.py:56-57; mcp/tests/test_closeout_queue.py:186-727 |
+| The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:138-138 |
 
 ## Cross-Repo References
 
@@ -126,6 +126,25 @@ by this focused module.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (flag resolved): the code worktree is frozen, so
+  the earlier flag is now measured rather than conditional. `mcp/tests/evidence-lifecycle.toml`
+  carries the inserted `checkpoint_landing_test_support.py` artifact block at `:342-361`, which
+  leaves `path = "mcp/tests/curator_coherence_test_support.py"` at `:363` — the position this row
+  already cites — and `path = "mcp/tests/closeout_input_test_support.py"` at `:283`. The pair
+  `283-283` / `363-363` is confirmed against the frozen tree, and the flag above stands as the
+  record of the interim state it described. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this row cites the
+  curator-coherence artifact path at `mcp/tests/evidence-lifecycle.toml:363`, which is its position
+  in the current working tree, where the in-flight `checkpoint_landing_test_support.py` artifact
+  block sits above it. The committed HEAD still carries that path at `:343`; the two forms differ
+  only by that uncommitted insertion, so the citation is correct for the tree this leaf is being
+  curated against and must be re-measured if the insertion does not land. Flagged rather than
+  silently chosen; verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
+  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T14:20+02:00 — 260913-LCA-L7 curator (uncommitted change set on `ar/260913-lca-l7`):
   created this one-to-one sidecar for the leaf's new integration module. Recorded the measured defect
   it pins (a capacity code spelling `capacity-exceeded` never matched the `cap-exceeded` substring the

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-14T11:58+02:00|
-| lastVerifiedCommitHash | `91a2a6e1d6b198a97a8de7eed3c2eed530aa0c55` |
-| lastVerifiedCommitDate | 2026-09-14T12:22:32+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -375,6 +375,22 @@ own first row). The preview/apply parity invariant this repair came from is inve
 recorded on the worktrees route and on the `integration_ref_transaction.py` card.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route's only change
+  is inside `closeout/preparation/memory_output.py` (its git call now passes
+  `GitRunnerOptions(input_text=…)`). Re-read the overview: it names neither that module nor the
+  runner, and its live-door and shared-renderer statements still hold. No wording changed.
+  Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/worktrees/integration/` route changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit (`closeout/preparation/memory_output.py`). Re-read the route
+  card: it makes no claim about that module, and its existing statements about the shared renderer
+  and the live door read still hold. No wording changed; verification metadata remains
+  closeout-owned.
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
   `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's checkpoint/landing paragraph, which
   described the L34 shape as current. The ledger-preservation check is **removed** by the developer's

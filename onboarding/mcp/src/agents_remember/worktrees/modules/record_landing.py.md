@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/modules/record_landing.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ It is `worktree_record_landing`'s domain half, reached through the MCP tool of t
 
 ### Logic
 
-`record_landing_result(args)` cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-131)
+`record_landing_result(args)` cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-143)
 refuses unless the call is approved or a dry run
 cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:60-60),
 loads the contract, and then short-circuits to `already-recorded` when the cell already records a
@@ -42,7 +42,7 @@ It then requires the landed commit cit:(["requires landed_code_commit"], mcp/src
 and resolves the branches that commit may legitimately have landed on. Both shapes occur: a master
 integrates into its recorded source branch (the super branch), while a task whose branch was merged
 straight to the protected default bypasses super entirely — which is what happened to
-`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:32-48)
+`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:32-46)
 therefore returns the recorded `code_source_branch` plus `main` when it exists locally, keeping only
 targets that are actually present.
 
@@ -56,7 +56,7 @@ call bundles its landed facts into the shared `LandedIntegration` record (the sa
 routes build) and appends no `checkpoint` flag, so this route still records a final landing
 cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68).
 
-The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:49-57)
+The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:49-55)
 rather than by `status_payload`. That is deliberate: this operation has no worktree or provider state
 to report, and avoiding the status payload keeps the operation callable and unit-testable without
 bound worktree services.
@@ -119,10 +119,10 @@ repository-internal git and contract semantics, so the retained source is the di
 | The local route that already recorded its own landing. | "def _integrated_result(" | mcp/src/agents_remember/worktrees/modules/integrate.py:598-633 |
 | The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. | "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/modules/record_landing.py:70-70 |
 | The summary the checkpointed half returns, naming the still-open series and the route that completes it. | "This contract already records a checkpointed integration" | mcp/src/agents_remember/worktrees/modules/record_landing.py:80-80 |
-| Cleanup refuses until the cell this route sets reads completed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:665-665 |
-| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". | `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:93-150 |
-| The MCP tool and payload that expose this operation. | `worktree_record_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:204-229 |
-| The application-layer entry point that confines the contract and builds the arguments. | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:466-502 |
+| Cleanup refuses until the cell this route sets reads completed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669 |
+| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". | `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:97-154 |
+| The MCP tool and payload that expose this operation. | `worktree_record_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:211-236 |
+| The application-layer entry point that confines the contract and builds the arguments. | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:502-536 |
 | The PR landing-tail recording step in operator doctrine. | `worktree_record_landing` | system/git-workflow.md:48-56 |
 
 ## Cross-Repo References
@@ -135,6 +135,12 @@ is recorded rather than queried at decision time, so no live external boundary i
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 6 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
   260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting the
   `integration_status` refusal read from line 664 to 665. The anchor was re-read at

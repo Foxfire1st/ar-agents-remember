@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/kernel/memory_attribution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash |  `52875e7a8695fc7b67bff21ebb07a67268213967`|
-| lastVerifiedCommitDate |  2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -39,35 +39,35 @@ does not retire the tracked ledger commit — see the boundary note under `Invar
 
 ### Logic
 
-`attributed_commits` cit:([`attributed_commits`], mcp/src/agents_remember/kernel/memory_attribution.py:119-150) is one
+`attributed_commits` cit:([`attributed_commits`], mcp/src/agents_remember/kernel/memory_attribution.py:148-179) is one
 `git log --date-order -z --format=%H%n%(trailers:key=Code-Commit,valueonly) <tip> [^<exclude>]`
-cit:([`_LOG_FORMAT`], mcp/src/agents_remember/kernel/memory_attribution.py:60-60). Git's own trailer machinery renders the value, and
+cit:([`_LOG_FORMAT`], mcp/src/agents_remember/kernel/memory_attribution.py:61-61). Git's own trailer machinery renders the value, and
 `-z` makes every record NUL-terminated so a message can never split into a second record.
-`_attributed_records` cit:([`_attributed_records`], mcp/src/agents_remember/kernel/memory_attribution.py:153-159) reads the object
+`_attributed_records` cit:([`_attributed_records`], mcp/src/agents_remember/kernel/memory_attribution.py:182-188) reads the object
 name from a record's first line and passes the remaining value lines to
-`_trailer_value_from` cit:([`_trailer_value_from`], mcp/src/agents_remember/kernel/memory_attribution.py:162-175), which maps each line
-through `_TRAILER_LINE` cit:([`_TRAILER_LINE`], mcp/src/agents_remember/kernel/memory_attribution.py:65-68) — the key anchored at the line
+`_trailer_value_from` cit:([`_trailer_value_from`], mcp/src/agents_remember/kernel/memory_attribution.py:191-204), which maps each line
+through `_TRAILER_LINE` cit:([`_TRAILER_LINE`], mcp/src/agents_remember/kernel/memory_attribution.py:66-69) — the key anchored at the line
 start, case-insensitively, followed by an object name of 4-64 hex characters. Only a line that is an
 object name counts, so a value git emitted for a differently shaped trailer is not an attribution,
 and the **last** match wins, which is what `%(trailers:key=...)` and
 `git interpret-trailers --parse` report.
 
 A commit with no trailer is still returned, as `AttributedCommit(memory_commit, None)`
-cit:([`AttributedCommit`], mcp/src/agents_remember/kernel/memory_attribution.py:76-100), because "I read this commit and it
+cit:([`AttributedCommit`], mcp/src/agents_remember/kernel/memory_attribution.py:104-129), because "I read this commit and it
 attributes nothing" is a different fact from "I did not read this commit".
-`ledger_rows_from_attribution` cit:([`ledger_rows_from_attribution`], mcp/src/agents_remember/kernel/memory_attribution.py:184-203)
+`ledger_rows_from_attribution` cit:([`ledger_rows_from_attribution`], mcp/src/agents_remember/kernel/memory_attribution.py:213-232)
 turns the walk into rows: one row per attributed commit, newest first, with no sort of its own —
 the walk arrives in `git log` order, which is the order the ledger records, so this is a map, and a
 commit that attributes nothing contributes nothing.
 
-`AttributedCommit.row(code_repository=...)` cit:([`AttributedCommit.row`], mcp/src/agents_remember/kernel/memory_attribution.py:86-100)
+`AttributedCommit.row(code_repository=...)` cit:(["def row(self"], mcp/src/agents_remember/kernel/memory_attribution.py:115-130)
 applies the second truth test: a trailer naming a commit the code repository does not hold is not a
 mapping, which is the same test the projection already applies to every row it keeps.
-`code_commit_exists` cit:([`code_commit_exists`], mcp/src/agents_remember/kernel/memory_attribution.py:178-181) is the one
+`code_commit_exists` cit:([`code_commit_exists`], mcp/src/agents_remember/kernel/memory_attribution.py:207-210) is the one
 `git cat-file -e <commit>^{commit}` definition in the package —
-`worktrees/ledger_projection.code_commit_exists` cit:([`code_commit_exists`], mcp/src/agents_remember/worktrees/ledger_projection.py:404-407)
+`worktrees/ledger_projection.code_commit_exists` cit:([`code_commit_exists`], mcp/src/agents_remember/worktrees/ledger_projection.py:483-486)
 now delegates to it instead of repeating the test.
-`MemoryAttributionError` cit:([`MemoryAttributionError`], mcp/src/agents_remember/kernel/memory_attribution.py:71-72) is the refusal for a
+`MemoryAttributionError` cit:([`MemoryAttributionError`], mcp/src/agents_remember/kernel/memory_attribution.py:100-101) is the refusal for a
 history that cannot be walked at all; the caller converts it into its own remedy-bearing refusal,
 which is how the projection keeps one refusal vocabulary.
 
@@ -127,7 +127,7 @@ surface.** The first version of this change set declared the key twice — here,
 constant comment, and again as a literal in `models/closeout/input.py` — while the comment claimed the
 model imported it. The failure that shape produces is the worst one available: a writer emitting
 trailers the reader silently ignores looks like "no attribution exists" rather than like a bug. The L2
-fix made `models/closeout/input.py` import the key cit:([`CODE_COMMIT_TRAILER_KEY`], mcp/src/agents_remember/models/closeout/input.py:9-9) and delete its own literal, so
+fix made `models/closeout/input.py` import the key cit:([`CODE_COMMIT_TRAILER_KEY`], mcp/src/agents_remember/kernel/memory_attribution.py:56-56) and delete its own literal, so
 `grep -rn '"Code-Commit"' --include=*.py mcp/` returned exactly one hit, this module's declaration
 cit:([`CODE_COMMIT_TRAILER_KEY`], mcp/src/agents_remember/kernel/memory_attribution.py:56-56). The L4 pass closed the
 remaining hole: that model no longer names the key at all — it imports and calls
@@ -213,17 +213,17 @@ Documentation source for this code repository, so no external document is cited 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The one **writer** of the trailer: the caller's body verbatim, a blank line, and the attribution as its own final block — the shape a public multi-paragraph commit message requires. | `render_memory_content_message` | mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
-| The one reader of the attribution: one `git log` record per reachable commit, the trailer value from git's own trailer machinery, the last object name winning. | `attributed_commits`; `_LOG_FORMAT`; `_attributed_records`; `_trailer_value_from`; `_TRAILER_LINE` | mcp/src/agents_remember/kernel/memory_attribution.py:148-179; mcp/src/agents_remember/kernel/memory_attribution.py:61-61; mcp/src/agents_remember/kernel/memory_attribution.py:182-188; mcp/src/agents_remember/kernel/memory_attribution.py:191-204; mcp/src/agents_remember/kernel/memory_attribution.py:66-69 |
-| One row per attributed commit, newest first, with the code-commit truth test applied where the row is created. | `ledger_rows_from_attribution`; `AttributedCommit`; `AttributedCommit.row` | mcp/src/agents_remember/kernel/memory_attribution.py:213-232; mcp/src/agents_remember/kernel/memory_attribution.py:104-118; mcp/src/agents_remember/kernel/memory_attribution.py:115-129 |
+| The one reader of the attribution: one `git log` record per reachable commit, the trailer value from git's own trailer machinery, the last object name winning. | `attributed_commits`; `_LOG_FORMAT`; `_attributed_records`; `_trailer_value_from`; `_TRAILER_LINE` | mcp/src/agents_remember/kernel/memory_attribution.py:61-61; mcp/src/agents_remember/kernel/memory_attribution.py:148-179; mcp/src/agents_remember/kernel/memory_attribution.py:182-188; mcp/src/agents_remember/kernel/memory_attribution.py:191-204; mcp/src/agents_remember/kernel/memory_attribution.py:66-69 |
+| One row per attributed commit, newest first, with the code-commit truth test applied where the row is created. | `ledger_rows_from_attribution`; `AttributedCommit`; `AttributedCommit.row` | mcp/src/agents_remember/kernel/memory_attribution.py:104-129; mcp/src/agents_remember/kernel/memory_attribution.py:213-232; mcp/src/agents_remember/kernel/memory_attribution.py:115-129 |
 | The message-level reader, used where the caller holds a message instead of a repository. | `parse_code_commit_trailer` | mcp/src/agents_remember/kernel/memory_attribution.py:132-145 |
-| The single `cat-file -e` object test, which the projection's own `code_commit_exists` now delegates to. | `code_commit_exists` | mcp/src/agents_remember/kernel/memory_attribution.py:207-210; mcp/src/agents_remember/worktrees/ledger_projection.py:404-407 |
-| The refusal for a history that cannot be walked, which the projection converts into a remedy-bearing `LedgerProjectionRefusal`. | `MemoryAttributionError`; `read_ledger_source` | mcp/src/agents_remember/kernel/memory_attribution.py:100-101; mcp/src/agents_remember/worktrees/ledger_projection.py:279-311 |
-| The row type this module produces and the ledger format it never writes. | `LedgerRow` | mcp/src/agents_remember/kernel/memory_ledger.py:23-25 |
+| The single `cat-file -e` object test, which the projection's own `code_commit_exists` now delegates to. | "def code_commit_exists(repository: Path, commit: str)"; "def code_commit_exists(" | mcp/src/agents_remember/kernel/memory_attribution.py:207-210; mcp/src/agents_remember/worktrees/ledger_projection.py:483-486 |
+| The refusal for a history that cannot be walked, which the projection converts into a remedy-bearing `LedgerProjectionRefusal`. | "class MemoryAttributionError(RuntimeError):"; "def read_ledger_source(" | mcp/src/agents_remember/kernel/memory_attribution.py:100-101; mcp/src/agents_remember/worktrees/ledger_projection.py:302-350 |
+| The row type this module produces and the ledger format it never writes. | `LedgerRow` | mcp/src/agents_remember/kernel/memory_ledger.py:28-31 |
 | The key is this module's declaration and, since 260913-LCA-L4, no production module spells it as a quoted literal: the writing model reaches the renderer instead of naming the constant. | `CODE_COMMIT_TRAILER_KEY`; `render_memory_content_message` | mcp/src/agents_remember/kernel/memory_attribution.py:56-56; mcp/src/agents_remember/kernel/memory_attribution.py:72-97; mcp/src/agents_remember/models/closeout/input.py:9-9; mcp/src/agents_remember/models/closeout/input.py:166-166 |
 | The layer contract that fixes the import direction: the ordered packages, and the rule that a package may import only a lower rank. `kernel` is rank 1 and `models` rank 2, so models may import kernel and not the reverse. | "a module in package P may import package Q only when rank(Q) < rank(P)"; "The strict order, low to high. Position in this list IS the rank."; `order` | layers.toml:25-25; layers.toml:29-31; layers.toml:32-59 |
-| The round trip that proves the writer's key and the reader's key are ONE key: the real writer renders the trailer, the message is committed as a real memory commit, and the real reader resolves the code commit out of it. The case restates no key literal, because a test that compared a literal against a literal could not catch a changed constant. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:562-597 |
-| The one-definition and producer census the L4 leaf enforces from source: the key identifier and its interpolation in exactly one production module, and each of the five producers reaching a shared renderer entry. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:86-138; mcp/tests/test_memory_attribution_producers.py:119-138; mcp/tests/test_memory_attribution_producers.py:55-65 |
-| The append-as-final-block dialect the renderer owes a public message argument, proved byte for byte with a hostile multi-paragraph body. | `test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final` | mcp/tests/test_memory_attribution_producers.py:140-163 |
+| The round trip that proves the writer's key and the reader's key are ONE key: the real writer renders the trailer, the message is committed as a real memory commit, and the real reader resolves the code commit out of it. The case restates no key literal, because a test that compared a literal against a literal could not catch a changed constant. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:698-733 |
+| The one-definition and producer census the L4 leaf enforces from source: the key identifier and its interpolation in exactly one production module, and each of the five producers reaching a shared renderer entry. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:86-116; mcp/tests/test_memory_attribution_producers.py:119-137; mcp/tests/test_memory_attribution_producers.py:55-65 |
+| The append-as-final-block dialect the renderer owes a public message argument, proved byte for byte with a hostile multi-paragraph body. | `test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final` | mcp/tests/test_memory_attribution_producers.py:140-162 |
 | The closeout-shaped way in to the renderer: the model method that delegates and no longer names the key. | `memory_content_message` | mcp/src/agents_remember/models/closeout/input.py:148-166 |
 
 ## Cross-Repo References
@@ -234,10 +234,22 @@ reader path that makes it the memory history's own record.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source-ledger reader is the one caller that feeds this module's rows into the projection, at the commit `resolve_memory_source_commit` resolves from the contract. | `read_ledger_source`; `resolve_memory_source_commit` | mcp/src/agents_remember/worktrees/ledger_projection.py:279-311; mcp/src/agents_remember/worktrees/ledger_projection.py:251-276 |
+| The source-ledger reader is the one caller that feeds this module's rows into the projection, at the commit `resolve_memory_source_commit` resolves from the contract. | `read_ledger_source`; `resolve_memory_source_commit` | mcp/src/agents_remember/worktrees/ledger_projection.py:302-350; mcp/src/agents_remember/worktrees/ledger_projection.py:274-299 |
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of
+  11 claim(s) whose anchor no longer sat in its cited range and normalised 8 further range(s) in
+  this card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): this module stopped being read-only. `render_memory_content_message(body,
   code_commit)` (`:72-97`) is now the **one** writer of the trailer, placed beside the one key literal

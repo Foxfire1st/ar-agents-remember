@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-09-14T18:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -118,7 +118,7 @@ package's production-path regression matrix.
 | `_run_git` calls this runner with `GIT_METADATA_TIMEOUT_SECONDS` and converts `TimeoutExpired`/`OSError` into `AuthorityError`/`RouteIndexCensusError`; `_nul_records` splits its NUL-delimited stdout. | `_run_git`; `_nul_records` | mcp/src/agents_remember/kernel/route_index_census.py:193-213; mcp/src/agents_remember/kernel/route_index_census.py:225-231 |
 | Carryover no longer defines its own input-bearing adapter: `require_git` delegates to `run_git`, and `patch_id` is one of the callers that passes `input_text`. | `require_git`; `patch_id` | mcp/src/agents_remember/memory/carryover.py:114-122; mcp/src/agents_remember/memory/carryover.py:186-197 |
 | The option object that replaced the three keyword arguments, including the `identity` names `git commit-tree` can only be told by environment. | `GitRunnerOptions` | mcp/src/agents_remember/kernel/git_command.py:115-128 |
-| The history rewrite that is the reason `identity` exists: it replays the author, committer and both timestamps through `GitRunnerOptions.identity` so a rebuilt commit differs from its original in its trailer alone. | `_identity`; `_IDENTITY_FIELDS` | mcp/src/agents_remember/kernel/memory_backfill.py:821-834; mcp/src/agents_remember/kernel/memory_backfill.py:106-106 |
+| The history rewrite that is the reason `identity` exists: it replays the author, committer and both timestamps through `GitRunnerOptions.identity` so a rebuilt commit differs from its original in its trailer alone. | `_identity`; `_IDENTITY_FIELDS` | mcp/src/agents_remember/kernel/memory_backfill.py:106-106; mcp/src/agents_remember/kernel/memory_backfill.py:821-834 |
 | The callers migrated to the option object, one per shape: `work_dir`, `input_text`, and a named timeout class. | `GitRunnerOptions` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:350-363; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:638-653; mcp/src/agents_remember/kernel/git_facts.py:79-83 |
 
 
@@ -147,7 +147,7 @@ Binary configuration, commit, blob and tree readers preserve exact bytes. Privat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `GitCommandPlan` owns the corresponding behavior described above. | `GitCommandPlan` | `mcp/src/agents_remember/kernel/git_command.py:98-104` |
+| `GitCommandPlan` owns the corresponding behavior described above. | `GitCommandPlan` | mcp/src/agents_remember/kernel/git_command.py:98-104 |
 | `_GitRun` owns the corresponding behavior described above. | `_GitRun` | mcp/src/agents_remember/kernel/git_command.py:107-112 |
 | `admit_git_closeout_publication` owns the corresponding behavior described above. | `admit_git_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:675-685 |
 | `inspect_git_closeout_publication` owns the corresponding behavior described above. | `inspect_git_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:688-698 |
@@ -156,6 +156,11 @@ Binary configuration, commit, blob and tree readers preserve exact bytes. Privat
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 3 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
   `ar/260913-lca-l3-ar`, base `7317108b`): No content impact on this module — the reviewed fix to the
   memory-history backfill changed only `kernel/memory_backfill.py`, `cli/memory_backfill.py`, its test
@@ -206,9 +211,9 @@ Recorded the current private preparation/publication ownership from source. Exis
 - 2026-07-31T20:50+02:00 — 260731-EFA-L3 curator: this file became the single owner, so the body
   was rewritten. Corrected the false "enforces a five-second timeout" claim: `run_git` now takes
   `timeout` and defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`, with `GIT_REMOTE_TIMEOUT_SECONDS =
-  120` and `GIT_METADATA_TIMEOUT_SECONDS = 30` as the other two classes cit:(["GIT_REMOTE_TIMEOUT_SECONDS = 120"], mcp/src/agents_remember/kernel/git_command.py:72-72), and callers pick
+  120` and `GIT_METADATA_TIMEOUT_SECONDS = 30` as the other two classes cit:(["GIT_REMOTE_TIMEOUT_SECONDS = 120"], mcp/src/agents_remember/kernel/git_command.py:93-93), and callers pick
   one. Corrected the unconditional `stdin=DEVNULL` claim: stdin is `DEVNULL` only when the new
-  `input_text` keyword is `None` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151). Recorded the consolidation (six drifted `_run_git`
+  `input_text` keyword is `None` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213). Recorded the consolidation (six drifted `_run_git`
   copies removed, this the only module that may spawn git) in Purpose and as a new invariant.
   Repaired 2 citations into files this leaf changed: the census row's whole-file `L1-L226` became
   `L189-L205; L217-L223` (`_run_git` + `_nul_records`), and the carryover row's unanchored "Git

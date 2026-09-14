@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:58:25+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,12 +56,12 @@ The configured Domain Documentation registry has no entries. The source below es
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The request/result separate prepared inputs from observed candidate and authority records. | `CandidateObservationRequest`; `ObservedCertificationCandidate` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:48-53; mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:57-59 |
-| Canonical input snapshots and structured refusal preserve real nested evidence. | `_snapshot`; `_finding_value`; `refuse` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:62-69; mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:72-80; mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:83-94 |
-| Task/door authority, generated declarations and semantic projections are assembled from actual owners. | `observe_certification_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:97-189 |
-| Mutation authority binds effective input and the actual memory work branch. | `_mutation_authority` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:192-210 |
-| The linked checkout, prepared index and add-all tree must agree. | `_worktree_rules` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:213-246 |
-| Every source edge is current, ancestral and unchanged across paired ref observations. | `_source_authority` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:249-294 |
+| The request/result separate prepared inputs from observed candidate and authority records. | `CandidateObservationRequest`; `ObservedCertificationCandidate` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:49-54; mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:58-60 |
+| Canonical input snapshots and structured refusal preserve real nested evidence. | `_snapshot`; `_finding_value`; `refuse` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:63-70; mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:73-81; mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:84-95 |
+| Task/door authority, generated declarations and semantic projections are assembled from actual owners. | `observe_certification_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:98-194 |
+| Mutation authority binds effective input and the actual memory work branch. | `_mutation_authority` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:197-215 |
+| The linked checkout, prepared index and add-all tree must agree. | `_worktree_rules` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:218-251 |
+| Every source edge is current, ancestral and unchanged across paired ref observations. | `_source_authority` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:254-299 |
 
 ## Cross-Repo References
 
@@ -76,6 +76,20 @@ No cross-repository implementation or external protocol is owned here.
 Certification observation now binds `admittedMemoryTree` from the closeout door's memory candidate tree and omits it when no tree is admitted, preserving legacy authority projections while recording the fresh memory-tree owner.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the live-door import
+  shift was already re-derived. Re-checked all nine ranges against the frozen file
+  (`observe_certification_candidate` `:98-194`, `_mutation_authority` `:197`): they hold. No wording
+  changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py` changed
+  since the recorded verification commit. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  `live_closeout_door` import and now reads the door live, shifting every definition below by one
+  line. Re-derived all nine cited ranges against the current source. No claim text changed;
+  verification metadata remains closeout-owned.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Certification observation now binds `admittedMemoryTree` from the closeout door's memory candidate tree and omits it when no tree is admitted, preserving legacy authority projections while recording the fresh memory-tree owner.
 
 - 2026-09-06T14:58:25+00:00 — Created after full source review at `c69d5171187fa1957025e393270db9f5a864ab14`. Records current implementation and remaining composition boundaries; source verification is not gate execution, delivery or acceptance.

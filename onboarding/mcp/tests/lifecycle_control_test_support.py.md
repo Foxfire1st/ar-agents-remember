@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/lifecycle_control_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,9 +25,9 @@ Provides public lifecycle-control helpers for tests that own a current generatio
 Builders preserve canonical generation, contract, worker and control identity. Existing door scheduling provenance supplies the judgment ID when present; the explicit standalone case detaches only the asserted singleton fixture sprint through the task store before returning master-scoped caller authority. This support module has no collected tests and does not itself establish coverage.
 
 Since 260831-CCR (commit `99dc249b`) the completed-disposition authority helper
-`publish_completed_disposition_task_authority` (line 39) builds the leaf through the real
+`publish_completed_disposition_task_authority` (line 40) builds the leaf through the real
 JSON-primary store and stamps a current route review via
-`build_route_review(contract, ResolvedTaskDocument(...), payload, now=...)` (line 87-93): the leaf
+`build_route_review(contract, ResolvedTaskDocument(...), payload, now=...)` (lines 92-107): the leaf
 document is read/updated through `read_task_doc`/the task store when present or created through
 `json_path_for` + `write_task_doc`, and the review is built with a fixed `now` instead of a
 hand-authored candidate tree. The stamped `RouteReviewRecord` carries the canonical
@@ -56,7 +56,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
+| No external domain source is required for this repository-owned test contract. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-255 |
 
 ## Repo-Internal References
 
@@ -64,9 +64,9 @@ The helper source establishes fixture construction; retained consumer assertions
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixed fixture judgment is used only when no selected door supplies scheduling provenance. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
-| Completed-disposition task authority is built through the store and a fixed-now route review. | "def publish_completed_disposition_task_authority(" | mcp/tests/lifecycle_control_test_support.py:39-198 |
-| Completed task authority derives the typed candidate reference inside the store-backed publication. | "def publish_completed_disposition_task_authority(" | mcp/tests/lifecycle_control_test_support.py:39-198 |
+| The fixed fixture judgment is used only when no selected door supplies scheduling provenance. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-255 |
+| Completed-disposition task authority is built through the store and a fixed-now route review. | "def publish_completed_disposition_task_authority(" | mcp/tests/lifecycle_control_test_support.py:40-199 |
+| Completed task authority derives the typed candidate reference inside the store-backed publication. | "def publish_completed_disposition_task_authority(" | mcp/tests/lifecycle_control_test_support.py:40-199 |
 
 ## Cross-Repo References
 
@@ -74,7 +74,7 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
+| No meaningful cross-repository reference applies. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-255 |
 
 ## CCR-R02@v2 Intent-Bound Fixture Reviews
 
@@ -85,6 +85,19 @@ Part of the landed L25 candidate `99dc249b`.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the live-door swap is the
+  frozen change and the earlier entry records it. Re-checked the fixture-judgment fallback at
+  `:48-50` and the fixed-`now` review builder at `:92-107`: they hold. No wording changed.
+  Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/tests/lifecycle_control_test_support.py` changed since the recorded verification commit.
+  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
+  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
+  remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  `live_closeout_door` import and now reads the door live. Re-derived the helper line references and
+  every cited range against the current source (the module is now 255 lines). No claim text changed;
+  verification metadata remains closeout-owned.
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=2cb7e45718692cdac660fd95989334e883bcef26b048e34ee0290ecfd5dc59e3; verification metadata remains unchanged because commit-owned realization is pending.
 
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,16 +29,16 @@ A new generation is allowed only after the prior one is terminal and exact contr
 Since 260831-CCR (commit `99dc249b`) admission binds canonical task intent into the candidate
 identity and refuses legacy absence:
 
-- `prevalidate_closeout_operation_admission` (line 89-110) obtains the current door task intent
-  (`current_door_task_intent(contract)`, line 100) and feeds it into the
+- `prevalidate_closeout_operation_admission` (lines 85-121) obtains the current door task intent
+  (`current_door_task_intent(contract)`, line 106) and feeds it into the
   `LifecycleOperationCandidateBinding.task_intent` so the durable candidate fingerprint covers the
-  exact intent bytes (line 110).
-- `resolve_closeout_operation_admission` (line 113-131) treats a missing-intent current generation
+  exact intent bytes (line 116).
+- `resolve_closeout_operation_admission` (lines 122-152) treats a missing-intent current generation
   as not resumable: once it is completed/failed/cancelled, the missing-intent branch becomes
-  unreusable (line 128-131).
-- `_validate_existing_closeout_request` (line 136-202) propagates the candidate task intent into
-  the recovered candidate (line 187-193) and the rebuilt binding (line 200-201).
-- `_current_operation_task_intent` (line 311-321) re-asserts exact currentness, raising
+  unreusable (lines 134-137).
+- `_validate_existing_closeout_request` (lines 162-209) propagates the candidate task intent into
+  the recovered candidate (lines 191-191) and the rebuilt binding (lines 205-205).
+- `_current_operation_task_intent` (lines 319-330) re-asserts exact currentness, raising
   `lifecycle-operation-task-intent-stale` with `next_action=retire-and-republish` when the
   retained generation binds different intent.
 
@@ -63,10 +63,10 @@ See task `260821-CLIVE-L1` L1-R2, L1-R3, L1-R5, and L1-R6.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:79-115 |
-| Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:113-131 |
-| Recovery identity admits only original or exact finalized publication. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:250-269 |
-| Currentness re-assertion for retained closeout candidates. | `_current_operation_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:311-321 |
-| The door-intent currentness source. | `current_door_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:69-85 |
+| Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:122-152 |
+| Recovery identity admits only the accepted candidate state or the exact finalized contract hash. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:255-272 |
+| Currentness re-assertion for retained closeout candidates. | `_current_operation_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:319-330 |
+| The door-intent currentness source. | `current_door_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:70-86 |
 | The candidate binding field carrying the exact intent into the durable fingerprint. | `task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:26-37 |
 
 ## Cross-Repo References
@@ -85,10 +85,12 @@ The current source seams include `CloseoutOperationAdmission`, `CloseoutAdmissio
 
 ## 260821-CLIVE Door-Bound Admission Identity
 
-Closeout admission now requires a door and binds the exact door generation id through
-`LifecycleOperationCandidateBinding`. The generation fingerprint therefore changes when the door
-changes even if code tree and other inputs do not. Existing-generation replay compares the
-journal-retained door publication id; a projection member cannot substitute for it.
+Closeout admission no longer requires a door. `_current_door_generation_id` returns the live door's
+generation id or `None`, so a fresh admission with no live door binds no generation id and the
+operation's own journal supplies one once it publishes; the generation fingerprint therefore still
+changes when the door changes, even if the code tree and other inputs do not. Existing-generation
+replay compares the journal-retained door publication id; a projection member cannot substitute
+for it.
 
 ## CCR-R02@v2 Intent-Bound Admission
 
@@ -103,6 +105,20 @@ The immutable operation input includes the supplied typed corrective disposition
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): every line number in this
+  card was off, and the previous entry's "the cited ranges still hold" was therefore wrong —
+  recorded plainly rather than quietly overwritten. Re-read the frozen source and repointed all of
+  them: `prevalidate_closeout_operation_admission` 85-121 (call at 106, binding at 116),
+  `resolve_closeout_operation_admission` 122-152 (unreusable branch 134-137),
+  `_validate_existing_closeout_request` 162-209 (191, 205), `_require_recovery_identity` 255-272,
+  `_current_operation_task_intent` 319-330, and `current_door_task_intent` at
+  `task_intent_identity.py:70-86`. The claims themselves are unchanged. Verification metadata
+  remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit — a fresh admission no longer requires a door and the recovery
+  identity no longer admits the door-publication contract hash. Corrected the recovery-identity
+  reference row and the door-bound admission section; the cited ranges still hold. Verification
+  metadata remains closeout-owned.
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=3df722ca9b22167bf059068105a0de4468d1624744fd1999f25f75eec678b33e; verification metadata remains unchanged because commit-owned realization is pending.
 
 

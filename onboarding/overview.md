@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 
 > **Status:** active baseline
 
@@ -883,6 +883,17 @@ integration branch also changed: it now requires the master's own terminal task 
 only an enclosure census, because a child that was never started has no enclosure to walk.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen code moved
+  under this repository route — test sources changed (the checkpoint-landing split, the door read
+  through `live_closeout_door`, the memory-census import moves) and the catalog gained consumer
+  rows. Re-read this overview and re-checked its claims and cited ranges: nothing it asserts is
+  falsified, so no wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this repository route
+  changed since the recorded verification commit. Re-read the card against the frozen on-disk source
+  and re-checked its claims and cited ranges: nothing this card asserts is falsified by the change,
+  so no wording changed. Verification metadata remains closeout-owned; no verification stamp
+  advanced.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: the repository gained one public verb, `worktree_pause`
   — the stop-only pause that releases an atomic master's activation selection, publishes nothing, and
   hands the turn back — taking the advertised MCP roster from 62 to 63 names, and the checkpoint
@@ -2295,6 +2306,9 @@ commands remain self-updating; the static pin belongs only to reproducible candi
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a source under this repo route moved since
+  the recorded verification commit (`mcp/tests/evidence-lifecycle.toml`). Re-read the overview; it makes no
+  claim about that file, so no wording changed. Verification metadata remains closeout-owned.
 - 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added the real Codex 0.151.0 twice-fresh ambient/hosted spawning harness, connected-tool startup gate, canonical replacement-routing proof, and route-local onboarding. Verification remains closeout-owned.
 
 - 2026-08-30T11:47+02:00 — 260821-ARSPAWN-L3 recorded one public spawn verb, the disjoint

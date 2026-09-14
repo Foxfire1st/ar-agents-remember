@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_record_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,12 +27,12 @@ that suite's whole transitive support closure.
 
 ### Logic
 
-`_fixture(root)` cit:([`_fixture`], mcp/tests/test_record_landing.py:44-67) creates a real Git
+`_fixture(root)` cit:([`_fixture`], mcp/tests/test_record_landing.py:44-65) creates a real Git
 repository with `main`, `super`, and `ar/master`, then builds a series contract over it with
 `memory_mode="disabled"` — so no memory repository is needed and the route's own logic is what is
-under test. `_commit_on` cit:([`_commit_on`], mcp/tests/test_record_landing.py:68-75) commits on a
+under test. `_commit_on` cit:([`_commit_on`], mcp/tests/test_record_landing.py:68-73) commits on a
 named branch and returns the resulting SHA, which is what the route records. `_record`
-cit:([`_record`], mcp/tests/test_record_landing.py:76-91) is the approved-call shorthand; it is
+cit:([`_record`], mcp/tests/test_record_landing.py:76-89) is the approved-call shorthand; it is
 explicitly typed rather than `**over: object`, which would erase the argument types the route
 validates.
 
@@ -65,7 +65,7 @@ The suite is a unittest class, matching the surrounding `mcp/tests` convention, 
 the ordinary unit population: the route avoids `status_payload`, so no bound worktree services are
 needed and no `@pytest.mark.integration` marker is required.
 
-`_git` cit:([`_git`], mcp/tests/test_record_landing.py:33-43) passes the identity via `-c` flags
+`_git` cit:([`_git`], mcp/tests/test_record_landing.py:33-41) passes the identity via `-c` flags
 rather than relying on repository or global Git configuration, so the fixture works on a machine with
 no configured user.
 
@@ -102,9 +102,9 @@ concern this repository's own contract write, so the retained source is the dire
 | The route under test: approval gate, landing targets, ancestry refusal, dry run. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:58-143 |
 | The widened `already-recorded` guard the new case pins: a checkpointed series is not upgraded into a reclaimable integration. | "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/modules/record_landing.py:70-70 |
 | The shared writer whose cell the happy path asserts, now taking the bundled `LandedIntegration` record (260831-LOCR-L30). | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
-| The contract fields the recorded commits land in. | `integration_strategy`; `integrated_code_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:260-263 |
-| The consumer-side guard that reads the cell this route sets. | "integration_status != \"completed\"" | mcp/src/agents_remember/worktrees/modules/cleanup.py:665-665 |
-| The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared. | "mcp/tests/fixtures/repository_profiles/node/package.json" | mcp/tests/evidence-lifecycle.toml:551-582 |
+| The contract fields the recorded commits land in. | `integration_strategy`; `integrated_code_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:260-261 |
+| The consumer-side guard that reads the cell this route sets. | "integration_status != \"completed\"" | mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669 |
+| The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared. | "mcp/tests/fixtures/repository_profiles/node/package.json" | mcp/tests/evidence-lifecycle.toml:593-593 |
 
 ## Cross-Repo References
 
@@ -116,6 +116,12 @@ directory; no sibling repository or external system participates.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
   260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting the
   `integration_status != "completed"` guard from line 664 to 665. The anchor was re-read at

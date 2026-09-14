@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No record is lost when an append races a compaction. | `test_no_record_is_lost_when_an_append_races_a_compaction` | mcp/tests/test_controlplane_store_durability.py:91-103 |
+| No record is lost when an append races a compaction. | `test_no_record_is_lost_when_an_append_races_a_compaction` | mcp/tests/test_controlplane_store_durability.py:90-103 |
 | Gate enforcement fold refuses a torn line. | `test_gate_enforcement_fold_refuses_a_torn_line` | mcp/tests/test_controlplane_store_durability.py:133-152 |
 | Gate projection fold degrades instead of crashing. | `test_gate_projection_fold_degrades_instead_of_crashing` | mcp/tests/test_controlplane_store_durability.py:154-171 |
 
@@ -64,6 +64,13 @@ No cross-repository implementation evidence is required for these local test and
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 5 claim(s) whose anchor no longer sat in its cited range and normalised 1 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 7 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 
 
@@ -138,14 +145,14 @@ No cross-repository implementation evidence is required for these local test and
   rather than symbol-only citations are safe for it. Verification metadata untouched.
 - 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: created the card for the leaf's durability
   contract suite. Recorded the three claims it holds and, for each, what breaks if it is deleted.
-  **R10** — four tests in cit:([`MultiProcessDurabilityTests`], mcp/tests/test_controlplane_store_durability.py:123-205): the forced lost-update window
+  **R10** — four tests in cit:([`MultiProcessDurabilityTests`], mcp/tests/test_controlplane_store_durability.py:87-103): the forced lost-update window
   over all six stores, the forced unlink window over the five that really append (`APPEND_CASES`;
   `AttentionDismissalStore.dismiss` is a whole-file read-modify-write, so there is no `"a"` handle
   to strand), the unforced stress case that also pins `attempted` to
   `appenders × per_appender` so a raising store cannot shrink its own denominator, and — kept
   deliberately separate — cit:([`test_concurrent_operation_never_raises_out_of_a_store_call`], mcp/tests/test_controlplane_store_durability.py:174-205),
   because a store that raises instead of losing has moved the failure rather than fixed it.
-  **R8** — cit:([`TornLinePolicyTests`], mcp/tests/test_controlplane_store_durability.py:208-336) holds the two folds over one `GateStore.read` to
+  **R8** — cit:([`TornLinePolicyTests`], mcp/tests/test_controlplane_store_durability.py:106-171) holds the two folds over one `GateStore.read` to
   opposite policies (strict `read`/`current`/`all_current` raise `ValidationError`; `read_gates`
   must still surface the intact gate *by id*, which is what separates "one row missing" from "no
   gates at all"), generalised across the other five stores through `STRICT_READ_CASES` /
@@ -154,8 +161,8 @@ No cross-repository implementation evidence is required for these local test and
   `HarnessSensitivityTests` (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:345-401)) asserts both directions against the base-commit archive:
   the five unlocked stores each lose exactly one record, and `operator_inbox` — the one store that
   already held an `fcntl` lock at `e52edaf5` — loses zero, which is the guard that the harness is
-  measuring the defect. Also recorded `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:102-104)) seeding through the store's
-  own `write` before appending `TORN_LINE` (cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:63-63)), and `_seed_gate` (cit:([`_seed_gate`], mcp/tests/test_controlplane_store_durability.py:218-228)) using state `open`
+  measuring the defect. Also recorded `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:64-66)) seeding through the store's
+  own `write` before appending `TORN_LINE` (cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:27-27)), and `_seed_gate` (cit:([`_seed_gate`], mcp/tests/test_controlplane_store_durability.py:116-126)) using state `open`
   because the projection keep-filter prunes the terminal states. **Filed one Todo, found by
   reading the cited source rather than the test:**
   `test_expectation_row_projection_degrades_instead_of_crashing` (cit:([`test_expectation_row_projection_degrades_instead_of_crashing`], mcp/tests/test_controlplane_store_durability.py:297-336)) says in its docstring

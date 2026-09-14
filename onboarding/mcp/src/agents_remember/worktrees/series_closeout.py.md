@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T11:58+02:00|
-| lastVerifiedCommitHash | `187414cef8150a8004fc1b023a8377f77b24e873` |
-| lastVerifiedCommitDate | 2026-09-14T12:13:50+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ coherence, or independent review. Full suites are an explicit developer request.
 
 ## Code Commentary
 
-`_exact_atomic_landing_chain` cit:([`_exact_atomic_landing_chain`], mcp/src/agents_remember/worktrees/series_closeout.py:221-245) collects one exact enclosure per canonical leaf and
+`_exact_atomic_landing_chain` cit:([`_exact_atomic_landing_chain`], mcp/src/agents_remember/worktrees/series_closeout.py:221-243) collects one exact enclosure per canonical leaf and
 returns the ordered landed chain. **It no longer feeds a ledger-row census**: the
 `atomic_series_ledger_prefix` producer that derived the newest-first rows that chain contributes
 was deleted by 260913-LCA-L11 together with its only consumer
@@ -69,7 +69,7 @@ Since 260831-closeout-door-cut the master/leaf re-proof carries no door dimensio
 ## 260831-LOCR-L30/L34 Checkpoint Authority: The Partial-Publication Verb, Made Reachable
 
 `publish_series_integration_under_authority` proves the atomic master is a **finished unit** — its
-task document is `Completed`, `_require_every_atomic_leaf_landed` cit:([`_require_every_atomic_leaf_landed`], mcp/src/agents_remember/worktrees/series_closeout.py:218-221) finds a landed enclosure for every
+task document is `Completed`, `_require_every_atomic_leaf_landed` cit:([`_require_every_atomic_leaf_landed`], mcp/src/agents_remember/worktrees/series_closeout.py:217-218) finds a landed enclosure for every
 canonical leaf, and (since 260831-LOCR-L34, because the closeout apply now evaluates
 `require_closeout_publication_authority`) it has closed out. An unfinished master has none of those,
 so it could not land its accumulated line at all through that route.
@@ -80,20 +80,20 @@ closeout cells, which are exactly the completion facts an unfinished master does
 admitted the real ref move was never proven end to end. L34 changes two things and nothing else:
 
 - **The checkpoint captures its own candidate.**
-  `capture_series_checkpoint_refs(contract)` cit:([`capture_series_checkpoint_refs`], mcp/src/agents_remember/worktrees/series_closeout.py:112-144) returns the frozen
-  `SeriesCheckpointRefs` cit:([`SeriesCheckpointRefs`], mcp/src/agents_remember/worktrees/series_closeout.py:100-111) built from the **live** `code_work_branch` tip and the live
+  `capture_series_checkpoint_refs(contract)` cit:([`capture_series_checkpoint_refs`], mcp/src/agents_remember/worktrees/series_closeout.py:111-141) returns the frozen
+  `SeriesCheckpointRefs` cit:([`SeriesCheckpointRefs`], mcp/src/agents_remember/worktrees/series_closeout.py:98-108) built from the **live** `code_work_branch` tip and the live
   `memory_work_branch` tip — captured, never inherited from a stale contract cell. It proves the
-  code-to-memory mapping through `exact_series_memory_closeout` cit:([`exact_series_memory_closeout`], mcp/src/agents_remember/worktrees/series_closeout.py:825-842), the **exact-mapping** reader; the
+  code-to-memory mapping through `exact_series_memory_closeout` cit:([`exact_series_memory_closeout`], mcp/src/agents_remember/worktrees/series_closeout.py:752-767), the **exact-mapping** reader; the
   *final* series route reads the pair through `series_memory_closeout` instead (see the L36 section),
   so the checkpoint's claim is deliberately the narrower one. A capture that cannot prove the mapping
   raises, which makes "the refs are recorded only once their ledger mapping holds" a property of the
   value rather than a separate check a caller could skip. A non-`series` contract raises; an
   unresolvable code branch refuses (`atomic-series-checkpoint-no-code-ref`).
 - **Publication revalidates that candidate.** `publish_series_checkpoint_under_authority(contract,
-  publication, expected)` cit:([`publish_series_checkpoint_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:167-200) takes `expected` as a **required, never
+  publication, expected)` cit:([`publish_series_checkpoint_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:166-199) takes `expected` as a **required, never
   defaulted** third argument. A default would be a fail-open hole in exactly the repair it was
   written for: an omitted argument would silently admit whatever the live refs happened to be, i.e. a
-  pair the preview never showed. `_require_checkpoint_candidate_unchanged` cit:([`_require_checkpoint_candidate_unchanged`], mcp/src/agents_remember/worktrees/series_closeout.py:201-217) re-reads the live refs and
+  pair the preview never showed. `_require_checkpoint_candidate_unchanged` cit:([`_require_checkpoint_candidate_unchanged`], mcp/src/agents_remember/worktrees/series_closeout.py:200-214) re-reads the live refs and
   re-proves their ledger mapping at the protected boundary, immediately before the irreversible ref
   move, and refuses `atomic-series-checkpoint-candidate-moved` when they differ.
 
@@ -122,7 +122,7 @@ stronger one:
 - A master whose task document already reads `Completed` raises
   `CloseoutQueueError("atomic-series-checkpoint-master-complete", ...)` and is pointed at the final
   route, so a checkpoint can never downgrade a finished integration. Since L34 that refusal lives in
-  `require_series_checkpoint_authority` cit:([`require_series_checkpoint_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:145-166), **one definition with two callers**: the
+  `require_series_checkpoint_authority` cit:([`require_series_checkpoint_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:144-163), **one definition with two callers**: the
   checkpoint's preflight (`integrate.py::checkpoint_landing_eligibility`) evaluates it so the dry run
   and the apply refuse identically and for the same named reason, and publication re-evaluates it so a
   master that completes *between* preflight and the ref move is refused there too.
@@ -131,11 +131,11 @@ stronger one:
 
 ## The One Closeout Gate Both Surfaces Read (260831-LOCR-L34)
 
-`require_closeout_publication_authority(contract)` cit:([`require_closeout_publication_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:40-66) is the extracted body of the old
+`require_closeout_publication_authority(contract)` cit:([`require_closeout_publication_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:39-63) is the extracted body of the old
 `publish_closeout_under_authority` gate. Its first statement is `if contract.kind == "leaf": return`,
 which is exactly the shape the publication had, so no leaf closeout changes. Two callers read it:
 
-- `publish_closeout_under_authority` (the apply) cit:([`publish_closeout_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:67-79), which is now a thin wrapper; and
+- `publish_closeout_under_authority` (the apply) cit:([`publish_closeout_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:66-76), which is now a thin wrapper; and
 - `worktrees/modules/closeout.py::closeout_preview_payload` (the dry run), which previously ran the
   workbench-commit refusal and nothing else.
 
@@ -156,32 +156,32 @@ find its first leaf, and a master reconciling with a sibling's landing failed
 `atomic-series-leaf-chain-invalid`. The proof now reads the order from the **landings themselves**,
 and the series closeout accepts the pair the reconciliation produced.
 
-**Order from landed ancestry.** `_ordered_atomic_landing_chain` cit:([`_ordered_atomic_landing_chain`], mcp/src/agents_remember/worktrees/series_closeout.py:272-304) proves every leaf landed
-(`_require_atomic_leaf_landed` cit:([`_require_atomic_leaf_landed`], mcp/src/agents_remember/worktrees/series_closeout.py:663-693)) and then repeatedly takes the one remaining leaf whose landing
+**Order from landed ancestry.** `_ordered_atomic_landing_chain` cit:([`_ordered_atomic_landing_chain`], mcp/src/agents_remember/worktrees/series_closeout.py:271-301) proves every leaf landed
+(`_require_atomic_leaf_landed` cit:([`_require_atomic_leaf_landed`], mcp/src/agents_remember/worktrees/series_closeout.py:590-618)) and then repeatedly takes the one remaining leaf whose landing
 precedes every other remaining leaf on both sides of the pair —
-`_leaf_landing_precedes` cit:([`_leaf_landing_precedes`], mcp/src/agents_remember/worktrees/series_closeout.py:305-329): the code commit must be a proper ancestor (`==` is not an ordering)
+`_leaf_landing_precedes` cit:([`_leaf_landing_precedes`], mcp/src/agents_remember/worktrees/series_closeout.py:304-326): the code commit must be a proper ancestor (`==` is not an ordering)
 and, for external memory, the ledger commit must be an ancestor too. A non-unique choice still
 refuses `atomic-series-leaf-chain-invalid`.
 
-**Origin.** `_require_chain_origin` cit:([`_require_chain_origin`], mcp/src/agents_remember/worktrees/series_closeout.py:330-363) applies two rules. With no recorded sync, the oldest leaf must
+**Origin.** `_require_chain_origin` cit:([`_require_chain_origin`], mcp/src/agents_remember/worktrees/series_closeout.py:329-360) applies two rules. With no recorded sync, the oldest leaf must
 still start at the recorded base **exactly**, which is the rule the old walk enforced for every
 step. Once a sync exists, the oldest leaf's base and the position the first sync advanced from —
-`_series_pre_sync_base` cit:([`_series_pre_sync_base`], mcp/src/agents_remember/worktrees/series_closeout.py:364-373) reads `codeBaseFrom`/`memoryBaseFrom` from `sync_log[0]` — must lie on one
-line (`_require_same_line` cit:([`_require_same_line`], mcp/src/agents_remember/worktrees/series_closeout.py:374-388), either direction, because a leaf may have landed
+`_series_pre_sync_base` cit:([`_series_pre_sync_base`], mcp/src/agents_remember/worktrees/series_closeout.py:363-370) reads `codeBaseFrom`/`memoryBaseFrom` from `sync_log[0]` — must lie on one
+line (`_require_same_line` cit:([`_require_same_line`], mcp/src/agents_remember/worktrees/series_closeout.py:373-385), either direction, because a leaf may have landed
 before or after the sync), and every leaf must start at or after the chain origin
-(`_require_leaf_starts_on_the_chain` cit:([`_require_leaf_starts_on_the_chain`], mcp/src/agents_remember/worktrees/series_closeout.py:389-414)).
+(`_require_leaf_starts_on_the_chain` cit:([`_require_leaf_starts_on_the_chain`], mcp/src/agents_remember/worktrees/series_closeout.py:388-411)).
 
-**Spine.** `_require_landing_spine_side` cit:([`_require_landing_spine_side`], mcp/src/agents_remember/worktrees/series_closeout.py:415-458) proves one series ref is exactly the leaf landings joined by
+**Spine.** `_require_landing_spine_side` cit:([`_require_landing_spine_side`], mcp/src/agents_remember/worktrees/series_closeout.py:414-455) proves one series ref is exactly the leaf landings joined by
 the reconciled source line, on the code side and (for external memory) the memory side. Every
 landing must be an ancestor of the ref; each step from one landing to the next must add nothing
 beyond the previous landing plus the official positions this contract actually synced with —
-`_require_admitted_step` cit:([`_require_admitted_step`], mcp/src/agents_remember/worktrees/series_closeout.py:493-530) asks `git rev-list --no-merges later --not earlier <positions>` and refuses any
+`_require_admitted_step` cit:([`_require_admitted_step`], mcp/src/agents_remember/worktrees/series_closeout.py:492-527) asks `git rev-list --no-merges later --not earlier <positions>` and refuses any
 surviving commit, so a merge is the reconciliation device rather than a loophole; the step from the
 last landing to the ref is proved the same way, and a ref that simply *is* the last landing (every
 master that reconciled before its final leaf landed) needs no step at all. The admitted positions
-are `_landing_source_positions` cit:([`_landing_source_positions`], mcp/src/agents_remember/worktrees/series_closeout.py:540-549) — the recorded base plus every `codeBaseTo`/`memoryBaseTo` in the
+are `_landing_source_positions` cit:([`_landing_source_positions`], mcp/src/agents_remember/worktrees/series_closeout.py:539-546) — the recorded base plus every `codeBaseTo`/`memoryBaseTo` in the
 sync log. On the memory side a commit that rewrites **only** `memory.md`
-(`_is_ledger_recording` cit:([`_is_ledger_recording`], mcp/src/agents_remember/worktrees/series_closeout.py:531-539)) is admitted: a reconciled master records its own ledger
+(`_is_ledger_recording` cit:([`_is_ledger_recording`], mcp/src/agents_remember/worktrees/series_closeout.py:530-536)) is admitted: a reconciled master records its own ledger
 bookkeeping on its memory line, and the evidence for that is the landed table itself.
 
 **The master's own rows — the census is deleted (260913-LCA-L11).** This route used to derive the
@@ -198,11 +198,11 @@ protected the tracked `memory.md`, which is derived state. A producer with no co
 the file would become authority again. Nothing else on this route changed: the atomic completion
 proof, the landing spine, the origin rules and both memory readers are untouched.
 
-**The recorded pair.** `exact_series_memory_closeout` cit:([`exact_series_memory_closeout`], mcp/src/agents_remember/worktrees/series_closeout.py:752-769) is unchanged in shape: it reads the exact
+**The recorded pair.** `exact_series_memory_closeout` cit:([`exact_series_memory_closeout`], mcp/src/agents_remember/worktrees/series_closeout.py:752-767) is unchanged in shape: it reads the exact
 memory ref, requires the landed ledger to map the exact code commit, and proves the mapped memory
 content reachable from that ref
-(`_require_series_memory_reachable` cit:([`_require_series_memory_reachable`], mcp/src/agents_remember/worktrees/series_closeout.py:830-839), over `_series_ledger_mapping` cit:([`_series_ledger_mapping`], mcp/src/agents_remember/worktrees/series_closeout.py:812-821) and
-`_series_ledger` cit:([`_series_ledger`], mcp/src/agents_remember/worktrees/series_closeout.py:823-828)). `series_memory_closeout` cit:([`series_memory_closeout`], mcp/src/agents_remember/worktrees/series_closeout.py:770-811)
+(`_require_series_memory_reachable` cit:([`_require_series_memory_reachable`], mcp/src/agents_remember/worktrees/series_closeout.py:830-838), over `_series_ledger_mapping` cit:([`_series_ledger_mapping`], mcp/src/agents_remember/worktrees/series_closeout.py:812-820) and
+`_series_ledger` cit:([`_series_ledger`], mcp/src/agents_remember/worktrees/series_closeout.py:823-827)). `series_memory_closeout` cit:([`series_memory_closeout`], mcp/src/agents_remember/worktrees/series_closeout.py:770-809)
 first tries exactly that, so the ordinary shape is read exactly as before. When the exact mapping is
 absent it accepts the **reconciled** pair instead, but only after proving the same two facts
 integration later recomputes: the master's own chain tip is still a row of the landed table with its
@@ -280,20 +280,20 @@ recording a public tool was cancelled by the developer.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout re-proves canonical completion without the landing lock; integration repeats it under the narrow protected-landing lock; the checkpoint route keeps every ref authority and drops only the completion assumptions. | `publish_closeout_under_authority`, `publish_series_integration_under_authority`, `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:66-78; mcp/src/agents_remember/worktrees/series_closeout.py:79-98; mcp/src/agents_remember/worktrees/series_closeout.py:166-199 |
-| The closeout completion gate is extracted into one definition with one body, and its first statement exempts a leaf, so the closeout preview and the closeout apply refuse identically. | `require_closeout_publication_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:39-65 |
-| The checkpoint captures its own live candidate refs from the live code and memory work-branch tips and proves their exact ledger mapping. | `SeriesCheckpointRefs`; `capture_series_checkpoint_refs`; `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:99-110; mcp/src/agents_remember/worktrees/series_closeout.py:111-143; mcp/src/agents_remember/worktrees/series_closeout.py:752-769 |
-| A checkpoint of an already-completed master is refused, and that refusal is one definition read by both the checkpoint preflight and publication. | `require_series_checkpoint_authority`; "atomic-series-checkpoint-master-complete" | mcp/src/agents_remember/worktrees/series_closeout.py:144-165; mcp/src/agents_remember/worktrees/series_closeout.py:160-160 |
-| Publication revalidates the captured candidate against the live tips at the protected boundary and refuses a candidate that moved. | `_require_checkpoint_candidate_unchanged`; "atomic-series-checkpoint-candidate-moved" | mcp/src/agents_remember/worktrees/series_closeout.py:200-216 |
-| The complete leaf set is proved and the landing order is read from the landings' own ancestry on both sides of the pair. | `_require_every_atomic_leaf_landed`; `_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain`; `_leaf_landing_precedes` | mcp/src/agents_remember/worktrees/series_closeout.py:217-220; mcp/src/agents_remember/worktrees/series_closeout.py:221-245; mcp/src/agents_remember/worktrees/series_closeout.py:271-303; mcp/src/agents_remember/worktrees/series_closeout.py:304-328 |
-| The chain origin is the recorded base exactly without a sync, and one line with the first sync's pre-state once a sync exists; every leaf starts on that line. | `_require_chain_origin`; `_series_pre_sync_base`; `_require_same_line`; `_require_leaf_starts_on_the_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:329-362; mcp/src/agents_remember/worktrees/series_closeout.py:363-372; mcp/src/agents_remember/worktrees/series_closeout.py:373-387; mcp/src/agents_remember/worktrees/series_closeout.py:388-413 |
-| One series ref equals the leaf landings joined by the reconciled source line, and only a ledger-only recording commit is additionally admitted on the memory side. | `_require_landing_spine_side`; `_require_admitted_step`; `_is_ledger_recording`; `_landing_source_positions` | mcp/src/agents_remember/worktrees/series_closeout.py:414-457; mcp/src/agents_remember/worktrees/series_closeout.py:492-529; mcp/src/agents_remember/worktrees/series_closeout.py:530-538; mcp/src/agents_remember/worktrees/series_closeout.py:539-548 |
+| Closeout re-proves canonical completion without the landing lock; integration repeats it under the narrow protected-landing lock; the checkpoint route keeps every ref authority and drops only the completion assumptions. | `publish_closeout_under_authority`, `publish_series_integration_under_authority`, `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:66-76; mcp/src/agents_remember/worktrees/series_closeout.py:79-95; mcp/src/agents_remember/worktrees/series_closeout.py:166-197 |
+| The closeout completion gate is extracted into one definition with one body, and its first statement exempts a leaf, so the closeout preview and the closeout apply refuse identically. | `require_closeout_publication_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:39-63 |
+| The checkpoint captures its own live candidate refs from the live code and memory work-branch tips and proves their exact ledger mapping. | `SeriesCheckpointRefs`; `capture_series_checkpoint_refs`; `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:98-108; mcp/src/agents_remember/worktrees/series_closeout.py:111-141; mcp/src/agents_remember/worktrees/series_closeout.py:752-767 |
+| A checkpoint of an already-completed master is refused, and that refusal is one definition read by both the checkpoint preflight and publication. | `require_series_checkpoint_authority`; "atomic-series-checkpoint-master-complete" | mcp/src/agents_remember/worktrees/series_closeout.py:144-163; mcp/src/agents_remember/worktrees/series_closeout.py:160-160 |
+| Publication revalidates the captured candidate against the live tips at the protected boundary and refuses a candidate that moved. | `_require_checkpoint_candidate_unchanged`; "atomic-series-checkpoint-candidate-moved" | mcp/src/agents_remember/worktrees/series_closeout.py:200-214 |
+| The complete leaf set is proved and the landing order is read from the landings' own ancestry on both sides of the pair. | `_require_every_atomic_leaf_landed`; `_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain`; `_leaf_landing_precedes` | mcp/src/agents_remember/worktrees/series_closeout.py:217-218; mcp/src/agents_remember/worktrees/series_closeout.py:221-243; mcp/src/agents_remember/worktrees/series_closeout.py:271-301; mcp/src/agents_remember/worktrees/series_closeout.py:304-326 |
+| The chain origin is the recorded base exactly without a sync, and one line with the first sync's pre-state once a sync exists; every leaf starts on that line. | `_require_chain_origin`; `_series_pre_sync_base`; `_require_same_line`; `_require_leaf_starts_on_the_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:329-360; mcp/src/agents_remember/worktrees/series_closeout.py:363-370; mcp/src/agents_remember/worktrees/series_closeout.py:373-385; mcp/src/agents_remember/worktrees/series_closeout.py:388-411 |
+| One series ref equals the leaf landings joined by the reconciled source line, and only a ledger-only recording commit is additionally admitted on the memory side. | `_require_landing_spine_side`; `_require_admitted_step`; `_is_ledger_recording`; `_landing_source_positions` | mcp/src/agents_remember/worktrees/series_closeout.py:414-455; mcp/src/agents_remember/worktrees/series_closeout.py:492-527; mcp/src/agents_remember/worktrees/series_closeout.py:539-546; mcp/src/agents_remember/worktrees/series_closeout.py:530-536 |
 | The removed ledger-row census: the leaf-row prefix, the per-reconciliation rows read back from the landed table, and the merge test that admitted them. All three are deleted with their only consumer, so the landed table is no longer read to decide what a master's own rows are. | `atomic_series_ledger_prefix`; `_reconciled_ledger_prefix`; `_is_reconciliation_row` — **removed at 260913-LCA-L11; no current range** | — |
-| The final series closeout records the exact pair when the ledger maps the code tip, and otherwise the reconciled pair after proving the master's own chain tip is still mapped and the landed table is the projection of its source plus this line's own rows. This is now the **only** surviving enforcement of the no-row-dropped/reordered/replaced rule. | `series_memory_closeout`; `_require_series_ledger_projection`; `_series_ledger_mapping`; `_series_ledger`; `_require_series_memory_reachable` | mcp/src/agents_remember/worktrees/series_closeout.py:770-811; mcp/src/agents_remember/worktrees/series_closeout.py:841-857; mcp/src/agents_remember/worktrees/series_closeout.py:812-821; mcp/src/agents_remember/worktrees/series_closeout.py:823-828; mcp/src/agents_remember/worktrees/series_closeout.py:830-839 |
-| The exact-mapping reader is kept for the checkpoint route, and the exact closeout still refuses a code commit that is not mapped. | `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:752-769 |
-| Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:549-589; mcp/src/agents_remember/worktrees/series_closeout.py:590-620; mcp/src/agents_remember/worktrees/series_closeout.py:621-656; mcp/src/agents_remember/worktrees/series_closeout.py:657-686 |
-| Atomic-master completion resolves the effective nature under the atomic-sequential default. | `_require_atomic_master_complete` | mcp/src/agents_remember/worktrees/series_closeout.py:693-732 |
-| Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:733-751; mcp/src/agents_remember/worktrees/series_closeout.py:752-769 |
+| The final series closeout records the exact pair when the ledger maps the code tip, and otherwise the reconciled pair after proving the master's own chain tip is still mapped and the landed table is the projection of its source plus this line's own rows. This is now the **only** surviving enforcement of the no-row-dropped/reordered/replaced rule. | `series_memory_closeout`; `_require_series_ledger_projection`; `_series_ledger_mapping`; `_series_ledger`; `_require_series_memory_reachable` | mcp/src/agents_remember/worktrees/series_closeout.py:770-809; mcp/src/agents_remember/worktrees/series_closeout.py:812-820; mcp/src/agents_remember/worktrees/series_closeout.py:823-827; mcp/src/agents_remember/worktrees/series_closeout.py:830-838; mcp/src/agents_remember/worktrees/series_closeout.py:841-857 |
+| The exact-mapping reader is kept for the checkpoint route, and the exact closeout still refuses a code commit that is not mapped. | `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:752-767 |
+| Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:549-587; mcp/src/agents_remember/worktrees/series_closeout.py:590-618; mcp/src/agents_remember/worktrees/series_closeout.py:621-654; mcp/src/agents_remember/worktrees/series_closeout.py:657-684 |
+| Atomic-master completion resolves the effective nature under the atomic-sequential default. | `_require_atomic_master_complete` | mcp/src/agents_remember/worktrees/series_closeout.py:693-730 |
+| Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:733-749; mcp/src/agents_remember/worktrees/series_closeout.py:752-767 |
 | The reconciled-pair recording is an agent-owned `memory.md` write with no public tool behind it. | `_record_reconciled_pair` | mcp/tests/test_cross_master_concurrency.py:384-412 |
 
 ## Documentation References
@@ -310,6 +310,12 @@ comparison was deleted with the contract field by the closeout-door cut (commit 
 Scheduling projection absence is irrelevant to atomic completion truth.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of
+  18 claim(s) whose anchor no longer sat in its cited range and normalised 20 further range(s) in
+  this card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 curator (uncommitted change set on `ar/260913-lca-l11-ar`,
   base `4214d7a1`): recorded the deletion of this route's own ledger-row census.
   `atomic_series_ledger_prefix`, `_reconciled_ledger_prefix` and `_is_reconciliation_row` are gone

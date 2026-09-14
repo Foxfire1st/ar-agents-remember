@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ still starts.
 | Sync admits either an ordinary leaf workbench or exact task-owned series authority. | `require_sync_worktree` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:348-359 |
 | The parent-series resolver renamed from `require_parent_series_accepting_leaves`: it resolves and validates the exact parent series (organizational direct-super returns `None`; a missing contract and a stale identity raise) and no longer consults a child-admission seal. | `require_parent_series`; "authority.sprint_ref is not None and authority.execution_nature == \"organizational\"" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:317-317 |
 | The atomic-owner resolver that follows the rename at its call site, and the leaf target that follows it at integration. | `atomic_leaf_parent`; `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:333-345; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:829-833 |
-| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-169 |
+| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
 | The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state. | `_require_series_task_terminal`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-278; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265 |
 
 ## Docs References
@@ -163,6 +163,25 @@ Topology collision and deleted-owner repair logic moved into dedicated owners; t
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the playthrough class
+  grew with its step-8 proof, so `LifecyclePlaythroughTests` now spans `:62-173`. Repointed the row;
+  every other cited range was re-read and holds. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` changed since the
+  recorded verification commit. Re-read the card against the frozen on-disk source and re-checked
+  its claims and cited ranges: nothing this card asserts is falsified by the change, so no wording
+  changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the `require_parent_series` rename and the removed
+  child-admission seal). Re-read the card: its rename section and history already record exactly
+  that change, and every cited range still holds. No wording changed; verification metadata remains
+  closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (reopened-claim judgement): the checker reopened
+  this claim because `require_parent_series` did not exist at the recorded verification commit.
+  Re-read the claim against the current source: the function is defined at `:309`, resolves and
+  validates the exact parent series, and the child-admission seal it used to consult is gone — the
+  card already states exactly that. Retained; verification metadata remains closeout-owned.
 - 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
   `ar/260831_lifecycle-owned-completion-relay`): recorded that
   `require_parent_series_accepting_leaves` is renamed `require_parent_series` (code lines 309-330),

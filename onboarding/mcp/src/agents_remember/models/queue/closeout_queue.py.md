@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
-| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,8 +59,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The request permits only status and rebuild. | `CloseoutQueueRequest` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38 |
-| The response carries effective projection condition, source identity, problems, and members. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:41-59 |
+| The request permits only status and rebuild. | `CloseoutQueueRequest` | mcp/src/agents_remember/models/queue/closeout_queue.py:32-37 |
+| The response carries effective projection condition, source identity, problems, and members. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:40-59 |
 
 ## Cross-Repo References
 
@@ -81,6 +81,11 @@ scheduling view, never an operation ledger.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
+  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-13T22:22+02:00 — L6 (260913-LCA): the response no longer caps how many closeout candidates a sprint may report. `CloseoutQueueResponse.members` is `Field(default_factory=list)` with the `MAX_CLOSEOUT_CANDIDATES` import dropped, so the Logic and Conventions claims that every public collection is bounded are corrected to name the one unbounded collection; `reasons`, `sourceProblems`, `MAX_CLOSEOUT_MASTERS` and `MAX_CLOSEOUT_GRAPH_EDGES` are untouched. Rebound the `CloseoutQueueResponse` row to its current extent 41-59. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; queue status/rebuild projection semantics are unchanged.
