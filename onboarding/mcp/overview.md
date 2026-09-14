@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-13T23:52+02:00|
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastUpdated | 2026-09-14T11:58+02:00|
+| lastVerifiedCommitHash | `187414cef8150a8004fc1b023a8377f77b24e873` |
+| lastVerifiedCommitDate | 2026-09-14T12:13:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1162,11 +1162,14 @@ ledger's **attribution**: it reads the `Code-Commit:` trailer each memory-conten
 out of the history (`attributed_commits` walks the whole ancestry from a given commit,
 `ledger_rows_from_attribution` turns each trailer into one row, `parse_code_commit_trailer` is the
 message-level reader) and it declares the one `git cat-file -e <commit>^{commit}` object test.
-`worktrees/ledger_projection` imports both: its `code_commit_exists` is now a delegation, and its
-`read_ledger_source` projects the complete source ledger from the attribution instead of reading the
-blob at `commit:memory.md`, with a per-commit fallback to that commit's own blob for the pre-trailer
-history. The reader change is documented on the
-[worktrees route](src/agents_remember/worktrees/overview.md).
+`worktrees/ledger_projection` imports both: its `code_commit_exists` is a delegation, and its
+`read_ledger_source` merges two records instead of reading the blob at `commit:memory.md` alone — the
+attribution rows, and the rows the source commit's **own table** recorded, read on every path rather
+than as a fallback for a history with no trailer. That distinction is not cosmetic: the L2 form
+returned the trailers *alone* as soon as one existed, so a partially backfilled line read as a
+nearly empty source; **260913-LCA-L11 corrected it** and also made the read exclude, with a recorded
+reason and a reported count, any row the exact source commit cannot prove. The reader changes are
+documented on the [worktrees route](src/agents_remember/worktrees/overview.md).
 
 Two boundaries belong on this route because they are package-level. The trailer is inside the hashed
 commit object, so an attribution cannot be added or altered after the fact — `git notes` was rejected
@@ -1223,6 +1226,16 @@ a shared renderer entry. Its residual gap is stated rather than hidden — a fut
 string some third way is caught only by its own route's behavioural case, and the prepared leg has none.
 
 ## Update History
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
+  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
+  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
+  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
+  source cannot prove; the fallback framing was the defect's own description — a partially
+  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
+  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
+  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
   `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
   sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this

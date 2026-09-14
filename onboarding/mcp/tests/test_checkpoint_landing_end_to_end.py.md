@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_checkpoint_landing_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:10+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T11:58+02:00 |
+| lastVerifiedCommitHash | `187414cef8150a8004fc1b023a8377f77b24e873` |
+| lastVerifiedCommitDate | 2026-09-14T12:13:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ composition of the seams.
 
 ### Logic
 
-`CheckpointPausesAnUnfinishedMasterTests` cit:([`CheckpointPausesAnUnfinishedMasterTests`], mcp/tests/test_checkpoint_landing_end_to_end.py:268-656) builds one real temporary Git world per case from
+`CheckpointPausesAnUnfinishedMasterTests` cit:([`CheckpointPausesAnUnfinishedMasterTests`], mcp/tests/test_checkpoint_landing_end_to_end.py:412-1211) builds one real temporary Git world per case from
 `test_closeout_queue.QueueFixture` (`atomic_b=True`, `memory_mode="external"`), then takes the
 **series** contract from the master's canonical sibling and its leaf enclosure from the fixture's
 contract map. `_unclosed_contract()` asserts the deadlock's own starting state and never fabricates
@@ -48,33 +48,41 @@ The helpers exist so that no case can cheat the property under test:
   `worktree_tools.worktree_checkpoint_landing_tool` — the registered public entry point — rather than
   `checkpoint_landing_result` or any inner helper. The module docstring states this as a
   prohibition, not a preference.
-- `_accumulate_master_line` cit:([`_accumulate_master_line`], mcp/tests/test_checkpoint_landing_end_to_end.py:125-141) authors a real code+memory-content+ledger triple on the master's own
+- `_accumulate_master_line` cit:([`_accumulate_master_line`], mcp/tests/test_checkpoint_landing_end_to_end.py:132-148) authors a real code+memory-content+ledger triple on the master's own
   work branches using the repository's own ledger helpers, which is the state an unfinished master
   landed at a checkpoint is
-  actually in and the projection the landing re-proves.
+  actually in and the mapping the landing re-proves.
 - `_branch_checkout` checks out a branch into a disposable worktree so a commit can be authored
   directly on a work branch a series contract has no live worktree for.
-- `_close_out_leaf` cit:([`_close_out_leaf`], mcp/tests/test_checkpoint_landing_end_to_end.py:87-122) records a leaf closeout **from real commits** in the leaf's own two worktrees, because the
+- `_close_out_leaf` cit:([`_close_out_leaf`], mcp/tests/test_checkpoint_landing_end_to_end.py:94-129) records a leaf closeout **from real commits** in the leaf's own two worktrees, because the
   ordinary integrate route's entry gate requires a closed-out contract and the ledger-divergence
   cases need a live leaf. `_hand_edit_ledger_in_place` then commits a hand-edited table where a hand
   edit really reaches a leaf (its own memory worktree) and moves the recorded ledger cell to it.
 
-Twelve cases in the one class:
+Twenty cases in the one class, plus the two `setUp`/`tearDown` helpers and `_unclosed_contract`:
 
 | Case | What it pins |
 | --- | --- |
-| `test_an_unfinished_master_checkpoints_its_own_refs_end_to_end` (`:296-355`) | the preview reports `closeoutRequired: False`, `approvalRequired: True`, `ledgerMappingVerified: True` and the **live** code/ledger candidates, and moves nothing; the apply moves both destination refs to exactly those captured commits, records `checkpointed` with the captured cells, leaves `closeout_status` `not-started` and `cleanup` untouched, keeps the code worktree, the contract and the enclosure, and lands a ledger that really maps code to memory content. |
-| `test_retry_is_idempotent_and_continued_work_checkpoints_again` (`:357-394`) | a second apply re-captures the same refs and converges (a crash between the ref move and the contract write must converge on retry); after another accumulated pair the refs advance again, so the route is a pause and not a one-shot terminal move — and the new ledger still carries the earlier mapping. |
-| `test_the_checkpoint_is_the_only_route_that_admits_an_unclosed_master` (`:396-419`) | the ordinary series `integrate_result` still refuses an unclosed master with `integration requires closeout.status completed`, before anything moves. |
-| `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses` (`:421-452`) | **instance 1**: both `worktree_closeout_preview_tool` and `worktree_closeout_apply_tool` raise `atomic-series-closeout-master-incomplete` for the same partial master, with the exact completion facts and no ref movement. |
-| `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate` (`:454-469`) | blast radius: a leaf closeout preview still plans `would-closeout` with `commit_approval_required`, because the shared gate returns immediately for a leaf. |
-| `test_the_ordinary_leaf_route_refuses_a_divergent_ledger_at_preview_and_apply` (`:471-516`) | **instance 5**: the ordinary leaf route refuses a hand-edited ledger at `dry_run=True` **and** `dry_run=False`, with both refusal sentences, and neither surface moves a ref or rewrites the contract. |
-| `test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate` (`:518-532`) | the leaf arm of the same entry gate: `validate_integrate_contract` is untouched for the ordinary routes, so the exemption really is local to the checkpoint preflight. |
-| `test_a_completed_master_is_still_refused_by_the_checkpoint` (`:534-545`) | the surviving downgrade guard, through the public operation, at preview **and** apply: `atomic-series-checkpoint-master-complete`. |
-| `test_a_candidate_whose_ledger_does_not_map_the_code_ref_is_refused` (`:547-563`) | the capture's own proof: a code branch advanced with no mapping row for its new tip is refused instead of captured, and nothing moves. |
-| `test_a_hand_edited_master_ledger_is_refused_by_the_preview_and_the_apply` (`:565-596`) | **instance 4**: an unfinished master landed at a checkpoint is exactly where someone might hand-edit `memory.md`, so the projection refusal fires at both surfaces, with the row the capture needs deliberately kept so this is genuinely the projection refusal and not an earlier one. |
-| `test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun` (`:598-624`) | **instance 3**: with `_compare_and_swap_ref` patched to lose, the `integration-ref-race` payload names `worktree_checkpoint_landing` — the tool that attempted the move — with `nextArgs` the contract path, and no ref or cell moved. |
-| `test_checkpoint_landing_requires_explicit_developer_approval` (`:638-656`) | `approved=False` on a non-dry-run raises "explicit developer approval": the closeout exemption was not traded for the approval channel. |
+| `test_an_unfinished_master_checkpoints_its_own_refs_end_to_end` (`:440-499`) | the preview reports `closeoutRequired: False`, `approvalRequired: True`, `ledgerMappingVerified: True` and the **live** code/ledger candidates, and moves nothing; the apply moves both destination refs to exactly those captured commits, records `checkpointed` with the captured cells, leaves `closeout_status` `not-started` and `cleanup` untouched, keeps the code worktree, the contract and the enclosure, and lands a ledger that really maps code to memory content. |
+| `test_a_master_line_that_unioned_its_source_still_checkpoints` (`:501-554`) | the union-merged master's own mapping is captured and landed. |
+| `test_a_unioned_master_line_still_refuses_a_content_difference` (`:556-622`) | **changed by 260913-LCA-L11.** The file-preservation rule is gone, so this case now measures what is left: only the row the world contradicts (a memory cell that exists nowhere) refuses, at both surfaces, naming the row; the reorderings **land**, which the case asserts directly beneath the refusal because a case that only asserted the refusal would read as if the file rule were still in force. The `dropped` and `duplicated` corruptions it used to iterate are deleted, with a comment saying why. |
+| `test_retry_is_idempotent_and_continued_work_checkpoints_again` (`:624-661`) | a second apply re-captures the same refs and converges (a crash between the ref move and the contract write must converge on retry); after another accumulated pair the refs advance again, so the route is a publication and not a one-shot terminal move — and the new ledger still carries the earlier mapping. |
+| `test_the_checkpoint_is_the_only_route_that_admits_an_unclosed_master` (`:663-686`) | the ordinary series `integrate_result` still refuses an unclosed master with `integration requires closeout.status completed`, before anything moves. |
+| `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses` (`:688-719`) | **instance 1**: both `worktree_closeout_preview_tool` and `worktree_closeout_apply_tool` raise `atomic-series-closeout-master-incomplete` for the same partial master, with the exact completion facts and no ref movement. |
+| `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate` (`:721-736`) | blast radius: a leaf closeout preview still plans `would-closeout` with `commit_approval_required`, because the shared gate returns immediately for a leaf. |
+| `test_the_ordinary_leaf_route_refuses_a_divergent_ledger_at_preview_and_apply` (`:738-785`) | **instance 5**: the ordinary leaf route refuses a hand-edited ledger at `dry_run=True` **and** `dry_run=False`, and neither surface moves a ref or rewrites the contract. |
+| `test_a_reversed_repeated_code_mapping_now_lands_and_the_hazard_is_recorded` (`:787-840`) | **renamed and inverted by 260913-LCA-L11**, and the leaf's most important negative knowledge. Reversing a superseding pair (two normal rows for one code commit) used to be refused; it now **lands**, because order is a property of the tracked table and the table is derived state. Both rows are true, so no surviving rule refuses it. The case asserts the projection is a pure reordering (`added_rows`/`removed_rows` empty, header unchanged), that the checkpoint reports `checkpointed`, and that both rows survive the landing — and its docstring points at the L11 record for the hazard this acceptance carries. |
+| `test_an_untrue_historical_row_below_a_current_one_is_refused` (`:842-898`) | a table may not carry a row the world contradicts even where no lookup reaches it — the mapping clause alone cannot catch it, which is why row truth is its own rule. |
+| `test_a_rebuilt_table_still_checkpoints_and_an_untrue_row_still_refuses` (`:900-940`) | **renamed by 260913-LCA-L11.** The retry converges (the shape the old early-return shortcut existed to serve) and a fabricated row still refuses — the replacement rule must not be weaker where it counts. |
+| `test_the_landing_does_not_pose_as_a_pause` (`:942-967`) | the checkpoint publication and the stop-only pause stay separate operations. |
+| `test_the_leaf_route_lands_the_ledger_the_checkpoint_accepts` (`:969-1033`) | **renamed and inverted by 260913-LCA-L11.** The interleaved projection a LEAF used to refuse while a checkpoint accepted it now lands on both routes — the parity the ruling restores — and the case asserts the refs **really moved**, which is the difference between a relaxed rule and a rule that stopped running. |
+| `test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate` (`:1035-1050`) | the leaf arm of the same entry gate: `validate_integrate_contract` is untouched for the ordinary routes. |
+| `test_the_open_master_refusal_names_the_route_that_can_land_it` (`:1052-1085`) | the refusal routes the operator to the checkpoint publication. |
+| `test_a_completed_master_is_still_refused_by_the_checkpoint` (`:1087-1098`) | the surviving downgrade guard, through the public operation, at preview **and** apply: `atomic-series-checkpoint-master-complete`. |
+| `test_a_candidate_whose_ledger_does_not_map_the_code_ref_is_refused` (`:1100-1116`) | the capture's own proof: a code branch advanced with no mapping row for its new tip is refused instead of captured, and nothing moves. |
+| `test_a_hand_edited_master_ledger_is_refused_by_the_preview_and_the_apply` (`:1118-1151`) | **instance 4**, re-pointed by 260913-LCA-L11: an unfinished master landed at a checkpoint is exactly where someone might hand-edit `memory.md`, and what refuses now is the **row-truth** rule with its new message, at both surfaces, with the fabrication deliberately kept so the refusal is attributed to that rule rather than to an earlier gate. |
+| `test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun` (`:1153-1192`) | **instance 3**: with `_compare_and_swap_ref` patched to lose, the `integration-ref-race` payload names `worktree_checkpoint_landing` — the tool that attempted the move — with `nextArgs` the contract path, and no ref or cell moved. |
+| `test_checkpoint_landing_requires_explicit_developer_approval` (`:1193-1211`) | `approved=False` on a non-dry-run raises "explicit developer approval": the closeout exemption was not traded for the approval channel. |
 
 ### Conventions
 
@@ -101,6 +109,14 @@ instead of adding a second one.
 - **Both surfaces are asserted for every ledger refusal.** An apply-only assertion is what let
   instance 1 and instance 4 ship; each divergence case iterates `(True, False)` and names the surface
   in its assertion message.
+- **A case that now ACCEPTS a table says so out loud (260913-LCA-L11).** Three cases in this module
+  changed direction: a reordered source region, a reversed superseding pair, and the interleaved
+  projection on the leaf route all **land** now. Each asserts the acceptance (and, for the leaf case,
+  that the destination refs really moved) rather than dropping the scenario, because a silently
+  deleted case would hide the change and a case that only asserted the surviving refusal would read
+  as if the file rule were still in force. The hazard the reversal case carries — nothing at the
+  landing reports an older row reordered above a newer one for the same code commit — is recorded on
+  the transaction card and in that case's docstring, as a gap pending a decision.
 - **Nothing is asserted about refs after a refusal unless it must not have moved.** Every refusal case
   re-reads both destination refs and the contract, so a refusal that moved something fails here.
 
@@ -123,11 +139,11 @@ the direct evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The public checkpoint entry point this module drives instead of an inner helper. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:427-469 |
-| The one eligibility decision the preview and the apply both read, and the captured candidate it revalidates. | "class CheckpointLanding:"; "def checkpoint_landing_eligibility(contract: WorktreeContract) -> CheckpointLanding:"; "class SeriesCheckpointRefs:"; "def capture_series_checkpoint_refs(contract: WorktreeContract) -> SeriesCheckpointRefs:" | mcp/src/agents_remember/worktrees/modules/integrate.py:371-405; mcp/src/agents_remember/worktrees/modules/integrate.py:406-453; mcp/src/agents_remember/worktrees/series_closeout.py:94-105; mcp/src/agents_remember/worktrees/series_closeout.py:106-138 |
-| The shared ledger proof whose preview-side evaluation instances 4 and 5 depend on. | `_require_ledger_projection`; `_route_commits` | mcp/src/agents_remember/worktrees/modules/integrate.py:498-526; mcp/src/agents_remember/worktrees/modules/integrate.py:527-539 |
-| The required operation name that makes instance 3's `nextTool` the checkpoint. | `_publish_integration_edge` | mcp/src/agents_remember/worktrees/modules/integrate.py:846-921 |
-| The closeout gate the preview and the apply now both read (instance 1) and its leaf exemption. | "def require_closeout_publication_authority(contract: WorktreeContract) -> None:"; "def closeout_preview_payload(contract, args: WorktreeArgs) -> dict[str, object]:" | mcp/src/agents_remember/worktrees/series_closeout.py:34-60; mcp/src/agents_remember/worktrees/modules/closeout.py:235-294 |
-| The projection proof a checkpoint's ledger owes, and the fact that it is the leaf form. | `_require_preserved_ledger_history`; `LandingAdmission` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:344-399; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:92-106 |
+| The one eligibility decision the preview and the apply both read, and the captured candidate it revalidates. | "class CheckpointLanding:"; "def checkpoint_landing_eligibility(contract: WorktreeContract) -> CheckpointLanding:"; "class SeriesCheckpointRefs:"; "def capture_series_checkpoint_refs(contract: WorktreeContract) -> SeriesCheckpointRefs:" | mcp/src/agents_remember/worktrees/modules/integrate.py:389-423; mcp/src/agents_remember/worktrees/modules/integrate.py:424-471; mcp/src/agents_remember/worktrees/series_closeout.py:99-110; mcp/src/agents_remember/worktrees/series_closeout.py:111-143 |
+| The shared landing proof whose preview-side evaluation instances 4 and 5 depend on. Since 260913-LCA-L11 it trades no ledger-history form between the surfaces, so the two agree by construction. | `_require_ledger_projection`; `_route_commits` | mcp/src/agents_remember/worktrees/modules/integrate.py:484-509; mcp/src/agents_remember/worktrees/modules/integrate.py:510-523 |
+| The required operation name that makes instance 3's `nextTool` the checkpoint. | `_publish_integration_edge` | mcp/src/agents_remember/worktrees/modules/integrate.py:847-922 |
+| The closeout gate the preview and the apply now both read (instance 1) and its leaf exemption. | "def require_closeout_publication_authority(contract: WorktreeContract) -> None:"; "def closeout_preview_payload(contract, args: WorktreeArgs) -> dict[str, object]:" | mcp/src/agents_remember/worktrees/series_closeout.py:39-65; mcp/src/agents_remember/worktrees/modules/closeout.py:235-294 |
+| **What a checkpoint's ledger owes since 260913-LCA-L11:** the landed pair is mapped, every row of the landed table is true against the two repositories, the landed memory content descends from the exact memory source while the source is still behind the landing, and the header names its own first row. `_require_preserved_ledger_history` and its projection proof are **deleted**; `LandingAdmission` now carries only the captured candidate. | `require_integrated_ledger_mapping`; `_require_true_rows`; `_integrated_ledger`; `LandingAdmission` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-344; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:345-380; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:245-273; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:88-98 |
 | The lane row the fail-closed manifest requires. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:132-132 |
 | The two shared-support consumer edges this module adds to the lifecycle catalog, in both artifact blocks. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-333; mcp/tests/evidence-lifecycle.toml:336-386 |
 
@@ -144,7 +160,7 @@ by the module's own fixture; no sibling repository or external system participat
 
 An `UNREPRODUCED FLAKE` comment dated 2026-09-13 (leaf 260831-LOCR-L34) sits above
 `test_checkpoint_landing_requires_explicit_developer_approval`
-cit:(["UNREPRODUCED FLAKE, RECORDED 2026-09-13"], mcp/tests/test_checkpoint_landing_end_to_end.py:1162-1162).
+cit:(["UNREPRODUCED FLAKE, RECORDED 2026-09-13"], mcp/tests/test_checkpoint_landing_end_to_end.py:1181-1191).
 It records that the case was reported FAILED **once** during a mutation run that deleted the shared
 preflight ledger proof while checking that the mutation fails exactly the two ledger-divergence cases.
 The flake was seen **only on that mutated build, never on the real tree**; the case passes in
@@ -154,6 +170,24 @@ rather than dropped so the next person who sees it does not start from zero — 
 the assertion text and treat it as a real flake in this case rather than in the closeout/landing code.
 
 ## Update History
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 curator (uncommitted change set on `ar/260913-lca-l11-ar`,
+  base `4214d7a1`): this module is the leaf's behavioural boundary proof and six of its cases were
+  rewritten, so the card was re-derived against the current source. Corrected the class extent
+  (`268-656` → `412-1211`); replaced the twelve-case L34 table with the current twenty-case inventory
+  and every case's real range; and marked what the leaf did to each case it touched — two renamed and
+  **inverted** (a reversed superseding pair now lands, which is the hazard case; the interleaved
+  projection now lands on the leaf route too, asserted by the destination refs really moving), one
+  renamed (the rebuilt table still checkpoints and an untrue row still refuses), one narrowed (only
+  the untrue row refuses — the `dropped`/`duplicated` corruptions are deleted with a comment saying
+  why, and the reorderings are asserted as landing), and one re-pointed at the row-truth refusal text
+  (instance 4 keeps its fabricated row so the refusal is attributed to the new rule rather than to an
+  earlier gate). Corrected the two helper ranges that had drifted (`_accumulate_master_line`
+  `125-141` → `132-148`, `_close_out_leaf` `87-122` → `94-129`), replaced the reference row that still
+  cited `_require_preserved_ledger_history` with the four promises a landing now owes, and re-pointed
+  the recorded `UNREPRODUCED FLAKE` comment (`1162` → `1181-1191`). Added the invariant that a case
+  which now accepts a table must assert the acceptance instead of disappearing, and recorded the
+  reversal hazard as a known gap pending a decision rather than as something prevented. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: the checkpoint route partially publishes an
   unfinished master, so `_accumulate_master_line`'s state, instance 4's hand-edit scenario, and the
   `_require_preserved_ledger_history` reference row now say "an unfinished master landed at a
