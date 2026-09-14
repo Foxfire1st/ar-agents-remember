@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T18:06+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,15 @@ This card describes the retained source at IAS `d3610903`. Historical entries be
 
 Synthetic upstream curator evidence in the convenience declaration is fixture-only; producer-backed memory tests call the real door owner with actual coherence instead. No helper declaration grants production acceptance.
 
+**`_leaf` must carry both derived fields, and that is a correction rather than a convenience.** Since
+260913-LCA-L5 a leaf document with an exact enclosure address but no `seriesContractPath` refuses
+closeout by name (`task-enclosure-binding-master-link-missing`, raised by
+`worktrees/task_leaf_binding.py` — see that card). The fixture previously withheld the field, which
+modelled the damage state start repairs rather than the document `task_doc` actually writes against a
+leaf contract; four unrelated closeout cases began refusing until it was corrected. Any future fixture
+that authors a started leaf must bind `seriesContractPath` (and `enclosures[]`) for the same reason, and
+a test that deliberately omits it is testing the refusal, not the happy path.
+
 ### Todos
 
 No file-local implementation change is requested by this reconciliation.
@@ -64,17 +73,17 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Master. | `_master` | mcp/tests/test_closeout_queue.py:77-105 |
-| Leaf. | `_leaf` | mcp/tests/test_closeout_queue.py:106-153 |
-| Judgment row. | `_judgment_row` | mcp/tests/test_closeout_queue.py:154-161 |
-| Priority row. | `_priority_row` | mcp/tests/test_closeout_queue.py:162-165 |
-| Judgment table. | `_judgment_table` | mcp/tests/test_closeout_queue.py:166-169 |
-| Priority table. | `_priority_table` | mcp/tests/test_closeout_queue.py:170-173 |
-| Grade. | `_grade` | mcp/tests/test_closeout_queue.py:174-180 |
-| Queuefixture. | `QueueFixture` | mcp/tests/test_closeout_queue.py:181-722 |
-| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | `author_unstarted_leaf` | mcp/tests/test_closeout_queue.py:318-369 |
-| Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | `start_leaf` | mcp/tests/test_closeout_queue.py:370-441 |
-| Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | `declare_leaf` | mcp/tests/test_closeout_queue.py:625-655 |
+| Master. | `_master` | mcp/tests/test_closeout_queue.py:78-104 |
+| Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. | `_leaf` | mcp/tests/test_closeout_queue.py:107-156 |
+| Judgment row. | `_judgment_row` | mcp/tests/test_closeout_queue.py:159-164 |
+| Priority row. | `_priority_row` | mcp/tests/test_closeout_queue.py:167-168 |
+| Judgment table. | `_judgment_table` | mcp/tests/test_closeout_queue.py:171-172 |
+| Priority table. | `_priority_table` | mcp/tests/test_closeout_queue.py:175-176 |
+| Grade. | `_grade` | mcp/tests/test_closeout_queue.py:179-183 |
+| Queuefixture. | `QueueFixture` | mcp/tests/test_closeout_queue.py:186-727 |
+| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | `author_unstarted_leaf` | mcp/tests/test_closeout_queue.py:323-373 |
+| Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | `start_leaf` | mcp/tests/test_closeout_queue.py:375-445 |
+| Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | `declare_leaf` | mcp/tests/test_closeout_queue.py:630-659 |
 
 ## Cross-Repo References
 
@@ -85,6 +94,18 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
+  `52875e7a`): recorded that `_leaf` now binds `seriesContractPath` alongside `enclosures[]`, and that this
+  is a correction rather than a convenience — the fixture had been modelling the damage state, and four
+  unrelated closeout cases began refusing once a leaf with an exact enclosure address but no master link
+  stopped passing silently (`task-enclosure-binding-master-link-missing`). Stated the rule for future
+  fixtures that author a started leaf. Re-derived every reference range against the current 727-line
+  source, measured with AST (`_master` 77-105 → 78-104, `_leaf` 106-153 → 107-156, `_judgment_row`
+  154-161 → 159-164, `_priority_row` 162-165 → 167-168, `_judgment_table` 166-169 → 171-172,
+  `_priority_table` 170-173 → 175-176, `_grade` 174-180 → 179-183, `QueueFixture` 181-722 → 186-727,
+  `author_unstarted_leaf` 318-369 → 323-373, `start_leaf` 370-441 → 375-445, `declare_leaf`
+  625-655 → 630-659). Verification metadata remains closeout-owned; no execution or acceptance claim.
 
 - 2026-09-13T18:06+02:00 — 260831-LOCR-L36: recorded the fixture's three new workflow-shaped leaf
   helpers. `author_unstarted_leaf` commands one more canonical leaf without starting its work

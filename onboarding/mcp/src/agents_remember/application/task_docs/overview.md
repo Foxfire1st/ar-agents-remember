@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:05+00:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,12 @@ batch with more than one graph-bearing document refuses, while on-disk title rea
 locked publisher callback. Create/replace share `task_doc_section_scaffolding`: raw `sections` must
 be a list of mappings before any missing canonical register scaffolds are appended.
 
+Since 260913-LCA-L5 create/replace also share one fail-closed authoring guard:
+`_require_bindable_leaf_authoring` refuses a leaf whose derived master link nothing would ever bind
+(no series contract and no master document in the task root), while the ordinary planning order —
+master first, then its leaves, before any start — remains allowed by the explicit guarantee that the
+first start binds the fields.
+
 ## Conventions
 
 - The package uses relative imports between its own modules (`from . import task_sprint_linkage`).
@@ -71,6 +77,13 @@ be a list of mappings before any missing canonical register scaffolds are append
 ## Invariants And Boundaries
 
 - Only these modules may author/render task documents; the application layer is the only writer.
+- Since 260913-LCA-L5 authoring fails closed on a derived field it cannot bind: `_build_doc` refuses a
+  leaf document authored under a task root with **no master document**, naming `seriesContractPath`, the
+  missing `task.json` and the remedy. The planning case — a master document exists but the series
+  contract is not bootstrapped yet — stays allowed, and only because the leaf's first
+  `worktree_start`/`worktree_attach` is guaranteed to bind both derived fields; the guarantee is stated
+  in the helper rather than left implicit. A leaf is therefore never authored under any task root: that
+  earlier claim is now false.
 - Task truth owns authoring; the waiting queue is a disposable scheduling projection and cannot
   freeze `task_doc` operations.
 - Queue invalidation cannot erase claimed/running/commit lifecycle evidence; that durable evidence
@@ -134,6 +147,14 @@ full-document `replace`. `remove_step` ("this step should never have existed") a
 ("this planned unit was deliberately not done") remain distinct and are not interchangeable.
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l5-ar`, base `52875e7a`): recorded the fail-closed authoring guard on the route.
+  `_require_bindable_leaf_authoring` refuses a leaf document authored under a task root with no master
+  document — the case where the derived `seriesContractPath`/`enclosures[]` would have nothing that could
+  ever bind them — while the planning order (master document present, series contract not yet
+  bootstrapped) stays allowed by the explicit guarantee that the leaf's first start binds both fields.
+  Corrected the invariant that implied a leaf could be authored under any task root. Route documentation
+  only: verification metadata remains closeout-owned and no execution or acceptance claim is made.
 - 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected this route's
   remaining source-pair/selector phrasing to per-contract activation — an otherwise-valid task
   mutation is never subordinate to queue or per-contract activation state, and per-contract

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-13T23:52+02:00|
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -903,9 +903,14 @@ The MCP package separates three surfaces:
   disposable interaction records; reads project retained state while approved writer-owned compaction reclaims logs, and `AgentPickupNode` projects
   pending inbox entries as waiting-for-agent/check-chat feedback for the dashboard, including L3
   sender/recipient role, message kind, artifact, and hosted-delivery metadata.
-  The series-contract resolver helpers in `worktrees/task_resolver.py` now own task-name lookup,
-  nested parent-task disambiguation, raw leaf `enclosures/<leaf-id>/series-contract.md` paths, archive
-  exclusion, and root-task archival into `tasks/<repo>/0_archive/`; `worktrees/leaf_refs.py` owns
+  The series-contract resolver in `worktrees/task_resolver.py` owns task-name lookup,
+  nested parent-task disambiguation, raw leaf `enclosures/<leaf-id>/series-contract.md` resolution, archive
+  exclusion, and root-task archival into `tasks/<repo>/0_archive/`. Since 260913-LCA-L5 the
+  task-layout **path vocabulary** it publishes is defined one layer down in `tasks/task_paths.py`
+  (`series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the two
+  predicates) and re-exported here under an explicit `__all__`, so `layers.toml`'s `tasks`(9) <
+  `worktrees`(10) order holds while every existing caller keeps importing `worktrees.task_resolver`, and
+  there is exactly one definition of each rule. `worktrees/leaf_refs.py` owns
   qualified/doc-id/legacy-stem leaf-ref validation and canonical id normalization for write surfaces,
   including schema-marker screening for sibling task-document JSON and standalone/light `task.json`
   doc-id candidates.
@@ -1218,6 +1223,16 @@ a shared renderer entry. Its residual gap is stated rather than hidden — a fut
 string some third way is caught only by its own route's behavioural case, and the prepared leg has none.
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
+  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
+  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
+  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
+  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
+  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
+  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
+  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
+  verification metadata remains closeout-owned and no execution or acceptance claim is made.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
   `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
   attribution plane. The kernel module now **writes** the trailer as well as reading it

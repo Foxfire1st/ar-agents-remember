@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_transaction_only_worktree_delivery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ leave no hook log. This captures the bounded commit contract: closeout stages an
 `commit_verified_staged` with `--no-verify`, while integration moves existing refs/tree state and
 creates no merge commit or merge-hook path.
 
-`_assert_memory_attribution` (`:176-221`) is the shared attribution reader the closeout scenarios call
+`_assert_memory_attribution` (`:183-227`) is the shared attribution reader the closeout scenarios call
 with the real commit shas the public routes returned. It reads the memory-content commit back out of the
 object and asserts `%B` equals `MESSAGES.memory` plus `\n\nCode-Commit: <code commit>`, that the literal
 `Code-Commit:` appears exactly once, that `git interpret-trailers --parse` returns
@@ -42,7 +42,7 @@ trailer. The mandatory `memory.md`-only ledger commit is asserted to return `""`
 it has no code counterpart to name, so it is deliberately left unattributed.
 
 **Since 260913-LCA-L4 the reader serves two routes, and the recovery route is the second one.**
-`test_closeout_recovery_attributes_the_memory_commit_it_still_owed` (`:321-445`) interrupts a real public
+`test_closeout_recovery_attributes_the_memory_commit_it_still_owed` (`:328-452`) interrupts a real public
 closeout *after* its code commit by making `closeout_external._refresh_external_memory` raise, asserts the
 contract holds a code commit but no memory-content commit, then resumes exactly as the recovery route does
 — a `WorktreeArgs` carrying `LifecycleOperationRecoveryCommits(codeCommit=..., memoryContentCommit="",
@@ -65,6 +65,11 @@ first attempt uses.
   assertions themselves were introduced by L1.
 - The recovery resume is a real public route: the journal cell is supplied as data, a wrong cell refuses
   before any mutation, and the case asserts the contract's code commit is unchanged by the resume.
+- The task documents these scenarios build carry both derived fields, exactly as `task_doc` stamps
+  them against a leaf contract. Since 260913-LCA-L5 a leaf document with an exact enclosure address
+  but no `seriesContractPath` refuses closeout by name
+  (`task-enclosure-binding-master-link-missing`), so a fixture that withheld the field would model the
+  damage state a later start repairs, not the document a start produces.
 - Integration refuses source movement before changing the protected pair.
 - Hook non-invocation is tested only for the configured repository hooks installed by the scenario;
   it does not imply that arbitrary external commands cannot run outside these commit paths.
@@ -74,13 +79,24 @@ first attempt uses.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public closeout delivers code, memory, and ledger while acceptance helpers are forbidden. | `test_public_closeout_commits_code_memory_and_ledger_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:223-318 |
-| The memory-content commit carries exactly one `Code-Commit` trailer naming the landed code commit, read back by `%B`, by `git interpret-trailers --parse`, and by `%(trailers:key=Code-Commit)`; the ledger commit returns `""` from the same reader. | `_assert_memory_attribution` | mcp/tests/test_transaction_only_worktree_delivery.py:176-221 |
-| The recovery route's behavioural case: a real public closeout interrupted after its code commit, resumed from the journalled cell, with a wrong cell refused first and the same two git readers asserted on the resumed shas. | `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` | mcp/tests/test_transaction_only_worktree_delivery.py:321-445 |
-| Public integration publishes the prepared pair without acceptance helpers and without configured hooks. | `test_public_integration_merges_prepared_pair_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:448-501 |
-| Source movement refuses before protected pair publication. | `test_public_integration_ref_movement_refuses_before_pair_merge` | mcp/tests/test_transaction_only_worktree_delivery.py:504-558 |
+| Public closeout delivers code, memory, and ledger while acceptance helpers are forbidden. | `test_public_closeout_commits_code_memory_and_ledger_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:230-325 |
+| The memory-content commit carries exactly one `Code-Commit` trailer naming the landed code commit, read back by `%B`, by `git interpret-trailers --parse`, and by `%(trailers:key=Code-Commit)`; the ledger commit returns `""` from the same reader. | `_assert_memory_attribution` | mcp/tests/test_transaction_only_worktree_delivery.py:183-227 |
+| The recovery route's behavioural case: a real public closeout interrupted after its code commit, resumed from the journalled cell, with a wrong cell refused first and the same two git readers asserted on the resumed shas. | `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` | mcp/tests/test_transaction_only_worktree_delivery.py:328-452 |
+| Public integration publishes the prepared pair without acceptance helpers and without configured hooks. | `test_public_integration_merges_prepared_pair_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:455-508 |
+| Source movement refuses before protected pair publication. | `test_public_integration_ref_movement_refuses_before_pair_merge` | mcp/tests/test_transaction_only_worktree_delivery.py:511-564 |
+| The task-binding helper now binds both derived fields, because a leaf document with an exact enclosure address but no `seriesContractPath` refuses closeout instead of passing silently. | `_bind_task_without_review` | mcp/tests/test_transaction_only_worktree_delivery.py:93-116 |
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
+  `52875e7a`): recorded that `_bind_task_without_review` now binds `seriesContractPath` alongside its
+  canonical enclosure binding, and why — the helper had been modelling the damage state, and a leaf
+  document with an exact enclosure address but no master link now refuses closeout by name
+  (`task-enclosure-binding-master-link-missing`) instead of passing silently. Added that rule as an
+  invariant and a reference row. Re-derived every range and both inline citations against the current
+  source with AST: the change's one import plus seven lines in `_bind_task_without_review` shifted every
+  later definition by seven (`_assert_memory_attribution` 176-221 → 183-227, closeout 223-318 → 230-325,
+  recovery 321-445 → 328-452, integration 448-501 → 455-508, ref-movement 504-558 → 511-564).
+  Verification metadata remains closeout-owned; no execution or acceptance claim.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): the file gained the recovery route's behavioural case,
   `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` (`:321-445`) — a real public

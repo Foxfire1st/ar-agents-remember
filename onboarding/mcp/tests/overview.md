@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,8 @@ checks for the branch-addressed route.
 | L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate. The activation admission is contract-scoped: a refusal carries no `classification`/`blocking`/`sourcePair*` key and never names a foreign master as blocker or retry precondition. Preparation evidence only. |
 | CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, configured-hook non-invocation, and the memory-content commit's one `Code-Commit:` trailer read back out of the object (the `memory.md`-only ledger commit carrying none); focused behavior evidence only. |
 | Ledger attribution and the projected source ledger | `test_memory_ledger.py`, `test_worktree_sync.py` | The projection equals the rows the tracked table carried at every checkpoint of an attributed line, a hand edit to the table cannot move it, the pre-trailer history reads its own blob, the bootstrap source contributes no rows, and a code tip the official memory line does not map still refuses by name without advancing the work branch. The ledger cases are the `unit-regression` lane and the sync case is the `integration` lane; the mid-cycle case's refusal comes from the named-ref ledger read, not from the projected source. |
-| Producer census and the one renderer | `test_memory_attribution_producers.py` | Five memory-content producers and zero untrailered, measured from source: the trailer key identifier and its interpolation appear in exactly one production module, no production module spells the trailer as a quoted literal, each of the five producers reaches a shared renderer entry, and a hostile multi-paragraph caller body survives byte for byte with the trailer appended as its own final block. The two non-closeout producers are driven end to end through the public `memory_carryover_apply` and `memory_baseline_adopt`. Source census plus real-repository cases; **the module has no lane row yet**, so `load_lane_manifest` fails closed on it — see the `test-evidence-lanes.toml` card. |
+| Producer census and the one renderer | `test_memory_attribution_producers.py` | Five memory-content producers and zero untrailered, measured from source: the trailer key identifier and its interpolation appear in exactly one production module, no production module spells the trailer as a quoted literal, each of the five producers reaches a shared renderer entry, and a hostile multi-paragraph caller body survives byte for byte with the trailer appended as its own final block. The two non-closeout producers are driven end to end through the public `memory_carryover_apply` and `memory_baseline_adopt`. Source census plus real-repository cases. **Superseding the note this row used to carry: the module's `unit-regression` lane row now exists** (`mcp/tests/test-evidence-lanes.toml:68`, added by the commit that landed L4), so the manifest loads. |
+| Leaf document master-link binding | `test_leaf_doc_master_link_binding.py` | The derived master link, end to end on real repositories: a leaf authored through `task_doc` with no series contract acquires `seriesContractPath` and its one `enclosures[]` ref when it is started; an already-damaged document (`lifecycleId` stale, no link) is repaired by its next start with objective, requirements, steps and title unchanged; a leaf under a task root with no master document is refused with `seriesContractPath`, the exact missing `task.json` and the remedy, writing nothing; and the planning flow (master plus two leaves, no start) still succeeds, still unstamped. Integration lane: one disposable code repository and one external memory repository per case. The restamp decision table is the unit half in `test_task_document_application_1.py`. |
 | Closeout recovery attribution | `test_transaction_only_worktree_delivery.py` | A real public closeout interrupted after its code commit is resumed through the journalled `LifecycleOperationRecoveryCommits` cell — a wrong cell is asserted to refuse first — and both documented git readers are asserted against the resumed shas, while the `memory.md`-only ledger commit returns none. The behavioural half of the census for the route that has no memory commit site of its own. |
 | Closeout auto-carry and parked candidate | `test_source_lineage.py` (`CloseoutSourceLineageHealTests`), `test_sync_parked_candidate.py` | The closeout boundary carries a settleable stale break, refuses a preview without mutating, escalates an unprovable break, and returns a parked dirty candidate through the sync transaction (restore on completed/resume/cancel, kept unmerged-index refusal); transaction-level detail lives in the new unit-lane module. |
 
@@ -147,6 +148,13 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
 
 The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 202 test-shaped modules: 114 unit-regression, 2 public-contract, 57 integration, 16 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty (260831-LOCR-L32 added one integration member — `test_worktree_status_terminal_next_tool.py` — 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py`, 260831-LOCR-L36 added `test_cross_master_concurrency.py`, 260831-LOCR-L37 added two: `test_pause_stop_only_end_to_end.py` to integration and `test_pause_is_not_publication.py` to architecture-fitness, and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to integration; the declared collected-case budgets are 1000 unit and 250 integration, the integration ceiling having been raised from 200 by L37 with a developer-authorized tradeoff block in `pyproject.toml`). That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 200-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+
+**Superseded counts (260913-LCA-L5 curator, measured at the current change set):** the sentence above records the
+pre-L4 population. The manifest now holds 204 modules on disk and 204 entries — 115 unit-regression,
+2 public-contract, 58 integration, 16 architecture-fitness, 13 provider-conformance, with
+stress-durability and migration empty — the growth being L4's `test_memory_attribution_producers.py`
+(row 68, unit-regression) and L5's `test_leaf_doc_master_link_binding.py` (row 152, integration). The
+`test-evidence-lanes.toml` card carries the per-lane brackets and is the owner of record.d it does not restore any retired matrix.
 
 260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
 load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
@@ -305,6 +313,44 @@ also moved one import in `test_memory_ledger.py` — `CODE_COMMIT_TRAILER_KEY` n
 as an exact consumer of two shared-support artifacts in `mcp/tests/evidence-lifecycle.toml`; no case and
 no assertion in `test_memory_ledger.py` changed.
 
+## 260913-LCA-L5 Leaf Master-Link Binding, And The Fixture Correction It Forced
+
+The change set's new module is `test_leaf_doc_master_link_binding.py` (integration lane, row 152): the
+derived master link proven end to end, plus the fail-closed half — a leaf under a task root with no master
+document is refused with its remedy. Its focused decision-table half is the new
+`LeafDocMasterLinkBindingTests` class in `test_task_document_application_1.py`.
+
+**One test was removed and must not be restored as it stood.**
+`test_task_document_application_1.py`'s `test_create_writes_both_files` authored a bare leaf through
+`task_doc` under a task root with no master document; the authoring plane now refuses exactly that
+scenario, because nothing would ever bind the leaf's derived `seriesContractPath`/`enclosures[]`. The
+file-write behavior it asserted survives in `test_leaf_create_syncs_parent_master_row` and in the new
+end-to-end module.
+
+Four existing test modules gained a prerequisite the refusal made mandatory, and each is a fixture
+correction rather than a weakened assertion:
+
+- `test_task_document.py` — shared `ApplicationTests._create` now ensures a parent master exists
+  (`_ensure_parent_master`), keeping every leaf operation on the flow the plane allows.
+- `test_task_doc_review_public.py` — `_create` writes the task root's master document first, because the
+  review API is exercised on a leaf.
+- `test_closeout_queue.py` — `_leaf` now binds `seriesContractPath` alongside `enclosures[]`.
+- `test_transaction_only_worktree_delivery.py` — `_bind_task_without_review` does the same.
+
+The last two are the load-bearing part, and they are why the fixture change is not cosmetic: a leaf
+document with an exact enclosure address but no `seriesContractPath` now **refuses closeout by name**
+(`task-enclosure-binding-master-link-missing`, raised by `worktrees/task_leaf_binding.py`) where it
+previously read as `present` and passed silently. Those two fixtures had been modelling the damage state
+that a start repairs, so four unrelated closeout cases began refusing until they carried the field
+`task_doc` actually stamps. That is an intended consequence of the change, not an accident.
+
+Lane membership was reconciled against the current manifest in the same change set: 204 modules on disk
+and 204 manifest entries, 115 unit-regression, 2 public-contract, 58 integration, 16 architecture-fitness
+and 13 provider-conformance, with stress-durability and migration empty. `load_lane_manifest` stays
+fail-closed, and both new-module rows (the L4 census and this leaf's binding suite) exist, so the
+manifest loads. Detail lives on the `test-evidence-lanes.toml` card, the owner of record for lane
+membership.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
@@ -325,12 +371,16 @@ These current source and policy ranges establish the development/certification d
 | The recorded flake note the L34 module carries. | "UNREPRODUCED FLAKE, RECORDED 2026-09-13" | mcp/tests/test_checkpoint_landing_end_to_end.py:1162-1175 |
 | The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
 | The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:465-512; mcp/tests/test_cross_master_concurrency.py:529-563; mcp/tests/test_cross_master_concurrency.py:565-623; mcp/tests/test_cross_master_concurrency.py:786-854; mcp/tests/test_cross_master_concurrency.py:754-782 |
-| The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:143-143 |
+| The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:144-144 |
 | The L37 stop boundary proof: the public pause, the measured world, the eight independently-failing cases and the refusals. Its never-selected case now asserts the already-vacant success rather than a refusal. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing` | mcp/tests/test_pause_stop_only_end_to_end.py:84-116; mcp/tests/test_pause_stop_only_end_to_end.py:148-166; mcp/tests/test_pause_stop_only_end_to_end.py:201-232; mcp/tests/test_pause_stop_only_end_to_end.py:234-261; mcp/tests/test_pause_stop_only_end_to_end.py:263-284 |
 | The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The L37 lane registrations the fail-closed manifest requires, one per new module (both rows shifted by the new integration row below). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:159-159; mcp/tests/test-evidence-lanes.toml:191-191 |
+| The L37 lane registrations the fail-closed manifest requires, one per new module (both rows shifted by the L4 census row and the L5 integration row). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:161-161; mcp/tests/test-evidence-lanes.toml:193-193 |
 | The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. | `LifecyclePlaythroughTests`; `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-74; mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-169 |
-| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:153-153 |
+| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:155-155 |
+| The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
+| The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:152-152 |
+| The removed case's scenario, now refused by design: the guard that makes a task root with no master document unbindable. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:619-649 |
+| The refusal the two corrected closeout fixtures had to satisfy. | `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
 | The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. | `class ActivationFixture`; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:58-106; mcp/tests/test_atomic_series_activation.py:117-140; mcp/tests/test_atomic_series_activation.py:174-209 |
 | The registered admission refusal now addresses only the addressed contract's own state. | `test_registered_sync_refusal_addresses_only_this_contracts_own_state` | mcp/tests/test_activation_admission_registered.py:178-221 |
 | The L2 attributed fixture line and the ten ledger-attribution cases: the every-checkpoint closed loop, the hand edit that cannot move the projection, the pre-trailer blob fallback, the bootstrap source, `exclude`, the last-block-wins parse, the unknown-code-commit drop, the by-key multi-trailer read, the merged-in mapping, and the writer/reader key round trip. | `_AttributedWorld`; `test_projection_is_the_ledger_the_attributed_history_records`; `test_projection_reads_the_trailer_and_never_the_live_table`; `test_projection_reads_an_unattributed_commit_from_its_own_ledger`; `test_projection_contributes_nothing_for_a_source_that_says_nothing`; `test_attribution_reads_only_the_commits_a_caller_asks_for`; `test_trailer_parse_takes_the_last_block_and_ignores_a_body_mention`; `test_attribution_reports_only_commits_the_code_repository_holds`; `test_attribution_reads_a_message_whose_final_block_carries_several_trailers`; `test_the_rendered_trailer_is_the_one_the_reader_parses`; `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:323-379; mcp/tests/test_memory_ledger.py:382-409; mcp/tests/test_memory_ledger.py:412-431; mcp/tests/test_memory_ledger.py:434-458; mcp/tests/test_memory_ledger.py:461-467; mcp/tests/test_memory_ledger.py:470-486; mcp/tests/test_memory_ledger.py:489-512; mcp/tests/test_memory_ledger.py:515-527; mcp/tests/test_memory_ledger.py:530-559; mcp/tests/test_memory_ledger.py:562-597; mcp/tests/test_memory_ledger.py:600-630 |
@@ -342,6 +392,23 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l5-ar`, base `52875e7a`): added a route section and a `Retained Behavioral Routes` row
+  for the change set's new `test_leaf_doc_master_link_binding.py` (integration lane, row 152) — the
+  derived master link end to end, plus the fail-closed half. Recorded that
+  `test_task_document_application_1.py`'s `test_create_writes_both_files` was **removed** because its
+  scenario is now refused by design, and that four existing modules gained a prerequisite the refusal
+  forced (`test_task_document.py._ensure_parent_master`, `test_task_doc_review_public.py._create`'s master
+  write, and the `seriesContractPath` binding in `test_closeout_queue._leaf` and
+  `test_transaction_only_worktree_delivery._bind_task_without_review`), with the reason the last two are
+  load-bearing rather than cosmetic. **Corrected the L4 open item rather than carrying it**: the producer
+  census module's `unit-regression` lane row now exists at `mcp/tests/test-evidence-lanes.toml:68`, so the
+  fail-closed load failure the L4 row and history entry predicted does not hold. Reconciled the population
+  to the measured current manifest (204 modules, 204 entries: 115 unit-regression, 2 public-contract, 58
+  integration, 16 architecture-fitness, 13 provider-conformance) in a superseding clause under the stale
+  paragraph, and re-derived three shifted lane rows (cross-master concurrency 143 → 144, the pause suite
+  159 → 161, the pause architecture guard 191 → 193, the playthrough 153 → 155). Verification metadata
+  remains closeout-owned; no execution or acceptance claim and no verification stamp advanced.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`, base
   `5bb124d4`): route refresh. Registered the leaf's new module
   `test_memory_attribution_producers.py` (the producer census: one-definition guard, five producers each

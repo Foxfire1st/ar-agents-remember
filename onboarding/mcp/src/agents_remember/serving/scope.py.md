@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/scope.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-29T17:50+02:00                     |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastUpdated            | 2026-09-14T07:05+02:00                     |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ modules.
 | The shared path-confinement helper (`confine_rel`) the scope uses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-49 |
 | The scope resolver bridge + "MissingMemoryError,". | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
 | The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-28 |
-| The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/worktrees/task_resolver.py:80-85 |
+| The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/tasks/task_paths.py:61-66 |
 | The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | `WorktreeContract`; `load_contract`; `ContractError` | mcp/src/agents_remember/worktrees/worktree_contract.py:89-90; mcp/src/agents_remember/worktrees/worktree_contract.py:228-283; mcp/src/agents_remember/worktrees/worktree_contract.py:434-464 |
 
 
@@ -112,6 +112,12 @@ selector=EnclosureSelector(contract_path=…))`. The resolved scope and its fall
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator: repointed one reference row after the 260913-LCA-L5
+  move. `iter_leaf_enclosure_contracts`, the enumerator this catalog walks, is now defined in
+  `mcp/src/agents_remember/tasks/task_paths.py:61-66` rather than in `worktrees/task_resolver.py` (whose
+  `:80-85` now holds a different function); `worktrees/task_resolver.py` re-exports it, so this card's
+  behavior claim is unchanged and only the anchor moved. No source file this card documents changed.
+  Verification metadata remains closeout-owned; no execution or acceptance claim.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `ContractError`, `WorktreeContract`, `load_contract` repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:228-283, mcp/src/agents_remember/worktrees/worktree_contract.py:434-464, mcp/src/agents_remember/worktrees/worktree_contract.py:89-90. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-08-29T17:50+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration in `worktree_contract.py`; scope discovery still consumes the same `WorktreeContract`, loader, and confinement authority. Refreshed the exact source ranges; verification remains closeout-owned.

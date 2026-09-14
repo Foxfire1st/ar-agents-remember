@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
-| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -315,6 +315,31 @@ memory candidates. It proves requested contract/repository identity, live roots,
 membership, checked out work branches, source/base equality, and base ancestry before emitting the
 shared pair model. No queue, report, repo-id lookup, branch switch, or fallback participates.
 
+## 260913-LCA-L5 Missing Master Link Refuses By Name
+
+`task_leaf_binding.py`'s `require_current_leaf_enclosure_binding` reads the enclosure-registration
+plan's state and, when the plan carries a candidate in state `master-link-missing`, raises
+`TaskLeafBindingError` with status `task-enclosure-binding-master-link-missing` and the route that
+actually binds the field — re-run `worktree_start`/`worktree_attach` so the start binding publisher
+writes `seriesContractPath`, then retry closeout. It deliberately does not reuse the `mismatched`
+recovery (`task_doc.replace` against the exact leaf contract), which could not have written a derived
+field.
+
+This is a real behaviour change on the route, and an intended one: a leaf document with an exact
+enclosure address but no `seriesContractPath` used to read as `present` and pass silently, so closeout
+would proceed on a document whose master link was never bound. Two shared closeout fixtures
+(`test_closeout_queue._leaf`, `test_transaction_only_worktree_delivery._bind_task_without_review`) had
+been modelling exactly that damage state and now bind the field. The publisher that repairs the
+document is `plan_leaf_doc_enclosure_registration` in the task route, reached from
+`_publish_leaf_task_enclosure_binding`; the worktrees route only names it.
+
+The same change set also moved this route's task-layout path vocabulary down a layer:
+`task_resolver.py` no longer defines `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two
+path builders or the two predicates — it imports them from the new `tasks/task_paths.py` and re-exports
+them under an explicit `__all__`, so `layers.toml`'s `tasks`(9) < `worktrees`(10) order holds and every
+existing caller is unchanged. What this route still owns in that module is task-name resolution,
+active-series discovery, leaf-enclosure contract resolution and root-task archival.
+
 ## 260831-CCR-L01 Shared Leaf Identity Boundary
 
 `task_leaf_binding.py` now delegates row/source identity to the pure task-domain
@@ -601,6 +626,18 @@ would use. The attribution path itself is proved by `mcp/tests/test_memory_ledge
 fixture line, and making the real history carry it is the master's backfill leaf.
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l5-ar`, base `52875e7a`): recorded the new `task-enclosure-binding-master-link-missing`
+  refusal on `require_current_leaf_enclosure_binding` — a leaf document with an exact enclosure address
+  but no `seriesContractPath` now refuses by name with the start/attach remedy instead of reading as
+  `present`, and the reason it does not reuse `mismatched`'s `task_doc.replace` recovery is that a replace
+  cannot write a derived field. Stated that two shared closeout fixtures were corrected because they had
+  been modelling the damage state, and that the repairing publisher lives on the task route. Also recorded
+  that this route's `task_resolver.py` lost ownership of the task-layout path vocabulary to the new
+  `tasks/task_paths.py` (it now re-exports it), which is what keeps `layers.toml`'s
+  `tasks`(9) < `worktrees`(10) order intact. Route
+  documentation only: verification metadata remains closeout-owned and no execution or acceptance claim is
+  made.
 - 2026-09-13T23:26+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): corrected the
   ancestry census in the route-impact section below to name its method and carry the full figures —
   `git merge-base --is-ancestor` at tip `5e4899ea` gives 442 rows on the first-parent line, 34 off it,
