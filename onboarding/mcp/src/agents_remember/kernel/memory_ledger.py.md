@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastUpdated            | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -17,7 +17,10 @@
 ## Purpose
 
 `memory_ledger.py` parses, validates, writes, and updates the external-memory
-`memory.md` ledger that maps code commits to memory-content commits.
+`memory.md` ledger that maps code commits to memory-content commits. It also declares **where** that
+ledger lives: `LEDGER_RELATIVE_PATH = "memory.md"`
+cit:([`LEDGER_RELATIVE_PATH`], mcp/src/agents_remember/kernel/memory_ledger.py:25-25) sits beside the schema, the row type and the
+parser because the path is a property of the ledger format rather than of any one reader.
 
 ## Code Commentary
 
@@ -31,6 +34,14 @@ mappings, and creates an initial ledger.
 `find_mapping` returns the first—and therefore current—row for a code commit. `contains_mapping`
 answers the different historical question: whether one exact code/memory edge exists anywhere in
 the immutable row history.
+
+`LEDGER_RELATIVE_PATH` is a declared constant and not a default buried in one reader, and the
+placement is the point: a kernel-level migration that reads the same table must not import a feature
+package to learn a filename. `worktrees/ledger_projection.py` imports it from here and re-exports it
+cit:([`LEDGER_RELATIVE_PATH`], mcp/src/agents_remember/worktrees/ledger_projection.py:44-63), so the callers that already name
+it from the projection keep working unchanged, while the kernel's own reader of the tracked table
+(`kernel/memory_backfill.ledger_rows_at`) takes it as its `relative` default without importing
+`worktrees` at all.
 
 ### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
 
@@ -75,10 +86,15 @@ the six JSONL logs.
 ### Conventions
 
 The parser deliberately uses the standard library and a small markdown/table
-grammar rather than pulling in a general markdown or YAML dependency.
+grammar rather than pulling in a general markdown or YAML dependency. The ledger's path is exported
+as one module constant rather than passed around as a literal, so a reader, a writer and a migration
+agree on `memory.md` by construction.
 
 ### Invariants And Boundaries
 
+- **The ledger's path is declared with the ledger's format.** `LEDGER_RELATIVE_PATH` lives here
+  beside `LEDGER_SCHEMA` and `LedgerRow`; `worktrees/ledger_projection.py` re-exports it through its
+  import so existing callers keep working, and no second declaration may appear.
 - `sortOrder` must remain `newest-first`.
 - The first table row must match `lastVerifiedCodeCommit` and
   `lastMemoryContentCommit`.
@@ -113,11 +129,12 @@ format.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of "class LedgerError(AgentsRememberError):"). | "class LedgerError(AgentsRememberError):" | mcp/src/agents_remember/kernel/memory_ledger.py:17-41 |
-| `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | `parse_ledger_text` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104 |
-| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:162-171; mcp/src/agents_remember/kernel/memory_ledger.py:174-199; mcp/src/agents_remember/kernel/memory_ledger.py:241-252 |
-| `find_mapping()` resolves current newest-first authority, while `contains_mapping()` proves one exact historical edge without imposing global code-key uniqueness. | `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:255-257; mcp/src/agents_remember/kernel/memory_ledger.py:260-268 |
-| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | "def write_ledger(path: Path" | mcp/src/agents_remember/kernel/memory_ledger.py:216-216 |
+| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of "class LedgerError(AgentsRememberError):"). | "class LedgerError(AgentsRememberError):" | mcp/src/agents_remember/kernel/memory_ledger.py:17-47 |
+| The declared location of the ledger, moved here from `worktrees/ledger_projection.py` so a kernel-level reader of the same table needs no feature-package import. | `LEDGER_RELATIVE_PATH` | mcp/src/agents_remember/kernel/memory_ledger.py:25-25 |
+| `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table; the unvalidated structural parse and the validator it delegates to are beside it. | `parse_ledger_text`; `parse_ledger_text_unvalidated`; `validate_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:58-63; mcp/src/agents_remember/kernel/memory_ledger.py:66-125; mcp/src/agents_remember/kernel/memory_ledger.py:168-177 |
+| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:168-177; mcp/src/agents_remember/kernel/memory_ledger.py:180-205; mcp/src/agents_remember/kernel/memory_ledger.py:247-258 |
+| `find_mapping()` resolves current newest-first authority, while `contains_mapping()` proves one exact historical edge without imposing global code-key uniqueness. | `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:261-263; mcp/src/agents_remember/kernel/memory_ledger.py:266-274 |
+| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:222-244 |
 | The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "contract for control-plane JSONL stores" | mcp/src/agents_remember/controlplane/durable_store.py:1-1 |
 
 ## Cross-Repo References
@@ -129,9 +146,23 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Journaled worktree closeout's sole external-phase owner imports these ledger helpers, then rewrites the code-to-memory mapping only when it actually changed. | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:64-64 |
-| The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:229-282 |
+| The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-359 |
 
 ## Update History
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): `LEDGER_RELATIVE_PATH = "memory.md"` is now declared here, beside the schema, the row
+  type and the parser, instead of in `worktrees/ledger_projection.py`. The reason is recorded in
+  `Purpose`, `Logic` and a new invariant: the path is a property of the ledger format, and a
+  kernel-level migration that reads the same table (`kernel/memory_backfill.ledger_rows_at`) must not
+  import a feature package to learn a filename. The projection imports and re-exports it, so every
+  caller that already names it from `worktrees.ledger_projection` is unchanged. Every citation in this
+  card was re-derived against the grown file — `write_ledger` 216-238 → 222-244 (the ruling paragraph
+  it anchors is unchanged), `parse_ledger_text` 52-104 → `parse_ledger_text`/`parse_ledger_text_unvalidated`/`validate_ledger`
+  at 58-63 / 66-125 / 168-177, `validate_ledger` 162-171 → 168-177, `ledger_to_text` 174-199 →
+  180-205, `prepend_mapping` 241-252 → 247-258, `find_mapping` 255-257 → 261-263, `contains_mapping`
+  260-268 → 266-274, the module-shape row 17-41 → 17-47, and
+  `require_integrated_ledger_mapping` 229-282 → 274-359. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `ledger_to_text`, `prepend_mapping`, `validate_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:162-171, mcp/src/agents_remember/kernel/memory_ledger.py:174-199, mcp/src/agents_remember/kernel/memory_ledger.py:241-252. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `find_mapping`; `contains_mapping` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:255-257; mcp/src/agents_remember/kernel/memory_ledger.py:260-268. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "def write_ledger(path: Path" repointed to mcp/src/agents_remember/kernel/memory_ledger.py:216-216. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

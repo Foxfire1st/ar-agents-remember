@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -113,7 +113,7 @@ args)` now wraps both:
 ```python
 def _remote_git(repo: Path, args: list[str]) -> subprocess.CompletedProcess[str] | None:
     try:
-        return run_git(repo, args, timeout=GIT_REMOTE_TIMEOUT_SECONDS)
+        return run_git(repo, args, GitRunnerOptions(timeout=GIT_REMOTE_TIMEOUT_SECONDS))
     except subprocess.TimeoutExpired:
         return None
 ```
@@ -129,7 +129,7 @@ never escapes as an exception; the payload shape and every reason string are unc
 
 Everything else in this module (`worktree remove`, `branch -d`/`-D`,
 `symbolic-ref`, `branch --show-current`, `checkout`) calls the shared
-`kernel.git_command.run_git` with no `timeout=`, i.e. the 300-second local class, and
+`kernel.git_command.run_git` with no options object, i.e. the 300-second local class, and
 with the `GIT_DIR`-family environment scrub the module-local runner never had.
 
 **Task 13 correction.** Work-branch cleanup no longer relies on Git's ambient
@@ -193,16 +193,16 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-708 |
+| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:637-712 |
 | The bridge releases only an exact selected series and reports durable release failure. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
 | Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:33-33 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:78-116 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:480-480 |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:480-514 |
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
-| `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:93-93 |
+| `_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`. | `_remote_git`; `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/worktrees/modules/cleanup.py:312-327; mcp/src/agents_remember/kernel/git_command.py:93-93 |
 | `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 | The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:229-242; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:245-287 |
 | The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220 |
@@ -241,6 +241,13 @@ the ephemeral terminal permit/release seam. Already-completed status returns the
 proof and never reconstructs deleted live state.
 
 ## Update History
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): `_remote_git` now calls `run_git(repo, args,
+  GitRunnerOptions(timeout=GIT_REMOTE_TIMEOUT_SECONDS))`, the timeout keyword having become a field
+  of the runner's one options object; the remote 120s class this site names is unchanged, and the
+  module's other calls still take the runner's 300s local default by passing no options object.
+  Re-derived the `_abandon_branches` row, which the same change set's shifts left stale
+  (480-480 → 480-514). Verification metadata remains closeout-owned.
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: documented that `_cleanup_outputs_result` and
   `_cleanup_terminal_outputs` now stage their outputs through `TerminalResult`, with
   `preview=args.dry_run` on the outputs result, so a dry run's `would_remove` entries are read as

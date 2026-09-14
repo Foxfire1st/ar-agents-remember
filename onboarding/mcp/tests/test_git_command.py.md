@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_git_command.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`|
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,15 +50,15 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A commit lands in the real repository not the decoy. | `test_a_commit_lands_in_the_real_repository_not_the_decoy` | mcp/tests/test_git_command.py:93-117 |
-| An explicit timeout still bounds a stalled command. | `test_an_explicit_timeout_still_bounds_a_stalled_command` | mcp/tests/test_git_command.py:121-131 |
-| Candidate tree isolates concurrent observers with one scratch namespace. | `test_candidate_tree_isolates_concurrent_observers_with_one_scratch_namespace` | mcp/tests/test_git_command.py:135-151 |
-| Exact private commit preserves logical state and normal hook policy. | `test_exact_private_commit_preserves_logical_state_and_normal_hook_policy` | mcp/tests/test_git_command.py:202-234 |
-| Raw commit readback preserves crlf and opaque signature header. | `test_raw_commit_readback_preserves_crlf_and_opaque_signature_header` | mcp/tests/test_git_command.py:236-264 |
-| Cancelled owner and forged capability start no commit. | `test_cancelled_owner_and_forged_capability_start_no_commit` | mcp/tests/test_git_command.py:266-277 |
-| Hidden index flags and changed physical bytes refuse commit. | `test_hidden_index_flags_and_changed_physical_bytes_refuse_commit` | mcp/tests/test_git_command.py:279-294 |
-| Stale logical tip and rebound private metadata refuse before mutation. | `test_stale_logical_tip_and_rebound_private_metadata_refuse_before_mutation` | mcp/tests/test_git_command.py:296-320 |
-| Failed hook returns original failure and does not retry. | `test_failed_hook_returns_original_failure_and_does_not_retry` | mcp/tests/test_git_command.py:322-337 |
+| A commit lands in the real repository not the decoy. | `test_a_commit_lands_in_the_real_repository_not_the_decoy` | mcp/tests/test_git_command.py:94-118 |
+| An explicit timeout still bounds a stalled command. | `test_an_explicit_timeout_still_bounds_a_stalled_command` | mcp/tests/test_git_command.py:122-136 |
+| Candidate tree isolates concurrent observers with one scratch namespace. | `test_candidate_tree_isolates_concurrent_observers_with_one_scratch_namespace` | mcp/tests/test_git_command.py:140-156 |
+| Exact private commit preserves logical state and normal hook policy. | `test_exact_private_commit_preserves_logical_state_and_normal_hook_policy` | mcp/tests/test_git_command.py:207-239 |
+| Raw commit readback preserves crlf and opaque signature header. | `test_raw_commit_readback_preserves_crlf_and_opaque_signature_header` | mcp/tests/test_git_command.py:241-269 |
+| Cancelled owner and forged capability start no commit. | `test_cancelled_owner_and_forged_capability_start_no_commit` | mcp/tests/test_git_command.py:271-282 |
+| Hidden index flags and changed physical bytes refuse commit. | `test_hidden_index_flags_and_changed_physical_bytes_refuse_commit` | mcp/tests/test_git_command.py:284-299 |
+| Stale logical tip and rebound private metadata refuse before mutation. | `test_stale_logical_tip_and_rebound_private_metadata_refuse_before_mutation` | mcp/tests/test_git_command.py:301-325 |
+| Failed hook returns original failure and does not retry. | `test_failed_hook_returns_original_failure_and_does_not_retry` | mcp/tests/test_git_command.py:327-342 |
 
 ## Cross-Repo References
 
@@ -69,6 +69,19 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): this module was migrated to the runner's one-object signature. It now imports
+  `GitRunnerOptions` and builds one at each of the two call sites that used a keyword —
+  `GitRunnerOptions(timeout=1)` for the stalled-command case (`:135`) and
+  `GitRunnerOptions(input_text=raw.decode("utf-8", "surrogateescape"))` for the raw-commit stdin case
+  (`:255`); the assertions are unchanged. The file grew five lines (one import plus four for the
+  split timeout call), so all nine anchors in the reference table were re-derived against the current
+  source: decoy 93-117 → 94-118, timeout 121-131 → 122-136, candidate tree 135-151 → 140-156, exact
+  private commit 202-234 → 207-239, raw commit 236-264 → 241-269, cancelled 266-277 → 271-282,
+  hidden index 279-294 → 284-299, stale tip 296-320 → 301-325 and failed-hook 322-337 → 327-342.
+  No content impact: no claim above was about the call form, so only the anchors moved and the
+  verification metadata remains closeout-owned.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

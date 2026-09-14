@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_freshness.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-06T22:01:41+00:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                         |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`                         |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ series.
 
 ## Code Commentary
 
-The removed bare-origin test card adds no independent production rule: the source still handles no-branch/no-upstream, fetch errors, stale comparison counts, and current/ahead/behind/diverged outcomes explicitly. Source: mcp/src/agents_remember/kernel/git_freshness.py:115-160.
+The removed bare-origin test card adds no independent production rule: the source still handles no-branch/no-upstream, fetch errors, stale comparison counts, and current/ahead/behind/diverged outcomes explicitly. Source: mcp/src/agents_remember/kernel/git_freshness.py:120-164.
 
 ### Logic
 
@@ -39,16 +39,16 @@ dataclass with `state` one of: `current`, `behind`, `ahead`, `diverged`,
 `no-upstream`, `no-branch` (detached HEAD), `unknown` (fetch failed or counts
 unresolvable — counts from the stale tracking ref are still reported when
 computable), or `unavailable` (git/filesystem error). `freshness_to_packet`
-cit:([`freshness_to_packet`], mcp/src/agents_remember/kernel/git_freshness.py:158-169)
+cit:([`freshness_to_packet`], mcp/src/agents_remember/kernel/git_freshness.py:167-178)
 projects the dataclass into the context-packet dict, adding `error` only when set.
 
-**This module declares the freshness vocabulary.** cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:29-38) is
+**This module declares the freshness vocabulary.** cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:30-39) is
 the eight-member alias — four members reporting a comparison that succeeded, four
 reporting why one could not be made — with `VALID_FRESHNESS_STATES` derived from
-it by cit:([`get_args`], mcp/src/agents_remember/kernel/git_freshness.py:41-41). `BranchFreshness.state` is that alias, not `str`,
-cit:([`BranchFreshness`], mcp/src/agents_remember/kernel/git_freshness.py:44-52)
+it by cit:([`get_args`], mcp/src/agents_remember/kernel/git_freshness.py:42-42). `BranchFreshness.state` is that alias, not `str`,
+cit:([`BranchFreshness`], mcp/src/agents_remember/kernel/git_freshness.py:45-53)
 and the computed fold in `_read_branch_freshness` is annotated
-cit:(["current"], mcp/src/agents_remember/kernel/git_freshness.py:146-154). `models.context_packet.BranchFreshness.state`
+cit:(["current"], mcp/src/agents_remember/kernel/git_freshness.py:155-165). `models.context_packet.BranchFreshness.state`
 **imports** it rather than keeping the hand-written eight-member copy it used to
 hold. The asymmetry is what made that copy dangerous: `freshness_to_packet` hands
 the wire boundary a plain dict, and half this vocabulary exists only on degrade
@@ -62,14 +62,16 @@ Mirrors `git_facts.py`: frozen dataclass + `*_to_packet` projector. Every git
 call now goes through the shared `run_git` from `kernel.git_command`,
 **including the fetch**. `fetch_remote` used to hold a local `subprocess.run`
 copy purely because `run_git`'s timeout was a fixed, unoverridable 5s; once the
-runner gained a per-call `timeout` keyword that copy had no reason to exist and
-was deleted cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:67-77). It still passes its own
-`DEFAULT_FETCH_TIMEOUT = 30`, cit:([`DEFAULT_FETCH_TIMEOUT`], mcp/src/agents_remember/kernel/git_freshness.py:23-23), which is now *shorter* than the runner's
+runner gained a per-call timeout that copy had no reason to exist and
+was deleted cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:68-82). It still passes its own
+`DEFAULT_FETCH_TIMEOUT = 30`, cit:([`DEFAULT_FETCH_TIMEOUT`], mcp/src/agents_remember/kernel/git_freshness.py:24-24), which is now *shorter* than the runner's
 `GIT_LOCAL_TIMEOUT_SECONDS = 300` default rather than longer than its old 5s:
 the fetch is the only network call in this module, and 30s is the point past
 which "still fetching" means "not coming back".
 
-**The timeout class is chosen per command, not per module.** No call in this
+**The timeout class is chosen per command, not per module, and since 260913-LCA-L3 it travels
+inside a `GitRunnerOptions` object** cit:([`GitRunnerOptions`], mcp/src/agents_remember/kernel/git_command.py:115-128)
+rather than as a `timeout=` keyword. No call in this
 file inherits the runner's default; each one names a band, and the code comments
 carry the reasoning:
 
@@ -86,12 +88,12 @@ carry the reasoning:
 
 - The only repository mutation is the optional fetch of remote-tracking refs;
   the working tree and local branches are never touched.
-- **cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:29-38) is the single declaration of this vocabulary.**
+- **cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:30-39) is the single declaration of this vocabulary.**
   `BranchFreshness.state` is typed with it and the context packet's wire model
   imports it. A ninth member — another degrade reason, most likely — is added
   here and nowhere else; a copy at the wire boundary would only be measured
   against this module when a real repository produced it.
-- cit:([`VALID_FRESHNESS_STATES`], mcp/src/agents_remember/kernel/git_freshness.py:41-41) is derived by `get_args`, never listed
+- cit:([`VALID_FRESHNESS_STATES`], mcp/src/agents_remember/kernel/git_freshness.py:42-42) is derived by `get_args`, never listed
   separately. The removed vocabulary census is not current execution evidence.
 - Errors degrade to data (`state` + `error`), never exceptions escaping to the
   caller — packet assembly must not fail because a remote is unreachable.
@@ -99,16 +101,16 @@ carry the reasoning:
   callers; preflights warn on it but do not block.
 - **Every `run_git` call in this file names its timeout; none inherits the
   runner's default.** There are exactly three non-fetch calls —
-  `upstream_ref`, cit:([`upstream_ref`], mcp/src/agents_remember/kernel/git_freshness.py:55-64),
+  `upstream_ref`, cit:([`upstream_ref`], mcp/src/agents_remember/kernel/git_freshness.py:56-65),
   and `branch --show-current` in `_read_branch_freshness`,
-  cit:([`_read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:115-155),
+  cit:([`_read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:120-164),
   at `GIT_METADATA_TIMEOUT_SECONDS` (30), and `ahead_behind`,
-  cit:([`ahead_behind`], mcp/src/agents_remember/kernel/git_freshness.py:80-95),
+  cit:([`ahead_behind`], mcp/src/agents_remember/kernel/git_freshness.py:85-100),
   at `GIT_LOCAL_TIMEOUT_SECONDS` (300) — plus the fetch,
-  cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:67-77), on its own 30s caller bound. Whichever bound trips, the result is still
+  cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:68-82), on its own 30s caller bound. Whichever bound trips, the result is still
   data, not an exception: `subprocess.TimeoutExpired` is a `SubprocessError`,
-  which both `fetch_remote`, cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:67-77), and
-  `read_branch_freshness`, cit:([`read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:98-112), catch and
+  which both `fetch_remote`, cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:68-82), and
+  `read_branch_freshness`, cit:([`read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:103-117), catch and
   turn into `state="unknown"`/`"unavailable"`.
 
 ### Todos
@@ -131,10 +133,10 @@ No external Domain Documentation source is configured for this memory repo.
 | The local default bound is 300 seconds. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:92-92 |
 | The ordinary remote bound is 120 seconds. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:93-93 |
 | The metadata bound is 30 seconds. | `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:94-94 |
-| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:133-184 |
-| Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. | `RepoState`, `VALID_REPO_STATES`, `read_git_facts` | mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:40-45 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
+| Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. | `RepoState`, `VALID_REPO_STATES`, `read_git_facts` | mcp/src/agents_remember/kernel/git_facts.py:23-23; mcp/src/agents_remember/kernel/git_facts.py:27-27; mcp/src/agents_remember/kernel/git_facts.py:41-46 |
 | The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`. | "state: FreshnessState" | mcp/src/agents_remember/models/context_packet.py:98-98 |
-| The context packet application entry point is the first consumer (`_freshness_packet`). | `_freshness_packet` | mcp/src/agents_remember/application/context_packet.py:105-132 |
+| The context packet application entry point is the first consumer (`_freshness_packet`). | `_freshness_packet` | mcp/src/agents_remember/application/context_packet.py:113-140 |
 
 ## Cross-Repo References
 
@@ -146,6 +148,22 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): every call in this module now names its bound through `GitRunnerOptions(timeout=...)`
+  instead of a `timeout=` keyword — `upstream_ref` and `_read_branch_freshness`'s branch lookup at
+  `GIT_METADATA_TIMEOUT_SECONDS`, `ahead_behind` at `GIT_LOCAL_TIMEOUT_SECONDS`, and `fetch_remote`
+  on its own caller-supplied `DEFAULT_FETCH_TIMEOUT`. The band each command names is unchanged, and
+  no call inherits the runner's default. Every citation in this card was re-derived against the
+  current file, whose vocabulary block sits lower than the ranges this card carried: `FreshnessState`
+  29-38 → 30-39, `VALID_FRESHNESS_STATES` 41 → 42, `BranchFreshness` 44-52 → 45-53,
+  `DEFAULT_FETCH_TIMEOUT` 23 → 24, `fetch_remote` 67-77 → 68-82, `upstream_ref` 55-64 → 56-65,
+  `ahead_behind` 80-95 → 85-100, `read_branch_freshness` 98-112 → 103-117, `_read_branch_freshness`
+  115-155 → 120-164, the `state: FreshnessState` fold 146-154 → 155-165, `freshness_to_packet`
+  158-169 → 167-178, the degrade-path region 115-160 → 120-164, the shared-runner row 133-184 →
+  149-213, the sibling `git_facts` row 22/26/40-45 → 23/27/41-46, and the application consumer
+  `_freshness_packet` 105-132 → 113-140. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
+
 - 2026-09-06T22:01:41+00:00 — Reconciled retired test evidence against current owning source; retained production invariants and verification pins without claiming removed suite protection.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
@@ -153,19 +171,19 @@ No meaningful cross-repo references found.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:56+02:00 — 260731-EFA-L4 curator: body updated and every self-citation
-  re-derived. This module now DECLARES cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:29-38), the eight-member freshness
-  vocabulary, with `VALID_FRESHNESS_STATES` derived by cit:([`get_args`], mcp/src/agents_remember/kernel/git_freshness.py:41-41);
-  `BranchFreshness.state`, cit:([`BranchFreshness`], mcp/src/agents_remember/kernel/git_freshness.py:44-52), changed from `str` to that alias and the computed fold is
-  annotated cit:(["current"], mcp/src/agents_remember/kernel/git_freshness.py:146-154). `models.context_packet.BranchFreshness.state` imports
+  re-derived. This module now DECLARES cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:30-39), the eight-member freshness
+  vocabulary, with `VALID_FRESHNESS_STATES` derived by cit:([`get_args`], mcp/src/agents_remember/kernel/git_freshness.py:42-42);
+  `BranchFreshness.state`, cit:([`BranchFreshness`], mcp/src/agents_remember/kernel/git_freshness.py:45-53), changed from `str` to that alias and the computed fold is
+  annotated cit:(["current"], mcp/src/agents_remember/kernel/git_freshness.py:155-165). `models.context_packet.BranchFreshness.state` imports
   it instead of holding the hand-written eight-member copy it used to — the copy that was most
   exposed of any in the package, because half these members exist only on degrade paths and
   `freshness_to_packet` crosses the boundary as an untyped dict. Added the declaration paragraph
   and two invariants. The file grew 151 → 169 lines and all nine self-citations were re-derived
-  against the current source, including cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:67-77),
-  cit:([`upstream_ref`], mcp/src/agents_remember/kernel/git_freshness.py:55-64),
-  cit:([`ahead_behind`], mcp/src/agents_remember/kernel/git_freshness.py:80-95),
-  cit:([`_read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:115-155), and
-  cit:([`DEFAULT_FETCH_TIMEOUT`], mcp/src/agents_remember/kernel/git_freshness.py:23-23). The shared-runner,
+  against the current source, including cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:68-82),
+  cit:([`upstream_ref`], mcp/src/agents_remember/kernel/git_freshness.py:56-65),
+  cit:([`ahead_behind`], mcp/src/agents_remember/kernel/git_freshness.py:85-100),
+  cit:([`_read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:120-164), and
+  cit:([`DEFAULT_FETCH_TIMEOUT`], mcp/src/agents_remember/kernel/git_freshness.py:24-24). The shared-runner,
   git-facts, context-packet, wire-model, and exhaustiveness references are recorded in the current
   Repo-Internal table. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T21:35+02:00 — 260731-EFA-L3 curator, correction on top of the 20:52 entry below. That
@@ -174,10 +192,10 @@ No meaningful cross-repo references found.
   false when written: there are **three** non-fetch calls, not four; all three now name a bound
   explicitly; and two of them take the *metadata* band, not the local default. A later fix moved
   the timeout class onto the command rather than the module — `upstream_ref`,
-  cit:([`upstream_ref`], mcp/src/agents_remember/kernel/git_freshness.py:55-64), and
-  `_read_branch_freshness`'s branch lookup, cit:([`_read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:115-155),
+  cit:([`upstream_ref`], mcp/src/agents_remember/kernel/git_freshness.py:56-65), and
+  `_read_branch_freshness`'s branch lookup, cit:([`_read_branch_freshness`], mcp/src/agents_remember/kernel/git_freshness.py:120-164),
   now pass `GIT_METADATA_TIMEOUT_SECONDS` (30), while `ahead_behind`,
-  cit:([`ahead_behind`], mcp/src/agents_remember/kernel/git_freshness.py:80-95), passes
+  cit:([`ahead_behind`], mcp/src/agents_remember/kernel/git_freshness.py:85-100), passes
   `GIT_LOCAL_TIMEOUT_SECONDS` (300) *explicitly*, because `rev-list --left-right --count` walks
   history and is not constant time. Rewrote the invariant to state the three assignments and kept
   the still-true half (`TimeoutExpired` is a `SubprocessError` and degrades to `state` + `error`),
@@ -188,7 +206,7 @@ No meaningful cross-repo references found.
 
 - 2026-07-31T20:52+02:00 — 260731-EFA-L3 curator: body updated. The Conventions paragraph said the
   fetch "shells out directly" because it "needs its own longer timeout than `run_git`'s fixed 5s";
-  both halves are now false. `fetch_remote`, cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:67-77),
+  both halves are now false. `fetch_remote`, cit:([`fetch_remote`], mcp/src/agents_remember/kernel/git_freshness.py:68-82),
   calls `run_git(repo_root, ["fetch", remote], timeout=timeout)` — its hand-rolled `subprocess.run`
   was deleted — and its `DEFAULT_FETCH_TIMEOUT = 30` is now shorter, not longer, than the runner's
   `GIT_LOCAL_TIMEOUT_SECONDS = 300` default. Repaired the shared-runner row to use current exact

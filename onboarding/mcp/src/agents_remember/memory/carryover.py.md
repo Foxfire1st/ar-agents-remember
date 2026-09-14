@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/memory/carryover.py`                |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastUpdated            | 2026-09-14T17:20+02:00                                      |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -57,8 +57,8 @@ After the plan and clean target-memory check, `required_target_storage(target_me
 explicit effective settings before any content or ledger mutation. The same settings feed
 `_refresh_target_route_indexes`; source-memory defaults cannot grant target write authority.
 
-cit:([`_require_carryover_authority`], mcp/src/agents_remember/memory/carryover.py:865-901)
-cit:([`_apply_carryover_for_request`], mcp/src/agents_remember/memory/carryover.py:760-863)
+cit:([`_require_carryover_authority`], mcp/src/agents_remember/memory/carryover.py:873-909)
+cit:([`_apply_carryover_for_request`], mcp/src/agents_remember/memory/carryover.py:768-870)
 
 **Git now runs through the one owner (260731-EFA-L3).** This module no longer carries a local
 `subprocess.run` adapter. It imports `run_git` from `agents_remember.kernel.git_command` and keeps
@@ -67,18 +67,20 @@ stripped stdout every caller here wants:
 
 ```python
 def require_git(repo: Path, args: list[str], *, input_text: str | None = None) -> str:
-    result = run_git(repo, args, input_text=input_text)
+    result = run_git(repo, args, GitRunnerOptions(input_text=input_text))
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or f"git {' '.join(args)} failed")
     return result.stdout.strip()
 ```
 
 `patch_id` is the only caller in the package that feeds git's stdin —
-`run_git(repo, ["patch-id", "--stable"], input_text=diff_text)` — which is why `input_text` is a
-keyword parameter of the shared runner rather than of a local copy. The ambient-selector scrubbing
+`run_git(repo, ["patch-id", "--stable"], GitRunnerOptions(input_text=diff_text))` — which is why
+`input_text` is a field of the shared runner's options object rather than of a local copy. The
+ambient-selector scrubbing
 this module used to perform for itself with `git_environment()` is now unconditional inside
 `run_git` (`env=git_environment()`), and every carryover git call additionally inherits the shared
-runner's `timeout=GIT_LOCAL_TIMEOUT_SECONDS` (300s) default, `encoding="utf-8"` and
+runner's `GIT_LOCAL_TIMEOUT_SECONDS` (300s) default — `GitRunnerOptions.timeout` — plus
+`encoding="utf-8"` and
 `errors="surrogateescape"`. The removed local adapter had none of the last three.
 
 ### Attribution At The Commit Seam (260913-LCA-L4)
@@ -86,7 +88,7 @@ runner's `timeout=GIT_LOCAL_TIMEOUT_SECONDS` (300s) default, `encoding="utf-8"` 
 Carryover is one of the two producers whose commit message is a **public argument of another tool**
 (`CarryoverCommitMessages.memory`), and that is the whole reason its attribution is appended rather than
 formatted into a new body. `_apply_carryover_for_request` commits the caller's message verbatim and
-renders it through the kernel's single writer (`:846-849`):
+renders it through the kernel's single writer (`:854-857`):
 
 ```python
 memory_content_commit = commit_if_dirty(
@@ -95,20 +97,20 @@ memory_content_commit = commit_if_dirty(
 )
 ```
 
-`official_head` (`:787`) is the code commit this mapping already names — the same value the very next
-line prepends to the ledger (`prepend_mapping(ledger, official_head, memory_content_commit)`, `:850`) —
+`official_head` (`:795`) is the code commit this mapping already names — the same value the very next
+line prepends to the ledger (`prepend_mapping(ledger, official_head, memory_content_commit)`, `:858`) —
 so the trailer and the ledger row are derived from one resolution and cannot disagree. The caller's body
 may be several paragraphs and its own last paragraph may itself be `Key: value` lines; the renderer keeps
 it byte for byte and appends the attribution as its own final block after a blank line, which is what
 stops a body line from being read as this attribution. No caller has to know attribution exists, and the
 public dialect is unchanged.
 
-By rule, two things on this path carry no trailer. The ledger leg (`:852`) commits
+By rule, two things on this path carry no trailer. The ledger leg (`:860`) commits
 `options.ledger_commit_message` unchanged: the `memory.md`-only commit names no code commit, and a
 second trailered commit for one code commit would project a duplicate row. The nothing-to-carry path
-(`_nothing_to_carry_result`, `:720-757`) creates no memory commit at all in its
+(`_nothing_to_carry_result`, `:728-765`) creates no memory commit at all in its
 `nothing-to-carryover` branch; in its `ledger-mapped-head` branch it commits only the ledger leg
-(`:748`), which stays unattributed for the same reason.
+(`:756`), which stays unattributed for the same reason.
 
 ### Conventions
 
@@ -157,11 +159,11 @@ define the current write-authority contract; deleted tests provide no current co
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Target JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-100; mcp/src/agents_remember/kernel/route_index.py:184-197 |
-| Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:202-205; mcp/src/agents_remember/kernel/memory_ledger.py:216-238 |
-| The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| The memory-content commit is attributed to `official_head` through the kernel's one renderer, from the same resolution the ledger row uses; the ledger leg stays plain. | `render_memory_content_message`; `official_head`; `commit_if_dirty` | mcp/src/agents_remember/memory/carryover.py:787-787; mcp/src/agents_remember/memory/carryover.py:846-852; mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
-| The nothing-to-carry ledger-mapped-head branch commits only the ledger leg, which carries no trailer; the nothing-to-carryover branch creates no commit. | `_nothing_to_carry_result` | mcp/src/agents_remember/memory/carryover.py:720-757 |
+| Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-100; mcp/src/agents_remember/kernel/route_index.py:184-235 |
+| Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:208-211; mcp/src/agents_remember/kernel/memory_ledger.py:222-244 |
+| The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`), all now reached as fields of `GitRunnerOptions`. | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:55-64; mcp/src/agents_remember/kernel/git_command.py:92-92; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
+| The memory-content commit is attributed to `official_head` through the kernel's one renderer, from the same resolution the ledger row uses; the ledger leg stays plain. | `render_memory_content_message`; `official_head`; `commit_if_dirty` | mcp/src/agents_remember/memory/carryover.py:795-795; mcp/src/agents_remember/memory/carryover.py:854-860; mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
+| The nothing-to-carry ledger-mapped-head branch commits only the ledger leg, which carries no trailer; the nothing-to-carryover branch creates no commit. | `_nothing_to_carry_result` | mcp/src/agents_remember/memory/carryover.py:728-765 |
 | The end-to-end case that drives the public `memory_carryover_apply` with a hostile multi-paragraph body and asserts the trailer equals `official_head` while the ledger commit carries none. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:237-287 |
 
 ## Cross-Repo References
@@ -178,6 +180,15 @@ authorization implementation remains package-local.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): `require_git` now calls `run_git(repo, args, GitRunnerOptions(input_text=input_text))`
+  and `patch_id` calls `run_git(repo, ["patch-id", "--stable"], GitRunnerOptions(input_text=diff_text))`,
+  the runner's keyword arguments having collapsed into one optional `GitRunnerOptions` object; the
+  timeout class each site names is unchanged. Rebound the ranges the migration shifted
+  (`_apply_carryover_for_request` 760-863 → 768-870, `_require_carryover_authority` 865-901 → 873-909,
+  `official_head` 787 → 795, the commit/render pair 846-852 → 854-860, `_nothing_to_carry_result`
+  720-757 → 728-765, `load_ledger`/`write_ledger` 202-205/216-238 → 208-211/222-244), and recorded
+  that the timeout every carryover call inherits is the `GitRunnerOptions.timeout` default.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): carryover became one of the five memory-content producers. `:846-849` now commits
   the caller's `CarryoverCommitMessages.memory` body through

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-14T11:58+02:00|
-| lastVerifiedCommitHash | `91a2a6e1d6b198a97a8de7eed3c2eed530aa0c55` |
-| lastVerifiedCommitDate | 2026-09-14T12:22:32+02:00|
+| lastUpdated | 2026-09-14T18:20+02:00|
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -702,11 +702,12 @@ unguarded worktree copy sat behind `commit`, `merge --ff-only`, `reset --hard`,
 The historical EFA-L3 census counted twenty-six imports from the single runner; it is not a current count. Twenty-four took the symbol
 (`from agents_remember.kernel.git_command import ...`) and two take the module
 (`from agents_remember.kernel import git_command`, in `code_quality/check.py` and
-`code_quality/diff_coverage.py`). Two of the twenty-six want `git_environment()` rather than, or
-as well as, `run_git`: `benchmarks/runner_modules/commands.py` composes its own argv so the runner
-cannot carry it; `worktrees/modules/landing.py::_pr_for` spawns `gh pr list`, which is not git but
+`code_quality/diff_coverage.py`). One importer wants `git_environment()` rather than, or as well as,
+`run_git`: `worktrees/modules/landing.py::_pr_for` spawns `gh pr list`, which is not git but
 resolves the repository *through* git, so an inherited `GIT_DIR` would list another repository's
-pull requests. The quality-gate adapter no longer launches a host wrapper or builds a host
+pull requests. (`benchmarks/runner_modules/commands.py` used to be named here for composing its own
+argv; since 260731-EFA-L3 it calls `run_git` like every other module, and the historical census above
+is what still lists it.) The quality-gate adapter no longer launches a host wrapper or builds a host
 environment; it hands the reconstructed candidate and ancestry bundle to the pinned Dagger graph.
 
 The runner always scrubs the eight selectors, always declares its stdin — `DEVNULL`, or
@@ -719,6 +720,18 @@ cancellation path), and `GIT_METADATA_TIMEOUT_SECONDS = 30` for constant-time re
 on interactive paths. Consolidating onto the old five-second bound unchanged would
 have replaced a redirection bug with a five-second failure on every integrate.
 
+**Since 260913-LCA-L3 those three ways to aim a command are one object.** `run_git(repo_root, args,
+options=None)` takes a `GitRunnerOptions` — `work_dir`, `input_text`, and a `timeout` defaulting to
+`GIT_LOCAL_TIMEOUT_SECONDS` — plus a fourth field, `identity`, which adds `GIT_AUTHOR_*` and
+`GIT_COMMITTER_*` names on top of the sanitized environment. `identity` exists for exactly one
+command: `git commit-tree` reads the author, the committer and both timestamps from those variables
+and from nowhere else, so the memory-history rewrite that must reproduce an existing commit byte for
+byte has no argv spelling for it. It can never reintroduce a repository selector — the selector strip
+runs first, and a name in `GIT_REPOSITORY_SELECTOR_ENV` raises `ValueError` instead of being set — and
+the reason the runner's signature collapsed back to two positional facts is that these are one
+concept rather than four unrelated keywords. 38 call sites across 19 files were migrated
+mechanically, and not one of them changed which command it runs or which timeout class it names.
+
 **The class belongs to the command, not to the module that calls it.** Consolidating onto a runner
 whose *default* is the local bound would have silently moved every `rev-parse` from 5s to 300s — a
 60x loosening on reads that sit under `resolve_context`, which runs on essentially every tool call,
@@ -729,15 +742,20 @@ and `rev-list --left-right --count` are not constant time (one stats the whole w
 walks history) and keep the local bound **explicitly named** rather than defaulted.
 `kernel/git_facts.py::_git_stdout` makes `timeout` a *required* keyword-only argument for exactly
 that reason — a call site that leaves the class to the default is a type error, not a quiet
-inheritance. `kernel/git_freshness.py::fetch_remote` keeps its own 30s `DEFAULT_FETCH_TIMEOUT`.
-`mcp/tests/test_git_command.py::TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel`
-pins the rule where it was already broken: `branch --show-current` and `rev-parse HEAD` are called
-from both `kernel/coordination_context/cross_repo.py` and `kernel/git_facts.py`, and the test
-asserts the two modules agree.
+inheritance — and it passes that bound on through `GitRunnerOptions`.
+`kernel/git_freshness.py::fetch_remote` keeps its own 30s `DEFAULT_FETCH_TIMEOUT`.
+The former cross-module timeout-comparison suite (`TimeoutClassTests` in
+`mcp/tests/test_git_command.py`) was removed by the 2026-09-06 test-inventory reduction at
+`d3610903`; the current call sites and the canonical constants own the contract now, and the
+`mcp/tests` route records that reduction.
 
-`mcp/tests/test_git_command.py` holds every half: a decoy repository the selectors
-point at, an AST sweep that fails if a seventh runner appears, a guard-on-the-guard suite that
-plants each bypass form the sweep must catch, and the per-command timeout assertions above.
+`mcp/tests/test_git_command.py` holds the retained single-runner half: a decoy repository the
+selectors point at, a stalled command asserted to trip an explicit bound, an isolated
+candidate-index case, and the exact private-preparation refusals (forged or cancelled authority,
+hidden index flags, physical drift, stale bindings). The AST sweep that failed on a second runner,
+the guard-on-the-guard suite that planted each bypass form, and the per-command timeout assertions
+were part of the same reduction and are **not** current coverage; the single-runner boundary is
+carried by the source and by this route's description of it rather than by a test.
 
 Branch-memory carryover (`memory/carryover.py`)
 plans route-overview candidates beside file sidecars (route-keyed, never
@@ -1225,7 +1243,133 @@ being spelled as a quoted literal anywhere in production, and asserts each of th
 a shared renderer entry. Its residual gap is stated rather than hidden — a future producer building the
 string some third way is caught only by its own route's behavioural case, and the prepared leg has none.
 
+## 260913-LCA-L3 The History Backfill, And Why It Is Deferred
+
+The trailer rule decided how every memory-content commit is written **from that point on**. The
+history written before it carries no trailer at all, so the ledger's rows for that history are proved
+by the table each commit's own tree records rather than by its message. The third kernel module in
+this plane, [kernel/memory_backfill.py](src/agents_remember/kernel/memory_backfill.py.md), is the
+migration that closes that gap: it derives which commits must receive a trailer from the table the
+history already records, and rewrites exactly those commit objects with the trailer appended.
+
+**The rule that picks which pairings survive is declared, and it has two halves.**
+`%(trailers:key=Code-Commit,valueonly)` renders one line per matching trailer and both readers take
+the last, so one memory commit can carry exactly one code commit while the table records more pairings
+than that allows. The selection is therefore: a **maximum matching** first, so no code commit is left
+unnamed while a memory commit that could have named it stands empty — code commits offered
+most-constrained-first, with a tie between two equally constrained claims going to the older row, read
+off the table rather than off object names — and then a **fill** giving every memory commit the
+matching did not reach its own oldest row. The fill is load-bearing rather than cosmetic: a matching is
+symmetric and the format is not, so a matching alone leaves dozens of named memory commits
+unattributed. Every row the rule passes over is reported, from a closed five-literal vocabulary that
+splits into **holes** no selection could repair (a memory cell that names no object, a memory commit
+outside the tip's ancestry, a code commit the code repository does not hold) and **declines** the rule
+chose (a memory commit already carrying another code commit, a code commit already named by an earlier
+row), and every code commit left with no trailer at all is named in `lost_claims` together with the
+memory commit and the code commit that took its pairing — because a migration that silently collapsed
+rows would look exactly like one with nothing to do, and a loss reported as a number is not
+adjudicable. A plan that lost a mapping can never report empty. The
+rewrite changes messages and nothing else: tree, parents, both identities and both timestamps are
+replayed through `git commit-tree`, and the dates are read in git's internal `<timestamp> <tzoffset>`
+spelling rather than strict ISO, because strict ISO renders a `+0000` offset as `Z` and the replay
+would no longer be byte-for-byte the object it replaces. That is why the runner grew
+`GitRunnerOptions.identity`, and it is also why idempotence is structural rather than plan-level: a
+no-op rebuild reproduces a commit's exact object id, so a second run is the identity function. The
+recoverable order is plan, optional digest pin, the empty-plan short-circuit, the rescue-ref guard,
+every name resolved to an exact commit, rescue refs written and read back before the first new
+object exists, then every named ref moved in one `git update-ref --stdin` transaction. Because the
+table records the *old* ids, the migration has a second half — `carry_ledger_cells` rewrites the
+tracked table's memory column onto the total old→new map — and the kernel now declares
+`LEDGER_RELATIVE_PATH` itself so a kernel-level reader of that table needs no feature-package import.
+
+**An external review found two defects and both are fixed; the module has not been applied to any real
+repository.** The first was the selection: keeping one row per code commit and letting the last
+assignment win meant a dictionary's hash order decided a conflict and 16 code commits lost their
+mapping, and it left every memory commit the matching did not reach without a trailer. Measured on the
+real history at `7aa4cd97`, the fixed selection names **418 of the table's 428** code commits — the
+maximum, confirmed independently with Hopcroft-Karp — and carries a trailer on **455 of 455** memory
+commits, recovering 52 of the 60 omitted pairings the review counted. Of the remaining 8, five are
+provably uncarryable (two equally constrained claims with nothing to fall back on) and three are the
+same tie resolved by the table's own order; a variant that scored 55 of 60 selects by hash order and
+was deliberately refused. The bound is structural: 472 pairings compete for 455 single-trailer memory
+commits and at most 418 matchable code commits. The second defect was on the CLI's own path, where
+`request.tip` is a branch NAME: a rescue set verified against a name can never read back equal to a
+hash, so the run wrote its rescue refs and then refused, and the retry tripped the existing-ref check
+on refs its own predecessor had created. Every name is now resolved to an exact commit before any ref
+is written, the same fix covers short names handed to `update-ref --stdin`, and the empty-plan check
+now precedes the rescue guard so a retry is a no-op. The acceptance proof was also the defect's
+accomplice: it read the table the migration carries forward, and because `read_ledger_source` unions
+table rows into trailer rows it proved the table had survived rather than that the trailers alone
+preserve the pairings — which is how 60 omissions passed a green suite. It now reads the rewritten tip
+through an **absent ledger path**, so the comparison is against Git-parsed trailers alone.
+
+**The earlier confined apply was reverted by developer ruling, and the reason is lineage rather than
+correctness.** The pre-fix confined rewrite of this master's own memory line
+(`7aa4cd97` → `df863a24`) behaved exactly as scoped: one branch changed plus the leaf's work branch,
+every other ref byte-identical, tree sequences, identities, dates and subjects identical, 405 commits
+rewritten, and a re-plan over the real repository empty. But rewriting the **shared ancestors**
+renumbered them, so
+the master's memory line and its super branch shared no common ancestor: the plane's own lineage gate
+then refused everything downstream (`closeout-door-source-lineage-stale`, blocking the master's
+memory edge at ahead 978 / behind 954), the named recovery route `worktree_sync` could not help
+because git refuses to merge unrelated histories and nothing passes
+`--allow-unrelated-histories`, and all eleven sibling enclosures would have failed the same way. The
+revert moved the two refs back to `7aa4cd97`, restored the leaf's carried table and the merge base,
+and deliberately kept `refs/backup/pre-migration` as the audit trail of the reverted attempt. The
+consequence is recorded as an obligation rather than a gap: the shared line still carries **0**
+`Code-Commit:` trailers, the fixed tool is proven on fixtures plus a read-only plan measurement and has
+**not** been applied to any real repository, and the backfill is an explicit step at this master's
+integration into IAS, where the shared line's ids change anyway. The worker's re-measurement also
+replaced the leaf document's census — 474 tracked rows and 419 distinct code commits at the shared line
+are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at the master's tip, and
+"10 skips" is 67 and 44 under the superseded vocabulary, of which 23 are unreachable memory commits and
+two name no object at all.
+
 ## Update History
+- 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
+  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
+  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
+  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
+  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
+  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
+  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
+  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
+  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
+  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
+  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
+  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
+  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
+  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
+  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
+  its own predecessor's refs — every name is now resolved before any ref is written and the
+  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
+  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
+  unions the table into the trailers and the earlier proof therefore proved the table had survived —
+  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
+  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
+  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
+  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
+  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
+  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
+  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
+  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
+  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
+  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
+  reverted by developer ruling because rewriting the shared ancestors removed the master's common
+  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
+  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
+  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
+  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
+  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
+  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
+  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
+  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
+  `d3610903` rather than current coverage, with the retained half described instead. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
   `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
   `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a

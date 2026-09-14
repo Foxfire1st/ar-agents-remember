@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_facts.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                         |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`                         |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,17 +26,17 @@ exception escaping to the caller.
 
 ### Logic
 
-cit:([`read_git_facts`], mcp/src/agents_remember/kernel/git_facts.py:40-45) resolves the path and delegates to
-cit:([`_read_git_facts`], mcp/src/agents_remember/kernel/git_facts.py:48-101), catching `OSError`/`SubprocessError` into an
+cit:([`read_git_facts`], mcp/src/agents_remember/kernel/git_facts.py:41-46) resolves the path and delegates to
+cit:([`_read_git_facts`], mcp/src/agents_remember/kernel/git_facts.py:49-104), catching `OSError`/`SubprocessError` into an
 `unavailable` `GitFacts`. `_read_git_facts` short-circuits to `unavailable` when
 the path is missing, is not a directory, or is not a git work tree; otherwise it
 reads HEAD (empty HEAD -> `unavailable`), the current branch, and
 `status --porcelain` for the dirty flag. `state` is `available` when a branch is
-present and `detached` when HEAD has no branch (L100).
-cit:([`git_facts_to_packet`], mcp/src/agents_remember/kernel/git_facts.py:104-115)
+present and `detached` when HEAD has no branch (L103).
+cit:([`git_facts_to_packet`], mcp/src/agents_remember/kernel/git_facts.py:107-118)
 projects a `GitFacts` into the context-packet dict, adding `error` only when set.
-cit:([`_git_stdout`], mcp/src/agents_remember/kernel/git_facts.py:118-124) returns trimmed stdout or `""` on non-zero exit;
-cit:([`_git_error`], mcp/src/agents_remember/kernel/git_facts.py:127-128) picks the most informative of stderr/stdout/default.
+cit:([`_git_stdout`], mcp/src/agents_remember/kernel/git_facts.py:121-131) returns trimmed stdout or `""` on non-zero exit;
+cit:([`_git_error`], mcp/src/agents_remember/kernel/git_facts.py:134-135) picks the most informative of stderr/stdout/default.
 
 **This module declares the repo-availability vocabulary.** `RepoState = Literal["available",
 "detached", "unavailable"]` with `VALID_REPO_STATES` derived from it by `get_args`.
@@ -56,22 +56,21 @@ All git calls go through the shared `run_git` runner imported from
 `kernel/git_command.py` (F14) — this module no longer defines its own private
 `_run_git`. Callers read `returncode`/`stdout` rather than relying on raises.
 
-**Every call names its timeout class; none of them defaults.** The runner's
-`timeout` keyword defaults to `GIT_LOCAL_TIMEOUT_SECONDS` (300), and inheriting
-that default is what this module deliberately does not do: the timeout class
-belongs to the command, not to the module the call sits in. `_git_stdout`'s
-`timeout` is therefore **keyword-only and required** (L118), so no call site here
-can silently take the 300s default — a new probe that forgets it is a
-`TypeError`, not a five-minute hang.
+**Every call names its timeout class; none of them defaults.** `GitRunnerOptions.timeout`
+cit:([`GitRunnerOptions`], mcp/src/agents_remember/kernel/git_command.py:115-128) defaults to
+`GIT_LOCAL_TIMEOUT_SECONDS` (300), and inheriting that default is what this module deliberately does
+not do: the timeout class belongs to the command, not to the module the call sits in. `_git_stdout`'s
+`timeout` is therefore **keyword-only and required** (L121), so no call site here can silently take
+the 300s default — a new probe that forgets it is a `TypeError`, not a five-minute hang.
 
-The assignments (cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151)), with the reasoning carried in the code comments:
+The assignments (cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213)), with the reasoning carried in the code comments:
 
 | Command | Bound | Why |
 | --- | --- | --- |
-| `rev-parse --is-inside-work-tree` (L78-L80) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time (~1.8ms measured on this repo) |
-| `rev-parse HEAD` (L92) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
-| `branch --show-current` (L96) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
-| `status --porcelain` (L99) | `GIT_LOCAL_TIMEOUT_SECONDS` (300) | **not** constant time — it stats the whole work tree |
+| `rev-parse --is-inside-work-tree` (L79-L83) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time (~1.8ms measured on this repo) |
+| `rev-parse HEAD` (L95) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
+| `branch --show-current` (L99) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
+| `status --porcelain` (L102) | `GIT_LOCAL_TIMEOUT_SECONDS` (300) | **not** constant time — it stats the whole work tree |
 
 The metadata band exists for exactly these reads because they sit under
 `resolve_context`, which runs on essentially every tool call: on the local
@@ -88,19 +87,19 @@ the current call sites and canonical constants own the contract.
 - Failure is data, not an exception: every error path returns a `GitFacts` with
   `state="unavailable"` and an `error` message. That still holds for a tripped
   bound: `subprocess.TimeoutExpired` is a `SubprocessError`, which
-  `read_git_facts` (cit:([`SubprocessError`], mcp/src/agents_remember/kernel/git_facts.py:44-44)) catches into `state="unavailable"`.
+  `read_git_facts` (cit:([`SubprocessError`], mcp/src/agents_remember/kernel/git_facts.py:45-45)) catches into `state="unavailable"`.
 - The git invocation flags, `safe.directory` isolation, the `GIT_DIR`-family
   selector stripping, and the DEVNULL stdin live in the shared `run_git` runner,
   not here. The **timeout class does not** — it is chosen per command at each
   call site in this file, because one number cannot bound both a `rev-parse` and
   a `status` over a large tree.
 - `state` is exactly one of `available`, `detached`, or `unavailable`, and that
-  is now enforced by a type rather than by prose: cit:([`RepoState`], mcp/src/agents_remember/kernel/git_facts.py:22-22) is the single
+  is now enforced by a type rather than by prose: cit:([`RepoState`], mcp/src/agents_remember/kernel/git_facts.py:23-23) is the single
   declaration, `GitFacts.state` is typed with it, and the context packet's
   `RepoSummary.state` imports it. **A new degrade path must add its member here,
   not at the wire model** — the whole point is that there is no second set to
   add it to.
-- cit:([`VALID_REPO_STATES`], mcp/src/agents_remember/kernel/git_facts.py:26-26) is derived from the alias by `get_args`, never listed
+- cit:([`VALID_REPO_STATES`], mcp/src/agents_remember/kernel/git_facts.py:27-27) is derived from the alias by `get_args`, never listed
   separately, and the exhaustiveness suite asserts the set this module actually
   produces equals it — which also catches a declared member no writer can emit.
 
@@ -118,12 +117,12 @@ The shared git runner and the context-packet consumer are the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
 | The local default bound is 300 seconds. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:92-92 |
 | The ordinary remote bound is 120 seconds. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:93-93 |
 | The metadata bound is 30 seconds. | `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:94-94 |
-| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:133-184 |
-| The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound. | `git_branch`; `git_head_or_empty` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:21-29; mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:32-38 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
+| The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound. | `git_branch`; `git_head_or_empty` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:25-37; mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:40-50 |
 
 | `git_facts_to_packet` output feeds the context packet's repo summary. | "git_facts = read_git_facts(" | mcp/src/agents_remember/application/context_packet.py:85-85 |
 | The wire face that imports `RepoState` instead of retyping it — the untyped-dict boundary this alias exists to close. | "state: RepoState" | mcp/src/agents_remember/models/context_packet.py:26-26 |
@@ -139,6 +138,20 @@ code repos and external-memory repos, but its contract is local to this file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): the timeout class this card describes is now carried by an options object rather than
+  by a keyword argument — `run_git(root, [...], GitRunnerOptions(timeout=GIT_METADATA_TIMEOUT_SECONDS))`
+  at the three constant-time probes and `GitRunnerOptions(timeout=GIT_LOCAL_TIMEOUT_SECONDS)` inside
+  `_git_stdout`. The class each probe names is unchanged, and `_git_stdout`'s own `timeout` stays
+  keyword-only and required, so the no-silent-default property still holds. Every self-citation was
+  re-derived against the grown file: `read_git_facts` 40-45 → 41-46, `_read_git_facts` 48-101 →
+  49-104, `git_facts_to_packet` 104-115 → 107-118, `_git_stdout` 118-124 → 121-131 and its required
+  `timeout` L118 → L121, `_git_error` 127-128 → 134-135, `RepoState` 22 → 23, `VALID_REPO_STATES`
+  26 → 27, the degrade catch 44 → 45, the probe lines L78-L80/L92/L96/L99 →
+  L79-L83/L95/L99/L102, the `state` fallthrough L100 → L103, and the runner rows 85-151 / 133-184 →
+  149-213. The cross-module row moved with its source too: `git_branch` 21-29 → 25-37 and
+  `git_head_or_empty` 32-38 → 40-50. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-03T02:49:35+02:00 — W3-B05 curator: resolved 15 Tier-2 prose findings into 12 exact prose citations with exact source paths; fixer generated all ranges.
@@ -160,7 +173,7 @@ code repos and external-memory repos, but its contract is local to this file.
   → L127-L128, the assignments block L58-L87 → L70-L99, `rev-parse --is-inside-work-tree`
   L66-L68 → L78-L80, `rev-parse HEAD` L80 → L92, `branch --show-current` L84 → L96,
   `status --porcelain` L87 → L99, and the degrade-catch L32 → L44. The `run_git` import row
-  (cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151)) was re-checked and still lands. The `context_packet.py` row gained
+  (cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213)) was re-checked and still lands. The `context_packet.py` row gained
   `read_git_facts` L77 / the `model_validate` call L81, and rows were added for
   `models/context_packet.py` (L9, L27) and the exhaustiveness suite. Verification metadata
   pinned until closeout stamps the L4 commit.

@@ -5,26 +5,33 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-06-14T11:30+02:00                        |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`    |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `../../../../overview.md`                      |
+| lastUpdated            | 2026-09-14T17:20+02:00                        |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`    |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
-[overview.md](../../../../overview.md)
+[mcp/overview.md](../../../overview.md)
 
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands (today `dashboard`; future CLI adapters slot in as subparsers).
-Backed by the `agents-remember = agents_remember.cli.__main__:main` console script.
+that dispatches subcommands. It registers three of them — `dashboard`, `memory-citations`
+and `memory-backfill` — and further CLI adapters slot in as subparsers. Backed by the
+`agents-remember = agents_remember.cli.__main__:main` console script.
 
 ## Code Commentary
 
 `build_parser()` builds an `argparse` parser with a required subcommand group and registers
-the `dashboard` subparser via `dashboard.add_arguments`, setting `func=dashboard.run`.
-`main(argv=None)` parses and dispatches to `args.func(args)`, returning its int exit code.
+each subparser through its adapter's own `add_arguments`, setting `func=<adapter>.run`:
+`dashboard.add_arguments`/`dashboard.run`, `memory_citations.add_arguments`/`memory_citations.run`
+and `memory_backfill.add_arguments`/`memory_backfill.run`. `main(argv=None)` parses and
+dispatches to `args.func(args)`, returning its int exit code.
+
+The memory-maintenance and migration adapters are reached only from here, so the umbrella is
+the one place a new CLI surface becomes reachable. Their flags, exit statuses and refusals
+belong to the adapters; this module contributes only the subparser registration.
 
 The MCP server keeps its own separate `agents-remember-mcp` console script — harness MCP
 configs launch the server by that exact name, so it is never folded into this umbrella.
@@ -35,16 +42,33 @@ configs launch the server by that exact name, so it is never folded into this um
   harness MCP registrations.
 - Subcommand wiring stays declarative (`add_arguments` + `set_defaults(func=...)`) so each
   adapter owns its own flags.
+- The subcommand group is required, so invoking `agents-remember` with no subcommand is a usage
+  error rather than a default action.
+- This module dispatches; it implements no operation of its own. A new subcommand is a
+  registration line here plus an adapter module that owns its arguments and its exit code.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `dashboard` subcommand adapter this dispatches to. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
-| The peer CLI adapter pattern. | `main` | mcp/src/agents_remember/cli/context_packet.py:17-60 |
-| The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:8-8 |
+| The `dashboard` subcommand adapter this dispatches to. | `run` | mcp/src/agents_remember/cli/dashboard.py:174-209 |
+| The peer CLI adapter pattern. | `main` | mcp/src/agents_remember/cli/context_packet.py:20-67 |
+| The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:48-101; mcp/src/agents_remember/cli/memory_citations.py:104-165 |
+| The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
+| The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:5-8 |
 
 ## Update History
+
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): the umbrella gained the `memory-backfill` subparser, registered through
+  `memory_backfill.add_arguments` + `set_defaults(func=memory_backfill.run)`, so the body now names
+  all three subcommands the parser builds instead of `dashboard` alone and records that the
+  maintenance and migration adapters are reachable only from here. Repaired the three stale
+  reference anchors this pass re-derived — `dashboard.run` 161-196 → 174-209, `context_packet.main`
+  17-60 → 20-67, `mcp/__main__.py` 8-8 → 5-8 — and corrected `governingOverview` from the
+  repository-root `../../../../overview.md` to this route's `../../../overview.md`, which is what the
+  sibling `cli/memory_citations.py` card already points at. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
 
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 6 citation findings for the dashboard, context-packet, and MCP console entry points.
 

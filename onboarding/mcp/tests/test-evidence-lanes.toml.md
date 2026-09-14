@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,11 +16,11 @@
 
 ## Purpose
 
-Classifies 202 retained test-shaped modules into explicit evidence categories: 114 unit-regression, 2 public-contract, 57 integration, 16 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member,
+Classifies 207 retained test-shaped modules into explicit evidence categories: 116 unit-regression, 2 public-contract, 60 integration, 16 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member,
 `test_closeout_projection_source_classification.py` (entry row 137) — it composes the real
 `QueueFixture` over temporary Git repositories and drives the production graph admission and
 projection path through `graph_context` and `capture_projection_source`, so that is its
-behaviour-preserving lane — bringing the manifest to 205 rows. The insertions split the alphabetical run again, so the integration lane now carries 57 entries closing at entry row 182, architecture-fitness carries 16 entries at rows 185-200, provider-conformance 13 entries at rows 203-215, and stress-durability and migration remain empty. The population had earlier fallen below its historical peak because the de-entanglement cut deleted four integration modules — `test_integration_ref_transaction.py`, `test_worktree_integrate_quality_gate.py`, `test_closeout_memory_certification_reuse.py` and `test_prepared_publication_recovery.py` — and the 188 rows this manifest held before 260831-LOCR-L30 were that reduced set; the eight rows added by that leaf brought it to 196, L32's row to 197, L34's to 198, L36's to 199, and L37's two to 201. Every `mcp/tests/test_*.py` module on disk is listed exactly once and no path is duplicated — 202 modules, 202 manifest entries. File counts are not collected-case counts, and the lane bracket is the unit of accounting: unit-regression is the default delivery lane, while the integration lane is capped at 250 collected cases (`pyproject.toml:150`; 260831-LOCR-L37 raised it 200 -> 250 on explicit developer authorization, and both the 150 and the 200 figures recorded in earlier entries of this card are stale). The closeout auto-carry change registered one new module, `test_sync_parked_candidate.py`, in the existing `unit-regression` lane, and the L28 leaf registered its boundary-delivery module `test_state_signal_boundary_delivery.py` in that same lane; the per-lane counts above are the current source membership.
+behaviour-preserving lane — bringing the manifest to 205 rows. The 260913-LCA-L3 change set registered one more unit-regression member, the new `mcp/tests/test_memory_backfill.py` (entry row 69), which is the measured current population of 207 modules on disk and 207 manifest entries. The insertions split the alphabetical run again, so the unit-regression lane now carries 116 entries at rows 5-121, public-contract its 2 at 123-126, integration its 60 at 127-188, architecture-fitness its 16 at 189-206 and provider-conformance its 13 at 207-221, while stress-durability (222-223) and migration (224-225) remain empty. The population had earlier fallen below its historical peak because the de-entanglement cut deleted four integration modules — `test_integration_ref_transaction.py`, `test_worktree_integrate_quality_gate.py`, `test_closeout_memory_certification_reuse.py` and `test_prepared_publication_recovery.py` — and the 188 rows this manifest held before 260831-LOCR-L30 were that reduced set; the eight rows added by that leaf brought it to 196, L32's row to 197, L34's to 198, L36's to 199, and L37's two to 201. Every `mcp/tests/test_*.py` module on disk is listed exactly once and no path is duplicated — 207 modules, 207 manifest entries. File counts are not collected-case counts, and the lane bracket is the unit of accounting: unit-regression is the default delivery lane, while the integration lane is capped at 250 collected cases (`pyproject.toml:150`; 260831-LOCR-L37 raised it 200 -> 250 on explicit developer authorization, and both the 150 and the 200 figures recorded in earlier entries of this card are stale). The closeout auto-carry change registered one new module, `test_sync_parked_candidate.py`, in the existing `unit-regression` lane, and the L28 leaf registered its boundary-delivery module `test_state_signal_boundary_delivery.py` in that same lane; the per-lane counts above are the current source membership.
 
 260831-LOCR-L30 registered eight members and, in doing so, repaired a manifest that could not load at
 all. `load_lane_manifest` independently proves the declared population closed — it derives the
@@ -77,9 +77,10 @@ is a boundary executor rather than a hermetic unit — that is its behaviour-pre
 
 Measured current brackets, by entry row: unit-regression 115 entries at rows 6-120, public-contract 2
 at 123-124, integration 58 at 127-184, architecture-fitness 16 at 187-202, provider-conformance 13 at
-205-217, stress-durability and migration empty. The Purpose paragraph above carries the pre-L4 counts
-(202 modules, 114 unit-regression, 57 integration) and is superseded by these; the insertion at `:152`
-shifted every integration entry after it and both later lane blocks by one.
+205-217, stress-durability and migration empty. The Purpose paragraph records the current L3
+measurement (207 modules, 116 unit-regression, 60 integration), so these L5 brackets are that leaf's
+as-of record; the insertion at `:152` shifted every integration entry after it and both later lane
+blocks by one.
 
 ## 260913-LCA-L7 Lane Row (Declared)
 
@@ -97,10 +98,10 @@ alphabetical integration run and pushes only the later line numbers down by one.
 
 Measured current brackets, by entry row: unit-regression 115 entries at rows 5-120, public-contract 2
 at 122-124, integration 59 at 126-185, architecture-fitness 16 at 187-203, provider-conformance 13 at
-205-218, stress-durability and migration empty. The Purpose paragraph above carries the pre-L4 counts
-(202 modules, 114 unit-regression, 57 integration) and the L5 section carries the 204-module brackets;
-both are superseded by these measured ones. The insertion at `:137` sits before entries that this card
-cites, so each of those rows is one line higher than the L5 section recorded it:
+205-218, stress-durability and migration empty. The Purpose paragraph records the current L3
+measurement and the L5 section carries the 204-module brackets; these L7 numbers are that leaf's
+as-of record, superseded by the L3 population. The insertion at `:137` sits before entries that this
+card cites, so each of those rows is one line higher than the L5 section recorded it:
 `test_leaf_doc_master_link_binding.py` `:152` → `:153`, `test_lifecycle_playthrough_end_to_end.py`
 `:155` → `:156`, `test_pause_stop_only_end_to_end.py` `:161` → `:162`,
 `test_worktree_status_terminal_next_tool.py` `:181` → `:182`, and
@@ -120,8 +121,9 @@ unit — that is its behaviour-preserving lane.
 
 Measured current brackets, by entry row: unit-regression 115 entries at rows 5-120, public-contract 2
 at 122-124, integration 60 at 126-186, architecture-fitness 16 at 188-204, provider-conformance 13 at
-206-219, stress-durability and migration empty. The L7 section above carries the 205-module brackets
-and the Purpose paragraph carries the pre-L4 counts; both are superseded by these measured ones.
+206-219, stress-durability and migration empty. The L7 section above carries the 205-module brackets,
+which are that leaf's as-of record; the Purpose paragraph carries the current L3 measurement (207
+modules, 207 manifest entries), which supersedes these L8 numbers.
 
 The insertion at `:177` also corrects three out-of-order entries that the earlier insertions had left
 behind in the closeout-input consumer list: `test_cross_master_concurrency.py` moves after
@@ -217,26 +219,27 @@ The exact source declarations below establish the current behavior; this invento
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-120 |
-| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:126-186 |
-| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:188-204 |
-| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:206-219 |
-| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:221-221; mcp/tests/test-evidence-lanes.toml:223-223 |
-| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:126-126 |
+| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-121 |
+| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:127-188 |
+| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:189-206 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:207-221 |
+| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:224-224 |
+| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:127-127 |
 | The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:221-221 |
-| LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:98-98 |
+| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:222-222 |
+| LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:99-99 |
 | The checkpoint landing forcing suite is registered in the unit-regression lane by the same leaf that created it. | "mcp/tests/test_checkpoint_landing.py" | mcp/tests/test-evidence-lanes.toml:24-24 |
-| The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 183 now, after the L4, seal-removal, L5, L7 and L8 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:183-183 |
-| The L34 boundary suite is registered in the integration lane by the same leaf that created it (row 132 at that leaf; row 133 now, after the L4, L5, L7 and L8 insertions) — it drives the public checkpoint and closeout operations over real temporary Git repositories. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:133-133 |
-| The L36 cross-master forcing module is registered in the integration lane by the same leaf that created it (row 143 at that leaf; row 145 now, after the L4, L5 and L7 insertions); it drives two sprint-commanded atomic masters plus the public checkpoint-landing and integration operations over one real temporary Git world. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:145-145 |
-| The L37 stop boundary suite is registered in the integration lane by the same leaf that created it (row 158 at that leaf; row 162 now, after the L4, seal-removal, L5 and L7 insertions). | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:162-162 |
-| The L37 AST-only architecture guard is registered in architecture-fitness by the same leaf that created it (row 190 at that leaf; row 195 now, after the L4, seal-removal, L5, L7 and L8 insertions). | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:195-195 |
-| The ordered lifecycle playthrough is registered in the integration lane by the same change set that created it (row 153 at that change set; row 156 now, after the L4, L5 and L7 insertions) — it plays master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf after the landing, over one real temporary Git world. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:156-156 |
+| The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 184 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:184-184 |
+| The L34 boundary suite is registered in the integration lane by the same leaf that created it (row 132 at that leaf; row 134 now, after the L4, L5, L7, L8 and L3 insertions) — it drives the public checkpoint and closeout operations over real temporary Git repositories. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:134-134 |
+| The L36 cross-master forcing module is registered in the integration lane by the same leaf that created it (row 143 at that leaf; row 146 now, after the L4, L5, L7, L8 and L3 insertions); it drives two sprint-commanded atomic masters plus the public checkpoint-landing and integration operations over one real temporary Git world. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:146-146 |
+| The L37 stop boundary suite is registered in the integration lane by the same leaf that created it (row 158 at that leaf; row 163 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:163-163 |
+| The L37 AST-only architecture guard is registered in architecture-fitness by the same leaf that created it (row 190 at that leaf; row 196 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:196-196 |
+| The ordered lifecycle playthrough is registered in the integration lane by the same change set that created it (row 153 at that change set; row 157 now, after the L4, L5, L7, L8 and L3 insertions) — it plays master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf after the landing, over one real temporary Git world. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:157-157 |
 | The L4 producer-census suite is registered in the unit-regression lane by the commit that landed L4, closing the gap the L4 section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
-| The L5 master-link binding suite is registered in the integration lane by the same change set that created it — it drives the real public `worktree_start` over disposable code and external-memory repositories, so that is its behaviour-preserving lane. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:153-153 |
-| The L7 capacity-refusal classification suite is registered in the integration lane by the same change set that created it (entry row 137) — it composes the real `QueueFixture` over temporary Git repositories and drives the production graph admission and projection path, so that is its behaviour-preserving lane. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:137-137 |
-| The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 177) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:177-177 |
+| The L5 master-link binding suite is registered in the integration lane by the same change set that created it (entry row 154 now, after the L7, L8 and L3 insertions) — it drives the real public `worktree_start` over disposable code and external-memory repositories, so that is its behaviour-preserving lane. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
+| The L7 capacity-refusal classification suite is registered in the integration lane by the same change set that created it (entry row 138 now, after the L8 and L3 insertions) — it composes the real `QueueFixture` over temporary Git repositories and drives the production graph admission and projection path, so that is its behaviour-preserving lane. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:138-138 |
+| The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 178 now, after the L3 insertion) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:178-178 |
+| The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (entry row 69) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
 | The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value. | "integration_case_budget = 250" | pyproject.toml:150-150 |
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
 ## Cross-Repo References
@@ -244,6 +247,27 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository authority is established by this file.
 
 ## Update History
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): registered the change set's new `mcp/tests/test_memory_backfill.py` in the
+  **unit-regression** lane at entry row 69 — its cases drive the backfill plan and apply paths against
+  disposable `tempfile` repositories and the module carries no integration marker, so the default unit
+  lane is its behaviour-preserving classification — and re-measured the manifest rather than carrying
+  the L8 numbers: 207 modules on disk and 207 manifest entries, 116 unit-regression (5-121), 2
+  public-contract (123-126), 60 integration (127-188), 16 architecture-fitness (189-206), 13
+  provider-conformance (207-221), with stress-durability (222-223) and migration (224-225) empty. The
+  insertion sits at `:69`, so every cited row below it moved one line and was re-cited:
+  `test_state_signal_boundary_delivery.py` `:98` → `:99`, `test_checkpoint_landing_end_to_end.py`
+  `:133` → `:134`, `test_cross_master_concurrency.py` `:145` → `:146`,
+  `test_lifecycle_playthrough_end_to_end.py` `:156` → `:157`, `test_pause_stop_only_end_to_end.py`
+  `:162` → `:163`, `test_terminal_blocker_reasons.py` `:177` → `:178`,
+  `test_worktree_status_terminal_next_tool.py` `:183` → `:184`, `test_pause_is_not_publication.py`
+  `:195` → `:196`, `test_leaf_doc_master_link_binding.py` `:153` → `:154`,
+  `test_closeout_projection_source_classification.py` `:137` → `:138`, the L38 `integration` key
+  `:126` → `:127`, and the empty-lane keys `:221`/`:223` → `:222`/`:224`.
+  `test_checkpoint_landing.py` (`:24`) and `test_memory_attribution_producers.py` (`:68`) sit above the
+  insertion and are unchanged, and the Purpose paragraph plus the L5, L7 and L8 bracket notes were
+  corrected to the measured L3 population; classification only, so lane membership is not execution
+  or acceptance evidence and the verification stamps remain closeout-owned.
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator (uncommitted change set on `ar/260913-lca-l8-ar`):
   registered the change set's new `mcp/tests/test_terminal_blocker_reasons.py` in the **integration**
   lane (entry row 177) — it builds a real landed leaf over disposable code and external-memory

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                 |
 | path                   | `mcp/src/agents_remember/kernel/route_index_census.py`           |
 | doc_type               | `file-level-onboarding`                                         |
-| lastUpdated            | 2026-07-18T20:03+02:00                                          |
-| lastVerifiedCommitHash |                                                                 `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                                 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-09-14T17:20+02:00                                          |
+| lastVerifiedCommitHash |                                                                 `270704b86116728a64ada83ee258a0e7726206b4`|
+| lastVerifiedCommitDate |                                                                 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -31,16 +31,16 @@ and symlink modes while excluding directories and gitlinks. It then reads untrac
 paths through `git ls-files --others --exclude-standard -z` and classifies them with non-following
 `lstat`. NUL-delimited records and `surrogateescape` preserve exact path identity.
 
-The resulting cit:([`RouteIndexSourceSnapshot`], mcp/src/agents_remember/kernel/route_index_census.py:29-38) exposes the frozen candidate paths as
+The resulting cit:([`RouteIndexSourceSnapshot`], mcp/src/agents_remember/kernel/route_index_census.py:33-42) exposes the frozen candidate paths as
 `repository_paths` and a second `eligible_paths` tuple filtered through
 `resolve_storage_for_source`. Route rendering can therefore distinguish source membership from
 onboarding eligibility without rerunning Git or walking the filesystem.
 
 ### Conventions
 
-cit:([`RouteIndexCandidate`], mcp/src/agents_remember/kernel/route_index_census.py:20-26) records path, Git/file mode, and tracked/untracked origin. The
+cit:([`RouteIndexCandidate`], mcp/src/agents_remember/kernel/route_index_census.py:24-30) records path, Git/file mode, and tracked/untracked origin. The
 module returns immutable tuples in stable path order. All Git execution goes through the one
-selector-scrubbed runner, wrapped locally by cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205). That wrapper names
+selector-scrubbed runner, wrapped locally by cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:193-213). That wrapper names
 `GIT_METADATA_TIMEOUT_SECONDS` (30s) rather than accepting the runner's 300s local default: every
 census command is a constant-time metadata read (`rev-parse --show-toplevel`, `ls-files --stage`,
 `ls-files --others`, `diff-files`), it runs while an MCP tool call waits, and the only way one of
@@ -54,7 +54,7 @@ them takes 30s is that git is blocked on an index lock another process holds.
   `OSError`, and `lstat` failures preserve their original causes for typed diagnosis. `_run_git`
   is the single place that translates: `subprocess.TimeoutExpired`/`OSError` become
   `AuthorityError` when `authority=True` and `RouteIndexCensusError` otherwise, always with
-  `from error` cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205). A census stall therefore surfaces as a typed failure at 30s, not as a
+  `from error` cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:193-213). A census stall therefore surfaces as a typed failure at 30s, not as a
   bare `TimeoutExpired` and not after the runner's 300s default.
 - Ignored paths and path-rule-excluded generated outputs never enter `eligible_paths`.
 - Symlink classification never follows the target, so target appearance/disappearance cannot
@@ -82,7 +82,7 @@ matrix are the authoritative evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The renderer consumes exactly one snapshot and separates repository membership from eligibility. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, `_run_git` here passes its 30s bound through `GitRunnerOptions(timeout=...)`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git` | mcp/src/agents_remember/kernel/git_command.py:55-64; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
 
 ## Cross-Repo References
 
@@ -95,6 +95,7 @@ external implementation dependency.
 
 ## Update History
 
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `_run_git` now passes its 30s bound as `run_git(code_root, args, GitRunnerOptions(timeout=GIT_METADATA_TIMEOUT_SECONDS))`, the timeout keyword having become a field of the runner's one options object. The timeout class this census names is unchanged. Re-derived the citation ranges the migration shifted (`RouteIndexSourceSnapshot` 29-38 → 33-42, `RouteIndexCandidate` 20-26 → 24-30, `_run_git` 189-205 → 193-213, the runner row `33-42; 76-82; 85-151` → `55-64; 140-146; 149-213`).
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 
 

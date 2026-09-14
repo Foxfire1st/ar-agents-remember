@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/preparation` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967`|
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`|
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

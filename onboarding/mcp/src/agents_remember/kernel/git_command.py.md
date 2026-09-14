@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-14T18:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -30,14 +30,20 @@ variables named by cit:([`GIT_REPOSITORY_SELECTOR_ENV`], mcp/src/agents_remember
 `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`,
 `GIT_NAMESPACE`, and `GIT_PREFIX`.
 
-`run_git(repo_root, args, *, input_text=None, timeout=GIT_LOCAL_TIMEOUT_SECONDS)` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151) injects
+`run_git(repo_root, args, options=None)` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213) injects
 `safe.directory`, runs at the supplied repository root, captures output as UTF-8 with
 `surrogateescape`, applies the scrubbed environment, and returns non-zero outcomes for typed
-interpretation by its caller. Two keyword arguments carry the consolidation:
+interpretation by its caller. `options` is a `GitRunnerOptions`
+cit:([`GitRunnerOptions`], mcp/src/agents_remember/kernel/git_command.py:115-128), a frozen dataclass carrying the ways a caller
+tells a git command something its argv cannot say:
 
-- `input_text` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151) feeds git's stdin; when it is `None`, stdin is `subprocess.DEVNULL`.
-  `patch_id()` cit:([`patch_id`], mcp/src/agents_remember/memory/carryover.py:181-188) — `git patch-id --stable` — is the only caller that passes
-  it.
+- `work_dir` separates *where git runs* from *which repository the command is about*: `git clone
+  <url> <dest>` cannot run inside `<dest>`, and `cwd=` a directory that does not exist raises before
+  git is reached. It is the destination's parent for `worktrees/modules/quality/clean_executor.py`
+  and unset everywhere else.
+- `input_text` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213) feeds git's stdin; when it is `None`, stdin is `subprocess.DEVNULL`.
+  `patch_id()` cit:([`patch_id`], mcp/src/agents_remember/memory/carryover.py:186-197) — `git patch-id --stable` — is one of the callers that
+  passes it, alongside the `hash-object --stdin`, `apply --index -` and `update-ref --stdin` sites.
 - `timeout` cit:([`GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:92-94) selects one of three module-level classes instead of the former hard-coded
   five seconds: `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default and bounds work that can
   legitimately churn (`rebase`, `merge`, `worktree add`); `GIT_REMOTE_TIMEOUT_SECONDS = 120` bounds
@@ -47,12 +53,25 @@ interpretation by its caller. Two keyword arguments carry the consolidation:
   `coordination_context/cross_repo.py` take the metadata bound, `worktrees/modules/cleanup.py`
   takes the remote one — and `git_freshness.fetch_remote` keeps its own shorter
   `DEFAULT_FETCH_TIMEOUT = 30` for the fetch.
+- `identity` adds `GIT_AUTHOR_*`/`GIT_COMMITTER_*` names on top of the sanitized environment, and it
+  exists for exactly one command: `git commit-tree` reads the author, the committer and both
+  timestamps from those variables and from nowhere else, so a history rewrite that must reproduce an
+  existing commit byte for byte has no argv spelling for it. It is additive and never subtractive —
+  the selector strip runs first, and a name in `GIT_REPOSITORY_SELECTOR_ENV` raises `ValueError`
+  rather than being set, so this cannot put a repository selector back.
+
+The three earlier keyword arguments arrived one at a time and became one object because they are one
+concept, and because the runner's own signature should stay at the two facts every call shares.
+38 call sites across 19 files were migrated mechanically when the object arrived; not one of them
+changed which command it runs or which timeout class it names.
 
 ### Conventions
 
 The selector tuple is production authority and is imported by tests instead of copied. Repository
 paths are rendered with `as_posix()` for stable Git configuration values. The module stays standard-
-library-only and does not interpret Git records.
+library-only and does not interpret Git records. `run_git`'s aim is expressed as one frozen
+`GitRunnerOptions` object rather than a growing keyword list, so the runner's own signature stays at
+the repository and the argv, and a new way to aim a command is a field rather than a parameter.
 
 ### Invariants And Boundaries
 
@@ -67,6 +86,12 @@ library-only and does not interpret Git records.
 - `stdin` is `DEVNULL` unless a caller passes `input_text`: under the stdio MCP transport the
   parent's stdin IS the JSON-RPC request pipe, and a child holding or reading it wedges the tool
   call (GitHub #49).
+- An `identity` may never reintroduce a repository selector. The names it accepts are checked against
+  `GIT_REPOSITORY_SELECTOR_ENV` and a match raises `ValueError`, so the option that exists to make a
+  commit replay faithful cannot be used to redirect the command that writes it.
+- Only the selectors are stripped, and only from the environment: `identity` is applied after
+  `git_environment()`, so it can add author and committer facts and cannot restore `GIT_DIR` or any
+  of its seven siblings.
 - No second runner may appear. Only this module may spawn `git`; re-exports and typed wrappers
   (`coordination_context/cross_repo.py`, `code_quality/diff_coverage.py`) are fine, a new
   `subprocess.run(["git", ...])` anywhere in the package is not.
@@ -90,8 +115,11 @@ package's production-path regression matrix.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_run_git` calls this runner with `GIT_METADATA_TIMEOUT_SECONDS` and converts `TimeoutExpired`/`OSError` into `AuthorityError`/`RouteIndexCensusError`; `_nul_records` splits its NUL-delimited stdout. | "git diff-files deletion census failed", "git census returned an empty NUL-delimited record" | mcp/src/agents_remember/kernel/route_index_census.py:91-91; mcp/src/agents_remember/kernel/route_index_census.py:222-222 |
-| Carryover no longer defines its own input-bearing adapter: `require_git` delegates to `run_git`, and `patch_id` is the one caller that passes `input_text`. | `require_git`, `patch_id` | mcp/src/agents_remember/memory/carryover.py:113-117; mcp/src/agents_remember/memory/carryover.py:181-188 |
+| `_run_git` calls this runner with `GIT_METADATA_TIMEOUT_SECONDS` and converts `TimeoutExpired`/`OSError` into `AuthorityError`/`RouteIndexCensusError`; `_nul_records` splits its NUL-delimited stdout. | `_run_git`; `_nul_records` | mcp/src/agents_remember/kernel/route_index_census.py:193-213; mcp/src/agents_remember/kernel/route_index_census.py:225-231 |
+| Carryover no longer defines its own input-bearing adapter: `require_git` delegates to `run_git`, and `patch_id` is one of the callers that passes `input_text`. | `require_git`; `patch_id` | mcp/src/agents_remember/memory/carryover.py:114-122; mcp/src/agents_remember/memory/carryover.py:186-197 |
+| The option object that replaced the three keyword arguments, including the `identity` names `git commit-tree` can only be told by environment. | `GitRunnerOptions` | mcp/src/agents_remember/kernel/git_command.py:115-128 |
+| The history rewrite that is the reason `identity` exists: it replays the author, committer and both timestamps through `GitRunnerOptions.identity` so a rebuilt commit differs from its original in its trailer alone. | `_identity`; `_IDENTITY_FIELDS` | mcp/src/agents_remember/kernel/memory_backfill.py:821-834; mcp/src/agents_remember/kernel/memory_backfill.py:106-106 |
+| The callers migrated to the option object, one per shape: `work_dir`, `input_text`, and a named timeout class. | `GitRunnerOptions` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:350-363; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:638-653; mcp/src/agents_remember/kernel/git_facts.py:79-83 |
 
 
 ## Cross-Repo References
@@ -111,7 +139,7 @@ The current source seams include `IsolatedGitState`, `git_environment`, `run_git
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IsolatedGitState`, `git_environment`, `run_git` at this ownership boundary. | `IsolatedGitState`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-91; mcp/src/agents_remember/kernel/git_command.py:94-100; mcp/src/agents_remember/kernel/git_command.py:103-154 |
+| The current module exposes `IsolatedGitState`, `git_environment`, `run_git` at this ownership boundary. | `IsolatedGitState`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:131-137; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
 
 ## L34 Current Implementation
 
@@ -119,14 +147,42 @@ Binary configuration, commit, blob and tree readers preserve exact bytes. Privat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `GitCommandPlan` owns the corresponding behavior described above. | `GitCommandPlan` | `mcp/src/agents_remember/kernel/git_command.py:99-104` |
-| `_GitRun` owns the corresponding behavior described above. | `_GitRun` | `mcp/src/agents_remember/kernel/git_command.py:108-112` |
-| `admit_git_closeout_publication` owns the corresponding behavior described above. | `admit_git_closeout_publication` | `mcp/src/agents_remember/kernel/git_command.py:646-656` |
-| `inspect_git_closeout_publication` owns the corresponding behavior described above. | `inspect_git_closeout_publication` | `mcp/src/agents_remember/kernel/git_command.py:659-669` |
-| `closeout_publication_command` owns the corresponding behavior described above. | `closeout_publication_command` | `mcp/src/agents_remember/kernel/git_command.py:672-680` |
-| `publish_git_closeout_ref` owns the corresponding behavior described above. | `publish_git_closeout_ref` | `mcp/src/agents_remember/kernel/git_command.py:683-706` |
+| `GitCommandPlan` owns the corresponding behavior described above. | `GitCommandPlan` | `mcp/src/agents_remember/kernel/git_command.py:98-104` |
+| `_GitRun` owns the corresponding behavior described above. | `_GitRun` | mcp/src/agents_remember/kernel/git_command.py:107-112 |
+| `admit_git_closeout_publication` owns the corresponding behavior described above. | `admit_git_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:675-685 |
+| `inspect_git_closeout_publication` owns the corresponding behavior described above. | `inspect_git_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:688-698 |
+| `closeout_publication_command` owns the corresponding behavior described above. | `closeout_publication_command` | mcp/src/agents_remember/kernel/git_command.py:701-709 |
+| `publish_git_closeout_ref` owns the corresponding behavior described above. | `publish_git_closeout_ref` | mcp/src/agents_remember/kernel/git_command.py:712-735 |
 
 ## Update History
+
+- 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
+  `ar/260913-lca-l3-ar`, base `7317108b`): No content impact on this module — the reviewed fix to the
+  memory-history backfill changed only `kernel/memory_backfill.py`, `cli/memory_backfill.py`, its test
+  module and the cards that describe them. Two citation anchors in this card point into that module
+  and both moved when it grew from 686 to 1024 lines, so they were re-derived: `_identity` 510-523 →
+  821-834 and `_IDENTITY_FIELDS` 82 → 106. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
+
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): `run_git` no longer takes `work_dir`/`input_text`/`timeout` as keyword arguments. It
+  takes one optional `GitRunnerOptions` object (`work_dir`, `input_text`, `timeout`, `identity`), so
+  the runner's signature is back to the two facts every call shares and a new way to aim a command is
+  a field rather than a parameter. The new capability is `identity`: `git commit-tree` reads the
+  author, the committer and both timestamps from `GIT_AUTHOR_*`/`GIT_COMMITTER_*` and from nowhere
+  else, so the memory-history rewrite that must reproduce an existing commit byte for byte had no
+  argv spelling for it. It is additive and cannot reintroduce a selector — a name in
+  `GIT_REPOSITORY_SELECTOR_ENV` raises `ValueError` — and two invariants were added for that.
+  `Logic` was rewritten around the object, `Conventions` gained the one-object rule, and every
+  citation in this card was re-derived against the grown file: `run_git` 85-151 → 149-213,
+  `GitCommandPlan` 99-104 → 98-104, `_GitRun` 108-112 → 107-112, the CLIVE-L2 seam row 85-91 /
+  94-100 / 103-154 → 131-137 / 140-146 / 149-213, the L34 rows 646-656 → 675-685, 659-669 → 688-698,
+  672-680 → 701-709 and 683-706 → 712-735, the census row 91-91 / 222-222 → `_run_git` 193-213 and
+  `_nul_records` 225-231, and the carryover row 113-117 / 181-188 → 114-122 / 186-197. The
+  `%ai`/`%ci`-rather-than-`%aI` date rule the identity replay depends on is recorded on the
+  backfill module's card. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `GIT_REPOSITORY_SELECTOR_ENV` repointed to mcp/src/agents_remember/kernel/git_command.py:55-64. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS` repointed to mcp/src/agents_remember/kernel/git_command.py:92-92; mcp/src/agents_remember/kernel/git_command.py:93-93; mcp/src/agents_remember/kernel/git_command.py:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 

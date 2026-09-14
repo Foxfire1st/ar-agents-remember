@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/terminal_validation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated            | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -144,6 +144,15 @@ This module defines the top-level symbols cited below; each row points at the ex
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): `_remote_branch_preflight` now hands the runner one
+  `GitRunnerOptions(timeout=GIT_REMOTE_TIMEOUT_SECONDS)` object for
+  `git ls-remote --heads origin <branch>` instead of a `timeout=` keyword. No content impact: this card
+  stated no `run_git` call form, the module's import line changed in place without adding a line, and
+  no cited range was derived from an `input_text=`, `work_dir=` or `timeout=` mention — every symbol
+  range above still names its current symbol, so no citation anchor changed. Verification metadata
+  remains closeout-owned.
 
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: documented the blocker contract this change set
   introduced. `_blocker` is now the only blockage construction path and refuses a missing, blank or

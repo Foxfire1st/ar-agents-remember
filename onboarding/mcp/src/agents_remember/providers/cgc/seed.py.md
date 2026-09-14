@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-14T17:20+02:00                     |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -28,7 +28,7 @@ result = run_git(repo_root, ["rev-parse", "HEAD"])
 result = run_git(
     source_repo_root,
     ["diff", "--name-status", source_head, target_head],
-    timeout=_CATCH_UP_DIFF_TIMEOUT_SECONDS,
+    GitRunnerOptions(timeout=_CATCH_UP_DIFF_TIMEOUT_SECONDS),
 )
 ```
 
@@ -140,11 +140,12 @@ No external Domain Documentation source is configured for this memory repo.
 | The post-watcher catch-up stage consuming the stashed divergence. | "def _seed_catchup_results(" | mcp/src/agents_remember/providers/provider_setup.py:250-250 |
 
 | The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
-| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:124-130 |
-| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:133-184 |
+| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:140-146 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment; the catch-up diff passes its 60s bound as `GitRunnerOptions(timeout=...)`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
 
 
 ## Update History
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `seed_commit_divergence` now calls `run_git(source_repo_root, ["diff", "--name-status", source_head, target_head], GitRunnerOptions(timeout=_CATCH_UP_DIFF_TIMEOUT_SECONDS))`, the timeout keyword having become a field of the runner's one options object; the timeout class the catch-up diff names is unchanged, and `git_head_or_none` still inherits the runner's 300s default. Re-derived the three runner-row ranges the migration shifted (`GIT_REPOSITORY_SELECTOR_ENV` 33-42 → 55-64, `git_environment` 124-130 → 140-146, `run_git` 133-184 → 149-213).
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 8 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.

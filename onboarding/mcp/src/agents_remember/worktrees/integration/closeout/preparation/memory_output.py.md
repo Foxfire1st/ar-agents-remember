@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967`|
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`|
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,13 +26,13 @@ Ordered post-certification private M and L preparation.
 
 prepare_memory_outputs reopens current prepared-memory certification, selects the genuine code output and either creates M or retains a proved existing M. It reads the exact ledger blob, retains a matching existing C-to-M mapping or builds the required new ledger tree in an isolated index, then prepares/selects L. Every selected memory intent carries the exact Gate-5 certificate and enabled-leg policy. Previously selected outputs are physically re-proved. Both logical branches remain untouched by this owner.
 
-**The memory-content leg is attributed, and the ledger leg is not.** `_intent` (`:73-137`) renders
-`normalizedMessage` through one branch per leg (`:91-97`): the memory-content leg calls
+**The memory-content leg is attributed, and the ledger leg is not.** `_intent` (`:75-142`) renders
+`normalizedMessage` through one branch per leg (`:92-98`): the memory-content leg calls
 `kernel.memory_attribution.render_memory_content_message(effective.message_for("memory"),
-result.candidate.codeView.codeCommit)` (`:92-94`) — the kernel's one writer of the `Code-Commit:`
+result.candidate.codeView.codeCommit)` (`:93-95`) — the kernel's one writer of the `Code-Commit:`
 trailer, so this route names the code commit its candidate was certified on without owning a second
-renderer — while the ledger leg keeps the plain `effective.message_for("ledger")` (`:96`) and names no
-code commit. The message is stored under `normalizedMessage` (`:123`) and is consumed by
+renderer — while the ledger leg keeps the plain `effective.message_for("ledger")` (`:97`) and names no
+code commit. The message is stored under `normalizedMessage` (`:124`) and is consumed by
 `private_execution.py:61` as the private commit's message, which is why the attribution is rendered at
 intent construction rather than appended later: `finalization.py` publishes that exact prepared object to
 the live memory ref, so the trailer is inside the object the ref receives and cannot be added afterwards
@@ -74,15 +74,15 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `PreparedMemoryOutputs` owns the corresponding behavior described above. | `PreparedMemoryOutputs` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:57-64` |
-| `_intent` owns the corresponding behavior described above, and it is where the per-leg message is chosen. | `_intent` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:74-142` |
-| The memory-content leg renders its message through the kernel's one writer, against the candidate's certified code commit; the ledger leg keeps the plain message and carries no trailer. | `render_memory_content_message`; `message_for` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:91-97`; `mcp/src/agents_remember/kernel/memory_attribution.py:72-97` |
-| The rendered message is what the private commit is created with, and finalization publishes that exact object to the live memory ref. | `normalizedMessage` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:106-126`; `mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:51-61` |
-| `_output` owns the corresponding behavior described above. | `_output` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:164-176` |
-| `_prepare` owns the corresponding behavior described above. | `_prepare` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:178-225` |
-| `_ledger_tree` owns the corresponding behavior described above. | `_ledger_tree` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:227-244` |
-| `prepare_memory_outputs` owns the corresponding behavior described above. | `prepare_memory_outputs` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:246-308` |
-| The census case that is this route's only attribution protection, because the route has no reachable public entry point. | `test_every_census_producer_reaches_the_shared_renderer`; `_PRODUCERS` | mcp/tests/test_memory_attribution_producers.py:119-137; mcp/tests/test_memory_attribution_producers.py:55-65 |
+| `PreparedMemoryOutputs` owns the corresponding behavior described above. | `PreparedMemoryOutputs` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:57-63` |
+| `_intent` owns the corresponding behavior described above, and it is where the per-leg message is chosen. | `_intent` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:75-142` |
+| The memory-content leg renders its message through the kernel's one writer, against the candidate's certified code commit; the ledger leg keeps the plain message and carries no trailer. | `render_memory_content_message`; `message_for` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:92-98`; `mcp/src/agents_remember/kernel/memory_attribution.py:72-97` |
+| The rendered message is what the private commit is created with, and finalization publishes that exact object to the live memory ref. | `normalizedMessage` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:107-139`; `mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:51-61` |
+| `_output` owns the corresponding behavior described above. | `_output` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:165-176` |
+| `_prepare` owns the corresponding behavior described above. | `_prepare` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:179-225` |
+| `_ledger_tree` owns the corresponding behavior described above. | `_ledger_tree` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:228-248` |
+| `prepare_memory_outputs` owns the corresponding behavior described above. | `prepare_memory_outputs` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:251-313` |
+| The census case that is this route's only attribution protection, because the route has no reachable public entry point. | `test_every_census_producer_reaches_the_shared_renderer`; `_PRODUCERS` | mcp/tests/test_memory_attribution_producers.py:119-137; mcp/tests/test_memory_attribution_producers.py:55-63 |
 
 ## Cross-Repo References
 
@@ -91,6 +91,20 @@ No source-local TODO is asserted here.
 | No cross-repository source is needed for this card. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): `_ledger_tree` now hands the runner one
+  `GitRunnerOptions(input_text=content.decode("utf-8"))` object instead of an `input_text=` keyword,
+  which is the whole of the change to this module. No content impact: this card stated no `run_git`
+  call form, so the attribution claims above are unchanged. The five-line call and the one-line import
+  grew the file, so every citation was re-derived against the current source: `_ledger_tree`
+  227-244 → 228-248 (its end moved five lines, not one), `prepare_memory_outputs` 246-308 → 251-313,
+  `_prepare` 178-225 → 179-225, `_output` 164-176 → 165-176, `_intent` 74-142 → 75-142,
+  `PreparedMemoryOutputs` 57-64 → 57-63, and the inline ranges in the Logic paragraph
+  (`_intent` `:73-137` → `:75-142`, the per-leg branch `:91-97` → `:92-98`, the renderer call
+  `:92-94` → `:93-95`, the ledger leg `:96` → `:97`, `normalizedMessage` `:123` → `:124`, and the
+  payload row 106-126 → 107-139, plus `_PRODUCERS` 55-65 → 55-63); verification metadata remains
+  closeout-owned.
 
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): this module is the producer the master's 2026-09-13T22:05 census missed and the

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -108,20 +108,20 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Only the admitted executable is resolved for the profile adapter. | `_resolve_executor`; `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:965-966; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:253-284 |
-| An unavailable admitted executor produces a typed prerequisite failure. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:951-978 |
+| Only the admitted executable is resolved for the profile adapter. | `_resolve_executor`; `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:956-957; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:255-288 |
+| An unavailable admitted executor produces a typed prerequisite failure. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:960-987 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executor admits authority, materializes the candidate and executes the profile adapter. | "def run_clean_quality("; "def _prepare_sandbox("; "def _admit_prepared_profile("; "def _write_sandbox_manifest(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:149-242; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:342-383; mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66; mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
-| Exported decoder bytes determine the pipeline result and whether certifying evidence exists. | `_publish_executor_outcome`; `_exported_pipeline_exit` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:287-337; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:392-405 |
-| Publish one immutable evidence generation, then atomically point readers at it. | "def _publish_reports" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:437-532 |
-| Export inventory validation checks the declared report members before publication. | "def _validated_export_inventory" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:535-556 |
-| Immutable generation identity includes the exported report inventory. | "def _generation_digest" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:596-611 |
-| Mint from one caller-held immutable generation snapshot. | "def certifying_evidence_from_published_manifest" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:733-764 |
-| One serialized acceptance firewall shared by lifecycle consumers. | "def require_published_quality_evidence" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:767-779 |
+| The executor admits authority, materializes the candidate and executes the profile adapter. | "def run_clean_quality("; "def _prepare_sandbox("; "def _admit_prepared_profile("; "def _write_sandbox_manifest(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:151-244; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:344-392; mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66; mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:122-170 |
+| Exported decoder bytes determine the pipeline result and whether certifying evidence exists. | `_publish_executor_outcome`; `_exported_pipeline_exit` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:291-341; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:399-412 |
+| Publish one immutable evidence generation, then atomically point readers at it. | "def _publish_reports" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:446-541 |
+| Export inventory validation checks the declared report members before publication. | "def _validated_export_inventory" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:544-565 |
+| Immutable generation identity includes the exported report inventory. | "def _generation_digest" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:605-620 |
+| Mint from one caller-held immutable generation snapshot. | "def certifying_evidence_from_published_manifest" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:742-773 |
+| One serialized acceptance firewall shared by lifecycle consumers. | "def require_published_quality_evidence" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:776-788 |
 | The single report reader and pruner implementation live in the path owner. | `published_report_path_from_manifest`; `_prune_report_generations` | mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py:86-116; mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py:119-138 |
 
 ## Cross-Repo References
@@ -130,7 +130,7 @@ The external execution boundary is the profile-declared Dagger runtime; its decl
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exact admitted executor and frozen authority determine the launch command. | `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:253-284 |
+| The exact admitted executor and frozen authority determine the launch command. | `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:255-288 |
 
 ## 260821-DAGQC-L2 And 260824-PDLS Historical Notes
 
@@ -143,6 +143,23 @@ fields, and evidence is minted only from a digest-verified passed generation.
 Selected execution carries `CodeCertificationExecution`, a current launch-authority callback and a selected-generation protection callback. It validates the explicit comparison base, reconstructs retained report transport for a suffix, and reopens launch authority only after sandbox/profile/manifest preparation completes. Selected execution without a launch callback refuses. Publication reobserves the selected generation set before pruning and validates that it is a frozen set of full generation digests. Sandbox profile/manifest helpers now live in `quality/execution/sandbox.py`.
 
 ## Update History
+
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
+  `7317108b`): `_prepare_sandbox` now hands the runner one `GitRunnerOptions(work_dir=sandbox)`
+  object for the sandbox clone and one `GitRunnerOptions(input_text=staged)` object for
+  `git apply --index -`, instead of `work_dir=`/`input_text=` keywords. No content impact: this card
+  stated no `run_git` call form, so the sandbox materialization described above is unchanged. The
+  eight-line apply call grew the file by seven lines; every citation here was re-derived against the
+  current file, several of them already loose before the migration — `run_clean_quality`
+  149-242 → 151-244, `_prepare_sandbox` 342-383 → 344-392, `_publish_executor_outcome` 287-337 →
+  291-341, `_exported_pipeline_exit` 392-405 → 399-412, `_publish_reports` 437-532 → 446-541,
+  `_validated_export_inventory` 535-556 → 544-565, `_generation_digest` 596-611 → 605-620,
+  `certifying_evidence_from_published_manifest` 733-764 → 742-773,
+  `require_published_quality_evidence` 767-779 → 776-788, `_resolve_executor` 965-966 → 956-957,
+  `_executor_command` 253-284 → 255-288 (Docs, Repo-Internal and Cross-Repo rows alike) and
+  `_executor_prerequisite_failure` 951-978 → 960-987 — and `quality/execution/sandbox.py`
+  `_write_sandbox_manifest` re-cited to 121-169 → 122-170; verification metadata remains
+  closeout-owned.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (_exported_pipeline_exit→392-405). Preserved claim prose; source-sha256=b05d8c7f20bba2073eaa98003bf820d01e443ae2edc9b9a6cfccd932b9b60959; verification metadata remains unchanged because commit-owned realization is pending.
 

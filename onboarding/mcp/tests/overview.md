@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastUpdated | 2026-09-14T18:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -78,6 +78,7 @@ checks for the branch-addressed route.
 | Leaf document master-link binding | `test_leaf_doc_master_link_binding.py` | The derived master link, end to end on real repositories: a leaf authored through `task_doc` with no series contract acquires `seriesContractPath` and its one `enclosures[]` ref when it is started; an already-damaged document (`lifecycleId` stale, no link) is repaired by its next start with objective, requirements, steps and title unchanged; a leaf under a task root with no master document is refused with `seriesContractPath`, the exact missing `task.json` and the remedy, writing nothing; and the planning flow (master plus two leaves, no start) still succeeds, still unstamped. Integration lane: one disposable code repository and one external memory repository per case. The restamp decision table is the unit half in `test_task_document_application_1.py`. |
 | Closeout recovery attribution | `test_transaction_only_worktree_delivery.py` | A real public closeout interrupted after its code commit is resumed through the journalled `LifecycleOperationRecoveryCommits` cell — a wrong cell is asserted to refuse first — and both documented git readers are asserted against the resumed shas, while the `memory.md`-only ledger commit returns none. The behavioural half of the census for the route that has no memory commit site of its own. |
 | Closeout auto-carry and parked candidate | `test_source_lineage.py` (`CloseoutSourceLineageHealTests`), `test_sync_parked_candidate.py` | The closeout boundary carries a settleable stale break, refuses a preview without mutating, escalates an unprovable break, and returns a parked dirty candidate through the sync transaction (restore on completed/resume/cancel, kept unmerged-index refusal); transaction-level detail lives in the new unit-lane module. |
+| Memory-history trailer backfill | `test_memory_backfill.py` | The migration's own contract, against disposable real Git repositories: a maximum matching plus a fill gives every pairing the format can hold its own trailer, a conflict resolves on the table's recorded order (proved by swapping rows) and names its loser with the winner, holes are kept apart from the declines the rule chose, a plan that lost a mapping is neither empty nor digest-equal to one that did not, the rewrite replays tree/identity/dates so the trailer is the only difference, a second run plans nothing and moves no ref, the acceptance proof reads the rewritten tip through an absent ledger path so only Git-parsed trailers can answer, and the CLI's own branch-name tip survives its own retry. Unit-regression lane. |
 
 | Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
 | Public tool-surface inventory | `test_tools.py` (`PublicSurfaceInventoryTests`) | Live registration order against a probe `FastMCP` equals `PUBLIC_TOOLS`, and the advertised names have response models that validate. Hermetic inventory contract: the probe starts no server and touches no provider. |
@@ -516,6 +517,78 @@ The module is a declared exact consumer of nine `mcp/tests/evidence-lifecycle.to
 `dependency_ownership.py` (`:82`). Consumer declarations are ownership accounting only; they are not
 execution or acceptance evidence.
 
+## 260913-LCA-L3 The Trailer Backfill's Own Contract
+
+**One new module, no deleted module, one lane row added.** The leaf's new module is
+`mcp/tests/test_memory_backfill.py`, registered in the **unit-regression** lane at
+`mcp/tests/test-evidence-lanes.toml:69` by the same change set that created it. It declares no
+`mcp/tests/evidence-lifecycle.toml` consumer row, and that is correct rather than an omission: its
+only imports are the production modules under test plus stdlib, so it reaches no
+`consumer_scope = "exact"` shared support artifact. `mcp/tests/test_git_command.py` was migrated
+with it — the stalled-command timeout case and the raw-commit stdin case now build
+`GitRunnerOptions(...)` instead of passing keyword arguments, which is the only change either case
+carries.
+
+The leaf delivers the migration **tool** and its measurements, not a rewritten history, and an
+external review found two defects that are now fixed. The pre-fix backfill had been applied on this
+master's own memory line, verified, and then **reverted by developer ruling**: rewriting the shared
+ancestors renumbered them, so the master's memory line and its super branch shared no common ancestor
+and the plane's lineage gate refused everything downstream. The fixed tool has **not** been applied to
+any real repository; its evidence is fixtures plus a read-only plan measurement. The backfill is an
+explicit step at this master's integration into IAS, and the shared source line `7317108b` still
+carries **0** `Code-Commit:` trailers. The worker's re-measurement also replaced the leaf
+document's census, and this route records the measured values: 474 tracked rows and 419 distinct code
+commits at the shared line are exact, while "104 duplicate rows" is 55 (every one sharing a code sha
+with another row and naming a different memory commit), "513 trailers" is 419 at the shared line and
+428 at the master's tip, and "10 skips" is 67 and 44 under the superseded vocabulary.
+
+**The first reviewed defect was the selection, and the cases pin the fixed rule from both sides.**
+The rule is a decision the code makes and therefore a decision a test has to pin, and it has two
+halves: a maximum matching, so no code commit is left unnamed while a memory commit that could have
+named it stands empty — code commits offered most-constrained-first, a tie between two equally
+constrained claims going to the older row read off the table — and then a fill giving every memory
+commit the matching did not reach its own oldest row, because a matching is symmetric and the format
+is not. `test_every_recorded_pairing_that_can_be_carried_gets_its_own_trailer` asserts both pairings of
+one code commit keep a trailer, which is what the fill exists for;
+`test_the_winner_does_not_depend_on_hash_order` swaps two rows in the same table and asserts the
+bottom-most row's owner wins in both, which is the defect stated directly; and
+`test_a_contested_memory_commit_names_the_oldest_claim_and_reports_the_loss` asserts the loser through
+`lost_claims` with its `winner` named and the plan not empty. The skip vocabulary is now closed at five
+literals split into holes and declines, and the two declines are asserted apart:
+`test_a_declined_row_names_whether_it_is_a_duplicate_or_a_lost_mapping` holds the two tables a single
+count cannot tell apart, and only `lost_code_commits` separates a decline that cost nothing from one
+that lost a mapping. A plan that lost a mapping is asserted to be non-empty and to carry a different
+digest from a plan that did not, because the digest is what an apply is pinned to.
+
+Idempotence is proved twice — the second plan over a migrated line is empty with the branch tip
+unmoved, and the rewrite itself replays tree, both identities, both dates and the subject, so a rebuilt
+commit differs from its original in its trailer block alone and an untouched commit reproduces its own
+object id.
+
+**The acceptance proof changed shape, and that is the second half of the first defect.**
+`test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded` reads the rewritten tip
+through `_ABSENT_LEDGER`, a declared path no commit carries, so the table contributes nothing and the
+mapped historical pairings are compared against Git-parsed trailers by set equality — failing if any
+carryable pairing is omitted and asserting the one that cannot be carried as a reported loss. The
+earlier proof read the table the migration carries forward, and because `read_ledger_source` unions
+table rows into trailer rows it proved the table had survived rather than that the trailers preserve
+the pairings, which is how 60 omissions passed a green suite.
+`test_a_content_bearing_duplicate_that_would_be_dropped_fails_the_proof` reproduces the documented
+drop shape against the trailer-only read.
+
+**The second reviewed defect was on the command path, so the command path has its own class.**
+`MemoryBackfillCliTests` drives `run` through the same parser the console script builds against a real
+leaf contract whose memory work branch is a NAME: a rescue set built from a name and read back as a
+hash can never compare equal, so the reviewed code wrote its rescue refs and then refused, and the
+retry tripped the existing-ref check on refs its own predecessor had created.
+`test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` asserts the first apply completes
+from a name, moves the branch and leaves the rescue ref on the pre-rewrite tip, and that a second
+apply returns 0 having moved neither the ref nor the branch. Every fixture is a throwaway pair of Git
+repositories under `tempfile`; nothing here reads or writes the coordination tree, the installed
+memory repository, or any shared ref. The module makes no claim that a backfill has been applied to
+the real memory repository — that sequencing decision belongs to the master's integration step, not to
+this route's evidence.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the
@@ -534,9 +607,12 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-329; mcp/src/agents_remember/models/worktree.py:355-363 |
 | The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
 | The L34 boundary module: the public checkpoint route end to end, and both surfaces' refusals for each divergent ledger and for a completed master. | `CheckpointPausesAnUnfinishedMasterTests`; `test_an_unfinished_master_checkpoints_its_own_refs_end_to_end`; `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses`; `test_a_hand_edited_master_ledger_is_refused_by_the_preview_and_the_apply` | mcp/tests/test_checkpoint_landing_end_to_end.py:412-1211; mcp/tests/test_checkpoint_landing_end_to_end.py:440-499; mcp/tests/test_checkpoint_landing_end_to_end.py:688-719; mcp/tests/test_checkpoint_landing_end_to_end.py:1118-1151 |
+| The L3 module itself: the selection's two halves and the reported loss, the decline vocabulary, the trailer-only acceptance proof, the byte-faithful replay, and the real CLI path with a branch-name tip. | `MemoryBackfillPlanTests`; `MemoryBackfillApplyTests`; `MemoryBackfillCliTests`; `test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded`; `test_the_winner_does_not_depend_on_hash_order` | mcp/tests/test_memory_backfill.py:226-396; mcp/tests/test_memory_backfill.py:399-629; mcp/tests/test_memory_backfill.py:754-902; mcp/tests/test_memory_backfill.py:462-545; mcp/tests/test_memory_backfill.py:277-303 |
+| The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
+| The kernel module the L3 cases exercise, the selection they pin, and the projection read the trailer-only proof drives through an absent path. | `_select_pairings`; `_lost_claims`; `is_empty`; `apply_memory_backfill`; `_resolve_commit`; `carry_ledger_cells`; `read_ledger_source` | mcp/src/agents_remember/kernel/memory_backfill.py:434-497; mcp/src/agents_remember/kernel/memory_backfill.py:406-431; mcp/src/agents_remember/kernel/memory_backfill.py:182-193; mcp/src/agents_remember/kernel/memory_backfill.py:625-661; mcp/src/agents_remember/kernel/memory_backfill.py:731-748; mcp/src/agents_remember/kernel/memory_backfill.py:927-972; mcp/src/agents_remember/worktrees/ledger_projection.py:302-350 |
 | **260913-LCA-L11:** the three cases that changed direction — a reordered source region lands while the untrue row still refuses, a reversed superseding pair lands (the hazard, recorded in the docstring), and the interleaved projection lands on the leaf route with the refs really moving. | `test_a_unioned_master_line_still_refuses_a_content_difference`; `test_a_reversed_repeated_code_mapping_now_lands_and_the_hazard_is_recorded`; `test_the_leaf_route_lands_the_ledger_the_checkpoint_accepts` | mcp/tests/test_checkpoint_landing_end_to_end.py:556-622; mcp/tests/test_checkpoint_landing_end_to_end.py:787-840; mcp/tests/test_checkpoint_landing_end_to_end.py:969-1033 |
 | **260913-LCA-L11:** the landing's clause inventory, including the dropped and duplicated source rows now asserted as **accepted** and the two module-level `_require_true_rows` cases. | `test_ledger_refuses_a_ledger_that_does_not_map_the_landed_code_commit`; `test_ledger_refuses_memory_content_that_does_not_descend_from_the_source`; `test_ledger_refuses_untrue_rows_and_accepts_a_rebuilt_source_region`; `test_the_landed_ledger_commit_must_carry_the_memory_content_it_maps`; `test_the_landed_ledger_must_name_a_code_commit_the_repository_holds`; `require_integrated_ledger_mapping`; `_require_true_rows` | mcp/tests/test_integration_branch_authority.py:295-329; mcp/tests/test_integration_branch_authority.py:331-382; mcp/tests/test_integration_branch_authority.py:384-527; mcp/tests/test_integration_branch_authority.py:581-614; mcp/tests/test_integration_branch_authority.py:617-642; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-344; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:345-380 |
-| **260913-LCA-L11:** the reader's two new cases — the row a source cannot prove is excluded with its reason, and a partially trailered source still reads its pre-rule rows. | `test_a_source_row_the_source_cannot_carry_is_reported_not_kept`; `test_a_partially_trailered_source_still_reads_its_pre_rule_rows`; `read_ledger_source` | mcp/tests/test_memory_ledger.py:473-502; mcp/tests/test_memory_ledger.py:503-532; mcp/src/agents_remember/worktrees/ledger_projection.py:299-349 |
+| **260913-LCA-L11:** the reader's two new cases — the row a source cannot prove is excluded with its reason, and a partially trailered source still reads its pre-rule rows. | `test_a_source_row_the_source_cannot_carry_is_reported_not_kept`; `test_a_partially_trailered_source_still_reads_its_pre_rule_rows`; `read_ledger_source` | mcp/tests/test_memory_ledger.py:495-522; mcp/tests/test_memory_ledger.py:525-552; mcp/src/agents_remember/worktrees/ledger_projection.py:302-350 |
 | The recorded flake note the L34 module carries. | "UNREPRODUCED FLAKE, RECORDED 2026-09-13" | mcp/tests/test_checkpoint_landing_end_to_end.py:1181-1192 |
 | The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
 | The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:465-512; mcp/tests/test_cross_master_concurrency.py:529-563; mcp/tests/test_cross_master_concurrency.py:565-623; mcp/tests/test_cross_master_concurrency.py:786-854; mcp/tests/test_cross_master_concurrency.py:754-782 |
@@ -569,6 +645,45 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
+  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
+  both are fixed, so this route's L3 section, its retained-route row and its reference rows were
+  corrected. The section now records that the rule is a maximum matching plus a fill (the fill is
+  load-bearing because a matching is symmetric and the format is not), that a conflict resolves on the
+  table's recorded order and is proved by swapping two rows, that the skip vocabulary is five literals
+  split into holes and declines with `lost_claims` naming each loser and its winner, that a plan which
+  lost a mapping is neither empty nor digest-equal to one that did not, and that the acceptance proof
+  is now trailer-only — it reads the rewritten tip through `_ABSENT_LEDGER`, whereas the earlier proof
+  read the table the migration carries forward and, because `read_ledger_source` unions table rows into
+  trailer rows, proved the table had survived rather than the trailers, which is how 60 omissions
+  passed a green suite. Added the fifth class: `MemoryBackfillCliTests` drives the real registered
+  command path against a branch-name tip and a second apply, because the reviewed second defect — a
+  rescue set built from a name and read back as a hash, plus the rescue guard running before the
+  empty-plan check — was invisible from every kernel-level case. The route row and the three reference
+  rows were rewritten to the current case names and ranges (the L3 module grew 543 → 906 lines and the
+  kernel module 686 → 1024), and the section now states plainly that the fixed tool has not been
+  applied to any real repository: its evidence is fixtures plus a read-only plan measurement, and the
+  rewrite is deferred to this master's integration into IAS. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l3-ar`, base `7317108b`): registered the leaf's new `test_memory_backfill.py` in the
+  retained route table and added the route section for it (unit-regression lane at
+  `mcp/tests/test-evidence-lanes.toml:69`, and no `evidence-lifecycle.toml` consumer row because its
+  only imports are the production modules under test plus stdlib). Records the migration's contract
+  as this route's evidence — the one-trailer rule and its reported skips, the closed four-literal skip
+  vocabulary, the total old→new identity map, the byte-faithful replay, the second-run no-op, and the
+  rescue-ref and digest refusals — and states the reversal plainly: the apply was verified and then
+  reverted by developer ruling because rewriting the shared ancestors removed the master's common
+  ancestor with its super, so the shared line still carries 0 trailers and the backfill is an explicit
+  step at this master's integration into IAS. Records the worker's re-measurement replacing the leaf
+  document's census (474 rows / 419 distinct code commits exact; 55 duplicate rows, not 104; 419 at
+  the shared line and 428 at the tip, not 513; 67 and 44 skips, not 10) and notes that
+  `test_git_command.py`'s two migrated call sites now build `GitRunnerOptions`. Two anchors in the
+  L11 reference row were repointed to their current ranges: `read_ledger_source`
+  `ledger_projection.py:299-349` → `:302-350`, which this change set moved by adding three lines
+  above it, and — inside the same row — the two `test_memory_ledger.py` ranges that already fell short
+  of the test functions they name (`:473-502` → `:495-522`, `:503-532` → `:525-552`). Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator (uncommitted change set on `ar/260913-lca-l8-ar`):
   registered the leaf's new `test_terminal_blocker_reasons.py` in the retained route table
   (integration lane, entry row 177) — a cleanup or finalize blockage always names its component and a
