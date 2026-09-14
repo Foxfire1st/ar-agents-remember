@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-13T23:52+02:00|
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T11:58+02:00|
+| lastVerifiedCommitHash | `187414cef8150a8004fc1b023a8377f77b24e873` |
+| lastVerifiedCommitDate | 2026-09-14T12:13:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -88,9 +88,15 @@ establish that a production continuation is installed or that the candidate has 
   those originals; a result payload, latest report, or another generation cannot substitute for them.
 - Exact-pair consumers have one candidate-identity owner; disabling the duplicate configured check
   never disables repository-root, separation, task, or enclosure authority.
-- External-memory ledger order is authoritative: the newest same-code row is current, while older
-  exact rows remain audit history. Memory-only landing appends one current row; integration and
-  organizational-completion repair preserve and prove the required exact historical edges.
+- External-memory ledger order is authoritative for *resolution*: the newest same-code row is
+  current, while older exact rows remain audit history. Memory-only landing appends one current row.
+- **The landing judges the commits, not the tracked table (260913-LCA-L11).** Integration no longer
+  requires a landed ledger to preserve the source file's row list or row order; `memory.md` is
+  derived state. What it proves is that the landed pair is mapped, that every row of the landed table
+  is true against the two repositories, that the landed memory content descends from the exact memory
+  source while the source is still behind the landing, and that the header names its own first row.
+  The known gap this leaves — a same-code-commit row reversal landing unreported — is recorded on the
+  `worktrees/overview.md` route as pending a decision, not as blocked.
 - The closeout door is journal-owned state (`<worktree_group>/reports/closeout-door.json`, plus the
   operation record's own publication). `WorktreeContract` no longer carries a `closeout_door` field;
   a contract that still carries the key parses, the key is never read, and the next rewrite drops it.
@@ -352,14 +358,34 @@ exact-mapping reader; the *final* series route may additionally accept the recon
 `series_memory_closeout`, 260831-LOCR-L36) and publication **requires** that `expected` value,
 revalidating it against the live tips immediately before the ref move
 (`atomic-series-checkpoint-candidate-moved`). The transaction on
-this route carries the route difference as data: `LandingAdmission` holds either the finished
-leaf-chain prefix or the checkpoint's own captured candidate, and `_require_preserved_ledger_history`
-takes the leaf projection form for an unfinished master because the completed census is one of the
-completion facts its route deliberately does not require. The preview/apply parity invariant this
-repair came from is inventoried on [the worktrees route overview](../overview.md) and in
-[`memory_quality/overview.md`](../../memory_quality/overview.md).
+this route carries the route difference as data, and since **260913-LCA-L11** that data is exactly one
+fact: `LandingAdmission` holds the checkpoint's own captured candidate, or nothing extra for the final
+routes. The L34 form also carried the finished master's ledger **shape** — the leaf-chain prefix, or
+the leaf projection form for an unfinished master, selected by `_require_preserved_ledger_history` —
+and **all of it is removed**: the developer's ruling of 2026-09-14T08:15+02:00 made the rebuild
+outrank the tracked ledger file, so a landing no longer reads the table for what it *should* have
+said, only for whether each row it carries is true. `_integrated_ledger_pair` and its source-blob
+read are gone with the rule, `LandingAdmission.expected_series_ledger_prefix` and its
+`atomic_series_ledger_prefix` producer are gone, and `require_integrated_ledger_mapping` keeps four
+promises that were never about the file (the landed pair's mapping, per-row truth through
+`_require_true_rows`, the conditional descent from the exact memory source, and the header naming its
+own first row). The preview/apply parity invariant this repair came from is inventoried on
+[the worktrees route overview](../overview.md) and in
+[`memory_quality/overview.md`](../../memory_quality/overview.md); the removal and its cost are
+recorded on the worktrees route and on the `integration_ref_transaction.py` card.
 
 ## Update History
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's checkpoint/landing paragraph, which
+  described the L34 shape as current. The ledger-preservation check is **removed** by the developer's
+  2026-09-14T08:15+02:00 ruling — it protected the tracked `memory.md`, which is derived state — so
+  `LandingAdmission` now carries only the checkpoint's captured candidate,
+  `_require_preserved_ledger_history` and `_integrated_ledger_pair` are gone,
+  `expected_series_ledger_prefix`/`atomic_series_ledger_prefix` are gone, and the surviving promises
+  are the mapping, per-row truth, the conditional source descent and the header. Added the matching
+  invariant and recorded the known gap (a same-code-commit row reversal can land unreported) as
+  pending a decision on the worktrees route. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
   `5bb124d4`): corrected the one sentence above that placed the rendering definition in
   `models/closeout/input.py`. Since L4 that method is a delegation to

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastUpdated | 2026-09-14T11:58+02:00 |
+| lastVerifiedCommitHash | `187414cef8150a8004fc1b023a8377f77b24e873` |
+| lastVerifiedCommitDate | 2026-09-14T12:13:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -191,10 +191,22 @@ memory-carryover vehicle.
   selection/cancellation paths.
 - External-memory ledgers are newest-first state history. Sync preserves every exact parent row and
   accepts repeated code commits; the newest matching row remains current authority.
-- **The source ledger is the attributed history, not the tracked table (260913-LCA-L2).** The
-  projection's trailing rows are the reachable memory commits' own `Code-Commit:` trailers, read
-  through `kernel/memory_attribution.py`; the tracked ledger commit, every named-ref reader of it and
-  the ledger commit leg itself are unchanged, and retiring that tracked form is a separate leaf.
+- **The source ledger is the source's own recorded table with the attributed rows merged into it
+  (260913-LCA-L2, corrected by 260913-LCA-L11).** `read_ledger_source` reads the table the source
+  commit carried on every path and merges the reachable memory commits' own `Code-Commit:` trailers
+  into it, excluding — with a recorded reason and a reported count — any row the exact source commit
+  cannot prove. It is not a "trailers first, blob as fallback" rule: that form made a partially
+  backfilled line read as a nearly empty source. The tracked ledger commit, every named-ref reader of
+  it and the ledger commit leg itself are unchanged, and retiring that tracked form is a separate
+  leaf.
+- **The rebuild outranks the tracked ledger file (260913-LCA-L11).** The integration-side check that
+  required a landing to preserve the complete source ledger history — no source row dropped,
+  reordered or replaced — is **removed**, because it protected a derived file. Every promise a
+  landing still makes is about the commits: the landed pair is mapped, every row of the landed table
+  is true against the two repositories, the landed memory content descends from the exact memory
+  source while the source is still behind the landing, and the header names its own first row. The
+  cost is recorded rather than hidden: an older row reordered above a newer one for the same code
+  commit can now land unreported for any code commit other than the landed one.
 - Cleanup may release only an exact selected terminal contract and must do so before deleting the
   canonical contract pointer needed to prove identity.
 - **The stop is not a publication (260831-LOCR-L37), and a master is not sealed by its own landing
@@ -471,12 +483,14 @@ which is how it survived.
   `_landing_admission`, and the required `operation` name on `_publish_integration_edge`. The
   checkpoint path no longer calls `validate_integrate_contract`, whose series arm is byte-identical to
   the two ref-shape checks the capture already makes.
-- `worktrees/integration/integration_ref_transaction.py` gained `LandingAdmission` (the admitted
-  candidate plus the ledger-proof shape) in place of a single keyword-only prefix argument, and
-  `_require_preserved_ledger_history` takes the leaf **projection** form for a paused series — a
-  smaller promise, not a dropped one, because the completed leaf-chain census is exactly one of the
-  completion facts the checkpoint route does not require. The transaction's own boundary read remains
-  authoritative, re-taken under the transaction immediately before the irreversible ref move.
+- `worktrees/integration/integration_ref_transaction.py` gained `LandingAdmission` in place of a
+  single keyword-only prefix argument, and `_require_preserved_ledger_history` took the leaf
+  **projection** form for an unfinished master — a smaller promise, not a dropped one, because the
+  completed leaf-chain census is exactly one of the completion facts the checkpoint route does not
+  require. **Both that function and `LandingAdmission.expected_series_ledger_prefix` were removed by
+  260913-LCA-L11** (see the L11 section below), so this paragraph records the L34 shape as history.
+  The transaction's own boundary read remains authoritative, re-taken under the transaction
+  immediately before the irreversible ref move.
 - `worktrees/modules/closeout.py`'s `closeout_preview_payload` now calls the extracted
   `require_closeout_publication_authority`, closing instance 1 (see the `closeout.py` card).
 - `models/worktree.py`'s `NextTool` gained `worktree_checkpoint_landing`; `NextOperation` was
@@ -579,17 +593,18 @@ states; the master-level beats are the registered tools.
 ## Route Impact: The Ledger's Source Is The Attribution (260913-LCA-L2)
 
 `ledger_projection.read_ledger_source` no longer reads the complete source ledger out of the blob at
-`commit:memory.md`. It projects it from the memory commits' own attribution: the new kernel module
+`commit:memory.md` alone. It merges two records: the new kernel module
 `mcp/src/agents_remember/kernel/memory_attribution.py` walks the whole ancestry from the exact source
-commit it is given, turns every `Code-Commit:` trailer into one row, and the projection takes those
-rows as its trailing tail. A commit written before the trailer rule carries no trailer, so **that
-commit alone** is read from its own ledger blob — a reading rule scoped to the commit being read,
-not a caller-selected mode: there is no flag, no second reader and no per-caller switch, and the
-history-wide backfill retires it by writing the trailer onto those commits. A source that resolves
-and carries neither contributes no rows, which is the bootstrap state the ledger-creation paths
-start from; a history that cannot be walked and a blob that exists and cannot be parsed both still
-refuse with their remedy. `ledger_projection.code_commit_exists` is now a delegation to the
-attribution module's single `cat-file -e` definition rather than a second copy of that test.
+commit it is given and turns every `Code-Commit:` trailer into one row, and the reader separately
+takes the rows **that commit's own table recorded**, keeping the table's order and each mapping once.
+The reader's original L2 form returned the trailers *alone* as soon as the history carried a single
+one, which made the blob reachable only for a history with no trailer at all; **260913-LCA-L11
+corrected that** and made the union the rule, with a row the exact source commit cannot prove
+excluded at the read and reported with its reason rather than dropped in silence. A source that
+resolves and carries neither record contributes no rows, which is the bootstrap state the
+ledger-creation paths start from; a history that cannot be walked and a blob that exists and cannot
+be parsed both still refuse with their remedy. `ledger_projection.code_commit_exists` is a delegation
+to the attribution module's single `cat-file -e` definition rather than a second copy of that test.
 
 **The walk is the whole ancestry because a memory line merges.** Measured on the real memory
 repository at tip `5e4899ea` with `git merge-base --is-ancestor` (the projection's own truth test,
@@ -619,13 +634,104 @@ someone edits, which is why the tracked form is a commit shape: retiring it mean
 ledger-commit leg across worktree closeout, direct landing, queue recovery, series closeout,
 integration and sync, and that is a separate leaf of this master, deliberately not half-landed here.
 
-**On the real repository the per-commit fallback is the live path.** At `5e4899ea`, 0 of the 958
-reachable memory commits carry the trailer, so the 476 rows the projection returns there are the
-ones the per-commit blob read yields — the same bytes and the same parser the direct comparison
-would use. The attribution path itself is proved by `mcp/tests/test_memory_ledger.py`'s attributed
-fixture line, and making the real history carry it is the master's backfill leaf.
+**On the real repository the L2 measurement and the L11 measurement are different states of the same
+line, and both are recorded with their method.** At `5e4899ea` the L2 pass measured 0 of the 958
+reachable memory commits carrying the trailer, so the projection returned the table's 476 rows
+through the blob read. At `f5edc613` (this leaf's memory base) the 260913-LCA-L11 worker measured
+that the table records 479 rows of which exactly ONE commit carries a trailer; the curator
+re-verified both halves against the official memory repository (`git show f5edc613:memory.md` parsed
+as the ledger parser does → 479 data rows; `git log --format=%(trailers:key=Code-Commit,valueonly)
+f5edc613` → one non-empty value, `02ed1fbc` trailing `4214d7a1`) and re-derived the read's split with
+`git merge-base --is-ancestor` row by row → 466 kept + 13 excluded, the worker's own figures. The
+attribution path itself is proved by `mcp/tests/test_memory_ledger.py`'s attributed fixture line, and
+making the real history fully carry it is the master's backfill leaf.
+
+## Route Impact: The Rebuild Outranks The Ledger File (260913-LCA-L11)
+
+**The developer's ruling of 2026-09-14T08:15+02:00, and what this route had to give up for it.** The
+integration-side check that enforced "preserve the complete source ledger history: no source row
+dropped, reordered or replaced" protected the tracked `memory.md`, and `memory.md` is derived state —
+the projection recomputes it from the memory commits' own attribution. A table that differs from the
+file it replaced is therefore the *normal* result of a rebuild, not damage, and a rule that refuses it
+is a rule that keeps a derived file authoritative. **The rebuild takes priority: the check is removed,
+not weakened** — no flag, no opt-out, no compatibility path. The trigger was concrete: leaf L10's
+ledger repair reported added 1, removed 13, reordered 455 (479 → 467) and its integration was refused
+by that check while naming the 13 missing rows and the ~455 out-of-order ones, even though the start
+point was current (the master records memory base `7317108b` and the source branch tip *is*
+`7317108b`). The asymmetry settled it: the **checkpoint** route already tolerated merge-produced
+interleaving while the **leaf** route did not, so the same table was accepted on one road and refused
+on the other. (The master's decision attributes the checkpoint half of that asymmetry to `L35`; this
+route's own record attributes the checkpoint's interleaved-projection acceptance to the L34 work
+above. The two labels are not reconciled here — what matters is that the asymmetry was real and is
+now gone.)
+
+**Removed, across three modules, so no producer is left without a consumer.**
+`integration_ref_transaction.py` lost `_require_preserved_ledger_history` (both the series leaf-chain
+prefix branch and the projection fixed point), its evidence renderers `_ledger_projection_refusal` /
+`_landing_ledger_rule` / `_projection_divergence_evidence` / `_ledger_row_list` / `_ledger_row_text`,
+the `_LedgerLanding` carrier, `_integrated_ledger_pair` and its source-blob read, and
+`LandingAdmission.expected_series_ledger_prefix`. `series_closeout.py` lost the now-orphaned
+`atomic_series_ledger_prefix` with `_reconciled_ledger_prefix` and `_is_reconciliation_row`.
+`modules/integrate.py`'s `_landing_admission` no longer takes the contract, because there is no series
+ledger prefix left to derive, and `_require_ledger_projection` no longer receives a history form.
+
+**What survives, and it is not nothing.** Four protections the file rule never carried all still fire,
+and each was proven by its own mutation: the landed code commit **is** mapped to the landed memory
+content (`find_mapping`, so a table naming that commit with different content refuses too); every row
+of the landed table is **true** against the two repositories (`_require_true_rows`, naming the
+offending row); the landed memory content descends from the exact memory source, now asked exactly
+while the source is still behind the landing so an idempotent retry converges; and the header names
+its own first row, through a validated read of the landed ledger with its own closeout-re-run remedy.
+The final **series closeout's** reconciled-pair recording still requires the landed table to be the
+fixed-point projection (`series_closeout._require_series_ledger_projection`) — a different route, on
+purpose, and not something this leaf touched.
+
+**The cost is recorded, not hidden.** With the file rule gone, a reordering that moves an OLDER row
+above a NEWER one **for the same code commit** can now land, and nothing at the landing reports it:
+`find_mapping` resolves the first row naming a commit, so the reversal silently changes what that code
+commit resolves to. The landed code commit's own pair is still safe — that is the mapping clause — so
+the exposure is every *other* code commit the table names. The worker briefly added a "resolution
+preservation" rule, found it refused a correct ledger (re-establishing the file as authority by the
+back door), and removed it. This is a **known gap pending a decision**, and no card or comment may
+describe it as blocked.
+
+**The rebuilder's second, independent defect — the expensive shape of "no attribution exists".** The
+ruling did not name it; the worker found it while reproducing the ruling. `read_ledger_source`
+returned the trailers ALONE as soon as the history carried one, so a line whose table records 479 rows
+and whose history carries one trailer read as a **one-row source** and every pre-rule row vanished
+from its tail. The blob is now the common case and the trailers merge into it; rows the exact source
+commit cannot carry are excluded at the read with a recorded reason and operator-visible counts
+(`sourceRowsExcluded`, `sourceExcludedRows`, `sourceExcludedReasons`, `sourceTraileredCommits`), and
+abbreviated object names are resolved by ancestry rather than string-compared. See the
+`ledger_projection.py` card for the measurement and its re-verification.
+
+**Where this is tested.** `mcp/tests/test_checkpoint_landing_end_to_end.py` is the behavioural proof
+and three of its cases changed direction: a reordered source region, a reversed superseding pair, and
+the interleaved projection on the leaf route all **land** now, each asserting the acceptance (and, for
+the leaf case, that the destination refs really moved) rather than dropping the scenario.
+`mcp/tests/test_integration_branch_authority.py` carries the clause inventory, including the dropped
+and duplicated source rows it now asserts as accepted, and the two new module-level cases that drive
+`_require_true_rows` directly. `mcp/tests/test_memory_ledger.py` gained the exclusion case and the
+partially-trailered-source case. No new test module was added and none was deleted.
 
 ## Update History
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): recorded the developer's 2026-09-14T08:15+02:00 ruling
+  that the rebuild outranks the tracked ledger file, and the removal it ordered — the
+  ledger-preservation check and its whole surface across `integration_ref_transaction.py` and
+  `series_closeout.py`, with `integrate.py`'s admission losing its ledger-history dimension. Stated
+  the four surviving promises, the surviving series-closeout projection gate as a different route,
+  the measured trigger (L10's 13 dropped / 455 reordered repair refused at a current start point),
+  and the asymmetry between the checkpoint and leaf routes that the master's decision attributes to `L35`. Recorded the removal's **cost** — a
+  same-code-commit row reversal can now land unreported for any code commit other than the landed
+  one, the "resolution preservation" rule that would have closed it refused a correct ledger and was
+  removed, and it is a known gap pending a decision. Recorded the rebuilder's second defect and the
+  direction of its fix, with both the worker's measurement and this curator's independent
+  re-verification (479 rows, 1 trailered commit, 466 kept + 13 excluded at `f5edc613`). Corrected
+  the two body passages the change falsifies — the L2 reader paragraph's "fallback" framing and the
+  L34 paragraph's `LandingAdmission`/`_require_preserved_ledger_history` account — and added the
+  matching local invariant. Verification metadata remains closeout-owned; no execution or acceptance
+  claim and no verification stamp advanced.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
   `ar/260913-lca-l5-ar`, base `52875e7a`): recorded the new `task-enclosure-binding-master-link-missing`
   refusal on `require_current_leaf_enclosure_binding` — a leaf document with an exact enclosure address

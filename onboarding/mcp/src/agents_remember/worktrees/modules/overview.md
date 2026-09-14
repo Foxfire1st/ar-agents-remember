@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-14T11:58+02:00 |
+| lastVerifiedCommitHash | `187414cef8150a8004fc1b023a8377f77b24e873` |
+| lastVerifiedCommitDate | 2026-09-14T12:13:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1047,6 +1047,19 @@ the closeout completion gate into `series_closeout.require_closeout_publication_
 invariant and its instance inventory live on [the worktrees route overview](../overview.md) and in
 [`memory_quality/overview.md`](../../memory_quality/overview.md).
 
+**260913-LCA-L11 removed this route's ledger-history dimension.** The developer's ruling of
+2026-09-14T08:15+02:00 made the rebuild outrank the tracked ledger file, so the shared landing proof
+no longer judges the landed table against the source file's row list or row order. Concretely on this
+route: `_landing_admission(*, checkpoint)` lost its `contract` parameter, because the finished
+master's ledger prefix it used to derive (`series_closeout.atomic_series_ledger_prefix`) is deleted
+with its only consumer; `_require_ledger_projection` no longer receives `expected_series_prefix` or
+`checkpoint`; and `LandingAdmission` carries one fact, the checkpoint's captured candidate. The
+preview/apply parity instances 4 and 5 are unchanged and now hold by construction rather than by both
+surfaces deriving the same ledger shape. What the proof still refuses — the landed pair's mapping,
+per-row truth, the memory content's descent from the exact source, and a header that disagrees with
+its own first row — is inventoried on the `worktrees/overview.md` route and the
+`integration_ref_transaction.py` card; the removal's known cost is recorded there too.
+
 The typed-vocabulary table below therefore names `landing_record.py` as the call site of the landing
 cells rather than `integrate.py`, and `integration/master_review_gate.py` as the `blocked` call site.
 
@@ -1210,6 +1223,14 @@ a producer must never edit the string it was handed. The census is enforced from
 `mcp/tests/test_transaction_only_worktree_delivery.py::test_closeout_recovery_attributes_the_memory_commit_it_still_owed`.
 
 ## Update History
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): recorded that the shared landing proof on this route lost
+  its ledger-history dimension under the developer's 2026-09-14T08:15+02:00 ruling — `_landing_admission`
+  no longer takes the contract (there is no series ledger prefix left to derive),
+  `_require_ledger_projection` no longer receives `expected_series_prefix`/`checkpoint`, and
+  `LandingAdmission` carries only the checkpoint's captured candidate. The L34 preview/apply parity
+  account above is unchanged and now holds by construction. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
   `5bb124d4`): added the producer-surface section above. This route's `_commit_memory_content` now reaches
   the kernel's one renderer through the closeout model, and the section records the corrected census
