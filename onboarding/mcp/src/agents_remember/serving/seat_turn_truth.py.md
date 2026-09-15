@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/serving/seat_turn_truth.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                    |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-09-15T13:15+02:00|
+| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6`                                    |
+| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -54,6 +54,11 @@ directly; every terminal-truth mutation rides `get`+`upsert` through this module
   compound-idle marker is signature-keyed (`compound_idle_emitted_for`), so re-recording the
   same episode signature is a no-op and a NEW episode (signature change) overwrites the marker
   — that is the re-arm (260713-TES-L3).
+- When a marker is written is the caller's contract, not this module's: since 260831-LOCR-L10 the
+  state-signal marker is stamped from inside the posting primitive's post-persistence callback, so
+  the row is already durable and delivery has not been attempted. Nothing in this write surface
+  changed for that — `record_state_signal_emitted` still reads through `catalog.get` and upserts
+  only a changed row.
 - Cursors advance only on success; the snapshot pointer and terminal cursors are independent
   positions.
 - The module never posts inbox rows, never classifies, and never decides delivery — it only
@@ -82,8 +87,8 @@ called by the liveness sweep and the interrupt route and the state-signal action
 | The frozen catalog row, evidence stamp, and public get/upsert seams it writes through. | "class TerminalCatalogEntry:"; "class CatalogTurnEvidence:"; "class TerminalCatalog:" | mcp/src/agents_remember/models/terminal_catalog.py:68-72; mcp/src/agents_remember/models/terminal_catalog.py:42-50; mcp/src/agents_remember/serving/terminal_catalog.py:48-92 |
 | The liveness sweep's read-before-projection ordering that calls `record_terminal_cursors`. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:343-426 |
 | The interrupt route stamping developer provenance after an accepted interrupt. | `conversation_interrupt` | mcp/src/agents_remember/serving/conversation/control/api.py:151-187 |
-| The state-signal/non-reaction action markers. | `_emit_state_signal`; `_emit_non_reaction` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599 |
-| The compound-idle action-time marker write (ask + marker share the fresh signature). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
+| The state-signal and non-reaction action markers. The state-signal marker is written from the emitter's post-persistence callback — after the row is durable and on the sweep fold, before any delivery attempt — while the non-reaction marker stays a post-return write. | `_emit_state_signal`; `_emit_non_reaction` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:489-561; mcp/src/agents_remember/serving/_agent_notifier_actions.py:631-702 |
+| The compound-idle action-time marker write (ask + marker share the fresh signature). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:564-629 |
 
 
 ## Cross-Repo References
@@ -95,6 +100,8 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes these catalog writes. | — | — |
 
 ## Update History
+
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: the state-signal marker's caller changed, so this card's claim about it is corrected rather than left stale. `_emit_state_signal` now stamps `state_signal_emitted_for` through the posting primitive's post-persistence callback (row durable and on the sweep fold, before any delivery attempt) instead of writing it after the post returned; the non-reaction and compound-idle markers keep their post-return writes. This module's own write path is unchanged — only when it is called moved — and both moved construct ranges were re-derived against the current source.
 
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the body and citations for the current
   `TerminalCatalogEntry`/`CatalogTurnEvidence` model move; verification metadata remains pinned

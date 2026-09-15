@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T13:19+02:00 |
-| lastVerifiedCommitHash | `163ba8a9798228b7f912eec05646f31e79f6b26e` |
-| lastVerifiedCommitDate | 2026-09-15T13:37:09+02:00|
+| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6` |
+| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -185,6 +185,21 @@ because rebinding a held signal restarts its attempt clock while the generic red
 suppressing it as a held signal; without the state-signal-scoped admission such a row had no
 delivery path at all. Every other row kind keeps the ordinary redelivery path, and an unparseable
 attempt clock is still refused.
+
+State signals now carry an explicit durable order — row persisted, marker stamped, delivery
+attempted — enforced at the posting primitive rather than by the emitter's call sequence.
+`owner_signals._post_owner_signal` runs `OwnerSignalOptions.after_persist` after the row is durable
+and on the sweep fold and strictly before `deliver_inbox_entry`, and `_emit_state_signal` is its only
+supplier today (it stamps `state_signal_emitted_for` there instead of after the post returns), so a
+failed marker write leaves one pending unmarked row and makes zero adapter submissions. Delivery
+eligibility is re-checked at the shared action: `_agent_notifier_actions._state_signal_awaits_marker`
+refuses a pending state-signal row whose own seat still reports that row's evidence without the
+marker, and `_drain_boundary` inherits the guard by delegating to `_redeliver`. Predicate order is
+therefore not what protects the row — the boundary-drain finder reaches the shared action without the
+held-on-boundary filter the generic finder applies. Coalescing follows the same source identity: a
+`state-signal` row renews on the exact `subjectAgentId` plus the normalized ask, so an R08 rebind
+renews and re-addresses that row while two replacement seats never renew each other; every other kind
+keeps the structural task-document + role key.
 
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
@@ -945,6 +960,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   the notifier's inline refresh, and both sweeper clocks are unchanged; whether the notifier's inline
   refresh should remain a second recurring caller is not decided here. Verification metadata remains
   closeout-owned; no stamp advanced.
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: extended the current structural seat and routing contract with the state-signal durable order and its recovery identity. The row is persisted before the emitted marker, which is now stamped from `OwnerSignalOptions.after_persist` inside `_post_owner_signal` and strictly before any delivery attempt; delivery eligibility is re-checked at the shared action by `_state_signal_awaits_marker`, which `_drain_boundary` inherits, so predicate order is not the protection. Coalescing for `state-signal` rows is the exact `subjectAgentId` plus the normalized ask, while every other kind keeps the structural task-document + role key. Canonical seat selection, boundary-drain admission, and the shared delivery path itself are unchanged.
 
 - 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.

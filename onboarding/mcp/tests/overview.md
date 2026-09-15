@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T13:20+02:00 |
-| lastVerifiedCommitHash | `163ba8a9798228b7f912eec05646f31e79f6b26e` |
-| lastVerifiedCommitDate | 2026-09-15T13:37:09+02:00|
+| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6` |
+| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -55,6 +55,7 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Memory preparation and repair | `test_memory_quality_runs.py`, `test_citation_document_transaction.py`, `test_memory_citation_fix_scopes.py` | Exact-pair revalidation, document isolation, conflict refusal and preserved evidence. |
 | State-signal structural routing | `test_state_signal_relay.py` | Action-time current-manager replacement, per-subject topology refusal, no-row/no-marker behavior while an owner is absent, and no owner wake while a seat's own turn is still open. |
 | State-signal boundary delivery | `test_state_signal_boundary_delivery.py` | Row persisted before the emitted marker, zero adapter submission while the target is `working`, and delivery of that same durable row at the target's next admissible boundary across occupant replacement, fresh notifier context, and failed submission. |
+| State-signal crash and restart recovery | `test_state_signal_restart_recovery.py` | The durable order row persisted → marker stamped → delivery attempted across a failed marker write, a stop after the marker, and a same-seat structural rebind: one pending row per exact seat/evidence identity, zero adapter submissions while that source marker is unstamped, and an action-time fence on the shared delivery action that state-signal recovery alone may lift. Seven cases, each rebuilt from the durable files through new store objects. |
 | Parked external-await separation | `test_parked_external_await_separation.py` | The parked open-turn external-await design stays out of the ended-turn relay: no `waiting` expectation kind is parseable, no wait-registration tool is advertised, and no wait/recheck/check-descriptor machinery ships. Absence guard only, not relay behavior evidence. |
 | Incremental memory scope | `test_memory_incremental_scope_compiler.py` | Dependency-complete work and exact reuse remain non-accepting with final-full pending. |
 | Native submission and IPC | `test_harness_submission_authority.py`, `test_harness_control_ipc.py` | One request authority, idempotence, withdrawal races and ambiguous receipt reconciliation. |
@@ -80,6 +81,38 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Capacity refusal source classification | `test_closeout_projection_source_classification.py` | The three states of a projected source stay distinct on the code its own raiser published. `graph_context` refuses a sprint whose authored graph is one node past `MAX_CLOSEOUT_MASTERS` with `closeout-queue-master-capacity-exceeded` — its own declared code, read back from the refusal rather than retyped — and that code classifies `invalid`, because the source was read and is past its bound; `contract-unreadable` and `atomic-series-contract-unreadable` still report `unreadable`; and the ordinary projected source stays readable with no problems and classifies `active`. The classifier tests membership of `closeout_queue_errors.py`'s `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains. Integration lane: real temporary Git repositories through `QueueFixture` and the production graph admission path. |
 | Registration before compaction | `test_terminal_liveness_registration_order.py` | The full sweep's post-commit order, pinned where it happens: the traced terminated-row read records the batch-commit state observed **at the read**, so the chain `batch-enter → batch-exit → enumerate[include_terminated=True, batch=closed] → register → compact` fails if the enumeration moves inside or ahead of the observation batch. The registrar's returned proved-id set is the only argument `compact` receives, an absent registrar yields the empty proved set (so a task-bound leaf row survives), a raising registrar stops the pass before `compact`, a crash after registration re-registers idempotently on the next pass, and the starting-row fast path does neither stage. Hermetic unit lane; no production byte changes for this contract. |
 | Terminal blocker reasons | `test_terminal_blocker_reasons.py` | A cleanup or finalize blockage always names the component it stopped on and a non-empty reason. The L6 shape — terminal archive proven, provider runtime already gone — finalizes on the first call with an empty `notRemoved` inventory; a real permission failure on the provider tree blocks with `remove_tree`'s own `permission denied: ...` reason, closes nothing and refuses identically on retry; and both invariant owners are driven directly (`_blocker` refuses a missing, blank or non-string reason, and `remove_tree` names a reason whenever it reclaimed nothing). The L6 payload is reproduced through the provider port boundary, not by re-enacting the original physical event. Integration lane; one new module, no deleted module. |
+
+## 260831-LOCR-L10 State-Signal Crash And Restart Recovery
+
+`test_state_signal_restart_recovery.py` (unit-regression, manifest row `:101`) is the executor for the
+relay's restart idempotency contract that no earlier module forced: for one exact catalog seat plus its
+`terminal_evidence_id`, retries and process restarts converge on **one** durable state-signal row and
+one emitted marker, in the order row persisted → marker stamped → delivery attempted. Seven cases,
+each building one temporary durable world and then re-reading it through brand-new catalog/store/context
+objects: a marker write that raises leaves exactly one pending unmarked row, zero adapter submissions
+and a restart that renews that same row id before delivering once; the two competing finders' findings
+(the generic redelivery finder run over that generation, and the boundary-drain finder) are both fenced
+at the shared action with no delivery-state mutation before state-signal recovery stamps and delivers in
+the same sweep; a stop after the marker leaves one *marked* pending row that the ordinary pending-row
+path lands once; a same-seat rebind between row persistence and marker retry renews and re-addresses the
+original row id instead of minting a sibling; two distinct seat ids sharing document, role, outcome and
+evidence hold two rows that never renew each other; a later evidence identity re-arms the seat as a
+successor row while the older row still delivers; and the non-state preservation control keeps the
+structural coalescing key and its occupant-blind behavior. Reverting the three source hardenings turns
+six of the seven red, with that preservation control the single pass — the module is sensitive to the
+ordering it claims, not to its own scaffolding.
+
+**The fence's reachable route is the boundary drain, not the generic finder.** Case two obtains the
+competing findings by calling each finder and acting the finding, because the sweep's *generic*
+redelivery path cannot select such a row by construction: `state_signals.state_signal_held_on_boundary`
+excludes a non-landed state-signal row whose target seat is alive. The reachable caller is
+`evaluate_predicates` → `evaluate_boundary_drain_findings` → `_drain_boundary` → the shared `_redeliver`,
+which carries no held-on-boundary filter; the independent baseline review reproduced that route on a
+real sweep and observed the skip (`('boundary-drain', 'skipped', 'state-signal source marker not
+stamped')`, zero submissions, row untouched) with recovery then stamping and landing the same row. A
+future touch of this module would be stronger with that real-sweep drain-fence assertion recorded as a
+case; it is not authorized scope for this leaf. Case inventory, helpers and the contract narrative live
+on `test_state_signal_restart_recovery.py.md`.
 
 ## Fixture Roles And Claims
 
@@ -723,6 +756,7 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   shape it was missing. Lane membership is classification only, not
   execution or acceptance evidence; verification metadata remains closeout-owned and no stamp
   advanced.
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: recorded the route's new state-signal crash/restart recovery executor (`test_state_signal_restart_recovery.py`, unit-regression row `:101`) — a route-table row plus a section carrying the durable order it forces, the seven cases, the non-vacuity witness, and the review verdict's coverage limit that the fence's reachable route is the boundary drain rather than the generic finder. Route purpose, lane membership accounting and every other module's coverage claim are unchanged by this leaf.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

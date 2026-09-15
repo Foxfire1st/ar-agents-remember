@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastUpdated | 2026-09-15T13:15+02:00 |
+| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6` |
+| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -1341,6 +1341,8 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: No route impact: this change set is five paths inside `mcp/src/agents_remember/serving/` and `mcp/tests/`, and it changes the state-signal posting/recovery contract, not the package boundary this overview owns (public tool roster, activation/admission, certification, memory preparation, structural agent boundary, route model). The package-level statements above stand as written; the affected contract is recorded on `serving/overview.md`, the three serving file cards, and the tests route.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

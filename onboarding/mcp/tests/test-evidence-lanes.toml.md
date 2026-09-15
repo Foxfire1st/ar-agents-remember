@@ -6,8 +6,8 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `163ba8a9798228b7f912eec05646f31e79f6b26e` |
-| lastVerifiedCommitDate | 2026-09-15T13:37:09+02:00|
+| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6` |
+| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -317,6 +317,9 @@ No separate cross-repository authority is established by this file.
   `architecture-fitness` `189-206` → `190-207`, `provider-conformance` `207-221` → `208-222`).
   Classification only: lane membership is not execution or acceptance
   evidence, and the verification stamps remain closeout-owned.
+
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: registered the change set's new `mcp/tests/test_state_signal_restart_recovery.py` in the **unit-regression** lane at entry row `:101` — its seven cases drive one temporary durable world per case through the retained sweep/action entry points with an injected store fault or a structural rebind, so the hermetic default lane is its behaviour-preserving classification — and re-measured the manifest rather than carrying the L3 numbers: 208 modules on disk and 208 manifest entries, 117 unit-regression (5-122), 2 public-contract (124-126), 60 integration (128-188), 16 architecture-fitness (190-206), 13 provider-conformance (208-221), stress-durability and migration empty. The insertion sits near the end of the unit run, so no row this card cites moved. The module's own card owns the case inventory; this row is selection and cost classification only. Verification metadata remains closeout-owned.
+
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): registered the change set's new `mcp/tests/test_memory_backfill.py` in the
   **unit-regression** lane at entry row 69 — its cases drive the backfill plan and apply paths against
