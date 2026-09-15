@@ -602,6 +602,22 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
 
 ## Update History
 
+- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
+  `ar/260831-locr-l38`, base `67b21aeb`): **no entity impact, and no fingerprint hand-advanced.**
+  The leaf's change set is exactly two test modules (`mcp/tests/test_pause_stop_only_end_to_end.py`
+  and `mcp/tests/test_tools.py`) and `mcp/src/**` is byte-identical to HEAD. Neither path appears in
+  any entity's curated evidence-path set, so every stored `git-blob-set-v1` value still resolves from
+  committed `HEAD` blobs and the change set cannot move one. The two surfaces the leaf touched in
+  prose terms were reviewed and neither is an inventory subject: the **pause route** is stated where
+  it belongs (the `Worktree Contract` entry's per-contract activation note and the pause card), and
+  the **atomic-series activation record** has no entity of its own — its per-contract address, release
+  and observation are recorded inside **Sprint Closeout Queue** and **Worktree Integration**, whose
+  claims this leaf does not falsify (they say each contract's own record decides its state, that no
+  master is paused or blocked by another's selection, and that a release addresses only its own
+  contract — all still true, and now proved through the public pause for the vacant/foreign/unreadable
+  record shapes as well). No inventory prose changed, no evidence path set changed.
+  Verification metadata remains closeout-owned; no acceptance claim.
+
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,

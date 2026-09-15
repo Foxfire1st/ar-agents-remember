@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash |  `9c8a7a42a3d761b13c462874c7b312313a11c0ae`|
-| lastVerifiedCommitDate |  2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-15T13:18+02:00 |
+| lastVerifiedCommitHash |  `9bef02374f7dc80b7bddceef5a9e08651169fd7d`|
+| lastVerifiedCommitDate |  2026-09-15T13:35:34+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,17 @@ genuinely `vacant`. The other statuses — an unreadable record and a record nam
 master/contract — are still inherited and translated into the caller's own terms, because neither
 proves the master is inactive. Explicit sync cancellation is untouched and still requires an existing
 exact selection, which is why this function keeps refusing the absent case.
+
+**Which of those two statuses a foreign record produces depends on that record's own state.** An
+*active* record naming another master never reaches this file's exact-owner guard: the observation's
+`_load_selected_contract` refuses it first (`atomic-series-activation-master-mismatch`, which the
+observation reports as `unreadable`), so a caller sees
+`atomic-series-activation-release-unreadable`. Only a record that is itself `vacant` — which
+`_observation_from_record` returns without loading the selected contract at all — reaches
+`_record_selects_contract` and this file's
+`atomic-series-activation-selected-contract-mismatch`. Both are refusals and neither releases
+anything; the distinction matters because only the second shape can be confused with an
+already-vacant master.
 
 ## Code Commentary
 
@@ -62,7 +73,9 @@ Release time defaults to a second-granularity UTC timestamp and may be injected 
 - Explicit cancellation must prove an existing exact owner for this contract or fail closed; a
   missing selection is refused, never treated as already-released.
 - Release addresses only the released contract: another contract's record, including one selecting a
-  different master, is never read as this contract's state and is never cleared.
+  different master, is never read as this contract's state and is never cleared. That record must be
+  `vacant` to reach this file's exact-owner guard at all; an active one is refused earlier by the
+  observation, so the guard is not a second implementation of the observation's own identity check.
 - Terminal cleanup never clears a different contract's selection.
 - Vacancy is a durable selector transition, not task completion or queue mutation.
 - Release carries no commit or lifecycle evidence.
@@ -88,8 +101,9 @@ No Domain Documentation source is configured for this memory root.
 | Exact-owner proof and the revision-incremented vacant replacement retain the last selected master/contract. | `_record_selects_contract`; `_release_record` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:79-88; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:91-118 |
 | The terminal bridge translates exact, absent, unreadable, and different-selection outcomes. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
 | Tests prove exact release addresses only the released contract and that another contract's record is never adopted. | "def test_release_addresses_only_the_released_contract(self) -> None:"; "def test_another_contracts_record_can_never_be_adopted(self) -> None:" | mcp/tests/test_atomic_series_activation.py:152-173; mcp/tests/test_atomic_series_activation.py:174-209 |
-| The stop-only pause is the third caller of the strict explicit release, and it adds no authority of its own. | `pause_result`; `_already_stopped_result` | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/modules/pause.py:131-151 |
-| The pause's boundary proof shows that releasing one master leaves the other master's record byte-identical, which is this file's per-contract isolation observed from the caller's side. | `test_pausing_one_master_leaves_the_other_masters_record_byte_identical` | mcp/tests/test_pause_stop_only_end_to_end.py:329-371 |
+| The stop-only pause is the third caller of the strict explicit release, and it adds no authority of its own. | `pause_result`; `_already_stopped_result` | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/modules/pause.py:131-150 |
+| The pause's boundary proof shows that releasing one master leaves the other master's record byte-identical, which is this file's per-contract isolation observed from the caller's side. | `test_pausing_one_master_leaves_the_other_masters_record_byte_identical` | mcp/tests/test_pause_stop_only_end_to_end.py:362-404 |
+| The two foreign-record shapes, proved apart through the public route: the **vacant** foreign record reaches this file's exact-owner guard and is refused as a contract mismatch, while an **active** one is refused by the observation's earlier guard and reports as unreadable. | `test_a_record_naming_another_master_is_refused_not_released`; `test_a_record_this_contract_does_not_own_is_refused_not_released` | mcp/tests/test_pause_stop_only_end_to_end.py:473-526; mcp/tests/test_pause_stop_only_end_to_end.py:406-443 |
 | The pause's structural guard proves the stop's static import closure cannot reach a publication module, so the third caller releases through this strict path only. | `PUBLICATION_MODULES` | mcp/tests/test_pause_is_not_publication.py:37-52 |
 
 ## Cross-Repo References
@@ -100,6 +114,18 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
+  `ar/260831-locr-l38`, base `67b21aeb`): this file is byte-identical to HEAD; the leaf proved
+  behaviour rather than changing it. Recorded the guard order the leaf's second new case exists to
+  reach, because it is what makes the two foreign-record refusals distinguishable: an *active* record
+  naming another master is refused by the observation's `_load_selected_contract` and reports as
+  `atomic-series-activation-release-unreadable`, so only a **vacant** foreign record reaches this
+  file's `_record_selects_contract` and its `atomic-series-activation-selected-contract-mismatch` —
+  and only that shape can be confused with an already-vacant master. Added the reference row for both
+  shapes as proved through the public route, repointed the per-contract isolation case to its current
+  range (`test_pause_stop_only_end_to_end.py:362-404`, re-derived after the module grew to ten cases),
+  and corrected `_already_stopped_result` to `pause.py:131-150`. Verification metadata remains
+  closeout-owned; no verification stamp advanced and no acceptance claim.
 - 2026-09-13T20:42+02:00 — 260831-LOCR-L38 (uncommitted change set on
   `ar/260831_lifecycle-owned-completion-relay`): corrected the third-caller paragraph. The pause no
   longer translates all three release refusals into its own terms — it now answers

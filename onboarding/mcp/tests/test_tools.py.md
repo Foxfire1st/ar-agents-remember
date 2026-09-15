@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-13T18:07+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-15T13:18+02:00 |
+| lastVerifiedCommitHash | `9bef02374f7dc80b7bddceef5a9e08651169fd7d` |
+| lastVerifiedCommitDate | 2026-09-15T13:35:34+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause — and 260831-LOCR-L37 added the matching case for the stop: `worktree_pause`'s description must present a stop that publishes NOTHING and must name `worktree_checkpoint_landing` as the separate, explicitly requested PUBLICATION. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause — and 260831-LOCR-L37 added the matching case for the stop: `worktree_pause`'s description must present a stop that publishes NOTHING and must name `worktree_checkpoint_landing` as the separate, explicitly requested PUBLICATION. 260831-LOCR-L38 extended that stop case so the description must also stay true about a master holding no selection: the removed `atomic-series-activation-selection-missing` refusal is pinned **out** of the registered text and the release the description still advertises is pinned **in**, so the absence cannot be satisfied by emptying the text. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
 
 ## Code Commentary
 
@@ -63,12 +63,12 @@ to removed methods are superseded by this current inventory.
 | Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:116-152 |
 | Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:153-164 |
 | Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:165-195 |
-| Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-240 |
+| Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-239 |
 | The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-259 |
 | The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish | `test_worktree_checkpoint_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:261-280 |
 | The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-304 |
-| The pause description presents a stop that publishes NOTHING and names the checkpoint landing as the separate publication. | `test_the_pause_advertises_a_stop_that_publishes_nothing` | mcp/tests/test_tools.py:306-330 |
-| The permissive registration-time config stub the registration cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:332-347 |
+| The pause description presents a stop that publishes NOTHING, names the checkpoint landing as the separate publication, and — since the already-vacant stop — advertises no refusal the verb no longer performs while still naming the release it does perform. | `test_the_pause_advertises_a_stop_that_publishes_nothing` | mcp/tests/test_tools.py:306-341 |
+| The permissive registration-time config stub the registration cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:344-359 |
 
 ## Cross-Repo References
 
@@ -129,7 +129,32 @@ it reads only the checkpoint's text, and a description-only edit is invisible to
 and to the per-name response-model cases. Together they are what makes "two registered tools, not one
 verb with two names" an enforced claim rather than a comment.
 
+**The stop case also pins what the description must not say (260831-LOCR-L38).** The pause used to
+refuse a master holding no selection with `atomic-series-activation-selection-missing`; it now reports
+that master as already stopped, so a registered description still advertising the removed refusal
+would describe a tool the caller does not have. The case asserts the identifier is absent — both the
+full status and the `selection-missing` fragment — and, in the same case, that
+`releases the master's atomic-series activation selection` is still present. The positive half is the
+load-bearing one for this check: without it, deleting the description would satisfy the absence. This
+is an advertisement pin, not a behavioural one — the behaviour is proved in
+`test_pause_stop_only_end_to_end.py` — and it pins the absence, so it constrains no production edit
+other than re-advertising a status the verb no longer returns.
+
 ## Update History
+- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
+  `ar/260831-locr-l38`, base `67b21aeb`): extended the existing stop case
+  `test_the_pause_advertises_a_stop_that_publishes_nothing` — no new case, so the module's case count
+  and the integration population are unchanged — with the requirement-9 pin. The registered
+  `worktree_pause` description must carry neither `atomic-series-activation-selection-missing` nor the
+  `selection-missing` fragment, and must still say
+  `releases the master's atomic-series activation selection`, so the absence cannot be satisfied by an
+  emptied description. Recorded that this is an advertisement pin whose premise is
+  **preserved-false**: no registered description ever advertised the removed refusal (the docstring is
+  changed only by this leaf's own text pin plus L37's registration), so the case pins the absence
+  rather than repairing a live text. Re-derived the shifted ranges (the stop case is now `306-341`,
+  `_permissive_registration_config` `344-359`, the live-registration case `230-239`).
+  Verification metadata remains closeout-owned; no verification stamp advanced and no acceptance
+  claim.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new case
   `test_the_pause_advertises_a_stop_that_publishes_nothing`, which pins the stop's published
   description (a pause of an atomic master, "Publishes NOTHING", and the checkpoint named as the
