@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_pause_stop_only_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
+| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -175,7 +175,7 @@ No Domain Documentation source is configured for this memory root.
 | The observation's own guard the *active* foreign record meets before the release's exact-owner guard, which is why the two foreign-record cases produce different refusal statuses. | `_observation_from_record`; `_load_selected_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:338-357; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:375-401 |
 | The exact-owner guard the *vacant* foreign record reaches, and the release that refuses it as a contract mismatch. | `_record_selects_contract`; `release_atomic_series_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:79-88; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-53 |
 | The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. | "class QueueFixture:"; "MASTER_A = TaskDocumentRef("; "MASTER_B = TaskDocumentRef("; "def git(repo: Path, *args: str) -> str:" | mcp/tests/test_closeout_queue.py:184-696; mcp/tests/test_closeout_queue.py:56-56; mcp/tests/test_closeout_queue.py:57-57; mcp/tests/test_worktree_support.py:79-79 |
-| The lane this module is registered in. | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:168-168 |
+| The lane this module is registered in. | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:169-169 |
 | The shared-support artifact whose exact consumer list carries this module (its entry is at `:369` in the block). | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:329-389 |
 | The separate publication no case here reaches. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:173-201 |
 | The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:149-150 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_terminal_catalog_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T13:57+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
+| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ path, declared model, conditional-key behaviour and status semantics.
 `unittest.TestCase` through `_ProjectionTestCase`, with temporary catalogs under `tempfile` and a
 `FastAPI` + `fastapi.testclient.TestClient` surface rather than a parallel fake of the production
 seams. The module issues real HTTP requests, so it is classified in the repository's `integration`
-evidence lane (`mcp/tests/test-evidence-lanes.toml:171`) — its `TestClient` neighbours, not the
+evidence lane (`mcp/tests/test-evidence-lanes.toml:172`) — its `TestClient` neighbours, not the
 hermetic unit-lane liveness modules. It starts no process, opens no socket, and publishes nothing.
 Focused host results are development evidence and grant no certification authority.
 
@@ -125,7 +125,7 @@ certification result.
 | `list_committed()` is the sweeper's own non-blocking contention read, called only from the two contention paths — not a projection read. | `list_committed` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92 |
 | The production readers the identity sweep resolves against by object identity. | `read_control_snapshot`; `read_entry_terminal_evidence` | mcp/src/agents_remember/serving/harness_control_client.py:133-142; mcp/src/agents_remember/serving/terminal_evidence.py:187-196 |
 | The sweeper whose re-introduction on the request path the module's cases detect. | `TerminalCatalogLivenessSweeper.refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
-| The candidate classifies this module once, in the explicit integration lane. | "mcp/tests/test_serving_terminal_catalog_read.py" | mcp/tests/test-evidence-lanes.toml:176-176 |
+| The candidate classifies this module once, in the explicit integration lane. | "mcp/tests/test_serving_terminal_catalog_read.py" | mcp/tests/test-evidence-lanes.toml:177-177 |
 
 ## Cross-Repo References
 

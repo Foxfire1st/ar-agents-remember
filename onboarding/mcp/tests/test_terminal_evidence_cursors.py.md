@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_evidence_cursors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T14:39+02:00 |
-| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash |  `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33`|
+| lastVerifiedCommitDate |  2026-09-15T21:57:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ the explicit evidence lane declaration.
 | Pi paging remains bounded and returns the last inspected native id. | `_read_pi_terminal_evidence` | mcp/src/agents_remember/serving/terminal_evidence.py:211-238 |
 | Liveness contains the harness read failure and suppresses cursor persistence. | `_terminal_evidence`; "except HarnessControlError:" | mcp/src/agents_remember/serving/terminal_liveness.py:455-469 |
 | Evidence and native-page models define the typed page envelopes under test. | `EvidencePage`; `NativeEvidencePage` | mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
-| This focused module is classified as unit-regression. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-109 |
+| This focused module is classified as unit-regression. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-110 |
 
 ## Cross-Repo References
 

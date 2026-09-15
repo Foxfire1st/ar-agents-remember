@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e29c0711bfc98d4450cd4d701df0e10b00d9b6f0` |
-| lastVerifiedCommitDate | 2026-09-15T21:56:06+02:00|
+| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
+| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
 | reviewedWorkingCandidate | `ar/260831-locr-l18` uncommitted source; base `d868486c07ac14d8af6d0d5555dbda4f3b737785` |
 | governingOverview | `../overview.md` |
 
@@ -86,6 +86,73 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Terminal observer health | `test_terminal_observer_health.py` | The observer stage's own health reading (`LOCR-R17@v1`), sixteen cases in three classes: the exact atomic v1 record and its writer (constant-size row, no partial document, the failed-write source of truth being the persisted row rather than the newer in-memory accumulator), the status ladder `initializing`/`degraded`/`healthy`/`stale` at exactly `6 ×` the configured sweep interval, omission-and-no-repair for every unusable source (missing, unreadable, wrong marker, extra or missing key, wrong type, naive stamp, prior-lifetime stamp, above-ceiling counter), the bounded ordered secret-safe failure vocabulary, publication on the observer CALL for success and failure alike through the real lifespan, the fixed write-failure log line with retry, and the served tail driven through the real `_state_response` handler and `stream_events` generator (additive key, untouched ETag/304 path, health on the snapshot and none on a delta, plus the packet's cross-read rows including "healthy beside a fresh notifier"). Unit lane: no HTTP transport, no server, no real second. |
 | Terminal blocker reasons | `test_terminal_blocker_reasons.py` | A cleanup or finalize blockage always names the component it stopped on and a non-empty reason. The L6 shape — terminal archive proven, provider runtime already gone — finalizes on the first call with an empty `notRemoved` inventory; a real permission failure on the provider tree blocks with `remove_tree`'s own `permission denied: ...` reason, closes nothing and refuses identically on retry; and both invariant owners are driven directly (`_blocker` refuses a missing, blank or non-string reason, and `remove_tree` names a reason whenever it reclaimed nothing). The L6 payload is reproduced through the provider port boundary, not by re-enacting the original physical event. Integration lane; one new module, no deleted module. |
 | Pane diagnostics are non-authoritative for turn truth | `test_terminal_liveness_pane_authority.py` | The pane's own reading is persisted only as `control_raw["paneDiagnostic"]`; adapter snapshots plus the canonical terminal projection own `turn_state`, terminal outcome/identity, interruption origin and state-signal eligibility. Ten cases pin the boundary: contradictory pane/adapter readings in both directions, **readiness** (an adapter `control="disconnected"`/`"failed"` snapshot with a `working` pane keeps the adapter's `control_state`, activity/acceptance `unknown`, turn `stale`), below-threshold retention with the `controlReadFailures` counter, the R21 third failure owning `disconnected`/`stale`, alive-starting retention, the legacy no-`control_endpoint` `unsupported`/`stale` projection proved never to consult the control surface, a failed terminal page advancing nothing, startup-prime and steady-pass sharing one boundary (`host.calls == 3` discriminates the fast path), a four-reading pane-independence matrix, and a negative AST source guard over `terminal_liveness.py` itself. This module is a **deliberate split** from the 574-line `test_terminal_liveness.py`, which it leaves byte-unchanged and from which it imports its fixtures; an in-place extension had reached the coding-guidelines 900-1200 band, so the two cards must not be merged. The source guard is defence-in-depth over behaviour, not the sole pin: it is measured blind to a pane-derived constant inside an enclosing `if`, to positional writer arguments and to `CatalogTurnEvidence(state=…)`, all three of which stay caught behaviourally. Integration lane; one new module, no production byte changed. |
+
+| Observer-to-notifier handoff latency | `test_serving_notifier_handoff.py` | `LOCR-R04@v1`'s completion-relative relay proof, eight cases over one disposable world that enters the real `_serving_lifespan` under a deadline-correct virtual clock, so the real observation loop, the real `TerminalCatalogLivenessSweeper.refresh`, the real catalog commit boundary and the real `run_agent_notifier_sweep` are what is measured. The two loops share no wake-up channel: the observer polls every `P` (1.0 s) after each attempt returns and the sweeper admits one full sweep per `F` (10.0 s) from the previous full sweep's **start**, while the notifier evaluates the durable catalog and sleeps `N` (10.0 s) after its pass returns — so the delivered worst phase is `F + P + R_observer + D_commit + N + R_notifier`, 21.0 s of logical scheduling for the default knobs plus only measured overrun. Each case asserts the bound **and** its decomposition from measured terms, and each protects one clause: the nominal phase, the previous full sweep's own overrun, a starting-row fast-path overrun, a notifier pass in flight at the commit (whose interval starts at its own completion, not at the commit), committed-truth-only reads (a read attempted before the commit and returned after it carries the committed rows in the notifier's own `include_terminated=True` scope), coalesced missed ticks for both loops, a live pass that did not observe the fact being unable to satisfy the stage, and notifier disablement with in-place re-enabling. The oracle documents three relations it deliberately does **not** assert — the telescoping decomposition, the observer phase's maximum, and `bound` as the sum — because each holds in every reachable state; an assertion that cannot fail is not evidence. Unit lane: no HTTP request, no server, no process. |
+
+## 260831-LOCR-L04 Overrun-Accounted Observer-To-Notifier Handoff
+
+`test_serving_notifier_handoff.py` (unit-regression, manifest row `:97`) is the proof half of a
+**preservation** requirement. `LOCR-R04@v1` requires zero production change, so the leaf's entire
+deliverable is the timing oracle and its evidence envelope and `mcp/src` is byte-unchanged by the change
+set; the two support modules that carry the instrument — `_handoff_clock.py` (the deadline-correct
+virtual timeline plus `_Gate` and `_Sequence`) and `_serving_handoff.py` (the disposable world and the
+oracle's terms) — take no manifest row, by the same rule that keeps this directory's other support
+modules out of it.
+
+**What the oracle states.** The serving lifetime owns two independently scheduled loops and neither can
+be woken by the other, so the relay is correct only if their cadences compose into a bounded handoff:
+
+```
+observer_release = max(previous_full_sweep_start + F,
+                       completion of any observer refresh() still holding the shared sweep lock there)
+consuming_sweep  = the first lifecycle poll at or after observer_release, at most P later
+commit           = the consuming full sweep's own durable catalog commit
+next_notifier    = last_notifier_pass_end + N
+
+worst phase      = F + P + R_observer + D_commit + N + R_notifier
+```
+
+`R_observer` is the remaining duration, measured at eligibility, of any refresh holding the shared sweep
+lock — the previous full sweep **or** a starting-row fast-path pass; `D_commit` is the consuming sweep's
+own duration up to its commit; `R_notifier` the remaining duration of a notifier pass already in flight
+at that commit. For the default knobs the fixed part is 21.0 s of logical scheduling; everything beyond it
+is a measured overrun rather than an allowance, and a case that met the bound by a different
+decomposition still fails because the decomposition is asserted, not illustrated.
+
+**Why each case exists.** The nominal phase; the previous full sweep's own overrun, where the sweep is
+parked inside its batch after it already read the evidence row unarmed; a starting-row fast-path overrun
+with a nonzero commit duration, where the observed latency is exactly the oracle's sum; a notifier pass in
+flight at the commit, whose interval starts at its own completion; committed-truth-only reads, where the
+read is attempted before the commit and returns after it carrying the committed rows; coalesced missed
+ticks for both loops, so three expiring ticks behind a parked pass queue nothing; a negative control in
+which rate-limited polls and a live notifier pass exist while the fact is readable and none of them is the
+consuming pass; and notifier disablement, where observation keeps sweeping and commits with signal
+derivation off, the loop re-parks without running a pass, and in-place re-enabling reaches the
+already-committed truth on the next completion-relative pass.
+
+**Two design properties, recorded because a passing run cannot show them.** Case 1's strict
+observer-phase assertion (`observer_term < F + overrun`) is a constraint on **that case's arming
+scenario** — it arms the fact `P / 2` after the previous sweep's start — and not a claim about production
+behaviour; its failing state is the tight arming the other cases use, and the arithmetic identity that
+would restate the arming constant has no such state, so it is not asserted. And `assert_oracle` documents
+three relations it deliberately does not assert — the telescoping decomposition, the observer phase's
+maximum, and `bound` defined as the sum it is compared against — because each holds in every reachable
+state, reachable or not; asserting them would add lines that cannot fail rather than evidence.
+
+**The lane-row insertion moved citations, not just a row.** The new module's row sits at `:97`, above
+every previously-latest unit-regression row, so every manifest line at or after it shifted by one —
+`test_serving_observation_loop.py` `:97` → `:98`, `test_serving_startup_prime.py` `:98` → `:99`, L17's
+`test_terminal_observer_health.py` `:122` → `:123`, and every later lane key with them. The 59 live
+citations into the manifest were therefore re-derived against the current file rather than carried, and
+the dated `## Update History` entries below were left as written because they are as-of records of earlier
+candidates. No case budget is quoted or changed here: `pyproject.toml` is the authority, and this leaf
+adds no collected case to any capped population.
+
+**Boundaries.** No case edits or imports a production module's internals; every case measures production
+through the harness's recordings. The oracle claims the two loops compose within the bound — not the
+sweeper's internals beyond its retained ten-second full-sweep limit, not the notifier's internal predicate
+set, and not the catalog's on-disk format. Lane membership is classification, not execution or acceptance
+evidence, and the verification stamps remain closeout-owned.
 
 ## 260831-LOCR-L10 State-Signal Crash And Restart Recovery
 
@@ -182,7 +249,7 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the cache path is informational. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
-The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 214 test-shaped modules: 121 unit-regression, 2 public-contract, 62 integration, 16 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty (260831-LOCR-L17 added `test_terminal_observer_health.py` to unit-regression at entry row 122) (260831-LOCR-L32 added one integration member — `test_worktree_status_terminal_next_tool.py` — 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py`, 260831-LOCR-L36 added `test_cross_master_concurrency.py`, 260831-LOCR-L37 added two: `test_pause_stop_only_end_to_end.py` to integration and `test_pause_is_not_publication.py` to architecture-fitness, and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to integration; the declared collected-case budgets are 1000 unit and 250 integration, the integration ceiling having been raised from 200 by L37 with a developer-authorized tradeoff block in `pyproject.toml`). That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 200-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 216 test-shaped modules: 123 unit-regression, 2 public-contract, 62 integration, 16 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty (the landed master added 260831-LOCR-L06's `test_lifecycle_owned_completion_relay_reviewer.py` to unit-regression at entry row 68 and this leaf adds `test_serving_notifier_handoff.py` to that lane at entry row 98, so both insertions moved every later manifest line; 260831-LOCR-L17 had added `test_terminal_observer_health.py` to that lane at entry row 122, now row 124) (260831-LOCR-L32 added one integration member — `test_worktree_status_terminal_next_tool.py` — 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py`, 260831-LOCR-L36 added `test_cross_master_concurrency.py`, 260831-LOCR-L37 added two: `test_pause_stop_only_end_to_end.py` to integration and `test_pause_is_not_publication.py` to architecture-fitness, and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to integration; the declared collected-case budgets are 1000 unit and 250 integration, the integration ceiling having been raised from 200 by L37 with a developer-authorized tradeoff block in `pyproject.toml`). That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 200-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
 
 **Superseded counts (260913-LCA-L5 curator, measured at the current change set):** the sentence above records the
 pre-L4 population. The manifest now holds 204 modules on disk and 204 entries — 115 unit-regression,
@@ -742,6 +809,30 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   is now **215** modules (122 unit-regression / 2 public-contract / 62 integration /
   16 architecture-fitness / 13 provider-conformance), not the 214 this card carried. Verification
   metadata remains closeout-owned; no stamp advanced.
+
+- 2026-09-15T21:25+02:00 — 260831-LOCR-L04 curator (uncommitted change set on `ar/260831-locr-l04`,
+  base `e9678c56`, `mcp/tests/test-evidence-lanes.toml` +1/−0 and three new test-side modules): this
+  route gained the leaf's completion-relative observer-to-notifier handoff proof,
+  `test_serving_notifier_handoff.py` (eight cases, unit-regression at manifest row `:97`), plus the two
+  support modules that carry its instrument (`_handoff_clock.py`, `_serving_handoff.py` — support, so no
+  manifest row, matching this directory's other support modules). The retained-behavioral-routes table
+  gained the row above, and the population sentence now records **215** test-shaped modules and **122**
+  unit-regression entries. The module enters the real `_serving_lifespan` under a deadline-correct
+  virtual clock and measures the real observation loop, the real sweeper, the real catalog commit
+  boundary and the real notifier sweep, with no HTTP request, no server and no process. Because the new
+  lane row was inserted at `test-evidence-lanes.toml:97` — above every previously-latest unit row — every
+  later manifest line moved one line, so this card's lane citations were re-derived against the current
+  file rather than carried (`test_cross_master_concurrency.py` `:151` → `:152`,
+  `test_leaf_doc_master_link_binding.py` `:159` → `:160`, the playthrough `:162` → `:163`,
+  `test_pause_stop_only_end_to_end.py` `:164` → `:169`, `test_pause_is_not_publication.py` `:197` → `:204`,
+  `test_terminal_blocker_reasons.py` `:184` → `:185`, `test_terminal_liveness_registration_order.py`
+  `:121` → `:122`, `test_terminal_liveness_pane_authority.py` `:183` → `:184`); the same re-derivation was
+  applied to the lane card and fourteen sibling cards, 59 live citations in all, while dated
+  `## Update History` entries were left as written. Two of the pause pair's citations were already stale
+  before this leaf and were corrected to the lines that carry them rather than shifted. `LOCR-R04@v1` is a
+  preservation requirement: `mcp/src` is byte-unchanged by this change set, and no case budget is quoted
+  or raised — `pyproject.toml` is the authority. Verification metadata remains closeout-owned; no stamp
+  advanced.
 
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`): the route gained the observer-health proof, so the retained-route table was extended

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_automatic_post_integration_cleanup.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
+| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ application tools over real repositories.
 
 **The file name is historical and deliberately not renamed.** This path is declared by name in three
 manifests and only one of them is fail-closed:
-`mcp/tests/test-evidence-lanes.toml:130` (the lane manifest a consumer refuses to load without),
+`mcp/tests/test-evidence-lanes.toml:131` (the lane manifest a consumer refuses to load without),
 `mcp/tests/evidence-lifecycle.toml` (nine rows), and
 `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65`. Renaming the
 module would be a cross-manifest change for no behavioural gain, so the docstring records the
@@ -137,7 +137,7 @@ direct evidence.
 | The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:598-633 |
 | The projection that names the finalization move. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:255-331 |
 | The terminal operation the first case calls. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:862-893 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "Path(\"mcp/tests/test_automatic_post_integration_cleanup.py\")" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65; mcp/tests/test-evidence-lanes.toml:132-132 |
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "Path(\"mcp/tests/test_automatic_post_integration_cleanup.py\")" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65; mcp/tests/test-evidence-lanes.toml:133-133 |
 
 ## Cross-Repo References
 
