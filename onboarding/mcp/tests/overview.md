@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T14:10+02:00 |
-| lastVerifiedCommitHash | `d868486c07ac14d8af6d0d5555dbda4f3b737785` |
-| lastVerifiedCommitDate | 2026-09-15T14:14:36+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-15T15:02+02:00 |
+| lastVerifiedCommitHash | `99534dc5880e979b98930ead9809bbdcad936033` |
+| lastVerifiedCommitDate | 2026-09-15T15:04:53+02:00|
+| reviewedWorkingCandidate | `ar/260831-locr-l18` uncommitted source; base `d868486c07ac14d8af6d0d5555dbda4f3b737785` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,8 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Durable state and event-loop liveness | `test_durable_store_contract.py`, `test_cross_store_lock_order.py` | Thread/process ordering and actual store outcomes, bounded by watchdogs. |
 | Candidate and protected-ref safety | `test_git_command.py`, `test_integration_branch_authority.py` | Real Git identity, private commits, hooks and race preservation. The former `test_integration_ref_transaction.py` was deleted with the removed mid-crash ref-recovery capability. |
 | Terminal liveness cadence and readiness | `test_terminal_liveness.py` | Controlled-clock sweeper checks preserve the configured full-sweep interval and the one-second starting-row path with its four-row cap; lifecycle production wiring remains a separate candidate proof. |
-| Serving-owned steady-state observation and pass-failure isolation | `test_serving_observation_loop.py` | The real `_serving_lifespan` finalizer under a virtual event-loop clock with no HTTP route registered: the completion-relative `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` sleep after each attempt (including a failed one), attempt non-overlap when a pass outruns its tick, the sweeper's retained ten-second full-sweep limit, observation continuing while `agent_notifier.enabled` is false, the off-loop refresh through the drained helper, exactly one observer task cancelled at teardown, and a failed pass that neither marks success nor changes cadence. Its `ServingObservationFailureIsolationTests` half then pins the failure boundary itself on the real task collection: one unexpected pass failure leaves the owner scheduled and the five sibling loops plus an in-process ASGI request alive, publishes nothing durable (with a control proving a *successful* pass does change the tree), and retries on the cadence alone from the current persisted catalog while rows, the emitted-signal marker and the workspace cursor survive; cancellation still ends the task because the boundary is `except Exception` and `CancelledError` is a `BaseException`. Unit lane; the sweeper's own cadence files stay the owners of their clocks. The notifier's pre-existing inline refresh, and any structured observer-failure *publication* surface, are out of this proof. |
+| Serving-owned steady-state observation and pass-failure isolation | `test_serving_observation_loop.py` | The real `_serving_lifespan` finalizer under a virtual event-loop clock with no HTTP route registered: the completion-relative `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` sleep after each attempt (including a failed one), attempt non-overlap when a pass outruns its tick, the sweeper's retained ten-second full-sweep limit, observation continuing while `agent_notifier.enabled` is false, the off-loop refresh through the drained helper, exactly one observer task cancelled at teardown, and a failed pass that neither marks success nor changes cadence. Its `ServingObservationFailureIsolationTests` half then pins the failure boundary itself on the real task collection: one unexpected pass failure leaves the owner scheduled and the five sibling loops plus an in-process ASGI request alive, publishes nothing durable (with a control proving a *successful* pass does change the tree), and retries on the cadence alone from the current persisted catalog while rows, the emitted-signal marker and the workspace cursor survive; cancellation still ends the task because the boundary is `except Exception` and `CancelledError` is a `BaseException`. This module also owns the **shared serving fixture**: `_ServingFixture` is imported by `test_serving_startup_prime.py`, and its `startup` witness plus its `_Gate` parkable probe `inner` are a shared contract — **call 1 of a lifespan timeline is the pre-serve prime and call 2 is the recurring owner's own first pass**, so a case that parks or fails invocation 1 addresses the prime rather than the owner. Unit lane; the sweeper's own cadence files stay the owners of their clocks. The notifier's pre-existing inline refresh, any structured observer-failure *publication* surface, and the prime's own ordering contract are out of this proof. |
+| Startup observation prime before projection and recurring loops | `test_serving_startup_prime.py` | The `LOCR-R18@v1` half of the same serving seam, driving the real `_serving_lifespan` through the shared fixture imported from `test_serving_observation_loop.py`: exactly one observation prime at the head of the timeline, dispatched off-loop through the drained helper and parked while event-loop timers keep firing, positioned before `runtime.projector.prime()`, before every recurring task and before the lifespan yield; the seeded `ready` row committed as the adapter's `unsupported` verdict and read back by both the captured initial projection and the captured first notifier sweep; a prime taken with a real `GET /api/terminal/sessions` route registered and never dispatched and with the notifier loop started but never sweeping; and the committed entry equal to one reference canonical pass over an identical seed, so no startup-only reader, cursor or write path took part. A raised prime is contained — startup, the projection prime and the recurring owner all survive and the owner retries on its first cadence. Unit lane, hermetic, ordinary test source; it asserts no health or readiness payload, and its ordering witness does not constrain prime-versus-migration/compaction (that edge rests on the production straight-line order). |
 
 | Deferred terminal work | `test_terminal_liveness_deferred_work.py` | Real catalog/sweeper proof that hosted-interaction syncs and turn callbacks run after commit, aborted batches dispatch nothing, and post-commit failures preserve durable truth. Caller ownership remains adjacent lifecycle work. |
 | Terminal catalog liveness | `test_terminal_liveness.py` | Fake-clock host/control-read hysteresis, restart continuity, and successful reset against existing production transitions. This row is the LOCR-R21 hysteresis proof only: cadence (`R12`) and sweep non-overlap (`R22`) cases for the same module are still in their own unlanded worktrees, so the composed module's case count and extents will be larger than this leaf's four cases. |
@@ -700,6 +701,24 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted test change set on `ar/260831-locr-l18`,
+  base `d868486c`): the route gained the `LOCR-R18@v1` startup-prime proof, so this overview's
+  retained-route table was extended rather than annotated. New row for
+  `test_serving_startup_prime.py` (one pre-serve observation prime, off-loop through the drained
+  helper, before the projection prime / the recurring tasks / the yield; committed truth read back by
+  the initial projection and the first notifier sweep; no GET, dashboard or model message; a raised
+  prime contained with the owner retrying on its cadence; the committed entry equal to one reference
+  canonical pass). The existing `test_serving_observation_loop.py` row was corrected in place, because
+  that module's meaning changed twice in this change set: it now owns the **shared serving fixture**
+  imported by the new module, so its `startup` witness and `_Gate` are a shared contract with
+  **call 1 = the pre-serve prime and call 2 = the recurring owner's own first pass**, and nine of its
+  landed cases were re-anchored by that one-call shift (a pure index shift, no assertion relaxed,
+  dropped or made conditional — the detail is on the module's own card). Its closing exclusion was
+  widened to also exclude the prime's own ordering contract, which is now the sibling module's.
+  Both modules are ordinary version-controlled test source in the `unit-regression` lane; lane
+  membership and its brackets live on the `test-evidence-lanes.toml` card, the owner of record. No
+  case budget was raised. Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-15T14:10+02:00 — 260831-LOCR-L11 curator (uncommitted test-only change set on
   `ar/260831-locr-l11`, base `163ba8a9`): route impact confined to the existing

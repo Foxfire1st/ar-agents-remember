@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-15T13:19+02:00 |
-| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f` |
-| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
+| lastUpdated | 2026-09-15T15:02+02:00 |
+| lastVerifiedCommitHash | `99534dc5880e979b98930ead9809bbdcad936033` |
+| lastVerifiedCommitDate | 2026-09-15T15:04:53+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -265,6 +265,20 @@ terminal-session GET route is **projection-only and names no sweeper at all** �
 current catalog snapshot and cannot itself make that snapshot newer — so it is not a consumer of
 this clock either (`LOCR-R02@v1`). The sweeper's starting-row and full-sweep clocks stay inside the
 sweeper.
+
+Steady state is not the whole contract: the same file also takes **one pre-serve observation prime**
+(`_app_lifespan.py::_prime_terminal_observation`, `LOCR-R18@v1`). The lifespan order is migrate →
+compact → one contained observation prime → `runtime.projector.prime()` → create the recurring loops
+→ yield, so the initial projection and the first notifier sweep read a catalog a canonical pass has
+already committed rather than depending on the first scheduled tick or on a request. The prime is the
+same canonical sweeper entry point as every later pass — no startup-only reader, cursor, or catalog
+mutation — and it is a due full sweep, not an extra one. Its `except Exception` containment is the
+requirement and not a defect: a recoverable observation failure must not become a serving outage, so
+the projection prime and every recurring loop still start and the steady-state owner retries on its
+first cadence, while `CancelledError` still propagates into the shutdown drain. Two limits are
+recorded rather than implied: this route defines **no** health or readiness payload for a prime
+outcome (`LOCR-R17@v1` owns that), and the delivered ordering witness does not constrain
+prime-versus-migration/compaction — that edge rests on the production straight-line order.
 
 ### Historical Slice-04 Through HFX Serving Account
 
@@ -953,6 +967,23 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+
+- 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted change set on `ar/260831-locr-l18`,
+  base `d868486c`, `_app_lifespan.py` +26/−0): the route's startup contract changed, so this
+  overview's current-intent section was extended in the body rather than annotated. The route now
+  takes one pre-serve observation prime before `runtime.projector.prime()` and before any recurring
+  loop exists, so the lifespan order this route documents is migrate → compact → one contained
+  observation prime → projection prime → recurring loops → yield, and the initial projection and the
+  first notifier sweep read a catalog a canonical pass has already committed instead of depending on
+  the first scheduled tick or on a request. Recorded with it: the prime is the same canonical sweeper
+  entry point with no startup-only reader or mutation and is a due full sweep rather than an extra
+  one; its `except Exception` containment is the requirement, because observation degradation must not
+  become a serving outage, while `CancelledError` still reaches the shutdown drain; this route defines
+  no health/readiness payload for a prime outcome (that is `LOCR-R17@v1`'s contract); and the
+  prime-versus-migration/compaction edge rests on the production straight-line order, not on the
+  delivered ordering witness. The steady-state ownership account, the GET route's projection-only
+  contract, and the sweeper's own clocks are unchanged. Verification metadata remains closeout-owned;
+  no stamp advanced.
 
 - 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
   base `67b21aeb`): the route's terminal-observation ownership changed, so this overview gained a

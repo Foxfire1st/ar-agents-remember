@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_lifespan.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T13:19+02:00 |
-| lastVerifiedCommitHash | `163ba8a9798228b7f912eec05646f31e79f6b26e`                                        |
-| lastVerifiedCommitDate | 2026-09-15T13:37:09+02:00|
+| lastUpdated | 2026-09-15T15:02+02:00 |
+| lastVerifiedCommitHash | `99534dc5880e979b98930ead9809bbdcad936033`                                        |
+| lastVerifiedCommitDate | 2026-09-15T15:04:53+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -19,7 +19,10 @@
 Composes serving-process startup and background loops. It migrates all recognized control-plane
 identity logs, including the serving-owned notifier log, before accepting clients, and prevents
 metrics-loop shutdown from returning while an already-started worker thread can still write. It also
-owns the serving lifetime's steady-state clock that keeps terminal catalog truth current.
+owns the serving lifetime's steady-state clock that keeps terminal catalog truth current, and it takes
+one contained terminal-catalog observation prime before the projection is built, so already-readable
+adapter truth enters the initial projection without a request and without waiting for the first
+scheduled tick.
 
 ## Code Commentary
 
@@ -30,10 +33,25 @@ caller cancellation. If the lifespan task is cancelled, it awaits the worker to 
 re-raising `CancelledError`. `_metrics_loop` uses that boundary for sampling, record, degradation
 evaluation, and compaction, so shutdown cannot race a still-running metrics write.
 
-The lifespan first runs `migrate_control_plane_identity_logs` in a worker thread, then performs
-compaction/priming and starts the existing projection, terminal-observation, liveness, metrics,
+The lifespan startup order is migrate → compact → one observation prime → projection prime → create
+the background loops → yield. It first runs `migrate_control_plane_identity_logs` in a worker thread,
+then compacts the workspace river, then takes the contained observation prime, then primes the
+projection, and only then starts the existing projection, terminal-observation, liveness, metrics,
 agent-notifier, and diagnostic loops. Shutdown cancels and awaits those tasks through the established
 lifecycle.
+
+`_prime_terminal_observation` is the one pre-serve terminal-catalog observation attempt. It calls the
+same `runtime.liveness_sweeper.refresh` the steady-state owner calls, through the same
+`_to_thread_drained_on_cancel` boundary, so it adds no startup-only reader, cursor, catalog or write
+path: a fresh sweeper's prime is a due full sweep and inherits the sweeper's own rate limit, batch and
+lock order. It is invoked exactly once, after migration and compaction and before
+`runtime.projector.prime()` and before the first `asyncio.create_task`, which is what makes both the
+initial projection and the first notifier sweep read a catalog a pass has already committed. Its
+`except Exception` containment is deliberate: observation degradation must not become a serving
+outage, so a raised prime still lets the projection prime and every recurring loop start, and the
+level-triggered steady-state owner retries from the unchanged durable evidence on its first cadence.
+Because the boundary catches `Exception` and not `BaseException`, `asyncio.CancelledError` still
+propagates and the drain keeps owning thread teardown.
 
 `_terminal_observation_loop` is the serving lifetime's one steady-state terminal-catalog observer.
 Each iteration awaits `runtime.liveness_sweeper.refresh` through `_to_thread_drained_on_cancel` and
@@ -42,7 +60,8 @@ cadence completion-relative: a slow pass delays the next attempt instead of queu
 and two attempts can never overlap. It reads no settings and needs no route, so a closed dashboard,
 a headless process, or a disabled agent notifier cannot keep catalog turn truth from advancing. The
 loop owns only the attempt cadence; the sweeper's own one-second starting-row window and ten-second
-full-sweep limit stay inside `TerminalCatalogLivenessSweeper.refresh`.
+full-sweep limit stay inside `TerminalCatalogLivenessSweeper.refresh`. The prime is one pre-serve
+attempt, not a second recurring owner: the recurrence is the loop's.
 
 Each enabled agent-notifier iteration refreshes the terminal catalog through the one liveness
 sweeper immediately before evaluating delivery. Dashboard HTTP polling may perform the same refresh
@@ -80,6 +99,29 @@ Startup ordering is the compatibility boundary: migrate once before strict curre
   separate concern this file does not claim.
 - Whether the notifier's pre-existing inline refresh should remain a second recurring caller is an
   open decision; this file's observation contract does not depend on it either way.
+- Serving takes exactly one pre-serve observation prime per lifespan. It is positioned after
+  migration and workspace-river compaction and strictly before `runtime.projector.prime()`, before
+  the first `asyncio.create_task`, and before the lifespan `yield`; a second invocation, a prime moved
+  after the projection prime or after the recurring tasks, and a prime that never runs are each a
+  contract violation, not an acceptable variation.
+- The prime attempts only; it is not an availability gate. Its `except Exception` containment is the
+  requirement, so a recoverable observation failure must leave serving startup, the projection prime,
+  and every recurring loop intact. Turning that containment into startup refusal is forbidden
+  overreach, and so is any startup-only parser, cursor, catalog or mutation used to force admission.
+- The prime is the same canonical pass as every later one — same sweeper, evidence readers, cursor
+  rules, rate limit, batch and lock order — and the prime is a due full sweep, not an extra one.
+- Negative knowledge, recorded rather than implied: the containment boundary's cancellation property
+  (`except Exception`, so `CancelledError` propagates into the drain) is asserted by the source and
+  the design, but the delivered proof set does **not** falsify a widened boundary — re-running the
+  L18 pair with `except BaseException` leaves every case green (`L18-RV-2`, measured by the leaf's
+  independent review). Treat that property as reasoned-but-unfalsified until a case cancels the
+  lifespan while the prime is parked in its worker thread.
+- R18 defines no health or readiness payload. A prime outcome is not published to any diagnostic
+  surface by this file; the observer-health contract is a separate requirement's.
+- Migration and compaction keep their existing precedence over the prime. The delivered ordering
+  witness does not constrain prime-versus-migration/compaction (`L18-RV-3`): moving the prime before
+  the compaction step also leaves every case green, so the production straight-line order at
+  `_serving_lifespan` is the authority for that edge, not the fixture.
 
 ### Todos
 
@@ -95,10 +137,11 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Worker-thread cancellation is shielded, drained, and then re-raised. | `_to_thread_drained_on_cancel` | mcp/src/agents_remember/serving/_app_lifespan.py:60-73 |
 | The serving lifetime owns one completion-relative, non-overlapping terminal-observation caller that goes off-loop through the drained helper and sleeps after each attempt. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:76-93 |
-| Every blocking metrics operation uses the drained cancellation boundary. | `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:96-118 |
+| One contained pre-serve terminal-catalog observation attempt through the same drained helper, whose only failure handling is an `except Exception` that logs and returns. | `_prime_terminal_observation` | mcp/src/agents_remember/serving/_app_lifespan.py:96-116 |
+| Every blocking metrics operation uses the drained cancellation boundary. | `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:119-141 |
 | The observer reads the sweeper's own starting-row interval constant as its attempt cadence. | `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` | mcp/src/agents_remember/serving/terminal_liveness.py:57-57 |
-| The serving lifespan performs migration before compaction and loop startup, registers the observer task, then cancels and awaits every background task. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:232-284 |
-| The notifier refreshes liveness before each sweep and drains an in-flight refresh on cancellation. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:163-204 |
+| The serving lifespan runs migration, then workspace-river compaction, then the one observation prime, then the projection prime, then registers the recurring tasks, then cancels and awaits every background task. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:255-310 |
+| The notifier refreshes liveness before each sweep and drains an in-flight refresh on cancellation. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:186-227 |
 
 ## Cross-Repo References
 
@@ -112,6 +155,27 @@ background-loop ordering remains intact; the new seam ensures registration happe
 reconciliation/compaction rather than adding a parallel cleanup loop.
 
 ## Update History
+
+- 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted change set on `ar/260831-locr-l18`,
+  base `d868486c`, `_app_lifespan.py` +26/−0, sha256
+  `81b4ef317545927bc115ecf2ddfa74b5e6bc641d170e1f31cb90022ae762c378`): the lifespan gained one
+  pre-serve observation seam, so this card's current contract was corrected in the body rather than
+  annotated. The startup order is now migrate → compact → **one contained observation prime** →
+  `runtime.projector.prime()` → recurring tasks → `yield`, and the card records why the prime exists
+  (initial projection and first notifier sweep must read a catalog a pass has already committed,
+  without a browser request and without depending on the first scheduled tick) together with the
+  boundaries that make it safe: the prime is an attempt and not an availability gate, its
+  `except Exception` containment is the requirement rather than a defect, it is the same canonical
+  sweeper pass with no startup-only reader or mutation, and it is a due full sweep rather than an
+  extra one. Two negative facts are recorded because they are non-obvious and expensive to
+  rediscover, both measured by this leaf's independent review rather than assumed: the boundary's
+  cancellation property is **not falsified** by the delivered proof set (widening the boundary to
+  `except BaseException` leaves every case green — `L18-RV-2`), and the delivered ordering witness
+  does **not** constrain prime-versus-migration/compaction (moving the prime before compaction also
+  leaves every case green — `L18-RV-3`). Every line anchor was re-derived against the 335-line
+  candidate (`_metrics_loop` `96-118` → `119-141`, `_agent_notifier_loop` `163-204` → `186-227`,
+  `_serving_lifespan` `232-284` → `255-310`) and the new `_prime_terminal_observation` row was added
+  at `96-116`. Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
   base `67b21aeb`): this file now also owns `_terminal_observation_loop`, the serving lifetime's
