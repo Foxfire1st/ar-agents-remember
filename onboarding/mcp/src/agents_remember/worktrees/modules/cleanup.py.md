@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,6 +16,8 @@ Owns post-integration cleanup of registered worktrees, merged task branches,
 worktree-owned observer drift snapshots, and empty worktree folders.
 
 ## Code Commentary
+
+The contract-derived terminal mutation authority identifies the external-memory checkout separately. `remove_registered_worktree` discards changes to its root ledger cache through the shared cache owner before ordinary Git removal. No force flag is added for cache handling. Code files named `memory.md`, other memory paths and branch-ancestry safeguards retain their normal protection.
 
 `cleanup_result` takes the typed `WorktreeArgs` dataclass (imported from
 `agents_remember.worktrees.modules.args`), replacing the former
@@ -85,9 +87,7 @@ the apply reports `cleanup-blocked`.
 message mentions "carryover") when integration is `completed` but
 `guidance.carryover_done(contract)` is false — because cleanup deletes the parked
 memory branch before its exact landed mapping has been proven on the named source.
-The proof is the OFFICIAL ledger (`carryover_done`,
-imported from `guidance`), **not** a contract stamp; `internal`/`disabled` memory has
-nothing to carry and passes vacuously.
+Current `carryover_done` proves the actual memory commit against named source history. The computed ledger file has no admission role; internal/disabled memory has nothing to carry and passes vacuously.
 
 **Branch cleanup** operates on the just-finalized child edge only. It removes task
 work branches after proving they are reachable from the contract's corresponding
@@ -193,19 +193,20 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:637-712 |
+| The authorized memory target clears its disposable cache before ordinary Git removal. | L183-L207 | [mcp/src/agents_remember/worktrees/modules/cleanup.py](mcp/src/agents_remember/worktrees/modules/cleanup.py) |
+| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:645-720 |
 | The bridge releases only an exact selected series and reports durable release failure. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
 | Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:33-33 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
-| Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
-| Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:78-116 |
+| Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:74-85 |
+| Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:80-121 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:480-514 |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:481-515 |
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
-| `_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`. | `_remote_git`; `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/worktrees/modules/cleanup.py:312-327; mcp/src/agents_remember/kernel/git_command.py:93-93 |
+| `_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`. | `_remote_git`; `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/worktrees/modules/cleanup.py:320-335; mcp/src/agents_remember/kernel/git_command.py:96-96 |
 | `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
-| The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:229-242; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:245-287 |
-| The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220 |
+| The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:230-243; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:246-288 |
+| The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:116-170; mcp/tests/test_terminal_blocker_reasons.py:173-229 |
 | Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
@@ -229,7 +230,7 @@ The current source seams include `remove_registered_worktree`, `delete_branch_if
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:178-199; mcp/src/agents_remember/worktrees/modules/cleanup.py:202-224; mcp/src/agents_remember/worktrees/modules/cleanup.py:227-263 |
+| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:183-207; mcp/src/agents_remember/worktrees/modules/cleanup.py:210-232; mcp/src/agents_remember/worktrees/modules/cleanup.py:235-271 |
 
 ## 260821-CLIVE Archive-Before-Cleanup
 
@@ -241,6 +242,9 @@ the ephemeral terminal permit/release seam. Already-completed status returns the
 proof and never reconstructs deleted live state.
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal delivery: The contract-derived terminal mutation authority identifies the external-memory checkout separately. `remove_registered_worktree` discards changes to its root ledger cache through the shared cache owner before ordinary Git removal. No force flag is added for cache handling. Code files named `memory.md`, other memory paths and branch-ancestry safeguards retain their normal protection.
+
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): `_remote_git` now calls `run_git(repo, args,
   GitRunnerOptions(timeout=GIT_REMOTE_TIMEOUT_SECONDS))`, the timeout keyword having become a field

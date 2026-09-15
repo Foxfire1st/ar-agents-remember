@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -172,6 +172,8 @@ Current working-candidate evidence for this route:
 | Baseline adoption commits memory content and returns a cache observation. | L172-L227 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
 
 ## Purpose
+
+Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.
 
 260718-CHATS-L1 implements the active conversation serving the structured Chats architecture
 assigned to the active child. Under `serving/conversation/active/`, the two authorized
@@ -1339,6 +1341,9 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -66,6 +66,8 @@ CQ01 bounds the activation diagnostic detail used by status and admission, and C
 registered consumer ownership in the evidence catalog.
 
 ## Purpose
+
+Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.
 
 The `worktrees/modules` package contains the extracted implementation modules
 behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycle
@@ -1241,6 +1243,9 @@ a producer must never edit the string it was handed. The census is enforced from
 `mcp/tests/test_transaction_only_worktree_delivery.py::test_closeout_recovery_attributes_the_memory_commit_it_still_owed`.
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected closeout, final staging, carryover/cleanup, and integration routing; prior three-leg milestone prose labelled historical. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

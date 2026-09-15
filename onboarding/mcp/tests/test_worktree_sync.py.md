@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_sync.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -23,11 +23,13 @@ Exercise real code/external-memory sync, retained conflicts, cache independence,
 
 ## Code Commentary
 
+The terminal-removal case uses the real Git fixture for tracked, missing, staged and untracked cache states. It verifies cache-free terminal preflight and actual non-forced memory-worktree removal. A neighboring `memory.md.other` file and a code-side `memory.md` remain protected. This adds one collected integration case using the existing fixture; no new test support or budget change is needed.
+
 ### Logic
 
 `SyncFixture` creates disposable code/memory worktrees and canonical contracts. Some setup deliberately retains or commits historical tracked memory.md states; these are inputs to prove cache independence, not cache commits created by the sync under test. `map_official_memory` writes attribution in a real memory-content commit.
 
-The seven scenario definitions cover two-sided fast-forward, a retained code conflict and continuation, stale/missing/malformed source caches, cache-independent start and memory-candidate identity, an already-current descendant with changed cache rows, native memory merge conflicts, and quarantine of a nonregular journal without following it.
+The scenario definitions cover two-sided fast-forward, a retained code conflict and continuation, stale/missing/malformed source caches, cache-independent start and memory-candidate identity, an already-current descendant with changed cache rows, native memory merge conflicts, and quarantine of a nonregular journal without following it.
 
 The native memory case checks both cache-only success and a genuine README conflict. Real draft WIP is parked and returned while staged cache data is excluded. It asserts the exact merge parents, only one new reachable merge beyond its parents, a cache-free committed tree, an untracked materialized cache, and both source/work content. Its interrupted-merge branch adds an unstaged real edit after the merge was staged: resume must refuse with both repositories' refs unchanged, then complete after that edit is staged.
 
@@ -60,11 +62,12 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The real Git fixture and attributed official memory update. | L39-L117; L102-L114 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Fast-forward and retained code conflict behavior. | L121-L141; L143-L178 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Cache-independent source admission, start, and candidate identity. | L180-L206; L208-L240; L242-L279 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Native cache-only success, real conflict continuation, and resumed staged-content validation. | L281-L362; L364-L397 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Nonregular journal quarantine preserves the outside target. | L399-L418 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | L247-L289 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| The real Git fixture and attributed official memory update. | L44-L122; L107-L119 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Fast-forward and retained code conflict behavior. | L126-L146; L148-L183 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Cache-independent source admission, start, and candidate identity. | L185-L211; L213-L245; L291-L328 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Native cache-only success, real conflict continuation, and resumed staged-content validation. | L330-L411; L413-L446 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Nonregular journal quarantine preserves the outside target. | L448-L467 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
 
 ## Cross-Repo References
 
@@ -74,6 +77,9 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal delivery: The terminal-removal case uses the real Git fixture for tracked, missing, staged and untracked cache states. It verifies cache-free terminal preflight and actual non-forced memory-worktree removal. A neighboring `memory.md.other` file and a code-side `memory.md` remain protected. This adds one collected integration case using the existing fixture; no new test support or budget change is needed.
+
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced mid-cycle cache-row refusal with source-ref acceptance; added cache-independent start/candidate and native merge coverage. The existing native merge case also pins refusal of unstaged content on resume and successful staged continuation. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073` |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -25,6 +25,8 @@ missing/unreadable/different evidence is preserved and reported rather than reco
 or queue state. Leaves, dry-runs, and blocked abandon results do not mutate the selector.
 
 ## Code Commentary
+
+`_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
 
 ### Logic
 
@@ -110,11 +112,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Abandon passes its dry-run flag into terminal result validation. | L290-L339 | [mcp/src/agents_remember/worktrees/modules/abandon.py](mcp/src/agents_remember/worktrees/modules/abandon.py) |
 | Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:178-199; mcp/src/agents_remember/worktrees/modules/cleanup.py:202-224; mcp/src/agents_remember/worktrees/modules/cleanup.py:266-292; mcp/src/agents_remember/worktrees/modules/cleanup.py:444-459 |
+| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:183-207; mcp/src/agents_remember/worktrees/modules/cleanup.py:210-232; mcp/src/agents_remember/worktrees/modules/cleanup.py:274-300; mcp/src/agents_remember/worktrees/modules/cleanup.py:452-467 |
 | `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-113 |
 | The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:298-298 |
-| Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
+| Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:74-85 |
 | The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. | "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:39-39 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:197-197 |
@@ -151,6 +154,9 @@ terminal release capability, never a persistent queue blocker. Already-abandoned
 surface terminal archive proof.
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal delivery: `_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
+
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: recorded that `_abandon_outputs_result` and the
   staged steps of `_abandon_terminal_outputs` hand their outputs to the terminal validator as a
   `TerminalResult`, and that every blockage it can report names its component and a non-empty

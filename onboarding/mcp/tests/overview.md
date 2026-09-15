@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -16,6 +16,8 @@
 [MCP package overview](../overview.md)
 
 ## Purpose
+
+Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.
 
 This route retains a small behavior-oriented verification population plus shared fixtures. The
 terminal-evidence cursor suite is a focused unit-regression module for no-loss deque envelopes,
@@ -643,6 +645,9 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Rewrote current test-route expectations for cache independence and preserved old scenario histories as historical; removed stale assertion citations. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

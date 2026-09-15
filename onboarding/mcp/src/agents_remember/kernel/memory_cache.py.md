@@ -6,16 +6,15 @@
 | path | `mcp/src/agents_remember/kernel/memory_cache.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash |  `67b21aeb66df96a971a33ae431a13992f2528b45`|
+| lastVerifiedCommitDate |  2026-09-15T06:37:48+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
 [Nearest governing overview](../../../overview.md)
 
-Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
-This new source file has no committed version yet, so the verification commit fields are deliberately empty; no future hash is invented.
+The initial implementation is committed at `7cbda30d`; the terminal-cache correction described here is the current L9 working change.
 
 ## Purpose
 
@@ -23,6 +22,8 @@ Owns derivation and materialization of the disposable consumer ledger. Its rows 
 metadata come from committed memory attribution; cache files do not become Git-operation authority.
 
 ## Code Commentary
+
+`discard_memory_cache_changes` is used only before an authorized memory-worktree removal. It restores a tracked root cache from HEAD or removes its staged/untracked representation. Ordinary non-forced Git removal still checks all real content. This function creates no commit and moves no ref.
 
 ### Logic
 
@@ -77,6 +78,7 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
+| Terminal removal discards only the root memory cache. | L94-L111 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
 | Derivation reads Git attribution and computes current/base metadata. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
 | Preparation excludes the cache and refresh reports materialization outcomes. | L44-L62; L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
 | Committed attribution and row mapping have one reader. | L143-L174; L208-L227 | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
@@ -93,5 +95,8 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal delivery: `discard_memory_cache_changes` is used only before an authorized memory-worktree removal. It restores a tracked root cache from HEAD or removes its staged/untracked representation. Ordinary non-forced Git removal still checks all real content. This function creates no commit and moves no ref.
+
 
 - 2026-09-15T01:02 UTC — Created the paired sidecar for the new computed-cache owner, documenting derivation, explicit staging preparation, best-effort materialization, and the absence of ledger commit/ref authority. Working candidate verified by source inspection; commit metadata records real committed history only.
