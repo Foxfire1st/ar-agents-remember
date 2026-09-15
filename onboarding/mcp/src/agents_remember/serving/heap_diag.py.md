@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/heap_diag.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:18:47Z |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ The serving lifespan owns scheduling; this module owns only flags, snapshots, fo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The app lifespan starts the diagnostic and trim loops only when their flags are enabled. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:209-209 |
+| The app lifespan starts the diagnostic and trim loops only when their flags are enabled. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:288-288 |
 
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,8 +16,8 @@
 
 ## Purpose
 
-The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,923 lines at the R03
-commit, shaped like the persisted `latest-state.json`. Three things read it — `test/contract.test.ts` (which measures the
+The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,982 lines at the
+`260831-LOCR-L17` candidate, shaped like the persisted `latest-state.json`. Four things read it — `test/contract.test.ts` (which measures the
 TypeScript mirror against it in three directions), `test/fixtures/wire.ts` (which takes every builder
 base from it), and `data/store.test.ts`; `e2e-production/cockpit.production.spec.ts` reads it off disk.
 
@@ -47,6 +47,16 @@ including public identity/component fingerprints and approval state, but no priv
 or worker PID, preserving the
 producer's private-plane boundary while making the generated dashboard contract measurable.
 
+L17 extends the manual sample with the observer stage's own health reading: a **degraded**
+`terminalObserverHealth` row (`generatedAt` 09:01:00, `lastAttemptAt` 09:00:57 so `ageSeconds` is 3.0
+against `staleCutoffSeconds` 60.0, `lastSuccessAt` 09:00:17 so `lastSuccessAgeSeconds` is 43.0,
+`consecutiveFailureCount` 2 with `initialObservationSucceeded` true). The reading is degraded rather
+than healthy because three of the payload's five closed unions are nullable: a payload carrying the
+healthy case's nulls could not satisfy a string-vocabulary check at all, so only a non-null reading
+can be sampled. The row is arithmetically coherent with the fixture's fabricated `2026-06-14T09:00`
+window, and it is what makes the five new `projection.terminalObserverHealth.*` vocabulary paths in
+`test/contract.test.ts` non-vacuous.
+
 ## Code Commentary
 
 ### Logic
@@ -71,10 +81,12 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
 ### Conventions
 
 - Shaped like the **persisted** `latest-state.json`, not like an HTTP response: the two app-injected
-  response-time fields, `servingBuild` and `agentNotifierHeartbeat`, are deliberately absent and are the
-  entire content of `contract.test.ts::KnownUnsampled`. `data/store.test.ts` exercises those two by
-  construction instead, including the "never ticked" (`lastTickAt: null`) reading that a payload always
-  carrying a heartbeat could not express.
+  response-time fields `servingBuild` and `agentNotifierHeartbeat` are deliberately absent and are the
+  entire content of `contract.test.ts::KnownUnsampled`; the fourth serve-time field,
+  `terminalObserverHealth` (`LOCR-R17@v1`), is now SAMPLED here and therefore deliberately NOT on that
+  residue. `data/store.test.ts` exercises the two absent ones by construction instead, including the
+  "never ticked" (`lastTickAt: null`) reading that a payload always carrying a heartbeat could not
+  express.
 - Non-uniform on purpose. Arrays are keyed by TYPE in the mirror walk, so one lifecycle carrying
   `staleSeconds` samples it for all of them. The payload does not have to be uniform; it has to be
   COMPLETE between its rows.
@@ -192,6 +204,20 @@ operation node that previously carried only the revision-less projection fields,
 wire-fixture consumers have a cursor-carrying sample matching the regenerated schema.
 
 ## Update History
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
+  `99534dc5`, `snapshot.json` +17/−0, 1,982 lines): the manual served sample gained the observer
+  stage's own health reading, so the body was corrected in place. Recorded the added degraded
+  `terminalObserverHealth` row and why it is degraded rather than healthy (three of the payload's five
+  closed unions are nullable, so only a non-null reading can satisfy a string-vocabulary check), its
+  arithmetic against the fixture's own fabricated timestamp window, and that it is what makes the five
+  new vocabulary paths in `contract.test.ts` non-vacuous. Corrected the stale census in the same pass:
+  the file is 1,982 lines at this candidate, not 1,923, and the `KnownUnsampled` residue is now
+  explicitly TWO fields — `servingBuild` and `agentNotifierHeartbeat` — because
+  `terminalObserverHealth` is sampled here rather than allowlisted; a reader who took the previous
+  sentence as current would have expected three absent fields. The file remains hand-maintained and is
+  still NOT generated. Verification metadata remains closeout-owned; the `lastVerifiedCommitHash` pin
+  is deliberately unchanged. No stamp advanced.
+
 
 - 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
 

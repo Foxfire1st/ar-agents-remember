@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
@@ -640,7 +640,7 @@ is exactly as unverified as a hand-written one, merely unverified in one place i
 **Be precise about what each artifact pins.** `dashboard/src/fixtures/snapshot.json` remains a
 hand-maintained sampled payload. `dashboard/src/types/projection.ts`, however, is generated from
 `WorkspaceProjection.model_json_schema()` plus the served projection tail, and
-the code-quality `stale_generated_files` comparison detects schema and TypeScript bytes that differ from the generator cit:([`stale_generated_files`], mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-608). Fixture builders are type-checked against that
+the code-quality `stale_generated_files` comparison detects schema and TypeScript bytes that differ from the generator cit:([`stale_generated_files`], mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:614-620). Fixture builders are type-checked against that
 generated mirror, `wireFixtureGuard` refuses fixture-side opt-outs, and `contract.test.ts` measures
 how completely the manual sample exercises the mirror. The human-maintained boundary is sample
 coverage, not the producer-to-TypeScript contract.

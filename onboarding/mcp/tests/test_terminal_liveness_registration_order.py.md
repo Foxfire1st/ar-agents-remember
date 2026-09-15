@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_liveness_registration_order.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T13:20+02:00 |
-| lastVerifiedCommitHash | `b368b66106302cfb90ff8b94afc49caa04b09457` |
-| lastVerifiedCommitDate | 2026-09-15T13:29:17+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -127,10 +127,10 @@ source, not a recorded test execution.
 | The reclamation predicate that retains a task-bound leaf row until its id is proved registered. | `compact`; `_leaf_execution_entry` | mcp/src/agents_remember/serving/terminal_catalog.py:315-345; mcp/src/agents_remember/serving/terminal_catalog.py:52-62 |
 | The starting-row fast path that must perform neither registration nor compaction. | `_refresh_starting_rows` | mcp/src/agents_remember/serving/terminal_liveness.py:223-268 |
 | The production registrar whose result really is partial — an id is proved only when every registration result is `durable_or_irrelevant`. | `register_terminal_catalog_execution_evidence` | mcp/src/agents_remember/application/task_docs/task_execution_registration.py:353-389 |
-| The app wiring that injects the real registrar into the sweeper's actions. | `create_app` | mcp/src/agents_remember/serving/app.py:208-215 |
+| The app wiring that injects the real registrar into the sweeper's actions. | `create_app` | mcp/src/agents_remember/serving/app.py:253-314 |
 | The sibling module that pins the same full/starting sweep order for the deferred post-commit work. | `TerminalLivenessDeferredWorkTests` | mcp/tests/test_terminal_liveness_deferred_work.py:101-366 |
 | The ordering case, the partial-proof case, the failure case, the restart case and the fast-path exclusion case. | `test_due_sweep_registers_committed_terminated_rows_before_compaction`; `test_partial_registration_compacts_only_the_proven_rows`; `test_registration_failure_prevents_compaction_and_leaves_rows_retryable`; `test_restart_after_registration_before_compaction_reregisters_and_loses_nothing`; `test_starting_fast_path_neither_registers_nor_compacts_while_the_due_sweep_does` | mcp/tests/test_terminal_liveness_registration_order.py:154-246; mcp/tests/test_terminal_liveness_registration_order.py:248-278; mcp/tests/test_terminal_liveness_registration_order.py:280-310; mcp/tests/test_terminal_liveness_registration_order.py:312-358; mcp/tests/test_terminal_liveness_registration_order.py:360-403 |
-| The module's own `unit-regression` lane row, added by the same change set that created it. | "mcp/tests/test_terminal_liveness_registration_order.py" | mcp/tests/test-evidence-lanes.toml:118-118 |
+| The module's own `unit-regression` lane row, added by the same change set that created it. | "mcp/tests/test_terminal_liveness_registration_order.py" | mcp/tests/test-evidence-lanes.toml:121-121 |
 
 ## Cross-Repo References
 

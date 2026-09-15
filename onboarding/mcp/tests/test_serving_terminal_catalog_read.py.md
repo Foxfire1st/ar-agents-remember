@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_terminal_catalog_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T13:57+02:00 |
-| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f` |
-| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,14 +118,14 @@ certification result.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The catalog GET is a projection of stored state and names no sweeper. | `api_terminal_sessions` | mcp/src/agents_remember/serving/_app_terminal_routes.py:156-162 |
-| The route serializes each row through the shared payload helper. | `_catalog_payload` | mcp/src/agents_remember/serving/_app_common.py:346-347 |
+| The route serializes each row through the shared payload helper. | `_catalog_payload` | mcp/src/agents_remember/serving/_app_common.py:359-360 |
 | `list()` takes the catalog `RLock` before testing `self._batch`, so a foreign thread waits for an in-flight batch and then reads the committed atomic file. | `list`; `_read_snapshot` | mcp/src/agents_remember/serving/terminal_catalog.py:80-84; mcp/src/agents_remember/serving/terminal_catalog.py:364-372 |
 | The batch holds both the exclusive file lock and the `RLock` across the whole unit of work, so the in-memory buffer is reachable only reentrantly by the batch-owning thread. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:282-313 |
 | `_write_disk` is the one seam every durable write passes through, which is why the write ledger is complete regardless of the port method used. | `_write_disk` | mcp/src/agents_remember/serving/terminal_catalog.py:422-432 |
 | `list_committed()` is the sweeper's own non-blocking contention read, called only from the two contention paths — not a projection read. | `list_committed` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92 |
 | The production readers the identity sweep resolves against by object identity. | `read_control_snapshot`; `read_entry_terminal_evidence` | mcp/src/agents_remember/serving/harness_control_client.py:133-142; mcp/src/agents_remember/serving/terminal_evidence.py:187-196 |
 | The sweeper whose re-introduction on the request path the module's cases detect. | `TerminalCatalogLivenessSweeper.refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
-| The candidate classifies this module once, in the explicit integration lane. | "mcp/tests/test_serving_terminal_catalog_read.py" | mcp/tests/test-evidence-lanes.toml:171-171 |
+| The candidate classifies this module once, in the explicit integration lane. | "mcp/tests/test_serving_terminal_catalog_read.py" | mcp/tests/test-evidence-lanes.toml:176-176 |
 
 ## Cross-Repo References
 

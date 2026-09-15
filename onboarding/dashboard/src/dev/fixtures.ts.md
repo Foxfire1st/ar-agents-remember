@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/fixtures.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`       |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -133,7 +133,7 @@ shape, so both sides of that delegation are cited.
 | `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:335-335 |
 | The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. | "processes: EngineProcessNode[];"; "workspace: ProviderNode[];"; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487; dashboard/src/panels/engine-room/fixtures.ts:21-22 |
 | Analytics requires series and engineProcesses arrays. | "export interface Analytics {" | dashboard/src/types/projection.ts:92-106 |
-| WorkspaceProjection owns analytics as a required field. | "export interface WorkspaceProjection {" | dashboard/src/types/projection.ts:816-816 |
+| WorkspaceProjection owns analytics as a required field. | "export interface WorkspaceProjection {" | dashboard/src/types/projection.ts:840-840 |
 
 ## Cross-Repo References
 

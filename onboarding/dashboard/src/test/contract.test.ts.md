@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`      |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`      |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ with `asServedProjection` and adds the two directions that were missing.
 Under CCR-R03@v1 the R03 leaf reformatted this file (double quotes → single quotes and collapsed
 multi-line literals) and re-synchronized the dashboard contract fixtures with the newly reserialized
 snapshot; no assertion, registry entry, or pinned expectation changed
-cit:(["the mirror declares everything the server sends"], dashboard/src/test/contract.test.ts:452-466).
+cit:(["the mirror declares everything the server sends"], dashboard/src/test/contract.test.ts:476-490).
 
 ## Code Commentary
 
@@ -63,14 +63,30 @@ cit:(["the server grows a field", "the mirror declares something the server neve
 `ClosedUnionPaths`/`VOCABULARIES` (every literal-union path registered and sampled) are `Record`s
 over derived path unions, replacing prose lists cit:([`INDEX_SIGNATURE_SITES`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:225-249; dashboard/src/test/contract.test.ts:289-430).
 `valuesAt` reads every value at a dotted path, fanning out over arrays
-cit:([`valuesAt`], dashboard/src/test/contract.test.ts:435-450).
+cit:([`valuesAt`], dashboard/src/test/contract.test.ts:459-474).
 
 **The runtime suites** (`the mirror declares everything the server sends`; `the fixture
 samples everything the mirror declares`; `every closed vocabulary in the mirror is checked
 against the payload`; `projection contract fixture`; `metrics bucket every live
 lifecycle state`; `mirror does not invent fields the server cannot send`) carry
 the runtime membership, non-vacuity, bucket-uniqueness, spelling-parity, and inverted-pin checks
-cit:(["the served payload carries a bucket per live state"], dashboard/src/test/contract.test.ts:535-540).
+cit:(["the served payload carries a bucket per live state"], dashboard/src/test/contract.test.ts:559-564).
+
+### 260831-LOCR-L17 — the observer-health vocabulary entries
+
+`VOCABULARIES` gained the five `projection.terminalObserverHealth.*` paths (the closed unions
+`status`, `schemaVersion`, `activeFailureCategory`, `activeFailureSummary`, `activeFailureType`),
+and `KnownUnsampled` is deliberately UNCHANGED at its two entries: the new field is sampled by
+`fixtures/snapshot.json`, so allowlisting it instead would have failed
+`allowlistMustStayEarned` and left the mirror's new surface unmeasured. Two consequences are worth
+recording, because both were live failure modes in this leaf's review round. First, this registry is
+the reason a serve-time key cannot be added to the mirror by the producer alone: `ClosedUnionPaths`
+and `VOCABULARIES` are `Record`s over derived path unions, so an unregistered closed union is a
+compile error (`TS2344`/`TS2739`) rather than a silent gap — and a type-only allowlist patch turns
+`tsc` green while the RUNTIME walk still fails with `no served value at
+projection.terminalObserverHealth.status`. Second, the runtime check is what makes the entry
+evidence rather than paperwork: it asserts a non-zero sample count first, so an entry whose fixture
+value is missing or null reads as a failure instead of passing vacuously.
 
 ### Conventions
 
@@ -170,6 +186,17 @@ The closed-vocabulary registry includes the two `executionGraphView` node-union 
 260831-CCR-L18 extended the fixture-coverage guard: `INDEX_SIGNATURE_SITES` now registers `projection.enclosures[].lifecycleOperation.recommendedAction.arguments` as an index-signature site, and the closed-vocabulary registry adds `schemaVersion` / `stateMatrixVersion` (single-member v1 literals), the `incoherent` status member, `identity.operationKind`, `worker.state` (live/termination-requested/termination-required/exited), and `approval.state` (claimed/unclaimed). The exhaustive path registry still requires the representative fixture sample to reach every newly registered path with only legal values.
 
 ## Update History
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
+  `99534dc5`, `contract.test.ts` +24/−0): the generated mirror's new closed unions were bound in
+  `VOCABULARIES`, so a current-contract section was added. Recorded the five new
+  `projection.terminalObserverHealth.*` paths, that `KnownUnsampled` stays at its two entries because
+  the field is sampled by `fixtures/snapshot.json`, and both failure modes this registry produces when
+  a serve-time key is added to the mirror without its companion: a compile error from the derived
+  `Record`s (`TS2344`/`TS2739`) and, if the entry is allowlisted instead of sampled, a green `tsc`
+  with a RED runtime walk (`no served value at projection.terminalObserverHealth.status`). The
+  non-vacuity rule is what makes each entry evidence. Verification metadata remains closeout-owned;
+  the `lastVerifiedCommitHash` pin is deliberately unchanged. No stamp advanced.
+
 
 - 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
 

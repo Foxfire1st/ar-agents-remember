@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_startup_prime.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T15:02+02:00 |
-| lastVerifiedCommitHash | `99534dc5880e979b98930ead9809bbdcad936033` |
-| lastVerifiedCommitDate | 2026-09-15T15:04:53+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -125,9 +125,9 @@ references describe the behavior under test and do not claim a certification res
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One contained pre-serve terminal-catalog observation attempt through the drained helper. | `_prime_terminal_observation` | mcp/src/agents_remember/serving/_app_lifespan.py:96-116 |
+| One contained pre-serve terminal-catalog observation attempt through the drained helper. | `_prime_terminal_observation` | mcp/src/agents_remember/serving/_app_lifespan.py:129-149 |
 | The lifespan runs migration, then compaction, then the prime, then the projection prime, then creates the recurring tasks. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:255-310 |
-| The steady-state owner the prime shares its canonical entry point with. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:76-93 |
+| The steady-state owner the prime shares its canonical entry point with. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126 |
 | The off-loop drain-on-cancel boundary the prime and every later pass both go through. | `_to_thread_drained_on_cancel` | mcp/src/agents_remember/serving/_app_lifespan.py:60-73 |
 | The one canonical observation entry point both the prime and later passes call. | `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
 | The six startup-order cases and their `(step, sweeps_completed)` witness. | `ServingStartupPrimeTests` | mcp/tests/test_serving_startup_prime.py:93-352 |

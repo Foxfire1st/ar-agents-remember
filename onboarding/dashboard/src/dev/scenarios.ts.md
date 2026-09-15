@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/scenarios.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`       |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ the reviewed task evidence for any current behavioral claim.
 | `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:934-953 |
 | `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | `engineRoomProjection`, `GALLERY` | dashboard/src/dev/fixtures.ts:135-144; dashboard/src/dev/fixtures.ts:146-490 |
 | Consumed by the player transport + the bench picker. | `Bench`, `applyFrame` | dashboard/src/dev/Bench.tsx:18-83; dashboard/src/dev/ScenarioPlayer.tsx:12-17; dashboard/src/dev/ScenarioPlayer.tsx:27-27 |
-| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:816-829 |
+| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:840-854 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 

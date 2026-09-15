@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-09-15T13:36+02:00 |
-| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f`                                             |
-| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`                                             |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -428,7 +428,7 @@ card's account of it:
    never an assumed registration — so a task-bound worker/curator/leaf-reviewer row is retained by the
    catalog's reclamation predicate (cit:([`_leaf_execution_entry`], mcp/src/agents_remember/serving/terminal_catalog.py:52-62)) until its id is explicitly
    proved. The app wires the registrar through `TerminalLivenessActions`
-   (cit:([`create_app`], mcp/src/agents_remember/serving/app.py:208-215)).
+   (cit:([`create_app`], mcp/src/agents_remember/serving/app.py:253-314)).
 4. **The fast path is stated as an exclusion.** `_refresh_starting_rows` registers nothing and compacts
    nothing (cit:([`_refresh_starting_rows`], mcp/src/agents_remember/serving/terminal_liveness.py:223-268)); both remain full-sweep
    responsibilities.

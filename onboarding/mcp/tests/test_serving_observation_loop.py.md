@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_serving_observation_loop.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T15:02+02:00 |
-| lastVerifiedCommitHash | `99534dc5880e979b98930ead9809bbdcad936033` |
-| lastVerifiedCommitDate | 2026-09-15T15:04:53+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,14 +74,17 @@ reason, and a case that parked invocation 1 would be parking the prime rather th
 `ServingObservationFailureIsolationTests` extends the same harness additively —
 `_RefreshProbe.fail_on` fails exactly one later attempt while `.outcomes` records each attempt's own
 verdict, and `_LiveHost.probed` records which tmux name each sweep probed — and adds `_durable_tree`
-(every durable file under the case root as relative path → sha256), `_background_tasks`,
+(every durable file under the case root as relative path → sha256), `_durable_tree_without_observer_health`
+(the same map minus exactly this lifetime's observer-health row), `_background_tasks`,
 `_serving_probe_route`, `_seed_emitted_signal_marker` and `_seed_workspace_cursor`. Its five cases
 drive the real lifespan task collection and the real sweeper over a real catalog: five sibling loops
 stay alive across a failed pass while the real notifier loop keeps reaching its own cadence with its
 sweep uncalled, an in-process ASGI request through the same app object still answers 200, and teardown
-then cancels every task and calls `host.shutdown()` exactly once; the durable tree is byte-identical
-across the failed pass with a control proving the preceding *successful* pass did change it; the retry
-is triggered by the cadence alone, on the same task object, with the tree still byte-identical so no
+then cancels every task and calls `host.shutdown()` exactly once; every durable artifact **outside the
+observer-health row** is byte-identical across the failed pass, with two like-scoped halves proving it
+— the filtered map against the filtered map, and the health row's own key before against after — plus
+a control proving the preceding *successful* pass did change the full tree; the retry is triggered by
+the cadence alone, on the same task object, with the non-health tree still byte-identical so no
 catalog edit and no HTTP request was needed; rows, an emitted-signal marker and the workspace cursor
 committed ahead of an independent later failure survive it, and the retry then probes the row committed
 ahead of the failure (`host.probed == ["ar-seat-1", "ar-seat-1", "ar-seat-2"]`); and a cancellation
@@ -116,20 +119,40 @@ a literal cadence, a notifier-enabled gate, an overlapping fire-and-forget attem
 lifespan does not cancel each fail a named case.
 
 A pass that raises must leave the owner scheduled, leave every sibling background loop and the HTTP
-surface intact, publish nothing durable, and retry from the current persisted catalog on the next
-cadence without any external trigger. The boundary is `except Exception`, which is load-bearable only
-because `asyncio.CancelledError` derives from `BaseException`: the module asserts that inheritance
-directly, and widening the boundary to `BaseException` fails the cancellation case alone. A durable
-tree that is byte-identical across the failure path is only meaningful because the same case proves a
-*surviving* pass does change it, so the identity is a result about the failure and not about a tree
-nothing writes.
+surface intact, publish nothing durable **of its own**, and retry from the current persisted catalog
+on the next cadence without any external trigger. The boundary is `except Exception`, which is
+load-bearable only because `asyncio.CancelledError` derives from `BaseException`: the module asserts
+that inheritance directly, and widening the boundary to `BaseException` fails the cancellation case
+alone. The durable-tree identity across the failure path is only meaningful because of two
+compensating halves: the same case proves a *surviving* pass does change the full tree, so the
+identity is a result about the failure and not about a tree nothing writes, and the identity itself
+is asserted between LIKE-SCOPED maps — the filtered map against the filtered map for "nothing outside
+the health row moved", and the health row's own key before against after for "the diagnostic row did
+move". `LOCR-R17@v1` is why the exclusion exists and why the scope matters: every completed observer
+call — successful or failed — atomically rewrites exactly
+`observer_root/workspace/terminal-observer-health.json`, so a failed pass legitimately changes that
+ONE path and nothing else. Weakening the claim to "almost nothing changed" was rejected; the
+exclusion keeps it exact for every other artifact.
+
+**Vacuous-assertion lesson (recorded because it cost a review round and is invisible to a passing
+run).** `LOCR-R17@v1`'s first repair to
+`ServingObservationFailureIsolationTests::test_a_failed_pass_publishes_no_durable_fact_at_all`
+compared the **full** tree map against the **filtered** one. The extra key made the inequality hold
+in every reachable state — including the state where the health row never moved at all — so the
+assertion could not fail and proved nothing. It now reads in two like-scoped halves as described
+above, and the non-vacuity is what makes it evidence: an assertion whose two sides are differently
+scoped is not a stronger form of the same claim, it is a different and empty one.
 
 The module claims nothing about the sweeper's own internals beyond its retained ten-second full-sweep
 limit, and nothing about the notifier's pre-existing inline refresh — that remains a second recurring
 caller whose future is a separate decision, so no case asserts its presence or absence. It also claims
-nothing about the shape, content, retention or log format of observer-failure *publication*: a
-structured observer-failure surface is a different requirement's contract, and no case here asserts on
-log text. It claims nothing about the pre-serve prime's own ordering either — that is
+nothing about the shape, content, retention or log format of observer-failure *publication*: those are
+`LOCR-R17@v1`'s contract and live in
+[test_terminal_observer_health.py](test_terminal_observer_health.py.md). What this module does assert
+about that publication is deliberately narrow and is not a second contract for it: the health row
+moved, and it carries the `steady-state-refresh-failed` category. No case here asserts log text, a
+payload field set, or the health module's own lifecycle. It claims nothing about the pre-serve prime's
+own ordering either — that is
 [test_serving_startup_prime.py](test_serving_startup_prime.py.md)'s contract — but it owns the fixture
 both modules read, so the timeline's call numbering is a shared contract: **call 1 is the pre-serve
 prime and call 2 is the recurring owner's own first pass.** A case that parks or fails invocation 1
@@ -170,15 +193,17 @@ references describe the behavior under test and do not claim a certification res
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The serving lifetime owns one completion-relative, non-overlapping observation attempt that sleeps after each call returns, including a failed one. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:76-93 |
+| The serving lifetime owns one completion-relative, non-overlapping observation attempt that sleeps after each call returns, including a failed one. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126 |
 | That attempt cadence is the sweeper's own starting-row interval constant, read at its declaration. | "DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS = 1.0" | mcp/src/agents_remember/serving/terminal_liveness.py:57-57 |
-| The lifespan creates the observer unconditionally and cancels/awaits it with the other background loops, and it takes the one pre-serve observation prime before the projection is built. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:255-310 |
+| The lifespan creates the observer unconditionally and cancels/awaits it with the other background loops, and it takes the one pre-serve observation prime before the projection is built. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:288-352 |
 | The sweeper keeps its own starting-row window and ten-second full-sweep limit behind `refresh`. | `refresh`; `_refresh_starting_rows`; `_starting_rate_limited`; `_rate_limited` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221; mcp/src/agents_remember/serving/terminal_liveness.py:223-268; mcp/src/agents_remember/serving/terminal_liveness.py:270-282 |
-| The module drives the real lifespan finalizer, the real sweeper, and its cadence cases with a virtual clock and no HTTP surface; every absolute call index counts the pre-serve prime as call 1. | `ServingObservationLoopTests` | mcp/tests/test_serving_observation_loop.py:439-657 |
-| One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable is published, the retry resumes from the current catalog, and cancellation still ends the task. | `ServingObservationFailureIsolationTests` | mcp/tests/test_serving_observation_loop.py:660-874 |
-| The failure boundary is `except Exception` and therefore cannot absorb cancellation, because `CancelledError` is a `BaseException`. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:88-93 |
-| The shared fixture and its ordered `startup` witness, imported by the startup-prime module as well as used here. | `_ServingFixture`; `_record_startup` | mcp/tests/test_serving_observation_loop.py:246-354 |
-| The probe's parkable inner callable, used to place a slow pass on a chosen invocation rather than always on the first. | `_Gate` | mcp/tests/test_serving_observation_loop.py:223-243 |
+| The module drives the real lifespan finalizer, the real sweeper, and its cadence cases with a virtual clock and no HTTP surface; every absolute call index counts the pre-serve prime as call 1. | `ServingObservationLoopTests` | mcp/tests/test_serving_observation_loop.py:469-688 |
+| One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task. | `ServingObservationFailureIsolationTests` | mcp/tests/test_serving_observation_loop.py:690-924 |
+| The failure boundary is `except Exception` and therefore cannot absorb cancellation, because `CancelledError` is a `BaseException`. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126 |
+| The like-scoped exclusion that keeps the R11 identity exact while accounting for the one row R17 must rewrite on every completed observer call. | `_durable_tree_without_observer_health` | mcp/tests/test_serving_observation_loop.py:429-441 |
+| The health row's own path and the category a failed steady pass must publish, asserted by the failure case. | `terminal_observer_health_path`; `TerminalObserverHealthStore` | mcp/src/agents_remember/serving/terminal_observer_health.py:110-113; mcp/src/agents_remember/serving/terminal_observer_health.py:239-279 |
+| The shared fixture and its ordered `startup` witness, imported by the startup-prime module as well as used here. | `_ServingFixture`; `_record_startup` | mcp/tests/test_serving_observation_loop.py:259-371 |
+| The probe's parkable inner callable, used to place a slow pass on a chosen invocation rather than always on the first. | `_Gate` | mcp/tests/test_serving_observation_loop.py:236-257 |
 | The sibling module that owns the pre-serve prime's own ordering contract and imports this fixture. | `ServingStartupPrimeTests` | mcp/tests/test_serving_startup_prime.py:93-352 |
 | The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_observation_loop.py" | mcp/tests/test-evidence-lanes.toml:97-97 |
 
@@ -191,6 +216,34 @@ unit-regression module.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
+  base `99534dc5`, `mcp/tests/test_serving_observation_loop.py` +86, 924 lines, final candidate
+  `git diff | sha256sum` = `b75a785d…`): this landed **L11** module was modified by this leaf, so the
+  card records what changed about its meaning rather than a routine refresh. `LOCR-R17@v1` makes every
+  completed observer call — successful or failed — atomically rewrite exactly
+  `observer_root/workspace/terminal-observer-health.json`, so R11's three "nothing durable moved"
+  identities can no longer hold verbatim. They now run over
+  `_durable_tree_without_observer_health` (the full map minus exactly that one path), which keeps the
+  claim exact for every OTHER durable artifact instead of weakening it to "almost nothing changed",
+  and the failure case additionally asserts positively that the row moved and carries
+  `steady-state-refresh-failed`. **The module's own wording changed with it**: it now says a failed
+  pass "publishes nothing durable **of its own**", and the card's invariant and negative-boundary
+  sections were corrected to match — the previous "publishes nothing durable" and "claims nothing
+  about observer-failure publication" sentences would now overstate the boundary, since the case does
+  assert that one row's movement and category (never log text or the health module's own field set,
+  which stay `LOCR-R17@v1`'s contract in the sibling card). **A vacuity defect found after the review
+  round is recorded as negative knowledge**: the first form of that assertion compared the FULL map
+  against the FILTERED one, so the extra key made the inequality hold in every reachable state,
+  including the one where the row never moved; it now reads in two like-scoped halves. An assertion
+  whose two sides are differently scoped is not a stronger form of the same claim but an empty one,
+  and a passing run cannot see the difference. Class anchors re-derived against the 924-line candidate
+  (`ServingObservationLoopTests` `439-657` → `469-688`, `ServingObservationFailureIsolationTests`
+  `660-874` → `690-924`, `_ServingFixture` `246-354` → `259-371`, `_Gate` `223-243` → `236-257`), the
+  `_serving_lifespan` citation moved with the production file (`255-310` → `288-352`), and rows were
+  added for the two helpers this leaf introduced. The module's lane row (`test-evidence-lanes.toml:97`)
+  is unchanged — the L17 insertion is the new sibling module at `:122`, below it — so L11's
+  classification is untouched. Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted test change set on `ar/260831-locr-l18`,
   base `d868486c`, `+117/−44`, 874 lines): the module's body was corrected rather than annotated,

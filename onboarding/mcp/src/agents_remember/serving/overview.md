@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-15T15:02+02:00 |
-| lastVerifiedCommitHash | `99534dc5880e979b98930ead9809bbdcad936033` |
-| lastVerifiedCommitDate | 2026-09-15T15:04:53+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -267,18 +267,20 @@ this clock either (`LOCR-R02@v1`). The sweeper's starting-row and full-sweep clo
 sweeper.
 
 Steady state is not the whole contract: the same file also takes **one pre-serve observation prime**
-(`_app_lifespan.py::_prime_terminal_observation`, `LOCR-R18@v1`). The lifespan order is migrate →
-compact → one contained observation prime → `runtime.projector.prime()` → create the recurring loops
+(`_app_lifespan.py::_prime_terminal_observation`, `LOCR-R18@v1`). The lifespan order is migrate → compact → **start the serving-lifetime observer-health accumulator and attempt its initial record** → one contained observation prime → `runtime.projector.prime()` → create the recurring loops
 → yield, so the initial projection and the first notifier sweep read a catalog a canonical pass has
 already committed rather than depending on the first scheduled tick or on a request. The prime is the
 same canonical sweeper entry point as every later pass — no startup-only reader, cursor, or catalog
 mutation — and it is a due full sweep, not an extra one. Its `except Exception` containment is the
 requirement and not a defect: a recoverable observation failure must not become a serving outage, so
 the projection prime and every recurring loop still start and the steady-state owner retries on its
-first cadence, while `CancelledError` still propagates into the shutdown drain. Two limits are
-recorded rather than implied: this route defines **no** health or readiness payload for a prime
-outcome (`LOCR-R17@v1` owns that), and the delivered ordering witness does not constrain
-prime-versus-migration/compaction — that edge rests on the production straight-line order.
+first cadence, while `CancelledError` still propagates into the shutdown drain. The prime now also PUBLISHES: every completed observation attempt — the prime's included, with
+`phase="startup"` — records the observer stage's own health through
+`terminal_observer_health.py` (`LOCR-R17@v1`), so the earlier statement that this route defines no
+health surface for a prime outcome is superseded. What stands is the boundary: this route owns the
+observer's own reading and no readiness gate, cursor, queue or task-authoring authority derives from
+it, and the read routes never rewrite the record. One limit is still recorded rather than implied: the
+delivered ordering witness does not constrain prime-versus-migration/compaction — that edge rests on the production straight-line order.
 
 ### Historical Slice-04 Through HFX Serving Account
 
@@ -967,6 +969,24 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
+  `99534dc5`, `_app_lifespan.py` +63/−2 with the new `terminal_observer_health.py`): the startup
+  contract changed again, so the body was corrected rather than annotated. The lifespan order this
+  route documents is now migrate → compact → **observer-health lifetime start and its initial
+  record** → observation prime → projection prime → recurring loops → yield: the
+  serving-lifetime accumulator is begun before the prime so the prime's own outcome is the first
+  transition published and a failed initial write costs the counters nothing. **Superseded:** the
+  previous entry's statement that this route defines no health or readiness payload for a prime
+  outcome. `LOCR-R17@v1` landed it — `_observe_terminal_catalog(runtime, phase)` publishes success
+  and failure for the prime (`phase="startup"`) and for every steady pass, and the served reading is
+  a separate `terminalObserverHealth` payload beside the notifier heartbeat, additively on the same
+  state body. What stands is the boundary: no readiness gate, cursor, marker, queue or task-authoring
+  authority derives from health, the read routes never rewrite the record, and the cutoff is the
+  configured sweep cadence rather than browser traffic. Recorded with it as an owner-visible negative
+  fact: the notifier's pre-existing inline refresh publishes no health transition, so a live notifier
+  beside a dead observer loop ages the record into `stale` — conservative, never a false `healthy`.
+  Verification metadata remains closeout-owned; no stamp advanced.
+
 
 - 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted change set on `ar/260831-locr-l18`,
   base `d868486c`, `_app_lifespan.py` +26/−0): the route's startup contract changed, so this

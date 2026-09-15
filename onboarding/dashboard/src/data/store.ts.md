@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash |                                                  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |                                                  2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash |                                                  `e9678c56e7f441371584ad8a18e2b9380cb38cf0`|
+| lastVerifiedCommitDate |                                                  2026-09-15T20:50:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -135,7 +135,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:827-827 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:851-851 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
 | Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once. | "export const dashboardStore"; `reset` | dashboard/src/data/store.ts:55-55; dashboard/src/data/store.ts:329-329 |
 | `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:403-403 |
