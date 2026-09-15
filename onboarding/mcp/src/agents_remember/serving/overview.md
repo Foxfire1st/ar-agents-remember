@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-15T13:19+02:00 |
+| lastVerifiedCommitHash | `163ba8a9798228b7f912eec05646f31e79f6b26e` |
+| lastVerifiedCommitDate | 2026-09-15T13:37:09+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -29,7 +29,9 @@ MCP server advertising exact `dispatch_agent`. The shared readiness parser owns 
 tool shape, settled absence, and timeout; the adapter has no alternate tool-name or discovery
 fallback. Dispatch briefs allow one bounded spawn-to-bridge convergence window without creating a
 second caller attempt. Agent-notifier sweeps refresh canonical terminal liveness themselves, so
-queued brief/message progress does not accidentally depend on dashboard browser polling. Control
+queued brief/message progress does not accidentally depend on dashboard browser polling; the serving
+lifespan is now the steady-state owner of that refresh, so notifier enablement is no longer part of
+the observation contract (see *Current Terminal-Observation Ownership*). Control
 socket diagnostics distinguish absent, refused, and timed-out endpoints without claiming process
 death from socket state alone.
 
@@ -234,6 +236,17 @@ byte-identical), an `unsupported` terminal receipt on non-capable adapters, and 
 is byte-preserved. Two additive IPC actions (`interrupt`, `operation-timeline`) keep the protocol
 at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays the control
 child's obligation.
+
+### Current Terminal-Observation Ownership
+
+Terminal catalog observation is a serving-lifespan responsibility, not a request-driven side effect.
+`_app_lifespan.py::_terminal_observation_loop` is the route's one steady-state owner: it calls the
+existing `TerminalCatalogLivenessSweeper.refresh` through the drained off-loop helper and sleeps
+`DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` only after each attempt returns, so the cadence is
+completion-relative and non-overlapping, and a closed dashboard, a headless process, a model turn, or
+a disabled agent notifier cannot stop catalog turn truth from advancing. The terminal-session GET
+route and the notifier's own inline refresh remain consumers of the same sweeper; neither is the
+ownership contract, and the sweeper's starting-row and full-sweep clocks stay inside the sweeper.
 
 ### Historical Slice-04 Through HFX Serving Account
 
@@ -919,6 +932,19 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+
+- 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
+  base `67b21aeb`): the route's terminal-observation ownership changed, so this overview gained a
+  current-intent section rather than a history-only note. `_app_lifespan.py::_terminal_observation_loop`
+  is now the serving lifespan's one steady-state caller of the existing
+  `TerminalCatalogLivenessSweeper.refresh`, on a completion-relative non-overlapping attempt cadence
+  that needs no HTTP request, no open dashboard, no model turn, and no enabled agent notifier. The
+  ARSPAWN-L5 paragraph was corrected rather than deleted: its account of the notifier refreshing
+  liveness before each sweep remains true for the notifier path, and it now names the serving
+  lifespan as the steady-state owner so it no longer reads as the ownership contract. The GET route,
+  the notifier's inline refresh, and both sweeper clocks are unchanged; whether the notifier's inline
+  refresh should remain a second recurring caller is not decided here. Verification metadata remains
+  closeout-owned; no stamp advanced.
 
 - 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.

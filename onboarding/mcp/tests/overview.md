@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T13:20+02:00 |
-| lastVerifiedCommitHash | `9bef02374f7dc80b7bddceef5a9e08651169fd7d` |
-| lastVerifiedCommitDate | 2026-09-15T13:35:34+02:00|
+| lastVerifiedCommitHash | `163ba8a9798228b7f912eec05646f31e79f6b26e` |
+| lastVerifiedCommitDate | 2026-09-15T13:37:09+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -44,6 +44,7 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Durable state and event-loop liveness | `test_durable_store_contract.py`, `test_cross_store_lock_order.py` | Thread/process ordering and actual store outcomes, bounded by watchdogs. |
 | Candidate and protected-ref safety | `test_git_command.py`, `test_integration_branch_authority.py` | Real Git identity, private commits, hooks and race preservation. The former `test_integration_ref_transaction.py` was deleted with the removed mid-crash ref-recovery capability. |
 | Terminal liveness cadence and readiness | `test_terminal_liveness.py` | Controlled-clock sweeper checks preserve the configured full-sweep interval and the one-second starting-row path with its four-row cap; lifecycle production wiring remains a separate candidate proof. |
+| Serving-owned steady-state observation | `test_serving_observation_loop.py` | The real `_serving_lifespan` finalizer under a virtual event-loop clock with no HTTP route registered: the completion-relative `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` sleep after each attempt (including a failed one), attempt non-overlap when a pass outruns its tick, the sweeper's retained ten-second full-sweep limit, observation continuing while `agent_notifier.enabled` is false, the off-loop refresh through the drained helper, exactly one observer task cancelled at teardown, and a failed pass that neither marks success nor changes cadence. Unit lane; the sweeper's own cadence files stay the owners of their clocks. The notifier's pre-existing inline refresh is out of this proof. |
 
 | Deferred terminal work | `test_terminal_liveness_deferred_work.py` | Real catalog/sweeper proof that hosted-interaction syncs and turn callbacks run after commit, aborted batches dispatch nothing, and post-commit failures preserve durable truth. Caller ownership remains adjacent lifecycle work. |
 | Terminal catalog liveness | `test_terminal_liveness.py` | Fake-clock host/control-read hysteresis, restart continuity, and successful reset against existing production transitions. This row is the LOCR-R21 hysteresis proof only: cadence (`R12`) and sweep non-overlap (`R22`) cases for the same module are still in their own unlanded worktrees, so the composed module's case count and extents will be larger than this leaf's four cases. |
@@ -623,15 +624,14 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-329; mcp/src/agents_remember/models/worktree.py:355-363 |
 | The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:175-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
 | The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
-| The recorded flake note the L34 module carries. | "UNREPRODUCED FLAKE, RECORDED 2026-09-13" | mcp/tests/test_checkpoint_landing_end_to_end.py:835-835 |
 | The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
 | The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:465-512; mcp/tests/test_cross_master_concurrency.py:529-563; mcp/tests/test_cross_master_concurrency.py:565-620; mcp/tests/test_cross_master_concurrency.py:752-780; mcp/tests/test_cross_master_concurrency.py:784-852 |
 | The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:146-146 |
 | The L37 stop boundary proof: the public pause, the measured world, the ten independently-failing cases and the four refusal shapes. Its never-selected case asserts the already-vacant success rather than a refusal, and the two L38 cases added after it pin the unreadable record and the vacant foreign record. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`; `test_an_unreadable_record_is_refused_not_reported_stopped`; `test_a_record_naming_another_master_is_refused_not_released` | mcp/tests/test_pause_stop_only_end_to_end.py:86-556; mcp/tests/test_pause_stop_only_end_to_end.py:150-168; mcp/tests/test_pause_stop_only_end_to_end.py:203-234; mcp/tests/test_pause_stop_only_end_to_end.py:236-263; mcp/tests/test_pause_stop_only_end_to_end.py:265-317; mcp/tests/test_pause_stop_only_end_to_end.py:445-471; mcp/tests/test_pause_stop_only_end_to_end.py:473-526 |
 | The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:163-163; mcp/tests/test-evidence-lanes.toml:196-196 |
+| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:164-164; mcp/tests/test-evidence-lanes.toml:197-197 |
 | The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. | `LifecyclePlaythroughTests`; `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173; mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-173 |
-| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:157-157 |
+| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:158-158 |
 | The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
 | The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
 | The L23 registration-order proof: the observed chain with the terminated-row read carrying its own batch-commit state, the partial-proof singleton, the raising registrar that stops the pass, the restart that re-registers and loses nothing, and the fast-path exclusion measured in both directions. | `test_due_sweep_registers_committed_terminated_rows_before_compaction`; `test_partial_registration_compacts_only_the_proven_rows`; `test_registration_failure_prevents_compaction_and_leaves_rows_retryable`; `test_restart_after_registration_before_compaction_reregisters_and_loses_nothing`; `test_starting_fast_path_neither_registers_nor_compacts_while_the_due_sweep_does` | mcp/tests/test_terminal_liveness_registration_order.py:154-246; mcp/tests/test_terminal_liveness_registration_order.py:248-278; mcp/tests/test_terminal_liveness_registration_order.py:280-310; mcp/tests/test_terminal_liveness_registration_order.py:312-358; mcp/tests/test_terminal_liveness_registration_order.py:360-403 |
@@ -640,22 +640,22 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | **260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason`; `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220; mcp/tests/test_terminal_blocker_reasons.py:223-243; mcp/tests/test_terminal_blocker_reasons.py:246-259 |
 | **260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item. | `_blocker`; `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:639-655; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:624-636 |
 | **260913-LCA-L8:** the producer whose result could answer `removed: False` with no reason, now naming every non-removal. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
-| **260913-LCA-L8:** the nine exact-consumer rows the new module's change set adds to the evidence registry. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/evidence-lifecycle.toml:331-331; mcp/tests/evidence-lifecycle.toml:391-391; mcp/tests/evidence-lifecycle.toml:435-435; mcp/tests/evidence-lifecycle.toml:565-565; mcp/tests/evidence-lifecycle.toml:604-604; mcp/tests/evidence-lifecycle.toml:643-643; mcp/tests/evidence-lifecycle.toml:955-955; mcp/tests/evidence-lifecycle.toml:1012-1012; mcp/tests/evidence-lifecycle.toml:1038-1038 |
+| **260913-LCA-L8:** the nine exact-consumer rows the new module's change set adds to the evidence registry. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/evidence-lifecycle.toml:304-304; mcp/tests/evidence-lifecycle.toml:379-379; mcp/tests/evidence-lifecycle.toml:423-423; mcp/tests/evidence-lifecycle.toml:553-553; mcp/tests/evidence-lifecycle.toml:592-592; mcp/tests/evidence-lifecycle.toml:631-631; mcp/tests/evidence-lifecycle.toml:943-943; mcp/tests/evidence-lifecycle.toml:1000-1000; mcp/tests/evidence-lifecycle.toml:1026-1026 |
 | **260913-LCA-L8:** the declaration that gives the new module ownership of the ambient-role runner for targeted selection. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:82-82 |
 | The removed case's scenario, now refused by design: the guard that makes a task root with no master document unbindable. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:619-649 |
 | The refusal the two corrected closeout fixtures had to satisfy. | `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
 | **The mid-flight reporting boundary:** a completed pass beside a reconciling selection is not this call's success, and a refusal left beside one leads with the mid-flight state. | `ReconcilingResultTests`; `test_a_completed_pass_beside_a_mid_flight_selection_is_not_success`; `test_a_refusal_that_left_a_record_mid_flight_leads_with_that_state`; `_reconciling_result` | mcp/tests/test_atomic_series_activation.py:231-297; mcp/tests/test_atomic_series_activation.py:255-274; mcp/tests/test_atomic_series_activation.py:276-297; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294 |
 | The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. | `class ActivationFixture`; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:63-111; mcp/tests/test_atomic_series_activation.py:122-145; mcp/tests/test_atomic_series_activation.py:179-214 |
 | The registered admission refusal now addresses only the addressed contract's own state. | `test_registered_sync_refusal_addresses_only_this_contracts_own_state` | mcp/tests/test_activation_admission_registered.py:178-221 |
-| The L2 mid-cycle case: the refusal by name, the unmoved work branch, and the completed pair that then syncs. | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `map_official_memory` | mcp/tests/test_worktree_sync.py:101-110; mcp/tests/test_worktree_sync.py:176-204 |
+| The sync fixture's official-memory mapping, which both the fast-forward case and the retained-conflict case drive. | `map_official_memory` | mcp/tests/test_worktree_sync.py:107-107 |
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Public closeout exercises the actual pair, attribution and cache-independent delivery. | L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| Cache damage cannot change the accepted integration pair or block ref publication. | L172-L213 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
-| The migration acceptance proof reads only committed trailers. | L458-L541 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| Public closeout exercises the actual pair, attribution and cache-independent delivery. | `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
+| Cache damage cannot change the accepted integration pair or block ref publication. | `test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move` | mcp/tests/test_integration_branch_authority.py:172-213 |
+| The migration acceptance proof reads only committed trailers. | `test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded` | mcp/tests/test_memory_backfill.py:467-550 |
 
 ## Docs And Cross-Repo References
 
@@ -696,6 +696,33 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   row (`test_cross_master_concurrency.py:784-852`, file now 847) and an L8 evidence-registry row
   (`evidence-lifecycle.toml:1038-1038`, file now 1029). Verification metadata remains closeout-owned;
   no verification stamp advanced and no acceptance claim.
+- 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
+  base `67b21aeb`): the route gained the leaf's hermetic `test_serving_observation_loop.py`, so the
+  retained-behavioral-routes table gained a row for the serving-owned steady-state observation proof
+  and the manifest population it registers into is now 208 modules. The module enters the real
+  lifespan finalizer and the real sweeper under a virtual clock and issues no HTTP request, so the
+  unit lane is its behaviour-preserving classification. The same pass removed one dead reference row
+  rather than re-pointing it: the L34 flake note (`"UNREPRODUCED FLAKE, RECORDED 2026-09-13"`) was
+  cited at `test_checkpoint_landing_end_to_end.py:835-835`, which is 356 lines past the end of the
+  479-line file and no longer contains the literal anywhere — `4164e3d0` retired it — so the claim it
+  carried is gone and the row was deleted. Because the new
+  lane row was inserted at `test-evidence-lanes.toml:97`, every later manifest row moved one line, so
+  this card's lane citations were re-derived against the current file rather than carried
+  (`test_cross_master_concurrency.py` `:146` → `:147`, `test_leaf_doc_master_link_binding.py` `:154` →
+  `:155`, the playthrough `:157` → `:158`, the pause pair `:163`/`:196` → `:164`/`:197`,
+  `test_terminal_blocker_reasons.py` `:178` → `:179`). Three further rows were re-read against their
+  sources in the same pass: the L36 cross-master case ranges were rebound to the current function
+  extents (`131-162; 409-456; 473-507; 509-568; 754-822; 722-750` — the previous set was stale and its
+  last range ended past the end of the 847-line module), the nine `evidence-lifecycle.toml` rows for
+  `test_terminal_blocker_reasons.py` were re-pointed to the nine lines that carry it
+  (`304, 379, 423, 553, 592, 631, 943, 1000, 1026`; the previous nine were stale and the last was past
+  the 1029-line end), and one row whose anchor
+  (`test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`) exists nowhere in the code tree
+  was re-worded onto the surviving `map_official_memory` fixture method instead of keeping an unbacked
+  claim. The working-candidate table was also rewritten into the canonical `Finding | Anchor | Source`
+  shape it was missing. Lane membership is classification only, not
+  execution or acceptance evidence; verification metadata remains closeout-owned and no stamp
+  advanced.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
