@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff`|
+| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview

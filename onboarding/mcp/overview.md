@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-15T13:15+02:00 |
-| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6` |
-| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
+| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff` |
+| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 

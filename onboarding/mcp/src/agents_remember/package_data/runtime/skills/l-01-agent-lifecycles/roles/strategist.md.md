@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff` |
+| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
