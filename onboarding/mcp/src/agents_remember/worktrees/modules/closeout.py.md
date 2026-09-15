@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Purpose
@@ -557,6 +557,18 @@ No separately configured cross-repository implementation governs this file; any 
 [Governing route overview](overview.md)
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
+  set, `ar/260913_ledger-commit-attribution`, base `bb65a207`): anchor repoint only, no claim change.
+  The ledger test module grew one line at its head, so this card's citation moved:
+  `test_roundtrip_preserves_newest_same_code_history` 44-59 → 45-60. The range was read back at its
+  current position. One further anchor repair, unchanged by this change set: the row for
+  `_landed_source_heads` cited the quoted `integration_status` guard at `156-156`, which is the
+  function's `expected = {base}` line; the literal is at `157-157` and the row now says so. That
+  range was read back too. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 
 - 2026-09-15T00:58 UTC — Rechecked the formatted L9 working candidate and rebound current references after source cleanup; source-sha256=ecb17da0f336b65ff9e4a0d666f0af81c66fb18f5bd5befee19238b012eaa640. The older working-candidate snapshot and verification provenance are retained.
 

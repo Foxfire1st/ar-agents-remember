@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/ledger_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,6 +119,39 @@ These are preserved observations from the earlier card, not measurements repeate
 claims about the working candidate. Their former table-union interpretation is superseded above.
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the projection now asks the code half of
+  a row's truth of the SOURCE's own rows.** `read_ledger_source` decides the memory half and holds no
+  code repository; `project_ledger` asks the code half through the new `_kept_true_source_rows`, which
+  keeps a source row the code repository holds and excludes one it does not with reason
+  `code-commit-missing`, reported through the existing `source_excluded_rows`/
+  `source_excluded_reasons` channel and surfaced as `sourceRowsExcluded`/`sourceExcludedReasons`. The
+  reviewed defect: `project_ledger` appended the source rows unchanged, so a source trailer naming a
+  code commit the code repository does not hold survived the recompute with the correct code
+  repository in `LedgerWorld` — the rebuild preserved the very row the landing refuses and re-derived
+  it on every run, so the recompute could not repair the state it exists to repair. Recorded the
+  deliberate behaviour change: `LedgerWorld.code_repository` widened to `Path | None = None`, so a
+  world that names no code repository cannot answer the code question and keeps its rows unchanged
+  (previously a `None` there died inside the `cat-file -e` object test with an `AttributeError`);
+  `_untrue_reason` was narrowed to ask the code question only when a repository is named. Added the
+  card row and the reference row for `_kept_true_source_rows` and the two new cases that pin it
+  (`test_a_source_row_naming_a_code_commit_the_repository_lacks_is_excluded`,
+  `test_a_source_with_no_code_repository_to_ask_keeps_its_rows`). Every citation in this card was
+  re-derived against the grown module (781 → 840 lines): `_own_row_candidates` 644-661 → 694-711,
+  `_untrue_reason` 681-686 → 731-745, `_newest_first` 689-707 → 748-766, `project_ledger` 579-641 →
+  592-656, `LedgerProjection` 145-271 → 154-284, `is_fixed_point` 168-177 → 181-190,
+  `is_interleaved_projection` 179-210 → 192-223, `needs_write` 222-231 → 235-244, `operator_payload`
+  233-258 → 246-271, `observed_ledger_state` 547-576 → 560-589, `read_ledger_source` 302-350 →
+  315-363, `_tail_rows` 353-383 → 366-396, `_distinct` 386-390 → 399-403, `_rows_the_source_records`
+  393-420 → 406-433, `_source_ledger_with_rows` 423-441 → 436-454, `read_ledger_text` 467-480 →
+  480-493, `code_commit_exists` 483-486 → 496-499, `inspect_ledger_projection` 489-511 → 502-524,
+  `contract_ledger_projection` 514-544 → 527-557, `resolve_memory_source_commit` 274-299 → 287-312,
+  `LedgerSource` 93-112 → 96-115, `LEDGER_RELATIVE_PATH`'s re-export block 44-63 → 47-66, and
+  `_bounded_removal_reasons` 774-781 → 833-840. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 
 - 2026-09-15T00:51 UTC — Replaced source-table union, cached-pair admission, and additions with Git-only mappings; documented optional code-object filtering, cache misses, computed metadata, diagnostic states, and retired path arguments. Earlier table-union and ledger-commit descriptions are superseded. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
 

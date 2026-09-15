@@ -1342,6 +1342,25 @@ two name no object at all.
 
 ## Update History
 
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
+  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
+  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
+  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
+  declared two or more refs; the L3 review paragraph now states that two external reviews found four
+  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
+  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
+  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
+  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
+  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
+  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
+  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
+  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
+  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+
 - 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 
 

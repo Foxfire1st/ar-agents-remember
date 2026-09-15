@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -98,6 +98,16 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
+  set, `ar/260913_ledger-commit-attribution`, base `bb65a207`): anchor repoint only, no claim change.
+  The ledger projection grew above its import block, so this card's citation of the re-export site
+  moved: `worktrees/ledger_projection.LEDGER_RELATIVE_PATH` 44-63 → 47-66. The range was read back at
+  its current position and still covers the `kernel/memory_ledger` import and the re-export comment.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp
+  advanced.
 
 - 2026-09-15T01:02 UTC — Replaced the immediate-ledger-commit durability rule with consumer serialization semantics; documented valid empty derived ledgers, retained nonempty validation, and the shared root-cache exclusion constant. Earlier R12 entries describe the former committed-table design. Working candidate verified by source inspection; commit metadata records real committed history only.
 

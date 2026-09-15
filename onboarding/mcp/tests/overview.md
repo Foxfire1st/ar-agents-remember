@@ -646,6 +646,33 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 
 ## Update History
 
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): the route's L3 section, the
+  ledger-attribution coverage row, the memory-backfill coverage row and four reference rows were
+  corrected for the review's second pair of defects. The backfill's ref move now travels as one
+  `update-ref --stdin` stream of one instruction per line plus exactly one terminating newline
+  (`_update_ref_stream`), because a blank line is an EMPTY COMMAND to git and aborted the whole
+  transaction for any run that declared two or more branches; `test_two_declared_branches_move_together_in_one_transaction`
+  drives two real branches through the public apply route and is recorded in the L3 section and the
+  module's reference row. The projection now asks the code half of a row's truth of the source's own
+  rows at the boundary where the code repository is in hand, excluding with `code-commit-missing` and
+  reporting through `sourceExcludedRows`/`sourceExcludedReasons`, while `LedgerWorld.code_repository`
+  widened to optional so a world naming none keeps its rows; the two new `test_memory_ledger.py` cases
+  are recorded in this route's `test_memory_ledger.py` paragraph, its coverage row and a new reference
+  row. The section's opening now states that two external reviews found four defects, all fixed, and
+  keeps the statement that the tool has not been applied to any real repository. Every anchor into the
+  two shifted modules and the two shifted test modules was re-derived against the working source:
+  `MemoryBackfillApplyTests` 399-629 → 399-676, `MemoryBackfillCliTests` 754-902 → 801-949,
+  `is_empty` unchanged, `carry_ledger_cells` 927-972 → 940-985, `read_ledger_source` 302-350 →
+  315-363, `test_a_source_row_the_source_cannot_carry_is_reported_not_kept` 495-522 → 496-523,
+  `test_a_partially_trailered_source_still_reads_its_pre_rule_rows` 525-552 → 601-628,
+  `_AttributedWorld` 345-401 → 346-402, and the ten L2 ledger-attribution ranges 404-431 → 405-432,
+  434-453 → 435-454, 456-485 → 457-486, 597-603 → 673-679, 606-622 → 682-698, 625-648 → 701-724,
+  651-663 → 727-739, 666-695 → 742-771, 698-733 → 774-809 and 736-766 → 812-842. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
 - 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -105,6 +105,39 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the module gained the two cases that pin
+  the code half of a row's truth on the source's rows.** A source row naming a code commit the code
+  repository lacks is now excluded from the projection with reason `code-commit-missing`, reported
+  through `sourceExcludedRows`/`sourceExcludedReasons`, while the valid source row beside it is
+  carried untouched — the reviewed code appended source rows unchanged, so the recompute preserved the
+  very row the landing refuses. The second case pins the other side of the widening:
+  `LedgerWorld.code_repository` is optional, and a world that names none keeps its rows with nothing
+  reported excluded. Recorded the new `code_commit_exists` import the first case uses to prove its
+  made-up SHA really is absent. Every citation in this card was re-derived against the grown module
+  (766 → 842 lines): `_World` 82-152 → 83-153, `_AttributedWorld` 345-401 → 346-402,
+  `test_roundtrip_preserves_newest_same_code_history` 44-59 → 45-60, the six pre-trailer projection
+  cases 190-216 → 191-217, 219-242 → 220-243, 245-267 → 246-268, 270-285 → 271-286, 288-299 → 289-300
+  and 302-317 → 303-318, `test_projection_is_the_ledger_the_attributed_history_records` 404-431 →
+  405-432, `test_projection_reads_the_trailer_and_never_the_live_table` 434-453 → 435-454,
+  `test_projection_reads_an_unattributed_commit_from_its_own_ledger` 456-485 → 457-486,
+  `test_a_source_row_the_source_cannot_carry_is_reported_not_kept` 495-522 → 496-523,
+  `test_a_partially_trailered_source_still_reads_its_pre_rule_rows` 525-552 → 601-628,
+  `_content_commit` 488-492 → 489-493, `test_projection_contributes_nothing_for_a_source_that_says_nothing`
+  597-603 → 673-679, `test_attribution_reads_only_the_commits_a_caller_asks_for` 606-622 → 682-698,
+  `test_trailer_parse_takes_the_last_block_and_ignores_a_body_mention` 625-648 → 701-724,
+  `test_attribution_reports_only_commits_the_code_repository_holds` 651-663 → 727-739,
+  `test_attribution_reads_a_message_whose_final_block_carries_several_trailers` 666-695 → 742-771,
+  `test_the_rendered_trailer_is_the_one_the_reader_parses` 698-733 → 774-809 and
+  `test_attribution_reads_a_mapping_that_arrived_through_a_merge` 736-766 → 812-842. Two further
+  anchor defects were repaired in the same pass without a claim change: the pre-trailer row carried a
+  seventh, duplicate range (`:248-265`) for six symbols and the lookup row carried a spurious third
+  range in the kernel ledger module, and neither resolved to a named case; those rows now carry one
+  range per case. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 
 - 2026-09-15T00:51 UTC — Replaced obsolete table-union, cached-metadata, additions, and malformed-table refusal expectations with Git-only attribution, cache forgery/miss checks, exact local-ref selection, and invalid-target reporting; retained twenty focused cases and the format/parser/merge protections. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
 

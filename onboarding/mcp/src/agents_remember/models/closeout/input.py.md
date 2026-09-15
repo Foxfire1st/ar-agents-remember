@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/closeout/input.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,6 +82,15 @@ No meaningful cross-repository reference applies.
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
+  set, `ar/260913_ledger-commit-attribution`, base `bb65a207`): anchor repoint only, no claim change.
+  The ledger test module grew above the round-trip case, so this card's citation moved:
+  `test_the_rendered_trailer_is_the_one_the_reader_parses` 698-733 → 774-809. The range was read back
+  at its current position. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Narrowed public/effective closeout input to code and memory while preserving the shared attribution renderer. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

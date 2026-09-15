@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_attribution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -98,6 +98,18 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
+  set, `ar/260913_ledger-commit-attribution`, base `bb65a207`): anchor repoint only, no claim
+  change. The review's fix grew `worktrees/ledger_projection.py`, so this card's citations into that
+  module and into the ledger test module moved: `worktrees/ledger_projection.code_commit_exists`
+  483-486 → 496-499 (twice: the prose and the reference row), `read_ledger_source` 302-350 → 315-363
+  (twice), `resolve_memory_source_commit` 274-299 → 287-312, and
+  `test_the_rendered_trailer_is_the_one_the_reader_parses` 698-733 → 774-809. Every rewritten range
+  was read back at its current position. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
 
 - 2026-09-15T01:02 UTC — Corrected documentation to match the existing trailer-only runtime, removing transitional cached-table fallback and ledger-commit claims; preserved full-ancestry, last-match, shared-writer, and optional code-object semantics. No runtime change is claimed for this source-comment correction. Working candidate verified by source inspection; commit metadata records real committed history only.
 

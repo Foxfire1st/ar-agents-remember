@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T03:43 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -111,6 +111,28 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the multi-branch migration is fixed.**
+  `_move_targets` appended an empty string after each update instruction and joined the list with
+  newlines, so a run with two or more changed refs sent a blank line to `git update-ref --stdin`,
+  which reads a blank line as an EMPTY COMMAND and aborts the whole transaction with
+  `fatal: empty command in input`; the single-ref case survived only because the one trailing newline
+  its last line needed doubled as the stream's terminator. The stream is now built by the new
+  `_update_ref_stream` — one instruction per line plus exactly one terminating newline — so any number
+  of refs moves atomically together, and the transaction is still fed by that one function rather
+  than by a joined list. Recorded the fix and the review that found it, and stated plainly that the
+  tool is fixed and host-verified with the review's own probes passing and the focused suites green,
+  has still **not** been applied to any real repository, and has **no** Dagger certificate. Every
+  citation in this card was re-derived against the grown module (1024 → 1037 lines): `_move_targets`
+  837-879 → 837-880, `_full_ref_name` 882-898 → 895-911, `ledger_rows_at` 901-924 → 914-937,
+  `carry_ledger_cells` 927-972 → 940-985, `_commit_fields` 992-1001 → 1005-1014, `_full_name`
+  1004-1012 → 1017-1025, `_code_commit_is_held` 1023-1024 → 1036-1037, and the test-module anchors
+  `MemoryBackfillApplyTests` 399-629 → 399-676 and `MemoryBackfillCliTests` 754-902 → 801-949.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp
+  advanced.
 
 - 2026-09-15T03:43 UTC — Documented committed C2 native --topo-order parent-before-child replay and retained the actual multi-ref framing contract; reviewed the committed source rather than a pending working candidate. Verification hash/date stamping remains with normal closeout.
 

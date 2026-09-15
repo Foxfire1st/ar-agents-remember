@@ -602,6 +602,23 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
 
 ## Update History
 
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): the **External Memory Ledger** entry's
+  `Description` now records the second half of its own truth test — the rebuild asks the
+  code-existence half of a row's truth of the **source's** rows at the boundary where the code
+  repository is in hand, excludes with `code-commit-missing` through the same reported channel what
+  that repository cannot prove, and keeps the rows of a world that names no code repository
+  (`LedgerWorld.code_repository` is optional) — and states that a later completed-master review found
+  two further defects, the multi-ref ref move and the invalid source row the rebuild carried through,
+  both fixed with the review's own probes passing. `Migration Notes` gained the same two fixes and
+  named `_update_ref_stream`. **No evidence path changed and no fingerprint was hand-advanced:** the
+  entry's curated evidence sets name neither `mcp/src/agents_remember/kernel/memory_backfill.py` nor
+  `mcp/src/agents_remember/worktrees/ledger_projection.py`, so every stored `git-blob-set-v1` value
+  still resolves from committed `HEAD` blobs, and this change set is uncommitted working-tree content.
+  Verification metadata remains closeout-owned; no acceptance claim is made.
+
 - 2026-09-15T03:43 UTC — Closed pending fingerprint wording for the 11 entities in the recorded refresh from committed `7cbda30d9a9a4c2944382fbef46ac58b85329935`. Confirmed all 11 stored values against the refresh receipt, including the cache-owner evidence set; fingerprint/evidence-path values, unrelated entity prose, global verification fields, and prior history were preserved. Scoped receipt/prose closure only, not full-catalog certification.
 
 

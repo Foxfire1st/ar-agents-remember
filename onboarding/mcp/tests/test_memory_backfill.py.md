@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T03:43 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -106,6 +106,31 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the module gained the multi-target ref
+  case.** `test_two_declared_branches_move_together_in_one_transaction` creates a second branch at the
+  original tip and drives the public apply route with BOTH refs, because the reviewed defect —
+  `_move_targets` appended an empty string after each update instruction and joined the list with
+  newlines, so a blank line reached `git update-ref --stdin` and aborted the whole transaction with
+  `fatal: empty command in input` — was invisible to every single-ref case: one declared branch moved
+  only because the one trailing newline its last line needed doubled as the stream's terminator. The
+  case pins all three promises together: both declared branches arrive at the rewritten tip, the
+  rescue ref still holds the pre-rewrite history, and a second run over the migrated history reports
+  `updated_refs == ()` and `rewritten == ()` with both branches unmoved. Every citation in this card
+  was re-derived against the grown module (906 → 953 lines): `MemoryBackfillApplyTests` 399-629 →
+  399-676, the existing-refusal cases 585-594 → 632-641, 596-609 → 643-656, 611-621 → 658-668 and
+  623-629 → 670-676, `MemoryBackfillLedgerReadTests` 632-659 → 679-706 with its cases 639-654 →
+  686-701 and 656-659 → 703-706, `MemoryBackfillCarryTests` 662-751 → 709-798 with `ledger_text`
+  669-694 → 716-741 and its four cases 696-709 → 743-756, 711-723 → 758-770, 725-738 → 772-785 and
+  740-751 → 787-798, and `MemoryBackfillCliTests` 754-902 → 801-949 with `contract_path` 770-829 →
+  817-876, `invoke` 831-838 → 878-885 and its two cases 840-891 → 887-938 and 893-902 → 940-949; the
+  kernel anchors moved with the module (`_move_targets` 837-879 → 837-880, `carry_ledger_cells`
+  927-972 → 940-985, `_full_name` 1004-1012 → 1017-1025) and the projection anchors with its own
+  (`read_ledger_source` 302-350 → 315-363, `LedgerSource` 93-112 → 96-115). Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
 
 - 2026-09-15T03:43 UTC — Documented the committed C2 extension of the existing CLI case to two named refs, peer-tip equality, retained rescue/attribution checks, and same-target retry; refreshed source ranges without adding a test or making a live-migration execution claim. Verification hash/date stamping remains with normal closeout.
 

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../../../overview.md` |
 
@@ -751,6 +751,23 @@ message last. Before this the only thing said about that state was the refused p
 complaint, which named neither the stuck contract nor what it was doing.
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): added the completed-master review's half of
+  the ledger exclusion channel to this route's L11 record. The read still decides the memory half of a
+  source row and holds no code repository; `project_ledger` now asks the code half of those same rows
+  at the one boundary where the code repository is in hand (`_kept_true_source_rows`), excluding with
+  `code-commit-missing` any source row the repository cannot prove and reporting it through the same
+  `sourceRowsExcluded`/`sourceExcludedRows`/`sourceExcludedReasons` payload. The reviewed defect: the
+  rebuild appended the source's rows unchanged, so an invalid source row survived the recompute that
+  exists to repair it. Recorded the deliberate widening `LedgerWorld.code_repository: Path | None =
+  None` — a world naming no code repository cannot refute a code claim and keeps its rows, where a
+  `None` in the previously required field died inside the object test — and the two cases that pin
+  both halves. Detail lives on the `worktrees/ledger_projection.py` card and on `mcp/overview.md`.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp
+  advanced.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced source-table union and ledger-based admission invariants; historical milestone accounts are explicitly superseded. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
