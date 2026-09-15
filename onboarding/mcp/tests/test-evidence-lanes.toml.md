@@ -6,8 +6,8 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T15:02+02:00 |
-| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff` |
-| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
+| lastVerifiedCommitHash | `c4f59e982d2d682a2bfce19cbd72b0efdecfa865` |
+| lastVerifiedCommitDate | 2026-09-15T22:16:46+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
