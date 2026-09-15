@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
-| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
+| lastVerifiedCommitHash | `b2aeba28e3e6c909048c99fc389a00aa65e5e2c1` |
+| lastVerifiedCommitDate | 2026-09-15T21:59:41+02:00|
 | reviewedWorkingCandidate | `ar/260831-locr-l18` uncommitted source; base `d868486c07ac14d8af6d0d5555dbda4f3b737785` |
 | governingOverview | `../overview.md` |
 
@@ -57,6 +57,7 @@ Start with the distinct failure or user operation, then locate its retained owne
 | State-signal structural routing | `test_state_signal_relay.py` | Action-time current-manager replacement, per-subject topology refusal, no-row/no-marker behavior while an owner is absent, and no owner wake while a seat's own turn is still open. |
 | State-signal boundary delivery | `test_state_signal_boundary_delivery.py` | Row persisted before the emitted marker, zero adapter submission while the target is `working`, and delivery of that same durable row at the target's next admissible boundary across occupant replacement, fresh notifier context, and failed submission. |
 | State-signal crash and restart recovery | `test_state_signal_restart_recovery.py` | The durable order row persisted → marker stamped → delivery attempted across a failed marker write, a stop after the marker, and a same-seat structural rebind: one pending row per exact seat/evidence identity, zero adapter submissions while that source marker is unstamped, and an action-time fence on the shared delivery action that state-signal recovery alone may lift. Seven cases, each rebuilt from the durable files through new store objects. |
+| Curator turn owner wake | `test_state_signal_curator_wake.py` | The curator seat's own canonical terminal turn reaches the same shared role predicate and current-manager routing as the worker seat, with the durable payload carrying the curator role, the subject leaf document, the mechanical outcome and the terminal evidence identity — all derived by the real liveness sweep and the real agent-notifier sweep, never written by a curator post. A `completed` ending and an `interrupted` ending each mint exactly one durable signal and never a second on re-observation; `failed` reaches terminal truth and emits nothing while leaving the seat eligible; a curator seat whose own master has no current manager fails closed instead of routing to another master's manager; and the wake neither validates nor declares curator coherence or memory readiness. Unit-regression, one new module, no production byte changed. |
 | Parked external-await separation | `test_parked_external_await_separation.py` | The parked open-turn external-await design stays out of the ended-turn relay: no `waiting` expectation kind is parseable, no wait-registration tool is advertised, and no wait/recheck/check-descriptor machinery ships. Absence guard only, not relay behavior evidence. |
 | Reviewer turn owner wake | `test_lifecycle_owned_completion_relay_reviewer.py` | The reviewer role's own production-wiring relay: a short-lived reviewer seat's canonical terminal truth, produced by a real observation pass rather than a seeded row, wakes the reviewer's **current** manager as one durable inbox row — with no completion post from the reviewer and no dependence on the terminal-session read route. Six cases pin the boundaries separately. The row is truthless before the pass (`turn_state`, `terminal_outcome` and `terminal_evidence_id` all absent) and carries `completed` plus its evidence identity after it; the durable row holds while the owner is mid-turn with zero submissions and lands exactly once at the owner's next boundary. Liveness, a ready `control_state` and even a pane whose own diagnostic reads `turn-ended` authorize nothing, with a control proving the identical row does wake once canonical evidence exists — so the silence is about missing evidence, not an inert fixture. An `interrupted` turn is reported as `interrupted` with `interrupted_by=unknown`, no verdict vocabulary and a byte-unchanged leaf document. The wake is addressed by current occupancy, so a recorded `spawned_by_session` naming an exited manager generation receives nothing while the live manager gets the one row. Re-observing the same evidence identity mints no second signal even after the first row has landed and can no longer absorb a repeat by coalescing. And `failed` — production-reachable with a real evidence identity, since the pi projector settles `stopReason="error"` into it — is refused while leaving the seat eligible, so a later canonical turn still wakes the manager. Unit lane: a temporary coordination root, a scripted single-seat adapter endpoint and a tmux double at the process boundary; the lift, the outcome and the evidence identity are production's, and the relay's own structural rules stay `test_state_signal_relay.py`'s contract. |
 | Worker turn owner wake | `test_state_signal_worker_wake.py` | A worker is not required to author a second completion message, so the wake must arrive on its own: an owned `worker` row whose **catalog terminal evidence** says `completed` or `interrupted` becomes a state-signal finding and the notifier persists and routes exactly one durable row to the leaf's **current** manager through the existing inbox path. Seven cases pin the boundaries separately. No inbox row is created for the worker at all, and the whole store is asserted rather than its state-signal subset, so a worker-authored row would be visible rather than filtered out. The eligible-outcome set is pinned from both sides: `completed` and `interrupted` wake the manager, and `failed` or `unknown` must not however real the evidence identity is — with a final leg re-reporting the same seat and evidence identity as `completed` and requiring the wake, which makes the empty store a measured refusal rather than an inert relay. Per-turn dedupe is pinned in both directions too: the same evidence identity projected twice mints one row, and a **second distinct terminal turn** on the same seat mints its own wake instead of being swallowed by the first turn's marker. An `interrupted` turn travels with its origin and is not mislabelled as completed; a report on disk is not terminal evidence, so the adapter evidence identity is the discriminator; the leaf and master documents are captured around the sweep and compared byte for byte, because reporting a seat turn never closes task work; and a worker below a managerless master wakes nobody, stamps no marker and guesses no global owner while staying eligible for the next sweep. An empty live terminal-session read is a measured zero on a host the delivery path demonstrably reached, because `_RecordingHost` counts every contact the sweep makes. Unit lane: a temporary coordination root with real task documents, a real catalog file, a real inbox log and the real durable stores; no HTTP request, no server, no process. The relay's own structural rules stay `test_state_signal_relay.py`'s contract, and the pre-existing dead-upstream supervision row the same sweep separately raises is outside this module's assertions. |
@@ -187,6 +188,37 @@ case; it is not authorized scope for this leaf. Case inventory, helpers and the 
 on `test_state_signal_restart_recovery.py.md`.
 
 | Terminal catalog reads are side-effect free | `test_serving_terminal_catalog_read.py` | The real registered `GET /api/terminal/sessions` route driven over `fastapi.testclient.TestClient` and the real composed `create_app`: one hundred requests produce one hundred equivalent answers with every ledger at zero; probe, cursor advance, row mutation and compaction each fail on their **own** instrument rather than as one aggregate; the no-adapter-probing clause is pinned at the readers themselves, by name **and** by object identity, so a route-side read bound through a module-level `import … as` alias is counted too; a catalog change between two reads is attributable to the background observer, and an observer that has failed still serves the stored snapshot instead of being repaired by the request; and path, declared model, conditional-key behaviour and status semantics are unchanged through the composed app. Integration lane, one new module, no production route behaviour beyond removing the handler's sweep. Two limits are recorded rather than papered over: a reader reached through anything that is not a module global (a function default, closure cell, class attribute, dict entry or instance attribute) stays outside the reader ledger, and the 100-GET case is content-vacuous on its own, so content is pinned by the composed-app and failed-observer cases. |
+
+## 260831-LOCR-L07 Curator Turn Owner Wake
+
+`test_state_signal_curator_wake.py` (unit-regression, manifest row `:102`) is the executor for the
+curator half of the terminal-turn wake: a curator's durable output is its structured coherence
+authority rather than a chat message, so the curator must not have to hand-author a completion post
+for its manager to resume. The module starts where production starts — the adapter's own evidence
+frames — and lets the real `TerminalCatalogLivenessSweeper` derive the catalog turn truth before the
+real agent-notifier sweep relays it, so no row in any scenario is written with a turn claim, a
+terminal outcome or an evidence identity, no terminal-session GET is issued, and no curator-authored
+completion row exists. Five cases: a `completed` ending wakes the **current** manager of the
+curator's own master with exactly one durable signal carrying the curator role, the subject leaf
+document, the outcome and the evidence identity, and re-observing that same terminal evidence mints
+no second signal and no second row; an `interrupted` ending carries interruption truth
+(`outcome interrupted`, `interrupted_by=developer`) and is re-emission-guarded on that path exactly
+as the completed one is; `failed` is the negative control that keeps the two-outcome boundary honest
+from the outside — the seat does reach terminal truth, and the relay still emits nothing, leaving the
+seat eligible so a later canonical outcome can still wake; a completed ending appends no verdict —
+the payload equals the canonical `state_signal_ask` / `state_signal_response` derivation, contains
+none of the acceptance vocabulary, and the coordination root read **after** the sweep is the same
+population as the premise, so a relay that wrote its own coherence or readiness artifact would show
+up there and nowhere else; and a curator seat whose own master has no current manager fails closed
+instead of routing to a live other-master manager, with the seat left eligible rather than consumed.
+
+Two things are deliberately *not* claimed. The wake is terminal-truth relay only: it neither
+validates nor declares curator coherence, memory readiness or closeout acceptance — the manager opens
+and validates the canonical curator authority itself, and `accepted` is a transport fact here rather
+than a verdict about the curator's memory. And the stale spawn-ancestry address registered on the
+curator row is never selected: routing resolves the owner from the task hierarchy, so the cases
+assert the manager the topology names rather than the session the seat was spawned from. Case
+inventory, helpers and the fixture contract live on `test_state_signal_curator_wake.py.md`.
 
 ## Fixture Roles And Claims
 
@@ -833,6 +865,25 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   preservation requirement: `mcp/src` is byte-unchanged by this change set, and no case budget is quoted
   or raised — `pyproject.toml` is the authority. Verification metadata remains closeout-owned; no stamp
   advanced.
+
+- 2026-09-15T21:19+02:00 — 260831-LOCR-L07 curator (uncommitted change set on `ar/260831-locr-l07`,
+  base `e9678c56`): the route gained the curator turn owner wake (`LOCR-R07@v1`), so the
+  retained-route table was extended rather than annotated, immediately below the crash/restart
+  recovery row it shares its family with. New row and new section for
+  `test_state_signal_curator_wake.py` (the curator seat reaching the same shared role predicate and
+  current-manager routing as the worker seat; the durable payload carrying the curator role, the
+  subject leaf document, the mechanical outcome and the terminal evidence identity off the real
+  liveness sweep and the real agent-notifier sweep; one durable signal and never a second on
+  re-observation for both `completed` and `interrupted`; `failed` reaching terminal truth and
+  emitting nothing while the seat stays eligible; no verdict appended and no coherence/readiness
+  artifact written, with the coordination root read after the sweep compared against the premise;
+  and the fail-closed refusal when the curator's own master has no current manager). The manifest
+  row citations this card carries were re-derived against the manifest as it now stands, because the
+  leaf's new unit-regression row at `:102` moves every cited row from `:102` down by one; three of
+  them — the L34, L36 and L37 registrations — were already adrift of the source before this leaf.
+  This is a preservation leaf: `mcp/src` is unchanged and no case budget was touched. Lane membership
+  and its brackets live on the `test-evidence-lanes.toml` card, the owner of record. Verification
+  metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`): the route gained the observer-health proof, so the retained-route table was extended
