@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T13:20+02:00 |
-| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f` |
-| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
+| lastUpdated | 2026-09-15T14:10+02:00 |
+| lastVerifiedCommitHash | `d868486c07ac14d8af6d0d5555dbda4f3b737785` |
+| lastVerifiedCommitDate | 2026-09-15T14:14:36+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -44,7 +44,7 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Durable state and event-loop liveness | `test_durable_store_contract.py`, `test_cross_store_lock_order.py` | Thread/process ordering and actual store outcomes, bounded by watchdogs. |
 | Candidate and protected-ref safety | `test_git_command.py`, `test_integration_branch_authority.py` | Real Git identity, private commits, hooks and race preservation. The former `test_integration_ref_transaction.py` was deleted with the removed mid-crash ref-recovery capability. |
 | Terminal liveness cadence and readiness | `test_terminal_liveness.py` | Controlled-clock sweeper checks preserve the configured full-sweep interval and the one-second starting-row path with its four-row cap; lifecycle production wiring remains a separate candidate proof. |
-| Serving-owned steady-state observation | `test_serving_observation_loop.py` | The real `_serving_lifespan` finalizer under a virtual event-loop clock with no HTTP route registered: the completion-relative `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` sleep after each attempt (including a failed one), attempt non-overlap when a pass outruns its tick, the sweeper's retained ten-second full-sweep limit, observation continuing while `agent_notifier.enabled` is false, the off-loop refresh through the drained helper, exactly one observer task cancelled at teardown, and a failed pass that neither marks success nor changes cadence. Unit lane; the sweeper's own cadence files stay the owners of their clocks. The notifier's pre-existing inline refresh is out of this proof. |
+| Serving-owned steady-state observation and pass-failure isolation | `test_serving_observation_loop.py` | The real `_serving_lifespan` finalizer under a virtual event-loop clock with no HTTP route registered: the completion-relative `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` sleep after each attempt (including a failed one), attempt non-overlap when a pass outruns its tick, the sweeper's retained ten-second full-sweep limit, observation continuing while `agent_notifier.enabled` is false, the off-loop refresh through the drained helper, exactly one observer task cancelled at teardown, and a failed pass that neither marks success nor changes cadence. Its `ServingObservationFailureIsolationTests` half then pins the failure boundary itself on the real task collection: one unexpected pass failure leaves the owner scheduled and the five sibling loops plus an in-process ASGI request alive, publishes nothing durable (with a control proving a *successful* pass does change the tree), and retries on the cadence alone from the current persisted catalog while rows, the emitted-signal marker and the workspace cursor survive; cancellation still ends the task because the boundary is `except Exception` and `CancelledError` is a `BaseException`. Unit lane; the sweeper's own cadence files stay the owners of their clocks. The notifier's pre-existing inline refresh, and any structured observer-failure *publication* surface, are out of this proof. |
 
 | Deferred terminal work | `test_terminal_liveness_deferred_work.py` | Real catalog/sweeper proof that hosted-interaction syncs and turn callbacks run after commit, aborted batches dispatch nothing, and post-commit failures preserve durable truth. Caller ownership remains adjacent lifecycle work. |
 | Terminal catalog liveness | `test_terminal_liveness.py` | Fake-clock host/control-read hysteresis, restart continuity, and successful reset against existing production transitions. This row is the LOCR-R21 hysteresis proof only: cadence (`R12`) and sweep non-overlap (`R22`) cases for the same module are still in their own unlanded worktrees, so the composed module's case count and extents will be larger than this leaf's four cases. |
@@ -700,6 +700,24 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-15T14:10+02:00 — 260831-LOCR-L11 curator (uncommitted test-only change set on
+  `ar/260831-locr-l11`, base `163ba8a9`): route impact confined to the existing
+  `test_serving_observation_loop.py` row, which this pass retitled and extended rather than
+  duplicated. The module gained `ServingObservationFailureIsolationTests` (five cases, anchors
+  `594-801`) beside the unchanged seven-case `ServingObservationLoopTests` (`399-591`), so the row now
+  records the failure boundary as its own proof: one unexpected pass failure leaves the owner scheduled
+  and the five sibling loops plus an in-process ASGI request alive, publishes nothing durable under a
+  control proving a *successful* pass does change the tree, retries on the cadence alone from the
+  current persisted catalog while rows, the emitted-signal marker and the workspace cursor survive, and
+  still propagates cancellation because the boundary is `except Exception` while `CancelledError` is a
+  `BaseException`. The row's closing exclusion was widened from the notifier's inline refresh to also
+  exclude any structured observer-failure *publication* surface, because a reader must not take this
+  module as evidence for an observer-health contract it deliberately does not assert. No production
+  byte changed for this contract (`_app_lifespan.py` sha256 `7c36ea83…`, unchanged since L01) and the
+  new cases are ordinary version-controlled test source, not a governed evidence artifact. The module's
+  lane membership is unchanged and its lane row did not move; the detail lives on
+  `test_serving_observation_loop.py.md`. Verification metadata remains closeout-owned.
 
 - 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator, **citation repair in an edited document** (same
   change set): corrected the L36 cross-master forcing row's six case ranges, which had drifted

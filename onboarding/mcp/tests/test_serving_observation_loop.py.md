@@ -5,26 +5,29 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_serving_observation_loop.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T13:19+02:00 |
-| lastVerifiedCommitHash | `163ba8a9798228b7f912eec05646f31e79f6b26e` |
-| lastVerifiedCommitDate | 2026-09-15T13:37:09+02:00|
+| lastUpdated | 2026-09-15T14:10+02:00 |
+| lastVerifiedCommitHash | `d868486c07ac14d8af6d0d5555dbda4f3b737785` |
+| lastVerifiedCommitDate | 2026-09-15T14:14:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [Tests overview](overview.md)
 
-Reviewed at 2026-09-15T13:19+02:00 against the leaf base `67b21aeb`; the module itself is an
-uncommitted candidate at that base, so no commit verifies it yet and normal closeout owns the final
-verification-metadata stamping.
+Reviewed at 2026-09-15T14:10+02:00 against the leaf base `163ba8a9798228b7f912eec05646f31e79f6b26e`; the module itself
+remains an uncommitted candidate at that base, so no commit verifies it yet and normal closeout owns
+the final verification-metadata stamping.
 
 ## Purpose
 
-This hermetic unit-regression module proves that the serving lifespan — not an HTTP route and not the
-agent notifier — owns the steady-state terminal-catalog observation clock. It enters the real
-`_serving_lifespan` finalizer under a virtual event-loop clock shared with the sweeper's own datetime
-clock, so the attempt cadence, attempt non-overlap, and the sweeper's retained rate limits are
-observed deterministically with no HTTP request, no browser, and no real second.
+This hermetic unit-regression module pins two distinct guarantees about the same serving background
+owner. Its first class proves that the serving lifespan — not an HTTP route and not the agent
+notifier — owns the steady-state terminal-catalog observation clock. Its second class proves that one
+unexpected failure inside a single observation pass is contained: the recurring observer survives and
+retries, unrelated serving loops keep running, and no durable truth is lost or invented. Both enter
+the real `_serving_lifespan` finalizer under a virtual event-loop clock shared with the sweeper's own
+datetime clock, so cadence, attempt non-overlap, the sweeper's retained rate limits, and the failure
+boundary are observed deterministically with no HTTP request, no browser, and no real second.
 
 ## Code Commentary
 
@@ -36,42 +39,74 @@ tick), `release` completes the oldest parked sleep by its own delay. `_RefreshPr
 ordered call/return/sleep timeline for the `refresh` the observation owner invokes, and
 `_ServingFixture` composes the real `TerminalCatalog`, `TerminalCatalogLivenessSweeper`, a live fake
 tmux host, and a `SimpleNamespace` serving runtime in which every sibling background loop is parked on
-an event instead of being individually faked.
+an event instead of being individually faked. `_ServingFixture` records every task the lifespan
+creates through the module's own `create_task` patch point, which is what lets a case assert on the
+real `asyncio.Task` objects rather than on a mock's call log; `_background_tasks` filters out the
+off-loop `to_thread` workers those loops spawn, and `_observer_tasks` selects the owner by its
+coroutine's `__qualname__`.
 
-The cases assert the ordered timeline `call started → call ended → sleep(DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS)`
-per attempt; that a pass outrunning three nominal ticks still yields exactly one follow-up attempt;
-that 25 one-second attempts against the real sweeper produce only three full sweeps because the
-ten-second clock stayed inside the sweeper; that observation continues at 1.0 s while the real
-notifier loop runs with `agent_notifier.enabled = False` and `run_agent_notifier_sweep` is never
-called; that the refresh runs on a worker thread through `_to_thread_drained_on_cancel` with no
-terminal-session route registered; that teardown cancels exactly one observer task, leaves no parked
-sleep, and performs no further refresh before `host.shutdown()`; and that a failed pass neither marks
-success nor changes cadence.
+`ServingObservationLoopTests` asserts the ordered timeline `call started → call ended →
+sleep(DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS)` per attempt; that a pass outrunning three nominal ticks
+still yields exactly one follow-up attempt; that 25 one-second attempts against the real sweeper
+produce only three full sweeps because the ten-second clock stayed inside the sweeper; that
+observation continues at 1.0 s while the real notifier loop runs with `agent_notifier.enabled = False`
+and `run_agent_notifier_sweep` is never called; that the refresh runs on a worker thread through
+`_to_thread_drained_on_cancel` with no terminal-session route registered; that teardown cancels exactly
+one observer task, leaves no parked sleep, and performs no further refresh before `host.shutdown()`;
+and that a failed pass neither marks success nor changes cadence.
+
+`ServingObservationFailureIsolationTests` extends the same harness additively —
+`_RefreshProbe.fail_on` fails exactly one later attempt while `.outcomes` records each attempt's own
+verdict, and `_LiveHost.probed` records which tmux name each sweep probed — and adds `_durable_tree`
+(every durable file under the case root as relative path → sha256), `_background_tasks`,
+`_serving_probe_route`, `_seed_emitted_signal_marker` and `_seed_workspace_cursor`. Its five cases
+drive the real lifespan task collection and the real sweeper over a real catalog: five sibling loops
+stay alive across a failed pass while the real notifier loop keeps reaching its own cadence with its
+sweep uncalled, an in-process ASGI request through the same app object still answers 200, and teardown
+then cancels every task and calls `host.shutdown()` exactly once; the durable tree is byte-identical
+across the failed pass with a control proving the preceding *successful* pass did change it; the retry
+is triggered by the cadence alone, on the same task object, with the tree still byte-identical so no
+catalog edit and no HTTP request was needed; rows, an emitted-signal marker and the workspace cursor
+committed ahead of an independent later failure survive it, and the retry then probes the row committed
+ahead of the failure (`host.probed == ["ar-seat-1", "ar-seat-1", "ar-seat-2"]`); and a cancellation
+still ends the task, drains the in-flight pass, and never resumes the loop.
 
 ### Conventions
 
 `unittest.IsolatedAsyncioTestCase` with module-local private harness classes; temporary catalogs and
 an in-process runtime rather than a parallel fake of the production seams. The module issues no HTTP
-request, starts no process, and publishes nothing, so it is classified in the repository's
-`unit-regression` evidence lane (the `test_terminal_liveness_deferred_work.py` /
-`test_active_projector_singleflight.py` neighbours, not the `TestClient`-based `test_serving.py`
-integration neighbours). Focused host results are development evidence and grant no certification
-authority.
+request except the one in-process ASGI probe that asserts the serving surface stays up, starts no
+process, and publishes nothing, so it is classified in the repository's `unit-regression` evidence
+lane (the `test_terminal_liveness_deferred_work.py` / `test_active_projector_singleflight.py`
+neighbours, not the `TestClient`-based `test_serving.py` integration neighbours). Focused host results
+are development evidence and grant no certification authority.
 
 ### Invariants And Boundaries
 
 The observation sleep must follow each attempt's return, including a failed one, and the attempt
-cadence must be read from `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS`; a fixed-tick (sleep-first)
-shape, a literal cadence, a notifier-enabled gate, an overlapping fire-and-forget attempt, or an
-observer the lifespan does not cancel each fail a named case. The module claims nothing about the
-sweeper's own internals beyond its retained ten-second full-sweep limit, and nothing about the
-notifier's pre-existing inline refresh — that remains a second recurring caller whose future is a
-separate decision, so no case asserts its presence or absence. Pass-failure retry and error
-*semantics* are likewise not claimed: the failure case asserts only cadence and survival.
+cadence must be read from `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS`; a fixed-tick (sleep-first) shape,
+a literal cadence, a notifier-enabled gate, an overlapping fire-and-forget attempt, or an observer the
+lifespan does not cancel each fail a named case.
+
+A pass that raises must leave the owner scheduled, leave every sibling background loop and the HTTP
+surface intact, publish nothing durable, and retry from the current persisted catalog on the next
+cadence without any external trigger. The boundary is `except Exception`, which is load-bearable only
+because `asyncio.CancelledError` derives from `BaseException`: the module asserts that inheritance
+directly, and widening the boundary to `BaseException` fails the cancellation case alone. A durable
+tree that is byte-identical across the failure path is only meaningful because the same case proves a
+*surviving* pass does change it, so the identity is a result about the failure and not about a tree
+nothing writes.
+
+The module claims nothing about the sweeper's own internals beyond its retained ten-second full-sweep
+limit, and nothing about the notifier's pre-existing inline refresh — that remains a second recurring
+caller whose future is a separate decision, so no case asserts its presence or absence. It also claims
+nothing about the shape, content, retention or log format of observer-failure *publication*: a
+structured observer-failure surface is a different requirement's contract, and no case here asserts on
+log text.
 
 ### Todos
 
-None. The module is complete for its leaf's requirement; a future change to the notifier's inline
+None. The module is complete for its leaves' requirements; a future change to the notifier's inline
 refresh belongs to the leaf that decides it.
 
 ## Docs References
@@ -93,7 +128,9 @@ references describe the behavior under test and do not claim a certification res
 | That attempt cadence is the sweeper's own starting-row interval constant, read at its declaration. | "DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS = 1.0" | mcp/src/agents_remember/serving/terminal_liveness.py:57-57 |
 | The lifespan creates the observer unconditionally and cancels/awaits it with the other background loops. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:232-284 |
 | The sweeper keeps its own starting-row window and ten-second full-sweep limit behind `refresh`. | `refresh`; `_refresh_starting_rows`; `_starting_rate_limited`; `_rate_limited` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221; mcp/src/agents_remember/serving/terminal_liveness.py:223-268; mcp/src/agents_remember/serving/terminal_liveness.py:270-282 |
-| The module drives the real lifespan finalizer, the real sweeper, and its seven cases with a virtual clock and no HTTP surface. | `ServingObservationLoopTests` | mcp/tests/test_serving_observation_loop.py:318-510 |
+| The module drives the real lifespan finalizer, the real sweeper, and its cadence cases with a virtual clock and no HTTP surface. | `ServingObservationLoopTests` | mcp/tests/test_serving_observation_loop.py:399-591 |
+| One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable is published, the retry resumes from the current catalog, and cancellation still ends the task. | `ServingObservationFailureIsolationTests` | mcp/tests/test_serving_observation_loop.py:594-801 |
+| The failure boundary is `except Exception` and therefore cannot absorb cancellation, because `CancelledError` is a `BaseException`. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:88-93 |
 | The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_observation_loop.py" | mcp/tests/test-evidence-lanes.toml:97-97 |
 
 ## Cross-Repo References
@@ -105,6 +142,26 @@ unit-regression module.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T14:10+02:00 — 260831-LOCR-L11 curator (uncommitted test-only change set on
+  `ar/260831-locr-l11`, base `163ba8a9`): the module gained `ServingObservationFailureIsolationTests`
+  (five cases) plus additive harness members (`_RefreshProbe.fail_on`/`.outcomes`, `_LiveHost.probed`,
+  `_durable_tree`, `_background_tasks`, `_serving_probe_route`, `_seed_emitted_signal_marker`,
+  `_seed_workspace_cursor`), so this card's three stale assertions were corrected in the body rather
+  than overridden: the case census is **12** in two classes (not seven in one), the class anchors are
+  `399-591` and `594-801` (not `318-510`), and the module **does** now pin pass-failure retry and error
+  semantics — the previous "likewise not claimed" sentence was inverted by this change set. Recorded
+  the new current contract (one failed pass leaves the owner scheduled, five sibling loops and the
+  serving surface intact, publishes nothing durable under a control proving a successful pass does
+  change the tree, and retries from the current persisted catalog on the cadence alone) together with
+  the boundary-safety invariant that makes the isolation compatible with shutdown:
+  `except Exception` cannot swallow `CancelledError`, so widening it to `BaseException` fails the
+  cancellation case alone. Also recorded the negative boundary that the module still does not claim
+  structured observer-failure *publication* — that belongs to a separate requirement — so a future
+  reader does not read this card as evidence for an observer-health surface. Production is byte-unchanged
+  by this change set (`_app_lifespan.py` sha256 `7c36ea83…`, the identity the L01 reviewer recorded);
+  this leaf's deliverable is the proof envelope, not a production edit. Verification metadata remains
+  closeout-owned; no stamp advanced.
 
 - 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator: created this file card for the leaf's new
   steady-state observation suite. Recorded the current contract it protects (a serving-lifespan-owned,
