@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T13:20+02:00 |
-| lastVerifiedCommitHash | `47114235809506b83a29d1fd9dbbcd770664bfa8` |
-| lastVerifiedCommitDate | 2026-09-15T13:53:13+02:00|
+| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f` |
+| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -114,6 +114,8 @@ stamped')`, zero submissions, row untouched) with recovery then stamping and lan
 future touch of this module would be stronger with that real-sweep drain-fence assertion recorded as a
 case; it is not authorized scope for this leaf. Case inventory, helpers and the contract narrative live
 on `test_state_signal_restart_recovery.py.md`.
+
+| Terminal catalog reads are side-effect free | `test_serving_terminal_catalog_read.py` | The real registered `GET /api/terminal/sessions` route driven over `fastapi.testclient.TestClient` and the real composed `create_app`: one hundred requests produce one hundred equivalent answers with every ledger at zero; probe, cursor advance, row mutation and compaction each fail on their **own** instrument rather than as one aggregate; the no-adapter-probing clause is pinned at the readers themselves, by name **and** by object identity, so a route-side read bound through a module-level `import … as` alias is counted too; a catalog change between two reads is attributable to the background observer, and an observer that has failed still serves the stored snapshot instead of being repaired by the request; and path, declared model, conditional-key behaviour and status semantics are unchanged through the composed app. Integration lane, one new module, no production route behaviour beyond removing the handler's sweep. Two limits are recorded rather than papered over: a reader reached through anything that is not a module global (a function default, closure cell, class attribute, dict entry or instance attribute) stays outside the reader ledger, and the 100-GET case is content-vacuous on its own, so content is pinned by the composed-app and failed-observer cases. |
 
 ## Fixture Roles And Claims
 
@@ -801,6 +803,16 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   execution or acceptance evidence; verification metadata remains closeout-owned and no stamp
   advanced.
 - 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: recorded the route's new state-signal crash/restart recovery executor (`test_state_signal_restart_recovery.py`, unit-regression row `:101`) — a route-table row plus a section carrying the durable order it forces, the seven cases, the non-vacuity witness, and the review verdict's coverage limit that the fence's reachable route is the boundary drain rather than the generic finder. Route purpose, lane membership accounting and every other module's coverage claim are unchanged by this leaf.
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
+  base `67b21aeb`): this route gained one integration member, so the `## Retained Behavioral Routes`
+  table gained the row *Terminal catalog reads are side-effect free* for
+  `test_serving_terminal_catalog_read.py` — the route-projection purity proof, with both of its
+  instrument limits stated in the row rather than left implicit. The card's `lastVerifiedCommitHash`
+  stays pinned: the candidate is uncommitted and verification metadata is closeout-owned. The facts
+  this route already carried — `GET /api/terminal/sessions` and `GET /api/harnesses` are the two
+  handlers whose `response_model` is live FastAPI validation, and the exact 52-key AST pin behind
+  them — are unchanged and were re-read: the new module asserts the same declaration and the same
+  conditional key set, so those historical entries stand as written.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

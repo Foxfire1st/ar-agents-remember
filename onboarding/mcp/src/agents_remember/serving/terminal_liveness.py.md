@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-09-15T13:36+02:00 |
-| lastVerifiedCommitHash | `47114235809506b83a29d1fd9dbbcd770664bfa8`                                             |
-| lastVerifiedCommitDate | 2026-09-15T13:53:13+02:00|
+| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f`                                             |
+| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -19,9 +19,13 @@
 `terminal_liveness.py` owns protocol-derived liveness/activity projection for durable dashboard
 terminal catalog rows through a **rate-limited, non-overlapping sweeper**
 (`TerminalCatalogLivenessSweeper`) plus the **shared single-row observation path**
-(`observe_terminal_liveness`) that the sessions endpoint, WebSocket attach, and server-side paste
-all route through. It decouples tmux probing cadence from the dashboard refresh cadence (the 1s
-projection tick / `/api/terminal/sessions` polling no longer implies 1s tmux probing) and replaces
+(`observe_terminal_liveness`) that WebSocket attach, the server-side paste target
+(`_live_paste_target`), and the harness-control routes all route through. The sweeper's own
+steady-state driver is the serving lifespan (`_app_lifespan.py::_terminal_observation_loop`); the
+terminal-session GET is **not** among its callers — that route projects `runtime.catalog.list()` and
+names no sweeper (see `## 260831-LOCR-R02 Current Delta`). The module decouples tmux probing cadence
+from the dashboard refresh cadence (the 1s projection tick / `/api/terminal/sessions` polling no
+longer implies 1s tmux probing) and replaces
 `serving.app`'s deleted `_refresh_catalog_entries`, whose immediate exit-marks on any probe
 failure could mass-exit a live fleet during a transient tmux command-failure storm.
 
@@ -284,7 +288,7 @@ record.
 | --- | --- | --- |
 | The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:62-66 |
 | The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/models/terminal_catalog.py:486-516; mcp/src/agents_remember/models/terminal_catalog.py:518-551 |
-| The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
+| The app wiring: one sweeper whose steady-state caller is the serving lifespan's observation loop, direct observations on WebSocket attach + the live-paste target, injected clock. `GET /api/terminal/sessions` is not a caller — it projects `runtime.catalog.list()` and names no sweeper (see `## 260831-LOCR-R02 Current Delta`). | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
 | Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification, committed-snapshot contention, dirty-gated single-write batches. | "class TerminalCatalogLivenessTests(unittest.TestCase):" | mcp/tests/test_terminal_liveness.py:127-570 |
 | The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:159-173 |
 | The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | "Public pane capture used by liveness and bounded dispatch retry/failure evidence." | mcp/src/agents_remember/serving/terminal_paste.py:201-203 |
@@ -376,8 +380,9 @@ Three sweeper facts changed, all inside the existing non-blocking single-pass ar
 
 1. **Full-sweep contention** returns `self._catalog.list_committed()` instead of `self._catalog.list()`.
    The previous call could park on the catalog `RLock` held by the active batch, so a contended
-   `refresh()` — the `GET /api/terminal/sessions` path behind startup and steady-state overlap —
-   could stall instead of returning current state.
+   `refresh()` — at that time reachable from the `GET /api/terminal/sessions` path, today reached
+   only from the serving lifespan's observation loop and the notifier's inline refresh (see
+   `## 260831-LOCR-R02 Current Delta`) — could stall instead of returning current state.
 2. **The starting-row fast path acquires before it lists.** It previously listed rows, filtered the
    capped starting selection, and only then attempted the sweep lock, so a contender could block on
    the active catalog batch during that first list. It now attempts the shared lock first, returns
@@ -467,6 +472,49 @@ the evidence-lifecycle registration of the new test (all excluded by the require
   both stages, plus a new `## 260831-LOCR-R23 Current Delta` section and the current-order proof in
   `mcp/tests/test_terminal_liveness_registration_order.py`. No production byte changed for this leaf.
   Verification metadata remains pinned until closeout stamps the leaf code commit.
+## 260831-LOCR-R02 Current Delta — The GET Route Is No Longer A Sweeper Caller
+
+`260831-LOCR-L02` removed the terminal-session GET route's call to
+`runtime.liveness_sweeper.refresh()`: `api_terminal_sessions` now serializes `runtime.catalog.list()`
+and the route module names no sweeper. Nothing inside `terminal_liveness.py` changed — this is a
+correction of *who calls the sweeper*, so this card's account of the caller moves and the module's
+own contract does not.
+
+Three sentences in this card said the route was a caller; all three are corrected in the body rather
+than left for a later block to override:
+
+1. **The `## Purpose` paragraph** said `observe_terminal_liveness` is the shared path "that the
+   sessions endpoint, WebSocket attach, and server-side paste all route through". The sessions
+   endpoint is no longer among them; WebSocket attach (`_app_common.py:363`), the live-paste target
+   (`_app_terminal_routes.py:429-440`), and the harness-control routes (`harness_control_api.py:651`)
+   are.
+2. **The `## Repo-Internal References` app-wiring row** said "one sweeper behind
+   `GET /api/terminal/sessions`". The sweeper's steady-state driver is the serving lifespan's
+   observation loop; the GET route is not a caller.
+3. **The `## 260831-LOCR-L22 Current Delta` contention note** described a contended `refresh()` as
+   "the `GET /api/terminal/sessions` path". That was true when written and is now historical; the
+   sentence states the current callers and keeps the L22 contract itself (the contention read, the
+   admission-before-list ordering, the final-only projection) unchanged.
+
+`refresh()`'s own behaviour is preserved exactly: rate-limited to ≤1 full probe sweep per 10s,
+non-overlapping, the bounded one-second starting-row fast path, the committed-snapshot contention
+read, one dirty-gated catalog batch per admitted path, and the post-batch registration-then-compaction
+order. Those are owned by LOCR-R12/R21/R22/R23/R27 and are untouched here. This leaf also does **not**
+decide the notifier's pre-existing inline refresh, which remains a second recurring caller.
+
+## Update History
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
+  base `67b21aeb`). **No change to this module's source** — the leaf removes the terminal-session GET
+  route's call to `liveness_sweeper.refresh()`, so this card's *caller* account moved while the
+  sweeper's own contract did not. Three stale body claims were corrected in place rather than
+  overridden: the `## Purpose` sentence naming the sessions endpoint among `observe_terminal_liveness`
+  callers, the `## Repo-Internal References` app-wiring row's "one sweeper behind
+  `GET /api/terminal/sessions`", and the L22 contention note's characterization of a contended
+  `refresh()` as the GET path (kept as historical with its current callers named). The new
+  `## 260831-LOCR-R02 Current Delta` section records the correction and re-affirms that
+  `refresh()`'s rate limits, fast path, contention read, batching and post-commit order are unchanged
+  and remain with R12/R21/R22/R23/R27. Verification metadata stays closeout-owned: the candidate is
+  uncommitted, so no stamp advanced.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: reconciled the sweeper card with the
   committed-snapshot contention read, the starting-path admission-before-list ordering, and the

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T13:19+02:00 |
-| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6` |
-| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
+| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f` |
+| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -259,9 +259,12 @@ Terminal catalog observation is a serving-lifespan responsibility, not a request
 existing `TerminalCatalogLivenessSweeper.refresh` through the drained off-loop helper and sleeps
 `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` only after each attempt returns, so the cadence is
 completion-relative and non-overlapping, and a closed dashboard, a headless process, a model turn, or
-a disabled agent notifier cannot stop catalog turn truth from advancing. The terminal-session GET
-route and the notifier's own inline refresh remain consumers of the same sweeper; neither is the
-ownership contract, and the sweeper's starting-row and full-sweep clocks stay inside the sweeper.
+a disabled agent notifier cannot stop catalog turn truth from advancing. The notifier's own inline
+refresh remains a consumer of the same sweeper and is not the ownership contract. The
+terminal-session GET route is **projection-only and names no sweeper at all** — it serializes the
+current catalog snapshot and cannot itself make that snapshot newer — so it is not a consumer of
+this clock either (`LOCR-R02@v1`). The sweeper's starting-row and full-sweep clocks stay inside the
+sweeper.
 
 ### Historical Slice-04 Through HFX Serving Account
 
@@ -762,14 +765,17 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   claim or move the structural binding for an existing session without respawn; delegates to
   `terminal_task_assignment.assign_terminal_session_to_task`, returning typed invalid/taken/unknown
   refusals without mutation or the accepted binding), `GET
-  /api/terminal/sessions` (return non-terminated sessions via
-  `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
-  non-overlapping; a rate-limited caller still runs the bounded one-second starting-row fast path,
-  and a caller that loses the non-blocking sweep lock returns the last ATOMICALLY REPLACED catalog
-  file (`TerminalCatalog.list_committed()`) rather than a snapshot read that would wait on the
-  active sweep's batch lock; each admitted path observes its selection inside exactly one
-  dirty-gated catalog batch, so a clean sweep performs zero file replacements and a dirty one
-  performs exactly one; WebSocket attach + the paste
+  /api/terminal/sessions` (a PROJECTION of stored state only: it serializes
+  `runtime.catalog.list()` through `_catalog_payload` and cannot itself make that snapshot newer —
+  no sweep, no adapter probe, no evidence-cursor advance, no row mutation, no compaction, and the
+  module names no sweeper at all. Observation is the serving lifespan's own clock, so a caller may
+  observe a snapshot between two background ticks and a closed dashboard, a headless process, or a
+  disabled notifier cannot stop turn truth from advancing. `list()` rather than `list_committed()`
+  because a request thread waits for an in-flight batch on the catalog `RLock` and then reads
+  committed bytes, whereas `list_committed()` is the sweeper's own non-blocking contention read and
+  can serve a demonstrably older snapshot; the resulting wait is bounded, lands on a threadpool
+  worker because the handler is a plain `def`, never the event loop, and is strictly smaller than
+  the full inline sweep it replaced; WebSocket attach + the paste
   endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
   replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
   `POST /api/terminal/{session}/terminate` (kill tmux and mark the catalog row terminated),
@@ -961,6 +967,19 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   refresh should remain a second recurring caller is not decided here. Verification metadata remains
   closeout-owned; no stamp advanced.
 - 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: extended the current structural seat and routing contract with the state-signal durable order and its recovery identity. The row is persisted before the emitted marker, which is now stamped from `OwnerSignalOptions.after_persist` inside `_post_owner_signal` and strictly before any delivery attempt; delivery eligibility is re-checked at the shared action by `_state_signal_awaits_marker`, which `_drain_boundary` inherits, so predicate order is not the protection. Coalescing for `state-signal` rows is the exact `subjectAgentId` plus the normalized ask, while every other kind keeps the structural task-document + role key. Canonical seat selection, boundary-drain admission, and the shared delivery path itself are unchanged.
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
+  base `67b21aeb`): the route account changed, so this overview's served-surface list was corrected
+  in the body rather than annotated. The `GET /api/terminal/sessions` clause said the route returned
+  `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()` — a producer with a rate-limited fast
+  path and a committed-snapshot contention read. It now states the current contract: the route
+  serializes `runtime.catalog.list()` through `_catalog_payload` and cannot make its own snapshot
+  newer, names no sweeper, probes nothing, writes nothing, and compacts nothing; observation is the
+  serving lifespan's own clock. The `list()`-versus-`list_committed()` ruling is recorded with its
+  reason (a request thread waits on the batch `RLock` and then reads committed bytes, while
+  `list_committed()` is the sweeper's own contention read and can serve an older snapshot), together
+  with the accepted bounded wait on a threadpool worker and the unchanged WebSocket-attach/paste
+  direct observations. The sweeper's own card carries the matching correction to its caller account.
+  Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.

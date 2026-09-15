@@ -6,8 +6,8 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `47114235809506b83a29d1fd9dbbcd770664bfa8` |
-| lastVerifiedCommitDate | 2026-09-15T13:53:13+02:00|
+| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f` |
+| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -400,6 +400,18 @@ No separate cross-repository authority is established by this file.
 
 - 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: registered the change set's new `mcp/tests/test_state_signal_restart_recovery.py` in the **unit-regression** lane at entry row `:101` — its seven cases drive one temporary durable world per case through the retained sweep/action entry points with an injected store fault or a structural rebind, so the hermetic default lane is its behaviour-preserving classification — and re-measured the manifest rather than carrying the L3 numbers: 208 modules on disk and 208 manifest entries, 117 unit-regression (5-122), 2 public-contract (124-126), 60 integration (128-188), 16 architecture-fitness (190-206), 13 provider-conformance (208-221), stress-durability and migration empty. The insertion sits near the end of the unit run, so no row this card cites moved. The module's own card owns the case inventory; this row is selection and cost classification only. Verification metadata remains closeout-owned.
 
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
+  base `67b21aeb`): registered the change set's new `mcp/tests/test_serving_terminal_catalog_read.py`
+  in the **integration** lane (entry row 171) — it drives the real registered route over
+  `fastapi.testclient.TestClient` and the real composed `create_app`, so the boundary lane is its
+  behaviour-preserving classification — and re-measured the manifest rather than carrying a count:
+  208 modules on disk and 208 manifest entries, 116 unit-regression, 2 public-contract, 61
+  integration, 16 architecture-fitness, 13 provider-conformance, stress-durability and migration
+  empty, with the 250-case integration ceiling (`pyproject.toml:150`) unchanged and no budget raised.
+  A `## 260831-LOCR-L02 Lane Row (Declared)` section records the measurement and states explicitly
+  that it is this leaf's as-of population over base `67b21aeb`, because concurrent sibling leaves
+  landed their own rows on the same source branch. The Purpose paragraph gained the matching clause.
+  Verification metadata stays closeout-owned: the candidate is uncommitted, so no stamp advanced.
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): registered the change set's new `mcp/tests/test_memory_backfill.py` in the
   **unit-regression** lane at entry row 69 — its cases drive the backfill plan and apply paths against
