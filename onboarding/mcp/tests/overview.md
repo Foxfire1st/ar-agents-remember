@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastUpdated | 2026-09-15T13:20+02:00 |
+| lastVerifiedCommitHash | `b368b66106302cfb90ff8b94afc49caa04b09457` |
+| lastVerifiedCommitDate | 2026-09-15T13:29:17+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -77,6 +77,7 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Sub-task index reachability across a writer skew | `test_task_documents_graph_projection.py` (`SubTaskIndexReachabilityTests`) | Projection-only unit evidence that a completed leaf whose durable JSON carries a field this reader's schema does not know stays reachable from the master's sub-task index, an unstarted row keeps resolving, and a document with a required field deleted is still withheld. `_index_doc` reproduces the dashboard's own index rule (`sliceForRef`) rather than approximating it. Hermetic temporary task root; one case, one helper, no lane change. |
 | Cross-master concurrency on one protected source pair | `test_cross_master_concurrency.py`, `test_atomic_series_activation.py` | One sprint commands every atomic master from its own source branches, so two atomic masters share one protected source pair; each keeps its own activation record. Both masters stay ready and progress, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks no sibling (the same statement the stop-only pause now makes as a real public operation, `worktree_pause`, proved separately in `test_pause_stop_only_end_to_end.py`), a conflicting or stale publication is refused at the pair (`blocked-non-ff`, `atomic-series-checkpoint-candidate-moved`), and a master that reconciles with a landed sibling finishes through ordinary public closeout and final integration rather than a checkpoint. A graph-less sprint serializes nothing — `executionGraph=None` resolves to the `atomic-sequential` sprint shape (every commanded master executes atomically, no dependency is declared) and both masters hold their own activation concurrently with no waiting reason. Only a real sprint-graph wave edge still gates (`predecessor-incomplete:`). Integration lane: real temporary Git repositories and the public operations. |
 | Capacity refusal source classification | `test_closeout_projection_source_classification.py` | The three states of a projected source stay distinct on the code its own raiser published. `graph_context` refuses a sprint whose authored graph is one node past `MAX_CLOSEOUT_MASTERS` with `closeout-queue-master-capacity-exceeded` — its own declared code, read back from the refusal rather than retyped — and that code classifies `invalid`, because the source was read and is past its bound; `contract-unreadable` and `atomic-series-contract-unreadable` still report `unreadable`; and the ordinary projected source stays readable with no problems and classifies `active`. The classifier tests membership of `closeout_queue_errors.py`'s `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains. Integration lane: real temporary Git repositories through `QueueFixture` and the production graph admission path. |
+| Registration before compaction | `test_terminal_liveness_registration_order.py` | The full sweep's post-commit order, pinned where it happens: the traced terminated-row read records the batch-commit state observed **at the read**, so the chain `batch-enter → batch-exit → enumerate[include_terminated=True, batch=closed] → register → compact` fails if the enumeration moves inside or ahead of the observation batch. The registrar's returned proved-id set is the only argument `compact` receives, an absent registrar yields the empty proved set (so a task-bound leaf row survives), a raising registrar stops the pass before `compact`, a crash after registration re-registers idempotently on the next pass, and the starting-row fast path does neither stage. Hermetic unit lane; no production byte changes for this contract. |
 | Terminal blocker reasons | `test_terminal_blocker_reasons.py` | A cleanup or finalize blockage always names the component it stopped on and a non-empty reason. The L6 shape — terminal archive proven, provider runtime already gone — finalizes on the first call with an empty `notRemoved` inventory; a real permission failure on the provider tree blocks with `remove_tree`'s own `permission denied: ...` reason, closes nothing and refuses identically on retry; and both invariant owners are driven directly (`_blocker` refuses a missing, blank or non-string reason, and `remove_tree` names a reason whenever it reclaimed nothing). The L6 payload is reproduced through the provider port boundary, not by re-enacting the original physical event. Integration lane; one new module, no deleted module. |
 
 ## Fixture Roles And Claims
@@ -169,6 +170,20 @@ entry row 177 by the same change set that created it: it drives the public landi
 `lifecycle_finalize_task` routes over real temporary repositories and worktrees, so that is its
 behaviour-preserving lane. The `test-evidence-lanes.toml` card owns the per-lane brackets;
 membership is selection and cost classification only, never execution or acceptance evidence.
+
+**Current counts (260831-LOCR-L23 curator, measured at the current change set):** the L8 paragraph
+above is superseded. The manifest now holds 208 modules on disk and 208 entries — 117 unit-regression
+(entry rows 5-122), 2 public-contract (123-126), 60 integration (127-188), 16 architecture-fitness
+(189-206), 13 provider-conformance (207-221), with stress-durability (222-223) and migration (224-225)
+empty. The single addition is this leaf's `test_terminal_liveness_registration_order.py`, registered in
+the **unit-regression** lane at entry row 118 by the same change set that created it: it drives the
+real `TerminalCatalog` over `tempfile` catalogs and the real
+`TerminalCatalogLivenessSweeper.refresh` with in-process registrar/compactor doubles and no
+`worktree_services`, so it is hermetic and the default unit lane is its behaviour-preserving
+classification — the same lane as the sibling `test_terminal_liveness_deferred_work.py` at row 117. The
+insertion sits between two alphabetically adjacent rows, so it moved no other entry. The
+`test-evidence-lanes.toml` card owns the per-lane brackets; membership is selection and cost
+classification only, never execution or acceptance evidence.
 
 260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
 load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
@@ -619,6 +634,8 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:157-157 |
 | The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
 | The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
+| The L23 registration-order proof: the observed chain with the terminated-row read carrying its own batch-commit state, the partial-proof singleton, the raising registrar that stops the pass, the restart that re-registers and loses nothing, and the fast-path exclusion measured in both directions. | `test_due_sweep_registers_committed_terminated_rows_before_compaction`; `test_partial_registration_compacts_only_the_proven_rows`; `test_registration_failure_prevents_compaction_and_leaves_rows_retryable`; `test_restart_after_registration_before_compaction_reregisters_and_loses_nothing`; `test_starting_fast_path_neither_registers_nor_compacts_while_the_due_sweep_does` | mcp/tests/test_terminal_liveness_registration_order.py:154-246; mcp/tests/test_terminal_liveness_registration_order.py:248-278; mcp/tests/test_terminal_liveness_registration_order.py:280-310; mcp/tests/test_terminal_liveness_registration_order.py:312-358; mcp/tests/test_terminal_liveness_registration_order.py:360-403 |
+| The L23 lane registration the fail-closed manifest requires, inserted between two alphabetically adjacent rows so no other entry moved. | "mcp/tests/test_terminal_liveness_registration_order.py" | mcp/tests/test-evidence-lanes.toml:118-118 |
 | **260913-LCA-L8:** the new module's lane registration, added by the same change set that created it — integration, because it drives the public landing, integration and finalization routes over real temporary repositories and worktrees. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:178-178 |
 | **260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason`; `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220; mcp/tests/test_terminal_blocker_reasons.py:223-243; mcp/tests/test_terminal_blocker_reasons.py:246-259 |
 | **260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item. | `_blocker`; `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:639-655; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:624-636 |
@@ -645,6 +662,21 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-15T13:20+02:00 — 260831-LOCR-L23 curator (uncommitted change set on `ar/260831-locr-l23`,
+  base `67b21aeb`): added the route's registration-before-compaction row — the new
+  `mcp/tests/test_terminal_liveness_registration_order.py` pins the full sweep's post-commit order by
+  instrumenting the terminated-row read itself, so a reorganisation that reads the open batch or reads
+  ahead of it fails rather than passing silently — and reconciled the population sentence to the
+  measured manifest: 208 modules on disk and 208 entries, 117 unit-regression (entry rows 5-122), 2
+  public-contract (123-126), 60 integration (127-188), 16 architecture-fitness (189-206), 13
+  provider-conformance (207-221), with stress-durability (222-223) and migration (224-225) empty. The
+  insertion sits at entry row 118 between two alphabetically adjacent rows, so no other entry moved and
+  no lane changed; no production byte changed for this contract, and this route's own file cards
+  (`test-evidence-lanes.toml.md`, the new module's card) carry the detail. The new module is ordinary
+  version-controlled test source, not a governed evidence artifact. Membership remains selection and
+  cost classification only: it is not execution, certification or acceptance evidence, and this
+  route's verification metadata remains closeout-owned.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
