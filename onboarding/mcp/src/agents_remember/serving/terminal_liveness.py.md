@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-09-15T13:20+02:00 |
-| lastVerifiedCommitHash | `b368b66106302cfb90ff8b94afc49caa04b09457`                                             |
-| lastVerifiedCommitDate | 2026-09-15T13:29:17+02:00|
+| lastUpdated            | 2026-09-15T13:36+02:00 |
+| lastVerifiedCommitHash | `47114235809506b83a29d1fd9dbbcd770664bfa8`                                             |
+| lastVerifiedCommitDate | 2026-09-15T13:53:13+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -245,8 +245,21 @@ migration archaeology; they do not override the protocol-backed L5 contract abov
   Known limitation: a landed row whose tmux session dies later stays in the archive until explicit
   cleanup; attach performs the live check and fails instead of the sweeper reclaiming it.
 - The module never spawns, kills, or attaches tmux sessions and never mutates anything but
-  liveness state through `record_liveness_probe` (and, since HFX-L8, turn-state through
-  `record_turn_state` for harness rows).
+  liveness state through `record_liveness_probe` and turn/terminal truth through
+  `seat_turn_truth.record_turn_projection` (the module's only catalog write for turn truth —
+  `terminal_liveness.py:619`). **It does not call `catalog.record_turn_state`.** That method still
+  exists on the port and on `TerminalCatalog` (`serving/ports.py:179`,
+  `serving/terminal_catalog.py:265`) and is exercised by `mcp/tests/test_terminal_catalog.py:151`, but
+  no production caller uses it, and the per-entry-mutator sentence in
+  `terminal_catalog.py:285`'s `batch()` docstring names it as a sweep mutator it no longer is. This
+  bullet replaces an earlier claim that the module wrote turn state through `record_turn_state`
+  (260707-HFX-L8); that was true of the pre-authority-change sweep and is historical.
+- Turn truth is projected, not classified in place: `_record_adapter_turn_state` composes a
+  `CatalogTurnEvidence` stamp from the canonical adapter snapshot (or the literal `"stale"` on the R21
+  threshold and the legacy unsupported-control path) and hands it to
+  `seat_turn_truth.record_turn_projection`, so this module can never write a pane reading into
+  `turn_state`, `terminal_outcome`, `terminal_evidence_id`, `interrupted_by` or
+  `state_signal_emitted_for`.
 - Turn-state classification rides the SAME rate-limited sweep cadence as liveness — no separate
   cadence, no extra tmux round-trip beyond the one `pane_capturer` call per alive harness row per
   sweep. Only `kind == "harness"` rows are ever classified; plain `terminal` rows are untouched.
@@ -425,6 +438,25 @@ Not owned here: evidence identity (`LOCR-R10`), retention-period values, workspa
 the evidence-lifecycle registration of the new test (all excluded by the requirement packet).
 
 ## Update History
+- 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator (uncommitted change set on `ar/260831-locr-l27`,
+  base `b368b661`). **No content impact from this leaf's change set:** the leaf is a *preservation*
+  obligation and its delivery is evidence-only, so this module is byte-identical to the base
+  (`terminal_liveness.py` sha256 `151f1004…713f`, `git status --porcelain -- mcp/src` = 0 rows) and no
+  clause, ownership boundary or invariant of this card moves with it. The leaf's executable proof for
+  the same contract is the new card
+  [test_terminal_liveness_pane_authority.py](../../../tests/test_terminal_liveness_pane_authority.py.md).
+  **Recorded in the same pass — a body correction this leaf was asked to verify, not a change made by
+  this leaf's diff:** the `### Invariants And Boundaries` bullet claimed the module writes turn state
+  through `record_turn_state` "(since HFX-L8)". The source does not call it: the only turn-truth write
+  is `seat_turn_truth.record_turn_projection` at `terminal_liveness.py:619`, imported at `:35`.
+  `record_turn_state` remains on the port (`serving/ports.py:179`) and on `TerminalCatalog`
+  (`serving/terminal_catalog.py:265`) and is exercised by `mcp/tests/test_terminal_catalog.py:151`, so
+  it is not dead — only this card's claim about who calls it was stale, and the bullet now states the
+  current contract with a pointer to the stale docstring line at `terminal_catalog.py:285`. The
+  `### 260707-HFX-L8` history block below keeps the original pre-authority description, which was
+  accurate when written and is framed there as historical. Verification metadata stays pinned to the
+  base commit until closeout stamps the leaf code commit.
+
 - 2026-09-15T13:20+02:00 — 260831-LOCR-L23 curator: reconciled the sweeper card with the retained
   registration-before-compaction order. **Corrected a stale body claim**: `### 260707-HFX2-L12 CS-6
   Update` said compaction runs *inside* the observation batch; the source puts it after the commit

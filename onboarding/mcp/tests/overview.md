@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T13:20+02:00 |
-| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6` |
-| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
+| lastVerifiedCommitHash | `47114235809506b83a29d1fd9dbbcd770664bfa8` |
+| lastVerifiedCommitDate | 2026-09-15T13:53:13+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -81,6 +81,7 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Capacity refusal source classification | `test_closeout_projection_source_classification.py` | The three states of a projected source stay distinct on the code its own raiser published. `graph_context` refuses a sprint whose authored graph is one node past `MAX_CLOSEOUT_MASTERS` with `closeout-queue-master-capacity-exceeded` — its own declared code, read back from the refusal rather than retyped — and that code classifies `invalid`, because the source was read and is past its bound; `contract-unreadable` and `atomic-series-contract-unreadable` still report `unreadable`; and the ordinary projected source stays readable with no problems and classifies `active`. The classifier tests membership of `closeout_queue_errors.py`'s `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains. Integration lane: real temporary Git repositories through `QueueFixture` and the production graph admission path. |
 | Registration before compaction | `test_terminal_liveness_registration_order.py` | The full sweep's post-commit order, pinned where it happens: the traced terminated-row read records the batch-commit state observed **at the read**, so the chain `batch-enter → batch-exit → enumerate[include_terminated=True, batch=closed] → register → compact` fails if the enumeration moves inside or ahead of the observation batch. The registrar's returned proved-id set is the only argument `compact` receives, an absent registrar yields the empty proved set (so a task-bound leaf row survives), a raising registrar stops the pass before `compact`, a crash after registration re-registers idempotently on the next pass, and the starting-row fast path does neither stage. Hermetic unit lane; no production byte changes for this contract. |
 | Terminal blocker reasons | `test_terminal_blocker_reasons.py` | A cleanup or finalize blockage always names the component it stopped on and a non-empty reason. The L6 shape — terminal archive proven, provider runtime already gone — finalizes on the first call with an empty `notRemoved` inventory; a real permission failure on the provider tree blocks with `remove_tree`'s own `permission denied: ...` reason, closes nothing and refuses identically on retry; and both invariant owners are driven directly (`_blocker` refuses a missing, blank or non-string reason, and `remove_tree` names a reason whenever it reclaimed nothing). The L6 payload is reproduced through the provider port boundary, not by re-enacting the original physical event. Integration lane; one new module, no deleted module. |
+| Pane diagnostics are non-authoritative for turn truth | `test_terminal_liveness_pane_authority.py` | The pane's own reading is persisted only as `control_raw["paneDiagnostic"]`; adapter snapshots plus the canonical terminal projection own `turn_state`, terminal outcome/identity, interruption origin and state-signal eligibility. Ten cases pin the boundary: contradictory pane/adapter readings in both directions, **readiness** (an adapter `control="disconnected"`/`"failed"` snapshot with a `working` pane keeps the adapter's `control_state`, activity/acceptance `unknown`, turn `stale`), below-threshold retention with the `controlReadFailures` counter, the R21 third failure owning `disconnected`/`stale`, alive-starting retention, the legacy no-`control_endpoint` `unsupported`/`stale` projection proved never to consult the control surface, a failed terminal page advancing nothing, startup-prime and steady-pass sharing one boundary (`host.calls == 3` discriminates the fast path), a four-reading pane-independence matrix, and a negative AST source guard over `terminal_liveness.py` itself. This module is a **deliberate split** from the 574-line `test_terminal_liveness.py`, which it leaves byte-unchanged and from which it imports its fixtures; an in-place extension had reached the coding-guidelines 900-1200 band, so the two cards must not be merged. The source guard is defence-in-depth over behaviour, not the sole pin: it is measured blind to a pane-derived constant inside an enclosing `if`, to positional writer arguments and to `CatalogTurnEvidence(state=…)`, all three of which stay caught behaviourally. Integration lane; one new module, no production byte changed. |
 
 ## 260831-LOCR-L10 State-Signal Crash And Restart Recovery
 
@@ -658,7 +659,7 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:175-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
 | The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
 | The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
-| The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:465-512; mcp/tests/test_cross_master_concurrency.py:529-563; mcp/tests/test_cross_master_concurrency.py:565-620; mcp/tests/test_cross_master_concurrency.py:752-780; mcp/tests/test_cross_master_concurrency.py:784-852 |
+| The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:409-456; mcp/tests/test_cross_master_concurrency.py:473-507; mcp/tests/test_cross_master_concurrency.py:509-568; mcp/tests/test_cross_master_concurrency.py:754-822; mcp/tests/test_cross_master_concurrency.py:722-750 |
 | The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:146-146 |
 | The L37 stop boundary proof: the public pause, the measured world, the ten independently-failing cases and the four refusal shapes. Its never-selected case asserts the already-vacant success rather than a refusal, and the two L38 cases added after it pin the unreadable record and the vacant foreign record. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`; `test_an_unreadable_record_is_refused_not_reported_stopped`; `test_a_record_naming_another_master_is_refused_not_released` | mcp/tests/test_pause_stop_only_end_to_end.py:86-556; mcp/tests/test_pause_stop_only_end_to_end.py:150-168; mcp/tests/test_pause_stop_only_end_to_end.py:203-234; mcp/tests/test_pause_stop_only_end_to_end.py:236-263; mcp/tests/test_pause_stop_only_end_to_end.py:265-317; mcp/tests/test_pause_stop_only_end_to_end.py:445-471; mcp/tests/test_pause_stop_only_end_to_end.py:473-526 |
 | The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
@@ -669,6 +670,8 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
 | The L23 registration-order proof: the observed chain with the terminated-row read carrying its own batch-commit state, the partial-proof singleton, the raising registrar that stops the pass, the restart that re-registers and loses nothing, and the fast-path exclusion measured in both directions. | `test_due_sweep_registers_committed_terminated_rows_before_compaction`; `test_partial_registration_compacts_only_the_proven_rows`; `test_registration_failure_prevents_compaction_and_leaves_rows_retryable`; `test_restart_after_registration_before_compaction_reregisters_and_loses_nothing`; `test_starting_fast_path_neither_registers_nor_compacts_while_the_due_sweep_does` | mcp/tests/test_terminal_liveness_registration_order.py:154-246; mcp/tests/test_terminal_liveness_registration_order.py:248-278; mcp/tests/test_terminal_liveness_registration_order.py:280-310; mcp/tests/test_terminal_liveness_registration_order.py:312-358; mcp/tests/test_terminal_liveness_registration_order.py:360-403 |
 | The L23 lane registration the fail-closed manifest requires, inserted between two alphabetically adjacent rows so no other entry moved. | "mcp/tests/test_terminal_liveness_registration_order.py" | mcp/tests/test-evidence-lanes.toml:118-118 |
+| The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires. | `PaneDiagnosticAuthorityTests`; `_PANE_AUTHORITY_FIELDS`; `_pane_authority_offenders` | mcp/tests/test_terminal_liveness_pane_authority.py:243-598; mcp/tests/test_terminal_liveness_pane_authority.py:56-69; mcp/tests/test_terminal_liveness_pane_authority.py:233-240; mcp/tests/test-evidence-lanes.toml:183-183 |
+| The shared fixtures the L27 module imports instead of rebuilding. | `_Clock`; `_FakeHost`; `_entry`; `_snapshot`; `_ready_snapshot` | mcp/tests/test_terminal_liveness.py:44-104 |
 | **260913-LCA-L8:** the new module's lane registration, added by the same change set that created it — integration, because it drives the public landing, integration and finalization routes over real temporary repositories and worktrees. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:178-178 |
 | **260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason`; `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220; mcp/tests/test_terminal_blocker_reasons.py:223-243; mcp/tests/test_terminal_blocker_reasons.py:246-259 |
 | **260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item. | `_blocker`; `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:639-655; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:624-636 |
@@ -695,6 +698,42 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator, **citation repair in an edited document** (same
+  change set): corrected the L36 cross-master forcing row's six case ranges, which had drifted
+  (`test_cross_master_concurrency.py:131-162;465-512;529-563;565-620;752-780;784-852` →
+  `131-162;409-456;473-507;509-568;754-822;722-750`). This was not optional tidying: the last of the
+  six pointed past the end of an 847-line module and was an `error`-severity
+  `citation_range_out_of_bounds` finding against *this* document. Every range was re-derived from the
+  module rather than offset by a delta, because the recorded ranges were internally inconsistent —
+  the two module-level helpers `_series` (`:88`) and `_member` (`:94`) sit between the two tests the
+  row places at `:465-512`, so no single offset can reconcile them. `_checkpoint_with_candidate`
+  (`:825`, a helper, not a test) was dropped as an anchor. The prior pass had explicitly recorded
+  this citation as left-as-found and reported rather than repaired; that note now carries this update
+  instead of contradicting the table. The two other out-of-bounds citations it recorded
+  (`test_checkpoint_landing_end_to_end.py:835-835`, `evidence-lifecycle.toml:1038-1038`) name other
+  documents and remain reported, not repaired. No behavior claim changed: only the ranges moved.
+
+- 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator (uncommitted change set on `ar/260831-locr-l27`,
+  base `b368b661`): added the route's pane-diagnostic-authority row for the new
+  `mcp/tests/test_terminal_liveness_pane_authority.py`. Route meaning genuinely changed here: the
+  route had no starting point for the question "may a captured pane reading authorize turn or
+  terminal truth", and this module is now that entry point, so a body row was added rather than a
+  no-impact marker. The row records the readiness half explicitly (an adapter
+  `control="disconnected"`/`"failed"` snapshot with a `working` pane keeps the adapter's
+  `control_state`), because that was the one clause the baseline review found unpinned, and it
+  records the module's two deliberate properties a future reader would otherwise get wrong: the
+  split from the byte-unchanged 574-line `test_terminal_liveness.py` is a size-doctrine decision and
+  the two cards must not be merged, and the negative source guard is defence-in-depth whose measured
+  blind spots (enclosing-`if` constant, positional writer arguments, `CatalogTurnEvidence(state=…)`)
+  stay behaviour-pinned. Two reference rows were added for the same reason (the module's own anchors
+  and the fixtures it imports from its sibling). The population sentence in this section still
+  records the pre-L4 count and is left as the historical record it declares itself to be; the
+  authoritative current lane population (209 modules, 61 integration) and the bracket citations live
+  on the `test-evidence-lanes.toml` card, which is the owner of record for lane membership. No
+  production byte changed for this contract and the new module is ordinary version-controlled test
+  source, not a governed evidence artifact; this route's verification metadata remains
+  closeout-owned.
 
 - 2026-09-15T13:20+02:00 — 260831-LOCR-L23 curator (uncommitted change set on `ar/260831-locr-l23`,
   base `67b21aeb`): added the route's registration-before-compaction row — the new
@@ -723,12 +762,17 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   perform pinned in. Reference rows re-derived for both modules (the pause proof is now
   `86-556` with the ten case ranges, `_world` `150-168`, the two new cases `445-471` and `473-526`;
   `PublicSurfaceInventoryTests` is `220-341`). **Three pre-existing out-of-bounds citations in this
-  document were left as found and are reported, not repaired**, because they belong to other leaves'
-  modules and are outside this change set: the recorded flake note
+  document were recorded by that pass as left-as-found and reported, not repaired**, because they
+  belong to other leaves' modules and were outside that change set: the recorded flake note
   (`test_checkpoint_landing_end_to_end.py:835-835`, file now 479 lines), the L36 cross-master forcing
   row (`test_cross_master_concurrency.py:784-852`, file now 847) and an L8 evidence-registry row
-  (`evidence-lifecycle.toml:1038-1038`, file now 1029). Verification metadata remains closeout-owned;
-  no verification stamp advanced and no acceptance claim.
+  (`evidence-lifecycle.toml:1038-1038`, file now 1029). **Update (260831-LOCR-L27 curator): the L36
+  row has since been repaired** — it was an `error`-severity finding against *this* document, which
+  this leaf was editing, so it was corrected here rather than carried. All six of its ranges were
+  re-derived from the module and the module-level `_checkpoint_with_candidate` was dropped as an
+  anchor, since it is a helper rather than a test the row claims. The other two remain unrepaired and
+  reported: neither names this document, so they stay with their owning leaves. Verification metadata
+  remains closeout-owned; no verification stamp advanced and no acceptance claim.
 - 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
   base `67b21aeb`): the route gained the leaf's hermetic `test_serving_observation_loop.py`, so the
   retained-behavioral-routes table gained a row for the serving-owned steady-state observation proof
