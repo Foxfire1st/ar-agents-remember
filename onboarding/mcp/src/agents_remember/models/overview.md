@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-15T22:40+02:00 |
+| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -684,7 +684,54 @@ waiting reasons. Real wave dependencies still gate through the sprint execution 
 `predecessor-incomplete:` reasons, and everything under `worktrees/integration/**` is untouched by
 this change.
 
+## 260915-KS-L1 Knowledge Vocabulary
+
+This route gained one sub-route of nine modules, `models/knowledge/`, and no authority. It is the shared
+vocabulary of the experimental knowledge substrate: repository namespace identity, invariant identity and the
+immutable revision aggregate, the sealed-payload digest, the provenance envelope, the source identity and locator
+union, the typed operation/refusal/result contract, and the schema identity.
+
+Three ownership rules are the reason it lives here rather than in the store that writes it:
+
+- **Literal vocabularies are defined where they decide.** `KnowledgeState` (`proposed`/`accepted`),
+  `KnowledgeOperation`, `KnowledgeRefusalCode`, `REVISION_PAYLOAD_VERSION` and `KNOWLEDGE_SCHEMA_NAME` are declared
+  in their owning model and imported by the decider — never declared by the decider and re-exported downward.
+- **Values, not rows.** `KnowledgeModel` is frozen with `extra="forbid"`, which makes the process-local value
+  immutable; refusing an update to a stored revision is a storage rule enforced by schema triggers and the
+  operation's preconditions, not by model immutability.
+- **Identity is not a label.** Display version and display label are separated from immutable identity, so two
+  successors of one revision may both display `v2` and both stay addressable. `RevisionDraft` deliberately has no
+  `payload_digest` field: the store recomputes the seal rather than accepting it.
+
+`Authorship` and the `SourceLocator` union are declared **shared**: they are the vocabulary the selective
+read/diff contributor (KS-R07/KS-R08) is expected to consume, and the locator union is discriminated on `kind` so
+that consumer needs no second locator vocabulary. That consumer does not exist yet; nothing here claims it does.
+The blob identity is a Git object identity, not a copy of the bytes — there is no second content store.
+
+Validation vocabulary matters as much as shape: `normalized_uuid` refuses a non-canonical identifier spelling
+instead of rewriting it, `Authorship` requires a normalized-UTC `recorded_at`, and `SourceAnchor` refuses an
+absolute, backslash, UNC or parent-escaping path so a stored record never carries one.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The served knowledge vocabulary as an explicit re-export list. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:55-88 |
+| The frozen base and the refusal to rewrite a non-canonical identifier. | `KnowledgeModel`; `normalized_uuid` | mcp/src/agents_remember/models/knowledge/base.py:34-54 |
+| The invariant identity and revision aggregate, including the display-label-versus-identity separation. | `InvariantIdentity`; `InvariantRevision` | mcp/src/agents_remember/models/knowledge/invariant.py:49-117 |
+| The sealed payload, with the predecessor set inside the digest and the digest field excluded. | `canonical_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:23-45 |
+| The provenance envelope and its normalized-UTC requirement. | `Authorship` | mcp/src/agents_remember/models/knowledge/authorship.py:32-88 |
+| The shared source identity, locator union and the relative-POSIX-path rule. | `SourceLocator`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:76-79; mcp/src/agents_remember/models/knowledge/source.py:82-115 |
+| The typed operation, refusal-code and result contract. | `KnowledgeRefusalCode`; `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:31-48; mcp/src/agents_remember/models/knowledge/result.py:106-132 |
+| The storage owner that writes this vocabulary and is its only writer. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:83-101 |
+| The later requirement packets the shared envelope and locator are declared for. | — | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R07-v1-selective-snapshot-read.md; ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R08-v1-invariant-family-candidate-diff.md |
+
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): recorded the new `models/knowledge/` vocabulary sub-route — nine modules carrying repository,
+  invariant and revision identity, the sealed-payload digest, the shared provenance envelope and locator union,
+  and the typed operation/refusal/result contract — with the three ownership rules (vocabulary defined where it
+  decides, values not rows, identity not label) and the declared-but-absent read/diff consumer. Verification
+  metadata remains closeout-owned.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Updated model routing and checkpoint result vocabulary; retained only informational cache exposure. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

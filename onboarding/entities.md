@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-09-15T03:43 |
+| lastUpdated | 2026-09-15T22:40 |
 | lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
 | lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00 |
 | status      | active                 |
@@ -589,6 +589,34 @@ CCR cumulative source verification: Current execution routes the repository-owne
 
 The six affected fingerprint values remain the prior committed baseline. Once the actual code candidate exists, refresh their reviewed evidence against that commit. The External Memory Ledger row now uses the focused current owners `mcp/src/agents_remember/kernel/memory_attribution.py`, `mcp/src/agents_remember/kernel/memory_cache.py`, `mcp/src/agents_remember/kernel/memory_ledger.py` and `mcp/src/agents_remember/worktrees/ledger_projection.py`; `memory_cache.py` has no committed blob in the reviewed base. Its retained digest is intentionally stale for the changed set until the actual committed-source refresh. The other five affected sets also require a committed-source refresh after their reviewed code changes.
 
+### Knowledge-Storage Entity Deferral (260915-KS-L1)
+
+This leaf adds a load-bearing cross-layer entity: the **knowledge invariant revision** — the immutable, sealed,
+separately addressable authored revision aggregate stored by `memory/knowledge/`, whose identity is a repository
+scoped namespace plus an opaque revision id, and whose content seal covers the whole authored payload including
+its sorted predecessor set. It spans `models/knowledge/` (vocabulary), `memory/knowledge/` (storage),
+`application/knowledge.py` (composition) and `kernel/canonical_json.py` (the encoder the seal is computed
+through), which is the profile this catalog exists to record.
+
+**No inventory entry and no fingerprint row are added in this pass, and that is deliberate.** A
+`git-blob-set-v1` fingerprint resolves `HEAD:<path>` blobs, and every file that would evidence this entity is
+**uncommitted** in the leaf's code worktree. Writing a fingerprint row now would either fail to resolve or
+advance a fingerprint onto a tree that does not exist yet, which the curator seat is explicitly forbidden to do.
+The entity is therefore recorded here as a deferred row with its evidence set named, and the refresh is owned by
+the closeout/index transaction that commits the code:
+
+| Deferred entity | Evidence paths for the refresh |
+| --- | --- |
+| Knowledge invariant revision | `mcp/src/agents_remember/models/knowledge/invariant.py`; `mcp/src/agents_remember/models/knowledge/digest.py`; `mcp/src/agents_remember/memory/knowledge/schema.py`; `mcp/src/agents_remember/memory/knowledge/store.py`; `mcp/src/agents_remember/memory/knowledge/records.py`; `mcp/src/agents_remember/application/knowledge.py`; `mcp/src/agents_remember/kernel/canonical_json.py` |
+
+Two conditions make the refresh complete rather than nominal: the row needs a committed source blob for every
+path in its evidence set, and its `## Entity Inventory` entry must be written in the same pass, because
+`c-02-memory-quality-control` skill reconciles the fingerprint table against the inventory and treats a missing
+row or an orphaned row as actionable maintenance. The subsystem's own account of current intent lives in the file
+cards under `onboarding/mcp/src/agents_remember/{models,memory}/knowledge/` and in
+[`memory/overview.md`](mcp/src/agents_remember/memory/overview.md) meanwhile, so a reader is not left without a
+route while the fingerprint is pending.
+
 ### Preserved Fragment From Prior Catalog Truncation
 
 Before this scoped edit, the baseline entity's source row contained a literal truncation marker and ran into unrelated harness-submission projection rows. The baseline entry is now coherent; the surviving unrelated fragment is preserved verbatim below rather than reconstructed or promoted as current baseline behavior. Other missing catalog bodies were not reconstructed by this ledger task.
@@ -601,6 +629,16 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
 ```
 
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): reviewed this catalog against the change set and recorded the one load-bearing entity the leaf
+  introduces — the knowledge invariant revision spanning `models/knowledge`, `memory/knowledge`,
+  `application/knowledge.py` and `kernel/canonical_json.py` — as a **deferred** row with its evidence set named.
+  No fingerprint row was added and no fingerprint was advanced, because a `git-blob-set-v1` fingerprint resolves
+  committed `HEAD` blobs and every evidencing file is uncommitted in this leaf; the refresh belongs to the
+  transaction that commits the code, and it must add the matching `## Entity Inventory` entry in the same pass.
+  Recorded in `### Knowledge-Storage Entity Deferral (260915-KS-L1)`. Verification metadata remains
+  closeout-owned.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

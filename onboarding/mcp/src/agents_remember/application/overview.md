@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-15T22:40+02:00 |
+| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -492,7 +492,45 @@ before landing exactly those. Published text is the only thing a client reads, s
 than comment. The preview/apply parity invariant that produced this repair is inventoried on the
 `worktrees/overview.md` route and in `memory_quality/overview.md`.
 
+## 260915-KS-L1 Knowledge Composition Seam
+
+This route gained one module, `application/knowledge.py`, and no new authority. It is the composition seam between
+admitted authority and the concrete knowledge store, and it is the **only** consumer of
+`memory.knowledge` (rank 12) from this layer (rank 21).
+
+What it does: `write_authorship` assigns the provenance envelope's `operation_id` and `recorded_at` rather than
+accepting them; `admitted_knowledge_destination` binds a resolved path, namespace and envelope into the typed
+handle a storage operation receives; `admitted_revision_request` attaches a draft to that destination so provenance
+is **not** a parameter; `initialize_knowledge_namespace` refuses an occupied destination as a resume attempt;
+`open_admitted_knowledge_store` opens read-only; and `create_knowledge_revision` delegates the insert and closes in
+a `finally`.
+
+What it deliberately does not do: it holds no schema and no durable state, it performs no admission check of its
+own (`admitted_knowledge_destination` confers no authority by itself — it exists so the store receives a typed
+handle rather than a bare path), and it exposes **no acceptance or promotion operation**. The store manufactures no
+acceptance; `state_at_origin` and `acceptance_ref` remain authored data.
+
+The direction is the point and it is what the `layers.toml` charter paragraph records: a lower-ranked owner —
+`worktrees` (10) and `memory_quality` (11) among them — receives `models.knowledge` values or an already-prepared
+result from this layer, and never imports the storage package.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The provenance envelope is assigned here, not accepted from a payload. | `write_authorship` | mcp/src/agents_remember/application/knowledge.py:46-66 |
+| The admitted-destination constructor that confers no authority by itself. | `admitted_knowledge_destination` | mcp/src/agents_remember/application/knowledge.py:69-85 |
+| Provenance and namespace come from the destination rather than from the request. | `admitted_revision_request` | mcp/src/agents_remember/application/knowledge.py:88-101 |
+| Initialization refuses an occupied destination as a resume attempt. | `initialize_knowledge_namespace` | mcp/src/agents_remember/application/knowledge.py:104-134 |
+| The read open and the delegating insert, both closing in a `finally`. | `open_admitted_knowledge_store`; `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:137-165 |
+| The layer charter paragraph that fixes the one-way direction this seam implements. | "[package.memory]" | layers.toml:206-222 |
+| The storage operation this seam delegates to. | `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:212-241 |
+
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): recorded the new `application/knowledge.py` composition seam — assigned rather than parameterized
+  provenance, the typed admitted-destination handle that confers no authority, the occupied-destination refusal, the
+  absent acceptance/promotion operation, and the one-way import direction the `layers.toml` charter paragraph
+  fixes. Verification metadata remains closeout-owned.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected application argument/result routing, record landing and checkpoint authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

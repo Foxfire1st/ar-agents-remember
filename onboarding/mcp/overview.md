@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-15T22:40+02:00 |
+| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1340,7 +1340,58 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 "10 skips" is 67 and 44 under the superseded vocabulary, of which 23 are unreachable memory commits and
 two name no object at all.
 
+## 260915-KS-L1 Experimental Knowledge Storage Route
+
+This package gained one experimental storage route and one kernel primitive; it gained no public surface and no
+new authority.
+
+`mcp/src/agents_remember/memory/knowledge/` (six modules) is the concrete APSW-backed SQLite candidate holding
+repository, invariant and revision identity. Its route overview is
+[`memory/overview.md`](src/agents_remember/memory/overview.md); the shared vocabulary it writes is
+`models/knowledge/` (nine modules, governed by the
+[models route](src/agents_remember/models/overview.md)), and its only consumer is
+`application/knowledge.py`, the composition seam.
+
+`mcp/src/agents_remember/kernel/canonical_json.py` is the package's single canonical JSON encoder for
+content-addressed digests: sorted keys, compact separators, literal Unicode, `allow_nan=False`, plus a decoder that
+refuses duplicate keys. It sits in `kernel` (rank 1) so both `models` (rank 2) and `memory` (rank 12) may import it
+downward.
+
+`mcp/pyproject.toml`, `mcp/requirements.txt` and `mcp/uv.lock` gained an exact `apsw==3.53.4.0` pin. APSW is the
+repository's first binary-wheel runtime dependency whose capability is a **build-time SQLite option**: the session
+and changeset machinery a later merge leaf needs requires `ENABLE_SESSION`, the standard library's `sqlite3`
+module exposes neither session nor changeset, and the release is pinned exactly because that capability has to be
+proven per platform rather than assumed from the upstream project. The declared Linux wheel (`cp313` manylinux
+x86_64) was exercised by the leaf's spike; macOS remains unexecuted and is carried as an unresolved acceptance item
+for the owning seat.
+
+`layers.toml` gained one charter **wording** paragraph inside `[package.memory]`; no rank, order or sequencing
+entry moved. It records the storage home and the import direction: consumers that rank below `memory` — `worktrees`
+and `memory_quality` among them — receive `models/knowledge` values or an already-prepared result from
+`application`, and never import the storage package.
+
+Scope this route does **not** claim: L2 family/anchor/relation behaviour, L3's admitted batch contract, L4 snapshot
+publication, L5 Git merging, L6 export/import and the read/diff surfaces. This is an experimental increment on the
+master's branch pair only, with no IAS landing implied, and legacy Markdown remains operational authority.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The exact binary-wheel pin and the in-file reason tying it to the session build option. | `apsw==3.53.4.0` | mcp/pyproject.toml:21-26 |
+| The same pin in the requirements manifest. | `apsw==3.53.4.0` | mcp/requirements.txt:2-2 |
+| The storage home and the one-way import direction, declared as charter wording only. | "[package.memory]" | layers.toml:206-222 |
+| The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
+| The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:16-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
+| The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:151-165 |
+| The route overview this section introduces. | — | onboarding/mcp/src/agents_remember/memory/overview.md |
+
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
+  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
+  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
+  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
+  remains closeout-owned.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

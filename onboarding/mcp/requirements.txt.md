@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/requirements.txt`                     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated            | 2026-09-15T22:40+02:00                     |
+| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,23 +17,39 @@ running the MCP package environment outside editable package metadata.
 
 ## Code Commentary
 
-The file pins the MCP library at `1.27.1` and includes runtime response
+### Logic
+
+The file pins the MCP library at `1.27.1` and includes the runtime response
 contract dependencies `pydantic>=2,<3` and `tiktoken>=0.12,<1`.
 
-## Invariants And Boundaries
+260915-KS-L1 added the knowledge store's SQLite binding, `apsw==3.53.4.0`. It is
+**exact-pinned rather than ranged** because the capability the store needs — SQLite's session and changeset
+machinery, which the standard library's `sqlite3` module does not expose — is compiled in through SQLite's
+`ENABLE_SESSION` build option and therefore belongs to the specific wheel rather than to the APSW version line.
+The in-file comment in `mcp/pyproject.toml` above that entry is the durable record of the reason; this file and
+`mcp/uv.lock` are the two other places the pin must agree.
+
+### Invariants And Boundaries
 
 - Keep this file aligned with the runtime dependencies in `mcp/pyproject.toml`.
 - Do not downgrade the MCP dependency here unless there is a concrete
   compatibility reason and matching source/package metadata update.
+- `apsw` is a binary-wheel dependency, not a pure-Python one: changing its version is a capability change, not a
+  routine bump, and the pinned release is the artifact whose session support was actually exercised.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP package metadata declares the same runtime dependencies. | "pydantic>=2" | mcp/pyproject.toml:22-22 |
+| MCP package metadata declares the same runtime dependencies. | "pydantic>=2,<3" | mcp/pyproject.toml:28-28 |
+| The exact SQLite-binding pin, with the session build-option reason recorded inline above it. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26 |
+| The same pin in this manifest, which must agree with the package metadata. | "apsw==3.53.4.0" | mcp/requirements.txt:2-2 |
 | Pydantic response contracts live under the models package. | `# mcp/src/agents_remember/models/ - Response Contract Models Overview` | onboarding/mcp/src/agents_remember/models/overview.md:1-506 |
+| The store that consumes the binding. | `open_database`; `apply_connection_contract` | mcp/src/agents_remember/memory/knowledge/connection.py:28-51 |
 
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): recorded the new `apsw==3.53.4.0` entry, why the pin is exact (session support is a build-time SQLite option carried by the wheel, not by the version line) and that the three places it appears must agree. Corrected the `pydantic>=2` citation, which the insertion shifted from `mcp/pyproject.toml:22` to `:28`, and added the matching rows for the pin itself and for the store that consumes the binding. Verification metadata remains closeout-owned.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (4 findings); no Tier-3 findings.
 

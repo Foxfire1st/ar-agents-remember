@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-15T22:40+02:00 |
+| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 
 > **Status:** active baseline
 
@@ -2318,7 +2318,59 @@ architect bootstrap, the ambient-to-worker structural chain, canonical manager a
 a real vacancy/replacement, actionable failure evidence, and complete teardown. Production starter
 commands remain self-updating; the static pin belongs only to reproducible candidate acceptance.
 
+## 260915-KS-L1 Experimental Knowledge Storage Increment
+
+An experimental master on this repository's branch pair added a knowledge-storage subsystem. It is one primary
+requirement (`KS-R01@v1` — stable knowledge identities and immutable invariant revisions) on an experimental
+branch, with **no IAS landing implied**, and legacy Markdown remains operational authority throughout.
+
+What exists after this leaf: `mcp/src/agents_remember/memory/knowledge/` (the concrete APSW-backed SQLite
+candidate: schema, connection contract, row codecs, typed refusals, one insert-only revision operation),
+`mcp/src/agents_remember/models/knowledge/` (the shared frozen vocabulary it writes),
+`mcp/src/agents_remember/application/knowledge.py` (the composition seam, and its only consumer), and
+`mcp/src/agents_remember/kernel/canonical_json.py` (the single canonical encoder the seal and the schema
+fingerprint are computed through). The route overviews are
+[`mcp/overview.md`](onboarding/mcp/overview.md),
+[`memory/overview.md`](onboarding/mcp/src/agents_remember/memory/overview.md),
+[`models/overview.md`](onboarding/mcp/src/agents_remember/models/overview.md) and
+[`application/overview.md`](onboarding/mcp/src/agents_remember/application/overview.md).
+
+Two repository-governance facts accompany it, and both are deliberate rather than incidental:
+
+- **`layers.toml` gained charter wording, not a rank.** `[package.memory]` now states that the experimental
+  knowledge storage lives there and ranks with the record stores rather than with the application that admits its
+  writes, and that consumers ranked below it — `worktrees` and `memory_quality` among them — receive
+  `models/knowledge` values or an already-prepared result from `application` and never import this package. No
+  rank, order or sequencing entry moved, which is the narrow charter change the leaf document permits.
+- **`mcp/pyproject.toml`, `mcp/requirements.txt` and `mcp/uv.lock` gained an exact `apsw==3.53.4.0` pin** — the
+  repository's first binary-wheel runtime dependency whose capability is a build-time SQLite option
+  (`ENABLE_SESSION`, needed for the session/changeset machinery a later merge leaf requires). The pin is exact
+  because that capability belongs to the wheel rather than to the version line.
+
+Scope this increment explicitly does **not** claim: authority adjudication, recommendation, invariant-family
+behaviour, the admitted batch contract, snapshot publication, Git merging, portable roundtrip, selective read and
+candidate diff, and any product surface. Storing a proposal grants no acceptance — the store manufactures no
+acceptance and exposes no promotion operation. The leaf's own review converged to PASS after three rounds with an
+empty remaining set; its two material disclosures are the unexecuted macOS spike and the R04 journal-mode
+behaviour, both carried for the owning seat.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The charter paragraph that records the storage home and the one-way import direction, with no rank move. | "[package.memory]" | layers.toml:206-222 |
+| The exact SQLite-binding pin and the in-file reason tying it to the session build option. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26 |
+| The storage package's ownership boundary in its own words. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
+| The requirement this increment implements. | `KS-R01@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R01-v1-immutable-knowledge-identity.md |
+| The leaf's independent review, whose final round returned PASS with an empty remaining set. | — | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/notes/reports/260915-KS-L1-review-fix-verification-2.md |
+
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): recorded the experimental knowledge-storage increment at repository scope — the new
+  `memory/knowledge`, `models/knowledge`, `application/knowledge.py` and `kernel/canonical_json.py` surfaces with
+  their route overviews, the `layers.toml` `[package.memory]` charter-wording addition (no rank or order moved),
+  the exact `apsw==3.53.4.0` binary-wheel pin and why session support makes it a per-wheel capability, the
+  explicit non-claims and the two carried disclosures (unexecuted macOS spike, R04 journal-mode behaviour).
+  Verification metadata remains closeout-owned.
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a source under this repo route moved since
   the recorded verification commit (`mcp/tests/evidence-lifecycle.toml`). Re-read the overview; it makes no

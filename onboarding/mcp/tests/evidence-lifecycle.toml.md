@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastUpdated | 2026-09-15T22:40 |
+| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ The commit fields identify the latest real commit touching this source; they do 
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
-exact consumers. The catalog currently contains 43 artifact records and four executable replacement
+exact consumers. The catalog currently contains 44 artifact records and five executable replacement
 contracts; those declarations are not records that a test ran.
 
 ## Code Commentary
@@ -38,6 +38,28 @@ That matches the current two-output transaction behavior and does not require a 
 The closeout-input and curator-coherence support records also declare
 `test_post_integration_cleanup_guidance.py` as an exact consumer.
 
+**260915-KS-L1 added the fifth contract and the 44th artifact**, and the pair is an application of the
+governance rule rather than a formality. Contract `knowledge-identity-branching-fixture` binds the
+shared branching knowledge fixture to the node
+`mcp/tests/test_knowledge_store.py::test_two_same_label_successors_reopen_as_separate_revisions`, and
+the matching `[[artifact]]` row declares
+`mcp/tests/knowledge_fixture_test_support.py` as `shared-support` / `internal-canonical` /
+`unit-regression` / `in-process` / `cadence = "affected"` / `lifetime = "permanent"` with
+`consumer_scope = "exact"` and one observed consumer.
+
+Two facts about that row are load-bearing for a future reader:
+
+- **The artifact path had to be governed for the row to be registrable at all.**
+  `governed_artifact_paths` discovers durable support under `mcp/tests/**` plus a small fixed root set;
+  `mcp/test_support/**` is not in that set, so a catalogued row naming
+  `mcp/test_support/agents_remember_test_support/testing/knowledge_fixture.py` is a stale row, and a
+  module outside the test roots has no derivable test-consumer proof either. The fixture therefore
+  lives under `mcp/tests/`, and moving it back silently breaks this registry.
+- **The declared consumers are intent, not observation, beyond the one real consumer.** The fixture's
+  only source-observed consumer today is `mcp/tests/test_knowledge_store.py`; the L2–L8 leaves that
+  are expected to extend it are named in the fixture's own card as intent and are deliberately **not**
+  listed here as consumers.
+
 Other artifact categories and ownership declarations retain their own scopes. Consumer rows are
 accounting for source-observed support use, including transitive use where declared; they do not
 establish acceptance, installed-executor fidelity, or a production run.
@@ -52,6 +74,8 @@ supersede historical per-leaf consumer positions and population counts retained 
 
 - Replacement node references must name the retained real test definition.
 - Exact consumer declarations must correspond to actual support use; stale counts are not authority.
+- A `[[artifact]]` row's path must be discoverable by `governed_artifact_paths`, which is a different
+  question from whether the module exists and is imported.
 - Registry consistency and permanent-support rationale do not claim execution or certification.
 - Ledger retirement changes the closeout replacement node, not unrelated artifact ownership.
 
@@ -80,7 +104,9 @@ Source declarations and test assertions are distinguished from execution and acc
 | Closeout fixture support names the retained code/memory transaction replacement. | L264-L281 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
 | Closeout-input support uses the renamed replacement and declares cleanup-guidance consumption. | L282-L308 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
 | Curator support also declares the cleanup-guidance consumer. | L329-L389 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
+| The knowledge branching fixture's contract row and its matching artifact row, added by 260915-KS-L1. | L1031-L1052 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
 | The referenced transaction test definition exists in the current source. | L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| The fixture's one-to-one card, which records the relocation rationale and the observed-consumer fact. | — | [onboarding/mcp/tests/knowledge_fixture_test_support.py.md](onboarding/mcp/tests/knowledge_fixture_test_support.py.md) |
 
 ## Cross-Repo References
 
@@ -92,6 +118,8 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): recorded the fifth contract `knowledge-identity-branching-fixture` and the 44th artifact row for the shared branching knowledge fixture (`shared-support`, `internal-canonical`, `unit-regression`, `in-process`, `permanent`, `consumer_scope = "exact"`, one observed consumer), corrected the populated counts in the Purpose and Logic text to the measured 44 artifacts / 5 contracts, and recorded that the artifact's governed path is why the fixture lives under `mcp/tests/**` — a row naming the module's former `mcp/test_support/**` location is stale by construction and its consumer proof is underivable. The anticipated L2–L8 consumers are named as intent in the fixture's own card and deliberately not listed as declared consumers here. Verification metadata remains closeout-owned.
 
 - 2026-09-15T01:02 UTC — Updated the documented replacement-node spelling for code/memory-only closeout and the two cleanup-guidance consumer declarations; retained registry ownership/fidelity/lifetime semantics and separated them from execution evidence. Working candidate verified by source inspection; commit metadata records real committed history only.
 

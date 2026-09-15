@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-15T22:40+02:00 |
+| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -644,7 +644,54 @@ Current working-candidate evidence for this route:
 
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
+## 260915-KS-L1 The Knowledge Storage Suite And Its Registered Fixture
+
+This route gained one test module and one governed support module, and both are load-bearing for the repository's
+own evidence machinery rather than only for the leaf.
+
+`mcp/tests/test_knowledge_store.py` — 22 nodes, all in the **unit-regression** lane and carrying no integration
+marker. It is the executable counterpart of the knowledge requirement's failure list: the divergent-successor
+read, identity reuse with differing content, dangling and cross-invariant predecessors, the two-branch lineage
+refusal, database-level immutability, the seal covering the predecessor set, the schema-generation validation and
+the layer-direction guard. Two of its nodes are enforcement-load-bearing in the sense that disabling the mechanism
+makes a named node fail, which is what makes the guard's coverage real rather than apparent.
+
+Its registration matters twice over. `mcp/tests/test-evidence-lanes.toml` gained the module in `unit-regression`
+because a test module with no explicit lane makes `load_lane_manifest` refuse the whole repository, which
+`evidence_lanes.pytest_collection_modifyitems` turns into a collection error and the quality path swallows into a
+run without retry proof. Registering it is therefore a precondition for the certifying collection path to start at
+all, and it is classification only — never execution or acceptance evidence.
+
+`mcp/tests/knowledge_fixture_test_support.py` — the shared branching fixture (one repository, one invariant, a base
+`I0` and two `v2` successors `I-A`/`I-B`), built through the real typed operations rather than by inserting rows.
+It is registered in `mcp/tests/evidence-lifecycle.toml` as contract `knowledge-identity-branching-fixture` with an
+explicit `[[artifact]]` row (`shared-support`, `internal-canonical`, `unit-regression`, `in-process`, `permanent`,
+`consumer_scope = "exact"`, one observed consumer).
+
+The fixture's **location is part of its contract, not a preference**. `governed_artifact_paths` discovers durable
+support under `mcp/tests/**` plus a small fixed root set; `mcp/test_support/**` is not governed, so the same module
+at `mcp/test_support/agents_remember_test_support/testing/knowledge_fixture.py` could not be registered at all —
+it is refused both as an ungoverned catalogued path and because a module outside the test roots has no derivable
+test-consumer proof. This paragraph exists so a later reader does not "tidy" the module back under `test_support/`
+and silently break the registry.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The 22-node suite and its unit-lane placement. | `unit-regression` | mcp/tests/test-evidence-lanes.toml:67-67 |
+| The suite's one-to-one card, which enumerates what each node protects. | — | onboarding/mcp/tests/test_knowledge_store.py.md |
+| The fixture's registered stable contract row and its matching artifact row. | `knowledge-identity-branching-fixture`; `[[artifact]]` | mcp/tests/evidence-lifecycle.toml:1031-1052 |
+| The fixture's one-to-one card, including the relocation rationale. | — | onboarding/mcp/tests/knowledge_fixture_test_support.py.md |
+| The enforcement-load-bearing nodes a disabled guard fails. | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle`; `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:413-462; mcp/tests/test_knowledge_store.py:509-544 |
+| The manifest rule that makes an unregistered module a hard load failure. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
+| The fixture builder the suite composes. | `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:90-133 |
+
 ## Update History
+
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): recorded the new knowledge-storage suite and its governed fixture — the 22-node unit-lane
+  registration that the certifying collection path requires to start, the fixture's registered contract in
+  `mcp/tests/evidence-lifecycle.toml`, and the load-bearing reason the fixture lives under `mcp/tests/**` rather
+  than `mcp/test_support/**`. Verification metadata remains closeout-owned.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
