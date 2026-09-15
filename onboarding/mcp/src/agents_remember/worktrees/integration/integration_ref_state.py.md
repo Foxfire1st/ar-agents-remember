@@ -5,66 +5,72 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[Integration overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Reads and classifies repository and external-memory ref state for integration decisions.
+Read exact protected-ref observations and classify them against accepted and intended integration states.
 
 ## Code Commentary
 
 ### Logic
 
-It distinguishes exact, absent, advanced, divergent, and unreadable refs and preserves command/error evidence for higher-level recovery.
+`classify_integration_authority_refs` reads code and optional external-memory source refs from their recorded repositories. Before-state comes from accepted source commits; intended state comes from `codeCommit` and `memoryContentCommit`. Exact before-state is `unchanged`. A combination in which every observed ref is either its accepted old value or its intended new value is `intended`, including a torn pair. An unexpected object or unreadable/missing ref is `conflict`.
+
+The public payload distinguishes mechanically recoverable publication interruption from a developer decision. `_read_ref` preserves repository-unreadable, ref-missing, and ref-unreadable categories. Observation itself performs no mutation.
 
 ### Conventions
 
-Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
-the public function or model instead of re-deriving its lower-level state machine.
+Public payloads report before, intended, and observed facts rather than inferring success from a contract status. The memory intent is the actual accepted memory output, never a ledger commit.
 
 ### Invariants And Boundaries
 
-- Ref observations are facts, not mutation authority; unreadable or divergent state must remain explicit and cannot fall back to cached expectations.
-- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
-  fallback or compatibility shadow.
+- Observed refs are evidence, not publication capability.
+- Missing/unreadable refs never fall back to expected or cached values.
+- A conflicting ref state is not presented as a mechanically recoverable interruption.
+- The code/memory pair uses the same two-output model as integration publication.
 
 ### Todos
 
-None recorded.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No external documentation claim is made.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:1-205 |
 
 ## Repo-Internal References
 
-The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:1-205 |
+| Observed objects and public conflict/interruption payloads. | L18-L32; L36-L89; L92-L97; L100-L107 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
+| Exact accepted/intended state classification uses the actual memory output. | L118-L124; L127-L168 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
+| Canonical ref reading preserves stable failure categories. | L171-L205 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
 
 ## Cross-Repo References
 
-No cross-repository source is allowed by the resolved settings, and this unit owns no external
-protocol claim.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:1-205 |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Changed intended memory-ref classification from retired ledgerCommit to memoryContentCommit; retained missing/unreadable and torn-pair distinctions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

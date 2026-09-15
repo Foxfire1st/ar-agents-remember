@@ -1,111 +1,81 @@
-# test_worktree_sync.py
+# mcp/tests/test_worktree_sync.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/tests/test_worktree_sync.py`          |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`                         |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/test_worktree_sync.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Exercises real code/external-memory synchronization: a pure fast-forward advances both sides and contract, a code merge conflict stays recoverable and can continue, a code tip the official memory line does not map refuses **by name** and succeeds once the pair is completed, and a nonregular journal is renamed/quarantined without following it. A memory work branch that already descends from its source syncs as `already-current` even when its recomputed ledger dropped a row the source carried, because the projection owns that judgement and the sync is not a second place to restate it. Recovery uses the exact contract and ledger pair, not an inferred ambient checkout.
+Exercise real code/external-memory sync, retained conflicts, cache independence, exact source/base publication, and journal quarantine.
 
 ## Code Commentary
 
 ### Logic
 
-The retained cases drive the public `sync_result` over `SyncFixture`, one live code/memory worktree
-pair per case. `move_official_code` cit:([`move_official_code`], mcp/tests/test_worktree_sync.py:97-99) advances the official
-code line and `map_official_memory` cit:([`map_official_memory`], mcp/tests/test_worktree_sync.py:101-110) lands an official memory
-content commit plus a ledger row mapping a given code tip, which is how a case builds either half of
-the official pair.
+`SyncFixture` creates disposable code/memory worktrees and canonical contracts. Some setup deliberately retains or commits historical tracked memory.md states; these are inputs to prove cache independence, not cache commits created by the sync under test. `map_official_memory` writes attribution in a real memory-content commit.
 
-The mid-cycle case
-cit:([`test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`], mcp/tests/test_worktree_sync.py:176-204) advances only
-the code line and asserts the refusal end to end: return code 2, state `blocked`, the summary
-containing `official line is mid-cycle`, and the work branch's HEAD **not** advanced to the admitted
-tip — then maps the tip into the official memory ledger and asserts the same call returns `synced`
-with the work branch at that tip. The refusal itself is produced by
-`sync_transaction_authority.preflight_official_pair`
-cit:([`preflight_official_pair`], mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158), which reads the
-official memory ledger blob at the named ref and resolves the code tip with `find_mapping`; that is
-the named-ref read path, and this leaf's change to the *source*-ledger reader does not touch it. The
-case is the suite's first coverage of the refusal at all, and it is the regression guard that the
-source-reader change left the detection where it was.
+The seven scenario definitions cover two-sided fast-forward, a retained code conflict and continuation, stale/missing/malformed source caches, cache-independent start and memory-candidate identity, an already-current descendant with changed cache rows, native memory merge conflicts, and quarantine of a nonregular journal without following it.
 
-A descendant memory ledger that dropped a source row is current, not refused
-cit:([`test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current`], mcp/tests/test_worktree_sync.py:206-243). The case
-commits a memory content commit and then rewrites `memory.md` so its one row maps the code base to
-that newer content commit — the stale-duplicate shape a closeout's recomputed table produces — and
-asserts the same call returns `already-current`, that no `dropped parent mapping` text appears
-anywhere in the payload, and that the memory work branch did not move. The removed rule required the
-resolution to carry every row its source carried, so this case is the regression guard for the ruling
-that the ledger is derived state and its rebuild reports the exclusions it cannot resolve; the
-projection's own exclusion reporting is pinned in `test_memory_ledger.py`.
-
-The source-listed behavior below is the current evidence boundary. Earlier coverage claims in history
-describe prior populations and must not be used to recreate removed tests or claim they still run.
-The retained behavior and its fixture limits govern this card.
+The native memory case checks both cache-only success and a genuine README conflict. Real draft WIP is parked and returned while staged cache data is excluded. It asserts the exact merge parents, only one new reachable merge beyond its parents, a cache-free committed tree, an untracked materialized cache, and both source/work content. Its interrupted-merge branch adds an unstaged real edit after the merge was staged: resume must refuse with both repositories' refs unchanged, then complete after that edit is staged.
 
 ### Conventions
 
-The table lists retained test definitions, not collected parametrized or subtest counts.
-Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
-The module is registered in the `integration` evidence lane (`mcp/tests/test-evidence-lanes.toml`);
-a lane registration says where the module executes, not that any case in it has run.
+The inventory describes current scenario definitions, not a production deployment or a certification receipt. The native merge scenario keeps its subcases inside one collected case. Quarantine assertions inspect the archived symlink itself and preserve its outside target.
 
 ### Invariants And Boundaries
 
-Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
-cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
-an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
-work. This source inspection does not claim a newly executed test or acceptance result.
+- Missing attribution or a broken cache cannot become a sync admission refusal.
+- Real content conflicts retain MERGE_HEAD and require the intended resolution.
+- Memory-side cache data never enters recorded real WIP or a new merge tree.
+- Post-admission tracked edits must be staged before resumed merge publication.
+- Real source/base/ref and journal identity remain the operation evidence.
 
 ### Todos
 
-No additional implementation scope is opened by this memory reconciliation.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-The repository has no configured Domain Documentation source. These claims concern its own test
-fixtures and assertions, so the exact retained source is the direct evidence.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
-Each current definition below can be inspected in the exact source file. Historical references
-to removed methods are superseded by this current inventory.
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Pure fast forward sync advances both sides and contract | `test_pure_fast_forward_sync_advances_both_sides_and_contract` | mcp/tests/test_worktree_sync.py:117-137 |
-| Code merge conflict is retained and can continue | `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:139-174 |
-| A code tip the official memory line does not map refuses by name, leaves the work branch where it was, and succeeds once the pair is completed | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `move_official_code`; `map_official_memory` | mcp/tests/test_worktree_sync.py:97-99; mcp/tests/test_worktree_sync.py:101-110; mcp/tests/test_worktree_sync.py:176-204 |
-| The refusal this case guards is the named-ref ledger read, not the projected source ledger | `preflight_official_pair`; "def find_mapping(ledger: MemoryLedger, code_commit: str)" | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_ledger.py:261-263 |
-| A descendant memory ledger that dropped a source row is current, nothing moved, and no `dropped parent mapping` text is reported | `test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current` | mcp/tests/test_worktree_sync.py:206-243 |
-| Nonregular journal is renamed without following and quarantined | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:245-264 |
-| The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_worktree_sync.py" | mcp/tests/test-evidence-lanes.toml:187-187 |
+| The real Git fixture and attributed official memory update. | L39-L117; L102-L114 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Fast-forward and retained code conflict behavior. | L121-L141; L143-L178 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Cache-independent source admission, start, and candidate identity. | L180-L206; L208-L240; L242-L279 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Native cache-only success, real conflict continuation, and resumed staged-content validation. | L281-L362; L364-L397 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Nonregular journal quarantine preserves the outside target. | L399-L418 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
 
 ## Cross-Repo References
 
-This card establishes test behavior, not a separate cross-repository protocol or live installation.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced mid-cycle cache-row refusal with source-ref acceptance; added cache-independent start/candidate and native merge coverage. The existing native merge case also pins refusal of unstaged content on resume and successful staged continuation. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the case this card
   documents was added by the frozen change set. Re-read the card: the new case and every cited range

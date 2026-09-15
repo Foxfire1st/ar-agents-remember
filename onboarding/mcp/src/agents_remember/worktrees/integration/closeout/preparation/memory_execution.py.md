@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-15T00:59 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,47 +16,62 @@
 
 ## Purpose
 
-Prepared memory candidate observation and selected result currentness.
+Observe a cache-free prepared memory candidate and reopen its selected certification result.
 
 ## Code Commentary
 
 ### Logic
 
-The candidate is derived from the current handoff, fresh physical code view and actual memory tree, then reobserved. Certification requires the registered prepared-memory port. current_prepared_memory_result reopens ownership, the exact five selected terminals, result/certificate references, current memory tree and pair authority before returning the current handoff. Result dictionaries or previous observations are not current authority.
+The candidate derives from the current handoff, fresh physical code view, and an isolated memory candidate tree that explicitly excludes root `memory.md`. Candidate observation is repeated around the physical code-view checks.
+
+Certification requires the registered prepared-memory port and a current handoff. Cache setup runs only when non-cache memory content has actual changes. Clean legacy memory, including a historical HEAD that tracked the cache, therefore acquires neither a new ignore file nor a cache-removal staging delta merely to certify an unchanged content view.
+
+`current_prepared_memory_result` reopens the exact owner, all five selected terminals, result/certificate references, cache-free memory tree, and pair authority. A returned dictionary or previous observation does not supply current authority.
 
 ### Conventions
 
-Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870` and remains byte-identical at the recovery code candidate. Its behavior was re-read against that source during memory recovery; the existing metadata owner still owns the pending verification stamp.
+Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870`. The earlier introduction and verification records remain historical facts; the current uncommitted candidate changes the behavior described here. The existing commit-verification metadata is retained until its owner records a real committed source revision.
 
 ### Invariants And Boundaries
 
 The documented types and paths do not themselves establish execution, certification, delivery or acceptance. Those claims require the corresponding owning runtime evidence.
 
+The certified memory-content tree can differ from an existing historical HEAD tree only by the separately proved cache projection. This observer does not rewrite HEAD or issue a new commit to make the identities look equal. Missing producer or mismatched selected evidence remains a typed refusal.
+
 ### Todos
 
-No source-local TODO is asserted here.
+No additional source-local TODO is asserted by this maintenance pass.
 
 ## Docs References
 
-| Finding | Anchor | Source |
+No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No external domain source is configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| `observe_prepared_memory_candidate` owns the corresponding behavior described above. | `observe_prepared_memory_candidate` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:26-49` |
-| `certify_prepared_memory` owns the corresponding behavior described above. | `certify_prepared_memory` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:52-71` |
-| `current_prepared_memory_result` owns the corresponding behavior described above. | `current_prepared_memory_result` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:74-119` |
+| Candidate construction explicitly excludes memory.md and reobserves the selected code view. | L27-L52 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
+| Cache setup is conditional on real non-cache changes before invoking the registered producer. | L55-L79 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
+| The selected fifth terminal must bind the actual cache-free tree and logical pair. | L82-L127 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
+| The memory reuse record carries distinct raw and certified tree identities. | L43-L69 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
 
 ## Cross-Repo References
 
-| Finding | Anchor | Source |
+These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Recorded cache-free candidate certification, conditional cache setup, and clean legacy no-op behavior while preserving exact selected-certificate checks. Source SHA-256 `1bb554607478692dc36526283758208a90677ac1a1997e8a35f563fffc4dd8eb`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 
 ### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
 

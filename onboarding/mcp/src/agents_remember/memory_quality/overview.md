@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -21,6 +22,10 @@ groups integrity checks that compare onboarding to source state and style
 checks that enforce repository memory conventions.
 
 ## Hot Path Summary
+
+`memory_candidate_pair.py` binds repository/worktree identity, branches, bases, onboarding and contract facts without requiring a cached ledger file or hashing its path into authority. Citation provenance snapshots read substantive memory content while excluding only root `memory.md`; actual source/candidate drift remains detectable.
+
+## Detailed Route Context
 
 `check.py` is the public package-level runner. It can execute style-only checks
 without repository context, or combine drift integrity and style checks when an
@@ -108,7 +113,9 @@ dependency on the closeout plane.
   merely in the apply. The inventory of known instances (and the deliberate exceptions) is maintained
   on the `worktrees/overview.md` route; this route's own previews are subject to the same rule.
 
-## The Preview/Apply Parity Invariant (260831-LOCR-L34)
+## Historical milestone context: The Preview/Apply Parity Invariant (260831-LOCR-L34)
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 The invariant was established while repairing the worktree checkpoint route, and it is recorded here as
 well as on the `worktrees/overview.md` route because **the memory-quality surfaces are the ones a bulk
@@ -146,6 +153,12 @@ exercise the pair, and prefer a single shared eligibility evaluation over two ag
 | The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Memory candidate identity excludes consumer cache availability. | L48-L129 | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
 
 ## Historical 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
@@ -414,7 +427,7 @@ checks, missing-onboarding/index observations and curator coherence against a pr
 view no longer lives here: commit `deb032fb` moved it to
 [worktrees/integration/closeout/prepared_certification.py](../worktrees/integration/closeout/prepared_certification.py.md)
 because a pre-closeout quality service must not depend on the closeout plane. The closeout plane may
-depend on this route; not the reverse. Red results remain evidence and cannot authorize M/L output
+depend on this route; not the reverse. Red results remain evidence and cannot authorize memory-content output
 preparation.
 
 ## Memory-Candidate Roots Relocated In
@@ -432,6 +445,9 @@ dependency.
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented cache-independent candidate pair identity and citation content snapshots. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:05+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
   as both an invariant bullet and a section, naming the five fixed instances, the two

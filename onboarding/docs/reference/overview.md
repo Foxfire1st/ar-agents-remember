@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-09-05T07:10+00:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
 
@@ -55,6 +56,10 @@ surface rather than the default path. The route also retains the three-state hos
 readiness, catalog-concurrency, and serving-cutover contracts.
 
 ## Hot Path Summary
+
+`mcp-tools.md`, `skills.md` and `worktrees-c09.md` expose code/memory commit messages and output refs. They describe the ledger as a computed consumer cache, not a commit leg, recovery intent or publication prerequisite. Reuse of unchanged content is a valid result without cache-only Git work.
+
+## Detailed Route Context
 
 The current orchestration references describe free chat as the identity-free launcher that, for
 ordinary role-shaped work, compiles the canonical architect brief and calls `dispatch_agent` once
@@ -127,7 +132,7 @@ The public reference route now exposes the same mandatory source-quality order
 as the implementation and runtime guidance. `worktree_closeout_apply` runs the
 admitted repository-profile gate before a source commit. The historical L1 wrapper-presence
 trigger has been superseded by explicit configured profile authority;
-`worktrees-c09.md` places that gate before code, onboarding, memory, and ledger
+`worktrees-c09.md` describes the applicable gate before code, onboarding and memory-content
 commit steps; and the skills reference names both pre-commit and pre-push sync
 checks. These are documentation projections of the existing gate authority, not
 independent bypasses or alternative check sequences.
@@ -228,7 +233,7 @@ The public reference route now assigns each mutable fact one owner. Task mutatio
 then invalidates/rebuilds the affected disposable queue projections and reports bounded effects;
 projection failure cannot roll back task truth. A manager publishes an immutable closeout-door
 generation, and the lifecycle journal atomically claims that exact waiting generation. Commit,
-memory, ledger, review, cancellation, supersession, and recovery evidence live in the journal—not in
+memory-content, review, cancellation, supersession, and recovery evidence live in the journal—not in
 queue rows.
 
 Closeout validates every enabled nonblank commit-message/input field before any claim. Retry and
@@ -263,7 +268,18 @@ master-to-parent integration; standalone and organizational leaves retain indepe
 review. Complexity and loop settings do not disable or move that atomic integration gate, and
 the route-review rule does not replace certifying evidence requirements.
 
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The normalized public input has only two commit legs. | L127-L165 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected reference routing and current delivery vocabulary. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 - 2026-09-13T15:03:18+02:00 — 260831-LOCR-L36 round 2: corrected this route's description of `execution-topology-migration.md` so it agrees with the guide's corrected text. The IAS execution-topology impact now carries the developer ruling — a missing `executionGraph` selects `atomic-sequential`, which describes the sprint's shape (every commanded master executes atomically) and serializes nothing, because a graph-less sprint declares no dependencies — alongside the per-contract activation account. Read the corrected guide to confirm: the intro's "describes the sprint's shape and serializes nothing" and "selecting one never pauses another" (guide lines 5-11) and the release-notes "a sprint shape, not a serialization mechanism (nothing serializes a graph-less sprint)" (guide lines 122-125). No route ownership changed; verification metadata remains closeout-owned and no acceptance claim is made.
 
 - 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected the IAS

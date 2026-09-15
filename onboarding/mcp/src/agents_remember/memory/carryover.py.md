@@ -1,185 +1,118 @@
 # mcp/src/agents_remember/memory/carryover.py
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/src/agents_remember/memory/carryover.py`                |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-14T17:20+02:00                                      |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
-| governingOverview      | `../../../overview.md`                                      |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/memory/carryover.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:06 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[MCP overview](../../../overview.md)
+[Nearest governing overview](../../../overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-`carryover.py` plans and applies evidence-backed onboarding memory carryover after code lands. It is
-the package service behind the `c-11-memory-carryover-from-branch` skill and MCP plan/apply tools. Its
-memory-content commit is attributed: since 260913-LCA-L4 the trailer naming `official_head` is appended
-to the caller's own commit message, so a carried-over branch memory entry is paired with the code
-commit the mapping already names.
+Plans and applies evidence-backed onboarding carryover after code lands. Selected memory content
+is committed in the exact ordinary recovery leaf and attributed to the selected official code tip.
+Integration of that leaf remains a separate operation.
 
 ## Code Commentary
 
 ### Logic
 
-The service compares base, source, and official code/memory states; classifies file-sidecar, route-
-overview, memory-only-doc, and entity-catalog candidates; and applies only proven or explicitly
-selected changes. It preserves the existing exact-landed-commit, review-required, ledger mapping,
-entity fingerprint validation, and guarded route-index refresh. Writes and commits belong to the
-ordinary recovery leaf; integrating that leaf is a separate lifecycle operation.
+`CarryoverRequest` owns the plan inputs; `CarryoverApplyOptions` contains the intent, explicit
+review selections, and memory message. `CarryoverRefs` keeps the base/source/official comparison
+frame constant for a plan, and `MemoryOnlyDoc` carries one memory-only candidate's source and target
+paths. The former `TargetLedger` handle and ledger message option are retired.
 
-**Three frozen parameter objects (260731-EFA-L2)** carry the comparison frame and the ledger handle
-that were previously spread across long keyword lists:
+Planning classifies file sidecars, route overviews, memory-only docs, and entity catalogs. Automatic
+carry requires proven evidence; exact-landed evidence requires every relevant source-branch commit
+to be an ancestor of the official ref. Review-required candidates must be explicitly selected.
 
-- **`CarryoverRefs(code_repository_root, official_ref, source_ref, old_base, target_memory,
-  source_memory)`** — the two states of the world a carryover compares and the base they diverged
-  from. Every candidate builder judges one path against exactly this pair of sides, and the pair is
-  **constant for a whole plan**, so it is built once in `build_plan_for_request` and passed down.
-  That is the point: candidates from two different plans can no longer be assembled against
-  mismatched refs. `candidate_for_path(refs, source_path, *, replace_existing)` and
-  `memory_only_doc_candidates(refs, *, existing)` both take it.
-- **`MemoryOnlyDoc(branch_doc, target_file, rel, source_path)`** — one onboarding doc that changed
-  only in branch memory: the branch copy, its target counterpart, its path relative to the
-  onboarding root, and the source path it documents. `_memory_only_evidence(refs, doc, mem_base)`
-  takes the refs frame plus one of these.
-- **`TargetLedger(ledger, path, memory_root, commit_message)`** — the recovery-leaf ledger as carryover
-  writes it. A ledger without its file path and its memory tree cannot be persisted, so they are
-  one handle. `_nothing_to_carry_result(plan, target_ledger, *, cleaned_note, carried,
-  official_head)` takes it.
+Apply verifies configured repository identity and the exact open external-memory leaf. Its code
+base and code HEAD must equal the selected official tip, with a clean code checkout. Target memory
+must be clean for actual content; `memory.md` is excluded from that check. Explicit target storage
+and path-rule authority is resolved before writes and reused for route-index refresh. Source-memory
+settings do not grant target write authority.
 
-Apply first proves configured repository identity and the exact open ordinary external-memory leaf.
-Both its code base and code HEAD must equal the selected official tip, with a clean code checkout.
-After the plan and clean target-memory check, `required_target_storage(target_memory)` resolves
-explicit effective settings before any content or ledger mutation. The same settings feed
-`_refresh_target_route_indexes`; source-memory defaults cannot grant target write authority.
+Copied sidecars receive the official verification metadata. Entity catalog fingerprints are
+recomputed against the official code ref and reported; derived route indexes are regenerated on the
+target when its code checkout permits that operation. No carried content or no actual content delta
+returns `nothing-to-carryover`, refreshes the cache best effort, and creates no commit.
 
-cit:([`_require_carryover_authority`], mcp/src/agents_remember/memory/carryover.py:873-909)
-cit:([`_apply_carryover_for_request`], mcp/src/agents_remember/memory/carryover.py:768-870)
-
-**Git now runs through the one owner (260731-EFA-L3).** This module no longer carries a local
-`subprocess.run` adapter. It imports `run_git` from `agents_remember.kernel.git_command` and keeps
-only `require_git`, which adds this module's contract — a non-zero exit is fatal — and returns the
-stripped stdout every caller here wants:
-
-```python
-def require_git(repo: Path, args: list[str], *, input_text: str | None = None) -> str:
-    result = run_git(repo, args, GitRunnerOptions(input_text=input_text))
-    if result.returncode != 0:
-        raise RuntimeError(result.stderr.strip() or f"git {' '.join(args)} failed")
-    return result.stdout.strip()
-```
-
-`patch_id` is the only caller in the package that feeds git's stdin —
-`run_git(repo, ["patch-id", "--stable"], GitRunnerOptions(input_text=diff_text))` — which is why
-`input_text` is a field of the shared runner's options object rather than of a local copy. The
-ambient-selector scrubbing
-this module used to perform for itself with `git_environment()` is now unconditional inside
-`run_git` (`env=git_environment()`), and every carryover git call additionally inherits the shared
-runner's `GIT_LOCAL_TIMEOUT_SECONDS` (300s) default — `GitRunnerOptions.timeout` — plus
-`encoding="utf-8"` and
-`errors="surrogateescape"`. The removed local adapter had none of the last three.
-
-### Attribution At The Commit Seam (260913-LCA-L4)
-
-Carryover is one of the two producers whose commit message is a **public argument of another tool**
-(`CarryoverCommitMessages.memory`), and that is the whole reason its attribution is appended rather than
-formatted into a new body. `_apply_carryover_for_request` commits the caller's message verbatim and
-renders it through the kernel's single writer (`:854-857`):
-
-```python
-memory_content_commit = commit_if_dirty(
-    target_memory,
-    render_memory_content_message(options.memory_commit_message, official_head),
-)
-```
-
-`official_head` (`:795`) is the code commit this mapping already names — the same value the very next
-line prepends to the ledger (`prepend_mapping(ledger, official_head, memory_content_commit)`, `:858`) —
-so the trailer and the ledger row are derived from one resolution and cannot disagree. The caller's body
-may be several paragraphs and its own last paragraph may itself be `Key: value` lines; the renderer keeps
-it byte for byte and appends the attribution as its own final block after a blank line, which is what
-stops a body line from being read as this attribution. No caller has to know attribution exists, and the
-public dialect is unchanged.
-
-By rule, two things on this path carry no trailer. The ledger leg (`:860`) commits
-`options.ledger_commit_message` unchanged: the `memory.md`-only commit names no code commit, and a
-second trailered commit for one code commit would project a duplicate row. The nothing-to-carry path
-(`_nothing_to_carry_result`, `:728-765`) creates no memory commit at all in its
-`nothing-to-carryover` branch; in its `ledger-mapped-head` branch it commits only the ledger leg
-(`:756`), which stays unattributed for the same reason.
+For changed content, cache preparation runs before the shared Git helper commits with
+`exclude_paths=("memory.md",)`. The kernel renderer appends attribution to the caller's memory
+message without rewriting its body, including when its last paragraph resembles trailer lines.
+The result reports `memory_content_commit` and `ledger_cache`. The old `ledger-mapped-head` path,
+ledger-only commit, and duplicate local commit helper no longer exist.
 
 ### Conventions
 
-CLI and MCP surfaces remain adapters around `CarryoverRequest`, `build_plan_for_request()`, and
-`apply_carryover_for_request()`. Derived indexes are regenerated, never copied. Parser-default
-settings may support read/topology discovery, but only explicit effective target settings may
-authorize mutation.
+The CLI and MCP remain adapters around typed requests and planning/application services. Git
+commands use the shared guarded runner and its `GitRunnerOptions` input-text path for patch IDs.
+Content committing and identity setup use the shared Git module. Indexes are regenerated rather
+than copied, and default read settings cannot substitute for explicit target write authority.
 
 ### Invariants And Boundaries
 
-- Only proven evidence tiers auto-carry; every source-branch commit touching a path must be an
-  ancestor of the official ref for `exact-landed-commit`.
-- Review-required paths must be selected explicitly.
-- Target recovery-leaf storage/path-rule authority is established once before all mutation and reused
-  for index refresh. Source-worktree settings cannot substitute for target settings.
-- Authority refusal is exact zero mutation: target HEAD, Git status, non-Git bytes, source bytes,
-  route-index presence, and ledger state remain unchanged.
-- Git children use scrubbed repository-selection environment and never inherit the MCP stdio pipe.
-  Both guarantees are the single `kernel.git_command.run_git`'s, not a module-local copy's: it always
-  passes `env=git_environment()`, and `stdin=subprocess.DEVNULL` unless a caller supplies
-  `input_text`. This module must not grow a second runner.
-- Post-merge head mapping runs only when no auto-carry or review-required candidate remains.
-- The memory-content commit is attributed to **`official_head`**, the code commit the mapping already
-  names, and the attribution is appended to the caller's message rather than replacing or editing it.
-  The ledger leg and the ledger-mapped-head branch stay unattributed by rule — no code commit to name —
-  and no producer here fabricates an attribution. The format itself is never open-coded: the one writer
-  is `kernel.memory_attribution.render_memory_content_message`.
-- Apply commits only in the exact recovery-leaf memory checkout. It does not advance memory `main`
-  or the selected integration branch; normal leaf integration owns publication.
+- Only the exact configured recovery-leaf memory checkout may receive carried content.
+- Repository identity, open-leaf state, official code tip, and explicit target settings remain checked.
+- A missing or malformed cache does not change candidate evidence or admission.
+- Nothing-to-carryover cannot invent attribution for a new code state or create a cache-only commit.
+- The real memory commit carries the official tip's attribution; cache rows are derived afterward.
 
 ### Todos
 
-None known for the MX-FIX-4 carryover boundary.
+No new file-local follow-up is established by this documentation pass.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository. The service and raw target-settings preflight
-define the current write-authority contract; deleted tests provide no current coverage claim.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Target JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-100; mcp/src/agents_remember/kernel/route_index.py:184-235 |
-| Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:208-211; mcp/src/agents_remember/kernel/memory_ledger.py:222-244 |
-| The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`), all now reached as fields of `GitRunnerOptions`. | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:55-64; mcp/src/agents_remember/kernel/git_command.py:92-92; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
-| The memory-content commit is attributed to `official_head` through the kernel's one renderer, from the same resolution the ledger row uses; the ledger leg stays plain. | `render_memory_content_message`; `official_head`; `commit_if_dirty` | mcp/src/agents_remember/memory/carryover.py:795-795; mcp/src/agents_remember/memory/carryover.py:854-860; mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
-| The nothing-to-carry ledger-mapped-head branch commits only the ledger leg, which carries no trailer; the nothing-to-carryover branch creates no commit. | `_nothing_to_carry_result` | mcp/src/agents_remember/memory/carryover.py:728-765 |
-| The end-to-end case that drives the public `memory_carryover_apply` with a hostile multi-paragraph body and asserts the trailer equals `official_head` while the ledger commit carries none. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:237-287 |
+| Candidate comparison and explicit review selection. | L222-L237; L240-L248; L182-L215; L611-L624 | [mcp/src/agents_remember/memory/carryover.py](mcp/src/agents_remember/memory/carryover.py) |
+| Apply owns one content commit and preserves exact leaf/repository authority. | L698-L791; L794-L830 | [mcp/src/agents_remember/memory/carryover.py](mcp/src/agents_remember/memory/carryover.py) |
+| Target storage is established from effective explicit settings. | L32-L66 | [mcp/src/agents_remember/memory/carryover_authority.py](mcp/src/agents_remember/memory/carryover_authority.py) |
+| Shared committing explicitly excludes the consumer cache. | L191-L197; L200-L207 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. | L238-L300 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
 
 ## Cross-Repo References
 
-Carryover intentionally spans the configured code and external-memory repositories, but its
-authorization implementation remains package-local.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external implementation governs official-memory write authority. | — | — |
-
-## 260815-DAG-L4 Authority Boundary
-
-L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
+
+
+- 2026-09-15T00:51 UTC — Retired TargetLedger, ledger_commit_message, ledger-mapped-head, and standalone ledger commits; documented cache-independent content checks and the shared commit helper while preserving evidence tiers, target authority, and caller-body attribution. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): `require_git` now calls `run_git(repo, args, GitRunnerOptions(input_text=input_text))`
   and `patch_id` calls `run_git(repo, ["patch-id", "--stable"], GitRunnerOptions(input_text=diff_text))`,

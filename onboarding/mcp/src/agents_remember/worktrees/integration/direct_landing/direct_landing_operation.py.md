@@ -5,78 +5,98 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:51 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](../overview.md)
+[Nearest governing overview](../overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Durable synchronous coordinator for one direct-landing generation.
+Owns the durable synchronous coordinator for one direct-landing generation: progress, exact output
+projection, completion, input-required reporting, and unchanged-attempt reset.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `DirectLandingRuntime`, `direct_landing_store`, `direct_landing_record`, `reconcile_direct_landing`, `reset_reconciled_attempt`. Direct landing is one journaled task/contract-addressed generation. Accepted code and repository state are immutable, intent precedes each memory or ledger mutation, produced commits are journaled before the next leg, and restart resumes the same generation instead of repeating raw Git from scratch.
+`DirectLandingRuntime` locates the canonical operation store. `progress` validates mutation
+observations and reported recovery cells, then derives the code/memory recovery projection through
+the shared closeout evidence owner. It preserves monotonic output proof and records when a real
+commit boundary was crossed. `finish` publishes completion; `require_input` records a recoverable
+interruption or a developer-decision surface.
 
-`direct_landing_record` builds the journal snapshot for one exact request and carries no door
-publication: a direct landing is admitted by its own request — the series contract, the branch HEAD
-commit and tree, and the effective commit messages — not by a claimed closeout door
-cit:([`direct_landing_record`], mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:169-213).
+`direct_landing_record` constructs an accepted generation from the typed request candidate and
+initial mutation evidence. The existing code commit is recorded immediately. Admission is by the
+request's own contract, commit/tree, and messages; the record has no closeout-door publication or
+ledger byte intent.
+
+`reconcile_direct_landing` reconciles launched Git commands, derives proven output cells, and asks
+the pure classifier whether an omitted memory receipt can be recovered. Only the actual
+`memoryContentCommit` is added from that proof. Updates use the current stored record and bounded
+compare/update retries. `reset_reconciled_attempt` archives an exactly unchanged attempt before
+resetting that leg within the same generation.
 
 ### Conventions
 
-Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
+Typed mutation observations and recovery cells flow through their shared models. The canonical
+root journal and its locator own durable state; mutable task prose and queue rows do not supply
+fallback evidence.
 
 ### Invariants And Boundaries
 
-- The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
-- Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
-- Queue rows and mutable task documents are not lifecycle evidence or fallback location authorities.
-- A direct-landing record never carries a door publication and declares no dependency set; admission
-  is by the request's own contract, commit, tree and message inputs.
+- Accepted request identity and already proven output commits stay immutable.
+- Missing memory receipts are recovered only from mechanically convergent Git evidence.
+- No ledger mutation cell, ledger commit output, or DirectLandingLedgerIntent is published.
+- Reconciliation and reset preserve the generation; action-required state must use the lifecycle recovery owner.
 
 ### Todos
 
-None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
+No new file-local follow-up is established by this documentation pass.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-The source file is the direct evidence for this file-specific ownership boundary.
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines `DirectLandingRuntime`; `direct_landing_store`; `direct_landing_record` as its public seam. | `DirectLandingRuntime`; `direct_landing_store`; `direct_landing_record` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:45-161; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:167-168; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:168-206 |
-| The record builder for one exact direct-landing request; it carries no door publication. | `direct_landing_record` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:169-213 |
+| The runtime validates and publishes progress, completion, and input-required evidence. | L51-L89; L91-L107; L109-L150 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
+| Request-owned generation construction and memory-only output reconciliation. | L157-L199; L202-L248; L251-L275 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
+| Recovery cells are derived from authoritative mutation evidence. | L27-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
+| The classifier supplies exact memory output evidence. | L77-L134; L185-L204 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
 
-## 260821-CLIVE Door Intent And Convergent Recovery
-
-The initial direct-landing record is built from the request alone and carries no door publication.
-Reconciliation may record missing memory or ledger output commits only when the pure
-recovery classifier proves them from accepted mutation lineage and deterministic bytes. The same
-operation generation is resumed; ambiguous output remains a developer decision.
-
-## 260831-CCR-R03 Dependency-Declared Direct-Landing Records
-
-CCR-R03 taught records with an admitted door to declare their exact direct inputs at construction
-(worker handover: notes/reports/260902-CCR-L03-worker-delivery.md). That declaration was removed when
-`closeout_door` left the worktree contract and the integration path, so a direct-landing record now
-names no dependencies; the section is kept as the record of what the R03 shape was.
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T00:51 UTC — Retired ledger-intent publication and ledger recovery cells from direct runtime coordination; retained canonical journal ownership, request-only admission, bounded reconciliation, and same-generation attempt history. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the door-free record
   shape this card records is the frozen one. Re-read the card against the source:

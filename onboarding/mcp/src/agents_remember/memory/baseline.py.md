@@ -1,106 +1,123 @@
 # mcp/src/agents_remember/memory/baseline.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/memory/baseline.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `52875e7a8695fc7b67bff21ebb07a67268213967` |
-| lastVerifiedCommitDate | 2026-09-14T00:06:58+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/memory/baseline.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:16 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `../../../overview.md` |
+
+## Governing Overview
+
+[Nearest governing overview](../../../overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T01:16 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-`baseline.py` is the package-local `c-10-adopt-memory-baseline` skill implementation for inspecting and
-adopting an existing external-memory onboarding baseline. The memory commit it creates when adopting is
-attributed: since 260913-LCA-L4 it carries the `Code-Commit:` trailer naming the code source-branch
-commit the initial ledger row maps.
+Inspects and adopts an existing external-memory onboarding baseline. Adoption creates an attributed
+memory-content commit; the consumer ledger is computed from Git and refreshed as a disposable cache.
 
 ## Code Commentary
 
 ### Logic
 
-The module exposes `BaselineRequest`, `baseline_status()`, and
-`baseline_adopt()` as service entry points for MCP application entry points. The CLI
-commands now adapt parsed arguments into that request shape, print the returned
-payload, and return the service return code. The thin argparse-to-context
-adapter is `resolve_baseline_context(args)` (renamed from the package-generic
-`resolve_context`); it delegates to `resolve_request_context(request_from_args(args))`.
-`resolve_request_context` passes the request's `topology` and `coordination_root` to the resolver
-inside a `CoordinationHints(...)` (260731-EFA-L2) — the resolver no longer accepts
-`requested_topology=` / `coordination_root=` as individual keywords. `code_repository_name`,
-`workspace_root` and `code_repository_root` are still passed directly.
+`BaselineRequest`, `baseline_status`, and `baseline_adopt` are the service entry points. CLI parsing
+adapts into the request object, and `resolve_request_context` passes topology and coordination hints
+through the shared resolver. Drift discovery includes sidecar and inline onboarding and writes its
+report before the adoption decision.
 
-### Attribution At The Commit Seam (260913-LCA-L4)
+`ledger_status` reports the derived Git-history view or an unavailable-history diagnostic.
+`base_payload` reuses that observation to classify `already-adopted` when readable history supplies a
+memory-content commit, rather than performing a second unguarded history walk. Cache existence still
+has no role in that decision.
 
-Baseline adoption writes the first mapping a repository's memory has, and it takes a commit message
-from nobody: its adopt subject is a hard-coded string built from the code repository's name. Before L4
-that subject was the whole message, so the memory commit pair — the only memory commit a fresh baseline
-has — carried no attribution and the projected ledger would simply have no first row.
+A resolvable HEAD whose ancestry cannot be read reports top-level `unavailable`. `baseline_adopt`
+returns that refusal before cache preparation, content staging, or ref mutation; accepting drift
+cannot override unreadable history. An unborn repository has no resolvable HEAD, so its unavailable
+initial walk does not by itself block bootstrap: it remains `ready` subject to the ordinary drift
+rules. Drift reporting still precedes the adoption decision.
 
-In `adopt_initial_baseline` (`:169-232`) the code commit is now resolved **once** and used twice
-(`:204-221`):
+`has_adopted_baseline` remains the direct bootstrap guard inside `adopt_initial_baseline`. Actionable
+drift still blocks new adoption unless `accept_drift` is explicit.
 
-```python
-code_source_commit = branch_commit(context.code_repository_root, source_branch)
-require_git(context.memory_root, ["add", *existing_paths])
-memory_content_commit = commit_if_dirty(
-    context.memory_root,
-    render_memory_content_message(
-        f"[adopt-{context.code_repository_name}-memory-baseline] Adopt external memory content",
-        code_source_commit,
-    ),
-)
-ledger = create_initial_ledger(
-    context.code_repository_name,
-    code_source_commit,
-    memory_content_commit,
-)
-```
+`adopt_initial_baseline` requires real onboarding, docs, or system content and the checked-out
+repository-default memory branch. `_baseline_default_branch` also supports the exact unborn `main`
+created by memory initialization, using its configured default-branch authority. It does not create,
+switch, or commit an integration ref.
 
-Two independent resolutions of "the code source-branch commit" is exactly how a trailer and its ledger
-row come to disagree, so hoisting it is the point rather than a tidy-up. The trailer is rendered by
-`kernel.memory_attribution.render_memory_content_message` — the package's one writer, so this route does
-not own a format — and it names `branch_commit(code_repository_root, source_branch)`, the same value
-`create_initial_ledger` maps. The adoption still requires external topology, still blocks on actionable
-drift unless it is explicitly accepted, and still refuses in the same places; only the memory-content
-message gained the trailer.
+The code source-branch commit is resolved once. The fixed adoption subject is passed through
+`render_memory_content_message`, so the resulting memory commit carries that exact `Code-Commit`
+trailer. Cache preparation adds the ignore rule and removes the cached ledger from the index; the
+shared `commit_if_dirty(..., exclude_paths=("memory.md",))` stages content without it. The returned
+bootstrap contains `memoryContentCommit` and best-effort `ledgerCache`, with no ledger-only commit.
 
-The `memory.md`-only ledger commit (`:224`) is deliberately left unattributed: it names no code commit,
-and a second trailered commit for one code commit would project a duplicate row.
+### Conventions
+
+MCP application functions call the service directly rather than parsing CLI stdout. `dry_run`
+defaults to false; an explicit dry run previews adoption. The kernel owns message rendering and
+cache computation, while the shared Git module owns content staging.
 
 ### Invariants And Boundaries
 
-- Adoption requires external topology.
-- Actionable drift blocks adoption unless explicitly accepted.
-- This module is invoked through typed MCP payloads, not through a coordinator
-  runtime script path.
-- MCP application entry points should call `baseline_status()` and `baseline_adopt()`
-  directly rather than invoking `main(argv)` and parsing stdout.
-- Baseline status imports drift classifiers from the `memory_quality.integrity`
-  package; the old top-level `drift` package is no longer present.
-- `baseline_adopt`'s `dry_run` defaults to `False` (act-by-default); `dry_run=true`
-  previews the adoption plan without committing.
-- The adopting memory commit is attributed to the code source-branch commit, and the initial ledger row
-  maps that same resolved value — one resolution, so the trailer cannot disagree with the ledger. The
-  attribution is rendered by `kernel.memory_attribution.render_memory_content_message`, never by a
-  route-local format, and the `memory.md`-only ledger commit stays unattributed by rule.
+- External topology, bootstrap branch ownership, and drift acceptance remain real admission rules.
+- Cache existence, content, or a missing cache path cannot authorize or block adoption.
+- A resolvable HEAD with unavailable ancestry cannot be adopted as a new baseline, even with drift accepted.
+- Attribution is stored in the real memory commit, not reconstructed from a hand-written pair.
+- Repeating adoption with readable attributed history returns `already-adopted` without another commit.
+
+### Todos
+
+No new file-local follow-up is established by this documentation pass.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:353-361; mcp/src/agents_remember/application/memory_tools.py:363-379 |
-| Ledger parsing and writing live in the kernel. | `load_ledger`; `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:202-205; mcp/src/agents_remember/kernel/memory_ledger.py:216-238 |
-| The adopting memory commit is attributed to the code source-branch commit through the kernel's one renderer, and that same resolved value is what `create_initial_ledger` maps. | `render_memory_content_message`; `code_source_commit`; `create_initial_ledger` | mcp/src/agents_remember/memory/baseline.py:208-221; mcp/src/agents_remember/kernel/memory_attribution.py:72-97 |
-| The end-to-end case that drives the public `memory_baseline_adopt` on a real disposable repository and asserts both documented git readers see the trailer, and that the ledger commit sees none. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch` | mcp/tests/test_memory_attribution_producers.py:289-345 |
+| Context, drift, and Git-history adoption decisions. | L71-L82; L89-L114; L236-L245; L248-L275; L284-L322 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| Bootstrap branch proof and the one attributed content commit. | L133-L169; L172-L227 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| Cache preparation and refresh are separate from Git commit publication. | L44-L62; L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Shared staging excludes derived paths from the content commit. | L191-L197; L200-L207 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. | L303-L387 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
 
-## 260815-DAG-L4 Authority Boundary
+## Cross-Repo References
 
-L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:16 UTC — Documented status classification from the already-derived observation, the existing-HEAD unavailable-history refusal before Git/content/cache mutation, and legitimate unborn readiness under the existing drift rules. Working candidate verified against the formatted source; real commit metadata and earlier history remain unchanged.
+
+
+- 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
+
+
+- 2026-09-15T00:51 UTC — Replaced cache-existence and ledger-only publication contracts with attributed-history adoption, one content commit, and best-effort cache reporting; retained drift and bootstrap branch authority. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): baseline adoption became one of the five memory-content producers, and it was the
   one whose commit message is nobody's argument — its hard-coded adopt subject was the whole message, so

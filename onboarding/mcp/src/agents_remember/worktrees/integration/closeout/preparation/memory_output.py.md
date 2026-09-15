@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`|
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-15T00:59 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,81 +16,67 @@
 
 ## Purpose
 
-Ordered post-certification private M and L preparation.
+Prepare code and memory-content outputs after memory certification, without publishing logical refs.
 
 ## Code Commentary
 
 ### Logic
 
-`_MemoryIntentSelection` carries a typed memory-content or ledger leg, parent, tree, existing proof and write-enabled decision into `_intent`. The private output observer is an explicit module dependency. Ordered M/L preparation, exact existing-proof reuse and disabled-write refusals remain unchanged.
+`PreparedMemoryOutputs` carries the handoff plus exactly code and memory outputs. `_MemoryIntentSelection` supplies the memory parent, admitted tree, existing proof, and write decision. `prepare_memory_outputs` reopens current certification, selects the genuine code output, and either creates memory content or retains the actual existing memory HEAD. No ledger output, mapping lookup, ledger blob comparison, or third preparation leg remains.
 
-prepare_memory_outputs reopens current prepared-memory certification, selects the genuine code output and either creates M or retains a proved existing M. It reads the exact ledger blob, retains a matching existing C-to-M mapping or builds the required new ledger tree in an isolated index, then prepares/selects L. Every selected memory intent carries the exact Gate-5 certificate and enabled-leg policy. Previously selected outputs are physically re-proved. Both logical branches remain untouched by this owner.
+For a created memory output, `_intent` renders `normalizedMessage` through the kernel's one `Code-Commit` renderer against the candidate's code commit. The stored message is exactly what private execution uses and finalization publishes; attribution is inside the hashed object. For a no-write output the message and private root are absent, so an unchanged memory HEAD can be reused even when a memory write/message is not enabled.
 
-**The memory-content leg is attributed, and the ledger leg is not.** `_intent` (`:75-142`) renders
-`normalizedMessage` through one branch per leg (`:92-98`): the memory-content leg calls
-`kernel.memory_attribution.render_memory_content_message(effective.message_for("memory"),
-result.candidate.codeView.codeCommit)` (`:93-95`) — the kernel's one writer of the `Code-Commit:`
-trailer, so this route names the code commit its candidate was certified on without owning a second
-renderer — while the ledger leg keeps the plain `effective.message_for("ledger")` (`:97`) and names no
-code commit. The message is stored under `normalizedMessage` (`:124`) and is consumed by
-`private_execution.py:61` as the private commit's message, which is why the attribution is rendered at
-intent construction rather than appended later: `finalization.py` publishes that exact prepared object to
-the live memory ref, so the trailer is inside the object the ref receives and cannot be added afterwards
-without rewriting it.
+Existing reuse keeps the historical raw HEAD tree as `admittedTree` and separately carries `existingMemoryProof.certifiedContentTree`. The kernel reproves that only root memory.md separates these trees. Created memory uses the cache-free certified tree directly. Each selected memory intent retains its exact Gate-5 certificate, and previously selected outputs are physically reproved.
+
+Only a real write-enabled output stages the logical memory content. Staging uses `MEMORY_CACHE_EXCLUDE`, removes the cache from the real index, requires the staged tree to equal the certified candidate, and reopens current certification again. These index changes do not advance either logical branch.
 
 ### Conventions
 
-Use the named source owners directly. The implementation is present in landed IAS; this preparation pass does not advance verification stamps.
+Use the named source owners directly. The earlier introduction and verification records remain historical facts; the current uncommitted candidate changes the behavior described here. The existing commit-verification metadata is retained until its owner records a real committed source revision.
 
 ### Invariants And Boundaries
 
-The memory-content intent's message carries exactly one `Code-Commit: <sha>` trailer, naming the code
-commit the candidate was certified on, and it is rendered by the kernel's single renderer rather than by
-a route-local format. The ledger intent is deliberately trailerless: the `memory.md`-only commit names
-no code commit, and a second trailered commit for one code commit would project a duplicate row in the
-attribution-derived ledger. Nothing is appended to a message after it is stored — `normalizedMessage` is
-the message the private commit is created with, and finalization publishes that object.
+The memory-content message uses the single kernel renderer; nothing appends attribution after the selected message or commit object is created. Existing raw HEAD/tree identities must never be relabelled as the cache-free certificate subject. New private memory output must exclude the cache, while unchanged historical memory is reused without a synthetic mapping-only commit.
 
-The route has **no behavioural case of its own**: its production entry point
-(`certification/execution.execute_selected_closeout`) has no caller, so nothing can be published through
-it to observe. What protects the attribution here is the source census case in
-`mcp/tests/test_memory_attribution_producers.py`, which asserts this module's renderer call by name; that
-is the residual gap stated on the kernel card rather than hidden.
-
-The documented types and paths do not themselves establish execution, certification, delivery or
-acceptance. Those claims require the corresponding owning runtime evidence.
+The inspected production tree still has no caller of `certification/execution.execute_selected_closeout`. The committed producer census checks the renderer call; neither that census nor focused disposable boundary checks establish a public end-to-end certification result. The owning runtime evidence is required for execution, delivery, or acceptance claims.
 
 ### Todos
 
-No source-local TODO is asserted here.
+No additional source-local TODO is asserted by this maintenance pass.
 
 ## Docs References
 
-| Finding | Anchor | Source |
+No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No external domain source is configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| `PreparedMemoryOutputs` owns the corresponding behavior described above. | `PreparedMemoryOutputs` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:57-63` |
-| `_intent` owns the corresponding behavior described above, and it is where the per-leg message is chosen. | `_intent` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:75-142` |
-| The memory-content leg renders its message through the kernel's one writer, against the candidate's certified code commit; the ledger leg keeps the plain message and carries no trailer. | `render_memory_content_message`; `message_for` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:92-98`; `mcp/src/agents_remember/kernel/memory_attribution.py:72-97` |
-| The rendered message is what the private commit is created with, and finalization publishes that exact object to the live memory ref. | `normalizedMessage` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:107-139`; `mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:51-61` |
-| `_output` owns the corresponding behavior described above. | `_output` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:165-176` |
-| `_prepare` owns the corresponding behavior described above. | `_prepare` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:179-225` |
-| `_ledger_tree` owns the corresponding behavior described above. | `_ledger_tree` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:228-248` |
-| `prepare_memory_outputs` owns the corresponding behavior described above. | `prepare_memory_outputs` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:251-313` |
-| The census case that is this route's only attribution protection, because the route has no reachable public entry point. | `test_every_census_producer_reaches_the_shared_renderer`; `_PRODUCERS` | mcp/tests/test_memory_attribution_producers.py:119-137; mcp/tests/test_memory_attribution_producers.py:55-63 |
+| The bundle has code and memory outputs only. | L44-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Created memory uses the one renderer; no-write intent has no message or private root. | L59-L122 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Memory attribution is appended to the caller's body by one shared renderer. | L67-L92 | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
+| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | L159-L198 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | L201-L236 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| The stored normalized message becomes the private commit message. | L49-L66 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
+| The committed census checks that every listed producer reaches the shared renderer. | L119-L137 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
 
 ## Cross-Repo References
 
-| Finding | Anchor | Source |
+These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Retired ledger-output preparation and documented two-output selection, real trailer attribution, raw/certified tree separation, disabled-write no-op reuse, and exact cache-excluding staging. Source SHA-256 `2ee68ae731e22bddf20478e1181247c758e145c097ebf86fa7aca1386711f886`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): `_ledger_tree` now hands the runner one

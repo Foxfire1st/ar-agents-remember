@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/kernel/git_closeout_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-15T00:59 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -16,49 +16,62 @@
 
 ## Purpose
 
-Expected-old publication capability and exact prepared commit proof.
+Expected-old publication capability and exact prepared commit proof for one Git ref.
 
 ## Code Commentary
 
 ### Logic
 
-Publication has a separate sealed capability from private preparation. The binding names the operation, generation, logical branch, expected old commit and exact prepared commit/tree. Raw commit validation recomputes the complete object identity and requires the exact prepared tree; a new prepared commit must have the sole expected-old parent. Observations distinguish old, new and existing states; publication authority, cancellation and journal selection remain caller responsibilities.
+Publication has a separate sealed capability from private preparation. The binding names the operation, generation, logical branch, expected old commit, and exact prepared commit/tree. Raw commit validation recomputes the complete object identity and requires the declared raw tree; a new prepared commit must have the sole expected-old parent. Observations distinguish old, new, and existing states.
+
+`allow_memory_cache` is false by default. The memory publication owner selects it explicitly so the runner can omit only root `memory.md` from logical index, flag, and physical-content checks. This never changes `prepared_tree` or the hash/parent checks over raw commit bytes. The runner refuses a newly published memory commit that actually includes the cache. Lifecycle approval, cancellation, and selected-journal ownership remain caller responsibilities.
 
 ### Conventions
 
-Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870` and remains byte-identical at the recovery code candidate. Its behavior was re-read against that source during memory recovery; the existing metadata owner still owns the pending verification stamp.
+Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870`. The earlier introduction and verification records remain historical facts; the current uncommitted candidate changes the behavior described here. The existing commit-verification metadata is retained until its owner records a real committed source revision.
 
 ### Invariants And Boundaries
 
 The documented types and paths do not themselves establish execution, certification, delivery or acceptance. Those claims require the corresponding owning runtime evidence.
 
+An existing or already-new observation does not authorize another ref mutation. Cache filtering is specific to memory content; code publication remains strict. The binding does not turn an ignored cache into a third output or a commit-authority record.
+
 ### Todos
 
-No source-local TODO is asserted here.
+No additional source-local TODO is asserted by this maintenance pass.
 
 ## Docs References
 
-| Finding | Anchor | Source |
+No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No external domain source is configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| `GitCloseoutPublicationError` owns the corresponding behavior described above. | `GitCloseoutPublicationError` | `mcp/src/agents_remember/kernel/git_closeout_publication.py:23-30` |
-| `GitCloseoutPublicationBinding` owns the corresponding behavior described above. | `GitCloseoutPublicationBinding` | `mcp/src/agents_remember/kernel/git_closeout_publication.py:34-81` |
-| `GitCloseoutPublicationCapability` owns the corresponding behavior described above. | `GitCloseoutPublicationCapability` | `mcp/src/agents_remember/kernel/git_closeout_publication.py:85-94` |
-| `GitCloseoutPublicationObservation` owns the corresponding behavior described above. | `GitCloseoutPublicationObservation` | `mcp/src/agents_remember/kernel/git_closeout_publication.py:98-101` |
-| `GitCloseoutPublicationResult` owns the corresponding behavior described above. | `GitCloseoutPublicationResult` | `mcp/src/agents_remember/kernel/git_closeout_publication.py:105-108` |
+| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | L33-L82 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | L61-L82 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| Capability use reopens the caller-owned authority. | L91-L95 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| Result records preserve before/after observations and any actual Git command result. | L105-L109 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | L688-L720 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| Publication issues one expected-old CAS and does not rerun already-new or existing output. | L760-L783 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Cross-Repo References
 
-| Finding | Anchor | Source |
+These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Recorded the memory-domain cache option without weakening raw commit/tree/parent proof or changing code publication semantics. Source SHA-256 `d6c8f5f2e7a71bdd9a79cd28b5254bf0d101c839d4b128bdb685348a0779c8e2`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 
 ### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
 

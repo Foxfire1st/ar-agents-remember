@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/certification/lifecycle_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:02:26+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,11 @@ shape constraints. Shared individual corrective dispositions now live in the mod
 
 ### Logic
 
-The local literals fix authority/generated-input status and the four durable finalization legs.
+The durable finalization order is code commit, external-memory commit, then contract
+finalization. A consumer ledger cache has no finalization leg or write intent; the journal still
+binds the actual applicable outputs and permits only one unfinished intent at a time.
+
+The local literals fix authority/generated-input status and the three durable finalization legs.
 `ExactCandidateObservation` carries owner-produced identities and statuses; conflicted worktrees
 must name exactly their sorted unique conflict paths. Shared `CorrectiveInputChange` and
 `RedCatalogDisposition` values are imported from `models/certification/corrective.py` by their
@@ -40,7 +44,7 @@ are not process-execution evidence.
 `FinalizationBoundaryObservation` carries current owner observations for the finalization
 validator; constructing it does not re-observe Git, approval or door authority. `DurableFinalizationLeg`
 validates authority/intended/proven-output shape. `FinalizationJournalState` preserves ordered
-code, external-memory, ledger and contract legs, permits at most one unfinished intent, and
+code, external-memory and contract legs, permits at most one unfinished intent, and
 requires monotonic progress. Its `next_leg` prefers the retained intent before a pending leg.
 The finalization envelope requires its explicit `nextLeg` to equal that derived journal edge.
 
@@ -56,7 +60,7 @@ read/write currentness remain responsibilities of the admission and finalization
   with its own envelope; supplied authority digests still require their owner’s evidence.
 - An applicable finalization leg always carries write authority; `not-applicable` legs carry
   none.
-- The finalization journal never reorders the durable code/memory/ledger/contract legs and never
+- The finalization journal never reorders the durable code/memory/contract legs and never
   retains two unfinished write intents.
 - The candidate observation is admission input; the model checks shape, not authority truth.
 
@@ -67,38 +71,40 @@ Authority observation and engine behavior are owned by `lifecycle_admission` /
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root. The governing task artifact
-below closes the informational gap for the finalization journal semantics.
+No Domain Documentation source is configured for this memory root. The source below proves the
+current journal semantics; the task history explains the retired ordering.
 
-CCR-R05@v3 (requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md, "Finalization
-Required Behavior") requires preserving current code-commit, external-memory-commit, ledger,
-and contract-finalization owners and ordering; journaling every durable leg so an unchanged
-interruption resumes without any gate rerun; and resuming the exact durable path on partial
-publication.
+The historical CCR-R05@v3 plan required code, external-memory, ledger, and contract finalization
+legs. LCA-L9 retires the ledger leg. The surviving requirement journals each real durable leg so
+an unchanged interruption resumes the exact publication path without rerunning gates.
 
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No configured external Domain Documentation source applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The exact-candidate observation is the admission boundary's owner-produced input. | `ExactCandidateObservation` | mcp/src/agents_remember/certification/lifecycle_models.py:48-81 |
-| Prior-red corrective and recovery records bind digests to semantic envelopes. | `RedCatalogDisposition`; `PriorRedDispositionManifest`; `CertificationRecoveryRecord` | mcp/src/agents_remember/models/certification/corrective.py:41-70; mcp/src/agents_remember/certification/lifecycle_models.py:105-117; mcp/src/agents_remember/certification/lifecycle_models.py:158-170 |
-| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | `FinalizationJournalState`; `LifecycleFinalizationSemanticEnvelope` | mcp/src/agents_remember/certification/lifecycle_models.py:217-252; mcp/src/agents_remember/certification/lifecycle_models.py:255-270 |
-| Certificate identities and creation provenance are imported from the R21 certificate owners. | `GateCertificateIdentity`; `CreationProvenance` | mcp/src/agents_remember/certification/certificate_models.py:100-102; mcp/src/agents_remember/certification/certificate_models.py:77-82 |
+| Finalization order contains code, external memory, and contract publication only. | L32-L36; L39-L43; L215-L250 | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
+| The exact-candidate observation is the admission boundary's owner-produced input. | L46-L79 | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
+| Prior-red corrective and recovery records bind digests to semantic envelopes. | corrective.py: L41-L70; lifecycle_models.py: L103-L115; L156-L168 | [mcp/src/agents_remember/models/certification/corrective.py](mcp/src/agents_remember/models/certification/corrective.py); [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
+| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | L215-L250; L253-L268 | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
+| Certificate identities and creation provenance are imported from the R21 certificate owners. | L100-L102; L77-L82 | [mcp/src/agents_remember/certification/certificate_models.py](mcp/src/agents_remember/certification/certificate_models.py) |
 
 ## Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No cross-repository implementation is referenced. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Retired the ledger finalization leg while preserving ordered durable output and contract evidence. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

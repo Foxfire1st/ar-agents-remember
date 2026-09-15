@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/door.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](../overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -22,6 +22,8 @@ the journal alone; the worktree contract no longer stores one.
 ## Code Commentary
 
 ### Logic
+
+Door successors bind the accepted code and memory candidate trees, task intent, topology, and review/memory/admission/scheduling provenance. Their identity and immutable transition checks contain no ledger row, cache digest, or ledger-commit cell, so rebuilding the downstream cache cannot invalidate a claimed door.
 
 The public surface is `DoorContractReadFailure`, `DoorPublicationClassification`, `DoorPublicationError`, `door_generation_for_operation`, `successor_waiting_door`, `prepare_door_publication`, plus the journal storage accessors `door_journal_path`, `read_published_door`, `write_published_door` and the single live reader `live_closeout_door`. The journal owns a write-once closeout-door generation. Publication intent and the journal's own state transition decide recovery; the queue may consume the published door but cannot synthesize, repair, or retain lifecycle evidence.
 
@@ -46,13 +48,13 @@ Under CCR-R03@v1 claiming re-requires the waiting generation's declared dependen
 declaration from the claimed predecessor's candidate trees, topology, intent, and provenance
 records before hashing the successor identity — so the successor is a declared content-addressed
 consumer of exactly the prior generation it reads
-cit:([`door_generation_for_operation`, `successor_waiting_door`], mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-114; mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-175).
+cit:([`door_generation_for_operation`, `successor_waiting_door`], mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-114; mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-172).
 
 ### Conventions
 
 Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity. Door dependency declarations are rebuilt from the exact provenance records, never from queue rows or task prose.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
 - Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
@@ -69,21 +71,36 @@ None recorded beyond the explicit terminal-archive boundary recorded by the gove
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `successor_waiting_door` binds successor identity to code/memory and task provenance without a ledger dependency. | L117-L172 | [mcp/src/agents_remember/worktrees/integration/closeout/door.py](mcp/src/agents_remember/worktrees/integration/closeout/door.py) |
+| `_require_door_transition` preserves the exact door identity and legal publication transitions. | L302-L360 | [mcp/src/agents_remember/worktrees/integration/closeout/door.py](mcp/src/agents_remember/worktrees/integration/closeout/door.py) |
+
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:31-36; mcp/src/agents_remember/worktrees/integration/closeout/door.py:39-58; mcp/src/agents_remember/worktrees/integration/closeout/door.py:61-76 |
-| The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. | `door_journal_path`; `read_published_door`; `write_published_door`; `live_closeout_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:178-181; mcp/src/agents_remember/worktrees/integration/closeout/door.py:184-194; mcp/src/agents_remember/worktrees/integration/closeout/door.py:197-203; mcp/src/agents_remember/worktrees/integration/closeout/door.py:206-235 |
-| Claim and successor seams re-require or rebuild the door dependency declaration. | `door_generation_for_operation`; `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-114; mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-175 |
+| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | L32-L36; L40-L58; L61-L76 | [mcp/src/agents_remember/worktrees/integration/closeout/door.py](mcp/src/agents_remember/worktrees/integration/closeout/door.py) |
+| The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. | L203-L232 | [mcp/src/agents_remember/worktrees/integration/closeout/door.py](mcp/src/agents_remember/worktrees/integration/closeout/door.py) |
+| Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`) | L79-L114; L117-L172 | [mcp/src/agents_remember/worktrees/integration/closeout/door.py](mcp/src/agents_remember/worktrees/integration/closeout/door.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional cross-repository evidence applies. | — | — |
 
 ## 260821-CLIVE Sole Door Publication Authority
 
@@ -102,6 +119,9 @@ reproven at claim, and the successor declares the exact predecessor generation a
 (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=8030607f94cfd3a9b1ab094b9f1caef465e24a0646cde170eae24c11aa25a781. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `door_generation_for_operation`, `successor_waiting_door` repointed to mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-175, mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-114. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that door storage moved out of the worktree contract into `<worktree_group>/reports/closeout-door.json`, named the journal accessors (`door_journal_path`, `read_published_door`, `write_published_door`) and the single live reader `live_closeout_door` that replaced every `contract.closeout_door` read, and recorded that `DoorPublicationEvidence` shed its three contract-SHA fields to `{state, generation}`. Replaced the contract-publication wording in Purpose, Logic and the sole-authority section, and added the no-contract-door-store invariant. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.

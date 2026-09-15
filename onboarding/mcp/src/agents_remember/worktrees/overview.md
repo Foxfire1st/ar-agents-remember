@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -28,6 +29,10 @@ Since 260831-LOCR-L37 the route also owns the **stop**: `modules/pause.py` relea
 activation selection, publishes nothing, and hands the turn back.
 
 ## Hot Path Summary
+
+`series_closeout.py`, integration admission and synchronization use exact code/memory history. `ledger_projection.py` and `named_ref_memory.py` retain the consumer read surface, derived solely from committed attribution. Closeout and landing produce at most code plus one memory-content output; cache availability cannot gate them.
+
+## Detailed Route Context
 
 `activation/atomic_series_activation.py` is the single disposable selection authority, keyed per
 series contract by `contract_fingerprint`; its release and terminal siblings own exact vacancy. The
@@ -166,7 +171,7 @@ memory-carryover vehicle.
 | `sync_source_refresh.py` | pre-lock evidence | shared bounded upstream refresh without local authority | covered |
 | `sync_transaction.py` | transaction driver | public start/resume/continue/cancel routing | covered |
 | `sync_transaction_state.py` | stable journal | state survives task/contract readability failures | covered |
-| `sync_transaction_authority.py` | identity/admission | pins sources and validates official code-memory ledger pairing | covered |
+| `sync_transaction_authority.py` | identity/admission | pins exact code and memory source refs and admits their Git history | covered |
 | `sync_transaction_git.py` | Git proof | retains conflicts and proves exact operation-created history | covered |
 | `sync_transaction_recovery.py` | finalization/recovery | terminal publication, rollback, and malformed/missing journal escape | covered |
 | `sync_transaction_results.py` | public evidence | consistent previews, conflict guidance, and terminal replay | covered |
@@ -189,28 +194,9 @@ memory-carryover vehicle.
 - Normal readers never infer selection or sync state from legacy files, task text, queue rows, or
   ambient Git. Missing/corrupt authority fails closed and is repaired only by explicit bounded
   selection/cancellation paths.
-- External-memory ledgers are newest-first state history. Sync proves Git state and the admitted
-  mapping only: it requires no row list of the `memory.md` a resolution carries, because the ledger is
-  derived state and its rebuild is its authority. A row the rebuild cannot resolve is a reported
-  exclusion (`sourceRowsExcluded`, `sourceExcludedRows`, `sourceExcludedReasons`), never a refusal
-  here. Repeated code commits remain valid newest-first history, and the newest matching row remains
-  current authority.
-- **The source ledger is the source's own recorded table with the attributed rows merged into it
-  (260913-LCA-L2, corrected by 260913-LCA-L11).** `read_ledger_source` reads the table the source
-  commit carried on every path and merges the reachable memory commits' own `Code-Commit:` trailers
-  into it, excluding — with a recorded reason and a reported count — any row the exact source commit
-  cannot prove. It is not a "trailers first, blob as fallback" rule: that form made a partially
-  backfilled line read as a nearly empty source. The tracked ledger commit, every named-ref reader of
-  it and the ledger commit leg itself are unchanged, and retiring that tracked form is a separate
-  leaf.
-- **The rebuild outranks the tracked ledger file (260913-LCA-L11).** The integration-side check that
-  required a landing to preserve the complete source ledger history — no source row dropped,
-  reordered or replaced — is **removed**, because it protected a derived file. Every promise a
-  landing still makes is about the commits: the landed pair is mapped, every row of the landed table
-  is true against the two repositories, the landed memory content descends from the exact memory
-  source while the source is still behind the landing, and the header names its own first row. The
-  cost is recorded rather than hidden: an older row reordered above a newer one for the same code
-  commit can now land unreported for any code commit other than the landed one.
+- Code and memory refs, substantive trees, ancestry and admitted operation identity decide Git mutations. A consumer ledger is computed from memory commit attribution and never supplies a missing Git proof.
+- `read_ledger_source` derives rows only from reachable `Code-Commit:` trailers; it does not union the cached table into history. Missing or malformed cached bytes are a cache miss. Invalid code attributions are reported by the reader, separately from transaction admission.
+- Memory candidate/status/index comparisons exclude root `memory.md`; code repositories keep their ordinary file semantics. Real content conflicts, branch movement, source ancestry and compare-and-swap publication checks remain enforced.
 - Cleanup may release only an exact selected terminal contract and must do so before deleting the
   canonical contract pointer needed to prove identity.
 - **The stop is not a publication (260831-LOCR-L37), and a master is not sealed by its own landing
@@ -240,6 +226,14 @@ memory-carryover vehicle.
 | Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
 | Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution, and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:304-326; mcp/src/agents_remember/worktrees/sync_transaction.py:336-362; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
 | A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. | L104-L122 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Consumer source rows are derived only from Git attribution. | L222-L249 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Real memory source ancestry remains a landing requirement. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
 
 ## Cross-Repo References
 
@@ -369,7 +363,7 @@ with typed status/detail; no worktree-local fallback remains.
 
 ## Integrated IAS Recovery Contract
 
-The default application bundle installs `PreparedCloseoutContinuation`, composing the memory-certification producer and prepared finalizer through the existing downward port. The closeout child owns resumption of selected private outputs and original C/M/L publication. Per-contract activation selection, synchronization, ledger authority and coordinator isolation are unchanged; an absent capability in an incomplete custom composition still refuses.
+The default application bundle installs `PreparedCloseoutContinuation`, composing the memory-certification producer and prepared finalizer through the existing downward port. The closeout child owns resumption of selected private outputs and original code/memory publication. Per-contract activation selection, synchronization and coordinator isolation remain; the ledger is a disposable consumer cache; an absent capability in an incomplete custom composition still refuses.
 
 ## CCR-L42 Refresh Validation Parity
 
@@ -380,7 +374,7 @@ The parity candidate composes the sidecar and governing route body/history check
 
 Worktree delivery preserves exact task/contract/source identity, explicit approval and handover
 controls, leases, recovery evidence, and protected ref safety. Normal closeout commits code,
-mechanically refreshes and commits external memory, and records the ledger; normal integration
+mechanically refreshes and commits substantive external memory when needed, then refreshes its consumer cache; normal integration
 publishes the prepared pair with ref/tree movement and no merge commit. Strict code quality, memory
 quality, selected certification, curator coherence, independent review, and full suites are not
 automatic transaction steps; full suites require an explicit developer request.
@@ -439,7 +433,9 @@ cannot be re-recorded into `completed` + `cleanup="pending"` — the state `work
 Completion still travels through `worktree_integrate`, which reaches it only once the series is
 genuinely terminal.
 
-## Route Impact: Preview/Apply Parity And The Checkpoint Reachability Repair (260831-LOCR-L34)
+## Historical milestone context: Route Impact: Preview/Apply Parity And The Checkpoint Reachability Repair (260831-LOCR-L34)
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 **The invariant: a preview that plans an operation does not enforce it, and the two surfaces must be
 maintained as one.** A dry run is read as a promise — by a human deciding what to do next and by an
@@ -596,7 +592,9 @@ regression: no single-boundary case could have seen it, because every operation 
 own. Leaf start and closeout use the fixture's structural equivalents, which the module docstring
 states; the master-level beats are the registered tools.
 
-## Route Impact: The Ledger's Source Is The Attribution (260913-LCA-L2)
+## Historical milestone context: Route Impact: The Ledger's Source Is The Attribution (260913-LCA-L2)
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 `ledger_projection.read_ledger_source` no longer reads the complete source ledger out of the blob at
 `commit:memory.md` alone. It merges two records: the new kernel module
@@ -652,7 +650,9 @@ f5edc613` → one non-empty value, `02ed1fbc` trailing `4214d7a1`) and re-derive
 attribution path itself is proved by `mcp/tests/test_memory_ledger.py`'s attributed fixture line, and
 making the real history fully carry it is the master's backfill leaf.
 
-## Route Impact: The Rebuild Outranks The Ledger File (260913-LCA-L11)
+## Historical milestone context: Route Impact: The Rebuild Outranks The Ledger File (260913-LCA-L11)
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 **The developer's ruling of 2026-09-14T08:15+02:00, and what this route had to give up for it.** The
 integration-side check that enforced "preserve the complete source ledger history: no source row
@@ -720,7 +720,9 @@ and duplicated source rows it now asserts as accepted, and the two new module-le
 `_require_true_rows` directly. `mcp/tests/test_memory_ledger.py` gained the exclusion case and the
 partially-trailered-source case. No new test module was added and none was deleted.
 
-## Route Impact: A Dropped Ledger Row Is Reported, Not Refused By The Sync
+## Historical milestone context: Route Impact: A Dropped Ledger Row Is Reported, Not Refused By The Sync
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 **The same ruling that removed the integration gate removed the sync gate.** The resumable sync
 transaction was the file rule's second keeper: a descendant or merged `memory.md` had to contain
@@ -749,6 +751,9 @@ message last. Before this the only thing said about that state was the refused p
 complaint, which named neither the stuck contract nor what it was doing.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced source-table union and ledger-based admission invariants; historical milestone accounts are explicitly superseded. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/worktrees` carries local unstaged changes not represented in HEAD.

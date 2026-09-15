@@ -5,166 +5,109 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:51 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Nearest governing overview](overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Focused kernel-level proof that the external-memory ledger is newest-first state history rather
-than a globally unique code-to-memory map — and, since 260913-LCA-L2, that the ledger's *source* is
-the memory commits' own `Code-Commit:` attribution rather than the tracked `memory.md` blob.
+Tests the ledger's newest-first data format and verifies that runtime ledger readers derive
+mappings from committed attribution while treating cached tables only as observations.
 
 ## Code Commentary
 
 ### Logic
 
-The first scenario starts from one code/memory edge, prepends a later memory commit for the same code
-commit, round-trips the canonical text, and proves both views of authority: `find_mapping` returns the
-newest memory state while `contains_mapping` still finds the older exact audit edge.
+The serialization case preserves repeated code commits as ordered memory history: `find_mapping`
+returns the newest row and `contains_mapping` can still find an older exact pair. These are lookup
+semantics of derived data, not permission to perform Git operations.
 
-The rest of the file is two fixture worlds over the projection. `_World`
-cit:([`_World`], mcp/tests/test_memory_ledger.py:82-152) writes an ordinary ledger blob and a side
-branch, and the six `test_projection_*` cases built on it predate the trailer rule: nothing in that
-fixture carries a trailer, so every one of them reaches `read_ledger_source` through the read of the
-source's **own recorded table** — which since 260913-LCA-L11 is the path every source takes, the
-trailers merely being merged into it. The attribution group is `_AttributedWorld`
-cit:([`_AttributedWorld`], mcp/tests/test_memory_ledger.py:345-401), a line where each mapping is two
-commits — the content commit carrying `Code-Commit: <sha>` and the ledger commit pinning the row
-into `memory.md` and carrying none — with one code commit attributed twice (the superseding pair
-the ledger keeps both copies of) and one memory commit carrying no trailer at all.
+`_World` now creates real code commits and attributed memory commits. Its projection cases check
+unreachable cache rows, ordering and header differences, a byte-identical correct cache, and forged
+metadata/pairs whose objects exist but whose claimed attribution does not. Contract and named-ref
+reads survive absent or malformed caches; the named-ref case also creates a same-named tag to prove
+that the exact local branch is selected. An unreadable Git commit still raises the explicit refusal.
 
-**Two cases added by 260913-LCA-L11, both about what a read may lose.** The first,
-`test_a_source_row_the_source_cannot_carry_is_reported_not_kept` (`:473-502`), is the class that
-made a real leaf's ledger read as damaged: a table row whose memory commit is not in the source's
-ancestry is now **excluded at the read with its reason** (`source.excluded_rows` carrying
-`memory-commit-unreachable`) instead of being carried into the projection to be dropped there — the
-drop becomes the projection's own stated decision rather than a silent one. The second,
-`test_a_partially_trailered_source_still_reads_its_pre_rule_rows` (`:503-532`), is the reader's
-second defect made permanent: a source whose table records hundreds of rows and whose history
-carries exactly ONE trailer must still read the pre-rule rows, because the reader used to return the
-trailers *alone* as soon as there was one — a one-row source for a 479-row line, which is the
-"looks like no attribution exists" failure in its most expensive form. It asserts
-`source.trailered_commits == 1` and that both the trailered row and the pre-rule row survive.
+`_AttributedWorld` retains historical cache-checkpoint commits as a fixture alongside actual
+attributed content. The reader must produce the attributed rows at each checkpoint, ignore
+hand-written table pairs, and emit no mappings from wholly unattributed history. A partially
+attributed history contributes only its real trailers. Invalid source and branch code targets are
+reported as exclusions instead of retained. Reversed or incomplete cached superseding pairs cannot
+change the order supplied by actual memory history.
 
-The helper `_content_commit` (`:466-472`) exists because of the first of those: a row's memory cell
-must now name a commit the repository really holds, since the read asks git rather than comparing
-strings, so the pre-rule case's placeholder 40-character cells were replaced with real commits.
-
-The ten added cases are the acceptance surface for the projection change. The closed-loop case
-walks **every checkpoint** of that line and asserts the projected rows equal the rows the tracked
-table carried at the same commit. The hand-edit case writes a row into the table under a matching
-header and asserts the projection does not move. The pre-trailer case proves a history with no
-trailer anywhere reads its own blob, and the empty-source case proves a source with neither
-contributes no rows rather than refusing. The remaining cases are the readers' own rules:
-`exclude` selects a branch's own commits, the parse takes the last trailer block and ignores a body
-mention, a trailer naming a commit the code repository lacks is not a mapping, a final block with
-several trailers is read by key, and a mapping that arrived through a merge is still found because
-it is still an ancestor.
-
-The tenth case is the cross-boundary one:
-cit:([`test_the_rendered_trailer_is_the_one_the_reader_parses`], mcp/tests/test_memory_ledger.py:698-733) renders the trailer through the
-**real writer** (`EffectiveCloseoutInput.memory_content_message`, which since 260913-LCA-L4 delegates to
-the kernel's one renderer), commits that message as a real memory commit, and reads the code
-commit back out with `attributed_commits` / `ledger_rows_from_attribution` /
-`parse_code_commit_trailer`. It exists because the writer and the reader had briefly held two separate
-`Code-Commit` literals: a writer whose key the reader does not parse loses the row entirely, and that
-looks like "no attribution exists" rather than like a bug. Nothing in the case restates the key — it
-goes through the writer and the trailer walk — because a case comparing one literal with another
-could not catch a changed constant.
+The remaining cases cover empty history, branch exclusion, last trailer-block parsing, body
+lookalikes, mixed trailer blocks, optional code-object filtering, and attributed commits inherited
+through a merge. The writer/reader round trip commits a message rendered by the real effective
+closeout input, so it checks that the actual writer's key is recognized by the actual Git reader.
 
 ### Conventions
 
-The scenario uses the public immutable ledger helpers directly, plus the attribution module's public
-readers (`attributed_commits`, `ledger_rows_from_attribution`, `parse_code_commit_trailer`) and, for
-the round-trip case, the writer's `EffectiveCloseoutInput`/`EnabledCloseoutLeg` and
-`CODE_COMMIT_TRAILER_KEY`. Since 260913-LCA-L4 that constant is imported from
-`agents_remember.kernel.memory_attribution` rather than from `agents_remember.models.closeout.input`
-(`:11`): the writing model no longer names the key at all, so the kernel module is the only place the
-module under test can read it from — the key's declaration and its one interpolation now live there
-together. The
-attribution fixture writes real 40-character object names rather than labels, because git reads a
-trailing block as a trailer only when the value looks like an object name; `CODE_ONE`/`CODE_TWO`/
-`CODE_OWN` are those names. Each checkpoint records an immutable `tuple` snapshot of its rows, so a
-later mapping cannot edit a checkpoint that was already asserted. `_commit` gained `--allow-empty`
-and `_ledger` now tolerates an empty row list, because a checkpoint can pin the same bytes twice and
-the bootstrap checkpoint has no rows yet — without both, the fixture could not represent the
-unattributed commit at all.
-
-**The literal `Code-Commit` text in this module is deliberate, and must not be "corrected" to read the
-constant.** The trailer-parse cases and the mixed-trailer-block case spell the key out on purpose:
-they are independent oracles, and a case that read `CODE_COMMIT_TRAILER_KEY` would follow a wrong
-constant instead of catching it. Only the round-trip case touches the constant, and it does so to
-prove the *writer* uses it, not to define what the reader accepts.
-
-The module is registered in the `unit-regression` evidence lane
-(`mcp/tests/test-evidence-lanes.toml`). A lane registration says where the module executes; it is not
-a recorded execution, and a focused run outside the delivery graph is not acceptance evidence.
+The file retains twenty tests. Historical ledger commits are explicit fixture data for testing
+cache independence; they do not prescribe current runtime writes or a fallback reader. Literal
+trailer spellings in parser tests are independent oracles, while the writer round trip deliberately
+uses the production renderer. Temporary repositories and source assertions provide focused
+development evidence, not certification or live integration proof.
 
 ### Invariants And Boundaries
 
-- Repeated code commits are valid when they record ordered memory states.
-- The newest matching row is current authority.
-- Older exact rows remain preserved audit history.
-- The projection answers from the attribution, not from the live table; a table edit is not a
-  mapping.
-- The source's own recorded table is read on every path, not as a fallback: the `_World` cases
-  depend on it, and a partially trailered line depends on it more (the trailers merge into it).
-- A row the source cannot prove is excluded at the read with a recorded reason and a count, never
-  dropped in silence; a placeholder memory cell is now a row the read reports rather than keeps.
-- This test does not weaken ledger schema, metadata, or first-row validation.
+- Runtime projection cannot union pre-rule cached rows into attributed Git history.
+- A valid-looking pair of existing objects is insufficient without matching committed attribution.
+- Cache absence/damage remains distinct from a genuine Git lookup failure.
+- Invalid code targets remain visible as exclusions; merged-in attributed history remains visible.
+- Repeated valid code-to-memory states keep Git-derived newest-first ordering.
+- Historical entries below do not require restoring retired table-authority assertions or ledger legs.
 
 ### Todos
 
-None recorded.
+No new file-local follow-up is established by this documentation pass.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local ledger format.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external source is required for this repository-owned regression contract. | n/a | n/a |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The focused scenario proves newest current lookup and exact historical containment after round-trip serialization. | `test_roundtrip_preserves_newest_same_code_history` | mcp/tests/test_memory_ledger.py:44-59 |
-| The kernel owns the current-versus-historical lookup distinction. | `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:255-257; mcp/src/agents_remember/kernel/memory_ledger.py:261-263; mcp/src/agents_remember/kernel/memory_ledger.py:266-274 |
-| The pre-trailer projection cases: untrue rows dropped, the source tail restored to source order, a disagreeing header recomputed, an already-correct table left byte-identical, metadata the projection did not compute preserved, and an unreadable source refused with its remedy. Every one of them reads the source's own recorded table directly, which is the path every source takes; none of them carries a trailer. | `test_projection_drops_a_row_whose_memory_content_never_landed`; `test_projection_moves_the_source_ledger_back_to_the_tail`; `test_projection_recomputes_a_header_that_disagrees_with_its_first_row`; `test_projection_leaves_an_already_correct_ledger_byte_identical`; `test_projection_keeps_the_metadata_it_did_not_compute`; `test_projection_refuses_an_unreadable_source_ledger_with_a_remedy` | mcp/tests/test_memory_ledger.py:190-216; mcp/tests/test_memory_ledger.py:219-242; mcp/tests/test_memory_ledger.py:245-267; mcp/tests/test_memory_ledger.py:248-265; mcp/tests/test_memory_ledger.py:270-285; mcp/tests/test_memory_ledger.py:288-299; mcp/tests/test_memory_ledger.py:302-317 |
-| The closed loop: the projection at every checkpoint of a realistic attributed line equals the rows that checkpoint's tracked table carried, including the superseding pair, and each code commit resolves to the same memory commit the table did. | `test_projection_is_the_ledger_the_attributed_history_records` | mcp/tests/test_memory_ledger.py:404-431 |
-| The trailers decide: a row hand-written into the table under a matching header does not appear in the projection. | `test_projection_reads_the_trailer_and_never_the_live_table` | mcp/tests/test_memory_ledger.py:434-453 |
-| The pre-trailer history reads its own recorded table, with cells that name real commits because the read asks git rather than comparing strings. | `test_projection_reads_an_unattributed_commit_from_its_own_ledger` | mcp/tests/test_memory_ledger.py:456-485 |
-| **New at 260913-LCA-L11:** a source row whose memory commit the source does not carry is excluded at the read with its reason (`memory-commit-unreachable`) and reported in `excluded_rows`, rather than carried into the projection to be dropped there — the class that made a real leaf's ledger read as damaged. | `test_a_source_row_the_source_cannot_carry_is_reported_not_kept` | mcp/tests/test_memory_ledger.py:495-522 |
-| **New at 260913-LCA-L11:** one trailer must not hide the history the trailer rule never reached. A line whose table records many rows and whose history carries exactly ONE trailer still reads its pre-rule rows, because the reader used to return the trailers alone as soon as there was one. | `test_a_partially_trailered_source_still_reads_its_pre_rule_rows` | mcp/tests/test_memory_ledger.py:525-552 |
-| The one-row helper the new exclusion rule forced: a row's memory cell must name a commit the repository holds. | `_content_commit` | mcp/tests/test_memory_ledger.py:488-492 |
-| A source with no trailer anywhere and no ledger blob contributes no rows instead of refusing — the bootstrap state. | `test_projection_contributes_nothing_for_a_source_that_says_nothing` | mcp/tests/test_memory_ledger.py:597-603 |
-| `exclude` selects a branch's own attributed commits and not the source's. | `test_attribution_reads_only_the_commits_a_caller_asks_for` | mcp/tests/test_memory_ledger.py:606-622 |
-| The message parse takes the last trailer block, ignores a body mention of the key, and rejects a value that is not an object name. | `test_trailer_parse_takes_the_last_block_and_ignores_a_body_mention` | mcp/tests/test_memory_ledger.py:625-648 |
-| A trailer naming a commit the code repository does not hold is not a mapping; the row-level truth test is opt-in and drops it. | `test_attribution_reports_only_commits_the_code_repository_holds` | mcp/tests/test_memory_ledger.py:651-663 |
-| A final trailer block holding several trailers is read by key rather than by last line. | `test_attribution_reads_a_message_whose_final_block_carries_several_trailers` | mcp/tests/test_memory_ledger.py:666-695 |
-| A merged-in mapping is still an ancestor, and the case asserts the second parent really is off the first-parent line so a first-parent walk could not have found it. | `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:736-766 |
-| The readers under test: the attribution walk, the row map, and the message parse. | `attributed_commits`; `ledger_rows_from_attribution`; `parse_code_commit_trailer` | mcp/src/agents_remember/kernel/memory_attribution.py:148-179; mcp/src/agents_remember/kernel/memory_attribution.py:213-232; mcp/src/agents_remember/kernel/memory_attribution.py:132-145 |
-| The cross-boundary case: the real writer renders the trailer, the message is committed, and the real reader resolves the code commit out of it — the guard against the writer and the reader holding two `Code-Commit` literals. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:698-733 |
-| The single key both sides use: declared in the kernel reader **and rendered there**, and imported by this test module from that kernel module (`:11`) rather than from the writing model, which stopped naming it at 260913-LCA-L4. | `CODE_COMMIT_TRAILER_KEY`; `render_memory_content_message` | mcp/src/agents_remember/kernel/memory_attribution.py:56-56; mcp/src/agents_remember/kernel/memory_attribution.py:72-97; mcp/tests/test_memory_ledger.py:11-11 |
-| The producer census that now owns the one-definition rule the round-trip case guards behaviourally. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:86-116; mcp/tests/test_memory_attribution_producers.py:119-137 |
-| The writer path the round-trip case drives, now a delegation to the kernel renderer instead of a local f-string. | `memory_content_message` | mcp/src/agents_remember/models/closeout/input.py:148-166 |
-| The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_memory_ledger.py" | mcp/tests/test-evidence-lanes.toml:75-75 |
+| Data round-trip and current-versus-historical lookup semantics. | L53-L68 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | L91-L179; L315-L335; L338-L360 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Unattributed and partially attributed histories cannot inherit cached pairs. | L499-L519; L550-L569 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Invalid targets are reported and superseding order comes from actual history. | L529-L547; L572-L613 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| The real writer/reader round trip and merged-in attribution stay covered. | L717-L751; L754-L784 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| The runtime projection under test separates computed mappings from cache observations. | L222-L249; L334-L396 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this focused unit.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T00:51 UTC — Replaced obsolete table-union, cached-metadata, additions, and malformed-table refusal expectations with Git-only attribution, cache forgery/miss checks, exact local-ref selection, and invalid-target reporting; retained twenty focused cases and the format/parser/merge protections. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of
   10 claim(s) whose anchor no longer sat in its cited range and normalised 13 further range(s) in

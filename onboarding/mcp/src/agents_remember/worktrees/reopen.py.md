@@ -1,184 +1,80 @@
 # mcp/src/agents_remember/worktrees/reopen.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/worktrees/reopen.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
+| governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[mcp/ overview](../../../overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-The `task_reopen` implementation cit:([`reopen_task`], mcp/src/agents_remember/worktrees/reopen.py:218-312): reopen a fully landed leaf task under its EXACT
-same leaf id. It reopens a task by REWRITING THE LEAF'S ENCLOSURE CONTRACT, which is why
-it lives in the worktrees package: it reads and amends the contract, emits a
-`WorktreeCommandResult`, and renders through the worktree status payload, while the
-document reset is the smaller half and goes through the `tasks` package the way every
-other worktree operation does. Ranked the other way round — as a task operation that
-happens to touch a contract — it made `tasks` and `worktrees` mutually dependent
-(`layers.toml`): the task-document store could not be loaded without loading the whole
-worktree lifecycle. Recreating worktrees stays `worktree_start`'s job.
+Reopen a fully landed leaf under the same leaf identity by atomically resetting its enclosure and task facts.
 
 ## Code Commentary
 
 ### Logic
 
-`reopen_task(contract_path, dry_run=False)` loads the enclosure contract and first runs
-cit:([`_reopen_blockers`], mcp/src/agents_remember/worktrees/reopen.py:410-424): the contract must be `kind == "leaf"` with closeout, integration,
-and cleanup all `completed`, and neither the code nor memory worktree may still exist
-on disk — anything else returns a `blocked` payload (returncode 2) listing every
-blocker.
+`reopen_task` requires a leaf whose closeout, integration, and cleanup are completed and whose code/memory worktrees are gone. It resolves the exact parent series, proves accepted memory ancestry through `require_integrated_memory_ancestry`, and uses the recorded integrated code/memory outputs as the terminal lineage position. It never reads a cache mapping or uses an integrated ledger commit.
 
-`_reopen_preflight_refusal` (code lines 315-388) is the gate both `reopen_task` (line 220) and its
-apply publication (line 527) run before anything is rewritten. It returns the `blocked` payload for a
-non-terminal leaf, then resolves the leaf's parent series through
-`require_parent_series(contract, operation="task_reopen")` and converts a `RuntimeError` into a
-`blocked` result whose summary reads "Reopen refused before resetting task state", then proves the
-external-memory ledger mapping. The helper this call names was renamed from
-`require_parent_series_accepting_leaves`; it still resolves and validates the parent series, and it no
-longer decides whether that series accepts leaves
-cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330).
+The reset clears free-form approval/output/lifecycle provenance with dataclass replacement and changes vocabulary cells through `ContractCells` and `amend_contract`. It preserves the leaf id. Task plans reset the leaf and corresponding master row; `cleanup="reopened"` tells worktree start to recreate the enclosure rather than attach to the old one.
 
-On the happy path the contract rewrite is now **two nested calls, split by what the
-type checker can see**:
+The frozen landing observation clear, leaf/master task updates, and contract reset publish in one task-fact CAS batch. Apply reloads and repeats the terminal/source checks inside that publication. Original artifacts support rollback of a failed canonical write; derived projection refresh happens afterward. Recreating worktrees remains worktree_start's responsibility.
 
-- `dataclasses.replace(contract, ...)` clears the free-form provenance — `approved_for_commit`,
-  `commit_approval_note`, the three commit hashes, `integration_strategy`, the three integrated
-  hashes, `lifecycle_id`, `memory_state`.
-- `amend_contract(..., ContractCells(human_review_status="pending-review",
-  closeout_status="not-started", integration_status="not-started", cleanup="reopened"))` moves
-  the four **vocabulary** cells.
+### Conventions
 
-The split is the fix, not a refactor. typeshed declares
-`dataclasses.replace(obj, /, **changes: Any)`, so for as long as `cleanup="reopened"` was spelled
-as a `replace` keyword it crossed the boundary **completely unchecked** — zero pyright
-diagnostics against a `Literal`, measured. And `reopened` was one of the six values
-`models.worktree.WorktreeSummary` then rejected, which is how the tool that writes it and the
-packet that reports it disagreed about the contract this tool had just written.
-`ContractCells` and `amend_contract` are the typed record and copy path that put those fields back in
-front of the checker, leaving any cell they were
-not handed alone. `cleanup: "reopened"` remains the tombstone marker `worktree_start`'s
-existing-contract branch treats like `abandoned` (recreate fresh, never attach) — and it is now a
-declared member of `CleanupStatus`, so the packet accepts it. cit:(["class ContractCells:"; "def amend_contract("; "CleanupStatus = Literal["], mcp/src/agents_remember/worktrees/worktree_contract.py:180-189; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225; mcp/src/agents_remember/models/worktree.py:39-39)
-
-`_plan_leaf_doc_reset` prepares the leaf task-document reset and publishes it only with the
-contract-side reopen transaction. cit:([`_plan_leaf_doc_reset`], mcp/src/agents_remember/worktrees/reopen.py:427-468)
-The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:579-579; mcp/src/agents_remember/worktrees/reopen.py:615-615; mcp/src/agents_remember/worktrees/reopen.py:617-617) plan applies the master's
-`subTasks` row for the doc back to `planning`.
-
-The reopen ledger-mapping proof now supplies the exact memory source commit.
+This owner lives in worktrees because the enclosure contract is the primary mutated artifact; the task store remains a collaborator. The parent resolver validates parent identity without restoring the deleted child-admission seal.
 
 ### Invariants And Boundaries
 
-- The leaf id NEVER changes across a reopen — that is the whole point; every doc,
-  chat, and dashboard binding holds by construction because the identity is stable.
-- Only a fully landed leaf reopens; in-flight leaves, masters/series contracts, and
-  leaves with live worktrees are refused with explicit blockers.
-- **A contract's vocabulary cells are moved through `ContractCells` /
-  `amend_contract`, never as `dataclasses.replace` keywords.** `replace` is
-  `**changes: Any` in typeshed, so a `replace` keyword is an unchecked write to a
-  `Literal` field. The removed vocabulary-exhaustiveness tests are historical; the
-  typed contract writer remains the production boundary. The
-  `replace` call that survives here is legitimate: it carries only free-form
-  string/bool provenance fields, none of them a vocabulary cell.
-- The tool mutates only coordination state: the enclosure contract, task docs, and the frozen
-  landing-final observation it clears before reopening. cit:([`_clear_frozen_landing`], mcp/src/agents_remember/worktrees/reopen.py:391-407)
-- `nextOperation` is always `worktree_start`: edit steps via `task_doc`, then start
-  the same leaf id.
+- Leaf identity is stable across reopen.
+- In-flight leaves, series contracts, and leaves with live worktrees cannot reopen.
+- Terminal code/memory Git facts replace cache mapping proof; unrelated source movement remains a refusal.
+- Vocabulary cells use the typed contract writer.
+- A task/ref race cannot overwrite newer task facts or leave an old completed landing projection current.
+
+### Todos
+
+No new file-local follow-up is identified by this source reconciliation.
+
+## Docs References
+
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:89-103; mcp/src/agents_remember/tasks/leaf_doc.py:237-260; mcp/src/agents_remember/tasks/leaf_doc.py:263-292 |
-| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:516-516 |
-| Reopen publishes the frozen-landing clear, task resets, and contract rewrite under one task-fact CAS and reports projection refresh separately. | `_publish_reopen_transition`; "published = publish_task_fact_mutation(" | mcp/src/agents_remember/worktrees/reopen.py:471-492 |
-| The shared preflight gate: the terminal-leaf blocker list, the parent-series resolution the seal removal renamed, and the external-ledger mapping proof. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:315-388 |
-| The parent-series resolver the preflight now names: it resolves and validates the exact parent series and no longer accepts or refuses leaves. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
-| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
-| The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. | "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:39-39 |
-| The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
-| The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:197-197 |
-| The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:233-287 |
+| Terminal preflight, accepted memory ancestry, and integrated source-position checks. | L313-L385; L407-L421 | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
+| Contract reset preserves identity while clearing two-output provenance. | L187-L213; L216-L310 | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
+| Frozen observation, task plans, and canonical publication remain coordinated. | L388-L404; L424-L465; L468-L489; L507-L565; L576-L615 | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
+| Parent lineage compares exact prestart output positions to the configured parent source. | L79-L91; L385-L421; L450-L487 | [mcp/src/agents_remember/worktrees/source_lineage.py](mcp/src/agents_remember/worktrees/source_lineage.py) |
 
-## 260718-CHATS-L5I Current Delta
+## Cross-Repo References
 
-Task reopening now clears the persisted landing-final observation as part of returning a contract to active work and reports any clearing failure explicitly. A reopened task must not retain an old completed landing projection as current fact.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## L23 Thematic Master Reopen Boundary
-
-Reopen first proves that the leaf's master contains its super-integration
-source. If that parent edge is stale or unavailable, the operation returns the
-shared lineage block/recovery payload before rewriting contract cells, leaf
-state, or the master index. The intended recovery is to synchronize the
-existing thematic master, not create a replacement master.
-
-## 260815-DAG-L3 Publication History, Superseded By CLIVE
-
-The earlier sprint-queue publisher no longer governs reopen. The current operation keeps frozen
-landing clear, leaf/master task writes, and contract rewrite in one rollback-safe task-CAS batch;
-projection invalidation/rebuild happens afterward and cannot roll that batch back.
-
-## 260815-DAG-L4 Integration-Authority Impact
-
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers,
-and active atomic-series refs are censused across code and external memory. CLIVE retains the exact
-terminal predecessor, source-tip, ledger, and lineage proofs but removes queue state from the reopen
-publication boundary.
-
-Reopen proves a terminal leaf against its exact recorded landing, not its necessarily older start
-base: code source must equal `integrated_code_commit`, and external-memory source must equal
-`integrated_ledger_commit`, before task facts are reset.
-
-The apply publication repeats that whole proof inside the task-CAS publication it uses for the
-reset. It reloads and requires the exact preflighted terminal contract, rechecks current protected
-source tips, and for external memory proves the recorded ledger maps the landed code commit to the
-landed memory-content commit and reaches that content. A contract or ref race therefore returns a
-blocked result without clearing frozen landing or rewriting task facts. The leaf/master reset plan
-is rebuilt inside the same callback, so a concurrent task-doc edit is never overwritten by stale
-prepared models.
-
-## 260815-DAG Master Full-Gate Repair
-
-Imports updated to the moved queue/integration packages; the contract review/closeout/integration reset was extracted into the `_reopened_contract` helper used by `reopen_task`.
-
-## 260821-CLIVE Terminal Predecessor And Task Publication
-
-Reopen requires the exact terminal lifecycle predecessor rather than inferring authority from a
-missing or deleted enclosure. Its prepared contract/task reset publishes under the task CAS, with
-exact original-source validation and rollback-safe document writes. Accepted task truth remains
-authoritative; dry-run and apply report the same affected projection scopes/effects, and a rebuild
-failure does not undo the reopen batch.
-
-## Child-Admission Seal Removal (260831-LOCR)
-
-Reopen no longer consults the deleted `worktrees/atomic_series_seal.py`. That module refused a new or
-reopened atomic child leaf whenever the parent series' `(closeout_status, integration_status,
-cleanup)` was not `("not-started", "not-started", "pending")`; once `checkpointed` joined the
-integration vocabulary, the same predicate also sealed every master that took a checkpoint landing.
-The developer ruled the seal out entirely — a master is meant to be paused and resumed, never locked
-by its own landing — so the module is gone rather than narrowed.
-
-This module's single call site is the rename only: `_reopen_preflight_refusal` now calls
-`require_parent_series` cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330)
-in place of `require_parent_series_accepting_leaves`. The helper resolves the exact parent series
-(still refusing an organizational-versus-atomic mismatch, a missing parent contract, or a stale
-series identity) and returns it; it no longer accepts or refuses leaves. Reopen's own gate is
-unchanged: `_reopen_blockers` still requires a fully landed leaf, and the parent-series `RuntimeError`
-still becomes a `blocked` result.
-
-`mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof for the removal.
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced terminal ledger mapping and integrated ledger base with the accepted memory output and real ancestry; retained exact terminal/parent lineage, typed reset cells, frozen-observation clearing, and rollback-safe task publication. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the parent-series rename
   is the frozen change and this card already records it in three places. Re-checked its ranges: they

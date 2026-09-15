@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/preparation_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:39:50+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,11 +22,16 @@ Append-only preparation commands and selected private output state.
 
 ### Logic
 
-The state selects exact intents and outputs in code, memory-content and ledger order. Command records retain original worker identity, bounded argv, start and succeeded/failed/unknown terminal observations. Later commands require successful predecessors; command starts and outputs cannot be rewritten into a retry. Current ownership is required for starts while an original terminal can remain retainable after cancellation. Private evidence cannot be combined with published mutation or approval claims. `SelectedPreparation._require_output_command` requires the retained original commit-command observation for a created output. `_validate_command_observation` separates terminal readback from command start: it retains the same command prefix and accepts only the original worker's terminal under the existing current/exited-owner rules.
+Selected preparations form an ordered prefix of at most two legs: code, then memory
+content. A later leg still requires the prior selected output, and command evidence remains
+append-only. Code retention does not manufacture memory output; a successor prepares memory
+through its own owner. There is no selected ledger leg.
+
+The state selects exact intents and outputs in code and memory-content order. Command records retain original worker identity, bounded argv, start and succeeded/failed/unknown terminal observations. Later commands require successful predecessors; command starts and outputs cannot be rewritten into a retry. Current ownership is required for starts while an original terminal can remain retainable after cancellation. Private evidence cannot be combined with published mutation or approval claims. `SelectedPreparation._require_output_command` requires the retained original commit-command observation for a created output. `_validate_command_observation` separates terminal readback from command start: it retains the same command prefix and accepts only the original worker's terminal under the existing current/exited-owner rules.
 
 ### Conventions
 
-Use the named source owners directly. The source is present in the landed IAS baseline. This preparation pass updates its description; final memory and ledger proof remains pending.
+Use the named source owners directly. The source is present in the landed IAS baseline. This preparation pass updates its description; review of an uncommitted candidate does not establish final publication proof.
 
 ### Invariants And Boundaries
 
@@ -38,28 +43,32 @@ No source-local TODO is asserted here.
 
 ## Docs References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No configured domain documentation applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| `PreparationCommandTerminal` owns the corresponding behavior described above. | `PreparationCommandTerminal` | `mcp/src/agents_remember/models/lifecycles/preparation_state.py:21-39` |
-| `PreparationCommand` owns the corresponding behavior described above. | `PreparationCommand` | `mcp/src/agents_remember/models/lifecycles/preparation_state.py:42-74` |
-| `OperationPreparationState` owns the corresponding behavior described above. | `OperationPreparationState` | `mcp/src/agents_remember/models/lifecycles/preparation_state.py:111-129` |
-| `validate_preparation_owner` owns the corresponding behavior described above. | `validate_preparation_owner` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:171-185 |
-| `validate_preparation_transition` owns the corresponding behavior described above. | `validate_preparation_transition` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:216-242 |
-| `_validate_leg_transition` owns the corresponding behavior described above. | `_validate_leg_transition` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:245-269 |
+| Selection is an ordered prefix of at most two preparations: code followed by memory content. | L19-L19; L112-L128 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| `PreparationCommandTerminal` owns the corresponding behavior described above. | L22-L40 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| `PreparationCommand` owns the corresponding behavior described above. | L43-L75 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| `OperationPreparationState` owns the corresponding behavior described above. | L112-L128 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| `validate_preparation_owner` owns the corresponding behavior described above. | L169-L183 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| `validate_preparation_transition` owns the corresponding behavior described above. | L214-L240 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| `_validate_leg_transition` owns the corresponding behavior described above. | L243-L267 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
 
 ## Cross-Repo References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No cross-repository source is needed for this card. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Narrowed preparation selection to the ordered code/memory-content prefix. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `validate_preparation_owner` repointed to mcp/src/agents_remember/models/lifecycles/preparation_state.py:171-185. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `validate_preparation_transition` repointed to mcp/src/agents_remember/models/lifecycles/preparation_state.py:216-242. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `_validate_leg_transition` repointed to mcp/src/agents_remember/models/lifecycles/preparation_state.py:245-269. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.

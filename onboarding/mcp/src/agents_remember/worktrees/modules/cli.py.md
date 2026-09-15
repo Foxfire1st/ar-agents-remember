@@ -5,16 +5,20 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
-| governingOverview      | `overview.md`                              |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Purpose
 
 Owns command-line parsing and JSON print adapters for the worktree lifecycle.
 
 ## Code Commentary
+
+### Logic
+
+Closeout parsing accepts code and memory commit-message flags only; integrate accepts strategy and approval without a ledger-message flag. `command_closeout` normalizes those two messages before constructing the domain input. Synchronous apply still obeys the journal-required boundary.
 
 The module builds the `start`, `attach`, `status`, `closeout`, `integrate`,
 and `cleanup` subcommands (the `direct-closeout` subcommand was removed with
@@ -33,21 +37,44 @@ migration sweep, never a per-read side effect — run it once against a
 coordination root (or at daemon startup) instead of relying on `load_contract`
 to normalize, which it no longer does.
 
+### Conventions
+
+Accepted input, exact Git facts, and typed owner results stay distinct from disposable projections.
+
+### Invariants And Boundaries
+
+The ledger is a computed consumer cache; it cannot supply an additional Git output or lifecycle prerequisite.
+
+### Todos
+
+None recorded for the ledger-retirement boundary.
+
 ## Docs References
 
-No external Domain Documentation source is configured for this memory repo.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The CLI module exposes the public main entry point for `python -m` execution. | "def main" | mcp/src/agents_remember/worktrees/modules/cli.py:192-199 |
-| MCP startup enters the result-returning application owner without CLI parsing. | "def worktree_start_tool" | mcp/src/agents_remember/application/worktree_tools.py:103-103 |
-| MCP attachment enters the result-returning application owner without CLI parsing. | "def worktree_attach_tool" | mcp/src/agents_remember/application/worktree_tools.py:265-265 |
-| MCP status enters the result-returning application owner without CLI parsing. | "def worktree_status_tool" | mcp/src/agents_remember/application/worktree_tools.py:277-277 |
-| Start or observe the exact contract-addressed integration operation. | "def worktree_integrate_tool" | mcp/src/agents_remember/application/worktree_tools.py:371-371 |
-| MCP cleanup enters the result-returning application owner without CLI parsing. | "def worktree_cleanup_tool" | mcp/src/agents_remember/application/worktree_tools.py:805-805 |
-| The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:491-566 |
+| `command_closeout` normalizes code/memory messages before the journal-bound closeout adapter. | L55-L77 | [mcp/src/agents_remember/worktrees/modules/cli.py](mcp/src/agents_remember/worktrees/modules/cli.py) |
+| `build_parser` exposes closeout/integration options without ledger-message flags. | L130-L186 | [mcp/src/agents_remember/worktrees/modules/cli.py](mcp/src/agents_remember/worktrees/modules/cli.py) |
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The CLI module exposes the public main entry point for `python -m` execution. (`main`) | L189-L196 | [mcp/src/agents_remember/worktrees/modules/cli.py](mcp/src/agents_remember/worktrees/modules/cli.py) |
+| MCP startup enters the result-returning application owner without CLI parsing. (`worktree_start_tool`) | L103-L200 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| MCP attachment enters the result-returning application owner without CLI parsing. (`worktree_attach_tool`) | L265-L274 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| MCP status enters the result-returning application owner without CLI parsing. (`worktree_status_tool`) | L277-L300 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Start or observe the exact contract-addressed integration operation. (`worktree_integrate_tool`) | L371-L422 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| MCP cleanup enters the result-returning application owner without CLI parsing. (`worktree_cleanup_tool`) | L798-L814 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. (`heal_contract_leaf_ids`) | L487-L562 | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## Series-Contract Notes
 
@@ -67,11 +94,26 @@ The current source seams include `parse_json_stdout`, `command_status`, `command
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | `parse_json_stdout`; `command_status`; `command_attach` | mcp/src/agents_remember/worktrees/modules/cli.py:27-34; mcp/src/agents_remember/worktrees/modules/cli.py:37-40; mcp/src/agents_remember/worktrees/modules/cli.py:43-46 |
+| The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | L27-L34; L37-L40; L43-L46 | [mcp/src/agents_remember/worktrees/modules/cli.py](mcp/src/agents_remember/worktrees/modules/cli.py) |
+
+## Cross-Repo References
+
+No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional cross-repository evidence applies. | — | — |
+
+## Governing Overview
+
+[Governing route overview](overview.md)
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f5525c0b231cc8a1b471bd457621d8a2566f782f6d024966178ed01dfafdf642. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_cleanup_tool" repointed to mcp/src/agents_remember/application/worktree_tools.py:805-805. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T08:49:05+00:00: Generated citation repair: "def worktree_cleanup_tool" repointed to mcp/src/agents_remember/application/worktree_tools.py:773-773. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
@@ -113,10 +155,3 @@ The current source seams include `parse_json_stdout`, `command_status`, `command
 - 2026-06-11T06:47+02:00 — Removed the `direct-closeout` subcommand, `command_direct_closeout`, and the `direct_closeout_result` import (issue #62 worktree-only closeout).
 - 2026-05-31T12:50+02:00 — Command functions now wrap `args` in `WorktreeArgs.from_namespace(args)` (new import from `worktrees.modules.args`) before calling each result function; updated Code Commentary to name the `argparse.Namespace`-to-`WorktreeArgs` DTO conversion (1.0.0 review remediation).
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
-
-## Governing Overview
-
-[governing overview](overview.md)
-## Cross-Repo References
-
-This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

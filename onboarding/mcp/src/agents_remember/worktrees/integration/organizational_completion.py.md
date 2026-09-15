@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastUpdated | 2026-09-15T00:59 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,12 +16,11 @@
 
 ## Purpose
 
-Owner of the branchless-organizational-master completion proof and its exact publication bytes. The
-completion-inference that once used this module — "a leaf landed, therefore the master is done" — was
-deleted by the closeout-door cut, so the plan and publication functions here are currently uncalled
-and master completion is undecided.
+Definitions for branchless organizational-master completion proof and exact task-publication bytes. In the inspected production tree the plan/publication entry points remain uncalled; the live consumer is the integration decision classifier for a retained publication intent. This candidate changes the commit-pair proof, not master-completion policy or reachability.
 
-## Master Completion Is Undecided
+## Historical Design Note: Master Completion After The Door Cut
+
+The following account records the earlier design discussion and its proposed checks. It is preserved as history, not as a new review/approval prerequisite for the current transaction. Current source behavior is described under Code Commentary.
 
 A leaf integrating reports a fact: integrated, checks passed. It may never imply its master is done.
 `publish_organizational_master_completion` had exactly one live effect — writing the master task
@@ -52,53 +51,64 @@ after the cut; they are retained as the named site of this gap, not as live infe
 
 ### Logic
 
-`organizational_completion_plan` resolves the canonical sprint→master→leaf topology, requires
-organizational execution, and binds the exact claimed final-leaf door. It loads a confined landing
-contract for every sibling and requires each sibling's exact claimed door plus landed
-code/memory/ledger pair to be reachable from the current sprint super. The completion fingerprint
-binds the master semantic digest, sibling facts, and exact commits. Publication writes the master
-completion decision only after protected-ref movement and fingerprint proof agree.
-Each sibling's own ledger uses its newest mapping as current authority; the proposed final ledger
-must retain the sibling's exact landed code/memory edge anywhere in history, even when a later
-memory-only row for the same code is newer.
+`organizational_completion_plan` resolves the canonical sprint/master/leaf topology, requires organizational execution, and binds the exact claimed final-leaf door. Each confined sibling contract must prove its own claimed door, repository identity, exact landed code and memory commits, and ancestry from its recorded base into the completing leaf's source base. The fingerprint binds the master semantic digest, sibling facts, and the actual two-output pair.
 
-The sibling door read goes through `live_closeout_door(contract)`; the module no longer reads a
-`contract.closeout_door` field, which no longer exists.
+Memory proof no longer parses a sibling or final memory.md, chooses a cache row, or requires a mapping for the code commit. Its actual integrated memory-content commit must equal the sibling's accepted memory commit and be reachable on the source line. The live sibling door still comes from `live_closeout_door`.
+
+Task-byte preparation binds accepted/intended JSON and Markdown. Publication classifies those exact byte states and rejects a third state; it does not itself move Git refs. `require_published_organizational_master_completion` checks Completed status and distinguishes abandonment; it does not inspect a certification marker. No automatic master completion is introduced by these retained definitions.
+
+### Conventions
+
+Use canonical task-document and contract identities. Logical task parentage and Git integration parentage are distinct; cache display rows are neither. Existing committed metadata and earlier design records remain intact.
 
 ### Invariants And Boundaries
 
-- Task parentage (logical master) and Git parentage (sprint super) stay deliberately separate.
-- A sibling contract reached through any symlink or path escape is refused.
-- The sibling's newest row selects current memory; exact-edge containment proves final-ledger
-  preservation. Repeated code rows are valid history and retries cannot substitute a stale edge.
-- An already-Completed master that lacks its exact certified marker raises.
-- **Abandoned is terminal but is not a published completion:** `require_published_organizational_master_completion`
-  refuses any non-`Completed` status and now says which, so an `abandoned` master is refused with
-  "this organizational master is abandoned, not completed" instead of the generic
-  "completion is not durably published" message that would send the reader hunting for missing work.
+- Task parentage (logical master) and Git parentage (sprint super) remain separate.
+- Symlinked or escaping sibling contracts, foreign repositories, mismatched accepted/integrated commits, and unrelated code or memory ancestry refuse.
+- The accepted pair has code and memory-content commits only; cache bytes, rows, or absent attribution cannot replace or veto that Git proof.
+- Exact accepted/intended task bytes govern publication, with conflicting third states reported for decision.
+- Abandoned is terminal but is not a published completion; the status helper requires Completed and reports abandonment distinctly.
+
+### Todos
+
+No additional source-local TODO is introduced by this pair-proof maintenance. The earlier reachability/design discussion remains explicitly historical above.
+
+
+## Docs References
+
+No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No external domain source is configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+The source separates pair/ancestry proof from task-byte publication. The production caller inspected here is the retained-state classifier; the source definitions do not establish a new automatic landing-to-master-completion edge.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Exact final-leaf plan requires sibling code/memory/ledger proof and sprint integrationBranch. | `organizational_completion_plan` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:130-180 |
-| Scope validation pins executionNature, owning master, and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:183-213 |
-| Sibling code ancestry is re-proved against the sprint super. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:460-482 |
-| Sibling memory ancestry, newest current mapping, and exact historical-edge preservation are enforced. | `_require_landed_sibling_memory`, `_sibling_memory_mappings` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:543-556; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:584-616 |
-| Master completion is published only with the exact certified fingerprint. This function currently has zero callers and no longer runs on any landing path. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:313-347 |
-| The published-completion proof refuses every non-`Completed` status and names abandonment distinctly. | `require_published_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:414-430 |
+| The retained completion plan binds the actual code/memory pair and sibling facts. | L123-L171 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| Scope validation pins execution nature, owning master and canonical child. | L174-L204 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| Sibling contracts require exact identities, code ancestry and any external-memory proof. | L455-L476 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| External memory must name the same repository and exact accepted/integrated content commit. | L547-L569 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| The sibling memory commit must descend from its base and reach the completing source base. | L572-L593 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| Task-byte preparation binds accepted and intended JSON/Markdown. | L250-L301 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| Publication accepts only the exact journaled before/after task byte states. | L304-L338 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| The helper requires Completed status, with a distinct abandonment refusal. | L404-L420 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| The live integration classifier reads retained organizational publication state. | L39-L81 | [mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py](mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py) |
 
-## Documentation References
+## Cross-Repo References
 
-No configured domain-documentation or cross-repository source applies to this file.
+These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## CCR-R12@v5 Current Completion Boundary
 
-Organizational completion now proves final-leaf landing and the paired code/external-memory source
-refs under their existing authority. The completion plan and publication checks do not require a
-durable full-quality or certification marker for normal transaction closeout/integration. Any
-retained completion or certification vocabulary is historical/explicit evidence, while the normal
-route records the resulting transaction and pair identity.
+The retained completion definitions use the code/external-memory Git pair and existing ownership. They do not read a durable full-quality or certification marker to approve a normal transaction. Historical completion/certification vocabulary below records prior design context; it does not make cache state or a ledger row authoritative.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -106,9 +116,11 @@ The current source seams include `OrganizationalCompletionError`, `Organizationa
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `OrganizationalCompletionError`, `OrganizationalCompletionPublicationError`, `OrganizationalCompletionPublicationState` at this ownership boundary. | `OrganizationalCompletionError`; `OrganizationalCompletionPublicationError`; `OrganizationalCompletionPublicationState` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:36-39; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:40-56; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:57-89 |
+| Pair or ownership failures use the completion error family. | L30-L31 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| Publication conflicts retain exact expected/observed evidence. | L34-L47 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| Classification distinguishes convergent, published and conflicting task bytes. | L50-L73 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
 
 ## 260821-CLIVE Door-Based Completion Proof
 
@@ -117,16 +129,19 @@ contracts. The door itself embeds candidate, master, and sprint binding; sibling
 require their own exact claimed doors, now read through `live_closeout_door` rather than from a
 contract field. Absence of a queue row, candidate collection, or mutable
 blocker state is never organizational-completion evidence. Since commit `fad9808e` this proof is not
-reached from the integration path at all; see "Master Completion Is Undecided" above.
+reached from the integration path at all; see "Historical Design Note: Master Completion After The Door Cut" above.
 
 
 ## PDLS Reconciliation
 
-Sibling completion proof now separates code ancestry, memory identity/ancestry, confined path, mapping, and completion-marker validation into explicit fail-closed helpers.
+Sibling completion proof now separates code ancestry, memory identity/ancestry, confined path, and exact task-byte validation into explicit fail-closed helpers.
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+
 ## Update History
+
+- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Replaced ledger/mapping authority with the exact sibling code/memory pair and ancestry; distinguished retained historical completion proposals from the current source status/byte checks and refreshed references. Source SHA-256 `47d50a539d4fb0446c80f9790d743c635759bbc88485a5c2dde000a818652806`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: `require_published_organizational_master_completion` now refuses an `abandoned` master with a distinct reason ("abandoned, not completed") instead of the generic not-durably-published message. Added the invariant and its source row. Content change, not a range repoint.
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that master completion is now explicitly undecided (the landed-leaf inference was deleted, not replaced), added the two owed checks and their intended `lifecycle_finalize_task_tool` entry point, and recorded that the plan/publication functions here now have zero callers while `classify_organizational_master_completion` remains reachable. Replaced the completion-inference Purpose with the completion-proof ownership, and repointed the sibling door read to `live_closeout_door`. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `organizational_completion_plan` repointed to mcp/src/agents_remember/worktrees/integration/organizational_completion.py:130-180. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.

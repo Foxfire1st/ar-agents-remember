@@ -5,14 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/modules/record_landing.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                              |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktrees/modules/overview.md](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -30,7 +30,9 @@ It is `worktree_record_landing`'s domain half, reached through the MCP tool of t
 
 ### Logic
 
-`record_landing_result(args)` cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-143)
+The PR landing path forwards only the supplied landed code and memory-content commits into the shared `LandedIntegration` writer. It requests no ledger commit and cannot turn cache refresh into evidence that a remote landing occurred.
+
+`record_landing_result(args)` cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-142)
 refuses unless the call is approved or a dry run
 cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:60-60),
 loads the contract, and then short-circuits to `already-recorded` when the cell already records a
@@ -54,7 +56,7 @@ The real path records `strategy=PR_STRATEGY` cit:([`PR_STRATEGY`], mcp/src/agent
 through the shared writer, so the cell says which route landed the work. Since 260831-LOCR-L30 the
 call bundles its landed facts into the shared `LandedIntegration` record (the same record the local
 routes build) and appends no `checkpoint` flag, so this route still records a final landing
-cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68).
+cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66).
 
 The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:49-55)
 rather than by `status_payload`. That is deliberate: this operation has no worktree or provider state
@@ -85,7 +87,7 @@ with `worktree_integrate`, which reaches it only once the series is genuinely te
 still adds no `checkpoint` flag and offers no way to record a non-final landing — it simply declines
 to overwrite one that is already recorded.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - **Never probe `gh`.** Inferring the PR route after the fact would put the network in front of a
   guard that authorizes branch deletion. Recording happens where `gh` necessarily exists — the PR
@@ -104,37 +106,45 @@ of the landing flow in the repo's `system/git-workflow.md`.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this memory repo; these are
-repository-internal git and contract semantics, so the retained source is the direct evidence.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The shared writer this route calls, and the cell it publishes. | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
-| The local route that already recorded its own landing. | "def _integrated_result(" | mcp/src/agents_remember/worktrees/modules/integrate.py:598-633 |
-| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. | "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/modules/record_landing.py:70-70 |
-| The summary the checkpointed half returns, naming the still-open series and the route that completes it. | "This contract already records a checkpointed integration" | mcp/src/agents_remember/worktrees/modules/record_landing.py:80-80 |
-| Cleanup refuses until the cell this route sets reads completed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669 |
-| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". | `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:97-154 |
-| The MCP tool and payload that expose this operation. | `worktree_record_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:211-236 |
-| The application-layer entry point that confines the contract and builds the arguments. | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:502-536 |
-| The PR landing-tail recording step in operator doctrine. | `worktree_record_landing` | system/git-workflow.md:48-56 |
+| `record_landing_result` validates the recorded code landing and forwards the actual code/memory facts. | L58-L142 | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) | L36-L66 | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
+| The local route that already recorded its own landing. (`_integrated_result`) | L574-L607 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
+| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) | L70-L70 | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+| The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) | L80-L80 | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+| Cleanup refuses until the cell this route sets reads completed. (`integration_status`) | L669-L669 | [mcp/src/agents_remember/worktrees/modules/cleanup.py](mcp/src/agents_remember/worktrees/modules/cleanup.py) |
+| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) | L97-L154 | [mcp/src/agents_remember/worktrees/modules/landing.py](mcp/src/agents_remember/worktrees/modules/landing.py) |
+| The MCP tool and payload that expose this operation. (`worktree_record_landing`) | L202-L224 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
+| The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) | L498-L531 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) | L50-L50 | [system/git-workflow.md](system/git-workflow.md) |
 
 ## Cross-Repo References
 
 The operation shells out to nothing. Its only external participant is the pull-request itself, which
 is recorded rather than queried at decision time, so no live external boundary is cited here.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
+| No additional cross-repository evidence applies. | — | — |
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=d37edafd5a2f8b43edc8d679e8b0e7a610101ba467b8373fa6400067dde477bb. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
   claim(s) whose anchor no longer sat in its cited range and normalised 6 further range(s) in this

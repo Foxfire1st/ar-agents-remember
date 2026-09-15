@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 The registered closeout and integration tools advertise transaction previews and applies. A
 closeout apply validates explicit approval, candidate/source identity, and Git safety before
-committing code, refreshing and committing external memory, and recording the ledger mapping.
+committing code, refreshing and committing attributed external memory, and refreshing the
+consumer ledger cache when possible.
 Integration validates the prepared pair and publishes it through the existing ref-atomic path.
 Neither public route promises or invokes strict code quality, memory quality, selected
 certification, curator coherence, or independent review during normal execution; full suites are
@@ -59,7 +60,7 @@ atomic master's accumulated line and keeps the master open, shares `worktree_int
 while dropping only the completion assumptions (`worktree_integrate` proves the task document
 `Completed`, one landed enclosure per canonical leaf, **and a completed closeout** — an unfinished master
 has none of those), captures the master's own committed refs (the live series code work branch tip
-and the live memory work branch tip) and proves the existing ledger maps the code ref before landing
+and the live memory work branch tip) and proves the source ancestry before landing
 exactly those, records the integration cell as `checkpointed` rather than `completed`, retires nothing
 and runs no cleanup, and is MUTATING with a `dry_run` preview. The L34 correction matters because the
 published text is the only thing a client reads: the old wording omitted the closeout requirement,
@@ -94,13 +95,19 @@ Current IAS policy treats coverage as diagnostic and production CRAP above 20 as
 
 ### Logic
 
+Current registered signatures expose only code and memory commit messages; direct landing
+accepts only the memory message because its code commit already exists. Integration and checkpoint
+landing take no ledger message, and PR landing records only code plus optional memory content.
+The retained ledger is a downstream computed cache, never an MCP-requested Git output.
+
 The preview/apply pair (`worktree_closeout_preview` L24-L46, `worktree_closeout_apply` L47-L76)
-share `CloseoutCommitMessages(code, memory, ledger)`, built in each body from
-the three flat message arguments. Apply keeps a **second** object, `CloseoutApproval(intent_note,
+share `CloseoutCommitMessages(code, memory)`, built in each body from
+the two flat message arguments. Apply keeps a **second** object, `CloseoutApproval(intent_note,
 dry_run)`, precisely so the approval-bearing half cannot be confused with the commit text: folding
 `dry_run` in with the messages would let a preview read as an approved apply.
 
-Both docstrings state the real order, and it is not commit-first. Preview reports whether strict
+**Historical quality-gate registration, superseded by the current transaction boundary above.**
+The former docstrings stated a pre-commit gate order. Preview reports whether strict
 project-owned quality under the selected project checks will run — since 260731-EFA-L4 the
 description is specific about *what it runs over*: "over the staged task worktree before the code
 commit", not merely "before the code commit".
@@ -128,15 +135,13 @@ the accurate claim now that staging is itself a mutation the gate performs. The 
 recommends preview before approval/apply, but apply independently validates the same effective
 input and does not treat a prior preview as authority; apply requires `intent_note`.
 
-The three destructive tools forward flat:
+The publication and reclamation tools forward flat:
 
-- `worktree_integrate(contract_path, strategy='ff-only'|'replay', ledger_commit_message, dry_run)` —
-  runs the altitude-routed quality gate before any merge (leaf targeted, master full and
-  host-managed by default), then moves branch refs; protected branches need explicit approval.
-- `worktree_checkpoint_landing(contract_path, strategy='ff-only'|'replay', ledger_commit_message,
-  dry_run)` — **partially publishes** an **unfinished** atomic master's line and keeps the master open;
+- `worktree_integrate(contract_path, strategy='ff-only'|'replay', dry_run)` —
+  checks accepted candidate/source and Git authority, then moves branch refs; protected branches need explicit approval.
+- `worktree_checkpoint_landing(contract_path, strategy='ff-only'|'replay', dry_run)` — **partially publishes** an **unfinished** atomic master's line and keeps the master open;
   requires the same explicit developer approval as `worktree_integrate`; captures the master's own
-  live code and memory work-branch tips and proves their ledger mapping; records `checkpointed`,
+  live code and memory work-branch tips and proves source ancestry; records `checkpointed`,
   retires nothing, runs no cleanup. It is not the pause: a pause publishes nothing and moves no ref.
 - `worktree_cleanup(contract_path, dry_run, teardown_providers=True)` — removes worktrees and merged
   task branches **after** integration, and by default reclaims the worktree's isolated provider stack.
@@ -145,6 +150,10 @@ The three destructive tools forward flat:
   branches and reports the commits, with `force=true` it discards them
   (`git worktree remove --force`, `git branch -D`). Since 260831-LOCR-L30 the series abandon guard
   also refuses a master whose integration cell reads `checkpointed`, not only `completed`.
+
+### Conventions
+
+Keep registered signatures and descriptions aligned with the application request models. Registrars pack inputs; they do not acquire a second publication authority.
 
 ### Invariants And Boundaries
 
@@ -157,13 +166,11 @@ The three destructive tools forward flat:
   additionally carries `CloseoutApproval`. A direct apply must therefore remain safe without a
   preceding preview.
 - Closeout is worktree-only; the retired `direct_closeout_*` tools are not registered anywhere.
-- All ordering, quality-gate execution and git mechanics live in `application/worktree_tools.py`.
-- **These docstrings are the published MCP tool descriptions**, so they are contract, not comment:
-  a client sees only what they say. Apply's is deliberately conditional ("when code would commit
-  AND the checkout carries the project-owned quality wrapper") because an unconditional promise
-  would over-claim for a wrapper-less checkout, which runs neither the gate nor its two refusals.
-  Keep the wrapper condition, the staging/reset explanation and the two refusals in the text
-  whenever the behaviour behind them changes.
+- Application composition lives in `application/worktree_tools.py`; Git publication and recovery
+  belong to the worktree operation owners.
+- **These docstrings are the published MCP tool descriptions**. They must describe the current
+  candidate/source checks, explicit approval, and code/memory publication behavior. The historical
+  wrapper-gate description above is superseded and must not restore a normal quality gate.
 - Keep internal registrar helper names ending in `_tools`; the suffix is part of the narrow
   structural-rule attribution for this declaration-only route.
 - **The checkpoint docstring must name the whole completion refusal set, not two of three
@@ -179,22 +186,36 @@ The three destructive tools forward flat:
   wording (`PUBLISH`, "not a pause", "separate matter and is NOT this call") and asserts the old
   invitation is gone.
 
+### Todos
+
+No additional file-local TODO is established by this candidate review.
+
+## Docs References
+
+No Domain Documentation source is configured in the resolved memory repository. The current
+contract is supported by the implementation and the authorized cache-retirement requirement.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:110-118 |
-| The checkpoint-landing tool declaration and the payload builder it forwards to. | "def worktree_checkpoint_landing("; "def worktree_checkpoint_landing_payload(" | mcp/src/agents_remember/mcp/registration/closeout.py:180-202; mcp/src/agents_remember/mcp/tools/worktree.py:150-169 |
-| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-117; mcp/src/agents_remember/application/worktree_tool_requests.py:134-139 |
-| Refuse to stage anywhere except a task's own throwaway worktree. | "def _refuse_outside_a_linked_worktree" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:25-41 |
-| Refuse before staging when the checkout has unresolved conflicts. | "def _refuse_conflicted_worktree" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:44-56 |
-| Prepare and certify a fresh candidate through the ordinary gate entry point. | "def gate_staged_code" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
-| The case that pins the checkpoint description as a partial publication and denies it is the pause. | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-305 |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:132-146; mcp/src/agents_remember/worktrees/modules/quality/gate.py:149-192 |
+| Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | L45-L89; L92-L146; L149-L265 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
+| The payload builders these forward to. | L110-L118 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The checkpoint-landing tool declaration and the payload builder it forwards to. | closeout.py: L173-L199; worktree.py: L159-L174 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py); [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | L111-L115; L132-L136 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Refuse to stage anywhere except a task's own throwaway worktree. | L25-L41 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
+| Refuse before staging when the checkout has unresolved conflicts. | L44-L56 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
+| Prepare and certify a fresh candidate through the ordinary gate entry point. | L139-L165 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
+| The case that pins the checkpoint description as a partial publication and denies it is the pause. | L282-L304 | [mcp/tests/test_tools.py](mcp/tests/test_tools.py) |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | L132-L146; L149-L192 | [mcp/src/agents_remember/worktrees/modules/quality/gate.py](mcp/src/agents_remember/worktrees/modules/quality/gate.py) |
 
-## R39 Integration Tool Contract
+## Historical R39 Integration Tool Contract
 
-The public integration description states that leaf integration lands the acceptance already
+Before the current transaction-only boundary, the integration description stated that leaf integration lands the acceptance already
 bound to its closeout commit without rerunning it. Only master integration owns a new acceptance
 run: full mode through the pinned Dagger executor.
 
@@ -204,7 +225,7 @@ run: full mode through the pinned Dagger executor.
 
 ## 260821-CLIVE-L1 Public Surface
 
-Worktree closeout and direct landing expose optional message fields syntactically because enabledness is route/contract/candidate-dependent; runtime validation requires each enabled field to be stripped and nonblank. Worktree preview/apply accepts code, memory, and ledger fields and returns `effectiveInput` or field-specific `invalidFields` with `resolvedPlan` and `correctedCall`. Direct landing accepts memory and ledger intent only: verified-existing code is not applicable. Each memory or ledger message is required only when its contract-derived leg is enabled; a typed not-applicable leg may omit it. Invalid input is refused before authority or Git.
+Worktree closeout and direct landing expose optional message fields syntactically because enabledness is route/contract/candidate-dependent; runtime validation requires each enabled field to be stripped and nonblank. Worktree preview/apply accepts code and memory fields and returns `effectiveInput` or field-specific `invalidFields` with `resolvedPlan` and `correctedCall`. Direct landing accepts memory intent only: verified-existing code is not applicable. The memory message is required only when its contract-derived leg is enabled; a typed not-applicable leg may omit it. Invalid input is refused before authority or Git.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -212,9 +233,9 @@ The current source seams include `register_closeout_tools`. The public schema/co
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `register_closeout_tools` at this ownership boundary. | `register_closeout_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:37-44 |
+| The current module exposes `register_closeout_tools` at this ownership boundary. | L37-L42 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -226,7 +247,19 @@ worktrees, branches, reports, providers, and the enclosure root. Active, ambiguo
 mismatched evidence refuses deletion. Shared grade/admission request types come from the canonical
 closeout-source model.
 
+
+## Cross-Repo References
+
+No separate cross-repository implementation claim is made.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No external implementation source applies. | N/A | N/A |
+
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Documented the removed public ledger arguments and the surviving two-output publication contract. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 - 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_closeout_preview_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:110-118. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: corrected the L36 paragraph, which ended "and no worktree
   tool performs it" — true at L36, false since this leaf added `worktree_pause` in the sibling

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,11 @@ Defines durable, repository-bound evidence for every enabled closeout mutation l
 
 ### Logic
 
+Mutation legs are only `code` and `memory`. Memory snapshots may additionally carry
+`contentHeadTree`, the HEAD content tree with the cache excluded, while `head` and `headTree`
+still identify the actual Git commit and raw tree. This separate comparison view lets memory
+content remain unchanged when cache bytes differ without weakening ref, reflog, or output proof.
+
 `GitMutationSnapshot` records branch/ref, HEAD and tree, reflog fingerprint, index tree, candidate tree, and worktree-status fingerprint. `GitMutationEvidence` binds one enabled leg and repository to `pre-mutation`, `mutation-intent`, `reconciled-unchanged`, or `commit-proven`, with before/observed snapshots, expected output tree, and commit proof as required by the state.
 
 The model validators prevent semantic laundering: every non-`commit-proven` state is forbidden
@@ -30,6 +35,10 @@ from naming a commit, `reconciled-unchanged` must reproduce the exact before sna
 retain an `expectedOutputTree` that differs from `before.headTree`: the former is the tree bound to
 the announced mutation intent, while the exact restored observation proves that no commit landed.
 These records are the durable facts from which closeout recovery projection is derived.
+
+### Conventions
+
+Keep actual Git object fields distinct from optional content-comparison fields. State-specific validation describes evidence; it never performs Git mutation.
 
 ### Invariants And Boundaries
 
@@ -44,36 +53,47 @@ These records are the durable facts from which closeout recovery projection is d
 
 ### Todos
 
-No open todo is owned here. Direct landing uses the sibling lifecycle direct-landing input and
-ledger-intent models; closeout mutation evidence remains deliberately repository-leg-specific.
+No open todo is owned here. Direct landing uses the sibling lifecycle direct-landing accepted-input model; closeout mutation evidence remains deliberately repository-leg-specific.
 
 ## Docs References
 
 See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The four-state vocabulary is closed and explicit. | `MutationEvidenceState` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:10-15 |
-| Snapshot identity includes reflog, index, candidate, and status facts. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-29 |
-| State-specific proof is model validated. | `GitMutationEvidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:32-62 |
+| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | L9-L9; L18-L30; L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| The four-state vocabulary is closed and explicit. | L10-L15 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| Snapshot identity includes reflog, index, candidate, and status facts. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| State-specific proof is model validated. | L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No separate external implementation source applies to this file. | N/A | N/A |
+
 ## 260821-CLIVE-L2 Current Contract
 
-The current source seams include `GitMutationSnapshot`, `GitMutationEvidence`. Closeout Git evidence remains strict and repository-bound. Direct landing now has its own accepted-input and ledger-intent models in the same lifecycle package, so the former “direct landing is unjournaled” boundary is obsolete.
+The current source seams include `GitMutationSnapshot`, `GitMutationEvidence`. Closeout Git evidence remains strict and repository-bound. Direct landing now has its own accepted-input model in the same lifecycle package, so the former “direct landing is unjournaled” boundary is obsolete.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | `GitMutationSnapshot`; `GitMutationEvidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-29; mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:32-62 |
+| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | L18-L30; L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
 
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Bounded mutation legs to code/memory and documented the separate cache-free HEAD content tree. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

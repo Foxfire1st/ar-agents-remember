@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Lifecycle operation integration overview](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -21,6 +21,8 @@ Coordinates task-addressed lifecycle start, observe, retry, resume, cancel, and 
 ## Code Commentary
 
 ### Logic
+
+Series closeout remains recording-only and rejects enabled code or memory writes. That is the complete Git-leg vocabulary; a ledger-cache refresh has no operation input or commit leg to require. The existing claim, dependency, lease, and selected-preparation rules continue to own their own boundaries.
 
 It claims waiting closeout candidates, creates or replaces generations, publishes initial doors,
 starts detached workers, handles exact duplicate/retry cases, and exposes current projections. A
@@ -35,7 +37,7 @@ Under CCR-R03@v1 the closeout claim record and the queued integrate record are b
 typed dependency declaration (`lifecycle_operation_dependencies`), and the lifecycle launch gate
 re-requires the current record's declared dependencies (`require_lifecycle_operation_dependencies`)
 before a worker is launched
-cit:(["def _prepare_closeout_claim(", "def queued_operation_record(", "def _recover_launch_and_project("], mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-33; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:445-445; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:858-858).
+cit:(["def _prepare_closeout_claim(", "def queued_operation_record(", "def _recover_launch_and_project("], mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:445-481; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:858-878).
 
 Queued-record construction now lives in `generation/creation.py`; its candidate/task identity
 and integrate dependency binding are unchanged. Durable generation publication and launch remain
@@ -48,7 +50,7 @@ the public function or model instead of re-deriving its lower-level state machin
 declarations are recomputed from the exact admitted inputs whenever the record's door intent or
 input changes.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - A failed or terminal generation has an explicit convergent retry route; claim/door/generation publication is ordered and idempotent; queue state is scheduling input, not operation authority.
 - Cancellation releases the old operation only after worker exit proof. A fresh generation follows
@@ -67,30 +69,36 @@ None recorded.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No external documentation claim is made.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:117-117 |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `_require_series_recording_only` refuses enabled code or memory writes for recording-only series closeout. | L245-L256 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
+| `start_or_observe_closeout_operation` composes closeout admission through the journal-owned lifecycle route. | L210-L242 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
+
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:117-117 |
-| Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:946-1041 |
-| R03 dependency binding on claims and queued records plus launch re-requirement. | "def _prepare_closeout_claim("; "def queued_operation_record("; "def _recover_launch_and_project(" | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-33; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:445-445; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:858-858 |
+| Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. (`launch_detached_worker`) | L946-L1041 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
+| R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`) | L33-L71; L62-L62; L445-L481; L858-L878 | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py); [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:117-117 |
+| No additional cross-repository evidence applies. | — | — |
 
 ## CCR-R12@v5 Current Admission Boundary
 
@@ -107,9 +115,12 @@ Closeout/integrate records now bind their declared inputs and launch refuses a s
 
 ## Current Landed Composition
 
-Leaf start freezes complete certification admission before initial journal publication. An unchanged candidate revalidates selected currentness and unchanged-retry admissibility; a new candidate prepares a new frozen admission. Initial certification selection is passed atomically into journal create/replace, and an existing leaf claim must retain selected certification. A queued claim recovered before any worker identity was installed can resume its original launch. Series closeout is recording-only: it revalidates series authority and refuses enabled code, memory or ledger commit legs. Integration authority snapshots and queued-record construction live in `generation/creation.py`.
+Leaf start freezes complete certification admission before initial journal publication. An unchanged candidate revalidates selected currentness and unchanged-retry admissibility; a new candidate prepares a new frozen admission. Initial certification selection is passed atomically into journal create/replace, and an existing leaf claim must retain selected certification. A queued claim recovered before any worker identity was installed can resume its original launch. Series closeout is recording-only: it revalidates series authority and refuses enabled code or memory commit legs. Integration authority snapshots and queued-record construction live in `generation/creation.py`.
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=eb993abec4b9093403d878bc44c789944a5ff1806dfacad6ce3ed347af62fe6f. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "def _prepare_closeout_claim(", "def _recover_launch_and_project(", "def queued_operation_record(" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-33, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:445-445, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:858-858. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `STALE_HEARTBEAT_SECONDS` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `STALE_HEARTBEAT_SECONDS` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

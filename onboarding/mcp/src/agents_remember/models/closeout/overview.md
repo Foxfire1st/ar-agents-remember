@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash |  `52875e7a8695fc7b67bff21ebb07a67268213967`|
-| lastVerifiedCommitDate |  2026-09-14T00:06:58+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -25,7 +26,7 @@ returns the closeout's own message verbatim plus exactly one final-paragraph `Co
 trailer naming the code commit that same closeout landed; both sanctioned closeout routes — worktree
 closeout in `worktrees/modules/closeout_external.py` and branch-addressed direct landing in
 `worktrees/integration/direct_landing/direct_landing_execution.py` — render their memory-content commit
-message through it, and `message_for` stays the raw public echo that the ledger leg still uses.
+message through it. `message_for` exposes only the accepted code or memory message; there is no ledger message field, leg or enabledness state.
 
 **This route renders the attribution; it does not own the rendering, and it no longer owns the key.**
 Since 260913-LCA-L2 the trailer key is declared once in `kernel/memory_attribution.py` — the reader of
@@ -36,6 +37,8 @@ interpolates the key. The direction is fixed by the
 layer contract rather than by preference: a kernel module importing a model would import upward.
 
 ## Hot Path Summary
+
+`input.py` defines exactly two public commit legs (`code`, `memory`) and rejects unknown fields. `EffectiveCloseoutInput.memory_content_message` delegates attribution rendering to the kernel; no caller supplies a third commit message.
 
 `projection.py` defines the `valid-built` / `invalid-empty` state machine and its source-problem,
 invalidation, rebuild, and task-doc effect payloads. Its member list is unbounded — how many leaves a
@@ -60,7 +63,19 @@ sprint declares is not a projection-model concern.
 No configured external source applies. Queue producers and application consumers are documented
 through same-repository source references.
 
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Accepted closeout message input contains only code and memory. | L46-L52 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| The effective two-leg input renders memory attribution through the kernel. | L127-L165 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected input/enabledness/message vocabulary to code and memory only. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 route refresh (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): the ownership sentence this route inherited from L1/L2 needed its last step. L4 moved

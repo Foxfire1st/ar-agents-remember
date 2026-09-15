@@ -1,137 +1,110 @@
 # mcp/src/agents_remember/worktrees/modules/git.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                              |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/worktrees/modules/git.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:02 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Nearest governing overview](overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-Owns small repository-state helpers used by the `c-09-git-worktree-manager`
-skill worktree lifecycle. It no longer owns a Git subprocess adapter: since
-260731-EFA-L3 every helper here calls the single `run_git` in
-`kernel/git_command.py`.
-
-## CCR-R12@v5 Current Commit Boundary
-
-`commit_verified_staged` is the transaction commit primitive used by normal closeout and recovery:
-the caller stages the intended index, then this helper commits that index with `--no-verify` without
-restaging or invoking configured repository hooks. `commit_if_dirty` remains an ordinary helper for
-callers outside this transaction boundary. Integration publication uses ref/tree movement rather
-than creating a merge commit, so it does not launch a merge hook. The change at code commit
-`6f3e3fde75a1ca0202c9b07557cf86a7893e8532` is documentation-only in this module; the helper
-contract was already present.
+Provides shared repository/ref, candidate-tree, cleanliness, staging, committing, and changed-path
+operations through the guarded kernel Git runner. Workflow admission remains with callers.
 
 ## Code Commentary
 
-**The module-local `run_git` is gone (260731-EFA-L3).** This file used to define
-its own copy — `kernel.git_command.run_git` with the environment guard, the
-timeout and the explicit encoding all dropped — and every destructive worktree
-operation reached git through it. The file now opens with
-`from agents_remember.kernel.git_command import run_git` and a comment naming
-what that cost:
+### Logic
 
-```
-# This module used to define its own `run_git` -- the kernel's function with the
-# environment guard, the timeout and the explicit encoding all dropped -- and every
-# destructive worktree operation (commit, merge --ff-only, reset --hard, rebase,
-# branch -f, branch -D, worktree remove --force, push origin --delete) ran through
-# it. With GIT_DIR exported those landed in whatever repository GIT_DIR named. The
-# helpers below now call the one guarded runner; nothing else about them changed.
-```
+`require_git` reports failed commands through transport-safe diagnostics while preserving the
+runner's raw successful output. The removed local runner is not restored: repository-selector
+scrubbing, standard-input ownership, encoding, and timeout policy stay in `kernel.git_command`.
+Branch resolution uses explicit local refs, and repository identity uses Git's shared object store.
 
-The helpers are otherwise unchanged; what they gained from the swap is
-everything `run_git` guarantees:
+`worktree_candidate_tree(..., exclude_paths=())` uses a private temporary index per observation. It
+seeds from HEAD, removes excluded entries before materialization, stages through an exclusion-aware
+pathspec, writes the tree, and removes its scratch directory. The real index remains untouched.
+The root cache uses `MEMORY_CACHE_EXCLUDE`; other explicit exclusions use their corresponding root
+pathspecs. This avoids treating an ignored cache literal as an explicit add request.
 
-- the repository-selector scrub — `git_environment()` copies the ambient
-  environment minus `GIT_REPOSITORY_SELECTOR_ENV` (`GIT_DIR`, `GIT_WORK_TREE`,
-  `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`,
-  `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`), so an exported `GIT_DIR` can
-  no longer redirect `require_git(repo, ["commit", ...])` into another repository;
-- the `stdin=subprocess.DEVNULL` + `-c safe.directory=<repo>` pair this module
-  always had, plus `encoding="utf-8"` / `errors="surrogateescape"`, which the
-  local copy lacked;
-- a timeout. No helper here passes `timeout=`, so all of them take `run_git`'s
-  default class, `GIT_LOCAL_TIMEOUT_SECONDS = 300` — the local band that bounds
-  `rebase`/`merge`/`status`. Nothing in this module is unbounded any more, and a
-  git call that exceeds 300s raises `subprocess.TimeoutExpired` out of the helper
-  instead of hanging; no helper catches it.
+`has_changes`, `worktree_dirty`, and `require_clean` accept the same explicit exclusions.
+`contract_has_worktree_changes` excludes `memory.md` only on the memory side. Real content dirt
+remains visible.
 
-The shared runner deliberately keeps `errors="surrogateescape"` so raw Git path
-identity survives decoding. The facade now separates that internal representation
-from transport-facing failure text: `_transport_safe_git_diagnostic` applies UTF-8
-`backslashreplace` only when `require_git` is about to raise, preserving valid Unicode
-while rendering an invalid byte as a literal escape such as `\udc81`. Raw successful
-stdout and stderr remain untouched; only a failed command's `RuntimeError` diagnostic
-is made safe for Pydantic/FastMCP JSON serialization.
+`stage_worktree_content` removes derived index entries and stages actual content without reading
+those paths. `commit_if_dirty` creates an ordinary content commit when its filtered status is dirty.
+`commit_verified_staged` operates on the already prepared index, removes explicitly excluded
+entries, checks the staged diff, and commits with `--no-verify` without restaging. Neither helper
+creates a commit for cache-only dirt. Hook execution remains a separate explicit helper.
 
-The module exposes branch, commit, cleanliness,
-worktree creation, commit-if-dirty, changed-path, and commit-content helpers
-without owning workflow policy. `commit_text_or_none(repo, ref, rel)` returns a
-path's text at any ref or `None` when absent — the closeout body gates use it
-to diff sidecar content against the last verified memory commit;
-`head_text_or_none` remains as the HEAD shorthand.
+Changed-path helpers retain their distinct semantics: existing-file worklists omit deletions, while
+`changed_files_with_counts` reports additions/deletions, rename targets, counts, and binary-file
+unknown counts for the serving change-set view.
 
-`worktree_candidate_tree(repo, index_path)` treats `index_path` as a scratch
-namespace rather than a shared physical index. Each invocation creates its own
-temporary sibling directory, seeds and materializes the add-all candidate there,
-writes the tree, and removes only its own directory. Dashboard, queue, memory,
-route-review, and closeout observers can therefore capture the same dirty
-candidate concurrently without one observer deleting another observer's index;
-the repository's real index remains untouched.
+### Conventions
 
-Closeout's staged-index path uses two deliberately separate helpers.
-`run_pre_commit_hook_if_configured(repo)` resolves Git's effective hook path, skips cleanly when
-no pre-commit hook exists, and otherwise invokes it through `git hook run pre-commit`.
-`commit_verified_staged(repo, message)` commits only the existing index with `--no-verify`; it
-never calls `add -A`, so a working-tree edit made after the strict wrapper cannot leak into the
-commit and the already-run hook cannot restart after pytest. Ordinary `commit_if_dirty` retains
-its original stage-and-commit behavior for callers that have not certified an index.
+Callers must supply exclusions for an owned derived artifact; this is not a blanket ignore rule for
+all repositories. Candidate observations own separate scratch paths. Ordinary staging/committing and
+verified-index committing remain deliberately separate APIs.
 
-`committed_changed_paths(repo, base_commit, verified_commit)` (issue #83)
-collects the paths changed by commits closeout has not verified yet: the
-tree-diff `base..HEAD` intersected with `verified..HEAD` when a distinct
-verified commit exists, so content the synced source branch already carries and
-content a previous closeout already verified both drop out. The shared
-`filesystem.is_file` filter keeps committed deletions out of the worklist,
-matching `changed_worktree_paths` dirty-deletion behavior.
+### Invariants And Boundaries
 
-`changed_files_with_counts(repo, base, head=None)` (operations-integration L3) is the
-change-set primitive behind the serving change-set API (`serving/changeset.py`). It
-parses `git diff --numstat --name-status --find-renames` over `base..head` (or
-`base..worktree` when `head` is `None`) into per-file
-`{path, insertions, deletions, status}`. Unlike the name-only `changed_*_paths` above it
-**keeps deletions** (status `D`), reports per-file insertion/deletion counts (`None` for
-binary files, whose numstat shows `-`), and in worktree mode appends untracked files as
-additions (status `A`). `_rename_aware_path` reconstructs the post-rename path from a
-numstat rename field (`a => b` / `p/{a => b}/q`) so the counts join the `--name-status`
-`R` row by the new path.
+- All Git execution uses the guarded kernel runner and exact caller-selected repository.
+- Cache-only dirt cannot trigger a memory-content commit when the caller supplies its exclusion.
+- Real ref, ancestry, repository, and content checks are retained.
+- Verified-index commit does not pull in later working-tree changes or rerun hooks.
+- Exclusion never grants permission to move a protected ref or bypass workflow authority.
+
+### Todos
+
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this memory repo.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
-| Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:86-86 |
-| The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:80-80 |
-| The extracted closeout staging owner runs the configured hook before its strict Dagger wrapper and later commits the certified index through this Git facade. | `gate_staged_code`; `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/git.py:188-198; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
-| Candidate-tree capture gives every observation a unique temporary index inside the caller-selected scratch namespace. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:33-55 |
-| The concurrency regression drives 24 observations through one requested scratch namespace and requires one tree plus zero residual scratch paths. | `test_candidate_tree_isolates_concurrent_observers_with_one_scratch_namespace` | mcp/tests/test_git_command.py:140-156 |
+| Ref/repository identity and transport-safe errors have shared implementations. | L20-L23; L26-L31; L79-L85; L88-L91; L100-L109 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| Candidate trees use private indices and exact derived-path exclusions. | L34-L35; L38-L68 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| Filtered status and staging/commit APIs share the exclusion contract. | L112-L116; L119-L120; L127-L130; L191-L197; L200-L207; L221-L236 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| The exact cache pathspec is defined beside the consumer filename. | L24-L24; L27-L27 | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
+| Changed-file reporting preserves its distinct deletion/rename/count semantics. | L282-L293; L309-L348 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
 
-## 260815-DAG-L4 Integration-Authority Impact
+## Cross-Repo References
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:02 UTC — Documented explicit cache exclusions in status, candidate capture, staging, ordinary commits, and verified-index commits; preserved guarded-runner, real-index isolation, hook separation, and changed-path semantics. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (reopened-claim judgement): the checker reopened
   the `run_git` claim because that construct changed after verification. Re-read the claim against

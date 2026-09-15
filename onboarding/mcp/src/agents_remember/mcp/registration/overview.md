@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -135,6 +136,10 @@ the checkpoint's case from L36 and the pause's case from L37. Signature, family 
 
 ## Hot Path Summary
 
+The closeout registrar publishes only code/memory commit-message arguments. Memory registration removes ledger commit-message controls from carryover. Cache status remains consumer output, while the typed lower-layer owners enforce actual Git authority.
+
+## Detailed Route Context
+
 The closeout registrar accepts typed corrective catalog dispositions and forwards them to the existing application owner; registration creates no alternative approval or retry authority.
 
 Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private.
@@ -202,6 +207,12 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Canonical closeout input rejects a ledger message field. | L46-L52 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+
 ## Historical 260731-EFA-L17 Change
 
 The closeout-family docstrings now state the quality altitude ladder: preview/apply name the
@@ -268,9 +279,9 @@ Registered worktree and memory tools expose journaled closeout/integration and r
 
 Registration modules import the moved `application/task_docs/*`; `registration/tasks.py` extracts the `task_doc` description constant; `registration/closeout.py` renames the direct-landing helper.
 
-## 260821-CLIVE-L1 Tool Contract
+## Current Closeout Tool Contract
 
-The advertised closeout surface exposes code, memory, and ledger message observations where the route can require them, then reports `effectiveInput` or structured refusal. Optional schema fields are not defaults: enabled legs require explicit stripped nonblank messages at runtime. Direct landing exposes only memory and ledger intent because code is verified-existing/not-applicable. Validation precedes integration authority, the landing lock, and Git.
+The advertised closeout surface accepts code and memory message observations and reports `effectiveInput` or structured refusal. Optional schema fields are not defaults: enabled legs require explicit stripped nonblank messages at runtime. Direct landing exposes the memory message because its code output is verified-existing/not-applicable. No public ledger message, commit or intent remains. Validation still precedes integration authority, the landing lock and Git.
 
 ## 260821-CLIVE-L2 Current Architecture
 
@@ -325,7 +336,7 @@ The parity candidate composes the sidecar and governing route body/history check
 
 The closeout-family registration advertises transaction-only preview/apply/integration behavior.
 Public calls preserve explicit developer approval, candidate/source checks, and ref safety, then
-delegate code, external-memory, ledger, or prepared-pair publication to existing owners. The
+delegate code, external-memory or prepared-pair publication to existing owners. The
 registered routes do not automatically invoke strict code quality, memory quality, selected
 certification, curator coherence, or independent review; full suites are an explicit developer
 request. The historical altitude-ladder section above remains context for the superseded contract.
@@ -347,6 +358,9 @@ are unchanged. A reader looking for the operation set in the published schema wi
 the description is the contract.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned advertised tool contract with two input legs and informational cache outputs. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical
   projection): re-read the worktree-registration claim against the current source and re-cited it to the
   declaration itself, `"def register_worktree_tools("` at

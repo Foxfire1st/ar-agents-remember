@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/style/citations/provenance.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -19,29 +19,35 @@
 Historical source and exact dependency-version provenance for citation claims. `GitHistory.commit`
 accepts only commits reachable from the current repository history or an explicitly retained
 prepared-history anchor; `Histories` passes those anchors to the code history while memory history
-still comes from the ledger. Source files are read from current bytes for the working-tree side of
+comes from reachable memory commit attribution. Source files are read from current bytes for the working-tree side of
 the comparison, and dependency checks require exact resolved Python or npm versions.
 
 ## Code Commentary
 
 ### Logic
 
+`Histories.memory_mappings` derives reachable code-to-memory pairs once per history
+observation from memory commit trailers. `memory_commit(code_commit)` resolves an attributed
+memory commit and still proves its reachability. No cache-file read supplies historical
+provenance; absent or malformed `memory.md` is irrelevant, while unavailable Git attribution or
+a missing real attribution remains an explicit provenance error.
+
 Module-level surface:
 
-- `Read` (class, lines 40-43)
-- `LockedVersion` (class, lines 46-50)
-- `GitHistory` (class, lines 53-111)
-- `Histories` (class, lines 114-184)
-- `VersionRead` (class, lines 187-190)
-- `requirement_candidate_for` (function, lines 193-203)
-- `package_candidate_for` (function, lines 206-218)
-- `manifest_error` (function, lines 221-225)
-- `requirement_versions` (function, lines 228-269)
-- `package_lock_versions` (function, lines 272-287)
-- `package_from_path` (function, lines 290-294)
-- `ecosystem_from_path` (function, lines 297-305) — The one resolved-version namespace capable of proving ``path``'s identity.
-- `normalised_package` (function, lines 308-309)
-- `_git_error` (function, lines 312-314)
+- `Read` (class)
+- `LockedVersion` (class)
+- `GitHistory` (class)
+- `Histories` (class)
+- `VersionRead` (class)
+- `requirement_candidate_for` (function)
+- `package_candidate_for` (function)
+- `manifest_error` (function)
+- `requirement_versions` (function)
+- `package_lock_versions` (function)
+- `package_from_path` (function)
+- `ecosystem_from_path` (function) — The one resolved-version namespace capable of proving ``path``'s identity.
+- `normalised_package` (function)
+- `_git_error` (function)
 
 ### Conventions
 
@@ -55,28 +61,50 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
+## Docs References
+
+No Domain Documentation source is configured in the resolved memory repository. The current
+contract is supported by the implementation and the authorized cache-retirement requirement.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Defines the class `Read` (lines 40-43). | `Read` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:40-43 |
-| Defines the class `LockedVersion` (lines 46-50). | `LockedVersion` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:46-50 |
-| Defines the class `GitHistory` (lines 53-111). | `GitHistory` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:53-111 |
-| Defines the class `Histories` (lines 114-184). | `Histories` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:114-184 |
-| Defines the class `VersionRead` (lines 187-190). | `VersionRead` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:187-190 |
-| Defines the function `requirement_candidate_for` (lines 193-203). | `requirement_candidate_for` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:193-203 |
-| Defines the function `package_candidate_for` (lines 206-218). | `package_candidate_for` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:206-218 |
-| Defines the function `manifest_error` (lines 221-225). | `manifest_error` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:221-225 |
-| Defines the function `requirement_versions` (lines 228-269). | `requirement_versions` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:228-269 |
-| Defines the function `package_lock_versions` (lines 272-287). | `package_lock_versions` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:272-287 |
-| Defines the function `package_from_path` (lines 290-294). | `package_from_path` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:290-294 |
-| Defines the function `ecosystem_from_path` (lines 297-305) — The one resolved-version namespace capable of proving ``path``'s identity.. | `ecosystem_from_path` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:297-305 |
-| Defines the function `normalised_package` (lines 308-309). | `normalised_package` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:308-309 |
-| Defines the function `_git_error` (lines 312-314). | `_git_error` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:312-314 |
+| Historical memory provenance derives once from reachable attribution and validates the selected commit. | L118-L193; L57-L114 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the class `Read`. | L44-L46 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the class `LockedVersion`. | L50-L53 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the class `GitHistory`. | L57-L114 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the class `Histories`. | L118-L193 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the class `VersionRead`. | L197-L199 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `requirement_candidate_for`. | L202-L212 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `package_candidate_for`. | L215-L227 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `manifest_error`. | L230-L234 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `requirement_versions`. | L237-L278 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `package_lock_versions`. | L281-L296 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `package_from_path`. | L299-L303 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `ecosystem_from_path` — The one resolved-version namespace capable of proving ``path``'s identity.. | L306-L314 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `normalised_package`. | L317-L318 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `_git_error`. | L321-L323 | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+
+
+## Cross-Repo References
+
+No separate cross-repository implementation claim is made.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No external implementation source applies. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Replaced cache-file mapping reads with once-per-observation Git attribution for historical citation provenance. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): the three `GitHistory` reads (`commit`'s `rev-parse --verify` and `merge-base

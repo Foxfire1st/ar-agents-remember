@@ -5,102 +5,75 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[worktrees overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-This file owns admission and identity authority for resumable source synchronization: exact side
-locations/plans, official code-memory pair validation, pinned refs, journal-to-contract identity,
-finalization/cancellation preconditions, and common response evidence.
+Own the side plans, pinned refs, contract identity, base transitions, and parked-candidate completion facts for resumable source synchronization.
 
 ## Code Commentary
 
 ### Logic
 
-`side_record` binds one code or memory side to repository, operation worktree, source/work branch,
-admitted source commit, pre-sync head, recorded base, three deterministic backup refs, and a plan.
-Series sync uses temporary enclosure `.sync` worktrees; leaves use their ordinary worktrees.
-`preflight_official_pair` reads `memory.md` at the admitted official memory tip and requires a
-newest current mapping for the admitted code tip before mutation. Older same-code rows remain valid
-history.
+`side_record` binds a code or memory side to its repository, source/work branches, pre-sync head, recorded base, deterministic base/pre-sync/source backup refs, and merge or fast-forward plan. Series sync uses temporary enclosure worktrees; leaves use their ordinary worktrees. `source_pair` resolves the named local source tips without consulting a ledger file or requiring a code-to-memory row.
 
-`pin_authority`, `require_pinned_authority`, and `delete_authority` manage exact base/pre-sync/source
-refs. Recovery reconstructs a side only when all three exist. Contract validation binds journal
-path, task id, kind, repositories, worktrees, and branches; finalization additionally constrains
-base transitions, while cancellation requires original bases. Shared helpers update the journal and
-shape side/result payloads without changing authority.
+Pinned refs are created, checked, reconstructed, and deleted by exact object identity. Journal-to-contract validation binds paths, task identity, kind, repositories, branches, and allowed base transitions. Finalization permits only the recorded old or admitted new bases; cancellation retains the original-base requirement.
+
+The shared parked-WIP helpers restore the candidate before dropping its exact stash. Genuine reapply conflicts retain the stash and resolution state. Settling a manually resolved reapply checks content conflicts, discards only memory-side cache changes, and leaves the real candidate uncommitted for its owning closeout.
 
 ### Conventions
 
-Git authority uses full commit ids and compare-exact refs. Source pair means local protected branch
-tips; upstream fetch evidence lives elsewhere. Missing one member of a recovery-ref triple is an
-error, not partial success.
+The base/pre-sync/source ref triple is recovery authority, not a third delivered commit. Shared side payloads expose WIP details only for sides that actually parked content.
 
 ### Invariants And Boundaries
 
-- External-memory admission requires the newest valid ledger mapping for the exact code tip; global
-  code-key uniqueness is not an admission rule.
-- Journal identity cannot be rebound to another contract, repository, branch, or worktree.
-- All participating refs are pinned before the journaled mutation proceeds.
-- Cleanup deletes refs only when they still equal the admitted commits.
-- This module does not infer authority from queue state or ambient checkout position.
-
-## Parked-Candidate Restore Authority
-
-The shared restore helpers live here so the driver, the recovery owner, and the read-only previews
-never re-implement the proof. `restore_parked_wip` returns one side's parked candidate to its
-worktree and journals the outcome: a clean reapply is proven restored before the stash entry is
-dropped and `wipState` becomes `restored`; a conflicted one becomes the retained
-`*-resolution-required` state with `wipState="restore-conflict"`, the exact `conflictFiles`, and the
-stash kept — and its third return value tells the caller not to advance that side.
-`restore_cancelled_wip` reapplies every still-parked candidate after the rollback restored the
-pinned pre-sync heads. `settle_resolved_parked_wip` closes a conflict the agent resolved in the
-worktree: it refuses while any unmerged path remains, then retires the stash entry without
-committing, so the resolved candidate stays uncommitted for the closeout that owns it.
-`require_parked_wip_settled` is the finalization safety net.
-
-`side_payload` gained one conditional `wip` block (`state`, `paths`, `pathCount`) for any side that
-parked something; sides that parked nothing emit no `wip` key, so an ordinary side's payload is
-unchanged. `resolution_phase` centralises the `code-resolution-required` /
-`memory-resolution-required` phase name both restore and merge callers use.
+- Journal identity cannot be rebound to another contract or repository.
+- All participating authority refs remain exact; partial ref triples are errors.
+- Missing memory attribution is informational and does not make source sync mid-cycle.
+- Cache-only conflict/index state is excluded from parked-content completion; real unresolved content remains a blocker.
 
 ### Todos
 
-Authority and result-state claims are reconciled to the frozen source; verification metadata awaits
-the real code commit.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The journal models store every side identity and deterministic ref used here. | `SyncSideRecord`; `SyncOperationRecord`; `sync_side_refs` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67; mcp/src/agents_remember/worktrees/sync_transaction_state.py:70-87; mcp/src/agents_remember/worktrees/sync_transaction_state.py:159-161 |
-| Exact ref, checkout, merge, and rollback proof is centralized in the Git module. | `create_pinned_ref`; `require_side_checkout`; `start_side_merge`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:52-61; mcp/src/agents_remember/worktrees/sync_transaction_git.py:93-99; mcp/src/agents_remember/worktrees/sync_transaction_git.py:264-301; mcp/src/agents_remember/worktrees/sync_transaction_git.py:375-403 |
-| The driver admits and advances only after this authority preflight succeeds. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110 |
-| The shared parked-candidate restore helpers prove a clean reapply, retain a conflicted one, return the candidate after cancellation, and refuse finalization while one is parked. | `restore_parked_wip`; `restore_cancelled_wip`; `settle_resolved_parked_wip`; `require_parked_wip_settled` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:356-395; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:398-417; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:420-440; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:443-450 |
-| The shared side payload emits the parked-candidate projection only for a side that parked one, and the resolution phase names are centralised. | `side_payload`; `resolution_phase` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:329-349; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:352-353 |
+| Side planning and exact source-pair reads. | L39-L74; L77-L99; L110-L118 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Pinned ref authority and reconstruction require exact identities. | L121-L126; L129-L143; L146-L151; L168-L195 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Contract identity and base-transition constraints. | L206-L220; L236-L242; L245-L252 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Parked-content restoration and settlement retain the exact stash until safe. | L316-L355; L358-L377; L380-L401; L404-L411 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
 
 ## Cross-Repo References
 
-No cross-repository source is configured for this memory root.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed official-pair ledger admission and connected parked-candidate settlement to memory-domain content conflict handling while retaining pinned-ref and contract/base proof. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
   claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this

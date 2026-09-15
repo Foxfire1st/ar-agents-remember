@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
 
@@ -17,6 +18,10 @@ abandonment, and reopen recovery. The skill describes public contract-addressed 
 not move private journal, ref, or queue identity into agent prompts.
 
 ## Hot Path Summary
+
+Closeout, sync, checkpoint and integration bind the actual code/memory refs and content. Ledger cache files remain available for downstream readers; their missing/stale/malformed state cannot block these operations or request another commit.
+
+## Detailed Route Context
 
 Atomic-series admission is a contract-scoped authority: each canonical series contract owns its own
 activation record, so masters that share one exact code/memory source pair never share that state.
@@ -41,7 +46,7 @@ resumes; cancel restores pinned heads, removes retained temporary worktrees, ter
 journal, and releases an exact reconciling selection to durable `vacant`. No direct-Git recovery,
 tolerant reader, or contract-presence fallback is part of the doctrine. For external memory,
 continuation proves the admitted Git history and leaves the ledger to its rebuild: the transaction
-requires no row list of the `memory.md` it commits, because the ledger is derived state and a row the
+does not commit `memory.md` or use its rows as a Git guard. A row the
 rebuild cannot resolve is reported as an exclusion. Repeated code commits are valid
 newest-first state history; the newest row supplies current authority and older same-code rows
 remain audit evidence.
@@ -85,7 +90,7 @@ metadata awaits the real code commit.
 
 ## CCR-R12@v5 Transaction Boundary
 
-Closeout and integration are authorized Git transactions over code, memory-content, and ledger legs. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Preview, conflict, and ref safeguards remain in this route; quality, tests, memory-quality, certification, and review operations are contextual or explicit rather than automatic.
+Closeout and integration are authorized Git transactions over code and memory-content legs, followed by best-effort consumer-cache refresh. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Preview, conflict, and ref safeguards remain in this route; quality, tests, memory-quality, certification, and review operations are contextual or explicit rather than automatic.
 
 ## Repo-Internal References
 
@@ -96,6 +101,12 @@ Closeout and integration are authorized Git transactions over code, memory-conte
 | The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters. | "nothing serializes the masters" | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:162-162 |
 | Public sync composes the selection and transaction owners without exposing private ids. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
 | Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Real memory ancestry is the landing proof. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
 
 ## Ungoverned Mirror Status (known defect)
 
@@ -111,6 +122,9 @@ removed. That mismatch between the declared path rules and the enforced checking
 recorded defect.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled canonical worktree doctrine to cache-independent Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
   `skills/c-09-git-worktree-manager/` route changed since the recorded verification commit. Re-read

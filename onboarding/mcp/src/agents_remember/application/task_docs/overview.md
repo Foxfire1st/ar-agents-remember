@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -31,6 +32,10 @@ the task-document authoring seam owns one package; `task_doc_steps` was added la
 the armed 1,200-line hard limit.
 
 ## Hot Path Summary
+
+`task_unstarted_evidence.py` determines commit evidence from actual code/memory-content and integrated output cells. Retired ledger commit cells no longer count as commit evidence; an existing enclosure remains independent started evidence, and task/lifecycle checks still apply.
+
+## Detailed Route Context
 
 Task-document authoring is the source-of-truth publication plane. An otherwise-valid mutation is
 never subordinate to queue or per-contract atomic-series activation state. The exact transaction rechecks accepted source bytes, writes task
@@ -146,7 +151,18 @@ decision are the audited substitute for the guard and gating on document status 
 full-document `replace`. `remove_step` ("this step should never have existed") and `skip_step`
 ("this planned unit was deliberately not done") remain distinct and are not interchangeable.
 
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Execution evidence checks real code and memory output cells. | L247-L297 | [mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented unstarted-task evidence after removal of ledger commit fields. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
   `ar/260913-lca-l5-ar`, base `52875e7a`): recorded the fail-closed authoring guard on the route.
   `_require_bindable_leaf_authoring` refuses a leaf document authored under a task root with no master

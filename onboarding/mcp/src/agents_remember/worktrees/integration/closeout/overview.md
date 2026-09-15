@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,11 +17,14 @@
 
 ## What This Area Is
 
-Closeout-door publication, structured curator-coherence authority, source reconstruction, ledger
-recovery, organizational repair, and recovery projection. It separates disposable scheduling
+Closeout-door publication, structured curator-coherence authority, source reconstruction, organizational repair, and recovery projection. It separates disposable scheduling
 evidence, candidate acceptance evidence, and the durable operation journal.
 
 ## Hot Path Summary
+
+Door dependency identity binds task, code and substantive memory candidates. It carries no ledger digest, row, provenance or third commit. The retired ledger recovery module has no replacement writer; existing journal/Git owners prove the two actual outputs.
+
+## Detailed Route Context
 
 `prepared_certification.py` (relocated here from `memory_quality/` by commit `deb032fb`) composes the
 actual affected closure and full memory checks against a proved private code view;
@@ -28,7 +32,7 @@ actual affected closure and full memory checks against a proved private code vie
 `curator_coherence_publication.py` publishes the sole live content-addressed authority;
 `curator_coherence_judgments.py` binds agent-owned decisions to evidence bytes; and
 `curator_coherence_render.py` produces a one-way human projection. `door_source.py` reconstructs
-the exact waiting source; `ledger_recovery.py` advances code and memory proof after partial
+the exact waiting source; the operation journal and Git mutation evidence prove code and memory outputs after partial
 closeout without making the disposable queue own commit evidence. `integration_reopen.py` decides
 whether exact newly produced code or memory output needs another plane-owned integration.
 For graph-backed candidates, both door reconstruction and curator-coherence observation pass the
@@ -83,7 +87,6 @@ were not removed by that commit.
 | Source File | Onboarding | Status |
 | --- | --- | --- |
 | `door_source.py` | [door_source.py.md](door_source.py.md) | covered |
-| `ledger_recovery.py` | [ledger_recovery.py.md](ledger_recovery.py.md) | covered |
 | `prepared_certification.py` | [prepared_certification.py.md](prepared_certification.py.md) | covered |
 | `curator_coherence.py` | [curator_coherence.py.md](curator_coherence.py.md) | covered |
 | `curator_coherence_judgments.py` | [curator_coherence_judgments.py.md](curator_coherence_judgments.py.md) | covered |
@@ -105,19 +108,30 @@ fallback.
 
 ## L34 Preparation Ownership
 
-[Preparation](preparation/overview.md) now owns selected private C/M/L creation, genuine existing-output reuse, physical code views and prepared-memory result currentness. [preparation_selection.py](preparation_selection.py.md) retains original objects and command outcomes through canonical journal CAS. Final memory evidence comes from the registered prepared-memory producer; private output selection alone is not ref publication or approval.
+[Preparation](preparation/overview.md) now owns selected private code/memory-content creation, genuine existing-output reuse, physical code views and prepared-memory result currentness. [preparation_selection.py](preparation_selection.py.md) retains original objects and command outcomes through canonical journal CAS. Final memory evidence comes from the registered prepared-memory producer; private output selection alone is not ref publication or approval.
 
 
 ## Integrated IAS Recovery Contract
 
-Preparation selection requires the exact four original code certificates and, for memory legs, the selected fifth certificate. Prepared finalization recovery is attempted before fresh original-head admission so the original generation can finish C/M/L publication after its owned refs advance. This is recovery of retained outputs, not permission to rerun commands or certify a changed candidate.
+Preparation selection requires the exact four original code certificates and, for memory legs, the selected fifth certificate. Prepared finalization recovery is attempted before fresh original-head admission so the original generation can finish code/memory-content publication after its owned refs advance. This is recovery of retained outputs, not permission to rerun commands or certify a changed candidate.
 
 ## CCR-L42 Refresh Validation Parity
 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
 
 
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Door source facts use current Git and task authority. | L381-L475 | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Removed deleted ledger recovery routing and documented cache-independent door evidence. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
   `mcp/src/agents_remember/worktrees/integration/closeout/` route changed since the recorded

@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/preparation` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-13T23:52+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`|
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,23 +17,13 @@
 
 ## Hot Path Summary
 
-Code intent selection precedes private execution. Exact raw outputs remain selected in the original operation journal. The physical code view and current logical memory pair feed the registered memory-certification producer. Only its exact selected Gate-5 result permits private M/L preparation. Existing outputs require actual Git and ledger proof; preparation alone does not advance logical refs or consume approval.
+Code intent selection precedes private execution. The journal retains exact code and memory-content outputs. The physical code view and current logical memory pair feed the selected memory-certification result; only that exact result permits private memory preparation. Existing output reuse proves the raw Git head/ref/tree and the certified content tree independently. Root `memory.md` is excluded only from the memory content view; cache state cannot request another output or publication.
 
 ## Ownership And Boundaries
 
-`policy.py` observes actual configuration/hooks. `private_execution.py` owns command ordering through kernel capabilities, while `output_selection.py` retains exact raw outputs. `code_view.py` separates physical read roots from logical pair identity. `memory_execution.py` reopens certification results and `memory_output.py` prepares ordered M/L outputs. `finalization.py` separately owns guarded ref publication and contract completion; `continuation.py` composes the installed memory producer with that finalizer. Current documentation records implementation, not a passing suite or aggregate acceptance.
+`policy.py` observes actual configuration/hooks. `private_execution.py` owns command ordering through kernel capabilities, while `output_selection.py` retains exact raw outputs. `code_view.py` separates physical read roots from logical pair identity. `memory_execution.py` reopens certification results, and `memory_output.py` selects one memory-content output after the code output. `finalization.py` publishes the selected pair under guarded refs; `continuation.py` composes the installed memory producer and finalizer.
 
-Since 260913-LCA-L4 this route owns one of the five memory-content producers, and it is the one with no
-reachable public entry point. `memory_output.py` renders the **memory-content** leg's `normalizedMessage`
-through `kernel.memory_attribution.render_memory_content_message` against
-`result.candidate.codeView.codeCommit` — the kernel's one writer of the `Code-Commit:` trailer — while the
-**ledger** leg keeps the plain `effective.message_for("ledger")` and carries none. The rendered message is
-what `private_execution.py` creates the private commit with, and `finalization.py` publishes that exact
-object to the live memory ref, so the attribution is inside the object the ref receives and cannot be
-appended afterwards without rewriting it. Because `certification/execution.execute_selected_closeout` has
-no production caller today, this leg's protection is the source census in
-`mcp/tests/test_memory_attribution_producers.py` rather than a behavioural case of its own — a residual gap
-that is stated on the kernel card rather than hidden.
+The memory-content message uses the kernel's shared `Code-Commit:` renderer. `memory_reuse.py` keeps the actual existing commit and its raw tree unchanged while binding the separately certified tree without root `memory.md`. Cache removal/ignore preparation occurs only alongside substantive memory work; a clean old commit that still contains the cache does not create a maintenance commit. This is source documentation, not an aggregate acceptance claim.
 
 ## File-Level Onboarding Map
 
@@ -47,7 +38,7 @@ that is stated on the kernel card rather than hidden.
 - [memory_port.py.md](memory_port.py.md) — Typed prepared-memory certification request, result and port.
 - [memory_execution.py.md](memory_execution.py.md) — Prepared memory candidate observation and selected result currentness.
 - [memory_reuse.py.md](memory_reuse.py.md) — Read-only proof of genuine existing memory output.
-- [memory_output.py.md](memory_output.py.md) — Ordered post-certification private M and L preparation.
+- [memory_output.py.md](memory_output.py.md) — Post-certification selection of the single memory-content output.
 
 - [finalization.py.md](finalization.py.md) — original prepared output publication and canonical contract completion.
 - [continuation.py.md](continuation.py.md) — default selected continuation and producer binding.
@@ -58,10 +49,17 @@ that is stated on the kernel card rather than hidden.
 | --- | --- | --- |
 | Selected intent and command CAS remain outside the transport package. | `select_preparation_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py:135-158 |
 
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The selected bundle contains code and one memory-content output. | L45-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Existing memory reuse binds raw Git facts and a separately certified content tree. | L19-L63 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
+| Final publication proves and publishes the pair, then refreshes the cache. | L533-L569 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
 
 ## Integrated IAS Recovery Contract
 
-M/L preparation reobserves the selected memory result, actual policy and original intent. A retained output is physically re-proven instead of created again. Finalization journals each original publication prestate once, reobserves proven refs, and recognizes that ledger publication advances the shared memory ref beyond intermediate M. `resume_prepared_closeout` requires the same running worker/generation, selected C/M/L outputs and retained ledger bytes before finishing publication; finalized-contract readback returns the original closed result.
+Memory preparation reobserves the selected result, actual policy and original intent. A retained output is physically re-proven instead of recreated. Finalization journals each original publication prestate once and reobserves proven code and memory refs. `resume_prepared_closeout` requires the same running worker/generation and the original selected two-output bundle; no ledger leg or retained ledger bytes are required. Cache refresh follows the Git publication and reports availability without changing the transaction result.
 
 ## CCR-L42 Refresh Validation Parity
 
@@ -69,6 +67,9 @@ The parity candidate composes the sidecar and governing route body/history check
 
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced M/L and C/M/L proof/publication with exact code and memory-content outputs and cache-free certified reuse. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
   `5bb124d4`): route impact. `memory_output.py` became one of the five memory-content producers when
   `_intent` began rendering the memory-content leg through

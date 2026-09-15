@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`                 |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`                 |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -30,6 +30,11 @@ already pass keywords. Registered tools are unchanged.
 
 ### Logic
 
+`memory_carryover_apply` publishes one `memory_commit_message`, packs it into
+`CarryoverCommitMessages`, and leaves approval intent separate. Its description names attributed
+memory content and a ledger cache refresh; there is no ledger commit argument or ledger branch
+publication for callers to provide.
+
 The two read-only checks are named for what they measure: `drift_check` is the **task-start**
 worklist
 (classifies how far onboarding has drifted since it was last verified — a nonzero actionable count
@@ -51,14 +56,18 @@ Three declarations pack:
 - `memory_baseline_adopt` — `source_branch` + `work_branch` become `MemoryBranches`.
 - `memory_carryover_plan` / `memory_carryover_apply` — the five refs the plan compares
   (`repo_id`, `source_memory`, `official_code_ref`, `source_code_ref`, `old_base`) plus
-  `replace_existing` become one `CarryoverSelection`, and apply's two commit messages become
+  `replace_existing` become one `CarryoverSelection`, and apply's memory-content commit message becomes
   `CarryoverCommitMessages`. The `intent_note` stays a separate argument: it is the approval, not
   part of the selection.
 
-The mutating/approval-gated ones say so in their docstrings — `memory_baseline_adopt` writes the
-ledger and commits memory and is gated on clean drift unless `accept_drift=true`;
+The mutating/approval-gated ones say so in their docstrings — `memory_baseline_adopt` commits attributed memory and refreshes the
+ledger cache and is gated on clean drift unless `accept_drift=true`;
 `memory_carryover_apply` may only run after the code has landed officially and after
 `memory_carryover_plan` has been reviewed.
+
+### Conventions
+
+Flat baseline/carryover arguments are packed into their application parameter objects. The quality request keeps its existing discriminated shape.
 
 ### Invariants And Boundaries
 
@@ -73,15 +82,29 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 - Quality execution lives in `application/memory_quality_controller.py`; other memory tools remain
   in `application/memory_tools.py`. Registration chooses only the validated request variant.
 
+### Todos
+
+No additional file-local TODO is established by this candidate review.
+
+## Docs References
+
+No Domain Documentation source is configured in the resolved memory repository. The current
+contract is supported by the implementation and the authorized cache-retirement requirement.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload`; `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:209-220; mcp/src/agents_remember/mcp/tools/memory.py:223-244 |
-| The typed sync/start/poll payload builders. | `memory_quality_check_payload`; `memory_quality_check_start_payload`; `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-89 |
-| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:308-314 |
-| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:321-338 |
-| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:341-346 |
+| Carryover registration declares one memory subject and describes the computed cache refresh. | L212-L242 | [mcp/src/agents_remember/mcp/registration/memory.py](mcp/src/agents_remember/mcp/registration/memory.py) |
+| The payload builders for the carryover plan and report-filing apply pair. | L209-L220; L223-L244 | [mcp/src/agents_remember/mcp/tools/memory.py](mcp/src/agents_remember/mcp/tools/memory.py) |
+| The typed sync/start/poll payload builders. | L58-L65; L68-L77; L80-L89 | [mcp/src/agents_remember/mcp/tools/memory.py](mcp/src/agents_remember/mcp/tools/memory.py) |
+| The `MemoryBranches` parameter object. | L309-L314 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
+| The `CarryoverSelection` parameter object. | L322-L338 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
+| The `CarryoverCommitMessages` parameter object. | L342-L345 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
 
 ## 260815-DAG-L3 Curator Attestation Registration
 
@@ -114,7 +137,19 @@ The registration advertises repository-only calls as official diagnostics and re
 polls to repeat the original contract path. It does not imply that repository id can select an
 acceptance pair.
 
+
+## Cross-Repo References
+
+No separate cross-repository implementation claim is made.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No external implementation source applies. | N/A | N/A |
+
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Aligned baseline/carryover registration descriptions and message packing with the derived-cache contract. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4345d17994bf47dcf3f795becd6e45481f2076058bb07d50090ad9ec2aa6101c; verification metadata remains unchanged because commit-owned realization is pending.
 

@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -97,6 +98,10 @@ the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
 
+Closeout and landing models expose code/memory outputs; `DirectLandingResponse.ledgerCache` is an informational cache-refresh result. The lifecycle models distinguish actual Git heads from filtered memory content and retain no ledger commit alias.
+
+## Detailed Route Context
+
 The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate.
 
 The closeout input, source, and projection vocabulary now lives under `models/closeout/`. This is a
@@ -112,7 +117,7 @@ exactly one final-paragraph `Code-Commit: <sha>` trailer naming the code commit 
 landed. Both closeout routes still render through that wrapper — worktree closeout and the
 branch-addressed direct landing — while the prepared memory-content leg, carryover, baseline adoption
 and backfill call the kernel renderer directly, so the attribution has a single definition in kernel.
-The `memory.md`-only ledger commit, which names no code commit, carries none.
+There is no current ledger-only producer: the cache is rebuilt without a commit. Historical commits without attribution contribute no computed mapping.
 
 ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
 role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
@@ -292,6 +297,13 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:40-40; mcp/src/agents_remember/models/worktree.py:50-50; mcp/src/agents_remember/models/worktree.py:59-59 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Direct landing returns cache observations separately from commits. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
+| Public message transport names only code and memory. | L46-L52 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -581,7 +593,7 @@ The parity candidate composes the sidecar and governing route body/history check
 
 `models/worktree.py` gains `WorktreeCheckpointLandingResponse` (operation literal
 `worktree_checkpoint_landing`, carrying `integrationStrategy`, `integratedCodeCommit`,
-`integratedMemoryContentCommit`, and `integratedLedgerCommit`), `IntegrationStatus` gains the
+`integratedMemoryContentCommit`), `IntegrationStatus` gains the
 `checkpointed` member, and `models/tools/tool_registry.py` registers the new envelope between
 `worktree_integrate` and `worktree_record_landing`.
 
@@ -673,6 +685,9 @@ waiting reasons. Real wave dependencies still gate through the sprint execution 
 this change.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Updated model routing and checkpoint result vocabulary; retained only informational cache exposure. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): corrected the change-set
   attribution in the renderer paragraph — the one-writer move is `260913-LCA-L4`, not L5, as the

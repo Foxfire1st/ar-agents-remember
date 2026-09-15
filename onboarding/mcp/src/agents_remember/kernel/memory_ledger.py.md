@@ -1,154 +1,106 @@
 # mcp/src/agents_remember/kernel/memory_ledger.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/kernel/memory_ledger.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:02 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[mcp/overview.md](../../../overview.md)
+[Nearest governing overview](../../../overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-`memory_ledger.py` parses, validates, writes, and updates the external-memory
-`memory.md` ledger that maps code commits to memory-content commits. It also declares **where** that
-ledger lives: `LEDGER_RELATIVE_PATH = "memory.md"`
-cit:([`LEDGER_RELATIVE_PATH`], mcp/src/agents_remember/kernel/memory_ledger.py:25-25) sits beside the schema, the row type and the
-parser because the path is a property of the ledger format rather than of any one reader.
+Defines the consumer memory-ledger representation: schema and row types, structural parsing,
+validation, canonical serialization, and current-versus-historical row lookup. It does not derive
+Git authority from those serialized rows.
 
 ## Code Commentary
 
 ### Logic
 
-The module reads a fenced JSON metadata block plus the first `Code commit |
-Memory commit` table, validates that the newest table row matches the metadata,
-serializes the canonical ledger format, prepends new mappings, finds existing
-mappings, and creates an initial ledger.
+The format is a fenced JSON metadata block followed by a two-column `Code commit` / `Memory commit`
+table. `parse_ledger_text_unvalidated` checks structure, schema, repository name, and sort-order
+metadata without enforcing current-header agreement. Nonempty tables still require all revision
+metadata. `parse_ledger_text` additionally calls `validate_ledger`.
 
-`find_mapping` returns the first—and therefore current—row for a code commit. `contains_mapping`
-answers the different historical question: whether one exact code/memory edge exists anywhere in
-the immutable row history.
+An empty derived ledger is valid. It has no mapping rows and may leave revision metadata empty;
+validation refuses an empty ledger that nevertheless claims a current code or memory mapping.
+For nonempty rows, the first pair must agree with the current header and ordering remains
+`newest-first`.
 
-`LEDGER_RELATIVE_PATH` is a declared constant and not a default buried in one reader, and the
-placement is the point: a kernel-level migration that reads the same table must not import a feature
-package to learn a filename. `worktrees/ledger_projection.py` imports it from here and re-exports it
-cit:([`LEDGER_RELATIVE_PATH`], mcp/src/agents_remember/worktrees/ledger_projection.py:44-63), so the callers that already name
-it from the projection keep working unchanged, while the kernel's own reader of the tracked table
-(`kernel/memory_backfill.ledger_rows_at`) takes it as its `relative` default without importing
-`worktrees` at all.
+`prepend_mapping` returns a representation with the new pair and updated current header.
+`find_mapping` selects the first matching code row; `contains_mapping` asks whether an exact pair
+occurs anywhere in the data. Repeated code commits can therefore represent ordered memory states
+without collapsing their history.
 
-### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
-
-cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:222-244) is two statements — `mkdir(parents=True, exist_ok=True)`
-then `path.write_text(...)`. It got no lock, no temp-and-rename and no `fsync` in the leaf that gave
-all six control-plane JSONL stores exactly those things, and L5 records why in the function's own
-docstring cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:222-244) rather than leaving the omission to be re-litigated. The ruling is **degraded,
-not unrecoverable**, and it rests on two properties of the callers, both of which are checkable:
-
-- **Every call commits within two statements.** Six call sites across five modules —
-  `worktrees/modules/closeout.py` L539, `worktrees/modules/integrate.py` L254-L257,
-  `worktrees/modules/start.py` L1128, `memory/carryover.py` L759-L762 **and** L849, and
-  `memory/baseline.py` L153 — are each followed immediately by
-  `require_git(<memory root>, ["add", "memory.md"])` and then `commit_if_dirty(...)`. So the durable
-  authority for a mapping is the git object, not the working-tree file: a torn or truncated
-  `memory.md` costs the uncommitted delta and nothing else, and `git checkout -- memory.md` restores
-  it. (The docstring says "five callers … `carryover.py` (twice)", which is five modules and six
-  calls; both readings are in the text, and the count that matters is that all six commit.)
-- **No second long-lived process writes it.** `write_ledger` does not appear anywhere under
-  `observer/` or `serving/`. The dashboard reads the ledger — `observer/snapshots.py` L42 imports
-  `LedgerError`, `LedgerRow` and `load_ledger` from this module, and no writer — so there is nothing
-  to serialize against and a lock here would guard nothing. (The docstring's parenthetical says
-  snapshots.py "imports `load_ledger` and nothing else"; it imports three names. The claim that
-  matters — that none of them writes — holds.)
-
-**One caller-reach claim in the docstring is not exact, and the card records the accurate version.**
-It says all five are "reached only through MCP tool registrations". Three of them are also reachable
-from a script: `worktrees/modules/cli.py` registers `start`, `closeout` and `integrate` subcommands
-(`build_parser`, `main`), and `worktrees/git_worktree_manager.py` L194-L195 is
-`if __name__ == "__main__": raise SystemExit(main())`. That is a short-lived process, it commits on
-the same two-statement path, and it changes nothing about the ruling — but it does mean the second
-bullet's premise is "no concurrent *daemon* writes this", not "only the MCP process ever writes
-this".
-
-**What would falsify the ruling**, stated so a later reader can check it rather than trust it: a
-`write_ledger` caller that does not `git add` + commit in the same function, or one reached from a
-process that runs concurrently with another writer (a serving route, a projection tick, a
-supervisor sweep). Either one makes a truncated ledger lose history rather than a delta, and the
-ledger then belongs on the `ar-durable-store/1.0` contract in `controlplane/durable_store.py` like
-the six JSONL logs.
+`write_ledger` serializes only the explicitly supplied representation. It creates no commit and
+performs no staging or ref move. Runtime refresh uses `memory_cache.refresh_memory_cache` to derive
+and materialize current data. `LEDGER_RELATIVE_PATH` owns the filename; `MEMORY_CACHE_EXCLUDE` is the
+exact root-cache exclusion consumed by Git staging/status helpers, including ignored or unreadable
+legacy cache files. The former projection-module reexport is no longer a reader contract.
 
 ### Conventions
 
-The parser deliberately uses the standard library and a small markdown/table
-grammar rather than pulling in a general markdown or YAML dependency. The ledger's path is exported
-as one module constant rather than passed around as a literal, so a reader, a writer and a migration
-agree on `memory.md` by construction.
+The parser uses a narrow standard-library grammar. Representation helpers and lookup ordering are
+data semantics; callers must not treat a successful parse or matching row as permission for Git
+work. Runtime derivation and best-effort cache writing have their separate kernel owner.
 
 ### Invariants And Boundaries
 
-- **The ledger's path is declared with the ledger's format.** `LEDGER_RELATIVE_PATH` lives here
-  beside `LEDGER_SCHEMA` and `LedgerRow`; `worktrees/ledger_projection.py` re-exports it through its
-  import so existing callers keep working, and no second declaration may appear.
-- `sortOrder` must remain `newest-first`.
-- The first table row must match `lastVerifiedCodeCommit` and
-  `lastMemoryContentCommit`.
-- `prepend_mapping()` requires both commits and updates metadata and rows
-  together.
-- Repeated code commits are valid. They record later external-memory states—such as settings-only
-  changes—for unchanged code while preserving the older mapping as audit history.
-- Row order carries authority: the newest matching row is current. Global code-key uniqueness must
-  not be inferred by readers.
-- Exact-edge checks use `contains_mapping`; current-state checks use `find_mapping`.
-- **A `write_ledger` call must be followed by `git add memory.md` + commit in the same function.**
-  That is not a style rule; it is the whole reason this file is allowed to do an unguarded
-  whole-file write while the control-plane stores may not. A caller that writes and defers the
-  commit converts "lose the uncommitted delta" into "lose the mapping history".
+- Empty data must not claim a current mapping; nonempty data must retain its required metadata.
+- The current header matches the first row when validated.
+- Current lookup and historical containment are distinct and do not impose global code-key uniqueness.
+- Writing a representation does not stage or commit it.
+- A cached table is disposable; only committed attribution supplies runtime mappings.
 
 ### Todos
 
-- `parse_ledger_rows()` is a Phase 06 complexity hotspot candidate.
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-No external documentation is needed for this repository-local ledger format.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No relevant external documentation is needed for the local ledger parser. | n/a | n/a |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-Same-repository source is the direct evidence for the external-memory ledger
-format.
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of "class LedgerError(AgentsRememberError):"). | "class LedgerError(AgentsRememberError):" | mcp/src/agents_remember/kernel/memory_ledger.py:17-47 |
-| The declared location of the ledger, moved here from `worktrees/ledger_projection.py` so a kernel-level reader of the same table needs no feature-package import. | `LEDGER_RELATIVE_PATH` | mcp/src/agents_remember/kernel/memory_ledger.py:25-25 |
-| `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table; the unvalidated structural parse and the validator it delegates to are beside it. | `parse_ledger_text`; `parse_ledger_text_unvalidated`; `validate_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:58-63; mcp/src/agents_remember/kernel/memory_ledger.py:66-125; mcp/src/agents_remember/kernel/memory_ledger.py:168-177 |
-| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:168-177; mcp/src/agents_remember/kernel/memory_ledger.py:180-205; mcp/src/agents_remember/kernel/memory_ledger.py:247-258 |
-| `find_mapping()` resolves current newest-first authority, while `contains_mapping()` proves one exact historical edge without imposing global code-key uniqueness. | `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:261-263; mcp/src/agents_remember/kernel/memory_ledger.py:266-274 |
-| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:222-244 |
-| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "contract for control-plane JSONL stores" | mcp/src/agents_remember/controlplane/durable_store.py:1-1 |
+| Format constants, row types, and the exact cache-exclusion expression. | L24-L24; L27-L27; L30-L33; L36-L45 | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
+| Structural parsing and validation distinguish empty and nonempty representations. | L68-L132; L149-L158; L173-L184 | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
+| Serialization and data lookup stay independent from Git publication. | L187-L212; L229-L236; L239-L250; L253-L255; L258-L266 | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
+| The runtime cache owner derives data rather than trusting a serialized table. | L22-L41; L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
 
 ## Cross-Repo References
 
-The ledger records code and memory commits across the source repository and its
-external memory repository, but the implementation contract is local to this
-file and the `c-09-git-worktree-manager` skill worktree manager.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Journaled worktree closeout's sole external-phase owner imports these ledger helpers, then rewrites the code-to-memory mapping only when it actually changed. | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:64-64 |
-| The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:274-359 |
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:02 UTC — Replaced the immediate-ledger-commit durability rule with consumer serialization semantics; documented valid empty derived ledgers, retained nonempty validation, and the shared root-cache exclusion constant. Earlier R12 entries describe the former committed-table design. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
   range of 2 claim(s) whose anchor no longer sat in its cited range and normalised 3 further

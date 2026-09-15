@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-14T18:20+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -66,13 +67,9 @@ before its canonical contract pointer is deleted. Normal readers never fall back
 queue rows, old files, or ambient Git when activation/journal authority is absent or unreadable.
 The focused route owner is [worktrees/overview.md](src/agents_remember/worktrees/overview.md).
 
-## IAS Newest-First Ledger History
+## Computed Memory Ledger For Consumers
 
-The external-memory ledger is ordered state history, not a globally unique code-to-memory map.
-Settings-only memory changes may therefore create a new memory content commit and a newer ledger
-row for unchanged code. `find_mapping` resolves the newest current row; exact-edge containment
-preserves older audit history. Closeout/direct recovery, source-pair sync, integration, and
-organizational completion all use that same distinction.
+The external-memory ledger remains a newest-first consumer view of reachable memory commits and their `Code-Commit:` trailers. Repeated code revisions can have later memory states without deleting older attributed history. `kernel/memory_ledger.py` owns the row format, `kernel/memory_attribution.py` owns Git attribution, and `kernel/memory_cache.py` derives and materializes the disposable cache. Cache rows never become a second source of mappings or a prerequisite for Git publication.
 
 ## L3 Canonical Scheduling-Register Boundary
 
@@ -151,7 +148,7 @@ Memory quality is useful before gate admission: a contract-scoped full request o
 
 Preparation does not grant a final certificate. The interactive catalog projection explicitly lacks affected-closure and code-prefix authority. The existing prepared-memory adapter consumes the selected four original code terminals and exact prepared candidate, runs the final memory producer, publishes its physical result and selects Gate 5 through the normal owner. Finalization requires that selected original fifth certificate and its bound memory inputs. MCAR continues from these existing owners; this overview does not declare the unfinished master accepted or create a second final proof path.
 
-Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
+Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the ledger path is informational and excluded from candidate authority. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
 ## Repo-Internal References
 
@@ -165,6 +162,14 @@ These current source and policy ranges establish the development/certification d
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| A ledger view is derived from Git and cache write failure is only an availability result. | L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Existing preparation retains actual Git binding and allows a distinct memory content view. | L34-L44 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| Baseline adoption commits memory content and returns a cache observation. | L172-L227 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
 
 ## Purpose
 
@@ -499,6 +504,10 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 
 ## Hot Path Summary
 
+The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
+
+## Detailed Route Context
+
 The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling.
 
 **260731-EFA-L21 — checkout coordination isolation.** An undeclared source-checkout invocation is
@@ -675,7 +684,7 @@ reviewed-no-impact attestations. Branch freshness (issue #54: is a local
 branch current with its upstream, plus ahead/behind counts) lives in
 `kernel/git_freshness.py` beside `kernel/git_facts.py`; the `context_packet`
 application entry point surfaces it as the opt-in `include_freshness` packet section
-together with a `ledgerMapsCodeHead` check, forming the lifecycle-start
+while the computed ledger remains an informational consumer view, forming the lifecycle-start
 staleness checkpoint. Route-index generation is split between
 `kernel/route_index.py`, which renders route-local metadata, and
 `kernel/route_index_census.py`, which validates the repository root and freezes
@@ -908,7 +917,7 @@ The MCP package separates three surfaces:
   via `git ls-remote` (visible across the whole landing window before any PR and even when `gh` is
   absent), and the PR ref carries gh's open/merge timestamp on the additive `LandingRefNode.at`.
   Slice 05m lands **carryover-before-cleanup** lifecycle correctness in `worktrees/modules/`
-  (`guidance.carryover_done` reads the official ledger; `lifecycle_guidance` routes a
+  (`guidance.carryover_done` proves the real memory output reaches the official source; `lifecycle_guidance` routes a
   `carryover-pending` phase before `cleanup-pending`; `cleanup_result` hard-refuses cleanup until the
   parked memory is carried home), and the observer reducer now follows it — `_GUIDANCE_PHASE` projects
   `carryover-pending` and the engine-room node carries the display-only `carryoverDoneAt` milestone
@@ -1127,7 +1136,7 @@ over a different hardcoded report. No historical-filename search or Markdown aut
 Every worktree-backed memory acceptance route now resolves one strict
 `ar-memory-candidate-pair/v1` identity from the configured leaf contract. The identity binds the
 exact code and memory repositories, worktree roots, source/work branches, base commits,
-onboarding root, ledger, and contract digest; a code tree or memory tree observed outside that
+onboarding root and contract digest; the cache location is informational; a code tree or memory tree observed outside that
 pair is not acceptance evidence. Memory-quality sync/start/poll, source-candidate attestation,
 curator coherence, closeout preview/apply, and closeout recovery all carry and revalidate the same
 pair before publishing or consuming evidence.
@@ -1163,7 +1172,7 @@ The kernel's [private preparation capability](src/agents_remember/kernel/git_pre
 
 Normal worktree closeout/integration are transaction routes. Closeout preserves explicit approval,
 candidate/source identity, Git safety, and recoverable mutation evidence; it commits code, performs
-raw external-memory metadata/entity/route-index refresh, then commits memory content and the ledger
+raw external-memory metadata/entity/route-index refresh, then commits substantive memory content and refreshes the consumer cache
 mapping. Integration validates and publishes a prepared code/external-memory pair with ref/tree
 compare-and-swap and no merge commit. These normal routes do not automatically run strict code
 quality, memory quality, selected certification, curator coherence, or independent review. Full
@@ -1171,7 +1180,9 @@ suites are only an explicit developer request. Quality and memory tools remain a
 preparation or diagnostic routes, and retained certification models/documentation are historical or
 explicit evidence rather than a normal closeout prerequisite.
 
-## 260913-LCA-L2 Ledger Attribution Reader In The Kernel
+## Historical milestone context: 260913-LCA-L2 Ledger Attribution Reader In The Kernel
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 The package's ledger plane gained its second kernel authority, and the two are deliberately separate.
 `kernel/memory_ledger.py` still owns the ledger **format** — parse, validate, serialize, prepend. The
@@ -1243,7 +1254,9 @@ being spelled as a quoted literal anywhere in production, and asserts each of th
 a shared renderer entry. Its residual gap is stated rather than hidden — a future producer building the
 string some third way is caught only by its own route's behavioural case, and the prepared leg has none.
 
-## 260913-LCA-L3 The History Backfill, And Why It Is Deferred
+## Historical milestone context: 260913-LCA-L3 The History Backfill, And Why It Is Deferred
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 The trailer rule decided how every memory-content commit is written **from that point on**. The
 history written before it carries no trailer at all, so the ledger's rows for that history are proved
@@ -1326,6 +1339,9 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
   under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve

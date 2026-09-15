@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -87,6 +88,10 @@ Older EFA/L23 paragraphs below preserve the migration account and its original f
 
 ## Hot Path Summary
 
+`closeout_external.py` writes one attributed memory-content commit or reuses the actual unchanged head. `git.py` excludes root `memory.md` before staging and at the final memory commit boundary; cache-only changes cannot request a commit. `guidance.py` proves carryover from memory commit ancestry, and `integrate.py` publishes only the admitted code/memory pair.
+
+## Detailed Route Context
+
 Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists.
 
 Quality execution, lifecycle gating, closeout memory checks, and immutable published-manifest reads
@@ -110,7 +115,7 @@ merge ordering while rechecking lineage after long quality work; the closeout li
 self-heals a settleable stale break through the sync transaction, and integration remains
 failure-atomic before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
 `startup/start_result.py` separates result projection from start coordination, and the external
-`worktrees/closeout_recovery.py` reconciles post-claim code, memory, and ledger commits without
+`worktrees/queue/closeout_recovery.py` reconciles post-claim code and memory-content commits without
 replaying completed irreversible steps.
 
 - `git.py` owns this route's Git vocabulary — the typed helpers and small repository
@@ -187,10 +192,9 @@ replaying completed irreversible steps.
   by a raised `closeout-approval` `GateNode` — never the working tree; the unused
   `contract_has_worktree_changes` import was dropped. **Slice 05m**
   adds the public `carryover_done(contract) -> (done, carryoverDoneAt)`: it reads the
-  OFFICIAL ledger (`memory_repo_path/memory.md` via `load_ledger`/`find_mapping`) to
-  detect whether the landed code commit (`integrated_code_commit`, else `code_commit`)
-  was carried home, returning the carry commit's `%cI` as the milestone (external-only;
-  internal/disabled → `(True, "")`). `lifecycle_guidance` now splits the
+  actual landed memory-content commit and the official memory source ancestry to
+  prove whether content was carried home, returning that commit's `%cI` as the milestone
+  (external-only; internal/disabled → `(True, "")`). Cache rows do not decide cleanup. `lifecycle_guidance` now splits the
   `integration_status == "completed"` branch on it — not carried → phase
   `carryover-pending` routing the existing `memory_carryover_apply` (carryover must run
   while the parked memory branch still exists), carried → `cleanup-pending` carrying
@@ -290,7 +294,7 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   `cleanup.py` carryover-guarded and work-branch-retiring: `cleanup_result` now HARD-REFUSES
   (raises) when integration is completed but `guidance.carryover_done` is false (external
   memory) — cleanup deletes the parked memory branch carryover reads from, so the carry
-  must run first; the proof is the official ledger, not a contract stamp. After the guard
+  must run first; the proof is reachability of the real memory output from the official memory source. After the guard
   it retires work branches only after proving they are reachable from the contract's
   recorded source branch (`merge-base --is-ancestor work_branch source_branch`), then
   deletes them with `git branch -D`; this avoids Git's ambient `HEAD`/upstream merge
@@ -403,12 +407,12 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   `integration_reopen.would_reopen`, and apply reopens `integration_status` only
   when the new code or memory-content commit is not yet on the recorded source
   branch. Clean no-op re-closeout keeps the completed integration state and does
-  not duplicate an already-present ledger mapping.
+  not create a synthetic memory output or a cache-only commit.
   260718-CHATS-L5I inserts the strict `code_quality_gate.py` adapter after
   preview/approval validation and before every apply **commit**. A quality failure
-  therefore creates no code, memory or ledger commit and leaves contract and
+  therefore creates no code or memory-content commit and leaves contract and
   applied-gate state untouched; only a clean wrapper result permits `commit_if_dirty`
-  and the subsequent onboarding/ledger sequence. **Since 260731-EFA-L4 the gate is not
+  and the subsequent onboarding and memory-content sequence. **Since 260731-EFA-L4 the gate is not
   reached directly**: `closeout_result` (line 743) calls `_gate_staged_code` (line 684) at line 786,
   which stages the code worktree first, so the *index* is one mutation that now precedes
   the gate and survives a refusal. See the L4 section below for why staging is what makes
@@ -459,6 +463,14 @@ No external Domain Documentation source is configured for this memory repo.
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:256-256; mcp/src/agents_remember/models/worktree.py:40-40 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval`; `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:206-209 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| External closeout chooses substantive memory output and refreshes the cache afterwards. | L36-L76 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
+| Final memory staging removes and excludes the cache. | L191-L197 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| Carryover completion is actual memory ancestry. | L189-L212 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
 
 ## Historical 260731-EFA-L2 Lifecycle Parameter Objects
 
@@ -851,7 +863,7 @@ contract census.
 
 ## 260821-CLIVE-L1 Execution Modules
 
-`args.py` transports one normalized effective closeout input, while legacy synchronous CLI apply fails closed. `closeout.py` coordinates journal-authorized execution and exact contract finalization and threads that effective value explicitly through every code/external/recovery consumer; external-memory refresh, memory commit, and ledger commit have moved to the new single owner `closeout_external.py`. That owner uses explicit accepted messages and mutation evidence with no generated ledger subject or fallback. Guidance remains contract-pure: it publishes only static `intent_note` and routes exact candidate-derived requirements to preview/apply. Abandon and cleanup call lifecycle compatibility explicitly under the pure serialization lease.
+`args.py` transports one normalized effective closeout input, while legacy synchronous CLI apply fails closed. `closeout.py` coordinates journal-authorized execution and exact contract finalization and threads that effective value explicitly through every code/external/recovery consumer; external-memory refresh and the memory-content commit belong to `closeout_external.py`. That owner uses accepted messages and Git mutation evidence, excludes the consumer cache from content, and refreshes it only as a post-output observation. Guidance remains contract-pure: it publishes only static `intent_note` and routes exact candidate-derived requirements to preview/apply. Abandon and cleanup call lifecycle compatibility explicitly under the pure serialization lease.
 
 ## 260821-CLIVE-L2 Current Architecture
 
@@ -865,7 +877,7 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 | --- | --- | --- |
 | Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:705-739 |
 | Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-708 |
-| Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
+| Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
 
 ## 260821-DAGQC-L4 No Route Impact
@@ -1015,14 +1027,16 @@ The parity candidate composes the sidecar and governing route body/history check
 The closeout/integration module route now treats normal delivery as a transaction boundary. Closeout
 preserves explicit approval, candidate/source identity, Git safety, and recovery evidence, commits
 code through the staged-index transaction helper, performs raw external-memory metadata/entity/index
-refresh, then commits memory content and the ledger mapping — the memory-content commit carrying its
-`Code-Commit:` attribution and the ledger commit deliberately carrying none. Integration validates and
+refresh, then commits substantive memory content with its `Code-Commit:` attribution when needed.
+The ledger is rebuilt as a consumer cache; it creates no extra commit. Integration validates and
 publishes a prepared pair with ref/tree compare-and-swap and no merge commit. Normal routes do not
 automatically run strict code quality, memory quality, selected certification, curator coherence, or
 independent review; full suites are an explicit developer request. The older quality-altitude
 sections remain historical context for pre-R12 behavior.
 
-## 260831-LOCR-L30/L34 Checkpoint Landing In This Route
+## Historical milestone context: 260831-LOCR-L30/L34 Checkpoint Landing In This Route
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 `integrate.py` gained `checkpoint_landing_result` and `_checkpoint_result`, and
 `landing_record.py`'s single writer gained `LandedIntegration` plus a `checkpoint` flag. The checkpoint
@@ -1152,7 +1166,9 @@ its `require_series_accepting_leaves` predicate are deleted, so no closeout/inte
 refuses a leaf and a master that took a checkpoint landing can still admit the next one.
 `mcp/tests/test_lifecycle_playthrough_end_to_end.py` plays the whole lifecycle in order and proves it.
 
-## 260913-LCA-L1 Memory-Content Commit Attribution
+## Historical milestone context: 260913-LCA-L1 Memory-Content Commit Attribution
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 A closeout's memory content is now attributed inside the commit object rather than only beside it in
 the tracked ledger table. `EffectiveCloseoutInput.memory_content_message(code_commit)`
@@ -1191,7 +1207,9 @@ The `memory.md`-only ledger commit is deliberately excluded: it has no code coun
 second trailered commit for one code commit would project a duplicate row. Absence is the detection,
 not a legacy state to tolerate.
 
-## 260913-LCA-L4 The Producer Surface Is Total (5 Producers, 0 Untrailered)
+## Historical milestone context: 260913-LCA-L4 The Producer Surface Is Total (5 Producers, 0 Untrailered)
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 A memory commit that names no code commit contributes no ledger row, and the projected ledger cannot tell
 that apart from a producer that kept the old shape — the pairing is simply gone. So the transition is
@@ -1223,6 +1241,9 @@ a producer must never edit the string it was handed. The census is enforced from
 `mcp/tests/test_transaction_only_worktree_delivery.py::test_closeout_recovery_attributes_the_memory_commit_it_still_owed`.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected closeout, final staging, carryover/cleanup, and integration routing; prior three-leg milestone prose labelled historical. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/worktrees/modules` carries local unstaged changes not represented in

@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -42,6 +43,8 @@ worktree, and application consumers may depend on these generic contracts, while
 cannot reach upward into their lifecycle or repository-specific behavior.
 
 ## Hot Path Summary
+
+`lifecycle_models.py` types lifecycle certification over the surviving code and memory-content commit legs. Candidate, selected result and authority remain exact; the computed ledger contributes no third preparation output or acceptance identity.
 
 Start with `certification_lane.py` for the R22-plan plus Gate-5-rails bridge, `certificate_admission.py` for exact authority alignment, and `results.py` / `certificate_authority.py` for terminal manifests and green certificates. `repository_profiles/`, `telemetry/`, `diagnostics/`, `final_codex/`, and `replay/` preserve separate profile, observation, execution-contract, and measurement vocabularies; a library API is not proof of a production caller.
 
@@ -225,7 +228,18 @@ Repository-profile validation now factors environment producer/reconstruction ar
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
 
 
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Preparation selection is limited to code and memory-content outputs. | L112-L128 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned certification route summary with the two-output lifecycle leg vocabulary. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read the bridge claim against `compile_certification_lane` and `_project_repository_rail`; removed the deleted `_require_applicable_repository_gates` anchor while retaining the supported behavior statement. Verification metadata remains pinned pending final pair composition.
 

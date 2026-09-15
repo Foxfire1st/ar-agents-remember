@@ -8,3 +8,4 @@
 # a crash when absent") and falls back to a direct sidecar probe, and the remaining readers
 # discover them with `rglob`.
 onboarding/**/overview.index.json
+/memory.md

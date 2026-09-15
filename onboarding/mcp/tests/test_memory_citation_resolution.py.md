@@ -5,79 +5,96 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
+| lastUpdated | 2026-09-15T01:02 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[Nearest governing overview](overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-Citation range, anchor and source-path resolution contracts, including canonical full/selected document validation, retained prepared-history provenance, and the support question asked of a mechanically projected range.
+Tests citation range, anchor, path, and provenance resolution, including retained history,
+mechanically projected ranges, and Git-based memory-citation provenance independent of cache state.
 
 ## Code Commentary
 
 ### Logic
 
-Whole identifier boundaries reject longer-name false matches while valid names and pooled ranges pass. Prose citations share table range/anchor errors, fenced examples are ignored and misplaced prose serialization in table cells is reported. Parent traversal is malformed; absent code-root context reports no-code-repository-root rather than a silent pass. The style-surface regression covers both full and selected walks rejecting a symlinked outside document, while retained prepared provenance may anchor history for current bytes and rejects an unrelated history commit.
+The existing grammar cases reject longer-identifier false matches, invalid ranges, absent anchors,
+misplaced prose serialization, and parent traversal while retaining valid pooled ranges. Fenced
+examples are ignored. Full and selected document walks share validation, and missing code-root
+context remains an explicit finding rather than a quiet pass.
 
-`MechanicallyProjectedRangeTests` records that a range the mechanical repair wrote is not evidence that the citation is current: the currency test is satisfied by construction by a projected range, because the projection chose the declaration it wrote. Its helpers `git`/`commit`/`card`/`projection_bullet`/`changed_construct` build a real generated Update History bullet through `deterministic_projection.history_bullet`. `test_a_projected_range_is_enforced_with_the_support_question_not_currency` asserts the projected item is **enforced, not surfaced**: `surfacedFindings == []`, exactly one finding, `severity == "error"`, `ok is False`, the no-git-view fail-closed fact (`_modified_onboarding_paths` is `None`, so every finding stays enforced), and it keeps every message assertion (no "the citation is current"; "NOT shown to be current", the generated bullet, "it now reads kernel/build.py:1-2", "does the construct the new range covers support", "mechanical anchor-range projection", "re-cite the location the claim is about", "only then advance the stamp"). `test_history_without_this_claims_bullet_keeps_the_currency_assertion` leaves the ordinary item untouched — one warning in `surfacedFindings`, `findings == []`, the currency assertion present — checked both for an ordinary history and for a bullet naming a different anchor.
+Retained prepared provenance distinguishes an admitted retained history from unrelated history.
+The added memory case commits code and an attributed memory policy file, then cites that memory
+source from an onboarding card. Valid, absent, and malformed consumer caches all leave provenance
+checks clean and both repository HEADs unchanged. Changing the actual cited memory source then
+surfaces `citation_claim_reopened`.
+
+The mechanical-range cases retain their different support question: a generated projection bullet
+for the same claim cannot establish that the newly cited construct supports the prose. That case
+is enforced at error severity instead of silently asserting currency. Ordinary or unrelated
+history bullets keep the existing warning-level changed-claim behavior.
 
 ### Conventions
 
-This card describes the current candidate source after the CCR-L42 citation-surface additions; historical entries below record earlier test populations and do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+The fixture owns code, memory, onboarding, and real Git history locally. Citation/source changes
+and cached projection changes are tested separately. These assertions establish repository-owned
+resolution behavior, not external documentation authority or a live verification receipt.
 
 ### Invariants And Boundaries
 
-The resolver must preserve valid pooled claims while refusing escaped or unsupported sources. A mechanically projected range must not be reported as a current citation: it is **enforced** (`severity == "error"`) with the support question, because evidence the check cannot verify must force an explicit disposition rather than sit in the report-only bucket a curator can read past. The ordinary evidence-change item keeps its `warning`, and the no-git-view path stays fail-closed. This is repository-owned resolution evidence, not an external documentation authority.
+- Valid pooled claims remain valid while unsupported or escaped sources are refused.
+- Cache absence/damage cannot invalidate real committed memory provenance.
+- Actual cited source changes still reopen the claim.
+- A mechanically moved range is not proof that its newly covered construct supports the claim.
+- Missing Git/code context remains explicit.
 
 ### Todos
 
-No file-local implementation change is requested by this reconciliation.
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| 1 a word boundary is not satisfied by a longer identifier. | `test_1_a_word_boundary_is_not_satisfied_by_a_longer_identifier` | mcp/tests/test_memory_citation_resolution.py:116-127 |
-| 1b the same names pass when the range really holds them. | `test_1b_the_same_names_pass_when_the_range_really_holds_them` | mcp/tests/test_memory_citation_resolution.py:129-135 |
-| 4 two ranges one anchor are pooled not paired. | `test_4_two_ranges_one_anchor_are_pooled_not_paired` | mcp/tests/test_memory_citation_resolution.py:137-146 |
-| A well formed citation resolves and passes. | `test_a_well_formed_citation_resolves_and_passes` | mcp/tests/test_memory_citation_resolution.py:157-164 |
-| An out of bounds prose range fails with the shared code. | `test_an_out_of_bounds_prose_range_fails_with_the_shared_code` | mcp/tests/test_memory_citation_resolution.py:166-170 |
-| An absent prose anchor fails with the shared code. | `test_an_absent_prose_anchor_fails_with_the_shared_code` | mcp/tests/test_memory_citation_resolution.py:172-174 |
-| A citation inside a fence is not scanned. | `test_a_citation_inside_a_fence_is_not_scanned` | mcp/tests/test_memory_citation_resolution.py:176-179 |
-| A cit written into a finding cell is reported. | `test_a_cit_written_into_a_finding_cell_is_reported` | mcp/tests/test_memory_citation_resolution.py:185-196 |
-| A parent step can no longer reach a file at a shallower depth. | `test_a_parent_step_can_no_longer_reach_a_file_at_a_shallower_depth` | mcp/tests/test_memory_citation_resolution.py:202-209 |
-| Without a code root the result says so instead of passing quietly. | `test_without_a_code_root_the_result_says_so_instead_of_passing_quietly` | mcp/tests/test_memory_citation_resolution.py:237-244 |
-
-| Full and selected walks share canonical document validation; retained prepared history is accepted only when it is an ancestor and unrelated history is refused. | `test_full_and_selected_walks_share_canonical_document_validation`; `test_retained_prepared_commit_accepts_current_tree_and_rejects_other_history` | mcp/tests/test_memory_citation_resolution.py:215-235; mcp/tests/test_memory_citation_resolution.py:328-349 |
-| A range the mechanical repair wrote is not evidence that the citation is current; the class also carries its own `git`/`commit`/`card`/`changed_construct` fixtures. | `MechanicallyProjectedRangeTests` | mcp/tests/test_memory_citation_resolution.py:352-491 |
-| The real generated Update History bullet for this card's anchors, exactly as `--fix` writes it. | `MechanicallyProjectedRangeTests.projection_bullet` | mcp/tests/test_memory_citation_resolution.py:420-436 |
-| A projected range is enforced at `severity="error"` with the support question, keeps `surfacedFindings` empty, fails the result, and pins the no-git-view fail-closed path. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:442-471 |
-| History without this claim's bullet keeps the ordinary warning-level currency assertion. | `test_history_without_this_claims_bullet_keeps_the_currency_assertion` | mcp/tests/test_memory_citation_resolution.py:473-491 |
+| Grammar and path boundaries retain their dedicated assertion classes. | L115-L148; L151-L181; L184-L198; L201-L211 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Selected/full validation and missing-code-root reporting. | L214-L246 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Retained prepared history and cache-independent memory provenance. | L330-L351; L353-L381 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Mechanical projection prompts the support question rather than asserting currency. | L474-L503; L505-L522 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
 
 ## Cross-Repo References
 
-No cross-repository implementation evidence is required for these local test and fixture claims.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:02 UTC — Added the Git memory-provenance scenario to the card: valid/missing/malformed caches preserve provenance and repository HEADs, while real policy-source changes reopen the citation. Retained grammar, source isolation, and mechanical-projection evidence boundaries. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 
 - 2026-09-13T02:05+02:00 — 260831-LOCR-L33 curator (delta after publish): re-pointed
   `MechanicallyProjectedRangeTests`. The projected item moved from report-only to enforced, so the

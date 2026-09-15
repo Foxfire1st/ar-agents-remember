@@ -5,148 +5,101 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/cli/memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T18:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-15T01:06 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[mcp/overview.md](../../../overview.md)
+[Nearest governing overview](../../../overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:06 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-CLI adapter for the memory-history trailer backfill:
-`agents-remember memory-backfill --contract <leaf contract> [--apply] [--rescue-ref <ref>]
-[--ref <ref> ...] [--expected-digest <digest>]`. It is the only way the migration in
-`kernel/memory_backfill.py` is invoked, and it exists to make the safe invocation the default one:
-planning is what happens when no flag is given, and planning is also the dry run.
+Adapts the memory-history backfill to the command line. Planning is the default and reads without
+rewriting; `--apply` explicitly invokes the kernel migration over refs selected from the request.
 
 ## Code Commentary
 
 ### Logic
 
-`run` cit:([`run`], mcp/src/agents_remember/cli/memory_backfill.py:76-97) resolves the request, plans, prints
-`MemoryBackfillPlan.render()` line by line, and returns an exit status that is the gate's:
-`EXIT_NOTHING_TO_DO` (0) when the history already carries every attribution the table records and no
-code commit lost its mapping, `EXIT_WORK_REMAINS` (1) when anything is left to write or a mapping was
-lost, and `EXIT_REFUSED` (2) when the invocation is refused. The 1-versus-0 distinction is the plan's
-own `is_empty`, which includes the lost code commits: a fully written history that dropped a pairing
-still reports work rather than claiming a completeness it does not have. `render()` is what puts that
-in front of an operator — the census lines, one line per skip family including the zeroes, and one
-line per lost mapping naming the memory commit that took it. A refusal from the kernel arrives as
-`MemoryBackfillRefusal` and is printed rather than
-raised, so an operator reads one line instead of a traceback, and the two adapters of that
-distinction — a request that cannot be resolved and a plan that cannot be derived — are both mapped
-to `EXIT_REFUSED`.
+`add_arguments` owns `--contract`, `--apply`, rescue-ref selection, repeatable target refs, and the
+optional expected plan digest. `_request_from` loads the supplied contract and obtains the code and
+memory repositories from it. `_refusal_for` checks external-memory mode and that both repository
+paths are directories. The adapter does not add a separate leaf-kind validation predicate.
 
-**`--contract` is required, and it is the write guard.** `_request_from`
-cit:([`_request_from`], mcp/src/agents_remember/cli/memory_backfill.py:117-137) reads the leaf enclosure contract and
-takes the memory repository, the code repository and the default ref from it, exactly as
-`cli/memory_citations.py` does. There is therefore no argument list that can aim a history rewrite at
-the official memory repository by hand. `_refusal_for`
-cit:([`_refusal_for`], mcp/src/agents_remember/cli/memory_backfill.py:140-150) refuses three contract shapes before any
-repository is read: a memory mode other than `external` (the trailer backfill is an external-memory
-operation), a memory repository path that is not a directory, and a code repository path that is not
-a directory. `_default_ref` cit:([`_default_ref`], mcp/src/agents_remember/cli/memory_backfill.py:153-154) prefers the
-contract's memory work branch and falls back to its memory source branch, so the default run moves
-the branch the leaf actually writes.
+`run` prints the kernel plan and its loss/skip census. An empty plan returns 0, a nonempty plan
+without apply returns 1, and request/planning refusals return 2. With explicit apply, `_apply` forwards
+the expected digest, reports the rewritten count, old/new tip, moved refs and rescue refs, and
+returns 0 after a successful kernel apply. That exit is not a separate check of lossless coverage;
+the plan's explicit loss accounting remains visible.
 
-**`--apply` is the only writing flag, and it is not the default.** `_apply`
-cit:([`_apply`], mcp/src/agents_remember/cli/memory_backfill.py:100-114) calls `apply_memory_backfill` with the
-`--expected-digest` value the caller passed, prints the rewritten count, the memory tip transition,
-the refs that moved and the rescue refs that were written, and then states the next step in the
-operator's own terms: carry `memory.md`'s memory cells onto the new ids with the returned total
-identity map, then re-read the projection at the new tip. `--rescue-ref` defaults to
-`refs/backup/memory-pre-migration` (`DEFAULT_RESCUE_REF`
-cit:([`DEFAULT_RESCUE_REF`], mcp/src/agents_remember/cli/memory_backfill.py:38-38)) and must not already exist: the
-rescue ref is the only undo a message rewrite has, and an existing one records an earlier rewrite
-nobody has read yet. `--ref` is repeatable and defaults to the contract's memory work branch, so the
-complete list of refs a run may move is always explicit.
+The next-step message now tells the caller to reconcile the selected worktrees and contract bases
+with the rewritten refs, then rebuild the consumer ledger cache from commit trailers without
+committing it. It no longer instructs manual carrying of memory.md cells as the runtime follow-up.
+The command prints this guidance; it does not automatically reconcile worktrees or update bases.
 
-**Passing the plan's digest back is what makes an applied run the rehearsed run.**
-`--expected-digest` is compared inside the kernel before any object is written, so a history or code
-repository that moved between the preview and the apply is refused rather than half-migrated.
-
-**The tip this command hands the kernel is the contract's memory WORK BRANCH NAME, not a commit.**
-That is the ordinary path and the kernel resolves it to the exact commit it names before the table,
-the digest or the rescue set are derived, so the printed plan is stated about one object rather than
-about a name that could move under the run. The same resolution reaches every ref the run moves. It
-is load-bearing rather than defensive: a rescue set built from a name and then read back as a hash
-can never compare equal to the name, so the reviewed version wrote its rescue refs and then refused,
-and the retry that followed tripped the existing-ref check on refs its own predecessor had just
-created. With the resolution in place the first apply completes from a name, and a second apply over
-the migrated history returns 0 having moved nothing — the kernel's empty-plan short-circuit runs
-before the rescue guard, so a retry is a no-op rather than a refusal.
+The contract's memory work branch is the normal tip/default target; the kernel resolves named refs
+to exact objects before planning and publication. Repeated `--ref` values name the allowed target
+set, and the empty-plan path returns before rescue collision checks so an unchanged retry can be a
+no-op. The kernel owns digest, rescue, rewrite, and target-update mechanics.
 
 ### Conventions
 
-`add_arguments` cit:([`add_arguments`], mcp/src/agents_remember/cli/memory_backfill.py:41-73) plus `run` is the
-package's CLI adapter shape — `cli/__main__.py` registers the subparser and `set_defaults(func=run)`,
-so this module owns its own flags and nothing else. The three exit codes are module constants rather
-than literals, and the module carries no `argparse` parsing of its own beyond the adapter contract.
-Every help string states the consequence rather than the syntax: `--apply` says what it writes,
-`--rescue-ref` says what an existing one means, `--ref` says what the default is.
+The umbrella CLI registers this module's `add_arguments` and `run` functions. This adapter constructs
+no Git commands; it resolves the contract, prints results, and maps expected refusal to exit status.
+A contract identifies repository facts, not independent user authorization to rewrite shared history.
 
 ### Invariants And Boundaries
 
-- **Planning is the default and is the dry run.** Without `--apply` the command reads the history,
-  prints the census, and writes nothing; a non-zero exit is the check, not a failure.
-- **`--contract` is required and is the only target selector.** No flag names a repository directly,
-  so a rewrite cannot be aimed at the official memory repository from a command line.
-- **The command refuses an internal-memory contract and any missing repository directory** before it
-  reads history.
-- **`--apply` refuses when `--rescue-ref` already exists**, because the rescue ref records the
-  history being replaced — but only when the run would rewrite something. An already-migrated
-  history short-circuits on the empty plan first, so a retry after a completed apply succeeds as a
-  no-op instead of refusing on the refs its own predecessor created.
-- **Every name is resolved before a ref is written.** The tip this adapter passes is a branch name;
-  the kernel turns it and every moved target into exact commits, and a name that cannot be restored
-  refuses rather than being recorded.
-- **Exit status is the gate's**: 0 nothing left to write and nothing lost, 1 work remains or a
-  mapping was lost, 2 refused.
-- **This adapter composes no Git command.** Every read and every rewrite goes through
-  `kernel/memory_backfill.py`; the adapter resolves a contract, prints a plan and maps a refusal to
-  an exit code.
-- **The contract is not an authority to rewrite anything.** It names the repositories; whether a
-  backfill should run, and when, is the developer's ruling and this master's integration step.
+- No apply flag means planning only, with no history rewrite.
+- Actual loss and skip census remain distinct from the CLI's return status.
+- Follow-up cache rebuilding is derived from trailers and must not create a cache commit.
+- Printed reconciliation guidance does not claim those follow-up operations already ran.
+- This sidecar update performs no migration or live-state operation.
 
 ### Todos
 
-None.
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository. The command-line surface is
-described by its own `--help` text and by the kernel module's contract, which is same-repository
-evidence rather than external documentation.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation applies to this adapter; the proving evidence is this repository's own CLI and kernel source. | n/a | n/a |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The umbrella entrypoint that registers this subcommand and dispatches through `func=run`. | `build_parser`; `main` | mcp/src/agents_remember/cli/__main__.py:16-34; mcp/src/agents_remember/cli/__main__.py:37-39 |
-| The planning half this prints: the census, the digest, and the empty-plan answer that becomes exit 0. | `plan_memory_backfill`; `MemoryBackfillPlan`; `render` | mcp/src/agents_remember/kernel/memory_backfill.py:257-308; mcp/src/agents_remember/kernel/memory_backfill.py:145-224; mcp/src/agents_remember/kernel/memory_backfill.py:200-224 |
-| The writing half: the digest pin, the rescue refs, the single `update-ref --stdin` transaction and the total identity map the printed next step consumes. | `apply_memory_backfill`; `MemoryBackfillRequest`; `MemoryBackfillResult` | mcp/src/agents_remember/kernel/memory_backfill.py:625-661; mcp/src/agents_remember/kernel/memory_backfill.py:227-242; mcp/src/agents_remember/kernel/memory_backfill.py:245-254 |
-| The refusal type the adapter prints as a line instead of raising. | `MemoryBackfillRefusal` | mcp/src/agents_remember/kernel/memory_backfill.py:109-110 |
-| The peer adapter whose contract-required write guard this command reuses. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:48-101; mcp/src/agents_remember/cli/memory_citations.py:104-165 |
-| The contract loader and its error type: the adapter resolves both repositories from the leaf enclosure contract rather than from flags. | `load_contract`; `ContractError` | mcp/src/agents_remember/worktrees/worktree_contract.py:434-464; mcp/src/agents_remember/worktrees/worktree_contract.py:89-90 |
+| Flags, request resolution, and mode/directory refusal define the adapter scope. | L41-L73; L117-L137; L140-L150; L153-L154 | [mcp/src/agents_remember/cli/memory_backfill.py](mcp/src/agents_remember/cli/memory_backfill.py) |
+| Planning and apply status/output remain separate. | L76-L97; L100-L114 | [mcp/src/agents_remember/cli/memory_backfill.py](mcp/src/agents_remember/cli/memory_backfill.py) |
+| The kernel owns loss-aware planning and the explicit apply transaction. | L144-L224; L257-L308; L625-L661 | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| Actual branch-name invocation and retry behavior are tested through the CLI. | L844-L895 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
 
 ## Cross-Repo References
 
-The command reads a code repository and an external memory repository that are both named by the same
-leaf enclosure contract, and it never assumes a layout beyond what the contract declares. No sibling
-repository or external system is reached.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The pair of repositories is contract-owned rather than ambient, which is what keeps the rewrite scoped to the leaf's own memory line. | `_request_from`; `_refusal_for` | mcp/src/agents_remember/cli/memory_backfill.py:117-137; mcp/src/agents_remember/cli/memory_backfill.py:140-150 |
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:06 UTC — Corrected the post-apply guidance to reconcile selected worktrees/contract bases and rebuild an uncommitted trailer-derived cache; retained flags and kernel ownership, and clarified the actual contract checks and exit-status scope. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 
 - 2026-09-14T18:20+02:00 — 260913-LCA-L3 curator (same uncommitted change set, `ar/260913-lca-l3-ar`,
   base `7317108b`): the adapter's source is unchanged by the reviewed fix, but what it reports is not,

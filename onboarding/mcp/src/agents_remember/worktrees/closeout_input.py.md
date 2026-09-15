@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_input.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktrees overview](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -20,9 +20,15 @@ Owns the single route- and contract-aware closeout-input normalizer. It captures
 
 ## Code Commentary
 
+### Conventions
+
+Accepted input, exact Git facts, and typed owner results stay distinct from disposable projections.
+
 ### Logic
 
-`resolve_closeout_plan` derives leg state from route, the already-validated contract model, memory mode, and the captured code candidate rather than from blank sentinels or memory dirtiness. Direct landing has verified-existing code, so code is not applicable; external memory and ledger are enabled. Worktree leaf code is enabled only when the stable candidate tree differs from HEAD, and external-memory leaves enable memory and ledger. Series and non-external legs receive typed reasons. Unsupported contract kinds are rejected at the model boundary; this owner does not duplicate that impossible-state guard.
+The normalized Git plan has exactly two possible legs, code and memory. Ledger rendering is a cache refresh and contributes neither a commit message nor enabledness to admission, retries, or corrected-call arguments.
+
+`resolve_closeout_plan` derives leg state from route, the already-validated contract model, memory mode, and the captured code candidate rather than from blank sentinels or memory dirtiness. Direct landing has verified-existing code, so code is not applicable; the external memory-content leg is enabled. Worktree leaf code is enabled only when the stable candidate tree differs from HEAD, and external-memory leaves enable memory content. Series and non-external legs receive typed reasons. Unsupported contract kinds are rejected at the model boundary; this owner does not duplicate that impossible-state guard.
 
 `normalize_closeout_input` strips enabled messages once, reports omitted/empty/whitespace or stale/forged values as `CloseoutInputError`, and includes `invalidFields`, `resolvedPlan`, and `correctedCall`. The candidate snapshot is rechecked so a tree or HEAD change during normalization refuses. `require_effective_closeout_plan` validates durable retries against the accepted plan rather than re-deriving it after partial mutation.
 
@@ -31,7 +37,7 @@ identity owner. That owner records the observed HEAD and configured base around 
 isolated-index add-all tree computation. Series closeout remains branch-addressed and continues
 through its existing committed-tree route.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - Preview, fingerprint, journal, worker, recovery, and commit code consume the same effective input.
 - Validation happens before integration-authority observation, lifecycle journal creation, worker launch, landing lock, mutation intent, or Git.
@@ -47,31 +53,41 @@ Revision and public recovery controls are deferred to L2.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root, and no external domain
-contract is needed for this repository-owned adapter.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external source governs the repository-local closeout input boundary. | — | — |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. | `capture_closeout_candidate` | mcp/src/agents_remember/worktrees/closeout_input.py:200-214 |
-| Enabled/not-applicable legs derive from validated route, contract, and candidate facts. | `resolve_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:81-120 |
-| Typed refusal and corrected-call data are emitted together. | `CloseoutInputError`; `normalize_closeout_input` | mcp/src/agents_remember/worktrees/closeout_input.py:51-79; mcp/src/agents_remember/worktrees/closeout_input.py:123-177 |
-| Retried durable input is checked against its accepted plan. | `require_effective_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:180-197 |
+| `resolve_closeout_plan` derives code/memory enabledness from the admitted route and candidate. | L80-L114 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| `normalize_closeout_input` validates the two explicit messages and returns one effective input. | L117-L170 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| `effective_message_arguments` renders only enabled code/memory messages for next-call guidance. | L316-L322 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. (`capture_closeout_candidate`) | L193-L207 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| Enabled/not-applicable legs derive from validated route, contract, and candidate facts. (`resolve_closeout_plan`) | L80-L114 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| Typed refusal and corrected-call data are emitted together. (`CloseoutInputError`; `normalize_closeout_input`) | L50-L77; L117-L170 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`) | L173-L190 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| This file has no external repository boundary. | — | — |
+| No additional cross-repository evidence applies. | — | — |
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=4aa067e9998742ba8d100e221b9319cb75df70f3acb5b07cb2716e2160afd07f. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): all four Repo-Internal
   rows started about two lines before their construct and ended short of it. Re-read the frozen

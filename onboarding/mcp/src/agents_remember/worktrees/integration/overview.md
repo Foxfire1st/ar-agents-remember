@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T11:58+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -39,6 +40,10 @@ Integration no longer owns a quality gate, a publication fence, an integration-c
 organizational-completion boundary; all four were deleted by the closeout-door cut (commit `fad9808e`).
 
 ## Hot Path Summary
+
+Follow `integration_ref_transaction.py` for code/memory ref publication and source-ancestry checks, `direct_landing/` for journaled memory writes, and `closeout/preparation/` for retained private outputs. No route requires a ledger commit or validates cached rows to authorize Git work.
+
+## Detailed Route Context
 
 Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. `lifecycle_operation_location.py` owns path confinement and publication state; `lifecycle_operation_binding.py` owns only the pure canonical identity/digest bytes that publication proves. This route also owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, and integration reconciliation. The bounded schema-1 legacy repair route this summary used to list was deleted with the legacy package.
 
@@ -88,46 +93,18 @@ establish that a production continuation is installed or that the candidate has 
   those originals; a result payload, latest report, or another generation cannot substitute for them.
 - Exact-pair consumers have one candidate-identity owner; disabling the duplicate configured check
   never disables repository-root, separation, task, or enclosure authority.
-- External-memory ledger order is authoritative for *resolution*: the newest same-code row is
-  current, while older exact rows remain audit history. Memory-only landing appends one current row.
-- **The landing judges the commits, not the tracked table (260913-LCA-L11).** Integration no longer
-  requires a landed ledger to preserve the source file's row list or row order; `memory.md` is
-  derived state. What it proves is that the landed pair is mapped, that every row of the landed table
-  is true against the two repositories, that the landed memory content descends from the exact memory
-  source while the source is still behind the landing, and that the header names its own first row.
-  The known gap this leaves — a same-code-commit row reversal landing unreported — is recorded on the
-  `worktrees/overview.md` route as pending a decision, not as blocked.
+- Integration publishes the admitted code and memory-content commits. It proves exact source ancestry, object existence, ownership, substantive cleanliness and ref compare-and-swap. The consumer cache supplies none of those facts.
+- Cache-only absence, edits or index conflicts are ignored in memory-domain content observations. Non-cache content differences and conflicts remain refusal conditions.
 - The closeout door is journal-owned state (`<worktree_group>/reports/closeout-door.json`, plus the
   operation record's own publication). `WorktreeContract` no longer carries a `closeout_door` field;
   a contract that still carries the key parses, the key is never read, and the next rewrite drops it.
 - Integration reports a fact — integrated, checks passed. It never completes a master task document.
 
-## Recovery Uses Current Ordered Authority
+## Recovery Proves Actual Git Outputs
 
-Direct-landing recovery recognizes an already-created external-memory ledger commit from the live
-canonical ledger, not by reconstructing a unique mapping. The newest row must exactly map this
-operation code commit to its memory-content commit; every accepted pre-operation row must remain an
-immutable suffix; ledger metadata and canonical rendering must match; and the ledger commit must
-prove the exact memory parent, before/after ledger blobs, and ledger-only changed path. Older exact
-same-code rows remain valid audit history.
+Direct landing retains accepted input and proves the actual memory-content commit through journaled mutation evidence, current branch/HEAD, source ancestry and exact substantive content. If no memory content changed, it can reuse the existing memory head without manufacturing attribution or a cache-maintenance commit. If content changed, the one memory-content commit carries the shared `Code-Commit:` trailer.
 
-Cancelled closeout replacement likewise admits only the current retained lifecycle state together
-with the cancelled disposition; the detached worker exit proof that earlier revisions of this section
-named was deleted with the operation plane, and the *contract-owned* copy of the waiting door went
-with the contract field. The door itself survives in its own journal and is read through
-`live_closeout_door`, which is what cancellation now consults for the observed disposition. Neither
-rule adds a fallback reader: both narrow recovery to the current canonical authority plus exact
-retained evidence.
-
-Since 260913-LCA-L1 the same pairing is also inside the memory-content commit object, not only in the
-ledger row recovery reads. `_direct_memory_commit` commits
-`direct_landing_input(...).effectiveInput.memory_content_message(operation_input.codeCommit)`, so the
-memory-content commit carries exactly one `Code-Commit: <sha>` trailer naming the verified code
-commit; since 260913-LCA-L4 that method delegates to
-`kernel.memory_attribution.render_memory_content_message`, the one shared renderer all five
-memory-content producers use, and the `memory.md`-only ledger commit deliberately carries none. The
-trailer is written at creation because `prove_git_commit` journals that exact object on the next
-statement, so a later append could only rewrite a proved commit.
+The writer removes root `memory.md` from the memory index at the final staging/commit boundary, so force-staging the ignored cache after admission cannot include it in the output. Cache refresh is a post-output observation and cannot substitute for or invalidate Git proof. Cancellation and replacement retain their independent journal/worker/ownership checks.
 
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
@@ -135,7 +112,7 @@ Closeout integration separates four owners: the contract lifecycle lease seriali
 
 ## 260821-CLIVE-L2 Current Architecture
 
-One admitted contract observation enters each public mutation flow; the mutation owner rereads that exact authority under its existing lease/lock. Journal input and proven output are immutable. Retry/recover remain same-generation, revise is safe-cancel plus write-ahead successor, and worker authority survives until termination proof. Direct landing journals every memory/ledger cut. Terminal cleanup refuses until L5 archive proof. The legacy schema-1 repair route and the pre-locator adoption route it once listed were deleted as capabilities by the de-entanglement cut.
+One admitted contract observation enters each public mutation flow; the mutation owner rereads that exact authority under its existing lease/lock. Journal input and proven output are immutable. Retry/recover remain same-generation, revise is safe-cancel plus write-ahead successor, and worker authority survives until termination proof. Direct landing journals memory-content mutation and publication evidence; cache refresh is informational. Terminal cleanup refuses until L5 archive proof. The legacy schema-1 repair route and the pre-locator adoption route it once listed were deleted as capabilities by the de-entanglement cut.
 
 The route decomposition mirrors those boundaries without adding new authority: normal lifecycle state is under `lifecycle/` and direct landing under `direct_landing/`. The `legacy/` package that held the only schema-1 reader no longer exists. Parent-level integration modules coordinate Git/ref publication and organizational repair across those owners.
 
@@ -158,7 +135,7 @@ Closeout scheduling intent begins as an immutable door generation published in i
 commands publish exact task/contract bytes under the short repository-scoped task CAS, then refresh
 the disposable projection as a downstream effect. Starting closeout atomically transfers the exact
 first-ready waiting door into the stable root operation journal; claim intent is durable before
-worker launch. From that point, lifecycle, source-journal identity, commits, memory, ledger,
+worker launch. From that point, lifecycle, source-journal identity, commits and memory content,
 certification, integration, cancel, retire, supersede, and recovery evidence remain journal-owned
 even if task changes invalidate the projection.
 
@@ -192,7 +169,7 @@ does not create a second authority route, queue-owned lifecycle evidence, or a c
 
 ## Integrated IAS Recovery Contract
 
-The closeout child now resumes retained prepared C/M/L publication before original-head admission. The default application service bundle installs `PreparedCloseoutContinuation`; the service boundary remains explicit and selected journal/certificate identities still govern execution. Protected-source integration, root-journal ownership and Dagger certification boundaries are unchanged by the helper extractions.
+The closeout child now resumes retained prepared code/memory-content publication before original-head admission. The default application service bundle installs `PreparedCloseoutContinuation`; the service boundary remains explicit and selected journal/certificate identities still govern execution. Protected-source integration, root-journal ownership and Dagger certification boundaries are unchanged by the helper extractions.
 
 ## CCR-R12@v5 Current Integration Boundary
 
@@ -335,7 +312,9 @@ master is reclaimed with `worktree_abandon` and is never closed out. And
 "this organizational master is abandoned, not completed" rather than the generic
 not-durably-published message.
 
-## 260831-LOCR-L30/L34 Checkpoint Landing On This Route
+## Historical milestone context: 260831-LOCR-L30/L34 Checkpoint Landing On This Route
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
 
 `worktrees/series_closeout.py` gained `publish_series_checkpoint_under_authority`, the non-final
 master exit, and `worktrees/modules/integrate.py` gained the `checkpoint_landing_result` route that
@@ -374,7 +353,20 @@ own first row). The preview/apply parity invariant this repair came from is inve
 [`memory_quality/overview.md`](../../memory_quality/overview.md); the removal and its cost are
 recorded on the worktrees route and on the `integration_ref_transaction.py` card.
 
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The landing output carrier has only code and memory-content commits. | L63-L67 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Only actual memory ancestry determines this integration proof. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Direct memory writes exclude the consumer cache. | L175-L236 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced direct recovery ledger proofs and landing row validation with two-output Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route's only change
   is inside `closeout/preparation/memory_output.py` (its git call now passes

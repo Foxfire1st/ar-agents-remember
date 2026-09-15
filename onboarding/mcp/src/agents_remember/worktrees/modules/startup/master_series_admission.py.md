@@ -5,99 +5,93 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../../overview.md` |
+| lastUpdated | 2026-09-15T01:02 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktrees/modules overview](../../overview.md)
+[Nearest governing overview](../overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-Startup-side validation of the persisted master-series contract edge. This module reads the
-existing series contract, compares task, repository, memory, and branch identity with the
-commanding sprint specification, and projects an actionable refusal through the shared atomic
-series admission response.
+Validates an existing master-series contract against the commanding sprint's declared task,
+repository/memory, and branch edges, and returns bounded actionable startup refusals.
 
 ## Code Commentary
 
 ### Logic
 
-`MasterSeriesContractSpecLike` describes the identity fields needed for validation without
-coupling the checker to one concrete startup object. `MasterSeriesContractAdmissionEvidence`
-retains the contract path, existing contract, and expected/observed edge dictionaries;
-`MasterSeriesContractAdmissionError` carries that evidence through the startup boundary.
+`MasterSeriesContractSpecLike` describes the required identity inputs. The evidence/error types
+retain contract location and expected/observed edge values. `_master_series_admission_refusal`
+projects that evidence into the shared atomic-series response with bounded parser details and a
+contract-addressed read-only `worktree_status` action.
 
-`_master_series_admission_refusal` derives the requested task-document reference when the task is
-under the repository task root, then calls `atomic_series_admission_projection`. Its
-`WorktreeCommandResult` preserves the refusal status/detail, exact contract path, retryability,
-structured admission, and contract-bound `worktree_status` action. Both the top-level refusal and
-the nested observed parser detail are bounded before serialization, so a malformed contract cannot
-overflow the public response while losing its actionable error prefix.
+`_existing_master_series_contract` treats absence as bootstrap, preserves unreadable/wrong-kind
+errors, and treats terminal cleanup artifacts as no longer owning a live lane. A live series must
+match task identity, actual repository identity/memory mode, and exact source/work branches.
 
-`_existing_master_series_contract` treats absence as a fresh bootstrap, preserves unreadable and
-wrong-kind errors with expected/observed evidence, and ignores terminal series artifacts that no
-longer own the lane. A live non-terminal contract must satisfy all three edge groups:
-`_same_master_task_edge`, `_same_master_repository_edge`, and `_same_master_branch_edge`.
-`_master_series_expected_edges` and `_master_series_observed_edges` provide the explicit values for
-each mismatch. A `ContractError` from the authoritative contract read is preserved as the concrete
-parser reason in both the refusal detail and the observed evidence. The repository helpers compare
-actual Git repository identity and require the external-memory ledger to remain rooted at the
-selected memory repository/worktree.
+The repository helpers require real Git roots and compare shared repository identity rather than
+path spelling. `_same_series_memory_edge` now checks only the actual memory repository and optional
+worktree relationship. With no external repository, no external memory worktree may remain; with
+one, the repository must resolve and any worktree must belong to it. Cache path equality is no
+longer part of this admission edge.
 
 ### Conventions
 
-The module returns typed startup results for expected contract-edge refusal instead of allowing a
-traceback to cross the MCP boundary. Terminal-series cleanup is treated as a stale artifact and
-returns no existing contract so fresh bootstrap can proceed. Repository comparison uses Git common
-identity, not checkout path spelling or ambient branch state.
+Expected contract mismatches return typed startup evidence rather than exposing tracebacks.
+The three edge groups remain separate so a refusal identifies the actual mismatch. This module
+validates existing state; it does not repair contracts or move branches.
 
 ### Invariants And Boundaries
 
-- This module validates and explains persisted edges; it does not repair or write the series
-  contract, selector authority, branches, or memory ledger.
-- Task identity, repository/memory identity, and source/work-branch identity are checked as separate
-  edge groups so the refusal names the exact mismatch.
-- External-memory contracts require the expected memory repository/worktree/ledger relationship;
-  internal or disabled memory has no external memory edge.
-- A terminal series artifact has relinquished ownership and is eligible for fresh bootstrap; a
-  non-terminal mismatched artifact is a fail-closed startup refusal.
-- The returned retry action is read-only `worktree_status` addressed by repository and exact
-  contract path.
+- Task, repository/memory mode, and branch identity retain independent checks.
+- External-memory admission depends on actual repository/worktree ownership, not memory.md location.
+- Cache absence or a different cache path is not a replacement for a real repository mismatch.
+- Terminal artifacts may permit fresh bootstrap; live mismatched artifacts still refuse.
 
 ### Todos
 
-The source is an uncommitted L38 candidate. Closeout owns the eventual commit-derived verification
-stamp; this sidecar does not claim acceptance or Gate 5 evidence.
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The startup protocol and admission error retain the fields needed for contract-edge diagnostics. | `MasterSeriesContractSpecLike`; `MasterSeriesContractAdmissionEvidence`; `MasterSeriesContractAdmissionError` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:26-77 |
-| Refusal projection preserves expected/observed edges, bounds public parser detail, and emits a contract-bound read-only status action. | `_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:91-150 |
-| Existing contract loading distinguishes absent, unreadable, wrong-kind, terminal, and mismatched series artifacts, preserving concrete parser detail for unreadable contracts. | `_existing_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215 |
-| Task, repository/memory, and branch edge checks remain separate and fail closed. | `_same_master_task_edge`; `_same_master_repository_edge`; `_same_master_branch_edge` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:218-276 |
-| Expected and observed edge payloads expose the exact persisted values used in a mismatch. | `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-374 |
-| Repository identity and external-memory ledger relationship are checked against actual Git roots. | `_repository_root`; `_same_repository_root`; `_same_optional_repository_root`; `_same_series_memory_edge` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:377-418 |
+| Typed admission evidence and bounded refusal projection. | L27-L55; L58-L65; L68-L78; L91-L150 | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
+| Existing contracts are classified before the separate edge checks. | L153-L215; L218-L241; L244-L260; L263-L275 | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
+| External memory is checked through real repository/worktree identity without a ledger-path argument. | L376-L384; L387-L392; L401-L414 | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
 
 ## Cross-Repo References
 
-No cross-repository source is configured for this memory root.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:02 UTC — Removed the documented ledger-path equality requirement from the series memory edge; retained real Git-root/worktree, task, memory-mode, branch, and bounded-refusal behavior. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 
 - 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound the refusal projector after oversized malformed-contract diagnostics were reproduced. Public and observed detail now retain bounded parser evidence; focused proof remains non-certifying and closeout-owned.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation reconciled the authoritative contract reread and preserved concrete `ContractError` parser detail in typed observed evidence. The validator/test result is source evidence only; verification remains closeout-owned with no acceptance claim.

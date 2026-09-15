@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T01:13+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -24,13 +24,23 @@ scope, execution, and async control now belong to the dedicated typed controller
 
 ### Logic
 
+`memory_baseline_status_tool` reports `ok=false` for both `blocked-drift` and `unavailable`.
+The baseline owner returns `unavailable` when an existing memory HEAD resolves but its Git
+attribution history cannot be read. An unborn repository can remain `ready` under the existing
+drift rules. This adapter preserves the owner's state and details; cache-file availability does
+not become a new admission requirement.
+
+`CarryoverCommitMessages` contains only the memory-content subject. The apply adapter forwards
+that subject to `CarryoverApplyOptions`; the carryover owner attributes the memory commit and may
+refresh the consumer ledger cache. No ledger subject or third commit intent crosses this boundary.
+
 The module defines three parameter objects for separate application contracts:
 `MemoryBranches` carries optional source/work branch overrides for baseline adoption
-cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:308-314);
+cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:309-314);
 `CarryoverSelection` carries the repository, memory/code refs, base, and replacement choice for
-carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:321-338);
-and `CarryoverCommitMessages` carries the two commit subjects for apply
-cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:341-346).
+carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:322-338);
+and `CarryoverCommitMessages` carries the memory-content commit subject for apply
+cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:342-345).
 `intent_note` remains a separate apply approval argument.
 
 Memory-quality resolution, checklist composition, sync/start/poll control, and public run outcomes
@@ -71,26 +81,29 @@ None known for the MX-FIX-4 application entry point boundary.
 No Domain Documentation source is configured for this repository; this card is grounded in the
 package application entry point and resolver contracts.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-170 |
-| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:98-208 |
-| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290 |
-| The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The route-index builder receives storage authority explicitly in its typed signature. | "def build_route_indexes(" | mcp/src/agents_remember/kernel/route_index.py:184-197 |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | L352-L359 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
+| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | L236-L275 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| Carryover has one memory subject and forwards it without a ledger-message option. | L342-L345; L391-L408 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
+| Canonical quality scope is owned by the focused scope module. | L105-L142; L145-L169 | [mcp/src/agents_remember/application/memory_scope.py](mcp/src/agents_remember/application/memory_scope.py) |
+| Typed quality execution and public run translation are owned by the controller. | L111-L121; L124-L156; L159-L221 | [mcp/src/agents_remember/application/memory_quality/controller.py](mcp/src/agents_remember/application/memory_quality/controller.py) |
+| The route-index application entry point forwards resolver-owned authority. | L254-L290 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
+| The route-index builder. | L184-L235 | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py) |
+| The route-index builder receives storage authority explicitly in its typed signature. | L184-L235 | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py) |
 
 ## Cross-Repo References
 
 The application entry point can target configured sibling repositories, but no external implementation governs
 this package-local dispatch contract.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -106,6 +119,11 @@ checklist publication moved to `memory_scope.py` and `memory_quality_controller.
 caller from reimplementing the controller's failure vocabulary.
 
 ## Update History
+
+- 2026-09-15T01:13+00:00 — LCA-L9 current candidate: documented the baseline status adapter's `ok=false` result for unavailable Git attribution, preserving the unborn-repository and existing drift distinction without a cache guard. Rechecked both source owners and repaired the citation-table spacing. Existing verification commit/date and earlier history remain unchanged; no test-execution claim.
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Documented the single carryover commit-message input and the cache-only ledger boundary. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 
 - 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored the quality-scope row to
   the current `resolve_memory_scope` and `resolve_leaf_memory_scope` implementations; the

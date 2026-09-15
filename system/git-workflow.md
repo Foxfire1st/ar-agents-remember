@@ -36,8 +36,9 @@ A job changes the checkout via these steps:
 4. Work in the worktree; **memory parks on the worktree memory branch.**
 5. **Commit transaction.** Nothing is committed before the applicable explicit developer or
    accepted-series authority and the `c-12-closeout` worktree preview. Closeout then publishes the
-   authorized code, memory-content, and ledger Git legs with the existing conflict and ref-movement
-   safeguards. Its transaction-owned commit legs suppress automatic quality and test hooks; the
+   authorized code and memory-content Git outputs with the existing conflict and ref-movement
+   safeguards. The consumer ledger is computed from commit attribution and excluded from staging;
+   cache absence, content, and refresh success are never transaction authority. Its commit legs suppress automatic quality and test hooks; the
    ordinary explicit Git hook policy outside closeout/integration remains unchanged. It does not
    automatically run quality, test, memory-quality, curator-certification, or review tools.
 6. **Push gate (human — one question).** After commit approval, a single "push?" approval hands the
@@ -55,11 +56,10 @@ A job changes the checkout via these steps:
    call refuses a commit that is not reachable from the recorded source branch or `main`, so the
    cell cannot be set from a commit that landed nowhere.
 9. **C-09 closeout** + worktree/provider cleanup.
-10. **C-11 carryover** of the parked memory to main-memory, run against the merged `main`. Carryover
-    maps the ledger to the actual `main` HEAD — **including the PR merge commit** even when nothing
-    else needs carrying — so the next worktree bases off the merged `main` without a manual
-    reconciliation. Always run it after the merge (even the linear case where memory already
-    fast-forwarded: carryover adds the missing merge-commit ledger row).
+10. **C-11 carryover** carries parked memory into an ordinary recovery leaf against merged `main`.
+    Real memory changes commit with attribution to the landed code. When content is already
+    carried, retain its existing memory commit; do not create a mapping-only commit for the
+    merge SHA. The consumer ledger cache is rebuilt from history.
 
 ### Gates, in one line
 
@@ -102,14 +102,15 @@ than one work branch straight to `main`:
 - Every **master integration branch** bases from the current super branch, not from `main`.
 - Every **leaf work branch** bases from its owning master integration branch.
 - **C-11 is the universal integration mechanic** at every edge: leaf -> master, master -> super, and
-  super -> main. Every edge carries memory so the ledger maps the accumulated code commits.
+  super -> main. Each edge carries the actual code and memory histories; the ledger is a derived view.
 - The orchestrator dispatches managers by dependency order. Dependent masters start only after their
   dependencies are integrated into super; independent masters may run in parallel, with reconcile
   absorbing a moved super base.
 - A completed master is integrated into super from an **orchestrator integration worktree** sourced at
   super, mirroring the leaf -> master worktree flow.
 - The landing tail remains PR-gated: open the final super -> main PR, merge remotely, run C-11
-  carry-over to main-memory so the ledger maps the actual main merge commit, then push memory.
+  carry-over of any remaining memory content to main-memory, then push memory. Do not invent
+  memory content or a ledger-only commit for the main merge SHA.
 
 The full orchestration doctrine lives in
 `skills/l-01-agent-lifecycles/SKILL.md` and `skills/l-01-agent-lifecycles/roles/orchestrator.md`.

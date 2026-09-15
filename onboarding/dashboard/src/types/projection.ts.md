@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ digest) and attaches it optionally to the lifecycle operation projection.
 The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.ts:352-352.
 
 ### Logic
+
+The generated `LifecycleOperationProjection.phase` union has no `ledger-commit` or
+`direct-ledger-commit` member. It mirrors the Python lifecycle vocabulary: code and memory output
+publication remain observable, while the downstream ledger cache creates no separate commit phase.
 
 The generator emits lifecycle, task, attention, engine, and metrics wire shapes together with checked
 state vocabularies. Structural additions share one `TaskDocumentRef` interface. Task documents
@@ -66,24 +70,33 @@ None.
 
 No Domain Documentation source is configured.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:698-701 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:647-681 |
-| Execution nodes name their kind, leaf-id segment and task reference. | "export interface TaskExecutionNode {" | dashboard/src/types/projection.ts:724-724 |
-| An execution endpoint carries a task reference and optional leaf id. | "export interface TaskExecutionEndpointNode {" | dashboard/src/types/projection.ts:710-710 |
-| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | "export interface TaskExecutionEdgeNode {" | dashboard/src/types/projection.ts:703-703 |
-| The graph contains typed node and edge arrays. | "export interface TaskExecutionGraphNode {" | dashboard/src/types/projection.ts:715-715 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:816-829 |
-| The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:361-361 |
-| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:750-754 |
-| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | `CloseoutQueueNode`; "export interface CloseoutCandidateNode {" | dashboard/src/types/projection.ts:143-152; dashboard/src/types/projection.ts:124-133 |
+| The lifecycle phase union mirrors the code/memory-only vocabulary. | L352-L352 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Structural analytics fields use the shared task-document reference. | L698-L701 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Generated task documents carry real hierarchy and optional runtime attachment. | L647-L681 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Execution nodes name their kind, leaf-id segment and task reference. | L724-L728 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| An execution endpoint carries a task reference and optional leaf id. | L710-L713 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | L703-L708 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The graph contains typed node and edge arrays. | L715-L718 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Workspace projection remains the generated top-level wire contract. | L816-L829 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The optional canonical task-intent identity on lifecycle operations. | L361-L361 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The generated `task-intent/v1` identity interface. | L750-L754 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No separate external implementation source applies to this file. | N/A | N/A |
 
 ## L23 Source-Lineage Mirror
 
@@ -109,9 +122,9 @@ The generated TypeScript mirror now carries optional lifecycle-operation `genera
 status vocabulary. These fields describe root-journal-owned operation state to dashboard consumers;
 they do not make the dashboard or disposable closeout projection an operation authority.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
+| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | L334-L363 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 
@@ -138,9 +151,9 @@ neighbouring refinements are untouched — `CloseoutCandidateNode.reasons` keeps
 `{"maxItems":256}` and `CloseoutQueueNode.sourceProblems` keeps its own. No dashboard-side behaviour
 changes: the panel still renders whatever rows the producer serves.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The removed refinement and the two that remain, in the generated mirror. | "export interface CloseoutQueueNode {"; "\"maxItems\":256" comments | dashboard/src/types/projection.ts:143-152; dashboard/src/types/projection.ts:124-133 |
+| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## 260824-PDLS Invalidation Outcome Mirror
 
@@ -170,6 +183,9 @@ dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-ch
 returns on snapshots.
 
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Reconciled the generated TypeScript lifecycle phases with the two-output transaction. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 5
   claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this

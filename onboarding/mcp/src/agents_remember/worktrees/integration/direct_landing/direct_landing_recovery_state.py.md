@@ -5,84 +5,104 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-15T01:06 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](../overview.md)
+[Nearest governing overview](../overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Pure live-evidence classifier for one retained direct-landing generation.
+Classifies live evidence for a retained direct-landing generation without mutating its journal.
+The outcomes distinguish recoverable work, terminalizable output, and contradictions requiring a
+developer decision.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `DirectLandingRecoveryClassification`, `classify_direct_landing_recovery`. Direct landing is one journaled task/contract-addressed generation. Accepted code and repository state are immutable, intent precedes each memory or ledger mutation, produced commits are journaled before the next leg, and restart resumes the same generation instead of repeating raw Git from scratch.
+`classify_direct_landing_recovery` requires the typed direct input, the configured memory
+repository and branch/ref, and the accepted code commit and candidate tree. It reads a disposable
+memory snapshot with `memory_cache=True`; no cached ledger table participates in classification.
 
-Ledger classification distinguishes an exact current mapping from `historical`: a different
-newest mapping for the same code commit can be valid prior memory history, so recovery continues
-the admitted memory/ledger legs instead of declaring a conflict.
+`_direct_recovery_outputs` uses durable memory cells or a proven commit, recognizes an accepted
+clean-memory reuse, and can infer an unpublished receipt from the exact mutation lineage.
+`_memory_commit_matches_intent` checks the parent and expected tree of the actual memory commit.
+The output must still be at the accepted ref and satisfy the shared clean-snapshot predicate.
 
-Every clean-repository branch consumes `integration.mutation_evidence.snapshot_is_clean`. The
-predicate was moved without changing its exact tuple comparison, eliminating a second definition
-inside this already-large classifier while preserving every recovery state transition.
+Before a commit, convergence requires either the exact accepted snapshot or an allowed prepared
+state on the same ref, HEAD/tree, and reflog base with the bound candidate/index tree. After a
+commit, parent, ref, tree, and clean state must match the intent. Changed code, memory ref, or
+unaccepted content produces a decision surface. An absent or malformed cache does not.
+
+The former ledger mapping states, accepted/intended cache-byte digests, and ledger-only output
+reconstruction are removed. The classifier reports a memory commit when one is proven; it never
+creates a dummy mapping to fill missing attribution.
 
 ### Conventions
 
-Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
+This is a read-only classifier over typed snapshots. The integration mutation-evidence owner
+defines cleanliness; `contentHeadTree` permits cache-excluded comparison while actual `head` and
+`headTree` remain available for ref and object proof.
 
 ### Invariants And Boundaries
 
-- The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
-- Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
-- Queue rows and mutable task documents are not lifecycle evidence or fallback location authorities.
-- Clean-snapshot classification comes from the shared mutation-evidence owner; this classifier does
-  not redefine Git cleanliness.
-- A `historical` same-code mapping is recoverable pending work. An externally completed ledger
-  leg may also carry additional canonical newest-first history, but it is accepted only when the
-  operation mapping is newest and every accepted pre-operation row remains an exact suffix.
-  Malformed bytes, reordered or dropped accepted history, broken lineage, or a mismatch against
-  already-published mutation intent remain conflicts.
+- A matching cache row or the shape of HEAD alone cannot establish a memory output.
+- Source code, exact memory repository/ref, and actual parent/tree lineage remain checked.
+- Recovery does not consult cache bytes, cached row order, or historical ledger commits.
+- Decision payloads preserve expected/observed evidence and never silently choose a different generation.
 
 ### Todos
 
-None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
+No new file-local follow-up is established by this documentation pass.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-The source file is the direct evidence for this file-specific ownership boundary.
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` as its public seam. | `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:53-77; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:107-156 |
-| The module consumes the shared mutation snapshot and exact-clean predicate rather than defining recovery-local copies. | `ephemeral_git_mutation_snapshot`; `snapshot_is_clean` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:29-32 |
+| Typed classification checks actual code, memory repository/ref, and candidate evidence. | L30-L53; L77-L134; L137-L162 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| Memory receipt inference and output matching are based on actual Git lineage. | L185-L204; L207-L223; L226-L252; L255-L269 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| Prepared and committed intent convergence retain exact ref/tree checks. | L300-L319; L322-L333; L336-L355 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| Shared snapshots exclude cache data while retaining actual objects. | L42-L57; L410-L473 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
+| Recovery tests reject code/ref/content drift and accept cache absence or damage. | L274-L314 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
 
-## 260821-CLIVE Exact Output Reconstruction
-
-The pure classifier may reconstruct a missing memory commit only from the accepted parent/tree
-lineage. A completed ledger leg must be clean, directly parent the accepted memory commit, change
-only the ledger path, and preserve the memory-commit ledger blob as the exact accepted pre-operation
-bytes. Its live ledger must parse and render canonically, preserve repository, base, and sort
-metadata, place the operation code-to-memory mapping first, and retain every accepted row as an
-immutable suffix. Additional canonical newest-first rows between that current mapping and the
-accepted suffix are valid history; uniqueness across historical rows is not required. HEAD shape
-or a matching row alone is never sufficient, and dropped or reordered accepted history remains a
-developer-decision conflict.
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
+
+
+- 2026-09-15T00:51 UTC — Replaced ledger mapping/byte-state reconstruction with code and memory Git evidence; documented cache-excluded snapshots, preserved parent/ref/tree checks, and no dummy attribution for clean reuse. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
 
 - 2026-08-27T18:33+02:00 — Removed the private clean-snapshot duplicate and consumed the shared
   mutation-evidence predicate; recovery semantics are unchanged.

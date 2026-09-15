@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastUpdated | 2026-09-15T01:01+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,25 +22,30 @@ Disposable task, door and projection fixture shared by lifecycle tests.
 
 ### Logic
 
+`QueueFixture.close_contract` is removed: fixture users cannot create code, memory, and ledger
+commits through that obsolete convenience method. The constructor still seeds a tracked cache
+into isolated history. That starting state supports migration and old-history operation checks;
+real current closeout behavior belongs to the operation exercised by each consumer.
+
 QueueFixture creates real code and optional external-memory repositories, task topology, contracts and shared priority/judgment data. Its helpers declare doors and construct the source/projection conditions required by consumers. The file contains no retained standalone queue tests.
 
 Since 260831-LOCR-L36 the fixture also authors and starts canonical leaves the way the workflow does.
-`author_unstarted_leaf` cit:([`author_unstarted_leaf`], mcp/tests/test_closeout_queue.py:318-369)
+`author_unstarted_leaf` cit:([`author_unstarted_leaf`], mcp/tests/test_closeout_queue.py:321-371)
 commands one more canonical leaf **without starting any of its work**: the master's subtask row and
 the leaf's own task document are written — an atomic master's review scope has to resolve every
 commanded leaf's document — and the leaf's judgment and priority register rows are added, but no
 enclosure contract, branch or worktree exists yet. The commanded id is recorded on
-`QueueFixture.unstarted_leaf_a`. `start_leaf` cit:([`start_leaf`], mcp/tests/test_closeout_queue.py:370-441) then starts one authored leaf from its
+`QueueFixture.unstarted_leaf_a`. `start_leaf` cit:([`start_leaf`], mcp/tests/test_closeout_queue.py:373-443) then starts one authored leaf from its
 master's branches **as they now stand** (a real enclosure, leaf document, worktrees and branches,
 based on the master's current tips rather than the base it had when the leaf was first commanded),
 publishes the lifecycle operation location and writes curator evidence. `declare_leaf`
-cit:([`declare_leaf`], mcp/tests/test_closeout_queue.py:625-655) declares the closeout door for a leaf that is not yet the
+cit:([`declare_leaf`], mcp/tests/test_closeout_queue.py:628-657) declares the closeout door for a leaf that is not yet the
 master's current one, reading its own canonical grade from the priority register it was authored with
 and naming the master whose command it executes.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card describes the current uncommitted LCA-L9 fixture candidate. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -63,7 +68,7 @@ No file-local implementation change is requested by this reconciliation.
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
@@ -71,29 +76,33 @@ No Domain Documentation entries are configured in this memory root. These are re
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Master. | `_master` | mcp/tests/test_closeout_queue.py:78-104 |
-| Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. | `_leaf` | mcp/tests/test_closeout_queue.py:107-156 |
-| Judgment row. | `_judgment_row` | mcp/tests/test_closeout_queue.py:159-164 |
-| Priority row. | `_priority_row` | mcp/tests/test_closeout_queue.py:167-168 |
-| Judgment table. | `_judgment_table` | mcp/tests/test_closeout_queue.py:171-172 |
-| Priority table. | `_priority_table` | mcp/tests/test_closeout_queue.py:175-176 |
-| Grade. | `_grade` | mcp/tests/test_closeout_queue.py:179-183 |
-| Queuefixture. | `QueueFixture` | mcp/tests/test_closeout_queue.py:186-727 |
-| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | `author_unstarted_leaf` | mcp/tests/test_closeout_queue.py:323-373 |
-| Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | `start_leaf` | mcp/tests/test_closeout_queue.py:375-445 |
-| Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | `declare_leaf` | mcp/tests/test_closeout_queue.py:630-659 |
+| Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. | L184-L696 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Master. | L76-L102 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. | L105-L154 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Judgment row. | L157-L162 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Priority row. | L165-L166 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Judgment table. | L169-L170 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Priority table. | L173-L174 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Grade. | L177-L181 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Queuefixture. | L184-L696 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | L321-L371 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | L373-L443 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | L628-L657 | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
 
 ## Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
+
 
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): recorded that `_leaf` now binds `seriesContractPath` alongside `enclosures[]`, and that this

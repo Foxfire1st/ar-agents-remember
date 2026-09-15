@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T14:20+02:00 |
-| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
-| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -21,6 +22,8 @@ Canonical task documents and closeout doors are its inputs; the root operation j
 claimed lifecycle after admission.
 
 ## Hot Path Summary
+
+`closeout_preview.py` describes only code and memory-content writes plus informational cache refresh. `closeout_recovery.py` proves the same two outputs from Git and journal evidence; it never reconstructs ledger commit authority.
 
 Canonical changes invalidate affected sprint projections to invalid-empty. A complete rebuild is
 computed off-side from current task topology, canonical waiting doors, and per-contract activation;
@@ -48,12 +51,9 @@ only deterministic readiness and order.
   master's state is never this contract's reason to wait, and the queue cannot select, release, or
   repair that authority.
 
-## IAS Closeout-Recovery Ledger Boundary
+## Closeout Recovery Uses Git Output Evidence
 
-`closeout_recovery.py` remains in this transitional package location but owns journal recovery,
-not queue authority. It reuses an exact current code/memory edge idempotently and prepends a new
-ledger row when unchanged code acquires a later memory state. Older same-code rows remain audit
-history; malformed bytes, wrong heads, and unreachable content still fail closed.
+`closeout_recovery.py` remains in this package location but owns journal recovery, not queue authority. Recovery reads exact current code/memory refs, compares them with accepted journal commits, proves substantive cleanliness and source ancestry, and reuses already-created outputs. A missing, unreadable, malformed or changed `memory.md` is irrelevant to those Git proofs. Refresh of the consumer cache is best effort after the actual output is proven.
 
 ## IAS Per-Contract Activation Projection
 
@@ -138,7 +138,7 @@ The transitional `closeout_staged_quality.py` helper separates `prepare_staged_c
 
 Queue/projection helpers describe and recover transaction state; they do not own normal quality or
 certification acceptance. Closeout preview presents candidate/source checks, code commit, raw memory
-metadata/entity/index refresh, memory commit, ledger mapping, and finalization. Recovery proves
+metadata/entity/index refresh, one attributed memory-content commit when content changed, cache refresh, and finalization. Recovery proves
 already-created outputs and uses the staged-index commit helper without repository hooks. Integration
 publication moves the prepared pair under ref safety and creates no merge commit. Strict code or
 memory checks, selected certification, curator coherence, independent review, and full suites are
@@ -155,7 +155,18 @@ its dependents wait on, so leaving them blocked forever would make abandonment w
 nothing. `closeout_projection.py::capture_projection_source` uses the same judgement to classify a
 sprint source as `terminal`. Master-granular resolution is unchanged; only the terminal set widened.
 
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Recovery proves the accepted code and memory outputs without a cache lookup. | L144-L160 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected preview and recovery authority; cache failures no longer refuse transactions. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 - 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the route's conventions now state that a capacity refusal is an `invalid` source rather than an unreadable one, and that the refusal codes and that classification are one declaration in `closeout_queue_errors.py`. `closeout_queue_graph.py` raises its master- and edge-capacity refusals through those constants and `closeout_projection._problem` classifies by membership of `CAPACITY_REFUSAL_CODES`, so a sprint past its graph bound is no longer reported as a source that could not be read; no refusal code was renamed and the other classifiers are unchanged. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T14:19+02:00 — Per-contract activation curation on this route: the queue now reads each live series' own contract-keyed activation record, so the invariant, hot-path and projection sections state that `atomic-series-reconciling` is the only waiting reason, vacant/active are never waits, a foreign master is never this contract's blocker, and the closeout projection remains a read-only observer that owns no transition. Retitled the section from source-pair to per-contract activation. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded that queue graph resolution and projection classification consume `master_is_terminal`, so an abandoned predecessor stops blocking its successors and a sprint with an abandoned master classifies as terminal. Content change, not a range repoint.

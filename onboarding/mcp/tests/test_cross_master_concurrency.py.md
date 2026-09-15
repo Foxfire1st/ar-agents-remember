@@ -5,249 +5,78 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_cross_master_concurrency.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Cross-master concurrency on one protected source pair: the forcing test for the contract-scoped
-atomic-series activation record, and (since 260831-LOCR-L36) for the reconciled series completion.
-
-One sprint commands every atomic master from its own integration branch, so two atomic masters
-commanded by the same sprint derive the SAME protected source pair (same code repository and source
-branch, same memory repository and source branch; only the work branches differ). The activation
-record used to be keyed by that pair, so the second master's selection replaced the first's and the
-closeout projection reported the displaced master as `atomic-series-paused-by:` and held it waiting.
-
-This module drives **real temporary Git repositories** and the **public operations** to prove the
-record is now per contract, and that a master which stays unfinished, is stopped, resumes, reconciles
-with a sibling's landing and then finishes does so through the ordinary public routes:
-
-1. both masters progress concurrently and each keeps its own record;
-2. each master's work stays private until it lands;
-3. landing stays protected against a conflicting or stale publication;
-4. a stopped master publishes nothing and no worktree tool performs the stop; and
-5. a master that reconciles with a landed sibling completes through **ordinary closeout and final
-   integration** — a checkpoint is never a substitute for completion; and
-6. a genuine wave dependency from the sprint execution graph still gates, while a graph-less sprint
-   serializes nothing between its atomic masters.
+Verify independent atomic masters sharing one protected source pair, private work, conflicting publication refusal, and ordinary completion after sibling reconciliation.
 
 ## Code Commentary
 
 ### Logic
 
-`CrossMasterConcurrencyTests` builds one real temporary Git world in `setUp` from
-`test_closeout_queue.QueueFixture(root, atomic_a=True, atomic_b=True, memory_mode="external")` —
-disposable code and external-memory repositories, two atomic master documents, real series/leaf
-contracts and a real `memory.md` ledger — declares the test process, and resolves each master's
-canonical **series** contract through `_series(load_contract(...))` cit:([`_series`], mcp/tests/test_cross_master_concurrency.py:88-91). The behaviour is asserted against
-`MASTER_A`/`MASTER_B`/`NOW` and the public operations, not against the removed pair-keyed helpers.
+QueueFixture builds two atomic masters with the same code/memory source branches and distinct work branches. The nine scenarios verify independent activation records/readiness, A-only private content, B leaf landing while A remains unfinished, activation release without publication, stale/non-fast-forward publication refusal, explicit checkpoint availability, genuine graph dependencies, and graph-less concurrency.
 
-The nine cases, in the order the module groups them:
+The full completion scenario lands A's first leaf and completes B through ordinary closeout/integration. A's stopped interval is represented by before/after private-state snapshots; this is not execution coverage of the public pause tool. A then uses the public sync, starts its remaining leaf, and completes through ordinary closeout/integration without a checkpoint substitute.
 
-- `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready` cit:([`test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`], mcp/tests/test_cross_master_concurrency.py:131-162) asserts the premise rather
-  than assuming it: both series report `code_source_branch == "super"` and equal memory source
-  branches, with different work branches and different `activation_path` values. `_select_both()`
-  publishes `active` on B first and then A, and both observations stay `active` on their own master,
-  both `project_series_activation` projections report an empty `waiting` tuple, and both closeout
-  members come back `classification == "ready"` with no reasons.
-- `test_master_a_experimental_code_and_memory_stay_private_until_it_lands` cit:([`test_master_a_experimental_code_and_memory_stay_private_until_it_lands`], mcp/tests/test_cross_master_concurrency.py:166-189) commits an
-  A-only code file and an A-only memory file on A's own work branches, then proves neither reaches the
-  pair's source branches (`super` in both repositories), the sibling master's worktree, or the other
-  master's work branch — while A's own line carries it and A is still the selected owner of its own
-  record.
-- `test_master_b_lands_its_leaf_while_master_a_is_unfinished` cit:([`test_master_b_lands_its_leaf_while_master_a_is_unfinished`], mcp/tests/test_cross_master_concurrency.py:193-212) closes and lands B's atomic leaf through
-  the public integrate route (`_close_out_and_land_leaf`), then proves B's own line moved onto B's
-  master branch while A stayed exactly where it was, B's leaf contract is `completed`, and B's
-  **series** contract is still `not-started`.
-- `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible` cit:([`test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`], mcp/tests/test_cross_master_concurrency.py:465-512) records both source revisions
-  and A's own line, releases A's activation selection, and proves the release published nothing (both
-  `super` refs and A's work branch are unchanged), A's work survived, B is still `active` on B's own
-  master, and a rebuilt status still classifies **both** members `ready` with no reasons. Its
-  docstring is explicit that this is deliberately **not** the pause: the release is the state
-  transition the sync-cancel and terminal routes need, and calling it is not what pausing a master
-  means. The pause itself — an ordinary stop that publishes nothing and advances nothing — is covered
-  by the completion case below through `_require_pause_left_a_private`.
-- `test_a_conflicting_publication_cannot_overwrite_master_b` cit:([`test_a_conflicting_publication_cannot_overwrite_master_b`], mcp/tests/test_cross_master_concurrency.py:529-563) first lands B's accumulated line through
-  `_land_master_b_line` (which publishes through the public checkpoint route and asserts the ledger
-  ref landed), then attempts A's non-fast-forwardable checkpoint: it is refused as `blocked-non-ff`
-  with both source refs and B's landing intact, B's ledger mapping still resolves through
-  `find_mapping`, and a stale hand-made candidate is refused as
-  `atomic-series-checkpoint-candidate-moved` while still moving nothing.
-- `test_master_a_resumes_reconciles_and_completes_after_master_b_landed` cit:([`test_master_a_resumes_reconciles_and_completes_after_master_b_landed`], mcp/tests/test_cross_master_concurrency.py:565-620) is the completion case, and it uses
-  **no checkpoint**. A lands its first leaf and stays private while B completes and integrates
-  normally; `_require_pause_left_a_private` then proves that stopping A published nothing, moved no
-  ref and advanced no unstarted leaf (the commanded A2 row and its document are untouched, no
-  enclosure and no worktree exist, and its single step is still `pending`), while B's landing stands.
-  A then resumes and reconciles B's landing through the **public sync path** (`_public_sync`),
-  validates and records the resulting code/memory pair, starts its remaining never-started leaf on
-  the reconciled line, lands that leaf, and completes through the public closeout and integrate
-  routes (`_closeout_and_land_master`, which asserts `state == "integrated"`).
-  `_require_both_ledger_histories` proves the landed series ledger maps B's landing, both of A's
-  candidates and A's final pair, that A's own row is first, and that the contract reads
-  `integration_status == "completed"` with `cleanup == "pending"`.
-- `test_explicit_checkpoint_landing_remains_available_when_requested` cit:([`test_explicit_checkpoint_landing_remains_available_when_requested`], mcp/tests/test_cross_master_concurrency.py:718-748) proves the explicit route is
-  unchanged for an open master: the preview reports `would-checkpoint` with `closeoutRequired: False`,
-  `approvalRequired: True` and `ledgerMappingVerified: True` and moves nothing; the apply moves both
-  refs, records `checkpointed`, leaves `closeout_status` `not-started`, keeps the code worktree, and
-  leaves the sibling unfinished master `active`.
-- `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` cit:([`test_a_dependent_master_still_waits_for_its_unfinished_predecessor`], mcp/tests/test_cross_master_concurrency.py:752-780) rebuilds the world with
-  `edge=True` — the sprint execution graph's real `MASTER_A -> MASTER_B` edge — and proves that with
-  activation exclusivity gone B is still `active` in its own record, the predecessor member is
-  `ready`, and the dependent member is `waiting` with exactly
-  `predecessor-incomplete: <MASTER_A.key>`. The sprint's own wave gate is what still holds B.
-- `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters` cit:([`test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`], mcp/tests/test_cross_master_concurrency.py:784-852) is the ruling's graph-less half. It rewrites the
-  sprint document with `executionGraph=None` and asserts the resolved `SchedulingMode` is exactly
-  `atomic-sequential`, that both commanded masters (`MASTER_A`, `MASTER_B`) are in `mode.masters`, and
-  that `mode.facts` is the one new single-element tuple `"executionGraph absent: atomic-sequential
-  default — every commanded master executes atomically and no dependency is declared, so nothing
-  serializes the masters"`. It then selects both masters and proves each observation is
-  `state == "active"` naming its own `selected_master`, with `project_series_activation(...).waiting
-  == ()` for both — so no master is held because a sibling is selected; the graph-less projection
-  classifies both members `ready` with no reasons. The case closes at the seam that still refuses a
-  caller whose already-resolved graph the canonical document no longer carries:
-  `graph_context(..., authored_graph=...)` raises `CloseoutQueueError` with status
-  `task-execution-topology-migration-required`, and the detail contains `nothing serializes the
-  masters` and no `source-pair` text. The sprint-with-a-graph half of the same ruling stays with the
-  wave case above, which is why this case asserts only the graph-less half.
-
-The helpers keep the cases honest. `_close_out_and_land_leaf` cit:([`_close_out_and_land_leaf`], mcp/tests/test_cross_master_concurrency.py:214-222) drives the public integrate route for one atomic leaf;
-`_land_leaf_contract` cit:([`_land_leaf_contract`], mcp/tests/test_cross_master_concurrency.py:224-289) authors and lands one leaf's code, memory content and ledger mapping the way the fixture does;
-`_complete_master_documents` cit:([`_complete_master_documents`], mcp/tests/test_cross_master_concurrency.py:291-311) marks the master and every canonical leaf row `Completed`, which is the plan
-fact ordinary closeout requires; `_closeout_and_land_master` cit:([`_closeout_and_land_master`], mcp/tests/test_cross_master_concurrency.py:313-338) runs the **public** closeout apply and
-integrate tools and asserts `closed` and `integrated`; and `_public_sync` cit:([`_public_sync`], mcp/tests/test_cross_master_concurrency.py:340-374) drives `worktree_sync_tool`, resolving a retained memory
-conflict the way the workflow requires by keeping every mapping from both sides and continuing the
-same contract-addressed sync.
-
-The reconciled pair is recorded by `_record_reconciled_pair` cit:([`_record_reconciled_pair`], mcp/tests/test_cross_master_concurrency.py:384-412), and that helper is deliberately an **agent-owned
-`memory.md` write**: it adds a worktree on the memory work branch, prepends one mapping row for the
-reconciled code tip against the memory ref the same sync landed, commits, and removes the worktree
-again. Nothing more exists, because the workflow owes that row and a sync creates the code merge
-*after* the retained conflict was resolved — **no public tool records the reconciled pair** (a
-follow-up pass that would have made it public was cancelled by the developer).
-`_private_master_a_facts` cit:([`_private_master_a_facts`], mcp/tests/test_cross_master_concurrency.py:414-445) and `_require_pause_left_a_private` cit:([`_require_pause_left_a_private`], mcp/tests/test_cross_master_concurrency.py:622-638) take the
-before/after snapshot a stop must leave untouched; `_paused_fixture` cit:([`_paused_fixture`], mcp/tests/test_cross_master_concurrency.py:447-461) rebuilds the world with the still-unstarted second
-canonical leaf; `_reconcile_master_a` cit:([`_reconcile_master_a`], mcp/tests/test_cross_master_concurrency.py:640-660) and `_land_remaining_master_a_leaf` cit:([`_land_remaining_master_a_leaf`], mcp/tests/test_cross_master_concurrency.py:662-676) carry the resume half;
-`_require_ledger_maps` cit:([`_require_ledger_maps`], mcp/tests/test_cross_master_concurrency.py:678-690) and `_require_both_ledger_histories` cit:([`_require_both_ledger_histories`], mcp/tests/test_cross_master_concurrency.py:692-714) prove the landed mappings; and
-`_checkpoint_with_candidate` cit:([`_checkpoint_with_candidate`], mcp/tests/test_cross_master_concurrency.py:855-873) publishes through the route's own candidate-validation
-boundary (`publish_series_checkpoint_under_authority`) and returns the refusal status instead of
-asserting it. `_member` cit:([`_member`], mcp/tests/test_cross_master_concurrency.py:94-97) and `_tree` cit:([`_tree`], mcp/tests/test_cross_master_concurrency.py:100-102) read one member row and one branch's tree
-listing.
+Leaf helpers author code plus one attributed memory commit and refresh the cache outside Git. Sync reconciles real content; the former cache-union and ledger-only reconciled-pair write are removed. The final assertions prove both masters' code/memory ancestry and read committed attribution through derive_memory_ledger. No cached row order or mapping for an un-attributed merge commit is required.
 
 ### Conventions
 
-A `unittest` class in the `mcp/tests` convention: one real temporary Git world per case, cleaned up in
-`tearDown`, with the wave and completion cases rebuilding their own world because they need the graph
-edge or a second unstarted leaf. It composes existing fixtures instead of adding new ones —
-`QueueFixture` and the shared constants come from `test_closeout_queue`, the Git/ledger helpers
-(`accumulate_master_line`, `checkpoint`, `memory_repository`, `rev`) from the shared
-`checkpoint_landing_test_support`, `git` from `test_worktree_support`, and the closeout support
-helpers from `closeout_input_test_support` — and `setUp` calls `declare_test_process()` before
-touching real repositories.
-
-It is registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 143) and as
-a consumer in both shared-support artifacts of `mcp/tests/evidence-lifecycle.toml`; that manifest is
-fail-closed, so an unregistered tracked module is a hard load failure rather than a silent gap.
-Registration is classification only, and lane membership is never execution or acceptance evidence.
+Scenarios compose the shared queue, checkpoint, and closeout fixtures under a declared test process. Real fixture repositories establish local operation behavior, not a live orchestration run. Release, stopped-work snapshots, checkpoint publication, and final completion stay separate claims.
 
 ### Invariants And Boundaries
 
-- The shared protected source pair is asserted, not assumed: one sprint command means one pair, and
-  only the work branches differ.
-- One activation record per series contract. A sibling's selection, pause or landing never replaces
-  or holds another contract's record.
-- **Publishing, stopping and pausing are three different things.** A checkpoint (the explicit route)
-  publishes committed refs onto the protected source branch under developer approval and records
-  `checkpointed`; a *release* of the activation selection moves no ref and is what sync-cancel and
-  terminal cleanup need; a *pause* is an ordinary stop that publishes nothing, moves no ref, advances
-  no unstarted leaf, and is performed by no worktree tool. A stopped master is not a waiting master
-  and blocks no sibling.
-- **Completion is ordinary.** A master that reconciles with a landed sibling still finishes through
-  the public closeout and integrate routes and reads `integration_status == "completed"` with
-  `cleanup == "pending"`; a checkpoint is never accepted in place of either, and this module's
-  completion case never calls one.
-- **The reconciled pair is recorded by an agent-owned `memory.md` write, not a tool.** The helper
-  performs exactly that write; there is no public operation for it.
-- Landing is a compare-and-swap against the pair: a candidate that is not fast-forwardable is refused
-  as `blocked-non-ff` and a moved candidate is refused as
-  `atomic-series-checkpoint-candidate-moved`; both leave the source refs and the already-landed ledger
-  mapping exactly as they were.
-- Only the sprint execution graph's own wave dependency holds a dependent master
-  (`predecessor-incomplete:`). Nothing serializes a graph-less sprint: `atomic-sequential` describes
-  the sprint's SHAPE — every commanded master executes atomically — not a serialization mechanism, so
-  independent masters proceed concurrently and no master is held because another is selected. This
-  module does not re-implement scheduling; its graph-less case asserts the resolved mode and the
-  per-contract projections rather than owning them.
-- The cases concern repositories created inside a temporary directory by the fixture; they do not
-  establish a live control-plane run, production scheduler behaviour, or acceptance.
+- A sibling selection, release, or landing cannot replace another master's activation record.
+- Unpublished work remains private and a stale publication cannot overwrite a sibling.
+- A reconciled master finishes through ordinary closeout and integration.
+- Both masters' real code and memory histories survive; cache bytes are not retention proof.
+- Only the authored dependency graph creates predecessor waiting; graph absence does not serialize independent masters.
 
 ### Todos
 
-None.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-No Domain Documentation entries are configured in this memory root (`system/sources.md` declares no
-entries). Every claim here is about this repository's own activation record, refs, contracts and
-ledger projection, so the retained source is the direct evidence.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain evidence applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-The current source cases below establish the concurrency behaviour; this inventory is not execution
-evidence.
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Two unfinished masters share one protected source pair and both stay ready. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready` | mcp/tests/test_cross_master_concurrency.py:131-162 |
-| An unfinished master's experimental code and memory stay private until it lands. | `test_master_a_experimental_code_and_memory_stay_private_until_it_lands` | mcp/tests/test_cross_master_concurrency.py:166-189 |
-| Master B lands its leaf while master A is unfinished, and B's series contract stays open. | `test_master_b_lands_its_leaf_while_master_a_is_unfinished` | mcp/tests/test_cross_master_concurrency.py:193-212 |
-| Releasing master A's activation publishes nothing and leaves master B eligible; this is deliberately not the pause. | `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible` | mcp/tests/test_cross_master_concurrency.py:465-512 |
-| A conflicting publication cannot overwrite master B's landed line, and a stale candidate is refused without moving anything. | `test_a_conflicting_publication_cannot_overwrite_master_b` | mcp/tests/test_cross_master_concurrency.py:529-563 |
-| Master A is stopped without publishing, resumes through the public sync, lands its remaining leaf and completes through ordinary closeout and integration without losing B's mapping. | `test_master_a_resumes_reconciles_and_completes_after_master_b_landed` | mcp/tests/test_cross_master_concurrency.py:565-620 |
-| The explicit checkpoint landing route is unchanged for an open master. | `test_explicit_checkpoint_landing_remains_available_when_requested` | mcp/tests/test_cross_master_concurrency.py:718-748 |
-| A genuine sprint-graph wave dependency still gates a dependent master. | `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:752-780 |
-| A graph-less sprint resolves to the atomic-sequential shape and serializes nothing: both commanded masters hold their own activation concurrently with no waiting reason, and the stale-graph seam still refuses with the ruling in its detail. | `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters` | mcp/tests/test_cross_master_concurrency.py:784-852 |
-| The stop snapshot helper: everything a pause must leave exactly as it was for an unfinished private master. | `_private_master_a_facts`; `_require_pause_left_a_private` | mcp/tests/test_cross_master_concurrency.py:414-445; mcp/tests/test_cross_master_concurrency.py:622-638 |
-| The closeout-and-land helper drives the public closeout apply and integrate tools and asserts `closed` then `integrated`. | `_closeout_and_land_master`; `_complete_master_documents` | mcp/tests/test_cross_master_concurrency.py:291-311; mcp/tests/test_cross_master_concurrency.py:313-338 |
-| The public sync helper reconciles the contract and resolves a retained memory conflict by keeping every mapping from both sides. | `_public_sync` | mcp/tests/test_cross_master_concurrency.py:340-374 |
-| The reconciled pair is recorded by an agent-owned `memory.md` write; no public tool performs it. | `_record_reconciled_pair` | mcp/tests/test_cross_master_concurrency.py:384-412 |
-| The resume half: reconcile A, then start and land A's remaining never-started leaf. | `_reconcile_master_a`; `_land_remaining_master_a_leaf` | mcp/tests/test_cross_master_concurrency.py:640-660; mcp/tests/test_cross_master_concurrency.py:662-676 |
-| The landed-mapping proofs the completion case reads. | `_require_ledger_maps`; `_require_both_ledger_histories` | mcp/tests/test_cross_master_concurrency.py:678-690; mcp/tests/test_cross_master_concurrency.py:692-714 |
-| The checkpoint candidate-validation boundary helper the stale-candidate case uses. | `_checkpoint_with_candidate` | mcp/tests/test_cross_master_concurrency.py:855-873 |
-| The leaf-landing helper the private-work and privacy cases reuse. | `_close_out_and_land_leaf`; `_land_leaf_contract` | mcp/tests/test_cross_master_concurrency.py:214-222; mcp/tests/test_cross_master_concurrency.py:224-289 |
-| The record path is keyed by the contract fingerprint rather than any source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-144 |
-| The selection transition writes only the addressed contract's own record. | `publish_atomic_series_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:155-212 |
-| Only this contract's own reconciling state is a waiting reason. | `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:275-287 |
-| A record whose fingerprint or contract path belongs to another contract is refused on read. | `_require_record_identity` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372 |
-| The release transition requires the exact selection it addresses. | `release_atomic_series_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-53 |
-| The closeout projection consumes the record's own waiting reason, so a sibling master is never projected as a blocker. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:29-51 |
-| The series completion the case reaches is the reconciled-pair closeout, not a checkpoint. | `series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:770-809 |
-| The real temporary Git world, the two atomic masters and the optional wave edge are the shared fixture's. | `QueueFixture` | mcp/tests/test_closeout_queue.py:186-727 |
-| The sprint execution graph's single wave edge that still gates the dependent master. | "A supplies B." | mcp/tests/test_closeout_queue.py:269-269 |
-| The accumulated code+memory+ledger pair helper this module reuses, now owned by the shared support module. | `accumulate_master_line` | mcp/tests/checkpoint_landing_test_support.py:104-120 |
-| The public checkpoint entry point the landing cases drive, reached through the shared support module's `checkpoint` helper. | `checkpoint` | mcp/tests/checkpoint_landing_test_support.py:345-353 |
-| The lane row the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:146-146 |
+| Independent activation, private content, and sibling leaf landing. | L131-L162; L166-L189; L193-L212 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| Release and conflicting publication preserve sibling state. | L409-L456; L473-L507 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| Ordinary resume/reconciliation/completion preserves actual histories. | L509-L568; L588-L610; L638-L681 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| The stopped interval is represented by snapshots, not a pause-tool call. | L358-L389; L570-L586 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| Checkpoint and authored/absent dependency behavior remain distinct. | L685-L718; L722-L750; L754-L822 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| Fixture commits are two actual outputs with Git-owned attribution. | L224-L288; L338-L348; L628-L636 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
 
 ## Cross-Repo References
 
-The code and memory repositories the cases assert against are created inside a temporary directory by
-the module's own fixture; no sibling repository or external system participates.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Migrated leaf and master scenarios to actual code/memory outputs; removed ledger-only reconciliation and cached-row reads, and strengthened retained-history assertions with direct Git ancestry. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): corrected the Conventions
   paragraph that still named `_accumulate_master_line`, `_checkpoint`, `_memory_repository` and
