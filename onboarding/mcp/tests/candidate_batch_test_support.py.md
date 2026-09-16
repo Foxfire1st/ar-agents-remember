@@ -20,7 +20,7 @@
 candidate-batch test modules needs the same three things, and this module owns them so neither module re-derives
 them:
 
-- **One admitted candidate built through the real seam.** `build_candidate_harness` opens a destination, binds its
+- **One admitted candidate built through the real seam.** `build_candidate_harness(` opens a destination, binds its
   namespace through `initialize_knowledge_namespace` and resolves contexts through `resolve_candidate_context`, so
   a case authors its batch against an identity the application actually read rather than against a digest the case
   wrote down.
@@ -110,7 +110,6 @@ No domain documentation source is configured for this repository (`system/source
 | The deliberate raw write that places the row the operations forbid. | `insert_raw_membership` | mcp/tests/candidate_batch_test_support.py:545-577 |
 | The registered contract, artifact row, evidence node and exact consumer set. | "contract:candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1101-1101 |
 | The admitted destination and namespace initialization the harness drives. | `initialize_knowledge_namespace`; `resolve_candidate_context` | mcp/src/agents_remember/application/knowledge.py:160-191; mcp/src/agents_remember/application/knowledge.py:252-273 |
-| The harness's one-to-one card, which records what it builds. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:19-31 |
 | The operation the harness applies its batches through. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
 | The two declared consumers' own first nodes, which measure a refusal through this harness. | "test_every_declared_command_is_applied_and_read_back"; "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_commands.py:114-209; mcp/tests/test_candidate_batch_transaction.py:62-110 |
 | The registry validator that derives real importers and refuses a differing declared consumer set. | `load_evidence_inventory` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:162-166 |
