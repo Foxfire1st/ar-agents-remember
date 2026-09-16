@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/eve_runtime_launch.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastUpdated | 2026-09-16T13:26+02:00 |
+| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,6 +64,19 @@ a compiled application value — so the selection rides the environment the adap
 `node` on `PATH`, and refuses naming every candidate and its version rather than starting eve under an
 unsupported runtime.
 
+`runtime_default_model` (255) answers the question a **pre-session** capability read has no launch to
+answer: which model does this runtime actually run with? It reads the pinned application's own
+`agent/agent.ts` (`AGENT_SOURCE`) and extracts the `?? <literal>` fallback with
+`MODEL_FALLBACK_PATTERN`, rather than mirroring the value as a second constant. A runtime whose source
+declares no fallback refuses with a message saying a pre-session read cannot name the model — it does
+not guess.
+
+`launch_spec_selection` (366) now falls back to `runtime_default_model` when the launch spec carries no
+settings-derived `AR_EVE_MODEL`, instead of refusing. The reason is stated in the code: the runtime is
+about to compile its authored application, whose own fallback is then the model that really runs, so
+reading it keeps the reported catalog and the running process on one value rather than refusing a read
+the dashboard needs or advertising a model nothing would use.
+
 ### Conventions
 
 - Environment names this adapter owns are the `AR_EVE_*` group plus the three AR binding names;
@@ -88,19 +101,22 @@ unsupported runtime.
 - **The launch carries the interpreter the caller asked for.** A resolved spec's `node_executable` is
   whatever `AR_EVE_NODE` named (or `None` when unset); the search and its refusal happen at spawn, not
   here.
-- `EVE_PINNED_VERSION = "0.56.0"` and `MINIMUM_NODE_MAJOR = 24` are stated here **for the refusal
-  message only**. The authoritative pins are `eve_runtime/package.json`; if they ever disagree, the
-  package pins win and this constant is the stale one.
+- `EVE_PINNED_VERSION = "0.56.0"` is stated here **for the refusal message only**. The authoritative
+  pin is `eve_runtime/package.json`; if the two ever disagree, the package pin wins and this constant
+  is the stale one.
+- **`MINIMUM_NODE_MAJOR` is no longer declared here: it is imported from the kernel readiness module
+  and re-exported.** One floor, two readers — detection and this launch path — so the two cannot
+  contradict. A second literal `24` anywhere on this path is a regression against that ownership.
 - `package-lock.json` is copied into a staged root when present, so a staged epoch installs from the
   same resolved graph as its source.
-- The runtime root is an **application**, not a command, which is why the adapter registers through
-  the protocol factory and deliberately has no row in the developer-curated terminal harness set.
+- **The runtime root is still an application, not a command — but it now has a curated registry row.**
+  eve is a settings-vocabulary row in `kernel/harnesses.py`, detected through its readiness probe; it
+  is still not a terminal program, and terminal launch refuses it by name.
 
 ### Todos
 
-None known. Packaging the runtime into `package_data/runtime/eve-agent` and adding an `eve` row to
-the curated harness registry are the packaging leaf's scope; resolution order 2 already anticipates
-the packaged location.
+None known. Packaging the runtime into `package_data/runtime/eve-agent` is the packaging leaf's scope;
+resolution order 2 already anticipates the packaged location, and the readiness probe reads it first.
 
 ## Docs References
 
@@ -115,22 +131,41 @@ pass was available for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The launch spec, identity and workspace binding are AR's existing control-wire types. | `LaunchSpec`; `ControlIdentity` | mcp/src/agents_remember/models/conversations/control_wire.py:1-200 |
-| The launch knobs are AR's existing capability-port type, which is why eve participates in the same launch-vocabulary contract as the other harnesses. | `LaunchKnobs` | mcp/src/agents_remember/serving/harness_capabilities.py:1-120 |
+| The launch spec, identity and workspace binding are AR's existing control-wire types. | `LaunchSpec`; `ControlIdentity` | mcp/src/agents_remember/models/conversations/control_wire.py:58-79; mcp/src/agents_remember/models/conversations/control_wire.py:82-90 |
+| The launch knobs are AR's existing capability-port type, which is why eve participates in the same launch-vocabulary contract as the other harnesses. | `LaunchKnobs` | mcp/src/agents_remember/serving/harness_capabilities.py:136-148 |
 | The declared pins and the operator-facing environment contract are documented beside the application they govern. | `dependencies`; environment table | eve_runtime/package.json:14-20; eve_runtime/README.md:10-46 |
-| The authored application applies the binding this module carries at `session.started`. | `defineDynamic`; `session.started` | eve_runtime/agent/instructions/ar-binding.ts:1-31 |
-| The adapter is the only consumer that resolves a spec, hands it to a transport, and verifies the effective selection it produced. | `EveSessionAdapter._resolve_spec`; `_verify_effective_selection` | mcp/src/agents_remember/serving/eve_adapter.py:660-700; mcp/src/agents_remember/serving/eve_adapter.py:890-915 |
-| The factory recovers the applied selection by probing a `LaunchSpec` through this module's reader, so the values that reached the child are the ones verified. | `_eve_expected_selection`; `launch_spec_selection` | mcp/src/agents_remember/serving/harness_control_factories.py:105-130; mcp/src/agents_remember/serving/eve_runtime_launch.py:328-353 |
-| The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses. | `_knob_values`; `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:173-196 |
-| The OS-level start-failure seed is an operator naming a nonexistent `AR_EVE_NODE`, which only fails because this module reads the selector as given. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:83-100; mcp/tests/live_eve_native_fixture.py:1070-1090 |
+| The authored application applies the binding this module carries at `session.started`. | `defineDynamic`; `session.started` | eve_runtime/agent/instructions/ar-binding.ts:1-1; eve_runtime/agent/instructions/ar-binding.ts:11-11 |
+| The adapter is the only consumer that resolves a spec, hands it to a transport, and verifies the effective selection it produced. | `EveSessionAdapter._resolve_spec`; `_verify_effective_selection` | mcp/src/agents_remember/serving/eve_adapter.py:660-700; mcp/src/agents_remember/serving/eve_adapter.py:892-904 |
+| The factory recovers the applied selection by probing a `LaunchSpec` through this module's reader, so the values that reached the child are the ones verified. | `_eve_expected_selection`; `launch_spec_selection` | mcp/src/agents_remember/serving/harness_control_factories.py:105-130; mcp/src/agents_remember/serving/eve_runtime_launch.py:366-393 |
+| The node floor is owned by the readiness module and re-exported here, so detection and launch read one number. | `KERNEL_MINIMUM_NODE_MAJOR`; `MINIMUM_NODE_MAJOR` | mcp/src/agents_remember/serving/eve_runtime_launch.py:38-38; mcp/src/agents_remember/serving/eve_runtime_launch.py:48-52; mcp/src/agents_remember/kernel/eve_runtime_readiness.py:55-60 |
+| The runtime's own model fallback, read from the authored application rather than mirrored as a constant. | `runtime_default_model`; `AGENT_SOURCE`; `MODEL_FALLBACK_PATTERN` | mcp/src/agents_remember/serving/eve_runtime_launch.py:96-96; mcp/src/agents_remember/serving/eve_runtime_launch.py:99-99; mcp/src/agents_remember/serving/eve_runtime_launch.py:255-276 |
+| The capability catalog consumes this fallback so a pre-session read names the model the runtime would really use. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
+| The case pinning that the advertised model is the one the runtime would use. | `test_the_advertised_model_is_the_one_the_runtime_would_use` | mcp/tests/test_eve_product_integration.py:985-997 |
+| The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses. | `_knob_values`; `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:173-185; mcp/tests/test_harness_launch.py:188-196 |
+| The OS-level start-failure seed is an operator naming a nonexistent `AR_EVE_NODE`, which only fails because this module reads the selector as given. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:83-89; mcp/tests/live_eve_native_fixture.py:1085-1085 |
 
 ## Cross-Repo References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pinned `eve` release and its Node `>=24` engine requirement come from the published package, not from a sibling Agents Remember repository. | exact pins; `engines` | eve_runtime/package.json:6-20 |
+| The pinned `eve` release and its Node `>=24` engine requirement come from the published package, not from a sibling Agents Remember repository. | `engines`; exact dependency pins | eve_runtime/package.json:7-8; eve_runtime/package.json:15-20; eve_runtime/README.md:3-8 |
 
 ## Update History
+- 2026-09-16T11:42:38+00:00: Generated citation repair: `LaunchKnobs` repointed to mcp/src/agents_remember/serving/harness_capabilities.py:136-148. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **the node floor moved to one owner, and a
+  pre-session read can now name the model.** `MINIMUM_NODE_MAJOR` is no longer a second literal here:
+  it is imported from `kernel/eve_runtime_readiness.py` as `KERNEL_MINIMUM_NODE_MAJOR` and re-exported,
+  because detection has to answer the same question and two numbers could contradict. Added
+  `runtime_default_model`, which reads the pinned application's own `agent/agent.ts` fallback through
+  `MODEL_FALLBACK_PATTERN` rather than mirroring the value as a constant, and `launch_spec_selection`
+  now uses it when no settings-derived `AR_EVE_MODEL` reached the launch — so the catalog the dashboard
+  reads and the process that actually runs agree on one model instead of the read being refused or a
+  value being invented. Corrected the stale Todo and the boundary that said eve "deliberately has no
+  row in the developer-curated terminal harness set": it has one now, and is still not a terminal
+  program. Verification metadata moves to the leaf's synced base `ff97072c`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the two launch selectors became
   **live**. `resolve_runtime_spec` now carries the caller's interpreter choice verbatim onto

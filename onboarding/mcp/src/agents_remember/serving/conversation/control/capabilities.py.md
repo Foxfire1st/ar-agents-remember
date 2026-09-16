@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/control/capabilities.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-09-16T13:26+02:00 |
+| lastVerifiedCommitHash |  `c1dbebf883f22710b71d40a66ec92c1ac134918f`|
+| lastVerifiedCommitDate |  2026-09-16T13:48:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,23 +31,33 @@ informational metadata only.
 
 ### Logic
 
-Per-harness fixture ids and version pins are module constants,
-cit:([`_CODEX_FIXTURE`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:43-43): codex
+Per-harness fixture ids and version pins are module constants: codex
 `0.144.5`/`codex-0.144.5-installed-20260718`, claude `2.1.211` plus the separate interrupt pin
-`2.1.217`/`claude-2.1.217-installed-20260722`, pi `0.80.7`. `_fixture`,
-cit:([`_fixture`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:64-71), cit:([`_adapter`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:91-97), cit:([`_unavailable`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:102-103), and cit:([`_image_capability`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:104-128)
-build the typed `FeatureCapability`/`AttachmentCapability` products; cit:([`_no_asset_kind`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:131-142)
-reports a kind the harness cannot stage. `_codex_controls`, cit:([`_codex_controls`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:145-173), `_claude_controls`, cit:([`_claude_controls`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:176-209), and `_pi_controls`, cit:([`_pi_controls`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:212-237), plus the telemetry builders `_codex_telemetry`, cit:([`_codex_telemetry`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:240-263), `_claude_telemetry`, cit:([`_claude_telemetry`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:266-276), and `_pi_telemetry`, cit:([`_pi_telemetry`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:279-302), assemble the static per-harness
-control/telemetry capability sets, keyed in cit:([`_CONTROLS`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:305-309) and cit:([`_TELEMETRY`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:311-315).
-cit:([`control_capabilities_for`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:318-328) and
-cit:([`telemetry_capabilities_for`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:342-352) select by `HarnessId` and now DISCARD the snapshot
-(`del snapshot`): the fixture-declared state stands on its own contract evidence and is never
+`2.1.217`/`claude-2.1.217-installed-20260722`, pi `0.80.7`, and — since the eve
+product-integration change set — eve `0.56.0`/`eve-0.56.0-native-20260916` with its own
+`_EVE_OBSERVED_AT`. `_fixture`, `_fixture_evidence`, `_adapter`, `_unavailable` and
+`_image_capability` build the typed `FeatureCapability`/`AttachmentCapability` products;
+`_no_asset_kind` reports a kind the harness cannot stage. `_codex_controls`, `_claude_controls`,
+`_pi_controls` and `_eve_controls`, plus the telemetry builders `_codex_telemetry`,
+`_claude_telemetry`, `_pi_telemetry` and `_eve_telemetry`, assemble the static per-harness
+control/telemetry capability sets, keyed in `_CONTROLS` and `_TELEMETRY`.
+`control_capabilities_for` and `telemetry_capabilities_for` select by `HarnessId` and **discard** the
+snapshot (`del snapshot`): the fixture-declared state stands on its own contract evidence and is never
 demoted by a version comparison — the `_observed_version`/`_demote_attachments`/`for_observed_runtime`
-demotion machinery is REMOVED. Claude's `_CLAUDE_MISMATCH` reason,
-cit:([`_CLAUDE_MISMATCH`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:56-59), is now the honest
-never-probed contract note ("control contract not yet probed through a captured production fixture
-… never a version gate"), not an installed-vs-locked version note. The attachment MIME allow-list
-is cit:([`_ATTACHMENT_MIME_TYPES`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:63-63), sorted from the L2E `SUBMIT_ASSET_MIME_TYPES`.
+demotion machinery is REMOVED. Claude's `_CLAUDE_MISMATCH` reason is the honest never-probed contract
+note ("control contract not yet probed through a captured production fixture … never a version gate"),
+not an installed-vs-locked version note. The attachment MIME allow-list is `_ATTACHMENT_MIME_TYPES`,
+sorted from the L2E `SUBMIT_ASSET_MIME_TYPES`.
+
+**`_eve_controls` is the newest set, and its conservatism is the point.** `interrupt` is the one
+`supported` control, and its evidence is the pinned runtime's own recorded cancel scenario — a
+`turn.cancelled` settlement for the exact observed turn — rather than a documentation claim.
+`policy_read` is `supported` on the recorded `authorization.required` challenge becoming a pending
+interaction. Everything else is `unavailable` rather than `unverified`, because the adapter does not
+implement the corresponding surface at all: the submission authority refuses an asset-carrying prompt
+for an adapter without `submit_with_assets`, so advertising a supported image/file/resource kind here
+would offer a composer control that can only ever be refused. `_eve_telemetry` declares every metric
+absent with a reason naming the stream, rather than borrowing another harness's rows.
 
 ### Conventions
 
@@ -65,6 +75,11 @@ routes gate on this module (see the L4-facing note in the governing overview).
   re-declared here.
 - The capability set is the gate every control route consults before any native call; a refused
   capability fails typed (422) before dispatch.
+- **An asset kind is advertised only when the adapter can stage it.** eve declares
+  image/file/resource `unavailable` because its adapter has no `submit_with_assets`; a `supported` row
+  here would offer a control the submission authority independently refuses.
+- **No harness borrows another's telemetry.** Each telemetry builder is its own; eve's declares every
+  metric absent with a reason naming the stream.
 
 ### Todos
 
@@ -87,7 +102,12 @@ asset limits come from the L2E substrate; the L1 page-level view is the conserva
 | --- | --- | --- |
 | `ControlCapabilities`, `AttachmentCapabilities`, "class TelemetryCapabilities(WireModel):" DTOs; `FeatureCapability` carries the documenting NOTE that there is deliberately no `for_observed_runtime` version-demotion. | "class FeatureCapability(WireModel):", "class AttachmentCapabilities(WireModel):", "class ControlCapabilities(WireModel):", `TelemetryCapabilities` | mcp/src/agents_remember/models/conversations/capabilities.py:18-18; mcp/src/agents_remember/models/conversations/capabilities.py:80-80; mcp/src/agents_remember/models/conversations/capabilities.py:86-86; mcp/src/agents_remember/models/conversations/capabilities.py:94-99 |
 | The L2E asset MIME/count/byte constants used by this gate. | `MAX_SUBMIT_ASSETS`, `MAX_SUBMIT_ASSET_BYTES`, `SUBMIT_ASSET_MIME_TYPES` | mcp/src/agents_remember/models/conversations/control_wire.py:43-43; mcp/src/agents_remember/models/conversations/control_wire.py:47-47; mcp/src/agents_remember/models/conversations/control_wire.py:51-51 |
-| The L1 conservative page-level control/telemetry view (stale post-L2E; L4 gates on this module instead). | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:342-357 |
+| The L1 conservative page-level control/telemetry view (stale post-L2E; L4 gates on this module instead). | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:440-457 |
+| eve's control set: exact-turn interrupt and policyRead supported on recorded native evidence, every other control `unavailable` because the adapter does not implement the surface. | `_eve_controls`; `_no_asset_kind` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:136-147; mcp/src/agents_remember/serving/conversation/control/capabilities.py:310-342 |
+| eve's telemetry declaration: every metric absent with a reason naming the stream, never borrowed. | `_eve_telemetry` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:345-359 |
+| eve's own fixture id, runtime pin and observation time, distinct from the other three harnesses'. | `_EVE_FIXTURE`; `_EVE_RUNTIME`; `_EVE_OBSERVED_AT` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:47-47; mcp/src/agents_remember/serving/conversation/control/capabilities.py:55-55; mcp/src/agents_remember/serving/conversation/control/capabilities.py:59-59 |
+| The adapter capability that decides the asset rows: no `submit_with_assets`, so no supported kind. | `EveSessionAdapter` | mcp/src/agents_remember/serving/eve_adapter.py:144-865 |
+| The cases: the asset-carrying submission is refused by the authority, and eve's telemetry is declared absent rather than borrowed. | `test_an_asset_carrying_submission_is_refused_by_the_authority`; `test_the_eve_adapter_is_not_asset_submit_capable`; `test_eve_telemetry_is_declared_absent_not_borrowed` | mcp/tests/test_eve_product_integration.py:1098-1103; mcp/tests/test_eve_product_integration.py:1706-1709; mcp/tests/test_eve_product_integration.py:1711-1745 |
 
 ## Cross-Repo References
 
@@ -114,6 +134,19 @@ reasons and `evidence_tier="runtime-fixture"` are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-09-16T11:42:32+00:00: Generated citation repair: `EveSessionAdapter` repointed to mcp/src/agents_remember/serving/eve_adapter.py:144-865. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: added eve's control and telemetry sets —
+  `_eve_controls` (exact-turn interrupt and `policyRead` `supported` on the pinned runtime's recorded
+  native evidence; every other control `unavailable` because the adapter implements no such surface,
+  and image/file/resource `unavailable` because the submission authority refuses an asset-carrying
+  prompt for an adapter without `submit_with_assets`) and `_eve_telemetry` (every metric absent with a
+  reason naming the stream, never borrowed from another harness), with eve's own fixture id, runtime
+  pin and observation time. Body updated on Logic and Invariants; five reference rows added; the nine
+  inline `cit:(…)` prose citations in the Logic section were converted to prose plus audit rows in the
+  required `Finding | Anchor | Source` shape. Verification metadata moves to the leaf's synced base
+  `ff97072c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

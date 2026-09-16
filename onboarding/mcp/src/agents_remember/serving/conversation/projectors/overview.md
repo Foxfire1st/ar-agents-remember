@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-16T13:26+02:00 |
+| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 
 ## What This Area Is
 
@@ -34,9 +34,11 @@ deltas/turn results, plus the collab/sub-agent roster rows), `claude.py`
 maps stream-json frames (text/thinking/tools/results, the exact submission echo, and the
 `task_*` sub-agent lifecycle correlated by `parent_tool_use_id`), and
 `pi.py` maps durable entries and live RPC events (messages/tools/
-notices/outcomes anchored on native entry identity). Every mapper takes
+notices/outcomes anchored on native entry identity). `eve.py` maps the durable session stream —
+one item revised by its completion, turn boundaries separated from session boundaries, and the
+park as a notice rather than a settlement. Every mapper takes
 the optional `parent_thread_id` demux context; only codex consumes it — claude's sub-agent
-identity arrives in-band and pi has no sub-agent threads.
+identity arrives in-band, and pi and eve have no sub-agent threads.
 
 ## What Belongs Here
 
@@ -47,6 +49,7 @@ identity arrives in-band and pi has no sub-agent threads.
 | `codex.py` | Codex thread items + notifications → items/blocks/tools/deltas/turn results. |
 | `claude.py` | Claude stream-json frames → items/thinking/tools/results; exact submission echo. |
 | `pi.py` | Pi durable entries → items/tools/notices/outcomes; live tool upserts. |
+| `eve.py` | eve durable session stream → items/blocks/deltas/turn outcomes; the park is a notice. |
 
 ## What Does Not Belong Here
 
@@ -135,10 +138,11 @@ identity arrives in-band and pi has no sub-agent threads.
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
 | `__init__.py` | protocol/registry | The only engine-facing surface; a harness without a projector fails closed typed. | covered |
-| `common.py` | shared primitives | One parsing/provenance home so the three mappers cannot drift apart. | covered |
+| `common.py` | shared primitives | One parsing/provenance home so the four mappers cannot drift apart. | covered |
 | `codex.py` | codex grammar | Native identity, tool/diff blocks, deltas, and honest historical tool loss. | covered |
 | `claude.py` | claude grammar | Stream-json mapping plus the exact submission echo; no native page exists. | covered |
 | `pi.py` | pi grammar | Entry-anchored identity, live tool upserts, honest unknown-input users. | covered |
+| `eve.py` | eve grammar | Durable-stream mapping; one settlement per turn and the park is never one. | covered |
 
 ## Local Invariants And Traps
 
@@ -210,10 +214,11 @@ the locked Pi RPC documentation); those are repository-owned and cited in the fi
 | `codex.py` | [`codex.py.md`](codex.py.md) | covered | Codex frame grammar. |
 | `claude.py` | [`claude.py.md`](claude.py.md) | covered | Claude frame grammar + submission echo. |
 | `pi.py` | [`pi.py.md`](pi.py.md) | covered | Pi entry/event grammar. |
+| `eve.py` | [`eve.py.md`](eve.py.md) | covered | eve durable-stream grammar; the park is a notice. |
 
 ## Child Overviews
 
-None. The five modules form one coherent mapper slice; per-harness detail lives in the file
+None. The six modules form one coherent mapper slice; per-harness detail lives in the file
 sidecars, not in nested overviews.
 
 ## How To Use This Area
@@ -306,7 +311,49 @@ filled in**. Nothing is guessed; absent evidence stays absent.
 
 The per-harness mapper grammars now import the wire contracts from `models/conversations/` after the L9 monolith split; the projection readers they depend on moved to `serving/projections/`. Mapping behavior is unchanged.
 
+## 260915-CAPS-L8 Route Impact — A Fourth Mapper, And The Rule It Exists For
+
+`eve.py` joins the slice and `_EveProjector` joins `PROJECTORS`, so every registered harness id now
+resolves a projector. It declares the **durable stream as its only evidence surface**
+(`uses_native_pages`, `uses_transcript_echo` and `eager_native_continuation` all false), so both other
+channels fail closed for a harness that has neither.
+
+The rule this mapper exists for is the one a future change is most likely to break: **a turn boundary
+is not a session boundary.** eve emits `turn.completed` and then `session.waiting` on the same stream,
+and the adapter reports that park with adapter kind `completed` and a `completed` terminal result,
+because AR's terminal vocabulary has no word for "parked". The park is genuinely not a settlement. A
+mapper that forwarded that result would settle the turn twice — and, because eve emits
+`session.waiting` after `turn.cancelled` as well, would display a **cancelled turn as completed**.
+So `_settled` is the only constructor of `MappedTurnOutcome`, reached only by `turn.completed` /
+`turn.cancelled` / `turn.failed`, and `session.waiting` maps to exactly one session-scoped `notice`
+item with `turn_id is None`. A cancelled turn settles as `interrupted`; only
+`session.completed`/`session.failed` retire the release.
+
+Two smaller rules belong beside it. **Streaming text is one item, revised**: an `*.appended` frame
+mints its channel item empty and delivers the text as a block delta, and the matching `*.completed`
+frame revises that same item — one assistant item and one thinking item per turn, never a delta pile
+beside a duplicate aggregate. And **recognized control state mints nothing**: session/turn/step
+framing, `action.input.appended` and compaction/context-clearing are consumed *by name* through
+`SILENT_CONTROL_EVENTS`, so the most frequent frames in the stream do not become "unknown vendor"
+rows that hide the genuinely unknown ones — an unclassified event still lands as preserved
+`unknown-vendor` evidence. The frame's event type is read from the diverted payload's own envelope
+`type` field, not from `EvidenceFrame.native_method`.
+
+Scope note: eve exposes **no native-history page**, so the mapper's `map_native_frame` fails closed
+rather than inventing one. Durable replay is the stream cursor's job, in the adapter's route.
+
 ## Update History
+
+- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: recorded the fourth mapper. `eve.py` joins the
+  slice, `_EveProjector` joins `PROJECTORS` (so every registered harness id resolves a projector), and
+  the route gained the two-boundary rule it exists for: `turn.*` settles a turn, `session.waiting`
+  parks the session and must never mint a `MappedTurnOutcome` — otherwise a turn settles twice and a
+  cancelled turn displays as completed. Also recorded the streaming-text-revises-one-item rule, the
+  by-name silence set, the envelope-`type` discriminator, and that eve has no native-history page so
+  `map_native_frame` fails closed. Body updated on Hot Path Summary, What Belongs Here, Load-Bearing
+  Files, File-Level Onboarding Map and Child Overviews. Verification metadata moves to the leaf's
+  synced base `ff97072c`; the candidate is deliberately uncommitted, so the governed closeout stamps
+  the real code commit and no hash or fingerprint was invented here.
 
 - 2026-08-28T14:15+02:00 — Closeout-stamped the already documented Claude structured-interaction,
   interrupt-correlation, and focused mutation-diff parsing changes against the landed candidate;

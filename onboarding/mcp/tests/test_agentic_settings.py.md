@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-16T13:26+02:00 |
+| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,16 @@ Two-layer agentic settings merge and authority-boundary tests.
 
 Local leaf overrides preserve global siblings; arrays replace and absent files expose defaults. Retained refusals name malformed settings paths, reject local gate delegation, human-pinned delegation and executor authority in agentic settings. Role overrides inherit flat defaults; harness references resolve against the effective merged registry.
 
+Two harness-vocabulary contracts are pinned the same way the source states them:
+
+- `test_new_id_adds_a_harness_with_defaults_derived` reads the expected builtin id prefix from
+  `HARNESSES` instead of transcribing `["claude", "codex", "pi"]`, so adding a builtin row cannot
+  silently pass an ordering check.
+- `test_a_builtin_override_keeps_its_runtime_readiness_probe` asserts that overriding a builtin's launch
+  mapping preserves its readiness probe — eve is detected through a runtime probe, not a PATH lookup, and
+  an override must not downgrade that — while a settings-defined id (hermes) declares no probe to
+  inherit.
+
 ### Conventions
 
 This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
@@ -31,6 +41,9 @@ This card describes the retained source at IAS `d3610903`. Historical entries be
 ### Invariants And Boundaries
 
 Executor selection is not an agentic-settings option. The remaining tests do not establish the removed unknown-key, free-form knob or effort-policy matrices.
+
+**A builtin's readiness probe survives an override and a new id has none.** The override case asserts
+both halves, so a merge change that drops the probe fails here rather than in production detection.
 
 ### Todos
 
@@ -46,21 +59,28 @@ No Domain Documentation entries are configured in this memory root. These are re
 
 ## Repo-Internal References
 
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The curated table the order assertion derives its expected prefix from, and the probe-carry merge the override case pins. | `HARNESSES`; `_merged_harness` | mcp/src/agents_remember/kernel/harnesses.py:187-212; mcp/src/agents_remember/kernel/_agentic_settings_harness.py:133-182 |
+| The two harness-vocabulary cases this change set touched. | `test_new_id_adds_a_harness_with_defaults_derived`; `test_a_builtin_override_keeps_its_runtime_readiness_probe` | mcp/tests/test_agentic_settings.py:268-278; mcp/tests/test_agentic_settings.py:280-294 |
+
+## Repo-Internal References
+
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Local leaf overrides global leaf and siblings survive. | `test_local_leaf_overrides_global_leaf_and_siblings_survive` | mcp/tests/test_agentic_settings.py:51-86 |
-| Arrays replace never concatenate. | `test_arrays_replace_never_concatenate` | mcp/tests/test_agentic_settings.py:88-94 |
-| Absent files mean documented defaults. | `test_absent_files_mean_documented_defaults` | mcp/tests/test_agentic_settings.py:96-116 |
-| Local gate delegation is refused global layer only. | `test_local_gate_delegation_is_refused_global_layer_only` | mcp/tests/test_agentic_settings.py:131-146 |
-| Malformed json fails loud with path. | `test_malformed_json_fails_loud_with_path` | mcp/tests/test_agentic_settings.py:148-157 |
-| Human pinned gate kind cannot be delegated. | `test_human_pinned_gate_kind_cannot_be_delegated` | mcp/tests/test_agentic_settings.py:192-194 |
-| Level override deep merges over the flat default. | `test_level_override_deep_merges_over_the_flat_default` | mcp/tests/test_agentic_settings.py:224-240 |
-| New id adds a harness with defaults derived. | `test_new_id_adds_a_harness_with_defaults_derived` | mcp/tests/test_agentic_settings.py:267-275 |
-| Cross layer reference and partial override merge. | `test_cross_layer_reference_and_partial_override_merge` | mcp/tests/test_agentic_settings.py:277-290 |
-| Reference to an id known nowhere fails naming the manual. | `test_reference_to_an_id_known_nowhere_fails_naming_the_manual` | mcp/tests/test_agentic_settings.py:292-294 |
-| Executor authority is not accepted in agentic settings. | `test_executor_authority_is_not_accepted_in_agentic_settings` | mcp/tests/test_agentic_settings.py:309-317 |
+| Local leaf overrides global leaf and siblings survive. | `test_local_leaf_overrides_global_leaf_and_siblings_survive` | mcp/tests/test_agentic_settings.py:52-87 |
+| Arrays replace never concatenate. | `test_arrays_replace_never_concatenate` | mcp/tests/test_agentic_settings.py:89-95 |
+| Absent files mean documented defaults. | `test_absent_files_mean_documented_defaults` | mcp/tests/test_agentic_settings.py:97-117 |
+| Local gate delegation is refused global layer only. | `test_local_gate_delegation_is_refused_global_layer_only` | mcp/tests/test_agentic_settings.py:132-147 |
+| Malformed json fails loud with path. | `test_malformed_json_fails_loud_with_path` | mcp/tests/test_agentic_settings.py:149-158 |
+| Human pinned gate kind cannot be delegated. | `test_human_pinned_gate_kind_cannot_be_delegated` | mcp/tests/test_agentic_settings.py:193-195 |
+| Level override deep merges over the flat default. | `test_level_override_deep_merges_over_the_flat_default` | mcp/tests/test_agentic_settings.py:225-241 |
+| New id adds a harness with defaults derived. | `test_new_id_adds_a_harness_with_defaults_derived` | mcp/tests/test_agentic_settings.py:268-278 |
+| Cross layer reference and partial override merge. | `test_cross_layer_reference_and_partial_override_merge` | mcp/tests/test_agentic_settings.py:296-309 |
+| Reference to an id known nowhere fails naming the manual. | `test_reference_to_an_id_known_nowhere_fails_naming_the_manual` | mcp/tests/test_agentic_settings.py:311-313 |
+| Executor authority is not accepted in agentic settings. | `test_executor_authority_is_not_accepted_in_agentic_settings` | mcp/tests/test_agentic_settings.py:328-336 |
 
 ## Cross-Repo References
 
@@ -71,6 +91,19 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+- 2026-09-16T11:43:21+00:00: Generated citation repair: `test_cross_layer_reference_and_partial_override_merge` repointed to mcp/tests/test_agentic_settings.py:296-309. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T11:43:21+00:00: Generated citation repair: `test_reference_to_an_id_known_nowhere_fails_naming_the_manual` repointed to mcp/tests/test_agentic_settings.py:311-313. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T11:43:21+00:00: Generated citation repair: `test_executor_authority_is_not_accepted_in_agentic_settings` repointed to mcp/tests/test_agentic_settings.py:328-336. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: two settings-vocabulary contracts are now pinned.
+  `test_new_id_adds_a_harness_with_defaults_derived` no longer transcribes the builtin id order — it
+  reads the expected prefix from `HARNESSES`, so a silent reorder of the curated table cannot pass.
+  New `test_a_builtin_override_keeps_its_runtime_readiness_probe` asserts that overriding a builtin's
+  launch mapping preserves its readiness probe (an override must not downgrade a runtime-probed
+  harness back to `which` over a command that was never a PATH program), and that a settings-defined
+  id declares no probe to inherit. Body updated on Logic; verification metadata moves to the leaf's
+  synced base `ff97072c`. The candidate is deliberately uncommitted, so the governed closeout stamps
+  the real code commit and no hash or fingerprint was invented here.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `test_human_pinned_gate_kind_cannot_be_delegated` repointed to mcp/tests/test_agentic_settings.py:192-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `test_level_override_deep_merges_over_the_flat_default` repointed to mcp/tests/test_agentic_settings.py:224-240. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `test_new_id_adds_a_harness_with_defaults_derived` repointed to mcp/tests/test_agentic_settings.py:267-275. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.

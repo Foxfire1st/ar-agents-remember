@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T22:06:54+00:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-16T13:26+02:00 |
+| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,9 +21,27 @@ launch mechanics remain plane-owned behind structural dispatch.
 
 ## Code Commentary
 
-The catalog batch spans the complete read, liveness probe, ensure and upsert transaction. A live row returns through `_live_open_result` before any spawn path; its launch provenance cannot be rewritten by reopen. A dead replacement builds a new catalog entry with fresh process control metadata instead of retaining the departed process's session observations. Role/altitude and occupied-seat refusals occur before `host.ensure`. Dashboard and structural dispatch share this opener. cit:([`open_terminal_session`; `_open_terminal_transaction`; `_opened_catalog_entry`], mcp/src/agents_remember/serving/terminal_opener.py:742-795; mcp/src/agents_remember/serving/terminal_opener.py:619-708; mcp/src/agents_remember/serving/terminal_opener.py:525-590).
+The catalog batch spans the complete read, liveness probe, ensure and upsert transaction. A live row returns through `_live_open_result` before any spawn path; its launch provenance cannot be rewritten by reopen. A dead replacement builds a new catalog entry with fresh process control metadata instead of retaining the departed process's session observations. Role/altitude and occupied-seat refusals occur before `host.ensure`. Dashboard and structural dispatch share this opener, and since the eve product-integration change set they ask it **two different launchability questions** through one request field.
 
 ### Logic
+
+**Two questions, one field.** `TerminalLaunchRequest.session_backend` (145) states which question the
+caller is asking, and `_require_launchable_harness` (299) answers it:
+
+- **A terminal OPEN** (the default, `session_backend=False`) execs `argv[0]`, so what it needs is a
+  program that **exists**. It consults `terminal_launch_detail` and refuses by name when the harness is
+  detected but has no program to launch — which is exactly eve's case. The dashboard's terminal-open
+  route deliberately does not set the field, so opening eve as a terminal refuses instead of silently
+  resolving to an impossible command.
+- **A session BACKEND spawn** (`session_backend=True`, set by the seat-spawning caller in
+  `application/terminal_tools.py`) starts the control runner, which owns the harness's own runtime; the
+  harness `argv` is data the runner carries to its adapter. The question there is detection: the
+  runtime has to be *startable*, not be a PATH program — so it consults `is_detected`.
+
+A harness kind always runs behind the control runner, so for a PATH TUI the two questions coincide;
+they diverge only for a harness whose runtime is an application. Answering both with detection alone is
+what let a detected eve row resolve to an argv whose program exists nowhere — a false affordance rather
+than a launch.
 
 `open_terminal_session` validates launch and task binding, refuses an occupied singular seat, creates
 the catalog row, and starts the hosted process. The opener scrubs inherited daemon identity before
@@ -58,6 +76,9 @@ or through an operator API boundary.
 - Reopening never mutates a live occupant's launch provenance.
 - Reviewer parent document and role are supplied together, altitude-valid, and bound to one
   process generation; other structural roles cannot carry that pair.
+- **Detection is not launchability for a terminal open.** A harness whose runtime is an application is
+  detected and still must refuse this path by name; only a caller that states
+  `session_backend=True` may resolve it, because that caller spawns the runner rather than the harness.
 - This module allocates occupants; it does not define public seat addresses.
 
 ### Todos
@@ -72,12 +93,16 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:437-475 |
-| Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:578-602 |
-| Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:742-795 |
-| Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:160-179 |
-| The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:519-575 |
-| Structural admission consumes the shared task-binding authority before process creation. | `_task_binding_refusal` | mcp/src/agents_remember/serving/terminal_opener.py:711-739 |
+| Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:484-503 |
+| Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:628-651 |
+| The request field that states which launchability question a caller is asking. | `TerminalLaunchRequest`; `session_backend` | mcp/src/agents_remember/serving/terminal_opener.py:125-174 |
+| The two branches: terminal open asks for an existing program, session backend asks for a startable runtime. | `_require_launchable_harness`; `terminal_launch_detail`; `is_detected`; `harness_detection_detail` | mcp/src/agents_remember/serving/terminal_opener.py:299-319; mcp/src/agents_remember/serving/harnesses.py:93-107; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
+| The seat-spawning caller that sets `session_backend=True`. | `_spawn_launch_request` | mcp/src/agents_remember/application/terminal_tools.py:732-766 |
+| The cases: a terminal open of eve refuses by name and yields no argv, a session-backend spawn still resolves, and the path harnesses are unaffected in both modes. | `EveTerminalLaunchTests` | mcp/tests/test_eve_product_integration.py:632-707 |
+| Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:777-830 |
+| Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:177-198 |
+| The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:560-625 |
+| Structural admission consumes the shared task-binding authority before process creation. | `_task_binding_refusal` | mcp/src/agents_remember/serving/terminal_opener.py:746-774 |
 
 ## Cross-Repo References
 
@@ -91,6 +116,21 @@ unavailable lineage returns a typed `OpenTerminalResult` with detail and the
 strict projection; non-structural terminals retain their existing path.
 
 ## Update History
+- 2026-09-16T11:42:31+00:00: Generated citation repair: `_scrub_daemon_identity_env` repointed to mcp/src/agents_remember/serving/terminal_opener.py:484-503. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T11:42:31+00:00: Generated citation repair: `_task_binding_refusal` repointed to mcp/src/agents_remember/serving/terminal_opener.py:746-774. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **detection is not launchability, and the opener now
+  asks the right question for its caller.** Added `TerminalLaunchRequest.session_backend` and the
+  `_require_launchable_harness` split it drives: a terminal OPEN execs `argv[0]` and so needs a program
+  that exists (`terminal_launch_detail`), while a session BACKEND spawn starts the control runner, which
+  owns the harness's runtime, and so needs only detection (`is_detected`). The two questions coincide
+  for a PATH TUI and diverge for a harness whose runtime is an application — which is exactly eve, where
+  the old detection-only check resolved to an argv whose program exists nowhere. The inline `cit:(…)`
+  prose citation in the Purpose section was converted to a reference row in the required
+  `Finding | Anchor | Source` shape, and the Logic section rewritten around the two branches. Reference
+  table extended with the field, both branches, the seat-spawning caller and the cases. Verification
+  metadata moves to the leaf's synced base `ff97072c`; the candidate is deliberately uncommitted, so the
+  governed closeout stamps the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 - 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair removed the opener-local binding and

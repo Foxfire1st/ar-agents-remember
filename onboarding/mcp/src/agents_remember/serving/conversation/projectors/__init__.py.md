@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-09-16T13:26+02:00 |
+| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f`|
+| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,20 +25,23 @@ session factory consumes.
 
 ### Logic
 
-cit:([`HarnessProjector`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:24-52) is a `Protocol` with four channel flags — `harness_id`,
-`uses_native_pages`, `uses_transcript_echo`, `eager_native_continuation` — and three mapping
-entry points (`map_native_frame`, `map_evidence_frame`, `map_transcript_echo`).
-cit:(["def map_evidence_frame("], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:39-45) also takes the optional keyword
-  `parent_thread_id`: the multiplexed-harness demux context (the parent thread's vendor id) that
-lets codex/claude mappers route a frame to its sub-agent thread; harnesses without sub-agent
-threads (pi) accept and ignore it. cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:46-46) Three private adapter classes bind the module-level mapper
-functions and declare each harness's
+`HarnessProjector` is a `Protocol` with four channel flags — `harness_id`, `uses_native_pages`,
+`uses_transcript_echo`, `eager_native_continuation` — and three mapping entry points
+(`map_native_frame`, `map_evidence_frame`, `map_transcript_echo`). `map_evidence_frame` also takes the
+optional keyword `parent_thread_id`: the multiplexed-harness demux context (the parent thread's vendor
+id) that lets codex/claude mappers route a frame to its sub-agent thread; harnesses without sub-agent
+threads (pi, and eve) accept and ignore it.
+
+**Four** private adapter classes bind the module-level mapper functions and declare each harness's
 honest channel set: codex pages native threads with lazy continuation and no echo; claude is
-stream/replay-only (its `map_native_frame` raises `NotImplementedError`) and consumes the
-submission echo; pi pages durable entries with eager native continuation so live items always
-carry native identity. cit:([`_CodexProjector`, `_ClaudeProjector`, `_PiProjector`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:55-72; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:75-90; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:93-110) cit:([`PROJECTORS`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:113-117) maps harness id to the bound projector;
-cit:([`projector_for`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:122-123) returns `None` for harnesses without a projector so the factory
-  fails closed typed.
+stream/replay-only (its `map_native_frame` raises `NotImplementedError`) and consumes the submission
+echo; pi pages durable entries with eager native continuation so live items always carry native
+identity; and — since the eve product-integration change set — `_EveProjector` declares the **durable
+stream as its only evidence surface**, setting `uses_native_pages = False`,
+`uses_transcript_echo = False` and `eager_native_continuation = False`, so both other channels fail
+closed for a harness that carries neither. `PROJECTORS` maps harness id to the bound projector — now
+including `"eve"`, which is what makes "every registered harness id has a projector" true — and
+`projector_for` returns `None` for harnesses without a projector so the factory fails closed typed.
 
 ### Conventions
 
@@ -78,12 +81,16 @@ harnesses through `projector_for`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine's native ingest reads all three channel flags: `uses_native_pages` seeds `native_complete` and gates the dirty-tip refresh, `uses_transcript_echo` arms the echo-zipper eviction guard and diverts frames to the echo buffer, and `eager_native_continuation` picks lazy tip-refresh vs the eager continuation poll. | `NativeEvidenceIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:44-268 |
-| The echo projector applies the transcript-echo channel flag. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:35-187 |
-| The child-history projector applies the native-pages channel flag. | `ChildHistoryProjection` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:25-173 |
-| The rebuild coordinator applies the native-pages channel flag for parent-history re-derivation. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
-| The session factory resolves the per-harness projector and fails closed when none exists. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:79-105 |
-| Mapper output types the protocol's entry points return are defined in the shared module. | `MappedItem` | mcp/src/agents_remember/serving/conversation/projectors/common.py:56-60 |
+| The engine's native ingest reads all three channel flags: `uses_native_pages` seeds `native_complete` and gates the dirty-tip refresh, `uses_transcript_echo` arms the echo-zipper eviction guard and diverts frames to the echo buffer, and `eager_native_continuation` picks lazy tip-refresh vs the eager continuation poll. | `NativeEvidenceIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:45-304 |
+| The echo projector applies the transcript-echo channel flag. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:37-189 |
+| The child-history projector applies the native-pages channel flag. | `ChildHistoryProjection` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:27-175 |
+| The rebuild coordinator applies the native-pages channel flag for parent-history re-derivation. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:67-196 |
+| The session factory resolves the per-harness projector and fails closed when none exists. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:82-108 |
+| Mapper output types the protocol's entry points return are defined in the shared module. | `MappedItem` | mcp/src/agents_remember/serving/conversation/projectors/common.py:58-62 |
+| The eve projector bound here, and the three flags that make the durable stream its only evidence surface. | `_EveProjector`; `uses_native_pages`; `uses_transcript_echo`; `eager_native_continuation` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:115-125 |
+| The per-harness mapper module the registration binds. | `map_evidence_frame`; `map_native_frame`; `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:147-159; mcp/src/agents_remember/serving/conversation/projectors/eve.py:347-351; mcp/src/agents_remember/serving/conversation/projectors/eve.py:354-362 |
+| The harness union a registered projector's `harness_id` is typed with, widened so eve could register. | `HarnessId` | mcp/src/agents_remember/models/conversations/identity.py:10-10 |
+| The cases: every registered harness id has a projector, and the eve projector declares stream-only evidence. | `test_every_registered_harness_id_has_a_projector`; `test_the_eve_projector_declares_stream_only_evidence` | mcp/tests/test_eve_product_integration.py:1109-1112; mcp/tests/test_eve_product_integration.py:1114-1120 |
 
 ## Cross-Repo References
 
@@ -95,6 +102,14 @@ No cross-repository implementation participates in this registry.
 
 ## Update History
 
+- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: registered the eve projector. `_EveProjector` joins
+  the `PROJECTORS` map under the `eve` harness id, so every registered harness id now resolves a
+  projector and the engine reaches eve without a special case. The class declares the durable stream as
+  its only evidence surface (`uses_native_pages = False`, `uses_transcript_echo = False`,
+  `eager_native_continuation = False`), so both other channels fail closed for a harness that carries
+  neither. Body updated on Logic and the reference table. Verification metadata moves to the leaf's
+  synced base `ff97072c`; the candidate is deliberately uncommitted, so the governed closeout stamps the
+  real code commit and no hash or fingerprint was invented here.
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 6 repository-reference citations (6/6 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the channel-flag citation, broken when

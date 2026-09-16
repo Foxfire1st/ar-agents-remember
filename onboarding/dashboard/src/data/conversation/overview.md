@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/conversation/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f`       |
+| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
