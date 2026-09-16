@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
-| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../overview.md`                  |
 
@@ -108,7 +108,7 @@ route whose entire contract is about *what an agent seat is given*, so its readi
 stating once.
 
 The package reads in six steps, and each step is one module: `vocabulary.py` declares the frozen
-nine roles/eight operations and the four composition roots; `manifest.py` parses the canonical
+ten roles/nine operations and the four composition roots; `manifest.py` parses the canonical
 authored `composition-manifest.json` into typed entries **without touching the filesystem**;
 `selection.py` turns an admitted binding into a scope by exact membership (no scoring, no
 nearest-match, no fallback operation); `source_set.py` proves the admitted files agree with the
@@ -116,6 +116,12 @@ locked plan **in both directions**; `resolution.py` reduces each identity to exa
 collapsing byte-identical duplicates and stopping on an equal-authority contradiction;
 `tools.py` narrows requested tool identities against the admitted policy snapshot; and
 `compiler.py` seals the result with the semantic digest and the diagnostic manifest.
+
+`models/memory_content_excludes.py` is the route's second 260915-CAPS-L13 addition and is a
+different kind of module: not a capsule DTO but the **shared memory-content exclusion policy** —
+`memory.md` (the computed ledger cache) and `bootstrap/` (transient scaffolding) declared once for
+all four seams that create a memory-content commit. It lives in `models` because that is the lowest
+layer every producing seam can read.
 
 Three separations are load-bearing and easy to collapse by accident:
 
@@ -137,8 +143,8 @@ The semantic digest is a `\t`-separated canonical document over the seat, operat
 work branch, task reference and document digest, requirement identities, the specializations
 **actually composed**, one line per composed block with its revision, one line per requested tool id
 in sorted order, one `skill` line per carried reference, and the task context when supplied. Order is
-part of identity, not presentation over it. Nine shipped roles compile from disk twice to one digest
-each and to nine different digests, so the digest is neither a constant nor order-insensitive.
+part of identity, not presentation over it. Ten shipped roles compile from disk twice to one digest
+each and to ten different digests, so the digest is neither a constant nor order-insensitive.
 
 `layers.toml` places this package in `models` (rank 2) precisely because it holds only
 dependency-free value types, canonical source parsing, and selection logic. The contract's declared
@@ -783,6 +789,14 @@ route (`registration/skills_extension.py`), which is the correct direction for t
 
 ## Update History
 
+- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **route body corrected for the two modules this
+  leaf added to this route** (`CAPS-R13@v1`). In the role-capsule sub-route the frozen vocabulary is
+  now **ten roles / nine operations** (was stated as nine/eight) and the shipped determinism property
+  is **ten shipped roles compiling to ten different digests** (was nine to nine); both are the
+  registry extension this leaf made in `vocabulary.py`. Added `models/memory_content_excludes.py` to
+  the route section as what it is — the shared memory-content exclusion policy (`memory.md`,
+  `bootstrap/`) rather than another capsule DTO — with the reason it sits in `models`: that is the
+  lowest layer all four producing seams can read. No other claim on this route changed.
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
   `ar/260915-caps-l4`, base `b00a4ac2`): refreshed this route section against the settled candidate.
   `skill_resources.py` now owns the **SEP-2640 entry shape** (`{uri, frontmatter, resources:[{uri,digest,size}]}`)

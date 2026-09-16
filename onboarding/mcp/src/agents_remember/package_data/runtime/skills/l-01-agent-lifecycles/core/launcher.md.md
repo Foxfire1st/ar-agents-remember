@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/launcher.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | governingOverview      | `../../../../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 The **ambient launcher** block: routing condition 3's own obligations, authored here so the role
-registry stays exactly nine roles and no file under `roles/` describes this mode.
+registry holds only real roles and no file under `roles/` describes this mode.
 
 ## Code Commentary
 
@@ -39,12 +39,12 @@ blocker when the altitude cannot be matched.
 `## What the launcher must not do` is the prohibition list — no role or hat, no session/lifecycle/agent
 id, no fabricated caller identity, no spend knobs in the brief, no local work after a durable dispatch
 result. `## Why it is authored here rather than in roles/` records the structural reason: a reader
-enumerating `roles/` sees exactly the nine seats.
+enumerating `roles/` sees exactly the seats that are roles, and the launcher is not one of them.
 
 ### Conventions
 
 Keep this block free of any seat identity: it describes a routing condition, and adding it to `roles/`
-would silently create a tenth role.
+would silently create a role that does not exist.
 
 ### Invariants And Boundaries
 
@@ -52,7 +52,10 @@ would silently create a tenth role.
 - Exactly one `dispatch_agent` call; `dispatched` and `dispatch-queued` are both durable.
 - The launcher never submits caller identity and never handles a session id.
 - A plane refusal never falls back to ambient.
-- The role registry stays at nine roles; the launcher has no entry under `roles/`.
+- The role registry holds exactly the roles the corpus publishes and the launcher has no entry under
+  `roles/`. Since 260915-CAPS-L13 that registry is **ten** roles — the ninth seat plus the
+  `bootstrap` free agent — and this block's reason for existing is unchanged by that addition: the
+  launcher is a routing condition, not an eleventh member.
 
 ### Todos
 
@@ -63,26 +66,43 @@ None recorded.
 No external or domain documentation governs this repository-local instruction file; it is canonical
 repository prose consumed by the skill router.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| The one-call contract for ordinary role-shaped work. | `## Ordinary role-shaped work — the one call` | skills/l-01-agent-lifecycles/core/launcher.md:20-43 |
-| The bounded task-seat-takeover exception. | `## Task-seat takeover — the bounded exception` | skills/l-01-agent-lifecycles/core/launcher.md:45-56 |
-| The launcher's prohibition list. | `## What the launcher must not do` | skills/l-01-agent-lifecycles/core/launcher.md:58-65 |
-| The manifest declares the launcher a non-role with this instruction source. | `"is_role": false`; `"instruction_source": "core/launcher.md"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1 |
-| The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition. | `test_manifest_resolves_every_role_and_operation_source` | mcp/tests/test_role_instruction_corpus.py:199-225 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| What the launcher is, and the ruling that it is a launcher rather than a role seat. | `## What it is` | skills/l-01-agent-lifecycles/core/launcher.md:8-19 |
+| The one-call contract for ordinary role-shaped work. | `## Ordinary role-shaped work — the one call` | skills/l-01-agent-lifecycles/core/launcher.md:20-40 |
+| The bounded task-seat-takeover exception. | `## Task-seat takeover — the bounded exception` | skills/l-01-agent-lifecycles/core/launcher.md:41-51 |
+| The launcher's prohibition list. | `## What the launcher must not do` | skills/l-01-agent-lifecycles/core/launcher.md:52-60 |
+| The structural reason this block is authored outside `roles/`. | `## Why it is authored here rather than in `roles/`` | skills/l-01-agent-lifecycles/core/launcher.md:61-66 |
+| The manifest declares the launcher a non-role with this instruction source. | `"is_role": false`; `"instruction_source": "core/launcher.md"` | skills/l-01-agent-lifecycles/composition-manifest.json:486-503 |
+| The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition. | `test_manifest_resolves_every_role_and_operation_source` | mcp/tests/test_role_instruction_corpus.py:248-300 |
 
 ## Cross-Repo References
 
 No sibling-repository contract defines this instruction file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body corrected for the corpus's tenth role**
+  (`CAPS-R13@v1`). The Purpose said the block is authored here "so the role registry stays exactly nine
+  roles", and the Invariants said "the role registry stays at nine roles" — both are stale: the
+  registry is now ten, and this block's reason for existing is that the launcher is not a member of it,
+  not that the count is nine. The Conventions sentence ("would silently create a tenth role") was
+  corrected to "a role that does not exist" for the same reason. **The Repo-Internal section had lost
+  its `| Finding | Anchor | Source |` header row**, so its rows rendered as prose; the header and
+  delimiter are restored, the four section ranges were re-derived against the 66-line block (they were
+  measured against an older revision and began at L20, which is the second heading rather than the
+  first), and two stale citations were repaired — the manifest row cited `:1-1` for a `launcher` block
+  that lives at `:486-503`, and the corpus-test row cited `:199-225` for a case that now starts at
+  `:248`. Verification metadata is left at the leaf base commit because the source is uncommitted —
+  the governed closeout stamps the real code commit.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for `skills/l-01-agent-lifecycles/core/launcher.md` — a file added by the role-instruction corpus consolidation. The canonical source is a shared core block composed into every role capsule (launcher).; the packaged copy is produced by `scripts/sync-skills.py` and is not hand-edited. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.

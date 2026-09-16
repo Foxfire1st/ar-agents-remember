@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/task_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
+| lastVerifiedCommitDate |  2026-09-16T20:47:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

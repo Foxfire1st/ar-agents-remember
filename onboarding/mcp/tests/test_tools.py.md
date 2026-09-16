@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash | `9bef02374f7dc80b7bddceef5a9e08651169fd7d` |
-| lastVerifiedCommitDate | 2026-09-15T13:35:34+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

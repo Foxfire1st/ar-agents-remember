@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_role_capsule_admission.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

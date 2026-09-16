@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-22T10:39+02:00                     |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2`
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5`
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview

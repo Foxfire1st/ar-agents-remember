@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/mcp/registration/capsule_serving.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
-| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l4` uncommitted source; base `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
 | governingOverview | `overview.md` |
 

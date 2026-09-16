@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3`|
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5`|
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -21,11 +21,11 @@ Packaged runtime copy of the consolidated lifecycle **router**. The canonical so
 and checks this artifact byte-for-byte for installed runtimes.
 
 The artifact's own boundary is load-bearing: **this file routes and does not carry doctrine.** It
-holds the three routing conditions, the nine-role registry, the composition map, and the diagnostic
+holds the three routing conditions, the ten-role registry, the composition map, and the diagnostic
 pointer sections; every doctrine rule now lives in exactly one other file — `core/` (shared, authored
-once), `roles/<role>.md` (one self-contained lifecycle per seat), `operations/` (the eight
+once), `roles/<role>.md` (one self-contained lifecycle per seat), `operations/` (the nine
 operation-scoped procedures), `composition-manifest.json` (routing metadata, no prose), and
-`reference/` (rationale, provenance, superseded rulings). At 179 lines it is the thin router the
+`reference/` (rationale, provenance, superseded rulings). At 180 lines it is the thin router the
 consolidation requires, down from the 620-line spine that used to double as the doctrine home.
 
 ## Code Commentary
@@ -35,7 +35,10 @@ consolidation requires, down from the 620-line spine that used to double as the 
 The router selects exactly one of three conditions, in order: plane-injected `AR_SPAWN_ROLE` →
 `roles/<value>.md`; a fresh session whose first message is a `templates/*-brief.md`-shaped role brief
 → that role's lifecycle; otherwise the developer-facing **ambient launcher**, which is routing
-condition 3 and deliberately not a tenth role (its own obligations are `core/launcher.md`).
+condition 3 and deliberately not a role (its own obligations are `core/launcher.md`). The registry
+row this leaf added is `bootstrap` — the new user's first-hour seat for one repository, reachable
+before any task document exists and stating so when it is not reachable; it is a **free agent**, so
+it is a registry member reached through condition 1, not a fourth condition.
 
 For ordinary role-shaped work the launcher compiles `templates/architect-brief.md` from current
 durable sprint truth and calls `dispatch_agent` once on the canonical sprint document; an explicit
@@ -54,7 +57,7 @@ spool-up decisions return to the developer (the propose-first strategist pass an
 
 The router's `## Composition Map` is the human-readable counterpart of `composition-manifest.json`:
 assembled order is **core → role → operation → explicitly admitted repository specialization**, task
-facts travel as a separate context channel, the operation vocabulary is frozen at eight names and an
+facts travel as a separate context channel, the operation vocabulary is frozen at nine names and an
 unknown operation is an explicit error, and composition invariants forbid truncating a required
 obligation to meet a size target.
 
@@ -76,8 +79,11 @@ this file keeps only the pointer.
 - This artifact must remain byte-identical to the canonical lifecycle SKILL.
 - The router carries no doctrine: every rule resolves through exactly one `core/`, `roles/`,
   `operations/`, or `reference/` file.
-- The role registry is exactly nine roles, and the ambient launcher stays routing condition 3 rather
-  than an invented tenth role.
+- The role registry is exactly ten roles, and the ambient launcher stays routing condition 3 rather
+  than an invented role. `bootstrap` is the tenth and is the only free agent among them: it is
+  reached through condition 1 and carries no task altitude, which is its shape rather than a gap.
+- `bootstrap` is not a fourth routing condition. The router still selects exactly one of three, and
+  a reader must not add a condition to make the free agent easier to reach.
 - No role is defined by reference to another role's lifecycle, and no role file sends its reader to a
   sibling's prose to learn its own obligations. A sanctioned sibling reference exists only for wearing
   that hat or dispatching that seat, and `mcp/tests/test_role_instruction_corpus.py` fails on any
@@ -110,11 +116,12 @@ No external domain documentation is configured for this repository-local lifecyc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged source carries the launcher, approval-gated strategist, and parallel-by-default invariants as pointers, not as doctrine. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:24-86 |
-| The router declares its own boundary — it routes, and every rule lives in exactly one other file — and names the nine-role registry plus the ambient launcher as a routing condition rather than a tenth role. | "**This file routes. It does not carry doctrine.**"; `## Composition Map (how a capsule is assembled)`; `Exactly nine roles.` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:8-22; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:88-109 |
-| Doctrine moved out of the router: shared rules to `core/`, procedures to `operations/`, rationale and superseded rulings to `reference/`, and routing metadata to the prose-free manifest. | `## Companion Files`; `## settings.json Orchestration Block` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:125-142; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:161-173 |
-| The enabled corpus stays self-contained: the shipped check fails on a role that leaks a sibling's duties, on a manifest that names a missing source, and on any relative path the corpus cites that does not resolve. | `SANCTIONED_SIBLING_REFERENCES`; `test_every_role_source_carries_the_readable_order_and_knob_block`; `test_manifest_reports_a_missing_source_instead_of_accepting_it`; `test_every_relative_path_the_corpus_cites_resolves` | mcp/tests/test_role_instruction_corpus.py:84-89; mcp/tests/test_role_instruction_corpus.py:227-227; mcp/tests/test_role_instruction_corpus.py:291-291; mcp/tests/test_role_instruction_corpus.py:332-332 |
-| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `TARGETS`; `sync_target`; `check_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-43; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
+| The packaged source carries the launcher, approval-gated strategist, and parallel-by-default invariants as pointers, not as doctrine. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:24-24; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:67-67 |
+| The router declares its own boundary — it routes, and every rule lives in exactly one other file — and names the ten-role registry plus the ambient launcher as a routing condition rather than an invented role. | `This file routes. It does not carry doctrine.`; `## Composition Map (how a capsule is assembled)`; `Exactly ten roles.` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:13-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:89-89; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:82-82 |
+| The tenth registry row this leaf added, and the reachability sentence it carries. | **bootstrap** | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:26-26 |
+| Doctrine moved out of the router: shared rules to `core/`, procedures to `operations/`, rationale and superseded rulings to `reference/`, and routing metadata to the prose-free manifest. | `## Companion Files`; `## settings.json Orchestration Block` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:126-144; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:162-175 |
+| The enabled corpus stays self-contained: the shipped check fails on a role that leaks a sibling's duties, on a manifest that names a missing source, and on any relative path the corpus cites that does not resolve. | `SANCTIONED_SIBLING_REFERENCES`; `test_every_role_source_carries_the_readable_order_and_knob_block`; `test_manifest_reports_a_missing_source_instead_of_accepting_it`; `test_every_relative_path_the_corpus_cites_resolves` | mcp/tests/test_role_instruction_corpus.py:107-116; mcp/tests/test_role_instruction_corpus.py:404-466; mcp/tests/test_role_instruction_corpus.py:468-507; mcp/tests/test_role_instruction_corpus.py:509-532 |
+| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `TARGETS`; `sync_target`; `check_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-55; scripts/sync-skills.py:136-177; scripts/sync-skills.py:179-191 |
 
 ## Cross-Repo References
 
@@ -226,6 +233,18 @@ the old router body, the citation was rebased to the new home or dropped as supe
 
 ## Update History
 
+- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the tenth role this leaf added**
+  (`CAPS-R13@v1`). The registry is now ten roles and nine operations: the Purpose's registry and
+  operation counts, the Logic's launcher sentence ("not a tenth role" → "not a role") and the frozen
+  operation-vocabulary count, and the Invariants' registry count were all updated, and the new
+  `bootstrap` row is recorded — the new user's first-hour seat for one repository, reachable before
+  any task document exists, and a **free agent** rather than a fourth routing condition. Added the
+  invariant that `bootstrap` must not become a fourth condition and that its absent task altitude is
+  its shape. Every Repo-Internal range was re-derived against the 180-line router (the previous ranges
+  were measured against the 179-line pre-extension file, and the `Exactly nine roles.` anchor no longer
+  existed at all — it now reads `Exactly ten roles.`), which also cleared this card's
+  `citation_anchor_absent_from_range` family. Verification metadata is left at the leaf base commit
+  because the source is uncommitted — the governed closeout stamps the real code commit.
 - 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: **governing-link repair, and a correction of the L1 entry below.** This card's `governingOverview` and its `## Governing Overview` link had been changed by 260915-CAPS-L1 from `../../../../../../overview.md` (six steps) to `../../../../../overview.md` (five), reasoning that the shorter path reached the nearest route-local overview. Both paths were tested against the filesystem on this pass and the reasoning is inverted: `onboarding/mcp/src/agents_remember/package_data/runtime/` is the directory that exists — the `skills/` segment does not — so this card's directory is **five** real levels below `onboarding/`, and the six-step path resolves to `onboarding/mcp/overview.md`, which is exactly what the link text names. The five-step path resolves to `onboarding/mcp/src/overview.md`, which does not exist. Metadata field and link are both corrected back to `../../../../../../overview.md`. Found while creating this leaf's cards for the same `l-01-agent-lifecycles` directory, whose governing links carried the identical defect. No body content changed and no verification stamp advanced — the source is uncommitted, so the stamp stays closeout-owned.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body rewritten for the corpus consolidation.**
