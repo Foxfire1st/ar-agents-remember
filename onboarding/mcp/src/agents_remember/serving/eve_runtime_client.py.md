@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/eve_runtime_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,10 +26,19 @@ durable eve session.
 ### Logic
 
 `EveRuntimeTransport` is the narrow native seam (`start`, `health`, `create_session`, `send_message`,
-`send_input_responses`, `cancel_turn`, `stream`, `stop`). It exists so a deterministic test transport
-can replace **the real HTTP client only**: the adapter, the event mapper, the cursor arithmetic and
-the event translation stay production code under test. `EveRuntimeProcess` is the production
-implementation of that seam.
+`send_input_responses`, `cancel_turn`, `compact_session`, `clear_session`, `stream`, `stop`). It exists
+so a deterministic test transport can replace **the real HTTP client only**: the adapter, the event
+mapper, the cursor arithmetic and the event translation stay production code under test.
+`EveRuntimeProcess` is the production implementation of that seam.
+
+`compact_session` (242) and `clear_session` (257) post eve's two ID-addressed session controls. Both
+send **no body at all** — `session_control_body()` (91) returns `None` and documents why: the routes are
+ID-addressed and accept no continuation token or options, and the documented `curl` form sends no body,
+so sending one is not merely redundant but refusable by a strict schema. They exist because the
+trusted-instruction survival claim needs them: compaction may summarize user-role history while
+system-role instructions stay outside it, and clear removes the model-message history **without**
+rerunning instruction definitions or resolvers — so only a system-role instruction can still govern the
+call after a clear.
 
 `start` launches `node_modules/eve/bin/eve.js dev --no-ui` with the resolved node executable, the
 composed environment, and the resolved root as `cwd`; it refuses when the entrypoint is missing, and
@@ -75,6 +84,11 @@ transport error becomes a `HarnessAdapterDisconnectedError` with `may_have_sent=
   this with an unbounded chunked read reproduces that stall; the events are already durable, so a
   reconnect from the persisted absolute index loses nothing and duplicates nothing.
 - **Queued, explicitly.** No request this client sends leaves `turnPolicy` to eve's default.
+- **The session controls send no body.** `compact_session` and `clear_session` are ID-addressed routes
+  with no options and no continuation token; a body here would be a field the route does not declare.
+- **A cleared or compacted session does not rerun instruction resolvers.** This is why the mandatory
+  capsule is applied in the system role at the route gate rather than through a per-turn resolver that
+  a clear could drop.
 - `health()` requires eve's own ready payload. A successful process spawn is never readiness proof.
 - The client never derives session identity from anything but eve's response or its session-id
   header.
@@ -102,7 +116,9 @@ pass was available for this file.
 | Node resolution is owned by the launch module so the client never guesses an interpreter, and the caller's choice arrives on the launch it is handed. | `resolve_node_executable`; `EveRuntimeLaunch.node_executable` | mcp/src/agents_remember/serving/eve_runtime_launch.py:101-124; mcp/src/agents_remember/serving/eve_runtime_launch.py:406-453 |
 | The native fixture subclasses this client to trace traffic, which is why the route surface must stay observable and every sent body is recorded for assertion. | `TracingEveRuntime` | mcp/tests/live_eve_native_fixture.py:89-103; mcp/tests/live_eve_native_fixture.py:584-670 |
 | The deterministic conformance suites implement this seam and leave every other layer production. | `FakeEveRuntime` | mcp/tests/eve_adapter_test_support.py:74-278 |
-| The production client itself is driven through a mock transport to assert the exact bodies it sends, including the cancel turn id. | `EveWireRequestTests` | mcp/tests/test_eve_protocol.py:218-526 |
+| The two session controls this client gained, and why they matter to the trusted-instruction claim: clear does not rerun resolvers, compaction may summarize user-role history. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-101; mcp/src/agents_remember/serving/eve_runtime_client.py:242-268 |
+| The trusted instructions are applied in the system role so they survive turn boundaries, compaction and clear. | `ROLE_INSTRUCTION_CHANNEL`; `TASK_CONTEXT_CHANNEL` | mcp/src/agents_remember/models/eve_capsule_carrier.py:46-58 |
+| The cases that exercise the controls through this client's own seam. | `EveWireRequestTests` | mcp/tests/test_eve_protocol.py:218-526 |
 
 ## Cross-Repo References
 
@@ -111,6 +127,19 @@ pass was available for this file.
 | The session routes, the `x-eve-stream-*` headers and the `turnPolicy` vocabulary are the pinned published package's contract. | dependency pins | eve_runtime/package.json:14-20; eve_runtime/README.md:1-22 |
 
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the client gained eve's two session controls.**
+  `compact_session` and `clear_session` were added to the transport seam and its production
+  implementation, both posting through a new `session_control_body()` that sends **no body at all** —
+  the routes are ID-addressed and accept no continuation token or options, so a body would be a field
+  the route does not declare. They are recorded here because they carry the trusted-instruction
+  survival claim's boundary: compaction may summarize user-role history while system-role instructions
+  stay outside it, and clear removes the model-message history **without** rerunning instruction
+  definitions or resolvers — which is precisely why the mandatory capsule is applied at the route gate
+  in the system role rather than through a per-turn resolver a clear could drop. A new invariant records
+  that boundary. Verification metadata moves to the leaf's synced base `23cc7a72`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the request bodies moved into named
   builders and the **follow-up now spells the queued policy too**. `create_session_body` and

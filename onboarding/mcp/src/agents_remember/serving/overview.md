@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -1051,7 +1051,67 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | The shared naming primitive appends the same physical lock suffix. | `lock_path_for` | mcp/src/agents_remember/kernel/file_lock.py:36-38 |
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
+## 260915-CAPS-L7 The Eve Capsule Launch Proof
+
+The eve adapter's route now **proves** the capsule binding it carries, before a process exists. This is
+a route-meaning change for `eve_runtime_launch.py`: it was a pass-through for the binding's environment
+values and is now an all-or-nothing admission gate.
+
+- **`verify_capsule_binding` runs first in `resolve_runtime_spec`** — ahead of staging an application
+  root or reserving a port — so a launch that cannot be bound correctly is never given a model. Six
+  refusals each name a distinct defect: a partly declared binding (`AR_BINDING_REF`, `AR_CAPSULE_PATH`
+  and `AR_CAPSULE_DIGEST` must arrive together), an unreadable carrier, a carrier whose bytes are not
+  the declared digest, a carrier written for another binding, a carrier whose workspace is not this
+  launch's workspace, and a workspace that is not the admitted git worktree.
+- **An entirely undeclared binding stays unbound** and returns `None`. It is started without a binding
+  and refused by the runtime's own session routes rather than executing without admitted instructions —
+  the gate does not invent a default.
+- **The workspace check reads git metadata, not the path.** `_require_admitted_git_worktree` requires
+  `HEAD` to be the admitted work branch, or the admitted base commit when detached. A directory that
+  exists at the admitted path is not the admitted worktree: a sibling task's checkout, a copied tree and
+  a detached checkout all satisfy "the path exists" while executing somewhere nobody admitted.
+- **Ambient binding names no longer survive into a child.** `build_runtime_env` pops `AR_BINDING_REF`,
+  `AR_CAPSULE_PATH` and `AR_CAPSULE_DIGEST` alongside the existing `AR_EVE_RUNTIME_ROOT`/`AR_EVE_NODE`
+  pops, because the runtime treats a complete set of those names as an admitted capsule. They are re-set
+  strictly from the binding this launch declares, and `launch_spec_binding` reads **only** the launch
+  spec — an ambient value in the server's own environment is not this launch's binding.
+- **The session controls send no body.** `eve_runtime_client.py` gained `compact_session` and
+  `clear_session`, both ID-addressed routes. They matter here because a cleared or compacted session
+  does **not** rerun instruction resolvers, which is why the mandatory capsule is applied at the route
+  gate in the system role rather than through a per-turn resolver.
+
+The produce side of this seam is **not** in this route: it is
+`application/eve_capsule/__init__.py::materialize_eve_binding`, and it still has **no production
+caller**. Wiring a production launch site is `CAPS-R15@v1`'s obligation, received by explicit transfer.
+Nothing in this route should be read as that wiring existing.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The launch-time proof, its six refusals and its unbound case. | `verify_capsule_binding`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
+| The git-identity requirement that distinguishes the admitted worktree from a directory at the same path. | `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527; mcp/src/agents_remember/serving/eve_runtime_launch.py:529-560 |
+| The ambient-binding pops and the launch-spec-only reader. | `launch_spec_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:430-445 |
+| The two body-less session controls and the resolver-not-rerun fact behind the system-role choice. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-101; mcp/src/agents_remember/serving/eve_runtime_client.py:242-268 |
+| The channel-level binder that refuses an unbound launch before any model work, guarding every session route. | `arCapsuleAuth` | eve_runtime/agent/channels/eve.ts:26-62 |
+| The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
+
 ## Update History
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **route meaning changed for the eve adapter, so the
+  body was updated rather than given a no-impact entry.** The new
+  `## 260915-CAPS-L7 The Eve Capsule Launch Proof` section records that `eve_runtime_launch.py` stopped
+  being a pass-through for the capsule binding's environment values and became an **all-or-nothing
+  admission gate that runs before a process exists**: `verify_capsule_binding` is called first in
+  `resolve_runtime_spec`, with six refusals each naming a distinct defect, an entirely undeclared binding
+  staying **unbound** rather than defaulting, and the workspace requirement reading git metadata because
+  a directory at the admitted path is not the admitted worktree. Also recorded: `build_runtime_env` now
+  pops the three ambient binding names alongside the existing `AR_EVE_RUNTIME_ROOT`/`AR_EVE_NODE` pops so
+  an inherited shell value cannot become a binding nobody verified; `launch_spec_binding` reads only the
+  launch spec; `eve_runtime_client.py` gained two body-less ID-addressed session controls, which matter
+  here because a cleared or compacted session does not rerun instruction resolvers; and the channel-level
+  `arCapsuleAuth` refuses an unbound launch before any model work. The section also states where the
+  produce side lives and that it **still has no production caller** — that wiring is `CAPS-R15@v1`'s
+  obligation under an explicit transfer. Verification metadata moves to the leaf's synced base
+  `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `_app_lifespan.py` +63/−2 with the new `terminal_observer_health.py`): the startup
   contract changed again, so the body was corrected rather than annotated. The lifespan order this

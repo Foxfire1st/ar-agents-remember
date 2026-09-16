@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/live_eve_native_fixture.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,30 @@ Six scenarios, each a `_scenario_*` coroutine:
 | `_scenario_restart` | a restarted bridge attaches to the same durable id, and an unknown id is refused rather than replaced |
 | `_scenario_concurrent` | two sessions with interleaved events keep separate transcripts, identities and pending sets |
 
+**Two further scenarios were added by the capsule/workspace leaf**, because the capsule binding cannot be
+proved by a unit double: it is applied by the shipped TypeScript inside the real runtime.
+
+| Scenario | What it proves |
+| --- | --- |
+| `_scenario_capsule_binding` (1758) | **five claims read from one launch**, reported as one scenario: an admitted capsule reaches the model; a forged user message cannot move the binding; a missing or edited carrier stops execution; the write scopes are the admitted ones; and compaction/clear/resume leave the trusted block governing |
+| `_scenario_capsule_execution` (1680) | the runtime's own file tools execute **inside the admitted worktree** and refuse a path outside every admitted surface |
+
+`_capsule_world` (1172) builds the capsule world through the capsule seam's own support module, so the
+fixture consumes the producer instead of re-deriving a carrier. `CapsuleRun` (1191) holds one admitted
+capsule, its own model provider and the session the scenario works with.
+
+`_observe_admitted_identity` (1394) is the observation that makes the forging claim falsifiable: it reads
+the `<agents-remember-binding>` block out of the **first effective prompt** and records nine
+`bindingBlockDeclares*` labels plus `bindingBlockFields`. `_binding_fields` (1358) returns an **ordered
+tuple of `(key, value)` pairs, deliberately not a mapping** — a mapping silently collapses a repeated
+key, and a block stating two conflicting roles would then be certified as declaring one. The three
+declared rules (1420, 1431-1438) require every occurrence of an identity field to carry the admitted
+value, so the guard is conflict-sensitive rather than order-sensitive.
+
+`_observe_first_prompts` (1455) reads the provider's own view of the effective prompt, which is why
+`eve_fixture_model.py`'s trace gained a `messages` key: the assertion is made against what a model would
+actually receive, not against the plan the fixture wrote.
+
 `run_real_provider_probe` / `_run_real_attempt` are a separate bounded probe: one native turn per
 hosted provider, recording each provider's own refusal. The script exits non-zero when a scenario's own
 assertion fails, and **exits `3` when no hosted provider completed** — a refusal is reported as a
@@ -92,6 +116,16 @@ artifact. `AR_EVE_NODE=/nonexistent/ar-eve-node-seed` is the seed that exercises
   against this server.
 - It must not be "fixed" by pointing it at the deterministic stub — that would remove the live proof
   the requirement asks for.
+- **The binding guard is conflict-sensitive, not order-sensitive, and that shape is load-bearing.**
+  `_binding_fields` returns ordered pairs rather than a mapping precisely so a block stating two
+  conflicting identity values is *detected*; a future edit that "simplifies" it back into a dict would
+  silently restore the order-dependent hole the leaf's round-3 fix closed.
+- **The guard inspects one binding block only.** `_binding_block` returns the **first** block, so a
+  second complete block appended after the admitted one is invisible to all nine labels. This is
+  recorded as residual assertion-completeness risk, not a live defect: `ar-binding.ts` is the only
+  production emitter of the `<agents-remember-binding>` delimiters and emits exactly one block, so the
+  shape is currently unreachable from shipped code. It was named as material for the final-verification
+  leaf and is **not** a closed finding.
 
 ### Todos
 
@@ -116,8 +150,13 @@ pass was available for this file.
 | The deterministic provider this fixture starts as the model backend. | `FixturePlan`; `serve` | mcp/tests/eve_fixture_model.py:39-80; mcp/tests/eve_fixture_model.py:255-277 |
 | The deterministic counterpart that proves the same contract without a process, and why both exist. | `FakeEveRuntime` | mcp/tests/eve_adapter_test_support.py:80-288 |
 | The runtime application this fixture launches, including the workspace-confined tools whose write the protocol scenario asserts. | `ar_workspace_write`; `resolveWorkspacePath` | eve_runtime/agent/tools/ar_workspace_write.ts:1-27; eve_runtime/agent/lib/workspace.ts:1-24 |
-| Node resolution and the runtime root the fixture relies on are the adapter's own launch module, and the interpreter override it seeds is read as given there. | `resolve_node_executable`; `resolve_runtime_root`; `AR_EVE_NODE` | mcp/src/agents_remember/serving/eve_runtime_launch.py:40-41; mcp/src/agents_remember/serving/eve_runtime_launch.py:140-173; mcp/src/agents_remember/serving/eve_runtime_launch.py:406-453 |
-| The blocked-artifact contract covers every start-failure shape and records the failure class. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:83-100; mcp/tests/live_eve_native_fixture.py:1070-1090 |
+| Node resolution and the runtime root the fixture relies on are the adapter's own launch module, and the interpreter override it seeds is read as given there. | `resolve_node_executable`; `resolve_runtime_root`; `AR_EVE_NODE` | mcp/src/agents_remember/serving/eve_runtime_launch.py:40-41; mcp/src/agents_remember/serving/eve_runtime_launch.py:140-173; mcp/src/agents_remember/serving/eve_runtime_launch.py:406-453 || The blocked-artifact contract covers every start-failure shape and records the failure class. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:98-116; mcp/tests/live_eve_native_fixture.py:1855-1870 |
+| The capsule scenario and the observation that makes the forging claim falsifiable: nine labels read from the first effective prompt's binding block. | `_scenario_capsule_binding`; `_observe_admitted_identity`; `bindingBlockFields` | mcp/tests/live_eve_native_fixture.py:1758-1813; mcp/tests/live_eve_native_fixture.py:1394-1453 |
+| The guard's conflict-sensitivity lives in the parser's return type, so a repeated identity key is visible rather than collapsed. | `_binding_fields`; `_declared_values` | mcp/tests/live_eve_native_fixture.py:1358-1373; mcp/tests/live_eve_native_fixture.py:1375-1392 |
+| The capsule world is built through the capsule seam's own support module, so the fixture consumes the producer instead of re-deriving a carrier. | `_capsule_world`; `FixtureWorld`; `fixture_carrier_for` | mcp/tests/live_eve_native_fixture.py:1172-1190; mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:565-620 |
+| The trace gained the provider's own `messages` view, which is what lets the assertion be made against the effective prompt rather than the plan the fixture wrote. | `FixturePlan.trace` | mcp/tests/eve_fixture_model.py:63-88 |
+| The shipped TypeScript the capsule scenarios actually observe, since no Python case can see it. | `arCapsuleAuth`; `loadVerifiedCapsule`; `verifyAdmittedWorkspace` | eve_runtime/agent/channels/eve.ts:26-62; eve_runtime/agent/lib/capsule.ts:109-149; eve_runtime/agent/lib/git-workspace.ts:47-68 |
+| The unit-level counterpart of the same binding, which asserts the format and the launch-time verification without a process. | `test_eve_capsule_binding.py`; `test_eve_capsule_runtime.py` | mcp/tests/test_eve_capsule_binding.py:1-418; mcp/tests/test_eve_capsule_runtime.py:1-339 |
 
 ## Cross-Repo References
 
@@ -126,6 +165,27 @@ pass was available for this file.
 | The runtime under test is the pinned published `eve` package and its Node engine requirement, not a sibling repository. | exact pins; `engines` | eve_runtime/package.json:6-20; eve_runtime/README.md:10-29 |
 
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the fixture gained the two capsule scenarios**
+  (~770 lines). The capsule binding cannot be proved by a unit double — it is applied by the shipped
+  TypeScript inside the real runtime — so `_scenario_capsule_binding` reads five claims from one launch
+  (an admitted capsule reaches the model; a forged user message cannot move the binding; a missing or
+  edited carrier stops execution; the write scopes are the admitted ones; compaction/clear/resume leave
+  the trusted block governing) and `_scenario_capsule_execution` proves the runtime's own file tools
+  execute inside the admitted worktree and refuse a path outside every admitted surface. `_capsule_world`
+  builds the world through the capsule seam's own support module rather than re-deriving a carrier, and
+  `_observe_admitted_identity` reads the binding block out of the **first effective prompt** — which is
+  why `eve_fixture_model.py`'s trace gained a `messages` key, so the assertion is against what a model
+  would receive rather than the plan the fixture wrote. Two behaviours are recorded as load-bearing
+  rather than incidental: `_binding_fields` returns ordered pairs **deliberately not a mapping**, because
+  a dict silently collapses a repeated key and would let a block stating two conflicting roles be
+  certified as declaring one (this is the shape the round-3 fix established); and the guard inspects
+  **one** block only, so a second whole block appended after the admitted one is invisible to all nine
+  labels — named here as residual assertion-completeness risk, unreachable from shipped code because
+  `ar-binding.ts` is the sole emitter and emits exactly one block, and left as material for the
+  final-verification leaf, **not** as a closed finding. Verification metadata moves to the leaf's synced
+  base `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps the real
+  code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the fixture grew by ~180 lines and
   three contracts changed. (1) `_scenario_reconcile` no longer claims the durable **delivery id** proves

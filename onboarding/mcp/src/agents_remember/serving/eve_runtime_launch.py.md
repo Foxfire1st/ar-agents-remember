@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/eve_runtime_launch.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,12 +49,41 @@ minimum-major check and the refusal that advertises both candidates stay with th
 spawns, so the search remains lazy and a deterministic test transport can consume a spec without an
 installed interpreter.
 
+**Admission precedes the process.** `resolve_runtime_spec` calls `verify_capsule_binding` first — before
+an application root is staged or a port is reserved — and carries the verified carrier onto
+`EveRuntimeSpec.capsule` so a caller reports what was *actually applied* rather than re-deriving it from
+the environment it just wrote.
+
+`verify_capsule_binding` (447) is the launch-time proof, an all-or-nothing gate with **six refusals,
+each naming its defect**: a partly declared binding (`AR_BINDING_REF`, `AR_CAPSULE_PATH` and
+`AR_CAPSULE_DIGEST` must arrive together — a bound launch names all three or none); a carrier that
+cannot be read; a carrier whose bytes are not the declared digest (a capsule that changed after
+admission); a carrier written for another binding (`require_identity`); a carrier whose admitted
+workspace is not this launch's workspace; and a workspace that is not the admitted git worktree.
+An entirely undeclared binding returns `None` — an **unbound** launch stays unbound and is started
+without a binding, which the runtime refuses at its session routes rather than executing without
+admitted instructions.
+
+`_require_admitted_git_worktree` (499) reads the workspace's own git metadata through `_read_git_head`
+(529) and compares: on a branch, `HEAD` must be the admitted work branch; detached, `HEAD` must be the
+admitted base commit. It deliberately does not shell out to git. The distinction matters because *a
+directory that exists at the admitted path is not the admitted worktree* — a sibling task's checkout, a
+copied tree and a detached checkout all satisfy "the path exists" while executing somewhere nobody
+admitted.
+
 `build_runtime_env` composes the child environment from the operator's base plus this adapter's owned
 values, and **owned values always win** over an inherited value of the same name, so an ambient
 `AR_EVE_MODEL` can never silently redirect a launch the settings selection already fixed. It also
 **pops `AR_EVE_RUNTIME_ROOT` and `AR_EVE_NODE` from the child environment**: both are resolved into
 the launch object before this point, so leaving them inherited would let a stale ambient value point
-the process at a different application than the adapter resolved.
+the process at a different application than the adapter resolved. For the same reason it now also pops
+**`AR_BINDING_REF`, `AR_CAPSULE_PATH` and `AR_CAPSULE_DIGEST`**: the runtime treats a complete set of
+those names as an admitted capsule, so one inherited from the operator's shell would be a binding
+nobody verified. They are re-set below strictly from the binding this launch declares.
+
+`launch_spec_binding` (430) reads **only the launch spec**: an ambient `AR_BINDING_REF` in the server's
+own environment is not this launch's binding, and treating it as one would let the operator's shell
+decide which seat a runtime runs as.
 
 `eve_launch_knobs` is how eve spells its model/effort selection: entirely through the environment,
 with empty `argv` and empty owned argv/config options. eve has no argv vocabulary for a model — it is
@@ -79,8 +108,9 @@ the dashboard needs or advertising a model nothing would use.
 
 ### Conventions
 
-- Environment names this adapter owns are the `AR_EVE_*` group plus the three AR binding names;
-  `OWNED_ENV_PREFIX` documents that grouping.
+- Environment names this adapter owns are the `AR_EVE_*` group plus the four AR binding names
+  (`AR_BINDING_REF`, `AR_CAPSULE_PATH`, `AR_CAPSULE_DIGEST`, `AR_WORKSPACE_ROOT`, imported from the
+  carrier module); `OWNED_ENV_PREFIX` documents the `AR_EVE_*` grouping.
 - `DEFAULT_RUNTIME_PORT = 0` means "reserve a free loopback port at launch"; `choose_runtime_port`
   binds and closes a socket so a collision fails the launch loudly instead of silently serving on a
   port the adapter cannot address.
@@ -91,9 +121,12 @@ the dashboard needs or advertising a model nothing would use.
 
 ### Invariants And Boundaries
 
-- **This module carries the AR binding; it does not compile or select a capsule.**
-  `EveWorkspaceBinding` only transports `AR_WORKSPACE_ROOT`, `AR_BINDING_REF` and
-  `AR_CAPSULE_DIGEST`. Where those values come from is the capsule/workspace leaf's scope.
+- **This module carries the AR capsule binding and now *proves* it; it still does not compile or
+  select a capsule.** `EveWorkspaceBinding` transports `AR_WORKSPACE_ROOT`, `AR_BINDING_REF`,
+  `AR_CAPSULE_PATH` and `AR_CAPSULE_DIGEST`, and `verify_capsule_binding` (447) turns a declared
+  binding into verified carrier bytes **before a process exists**. Where those values come from — which
+  seat, which task, which compiled capsule — remains the capsule/workspace seam's scope, and
+  `materialize_eve_binding` is that seam's producer.
 - **`AR_EVE_RUNTIME_ROOT` and `AR_EVE_NODE` are live selectors, not advisory names.** The root is
   honoured at resolution and the interpreter is carried onto the launch; both are then popped from the
   child environment so the process cannot re-resolve itself elsewhere. Documenting them without
@@ -134,15 +167,19 @@ pass was available for this file.
 | The launch spec, identity and workspace binding are AR's existing control-wire types. | `LaunchSpec`; `ControlIdentity` | mcp/src/agents_remember/models/conversations/control_wire.py:58-79; mcp/src/agents_remember/models/conversations/control_wire.py:82-90 |
 | The launch knobs are AR's existing capability-port type, which is why eve participates in the same launch-vocabulary contract as the other harnesses. | `LaunchKnobs` | mcp/src/agents_remember/serving/harness_capabilities.py:136-148 |
 | The declared pins and the operator-facing environment contract are documented beside the application they govern. | `dependencies`; environment table | eve_runtime/package.json:14-20; eve_runtime/README.md:10-46 |
-| The authored application applies the binding this module carries at `session.started`. | `defineDynamic`; `session.started` | eve_runtime/agent/instructions/ar-binding.ts:1-1; eve_runtime/agent/instructions/ar-binding.ts:11-11 |
+| The authored application applies the binding this module carries at `session.started`, and the channel's own AR binder is the route gate that refuses an unbound launch before any model work. | `defineDynamic`; `arCapsuleAuth`; `verifyAdmittedWorkspace` | eve_runtime/agent/instructions/ar-binding.ts:1-48; eve_runtime/agent/channels/eve.ts:1-62 |
+| The launch-time proof itself, and the git-identity requirement behind it, whose six refusals each name their defect. | `verify_capsule_binding`; `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527; mcp/src/agents_remember/serving/eve_runtime_launch.py:529-560 |
+| The carrier format and environment names this module verifies against, declared in the models tier so the reader and the writer share one spelling. | `EveCapsuleCarrier`; `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV`; `CAPSULE_PATH_ENV`; `carrier_digest` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-42; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-291 |
+| The produce side of the same seam, which writes the carrier this module reads — and which still has no production caller. | `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206 |
+| The cases pinning the launch-time verification in both directions, including a workspace checked out on another branch. | `test_launch_verification_accepts_the_admitted_capsule`; `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:355-362; mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
 | The adapter is the only consumer that resolves a spec, hands it to a transport, and verifies the effective selection it produced. | `EveSessionAdapter._resolve_spec`; `_verify_effective_selection` | mcp/src/agents_remember/serving/eve_adapter.py:660-700; mcp/src/agents_remember/serving/eve_adapter.py:892-904 |
-| The factory recovers the applied selection by probing a `LaunchSpec` through this module's reader, so the values that reached the child are the ones verified. | `_eve_expected_selection`; `launch_spec_selection` | mcp/src/agents_remember/serving/harness_control_factories.py:105-130; mcp/src/agents_remember/serving/eve_runtime_launch.py:366-393 |
+| The factory recovers the applied selection by probing a `LaunchSpec` through this module's reader, so the values that reached the child are the ones verified. | `_eve_expected_selection`; `launch_spec_selection` | mcp/src/agents_remember/serving/harness_control_factories.py:165-186; mcp/src/agents_remember/serving/eve_runtime_launch.py:391-418 |
 | The node floor is owned by the readiness module and re-exported here, so detection and launch read one number. | `KERNEL_MINIMUM_NODE_MAJOR`; `MINIMUM_NODE_MAJOR` | mcp/src/agents_remember/serving/eve_runtime_launch.py:38-38; mcp/src/agents_remember/serving/eve_runtime_launch.py:48-52; mcp/src/agents_remember/kernel/eve_runtime_readiness.py:55-60 |
-| The runtime's own model fallback, read from the authored application rather than mirrored as a constant. | `runtime_default_model`; `AGENT_SOURCE`; `MODEL_FALLBACK_PATTERN` | mcp/src/agents_remember/serving/eve_runtime_launch.py:96-96; mcp/src/agents_remember/serving/eve_runtime_launch.py:99-99; mcp/src/agents_remember/serving/eve_runtime_launch.py:255-276 |
+| The runtime's own model fallback, read from the authored application rather than mirrored as a constant. | `runtime_default_model`; `AGENT_SOURCE`; `MODEL_FALLBACK_PATTERN` | mcp/src/agents_remember/serving/eve_runtime_launch.py:62-62; mcp/src/agents_remember/serving/eve_runtime_launch.py:80-80; mcp/src/agents_remember/serving/eve_runtime_launch.py:269-300 |
 | The capability catalog consumes this fallback so a pre-session read names the model the runtime would really use. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
 | The case pinning that the advertised model is the one the runtime would use. | `test_the_advertised_model_is_the_one_the_runtime_would_use` | mcp/tests/test_eve_product_integration.py:985-997 |
-| The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses. | `_knob_values`; `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:173-185; mcp/tests/test_harness_launch.py:188-196 |
-| The OS-level start-failure seed is an operator naming a nonexistent `AR_EVE_NODE`, which only fails because this module reads the selector as given. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:83-89; mcp/tests/live_eve_native_fixture.py:1085-1085 |
+| The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses. | `_knob_values`; `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:173-187; mcp/tests/test_harness_launch.py:189-200 |
+| The OS-level start-failure seed is an operator naming a nonexistent `AR_EVE_NODE`, which only fails because this module reads the selector as given. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:98-116; mcp/tests/live_eve_native_fixture.py:1847-1862 |
 
 ## Cross-Repo References
 
@@ -151,6 +188,23 @@ pass was available for this file.
 | The pinned `eve` release and its Node `>=24` engine requirement come from the published package, not from a sibling Agents Remember repository. | `engines`; exact dependency pins | eve_runtime/package.json:7-8; eve_runtime/package.json:15-20; eve_runtime/README.md:3-8 |
 
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the launch path now proves the binding it
+  carries, before a process exists.** `verify_capsule_binding` was added and is called first in
+  `resolve_runtime_spec` — ahead of staging an application root or reserving a port — so a launch that
+  cannot be bound correctly is never given a model. Its six refusals each name their defect: a partly
+  declared binding, an unreadable carrier, a carrier whose bytes are not the declared digest, a carrier
+  written for another binding, a carrier whose workspace is not this launch's workspace, and a
+  workspace that is not the admitted git worktree (`_require_admitted_git_worktree`, reading git
+  metadata rather than assuming the path). An undeclared binding stays **unbound** and is refused by
+  the runtime's session routes instead. `EveWorkspaceBinding` gained `capsule_path`, `EveRuntimeSpec`
+  gained the verified `capsule` so a caller reports what was applied rather than re-deriving it, and
+  `build_runtime_env` now pops `AR_BINDING_REF`/`AR_CAPSULE_PATH`/`AR_CAPSULE_DIGEST` so a binding
+  inherited from the operator's shell cannot become one nobody verified. The invariant that said this
+  module "only transports" the binding was **superseded** in place: it carries *and proves* it, while
+  still neither compiling nor selecting a capsule. Verification metadata moves to the leaf's synced
+  base `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps the real
+  code commit and no hash or fingerprint was invented here.
 - 2026-09-16T11:42:38+00:00: Generated citation repair: `LaunchKnobs` repointed to mcp/src/agents_remember/serving/harness_capabilities.py:136-148. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **the node floor moved to one owner, and a

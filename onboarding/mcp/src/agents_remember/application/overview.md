@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -634,7 +634,63 @@ before landing exactly those. Published text is the only thing a client reads, s
 than comment. The preview/apply parity invariant that produced this repair is inventoried on the
 `worktrees/overview.md` route and in `memory_quality/overview.md`.
 
+## 260915-CAPS-L7 The Eve Capsule Produce Side
+
+This route gained one package, `eve_capsule/`, which is the **produce side** of the eve
+capsule/workspace binding seam. It is deliberately not a second compiler: it calls the L4 capsule
+surface and the L3 task projection and **transports a decided value** into the carrier file one bound
+eve runtime reads before its first model call. It orders nothing, selects nothing and re-renders
+nothing.
+
+The load-bearing boundary for a reader of this route:
+
+- **Admission precedes execution.** `materialize_eve_binding` returns the compiler's or projection's
+  own refusal and writes **no carrier** on any refusal path, so a runtime that cannot be bound correctly
+  is never handed something to run. It also reads the carrier back and requires it to parse equal.
+- **The projection is re-derived and compared, not trusted.** The compile outcome does not carry the
+  projection it read, so the module resolves the same scope and requires the task context to be
+  **byte-identical** to the one the capsule carries; a disagreement is refused rather than silently
+  becoming the carrier's task facts.
+- **Write surfaces are role authority, and the fallback is the smallest set.** A worker gets the
+  workspace and its report surface, a curator adds the memory surface, and an undeclared role gets the
+  worker's set — so a role whose scope nobody declared cannot inherit the memory write. A surface the
+  role's table names but nobody admitted is a refusal, not a silent narrowing.
+- **The carrier lives outside the admitted workspace**, in a caller-admitted epoch directory, because
+  the runtime's own file tools are confined to the workspace root and the instructions it applies must
+  not be a file the model can rewrite.
+
+**The seam's other half is not in this route.** The format is `models/eve_capsule_carrier.py`; the
+launch-time proof is `serving/eve_runtime_launch.py::verify_capsule_binding`; and the in-process reader
+is `eve_runtime/agent/lib/capsule.ts`. **The produce side has no production caller yet** — the only
+caller is the test fixture — and wiring a production launch site is `CAPS-R15@v1`'s obligation, which
+received it by explicit transfer rather than closure.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The produce side added to this route, and the read-back-equals-written and no-carrier-on-refusal rules. | `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206 |
+| The projection agreement check that makes the re-derivation a check rather than a second opinion. | `_admitted_projection`; `_require_matching_task_context` | mcp/src/agents_remember/application/eve_capsule/__init__.py:228-279 |
+| The role-authority write surfaces and the smallest-set fallback. | `write_scopes_for`; `ROLE_WRITE_SURFACES` | mcp/src/agents_remember/application/eve_capsule/__init__.py:79-93; mcp/src/agents_remember/application/eve_capsule/__init__.py:327-365 |
+| The capsule surface this package consumes and does not re-implement. | `compile_task_capsule` | mcp/src/agents_remember/application/skill_resources/__init__.py |
+| The launch-time proof and the in-process reader that consume the carrier this route produces. | `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; eve_runtime/agent/lib/capsule.ts:109-149 |
+| The one current caller, which is a test fixture — the produce side's missing production caller. | `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:565-620 |
+
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained `eve_capsule/`, the **produce
+  side** of the eve capsule/workspace binding seam, recorded in the new
+  `## 260915-CAPS-L7 The Eve Capsule Produce Side` section. It is not a second compiler: it calls the
+  L4 capsule surface and the L3 projection and transports a decided value into the carrier one bound eve
+  runtime reads. The section names the load-bearing boundaries a reader of this route needs — admission
+  precedes execution (no carrier is written on any refusal path, and the written carrier is read back and
+  required to parse equal); the projection is re-derived and required to be byte-identical to the
+  capsule's task context rather than trusted; write surfaces follow the role authority table with the
+  **smallest** set as the fallback so an undeclared role cannot inherit the memory write; and the carrier
+  lives outside the admitted workspace so the instructions are not a file the model can rewrite. It also
+  states where the seam's other half lives (models carrier format, serving launch proof, TypeScript
+  in-process reader) and that **the produce side has no production caller yet** — wiring one is
+  `CAPS-R15@v1`'s obligation under an explicit transfer, not a closure. Verification metadata moves to
+  the leaf's synced base `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
   base `b00a4ac2`): added the `skill_resources/` package to this route and recorded its two

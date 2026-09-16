@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -787,7 +787,57 @@ route (`registration/skills_extension.py`), which is the correct direction for t
 | The trust statement is a constant and a declared tool set is observed, never applied. | `SERVER_SUPPLIED_CONTENT_TRUST`; `declared_allowed_tools` | mcp/src/agents_remember/models/role_capsule_resources.py:31-32; mcp/src/agents_remember/models/skill_resources.py:219-234 |
 | The three registry rows that make the new names returnable. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:155-238 |
 
+## 260915-CAPS-L7 The Eve Capsule Carrier Format
+
+This route gained `eve_capsule_carrier.py`, which owns the **format** of the one value AR hands a pinned
+eve runtime before it executes. The launch environment can carry a reference and a digest but not the
+compiled instructions, so the content travels as a file whose bytes that digest addresses.
+
+It owns the format and nothing else — it parses bytes it is handed and computes digests over them, with
+**no filesystem import by design**. Reading the file, writing it and deciding whether a launch may
+proceed belong to the tiers that own those surfaces, and that separation is what lets one shape serve
+the compiler side (`application`) and the launch side (`serving`) with neither importing the other.
+
+Four properties are enforced here rather than trusted, all at parse time:
+
+- **Self-describing identity** — `EveCapsuleIdentity` names the seat it belongs to, so a carrier left
+  over from another seat is refused by `require_identity` instead of applied.
+- **The digest is over the exact bytes on disk**, so a carrier edited after it was written is refused.
+- **Every consumer-needed field is required**, so a truncated or hand-written carrier fails naming the
+  missing field rather than contributing an empty instruction block; the three parallel instruction
+  lists must correspond one to one.
+- **The workspace scope and the workspace root are forced equal** (`_require_workspace_confinement`),
+  so the runtime cannot read and execute in one directory while its write rule admits another.
+
+This module is also the single home of the four environment names and of the two instruction
+**channels**. The channel choice is load-bearing rather than stylistic: the trusted instructions go in
+the **system** role, which eve keeps outside conversation history and includes on every model call — so
+they survive turn boundaries, compaction and clear — while task facts go in the **user** role, because
+they are content rather than authority and compaction may legitimately summarize them.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The carrier format added to this route: schema, value types and the on-disk byte contract. | `EVE_CAPSULE_CARRIER_SCHEMA`; `EveCapsuleCarrier`; `to_bytes`; `from_bytes`; `carrier_digest` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-32; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-296 |
+| The two channels and why the distinction is load-bearing. | `ROLE_INSTRUCTION_CHANNEL`; `TASK_CONTEXT_CHANNEL` | mcp/src/agents_remember/models/eve_capsule_carrier.py:46-58 |
+| The parse-time confinement invariant and the wrong-seat refusal. | `_require_workspace_confinement`; `require_identity` | mcp/src/agents_remember/models/eve_capsule_carrier.py:273-285; mcp/src/agents_remember/models/eve_capsule_carrier.py:299-320 |
+| The four environment names declared beside the format so writer and reader cannot drift. | `BINDING_REF_ENV`; `CAPSULE_PATH_ENV`; `CAPSULE_DIGEST_ENV`; `WORKSPACE_ROOT_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:34-42 |
+| The producer that builds this value and the two consumers that verify it, none of them in this route. | `build_carrier`; `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/application/eve_capsule/__init__.py:282-324; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; eve_runtime/agent/lib/capsule.ts:109-149 |
+
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained `eve_capsule_carrier.py`, the
+  **format** of the value AR hands a pinned eve runtime before it executes, recorded in the new
+  `## 260915-CAPS-L7 The Eve Capsule Carrier Format` section. The section names the module's deliberate
+  narrowness (format only, no filesystem import, so the compiler side and the launch side can share one
+  shape without importing each other), the four properties enforced at parse rather than trusted
+  (self-describing identity, digest over the exact on-disk bytes, every consumer-needed field required
+  with the three instruction lists forced one-to-one, and the workspace scope forced equal to the
+  workspace root), and the two instruction channels as load-bearing rather than stylistic: system role
+  for trusted instructions so they survive turn boundaries, compaction and clear, user role for task
+  facts because they are content and compaction may summarize them. It also records that the producer
+  and both consumers live in other routes. Verification metadata moves to the leaf's synced base
+  `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **route body corrected for the two modules this
   leaf added to this route** (`CAPS-R13@v1`). In the role-capsule sub-route the frozen vocabulary is

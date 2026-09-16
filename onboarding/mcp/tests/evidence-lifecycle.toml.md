@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,8 +20,12 @@ The commit fields identify the latest real commit touching this source; they do 
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
-exact consumers. The catalog currently contains 43 artifact records and four executable replacement
+exact consumers. The catalog currently contains **51 artifact records** and four executable replacement
 contracts; those declarations are not records that a test ran.
+
+The count is re-derived from the file rather than carried: it stood at 43 when an earlier version of
+this paragraph was written, measures **50 at this leaf's synced base `23cc7a72`**, and measures 51 with
+this leaf's one added row.
 
 ## Code Commentary
 
@@ -41,6 +45,19 @@ The closeout-input and curator-coherence support records also declare
 Other artifact categories and ownership declarations retain their own scopes. Consumer rows are
 accounting for source-observed support use, including transitive use where declared; they do not
 establish acceptance, installed-executor fidelity, or a production run.
+
+**`consumers` is a derived test population, and the loader enforces it.** For `consumer_scope = "exact"`
+the loader re-derives the test modules that reach the artifact from the source graph and reports any
+difference from the declared list, so a row's `consumers` cell is a checkable claim rather than prose.
+The eve capsule row added by this leaf lists exactly the four test modules the loader derives for it —
+one of which reaches the support only **transitively** through another support module. That transitivity
+is why a row's `consumers` and its `permanence_rationale` can describe different things without either
+being wrong: the list is the mechanical test population, the rationale is the artifact's semantic role.
+
+Because the rows are derived from the graph, they are also what a base move invalidates. The merge that
+produced this leaf's base re-derived every catalog consumer proof it touched, and **verifying that
+re-derivation is a separate leaf's obligation**; a row that disagrees with the graph is a loader finding
+to be repaired by its owner, not a tolerated inconsistency.
 
 ### Conventions
 
@@ -92,6 +109,21 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **one artifact row added, one shared-support row
+  extended, population re-measured.** The leaf's new `mcp/tests/eve_capsule_test_support.py` is
+  registered as `shared-support` / `unit-regression`, owned by
+  `mcp/src/agents_remember/application/eve_capsule/__init__.py`, with `consumer_scope = "exact"` and
+  exactly the four consumers the loader derives for it; the two new L7 suites were added as exact
+  consumers of the existing `mcp/tests/test_eve_adapter.py`-adjacent shared-support row. The declared
+  population is corrected in the Purpose paragraph: **51 artifacts** at the candidate, of which 50 are
+  the synced base `23cc7a72` and one is this leaf's — the previous 43 was stale and is now stated with
+  the measurement it came from rather than silently replaced. A new paragraph records that `consumers`
+  is a graph-derived population the loader enforces, which is why a transitively-derived consumer can
+  appear in a list whose rationale describes a different role, and that verifying the merge's
+  re-derivation of every touched consumer proof belongs to a separate leaf. Verification metadata moves
+  to the leaf's synced base `23cc7a72`; the candidate is deliberately uncommitted, so the governed
+  closeout stamps the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-15T01:02 UTC — Updated the documented replacement-node spelling for code/memory-only closeout and the two cleanup-guidance consumer declarations; retained registry ownership/fidelity/lifetime semantics and separated them from execution evidence. Working candidate verified by source inspection; commit metadata records real committed history only.
 

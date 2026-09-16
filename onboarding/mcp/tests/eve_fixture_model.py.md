@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/eve_fixture_model.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,12 @@ aggregate; `serve` and `main` are the CLI entry points (`--plan`, `--state`, `--
 - `DELTA_STEP` (7) and `ARGUMENT_STEP` (11) chunk deltas at fixed sizes, so a stream's shape is
   reproducible rather than incidental.
 - The plan is read once per server and the counter lives on the server instance.
+- The trace record gained a **`messages` key** beside the four original ones (`model`, `stream`,
+  `messageCount`, `messages`). The four original keys are unchanged; `messages` carries the provider's
+  own view of the request, which is the only place a consumer can read the **effective prompt** a model
+  would actually receive — the system block and the durable history — instead of inferring it from the
+  plan the fixture wrote. This is what makes the capsule scenarios' "the binding reaches the model"
+  assertion a measurement rather than a restatement.
 - Usage is printed in the module docstring; the live fixture starts this file as a subprocess.
 
 ### Invariants And Boundaries
@@ -60,6 +66,10 @@ aggregate; `serve` and `main` are the CLI entry points (`--plan`, `--state`, `--
   wired into a non-test launch path.
 - It supplies no hosted-model behavior: the real-provider probe in the live fixture deliberately does
   not use this stub.
+- **The trace's `messages` field is the effective-prompt evidence, and it must stay the provider's own
+  view.** Recording a re-rendered or fixture-constructed message list here would make the capsule
+  scenarios assert against the fixture's intent instead of what the model received, which is exactly the
+  class of self-confirming evidence the seam's cases are built to avoid.
 
 ### Todos
 
@@ -89,6 +99,18 @@ pass was available for this file.
 | The stub imitates the OpenAI-compatible chat-completions API, and the runtime reaches it through the pinned `@ai-sdk/openai-compatible` provider. | exact dependency pin | eve_runtime/package.json:14-20 |
 
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the trace now records the provider's own
+  `messages` view.** Added beside the four original keys, which are unchanged, so a consumer can read
+  the **effective prompt** a model would actually receive — the system block and the durable history —
+  rather than inferring it from the plan the fixture wrote. It exists for the capsule scenarios: their
+  "an admitted capsule reaches the model" claim is only a measurement if the observed prompt is the
+  provider's own view, and the same field is what lets a seed's mutation be confirmed present in that
+  seed's trace, so no exit code is read from a run in which the mutation never reached the runtime. A
+  boundary was added stating the field must stay the provider's view and must not be re-rendered here.
+  Verification metadata moves to the leaf's synced base `23cc7a72`; the candidate is deliberately
+  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint was
+  invented here.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **no content impact from the A2
   revision.** This file is byte-identical between the A1 and A2 candidates of the same change set, so

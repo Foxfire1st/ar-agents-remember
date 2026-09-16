@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/eve_adapter_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,6 +60,16 @@ honoring `send_error`, which is exactly the ambiguous case reconciliation must a
 case can assert what the adapter resolved. `_current_turn_id` exposes the turn a session currently has
 open, so a case can state the expected cancel target independently of the adapter's own bookkeeping.
 
+`fixture_launch_binding` (336) is the one piece of production-shaped state this double needs. The
+transport is a double, but **the launch path is the real one**: `resolve_runtime_spec` now verifies the
+declared carrier, its digest and the admitted worktree before a process would exist, so a launch that
+declared half a binding would be refused before any protocol behaviour could be observed. It therefore
+builds a real git worktree with a real commit and a real carrier through the capsule seam's own support
+module, and returns the same four values a real launch carries. It is `lru_cache(maxsize=1)` because the
+work is real and the binding is immutable; `test_eve_adapter.py`'s `_launch` spreads its result into the
+launch environment and takes `cwd` from it, so the fixture cannot drift from what the launch path
+verifies.
+
 ### Conventions
 
 - The record is decoded through the production frame parser (`parse_event_frame`), so a fixture that
@@ -104,7 +114,10 @@ pass was available for this file.
 | The cancel request this double records is the one the production client builds, including the target turn. | `cancel_turn_body`; `FakeEveSession.cancel_requests` | mcp/src/agents_remember/serving/eve_runtime_client.py:85-89; mcp/tests/eve_adapter_test_support.py:41-60 |
 | Frame decoding is delegated to the production parser, not re-implemented here. | `parse_event_frame` | mcp/src/agents_remember/serving/eve_protocol.py:192-222 |
 | The conformance suites that consume this double, one case class per named scenario. | `EveAdapterSubmissionTests`; `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests`; `EveAdapterIsolationTests` | mcp/tests/test_eve_adapter.py:371-1128 |
-| The live native fixture is the non-deterministic counterpart and deliberately does **not** use this double. | `TracingEveRuntime` | mcp/tests/live_eve_native_fixture.py:108-156 |
+| The live native fixture is the non-deterministic counterpart and deliberately does **not** use this double. | `TracingEveRuntime` | mcp/tests/live_eve_native_fixture.py:123-170 |
+| The capsule binding this double's launches now carry, built through the capsule seam's own fixture support rather than hand-written environment values. | `fixture_launch_binding`; `fixture_carrier_for`; `binding_env`; `repository_with_commit` | mcp/tests/eve_adapter_test_support.py:336-364; mcp/tests/eve_capsule_test_support.py:565-620 |
+| The launch path that verifies the declared carrier before a process exists, which is why a partial binding would be refused before any protocol behaviour is observed. | `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
+| The live native fixture is the only artifact that proves the *live runtime* half of the same seam; it drives a real eve process rather than this double. | `TracingEveRuntime`; `_scenario_capsule_binding` | mcp/tests/live_eve_native_fixture.py:123-170; mcp/tests/live_eve_native_fixture.py:1758-1813 |
 
 ## Cross-Repo References
 
@@ -115,6 +128,20 @@ No external repository boundary is implemented by this support module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the double's launches must now carry a real,
+  verifiable capsule binding.** `fixture_launch_binding` was added because the launch path is no longer
+  a pass-through: `resolve_runtime_spec` verifies the declared carrier, its digest and the admitted
+  worktree before a process would exist, so a launch declaring half a binding is refused before any
+  protocol behaviour can be observed. The fixture therefore builds a **real** git worktree with a real
+  commit and a real carrier through the capsule seam's own support module, and returns the same four
+  values a real launch carries; `test_eve_adapter.py`'s `_launch` now spreads that result into the
+  launch environment and takes `cwd` from it, replacing the hand-written `AR_WORKSPACE_ROOT` /
+  `AR_BINDING_REF` pair that could not have passed the verification. It is `lru_cache(maxsize=1)`
+  because the work is real and the binding immutable. This is a genuine coupling worth recording: the
+  transport is a double, but the launch path is production. Verification metadata moves to the leaf's
+  synced base `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps
+  the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the cancel control became a
   **request record**. `FakeEveSession.cancel_requests` now stores the `(session_id, turn_id)` pair

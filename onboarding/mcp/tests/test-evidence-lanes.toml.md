@@ -5,15 +5,33 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [Tests overview](overview.md)
+
+## Current population (measured at this leaf's synced base `23cc7a72` plus its own two rows)
+
+**236** `test_*.py` modules on disk and **230** manifest entries, with the loader reporting **one**
+finding: six test files carry no explicit lane. Those six —
+`test_eve_adapter.py`, `test_eve_protocol.py`, `test_role_capsule_admission.py`,
+`test_role_capsule_compiler.py`, `test_role_instruction_corpus.py`, `test_task_projection.py` — are
+**pre-existing at the pristine base** and are none of them this leaf's modules; this leaf adds two rows
+and closes none of that gap. Every count stated in the earlier sections below is an earlier
+measurement and must be read as such.
+
+Lane brackets as measured now: unit-regression 134 entries (key `:5`), public-contract 2 (`:141`),
+integration 63 (`:145`), architecture-fitness 17 (`:210`), provider-conformance 14 (`:229`), with
+stress-durability (`:245`) and migration (`:247`) empty.
+
+Case budgets are `pyproject.toml`'s and are **not** lane membership: `unit_case_budget = 1500` and
+`integration_case_budget = 300` (`.tool.pytest.ini_options`). Every earlier 150/200/250/1000/1100
+figure quoted in this card's history is stale.
 
 ## Purpose
 
@@ -563,6 +581,25 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository authority is established by this file.
 
 ## Update History
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **two rows added and the population re-measured at
+  the current base.** Registered this leaf's `mcp/tests/test_eve_capsule_binding.py` in
+  **unit-regression** (hermetic focused cases: no process, no Node) and
+  `mcp/tests/test_eve_capsule_runtime.py` in **integration** (it executes the shipped TypeScript under a
+  real Node). Added a measured `## Current population` section because the card's standing numbers were
+  from an older base and no longer described the tree: **236** modules on disk, **230** manifest
+  entries, unit-regression 134 (key `:5`), public-contract 2 (`:141`), integration 63 (`:145`),
+  architecture-fitness 17 (`:210`), provider-conformance 14 (`:229`), stress-durability and migration
+  empty. The loader's **one** finding — six test files with no explicit lane
+  (`test_eve_adapter.py`, `test_eve_protocol.py`, `test_role_capsule_admission.py`,
+  `test_role_capsule_compiler.py`, `test_role_instruction_corpus.py`, `test_task_projection.py`) — is
+  recorded as **pre-existing at the pristine base** and none of it is this leaf's; this leaf adds two
+  rows and closes none of that gap. Case budgets are recorded as `pyproject.toml`'s own
+  (`unit_case_budget = 1500`, `integration_case_budget = 300`) and explicitly separated from lane
+  membership, with the card's older 150/200/250/1000/1100 figures marked stale rather than edited out of
+  the history. Verification metadata moves to the leaf's synced base `23cc7a72`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
 
 - 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: registered the leaf's new
   `mcp/tests/test_codex_capsule_delivery.py` in the **provider-conformance** lane (entry row 216,

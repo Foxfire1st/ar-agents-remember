@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastUpdated | 2026-09-16T20:42+02:00 |
+| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -996,6 +996,50 @@ memory repository, or any shared ref. The module makes no claim that a backfill 
 the real memory repository — that sequencing decision belongs to the master's integration step, not to
 this route's evidence.
 
+## 260915-CAPS-L7 The Eve Capsule/Workspace Binding Evidence
+
+This route gained three modules proving the eve capsule/workspace binding seam, split by what each can
+actually observe:
+
+- `eve_capsule_test_support.py` — **shared support, not a test module.** It builds a real git repository
+  with real `git worktree` checkouts, a real coordination root with a sprint/master/leaf document and an
+  enclosure contract, and an authored composition corpus. It is the reason the route's other two modules
+  can compare against something the code under test does not feed: the workspace identity is compared
+  against `git` itself, the carrier digest is recomputed from disk, the task facts against the fixture's
+  own task document. Its frozen role/operation vocabularies are deliberately **spelled rather than
+  imported** — a fixture that imported what the compiler enforces could not disagree with it.
+- `test_eve_capsule_binding.py` — **unit-regression.** The Python half. Most of its cases assert a
+  **named refusal** rather than merely that something raised, because an over-strict verifier that
+  refused everything would otherwise pass the whole refusal group.
+- `test_eve_capsule_runtime.py` — **integration.** The TypeScript half, which no Python case can observe:
+  it executes the **shipped** `eve_runtime/agent/lib/*.ts` under the same Node a launch would pick, with
+  a `node:module` loader hook supplying only the eve compiler's `./x.js`-for-`.ts` specifier convention.
+  Carrier and launch defects are declared as **data** carrying the exact refusal code they must produce.
+
+Two fixture changes in this route belong to the same seam and are recorded here rather than only in the
+individual cards. `eve_adapter_test_support.py` gained `fixture_launch_binding()`, because the launch
+path is production even when the transport is a double: it now verifies the carrier and the admitted
+worktree before a process would exist, so `test_eve_adapter.py`'s launches take their `cwd` and
+environment from a real worktree, commit and carrier instead of hand-written values. And
+`eve_fixture_model.py`'s trace gained a **`messages`** key carrying the provider's own view of the
+request — the only place the *effective prompt* is observable, which is what makes the live fixture's
+"the binding reaches the model" assertion a measurement instead of a restatement.
+
+Whole-seam boundary a reader of this route should carry: the live end-to-end claim is
+`live_eve_native_fixture.py`'s two capsule scenarios, which drive the real pinned eve runtime. The
+produce side they exercise still has **no production caller**, and wiring one is `CAPS-R15@v1`'s
+obligation under an explicit transfer.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared fixture world the seam's cases are built on, and the one place the produce side is currently called. | `FixtureWorld`; `build_world`; `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:457-549; mcp/tests/eve_capsule_test_support.py:565-620 |
+| The Python half, whose refusal cases assert a named defect. | `test_launch_verification_refuses_every_declared_defect`; `test_carrier_refuses_a_workspace_scope_that_is_not_its_workspace` | mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:179-196 |
+| The TypeScript half, executing the shipped modules under a real Node. | `RuntimeProbe`; `CarrierDefect`; `test_runtime_verifier_refuses_each_declared_defect` | mcp/tests/test_eve_capsule_runtime.py:58-75; mcp/tests/test_eve_capsule_runtime.py:76-180; mcp/tests/test_eve_capsule_runtime.py:267-288 |
+| The launch-binding fixture that makes the adapter suite's launches verifiable. | `fixture_launch_binding` | mcp/tests/eve_adapter_test_support.py:335-364 |
+| The trace's effective-prompt key, which the live capsule scenarios assert against. | `FixturePlan.trace` | mcp/tests/eve_fixture_model.py:63-88 |
+| The live end-to-end capsule scenarios, which are the whole-seam proof rather than a unit claim. | `_scenario_capsule_binding`; `_scenario_capsule_execution` | mcp/tests/live_eve_native_fixture.py:1758-1813; mcp/tests/live_eve_native_fixture.py:1680-1757 |
+| The lifecycle catalog registration for the shared support module, with its four derived consumers. | `path = "mcp/tests/eve_capsule_test_support.py"` row | mcp/tests/evidence-lifecycle.toml:714-724 |
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the
@@ -1054,6 +1098,21 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained three modules and two fixture
+  changes for the eve capsule/workspace binding seam, recorded in the new
+  `## 260915-CAPS-L7 The Eve Capsule/Workspace Binding Evidence` section. The section explains the
+  three-way split by what each module can actually observe — real-git/uxtree support, the Python half
+  whose refusal cases assert a **named** defect, and the TypeScript half that executes the shipped
+  modules under a real Node through a loader hook supplying only the eve compiler's specifier convention
+  — and records the two fixture changes that belong to the same seam: `fixture_launch_binding()` in the
+  adapter support, needed because the launch path is production even when the transport is a double, and
+  the trace's new `messages` key, which is the only place the **effective prompt** is observable and so
+  is what keeps the live "the binding reaches the model" claim a measurement. It also records the
+  whole-seam boundary: the live capsule scenarios are the end-to-end proof, and the produce side they
+  exercise still has **no production caller** — wiring one is `CAPS-R15@v1`'s obligation under an
+  explicit transfer. Verification metadata moves to the leaf's synced base `23cc7a72`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
 - 2026-09-15T21:40+02:00 — 260831-LOCR-L05 curator, **re-dispatch** (uncommitted change set on
   `ar/260831-locr-l05`, pair code base `67c91534`, memory base `309110f8`): the route gained the
   worker-role wake, so the retained-route table was extended rather than annotated. New row for
