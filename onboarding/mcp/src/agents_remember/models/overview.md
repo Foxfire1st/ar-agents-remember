@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastUpdated | 2026-09-16T08:24+02:00 |
+| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
+| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -714,17 +714,72 @@ absolute, backslash, UNC or parent-escaping path so a stored record never carrie
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The served knowledge vocabulary as an explicit re-export list. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:55-88 |
-| The frozen base and the refusal to rewrite a non-canonical identifier. | `KnowledgeModel`; `normalized_uuid` | mcp/src/agents_remember/models/knowledge/base.py:34-54 |
-| The invariant identity and revision aggregate, including the display-label-versus-identity separation. | `InvariantIdentity`; `InvariantRevision` | mcp/src/agents_remember/models/knowledge/invariant.py:49-117 |
-| The sealed payload, with the predecessor set inside the digest and the digest field excluded. | `canonical_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:23-45 |
+| The served knowledge vocabulary as an explicit re-export list — re-cited against the working tree, which the graph half extended. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:98-170 |
+| The frozen base and the refusal to rewrite a non-canonical identifier. | `KnowledgeModel`; `normalized_uuid` | mcp/src/agents_remember/models/knowledge/base.py:34-37; mcp/src/agents_remember/models/knowledge/base.py:59-73 |
+| The invariant identity and revision aggregate, including the display-label-versus-identity separation. | `InvariantIdentity`; `InvariantRevision` | mcp/src/agents_remember/models/knowledge/invariant.py:33-55; mcp/src/agents_remember/models/knowledge/invariant.py:56-115 |
+| The sealed payload, with the predecessor set inside the digest and the digest field excluded. | `canonical_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:30-52 |
 | The provenance envelope and its normalized-UTC requirement. | `Authorship` | mcp/src/agents_remember/models/knowledge/authorship.py:32-88 |
-| The shared source identity, locator union and the relative-POSIX-path rule. | `SourceLocator`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:76-79; mcp/src/agents_remember/models/knowledge/source.py:82-115 |
-| The typed operation, refusal-code and result contract. | `KnowledgeRefusalCode`; `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:31-48; mcp/src/agents_remember/models/knowledge/result.py:106-132 |
-| The storage owner that writes this vocabulary and is its only writer. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:83-101 |
+| The shared source identity, locator union and the relative-POSIX-path rule — now split into the draft and the stored anchor, with a real `UUID` identity. | `SourceLocator`; `SourceAnchorDraft`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:79-81; mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:125-128 |
+| The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph half extended. | `KnowledgeRefusalCode`; `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:52-69; mcp/src/agents_remember/models/knowledge/result.py:246-265 |
+| The storage owner that writes this vocabulary. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:86-104 |
 | The later requirement packets the shared envelope and locator are declared for. | — | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R07-v1-selective-snapshot-read.md; ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R08-v1-invariant-family-candidate-diff.md |
 
+## 260915-KS-L2 The Graph Vocabulary, And The Repaired Anchor Identity
+
+This route's knowledge sub-route grew from nine modules to eleven and the vocabulary it serves now covers the
+**graph**: `family.py` carries family identity and the immutable family revision, and `graph.py` carries the two
+relations and the read models both directions answer with. Four of the nine L1 modules changed, three of them
+substantively.
+
+The three graph-vocabulary rules, each the model-level half of a storage contract:
+
+- **A guarantee is the family's own text.** `FamilyRevisionDraft` carries the joint guarantee and never composes
+  it from its members, and its `payload_digest` seals the whole aggregate including the sorted predecessor set, so
+  a changed guarantee is a separately identified successor.
+- **A draft carries no seal, and the anchor draft carries no provenance.** `FamilyMemberDraft`,
+  `RealizationClaimDraft` and `FamilyRevisionDraft` have no row digest, and `SourceAnchorDraft` has no
+  `provenance` field; the store computes the first and the admitted application attaches the second.
+- **A role is an authored claim.** `RealizationRole` is a closed vocabulary with an explicit `unclassified`
+  member, so a missing role is representable as "not classified" rather than silently defaulted to a real one,
+  and no reader infers a role or a rationale from the source.
+
+**The repaired anchor identity is a correction to the L1 vocabulary, not a new feature.** `SourceAnchor.anchor_id`
+was declared `anchor_id: UUID = Field(pattern=UUID_PATTERN)`, and Pydantic refuses to apply a string `pattern`
+constraint to its UUID schema, so **every** anchor construction raised
+`TypeError: Unable to apply constraint 'pattern' … for schema of type 'uuid'` — the class was unconstructible, and
+it stayed latent because no L1 test constructed one. The field is now a plain `UUID` and the canonical stored text
+is derived at the storage boundary (`records.anchor_row` writes `str(anchor.anchor_id)`), exactly as it is for an
+authorship operation identity. The same change split `SourceAnchor` into the draft (what the author decided) and
+the stored record (the draft plus the provenance envelope), which is what keeps provenance out of a caller's hands.
+The lesson a future reader should take is narrow and reusable: on an identifier field, a `pattern`-constrained
+string and a parsed `UUID` are not interchangeable spellings — one of them is unconstructible.
+
+The `models/` route's own statement that `REVISION_PAYLOAD_VERSION` is the payload version is now one of two:
+`FAMILY_REVISION_PAYLOAD_VERSION` exists because the family payload seals a different field set, so a digest can
+never be mistaken for the other object's identity.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The family identity, the immutable revision aggregate and its self-consistency rules. | `FamilyIdentity`; `FamilyRevisionDraft`; `FamilyRevision` | mcp/src/agents_remember/models/knowledge/family.py:51-55; mcp/src/agents_remember/models/knowledge/family.py:58-102; mcp/src/agents_remember/models/knowledge/family.py:105-109 |
+| The two relation shapes, the closed authored role vocabulary and the four read models. | `FamilyMemberDraft`; `RealizationClaimDraft`; `RealizationRole`; `UNCLASSIFIED_ROLE`; `AnchorRealizations` | mcp/src/agents_remember/models/knowledge/graph.py:49-56; mcp/src/agents_remember/models/knowledge/graph.py:65-85; mcp/src/agents_remember/models/knowledge/graph.py:36-44; mcp/src/agents_remember/models/knowledge/graph.py:46-46; mcp/src/agents_remember/models/knowledge/graph.py:120-129 |
+| The draft/stored split and the repaired `UUID` identifier field. | `SourceAnchorDraft`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:125-128 |
+| The two payload versions and the family payload's sealed field set. | `FAMILY_REVISION_PAYLOAD_VERSION`; `canonical_family_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:26-27; mcp/src/agents_remember/models/knowledge/digest.py:71-90 |
+| The shared accepted/proposed rule both revision aggregates apply at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
+| The extended served surface, including the graph names. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:98-170 |
+| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:208-213; mcp/src/agents_remember/models/knowledge/result.py:197-207; mcp/src/agents_remember/models/knowledge/result.py:190-196; mcp/src/agents_remember/models/knowledge/result.py:350-366 |
+| The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `create_realization_claim`; `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:112-141; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83; mcp/src/agents_remember/memory/knowledge/store.py:86-104 |
+| The requirement this graph vocabulary belongs to. | `KS-R02@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R02-v1-registered-family-and-realization-graph.md |
+
 ## Update History
+
+- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
+  `60e0820e`): recorded the knowledge sub-route's growth from nine modules to eleven and the graph vocabulary it
+  now serves (family identity and the immutable family revision; the two relations, the closed authored role
+  vocabulary with its explicit `unclassified`, and the four read models), the three graph-vocabulary rules that
+  are each the model-level half of a storage contract, the second payload version, and the **repaired anchor
+  identity** — `SourceAnchor.anchor_id` was a `pattern`-constrained string on a `UUID` field, which made every
+  anchor unconstructible, and is now a plain `UUID` with its canonical text derived at the storage boundary.
+  Verification metadata remains closeout-owned.
 
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the new `models/knowledge/` vocabulary sub-route — nine modules carrying repository,

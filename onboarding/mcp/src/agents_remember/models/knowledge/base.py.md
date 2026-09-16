@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/base.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash |  `60e0820e6cb3b1d160518b9f8c7ac6241323a281`|
-| lastVerifiedCommitDate |  2026-09-15T22:46:24+02:00|
+| lastUpdated | 2026-09-16T08:24+02:00 |
+| lastVerifiedCommitHash |  `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
+| lastVerifiedCommitDate |  2026-09-16T08:41:27+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,12 @@ Module constants: `UUID_PATTERN` (lowercase hyphenated UUID text), `SHA256_PATTE
 and lowercases, parses, and then compares `str(parsed)` against the canonical form, raising `ValueError` with the
 non-canonical input when they differ.
 
+`require_consistent_acceptance` is the shared authored-value rule for an origin state: accepted origin data is
+accepted because a named authority accepted it, so a non-blank `acceptance_ref` is required; a proposed revision
+that carried one would claim an acceptance that never happened. It is called by **both** revision aggregates at
+construction — `InvariantRevision` (which previously inlined the same two checks) and `FamilyRevisionDraft` — so
+the rule has one owner and a new revision kind inherits it instead of restating it.
+
 ### Conventions
 
 Two spellings of one identity never coexist: an identifier is validated into the canonical form at the model
@@ -51,6 +57,11 @@ SQLite limit; a legitimate value never approaches them.
   never quietly rewritten.
 - `PROPOSED_STATE`/`ACCEPTED_STATE` live here because they decide something, so consumers import them rather than
   re-declaring their own literals.
+- **A rule shared by two aggregates lives here, not in the first one that needed it.** A rule inlined in one
+  revision kind is a rule the next kind will re-derive slightly differently; the accepted/proposed check was
+  extracted for exactly that reason.
+- **No model here gains a storage concern.** These are authored-value rules refused at construction, not
+  substitutes for the storage boundary's checks.
 
 ### Todos
 
@@ -70,10 +81,11 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The frozen, extra-forbidding base every knowledge model inherits. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
-| The canonical-spelling identifier rule and its refusal of non-canonical input. | `normalized_uuid` | mcp/src/agents_remember/models/knowledge/base.py:40-54 |
+| The shared accepted/proposed rule both revision aggregates apply at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
+| The canonical-spelling identifier rule and its refusal of non-canonical input. | `normalized_uuid` | mcp/src/agents_remember/models/knowledge/base.py:59-73 |
 | The declared length ceilings and identifier patterns used by every sibling model. | `PROSE_MAX_LENGTH`; `LABEL_MAX_LENGTH`; `UUID_PATTERN`; `SHA256_PATTERN`; `GIT_OBJECT_PATTERN` | mcp/src/agents_remember/models/knowledge/base.py:18-27 |
 | The two authored origin states are declared once here. | `PROPOSED_STATE`; `ACCEPTED_STATE` | mcp/src/agents_remember/models/knowledge/base.py:29-31 |
-| The revision aggregate validates its own predecessor set against the identity pattern. | `InvariantRevision` | mcp/src/agents_remember/models/knowledge/invariant.py:56-117 |
+| The two revision aggregates that apply the shared rule. | `InvariantRevision`; `FamilyRevisionDraft` | mcp/src/agents_remember/models/knowledge/invariant.py:33-115; mcp/src/agents_remember/models/knowledge/family.py:58-102 |
 
 ## Cross-Repo References
 
@@ -85,4 +97,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): recorded the one addition this leaf made — `require_consistent_acceptance`, the accepted/proposed origin-state rule extracted from `InvariantRevision` so both revision aggregates apply one owner's rule at construction instead of the second kind re-deriving it — plus the boundary that no model here gains a storage concern. The identifier and length declarations are unchanged and are still the single source the siblings import. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new frozen model base. It records that value immutability is distinct from row immutability and that identity spelling is validated rather than normalized. Verification metadata remains empty until closeout stamps the code commit.

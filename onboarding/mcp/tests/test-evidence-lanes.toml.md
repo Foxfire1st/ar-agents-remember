@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastUpdated | 2026-09-16T08:24+02:00 |
+| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
+| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 
 ## Purpose
 
-Classifies 208 retained test-shaped modules into explicit evidence categories: 117 unit-regression, 2 public-contract, 60 integration, 16 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. The 260915-KS-L1 change set registered the new `test_knowledge_store.py` at row 67 in **unit-regression**; see its own section below for the measured brackets, which are the current ones. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member,
+Classifies 212 retained test-shaped modules into explicit evidence categories: 121 unit-regression, 2 public-contract, 60 integration, 16 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. The 260915-KS-L1 change set registered `test_knowledge_store.py` at row 67 in **unit-regression**, and the 260915-KS-L2 change set registered four further knowledge modules at rows 67-70 in that same lane; the KS-L2 section below carries the measured current brackets, and it supersedes every earlier per-lane number in this card. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member,
 `test_closeout_projection_source_classification.py` (entry row 137) — it composes the real
 `QueueFixture` over temporary Git repositories and drives the production graph admission and
 projection path through `graph_context` and `capture_projection_source`, so that is its
@@ -37,6 +37,33 @@ existing lanes, plus `test_memory_quality_is_independent_of_the_closeout_plane.p
 hermetic focused suites and the integration lane is capped at 200 collected cases
 (`pyproject.toml:135`; the "150" this card's earlier entries recorded is stale), so nothing was
 moved into it beyond the one module that genuinely exercises an integration boundary.
+
+## 260915-KS-L2 Lane Rows (Declared)
+
+The KS-L2 change set adds **four** modules and their rows in the same change — `test_knowledge_family_revision.py`,
+`test_knowledge_graph_reads.py`, `test_knowledge_relation_rules.py` and `test_knowledge_revision_seals.py` — at
+rows `mcp/tests/test-evidence-lanes.toml:67-70`, all in the **unit-regression** lane. Each is hermetic (temporary
+directories under `tmp_path`, in-process APSW databases, no integration marker, no repository or subprocess), so
+the default unit lane is each one's behaviour-preserving classification. The population is closed in both
+directions at **212** modules on disk and 212 declared entries — the KS-L1 population was 208 and these are the
+four additions.
+
+**Measured current brackets, by entry row** — this is the current account, and it supersedes every earlier
+per-lane bracket in this card: unit-regression **121** entries at rows 6-126, public-contract 2 at 129-130,
+integration 60 at 133-192, architecture-fitness 16 at 195-210, provider-conformance 13 at 213-225, with
+stress-durability (226-228) and migration (229-231) empty. The knowledge modules sit at rows 67-71, inside the
+alphabetical run, so the insertion shifted the lanes after it. Unit collected cases remain inside the declared
+`unit_case_budget` 1000 (`pyproject.toml:149`).
+
+`test_knowledge_revision_seals.py` arrived one round later than the other three, as the fix for sealed review
+finding `260915-KS-L2-RV-1`: the round-1 mutation array could not kill the sealed predecessor field on either
+payload, and the new module is where the field-isolating evidence for it now lives. Its row was added in the same
+change, which is why one leaf is recorded as three rows plus one.
+
+Registration here is not bookkeeping, and the KS-L1 note below states why: `load_lane_manifest` derives the
+repository's actual test modules and refuses a manifest that omits one, so an unregistered module is a **hard load
+failure** — the lane plugin raises `pytest.UsageError` during collection and the quality path swallows the same
+error into a run without retry proof. These rows are classification only — never execution or acceptance evidence.
 
 ## 260915-KS-L1 Lane Row (Declared)
 
@@ -263,6 +290,7 @@ The exact source declarations below establish the current behavior; this invento
 | The L5 master-link binding suite is registered in the integration lane by the same change set that created it (entry row 154 now, after the L7, L8 and L3 insertions) — it drives the real public `worktree_start` over disposable code and external-memory repositories, so that is its behaviour-preserving lane. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
 | The L7 capacity-refusal classification suite is registered in the integration lane by the same change set that created it (entry row 138 now, after the L8 and L3 insertions) — it composes the real `QueueFixture` over temporary Git repositories and drives the production graph admission and projection path, so that is its behaviour-preserving lane. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:138-138 |
 | The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 178 now, after the L3 insertion) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:178-178 |
+| The L2 knowledge graph suite is registered in the unit-regression lane by the same change set that created it (entry rows 67-70) — all four modules are hermetic (temporary directories, in-process APSW databases, no integration marker, no repository or subprocess), so the default unit lane is each one's behaviour-preserving classification. | "mcp/tests/test_knowledge_family_revision.py"; "mcp/tests/test_knowledge_graph_reads.py"; "mcp/tests/test_knowledge_relation_rules.py"; "mcp/tests/test_knowledge_revision_seals.py" | mcp/tests/test-evidence-lanes.toml:67-70 |
 | The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (entry row 69) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
 | The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value. | "integration_case_budget = 250" | pyproject.toml:150-150 |
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
@@ -271,6 +299,23 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository authority is established by this file.
 
 ## Update History
+- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
+  `60e0820e`): registered the change set's four new knowledge modules in the **unit-regression** lane
+  at entry rows 67-70 — `test_knowledge_family_revision.py`, `test_knowledge_graph_reads.py`,
+  `test_knowledge_relation_rules.py` and `test_knowledge_revision_seals.py`; all four are hermetic
+  (temporary directories, in-process APSW databases, no integration marker, no repository or
+  subprocess), so the default unit lane is each one's behaviour-preserving classification — and
+  re-measured the manifest rather than carrying the L1 numbers: 212 modules on disk and 212 declared
+  entries with no undeclared module and no stale row, 121 unit-regression (entries 6-126), 2
+  public-contract (129-130), 60 integration (133-192), 16 architecture-fitness (195-210), 13
+  provider-conformance (213-225), stress-durability and migration empty. One of the four arrived in
+  the fix-verification round as the evidence repair for sealed finding `260915-KS-L2-RV-1`, and its
+  row was added in the same change. Recorded again why the rows are load-bearing rather than
+  bookkeeping: an unregistered module makes `load_lane_manifest` refuse the repository, which raises
+  `pytest.UsageError` at collection and quietly drops the quality path's retry proof. Classification
+  only, so lane membership is not execution or acceptance evidence; verification metadata remains
+  closeout-owned.
+
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): registered the change set's new `mcp/tests/test_knowledge_store.py` in the
   **unit-regression** lane at entry row 67 — the module is hermetic (temporary directories, in-process

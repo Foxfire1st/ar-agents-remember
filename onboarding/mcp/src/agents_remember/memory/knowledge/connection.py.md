@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/connection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281`|
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| lastUpdated | 2026-09-16T08:24+02:00 |
+| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
+| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,10 @@ delegates to `inspect_schema`. The version marker is written **after** the DDL c
 leaves a complete but unversioned database that the next open refuses instead of guessing — the opposite order
 could leave a database claiming a generation it does not have.
 
+`fetch_one` is the shared "the row, if there is one" reader: one `next(iter(...), None)` over a parameterized
+statement, returning a plain tuple or `None`. Every reader in the package asks that question, and this is the one
+owner of the shape — the graph modules' ten reads call it rather than repeating the pattern at each call site.
+
 `inspect_schema` refuses an unexpected `user_version`, then calls `_require_declared_tables` (every canonical table
 present and every table's declared column tuple identical to the manifest) and `_require_declared_triggers` (no
 immutability trigger missing), returning the `KnowledgeSchemaIdentity` with the current fingerprint.
@@ -62,6 +66,10 @@ typed checks rather than a mix of SQLite plumbing and identity rules.
 - Missing immutability triggers refuse at open, because a database without them can rewrite a sealed revision and
   therefore is not this schema.
 - The transaction boundary rolls back on failure and never suppresses the caller's exception.
+- **This module decides no identity rule and writes no domain row.** It is the boundary that makes the store's
+  guarantees enforceable; the rules themselves belong to `store.py` and the graph modules.
+- **One owner per repeated question.** A reader that needs "the row, if there is one" calls `fetch_one` rather
+  than re-deriving the shape, so a change to how a single row is fetched is one change.
 
 ### Todos
 
@@ -83,11 +91,13 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bounded lock policy and its no-retry rule. | `BUSY_TIMEOUT_MILLISECONDS` | mcp/src/agents_remember/memory/knowledge/connection.py:23-25 |
-| The verified foreign-key contract that fails closed on a build without enforcement. | `apply_connection_contract` | mcp/src/agents_remember/memory/knowledge/connection.py:37-51 |
-| Create-on-empty versus validate-on-existing, and the post-commit version marker. | `create_or_validate_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:54-66 |
-| The existing database is checked for generation, exact table columns and the full trigger set. | `inspect_schema`; `_require_declared_tables`; `_require_declared_triggers` | mcp/src/agents_remember/memory/knowledge/connection.py:69-84; mcp/src/agents_remember/memory/knowledge/connection.py:127-157 |
-| The single immediate transaction whose exit rolls back without suppressing the failure. | `immediate_transaction`; `_ImmediateTransaction` | mcp/src/agents_remember/memory/knowledge/connection.py:87-110 |
+| The bounded lock policy and its no-retry rule. | `BUSY_TIMEOUT_MILLISECONDS` | mcp/src/agents_remember/memory/knowledge/connection.py:26-26 |
+| The verified foreign-key contract that fails closed on a build without enforcement. | `apply_connection_contract` | mcp/src/agents_remember/memory/knowledge/connection.py:38-52 |
+| The shared one-row reader every graph read is built on. | `fetch_one` | mcp/src/agents_remember/memory/knowledge/connection.py:55-68 |
+| Create-on-empty versus validate-on-existing, and the post-commit version marker. | `create_or_validate_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:71-85 |
+| The existing database is checked for generation, exact table columns and the full trigger set. | `inspect_schema`; `_require_declared_tables`; `_require_declared_triggers` | mcp/src/agents_remember/memory/knowledge/connection.py:86-103; mcp/src/agents_remember/memory/knowledge/connection.py:144-163; mcp/src/agents_remember/memory/knowledge/connection.py:164-174 |
+| The single immediate transaction whose exit rolls back without suppressing the failure. | `immediate_transaction`; `_ImmediateTransaction` | mcp/src/agents_remember/memory/knowledge/connection.py:104-129 |
+| The graph readers that reuse the one-row helper. | `get_anchor`; `get_family_revision`; `get_family_member`; `get_realization_claim` | mcp/src/agents_remember/memory/knowledge/anchors.py:130-144; mcp/src/agents_remember/memory/knowledge/families.py:215-232; mcp/src/agents_remember/memory/knowledge/memberships.py:176-186; mcp/src/agents_remember/memory/knowledge/realizations.py:213-223 |
 | The declared generation the validation compares against. | `SCHEMA_USER_VERSION`; `CANONICAL_TABLES`; `CANONICAL_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema.py:26-42; mcp/src/agents_remember/memory/knowledge/schema.py:47-112 |
 
 ## Cross-Repo References
@@ -100,4 +110,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): recorded the one addition this leaf made to the boundary — `fetch_one`, the shared "the row, if there is one" reader now used by all ten graph reads, which keeps that shape in one owner instead of repeated at each call site — plus the two boundaries it does not cross (no identity rule, no domain row). The verified-pragma contract, the create-versus-validate split and the fail-closed schema refusals are unchanged from L1 and are the reason the graph modules' foreign-key guarantees hold. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new connection/schema-validation boundary. It records the verified-pragma rule, the create-versus-validate split and the two fail-closed schema refusals. Verification metadata remains empty until closeout stamps the code commit.

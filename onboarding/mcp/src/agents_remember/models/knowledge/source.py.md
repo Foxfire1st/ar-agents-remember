@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/source.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281`|
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| lastUpdated | 2026-09-16T08:24+02:00 |
+| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
+| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 The shared source vocabulary: what a knowledge claim points at, in which exact revision of the selected
-repository, and via which locator.
+repository, and via which locator. The anchor is split into a **draft** — what the author decided — and
+the **stored** record, which is the draft plus the provenance envelope that recorded it.
 
 ## Code Commentary
 
@@ -29,10 +30,20 @@ repository, and via which locator.
 validator that refuses an `end_line` preceding `start_line`) and `SymbolLocator` (`kind: "symbol"`, nonblank
 `language` and `qualified_name`). `SourceLocator` is the discriminated union of the three, keyed on `kind`.
 
-`SourceAnchor` is one attributed location: a `UUID` `anchor_id`, a repository-relative `path`, a
-`SourceIdentity`, a `SourceLocator` and the `Authorship` envelope. Its `_require_confined_relative_posix_path`
-validator refuses a blank path, an absolute or `~`-prefixed path, a backslash separator, a NUL byte, and any
-empty, `.` or `..` segment, and bounds the length.
+`SourceAnchorDraft` is one attributed location as its author supplies it: a `UUID` `anchor_id`, a
+repository-relative `path`, a `SourceIdentity` and a `SourceLocator`. Its
+`_require_confined_relative_posix_path` validator refuses a blank path, an absolute or `~`-prefixed path, a
+backslash separator, a NUL byte, and any empty, `.` or `..` segment, and bounds the length. `SourceAnchor`
+subclasses it and adds the `Authorship` envelope, so provenance cannot be supplied by a caller who is only
+proposing a location.
+
+`anchor_id` is a real `UUID`, not a pattern-constrained string. This is a repair of an L1 defect: the
+field was declared `anchor_id: UUID = Field(pattern=UUID_PATTERN)`, and Pydantic refuses to apply a string
+`pattern` constraint to its UUID schema, so **every** anchor construction raised `TypeError: Unable to
+apply constraint 'pattern' … for schema of type 'uuid'`. It was latent because no L1 test constructed an
+anchor. The canonical stored text is now derived from the parsed value at the storage boundary
+(`records.anchor_row` writes `str(anchor.anchor_id)`), exactly as it is for an authorship operation
+identity.
 
 ### Conventions
 
@@ -44,9 +55,15 @@ readable after the symbol moves, and losing resolvability never erases the claim
 - The blob identity is a Git object identity, **not a copy of the bytes** — there is no second content store here.
 - Path shape is checked at the vocabulary boundary; resolution against a real filesystem belongs to the filesystem
   boundary, so an absolute, drive, UNC, backslash or parent-escaping path never reaches a stored record.
+- **A draft carries no provenance.** `SourceAnchorDraft` deliberately has no `provenance` field, so the
+  admitted application attaches the envelope (`admitted_anchor_request`) and
+  `memory/knowledge/anchors.source_anchor_from_draft` is the single construction point for a stored anchor.
+- **An identity is a parsed value, not a formatted string.** A `pattern`-constrained string declaration on a
+  `UUID` field is unconstructible rather than merely lax, so a new identifier field must choose one of the
+  two shapes deliberately — the L1 defect this file repaired.
 - `SourceLocator` is declared *shared* with the selective read/diff contributor (KS-R07/KS-R08): the union is
-  designed so that consumer can discriminate on `kind` without a second locator vocabulary. That consumer does not
-  exist yet; nothing here claims it does.
+  designed so that consumer can discriminate on `kind` without a second locator vocabulary. That consumer does
+  not exist yet; nothing here claims it does.
 
 ### Todos
 
@@ -66,10 +83,11 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The single v1 source identity and the alias a caller may name. | `GitBlobIdentity`; `SourceIdentity` | mcp/src/agents_remember/models/knowledge/source.py:28-35 |
-| The three locators and the discriminated union over them. | `FileLocator`; `LineRangeLocator`; `SymbolLocator`; `SourceLocator` | mcp/src/agents_remember/models/knowledge/source.py:38-79 |
-| The anchor model and its repository-relative POSIX path rule. | `SourceAnchor`; `_require_confined_relative_posix_path` | mcp/src/agents_remember/models/knowledge/source.py:82-115 |
-| The stored `source_anchor` table, its immutability trigger and its canonical column order. | `source_anchor`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:217-229; mcp/src/agents_remember/memory/knowledge/schema.py:335-339 |
-| The codec that stores and decodes an anchor row through the discriminated union. | `anchor_row`; `decode_anchor_row` | mcp/src/agents_remember/memory/knowledge/records.py:208-226 |
+| The three locators and the discriminated union over them. | `FileLocator`; `LineRangeLocator`; `SymbolLocator`; `SourceLocator` | mcp/src/agents_remember/models/knowledge/source.py:37-42; mcp/src/agents_remember/models/knowledge/source.py:43-57; mcp/src/agents_remember/models/knowledge/source.py:58-78; mcp/src/agents_remember/models/knowledge/source.py:79-81 |
+| The draft/stored split, the repository-relative POSIX path rule, and the repaired `UUID` identifier field. | `SourceAnchorDraft`; `SourceAnchor`; `_require_confined_relative_posix_path` | mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:125-128 |
+| The stored `source_anchor` table, its immutability trigger and its canonical column order. | `source_anchor`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:218-230; mcp/src/agents_remember/memory/knowledge/schema.py:336-340 |
+| The codec that derives the canonical identity text and decodes an anchor row through the discriminated union. | `anchor_row`; `anchor_row_digest`; `decode_anchor_row` | mcp/src/agents_remember/memory/knowledge/records.py:226-236; mcp/src/agents_remember/memory/knowledge/records.py:366-381; mcp/src/agents_remember/memory/knowledge/records.py:237-246 |
+| The single construction point that attaches provenance to a draft. | `source_anchor_from_draft` | mcp/src/agents_remember/memory/knowledge/anchors.py:90-106 |
 | The later requirement packets this vocabulary is declared shared with. | `KS-R07`; `KS-R08` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R07-v1-selective-snapshot-read.md; ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R08-v1-invariant-family-candidate-diff.md |
 
 ## Cross-Repo References
@@ -82,4 +100,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): **superseded the L1 account of the anchor's identity field and type shape.** The earlier card described `SourceAnchor` as one model carrying a `UUID` `anchor_id` plus the `Authorship` envelope, and cited the anchor range at `82-115`. That account was wrong in the load-bearing respect: the field was declared `anchor_id: UUID = Field(pattern=UUID_PATTERN)`, and Pydantic refuses a string `pattern` constraint on a UUID schema, so **every** anchor construction raised `TypeError: Unable to apply constraint 'pattern' … for schema of type 'uuid'` — the class was unconstructible and no L1 test constructed one. The card now records the repair (`anchor_id: UUID`, canonical text derived at the storage boundary) and the draft/stored split (`SourceAnchorDraft` without provenance, `SourceAnchor(SourceAnchorDraft)` adding it), and re-cites the anchor range, the locator ranges and the codec rows against the corrected source. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new shared source vocabulary. It records that the locator union is declared shared with a read/diff consumer that does not exist yet, and that the blob identity is a Git object identity rather than a byte copy. Verification metadata remains empty until closeout stamps the code commit.

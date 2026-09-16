@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/refusals.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281`|
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| lastUpdated | 2026-09-16T08:24+02:00 |
+| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
+| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -36,16 +36,39 @@ One factory per case: `scope_refusal` (returns `None` when the namespaces match)
 `unknown_invariant_refusal`, `dangling_predecessor_refusal`, `cross_invariant_predecessor_refusal`,
 `lineage_cycle_refusal`, `lock_capability_refusal`, `candidate_busy_refusal`.
 
-`lineage_cycle_refusal` has two branches and the message names which applied, because the remedy differs.
-`candidate_on_cycle=True` states the predecessors would put the revision on a cycle ("it would be reachable from
-itself") and names resolving the cycle at that revision. The descending branch states the predecessors descend
-from a revision already on a lineage cycle, names the ancestor cycle in `observed`, and says explicitly that the
-candidate is **not itself on that cycle** — claiming self-reachability there would be false, because nothing
-points at the candidate.
+**The relation factories this package's graph half added.** One per failure, each emitting exactly one code:
+`family_lineage_cycle_refusal` (`lineage_cycle`), `unknown_family_refusal` (`unknown_family` — a code
+introduced with the family half), `invalid_family_payload_refusal` (`invalid_payload`),
+`duplicate_family_refusal` and `duplicate_family_revision_refusal` and `duplicate_anchor_refusal` and
+`duplicate_relation_identity_refusal` (`duplicate_identity`, each carrying the expected and observed digests
+or labels), `dangling_family_predecessor_refusal` and `cross_family_predecessor_refusal` and
+`missing_relation_endpoint_refusal` (`invalid_reference`), `duplicate_relationship_refusal` and
+`referenced_anchor_refusal` (`relationship_constraint`), `missing_expected_row_refusal`
+(`missing_expected_row` — declared in L1, first produced here), and `stale_expected_row_refusal`
+(`stale_precondition` — a code introduced with the removal contract).
+
+The two relations share one refusal **shape** through the factories' keyword-only context
+(`operation`, `table`, `record_id`) rather than through duplicated code, which is what lets a membership
+refusal and a realization refusal be worded identically without being the same call.
+
+`lineage_cycle_refusal` and its family sibling `family_lineage_cycle_refusal` share
+`_lineage_cycle_wording`, so the two graphs cannot drift into describing different rules; only the object
+noun, the operation and the edge table differ. Both have two branches and the message names which applied,
+because the remedy differs. `candidate_on_cycle=True` states the predecessors would put the revision on a
+cycle ("it would be reachable from itself") and names resolving the cycle at that revision. The descending
+branch states the predecessors descend from a revision already on a lineage cycle, names the ancestor cycle
+in `observed`, and says explicitly that the candidate is **not itself on that cycle** — claiming
+self-reachability there would be false, because nothing points at the candidate.
 
 `map_sqlite_error` maps a surviving `apsw.Error` by message: an `immutable_revision`-prefixed message to
 `immutable_revision`, a foreign-key message to `invalid_reference`, any other constraint message to
-`relationship_constraint`, and everything else to `invalid_payload`.
+`relationship_constraint`, and everything else to `invalid_payload`. It takes a `SqliteFailureContext`
+(`operation`, `table`, `record_id`) rather than a bare record id, because a constraint failure carries no
+operation identity of its own. This too is a repair of an L1 defect: the earlier signature hard-coded
+`operation="create_invariant_revision"` and the invariant tables for **every** caller, so a mapped failure
+arising from a repository, invariant, family, anchor, membership or claim write reported the wrong operation
+and sent the caller to the wrong row. The operation and table now come from the caller-supplied context at
+all eleven call sites.
 
 ### Conventions
 
@@ -59,10 +82,16 @@ refusal raised from inside a transaction that must be rolled back first.
   means the caller has found a defect, not an outcome to handle.
 - The trigger text `immutable_revision: …` is the steering signal that maps a trigger-originated SQLite error to
   the right code, so the schema's trigger messages and this mapping are one contract.
+- **A mapped failure must name the operation and table it actually came from.** The mapping cannot know either
+  one, so the caller supplies them; a hard-coded pair is wrong for every operation but one.
+- **A code names one failure.** Two failures that need different remedies get different codes even when they
+  arrive at the same factory shape — which is why a dangling predecessor and a cross-family predecessor are both
+  `invalid_reference` while a stale row and an absent row are `stale_precondition` and `missing_expected_row`.
 - Every refusal names a `next_action`; guidance for the descending-cycle branch names both remedies (author an
-  acyclic successor, and resolve the ancestor cycle reported in `observed`).
-- `unsupported_schema` and `missing_expected_row` are declared in the vocabulary but have no factory here; schema
-  failures raise `KnowledgeStorageError` instead.
+  acyclic successor, and resolve the ancestor cycle reported in `observed`), and the anchor-lifetime refusal says
+  explicitly that an anchor is never removed because its source disappeared.
+- `unsupported_schema` and `no_change` are declared in the vocabulary but have no factory here; schema failures
+  raise `KnowledgeStorageError` instead, and `no_change` is a *result state* rather than a refusal.
 
 ### Todos
 
@@ -82,12 +111,13 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The defect-report exception versus the internal control-flow exception. | `KnowledgeStorageError`; `KnowledgeRefused` | mcp/src/agents_remember/memory/knowledge/refusals.py:27-44 |
-| The facts bundle and the one generic factory every refusal is built through. | `RefusalFacts`; `refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:47-77 |
-| The two-branch cycle refusal whose text must be true in both directions. | `lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:238-277 |
-| The write-path rule the descending branch describes, and its post-insert graph scope. | `_require_no_lineage_cycle` | mcp/src/agents_remember/memory/knowledge/store.py:378-404 |
-| The SQLite-error mapping and the trigger-message prefix that steers it. | `map_sqlite_error` | mcp/src/agents_remember/memory/knowledge/refusals.py:308-350 |
-| The trigger messages the mapping depends on. | `IMMUTABILITY_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema.py:284-350 |
-| The refusal codes these factories must stay within. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:31-48 |
+| The facts bundle and the one generic factory every refusal is built through. | `RefusalFacts`; `refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:48-56; mcp/src/agents_remember/memory/knowledge/refusals.py:57-79 |
+| The two-branch cycle refusal whose text must be true in both directions, and the family sibling that shares its wording. | `lineage_cycle_refusal`; `family_lineage_cycle_refusal`; `_lineage_cycle_wording` | mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286; mcp/src/agents_remember/memory/knowledge/refusals.py:290-309 |
+| The family, anchor and relation factories added with the graph half, one per failure. | `unknown_family_refusal`; `duplicate_family_refusal`; `duplicate_anchor_refusal`; `duplicate_relationship_refusal`; `missing_expected_row_refusal`; `stale_expected_row_refusal`; `referenced_anchor_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:310-324; mcp/src/agents_remember/memory/knowledge/refusals.py:337-358; mcp/src/agents_remember/memory/knowledge/refusals.py:420-441; mcp/src/agents_remember/memory/knowledge/refusals.py:492-513; mcp/src/agents_remember/memory/knowledge/refusals.py:514-530; mcp/src/agents_remember/memory/knowledge/refusals.py:531-552; mcp/src/agents_remember/memory/knowledge/refusals.py:553-567 |
+| The write-path rule the descending branch describes, and its post-insert graph scope, now owned by the shared lineage module. | `_require_acyclic_lineage`; `find_cycle` | mcp/src/agents_remember/memory/knowledge/store.py:391-417; mcp/src/agents_remember/memory/knowledge/lineage.py:71-86 |
+| The SQLite-error mapping, its caller-supplied failure context, and the trigger-message prefix that steers it. | `map_sqlite_error`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/refusals.py:609-652; mcp/src/agents_remember/memory/knowledge/refusals.py:596-607 |
+| The trigger messages the mapping depends on. | `IMMUTABILITY_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema.py:286-350 |
+| The refusal codes these factories must stay within. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:52-69 |
 
 ## Cross-Repo References
 
@@ -99,4 +129,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): **superseded the L1 account of the SQLite-error mapping and extended the vocabulary to the graph half.** The earlier card described `map_sqlite_error` as taking a bare record id; that signature hard-coded `operation="create_invariant_revision"` and the invariant tables for every caller, so a mapped failure from any other write reported the wrong operation and the wrong row. The card now records the `SqliteFailureContext` signature and the eleven caller-supplied contexts, the two cycle refusals sharing one wording helper so the two lineage graphs cannot describe different rules, the fourteen new relation factories with the code each emits, and the corrected reachability statement (`missing_expected_row` is now produced; `no_change` remains a result state rather than a refusal, and `unsupported_schema` still has no producer). Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new typed refusal vocabulary. It records that refusals are returned values, that the two cycle branches must be true in their own case, and that the trigger-message prefix is a shared contract with the SQLite-error mapping. The final wording of the descending branch is the round-3 review outcome for sealed finding `RV-4`. Verification metadata remains empty until closeout stamps the code commit.

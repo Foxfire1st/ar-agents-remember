@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastUpdated | 2026-09-16T08:24+02:00 |
+| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
+| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -524,7 +524,37 @@ result from this layer, and never imports the storage package.
 | The layer charter paragraph that fixes the one-way direction this seam implements. | "[package.memory]" | layers.toml:206-222 |
 | The storage operation this seam delegates to. | `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:212-241 |
 
+## 260915-KS-L2 The Graph Operations Join The Seam
+
+The same module gained the graph half's eight operations and eight request builders, and the seam's contract did
+not change: the builders attach the destination's `authorship` and `repository_id` exactly as
+`admitted_revision_request` does, and each operation opens the admitted destination, delegates to the owning graph
+module and closes in a `finally`. The one builder with an extra parameter is `admitted_claim_request`, which takes
+the anchor endpoint — naming an existing anchor and recording a new one in the same transaction are different
+inputs, and the seam must not collapse them.
+
+**The boundary a later reader most needs is the one that did not move: this module still has no non-test importer
+in `mcp/src`.** Its only importers are `mcp/tests/test_knowledge_store.py` and
+`mcp/tests/test_knowledge_relation_rules.py`, so its green composed-path test is evidence about the seam's
+behaviour, not evidence that the seam is wired into any registered tool or entry point. The typed write boundary
+that will consume it is `KS-R03`'s.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The graph request builders, all attaching the destination's provenance and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:213-225; mcp/src/agents_remember/application/knowledge.py:237-248; mcp/src/agents_remember/application/knowledge.py:249-259; mcp/src/agents_remember/application/knowledge.py:260-274 |
+| The eight graph operations, each open-delegate-close. | `create_knowledge_family`; `create_knowledge_anchor`; `create_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:309-320; mcp/src/agents_remember/application/knowledge.py:333-344; mcp/src/agents_remember/application/knowledge.py:357-368; mcp/src/agents_remember/application/knowledge.py:381-392; mcp/src/agents_remember/application/knowledge.py:393-402 |
+| The graph modules the new operations delegate to. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:112-141; mcp/src/agents_remember/memory/knowledge/anchors.py:49-70; mcp/src/agents_remember/memory/knowledge/memberships.py:59-80; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83 |
+| The composed-path case that drives admit -> create -> reopen -> read through this seam. | "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:566-680 |
+
 ## Update History
+
+- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
+  `60e0820e`): recorded the graph operations joining the seam — eight builders that attach the destination's
+  provenance and namespace exactly as the revision builder does, eight open-delegate-close operations, and the one
+  builder that takes the anchor endpoint because naming an anchor and recording one are different inputs — and
+  recorded the boundary that did not move: the seam still has **no non-test importer in `mcp/src`**, so its
+  composed-path test is behaviour evidence and not wiring evidence, and the consuming write boundary is `KS-R03`'s.
+  Verification metadata remains closeout-owned.
 
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the new `application/knowledge.py` composition seam — assigned rather than parameterized
