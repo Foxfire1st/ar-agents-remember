@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c` |
-| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastUpdated | 2026-09-16T13:45+02:00 |
+| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
+| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -801,7 +801,64 @@ Two rules this leaf's evidence teaches, and both are about what a named node pro
 | The node that pins the identity operation's two-caller contract after the refactor broke it. | "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses" | mcp/tests/test_knowledge_store.py:139-178 |
 | The two split nodes that keep the database path and the concept guard separately proven. | "test_a_database_refusal_mid_batch_names_the_command_that_actually_failed"; "test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse" | mcp/tests/test_candidate_batch_transaction.py:993-1060; mcp/tests/test_candidate_batch_transaction.py:1062-1118 |
 
+## 260915-KS-L5 The Merge Suites, Split By The Budget Their Contract Could Not Fit
+
+This route gained two test modules and one governed support module, and the split between the two modules is a
+**budget decision** rather than a classification preference: the unit population sits exactly at its declared
+`unit_case_budget` of 1000 collected cases after this leaf, so the merge's whole contract is carried in five unit
+cases and every scenario that needs its own world went to the integration lane.
+
+`mcp/tests/test_knowledge_guarded_merge.py` (5 nodes, **unit-regression**, row 73) carries the contract in five
+named nodes rather than one per scenario, and each node asserts the **whole** outcome — the state, the identity,
+the refusal code, and that every input is byte-identical to what it was. What each node is the mutation target
+for: the declared-manifest preflight (seven structural classes plus a reorder, a rename, a weakened trigger body, a
+changed `user_version` and an absent or unreadable input); the **silent-omission** class, where a delta built over
+a subset of the canonical tables is accepted by SQLite and refused by the coverage comparison *and* the replay; the
+conforming merge into a closed, published candidate that carries no verdict field; the refusal taxonomy, including
+the exact conflict-key assertion; and base resolution plus input integrity, including a criss-cross history with
+two common bases and a side that rewrote a sealed revision in place.
+
+`mcp/tests/test_knowledge_guarded_merge_boundaries.py` (6 nodes, **integration**, row 139) holds the scenarios that
+each need their own three-commit Git world: the conflict-row identity on a row that is **not the first** the table
+holds, a table carrying an insert alongside a conflicting update, the old-side key rule with the missing-key case,
+and the three final-integrity checks — the structural one reachable through a dangling reference all three inputs
+carry, and the applied-change and merged-candidate-immutability ones exercised as **policies** because their call
+sites cannot be reached by a black-box case at all.
+
+`mcp/tests/merge_case_test_support.py` is the new governed support module, registered in
+`mcp/tests/evidence-lifecycle.toml` as contract `common-base-merge-cases` with exactly two declared consumers and
+an evidence node that is a real passing node
+(`test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate`). It authors every dataset through
+the **real store operations** and closes it through SQLite's own backup; it builds a **real three-commit Git
+world** in which the base is the two sides' parent, so the common base is a fact of the commit graph rather than of
+the fixture's bookkeeping; it materialises each side's file out of its commit rather than from a working tree; and
+its `shape` callback runs *before* the commits are built, so a case's unusual state is inside the history the merge
+is asked to prove rather than a rewrite afterwards.
+
+Two rules this leaf's evidence teaches, and both are about what a survivor means:
+
+- **A broken mutation is not a killed guard.** The leaf's first matrix scored an `M16` survivor as killed because
+  its mutant module raised `NameError` and every node failed; the harness now classifies each failure and refuses
+  to score a `NameError`, `ImportError`, `SyntaxError` or collection error as a kill. Re-derived, the headline is
+  **17 of 21 killed with four non-experiments**, each with its cause stated.
+- **A guard whose call site is unreachable is described as one.** Two of the merge's postcondition guards cannot be
+  falsified by a black-box case under this schema, and the freeze's contribution is invisible to a case for the
+  same kind of reason. Each is recorded as a non-experiment beside the reason, with its *policy* exercised by a
+  direct node, rather than presented as coverage.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The five-case unit module, its budget statement and the whole-outcome assertion rule. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:1-33 |
+| The registered evidence node of `contract:common-base-merge-cases`. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| The two conflict-identity boundary nodes that regression-guard the corrected old-side key. | "test_a_row_level_conflict_names_the_row_the_engine_refused"; "test_a_table_carrying_an_insert_and_a_conflicting_update_names_the_conflicting_row" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:100-132; mcp/tests/test_knowledge_guarded_merge_boundaries.py:135-162 |
+| The reachable structural guard and the two direct-policy nodes for the unreachable call sites. | "test_a_candidate_carrying_a_foreign_key_violation_is_refused_by_the_structural_check"; "test_a_candidate_that_dropped_an_intended_change_is_refused" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:187-226; mcp/tests/test_knowledge_guarded_merge_boundaries.py:229-249 |
+| The shared harness: the real three-commit world, the commit-materialised files and the build order. | `build_case`; `build_git_world`; `materialize_commit` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:427-449; mcp/tests/merge_case_test_support.py:474-484 |
+| The governed-artifact registration and exact two-consumer list this leaf added. | `contract:common-base-merge-cases` | mcp/tests/evidence-lifecycle.toml:1132-1151 |
+| The lane rows the two modules were registered in, and the budget statement they sit under. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:5-73; mcp/tests/test-evidence-lanes.toml:138-139 |
+| The two guard docstrings that state their own call site's unreachability. | `require_applied_changes`; `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152 |
+
 ## Update History
+- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the merge half's own pair of suites and the reason they are split — the unit population sits exactly at its declared ceiling after this leaf, so the merge's whole contract is five unit cases and every scenario needing its own three-commit Git world went to the integration lane. The paragraph states what each node is the mutation target for, and it records the two rules this leaf's evidence teaches rather than leaving them to be rediscovered: **a broken mutation is not a killed guard** (the first matrix scored a `NameError` as a kill; the harness now refuses to score a crash, and the re-derived headline is 17 of 21 killed with four named non-experiments) and **a guard whose call site is unreachable is described as one** rather than presented as coverage. It also records the new governed harness (`common-base-merge-cases`, exact two-consumer list) and, as its load-bearing design fact, that its `shape` callback runs before the commits are built. Verification metadata remains closeout-owned.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the candidate and snapshot half's own pairs — the batch suite plus its command-union sibling and the standalone label guard, and the new candidate-lifecycle and publication suites sharing one registered harness (`knowledge-snapshot-lifecycle-cases`, exact two-consumer list). The paragraph states why that harness's evidence node is `test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not`: the claim being protected is that a published snapshot is *closed*, and only a comparison against a bare main-file copy measures it. It also names the lifecycle suite's two distinctive nodes — the live-reader state the removed WAL/SHM peer unlink destroyed, and a real child interpreter that exits with an uncommitted write transaction open — and re-states that a module missing from either registry fails the load rather than passing quietly. Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base

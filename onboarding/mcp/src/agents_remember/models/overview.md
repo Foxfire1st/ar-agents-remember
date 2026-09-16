@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c` |
-| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastUpdated | 2026-09-16T13:45+02:00 |
+| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
+| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -720,8 +720,8 @@ absolute, backslash, UNC or parent-escaping path so a stored record never carrie
 | The sealed payload, with the predecessor set inside the digest and the digest field excluded. | `canonical_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:30-52 |
 | The provenance envelope and its normalized-UTC requirement. | `Authorship` | mcp/src/agents_remember/models/knowledge/authorship.py:32-88 |
 | The shared source identity, locator union and the relative-POSIX-path rule — now split into the draft and the stored anchor, with a real `UUID` identity. | `SourceLocator`; `SourceAnchorDraft`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:79-81; mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:125-128 |
-| The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph half extended. | `KnowledgeRefusalCode`; `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:52-69; mcp/src/agents_remember/models/knowledge/result.py:246-265 |
-| The storage owner that writes this vocabulary. | `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:93-110 |
+| The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot and merge halves have each extended since. | `KnowledgeRefusalCode`; `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111; mcp/src/agents_remember/models/knowledge/result.py:311-328 |
+| The storage owner that writes this vocabulary. | `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:92-510 |
 | The later requirement packets the shared envelope and locator are declared for. | — | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R07-v1-selective-snapshot-read.md; ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R08-v1-invariant-family-candidate-diff.md |
 
 ## 260915-KS-L2 The Graph Vocabulary, And The Repaired Anchor Identity
@@ -766,8 +766,8 @@ never be mistaken for the other object's identity.
 | The two payload versions and the family payload's sealed field set. | `FAMILY_REVISION_PAYLOAD_VERSION`; `canonical_family_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:26-27; mcp/src/agents_remember/models/knowledge/digest.py:71-90 |
 | The shared accepted/proposed rule both revision aggregates apply at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
 | The extended served surface, including the graph names. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:98-170 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:208-213; mcp/src/agents_remember/models/knowledge/result.py:197-207; mcp/src/agents_remember/models/knowledge/result.py:190-196; mcp/src/agents_remember/models/knowledge/result.py:350-366 |
-| The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `create_realization_claim`; `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83; mcp/src/agents_remember/memory/knowledge/store.py:93-110 |
+| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:250-253; mcp/src/agents_remember/models/knowledge/result.py:239-247; mcp/src/agents_remember/models/knowledge/result.py:232-236; mcp/src/agents_remember/models/knowledge/result.py:415-429 |
+| The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/store.py:92-510 |
 | The requirement this graph vocabulary belongs to. | `KS-R02@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R02-v1-registered-family-and-realization-graph.md |
 
 ## 260915-KS-L3 The Candidate-Change Vocabulary
@@ -811,7 +811,7 @@ vocabulary is the *result state*, and a consumer must not branch on the code.
 | The closed twelve-member union with no promotion, approval or SQL member; the twelve kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:243-358 |
 | The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:361-378 |
 | The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:381-406; mcp/src/agents_remember/models/knowledge/candidate.py:409-452; mcp/src/agents_remember/models/knowledge/candidate.py:194-215 |
-| The two candidate-boundary codes and the three operations this leaf added to the served vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation`; `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:55-75; mcp/src/agents_remember/models/knowledge/result.py:36-53; mcp/src/agents_remember/models/knowledge/result.py:440-461 |
+| The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation`; `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111; mcp/src/agents_remember/models/knowledge/result.py:477-497 |
 | The operation that consumes this vocabulary. | `change_candidate` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80 |
 | The composition seam that resolves a context from a live candidate and seals it. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
 | The seam entry point that applies a batch under the admitted provenance. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
@@ -860,13 +860,72 @@ completed but cannot be confirmed" need different remedies.
 | The destination request whose "expected absent" mode is the only way to overwrite. | `SnapshotDestinationRequest`; `PublishSnapshotRequest` | mcp/src/agents_remember/models/knowledge/snapshot.py:239-249; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256 |
 | The measurement that reports two identities and guesses nothing. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
 | The carried-not-examined authorization reference and the verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
-| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-57; mcp/src/agents_remember/models/knowledge/result.py:61-89 |
+| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111 |
 | The facade that re-exports the whole snapshot surface as the served vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:121-214 |
 | The lifecycle and publication operations that produce these values. | `create_candidate`; `publish_candidate_snapshot`; `publication_state` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/materialization.py:34-99 |
 | The second composition seam that admits these values and returns them unchanged. | `admitted_candidate_destination`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
 | The node that proves the publication outcome is a measurement rather than a claim. | "test_a_logical_no_op_retains_the_published_bytes" | mcp/tests/test_knowledge_snapshot_publication.py:178-202 |
 
+## 260915-KS-L5 The Merge Vocabulary
+
+The knowledge sub-route grew a fourteenth module, `models/knowledge/merge.py`, and it declares the **structural**
+half of the substrate's vocabulary: three datasets that already exist, two base claims, the coverage facts of a
+delta, one conflict record and one outcome. The absence the whole module is built around is stated in its own
+docstring rather than left to a consumer's inference: **nothing here can carry a judgement about whether the
+merged knowledge is correct** — there is no compatibility, acceptance, approval or "harmless" field, and the one
+non-refusal state is named `structurally_merged` because that is the entire claim.
+
+Three splits are load-bearing, and each is a place a weaker model would have permitted a guess:
+
+- **An explicit input versus a resolved one.** `MergeInput` names a dataset *and* the exact logical identity the
+  caller admitted for it. A caller cannot hand over a path and let the operation decide which dataset it meant;
+  the identity is re-read and compared before any byte is copied. The `reference` field is the caller's own
+  durable anchor and is carried as a fact — this layer does not read Git objects to decide what a dataset is.
+- **A base claim versus a base fact.** The claim is a closed union of `SuppliedGitBase` (the caller resolved it)
+  and `ResolvedGitBase` (the caller claims one commit is the *unique* common base and asks for the evidence).
+  There is no third member, so "the operation may pick one" is not expressible. `MergeBaseResolution` records
+  which of the two applied, so a reader can tell "the history had one common base" from "the caller said which
+  commit it was" without re-deriving it from the claim.
+- **A measurement versus a verdict.** `MergeCoverage` reports which tables the changeset touched, which the
+  replay proved covered, and how many operations of each kind were materialised; `MergeOutcome` reports the
+  identities it observed. Neither can express an opinion about the data.
+
+Two model-level rules a consumer must not flatten, because each is enforced at construction:
+
+- **A table that changed but carried no operation is representable, and it is not silent.** `TableCoverage`
+  separates `table_changed` (read from the two datasets) from `operations` (counted from the changeset) — the
+  exact pair whose disagreement *is* the silent-omission class — and `MergeCoverage` covers every canonical
+  table, so "examined and had nothing to carry" cannot be confused with "never attached".
+- **A conflict record states only what the engine supplied.** `MergeConflict` has two shapes:
+  `engine_attributed`, where the callback held the operation and the record carries its table, kind and the exact
+  row key (read from the operation's **old** values, because a changeset omits a key column an `UPDATE` did not
+  change), and `engine_reported_without_row`, where a foreign-key conflict gave the callback no change at all, so
+  the row fields are absent and `detail` says so. No violation count is reported for that shape: the pinned
+  binding raises `ConstraintError` with no count, so a number there would be the operation's own inference.
+
+`models/knowledge/result.py` grew the two operations (`resolve_merge_base`, `merge_knowledge_datasets`) and
+twelve refusal codes in the same change — one per observable failure point, so the twelve different next actions
+stay distinguishable. `duplicate_identity` and `delete_reference_conflict` are the two whose meaning a reader must
+read from the merge's cards rather than from the code name: the first fires even on byte-identical payloads, and
+the second names no row.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The merge vocabulary's own module: the explicit input, the closed base claim, coverage, conflict and outcome.** | `MergeInput`; `SuppliedGitBase`; `ResolvedGitBase` | mcp/src/agents_remember/models/knowledge/merge.py:110-121; mcp/src/agents_remember/models/knowledge/merge.py:81-86; mcp/src/agents_remember/models/knowledge/merge.py:89-101; mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/models/knowledge/merge.py:293-346; mcp/src/agents_remember/models/knowledge/merge.py:349-391 |
+| The one non-refusal state name, which is the entire claim the operation makes. | `MERGE_STATES` | mcp/src/agents_remember/models/knowledge/merge.py:78-78 |
+| The request that carries the proven resolution, the paths it deliberately keeps out of the resolution, and the optional destination. | `MergeRequest` | mcp/src/agents_remember/models/knowledge/merge.py:189-215 |
+| The base-resolution request and the resolution that records which claim applied. | `MergeBaseRequest`; `MergeBaseResolution` | mcp/src/agents_remember/models/knowledge/merge.py:124-154; mcp/src/agents_remember/models/knowledge/merge.py:157-186 |
+| The per-table coverage fact that separates "changed" from "carried an operation". | `TableCoverage` | mcp/src/agents_remember/models/knowledge/merge.py:218-240 |
+| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111 |
+| The merge operation that consumes this vocabulary. | `merge_knowledge_datasets` | mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
+| The base resolution that produces the value this vocabulary consumes. | `resolve_merge_base` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105 |
+| The third composition seam that takes these values and returns them unchanged. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
+| The node that asserts the published outcome carries no verdict field and reports the coverage record. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| The boundary node that holds the conflict record to the engine's own row identity. | "test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:165-184 |
+
 ## Update History
+
+- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the knowledge sub-route's fourteenth module and the **structural merge vocabulary** it serves — the explicit input that carries the identity a caller admitted, the closed two-member base claim, the coverage facts that separate "changed" from "carried an operation", the two-shape conflict record and the outcome. The card states the absence the module is built around (no field can carry a verdict, and `structurally_merged` is the entire claim), the two shapes a consumer must not flatten (`duplicate_identity` fires even on byte-identical payloads; `delete_reference_conflict` names no row because the engine supplies none and reports no count), and the two operations plus twelve refusal codes `models/knowledge/result.py` grew. The pre-existing citation rows in this card were re-derived after the L5 insertions moved every anchor below them. Verification metadata remains closeout-owned.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the knowledge sub-route's thirteenth module and the **local-working-object vocabulary** it serves — the candidate layout and its sealed receipt, the closed snapshot stage carrying both identities, the publication request/result pair, the publication-state measurement, and the two-member disposal union. Three absences are stated as the contract: the receipt carries **no dataset digest** (so a caller cannot hand-write the identity its publication will be compared against), the closed disposal union has no "looked disposable" member, and `authorization_ref` is **carried rather than examined** because permissibility is this layer's question and the approval chain is the caller's. The card also records the six operations and seven refusal codes `models/knowledge/result.py` grew, and restates the `no_change` distinction where the codes are actually declared — two result states are reachable, the refusal code still has no producer. Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base

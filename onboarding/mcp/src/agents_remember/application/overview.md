@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c` |
-| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastUpdated | 2026-09-16T13:45+02:00 |
+| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
+| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -516,11 +516,11 @@ result from this layer, and never imports the storage package.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The provenance envelope is assigned here, not accepted from a payload. | `write_authorship` | mcp/src/agents_remember/application/knowledge.py:46-66 |
-| The admitted-destination constructor that confers no authority by itself. | `admitted_knowledge_destination` | mcp/src/agents_remember/application/knowledge.py:69-85 |
-| Provenance and namespace come from the destination rather than from the request. | `admitted_revision_request` | mcp/src/agents_remember/application/knowledge.py:88-101 |
-| Initialization refuses an occupied destination as a resume attempt. | `initialize_knowledge_namespace` | mcp/src/agents_remember/application/knowledge.py:104-134 |
-| The read open and the delegating insert, both closing in a `finally`. | `open_admitted_knowledge_store`; `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:137-165 |
+| The provenance envelope is assigned here, not accepted from a payload. | `write_authorship` | mcp/src/agents_remember/application/knowledge.py:102-122 |
+| The admitted-destination constructor that confers no authority by itself. | `admitted_knowledge_destination` | mcp/src/agents_remember/application/knowledge.py:125-141 |
+| Provenance and namespace come from the destination rather than from the request. | `admitted_revision_request` | mcp/src/agents_remember/application/knowledge.py:144-157 |
+| Initialization refuses an occupied destination as a resume attempt. | `initialize_knowledge_namespace` | mcp/src/agents_remember/application/knowledge.py:160-190 |
+| The read open and the delegating insert, both closing in a `finally`. | `open_admitted_knowledge_store`; `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:193-204; mcp/src/agents_remember/application/knowledge.py:207-221 |
 | The layer charter paragraph that fixes the one-way direction this seam implements. | "[package.memory]" | layers.toml:206-222 |
 | The storage operation this seam delegates to. | `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:212-241 |
 
@@ -541,9 +541,9 @@ that will consume it is `KS-R03`'s.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The graph request builders, all attaching the destination's provenance and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:213-225; mcp/src/agents_remember/application/knowledge.py:237-248; mcp/src/agents_remember/application/knowledge.py:249-259; mcp/src/agents_remember/application/knowledge.py:260-274 |
-| The eight graph operations, each open-delegate-close. | `create_knowledge_family`; `create_knowledge_anchor`; `create_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:309-320; mcp/src/agents_remember/application/knowledge.py:333-344; mcp/src/agents_remember/application/knowledge.py:357-368; mcp/src/agents_remember/application/knowledge.py:381-392; mcp/src/agents_remember/application/knowledge.py:393-402 |
-| The graph modules the new operations delegate to. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:112-141; mcp/src/agents_remember/memory/knowledge/anchors.py:49-70; mcp/src/agents_remember/memory/knowledge/memberships.py:59-80; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83 |
+| The graph request builders, all attaching the destination's provenance and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:327-337; mcp/src/agents_remember/application/knowledge.py:351-360; mcp/src/agents_remember/application/knowledge.py:363-371; mcp/src/agents_remember/application/knowledge.py:374-386 |
+| The eight graph operations, each open-delegate-close. | `create_knowledge_family`; `create_knowledge_anchor`; `create_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-432; mcp/src/agents_remember/application/knowledge.py:447-456; mcp/src/agents_remember/application/knowledge.py:471-480; mcp/src/agents_remember/application/knowledge.py:495-504; mcp/src/agents_remember/application/knowledge.py:507-516 |
+| The graph modules the new operations delegate to. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/anchors.py:49-68; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81 |
 | The composed-path case that drives admit -> create -> reopen -> read through this seam. | "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:566-680 |
 
 ## 260915-KS-L3 The Candidate-Write Boundary Joins The Seam
@@ -622,7 +622,45 @@ behaviour evidence about the boundary and not evidence that any tool is wired to
 | The disposal verdict whose authority the caller owns. | `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
 | The composed-path harness that drives the seam end to end through the public operations. | `build_case`; `publish` | mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:357-380 |
 
+## 260915-KS-L5 The Merge Joins As A Third Seam
+
+The route gained one module, `application/knowledge_merge.py`, and still no new authority. It is the **third
+composition seam**, and it exists for the same reason as the second: a guarded common-base merge is a different
+composed operation from a single candidate write, and a different one again from the lifecycle/publication half, so
+each entry point stays readable as one intent rather than one module with three jobs. The three seams now divide
+this route's knowledge surface cleanly — the write, the lifecycle-and-publication, and the merge — which is why
+this module was added rather than more entry points on either sibling.
+
+Two things matter to a later reader:
+
+- **It resolves, merges, and returns the typed value unchanged.** `resolve_knowledge_merge_base` proves the three
+  input identities, their structure and the Git base claim, returning the resolution; `merge_resolved_knowledge_
+  datasets` runs the guarded merge against a proven base and returns the whole structural outcome, including the
+  coverage of both deltas and the publication state when a destination was named. A failure is the storage layer's
+  typed refusal, so a caller composing a tool response branches on one code rather than catching an exception.
+- **The adapter is callable rather than wired.** No Git merge driver is installed, no attribute is configured and
+  no commit is created anywhere on this path: the module is the exact seam a later, separately reviewed change
+  would call. That is the requirement's own boundary — this increment supplies evidence and a callable boundary,
+  not production configuration.
+
+The result this seam returns carries **no compatibility verdict**: a `structurally_merged` outcome is a statement
+about the candidate's structure and nothing about whether the merged knowledge is correct. The wiring boundary also
+did **not** move: like its two siblings, this module has **no non-test importer in `mcp/src`**, so its cases are
+behaviour evidence about the boundary and not evidence that any tool is wired to it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The base-resolution entry point and its refusal-or-resolution contract. | `resolve_knowledge_merge_base` | mcp/src/agents_remember/application/knowledge_merge.py:36-52 |
+| The merge entry point, including the carried statement that the result holds no compatibility verdict. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
+| The defect the layer below makes unreachable. | `KnowledgeMergeSeamDefect` | mcp/src/agents_remember/application/knowledge_merge.py:67-68 |
+| The two storage operations this seam delegates to, in the order the seam exposes them. | `resolve_merge_base`; `require_session_capability` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
+| The vocabulary the seam takes and returns unchanged. | `MergeBaseRequest`; `MergeRequest`; `MergeOutcome` | mcp/src/agents_remember/models/knowledge/merge.py:124-154; mcp/src/agents_remember/models/knowledge/merge.py:189-215; mcp/src/agents_remember/models/knowledge/merge.py:349-391 |
+| The unit node that drives the conforming merge end to end through the public operations. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| The published-file freeze and install contract the merge's last step reuses rather than duplicating. | `freeze_closed_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
+
 ## Update History
+
+- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the third composition seam — `application/knowledge_merge.py` — and why the guarded common-base merge is its own module rather than more entry points on either sibling: the three seams now divide the knowledge surface into the write, the lifecycle-and-publication, and the merge, so each entry point stays readable as one intent. The card records the resolve-then-merge pair returning the storage layer's typed values unchanged, the carried absence of any compatibility verdict, and the non-claim the ruled design made explicit: **the adapter is callable rather than wired** — no Git merge driver, attribute or commit exists on this path, and activation is an explicit later change. The wiring boundary is re-recorded because it did not move: like its two siblings, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the second composition seam — `application/knowledge_snapshot.py` — and why the lifecycle/publication half is its own module rather than more entry points on `application/knowledge.py`: each entry point stays readable as one intent. The card records the derived write destination (so write and publish cannot name different files), the two publication entry points sharing one install contract, and the read-side gate being exposed rather than decided. **Two non-claims are stated rather than left to inference**: the seam creates no Git commit (capturing a published file into a memory tree is the existing candidate-tree owner's operation) and no IAS landing is reachable from it. The wiring boundary is re-recorded because it did not move: like `application/knowledge.py`, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base

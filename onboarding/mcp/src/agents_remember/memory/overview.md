@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash |  `3332a4ce7029777d49feca22b499350435a9f83c`|
-| lastVerifiedCommitDate |  2026-09-16T11:50:16+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastUpdated | 2026-09-16T13:45+02:00 |
+| lastVerifiedCommitHash |  `7db50f8f4a67e60f9011266110ad6d0156f1a905`|
+| lastVerifiedCommitDate |  2026-09-16T14:02:05+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,13 @@ admitted authority writes through rather than authors.
 package is composed by it or called through it. `knowledge/batch_preconditions.py` holds every read-only
 precondition (including the completed-graph lineage pass), `knowledge/batch_commands.py` is the only module that
 applies a batch and the pass that re-proves the rows it left, `knowledge/candidate_records.py` is the identity
-vocabulary both read, and `knowledge/logical.py` owns the canonical logical dataset identity.
+vocabulary both read, and `knowledge/merge.py` owns **the guarded common-base merge** — the package's composition of base resolution,
+structural preflight, changeset production, coverage replay, aborting application, postcondition validation and
+publication, in that order — with `knowledge/merge_base.py` (dataset identity, the closed base claim and its Git
+ancestry adjudication), `knowledge/merge_schema.py` (the declared-structure preflight that runs before any session),
+`knowledge/merge_changeset.py` (deltas, their materialised operations and the coverage replay),
+`knowledge/merge_validation.py` (the result's postconditions and the inputs' integrity) and
+`knowledge/merge_refusals.py` (the merge's refusal vocabulary) beneath it; `knowledge/logical.py` owns the canonical logical dataset identity.
 `knowledge/store.py` owns the one insert-only single-record revision operation, the package's shared candidate lock
 and its one-immediate-transaction wrapper, and the invariant half's tables; `knowledge/{families,anchors,memberships,realizations}.py`
 own the four graph concepts and their tables, `knowledge/lineage.py` owns the one acyclic-lineage rule both lineage
@@ -236,7 +242,68 @@ And the `kernel/atomic_write.py` directory fsync runs **after** `os.replace`, so
 as a replace failure — which is why a create can answer `destination_occupied` for the destination holding the
 complete candidate it just created, and why a publication can return `publication_failed` where
 `publication_durability_unconfirmed` would be the honest code. The non-claim narrows again: the still-unclaimed
-behaviour is now L5–L8 (Git merging, portable roundtrip, selective read and candidate diff).
+behaviour is now **L6–L8** (portable roundtrip, selective read and candidate diff): the Git-side merging half
+is delivered by the L5 section below.
+
+### 260915-KS-L5 The Guarded Common-Base Merge
+
+This route gained the **merge half** and still no new authority: six new modules
+(`knowledge/{merge,merge_base,merge_schema,merge_changeset,merge_validation,merge_refusals}.py`), the third
+composition seam in `application/knowledge_merge.py`, and **no change to `schema.py`** — the schema stays
+`ar-knowledge-sqlite/v1`, `PRAGMA user_version = 1`, ten tables, fifteen triggers and the same
+`schema_fingerprint()`. This is the route's largest increment so far and it is deliberately built as a sequence in
+which each step exists because the step before it cannot see what it prevents:
+
+- **The base is proven, never chosen.** A merge is defined by its base, and the failure this route refuses is the
+  quiet one: picking *some* commit (an arbitrary `git merge-base` result, or `HEAD` as a stand-in) and producing a
+  delta against a base neither side descends from. The claim is a closed two-member union — a caller-supplied
+  commit, or a claim the ancestry evidence must confirm as the **unique** common base — and zero bases, several
+  bases, or one base that is not the claimed commit all refuse. Nothing here reads a Git object to decide what a
+  dataset *is*: the datasets are identified by their own logical digest.
+- **The declared structure is checked before a session exists.** SQLite's changeset application can silently skip a
+  table it cannot match, so an input that is not this schema generation would produce a green merge over a dropped
+  change set. Each input is compared against the one declared manifest (derived from the DDL that creates a
+  database rather than from a second description of it), and an input carrying a table outside the manifest is
+  refused rather than merged around. There is exactly one comparison per input and no pairwise pass: every accepted
+  input is identical to that one declaration, so a second pass could only fire for an input the first had already
+  refused.
+- **A delta is a changeset, never a patchset, and its coverage is proven by replay.** A patchset carries only the
+  new values, so applying it cannot detect that the target row moved; the session is asked for `changeset()` and
+  never for `patchset()`, every operation is materialised before the cursor advances, and each delta is replayed
+  into a fresh copy of the base, where it must reproduce its side's whole logical dataset. That replay is the only
+  place an omitted table is observable: the application reports success either way.
+- **Application aborts whole.** `flags=0`, no filter, and a conflict callback that returns
+  `SQLITE_CHANGESET_ABORT` unconditionally: the first blocking conflict rolls the whole application back rather
+  than continuing with `OMIT` to collect a cosmetically complete list, and neither side is ever preferred.
+- **The conflict record names the row the engine refused.** The key is copied out of the change the callback held —
+  read from the operation's **old** values, because a changeset omits the columns an operation does not change and
+  an `UPDATE`'s key columns are unchanged, so its new side carries the not-supplied marker where the key is — and
+  it is never reconstructed from the changeset, because the first operation a changeset carries for a table is not
+  necessarily the operation that conflicted. Where the engine genuinely supplies nothing (a foreign-key conflict
+  hands the callback no change at all) the record says so and names no row and no count.
+- **Publication is the last step and reuses the existing contract.** The merged temporary is frozen through the
+  same closed-snapshot procedure the snapshot half uses, under the temporary's own resource lock, and installed
+  through the same destination-admitted publication. The two locks are sequential, never nested — this route takes
+  one resource lock at a time, which is why the merge never needs a second.
+
+**The result carries no verdict, and that is the contract rather than an omission.** `structurally_merged` is the
+only non-refusal state; there is no compatibility, acceptance, approval or "harmless" field, and nothing on this
+path decides whether the merged knowledge is *correct*. Two collision shapes are refused even though a weaker
+policy would have merged them: a same-identity independent insert on both sides is a conflict **even when the two
+payloads are byte-identical** (two authored acts that happen to collide are not one act), while two newly authored
+successors of one invariant are **not** a data conflict and both survive — the two shapes are measured separately
+rather than lumped together.
+
+**Three facts about this increment belong here rather than being rediscovered.** First, the adapter is
+**callable rather than wired**: no Git merge driver, attribute or config is installed anywhere on this path, and
+that activation is an explicit later decision. Second, two postcondition guards are recorded as
+**non-experiments** — the applied-change check and the merged-candidate immutability check cannot be reached by a
+black-box case under this schema, and the freeze's contribution is invisible to a case — so their policies are
+exercised directly and their call-site unreachability is stated where the code is, rather than a broken mutation
+being scored as a covered guard. Third, two facts about the pinned SQLite build are recorded as **facts, not
+excuses**: it supplies no foreign-key conflict row identity or count, and a stale `DELETE` is a silent no-op for
+which the operation claims no guard. A merge that skipped a table and reported success — the requirement's own
+non-conforming example — is refused by two independent measures, and that is the class this half exists to close.
 
 ## Invariants And Boundaries
 
@@ -266,6 +333,23 @@ behaviour is now L5–L8 (Git merging, portable roundtrip, selective read and ca
 ## Repo-Internal References
 
 The declarations below establish the current behaviour; this inventory is not execution evidence.
+
+**The 260915-KS-L5 merge half**, cited in the current `Finding | Anchor | Source` shape. The older rows below remain in the superseded
+two-column shape and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside
+one leaf's curation pass.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The merge orchestration: the ordered sequence, the one-lock policy, the conflict taxonomy and the engine-supplied conflict key. | `merge_knowledge_datasets`; `_TAXONOMY`; `_conflict_record`; `_freeze_merged` | mcp/src/agents_remember/memory/knowledge/merge.py:131-163; mcp/src/agents_remember/memory/knowledge/merge.py:608-614; mcp/src/agents_remember/memory/knowledge/merge.py:626-637; mcp/src/agents_remember/memory/knowledge/merge.py:698-734 |
+| The base resolution: the closed two-member claim and the two refusals a base claim can earn. | `resolve_merge_base`; `_ancestry_refusal`; `_uniqueness_refusal` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge_base.py:181-196; mcp/src/agents_remember/memory/knowledge/merge_base.py:199-224 |
+| The structural preflight that runs before any session exists, and the declared manifest it compares against. | `require_supported_structure`; `declared_structure`; `compare_structures` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:121-139; mcp/src/agents_remember/memory/knowledge/merge_schema.py:78-88; mcp/src/agents_remember/memory/knowledge/merge_schema.py:142-183 |
+| The changeset half: the directional delta build, the aborting application, the old-side conflict key and the coverage replay. | `build_delta`; `apply_changeset`; `_conflicting_key`; `replay_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:185-220; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:223-263; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:266-289; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:292-331 |
+| The postcondition half, including the two call sites this leaf recorded as unreachable by a black-box case. | `require_structural_validity`; `require_immutable_revisions_preserved`; `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:73-101; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152; mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211 |
+| The merge's refusal vocabulary, one factory per observable failure point. | `schema_mismatch_refusal`; `conflicting_values_refusal`; `duplicate_identity_refusal`; `delete_reference_conflict_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:21-45; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:70-94; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:97-121; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:124-151 |
+| The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111 |
+| The measurement the merge reports, and the merge's own third composition seam. | `MergeCoverage`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/models/knowledge/merge.py:293-346; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
+| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| The governed-artifact row and the exact two-consumer list this leaf registered in the shared catalog. | `contract:common-base-merge-cases` | mcp/tests/evidence-lifecycle.toml:1132-1151 |
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
@@ -306,6 +390,8 @@ checkout, but neither establishes a boundary contract here.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): reviewed the route because its meaning changed again — six new `knowledge/merge*.py` modules add **the merge half** of the experimental knowledge substrate with no schema change (still `ar-knowledge-sqlite/v1`, ten tables, fifteen triggers and the same `schema_fingerprint()`). The body records the ordered contract and why each step's position is load-bearing, the closed base claim, the one-comparison-per-input preflight, the changeset-not-patchset and coverage-by-replay rules, the aborting application, and the conflict record's engine-supplied old-side key. It states the two collision shapes a consumer must not flatten (an equal-payload same-ID insert is a conflict; two authored successors are not), the absent verdict, the callable-but-unwired adapter, the two recorded **non-experiments**, and the two pinned-binding facts recorded as facts rather than excuses. The still-unclaimed behaviour narrows from L5–L8 to L6–L8. Verification metadata remains empty until closeout stamps the code commit.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): reviewed the route because its meaning changed, not only its file list. The storage package gained its **snapshot half** in five new `knowledge/` modules plus a second composition seam, with `schema.py` untouched, and this account records the five boundaries a reader needs before the mechanism: local working identity read rather than asserted (a receipt with no dataset digest), two-phase creation with occupied-destination-as-resume, a clone taken from a closed representation, closedness *proven* after a freeze that has to establish the journal mode on a fresh connection, replace-or-nothing publication against an admitted identity with a `no_change` that retains bytes, and disposal as a verdict whose two grounds are both identity-checked. **The durability correction is recorded as the reason two long-standing cards changed**: `store.close()` no longer unlinks WAL/SHM peers and `discard_closed_wal_peers` is now a caller precondition, because the unlink could not know whether another connection held the database and an unconditional call destroyed a committed batch when a reader blocked SQLite's checkpoint. The Hot Path Summary now names the snapshot modules in the same breath as the batch boundary. Two carried limitations and one disclosure are stated as limitations rather than properties: the new seam has no non-test importer in `mcp/src`, `authorization_ref` is carried but never examined, and the `atomic_write` directory fsync runs after `os.replace` (so a post-rename failure is reported as a replace failure). The explicit non-claim was narrowed from "L4–L8 behaviour" to "L5–L8 behaviour". Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): reviewed the route because its meaning changed, not only its file list. The storage package gained the substrate's **single typed write boundary** in six new modules (`candidate`, `candidate_records`, `batch_preconditions`, `batch_commands`, `labels`, `logical`) with seven changed, and `schema.py` untouched. This account records the one-lock/one-transaction boundary and the published in-transaction helpers, the all-or-nothing property as measured evidence rather than a promise, the completed-graph validation axis with `lineage.declared_cycle` as the only supplier of the batch's declared edges, the fail-closed lane rules (baseline by name, `task-candidate` until a checkable binding exists), the resolved-not-asserted dataset identity, and the factual closed receipt. The explicit non-claim was narrowed from "L3–L8 behaviour" to "L4–L8 behaviour". **Two carried limitations are recorded as limitations rather than properties**: the refusal code `no_change` still has no producer (only the result state is reachable), and `application/knowledge.py` still has no non-test importer in `mcp/src`, so the boundary is not yet wired to any tool. Verification metadata remains empty until closeout stamps the code commit.
