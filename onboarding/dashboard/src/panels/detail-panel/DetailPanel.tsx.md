@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -298,7 +298,7 @@ master leg of the drill-down).
 | --- | --- | --- |
 | `displayedReaderDoc`; `useTaskDocumentBody`; `taskDocumentBodyState`; `TaskNotes`; `DocChangeSetBar`; `MasterOverview`; `TaskReader`; "change-set"; "loading"; "Loading complete task document…" | `taskDocumentBodyState` | dashboard/src/panels/detail-panel/state.ts:150-151 |
 | The hook owns fetch, merge, availability, and path-plus-revision caching; the API literal remains in the transport helper. | `useTaskDocumentBody`; `mergeTaskDocumentBody`; `taskDocumentBodyKey`; `fetchTaskDocument` | dashboard/src/data/useTaskDocumentBody.ts:9-11; dashboard/src/data/useTaskDocumentBody.ts:13-27; dashboard/src/data/useTaskDocumentBody.ts:29-74; dashboard/src/data/taskDocuments.ts:3-9 |
-| Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching. | "loads the complete task body before mounting reader ancillary requests"; "renders the complete on-demand task-document body while retaining its summary"; "shows the available summary when the on-demand task-document body is absent"; "reuses an unchanged task body and refetches when its revision changes" | dashboard/src/panels/detail-panel/taskBody.test.tsx:115-115; dashboard/src/panels/detail-panel/taskBody.test.tsx:12-12; dashboard/src/panels/detail-panel/taskBody.test.tsx:184-184; dashboard/src/panels/detail-panel/taskBody.test.tsx:208-208 |
+| Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching. | "loads the complete task body before mounting reader ancillary requests"; "renders the complete on-demand task-document body while retaining its summary"; "shows the available summary when the on-demand task-document body is absent"; "reuses an unchanged task body and refetches when its revision changes" | dashboard/src/panels/detail-panel/taskBody.test.tsx:115-182; dashboard/src/panels/detail-panel/taskBody.test.tsx:12-113; dashboard/src/panels/detail-panel/taskBody.test.tsx:184-206; dashboard/src/panels/detail-panel/taskBody.test.tsx:208-252 |
 | `parseTaskSelection` resolves typed taskdoc/series/lifecycle selections before rendering by task-document `kind`. | "const selectedTaskDoc = resolveSelectedTaskDoc(selection, allDocs);"; "const TASKDOC_PREFIX = \"taskdoc:\";"; "const SERIES_PREFIX = \"series:\";"; "const LIFECYCLE_PREFIX = \"lifecycle:\";" | dashboard/src/panels/detail-panel/state.ts:125-125; dashboard/src/data/taskIdentity.ts:13-16 |
 | The shared task-document selector prefixes the canonical docPath. | "export const taskDocSelectionKey" | dashboard/src/data/taskIdentity.ts:18-18 |
 | Task-document rows use the shared task-document key. | "key: taskDocSelectionKey(doc.docPath)" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:755-755 |
@@ -315,14 +315,14 @@ master leg of the drill-down).
 | Selection attribution looks for the closest task-leaf wrapper. | "function leafKeyForAnchor(" | dashboard/src/data/selection.ts:34-36 |
 | Mouse selection context carries the leaf key read from that wrapper. | "export function readSelection(selection: Selection" | dashboard/src/data/selection.ts:39-49 |
 | `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. | `findParentTaskMatch`; `parentTaskLinkForDoc`; `orderedByCreation`; `parentSelectionKey` | dashboard/src/data/taskHierarchy.ts:43-51; dashboard/src/data/taskHierarchy.ts:68-82; dashboard/src/data/taskHierarchy.ts:152-156; dashboard/src/data/taskHierarchy.ts:145-150 |
-| SubTaskRow is the union of the distinct task-master and series row shapes. | "export type SubTaskRow =" | dashboard/src/types/projection.ts:815-815 |
-| Task-master rows may carry a linked lifecycle id and masterRef. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:793-801 |
-| Series rows instead carry optional creation time. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
-| The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:585-606; mcp/src/agents_remember/observer/projection.py:797-812 |
+| SubTaskRow is the union of the distinct task-master and series row shapes. | "export type SubTaskRow =" | dashboard/src/types/projection.ts:814-814 |
+| Task-master rows may carry a linked lifecycle id and masterRef. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:792-792 |
+| Series rows instead carry optional creation time. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:560-560 |
+| The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:590-611; mcp/src/agents_remember/observer/projection.py:804-819 |
 | `_series_subtask_nodes`; `seriesAsMasterDoc`; `orderedByCreation`; `createdAt` | "export function orderedByCreation" | dashboard/src/data/taskHierarchy.ts:145-145 |
 | `MasterDocView`; `SubTaskRow`; `seriesAsMasterDoc`; `orderedByCreation` | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| `SubTaskIndex` renders in received order and reads the cross-link as `"linkedLifecycleId" in ref`, so the `→` branch is unreachable for a series. | `SubTaskIndex` | dashboard/src/panels/detail-panel/taskReader.tsx:440-478 |
-| `parentTaskLinkForDoc` links an enclosure-opened leaf back to its parent task document (`master-parent-link`), pinned by the promotedIdentity suite. | "export function parentTaskLinkForDoc("; "links an enclosure-opened leaf back to its parent task document" | dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/promotedIdentity.test.tsx:29-29 |
+| `SubTaskIndex` renders in received order and reads the cross-link as `"linkedLifecycleId" in ref`, so the `→` branch is unreachable for a series. | `SubTaskIndex` | dashboard/src/panels/detail-panel/taskReader.tsx:464-502 |
+| `parentTaskLinkForDoc` links an enclosure-opened leaf back to its parent task document (`master-parent-link`), pinned by the promotedIdentity suite. | "export function parentTaskLinkForDoc("; "links an enclosure-opened leaf back to its parent task document" | dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/promotedIdentity.test.tsx:29-41 |
 | Task progress forwards the projected done and total counts. | "export const taskStepProgress =" | dashboard/src/panels/detail-panel/model.ts:168-171 |
 | The master index renders its received sub-task references. | "export function SubTaskIndex({" | dashboard/src/panels/detail-panel/taskReader.tsx:464-502 |
 | The master-less slice list sorts task documents and displays their progress. | "export function SliceList({" | dashboard/src/panels/detail-panel/taskReader.tsx:505-541 |
@@ -334,10 +334,10 @@ master leg of the drill-down).
 | The slice list retains createdAt ordering because it operates on task documents. | "export function SliceList({" | dashboard/src/panels/detail-panel/taskReader.tsx:505-541 |
 | `TaskReader` renders the top `ProgressFill` before the task body and keeps implementation-step copy later in the document. | "export function TaskReader({"; "export function ProgressFill({" | dashboard/src/grammar/ProgressFill.tsx:27-27; dashboard/src/panels/detail-panel/taskReader.tsx:638-638 |
 | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `seriesTokenTotal`; `MasterTokenSummary` | `masterDocWithSeriesTokens` | dashboard/src/panels/detail-panel/model.ts:216-219 |
-| SeriesNode provides the series fields and typed sub-task rows consumed by the panel. | "export interface SeriesNode {" | dashboard/src/types/projection.ts:535-553 |
-| TaskDocNode provides authored task identity, creation time and task-master references. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:648-682 |
-| Only the series sub-task row has optional createdAt. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
-| `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | `taskLabel`; `taskDocsForLifecycle`; `taskDocumentLabel`; `findLifecycleEnclosure` | dashboard/src/data/taskIdentity.ts:253-260; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:281-286; dashboard/src/data/taskIdentity.ts:288-293 |
+| SeriesNode provides the series fields and typed sub-task rows consumed by the panel. | "export interface SeriesNode {" | dashboard/src/types/projection.ts:534-534 |
+| TaskDocNode provides authored task identity, creation time and task-master references. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:647-647 |
+| Only the series sub-task row has optional createdAt. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:560-560 |
+| `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | `taskLabel`; `taskDocsForLifecycle`; `taskDocumentLabel`; `findLifecycleEnclosure` | dashboard/src/data/taskIdentity.ts:253-260; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:288-293; dashboard/src/data/taskIdentity.ts:281-286 |
 | The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. | "testId=\"gate-review\""; "function DetailPanelImpl({"; "<GateResponder" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:226-226; dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/lifecycleBody.tsx:222-222 |
 | `Markdown`; `Bullets`; `DecisionList`; `MasterSection` | `DecisionList` | dashboard/src/panels/detail-panel/taskReader.tsx:771-786 |
 | `ProgressFill` + `TokenGauge` grammar it composes. | `ProgressFill`; `TokenGauge` | dashboard/src/grammar/ProgressFill.tsx:27-45; dashboard/src/grammar/TokenGauge.tsx:18-53 |
@@ -345,6 +345,11 @@ master leg of the drill-down).
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 6
+  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: "import { parentTaskLinkForDoc } from \"../../data/taskHierarchy\";"; "export function parentTaskLinkForDoc("; "export function TaskContent({" repointed to dashboard/src/panels/detail-panel/taskDocPanels.tsx:1-1; dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/taskReader.tsx:107-107. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: "export function TaskReader({"; "export function ProgressFill({" repointed to dashboard/src/panels/detail-panel/taskReader.tsx:638-638; dashboard/src/grammar/ProgressFill.tsx:27-27. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.

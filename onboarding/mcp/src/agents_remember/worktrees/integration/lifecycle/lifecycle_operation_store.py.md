@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Lifecycle operation integration overview](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -22,21 +22,23 @@ Provides strict atomic enclosure-local storage and transition validation for lon
 
 ### Logic
 
+Recovery-cell monotonicity now protects only `codeCommit` and `memoryContentCommit`. The store has no immutable direct-ledger intent transition; immutable task/operation identity, exact mutation evidence, private preparation, publication proof, and record revisions remain the durable validation boundary.
+
 It validates immutable identity, worker authority, mutation, door, quality, publication, recovery, repair, migration, and finalization transitions under exclusive access.
 
 Since 260831-CCR (commit `99dc249b`) the store makes canonical task intent part of the durable
 generation contract and preserves legacy bytes on retirement:
 
 - `_validate_identity_and_evidence_transition` includes `taskIntent` in the compared identity
-  field set (line 326), so an intent change is a distinct successor, not a silent replay.
-- `_retire_missing_intent_generation` (line 638-668) is the legacy cutover: when the current
-  closeout/direct-landing generation lacks intent (line 625-628) and a successor is being applied,
+  field set, so an intent change is a distinct successor, not a silent replay.
+- `_retire_missing_intent_generation` is the legacy cutover: when the current
+  closeout/direct-landing generation lacks intent and a successor is being applied,
   the store preserves the exact legacy bytes to
   `{stem}.legacy-missing-intent-generation-{generation}.json` (atomic, idempotent, contradiction-
   checked, rolled back on write failure) and then publishes the validated intent-bound successor —
   so a legacy record stays readable but is replaced by one canonical generation.
 - `_write` refuses any closeout/direct-landing record whose `taskIntent` is not a canonical
-  identity (line 681-689), translating `TaskIntentError` into a loud `RuntimeError`; writers
+  identity, translating `TaskIntentError` into a loud `RuntimeError`; writers
   cannot emit the sentinel.
 
 ### Conventions
@@ -44,7 +46,7 @@ generation contract and preserves legacy bytes on retirement:
 Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
 the public function or model instead of re-deriving its lower-level state machine.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - Updates are monotonic and generation-bound; evidence cannot disappear or change identity; invalid/corrupt records raise the shared read/schema failure API.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
@@ -61,37 +63,43 @@ None recorded.
 
 Private preparation is selected after generation creation, never injected into a new record. Starting a private command requires the same fully identified active running worker, no cancellation and a validated preparation transition. A preparation update cannot simultaneously publish mutation/history/recovery tuples, consume approval, enter the irreversible boundary or finalize the contract. Retained preparation blocks retirement/supersession or terminal replacement without an explicit proved disposition; completed status requires finalization proof, and cancellation requires unchanged logical-ref evidence.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current `_validate_private_preparation_transition` boundary implements the preparation contract above. | "def _validate_private_preparation_transition" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:398-444 |
+| The current `_validate_private_preparation_transition` boundary implements the preparation contract above. | L384-L430 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No external documentation claim is made.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `_OWNERSHIP` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:1-710 |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. | L89-L102 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. | L306-L381 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `_OWNERSHIP` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:1-710 |
-| Task intent joins the compared generation identity. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:310-355 |
-| Legacy missing-intent generation archive + successor write. | `_retire_missing_intent_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:873-900 |
-| The write-side identity requirement for closeout/direct-landing records. | `_write` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:740-758 |
+| Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) | L306-L381 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`) | L859-L886 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| The write-side identity requirement for closeout/direct-landing records. (`_write`) | L897-L918 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_OWNERSHIP` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:1-710 |
+| No additional cross-repository evidence applies. | — | — |
 
 ## CCR-R02@v2 Legacy Retirement In The Store
 
@@ -116,15 +124,23 @@ revisions after validation and refuses transforms that pre-assign either. The su
 supersede writers bump `meaningfulRevision` alongside the generation/record-revision
 advance, so a successor is always visible to an old-generation waiter.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Exactly-once cursor validation on the meaningful subset. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:311-340 |
-| Both revisions assigned at the canonical writer boundary. | `_advance_record_revision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:447-470 |
-| The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. | "def _advance_record_revision" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:447-470 |
-| A terminal successor archives its exact predecessor before publishing the next generation. | "def replace_terminal" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:755-820 |
-| The shared meaningful-change comparison. | `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:559-565 |
+| Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`) | L306-L381 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`) | L433-L456 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`) | L433-L456 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) | L741-L829 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| The shared meaningful-change comparison. (`meaningful_state_changed`) | L557-L563 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=0912b58b381a39097aa661c37abcd7990d53742afacda6bd40239ed18fbeaeb3. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _validate_private_preparation_transition" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:394-394. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_retire_missing_intent_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:869-896. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_advance_record_revision` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:443-466. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _advance_record_revision" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:443-443. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def replace_terminal" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:751-751. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `_retire_missing_intent_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:873-900. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."

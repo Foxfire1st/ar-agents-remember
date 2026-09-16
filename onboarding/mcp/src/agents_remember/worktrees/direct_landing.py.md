@@ -5,147 +5,109 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
-| governingOverview | `../../../overview.md` |
+| lastUpdated | 2026-09-15T00:51 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../../../overview.md)
+[Nearest governing overview](overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-The durable branch-addressed counterpart of worktree closeout commit execution for a sanctioned
-leaf implemented without its own worktree enclosure. It is not ordinary master/series closeout or
-master-to-parent integration. It binds the task-root series contract, consumes the exact closed admission result,
-creates or resumes one canonical root-journal generation, verifies the exact code commit/tree and
-memory/ledger pre-state, then records intent and proof around each sequential external Git commit.
-The landing lock excludes concurrent writers while held; restart recovery comes from the journal.
+Coordinates branch-addressed delivery for a sanctioned leaf implemented without its own worktree
+enclosure. It verifies already committed code, accepts an exact memory candidate, and creates or
+observes one direct-landing journal generation. Ordinary series closeout and integration are
+separate routes.
 
 ## Code Commentary
 
 ### Logic
 
-`direct_landing(config, request)` is policy-gated (`directExecutionEnabled`, fail-closed) and
-synchronous by design, but synchronous execution no longer means unjournaled execution. Before
-Git it consumes the accepted configured contract, derives the verified-existing-code,
-external-memory, and ledger plan, normalizes the required explicit messages, and creates or resumes
-the exact direct-landing generation. Under
-`integration_authority_lock(config.coordination_root, contract.repo_name)` it re-loads the
-contract (a changed contract refuses `direct-landing-contract-changed`), then applies the already
-validated plan. This lock serialization is concurrency control, not crash durability.
+`DirectLandingRequest` carries the exact code commit, memory message, approval intent, optional
+candidate tree, and dry-run selection. The policy gate requires `directExecutionEnabled`.
+`_direct_landing_after_policy` requires a series contract, normalizes the effective memory message,
+requires intent, and rereads configured contract authority. The application boundary owns configured
+admission and serialized execution; this module consumes the admitted contract.
 
-`_verify_code_commit` proves the exact commit is the current series branch HEAD (`branch_commit`),
-resolves its tree, and — when `candidate_tree` is given (the staged candidate the owner gated
-through the Dagger `--source`/`--repository-bundle` contract) — refuses a moved tree
-(`direct-landing-candidate-tree-moved`), keeping the gate strictly pre-commit (L16-R7).
-`_memory_facts` reads external-memory + ledger facts for preview. Apply now enters
-`_start_or_observe_direct_landing`, which creates or resumes one root-journal generation and calls
-the focused `integration/direct_landing_*` owners. Those owners preserve accepted repository/input
-identity, write intent before memory and ledger mutation, journal each produced commit, and resume
-the same generation across crash cuts or unreadable-ledger recovery.
+`_verify_code_commit` first proves that the requested commit is the exact local series-branch HEAD,
+then resolves its tree. Apply requires the supplied pre-commit candidate tree to match. This module
+checks the candidate proof; it neither creates the code commit nor runs the caller's quality gate.
+Preview reads repository/ref facts and does not parse or mutate a ledger.
 
-Under CCR-R03@v1 the claimed direct-landing operation carries its typed dependency declaration
-(`lifecycle_operation_dependencies`). Since the closeout-door cut (commit `fad9808e`) that binding no
-longer includes a door: a direct landing is admitted by its own request — the series contract, the
-branch HEAD commit and tree, and the effective commit messages — not by a claimed closeout door. All
-five former door reads are gone, `_claim_waiting_direct_landing` no longer exists, and the record
-carries no `doorPublication`.
+For apply, `_direct_memory_admission_snapshot` verifies the checked-out memory branch. Real content
+dirt triggers reversible cache preparation before the accepted snapshot is captured; cache-only
+dirt does not. Memory snapshots exclude the consumer cache while retaining actual ref and object
+identity. `_prepare_direct_landing_candidate` stores code/tree and memory repository/ref/snapshot
+facts in the typed input. Ledger paths, bytes, digests, and commit messages are absent from that input.
+
+`_create_direct_landing` admits the request itself: contract, code commit/tree, candidate, and
+normalized inputs. It carries no closeout-door publication. The runtime executes or reconciles the
+same generation. Success includes the lifecycle-operation projection; an existing generation that
+requires action returns the closed public `refused` outcome with that evidence nested.
 
 ### Conventions
 
-The sequence uses a direct-landing record in the same canonical root journal architecture while
-retaining its own typed input and ledger-intent vocabulary: journal intent → memory
-`commit_if_dirty` → journal memory proof → ledger intent/write/commit → journal ledger proof.
-The code commit is verified, never created. No generated subject, message fallback, or repeat-from-
-scratch recovery exists.
+Execution is synchronous and journaled. Concurrency serialization is owned by configured
+application authority, while crash recovery is owned by the durable operation. The code leg is
+verified-existing, and the only mutation message is the memory-content message.
 
 ### Invariants And Boundaries
 
-- All facts are pre-validated before any mutation; every refusal carries a typed `status`.
-- `directExecutionEnabled` must be set; `intent_note` is required (the commit approval).
-- Memory and ledger messages are explicit, stripped, and nonblank before lock or Git; code is
-  verified-existing/not-applicable and has no message.
-- Only the task-root series contract binds; leaf contracts refuse (`direct-landing-series-required`).
-- A series-shaped contract is necessary but not sufficient: the route is only for an explicitly
-  selected leaf delivery without an enclosure. Ordinary series closeout and integration never
-  become direct execution and never require `directExecutionEnabled`.
-- The gate stays strictly pre-commit via `candidate_tree`; commit-then-gate is the accepted-risk
-  exception only where the developer rules it (documented, L16-R7).
-- External memory only for apply; internal/disabled memory refuses
-  (`direct-landing-memory-required`).
-- A memory commit followed by a crash or ledger conflict remains attached to the same journal
-  generation and must reconcile/recover before any successor attempt.
-- Observing an existing action-required journal is a public refusal (`ok: false`, `state: refused`)
-  with the lifecycle operation nested; intermediate journal states never escape as top-level
-  direct-landing outcomes.
-- The claimed direct-landing operation must carry the declared dependency set of its admitted
-  inputs before persistence.
+- Apply requires external memory and the exact pre-commit candidate tree.
+- Series shape alone does not turn ordinary closeout or integration into direct execution.
+- Real code, memory repository, branch, and content evidence retain their authority.
+- Cached rows, bytes, or absence have no admission or recovery authority.
+- There is no ledger third leg, ledger-only commit, closeout-door dependency, or repeat-from-scratch recovery route.
 
 ### Todos
 
-None recorded.
+No new file-local follow-up is established by this documentation pass.
 
 ## Docs References
 
-No configured Domain Documentation source applies.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The policy-gated coordinator consumes the admitted contract and one journal generation. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
-| Journaled memory/ledger execution and recovery own all partial-output cuts. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
-| The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
-| The application boundary performs closed configured-contract admission and typed projection. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:54-103 |
-| R03 dependency binding at direct-landing claim. | `_claim_waiting_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:678-701 |
+| Policy, normalized request, exact code proof, and read-only preview. | L86-L100; L139-L193; L196-L254; L287-L307 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
+| Memory admission captures the prepared content snapshot and typed candidate. | L310-L353; L425-L457 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
+| Generation creation and action-required public projection. | L460-L494; L497-L514 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
+| The application owns configured admission and execution serialization. | L55-L104 | [mcp/src/agents_remember/application/lifecycle/direct_landing.py](mcp/src/agents_remember/application/lifecycle/direct_landing.py) |
+| The focused integration scenario verifies cache-independent publication and recovery. | L171-L272 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 
 ## Cross-Repo References
 
-No meaningful cross-repository reference applies.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
 
-## 260821-CLIVE-L1 Direct Landing Boundary
-
-Direct landing normalizes memory and ledger messages before journal publication, landing-lock
-acquisition, or Git. Its code leg is verified-existing/not-applicable. Preview and apply expose the
-same stripped `effectiveInput`, and apply uses those exact messages with no generated subjects or
-fallbacks. L2 supersedes the deferred-durability clause: memory and ledger remain sequential, while
-the canonical journal records intent/proof and resumes the same generation after partial output.
-
-## 260821-CLIVE-L2 Current Contract
-
-The current source seams include `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled`. The L2 candidate preserves this file at its existing altitude while routing lifecycle authority through the canonical root journal and the closed configured-contract admission boundary.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled` at this ownership boundary. | `DirectLandingRequest`; `direct_landing`; `require_direct_landing_enabled` | mcp/src/agents_remember/worktrees/direct_landing.py:104-119; mcp/src/agents_remember/worktrees/direct_landing.py:132-144; mcp/src/agents_remember/worktrees/direct_landing.py:147-155 |
-
-## 260821-DAGQC-L2 Action-Required Outcome
-
-When the root journal already requires recovery or operator action, the coordinator preserves that
-durable operation evidence but returns a closed refused direct-landing outcome. This prevents a
-running/action-required journal state from masquerading as success while retaining the exact nested
-generation a caller must recover.
-
-
-## PDLS Reconciliation
-
-Direct landing now attaches the durable lifecycle operation projection to successful and convergent responses through one helper; it does not add a fallback route.
-
-This change preserves the file's existing authority boundary. No threshold exception, silent
-fallback, or compatibility reader was added.
-
-## 260831-CCR-R03 Dependency-Declared Direct Landing
-
-The claimed direct-landing generation carries `lifecycle_operation_dependencies`, binding the
-candidate, plan, and input (worker handover:
-notes/reports/260902-CCR-L03-worker-delivery.md). The admitted door was dropped from that binding by
-the closeout-door cut (commit `fad9808e`).
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T00:51 UTC — Replaced the memory-plus-ledger admission narrative with exact code/content evidence and one memory publication; recorded reversible cache preparation, typed input retirement, retained request-owned generation admission, and the nearer worktrees overview. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
+- 2026-09-11T23:05:00+00:00: Repaired the R03 claim, which anchored `_claim_waiting_direct_landing` at lines 678-701 of a 576-line file. That helper no longer exists anywhere in the tree and the closeout-door cut (commit `fad9808e`) already removed the door reads; `_create_direct_landing` (473-507) now admits a fresh generation from the request itself (series contract, branch HEAD commit and tree, effective commit messages) with no door publication and no bound `lifecycle_operation_dependencies`.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `direct_landing` repointed to mcp/src/agents_remember/worktrees/direct_landing.py:117-129. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that all five door reads are gone and admission is now the request itself plus the `directExecutionEnabled` policy gate; replaced the `_claim_waiting_direct_landing` binding claim with the current dependency declaration (candidate, plan, input — no door). Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 

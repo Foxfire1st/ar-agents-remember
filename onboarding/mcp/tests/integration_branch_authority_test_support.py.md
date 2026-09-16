@@ -5,89 +5,79 @@
 | repository | agents-remember |
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
+| governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[governing overview](../overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Builds repository, contract, task-topology, atomic blocker, closed-leaf and exact-series preview fixtures for retained integration-authority tests. This support module is not itself collected test coverage.
+Build configured disposable repository/topology and closed-leaf fixtures for integration authority scenarios.
 
 ## Code Commentary
 
-Shared fixture construction uses production task documents, queue state, contracts, Git refs and external-memory ledger commits. `_authority_fixture` installs the selected certification profile. `_publish_completed_closeout_fixture` admits leaves through the selected lifecycle input owner before publishing component fixture state; an explicit final-source override models integration targets after admission. Closed external-memory leaf fixtures materialize the contract-required `onboarding/` root before closeout, ensuring conflict and integration tests reach their intended branch-authority seam instead of failing earlier on an invalid memory-candidate shape.
+### Logic
 
-Since 260831-CCR (commit `99dc249b`) the atomic-leaf authority fixtures bind canonical task intent:
-`_record_additional_atomic_leaf_landing` reorders the work so the claimed closeout door is only
-attached after the leaf document and master row are updated (line 500-506), and
-`_claimed_atomic_leaf_door` (line 511-563) now stamps
-`taskIntent=contract_task_intent(leaf, candidate_ref=leaf_ref)` (line 560) on the door it builds,
-so the forced series/door identity includes the exact intent digest.
+`_authority_fixture` constructs the exact code/memory repositories, protected branches, task topology, selected profile configuration, and sibling atomic-series contract. External baseline memory is a real content commit with Code-Commit attribution; its ledger is refreshed only as an untracked cache.
 
-## Invariants And Boundaries
+`_closed_external_leaf_worktrees` materializes the ordinary leaf worktrees and onboarding root, creates actual code and attributed memory commits, refreshes the disposable cache, and records only the two accepted outputs. `_publish_completed_closeout_fixture` optionally enters the selected/ordinary lifecycle input owner before publishing the fixture's completed state; its explicit final-source override models target changes after admission. `_doc` remains the small task-model builder.
 
-- Consumers exercise production owners; helper construction alone makes no acceptance or coverage claim.
-- External-memory fixtures must satisfy the same minimum candidate shape as a real leaf, including
-  the onboarding root required by exact code-memory pairing.
-- Refusal cases assert no unauthorized Git, contract, queue, task, or memory mutation.
-- Crash/retry cases retain exact durable identity and expected-old facts.
-- Claimed doors produced by fixtures carry a canonical task-intent identity, matching the
-  production admission requirement.
+Unused atomic-landing/door/preview builders and their ledger-only commit machinery were removed. Support code itself is not collected scenario coverage.
+
+### Conventions
+
+Helpers build production-shaped inputs for their consumers; synthetic completed fixture state is not an executed acceptance or certification result. Candidate repositories and paths remain explicitly configured and confined to the temporary world.
+
+### Invariants And Boundaries
+
+- Real code/memory objects back the recorded output cells.
+- Cache materialization produces no third commit or ledger output field.
+- Onboarding-root and canonical task/enclosure identity remain present so tests reach their intended seam.
+- No queue row or guessed ambient path substitutes for ref authority.
+
+### Todos
+
+No new file-local follow-up is identified by this source reconciliation.
+
+## Docs References
+
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:61-90; mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:346-373; mcp/tests/integration_branch_authority_test_support.py:643-697 |
-| Claimed atomic-leaf doors bind the canonical contract task intent after task and series setup. | "def _claimed_atomic_leaf_door(" | mcp/tests/integration_branch_authority_test_support.py:522-588 |
-| Additional atomic leaf landings attach the door only after task-document/master writes. | `_record_additional_atomic_leaf_landing` | mcp/tests/integration_branch_authority_test_support.py:427-508 |
+| Closed external leaves are backed by two actual commits and a disposable cache. | L48-L91 | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| Optional lifecycle admission precedes fixture finalization. | L94-L126 | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| Configured repository, profile, protected branches, and task topology. | L129-L288; L291-L298 | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| Consumers retain ownership, cache-independence, and CAS scenarios. | L53-L213 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
 
-## Documentation References
+## Cross-Repo References
 
-No configured domain-documentation or cross-repository source applies to this file.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include the module forcing surface. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The authority fixture constructs configured disposable repositories and task documents. | "def _authority_fixture(" | mcp/tests/integration_branch_authority_test_support.py:189-348 |
-
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Provides shared exact-repository, protected-ref, organizational-completion, and atomic-series fixtures for the split integration authority suites.
-
-### Current Invariants
-
-- Fixtures bind current contract, task, door, journal, repository, and ref facts explicitly.
-- No queue row or inferred path substitutes for protected-ref authority.
-
-
-## PDLS Reconciliation
-
-Shared integration-authority builders now expose the canonical current topology and bounded scenario overrides used by collision and publication forcing.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
-
-## CCR-R02@v2 Intent-Bound Door Fixtures
-
-Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, doors produced by these fixtures
-now bind the canonical task-intent digest so authority tests exercise the production currentness
-rule instead of counterfeiting a pre-intent door.
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Migrated retained baseline/closed-leaf builders to one attributed memory commit and untracked cache; removed unused ledger-era atomic-door/preview helpers and retired fields. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+- 2026-09-11T23:05:00+00:00: The claim named `_closed_leaf_worktree` as the closed-leaf fixture helper, but that internal-memory helper was deleted as unreachable when the detached lifecycle worker was removed; the surviving shared helper for closed leaf worktrees is `_closed_external_leaf_worktrees`, and the four cited ranges now project each named helper's exact current definition extent.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _claimed_atomic_leaf_door(" repointed to mcp/tests/integration_branch_authority_test_support.py:490-490. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_record_additional_atomic_leaf_landing` repointed to mcp/tests/integration_branch_authority_test_support.py:406-487. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _authority_fixture(" repointed to mcp/tests/integration_branch_authority_test_support.py:157-157. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=a5aabfbfd3259e1f38bf772c6dd51717ccd2cfe3b5e53a585b5659c8ce0708ba; verification metadata remains unchanged because commit-owned realization is pending.
 

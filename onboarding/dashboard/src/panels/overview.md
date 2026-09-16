@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T07:24+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -196,7 +196,7 @@ inside agents-remember.
 | The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
 | The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 | Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `successful` | dashboard/src/panels/HighlightComposer.tsx:710-780; dashboard/src/panels/HighlightComposer.tsx:244-696; dashboard/src/panels/HighlightComposer.tsx:238-238 |
-| Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForTask` | dashboard/src/data/sessions.ts:564-576; dashboard/src/panels/RailChat.tsx:255-289; dashboard/src/panels/RailChat.tsx:469-537 |
+| Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForTask` | dashboard/src/data/sessions.ts:596-608; dashboard/src/panels/RailChat.tsx:255-289; dashboard/src/panels/RailChat.tsx:469-537 |
 | `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:294-294; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-224; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:307-307; dashboard/src/grammar/ModeBar.tsx:65-65; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:350-350; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:329-329 |
 | `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. | "function DetailPanelImpl({"; "export function displayedReaderDoc({"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/model.ts:102-102; dashboard/src/panels/detail-panel/taskReader.tsx:638-649 |
 | The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. | "State = Literal[LiveState"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:105-105; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
@@ -326,6 +326,18 @@ viewer change; file-level detail lives in the panel sidecars.
 260831-CCR-L18 updated the Hangar render-test fixture so its hand-built `lifecycleOperation` sample carries the new `schemaVersion` and `stateMatrixVersion` literals required by the generated mirror. File-level detail lives in that sidecar.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `dashboard/src/panels/` route changed since the recorded verification commit. Re-read the card
+  against the frozen on-disk source and re-checked its claims and cited ranges: nothing this card
+  asserts is falsified by the change, so no wording changed. Verification metadata remains
+  closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit — `sprint-graph/styles.ts` gained the `abandoned` frontier
+  variant in the dormant tone. Re-read the route card: it makes no claim about that variant, so no
+  wording changed. The drift predates this task line (the change landed with an earlier route
+  change, not with this master). Verification metadata remains closeout-owned.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `RailChatImpl`, `buildLeafContextPackage`, `findSessionForTask` repointed to dashboard/src/data/sessions.ts:596-608, dashboard/src/panels/RailChat.tsx:255-289, dashboard/src/panels/RailChat.tsx:469-537. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 
 

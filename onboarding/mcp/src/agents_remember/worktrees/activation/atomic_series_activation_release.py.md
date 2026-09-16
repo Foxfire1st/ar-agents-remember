@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash |  `9c8a7a42a3d761b13c462874c7b312313a11c0ae`|
+| lastVerifiedCommitDate |  2026-09-13T19:56:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,23 +16,41 @@
 
 ## Purpose
 
-This file owns the only durable vacancy transitions for atomic-series activation. It separates
-strict explicit cancellation release from terminal cleanup release so neither call path can clear a
-different selected master.
+This file owns the only durable vacancy transitions for atomic-series activation, and it owns them per
+series contract. Each canonical series contract has its own activation record, so release separates
+strict explicit cancellation release from terminal cleanup release without either call path being able
+to clear a different contract's record.
+
+**`release_atomic_series_selection` has a third caller since 260831-LOCR-L37.** The stop-only pause
+(`worktrees/modules/pause.py::pause_result`) releases the master's selection through this exact
+function, which is what keeps the pause from introducing a second scheduling or vacancy authority. The
+pause is therefore a consumer of the strict explicit-release path described below, not a variant of
+it, and this function's own refusals are unchanged. Since the 260831-LOCR-L38 already-vacant stop the
+pause answers exactly one of them itself: `atomic-series-activation-selection-missing` is reported as
+the pause's `atomic-series-already-vacant` success, after re-observing the record and confirming it is
+genuinely `vacant`. The other statuses — an unreadable record and a record naming another
+master/contract — are still inherited and translated into the caller's own terms, because neither
+proves the master is inactive. Explicit sync cancellation is untouched and still requires an existing
+exact selection, which is why this function keeps refusing the absent case.
 
 ## Code Commentary
 
 ### Logic
 
-`release_atomic_series_selection` derives the exact source-pair path, reads beneath the selector
-store lock, rejects unreadable or absent authority, proves selected master plus canonical contract
-path, and replaces a non-vacant record with a revision-incremented vacant record. Replaying an
-already-vacant exact record is idempotent.
+`release_atomic_series_selection` derives this contract's exact activation path from
+`activation_path(contract.coordination_root, contract)`, reads beneath the selector store lock,
+rejects unreadable authority, and refuses a record that is absent with
+`atomic-series-activation-selection-missing`: explicit sync cancellation must address an existing
+exact selection rather than silently succeeding. It then proves the record selects this contract's
+master and canonical contract path (`_record_selects_contract`); a record selecting any other
+master/contract is refused as `atomic-series-activation-selected-contract-mismatch` and left
+untouched. An exact non-vacant record is replaced with a revision-incremented vacant record. Replaying
+an already-vacant exact record is idempotent.
 
 `release_terminal_atomic_series_selection_if_exact` uses the same identity proof but deliberately
-preserves unreadable, absent, or different selection state. `_release_record` retains the last
-selected master/contract in the durable vacant record so later exact cancellation replay and audit
-do not require a surviving task contract.
+preserves unreadable, absent, or different selection state instead of raising. `_release_record`
+retains the last selected master/contract in the durable vacant record so later exact cancellation
+replay and audit do not require a surviving task contract.
 
 ### Conventions
 
@@ -41,8 +59,11 @@ Release time defaults to a second-granularity UTC timestamp and may be injected 
 
 ### Invariants And Boundaries
 
-- Explicit cancellation must prove an existing exact owner or fail closed.
-- Terminal cleanup never clears another selected master.
+- Explicit cancellation must prove an existing exact owner for this contract or fail closed; a
+  missing selection is refused, never treated as already-released.
+- Release addresses only the released contract: another contract's record, including one selecting a
+  different master, is never read as this contract's state and is never cleared.
+- Terminal cleanup never clears a different contract's selection.
 - Vacancy is a durable selector transition, not task completion or queue mutation.
 - Release carries no commit or lifecycle evidence.
 
@@ -62,9 +83,14 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selector authority supplies exact pair, master, observation, and locked-store identity. | `atomic_series_source_pair`; `observe_atomic_series`; `require_selected_atomic_series`; `require_atomic_series_cancellation_owner` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:131-153; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-214; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:278-306; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:309-335 |
+| The selector authority supplies the per-contract activation path, strict observation, and canonical master reference. | "def activation_path("; `observe_atomic_series_path`; `series_master_ref` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:290-335; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:418-431 |
+| Explicit cancellation refuses an absent exact selection and a record that selects another contract. | `release_atomic_series_selection`; `atomic-series-activation-selection-missing`; `atomic-series-activation-selected-contract-mismatch` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-53; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:43-47; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:48-52 |
+| Exact-owner proof and the revision-incremented vacant replacement retain the last selected master/contract. | `_record_selects_contract`; `_release_record` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:79-88; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:91-118 |
 | The terminal bridge translates exact, absent, unreadable, and different-selection outcomes. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
-| Tests prove durable vacancy and refusal to clear another selected master. | `AtomicSeriesActivationTests` | mcp/tests/test_atomic_series_activation.py:96-137 |
+| Tests prove exact release addresses only the released contract and that another contract's record is never adopted. | "def test_release_addresses_only_the_released_contract(self) -> None:"; "def test_another_contracts_record_can_never_be_adopted(self) -> None:" | mcp/tests/test_atomic_series_activation.py:152-173; mcp/tests/test_atomic_series_activation.py:174-209 |
+| The stop-only pause is the third caller of the strict explicit release, and it adds no authority of its own. | `pause_result`; `_already_stopped_result` | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/modules/pause.py:131-151 |
+| The pause's boundary proof shows that releasing one master leaves the other master's record byte-identical, which is this file's per-contract isolation observed from the caller's side. | `test_pausing_one_master_leaves_the_other_masters_record_byte_identical` | mcp/tests/test_pause_stop_only_end_to_end.py:329-371 |
+| The pause's structural guard proves the stop's static import closure cannot reach a publication module, so the third caller releases through this strict path only. | `PUBLICATION_MODULES` | mcp/tests/test_pause_is_not_publication.py:37-52 |
 
 ## Cross-Repo References
 
@@ -74,6 +100,25 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-13T20:42+02:00 — 260831-LOCR-L38 (uncommitted change set on
+  `ar/260831_lifecycle-owned-completion-relay`): corrected the third-caller paragraph. The pause no
+  longer translates all three release refusals into its own terms — it now answers
+  `atomic-series-activation-selection-missing` itself as the `atomic-series-already-vacant` success,
+  after re-observing the record and confirming it is `vacant`. This file's behaviour is unchanged:
+  `release_atomic_series_selection` still refuses the absent case, because explicit sync cancellation
+  requires an existing exact selection, and the unreadable/foreign-records refusals are still inherited
+  by the pause. Re-cited `pause_result` to `pause.py:80-128` (the module grew from 148 to 209 lines),
+  added the `_already_stopped_result` anchor, and re-derived the per-contract isolation case to
+  `test_pause_stop_only_end_to_end.py:329-371`. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the third caller of this file's strict explicit
+  release — the stop-only pause (`worktrees/modules/pause.py`), which delegates to
+  `release_atomic_series_selection` rather than introducing a second scheduling or vacancy authority,
+  inherits all three refusals unchanged, and is observed from the caller's side by the per-contract
+  isolation case in the pause boundary suite. Added the two reference rows. Verification metadata
+  remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:19:25+02:00 — Per-contract release: rewrote Purpose/Logic/Invariants so release derives its own contract's activation path, refuses a missing exact selection with `atomic-series-activation-selection-missing`, and never clears another contract's record; rebound every citation to the frozen source. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound selector release citations to the current source-pair, observation, selection, and cancellation definitions; release ownership is unchanged and no acceptance claim is made.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `AtomicSeriesActivationTests` repointed to mcp/tests/test_atomic_series_activation.py:96-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.

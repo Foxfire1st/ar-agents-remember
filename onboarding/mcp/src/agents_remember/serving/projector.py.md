@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -198,6 +198,14 @@ drained, preventing a late atomic projection write from racing temporary
 worktree cleanup while preserving cancellation as the public outcome.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 2 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented shield-and-drain semantics for threaded projection ticks; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

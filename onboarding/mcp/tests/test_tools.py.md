@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-13T18:07+02:00 |
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. These cases establish payload behavior with controlled configuration, not a full server-registration or live-provider suite.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause — and 260831-LOCR-L37 added the matching case for the stop: `worktree_pause`'s description must present a stop that publishes NOTHING and must name `worktree_checkpoint_landing` as the separate, explicitly requested PUBLICATION. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
 
 ## Code Commentary
 
@@ -58,11 +58,17 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ping payload | `test_ping_payload` | mcp/tests/test_tools.py:50-59 |
-| Server info payload reports safe config summary | `test_server_info_payload_reports_safe_config_summary` | mcp/tests/test_tools.py:61-106 |
-| Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:108-143 |
-| Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:145-155 |
-| Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:157-185 |
+| Ping payload | `test_ping_payload` | mcp/tests/test_tools.py:58-68 |
+| Server info payload reports safe config summary | `test_server_info_payload_reports_safe_config_summary` | mcp/tests/test_tools.py:69-115 |
+| Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:116-152 |
+| Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:153-164 |
+| Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:165-195 |
+| Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-240 |
+| The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-259 |
+| The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish | `test_worktree_checkpoint_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:261-280 |
+| The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-304 |
+| The pause description presents a stop that publishes NOTHING and names the checkpoint landing as the separate publication. | `test_the_pause_advertises_a_stop_that_publishes_nothing` | mcp/tests/test_tools.py:306-330 |
+| The permissive registration-time config stub the registration cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:332-347 |
 
 ## Cross-Repo References
 
@@ -72,7 +78,84 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | --- | --- | --- |
 | No external evidence is needed for these assertions. | N/A | N/A |
 
+## Public-Surface Inventory Coverage (260831-LOCR-L29)
+
+`PublicSurfaceInventoryTests` exists because the advertised surface's own agreement was unenforced.
+`server_info` reports `mcp.tools.PUBLIC_TOOLS` itself, so a case that reads that payload and compares
+it to the tuple is self-referential. `worktree_record_landing` shipped registered by
+`mcp/registration/closeout.py`, advertised by FastMCP, and absent from both `PUBLIC_TOOLS` and
+`TOOL_RESPONSE_MODELS`, and the suite stayed green while `finalize_tool_response`'s by-name registry
+lookup made the tool unable to return a payload at all.
+
+`test_live_registration_matches_the_public_inventory_in_order` registers every entry in
+`TOOL_REGISTRARS` against a probe `FastMCP("inventory-probe")` and compares the
+`asyncio.run(server.list_tools())` names to `PUBLIC_TOOLS`. The comparison is ordered because
+FastMCP publishes in registration order, so a misplaced row is a reordering bug rather than a
+missing one. `test_worktree_record_landing_has_a_response_model_that_validates` asserts
+`set(PUBLIC_TOOL_RESPONSE_MODELS) == set(PUBLIC_TOOLS)` and then drives one
+`finalize_tool_response("worktree_record_landing", ...)` call — the call a missing registry row
+raises on, which the surface comparison alone cannot see.
+
+`_permissive_registration_config()` is the stub both cases need. Every registrar only closes over
+the config and none validates it while registering, so a permissive chain keeps these cases about
+the inventory rather than about building a runtime. The probe starts no server process, reads no
+provider state, and reaches no network.
+
+### Why There Is A Case Per Landing Tool (260831-LOCR-L30)
+
+`test_worktree_checkpoint_landing_has_a_response_model_that_validates` exists because the L29 case's
+set comparison cannot distinguish the two landing envelopes: `worktree_checkpoint_landing` and
+`worktree_record_landing` sit adjacent in `TOOL_RESPONSE_MODELS` and declare the same field names
+apart from the operation literal, so a registry swap between them still validates as a set. The L30
+case drives `finalize_tool_response("worktree_checkpoint_landing", …)` with the checkpoint payload
+(`state: "checkpointed"`, `integratedCodeCommit`, empty memory and ledger commits) and asserts the
+returned operation, which is what pins the name to the model that declares its literal.
+
+The general rule the two cases establish: one validating call per public tool name, not one for the
+whole registry.
+
+### The Stop's Half Of The Split (260831-LOCR-L37)
+
+`test_the_pause_advertises_a_stop_that_publishes_nothing` is the L36 case's counterpart, and the two
+are deliberately a pair. The checkpoint case pins the publication's side of the split; this one pins
+the stop's. It registers every registrar against a probe `FastMCP("pause-surface-probe")`, reads the
+advertised descriptions, and asserts that `worktree_pause` is a `PUBLIC_TOOLS` member, that
+`worktree_checkpoint_landing` is too, and that the stop's text says all three things an agent needs:
+that it is a pause of an atomic master, that it **publishes NOTHING**, and that the publication it
+must not reach for is named and separate.
+
+Neither case would catch the other's regression. The L36 case cannot see the stop's wording because
+it reads only the checkpoint's text, and a description-only edit is invisible to the set comparison
+and to the per-name response-model cases. Together they are what makes "two registered tools, not one
+verb with two names" an enforced claim rather than a comment.
+
 ## Update History
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new case
+  `test_the_pause_advertises_a_stop_that_publishes_nothing`, which pins the stop's published
+  description (a pause of an atomic master, "Publishes NOTHING", and the checkpoint named as the
+  separate, explicitly requested publication) and both roster memberships, and recorded why it is the
+  L36 checkpoint case's counterpart rather than a duplicate. Re-derived the retained-test and stub
+  ranges (`_permissive_registration_config` 332-347). Verification metadata remains closeout-owned; no
+  execution or acceptance claim.
+- 2026-09-13T18:07+02:00 — 260831-LOCR-L36: recorded the new case
+  `test_the_checkpoint_description_publishes_rather_than_pausing`, which registers every tool against
+  a probe `FastMCP` and pins the checkpoint description: it must present a partial **publication** and
+  deny being the pause (no "Use this to pause", and the pause is named as a "separate matter and is NOT
+  this call"). The case exists because the old invitation routed an ordinary stop request into a
+  protected-branch publication. Rebound `_permissive_registration_config` to its current range.
+  Verification metadata remains closeout-owned; no execution or acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added the
+  `test_worktree_checkpoint_landing_has_a_response_model_that_validates` case, recorded why a per-name
+  case is required (the two landing envelopes differ only in the operation literal, so a set
+  comparison misses a swap), corrected the Purpose sentence, and re-derived the shifted retained-test
+  and stub ranges. Verification metadata remains closeout-owned; no execution or acceptance claim.
+- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: recorded
+  `PublicSurfaceInventoryTests` (live-registration-order equality with `PUBLIC_TOOLS`, plus a
+  validating `finalize_tool_response` call for `worktree_record_landing`) and its
+  `_permissive_registration_config` stub, corrected the Purpose sentence that claimed this module
+  had no registration coverage, repointed all five shifted retained-test ranges after the import
+  block grew, and added the three new reference rows. Verification metadata remains closeout-owned;
+  no execution or acceptance claim.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 

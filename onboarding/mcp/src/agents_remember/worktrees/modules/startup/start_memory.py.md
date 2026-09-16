@@ -5,14 +5,17 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/startup/start_memory.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `../overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[governing route overview](../overview.md)
+[Nearest governing route overview](../overview.md)
 
 ## Purpose
 
@@ -22,38 +25,53 @@ Own external-memory admission and preparation during worktree start.
 
 ### Logic
 
-The module settles the source memory branch, creates or reuses the memory worktree, synchronizes safe mtimes, detects divergence, and loads ledger/mapping state before start can publish a contract.
+`prepare_memory_for_start` settles internal, disabled, or external memory, requires the exact configured memory source branch, and creates or reuses the memory worktree. Its `lastVerifiedCodeCommit` and `lastMemoryContentCommit` response data come from `derive_memory_ledger` at the recorded memory base. An unattributed history produces empty informational values; a missing, stale, or malformed cached `memory.md` is not an admission condition.
 
-Mtime reuse skips `.git`, non-files, target-only files and known divergent paths; dry-run writes nothing. Missing source files are counted without failing the sync. Source-computable divergence keeps changed files fresh for indexing; an uncomputable divergence is explicitly reported by the current implementation. See `mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:79-134`.
+Mtime reuse skips `.git`, non-files, missing source files, and known divergent paths. Missing source files are counted. A computable source/worktree diff leaves changed paths fresh for indexing; an uncomputable diff is explicitly reported. Dry-run does not create a worktree or synchronize mtimes.
+
+### Conventions
+
+Named branch and repository facts establish the memory source. The existing disabled-memory choice remains explicit; this module does not create a substitute protected source branch.
 
 ### Invariants And Boundaries
 
-- External-memory state is resolved before ledger authority is consumed.
-- Missing repository, mapping, or divergent paths return typed public failure evidence.
-- Disabled memory is an explicit contract choice, not a fallback.
-- No inferred compatibility branch substitutes for configured memory authority.
+- The memory repository and exact source branch must exist for an external-memory start.
+- Cache rows never select the code base or establish compatibility.
+- Derived metadata reports only committed attribution; it does not invent a mapping for the selected code base.
+- Worktree creation and mtime handling retain their existing dry-run boundary.
 
 ### Todos
 
-None recorded.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-No configured domain-documentation source applies to this repository-internal route.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Memory source settlement precedes worktree and ledger preparation. | `prepare_memory_for_start`; `_ensure_memory_source_branch` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:39-64; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:67-76 |
-| Mtime synchronization and divergence detection preserve exact file-state evidence. | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:79-118; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:121-134 |
-| Disabled, missing-repository, ledger, and mapping outcomes are explicit. | `_disabled_memory_choice`; `_missing_memory_repo_state`; `_load_memory_ledger`; `_missing_mapping_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:137-140; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:143-151; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:154-179; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:182-196 |
+| Source state, named-branch admission, and informational Git-derived metadata. | L19-L32; L35-L59; L62-L71 | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
+| Mtime reuse and divergence handling preserve the current indexing behavior. | L74-L113; L116-L129 | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
+| Missing external repository and explicit disabled-memory outcomes. | L132-L135; L138-L146 | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
+| The informational ledger is reconstructed from commit attribution without a cache read. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed the cached-file read and exact-row admission gate; retained repository/source validation, derived informational metadata, worktree creation, and mtime behavior. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

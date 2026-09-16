@@ -50,7 +50,7 @@ quality operation.
 
 Use focused behavioral checks during implementation and report their exact scope. Full code quality,
 full tests, full memory quality, and whole-candidate review run only after an explicit developer
-request. Closeout and integration are Git code/memory/ledger transactions and do not launch or
+request. Closeout and integration publish the real code/memory outputs, with the computed ledger outside Git, and do not launch or
 require those operations. When a requested certification run is required, use the current shared
 Dagger configuration and exact source/bundle/base contract; do not allocate another engine or
 substitute a host result for its certificate.

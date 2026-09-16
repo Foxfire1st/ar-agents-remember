@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
+| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -31,7 +31,8 @@ task-state transitions: `task_reopen`, `lifecycle_finalize_task`, `task_doc`.
 
 `task_doc` is the JSON-primary authoring tool and carries the longest docstring on the surface,
 because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
-`set_step` | `skip_step` | `set_subtask` | `remove_subtask` | `set_section` | `append_decision` |
+`set_step` | `add_step` | `remove_step` | `skip_step` | `read_steps` | `set_subtask` |
+`remove_subtask` | `set_section` | `append_decision` |
 `record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` |
 `linkage_report` | `set_field` |
 `get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
@@ -39,9 +40,16 @@ is never parsed back. Everything mutates except `operation='get'`, and `dry_run=
 validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
 adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subtask` /
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
-`subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
+`subtask.keep_file`; every step operation is leaf-only. Since 260831-LOCR-L33 the description spells
+the **step plane** out by intent, because `operation` is a plain `str` and the vocabulary is the only
+place the split exists: `set_step` updates exactly one existing unit and never creates; `add_step`
+creates exactly one and requires `{id, title}`, refusing an id that already exists in its scope;
+`remove_step` deletes exactly one and requires a nonblank `step.reason`, records a decision entry, and
+**may** remove a `done` unit or operate on a `Completed` document once that reason is given;
+`read_steps` is the read-only focused checklist read; and all of them address one exact existing unit
+by `step={id, parent?}`, where `parent` selects the namespace. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:129-129; mcp/src/agents_remember/mcp/registration/tasks.py:141-143).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:114-136).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -86,6 +94,11 @@ recreates everything.
 
 - Flat signature; `TaskDocTarget` / `TaskDocEdit` / `FinalizeTaskDocs` are built in the body.
 - `task_doc` is mutating except `get`, and registers `dry_run=False`.
+- **The operation vocabulary lives only in the description text.** `operation` is a plain `str`, not
+  an enum and not a schema member, so adding or changing an operation is a description edit and
+  nothing else — the 260831-LOCR-L33 step-plane change touched this module's description only, with
+  no schema, `PUBLIC_TOOLS`, or response-model change. A reader looking for the operation set in the
+  types will not find it here.
 - Document schema validation, master/leaf rules, and the reopen refusals live in
   `application/task_doc_tools.py` and `application/worktree_tools.py`.
 
@@ -93,9 +106,9 @@ recreates everything.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30; mcp/src/agents_remember/mcp/tools/task_doc.py:33-46 |
+| The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32; mcp/src/agents_remember/mcp/tools/task_doc.py:35-48 |
 | The finalize builder. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| `FinalizeTaskDocs`. | "class FinalizeTaskDocs:" | mcp/src/agents_remember/application/worktree_tool_requests.py:133-133 |
+| `FinalizeTaskDocs`. | "class FinalizeTaskDocs:" | mcp/src/agents_remember/application/worktree_tool_requests.py:147-147 |
 
 ## Historical 260815-DAG-L3 Queue Registration (Superseded)
 
@@ -128,6 +141,16 @@ canonical, keeps semantic revision/attempt/digest identities separate, requires 
 validator used by memory and closeout. It explicitly forbids historical-filename fallback.
 
 ## Update History
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: the `task_doc` tool **description** now
+  advertises the step plane split by intent. Recorded the new operation vocabulary
+  (`add_step`/`remove_step`/`read_steps` alongside `set_step`/`skip_step`), the real semantics the
+  description now states (`set_step` update-only and never creating; `add_step` create-only and
+  refusing an existing id; `remove_step` delete-only with a nonblank `step.reason`, a decision entry,
+  and the `done`-unit / `Completed`-document rulings; `read_steps` read-only; one exact addressing
+  rule where `parent` selects the namespace), and that this change touched the description text only.
+  Added the invariant that the operation vocabulary lives only in the description because `operation`
+  is a plain `str`, not an enum. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:133-133. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-29T08:52+02:00 — Registered the single lifecycle-owned curator-coherence API and its

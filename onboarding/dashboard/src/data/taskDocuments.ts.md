@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskDocuments.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                  2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |                                                  `dca949f3c1652d76edf277eef86c6399c4ab8404`|
+| lastVerifiedCommitDate |                                                  2026-09-14T10:26:38+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,8 @@ link state is recorded rather than silently treated as already landed.
 | The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
 | `useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
 | The serving route maps projection readiness and the confined snapshot read to HTTP responses. | "def _task_document_response(runtime: _ServingRuntime" | mcp/src/agents_remember/serving/_app_routes.py:102-102 |
-| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | "def read_task_document_body(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:110-110 |
+| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | "def read_task_document_body(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:166-166 |
+| That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404. | `_projected_document` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:81-105 |
 
 ## Cross-Repo References
 
@@ -84,6 +85,7 @@ No meaningful cross-repo boundary exists; the client, endpoint, and task-documen
 
 ## Update History
 
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 curator: re-anchored the `read_task_document_body` citation after `snapshots_impl/_task_documents.py` grew by 52–57 lines in this change set (110-110 → 166-166; the cited file changed, this card's own source did not), and added one row recording that the body reader now reaches the schema through the shared tolerant parse, so an unknown field from a newer writer no longer turns a readable body into the endpoint's 404. Verification metadata unchanged; no verification stamp advanced.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 

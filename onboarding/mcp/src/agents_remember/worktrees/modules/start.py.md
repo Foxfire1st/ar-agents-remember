@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -30,12 +30,45 @@ from `agents_remember.worktrees.modules.args`), replacing the former
 `argparse.Namespace`; `import argparse` is gone.
 
 `attach_result` rejects a series contract as a workbench, admits the ordinary leaf contract and its
-exact lifecycle location, then resolves any parent series. When a parent exists it calls
-`activate_atomic_series_contract` before source-lineage projection: a different live series is
-logically paused, the requested parent is reconciled for its protected source pair, and attach
-returns the selecting transaction's conflict/refusal rather than exposing stale implementation.
+exact lifecycle location, then resolves any parent series. The series branch itself now lives in
+`startup/series_attach.py` as `series_attach_result`, moved there verbatim under the size rail, and
+this module calls it (`:174-175`): it resumes a live series whose integration branch still exists and
+otherwise refuses with `series-terminal` (the contract's cleanup is already terminal) or
+`series-branch-missing` (the work branch is gone locally). When a parent exists it calls
+`activate_atomic_series_contract` before source-lineage projection: that call transitions the
+requested parent's OWN activation record (`reconciling`, reconcile its pinned source pair, then
+`active`) because the record is keyed per series contract, not per protected source pair. No other
+master is named, selected, or paused on this contract's behalf, and attach returns the selecting
+transaction's conflict/refusal rather than exposing stale implementation.
 Only an active/current parent reaches the existing lineage check and `attached` result. Dry-run
 activation remains observation-only.
+
+**260831-LOCR-L36 re-keyed the activation record from per protected source pair to per series
+contract.** Start/attach/dispatch/sync still share one selecting transaction, but the record it
+writes is addressed by `contract_fingerprint(contract)`; a foreign master's record is read only by
+that foreign contract, so two atomic masters that share one sprint's code/memory source branches
+hold independent records and both may be `active`. `activation_waiting_reason(observation)` now
+takes the observation alone and returns only `atomic-series-reconciling`; a vacant record, an
+`active` record, and a foreign master are all explicitly not waiting reasons. Genuine wave
+dependencies remain with the sprint execution graph's own `predecessor-incomplete:` reasons.
+
+**The child-admission seal is gone, so this module's parent-series guards are resolution only
+(260831-LOCR seal removal).** Both call sites — `attach_result` (code line 177) and the apply-time
+start preflight inside `_plan_start_enclosure` (code line 703) — now import and call
+`require_parent_series` cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330)
+instead of `require_parent_series_accepting_leaves`. The helper still resolves and validates the
+leaf's exact parent series (organizational direct-super work under a sprint graph returns `None`;
+`_require_atomic_master` refuses a non-atomic master; a missing parent contract and a stale series
+identity still raise), but it no longer decides whether that series accepts leaves. The guard it
+used to call, `worktrees/atomic_series_seal.py::require_series_accepting_leaves`, is deleted with its
+module: it read the parent's `(closeout_status, integration_status, cleanup)` cells as a seal, which
+once `checkpointed` existed also sealed every master that took a checkpoint landing. A master is
+meant to be paused and resumed, never locked by its own landing, so neither `worktree_attach` nor
+`worktree_start` refuses a leaf because of a lifecycle cell.
+
+`mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof: it walks master open →
+leaf start → leaf closeout → leaf landing → checkpoint → pause → attach, then starts a leaf commanded
+*after* the landing.
 
 **`start_result()` is now four lines (260731-EFA-L2)** — resolve context, build the contract, then
 three stages, each of which owns one decision and can return early:
@@ -236,15 +269,17 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:163-200 |
-| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502; mcp/src/agents_remember/worktrees/modules/start.py:136-163 |
-| The selecting transaction owns pause/reconcile/active behavior rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:139-201 |
-| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
-| Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:58-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
-| Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:60-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
+| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:168-208 |
+| The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves. | "parent_series = require_parent_series("; "require_parent_series(contract, operation=\"worktree_start\")" | mcp/src/agents_remember/worktrees/modules/start.py:177-179; mcp/src/agents_remember/worktrees/modules/start.py:703-703 |
+| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
+| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:138-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-445 |
+| The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
+| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:32-113 |
+| Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
+| Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:468-470 |
-| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-172; mcp/src/agents_remember/worktrees/modules/guidance.py:130-146; mcp/src/agents_remember/worktrees/modules/guidance.py:502-504 |
+| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 
 ## Cross-Repo References
 
@@ -259,8 +294,9 @@ pair already documented by the repository-owned contract.
 For master task starts, `start_contract.py` creates or loads the root series contract, creates the
 integration branch from the protected/source branch, selects and reconciles that exact series, and
 only then builds the leaf contract from the integration branch with canonical doc-id `leaf_id`
-recorded. Multiple root series contracts may remain live; selection is disposable source-pair
-authority, not a global contract census. Both root and leaf `memory_base_commit` values come from
+recorded. Multiple root series contracts may remain live; selection is that one contract's own
+`reconciling -> active` activation transition — never a global contract census, and never a claim on
+a shared protected source pair. Both root and leaf `memory_base_commit` values come from
 `memory_base_for_source` — the tip of the **memory source branch** the worktree is created from, not
 the memory repo's ambient HEAD.
 
@@ -282,8 +318,8 @@ after accepted task truth publishes, affected projections are refreshed independ
 
 Task-derived integration refs remain mechanically non-ordinary. The exact configured locator and
 task CAS remain the leaf publication boundary; the parent atomic series is separately selected and
-reconciled under source-pair integration authority before start/attach exposes the leaf. A mutable
-queue lane is absent from both decisions.
+reconciled under repository integration authority in its own contract-keyed activation record before
+start/attach exposes the leaf. A mutable queue lane is absent from both decisions.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -293,20 +329,57 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:92-101; mcp/src/agents_remember/worktrees/modules/start.py:104-105; mcp/src/agents_remember/worktrees/modules/start.py:111-136 |
+| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:93-102; mcp/src/agents_remember/worktrees/modules/start.py:105-106; mcp/src/agents_remember/worktrees/modules/start.py:109-134 |
 
 ## 260821-CLIVE Start Reservation And Task-CAS Boundary
 
 Leaf publication still competes with discard-unstarted under the short task-publication CAS. It proves the exact
 current parent/leaf binding and reserves the configured contract locator before code, memory,
-provider, or lifecycle task mutation. Parent-series selection is a preceding source-pair operation,
-not part of this task-authoring CAS.
+provider, or lifecycle task mutation. Parent-series selection is a preceding contract-keyed activation
+operation, not part of this task-authoring CAS.
 Memory preparation must reproduce the reserved contract bytes or refuse. Lifecycle task restamping
 uses the shared task-fact publisher and returns independent projection effects. Retry converges on
 the same reservation; conflicts name task-authority or recovery actions. A successor start requires
 the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the series-attach
+  extraction removed 55 lines, so the two guard call sites moved to `:177` and `:703`,
+  `status_result` now spans `:138-165` and `attach_result` `:168-208`. Repointed every one of them,
+  plus the playthrough row to `:62-173`. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source
+  extracted its series-attach branch into `startup/series_attach.py` as `series_attach_result`,
+  moved verbatim and renamed, and now calls it from `attach_result` (`:174-175`). Recorded that in
+  the attach paragraph, with the two refusal states that branch owns; every other claim about this
+  module still holds and the cited ranges were re-read. Verification metadata remains
+  closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the parent-series resolver rename and the deleted seal). Re-read
+  the card: its rename claim and call-site references hold at the current source. Note that this
+  file also carries another worker's in-flight edit, so on-disk line numbers may differ from the
+  committed ones; no card claim depends on the shifted region. Verification metadata remains
+  closeout-owned.
+- 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
+  `ar/260831_lifecycle-owned-completion-relay`): recorded that both start-side parent-series guards —
+  `attach_result` (code line 176) and the apply-time preflight inside `_plan_start_enclosure` (code
+  line 757) — now call `require_parent_series` instead of `require_parent_series_accepting_leaves`,
+  that the guard they replace (`worktrees/atomic_series_seal.py::require_series_accepting_leaves`) is
+  deleted with its module, and that neither `worktree_attach` nor `worktree_start` can now refuse a
+  leaf because of a parent lifecycle cell. Added the reference row and the playthrough module as the
+  regression proof. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+
+- 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36: re-keyed the atomic-series activation account from per protected source pair to per series contract. Attach/start now describe `activate_atomic_series_contract` as transitioning the requested parent's OWN contract-keyed activation record to `reconciling` and then `active`, with no foreign master paused, selected, or named as a reason to wait; `activation_waiting_reason` takes the observation alone and returns only `atomic-series-reconciling`. Corrected the Series-Contract Notes claim that selection is "disposable source-pair authority", the DAG-L4 "source-pair integration authority" wording, and the CLIVE "source-pair operation" wording. Rebound two stale reference rows: `atomic_series_status_projection` now cites `atomic_series_activation.py:434-445` (was `502-502`, where the symbol no longer appears) and `status_payload` now cites `guidance.py:502-504` (was `494-496`, which is `projected_status_payload`'s range); the guidance row's source order was aligned with its anchors. This records source documentation only; verification metadata remains closeout-owned and no acceptance claim is made.
+
+- 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: corrected three stale reference rows against the current source — `status_payload` now cites `guidance.py:472-474`, `amend_contract` cites `worktree_contract.py:197-227`, and this module's public start boundary cites `start.py:94-102; 105-106; 109-134`. This leaf replaced the unconditional `kind == "series"` attach refusal with `_attach_series_result`, which is the state-grounded resume; that behaviour is recorded in the attach row rather than added here. Verification metadata remains closeout-owned.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `status_result`; "def atomic_series_status_projection(" repointed to mcp/src/agents_remember/worktrees/modules/start.py:136-163; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.

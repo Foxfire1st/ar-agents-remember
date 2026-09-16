@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/kernel/primitives/version.py`         |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-08-12T22:04+02:00                                        |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                    |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`                    |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ the `mcp` package.
 
 Defines `SERVER_NAME = "agents-remember"` (cit:([`SERVER_NAME`], mcp/src/agents_remember/kernel/primitives/version.py:11-11)).
 `_resolve_server_version` reads the installed `agents-remember-mcp` distribution metadata and
-returns the committed `3.0.0rc7` identity only when that metadata is unavailable in a source
+returns the committed `3.0.0rc8` identity only when that metadata is unavailable in a source
 checkout. `SERVER_VERSION` is computed through that function seam, which keeps reload-based
 fallback tests deterministic and gives every upper layer one kernel-owned value.
 
@@ -64,7 +64,16 @@ No cross-repository implementation participates.
 
 ## Update History
 
-- 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: replaced the stale `__version__` description with the committed `_resolve_server_version` seam and its installed-metadata-first, `3.0.0rc7` source fallback. Final verification stamping remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/kernel/primitives/version.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source advanced the
+  source-checkout fallback from `3.0.0rc7` to `3.0.0rc8`. Corrected the Logic sentence; the earlier
+  history entry keeps its original wording as the record of what was true then. Verification
+  metadata remains closeout-owned.
+- 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: replaced the stale `__version__` description with the committed `_resolve_server_version` seam and its installed-metadata-first source fallback. Final verification stamping remains closeout-owned.
 
 - 2026-08-12T10:08+02:00 — Advanced the source-checkout fallback to `3.0.0rc7` and extracted
   the existing installed-metadata/fallback branch into `_resolve_server_version()`. Behavior and

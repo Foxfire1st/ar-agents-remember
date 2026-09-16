@@ -5,103 +5,105 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_git.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[worktrees overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-This file owns every exact Git mutation and proof for resumable sync. It makes retained conflicts,
-agent continuation, exact result attribution, rollback, temporary worktree cleanup, and
-external-memory ledger preservation mechanical rather than caller-specific.
+Own exact Git mutation and proof for resumable code and memory-content sync, including parked WIP, retained conflicts, continuation, rollback, and temporary worktree cleanup.
 
 ## Code Commentary
 
 ### Logic
 
-`read_ref` first validates the complete ref name with `git check-ref-format`, then resolves exactly
-`<ref>^{commit}` through `git rev-parse --verify --quiet --end-of-options`. Only the latter
-command's missing-ref return code becomes `None`; an invalid name or any other inspection failure
-raises `SyncGitProofError` with Git's detail. Pinned refs are then created and deleted by
-expected-value checks, so malformed authority cannot masquerade as absent authority. Temporary
-worktrees are created only for the journaled repository/branch and are removed only when clean.
-Checkout proof compares repository identity and branch, while helpers inspect status, MERGE_HEAD,
-and unmerged paths.
+Ref reads distinguish invalid names, absent refs, and inspection errors. Pinned refs use expected-value creation/deletion, and worktree identity includes the recorded repository and branch. A completed side must be the admitted fast-forward or an exact two-parent merge in pre-sync/source order.
 
-`start_side_merge` attempts the pinned source merge and leaves a genuine conflict in place. A
-divergent memory merge is staged without auto-commit until both parent ledgers are validated.
-`validate_staged_resolution` proves the exact MERGE_HEAD, zero unmerged/unstaged paths, index
-sanity, and memory-ledger preservation before `continue_side_merge` commits. Completion accepts
-only the admitted fast-forward or a two-parent commit with exact pre-sync/source parents.
-`rollback_side` restores only an active or completed operation-owned delta and refuses later work.
+Dirty-path and WIP helpers take the typed side record. Only the memory domain excludes root memory.md. Before a native operation, only that disposable path is restored/cleaned so its local edits cannot obstruct Git or enter a stash; substantive WIP is still parked with untracked files and later restored and proved.
+
+An admitted divergent memory merge runs without auto-commit. A cache-only conflict removes only memory.md from the merge index. Real content conflicts remain unresolved; when content is ready, the cache ignore rule is added to the same ordinary memory merge and the exact parents are checked. No standalone cache commit is created. Continue previews inspect content without mutation. Both fresh and resumed staged memory merges re-prove HEAD/MERGE_HEAD, remaining content conflicts, tracked unstaged changes, and cached diff validity before committing. The code side treats a file named memory.md as ordinary content.
+
+The cache is refreshed as a disposable view after applicable memory results. A narrow cache-only stash conflict recovery additionally requires a clean content prestate and the existing restored-WIP proof. Other Git failures remain errors. Rollback and temporary removal retain exact side/ref identity and refuse later substantive work.
 
 ### Conventions
 
-All Git commands use the shared bounded runner. `SyncGitProofError` means live Git cannot be
-attributed exactly to this journal generation; callers return manual-repair/cancel guidance rather
-than weakening the proof.
+All commands use the shared runner. `SyncGitProofError` exposes an unproven Git transition. Cache stripping is domain- and path-specific; it is not an ours/theirs policy for other files.
 
 ### Invariants And Boundaries
 
-- A conflict is retained only when MERGE_HEAD equals the pinned source and unmerged paths exist.
-- Missing exact refs are distinct from invalid ref names and Git inspection failures.
-- Continue commits only a fully staged exact retained merge.
-- Memory resolution must contain every exact parent ledger row. Repeated code rows are valid
-  newest-first history and are not collapsed during merge validation.
-- Automatic rollback refuses unrelated/later commits or dirty post-sync work.
-- Temporary worktree removal and ref deletion are evidence-checked, never best-effort deletion.
-
-## Parked-Candidate Git Primitives
-
-`worktree_dirty_paths` reads every dirty path the worktree holds, untracked included, from
-NUL-separated porcelain (`status --porcelain -z -uall`) — the only form that never quotes a path —
-and skips the second entry of a rename/copy pair. `park_worktree_wip` stashes the exact candidate
-with `--include-untracked` and refuses if the worktree is still dirty or no stash entry appeared.
-`apply_parked_wip` reapplies a recorded stash and classifies the result: a nonzero exit with no
-conflict is a hard proof error, never a silent skip.
-
-`prove_parked_wip_restored` is the restore proof. A parked path counts as restored when the
-worktree reports it dirty again, or when the carried result already holds exactly the parked
-content (`<stash>^{tree}:<path>` / `<stash>^3:<path>` equal to `<carried_head>:<path>`) — a clean
-reapply the moved source made identical. Anything else fails the proof, the stash is kept, and the
-transaction refuses with `sync-git-proof-failed`. `drop_parked_wip` drops exactly the recorded stash
-by matching its commit in a bounded `git stash list`, never another entry.
-`discard_conflicted_wip_reapply` is cancel-only: it clears a conflicted reapply (refusing if an
-active merge sits outside cancel authority) while the candidate itself stays safe in its stash.
+- Memory cache state cannot block dirty/WIP, native merge, resolution preview, or admitted continuation.
+- Real unresolved content is retained with its stash or MERGE_HEAD evidence.
+- Code-side memory.md keeps normal Git conflict semantics.
+- Only the pinned fast-forward or exact admitted two-parent merge is accepted.
+- No cache-only commit or cached-row authority is introduced.
 
 ### Todos
 
-Reconcile line ranges after Dagger fixes; verification remains empty for the uncommitted source.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Side records carry the exact repository, worktree, commits, refs, plan, and conflict set proven here. | `SyncSideRecord` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67 |
-| The driver records retained conflicts and delegates continue through these proof functions. | `_continue_resolution`; `continue_side_merge`; `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:539-570; mcp/src/agents_remember/worktrees/sync_transaction_git.py:318-342; mcp/src/agents_remember/worktrees/sync_transaction_git.py:345-366 |
-| Recovery uses exact-created-head and rollback proof before restoring or finalizing. | `_recover_from_refs`; `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:316-374; mcp/src/agents_remember/worktrees/sync_transaction_git.py:400-408; mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-397 |
-| The parked-candidate Git primitives read exact dirty paths, park with untracked files, reapply with conflict classification, prove restoration, drop exactly the recorded stash, and clear a cancel-only conflicted reapply. | `worktree_dirty_paths`; `park_worktree_wip`; `apply_parked_wip`; `prove_parked_wip_restored`; `drop_parked_wip`; `discard_conflicted_wip_reapply` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:112-134; mcp/src/agents_remember/worktrees/sync_transaction_git.py:137-150; mcp/src/agents_remember/worktrees/sync_transaction_git.py:153-166; mcp/src/agents_remember/worktrees/sync_transaction_git.py:169-185; mcp/src/agents_remember/worktrees/sync_transaction_git.py:202-218; mcp/src/agents_remember/worktrees/sync_transaction_git.py:188-199 |
+| Exact refs, worktree identity, and authority-safe cleanup. | L27-L39; L42-L51; L54-L62; L83-L89; L92-L107 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Typed dirty/WIP and restore proof exclude only the memory cache. | L117-L141; L144-L163; L166-L195; L198-L216 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Content-domain conflicts and narrowly scoped cache state handling. | L285-L292; L295-L308; L334-L337 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Native merge, exact continuation, and cache-free merge output. | L363-L396; L340-L347; L399-L411; L414-L435; L438-L456 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Rollback and created-head proof retain exact operation ownership. | L459-L488; L491-L499 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Public regression covers cache-only success, true content conflict/continue, and preserved WIP. | L281-L362 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
 
 ## Cross-Repo References
 
-No cross-repository source is configured for this memory root.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Fixed native legacy-memory.md conflicts and surrounding WIP/status/continuation boundaries; cache-only conflicts now progress while real content conflicts and code-domain memory.md remain ordinary Git facts. The existing public regression also interrupts before publication, proves an unstaged real edit refuses with refs unchanged, and completes after the intended edit is staged. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the ledger-ruling changes
+  this card records are the frozen ones. Re-checked the cited ranges and the prose: they hold. No
+  wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the deleted ledger validators and the parked-WIP primitives).
+  Re-read the card against the current source: all twelve cited ranges hold and the history already
+  names every deletion. No wording changed; verification metadata remains closeout-owned.
+- 2026-09-14T13:20+02:00 — The ledger ruling reaches the sync: removed the sync-side row-preservation
+  rule (`validate_current_memory_side`, `validate_completed_side`, `_validate_parent_ledgers`,
+  `_validate_required_ledger_rows`, `_ledger_rows` and their call sites), so this module proves Git
+  state only — `_finish_staged_memory_merge` commits the pinned memory merge without re-judging
+  either parent's row list, and `validate_staged_resolution` proves the staged resolution alone. The
+  ledger is derived state and its rebuild is its authority, so a row the rebuild cannot resolve is
+  reported by `ledger_projection` rather than refused here. Rewrote the Purpose, the merge/continue
+  Logic, and the parent-row invariant, and re-derived every reference anchor against the current
+  source (the module docstring grew and the parked-candidate primitives moved with it). Verification
+  remains closeout-owned.
 
 - 2026-09-10T15:06+02:00 — Parked-candidate Git primitives: recorded `worktree_dirty_paths`, `park_worktree_wip`, `apply_parked_wip`, `prove_parked_wip_restored`, `drop_parked_wip`, and the cancel-only `discard_conflicted_wip_reapply`, including the restore proof's exact-content branch. Re-derived the retained proof anchors against the current working tree. Verification remains closeout-owned.
 

@@ -5,32 +5,71 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T16:57+02:00 |
-| lastVerifiedCommitHash | `8dcf0645fdbc3aa490132d5947b22227d45ff302` |
-| lastVerifiedCommitDate | 2026-08-26T16:57:26+02:00 |
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Worktree-integration overview](../overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
 Builds the immutable closeout-preview argument map from the accepted operation input. Only enabled
-code, memory, and ledger legs contribute their explicit commit-message fields.
+code and memory legs contribute their explicit commit-message fields.
 
 ## Code Commentary
+
+### Logic
+
+`closeout_preview_args` emits the contract path and explicit messages for enabled code and memory legs only. It cannot request a ledger subject or turn a cache refresh into mutation authority.
 
 The helper translates one accepted closeout input into the corrected public preview call. It does not
 own door ancestry, cancellation release, queue selection, or operation replacement.
 
-## Invariants And Boundaries
+### Conventions
+
+Accepted input, exact Git facts, and typed owner results stay distinct from disposable projections.
+
+### Invariants And Boundaries
 
 - Preview arguments are authority-free immutable inputs until the owning transaction validates them.
 - Disabled commit legs never acquire synthesized messages.
 - Door, queue, cancellation, and replacement authority stay with their owning lifecycle transactions.
 
+### Todos
+
+None recorded for the ledger-retirement boundary.
+
+## Docs References
+
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external source applies. | — | — |
+
+## Cross-Repo References
+
+No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional cross-repository evidence applies. | — | — |
+
+## Repo-Internal References
+
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `closeout_preview_args` renders contract-addressed preview arguments with enabled code/memory messages. | L8-L17 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py) |
+
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=9303fcc6ce29e2d9789a13ab2a3770207d3a5114ef56aba0d8c654f31e10235d. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 
 - 2026-08-26T16:57+02:00 — Removed the obsolete claimed-predecessor resolver after
   cancelled-generation replacement was returned to current door truth plus journal-owned worker-exit

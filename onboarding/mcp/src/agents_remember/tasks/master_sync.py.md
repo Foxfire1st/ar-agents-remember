@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/master_sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,6 +52,10 @@ not render markdown; the application/store boundary owns that.
   `Completed`. Any done, in-progress, or blocked status otherwise derives
   `inProgress`; an inconsistent completed leaf also derives
   `inProgress`, and the remaining case keeps the leaf status.
+- **An abandoned leaf projects `abandoned` unchanged:** `derived_master_status`
+  returns `abandoned` before the rollup, so a deliberately dropped leaf does not
+  collapse back to `inProgress` and a later master sync cannot silently reopen a
+  row that was abandoned on purpose.
 
 ### Todos
 
@@ -72,7 +76,7 @@ scope; this file implements an internal coordination contract.
 | --- | --- | --- |
 | Same-root parent resolution and master-plan construction. | `plan_master_sync`; `_master_json_path`; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:35-89; mcp/src/agents_remember/tasks/master_sync.py:144-148; mcp/src/agents_remember/tasks/master_sync.py:151-161 |
 | Deterministic leaf-to-row mapping with manual scope preservation. | `subtask_ref_from_leaf` | mcp/src/agents_remember/tasks/master_sync.py:92-102 |
-| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-116; mcp/src/agents_remember/tasks/master_sync.py:119-125 |
+| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-121; mcp/src/agents_remember/tasks/master_sync.py:119-125 |
 | Existing-row path validation. | `_validate_existing_row_path` | mcp/src/agents_remember/tasks/master_sync.py:128-141 |
 | Parent document loading uses the exact accepted JSON snapshot. | "master = TaskDocument.model_validate_json(source_snapshot.json_bytes)" | mcp/src/agents_remember/tasks/master_sync.py:46-46 |
 
@@ -97,6 +101,7 @@ The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_mast
 
 ## Update History
 
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: `derived_master_status` returns `abandoned` before the step rollup, so an abandoned leaf's row is never collapsed back to `inProgress` and a later sync cannot silently reopen it. Added the invariant and corrected the derivation row to the current extent. Content change, not a range repoint.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 - 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 

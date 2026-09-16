@@ -5,28 +5,54 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
 
-## IAS Frozen Source-Pair Application Boundary
+## IAS Per-Contract Activation Application Boundary
 
-The application layer composes selecting operations around one source-pair activation authority.
-An atomic master is not exposed merely because its series contract exists: selection becomes
-`reconciling`, the exact code/external-memory pair is synchronized, and only an exact-current result
-becomes `active`. A retained conflict returns agent-owned continue/cancel guidance and leaves the
-integration lock free between calls.
+The application layer composes selecting operations around one per-contract activation authority.
+An atomic master is not exposed merely because its series contract exists: activation becomes
+`reconciling`, that contract's exact code/external-memory bases are synchronized, and only an
+exact-current result becomes `active`. The record is keyed by the canonical series contract, not the
+protected source pair, so two atomic masters commanded by one sprint and sharing its code/memory
+source branches hold independent records: the only activation waiting reason is
+`atomic-series-reconciling` for a contract's own in-flight reconciliation, and a foreign master is
+never a reason to wait. A retained conflict returns agent-owned continue/cancel guidance and leaves
+the integration lock free between calls.
 
 Status observes the stable enclosure-root sync journal independently from task-document health.
 Application adapters translate failures into bounded tool results; they do not recreate the journal
 from task prose, queue rows, or ambient Git. Task-document mutation remains an upstream application
 flow: it publishes canonical truth, invalidates projections for semantic/readiness mutations, and never asks queue or
 activation state for permission.
+
+## 260831-LOCR-L37 The Stop-Only Application Boundary
+
+This route gained one application entry point and no authority. `worktree_tools.py::worktree_pause_tool`
+admits the configured contract through the shared gate (projecting a refusal under the operation name
+`worktree_pause`), builds the same typed `WorktreeArgs` the other contract-addressed entry points build
+— the contract path plus `config.orchestration.gate_policy` — and delegates to
+`git_worktree_manager.pause_result`. It performs no Git, moves no ref, creates no commit, lands
+nothing, writes no ledger row, and runs no auto-land seat hook, because nothing is retired and nothing
+is finished.
+
+That shape is the boundary. Every other mutating entry point on this route hands work to a worktree
+owner that may publish; this one hands work to a route whose publication modules are structurally
+unreachable (see `worktrees/modules/pause.py.md` and `mcp/tests/test_pause_is_not_publication.py`). The
+application layer therefore does not decide whether to publish — there is no such decision on this
+path to make.
+
+`worktree_pause_tool` is the counterpart of `worktree_checkpoint_landing_tool` on the same file and the
+opposite side of it: the checkpoint is the explicitly requested **publication** of an unfinished
+master's accumulated line, and the pause is the stop that publishes nothing. Two entry points, two
+registered tools, neither reachable from the other.
 
 ## CCR-R25 Actionable Refusal Boundary
 
@@ -79,6 +105,10 @@ reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
+
+`worktree_tool_requests.py` carries only code/memory commit messages and landed commits. `worktree_tools.py` forwards that pair unchanged; `memory_tools.py` exposes baseline/carryover cache observations without a ledger commit argument. Adapters do not recreate retired guards or synthesize a third output.
+
+## Detailed Route Context
 
 This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, direct landing, and degraded status. The legacy-repair adapter and the closeout-door adapter were deleted as capabilities by the de-entanglement cut.
 
@@ -216,7 +246,7 @@ forwards `retry_provider_setup`, and bounds worktree provider setup by
 `context_packet.py` carries the opt-in branch-freshness section (GitHub #54):
 `include_freshness`/`fetch_timeout` on the request feed
 `kernel.git_freshness.read_branch_freshness` for the code and external-memory
-repos plus a `ledgerMapsCodeHead` mapping check; the default stays
+repos plus informational computed-ledger status; the default stays
 `not-checked` so everyday packets skip the remote fetch.
 
 Gate-policy threading (260703-L8): `worktree_tools.py` resolves
@@ -241,6 +271,13 @@ writes lifecycle settings from the LIVE map only when armed, attaching a
 boot snapshot (the worktree itself is still created). `benchmark_tools.py`
 passes the live authority's provider ids as `allowed_provider_ids` on both
 benchmark requests, so a case manifest cannot arm providers disabled on disk.
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Application message transport contains only code and memory. | L111-L115 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Landing input carries the actual two outputs. | L119-L128 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
 
 ## 260731-EFA-L4 — Typed Seams Where An Application Entry Point Meets A Producer
 
@@ -393,7 +430,7 @@ contract-addressed repair arguments.
 
 The task publication owner classifies exact field deltas and preflights affected scopes before canonical writes. Route-review and closeout admission now bind current normative task intent and direct evidence dependencies; typed intent refusals stay visible at the application boundary. Detached lifecycle workers and direct worktree paths preserve transaction identity and explicit approval/ref safety; normal closeout/integration do not automatically execute the repository certification profile. The default service graph still exposes explicit quality and memory tooling for callers that request it.
 
-The full memory controller snapshots both working trees with external temporary indexes before scanning and revalidates those exact tree identities before checklist publication. Its `finalFullCatalog` reports executed catalog checks and missing authority; it explicitly supplies no affected-closure plan and cannot create R08 acceptance from checklist readiness. R05 frozen lifecycle admission/finalization, ordinary R16 durable telemetry and complete R07/R08 production orchestration remain unconstructed at this source. Terminal failure translation preserves already-classified organizational repair/ledger recovery before supplying an otherwise missing typed rail failure.
+The full memory controller snapshots both working trees with external temporary indexes before scanning and revalidates those exact tree identities before checklist publication. Its `finalFullCatalog` reports executed catalog checks and missing authority; it explicitly supplies no affected-closure plan and cannot create R08 acceptance from checklist readiness. R05 frozen lifecycle admission/finalization, ordinary R16 durable telemetry and complete R07/R08 production orchestration remain unconstructed at this source. Terminal failure translation preserves classified organizational repair and actual Git recovery before supplying an otherwise missing typed rail failure.
 
 ## CCR-R18@v1 Task-Addressed Next-Step Bounding
 
@@ -406,13 +443,86 @@ The parity candidate composes the sidecar and governing route body/history check
 ## CCR-R12@v5 Current Application Boundary
 
 Application adapters expose transaction previews, applies, observation, and recovery. Normal
-closeout commits code, mechanically refreshes and commits external memory, and records the ledger;
+closeout commits code, mechanically refreshes and commits substantive external memory when needed, then refreshes the consumer ledger cache;
 normal integration publishes a prepared pair under explicit handover/ref authority. Neither path
 automatically runs strict code quality, memory quality, selected certification, curator coherence,
 or independent review. Full suites remain an explicit developer request.
 
 
+## Pull-Request Landing Records Through The Same Writer
+
+A pull request lands code on the remote; it never moves refs locally, so `worktree_integrate` cannot
+express it. `worktree_tools.py::worktree_record_landing_tool` is the application entry point for that
+route. It admits the configured contract through the same refusal projector, builds a
+`git_worktree_manager.WorktreeArgs` carrying `landed_code_commit` and `landed_memory_content_commit`, then
+calls `git_worktree_manager.record_landing_result`. The point of the
+entry point is that it shares `worktree_integrate`'s one contract write
+(`worktrees/modules/landing_record.py`), so the terminal `integration` cell has exactly one
+definition regardless of how the code landed; a commit that is not reachable from a landing target is
+refused, so the cell cannot be set from a commit that landed nowhere.
+
+`worktree_tool_requests.py::LandedCommits` is the parameter object that route owns: `code` is the
+commit the PR landed on the protected branch, and the memory output is optional because C-11 carryover
+may not have run yet when the landing is recorded — the cleanup guard checks carryover separately and
+refuses until it is done.
+
+## Checkpoint Landing Gets Its Own Application Entry Point (260831-LOCR-L30)
+
+The application layer gained a second landing entry point beside the PR tail.
+`worktree_tools.py::worktree_checkpoint_landing_tool` admits the configured contract, refuses through
+the same projector, builds `WorktreeArgs` with `approved=not dry_run`, the typed `strategy` and the
+configured `gate_policy` (the same master-exit seam pass-through `worktree_integrate_tool` uses), and
+delegates to `git_worktree_manager.checkpoint_landing_result(args, configured.contract)`.
+
+The entry point is deliberately as thin as its integrate sibling: eligibility, the series authority,
+and the recorded state all live below it, and it runs none of the completion-edge work
+`worktree_integrate_tool` performs — in particular no `auto_complete_seats` call, because a checkpoint
+retires nothing. It is also the only landing entry point that does not need the master to be finished,
+which is exactly why it is a separate tool rather than a flag on `worktree_integrate`: a caller that
+invokes it has chosen a non-final landing on purpose.
+
+**260831-LOCR-L34 corrected this entry point's published docstring, and the correction is
+substantive.** It had said the route drops only the two "master is finished" assumptions; the route
+also required a **completed closeout**, which is why it was unreachable in both directions — a partial
+master could never satisfy it, and a complete one was refused by the downgrade guard. The docstring now
+names the full refusal set (`worktree_integrate` proves the task document `Completed`, one landed
+enclosure per canonical leaf, **and a completed closeout**) and states that the checkpoint captures the
+master's own live code and memory work-branch tips and proves their Git source ancestry
+before landing exactly those. Published text is the only thing a client reads, so it is contract rather
+than comment. The preview/apply parity invariant that produced this repair is inventoried on the
+`worktrees/overview.md` route and in `memory_quality/overview.md`.
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected application argument/result routing, record landing and checkpoint authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: added the stop-only application boundary to the body. The
+  route gained `worktree_pause_tool`, which admits the configured contract, builds the same typed
+  `WorktreeArgs` its siblings build and delegates to `git_worktree_manager.pause_result` — performing no
+  Git, no ref move, no commit, no landing, no ledger write and no auto-land hook, because nothing is
+  retired and nothing is finished. Recorded that this is the one mutating entry point here whose
+  delegate cannot reach a publication module, so the application layer makes no publish-or-not decision
+  on that path, and that it is the counterpart of `worktree_checkpoint_landing_tool` on the opposite
+  side of the pause/publication split. Verification metadata remains closeout-owned; no acceptance
+  claim.
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected the IAS application
+  boundary from one source-pair activation authority to the per-contract activation record — each
+  canonical series contract owns its record, sibling masters sharing a protected source pair never
+  wait on one another, and the only waiting reason is `atomic-series-reconciling` — with no shipped
+  document quoted by this route claim. Source documentation only; verification metadata remains
+  closeout-owned and no acceptance or test claim is made.
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded the corrected `worktree_checkpoint_landing_tool`
+  docstring on this route — the published text had omitted the completed-closeout requirement, which
+  was the reason the route was unreachable — and pointed to the preview/apply parity invariant
+  inventory on the worktrees route overview and in `memory_quality/overview.md`. Content change, not a
+  range repoint; verification metadata remains closeout-owned and no acceptance claim is made.
+- 2026-09-12T02:55+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the new
+  `worktree_checkpoint_landing_tool` entry point on this route, its admission/argument/delegation
+  shape, why it runs no completion-edge work, and why it is a separate public tool rather than a flag
+  on `worktree_integrate`. Content change, not a range repoint; verification metadata remains
+  closeout-owned.
+- 2026-09-11T23:05:00+00:00: Pull-request landing curation: recorded the new `worktree_record_landing_tool` entry point and its `LandedCommits` parameter object, and why it shares the single landed-integration writer with `worktree_integrate` instead of writing the integration cell itself. Content change, not a range repoint.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: rewrote the "Durable Lifecycle Application Boundary" section from the deleted detached worker to the in-process synchronous route, removed the deleted legacy-repair and closeout-door adapters from the hot-path summary, and recorded the deletions of `application/closeout_door.py` and the `application/lifecycle/` worker, legacy-tool, enclosure-tool and status-wait entry points. Only cut-affected claims were reconciled; this route's other claims were not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.

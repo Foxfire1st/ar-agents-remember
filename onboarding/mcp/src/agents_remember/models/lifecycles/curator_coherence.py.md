@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,11 +17,13 @@
 ## Purpose
 
 Defines the strict structured contracts for curator source candidates, agent-owned judgments,
-immutable coherence generations, the sole live authority manifest, optional attempt snapshots, and
-the four-action public request/response API. Under CCR-R03@v1 the memory-quality attestation and
+immutable coherence generations, the sole live authority manifest, optional attempt snapshots, the
+four-action public request/response API, and — since the closeout plane was cut away — the frozen
+`ValidatedCuratorCoherence` value (`:372-385`) that carries one validated authority with its record,
+its two paths, its digest and its evidence. Under CCR-R03@v1 the memory-quality attestation and
 immutable coherence record additionally carry a typed direct-dependency declaration so evidence is
 a content-addressed consumer of exactly its declared inputs
-cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:62-89; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:186-230).
+cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-92; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233).
 
 ## Code Commentary
 
@@ -39,7 +41,7 @@ digest), exact code and memory candidate trees (git-object digests), the rendere
 and both validator identities; `require_memory_quality_attestation_dependencies` rebuilds that
 expected set from the attestation's current source facts and refuses
 `memory-quality-attestation-dependencies-stale` on any mismatch
-cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-130; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:131-156).
+cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:94-133; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:134-159).
 
 ### Conventions
 
@@ -74,9 +76,9 @@ No configured external documentation applies; the schemas are repository-owned.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:50-74 |
-| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:186-232 |
-| The discriminated action request separates read actions from publication CAS input. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:256-314 |
+| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-91 |
+| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-235 |
+| The discriminated action request separates read actions from publication CAS input. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-317 |
 | The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`, `dependency`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:216-227; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277 |
 
 ## Cross-Repo References
@@ -102,6 +104,16 @@ another candidate or report (worker handover: notes/reports/260902-CCR-L03-worke
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` changed since the recorded
+  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
+  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  `ValidatedCuratorCoherence` dataclass and its imports since the recorded verification commit.
+  Re-derived every cited range (+3 for the added imports; `CuratorQualityAttestation` measured at
+  `:65-93`) and added the new value to the Purpose surface list. No other claim changed;
+  verification metadata remains closeout-owned.
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed direct-dependency declarations on the memory-quality attestation and coherence record, plus the new attestation dependency builders/currentness guards; prior pair-identity and judgment-set prose preserved.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: made the exact pair mandatory acceptance evidence across

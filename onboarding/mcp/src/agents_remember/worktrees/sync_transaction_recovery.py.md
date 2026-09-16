@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,9 @@ heads were restored when deterministic authority is absent or incomplete.
 
 `finalize_sync` re-reads and validates the contract and completed work branches, writes the new base
 pair plus sync log, publishes the terminal journal first, then removes temporary worktrees and refs.
+`_require_completed_branches` proves each final branch head is the exact operation-created head, and
+performs no ledger re-judgement: a completed memory side is proved as Git history, and the derived
+`memory.md` it carries is left to the projection that rebuilds it.
 `completed_sync_result` reconstructs success and distinguishes a current pair from moved-again or
 explicit memory-skipped outcomes. `cancel_sync` publishes cancelling, rolls back only participating
 operation-owned sides, returns every parked candidate, proves contract bases stayed original,
@@ -48,6 +51,8 @@ ambient inference.
 ### Invariants And Boundaries
 
 - Terminal journal publication precedes deletion of recovery authority.
+- The completed-branch proof is a Git proof: it never re-reads, or requires rows from, the ledger a
+  completed memory side carries.
 - Cancellation restores only the exact pinned pre-sync state and refuses changed contract bases.
 - Corrupt evidence is archived before quarantine or ref-based rollback.
 - No-refs quarantine means usable terminal sync state, not a false rollback-success claim.
@@ -81,10 +86,11 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The stable store archives raw or opaque journal evidence and projects quarantine. | `SyncOperationStore`; `_quarantined_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305; mcp/src/agents_remember/worktrees/sync_transaction_state.py:349-369 |
+| The stable store archives raw or opaque journal evidence and projects quarantine. | `SyncOperationStore`; `_quarantined_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:410-430 |
 | Ref reconstruction and contract/base constraints come from the sync authority module. | `side_record`; `require_record_contract` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:44-79; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:246-260 |
-| Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-397; mcp/src/agents_remember/worktrees/sync_transaction_git.py:400-408 |
-| Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. | `finalize_sync`; `cancel_sync`; `require_parked_wip_settled`; `restore_cancelled_wip` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:57-93; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:443-450; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:398-417 |
+| Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:406-414; mcp/src/agents_remember/worktrees/sync_transaction_git.py:375-403 |
+| Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. | `finalize_sync`; `cancel_sync`; "require_parked_wip_settled(record)"; "restore_cancelled_wip(store, record)" | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:443-450; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:398-417 |
+| The completed-branch proof addresses only operation-created heads and reads no ledger rows. | `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
 
 ## Cross-Repo References
 
@@ -94,6 +100,29 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the removed
+  `validate_completed_side` call is the frozen change and the earlier entries record it. Re-checked
+  `_require_completed_branches` `:516-536`: it holds. No wording changed. Verification metadata
+  remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` changed since the recorded
+  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
+  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the `validate_completed_side` call and import were removed).
+  Re-read the card against the current source: the card already records that removal, and the cited
+  `_require_completed_branches` range (516-536) still holds. No wording changed; verification
+  metadata remains closeout-owned.
+- 2026-09-14T13:20+02:00 — The ledger ruling reaches the completed-branch proof:
+  `_require_completed_branches` no longer calls `validate_completed_side`, so finalization proves each
+  final head is the exact operation-created head and reads no ledger rows from the memory side it
+  completes. Recorded that in Logic and as a local invariant, added its reference row, and re-derived
+  the `finalize_sync`/`cancel_sync` and Git-module anchors against the current source. Verification
+  remains closeout-owned.
+- 2026-09-11T23:05:00+00:00: The recovery row anchored `require_parked_wip_settled` and `restore_cancelled_wip` as bare symbols; each now resolves three times across the cited files (import and call in `sync_transaction_recovery.py`, definition in `sync_transaction_authority.py`), so the claim could not be compared with its provenance. Those two anchors are now the exact call texts `require_parked_wip_settled(record)` and `restore_cancelled_wip(store, record)`, each occurring once in the cited recovery extents; `finalize_sync`, `cancel_sync`, both cited extents, and the claim's wording are unchanged.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `_quarantined_sync_projection` repointed to mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:410-430. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-10T15:06+02:00 — Parked-candidate recovery ownership: recorded `require_parked_wip_settled` in `finalize_sync` and the cancel path that clears a conflicted reapply, rolls back, and returns the parked candidate (or reports `sync-cancel-wip-restore-failed`). Re-derived the store/authority/Git anchors against the current working tree. Verification remains closeout-owned.
 

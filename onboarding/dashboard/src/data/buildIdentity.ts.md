@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/buildIdentity.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,8 +63,8 @@ proven by repository source and direct consumers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input. | "export interface ServingBuild {" | dashboard/src/types/projection.ts:570-579 |
-| Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:933-962 |
+| The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input. | "export interface ServingBuild {" | dashboard/src/types/projection.ts:569-569 |
+| Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:933-963 |
 | Embeds the fingerprint into the compiled client. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
 
 ## Cross-Repo References
@@ -77,6 +77,11 @@ No meaningful cross-repository implementation source governs this repository-loc
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-05T08:27+02:00 — L31 native curator: Retained the optional dashboard-fingerprint contract after reviewing the expanded ServingBuild type; corrected the cockpit consumer to a mismatch tooltip rather than a reload action and refreshed its evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

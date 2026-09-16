@@ -5,52 +5,69 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Revalidates the immutable lifecycle journal against the current contract, repositories, refs, source tips, and accepted commits.
+Re-prove that a final integration output is the exact closeout pair recorded on its contract.
 
 ## Code Commentary
 
-`require_plane_integration_operation` proves the operation key and durable authority before protected movement. The source and commit helpers then recheck current named refs and the exact closed candidate at the last reversible boundary, preventing repository rebind, source-alias drift, candidate substitution, or replay output widening.
+### Logic
 
-## Invariants And Boundaries
+`require_authorized_integration_commits` compares `(code_commit, memory_content_commit)` with the contract's two accepted closeout outputs. A mismatch refuses publication and requires a new closeout after conflict resolution. This check reads contract output facts; current source tips and ancestry belong to the separate ref-preparation boundary.
 
-- A contract path alone is not integration authority.
-- Configured Git common-directory identities and canonical ref names are immutable operation facts.
-- Authorized outputs must equal the journaled accepted candidate; no unrecorded replay result may land.
-- Legacy or malformed journal records fail closed.
+### Conventions
+
+The retained WorktreeArgs parameter is not an alternate authority source. This module neither reads a journal to choose a candidate nor consults cache data.
+
+### Invariants And Boundaries
+
+- No unrecorded replay result may substitute for the accepted pair.
+- There is no ledger output slot or dummy ledger identity.
+- Matching output cells do not bypass the caller's ownership, source-tip, ancestry, and CAS checks.
+
+### Todos
+
+No new file-local follow-up is identified by this source reconciliation.
+
+## Docs References
+
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Operation admission binds the requested key to one durable authority record. | `require_plane_integration_operation` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:19-47 |
-| Source tips and candidate commits are revalidated immediately before movement. | `require_current_integration_sources`, `require_authorized_integration_commits` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:50-68; mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:71-95 |
+| Final output authority is the contract's exact accepted pair. | L9-L30 | [mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py](mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py) |
+| Source and ref proof remain at the prepared movement boundary. | L103-L160; L253-L283 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
 
-## Documentation References
+## Cross-Repo References
 
-No configured domain-documentation or cross-repository source applies to this file.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-## 260821-CLIVE-L2 Current Contract
-
-The current source seams include `require_plane_integration_operation`, `require_current_integration_sources`, `require_authorized_integration_commits`. Integration authority is journal- and lease-bound. Claim transfer crosses from disposable scheduling projection into the operation journal before irreversible publication; queue state cannot retain or reconstruct the lifecycle.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `require_plane_integration_operation`, `require_current_integration_sources`, `require_authorized_integration_commits` at this ownership boundary. | `require_plane_integration_operation`; `require_current_integration_sources`; `require_authorized_integration_commits` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:19-47; mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:50-68; mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:71-95 |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Reduced exact candidate comparison to code and actual memory output; removed the retired ledger-commit member while preserving mismatch refusal. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+- 2026-09-11T23:05:00+00:00: Repaired three claims against the current source. The card claimed a journaled operation admission (`require_plane_integration_operation`) binding the requested key to one durable authority record and a stored source-tip revalidation (`require_current_integration_sources`); both functions are deleted, the module is now the 31-line `require_authorized_integration_commits` that compares the landing output with the contract's recorded closeout commits, and the moved-source refusal lives in the pure-Git replay requirements of `prepare_integration_ref_move`.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

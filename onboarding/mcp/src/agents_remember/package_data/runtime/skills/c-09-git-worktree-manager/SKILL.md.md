@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated            | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../../../../overview.md`             |
 
 ## Governing Overview
@@ -31,10 +31,18 @@ fleeting lifecycle to persistent (the contract `lifecycle:` anchor),
 `worktree_attach` resumes it, and attaching over an unsaved fleeting lifecycle
 hits the save gate (`on_unsaved=save`|`discard`).
 
-The current skill also owns public doctrine for exact source-pair atomic-series selection and
-resumable synchronization. Selection is runtime admission, not planning authority; conflicts are
-retained for explicit continue/cancel; stable journal evidence remains below the enclosure root;
-and terminal cleanup releases only the exact selected contract.
+The current skill also owns public doctrine for per-contract atomic-series activation and
+resumable synchronization. Activation is runtime admission, not planning authority; the
+activation record is keyed by the canonical series contract, so two atomic masters commanded by
+one sprint and sharing its protected code/memory source branches hold independent records and
+neither is a reason for the other to wait; nothing serializes a graph-less sprint, because a sprint
+without an `executionGraph` declares no dependencies, so independent atomic masters proceed
+concurrently, no master is held because another is selected, and `atomic-sequential` names the
+sprint's shape (every commanded master executes atomically) rather than a serialization mechanism —
+only an explicit graph's `predecessor-incomplete:` waves gate anything; conflicts are retained for
+explicit continue/cancel;
+stable journal evidence remains below the enclosure root; and terminal cleanup releases only the
+exact selected contract.
 
 ## Code Commentary
 
@@ -52,9 +60,10 @@ section: `worktree_sync` reconciles an exact moved code/memory source pair as a 
 resumable transaction. The new code tip must be ledger-mapped at the admitted memory tip; sync
 early before memory work; retained code or memory conflicts resume through
 `resolution_action=continue`, while explicit `cancel` restores pinned heads and releases an exact
-reconciling selection. It states that `c-09-git-worktree-manager` skill
-Memory continuation preserves every exact parent ledger row and accepts repeated code commits as
-newest-first state history; it does not impose a globally unique code key.
+reconciling selection. Its Mid-Task Sync section states that memory resolution is not re-judged
+against either parent's row list — the ledger is derived state, its rebuild is its authority, and a
+row the rebuild cannot resolve is reported as an exclusion — while repeated code commits stay valid
+newest-first state history and no globally unique code key is imposed.
 
 begins after the normal intake and onboarding gate, uses context resolved by the `c-08-ar-coordination-context-resolver` skill
 through the MCP worktree tools, refuses external-memory worktree start while
@@ -197,12 +206,13 @@ finalization requires completed closeout, completed integration, completed
 memory carryover, landed-commit ancestry on the recorded source branch, and
 applicable cleanup/finalization authority.
 
-Atomic-series selection is scoped to the exact code/memory source pair and never reads task prose
-or queue ownership. Task-document authoring is always upstream. The queue owns no activation,
+Atomic-series activation is scoped to the exact canonical series contract and never reads task
+prose or queue ownership. Task-document authoring is always upstream. The queue owns no activation,
 operation, commit, certification, or integration evidence. There is no tolerant selector reader or
 contract-presence election. Terminal cleanup may release only the exact still-selected contract and
 must preserve a newer selection.
-Memory-merge validation preserves exact parent rows; older same-code rows remain audit history.
+Memory-merge validation proves the pinned Git history only; older same-code rows remain audit history
+and a row the projection cannot resolve is reported there rather than refused by the sync.
 
 
 ### Todos
@@ -227,15 +237,18 @@ No external documentation is needed for this repository-local skill.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-316 |
+| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-563 |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-307 |
 | The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:204-204 |
 | The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:130-130 |
-| Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. | `## Pre-Worktree Intake` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:103-162 |
-| Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
-| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:379-379 |
-| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376 |
-| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
+| Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. | `## Pre-Worktree Intake` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:104-163 |
+| Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:365-432; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:433-512 |
+| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:405-405 |
+| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:365-432 |
+| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:433-512 |
+| The shipped text is corrected: admission is contract-scoped, each canonical series contract owns its own activation record, and masters sharing one exact code/memory source pair never share that state. | "Atomic-series implementation admission is a separate, contract-scoped authority." | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:237-247 |
+| The shipped closeout-queue paragraph now projects only active, reconciling, or vacant waiting candidates and owns none of those lifecycle facts. | "projects active, reconciling, or vacant waiting candidates" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:249-254 |
+| The shipped sync-scope "source pair" is current: sync derives one contract's code/memory branch pair from the contract, so the phrase describes a two-branch reconciliation, not a serialization claim. | "def source_pair(contract" | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:115-115 |
 
 ## Cross-Repo References
 
@@ -269,13 +282,22 @@ status/rebuild, and `worktree_operation_control` owns advertised journal recover
 archive before deletion and replay only their exact accepted typed arguments. Queue invalidation,
 task edits, or enclosure deletion cannot erase a claimed journal or authorize guessed recovery.
 
-## IAS Source-Pair Activation And Resumable Sync
+## IAS Per-Contract Activation And Resumable Sync
 
-The packaged skill now matches the canonical runtime doctrine. Manager/worker dispatch and atomic
-start/attach select one master for an exact source pair; reviewer/curator inspection does not.
-Selection publishes `reconciling`, preserves the former live series as logically paused, syncs the
-exact bases, and publishes `active` only when current. Multiple paused/nonterminal contracts are
-valid, and task authoring never consults selector or queue state.
+The packaged skill now matches the canonical runtime doctrine. The activation record is keyed per
+series contract, not per protected source pair. Manager/worker dispatch and atomic start/attach
+activate the requested canonical contract; reviewer/curator inspection does not. Activation
+publishes `reconciling`, syncs that contract's exact code/memory bases, and publishes `active` only
+when current. Two atomic masters commanded by one sprint share a protected source pair but own
+separate records, so activating one never replaces, pauses, or blocks the other; the only
+activation waiting reason is `atomic-series-reconciling` for that contract's own in-flight
+reconciliation, and a foreign master is never a reason to wait. Multiple nonterminal contracts are
+valid, and task authoring never consults activation or queue state. Nothing serializes a graph-less
+sprint: with no `executionGraph` there is no declared dependency to honour, so
+`atomic-sequential` describes the sprint's shape — every commanded master executes atomically —
+not a scheduling mechanism, and independent masters proceed concurrently. The closeout queue only
+projects each contract's own active/reconciling/vacant waiting candidates; it owns none of those
+lifecycle facts and cannot hold one master behind another.
 
 Sync pins source and pre-sync refs in the enclosure-root journal. Conflicts remain in operation-owned
 `.sync` worktrees for agent resolution and contract-addressed continuation, or explicit cancellation
@@ -283,8 +305,29 @@ restores exact pinned heads and publishes `vacant`. Cleanup releases the exact s
 contract before deleting its naming authority. No compatibility reader, direct-Git recovery, or
 contract-presence fallback is admitted.
 
-Memory resolution keeps every exact parent row and accepts repeated code commits as ordered history;
-the newest row is current authority. No global ledger-key uniqueness rule is admitted.
+**Shipped text corrected (260831-LOCR-L36 round 2).** The mirrored runtime document this card
+describes — `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` —
+now carries the contract-scoped doctrine in its own text at `:237-247`: implementation admission is
+"a separate, contract-scoped authority"; each canonical series contract owns its own activation
+record, so masters that share one exact code/memory source pair "never share this state and one
+master's selection never pauses or excludes another"; selection first publishes `reconciling` for
+that contract, which "suspends nothing"; the selected contract is source-synced and becomes `active`
+only when both protected source tips are current; and multiple nonterminal contracts remain valid.
+Its task-authoring paragraph at `:249-254` now says the closeout queue "merely projects active,
+reconciling, or vacant waiting candidates" and "owns none of those lifecycle facts". The earlier
+shipped-source debt note is therefore removed: a repo-wide grep for `source-pair-scoped`,
+`source-pair-selected`, the "logically pauses the former master" admission, one-selected-master-at-a-time
+and source-pair activation wording returns 0 hits in the code worktree. The file's source-sync
+paragraph at `:258-260` was re-checked: its "moved code/memory source pair" phrase describes
+`worktree_sync` reconciling one contract's two protected branches, which is still true
+(`source_pair(contract)` derives that pair from the contract), so it is not a serialization claim.
+
+Memory resolution proves the admitted Git history and requires no row list of the `memory.md` it
+commits: the ledger is derived state and its rebuild reports the rows it cannot resolve. Repeated code
+commits stay valid ordered history, the newest row is current authority, and no global ledger-key
+uniqueness rule is admitted. The packaged source text at `:293-299` was corrected together with the
+canonical skill, so it no longer asserts that continuation validates every exact parent ledger row
+survives.
 
 ## Direct-Execution Boundary
 
@@ -297,6 +340,57 @@ source, and an already-journaled no-door operation remains recoverable only as t
 generation.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` changed
+  since the recorded verification commit. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the `merge-memory` ledger ruling at `:292-298`). Re-read the
+  card against the current source: the card already states that ruling and every cited anchor (whole
+  file 6-563, the intake and gate sections, the integration and finalization blocks) still holds. No
+  wording changed; verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-14T13:20+02:00 — Corrected the packaged skill's sync doctrine as this card states it: the
+  transaction no longer re-judges a memory resolution against either parent's row list, because the
+  ledger is derived state, its rebuild is its authority, and a row the rebuild cannot resolve is
+  reported as an exclusion rather than refused. The packaged source text at `:293-299` was corrected
+  with the canonical skill and its generated copies, so it no longer carries the removed parent-row
+  validation, and the three body statements that asserted the removed rule were corrected. Verification metadata remains closeout-owned.
+- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
+  shipped-source debt row and the debt paragraph from this card and replaced them with the corrected
+  shipped ranges — the frozen `SKILL.md` now states the contract-scoped admission rule at
+  `:237-247` ("Atomic-series implementation admission is a separate, contract-scoped authority.",
+  masters sharing one code/memory source pair "never share this state and one master's selection
+  never pauses or excludes another", selection "suspends nothing") and the active/reconciling/vacant
+  queue projection at `:249-254`; the sync-scope "source pair" row was reworded to a two-branch
+  reconciliation claim and re-verified at `sync_transaction_authority.py:115`. Body prose now states
+  the developer ruling: nothing serializes a graph-less sprint, `atomic-sequential` describes sprint
+  shape (every commanded master executes atomically) rather than a scheduling mechanism, independent
+  masters proceed concurrently, per-contract activation records each contract's own
+  `reconciling -> active`, and only explicit `executionGraph` waves still gate on
+  `predecessor-incomplete:`. All other citation ranges were re-grepped and repointed after the
+  frozen file's line shift: `# c-09-git-worktree-manager Git Worktree Manager` `:6-560`,
+  `## Pre-Worktree Intake` `:104-163`, `## Integration` `:362-429`,
+  `## Lifecycle Finalization And Cleanup` `:430-509`, and "Before previewing integration"
+  `:402-402`. Source documentation only; verification metadata remains closeout-owned and no
+  acceptance or test claim is made.
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote this card's activation
+  claims from one-master-per-source-pair selection to the per-contract activation record — each
+  canonical series contract owns its own record, the sole waiting reason is
+  `atomic-series-reconciling`, and a foreign master is never a reason to wait — and recorded the
+  shipped-source debt that the frozen mirrored `SKILL.md` text still states the removed
+  per-source-pair admission rule at `:237-238` and `:241`, flagged for a future code leaf. That
+  debt observation is superseded by the 260831-LOCR-L36 round-2 entry above: the shipped text is
+  corrected and the debt note is removed. The
+  sync-scope phrase at `:259` was verified still accurate. Source documentation only; verification
+  metadata remains closeout-owned and no acceptance or test claim is made.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "Before previewing integration" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:401-401. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `# c-12-closeout Closeout` repointed to mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-307. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "Before previewing integration" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:379-379. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

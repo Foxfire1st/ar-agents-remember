@@ -36,25 +36,60 @@ A job changes the checkout via these steps:
 4. Work in the worktree; **memory parks on the worktree memory branch.**
 5. **Commit transaction.** Nothing is committed before the applicable explicit developer or
    accepted-series authority and the `c-12-closeout` worktree preview. Closeout then publishes the
-   authorized code, memory-content, and ledger Git legs with the existing conflict and ref-movement
-   safeguards. Its transaction-owned commit legs suppress automatic quality and test hooks; the
+   authorized code and memory-content Git outputs with the existing conflict and ref-movement
+   safeguards. The consumer ledger is computed from commit attribution and excluded from staging;
+   cache absence, content, and refresh success are never transaction authority. Its commit legs suppress automatic quality and test hooks; the
    ordinary explicit Git hook policy outside closeout/integration remains unchanged. It does not
    automatically run quality, test, memory-quality, curator-certification, or review tools.
 6. **Push gate (human — one question).** After commit approval, a single "push?" approval hands the
    tail to the agent. Merge is **no longer its own gate** — only timing.
 7. Agent owns the tail: **push the branch → `gh pr create` (target `main`) → checks green →
-   `gh pr merge --delete-branch`.**
-8. **C-09 closeout** + worktree/provider cleanup.
-9. **C-11 carryover** of the parked memory to main-memory, run against the merged `main`. Carryover
-   maps the ledger to the actual `main` HEAD — **including the PR merge commit** even when nothing
-   else needs carrying — so the next worktree bases off the merged `main` without a manual
-   reconciliation. Always run it after the merge (even the linear case where memory already
-   fast-forwarded: carryover adds the missing merge-commit ledger row).
+   `gh pr merge --delete-branch`** — but `--delete-branch` is only correct at leaf altitude; see
+   *Deleting the head branch* below.
+8. **Record the landing.** After the merge, pull the protected branch locally, then run
+   `worktree_record_landing(contract_path=…, landed_code_commit=<the commit the PR landed>)`.
+   AR is never told a pull request happened, so without this step the contract's `integration` cell
+   stays `not-started` — and the landing half of the workflow then refuses: `worktree_cleanup`
+   requires `integration.status completed`, so a PR-landed task cannot be reclaimed at all, and a
+   master's abandon guard reads the same cell to decide whether its work has left it. The local
+   `worktree_integrate` route records this itself; only the PR route needs the explicit step. The
+   call refuses a commit that is not reachable from the recorded source branch or `main`, so the
+   cell cannot be set from a commit that landed nowhere.
+9. **C-09 closeout** + worktree/provider cleanup.
+10. **C-11 carryover** carries parked memory into an ordinary recovery leaf against merged `main`.
+    Real memory changes commit with attribution to the landed code. When content is already
+    carried, retain its existing memory commit; do not create a mapping-only commit for the
+    merge SHA. The consumer ledger cache is rebuilt from history.
 
 ### Gates, in one line
 
 `commit approval (human)` → `push approval (human, one question)` → agent owns `push → PR → checks
-→ merge → cleanup → carryover → memory-main push`.
+→ merge → record landing → cleanup → carryover → memory-main push`.
+
+### Deleting the head branch — altitude matters
+
+`--delete-branch` is correct only when the branch is finished **as a unit of work**. Ask whose
+branch it is:
+
+| Branch | May it be deleted on merge? |
+| --- | --- |
+| `feat/<slug>` / `fix/<slug>` — one-shot work, one owner | yes |
+| A **master integration branch** (`ar/<task>`) | only once that master's own task document is terminal — every row `Completed` or `abandoned` |
+| A **super integration branch** | only once the sprint is terminal |
+
+A master or super branch is not the container of one finished change; it is the accumulated line
+that remaining leaves still base from. Merging up to `main` early is legitimate — deleting the
+branch in the same step is not, because it strands every leaf that has not run yet.
+
+**AR cannot refuse this.** `gh pr merge` is outside the worktree manager; no guard intercepts it,
+and the contract's `integration: status` is not written by a PR at all. So this rule is the only
+thing that protects the branch.
+
+`ar/260831_lifecycle-owned-completion-relay` was lost exactly this way on 2026-09-11: PR #107
+merged it to `main` with `--delete-branch` while 19 of its 28 leaves were still `planning`, and the
+branch had to be reconstructed by hand. When in doubt, merge **without** `--delete-branch` and let
+`worktree_cleanup` reclaim the branch after the master is terminal — that path is the one that
+consults the task document.
 
 ---
 
@@ -67,14 +102,15 @@ than one work branch straight to `main`:
 - Every **master integration branch** bases from the current super branch, not from `main`.
 - Every **leaf work branch** bases from its owning master integration branch.
 - **C-11 is the universal integration mechanic** at every edge: leaf -> master, master -> super, and
-  super -> main. Every edge carries memory so the ledger maps the accumulated code commits.
+  super -> main. Each edge carries the actual code and memory histories; the ledger is a derived view.
 - The orchestrator dispatches managers by dependency order. Dependent masters start only after their
   dependencies are integrated into super; independent masters may run in parallel, with reconcile
   absorbing a moved super base.
 - A completed master is integrated into super from an **orchestrator integration worktree** sourced at
   super, mirroring the leaf -> master worktree flow.
 - The landing tail remains PR-gated: open the final super -> main PR, merge remotely, run C-11
-  carry-over to main-memory so the ledger maps the actual main merge commit, then push memory.
+  carry-over of any remaining memory content to main-memory, then push memory. Do not invent
+  memory content or a ledger-only commit for the main merge SHA.
 
 The full orchestration doctrine lives in
 `skills/l-01-agent-lifecycles/SKILL.md` and `skills/l-01-agent-lifecycles/roles/orchestrator.md`.
@@ -83,9 +119,10 @@ The full orchestration doctrine lives in
 
 ## PR merge: prefer a merge commit over squash
 
-- **Default: merge commit** (`gh pr merge --delete-branch`). It preserves the branch's distinct
-  commits on `main` — important when a PR bundles several self-contained changes (each with its own
-  onboarding + ledger mapping), so history stays bisectable and traceable.
+- **Default: merge commit** (`gh pr merge --delete-branch` — but drop the `--delete-branch` flag
+  above leaf altitude; see *Deleting the head branch* in the landing flow). It preserves the
+  branch's distinct commits on `main` — important when a PR bundles several self-contained changes
+  (each with its own onboarding + ledger mapping), so history stays bisectable and traceable.
 - **Squash** (`--squash`) is for messy WIP branches full of "fix typo" commits where the individual
   history has no value. Do not squash a bundle of distinct features just to get a single line.
 - Never `--rebase`-merge onto `main` in a way that rewrites already-pushed history.

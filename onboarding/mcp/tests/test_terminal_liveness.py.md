@@ -6,8 +6,9 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-10T10:12:00+02:00 |
-| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`       |
-| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|| governingOverview | `overview.md` |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`       |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
@@ -72,18 +73,18 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fake fixtures configure and drive the existing host/control-read seams | `_Clock`; `_FakeHost`; `_sweeper`; `_starting_sweeper` | mcp/tests/test_terminal_liveness.py:44-81 |
+| Fake fixtures configure and drive the existing host/control-read seams | `_Clock`; `_FakeHost`; `_sweeper`; `_starting_sweeper` | mcp/tests/test_terminal_liveness.py:81-89; mcp/tests/test_terminal_liveness.py:92-111; mcp/tests/test_terminal_liveness.py:137-155; mcp/tests/test_terminal_liveness.py:157-178 |
 | The raising probe double that forces the lock-release path | `_RaisingHost` | mcp/tests/test_terminal_liveness.py:114-124 |
-| Host failures retain the count-plus-window gate, exit-mark and immediate pane-gone transition | `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` | mcp/tests/test_terminal_liveness.py:203-231 |
-| Full sweeps remain rate-limited by the configured interval | `test_full_sweep_rate_limit_is_preserved` | mcp/tests/test_terminal_liveness.py:233-250 |
-| Starting rows use the one-second path and four-row cap | `test_starting_rows_use_one_second_fast_path_and_four_row_cap` | mcp/tests/test_terminal_liveness.py:252-292 |
-| Host failure evidence survives reload and clears after a successful probe | `test_host_failure_series_survives_restart_and_success_resets` | mcp/tests/test_terminal_liveness.py:295-334 |
-| Connected bridge failures require three strikes across reload and reset on success | `test_connected_control_reads_require_three_strikes_across_restart_and_reset` | mcp/tests/test_terminal_liveness.py:336-405 |
-| Alive starting rows remain eligible through delayed bridge reads | `test_alive_starting_row_survives_delayed_bridge_reads` | mcp/tests/test_terminal_liveness.py:407-439 |
-| A contended full sweep returns without waiting and without a second probe | `test_contended_full_sweep_returns_committed_snapshot_without_second_probe` | mcp/tests/test_terminal_liveness.py:442-479 |
-| The sweep lock releases after an observation exception so a later cadence retries | `test_sweep_lock_releases_after_observation_exception_for_later_retry` | mcp/tests/test_terminal_liveness.py:481-491 |
-| A contended starting-row sweep reads the committed snapshot before any catalog list | `test_contended_starting_sweep_reads_committed_snapshot_before_any_catalog_list` | mcp/tests/test_terminal_liveness.py:493-534 |
-| A repeated clean hosted sweep performs zero physical replacements | `test_repeated_clean_hosted_sweep_does_not_replace_catalog` | mcp/tests/test_terminal_liveness.py:536-572 |
+| Host failures retain the count-plus-window gate, exit-mark and immediate pane-gone transition | `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` | mcp/tests/test_terminal_liveness.py:202-230 |
+| Full sweeps remain rate-limited by the configured interval | `test_full_sweep_rate_limit_is_preserved` | mcp/tests/test_terminal_liveness.py:232-249 |
+| Starting rows use the one-second path and four-row cap | `test_starting_rows_use_one_second_fast_path_and_four_row_cap` | mcp/tests/test_terminal_liveness.py:251-292 |
+| Host failure evidence survives reload and clears after a successful probe | `test_host_failure_series_survives_restart_and_success_resets` | mcp/tests/test_terminal_liveness.py:294-333 |
+| Connected bridge failures require three strikes across reload and reset on success | `test_connected_control_reads_require_three_strikes_across_restart_and_reset` | mcp/tests/test_terminal_liveness.py:335-404 |
+| Alive starting rows remain eligible through delayed bridge reads | `test_alive_starting_row_survives_delayed_bridge_reads` | mcp/tests/test_terminal_liveness.py:406-438 |
+| A contended full sweep returns without waiting and without a second probe | `test_contended_full_sweep_returns_committed_snapshot_without_second_probe` | mcp/tests/test_terminal_liveness.py:440-477 |
+| The sweep lock releases after an observation exception so a later cadence retries | `test_sweep_lock_releases_after_observation_exception_for_later_retry` | mcp/tests/test_terminal_liveness.py:479-489 |
+| A contended starting-row sweep reads the committed snapshot before any catalog list | `test_contended_starting_sweep_reads_committed_snapshot_before_any_catalog_list` | mcp/tests/test_terminal_liveness.py:491-532 |
+| A repeated clean hosted sweep performs zero physical replacements | `test_repeated_clean_hosted_sweep_does_not_replace_catalog` | mcp/tests/test_terminal_liveness.py:534-570 |
 
 ## Cross-Repo References
 
@@ -94,6 +95,17 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_Clock`; `_FakeHost`; `_sweeper`; `_starting_sweeper` repointed to mcp/tests/test_terminal_liveness.py:81-89; mcp/tests/test_terminal_liveness.py:92-111; mcp/tests/test_terminal_liveness.py:137-155; mcp/tests/test_terminal_liveness.py:157-178. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` repointed to mcp/tests/test_terminal_liveness.py:202-230. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_full_sweep_rate_limit_is_preserved` repointed to mcp/tests/test_terminal_liveness.py:232-249. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_starting_rows_use_one_second_fast_path_and_four_row_cap` repointed to mcp/tests/test_terminal_liveness.py:251-292. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_host_failure_series_survives_restart_and_success_resets` repointed to mcp/tests/test_terminal_liveness.py:294-333. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_connected_control_reads_require_three_strikes_across_restart_and_reset` repointed to mcp/tests/test_terminal_liveness.py:335-404. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_alive_starting_row_survives_delayed_bridge_reads` repointed to mcp/tests/test_terminal_liveness.py:406-438. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_contended_full_sweep_returns_committed_snapshot_without_second_probe` repointed to mcp/tests/test_terminal_liveness.py:440-477. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_sweep_lock_releases_after_observation_exception_for_later_retry` repointed to mcp/tests/test_terminal_liveness.py:479-489. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_contended_starting_sweep_reads_committed_snapshot_before_any_catalog_list` repointed to mcp/tests/test_terminal_liveness.py:491-532. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_repeated_clean_hosted_sweep_does_not_replace_catalog` repointed to mcp/tests/test_terminal_liveness.py:534-570. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-11T18:45+02:00 — 260831-LOCR-L22 curator composition: resolved this card's sync merge
   against the landed L12 and L21 lines and re-derived the inventory and every range from the composed
@@ -117,11 +129,21 @@ This card establishes test behavior, not a separate cross-repository protocol or
   three-strike and alive-starting cases plus the storm tail. Verification metadata remains
   closeout-owned.
 
+- 2026-09-10T11:53:11+02:00 — LOCR-R21 curator reconciliation against the relocated base (code `bb38d04e`, memory `e26b55db`) after sibling LOCR-L28 landed: LOCR-L28 did not touch this module, so all five cited ranges were re-checked against the unchanged candidate file and kept; the four collected cases and the 363-line file are unchanged. The composition boundary was re-confirmed — L12 and L22 remain unlanded and their case additions to this module are still absent — and the card now also records that the module is registered in the `integration` lane of `mcp/tests/test-evidence-lanes.toml`, whose declared budget is 150 collected cases. The candidate stays test-only. Verification metadata remains closeout-owned.
+
+- 2026-09-10T10:32:23+02:00 — LOCR-R21 curator reconciliation against the synced base (code `6096941f`, memory `71d7f73a`): re-verified every range cited by this card against the current candidate file and kept each one unchanged — the fixture range spans `_Clock`/`_FakeHost` through `_control_sweeper`, and each of the four case ranges ends on its method's final assertion. The candidate is test-only: `mcp/tests/test_terminal_liveness.py` is the sole changed source, and no production module, threshold, or persisted field moves with it. Recorded the module's composition boundary (L12 and L22 add cases to this same file from their own unlanded worktrees) and the retained-but-uncalled `_control_sweeper` builder. Verification metadata remains closeout-owned.
+
 - 2026-09-10T10:12:00+02:00 — 260831-LOCR-L12 curator: re-verified every cited range against the
   current source tree and made the composition boundary explicit. Sibling leaves `260831-LOCR-L21`
   (three further cases) and `260831-LOCR-L22` (four further cases) modify this same file and had not
   landed, so this inventory is bounded by what this tree contains and is not the file's final case
   count. Verification metadata remains pinned until closeout stamps the leaf code commit.
+
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: refreshed the card for the retained
+  non-overlap and single-write proof — full and starting contention, exception-driven lock release
+  with later retry, and one-replacement-then-zero for a repeated clean hosted sweep. Cadence (`R12`)
+  and hysteresis (`R21`) ownership is explicitly preserved; closeout owns verification stamping.
+- 2026-09-08T14:25+02:00 — LOCR-R21 curator: refreshed the card for the current test-only proof boundary. The retained storm now asserts definitive pane-gone exit, and dedicated cases cover persisted host reset, connected three-strike reset, and alive-starting bridge delay. Production liveness thresholds, state fields, and ownership remain unchanged; closeout owns verification stamping.
 
 - 2026-09-08T14:23:36+02:00 — 260831-LOCR-L12 curator: reconciled the retained liveness test
   inventory with the worker's two focused additions. The sidecar now records the configured
@@ -129,16 +151,6 @@ This card establishes test behavior, not a separate cross-repository protocol or
   that lifecycle ownership and production wiring require the assembled L01/R16/R18 candidate.
   Verification metadata remains pinned until closeout stamps the leaf code commit.
 
-- 2026-09-10T11:53:11+02:00 — LOCR-R21 curator reconciliation against the relocated base (code `bb38d04e`, memory `e26b55db`) after sibling LOCR-L28 landed: LOCR-L28 did not touch this module, so all five cited ranges were re-checked against the unchanged candidate file and kept; the four collected cases and the 363-line file are unchanged. The composition boundary was re-confirmed — L12 and L22 remain unlanded and their case additions to this module are still absent — and the card now also records that the module is registered in the `integration` lane of `mcp/tests/test-evidence-lanes.toml`, whose declared budget is 150 collected cases. The candidate stays test-only. Verification metadata remains closeout-owned.
-
-- 2026-09-10T10:32:23+02:00 — LOCR-R21 curator reconciliation against the synced base (code `6096941f`, memory `71d7f73a`): re-verified every range cited by this card against the current candidate file and kept each one unchanged — the fixture range spans `_Clock`/`_FakeHost` through `_control_sweeper`, and each of the four case ranges ends on its method's final assertion. The candidate is test-only: `mcp/tests/test_terminal_liveness.py` is the sole changed source, and no production module, threshold, or persisted field moves with it. Recorded the module's composition boundary (L12 and L22 add cases to this same file from their own unlanded worktrees) and the retained-but-uncalled `_control_sweeper` builder. Verification metadata remains closeout-owned.
-
-- 2026-09-08T14:25+02:00 — LOCR-R21 curator: refreshed the card for the current test-only proof boundary. The retained storm now asserts definitive pane-gone exit, and dedicated cases cover persisted host reset, connected three-strike reset, and alive-starting bridge delay. Production liveness thresholds, state fields, and ownership remain unchanged; closeout owns verification stamping.
-
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: refreshed the card for the retained
-  non-overlap and single-write proof — full and starting contention, exception-driven lock release
-  with later retry, and one-replacement-then-zero for a repeated clean hosted sweep. Cadence (`R12`)
-  and hysteresis (`R21`) ownership is explicitly preserved; closeout owns verification stamping.
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
 

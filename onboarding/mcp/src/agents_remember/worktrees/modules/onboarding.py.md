@@ -5,14 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview      | `overview.md`                              |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Worktree modules overview](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -30,6 +30,10 @@ owners. This separation lets closeout publish mechanical metadata while keeping 
 outside the transaction. Full suites and quality checks are explicit developer actions.
 
 ## Code Commentary
+
+### Logic
+
+`contract_memory_verified_commit` chooses the accepted memory-content commit, or the task memory base before a closeout has recorded one. A ledger-cache commit is never a body-review baseline. This keeps the existing dirty-plus-committed memory membership tied to real memory content.
 
 The module finds changed source sidecars — gating each changed source on the
 boolean `resolver.is_sidecar_storage(storage)` predicate (sidecar-backed storage
@@ -58,7 +62,7 @@ slices) without onboarding collect in the non-blocking `unonboarded` list, so
 already-onboarded artifacts gate regardless of author but never-onboarded files
 are not blanket-onboarded at closeout. `working_paths=None` keeps the strict
 legacy semantics. `contract_memory_verified_commit(contract)` resolves the
-body-gate baseline (`ledger_commit` → `memory_content_commit` →
+body-gate baseline (`memory_content_commit` →
 `memory_base_commit`), `_changed_memory_paths` widens gate membership to dirty
 ∪ committed-since-verified memory paths, and `_joined_sample` caps gate error
 path joins at `PATH_SAMPLE_LIMIT`.
@@ -163,7 +167,7 @@ parsing stays in `kernel/onboarding_doc.py`, deterministic source census stays
 in `kernel/route_index_census.py`, and rendering stays in
 `kernel/route_index.py`.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - Sidecar and nearest-governing overview body/history gates run before code
   commit; ancestor overviews are reported but do not become false blockers.
@@ -187,35 +191,45 @@ None known for the MX-FIX-4 closeout caller boundary.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this memory repo.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
-Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:816-836). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:983-996). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:132-166); the subsequent ledger records that actual content commit. These contracts are source-backed; the removed support slices are not current test evidence.
+The following current source boundaries establish the ledger-retirement behavior.
 
-
-
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-395; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342 |
-| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | "def build_route_indexes("; "def route_index_source_snapshot(" | mcp/src/agents_remember/kernel/route_index.py:184-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
+| `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. | L55-L57 | [mcp/src/agents_remember/worktrees/modules/onboarding.py](mcp/src/agents_remember/worktrees/modules/onboarding.py) |
+| `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. | L60-L71 | [mcp/src/agents_remember/worktrees/modules/onboarding.py](mcp/src/agents_remember/worktrees/modules/onboarding.py) |
 
-| Sidecar and route-overview attestations are checked independently and aggregated before refresh publication. | `validate_memory_refresh_attestations` | mcp/src/agents_remember/worktrees/modules/onboarding.py:865-943 |
+Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:826-864). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:1069-1081). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:121-147); the downstream cache is derived from attributed Git history and is not a body-review baseline. These contracts are source-backed; the removed support slices are not current test evidence.
+
+
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) | L337-L395; L289-L342 | [mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py](mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py); [mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py](mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) | L184-L235; L125-L125; L45-L67 | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py); [mcp/src/agents_remember/kernel/route_index_census.py](mcp/src/agents_remember/kernel/route_index_census.py) |
+
+| Sidecar and route-overview attestations are checked independently and aggregated before refresh publication. (`validate_memory_refresh_attestations`) | L867-L942 | [mcp/src/agents_remember/worktrees/modules/onboarding.py](mcp/src/agents_remember/worktrees/modules/onboarding.py) |
 
 ## Cross-Repo References
 
 Closeout can coordinate code and external-memory worktrees, but no external
 implementation governs this module.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| No additional cross-repository evidence applies. | — | — |
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f8508321721044ce85bb464c13146d4ff9a93843f25c858575bda1d3bad10c1a. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented the shared sidecar and route-overview attestation composition used by curator preparation and closeout; verification metadata remains closeout-owned.

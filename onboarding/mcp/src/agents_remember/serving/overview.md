@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4` |
-| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -920,14 +920,15 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 
 ## Update History
 
+- 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.
+
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: extended the `GET /api/terminal/sessions` route account with the current sweeper boundary — bounded starting-row fast path while rate-limited, committed-atomic-snapshot return on sweep-lock contention (instead of a snapshot read that waits on the active batch), and one dirty-gated catalog batch per admitted path. Cadence, hysteresis, registration/compaction order, and cross-store post-commit ownership are unchanged and remain with their leaves.
 
 - 2026-09-08T14:39+02:00 — 260831-LOCR-L20 curator reconciliation: added the current
   terminal-evidence cursor consumer and its no-loss envelope boundary to the serving hot path.
   The candidate preserves the existing bounded Pi route and canonical projector ownership;
   verification metadata remains pinned until governed closeout stamps the code commit.
-
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: extended the `GET /api/terminal/sessions` route account with the current sweeper boundary — bounded starting-row fast path while rate-limited, committed-atomic-snapshot return on sweep-lock contention (instead of a snapshot read that waits on the active batch), and one dirty-gated catalog batch per admitted path. Cadence, hysteresis, registration/compaction order, and cross-store post-commit ownership are unchanged and remain with their leaves.
 
 
 - 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.

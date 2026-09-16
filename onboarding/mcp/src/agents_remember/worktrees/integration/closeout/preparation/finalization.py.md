@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46:58+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:59 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,54 +16,70 @@
 
 ## Purpose
 
-Guarded publication of the original prepared outputs.
+Guarded publication of the original code and memory-content outputs and canonical contract completion.
 
 ## Code Commentary
 
 ### Logic
 
-`_retain_existing_leg` preserves unchanged outputs. `_publication_intent` journals the original physical prestate once; `_observe_proven_leg` reopens published output through its original authority. `_ledger_publication_started` recognizes that ledger publication supersedes the intermediate memory ref, while `_physical_memory` validates exact ledger recovery states and bytes.
+The finalizer reopens the current worker, original preparation/certification objects, raw commit bytes, effective policy, task/source authority, route review, and approval. The complete five-terminal certificate prefix remains required by this explicit prepared route; it consumes selected originals rather than minting or rerunning them.
 
-The finalizer reopens the current worker, original preparation/certification objects, raw commit bytes, effective policy, task/source authority, route review and approval. It records mutation intent before exact expected-old ref publication, materializes the deterministic ledger through the existing recovery classifier, and retains commit-proven evidence only after physical/index/ref readback. Genuine existing legs retain their original C/M/L identities without creating empty commits. It finalizes the canonical contract only after the ordered output proofs. This source description is not a claim that the new route has passed tests or CCR acceptance.
+`_live` binds Gate 5 to the memory intent's cache-free tree, or to `existingMemoryProof.certifiedContentTree` for reused historical memory. `_physical_memory` independently proves the actual raw historical HEAD/tree through the typed binding. Code checks remain strict; only memory observations select the exact cache projection.
 
-`CCR-L42` parity validation leaves the guarded publication behavior and this source-to-card meaning unchanged; the shared memory-refresh validator checks this sidecar independently from its governing preparation overview in curator preparation and closeout.
+`_publication_intent` journals the original prestate, `_publish_leg` checks it before the expected-old CAS, and `_record_proof` accepts output only after physical/index/ref readback. All three snapshots select `memory_cache=True` only for the memory leg, so force-staged cache data cannot strand proof after a valid ref update. A created output's raw HEAD/tree still must equal its exact prepared object; new memory commits cannot contain the cache.
+
+`_retain_existing_leg` records the actual unchanged code or memory commit without creating an empty commit. Finalization and resume require exactly code plus memory-content outputs; no ledger recovery classifier, ledger byte comparison, or third ref publication remains. `_closed_payload` proves the accepted pair and refreshes the consumer cache without making its availability transaction authority. The canonical contract is finalized only after the ordered output proofs.
 
 ### Conventions
 
-Import the owning module directly. The implementation is present in landed IAS; this preparation pass does not advance verification stamps.
+Use the named source owners directly. The earlier introduction and verification records remain historical facts; the current uncommitted candidate changes the behavior described here. The existing commit-verification metadata is retained until its owner records a real committed source revision.
 
 ### Invariants And Boundaries
 
-Prepared objects, selected evidence, publication and approval remain separate facts. Historical acceptance cannot be inferred from this card.
+Prepared objects, selected evidence, publication, and approval remain separate facts. Raw historical HEAD/tree and certified memory content are independently bound and never substituted for each other. Memory cache filtering cannot weaken code checks or admit a cache-bearing new memory commit. Missing or changed non-cache content, moved refs, or changed selected ownership still refuse.
+
+This card describes the explicit prepared-publication owner. It does not assert that the route has passed an end-to-end certification or that ordinary closeout must invoke this certification path.
 
 ### Todos
 
-No additional source-local TODO is asserted.
+No additional source-local TODO is asserted by this maintenance pass.
 
 ## Docs References
 
-| Finding | Anchor | Source |
+No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No external domain source is configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| `_output` owns the described behavior. | `_output` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:93-105` |
-| `_materialize_ledger` owns the described behavior. | `_materialize_ledger` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:433-468 |
-| `_publish_leg` owns the described behavior. | `_publish_leg` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:577-610 |
-| `_closed_payload` owns the described behavior. | `_closed_payload` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:613-630 |
-| `finalize_prepared_closeout` owns the described behavior. | `finalize_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:633-670 |
-| `resume_prepared_closeout` owns the described behavior. | `resume_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:673-710 |
+| Prepared output references and exact raw commit bytes are revalidated. | L90-L106 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Live ownership, contract identity, and selected preparation remain bound. | L109-L145 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Existing historical memory retains its raw tree while proving the separate certified content. | L243-L268 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| The fifth certificate is checked against the correct content subject and current authorities. | L271-L353 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality. | L356-L387 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| The original per-leg prestate is journaled with the same memory-domain snapshot semantics. | L443-L477 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Publication checks original state, uses the exact CAS, and records its proof. | L480-L509 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| The accepted pair is proven before the best-effort cache refresh. | L512-L530 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Only code and memory outputs are published before canonical contract completion. | L533-L569 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Resume requires the same generation and exactly two selected output legs. | L572-L606 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
 
 ## Cross-Repo References
 
-| Finding | Anchor | Source |
+These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No cross-repository source is needed. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Removed the ledger publication/recovery account; recorded independent raw/certified memory proof, two-output finalization, all three normalized memory snapshots, and non-authoritative cache refresh. Source SHA-256 `5d5b77b235f8fa91080e88a14da1b13430ea8150b6104b31d4675da1c4edbf0d`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No content impact: this source behavior and source-to-card meaning remain unchanged while the shared sidecar and route body validators run independently. No acceptance claim is made.
 - 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read `resume_prepared_closeout` and its finalization helpers against the current source; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
 - 2026-09-08T14:39:58+00:00: Generated citation repair: `_materialize_ledger` repointed to mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:433-468. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.

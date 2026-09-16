@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/catalogPoll.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`       |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The refcount driver, reconciler, hydrate helper, beat recording, and localStorage preference. | "export function startCatalogPollDriver(): () => void {"; "export function startCatalogReconciler(): () => void {"; "export async function hydrateTerminalSessionsFromCatalog("; "recordPollBeat: (ok) =>"; "export function writeLastActiveSessionId(" | dashboard/src/data/catalogPoll.ts:68-68; dashboard/src/data/catalogPoll.ts:112-119; dashboard/src/data/catalogPoll.ts:139-157; dashboard/src/data/catalogPoll.ts:179-192; dashboard/src/data/catalogPoll.ts:206-231; dashboard/src/data/sessionCockpitStore.ts:294-304 |
 | The catalog fetch this wraps (`fetchTerminalSessionsOrNull`, null on failure). | `fetchTerminalSessionsOrNull` | dashboard/src/data/terminal.ts:413-432 |
-| The session-store hydrate + row conversion the helper feeds. | `sessionStore`; `fromTerminalSessionInfo` | dashboard/src/data/sessions.ts:508-522; dashboard/src/data/sessions.ts:631-639 |
+| The session-store hydrate + row conversion the helper feeds. | `sessionStore`; `fromTerminalSessionInfo` | dashboard/src/data/sessions.ts:543-557; dashboard/src/data/sessions.ts:668-676 |
 | The poll-health state the beats update: three misses mark the catalog stale. | `recordPollBeat`; `POLL_STALE_MISSED_BEATS` | dashboard/src/data/sessionCockpitStore.ts:186-186; dashboard/src/data/sessionCockpitStore.ts:228-228 |
 | The shell owns the shared timer and eager/cross-tab reconciler for every view lifetime. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | The sole shell subscriptions keep both the poll driver and reconciler alive with no view in front. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
@@ -101,6 +101,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `fromTerminalSessionInfo`, `sessionStore` repointed to dashboard/src/data/sessions.ts:543-557, dashboard/src/data/sessions.ts:668-676. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: generated the final ranges for the two
   S18-T3 `:1-1` prose citations (`scheduleCatalogPoll`/`startCatalogPollDriver` → 163-173 and

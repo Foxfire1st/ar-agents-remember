@@ -5,40 +5,89 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/named_ref_memory.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
-| governingOverview | `../../../overview.md` |
+| lastUpdated | 2026-09-15T00:51 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../../../overview.md)
+[Nearest governing overview](overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Loads `memory.md` from the exact local memory source ref instead of the ambient repository checkout.
+Returns a consumer `MemoryLedger` derived from one exact local memory branch, independently of
+the ambient checkout and cached ledger files.
 
 ## Code Commentary
 
-`load_named_ref_ledger` resolves a canonical local branch, reads the ledger blob directly from that ref, and parses it through the shared memory ledger model. Start admission, landing evidence, carryover guidance, and cleanup therefore evaluate the same task-derived memory history that integration owns.
+### Logic
 
-## Invariants And Boundaries
+`load_named_ref_ledger(repository, branch)` canonicalizes the branch through `local_branch_ref`
+and passes that explicit `refs/heads/...` ref to `derive_memory_ledger`. It reads committed
+attribution and returns the existing ledger data shape. A same-named tag or different checked-out
+branch cannot substitute for the requested local branch.
 
-- The branch is canonicalized before reading.
-- Ambient checkout contents are never accepted as source-ref evidence.
-- Missing or malformed exact-ref ledgers fail closed.
+Neither a committed `memory.md` blob nor its working copy is parsed. An unattributed history
+contributes no mappings; an unreadable Git ref raises the attribution reader's error. This API has
+no code-repository argument, so code-object filtering belongs to consumers that supply that
+authority, such as `read_ledger_source(..., code_repository=...)`.
+
+### Conventions
+
+The kernel owns derivation and ledger representation; the shared Git module owns local-ref
+normalization. This module adds no alternate lookup, table fallback, or write behavior.
+
+### Invariants And Boundaries
+
+- Only the explicit local branch's committed history is read.
+- Cache absence, corruption, or forged rows cannot supply or override mappings.
+- Genuine Git lookup failures remain distinguishable from an empty derived ledger.
+
+### Todos
+
+No new file-local follow-up is established by this documentation pass.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Exact-ref blob loading and parsing have one shared boundary. | `load_named_ref_ledger` | mcp/src/agents_remember/worktrees/named_ref_memory.py:12-20 |
+| The reader derives attribution at the explicit normalized local branch. | L12-L15 | [mcp/src/agents_remember/worktrees/named_ref_memory.py](mcp/src/agents_remember/worktrees/named_ref_memory.py) |
+| Local ref normalization and ledger derivation have shared owners. | L79-L85 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| The kernel derives rows and current/base metadata from committed attribution. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| A tag sharing the source branch name cannot redirect the read, even with a damaged cache. | L338-L360 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
 
-## Documentation References
+## Cross-Repo References
 
-No configured domain-documentation or cross-repository source applies to this file.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T00:51 UTC — Replaced exact-ref memory.md blob parsing with exact-local-ref attribution derivation; documented empty-history and Git-failure behavior and updated the nearer worktrees overview link. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: created named-ref memory ledger reader onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.
 

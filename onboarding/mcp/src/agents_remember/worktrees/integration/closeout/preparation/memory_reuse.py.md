@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-15T00:59 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,46 +16,63 @@
 
 ## Purpose
 
-Read-only proof of genuine existing memory output.
+Read-only proof of an actual existing memory HEAD and its separately certified content tree.
 
 ## Code Commentary
 
 ### Logic
 
-A dirty memory candidate returns no reuse proof and leaves creation to its owner. Clean reuse proves HEAD/tree/index/physical bytes, the actual memory.md ledger blob and repository identity. Existing mappings must identify an ancestor M whose binary non-ledger entries equal the current head; older M may predate the ledger file. An absent mapping is explicitly unmapped-head. Invalid mapped content refuses instead of becoming an empty commit or an unmapped fallback.
+Status excludes only root `memory.md`; real memory-content changes return no reuse proof and leave creation to the output owner. Cache-only edits, forced staging, or cache index flags do not select a write. The observer reads the actual repository identity, logical branch, HEAD commit, and raw HEAD tree without replacing them with a normalized tree.
+
+An `ExistingGitPreparationBinding` supplies both that raw tree and the independent certified content tree in the explicit memory domain. The kernel proves the raw HEAD/ref identity, removes only the cache entry for content comparison, and checks every remaining index entry, flag, and physical blob. The returned closed proof binds `logicalHeadCommit`, `logicalHeadTree`, and `certifiedContentTree` into its digest, with physical reproof around construction.
+
+There is no ledger parser, code-to-memory mapping lookup, or historical mapped-commit selection here. Reuse retains current HEAD whether or not a newer code commit has attribution; it never invents a new memory commit or stages cache maintenance.
 
 ### Conventions
 
-Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870` and remains byte-identical at the recovery code candidate. Its behavior was re-read against that source during memory recovery; the existing metadata owner still owns the pending verification stamp.
+Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870`. The earlier introduction and verification records remain historical facts; the current uncommitted candidate changes the behavior described here. The existing commit-verification metadata is retained until its owner records a real committed source revision.
 
 ### Invariants And Boundaries
 
 The documented types and paths do not themselves establish execution, certification, delivery or acceptance. Those claims require the corresponding owning runtime evidence.
 
+The memory-domain content projection cannot be used as the raw HEAD tree. Cache bytes are irrelevant to reuse, but a changed real file, wrong repository/ref, hidden real-content flag, or mismatched certificate subject still refuses. This function is read-only.
+
 ### Todos
 
-No source-local TODO is asserted here.
+No additional source-local TODO is asserted by this maintenance pass.
 
 ## Docs References
 
-| Finding | Anchor | Source |
+No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No external domain source is configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| `_memory_entries` owns the corresponding behavior described above. | `_memory_entries` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:21-38` |
-| `observe_existing_memory_proof` owns the corresponding behavior described above. | `observe_existing_memory_proof` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:41-97` |
+| The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | L19-L63 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
+| The exact raw HEAD tree is checked before projected content is inspected. | L451-L465 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| Only root memory.md is removed when proving equality with a required memory certificate subject. | L468-L486 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| The closed record hashes the raw and certified identities separately. | L43-L69 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
+| The shared exact Git pathspec names only the derived root cache. | L27-L27 | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
 
 ## Cross-Repo References
 
-| Finding | Anchor | Source |
+These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Replaced ledger/mapping authority with read-only current-HEAD reuse and independently bound cache-free content; cache-only staging no longer creates a memory output. Source SHA-256 `e76443ad8abc02674ccbbe5993104ab93f8f74601e9ed051545ed22dd419bbc8`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 
 ### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
 

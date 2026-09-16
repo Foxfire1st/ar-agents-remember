@@ -5,117 +5,136 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-09-15T01:05 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktrees overview](overview.md)
+[Nearest governing overview](overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:05 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-This file is the state-machine driver for resumable, contract-addressed mid-task source
-synchronization. It replaces abort-and-block merge handling with one durable generation that an
-agent can observe, continue after resolving a retained conflict, cancel, or recover.
+Drives resumable, contract-addressed mid-task source synchronization. One durable generation can
+be observed, continued after resolving retained content conflicts, cancelled, or recovered without
+reconstructing lifecycle evidence from task prose.
 
 ## Code Commentary
 
 ### Logic
 
-`sync_contract_under_authority` validates typed inputs, reads the stable enclosure-root store, and
-routes missing/malformed journal recovery, quarantine replay, identity checks, active resume,
-terminal replay, or new admission. No integration lock survives the return, so conflict resolution
-happens between calls in the reported worktree.
+`sync_contract_under_authority` validates input choices and reads the enclosure-root journal. It
+routes damaged/missing journal recovery, quarantine, identity validation, active resumption,
+terminal replay, or new admission. The operation returns typed results; no lock remains held while
+an agent resolves conflicts between calls.
 
-Admission reads the exact official pair, validates its external-memory ledger mapping, plans each
-side as already-current/fast-forward/merge/skip, checks non-temporary worktrees before any refs are
-pinned, writes the journal, creates temporary `.sync` worktrees for series sides, and starts code
-then memory. A genuine merge conflict records the side and conflict files without aborting. Continue
-validates the exact staged merge and advances the same generation; cancel delegates exact rollback.
-Automatic replay reconciles a side whose operation-owned commit already exists and finalizes only
-after both participating sides are proven.
+Admission resolves actual code/memory source tips and builds typed `SyncSideRecord` plans for
+already-current, fast-forward, merge, or skip behavior. It no longer performs a ledger mapping
+preflight. `_already_current_result` uses the recorded bases and participating branch ancestry,
+independently of cached rows. A divergent memory plan still requires its explicit merge/skip choice,
+and that admitted choice cannot change during continuation.
+
+Before a moving non-temporary side is parked, preflight proves its checkout and rejects real
+content conflicts or an active `MERGE_HEAD` outside the sync admission. A merely dirty candidate is
+parked rather than refused. `_park_participating_wip` passes the complete side record to dirty-path
+and stash helpers, so the memory side excludes only its root `memory.md` cache. It records the stash,
+up to 128 sampled paths, and the exact total path count. Failed partial parking attempts restore
+already parked work where possible and report any stranded stash identities.
+
+The admitted record pins source/base/pre-sync authority before automatic code-then-memory progress.
+Native merge behavior and exact parent/source proofs belong to `sync_transaction_git`. Genuine
+content conflicts remain in the retained worktree. The driver reads `content_conflicts(side)` when
+refreshing both merge-resolution and parked-WIP-resolution failures, so a memory-cache conflict is
+not presented as content requiring agent judgment.
+
+Completed paths, resume, and cancellation restore parked work through the focused authority/recovery
+owners. `_reconcile_completed_sides` can recognize an already committed operation-owned merge;
+finalization waits for the participating sides and parked work to be settled. Exact checkout,
+source, parent/ref, journal, and admitted-choice checks remain in force.
 
 ### Conventions
 
-The driver delegates durable models/store, Git proof, authority, results, and recovery to focused
-modules; it owns only phase routing. Input refusals happen before selector, refs, journal, or Git
-mutation. State is returned as `WorktreeCommandResult`. The top-level safety boundary translates
-unexpected I/O, proof, and value failures into `sync-operation-refused`, names the caught failure
-family in the summary, and preserves `str(error)` in the structured `detail` field so a useful Git
-or journal refusal is not collapsed into a generic status.
+The driver owns phase routing and delegates Git mechanics, journal storage, pinned authority,
+result formatting, and terminal recovery. Top-level I/O/proof/value failures return
+`sync-operation-refused` with the failure family and retained detail. The cache is an ignored
+consumer artifact on the memory side, not a second source of sync truth.
 
 ### Invariants And Boundaries
 
-- One active generation is addressed by canonical contract, never a public operation id.
-- Pinned source/base/pre-sync refs plus the stable journal are recovery authority.
-- Retained conflicts are agent-owned action, not terminal failure.
-- Continue/cancel cannot change the admitted memory-sync choice.
-- Normal sync fails closed for malformed, missing-after-admission, or identity-invalid journal state.
-- Queue rows and task prose never reconstruct operation lifecycle evidence.
-
-## Parked Worktree Candidate
-
-A closeout-time leaf is dirty by definition, so the transaction parks each dirty moving side's
-candidate before it carries the moved source. `_admit_participating_sides` is the single pre-journal
-gate: it runs `_preflight_participating_sides`, returns `sync_preview` for `dry_run`, and otherwise
-calls `_park_participating_wip`. Only a side this transaction will actually move parks:
-`_side_parks_wip` skips a `temporary` side and any side planned `already-current` or `skip`, so an
-unchanged side and every temporary series worktree are left exactly as before.
-
-`_park_participating_wip` stashes each dirty side with `park_worktree_wip`
-(`git stash push --include-untracked --message "<_wip_stash_message>"`), journals the exact stash
-commit, the bounded path sample (`WIP_PATH_SAMPLE_LIMIT = 128`) and the true path count on the side
-record, and only then is the admission record written — so the parked identity rides the same
-`store.write` that admits the transaction. A park that fails calls `_restore_already_parked` to undo
-whatever was already parked and refuses with `sync-side-preflight-failed`; if that restoration also
-fails, the refusal names each stranded stash id.
-
-`_preflight_participating_sides` now refuses only a worktree whose index already has unmerged paths
-(`_require_parkable_worktree`) or whose checkout cannot be proven (`require_side_checkout`, status
-read). A merely dirty moving side is parked, not refused. Restore happens on the completed path
-(`_run_side`, `_continue_resolution`), on resume (`_reconcile_completed_sides`), and on cancel
-(`sync_transaction_recovery.cancel_sync`); the agent-resolved continuation is
-`_continue_parked_wip_restore`. The last safety net is `require_parked_wip_settled` in
-`finalize_sync`, which refuses to finalize while any side still parks its candidate. See
-[`sync_transaction_authority.py`](sync_transaction_authority.py.md) and
-[`sync_transaction_git.py`](sync_transaction_git.py.md) for the restore proof.
+- Canonical contract and pinned Git facts identify one retained transaction generation.
+- Cached mappings, byte shape, or absence do not authorize or block source synchronization.
+- Only memory-side root memory.md is excluded; a code file with that name remains real content.
+- New moving-side admission cannot adopt an unrelated active merge.
+- Real content conflicts stay resumable, and exact merge/ref proofs cannot be replaced by a cache match.
+- Parked work must be restored or explicitly reported before terminal completion.
 
 ### Todos
 
-State-machine claims and citations are reconciled to the frozen source; commit-derived verification
-remains closeout-owned.
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Strict journal records and read-only status projection live at the enclosure root. | `SyncSideRecord`; `SyncOperationRecord`; `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67; mcp/src/agents_remember/worktrees/sync_transaction_state.py:70-87; mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305; mcp/src/agents_remember/worktrees/sync_transaction_state.py:308-324 |
-| Admission and pinned identity validate contract/source/ledger authority. | `preflight_official_pair`; `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:161-166; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:169-183 |
-| Git operations retain conflicts and prove exact staged, completed, or rolled-back heads. | `start_side_merge`; `continue_side_merge`; `validate_staged_resolution`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:253-293; mcp/src/agents_remember/worktrees/sync_transaction_git.py:318-344; mcp/src/agents_remember/worktrees/sync_transaction_git.py:345-368; mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-399 |
-| Finalization, cancellation, quarantine, and damaged-journal escape are separate recovery ownership. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:57-93; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-264; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:267-284 |
-| Public result constructors keep recovery guidance consistent across phases. | `memory_choice_required`; `resolution_required`; `active_preview`; `cancel_preview`; `terminal_resolution_replay`; `quarantine_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:28-50; mcp/src/agents_remember/worktrees/sync_transaction_results.py:71-113; mcp/src/agents_remember/worktrees/sync_transaction_results.py:173-187; mcp/src/agents_remember/worktrees/sync_transaction_results.py:190-207; mcp/src/agents_remember/worktrees/sync_transaction_results.py:210-245; mcp/src/agents_remember/worktrees/sync_transaction_results.py:248-261 |
-| The parkability preflight, the park-and-journal admission, and the stash message are the driver's new pre-journal boundary. | `_admit_participating_sides`; `_park_participating_wip`; `_side_parks_wip`; `_wip_stash_message`; `_restore_already_parked` | mcp/src/agents_remember/worktrees/sync_transaction.py:241-255; mcp/src/agents_remember/worktrees/sync_transaction.py:264-301; mcp/src/agents_remember/worktrees/sync_transaction.py:258-261; mcp/src/agents_remember/worktrees/sync_transaction.py:304-310; mcp/src/agents_remember/worktrees/sync_transaction.py:313-334 |
-| A dirty moving side is parked; only an unmerged index or an unprovable checkout refuses. | `_preflight_participating_sides`; `_require_parkable_worktree` | mcp/src/agents_remember/worktrees/sync_transaction.py:389-404; mcp/src/agents_remember/worktrees/sync_transaction.py:407-415 |
-| Restore runs on the completed path, on resume, and through the agent-resolved parked continuation. | `_run_side`; `_continue_resolution`; `_continue_parked_wip_restore`; `_reconcile_completed_sides` | mcp/src/agents_remember/worktrees/sync_transaction.py:508-536; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570; mcp/src/agents_remember/worktrees/sync_transaction.py:573-594; mcp/src/agents_remember/worktrees/sync_transaction.py:597-629 |
-| The parked-candidate path sample is bounded and the true count is journaled beside it. | `WIP_PATH_SAMPLE_LIMIT` | mcp/src/agents_remember/worktrees/sync_transaction.py:80-80 |
+| The driver validates choices and routes retained or new transactions. | L82-L110; L113-L151; L202-L234 | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
+| Dirty work admission and parking use complete typed side records. | L387-L402; L405-L415; L260-L297; L79-L79 | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
+| Currentness and continuation use Git facts and content-only conflicts. | L333-L359; L539-L570; L573-L594; L597-L629 | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
+| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs. | L117-L141; L144-L163; L285-L292; L362-L395; L437-L455; L490-L498 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Pinned authority and parked-work restoration remain separate owners. | L121-L126; L129-L143; L316-L355; L380-L401 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Terminal finalization/cancellation and damaged-journal recovery are delegated. | L56-L92; L159-L190; L266-L283; L193-L263 | [mcp/src/agents_remember/worktrees/sync_transaction_recovery.py](mcp/src/agents_remember/worktrees/sync_transaction_recovery.py) |
 
 ## Cross-Repo References
 
-No cross-repository source is configured for this memory root.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:05 UTC — Reconciled the stable sync driver after ledger admission removal and native cache-conflict repair: typed side records now drive WIP exclusion, content_conflicts filters memory-side cache entries, and moving-side admission still refuses an unrelated active merge. Preserved pinned authority, real content conflict, restore, and exact merge recovery boundaries. Working candidate verified by source inspection; commit metadata records real committed history only.
+
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the already-current
+  branch no longer validates the parent memory side, as the earlier entry records. Re-checked all
+  fourteen cited ranges against the frozen source: they hold. No wording changed. Verification
+  metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/sync_transaction.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the already-current branch no longer validates the parent memory
+  side). Re-read the card: it already records that removal and all fourteen cited ranges still hold.
+  No wording changed; verification metadata remains closeout-owned.
+- 2026-09-14T13:20+02:00 — The ledger ruling reaches the driver: `_already_current_result` reports an
+  already-descendant pair as `already-current` on its recorded bases and branch ancestry alone, and
+  the `validate_current_memory_side` call that used to refuse it with `sync-work-branch-invalid` is
+  gone. Recorded that boundary in Logic and as a local invariant, and re-derived every reference
+  anchor (the Git, recovery, park-boundary, and driver ranges all moved). Verification remains
+  closeout-owned.
+
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationRecord`, `SyncOperationStore`, `SyncSideRecord`, `observe_sync_operation` repointed to mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385, mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67, mcp/src/agents_remember/worktrees/sync_transaction_state.py:70-87. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-10T15:06+02:00 — Parked-candidate curation: recorded the new pre-journal admission (`_admit_participating_sides`, `_park_participating_wip`, `_side_parks_wip`, `_wip_stash_message`, `_restore_already_parked`), the narrowed parkability preflight (`_require_parkable_worktree`), the completed/resume/agent-resolved restore paths, and the bounded `WIP_PATH_SAMPLE_LIMIT`. A dirty moving side is now parked rather than refused; unmerged index entries and unprovable checkouts still refuse. Re-derived every cited range against the current working tree. Verification remains closeout-owned.
 

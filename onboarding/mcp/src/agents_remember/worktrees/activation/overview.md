@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/activation` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,46 +16,57 @@
 
 ## Purpose
 
-This focused route owns atomic-series implementation selection for one exact code/external-memory
-source pair. It separates durable work existence from current exposure, binds selection to
-reconciliation-before-admission, and owns exact cancellation/terminal vacancy without placing
-lifecycle or commit evidence in the selector.
+This focused route owns atomic-series implementation selection per canonical series contract. Every
+series contract owns exactly one fingerprint-addressed activation record tracking its own
+`reconciling -> active` transition, so two atomic masters that share one protected code/external-memory
+source pair never share this state and never pause each other. It separates durable work existence
+from current exposure, binds that contract's selection to reconciliation-before-admission, and owns
+exact cancellation/terminal vacancy without placing lifecycle or commit evidence in the selector.
 
 ## Hot Path Summary
 
-`atomic_series_activation.py` derives normalized source identity, strictly observes one
-fingerprint-addressed record, archives corrupt authority, and publishes replace-in-place
-`reconciling|active` state. `atomic_series_activation_transaction.py` connects selection to the
-root-level resumable sync transaction: select reconciling, reconcile exact sources, then expose
-active. `atomic_series_admission.py` projects requested identity, source-pair observation,
-foreign blockers, retry preconditions, and read-only status actions without mutation.
-`atomic_series_activation_release.py` owns exact durable vacancy, and the terminal bridge ensures
-cleanup releases the selected contract before deleting its naming authority while preserving a
-newer selection.
+`atomic_series_activation.py` derives the per-contract fingerprint from the canonical contract path,
+strictly observes one fingerprint-addressed record, refuses a record that is not this exact contract,
+archives corrupt authority, and publishes replace-in-place `reconciling|active` state for that
+contract alone. `atomic_series_activation_transaction.py` connects selection to the root-level
+resumable sync transaction: select reconciling, reconcile exact sources, then expose active for the
+addressed contract. A selection left mid-flight is reported as that state and never as the pass's own
+success, with the stuck contract, its publication time, its revision and both exits named in the
+summary. `atomic_series_admission.py` projects requested identity, `contractFingerprint`,
+activation facts, contract-scoped retry preconditions, and read-only status actions without mutation
+or any foreign-blocker concept. `atomic_series_activation_release.py` owns exact durable vacancy for
+one contract, and the terminal bridge ensures cleanup releases that contract's own selection while
+preserving every other contract's record.
 
 CCR-R25 adds a pure public explanation layer to the selector. Status exposes the observed
-source-pair fact, while admission responses retain exact requested identity, foreign blocker or
-unreadable/vacant evidence, retry precondition, and a contract-bound read-only status action. The
-projection never treats logical selection as a live process and never mutates activation bytes;
-selection, release, and synchronization remain the existing transaction owners.
+per-contract activation fact, while admission responses retain exact requested identity, the contract
+fingerprint, vacant/unreadable activation evidence, retry precondition, and a contract-bound read-only
+status action. The projection never treats logical selection as a live process, never names another
+master as a blocker, and never mutates activation bytes; selection, release, and synchronization
+remain the existing transaction owners.
 
 ## Operating Model
 
 1. A manager/worker dispatch or atomic start/attach selects the canonical series contract.
-2. Selection records `reconciling`, logically pausing the former master but preserving its task,
-   process, worktree, contract, branch, and journal.
+2. Selection records `reconciling` for that contract only; other atomic masters keep their own records
+   and their own tasks, processes, worktrees, contracts, branches, and journals untouched.
 3. The root sync transaction reconciles the exact current source pair and retains conflicts for
    contract-addressed continue/cancel.
-4. Only an exact-current pair advances to `active`; moved-again, incomplete, failed, or skipped
-   memory remains reconciling.
-5. Explicit cancellation or exact terminal cleanup publishes durable `vacant`; another selected
-   master is never cleared.
+4. Only an exact-current pair advances that contract to `active`; moved-again, incomplete, failed, or
+   skipped memory remains reconciling, and a pass that itself succeeded beside a mid-flight record is
+   reported as `atomic-series-reconciling` with the stuck contract, its publication time, its
+   revision, and both exits named in the summary.
+5. Explicit cancellation or exact terminal cleanup publishes durable `vacant` for that contract; no
+   other contract's record is read or cleared.
 
 ## Invariants And Boundaries
 
 - Task authoring never reads or waits on this route.
-- Multiple live series are normal; selection controls exposure, not existence.
+- Activation state is per contract: multiple live series are normal, sharing one protected source pair
+  never couples two masters, and one selection never pauses or replaces another.
 - Queue projection observes the selector but owns no transition or recovery.
+- A reconciling record left by an incomplete source reconciliation is reported with the contract, its
+  revision, and both exits; a successful pass beside it is never reported as that call's success.
 - Contract presence, queue order, and old-path scanning never elect a master.
 - Malformed regular bytes are archived; nonregular entries are quarantined without following them.
 - The old flat `worktrees/atomic_series_activation*.py` paths have no compatibility forwarders.
@@ -65,9 +76,9 @@ selection, release, and synchronization remain the existing transaction owners.
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
 | `activation/__init__.py` | [`__init__.py.md`](__init__.py.md) | covered | Canonical activation package boundary |
-| `activation/atomic_series_activation.py` | [`atomic_series_activation.py.md`](atomic_series_activation.py.md) | covered | Selector store and strict observation |
+| `activation/atomic_series_activation.py` | [`atomic_series_activation.py.md`](atomic_series_activation.py.md) | covered | Per-contract selector store and strict observation |
 | `activation/atomic_series_admission.py` | [`atomic_series_admission.py.md`](atomic_series_admission.py.md) | covered | Pure public admission and diagnostic projection |
-| `activation/atomic_series_activation_release.py` | [`atomic_series_activation_release.py.md`](atomic_series_activation_release.py.md) | covered | Exact durable vacancy |
+| `activation/atomic_series_activation_release.py` | [`atomic_series_activation_release.py.md`](atomic_series_activation_release.py.md) | covered | Exact per-contract durable vacancy |
 | `activation/atomic_series_activation_terminal.py` | [`atomic_series_activation_terminal.py.md`](atomic_series_activation_terminal.py.md) | covered | Terminal exact-release bridge |
 | `activation/atomic_series_activation_transaction.py` | [`atomic_series_activation_transaction.py.md`](atomic_series_activation_transaction.py.md) | covered | Reconciliation-before-exposure transaction |
 
@@ -76,9 +87,12 @@ selection, release, and synchronization remain the existing transaction owners.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package marker names selection and source reconciliation as this route's authority. | "Atomic-series selection and source-reconciliation authority." | mcp/src/agents_remember/worktrees/activation/__init__.py:1-1 |
-| The selector strictly owns source-pair observation, publication, quarantine, and waiting reasons. | `observe_atomic_series`; `publish_atomic_series_selection`; `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-214; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:216-276; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:338-351 |
-| Admission moves from reconciling to active only through exact sync. | `activate_atomic_series_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79 |
-| Public admission explains exact source-pair and foreign-holder evidence without selector mutation, bounding its public diagnostic detail. | `atomic_series_admission_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:38-92 |
+| The selector keys one record per canonical contract, strictly observes it, publishes, quarantines, and projects only this contract's reconciling wait. | "def contract_fingerprint("; `observe_atomic_series`; `publish_atomic_series_selection`; `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:155-212; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:275-287 |
+| A record that is not this exact contract is refused rather than adopted. | `_require_record_identity` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372 |
+| Admission moves this contract from reconciling to active only through exact sync. | `activate_atomic_series_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100 |
+| A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
+| Release publishes durable vacancy for this contract alone and refuses a missing exact selection. | `release_atomic_series_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-53 |
+| Public admission explains this contract's activation and retry evidence without selector mutation or any other master's state, bounding its public diagnostic detail. | `atomic_series_admission_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
 
 ## Needs Verification
 
@@ -91,6 +105,22 @@ The parity candidate composes the sidecar and governing route body/history check
 
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/worktrees/activation/` route changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit (the mid-flight reconciling state and summary). Re-read the route
+  card: it already documents that state and its summary fields, and every cited range still holds.
+  No wording changed; verification metadata remains closeout-owned.
+- 2026-09-14T13:20+02:00 — Mid-flight reporting: recorded that the transaction reports a selection
+  left mid-flight as `atomic-series-reconciling` rather than as the pass's own `synced` success, with
+  `_mid_flight_summary` naming the stuck contract, its publication time, its revision and both exits.
+  Updated the Hot Path Summary, the Operating Model's reconciling step, the invariant list, and the
+  reference table. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:19:25+02:00 — Per-contract route rewrite: Purpose, Hot Path Summary, Operating Model, Invariants, the onboarding map reasons, and the reference table now describe one fingerprint-addressed activation record per canonical series contract with no cross-master exclusivity, no logical pausing of a former master, no cross-contract blocker framing, and no selection-versus-existence framing; citations rebound to the frozen source. No acceptance claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound the shared admission route after oversized parser-detail projection was bounded; selector ownership remains unchanged and no acceptance claim is made.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound selector route citations after bounded activation diagnostics landed; route ownership and mutation boundaries remain unchanged, with no acceptance claim.

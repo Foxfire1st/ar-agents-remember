@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,13 @@ No separate cross-repository authority is established by this helper module.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — No content impact: removed an explicit `leaf_key=None` from the local

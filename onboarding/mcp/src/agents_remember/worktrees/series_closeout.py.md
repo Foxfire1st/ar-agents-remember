@@ -5,85 +5,151 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T12:02+02:00|
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
-| governingOverview | `../../../overview.md` |
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
+| governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[governing overview](../../../overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Seals an atomic block only after every canonical leaf forms one exact journaled code-and-memory landing chain, then records the named series refs without ambient workbench commits.
-
-## CCR-R12@v5 Current Series Boundary
-
-Series closeout and integration remain recording/publication operations over already landed leaf
-transactions. They re-prove canonical membership, exact code/memory ancestry, named-ref identity,
-and authority before recording the pair; they do not create a normal leaf code/memory/ledger
-transaction or invoke strict code quality, memory quality, selected certification, curator
-coherence, or independent review. Full suites are an explicit developer request.
+Prove completed atomic-master candidates and capture exact series refs for final closeout or a non-final checkpoint.
 
 ## Code Commentary
 
-`_exact_atomic_landing_chain` now returns the ordered landed leaf chain, and `atomic_series_ledger_prefix` derives the newest-first ledger rows that chain contributes.
+### Logic
 
-Closeout and series integration share the same canonical task/contract evidence, but only the
-protected landing takes the narrow integration-authority lock. Closeout re-proves completion without
-that landing-only lock. The seal verifies canonical master membership, exact enclosure
-identity, code and memory repository identity, each leaf's base-to-integrated edge, content/ledger
-ancestry, and final named-ref tips. Direct commits, missing leaves, foreign copied contracts, mismatched
-code/memory order, and concurrent child admission cannot be absorbed into a master candidate.
+The final route resolves canonical master/leaf task membership and requires one exact enclosure per leaf. It verifies each leaf's repository, source branch, base-to-integrated edges, and recorded code/memory output identity, then orders the chain by the landings' own ancestry. It does not order from bases that a later sync legitimately advanced.
 
-Since the closeout-door cut (commit `fad9808e`) the landed-leaf proof no longer consults a door: the
-`_AtomicLandingFacts` carrier and its `door`/`door_sprint`/`door_candidate` comparisons were removed
-from `_require_exact_atomic_landing_chain` and `_atomic_leaf_code_matches` when `contract.closeout_door`
-stopped existing.
+Without a recorded sync, the oldest leaf starts at the exact series base. With sync history, the origin is proved against the first sync's old bases and each leaf must remain on that line. The series spine must contain every landing and only admitted inter-leaf/source transitions. Memory-side history inspection excludes root memory.md content; the removed special ledger-recording commit exception is not an authority rule.
 
-Since 260815-DAG-L13 the atomic-master completion proof (`_require_atomic_master_complete`) and
-the series-edge publication (`_publish_atomic_series_edge`) read the **effective** execution
-nature (`scheduling_mode.effective_execution_nature`): a nature-less legacy master executes
-atomically under the atomic-sequential default and closes out without migration (L13-R5a), and a
-graph-less sprint takes the atomic-sequential series path. Graph absence does not weaken canonical
-master/leaf re-proof and no projection row is completion authority.
+Both checkpoint capture and final memory recording use `series_memory_closeout`: re-read the exact code work ref, capture the actual memory work ref, and prove its recorded-base ancestry. They do not select an output from cached rows or require a fixed-point table. A code tip with no corresponding memory trailer can therefore still be captured without inventing attribution.
 
-Since 260831-closeout-door-cut the master/leaf re-proof carries no door dimension at all.
+Final closeout and integration require the master complete. The checkpoint route deliberately does not, and instead refuses an already-completed master, requires an explicit captured `expected` pair, reloads the contract, and revalidates live tips before publication. It records no completed-task claim and reclaims nothing.
 
-## Invariants And Boundaries
+### Conventions
 
-- Atomic membership comes from exact master task rows and canonical parent relations, not sibling-file discovery.
-- The series history equals the ordered leaf landing chain from recorded bases to current named refs.
-- Every external memory pair proves base-to-content and content-to-ledger ancestry plus exact ledger mapping.
-- Series closeout records named refs and never commits ambient repository-root worktrees.
-- The effective nature, not graph presence alone, gates the atomic closeout path; graph-less
-  atomic-sequential is valid.
+Closeout records existing refs rather than committing an ambient series workbench. Substantive dirty checkouts still refuse; memory.md alone is excluded. Checkpoint publication, stop-only pause, and finalization are distinct operations.
+
+### Invariants And Boundaries
+
+- Canonical task membership and exact repository/ref identity remain mandatory.
+- Leaf order comes from real code and memory ancestry, including after source reconciliation.
+- Cache rows, ordering, and fixed-point projection are never series completion or checkpoint gates.
+- No agent-owned ledger-only commit is needed to record a reconciled code tip.
+- The checkpoint's expected candidate is required and is re-read before publication.
+- Preview and apply consume the same final-completion predicate.
+
+### Todos
+
+No new file-local follow-up is identified by this source reconciliation.
+
+## Docs References
+
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Closeout re-proves canonical completion without the landing lock; integration repeats it under the narrow protected-landing lock. | `publish_closeout_under_authority`, `publish_series_integration_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:41-58; mcp/src/agents_remember/worktrees/series_closeout.py:61-78 |
-| The complete leaf set and exact pair chain are proved before sealing. | `_require_every_atomic_leaf_landed`, `_require_exact_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:81-84; mcp/src/agents_remember/worktrees/series_closeout.py:110-146 |
-| Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:180-218; mcp/src/agents_remember/worktrees/series_closeout.py:221-250; mcp/src/agents_remember/worktrees/series_closeout.py:253-294; mcp/src/agents_remember/worktrees/series_closeout.py:297-324 |
-| Atomic-master completion resolves the effective nature under the atomic-sequential default. | `_require_atomic_master_complete` | mcp/src/agents_remember/worktrees/series_closeout.py:333-361 |
-| Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:364-380; mcp/src/agents_remember/worktrees/series_closeout.py:383-415 |
+| Final closeout and series integration re-prove canonical completion. | L33-L57; L60-L70; L73-L89 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Checkpoint capture and publication revalidate an explicit two-output candidate. | L93-L101; L104-L122; L125-L144; L147-L178; L181-L194 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Leaf membership, output identity, and ordering remain exact. | L201-L223; L251-L281; L284-L306; L617-L631 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Recorded origins and admitted substantive history preserve reconciled series proof. | L309-L340; L394-L435; L472-L509 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Series cleanliness and actual memory-ref capture exclude cache authority. | L680-L698; L701-L711 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
 
-## Documentation References
+## Cross-Repo References
 
-No configured domain-documentation or cross-repository source applies to this file.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-## 260821-CLIVE Atomic Completion Re-Proof
-
-Series closeout no longer creates or mutates an initial queue state. It re-proves the atomic master
-is complete and every atomic leaf is landed from canonical task/contract evidence, then repeats
-that proof under the landing-only integration authority lock immediately before protected
-publication. Door candidate/sprint identities no longer participate in the landed-leaf proof — that
-comparison was deleted with the contract field by the closeout-door cut (commit `fad9808e`).
-Scheduling projection absence is irrelevant to atomic completion truth.
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Unified series memory capture on the actual memory ref; removed exact-mapping and fixed-point readers, ledger output cells, and the ledger-only history exemption. Preserved canonical completion, leaf-chain origin/spine proof, expected checkpoint capture, and pause/finalization distinctions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of
+  18 claim(s) whose anchor no longer sat in its cited range and normalised 20 further range(s) in
+  this card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 curator (uncommitted change set on `ar/260913-lca-l11-ar`,
+  base `4214d7a1`): recorded the deletion of this route's own ledger-row census.
+  `atomic_series_ledger_prefix`, `_reconciled_ledger_prefix` and `_is_reconciliation_row` are gone
+  with their only consumer, `LandingAdmission.expected_series_ledger_prefix`, because the
+  integration-side check that a landing preserves the complete source ledger history was removed by
+  the developer's 2026-09-14T08:15+02:00 ruling: it protected the tracked `memory.md`, which is
+  derived state. Corrected the two body claims the deletion falsifies — the paragraph that said
+  `_exact_atomic_landing_chain` feeds `atomic_series_ledger_prefix`, and the "The master's own rows"
+  section that described all three functions as live — and corrected the invariant that said a
+  reconciliation row is proved from the landed table. Stated the boundary a future reader needs:
+  `_require_series_ledger_projection` (was cited at `914-930`, now **841-857**) still requires `is_fixed_point` and still
+  refuses a dropped, reordered or replaced source row **on the reconciled-pair recording path**,
+  which is not the landing check that was removed; it must not be "finished off" on the strength of
+  the landing change, and the landing rule must not be back-ported here. Repointed every reference
+  range in this card after the module shrank by 73 lines. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: corrected this card's L36 sentence that "no worktree tool
+  performs it". The stop now exists as its own public verb (`worktree_pause`, registered by the
+  working-half registrar), so the card states the L36 state as history and names the two separate
+  registered descriptions that now point at each other. The checkpoint's own publication account is
+  unchanged. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T17:38+02:00 -- 260831-LOCR-L36 curator reconciliation against the changed code
+  candidate. Recorded that the atomic completion proof no longer anchors the leaf chain at
+  `series.code_base_commit`/`series.memory_base_commit` (which `worktree_sync` advances): the order
+  now comes from the leaves' own landed ancestry (`_ordered_atomic_landing_chain`,
+  `_leaf_landing_precedes`), the origin is the recorded base exactly only without a sync and one
+  line with the first sync's pre-state once a sync exists (`_require_chain_origin`,
+  `_series_pre_sync_base`, `_require_same_line`, `_require_leaf_starts_on_the_chain`), and one
+  series ref is proved to be the leaf landings joined only by the official positions this contract
+  synced with (`_require_landing_spine_side`, `_require_admitted_step`, `_is_ledger_recording`,
+  `_landing_source_positions`). Recorded the new reconciled-pair path: `atomic_series_ledger_prefix`
+  now includes the master's own proved reconciliation merges, and the series closeout accepts the
+  reconciled tip through `series_memory_closeout` only after proving the master's own chain tip is
+  still mapped and the landed table is the exact projection of its source plus this line's own true
+  rows (`_require_series_ledger_projection`). Corrected the earlier claim that the checkpoint and
+  the final series closeout share one reader: the checkpoint reads the exact mapping through
+  `exact_series_memory_closeout`, the final route may accept the reconciled pair through
+  `series_memory_closeout`. Stated that recording the reconciled pair remains an agent-owned
+  `memory.md` write (the test helper `_record_reconciled_pair`) with **no public tool**, because the
+  developer cancelled the follow-up pass that would have made it public. Recorded that a checkpoint
+  is a partial PUBLICATION, not a pause: it moves both refs onto the super branch under explicit
+  developer approval, while a pause publishes nothing and moves no ref. Re-derived every reference
+  range in this card for the rewritten symbol block. Verification metadata remains closeout-owned;
+  no acceptance claim.
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T08:40+00:00 — 260831-LOCR-L34 reachability repair: recorded that the L30 checkpoint
+  route was unreachable in both directions (a partial master could not reach the closeout-gated
+  route; a complete one was refused) and never proved its real ref move, and what L34 changed —
+  `capture_series_checkpoint_refs`/`SeriesCheckpointRefs` capturing the live code and memory work
+  branch tips and proving their mapping through the same `exact_series_memory_closeout` the final
+  route uses, the now-required and revalidated `expected` argument with its
+  `atomic-series-checkpoint-candidate-moved` refusal, and `require_series_checkpoint_authority` as one
+  definition with two callers. Recorded the closeout gate's extraction into
+  `require_closeout_publication_authority` (leaf-exempt, read by both the preview and the apply) as
+  instance 1 of the preview/apply parity invariant. Re-derived every reference range in this card for
+  the new symbol block. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `publish_series_checkpoint_under_authority`,
+  the missing partial-master verb that keeps every ref-protecting authority while dropping the
+  "master is complete" and "every atomic leaf landed" assumptions; recorded the
+  `atomic-series-checkpoint-master-complete` refusal that stops a checkpoint from downgrading a
+  finished integration, the contract re-read before protected landing, and the invariant that the
+  checkpoint route may not grow a completion proof. Re-derived every reference range in this card
+  (the new function is inserted at L72, shifting all later symbols by ~37 lines). Verification
+  metadata remains closeout-owned; no acceptance claim.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_require_atomic_master_complete` repointed to mcp/src/agents_remember/worktrees/series_closeout.py:309-346. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: removed the door dimension from the landed-leaf proof claim — `_AtomicLandingFacts` and its `door`/`door_sprint`/`door_candidate` comparisons were deleted with `contract.closeout_door`. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,8 +24,9 @@ Computes candidate-local readiness, dependency order, and stable source fingerpr
 
 It combines task completion blockers, door admission reasons, candidate-local activation waits,
 authored dependency ordering, and explicit source-plane digests into one bounded member record. A graph-less
-sprint adds no synthetic contract-census ordering reason; source-pair activation already says
-whether this exact master is selected, paused, or still reconciling.
+sprint adds no synthetic contract-census ordering reason; the addressed contract's own activation
+record already says whether it is vacant, still reconciling, or active — and because activation is
+keyed per series contract, no foreign master's state contributes a waiting reason here.
 
 Candidate topology identity is owned by `tasks.semantic_topology`: this module adapts the shared
 `QueueGraphContext` to `semantic-topology/v2`, translates typed domain refusals without losing status
@@ -99,6 +100,7 @@ readiness exactly, without the queue becoming an intent authority. Part of the l
 `99dc249b`.
 
 ## Update History
+- 2026-09-13T14:36+02:00 — Corrected the member-waiting prose to contract-scoped activation: the addressed contract's own record reports vacant/reconciling/active and no foreign master's state contributes a waiting reason. Content change after the activation re-keying; `lastVerifiedCommitHash` remains closeout-owned.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the member readiness projection now binds the leaf's canonical task-intent identity and reports

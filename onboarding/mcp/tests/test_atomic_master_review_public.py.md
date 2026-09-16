@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_atomic_master_review_public.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:10+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-11T23:05:00+00:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,74 +16,53 @@
 
 ## Purpose
 
-Exercises the registered public task and integration routes for the CCR-R26 master-review boundary.
-It checks public refusal and publication behavior while preserving the distinction between atomic
-child closeout and master-to-parent integration. The current card tracks the composed CQ07
-external-memory ledger-identity fixture plus the R27 review-state callers; earlier V6 composition
-evidence remains historical.
+Pins the removal of the closeout route-review gate at both altitudes through the registered public
+tools. It proves that closeout consults no route-review record -- an atomic child is not deferred
+into one and an organizational leaf is not refused for the lack of one -- and that the real atomic
+leaf-to-master landing still completes while both task documents remain review-free.
 
 ## Code Commentary
 
 ### Logic
 
-The module uses the public MCP registration helpers to construct leaf, direct-series, and master
-scenarios. It proves that atomic child closeout remains deferred through the real leaf-to-master
-landing path, while a direct organizational candidate retains missing, blocked, current, and stale
-leaf-review behavior. The master cases exercise missing-review refusal, candidate stamping, exact
-protected landing, and the lock-time evidence-staleness recheck.
+`_call_registered` drives the real MCP stdio server with the fixture settings file and returns the
+raw `CallToolResult`; `_call` runs it synchronously. `_assert_wire_payload` requires the readable
+text block and `structuredContent` to agree, so a route that renders one shape and returns another
+cannot pass.
 
-The CQ06 successor narrows the optional `closeout_door` values in the blocked and stale direct-door
-branches with explicit `is not None` assertions and reformats three existing response-text
-comprehensions. These are Pyright/Ruff repairs only; no fixture, route, operation, or refusal
-assertion changes.
+`_remove_leaf_review` clears the leaf's `routeReview` record, which is how the test creates
+review-free documents. `_prepare_atomic_leaf_landing` activates the atomic master, commits the child
+candidate, declares the waiting door, starts the real closeout operation and journal, finalizes the
+contract record, and returns the reloaded contract plus the exact candidate commit.
+`_integrate_exact_leaf` starts the production integration operation and then runs
+`integrate_result` with the running operation key and generation, asserting an `integrated` state and
+that the master's protected source branch now holds the candidate commit.
 
-The CQ07 successor adds an external-memory atomic-door fixture. It exercises full and abbreviated
-ledger commit identities, then malformed, missing, non-commit, and ambiguous identities through
-the registered public door. The fixture asserts that valid abbreviated identities are returned as
-their resolved full commit, while invalid identities return `closeout-door-ledger-incompatible`
-and preserve the contract, ledger bytes, and protected source ref. The composed source contains
-these assertions. V6 extends the same fixture with a 10,000-character invalid identity and asserts
-a bounded response carrying the stable refusal cause and explicit truncation marker. These are
-source assertions; this card does not promote a focused run to certification.
-
-The R27 API composition also exercises the shared `begin_review` transition before direct and
-canonical-master route-review publication and checks the returned `reviewState` payload. The
-current source is preparation evidence for the public API and preserves the R26 altitude rule:
-atomic children remain deferred while the aggregate master review is consumed at integration.
-
-The L41 public state payload also records the two default exception fields explicitly:
-`developerApproval` is `None` and `additionalRounds` is `0` before any exhaustion-only direct
-permission. This keeps the public contract aligned with the bounded R28 state without claiming
-developer authentication.
+The single test, `test_closeout_never_gates_on_a_route_review_record_at_either_altitude`, first
+previews closeout for an atomic child with its review removed and asserts the payload carries no
+`route_review` field and that neither the task document nor the contract changed; it then performs
+the real leaf-to-master landing and re-asserts both documents stay review-free. It repeats the
+review-free preview for an organizational leaf. The removal it pins is deliberate: quality is
+checked focused within the leaves and the adversarial review that precedes integration is a process
+step owned by the reviewer role, not a code gate at closeout.
 
 ### Conventions
 
 Public route tests compare the readable and structured response payloads, task-document state,
-contract generation, and protected ref movement inside isolated fixtures. They observe the review
+contract bytes, and protected ref movement inside disposable fixtures. They observe the review
 boundary; they do not authorize a verdict or substitute for the combined master integration run.
-The CQ06 edits retain the same runtime assertions and add no casts or ignores.
-The CQ07 fixture is isolated under disposable repositories and does not authorize a verdict or
-substitute for the combined master integration run.
 
 ### Invariants And Boundaries
 
-- A public atomic child operation defers independent review and can still complete its exact
-  leaf-to-master landing while the child and master documents remain review-free.
-- A direct organizational door refuses missing, blocked, and candidate-stale reviews without
-  moving the protected source ref or replacing the prior generation; a current review publishes.
-- Master integration refuses before publication when its current review is absent or its evidence
-  becomes stale after admission.
-- Optional door narrowing is explicit and local to the blocked/stale assertions; it does not alter
-  the public operation contract.
-- External-memory ledger identities are resolved through Git before door publication: a full or
-  abbreviated commit identity is normalized to the full commit, while missing, ambiguous, and
-  non-commit identities refuse without changing prior contract, ledger, or protected-ref state.
-- An oversized invalid identity keeps the public refusal bounded, retains the resolution cause and
-  `...[truncated]...` marker, and leaves the contract, ledger, and protected source ref unchanged.
-- Public route-review publication begins the bounded review round and exposes its pending/finding
-  state without allowing callers to supply plane-owned candidate identities.
-- A fresh public review state exposes `developerApproval: None` and `additionalRounds: 0`; those
-  fields remain recorded evidence and do not authorize extra rounds by themselves.
+- Closeout consults no route-review record at either altitude: an atomic child is not deferred into
+  one and an organizational leaf is not refused for the lack of one.
+- The route-review *record* survives as task shape through `task_doc.record_route_review`; only the
+  closeout gate is gone. Pinning the removal here keeps the gate from returning unnoticed.
+- A review-free closeout preview mutates neither the task document nor the contract and moves no
+  ref.
+- The real atomic leaf-to-master landing still integrates: the lifecycle operation is started and
+  `integrate_result` moves the master's protected source branch while both task documents remain
+  review-free.
 - The test owns no mutation outside its isolated fixtures.
 
 ### Todos
@@ -96,67 +75,47 @@ No relevant external documentation was configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external documentation source was configured for this test module. | n/a | n/a |
+| No external documentation source was configured for this test module. | N/A | N/A |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public helper and route registration coverage. | `_call`; `_assert_wire_payload` | mcp/tests/test_atomic_master_review_public.py:81-99 |
-| CQ07 external-memory identity fixture, long-identity bound, and public door assertions. | `_ambiguous_memory_commit_prefix`; `_external_atomic_ledger_door_case`; `_assert_external_ledger_identity_cases` | mcp/tests/test_atomic_master_review_public.py:336-505 |
-| Atomic child deferral, real leaf landing, organizational leaf review gate, and CQ07 fixture invocation. | `test_atomic_leaf_public_closeout_defers_review_and_organizational_leaf_keeps_gate` | mcp/tests/test_atomic_master_review_public.py:669-777 |
-| Direct organizational missing, current, blocked, and stale review behavior. | `test_registered_direct_organizational_door_keeps_leaf_review_gate`; `_exercise_blocked_direct_review` | mcp/tests/test_atomic_master_review_public.py:258-334; mcp/tests/test_atomic_master_review_public.py:778-859 |
-| CQ06 static narrowing and formatter-only successor edits. | "closeout-door-route-review-blocked"; "closeout-door-ledger-incompatible\" in missing_text[0]"; "closeout-door-route-review-stale" | mcp/tests/test_atomic_master_review_public.py:296-301; mcp/tests/test_atomic_master_review_public.py:460-465; mcp/tests/test_atomic_master_review_public.py:851-856 |
-| Missing master review refuses before protected ref movement. | `test_atomic_master_public_integration_refuses_without_review_before_ref_move` | mcp/tests/test_atomic_master_review_public.py:860-946 |
-| Master review stamps the branch candidate and allows exact landing. | `test_public_master_review_stamps_branch_candidate_and_allows_exact_protected_landing` | mcp/tests/test_atomic_master_review_public.py:947-1023 |
-| Evidence mutation after admission makes the master review stale. | `test_public_master_integration_refuses_after_admission_evidence_changes` | mcp/tests/test_atomic_master_review_public.py:1024-1129 |
-| Production refusal projection. | `master_route_review_refusal` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:53-95 |
-| R27 direct and canonical-master review-state publication paths. | `test_registered_direct_organizational_door_keeps_leaf_review_gate`; `test_public_master_review_stamps_branch_candidate_and_allows_exact_protected_landing`; `test_public_master_integration_refuses_after_admission_evidence_changes` | mcp/tests/test_atomic_master_review_public.py:778-859; mcp/tests/test_atomic_master_review_public.py:947-1023; mcp/tests/test_atomic_master_review_public.py:1024-1129 |
-| L41 public default exception fields remain explicit before any exhaustion-only permission. | `test_registered_direct_organizational_door_keeps_leaf_review_gate` | mcp/tests/test_atomic_master_review_public.py:778-818 |
+| Registered stdio client and the readable/structured wire-payload agreement assertion. | `_call_registered`; `_call`; `_assert_wire_payload` | mcp/tests/test_atomic_master_review_public.py:49-90 |
+| Review-free fixture setup: the leaf review record is cleared. | `_remove_leaf_review` | mcp/tests/test_atomic_master_review_public.py:93-97 |
+| The real closeout journal for the atomic child is written and finalized for the landing proof. | `_prepare_atomic_leaf_landing` | mcp/tests/test_atomic_master_review_public.py:130-167 |
+| Production leaf landing runs under the started integration operation and moves the protected branch. | `_integrate_exact_leaf` | mcp/tests/test_atomic_master_review_public.py:100-127 |
+| The route-review gate is absent at both altitudes while the exact landing still completes. | `test_closeout_never_gates_on_a_route_review_record_at_either_altitude` | mcp/tests/test_atomic_master_review_public.py:170-258 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo implementation reference is required for this preparation test card. The
 coordination requirement is tracked in the task report.
 
-## Historical V3 Binding
+## Source Binding
 
-The predecessor v3 public-test source was cumulative tree
-`1ace1845d61c29f47ece5b4f2b93c86f7203021d` with file SHA-256
-`fcd8c9e8797ff5d9de994d0b18b71932ba950c028160edea57e1cc9703a7e59c`. That identity is retained
-as historical composition evidence and is not the active successor binding below.
-
-## Historical V6 Candidate Binding
-
-This card is bound to the frozen V6 candidate tree `637152923330a4f7ac67a819dc124211497a7998`;
-the current CQ07 successor file is 41,407 bytes and 1,047 lines with SHA-256
-`bf4de116fbbfd4cb58b2cc83b31d948cc67d8b2e6879ac2c367dfe14721647a3`. The immediate V5 bytes
-`06295ed0ea74686eec95b55c10e3ec495fcc656d002e4f52215c253b1030ceab` (1,032 lines) and CQ06
-predecessor bytes `7415b51de6e181276fe21e02108399a29f6aa8ad72a4d03fdbda94220f28fa7a` (871 lines)
-remain historical evidence. V6 composition is recorded in the V6 candidate manifest; no final
-test pass or landed commit identity is asserted here. Verification metadata remains blank until
-governed closeout stamps a landed code commit.
-
-## Current R27 API Candidate Binding
-
-The source checkout is based at code commit `8133b6a9de2f787cb6c4527621a70123357aff31`; the
-frozen R27 API composition of this file is 44,107 bytes and 1,129 lines with SHA-256
-`8b5da44fc27b3fdc6af3f8d8f6071687f4ca4d2f51a6f6439374d2195d2ae4f3`. It includes the R26 public
-route tests plus the bounded `begin_review`/`record_route_review` state assertions. No focused test
-pass, landed commit identity, independent review, or acceptance is asserted here; verification
-metadata remains blank until governed closeout stamps a genuine code commit.
-
-## Current R28 L41 Candidate Binding
-
-The frozen L41 source tree is `2d2e1ae39b2046b5663aca2cf82f27779dafe0c2`. This public-test source is
-44,173 bytes and 1,131 lines with SHA-256
-`00ebadf8ddd33be0ecba0fefb64d6d5a415bc64a8ecde50a5361e3682d7fab9f`. Relative to the preserved
-R27 binding, the public direct-organizational review-state assertion includes the two default
-exception fields (`developerApproval: None`, `additionalRounds: 0`); all R26/R27 route, ledger,
-atomic-child, and master-integration proofs remain in the same source. No focused pass, landed
-commit identity, independent review, or acceptance is asserted.
+The card was created for the CCR-R26 public route-boundary composition and later carried the V3, V6,
+CQ06, CQ07, R27 and L41 candidate bindings, whose exact byte identities are superseded historical
+composition evidence and are not re-asserted here. The 1,129-line composition is gone because its
+whole named test set was removed deliberately, and each removal is provable: `b06b3a27` (2026-09-10,
+"Remove the master route-review gate that integration never consulted") deleted
+`test_atomic_master_public_integration_refuses_without_review_before_ref_move`,
+`test_public_master_review_stamps_branch_candidate_and_allows_exact_protected_landing` and
+`test_public_master_integration_refuses_after_admission_evidence_changes` under an explicit developer
+ruling that quality is checked focused within the leaves; `6982c6a7` (2026-09-10, the
+door-operation-journal cut) deleted `test_registered_direct_organizational_door_keeps_leaf_review_gate`;
+and `2ec5d244` (2026-09-11) deleted what the remaining failures exposed as dead, including
+`test_atomic_leaf_public_closeout_defers_review_and_organizational_leaf_keeps_gate`,
+`_ambiguous_memory_commit_prefix`, `_external_atomic_ledger_door_case` and `_exercise_blocked_direct_review`.
+`master_route_review_refusal` was deleted by the same `b06b3a27` ruling; its role now lives in
+`mcp/src/agents_remember/worktrees/route_review.py` as `route_review_refusal_projection` and
+`route_review_refusal_fields`. The current source reduces the module to the closeout-gate-removal
+proof described above; no focused test pass, landed commit identity, independent review, or
+acceptance is asserted, and commit-owned verification metadata remains closeout-owned.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator content reconciliation: the cited 1,129-line composition is gone because its named test set was deleted deliberately — `b06b3a27` removed the master route-review gate and its tests, `6982c6a7` cut the door-operation-journal plane, and `2ec5d244` deleted what the remaining failures exposed as dead (all provable with `git log -S '<symbol>'`). The module is now the 258-line closeout route-review gate-removal proof, so the R26/V3/V6/CQ06/CQ07/R27/L41 review-state and ledger-identity claims were replaced by the helpers and the single test that actually exist, the superseded byte-identity bindings were compressed into one source-binding note, and the removal provenance was recorded as durable negative knowledge. The retained route-boundary contract is unchanged: the review gate stays absent at both altitudes.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_call`; `_assert_wire_payload` repointed to mcp/tests/test_atomic_master_review_public.py:72-77; mcp/tests/test_atomic_master_review_public.py:80-90. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `00ebadf8ddd33be0ecba0fefb64d6d5a415bc64a8ecde50a5361e3682d7fab9f`, `44173` bytes, `1131` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
 

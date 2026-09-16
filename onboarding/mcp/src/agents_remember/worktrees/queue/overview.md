@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,15 +23,20 @@ claimed lifecycle after admission.
 
 ## Hot Path Summary
 
+`closeout_preview.py` describes only code and memory-content writes plus informational cache refresh. `closeout_recovery.py` proves the same two outputs from Git and journal evidence; it never reconstructs ledger commit authority.
+
 Canonical changes invalidate affected sprint projections to invalid-empty. A complete rebuild is
-computed off-side from current task topology, canonical waiting doors, and source-pair activation;
+computed off-side from current task topology, canonical waiting doors, and per-contract activation;
 publication occurs only after an exact-current source recheck. `closeout_queue.py` exposes status,
 rebuild, and the short first-ready claim-admission fence. Projection member and graph helpers own
 only deterministic readiness and order.
 
 ## Conventions
 
-- Projection errors and source problems are bounded and typed.
+- Projection errors and source problems are bounded and typed. A capacity refusal is `invalid`, not
+  `unreadable`: the source was read and is past its bound, and the codes that say so are declared
+  once with that classification in `closeout_queue_errors.py` so a raiser and the projection's
+  classifier cannot drift apart.
 - The projection is evictable; canonical task, door, register, and journal sources are not copied
   into permanent queue authority.
 
@@ -40,23 +46,26 @@ only deterministic readiness and order.
 - Task authoring never waits on or seeks permission from projection state.
 - Claim, certification, commit, blocker, integration, and lifecycle evidence never live here.
 - Graph-less atomic-sequential topology is valid; a graph, when present, contributes bounded order.
-- Activation is read-only input: the selected master can be active or reconciling, and every other
-  live series projects as paused. The queue cannot select, release, or repair that authority.
+- Activation is read-only input: each live series is read from its own contract-keyed record, and
+  only a reconciling record makes that series wait. Vacant and active are never waits, another
+  master's state is never this contract's reason to wait, and the queue cannot select, release, or
+  repair that authority.
 
-## IAS Closeout-Recovery Ledger Boundary
+## Closeout Recovery Uses Git Output Evidence
 
-`closeout_recovery.py` remains in this transitional package location but owns journal recovery,
-not queue authority. It reuses an exact current code/memory edge idempotently and prepends a new
-ledger row when unchanged code acquires a later memory state. Older same-code rows remain audit
-history; malformed bytes, wrong heads, and unreachable content still fail closed.
+`closeout_recovery.py` remains in this package location but owns journal recovery, not queue authority. Recovery reads exact current code/memory refs, compares them with accepted journal commits, proves substantive cleanliness and source ancestry, and reuses already-created outputs. A missing, unreadable, malformed or changed `memory.md` is irrelevant to those Git proofs. Refresh of the consumer cache is best effort after the actual output is proven.
 
-## IAS Source-Pair Activation Projection
+## IAS Per-Contract Activation Projection
 
-Multiple live atomic-series contracts for one protected source pair are normal. The queue observes
-the single disposable activation snapshot and derives only a waiting reason: unselected,
-reconciling, or paused by another selected master. A malformed snapshot becomes a typed projection
-source problem with an explicit selecting repair; rebuild does not infer a winner from prior queue
-rows, task ordering, a contract census, or ambient Git.
+Multiple live atomic-series contracts for one protected source pair are normal, and each contract
+owns its own activation record keyed by `contract_fingerprint` (the digest of its resolved contract
+path). The closeout projection is a read-only observer of those records: it derives only
+`atomic-series-reconciling` as a waiting reason, treats vacant and active as normal rather than
+waits, and never treats another master's state as this contract's reason to wait. A snapshot that is
+not this exact contract, or is otherwise malformed, becomes a typed projection source problem with an
+explicit selecting repair; rebuild does not infer a winner from prior queue rows, task ordering, a
+contract census, or ambient Git. The projection never owns an activation transition — it cannot
+publish, release, or archive a record.
 
 This does not subordinate task authoring to selection. Task mutation publishes canonical truth; classified semantic/readiness changes
 invalidate affected projections to empty, and causes a rebuild from that new truth. Selection
@@ -129,13 +138,38 @@ The transitional `closeout_staged_quality.py` helper separates `prepare_staged_c
 
 Queue/projection helpers describe and recover transaction state; they do not own normal quality or
 certification acceptance. Closeout preview presents candidate/source checks, code commit, raw memory
-metadata/entity/index refresh, memory commit, ledger mapping, and finalization. Recovery proves
+metadata/entity/index refresh, one attributed memory-content commit when content changed, cache refresh, and finalization. Recovery proves
 already-created outputs and uses the staged-index commit helper without repository hooks. Integration
 publication moves the prepared pair under ref safety and creates no merge commit. Strict code or
 memory checks, selected certification, curator coherence, independent review, and full suites are
 explicit developer actions rather than automatic queue steps.
 
+## Resolved Masters Stop Blocking Their Successors
+
+Queue scheduling and projection now resolve masters on *terminal state* rather than completion.
+`closeout_queue_graph.py::graph_context` and `incomplete_predecessor_map` build their blocking set
+with `tasks/readiness.py::master_is_terminal`, so a predecessor master that was `abandoned` resolves
+exactly like a `Completed` one and stops blocking its successors. The reason is stated in the source
+and is a scheduling invariant, not a courtesy: an abandoned master is never going to produce the work
+its dependents wait on, so leaving them blocked forever would make abandonment worse than doing
+nothing. `closeout_projection.py::capture_projection_source` uses the same judgement to classify a
+sprint source as `terminal`. Master-granular resolution is unchanged; only the terminal set widened.
+
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Recovery proves the accepted code and memory outputs without a cache lookup. | L144-L160 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected preview and recovery authority; cache failures no longer refuse transactions. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+- 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the route's conventions now state that a capacity refusal is an `invalid` source rather than an unreadable one, and that the refusal codes and that classification are one declaration in `closeout_queue_errors.py`. `closeout_queue_graph.py` raises its master- and edge-capacity refusals through those constants and `closeout_projection._problem` classifies by membership of `CAPACITY_REFUSAL_CODES`, so a sprint past its graph bound is no longer reported as a source that could not be read; no refusal code was renamed and the other classifiers are unchanged. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:19+02:00 — Per-contract activation curation on this route: the queue now reads each live series' own contract-keyed activation record, so the invariant, hot-path and projection sections state that `atomic-series-reconciling` is the only waiting reason, vacant/active are never waits, a foreign master is never this contract's blocker, and the closeout projection remains a read-only observer that owns no transition. Retitled the section from source-pair to per-contract activation. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded that queue graph resolution and projection classification consume `master_is_terminal`, so an abandoned predecessor stops blocking its successors and a sprint with an abandoned master classifies as terminal. Content change, not a range repoint.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/queue`, so no route/member/prose/invariant change is required. route-member-count=14; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.

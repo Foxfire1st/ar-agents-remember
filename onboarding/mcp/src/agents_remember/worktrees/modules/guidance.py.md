@@ -1,261 +1,138 @@
 # mcp/src/agents_remember/worktrees/modules/guidance.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-11T14:56+02:00|
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
-| governingOverview      | `overview.md`                              |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
+| governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
+
+## Governing Overview
+
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Builds lifecycle status payloads and typed next-operation guidance for worktree
-tools. Since 260731-EFA-L4 it is also **where the phase and next-move vocabularies are
-declared** — `models.worktree` imports them from here rather than keeping a second copy.
+Build lifecycle status payloads and typed next-operation guidance from the worktree contract and observed Git state.
 
 ## Code Commentary
 
-### 260731-EFA-L4: this module owns the guidance vocabulary
+### Logic
 
-Five `Literal` aliases and four `TypedDict`s now sit above the state machine that produces them.
+`lifecycle_guidance` preserves three ordered groups: reclaimed/abandoned contracts first, attempted integration next, then pre-integration work. Dirty worktree diagnostics do not manufacture a commit-approval gate. A completed integration whose accepted outputs are carried home routes to `lifecycle_finalize_task`; a checkpointed series remains `worktree-started` with `continue_work`, because its master is still open.
 
-| Alias | Members |
-| --- | --- |
-| `WorktreePhase` | `worktree-started`, `closeout-pending`, `integration-pending`, `integration-blocked`, `carryover-pending`, `cleanup-pending`, `cleanup-completed`, `abandoned` |
-| `NextOperation` | `continue_work`, `closeout`, `request_integration_decision`, `developer_decision`, `request_carryover_decision`, `retry_cleanup`, `done` |
-| `NextTool` | `worktree_status`, `worktree_closeout_apply`, `worktree_integrate`, `memory_carryover_apply`, `worktree_cleanup` |
-| `RecoveryOperation` | `request_commit_approval`, `choose_memory_recovery`, `choose_provider_setup_recovery`, `choose_stale_base_recovery`, `choose_memory_sync_recovery` |
-| `RecoveryTool` | `worktree_start`, `worktree_sync`, `worktree_closeout_apply` |
+`carryover_done` proves that the recorded code and memory outputs are ancestors of their named source tips. It uses integrated output cells when populated and otherwise the recorded closeout outputs. Missing repositories, output identities, source refs, or ancestry return false. Internal/disabled memory passes without an external-memory milestone. The timestamp is read from the accepted memory commit, not a cache row. Missing or malformed `memory.md` cannot change this completion proof.
 
-**Why here.** This module is the state machine that emits every one of these values, and
-`models.worktree.WorktreeSummary` imports `WorktreePhase` / `NextOperation` / `NextTool` for the
-response boundary instead of restating them. The second hand-written copy is what drifted:
-`carryover-pending`, `abandoned`, `request_carryover_decision` and `memory_carryover_apply` were all
-emitted below and all rejected by the packet's model.
+`NextGuidance`, `LifecycleGuidance`, `WorktreeStatusFacts`, and `WorktreeStatusPayload` retain typed response boundaries. `WorktreePhase`, `NextOperation`, and `NextTool` are imported from `models.worktree`; only the recovery vocabulary is declared locally. The separate `recovery_guidance` builder serves blocked/gated flexible responses without widening lifecycle phases.
 
-**Why `recovery_guidance` is a separate function.** `next_guidance(operation: NextOperation, *,
-tool: NextTool | None = None, args=None, required_args=None) -> NextGuidance` is now narrowed to the
-phase machine's vocabulary. The *other* users of the same next-move key shape — the closeout
-preview's commit-approval gate and the four blocked-start / blocked-sync recovery payloads — get
-`recovery_guidance(operation: RecoveryOperation, *, tool: RecoveryTool, args, required_args=None)
--> dict[str, object]` instead. It emits exactly the same keys in the same order, so **nothing on the
-wire changed**; the split is in the type. Every one of those callers hands its result to a
-`FlexibleToolResponse` and none reaches `WorktreeSummary`, whose only producer is
-`lifecycle_guidance` via `application.worktree_status` — so widening `next_guidance` to fit them would have
-silently widened `WorktreeSummary.nextOperation`, putting "requires developer approval" and "blocked
-on a stale base" back into the set the context packet's `nextOperation` claims to be. `tool` and
-`args` are *required* on `recovery_guidance` (they are optional on `next_guidance`) because a block
-that cannot say how to recover is not worth emitting.
+Status retains `ledger_path` as consumer metadata, exposes contract/enclosure identity, providers, source lineage, local base freshness, and optional landing observations. `unknown_contract_cells` remains an explicit degraded-read diagnostic. Interactive status calls the landing observation owner; projected status accepts an already-observed snapshot.
 
-The four payload types:
+### Conventions
 
-- **`NextGuidance`** — `nextOperation` required; `nextTool` / `nextArgs` / `nextRequiredArgs`
-  `NotRequired`. `nextTool` is deliberately *absent*, not blank, when the operation needs no call
-  (`done`); the wire model declares it optional for exactly that reason and the packet projection
-  reads it with `.get`.
-- **`LifecycleGuidance`** — everything `lifecycle_guidance` returns: `phase`, `summary`, the
-  next-move keys, plus `NotRequired` `carryoverDoneAt` (only the `cleanup-pending` phase carries it).
-- **`WorktreeStatusFacts`** — the local, contract-derived half, snake_case because it is the
-  tool-response shape. Carries `NotRequired` `unknown_contract_cells`, `providers`, `freshness`,
-  `landing`.
-- **`WorktreeStatusPayload(WorktreeStatusFacts, LifecycleGuidance)`** — a full `worktree_status`
-  payload: the facts plus the guidance.
+Next-move keys are omitted when they have no value. Guidance keys are merged after factual status keys. Local base freshness is separate from upstream fetch and remote landing observation.
 
-`lifecycle_guidance` is now typed `-> LifecycleGuidance`, and the three phase helpers return
-`LifecycleGuidance | None` / `LifecycleGuidance` (not `dict | None` / `dict`).
-`status_payload` and `projected_status_payload` return `WorktreeStatusPayload`.
+### Invariants And Boundaries
 
-**`unknown_contract_cells`.** `_status_payload_with_landing` adds
-`facts["unknown_contract_cells"] = list(contract.unknown_cells)` when the contract carried a cell
-outside its vocabulary that `worktree_contract._vocabulary_cell` substituted for. It is the one
-place a degraded read becomes visible to whoever called a worktree tool, and it says so explicitly:
-the phase reported beside it was computed from the substituted values. Absent is the normal shape,
-so the key is an exception report, not a flag.
+- Lifecycle position, rather than raw dirtiness, selects the next operation.
+- Code and memory completion require real Git reachability; cached mappings carry no completion authority.
+- Finalization owns reclamation; a checkpoint does not close the master or make cleanup pending.
+- Lifecycle wire vocabulary has one model owner; recovery guidance keeps its separate response vocabulary.
+- Consumer ledger paths and raw status diagnostics remain available without becoming admission facts.
 
-Finally, the payload is assembled as `return {**facts, **guidance}` rather than
-`payload.update(guidance)`, so the checker sees one payload of a declared type. The guidance keys
-still come last and the emitted key order is unchanged.
+### Todos
 
-The module converts a `WorktreeContract` into stable MCP-facing lifecycle phases
-keyed off its **lifecycle position** (disposal/integration/closeout/approval
-fields) — integration pending, carryover pending, cleanup pending, done, and so
-on — and renders contract dataclasses into JSON-compatible dictionaries.
-
-**Slice 09 (visibility fix): `lifecycle_guidance` no longer infers a commit-approval
-gate from `git status`.** The old code carried a dirty-tree branch (worktree dirty
-→ phase `commit-approval-pending`) that fabricated a gate the working tree has no
-authority to assert; it has been removed (with its unused `contract_has_worktree_changes`
-import — `worktree_dirty` stays, and so does `run_git`, though since 260731-EFA-L3 it is
-imported from `kernel.git_command` rather than `modules.git`). A dirty worktree now falls through to its
-honest lifecycle-position phase (e.g. `closeout_status == "completed"` →
-`integration-pending`). `commit-approval-pending` is owned by the closeout preview
-(the real gate moment, set in `closeout.py`) and — once the slice-6 gate plane is
-adopted — by a raised `closeout-approval` gate surfaced via `GateNode`; it is never
-read off the tree. (`closeout-approval` IS the commit gate: closeout is the single
-commit-of-record for code + memory + ledger, so there is no separate
-`commit-approval`.)
-
-**Three phase groups (260731-EFA-L2).** `lifecycle_guidance` is now a three-line `or` chain over
-one helper per group, and **the order is the contract** — read back to front: a reclaimed worktree
-is done, an integrated one is waiting on carryover/cleanup, and everything else is still working
-toward closeout.
-
-- `_reclaimed_phase(contract) -> LifecycleGuidance | None` — the terminal phases, where the
-  worktrees are gone: `cleanup-completed` and `abandoned`.
-- `_post_integration_phase(contract) -> LifecycleGuidance | None` — integration has been attempted:
-  `integration-blocked`, or it landed and `carryover-pending` / `cleanup-pending` follow.
-- `_pre_integration_phase(contract) -> LifecycleGuidance` — still working: `integration-pending`,
-  closeout-approved, closeout-pending, `worktree-started`. This one always returns a phase, which
-  is why it terminates the chain.
-
-The first two return `None` to mean "not my group", so an earlier group always wins — the same
-precedence the old top-to-bottom if-chain had. `lifecycle_guidance` checks the disposal states
-**first**: `cleanup == "completed"`
-returns the `cleanup-completed` phase, and (slice 05l P1) `cleanup == "abandoned"`
-returns a dedicated `abandoned` phase (`"Worktree abandoned — provider stack reclaimed;
-no further action."`, `nextOperation: "done"`). Before this branch an abandoned worktree
-fell through to the `worktree-started` default, so the dashboard rendered a torn-down /
-deleted worktree as fully active; the explicit phase lets the observer surface it (the
-reducer's `_GUIDANCE_PHASE` maps it through) and the teardown render (05k).
-
-`carryover_done(contract) -> (done, carryoverDoneAt)` (slice 05m) is the new public
-honesty signal for "has the parked memory been carried into official memory?". The
-existing `memory_carryover_apply` is contract-decoupled and leaves no contract stamp, so
-the truthful source is the OFFICIAL ledger itself: a successful carry prepends a row to
-the official `memory.md` (`contract.memory_repo_path / "memory.md"`) mapping the landed
-code commit → the carried memory commit. `carryover_done` reads it with `load_ledger`
-and looks up the landed commit (`integrated_code_commit`, else `code_commit`) via
-`find_mapping`; the carried memory commit's `%cI` (`run_git ... show -s --format=%cI`) is
-the returned milestone time. It is **external-only**: `internal`/`disabled` memory has
-nothing to carry, so it returns `(True, "")` — the carryover route + cleanup guard are
-no-ops there. A `LedgerError`, an absent ledger, or a missing row returns `(False, "")`.
-
-Slice 05m also splits the `integration_status == "completed"` branch on `carryover_done`,
-making carryover a distinct lifecycle phase **between integration and cleanup**:
-
-- **not carried** → phase `carryover-pending` (`"Integration completed; carry the parked
-  memory home before cleanup."`). The next operation routes the EXISTING
-  `memory_carryover_apply` (its own plan→apply gate stays intact) with args derived from
-  the contract — `repo_id`, `source_memory` (the memory worktree posix path),
-  `official_code_ref` (`integrated_code_commit` or `code_commit`) — and
-  `required_args=["intent_note"]`. Carryover must run while the worktree (its parked
-  memory branch) still exists; cleanup later hard-guards on this same signal.
-- **carried** → phase `cleanup-pending`, with the guidance dict now carrying
-  `carryoverDoneAt` (the milestone time from `carryover_done`, surfaced onto
-  `EngineProcessNode.carryoverDoneAt` for the dashboard; 5k renders the seam).
-
-Since reclamation became an automatic post-integration step, this phase is what a caller sees when
-that step did not finish. Its summary reads "Carryover completed, but the automatic
-post-integration cleanup did not complete. Read the integration result's cleanup report, clear the
-refusal, then retry worktree_cleanup." and its next operation is `retry_cleanup` with
-`worktree_cleanup` and the contract's next args — no longer a `request_cleanup_decision` dry-run
-preview. `request_cleanup_decision` no longer exists as a `NextOperation` member, and the
-integration projection carries no `cleanup_question`.
-
-New imports back this: `LedgerError`/`find_mapping`/`load_ledger` from
-`kernel.memory_ledger`, and `run_git` — since 260731-EFA-L3 from
-`agents_remember.kernel.git_command`, the package's single git runner, not from
-`modules.git` (which no longer defines one). The one call site is unchanged in shape —
-`run_git(contract.memory_repo_path, ["show", "-s", "--format=%cI", row.memory_commit])` — but
-it now runs with the `GIT_DIR`-family selectors stripped from the environment and under
-`run_git`'s default local bound `GIT_LOCAL_TIMEOUT_SECONDS = 300` (it passes no `timeout=`).
-`carryover_done`'s `try` covers only `load_ledger`/`find_mapping` (`except LedgerError`) and the
-`run_git` call sits outside it, so a git call that outran the bound would raise
-`subprocess.TimeoutExpired` out of `carryover_done` and its `_post_integration_phase` caller;
-a `show -s` of a known commit is a constant-time read, so tripping 300s means git is blocked,
-not busy.
-
-`status_payload` includes a `providers` block from
-`provider_async.provider_setup_status(contract)` when present: the
-`worktree_status` poll surface for background provider setup — running with
-currentPhase/heartbeat/seedFallback, stale on a dead heartbeat, terminal
-ok / ready-with-failed-phases / failed with `retryArgs` (GitHub #53).
-
-`status_payload` also includes a `freshness` block from `base_freshness`
-(issue #54): a deliberately fetch-free comparison of the contract's recorded
-base commits against the current LOCAL source branch tips
-(`baseBehindSource` counts per side). Local source branches move mid-task when
-a parallel cycle lands (PR merge ff's code main, carryover advances memory
-main); when behind, the block carries a `syncHint` recommending
-`worktree_sync` with a dry-run preview. No network in this path — it must stay
-safe for the provider-setup polling loop; the fetching freshness checks live in
-`context_packet` (`include_freshness`), the start preflight, and
-`worktree_sync` itself.
-
-`status_payload` also includes a `landing` block (slice 5h) from
-`landing.landing_refs(contract)` once the worktree reaches the landing window
-(closeout-completed onward): the successful-landing arc's remote/PR refs
-(`origin/<feat>`, `origin/mem-main`, the PR), observed best-effort — `git ls-remote`
-for branch tips and a best-effort `gh` for PR state, each timeout-bounded with
-`stdin=DEVNULL` (the #49 stdio-pipe guard). Honest `factState` (`observed` when a
-probe ran, else `planned`/`missing` — never faked); additive and absent before the
-landing window, so the build-phase poll stays network-free like `freshness`.
-
-`status_payload` also emits `lifecycle_id` (slice 2c) — the contract's
-observable-lifecycle enclosure anchor, surfaced snake_case (like its sibling
-keys) so `worktree_attach` can resume it; `""` for contracts written before 2c.
-
-### 260712-TRH-L7 projected versus interactive landing
-
-`status_payload` remains the interactive, fresh-observation surface. `projected_status_payload` accepts a pre-observed landing snapshot for recurring projection, so guidance preserves landing semantics without synchronously invoking remote commands.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this memory repo.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Context packet worktree status consumes the facade-exported status payload. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-152 |
-| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:468-470 |
-| `carryover_done` reads the exact task-derived memory source ref, requires the row's memory commit to equal the recorded integrated content, and proves that content is reachable from the ledger tip. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:191-222 |
-| Cleanup hard-guards on `carryover_done` before deleting the parked memory branch. | "carryover_done(contract)" | mcp/src/agents_remember/worktrees/modules/cleanup.py:672-672 |
-| Guidance imports the `WorktreePhase` / `NextOperation` / `NextTool` aliases from the wire model in one grouped import rather than restating them. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
-| The six persisted contract vocabularies (declared in models/worktree.py / kernel) imported for `WorktreeStatusFacts`. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/worktree_contract.py:21-21 |
-| `unknown_cells` is the source of `unknown_contract_cells`. | `unknown_cells` | mcp/src/agents_remember/worktrees/worktree_contract.py:287-287 |
-| Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:220-220; mcp/src/agents_remember/worktrees/modules/start.py:274-274; mcp/src/agents_remember/worktrees/modules/start.py:414-414 |
-| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:245-245 |
-| The fifth recovery action, `choose_memory_sync_recovery`, is emitted by `memory_choice_required`. | `memory_choice_required` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:28-50 |
+| Typed payloads and separate lifecycle/recovery builders. | L56-L67; L70-L80; L83-L121; L124-L125; L128-L142; L145-L168 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Carryover completion is a real two-repository ancestry proof. | L189-L212 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Phase precedence, finalization guidance, and the still-working checkpoint branch. | L215-L225; L228-L242; L245-L328; L331-L375 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Freshness, consumer paths, identity fields, and interactive/projected observation. | L378-L428; L431-L483; L486-L490; L493-L495 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| The canonical lifecycle wire vocabularies. | L40-L49; L50-L58; L59-L74 | [mcp/src/agents_remember/models/worktree.py](mcp/src/agents_remember/models/worktree.py) |
+| External completion remains valid with damaged caches and rejects unlanded commits. | L84-L119 | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
 
-## Invariants And Boundaries
+## Cross-Repo References
 
-- **One declaration per vocabulary.** `WorktreePhase`, `NextOperation` and `NextTool` are declared
-  here and imported by `models.worktree`; do not restate a member at the response boundary. A
-  second copy is what the packet's 260731-EFA-L4 failures were made of.
-- **A phase payload uses `next_guidance`; a block or gate uses `recovery_guidance`.** Do not widen
-  `NextOperation`/`NextTool` to admit a recovery caller — that vocabulary is what
-  `WorktreeSummary.nextOperation` publishes, and a `worktree_status` response can never contain
-  `choose_stale_base_recovery`.
-- A next-move key with nothing to say is omitted, never defaulted. `next_guidance` writes `nextTool`
-  / `nextArgs` / `nextRequiredArgs` only when there is a value, and the packet projection preserves
-  the absence.
-- `unknown_contract_cells` is additive and normally absent; its presence means the phase beside it
-  was computed from substituted values.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-## Series-Contract Notes
-
-Guidance/status payloads now expose contract `kind`, `leaf_id`, `enclosure_path`, and optional `parent_contract_path`, making the leaf/root split visible to dashboard and tool callers.
-
-## L23 Source-Lineage Guidance
-
-Status computes ancestry from the loaded enclosure contract and publishes it as
-`source_lineage`. A blocked projection advertises `sync_source_lineage`, keeping
-operator guidance and Engine Room evidence aligned with the same structural
-gate rather than inventing recovery in the UI.
-
-## 260815-DAG-L4 Integration-Authority Impact
-
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
-
-## 260821-CLIVE-L1 Required-Input Guidance
-
-Pre-integration guidance stays contract-pure. It publishes only the static orchestration requirement `intent_note` and tells the caller that exact commit-message requirements are resolved from the current candidate by closeout preview or apply. It deliberately does not inspect the worktree, derive a candidate-sensitive plan, or restate message applicability: the normalizer owns that decision after candidate capture.
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced official-ledger carryover detection with accepted code/memory ancestry; corrected the vocabulary-owner description and retained phase precedence, checkpoint/finalization semantics, and projected-status distinctions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
+  260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting
+  `carryover_done(contract)` from line 669 to 670. The anchor was re-read at
+  `cleanup.py:670-670`, where that call still sits; the cited symbol and its meaning are unchanged.
+- 2026-09-13T17:48+02:00 — 260831-LOCR-L36 pause wording: the `_post_integration_phase` comment above
+  the `checkpointed` branch was reworded to stop reading the landing as a pause. Pausing a master is a
+  separate matter that stops the master's work and returns control while publishing nothing, keeping
+  its branch, worktrees and enclosure private; folding the pause into this landing is the hidden side
+  effect the split exists to prevent. Recorded that rule as a third property of the checkpoint
+  projection next to "no new `WorktreePhase` member" and "not a fallthrough". Comment only in the
+  source: the branch, its phase, its next tool and its summary are unchanged. Verification metadata
+  remains closeout-owned; no acceptance claim.
+- 2026-09-13T12:29:52+00:00: Generated citation repair: `status_payload` repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:502-504. No content impact: mechanical anchor-range projection bound to citation source snapshot 608ec827a174d194b141ff2daa61dd8e3b6b44611d03fb561dc0b7bb0223223f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T08:49:05+00:00: Generated citation repair: `request_commit_approval` repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:264-264. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T17:57:35+00:00: Generated citation repair: "if contract.integration_status == \"checkpointed\":" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:308-308. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T17:57:35+00:00: Generated citation repair: "if contract.integration_status == \"checkpointed\":" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:308-308. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 root integration to `lifecycle_finalize_task`: the
+  `cleanup-pending` branch no longer describes a failed automatic post-integration cleanup. It now
+  projects the ordinary moment before the terminal edge — landed refs, carryover done, task edge not
+  yet finalized — and routes `finalize` / `lifecycle_finalize_task` with
+  `required_args=["contract_path"]` so an operator is handed the argument that names the edge.
+  Recorded that `finalize` replaced `retry_cleanup` in `NextOperation` (removed rather than parked,
+  because the branch that emitted it was its only writer) and that `lifecycle_finalize_task` joined
+  `NextTool`; corrected this card's `NextTool` transcription, which read `memory_carryover_apply` for
+  the member `guidance._post_integration_phase` actually emits, `memory_carryover_plan`. Added an
+  invariant that a vocabulary member goes when its last writer goes, plus two reference rows.
+  Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the "no new `WorktreePhase`
+  member" bullet's dashboard list was incomplete (three of six sites). Replaced it with the full
+  five-file / six-site list — `EngineRoom.tsx:59-66` (`LIFECYCLE_PHASES`, `"integration-pending"` at
+  `:63`), `BootTimeline.tsx:88` and `:110`, `useEngineTimeline.ts:41`,
+  `buildEngineRoomModel.ts:16`, `geometry.ts:218` — and made the summary sentence above defer to it.
+  Content change, not a range repoint; verification metadata remains closeout-owned.
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: `_post_integration_phase` gained a
+  `checkpointed` branch projecting the existing `worktree-started` phase with
+  `continue_work`/`worktree_status` and a summary carrying the checkpoint truth. Recorded the two
+  deliberate properties: no new `WorktreePhase` member (closed `Literal` mirrored by the dashboard at
+  six sites across five files, listed in full in the bullet above) and that this is a real branch, not
+  a fallthrough — before it, a checkpointed contract read as `integration-pending` pointing at
+  `worktree_integrate`, which refuses while the series is open. Verification metadata remains
+  closeout-owned; no acceptance claim.
+- 2026-09-12T01:26:36+00:00: Generated citation repair: `request_commit_approval` repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:255-255. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b5cbe38ab438de766feb0fc3860228f5125b623ebbee641f90211d51326d68e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "choose_memory_recovery", "choose_provider_setup_recovery", "choose_stale_base_recovery" repointed to mcp/src/agents_remember/worktrees/modules/start.py:274-274, mcp/src/agents_remember/worktrees/modules/start.py:328-328, mcp/src/agents_remember/worktrees/modules/start.py:468-468. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `status_payload` repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:472-474. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "carryover_done(contract)" repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "from agents_remember.models.worktree import (" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:19-19. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `unknown_cells` repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:283-283. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T14:56+02:00 — Automatic post-integration cleanup vocabulary at code commit `76ce662a`: the `cleanup-pending` phase now says the automatic cleanup did not complete and routes to `retry_cleanup` (`worktree_cleanup`, contract args, no dry-run preview); `request_cleanup_decision` left `NextOperation` and the integration projection carries no `cleanup_question`. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `request_commit_approval` repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:245-245. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 
@@ -329,11 +206,3 @@ Pre-integration guidance stays contract-pure. It publishes only the static orche
 - 2026-06-10T09:56+02:00 — Issue #54 sub-task D: added `base_freshness` (fetch-free recorded-base vs local source tip counts with a `worktree_sync` `syncHint`) and wired it into `status_payload` as `freshness`.
 - 2026-06-10T07:30+02:00 — `status_payload` includes a `providers` block from `provider_async.provider_setup_status(contract)` when present: the worktree_status poll surface for background provider setup (running with currentPhase/heartbeat/seedFallback, stale on dead heartbeat, terminal ok/ready-with-failed-phases/failed with retryArgs) (GitHub #53).
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
-
-## Governing Overview
-
-[governing overview](overview.md)
-
-## Cross-Repo References
-
-This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

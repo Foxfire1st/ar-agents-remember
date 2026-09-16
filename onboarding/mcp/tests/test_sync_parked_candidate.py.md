@@ -5,104 +5,90 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_sync_parked_candidate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash | `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0` |
-| lastVerifiedCommitDate | 2026-09-10T08:03:15+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-The transaction-level proof for the parked worktree candidate inside the existing sync
-transaction. A closeout-time leaf is dirty by definition, so `worktree_sync` parks its WIP, carries
-the moved source, and must return the candidate. These cases pin that contract against the real
-sync transaction; the closeout boundary's own surface is pinned in
-`test_source_lineage.py::CloseoutSourceLineageHealTests`.
+Exercise the parked worktree candidate inside the existing sync transaction and prove its return, retained conflicts, cancellation, and recovery.
 
 ## Code Commentary
 
 ### Logic
 
-The suite reuses `SyncFixture` and its `commit_file` / `git` / `section` helpers from
-`test_worktree_sync.py`, so the fixture Git flows under real repositories and canonical contracts.
-Each case builds the dirty candidate, moves the official source, and asserts the exact transaction
-outcome:
+The six cases reuse SyncFixture's real repositories and contracts. Clean code carry restores modified/untracked WIP and advances the recorded base. The external-memory case now includes staged cache data beside a real onboarding draft: only the draft appears in parked WIP, and the draft returns with no remaining stash.
 
-1. `test_parked_candidate_is_carried_and_returned` — untracked plus modified code WIP with a moved
-   source: one sync reports `synced`, the code side's `wip.state` is `restored`, the candidate content
-   is byte-identical, `git stash list` is empty, the work branch is at the source tip, and the
-   recorded base advanced.
-2. `test_parked_memory_candidate_is_carried_and_returned` — the same contract on the external-memory
-   side.
-3. `test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it` — the moved source
-   edits the file the parked WIP edits: `sync-resolution-required` with `resolution.wipRestore`,
-   `README.md` in `resolution.files`, and the stash still holding the candidate; then
-   `resolution_action=cancel` returns the candidate, restores the pre-sync head, and empties the
-   stash.
-4. `test_resume_returns_the_candidate_a_crash_left_parked` — a simulated crash before the restore
-   (patching `restore_parked_wip` to raise once) leaves the candidate parked and absent from the
-   worktree; the next call resumes, restores it, drops the stash, and finalizes.
-5. `test_resolving_a_retained_merge_returns_the_parked_candidate` — a retained source merge conflict
-   (no `wipRestore` flag) resolved and staged, then `resolution_action=continue`: the merge commits,
-   the parked candidate comes back, the stash is empty, and the base advanced.
-6. `test_unmerged_index_entries_still_refuse_the_sync` — a real pre-existing conflict refuses with
-   `sync-side-preflight-failed` and names the unmerged paths, leaving no stash behind.
-
-`git_unchecked` runs the one Git command whose nonzero exit is the expected outcome (creating the
-real conflict), distinct from the fixture's fail-loud `git` helper.
+Other cases preserve a genuine reapply conflict and its wipRestore marker, return the candidate on cancel, resume a crash before restoration, continue a staged source conflict without losing parked content, and refuse a pre-existing genuine unmerged index without creating a stash. The module validates the public resolution projection as well as the dictionary so producer/model drift is visible.
 
 ### Conventions
 
-The table lists retained test definitions, not collected parametrized or subtest counts. Cases assert
-exact payload states, byte-identical candidate content, stash emptiness, and the recorded base; a
-focused green result here is not end-to-end closeout evidence.
+Intentional fault injection stops restoration once; native Git creates the genuine conflict. Assertions cover exact payload state, candidate bytes, stash identity/emptiness, and recorded bases. These are transaction-level scenarios, not a full closeout acceptance claim.
 
 ### Invariants And Boundaries
 
-- A parked candidate must come back byte-identical, and the stash must be empty on the clean path.
-- A reapply conflict is retained, never silently dropped; `cancel` returns the candidate.
-- Resume repairs a crash that left the candidate parked; it does not re-run the carried merge.
-- The kept refusals (unmerged index entries) still refuse and leave no stash.
-- Coverage percentages are diagnostic; these cases exist to protect distinct transaction outcomes,
-  not to raise a floor.
+- Real parked content must return; a memory cache is not part of that candidate.
+- A genuine reapply conflict retains the stash until resolution or cancellation.
+- Resume must return an already-parked candidate without inventing another merge.
+- Pre-existing real conflicts still refuse admission.
+- Code-domain files keep ordinary semantics.
 
 ### Todos
 
-The unit-regression lane budget is untouched (this module was added to the existing
-`unit-regression` lane rather than raising any case budget).
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The suite classifies its six retained parked-candidate transaction outcomes. | `ParkedCandidateTests` | mcp/tests/test_sync_parked_candidate.py:26-27 |
-| The clean carry returns the candidate and advances the base. | `test_parked_candidate_is_carried_and_returned` | mcp/tests/test_sync_parked_candidate.py:29-53 |
-| The same contract holds on the external-memory side. | `test_parked_memory_candidate_is_carried_and_returned` | mcp/tests/test_sync_parked_candidate.py:55-72 |
-| A reapply conflict is retained and `cancel` returns the candidate. | `test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it` | mcp/tests/test_sync_parked_candidate.py:74-99 |
-| Resume returns a candidate a crash left parked. | `test_resume_returns_the_candidate_a_crash_left_parked` | mcp/tests/test_sync_parked_candidate.py:101-128 |
-| Resolving a retained source merge still returns the parked candidate. | `test_resolving_a_retained_merge_returns_the_parked_candidate` | mcp/tests/test_sync_parked_candidate.py:130-155 |
-| Unmerged index entries still refuse the sync and leave no stash. | `test_unmerged_index_entries_still_refuse_the_sync` | mcp/tests/test_sync_parked_candidate.py:157-172 |
-| The suite reuses the shared real-Git sync fixture and helpers. | `SyncFixture`; `section`; `commit_file`; `git` | mcp/tests/test_worktree_sync.py:38-113; mcp/tests/test_worktree_sync.py:198-201; mcp/tests/test_worktree_sync.py:216-221; mcp/tests/test_worktree_sync.py:224-232 |
-| The transaction behaviour under test is owned by the sync driver's park/restore boundary. | `_park_participating_wip`; `restore_parked_wip`; `_continue_parked_wip_restore`; `_reconcile_completed_sides` | mcp/src/agents_remember/worktrees/sync_transaction.py:264-301; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:356-395; mcp/src/agents_remember/worktrees/sync_transaction.py:573-594; mcp/src/agents_remember/worktrees/sync_transaction.py:597-629 |
-| The lane manifest classifies this module. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-105 |
+| Code and memory WIP return, with cache excluded from the memory candidate. | L30-L54; L56-L78 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
+| Genuine reapply conflict and cancellation preserve candidate content. | L80-L115 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
+| Crash recovery and retained-source continuation return parked work. | L117-L144; L146-L171 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
+| Pre-existing genuine conflicts remain a refusal. | L173-L188 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
+| Production parked-content boundary and exact restore proof. | L144-L163; L166-L195; L198-L216 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
 
 ## Cross-Repo References
 
-No cross-repository source is configured for this memory root.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Update History
 
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Extended the existing memory-WIP case with staged cache data and an exact real-path assertion; retained the six clean, conflict, cancel, crash/resume, continuation, and pre-existing-conflict scenarios. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the shared sync fixture
+  and park/restore owners are the frozen ones. Re-checked every case and helper range: they hold. No
+  wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 7 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
+  and were left for a reading curator. No claim wording changed; every rewritten range was read back
+  at its current position. Verification metadata remains closeout-owned.
 - 2026-09-10T15:06+02:00 — Created for the parked-candidate change: the six transaction-level cases proving a dirty closeout candidate is parked, carried, and returned (with restore on completion, resume, and cancel, and the kept unmerged-index refusal). The new module has no committed identity yet, so verification remains closeout-owned.

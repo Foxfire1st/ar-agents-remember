@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-09-07T00:28+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-15T01:01+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -22,9 +22,22 @@ Shared temporary Git, external-memory, task-lineage and closeout-component fixtu
 
 ### Logic
 
-`open_external_contract_fixture` creates real temporary code and memory repositories, a selected fixture profile, a ledger baseline, task lineage and an external-memory contract. Variant fixtures add committed ranges, closed or integrated state. File, overview and entity helpers create controlled onboarding inputs; their existence is not a coverage claim.
+The unused `commit_memory_ledger`, `closed_external_contract_fixture`, `closeout_args`, and
+`integrate_args` helpers are retired. This support module no longer fabricates a completed
+three-commit closeout. Initial tracked `memory.md` seeds remain deliberately in temporary
+repositories so consumers can exercise old history and migration; they do not define the current
+publication protocol.
 
-`closeout_publication_facts` uses the actual pair, route-review, attestation and memory-check owners and stages the fixture candidate. It labels the code-quality result `component-fixture` with `acceptanceClaim=False`. `run_authorized_closeout_mechanics` exercises the publication component using those facts; it does not certify the selected lifecycle operation or execute its gates.
+`open_external_contract_fixture` creates real temporary code and memory repositories, a selected fixture profile, a ledger baseline, task lineage and an external-memory contract. Variant fixtures add committed ranges and explicit lineage state. File, overview and entity helpers create controlled onboarding inputs; their existence is not a coverage claim.
+
+Earlier cleanup removed the dead publication-facts and writer-mechanics helpers. LCA-L9 also
+removes their remaining unused closed-contract and closeout/integration argument conveniences;
+no fixture here represents a synthetic completed closeout as production acceptance.
+
+### Conventions
+
+Helpers operate only on disposable repositories supplied by their callers. Initial historical
+cache state is distinct from the operation a consumer test invokes.
 
 ### Invariants And Boundaries
 
@@ -32,16 +45,47 @@ Shared temporary Git, external-memory, task-lineage and closeout-component fixtu
 - A writer-component fixture must not be reported as full closeout or gate acceptance.
 - Consumer tests determine actual protection. Removed slice matrices and their historical outcomes are not current executable coverage.
 
+### Todos
+
+No additional fixture scenario is introduced by this retirement.
+
+## Docs References
+
+No Domain Documentation source is configured for these repository-owned test fixtures.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| External-memory fixture supplies real isolated Git repositories and current contract inputs. | `open_external_contract_fixture` | mcp/tests/test_worktree_support.py:420-508 |
-| Publication facts retain an explicit non-acceptance component-fixture result. | `closeout_publication_facts` | mcp/tests/test_worktree_support.py:831-882 |
-| Writer mechanics call the publication component without claiming gate acceptance. | `run_authorized_closeout_mechanics` | mcp/tests/test_worktree_support.py:885-896 |
-| The base class provides helper methods rather than collected test cases. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
+| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | L364-L392; L395-L483; L708-L783 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+| External-memory fixture supplies real isolated Git repositories and current contract inputs. | L395-L483 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+| The base class provides helper methods rather than collected test cases. | L708-L783 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+
+
+## Cross-Repo References
+
+Temporary fixture repositories do not establish a live cross-repository integration.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No separate external implementation source applies. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
+
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 2 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-11T23:05:00+00:00: Two rows named the deleted `closeout_publication_facts` and `run_authorized_closeout_mechanics` helpers — the module has neither, and its Logic prose described them as current. The rows now record the deletion as dead test support with no surviving publication-component driver, and the prose points at the surviving `closeout_args` and `closed_external_contract_fixture` helpers.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=1883113cfcb16de05b95330b0c1e8a5b504882b5165e0700a4879197ead55038; verification metadata remains unchanged because commit-owned realization is pending.
 
@@ -93,7 +137,7 @@ Shared temporary Git, external-memory, task-lineage and closeout-component fixtu
   replacements, none of which this card describes. Four are fixture values moving to the narrowed
   `WorkflowKind` — `workflow_kind="chat"` becoming `"chat-task"` in the external-contract fixtures
   and atomic-integrate contract — forced by the two-value workflow contract. The fixture definitions
-  and contract vocabulary were re-read directly: cit:([`open_external_contract_fixture`, `committed_range_external_contract_fixture`, `closed_external_contract_fixture`], mcp/tests/test_worktree_support.py:474-564; mcp/tests/test_worktree_support.py:698-772; mcp/tests/test_worktree_support.py:787-870); cit:([`DEFAULT_WORKFLOW_KIND`], mcp/src/agents_remember/worktrees/worktree_contract.py:84-84).
+  and contract vocabulary were re-read directly: cit:([`open_external_contract_fixture`, `committed_range_external_contract_fixture`, `closed_external_contract_fixture`], mcp/tests/test_worktree_support.py:410-498; mcp/tests/test_worktree_support.py:634-706; mcp/tests/test_worktree_support.py:723-804); cit:([`DEFAULT_WORKFLOW_KIND`], mcp/src/agents_remember/worktrees/worktree_contract.py:82-82).
   The fifth is inside `test_status_reports_integration_pending_for_dirty_closed_contract`, where
   `payload["nextTool"]` became `payload.get("nextTool")`: `status_payload` now returns a
   `WorktreeStatusPayload` whose `nextTool` is `NotRequired` (omitted rather than `""`), so the

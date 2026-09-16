@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T07:20+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -33,8 +33,10 @@ record is the source of truth for a task's plan and progress, and `task.md` (or
 produced by parsing markdown back. From L11 until 260731-EFA-L6 the route also owned leaf reopen
 semantics; `reopen.py` has since moved to `worktrees/reopen.py`, because reopening rewrites the
 leaf's enclosure contract and ranking it as a task operation made `tasks` and `worktrees` mutually
-dependent (`layers.toml`). What stays here is `leaf_doc.py` (exact case-insensitive leaf-doc lookup
-plus the explicit `lifecycleId` restamp worktree start applies across restarts) and the document
+dependent (`layers.toml`). What stays here is `leaf_doc.py` (exact case-insensitive leaf-doc lookup,
+the explicit `lifecycleId` restamp worktree start applies across restarts, and — since 260913-LCA-L5 —
+the derived master link `seriesContractPath`/`enclosures[]` bound when a leaf document was authored
+before its master's series contract existed) and the document
 reset itself, which reopen still drives through this route's `store.py`. This is the work-content layer the observer projects as active
 task documents, with lifecycle/enclosure bindings attached when available, so the dashboard can show
 planned and running work from the same JSON source (slice 3c; closes note-03 gap #8).
@@ -85,6 +87,12 @@ together.
   recording exact collection work.
 - `leaf_binding.py` — the pure canonical composite master-row/leaf identity owner shared by
   lifecycle and semantic-topology consumers. Number, file, ref, directory, id, and stem must agree.
+- `task_paths.py` — the on-disk task-root path vocabulary and the predicates over it
+  (`SERIES_CONTRACT_FILENAME`, `ARCHIVE_DIR`, `ENCLOSURES_DIR`, `slugify`, `series_contract_path`,
+  `leaf_enclosure_dir`, `leaf_enclosure_path`, `is_archived_path`, `is_enclosure_contract`,
+  `iter_leaf_enclosure_contracts`). Task-domain rules, single definition, no import from `worktrees`:
+  `worktrees/task_resolver.py` re-exports every name so the rules can live below `worktrees` where
+  `layers.toml` requires them.
 - `semantic_topology.py` — the strict `semantic-topology/v2` candidate identity: exact refs, one
   structural parent row, execution nature, and explicit DAG or atomic-sequential placement only.
 - `semantic_topology_graph.py` + `semantic_topology_graph_binding.py` — compare authored/resolved
@@ -220,6 +228,36 @@ non-retired roles) and typed `SubTaskRef.masterRef` rows; the renderer emits rea
 master links, the generated Master Index for sprints, and the `**Seats:**` header block;
 `validate_sprint_linkage` hard-fails new-shape drift.
 
+## 260913-LCA-L5 Route Impact — The Derived Master Link, And A Recorded Layer Inversion
+
+`leaf_doc.py` now binds the two derived fields (`seriesContractPath`, `enclosures[]`) that a leaf
+document cannot carry when it is authored before its master's series contract exists — the normal
+planning order. Both planning paths bind only the ABSENT fields, so an existing binding is never
+rewired, and `plan_leaf_doc_enclosure_registration`'s exact no-op now requires the link to be present
+(new `master-link-missing` state). `restamp_leaf_doc_lifecycle` gained the same binding in its
+docstring's corrected premise, but it remains **uncalled** anywhere in `mcp/src`; the live publisher is
+the start/attach path.
+
+Route-level consequence, and the reason this is recorded at route altitude rather than only on the
+file card: the **first revision** of this change set imported those two helpers from
+`worktrees.task_resolver`, which inverted the declared package order (`tasks` is rank 9, `worktrees`
+rank 10, and `layers.toml` declares no baseline and no exception) and produced a `tasks <-> worktrees`
+package cycle. The repository's own layering fitness function reported
+`tasks -> worktrees (tasks/leaf_doc.py:32)` plus that cycle, and exited 1 — 17 violations and 2 cycles
+against 16 and 1 for the same tree with only those import lines deleted. The route's charter —
+"Document state only -- an operation that also rewrites an enclosure contract is a worktree operation
+and is ranked accordingly" — was not violated by what the module *does* (it writes only the document),
+but the dependency pointed the wrong way across the two packages' boundary, and the rail is armed
+(`quality_plan.py` inserts a `layering` step).
+
+**Resolved by moving the rules down, not by having `tasks` reach up.** The task-layout path vocabulary
+now has its single definition in the new route module `task_paths.py`, and `worktrees/task_resolver.py`
+imports and re-exports it so its existing callers are unchanged. `leaf_doc.py` imports from
+`tasks.task_paths`, no `tasks -> worktrees` import remains anywhere under `tasks/`, and the same checker
+reports 16 violations and 1 cycle (the pre-existing `memory_quality <-> worktrees` cycle) with no
+tasks-related finding — the base state, since the rail was already red before this change set on
+pre-existing `worktrees -> memory_quality` edges. `layers.toml` is untouched.
+
 ## 260815-DAG-L16 Route Impact
 
 `tasks/leaf_doc.py` blank-id refusal now names the missing binding and the recovery (L16-R9:
@@ -285,7 +323,62 @@ index is shared across the candidate population. The existing task-document sche
 canonical persisted authority, and its intrinsic graph validation is now one indexed analysis
 reused by admission and wave/cycle reads.
 
+## Master Abandonment: Terminal Status And Resolved Rows
+
+`DocStatus` gained `abandoned` as a second terminal value, and this route owns the judgement that
+consumes it. `readiness.py::master_is_terminal` is the single definition: `Completed`, or
+`abandoned`. It is deliberately not `status == "Completed" and not completion_blockers(doc)` —
+abandonment does *not* resolve a master's rows: on an atomic master whose remaining leaves were
+never started those rows stay `planning` on purpose. The shared
+`RESOLVED_MASTER_ROW_STATUSES = {"Completed", "abandoned"}` lives beside the vocabulary in
+`models/task_document.py`, so the task, worktree and observer planes consume one set instead of each
+spelling it out and drifting.
+
+Within this route: `completion_blockers` and `missing_unresolved_master_rows` read that shared set;
+`master_sync.py::derived_master_status` projects an abandoned leaf straight to `abandoned` (otherwise
+the rollup collapses it back to `inProgress` and a later sync silently reopens it); `render.py`'s
+`_MARKER` is a direct lookup covering every status, so a new status without a marker raises at render
+time instead of drawing a wrong glyph; `document.py::derived_leaf_placement` chooses a segment by
+resolved (terminal) predecessors rather than completed ones; and `__init__.py` re-exports
+`master_is_terminal` on the route's public surface.
+
+## 260831-LOCR-L33 Step Notes And Their Render
+
+`Step` gained an optional `note` (`document.py`), the same free prose `SubStep` already carried and
+`None`-defaulted for the same `exclude_none` byte-identity reason. **The field is a root-cause fix,
+not a convenience**: before it existed the schema had nowhere to put a top-level note, so
+`task_doc`'s `set_step` accepted a caller's `note` and silently discarded it whatever the update key
+set did. Any future report that a caller's field vanished should first ask whether the field is
+declared in this schema at all.
+
+`Step.note` is classified `AUDIT` in `document_field_effects.py` — the taxonomy is exhaustive and
+fails closed, so adding a persisted field without a classification refuses before write — and the
+renderer (`render.py::_step_lines`) now suffixes a top-level note onto the step's checkbox line
+exactly as a substep's, **and** counts `step.note` among the reasons to draw that line: a step
+carrying only a note would otherwise render as a bare heading and lose the note a second time.
+Persisting a field the renderer cannot show still leaves it invisible.
+
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l5-ar`, base `52875e7a`): `leaf_doc.py` gained the derived master-link binding —
+  absent-only `seriesContractPath`/`enclosures[]` on both planning paths, a candidate where a matching
+  `lifecycleId` used to mean "nothing to write", and a `master-link-missing` enclosure-registration
+  state. Corrected the Purpose sentence that described the module as lookup plus `lifecycleId` restamp
+  only. Recorded the layer inversion the first revision of this change set introduced (`tasks ->
+  worktrees` from `leaf_doc.py:32` plus a `tasks <-> worktrees` cycle, measured with the repository's own
+  layering fitness function at 17 violations / 2 cycles against a 16/1 base) **and its resolution**: the
+  path rules moved down into the new route module `task_paths.py`, `worktrees/task_resolver.py`
+  re-exports them, `leaf_doc.py` imports from `tasks.task_paths`, and the re-measured tree is back to
+  16 violations / 1 cycle with no tasks-related finding and `layers.toml` untouched. Added the
+  `task_paths.py` Route Model bullet and the Purpose mention of the derived master link. Also stated
+  plainly that `restamp_leaf_doc_lifecycle` has no caller. Route documentation only: verification
+  metadata remains closeout-owned and no execution or acceptance claim is made.
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded `Step.note` on the route — the field,
+  why it is a root-cause fix rather than an addition (the schema had nowhere to store a top-level
+  note, so `set_step` accepted and dropped it), its `AUDIT` classification under the fail-closed
+  taxonomy, and the two-part renderer fix (`_step_lines` suffixes the note and counts it among the
+  reasons to draw the checkbox line at all). Content change, not a range repoint.
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded the route-level contract for `abandoned` as a second terminal `DocStatus` — `master_is_terminal` as the one judgement, the shared `RESOLVED_MASTER_ROW_STATUSES`, the sync/render/placement consequences, and why abandonment resolves the master but not its rows. Content change, not a range repoint.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `_requirements` repointed to mcp/src/agents_remember/tasks/task_intent.py:288-309. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `classify_task_document_mutation` repointed to mcp/src/agents_remember/tasks/document_field_effects.py:345-358. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 

@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
 
@@ -17,7 +18,7 @@ Memory quality is useful before gate admission: a contract-scoped full request o
 
 Preparation does not grant a final certificate. The interactive catalog projection explicitly lacks affected-closure and code-prefix authority. The existing prepared-memory adapter consumes the selected four original code terminals and exact prepared candidate, runs the final memory producer, publishes its physical result and selects Gate 5 through the normal owner. Finalization requires that selected original fifth certificate and its bound memory inputs. MCAR continues from these existing owners; this overview does not declare the unfinished master accepted or create a second final proof path.
 
-Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
+Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the ledger path is informational and excluded from candidate authority. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
 ## Development And Certification Policy
 
@@ -35,7 +36,7 @@ The earlier frontend milestone introduced broader static measurement and a chang
 
 `agents-remember` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, MCP tools, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. Durable memory is reached through three retrieval substrates routed by `c-04-retrieval-strategy-router` skill: **by path** (a source file's deterministic one-to-one onboarding unit, verified against Git history), **by meaning** (semantic memory search over the onboarding), and **by relationship** (a code-relationship graph). By-path notes are the core and need no provider; meaning and relationship are served by opt-in Docker providers (GrepAI, CodeGraphContext) and return candidate routing evidence, not proof. Overviews and entity catalogs use route scopes or curated evidence fingerprints before an agent relies on them. The earlier sidecar-only, anti-retrieval positioning (no embeddings / no vector store) predated those providers and has been retired from the public spine and from this overview's framing.
 
-The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. `c-08-ar-coordination-context-resolver` skill exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`; `c-09-git-worktree-manager` skill owns worktree lifecycle mutation, ordinary series integration back to source branches, and the narrowly policy-gated branch-addressed landing of an explicitly selected leaf implemented without an enclosure. It also documents `task_reopen` — reopening a fully landed leaf task in place under its exact leaf id — while `c-10-adopt-memory-baseline` skill provides the adoption path for existing external-memory onboarding that needs an initial `memory.md` ledger.
+The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. `c-08-ar-coordination-context-resolver` skill exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`; `c-09-git-worktree-manager` skill owns worktree lifecycle mutation, ordinary series integration back to source branches, and the narrowly policy-gated branch-addressed landing of an explicitly selected leaf implemented without an enclosure. It also documents `task_reopen` — reopening a fully landed leaf task in place under its exact leaf id — while `c-10-adopt-memory-baseline` skill provides the adoption path for existing external-memory onboarding that needs adoption into attributed memory history.
 
 The provider runtime guidance now routes through the MCP/package boundary:
 MCP settings outside the coordinator are authority, coordinator files can only
@@ -62,7 +63,7 @@ onboarding pass.
 | Feature | What It Offers | Primary Surface |
 | --- | --- | --- |
 | Path-derived onboarding memory | Deterministic Markdown memory beside source files, plus route overviews and repo entity catalogs for larger scopes. | `README.md`, `onboarding/`, `c-05-create-or-update-onboarding-files` skill |
-| Internal and external memory roots | Repo-local `ar-memory/` by default, selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/`, and `memory.md` ledgers for code/memory alignment. | `c-00-initialize-memory-repo` skill, `c-08-ar-coordination-context-resolver` skill, `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `kernel/memory_ledger.py` |
+| Internal and external memory roots | Repo-local `ar-memory/` by default, selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/`, and computed `memory.md` consumer caches derived from committed code/memory attribution. | `c-00-initialize-memory-repo` skill, `c-08-ar-coordination-context-resolver` skill, `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `kernel/memory_ledger.py` |
 | Context resolution and startup packets | Resolved code, coordination, memory, onboarding, task, temp, ledger, storage, path-rule, cross-repo, provider-summary, worktree, Git, and optional drift facts through compact `ContextPacketV2`; detailed provider state is intentionally excluded. | `c-08-ar-coordination-context-resolver` skill, `resolve_context`, `context_packet`, `ContextPacketV2` |
 | Memory quality control | Task-start drift classification, closeout memory quality, new-file missing-onboarding checks, overview/entity fingerprint checks, and update-history style checks. | `c-02-memory-quality-control` skill, `drift_check`, `memory_quality_check`, `check_missing_onboarding` |
 | Retrieval routing | Semantics, Relationship, and Intent routing across provider accelerators, route indexes, onboarding, and bounded source confirmation. | `c-04-retrieval-strategy-router` skill, `overview.index.json`, GrepAI tools, CGC tools |
@@ -70,11 +71,11 @@ onboarding pass.
 | File and entity onboarding maintenance | File-level sidecars, inline onboarding adapter rules, repo entity catalogs, deterministic entity fingerprints, reference health checks, and generated route indexes driven by one Git/path-rule census. | `c-05-create-or-update-onboarding-files` skill, `route_index_refresh`, `kernel/route_index.py`, `kernel/route_index_census.py` |
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
 | Workflow modes | The `l-01-agent-lifecycles` architect lifecycle's build decision at `decide`: a research-only exit for no-code answers, otherwise a `w-02-light-task-workflow` skill task — chat is never a build route, so one-session edits take the minimal artifact — escalating to a master + light sub-task series for larger phased work (the retired heavy workflow and the retired chat build are no longer modes). | `l-01-agent-lifecycles` skill, `w-02-light-task-workflow` skill |
-| Agent lifecycles (one per role) | Developer-requested multi-agent series run through the unified `l-01-agent-lifecycles` skill. Spawn-role env and fresh briefs select role seats; otherwise free chat remains a launcher. Ordinary role-shaped work compiles the canonical architect brief and calls `dispatch_agent` once on the sprint document; an explicit developer-declared task-seat takeover instead targets the named role at its canonical altitude. The identity-free call uses target-document/role-altitude authority; after handoff, hosted seats use plane identity and direct-child scope, with no plane-to-ambient fallback. Architect owns the initial plan loop and recommends the developer-approved strategist when the evidence-backed topology/classification reasoning is missing or stale — graph absence alone is not a trigger. A reviewed graph-less atomic-sequential choice is valid: one source-pair-selected atomic master is active for implementation while other live masters are paused and preserved, and a selection remains `reconciling` until its exact code/memory sources are current. A sanctioned strategist skip transfers the complete dependency, route, seam, classification, priority, and topology-reasoning duty to the orchestrator, which adopts a graph only when present. One effective priority governs a candidate (candidate override, otherwise master default), while the orchestrator retains portfolio comparison. Graph adoption from a graph-less sprint first attaches every master, then publishes one complete nodes-plus-evidence-edges batch. Exact proposed completion candidates are reviewed before refs move; handover cites canonical candidate/code ancestry/memory ancestry/per-leaf ledger refs rather than copying maps, and failed review routes to a leaf rather than an integration workbench. | `l-01-agent-lifecycles` skill, `skills/l-01-agent-lifecycles/templates/architect-brief.md`, `skills/l-01-agent-lifecycles/roles/architect.md`, `skills/l-01-agent-lifecycles/roles/orchestrator.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, `system/git-workflow.md` |
-| Approval-gated closeout | Applicable authority gates for implementation, worktree-backed closeout, memory refresh, memory quality, and ledger alignment: standalone/final work uses explicit developer approval, while subordinate accepted-series work can proceed under recorded delegated series authority. Closeout itself is worktree-only — the retired direct current-checkout closeout path remains removed (issue #62). The separate `direct_landing` operation is only the explicitly selected delivery route for a leaf implemented without its own enclosure; ordinary master/series closeout and integration never require `directExecutionEnabled`. Since 260731-EFA-L4, where the quality gate runs it first resets the index and stages the whole task worktree, so the gate is shown the commit's content rather than only the paths already tracked; two refusals guard that step (not a task worktree, or unresolved merge conflicts). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*`, `direct_landing` |
-| Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. Atomic implementation admission uses one disposable selector per exact code/external-memory source pair: switching preserves and pauses the previous live master, publishes the selected master as `reconciling`, and exposes it as active only after sync. Sync evidence survives in the enclosure-root journal and pinned Git refs; real conflicts are retained for staged `continue`, while explicit `cancel` restores operation-owned pre-sync heads. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
+| Agent lifecycles (one per role) | Developer-requested multi-agent series run through the unified `l-01-agent-lifecycles` skill. Spawn-role env and fresh briefs select role seats; otherwise free chat remains a launcher. Ordinary role-shaped work compiles the canonical architect brief and calls `dispatch_agent` once on the sprint document; an explicit developer-declared task-seat takeover instead targets the named role at its canonical altitude. The identity-free call uses target-document/role-altitude authority; after handoff, hosted seats use plane identity and direct-child scope, with no plane-to-ambient fallback. Architect owns the initial plan loop and recommends the developer-approved strategist when the evidence-backed topology/classification reasoning is missing or stale — graph absence alone is not a trigger. A reviewed graph-less atomic-sequential choice is valid, but its runtime admission is no longer exclusive: the activation record is keyed per canonical series contract, so a master that is `reconciling` holds only its own activation until its exact code/memory sources are current, and two atomic masters that share one protected source pair keep independent records rather than pausing one another. A sanctioned strategist skip transfers the complete dependency, route, seam, classification, priority, and topology-reasoning duty to the orchestrator, which adopts a graph only when present. One effective priority governs a candidate (candidate override, otherwise master default), while the orchestrator retains portfolio comparison. Graph adoption from a graph-less sprint first attaches every master, then publishes one complete nodes-plus-evidence-edges batch. Exact proposed completion candidates are reviewed before refs move; handover cites canonical candidate/code ancestry/memory ancestry/per-leaf ledger refs rather than copying maps, and failed review routes to a leaf rather than an integration workbench. | `l-01-agent-lifecycles` skill, `skills/l-01-agent-lifecycles/templates/architect-brief.md`, `skills/l-01-agent-lifecycles/roles/architect.md`, `skills/l-01-agent-lifecycles/roles/orchestrator.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, `system/git-workflow.md` |
+| Approval-gated closeout | Applicable authority gates for implementation, worktree-backed closeout, memory refresh and memory quality: standalone/final work uses explicit developer approval, while subordinate accepted-series work can proceed under recorded delegated series authority. Closeout itself is worktree-only — the retired direct current-checkout closeout path remains removed (issue #62). The separate `direct_landing` operation is only the explicitly selected delivery route for a leaf implemented without its own enclosure; ordinary master/series closeout and integration never require `directExecutionEnabled`. Since 260731-EFA-L4, where the quality gate runs it first resets the index and stages the whole task worktree, so the gate is shown the commit's content rather than only the paths already tracked; two refusals guard that step (not a task worktree, or unresolved merge conflicts). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*`, `direct_landing` |
+| Worktree lifecycle | Worktree start, attach, status, **stop**, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. The stop is its own public verb — `worktree_pause` — and it publishes nothing: it releases the master's atomic-series activation selection and hands the turn back, while `worktree_checkpoint_landing` remains the separate, explicitly requested publication of an unfinished master. The two are separate registered tools with separate descriptions and neither is reachable from the other. Atomic implementation admission uses one disposable activation record per canonical series contract: it publishes this contract's own `reconciling` state and exposes it as active only after sync, so atomic masters that share one protected code/external-memory source pair never share that state and a foreign master is never a waiting reason. Sync evidence survives in the enclosure-root journal and pinned Git refs; real conflicts are retained for staged `continue`, while explicit `cancel` restores operation-owned pre-sync heads. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
 | Observable session lifecycle | The observer event log and projection retain trust provenance, lifecycle status, metrics, attention and task context. Public tool completion passes through application-owned enrichment and the single model finalizer; `nextStep` is bounded and optional, rather than attached unconditionally to every response. Lifecycle gate decisions and turn-end notification have distinct contracts. | `agents_remember.observer`, `application/tool_response.py`, `models/tool_response.py`, `mcp/tools/base.py` |
-| JSON-primary task documents | The `ar-task-document/v1` document is the source of truth for a task's plan + progress and `task.md` is its deterministic render. Sprint documents carry the canonical `executionGraph`; master documents carry explicit `executionNature` (`organizational` or `atomic`). A sprint without an `executionGraph` uses the atomic-sequential default, whose runtime admission is source-pair selection rather than a task-authoring lock or permanent series lane. Task mutations publish their authored state; field classification invalidates closeout evidence for semantic/readiness changes, while observation-only updates do not invalidate task intent. `task_doc.author_execution_graph` bootstraps or edits the graph, and there is no implicit inference or compatibility reader. The `task_doc` MCP tool validates cross-document graph references, authors/replaces documents, and republishes the affected JSON/Markdown set atomically; observer projection exposes the same topology. | `agents_remember.tasks`, `task_doc` tool, `tasks/` route overview |
+| JSON-primary task documents | The `ar-task-document/v1` document is the source of truth for a task's plan + progress and `task.md` is its deterministic render. Sprint documents carry the canonical `executionGraph`; master documents carry explicit `executionNature` (`organizational` or `atomic`). A sprint without an `executionGraph` uses the atomic-sequential default, which describes the sprint's shape — every commanded master executes atomically — and serializes nothing; its runtime admission is this contract's own per-contract activation record rather than a task-authoring lock, permanent series lane, or shared per-source-pair slot. Task mutations publish their authored state; field classification invalidates closeout evidence for semantic/readiness changes, while observation-only updates do not invalidate task intent. `task_doc.author_execution_graph` bootstraps or edits the graph, and there is no implicit inference or compatibility reader. The `task_doc` MCP tool validates cross-document graph references, authors/replaces documents, and republishes the affected JSON/Markdown set atomically; observer projection exposes the same topology. | `agents_remember.tasks`, `task_doc` tool, `tasks/` route overview |
 | Gate control plane | The durable, attributed record of decision points on a lifecycle (closeout/integration/cleanup approvals, agent questions, alarm acks): an append-only `ar-gate-record/v1` `GateRecord` + `GateStore` co-located with the observer event log. The public agent-facing MCP junction is `lifecycle_gate`: it creates the typed durable gate, blocks the active lifecycle with the developer-facing ask, waits for a developer decision or gate-specific inbox response, and can carry `required_decision`; lower-level gate payloads/stores remain the implementation substrate. `controlplane/enforcement.py` binds `worktree_closeout_apply` to a developer-approved `closeout-approval` gate, or to an opt-in delegated orchestration approval that passes the `gate_policy.py` rules; model self-approval and owner lifecycle self-approval remain non-binding. The default policy is all-human, human-pinned integration/push/cleanup gates are not configurable away, and delegated decisions can require reviewer-verdict evidence refs that surface on gate records/projections. Task 19 adds the single-current-gate invariant (new lifecycle gates expire older open lifecycle gates) plus targeted dashboard decisions via `gate_decide_for_lifecycle`. Lifecycle skills now raise `lifecycle_gate(kind=...)`, handle the returned developer decision or operator-inbox message from that public junction, and clear with `lifecycle_resume`, split across plan/worktree/closeout/push/integration/cleanup/agent-question gate kinds. Dashboard gate projection is live and now renders human-readable previews with raw JSON as diagnostics. | `agents_remember.controlplane`, `lifecycle_gate`, `gate_*` stores/tools, `controlplane/` route overview |
 | Dashboard serving layer | `agents-remember dashboard` serves projection snapshots/deltas, raw retained events, typed operator actions, the packaged frontend, and hosted harness sessions. The serving package composes protocol, catalog, submission, conversation and bridge authorities as well as HTTP/WebSocket transport. Controlled chats use a structured conversation surface with a read-only diagnostic line log. Optional settings discovery, supervised daemon start/status/stop, and version-aware daemon reconciliation remain CLI/runtime concerns. | `agents_remember.serving`, `agents-remember dashboard`, `serving/overview.md`, `dashboard/src/overview.md` |
 | Dashboard frontend | The root React dashboard exposes Operations and the canonical Chats cockpit, plus task, requirement, artifact, lifecycle, event and provider views. Controlled sessions submit through the typed submission authority and render structured conversation history; inspector tabs retain evidence and capabilities without inventing missing telemetry. Grammar components and route-local overviews own the detailed current layout and behavior. Earlier slice-by-slice frontend descriptions are retained below as historical development context. | `dashboard/src/overview.md`, `dashboard/src/panels/overview.md`, `dashboard/src/data/overview.md`, `dashboard/src/grammar/overview.md` |
@@ -94,7 +95,7 @@ onboarding pass.
 | Public MCP response contracts | Pydantic models for every public MCP tool response, registry coverage for the tool surface, compact strict contracts where the repo owns shape, flexible envelopes where provider/service-native details are intentionally passed through, and token metadata fields for later cost accounting. | `mcp/src/agents_remember/models/`, `PUBLIC_TOOL_RESPONSE_MODELS`, `test_models.py` |
 | Provider lifecycle and discovery tools | Docker-managed GrepAI memory search/trace, CodeGraphContext symbol/caller/callee/dependency/complexity/visualization queries, compact provider status, dedicated provider diagnostics, watcher lifecycle, and current-state snapshots. Readiness is content-gated (2.5.0/2.5.1): graph/workspace content probes drive `indexed`/`indexing`/`empty`/`backend-unreachable` states for both providers, empty/unreachable targets degrade the global packet `ok`, crash-looping containers are not ready, and healthy-but-busy targets surface in the compact summary's `indexing` list. Provider launch is contained since 260707-HFX-L1: launch-capable operations (watcher start/restart/index rebuild, one-shot query runners, worktree provider setup, benchmark provider synthesis, the install rebind) re-read the on-disk MCP authority fail-closed — the boot snapshot is not launch authority, so `providers: {}` on disk is a live fleet-wide kill-switch — while stop/status/cleanup stay ungated; provider setup is serialized fleet-wide (one non-dry-run prepare at a time); and the dashboard daemon samples per-container containment metrics (label-discovered, read-only, dockerless-safe) that ride `provider_status`. | `provider_status`, `provider_diagnostics`, `provider_watchers`, `grepai_*`, `cgc_*`, `providers/`, `providers/metrics.py` |
 | Tool response token budgets | Verbose tools (`runtime_install`, `provider_diagnostics`, `provider_watchers`, carryover plan/apply) keep compact outcomes inline and file bulk diagnostics under `temp/tool-reports/<tool>/` with an inline `reportPath` (keep-last-5 / 7-day write-time prune, secret redaction); budget tests are the regression line (2.5.1/2.5.2). | `mcp/tool_reports.py`, `compact_*_payload` builders, `test_tool_response_budgets.py` |
-| Memory baseline adoption | One-time adoption of existing external-memory onboarding into the first ledgered baseline after drift/status review. | `c-10-adopt-memory-baseline` skill, `memory_baseline_*`, `memory/baseline.py` |
+| Memory baseline adoption | Adoption of existing external-memory onboarding into attributed memory history after drift/status review; the ledger is a rebuildable consumer view. | `c-10-adopt-memory-baseline` skill, `memory_baseline_*`, `memory/baseline.py` |
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
@@ -115,7 +116,7 @@ Task 23/24 changes the lifecycle of those gate/inbox interactions: prompts, resp
 signals, and attention-queue gate rows are disposable interaction data. Explicit dismiss/clear paths
 delete immediately; inbox consume records a terminal audit snapshot, and passive TTL cleanup removes
 it at the 24-hour interaction window. The only durable lifecycle records are
-the task/worktree documents, commits, contracts, and ledger rows.
+the task/worktree documents, commits and contracts. Consumer ledger rows are recomputed from attributed Git history.
 
 Task 31 updates the root dashboard/provider current-state story: live dashboard projection now refreshes
 provider current-state before serving snapshots, worktree provider stacks can be inspected from their
@@ -159,6 +160,8 @@ once for the successful bind. That context package is not addressing authority. 
 `observer/`, `serving/`, and `dashboard/src/` route overviews.
 
 ## Hot Path Summary
+
+Git lifecycle operations carry code and memory-content outputs. Memory commits encode their code attribution; `memory.md` remains available as a computed cache for consumers. Root memory-cache changes are excluded from memory staging/candidate authority, and missing or malformed cache bytes cannot block closeout, synchronization, integration or cleanup.
 
 Use [MCP package](mcp/overview.md) for composed services, [memory quality](mcp/src/agents_remember/memory_quality/overview.md) for preparation/final checks and [worktrees](mcp/src/agents_remember/worktrees/overview.md) for contract-owned lifecycle and protected refs. The retained [test route](mcp/tests/overview.md) describes present assertions and distinguishes helper-only files from suites. Exact source/pair identity, durable owner journals and original physical publications govern acceptance; a historical test name does not.
 
@@ -269,7 +272,7 @@ Current development commands, diagnostic metrics and certification authority are
 
 ### Task Workflows
 
-`w-02-light-task-workflow` skill is the compact durable-task workflow used by the current worktree-support task stack. It creates a task wrapper folder and `task.md` once task class and naming are clear, stops for implementation approval, then treats the checklist, onboarding propagation, checks, and worktree-backed commit approval handoff as one implementation cycle. When refreshed external-memory onboarding is part of intake, the memory content and ledger are committed before `c-09-git-worktree-manager` skill starts worktrees.
+`w-02-light-task-workflow` skill is the compact durable-task workflow used by the current worktree-support task stack. It creates a task wrapper folder and `task.md` once task class and naming are clear, stops for implementation approval, then treats the checklist, onboarding propagation, checks, and worktree-backed commit approval handoff as one implementation cycle. When refreshed external-memory onboarding is part of intake, the substantive memory content is committed and the consumer ledger is refreshed before `c-09-git-worktree-manager` skill starts worktrees.
 
 Requirement delivery history is append-only without turning every implementation/test rerun into a
 formal attempt. Semantic revisions advance only through explicit developer approval; workers mint
@@ -285,7 +288,7 @@ or queue work.
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, `lifecycle_finalize_task`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval. Real external-memory closeout runs the explicit repository-profile Dagger lane before the accepted code commit, then applies the separately owned memory/ledger lifecycle boundaries — since 260731-EFA-L4 over the *staged* task worktree, which is the one index mutation that precedes the gate; missing profile authority, CRAP at or above threshold, or a failing required rail fails closed. Only after that gate passes does closeout commit code, use `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refresh affected onboarding verification metadata and entity fingerprints, run `memory_quality_check`, then commit memory content and ledger when clean. `lifecycle_finalize_task` is the terminal lifecycle operation after the branch edge has landed: it proves the landed commit is reachable from the local parent/source branch, verifies memory carryover, runs or verifies cleanup, and reconciles the JSON-primary leaf task plus immediate parent row to `Completed`; it does not attempt squash equivalence or recursively complete ancestors. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, `lifecycle_finalize_task`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks substantive dirty source-memory content while ignoring its disposable cache so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval. Real external-memory closeout runs the explicit repository-profile Dagger lane before the accepted code commit, then applies the separately owned memory/ledger lifecycle boundaries — since 260731-EFA-L4 over the *staged* task worktree, which is the one index mutation that precedes the gate; missing profile authority, CRAP at or above threshold, or a failing required rail fails closed. Only after that gate passes does closeout commit code, use `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refresh affected onboarding verification metadata and entity fingerprints, run `memory_quality_check`, then commit memory content and ledger when clean. `lifecycle_finalize_task` is the terminal lifecycle operation after the branch edge has landed: it proves the landed commit is reachable from the local parent/source branch, verifies memory carryover, runs or verifies cleanup, and reconciles the JSON-primary leaf task plus immediate parent row to `Completed`; it does not attempt squash equivalence or recursively complete ancestors. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
 
 ### Historical Observable Session Lifecycle Build-up
 
@@ -720,7 +723,7 @@ acceptance. Pull requests keep deterministic non-test validation, and the tag wo
 reachability before publishing. Generic runtime doctrine resolves each repository's concrete
 acceptance policy from its own memory rather than embedding this repository's Dagger command.
 
-## IAS Source-Pair Activation And Disposable Queue Boundary
+## IAS Contract-Scoped Activation And Disposable Queue Boundary
 
 The task topology has a mechanistic closeout-door surface, but the queue is only a disposable
 projection of current task truth and current waiting door generations. It owns ordering and
@@ -729,22 +732,59 @@ evidence. An otherwise-valid task mutation never waits on queue or activation st
 completes first, invalidates the affected projection to explicit invalid-empty, and rebuilds waiting
 candidates from authoritative task/door inputs.
 
-Atomic implementation admission belongs to one replace-in-place selector per normalized code and
-external-memory source pair. Selecting another live master preserves the former and makes it
-observably paused; the selected master enters `reconciling` until its exact source pair is current,
-then becomes `active`. Missing or malformed selector authority fails closed only for affected
-runtime admission/projection. Normal readers never reconstruct it from task prose, queue rows,
-legacy files, or ambient Git.
+Atomic implementation admission belongs to one replace-in-place activation record per canonical
+series contract, addressed by a fingerprint of that contract path. A contract enters `reconciling`
+until its exact source pair is current, then becomes `active`; the record is never shared, so one
+master's state cannot pause another master that merely shares the sprint's code and memory source
+branches. The only activation waiting reason is `atomic-series-reconciling`: a vacant, `active`, or
+foreign-master record is never this contract's reason to wait, and a record that does not name the
+addressed contract is unreadable rather than adopted. Missing or malformed activation authority
+fails closed only for affected runtime admission/projection. Real wave dependencies still gate
+through the sprint execution graph's own `predecessor-incomplete:` reasons. Normal readers never
+reconstruct activation from task prose, queue rows, legacy files, or ambient Git.
+
+### Atomic-Sequential Default — Developer Ruling (Nothing Serializes A Graph-Less Sprint)
+
+A sprint without an `executionGraph` declares no dependencies, so there is nothing to honour:
+**nothing serializes a graph-less sprint.** Independent atomic masters proceed concurrently, no
+master is held because another master is selected, and `atomic-sequential` describes the sprint's
+SHAPE — every commanded master executes atomically — not a serialization mechanism.
+`resolve_scheduling_mode` (`mcp/src/agents_remember/worktrees/scheduling_mode.py`) returns that mode
+with both commanded masters in `mode.masters` and a single `facts` string that now states the ruling
+("executionGraph absent: atomic-sequential default — every commanded master executes atomically and
+no dependency is declared, so nothing serializes the masters"); `commanded_sprint_masters` likewise
+records that neither contract presence nor the absence of a graph adds a dependency. Activation stays
+per contract — each canonical series contract owns its own record, so two masters that share one
+protected source pair keep independent records and one master's `reconciling` state is never a
+sibling's waiting reason — and an explicit `executionGraph` wake is unchanged: a graph-backed sprint
+still gates its masters on real predecessors (`predecessor-incomplete:`). No new serialization
+authority was introduced and no unrelated scheduling semantics changed.
+
+### Known Defect — The Ungoverned `onboarding/skills/**` Tree
+
+`onboarding/skills/**` is a legacy mirror of the code repository's root `skills/**`. The source path
+`skills/**` is absent from this memory root's `system/settings.json` `pathRules.include` (the include
+set lists `AGENTS.md`, `README.md`, `dashboard/src/**`, `examples/mcp/**`, `installer/**`, `mcp/**`,
+`runtime/**` and `scripts/**`), so the tree sits outside normal census coverage — yet the
+contract-scoped memory-quality checker still validates it and enforces findings inside it. The tree
+is therefore ungated by path rules while still being graded, which is a follow-up decision rather than
+a settled design: either bring it into `pathRules` and govern it like any other route, or retire it.
+The contradiction is the concrete reason the decision cannot wait: the tree's sibling sidecars (beyond
+the four gate-required files) still describe the retired source-pair exclusivity rule — the superseded
+"one selected master / paused by the selected master" activation story — while the corrected shipped
+skills under `mcp/src/agents_remember/package_data/runtime/skills/**` now state per-contract
+activation and the ruling above. Two onboarding trees describing opposite activation semantics is a
+known defect of this memory root, not an accepted current-state description.
 
 ## IAS Sync And Protected-Source Authority Boundary
 
 Integration and sync remain journaled Git transactions over task-derived protected source refs, but
-task-document publication is not serialized behind their long-lived state. A source-pair selection
-starts or resumes a contract-addressed sync whose durable record lives at the worktree enclosure
-root and whose exact base, source, and pre-sync commits are pinned in Git refs. Automatic sync is
-only phase one: a genuine code or memory merge conflict is retained for agent resolution and staged
-`continue`; explicit `cancel` restores provably operation-owned pre-sync heads. Cleanup vacates only
-the exact selected terminal contract before its canonical pointer is removed.
+task-document publication is not serialized behind their long-lived state. This contract's own
+activation record starts or resumes a contract-addressed sync whose durable record lives at the
+worktree enclosure root and whose exact base, source, and pre-sync commits are pinned in Git refs.
+Automatic sync is only phase one: a genuine code or memory merge conflict is retained for agent
+resolution and staged `continue`; explicit `cancel` restores provably operation-owned pre-sync heads.
+Cleanup vacates only the exact selected terminal contract before its canonical pointer is removed.
 
 ## Historical milestone context: 260815-DAG-L14 Sprint Structure Route Impact
 
@@ -820,13 +860,55 @@ prohibited, with no compatibility fallback.
 The repository's normal worktree closeout and integration flows complete the approved Git and
 external-memory transaction. They preserve explicit developer approval, candidate/source identity,
 leases, compare-and-swap/ref safety, and recovery evidence; closeout commits code, mechanically
-refreshes and commits memory content, and records the ledger, while integration publishes the
+refreshes and commits substantive memory content when needed, and rebuilds the consumer cache, while integration publishes the
 prepared pair without creating a merge commit. Automatic strict code quality, memory quality,
 selected certification, curator coherence, and independent review are removed from these normal
 routes. Full suites remain an explicit developer request. The dedicated quality/certification and
 curation tools remain explicit owners rather than hidden transaction steps.
 
+## Repository Impact Of Terminal Abandonment And Pull-Request Landing
+
+Two repository-wide entities changed. `DocStatus` gained `abandoned` as a second *terminal* value,
+and it records a decision rather than a failure: on a master it means nothing of that master
+integrated, so its work was deliberately not taken; on a master row it means that leaf's work was not
+taken while the master still completed. It carries no reason of its own — the reason belongs to the
+declaring operation's audit trail (`skip_step`, `remove_subtask` with a disposition, or the decision
+log). `models/task_document.py` publishes the shared `RESOLVED_MASTER_ROW_STATUSES = {"Completed",
+"abandoned"}` and `tasks/readiness.py::master_is_terminal` is the one judgement every plane reads, so
+the task, worktree, queue and observer routes cannot drift apart on the terminal set.
+
+The second entity is the landing route. `worktree_record_landing` is a new public tool for the
+pull-request route: a PR lands on the remote and never moves refs locally, so `worktree_integrate`
+cannot express it. Both routes now write the same terminal `integration` cell through one shared
+writer (`worktrees/modules/landing_record.py`), and a commit that is not reachable from a landing
+target is refused, so the cell cannot be set from a commit that landed nowhere. Retiring a series'
+integration branch also changed: it now requires the master's own terminal task state rather than
+only an enclosure census, because a child that was never started has no enclosure to walk.
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled root delivery, baseline, glossary and verification guidance to actual Git outputs and the computed consumer cache. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen code moved
+  under this repository route — test sources changed (the checkpoint-landing split, the door read
+  through `live_closeout_door`, the memory-census import moves) and the catalog gained consumer
+  rows. Re-read this overview and re-checked its claims and cited ranges: nothing it asserts is
+  falsified, so no wording changed. Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this repository route
+  changed since the recorded verification commit. Re-read the card against the frozen on-disk source
+  and re-checked its claims and cited ranges: nothing this card asserts is falsified by the change,
+  so no wording changed. Verification metadata remains closeout-owned; no verification stamp
+  advanced.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: the repository gained one public verb, `worktree_pause`
+  — the stop-only pause that releases an atomic master's activation selection, publishes nothing, and
+  hands the turn back — taking the advertised MCP roster from 62 to 63 names, and the checkpoint
+  landing is restated as the separate publication it is. The repo surface this overview describes is
+  otherwise unchanged; the content updates live on the `mcp/registration`, `mcp/tools`,
+  `worktrees` and `worktrees/modules` route overviews and the file cards beneath them. Verification
+  metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T15:00:56+02:00 — 260831-LOCR-L36 curator (round 2): stated the developer ruling on the graph-less default — nothing serializes a graph-less sprint; `atomic-sequential` describes sprint shape (every commanded master executes atomically), not a serialization mechanism; activation stays per contract and a real graph wave still gates on `predecessor-incomplete:`. Added a new explicit **known defect** note for the ungoverned `onboarding/skills/**` tree (a mirror of the code repo's `skills/**` that is absent from `system/settings.json` `pathRules.include` and from normal census coverage yet is still validated by the contract-scoped memory-quality checker, with sibling sidecars still describing the retired source-pair exclusivity rule and contradicting the corrected shipped skills — needs a follow-up decision: govern it or retire it), cross-referenced from `## Key Invariants`, and corrected the JSON-primary task-documents feature row to say the default serializes nothing. No verification-metadata change; no execution or acceptance claim.
+
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the `PreparedMemoryCertificationAdapter` citation to `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, where commit `deb032fb` moved the adapter out of `memory_quality/`. Citation path only; the cited claim is unchanged and verification metadata remains pinned.
 - 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the staged-quality row: the boundary still owns exact-candidate staging and targeted quality, but the transaction-only closeout no longer imports it. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
@@ -2070,7 +2152,25 @@ These current source and policy ranges establish the development/certification d
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Git attribution is the source of the consumer ledger. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Closeout writes or reuses one actual memory-content output. | L36-L76 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
+| Integration proves exact memory source ancestry independently of cache rows. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+
 ## Key Invariants
+
+- **Nothing serializes a graph-less sprint** (developer ruling): a sprint without an `executionGraph`
+  declares no dependencies, so `atomic-sequential` names the sprint SHAPE (every commanded master
+  executes atomically) rather than a serialization mechanism; activation is per canonical series
+  contract, and a real graph wave still gates through `predecessor-incomplete:`.
+- **Known defect: `onboarding/skills/**` is ungated by `pathRules` yet still graded.** The legacy
+  mirror of the code repo's `skills/**` is absent from `system/settings.json` `pathRules.include` and
+  from normal census coverage, but the contract-scoped memory-quality checker validates it, and its
+  sibling sidecars still carry the retired source-pair exclusivity rule. Needs a follow-up decision
+  (govern it or retire it); see the boundary section above.
 
 - Controlled prompt delivery has one epoch-bound authority. Request identity/payload is immutable;
   only certified pre-dispatch failure retries; full operation refs complete work; pop-back is an
@@ -2085,7 +2185,7 @@ These current source and policy ranges establish the development/certification d
 - Worktree-backed task workflows must stop again for applicable closeout authority before `c-09-git-worktree-manager` skill closeout creates commits: explicit developer approval for standalone/final/unclear work, or recorded delegated series authority for subordinate accepted-series work.
 - The installed runtime `system/AGENTS.md` start-of-task onboarding gate is hard: after drift detection, agents must not silently drop, ignore, or stop using onboarding; they must report update candidates and dirty-source findings, update approved candidates through `c-05-create-or-update-onboarding-files`, rerun drift, and only then continue.
 - `c-09-git-worktree-manager` skill wraps task workflows with worktree lifecycle state; it does not replace `w-02-light-task-workflow` skill, starts external-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant applicable authority, uses `c-02-memory-quality-control` skill memory quality control after the code commit, refreshes memory, runs `memory_quality_check` before the memory commit, and runs cleanup only after successful integration.
-- `c-10-adopt-memory-baseline` skill is an adoption wrapper for existing external-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
+- `c-10-adopt-memory-baseline` skill is an adoption wrapper for existing external-memory onboarding; it does not refresh onboarding; adoption is detected from attributed Git history, and the disposable ledger may be rebuilt.
 - `c-03-repo-bootstrap` skill bootstrap memory must keep durable route-local overviews in the mirrored onboarding hierarchy under the resolved onboarding root, use root `bootstrap/` artifacts as temporary promotion/review artifacts, keep low-confidence claims out of durable fact sections, apply candidate excludes before scouting, and hand file-level onboarding semantics to `c-05-create-or-update-onboarding-files` skill.
 - `c-05-create-or-update-onboarding-files` skill file-level onboarding remains strict one-to-one with source files and must not collapse file-specific facts into a generic route overview reference; structural route changes route to `c-03-repo-bootstrap` skill rather than becoming disconnected file edits.
 - Route indexes are generated availability metadata, not hand-authored truth; overview `## Hot Path Summary` sections and file sidecars are the maintained inputs, and `c-04-retrieval-strategy-router` skill should infer missing sidecars from `sourceScope` plus `coveredFiles`. One validated Git snapshot supplies both repository membership and path-rule eligibility so counts, coverage, and generated bytes cannot observe different filesystem moments; carryover requires explicit official-memory storage authority rather than parser defaults before it may refresh indexes.
@@ -2143,7 +2243,7 @@ These current source and policy ranges establish the development/certification d
 | memory quality check     | The MCP closeout gate that combines drift integrity and memory style checks.                                  | It runs after onboarding refresh and before the memory content commit; task-start work uses the drift-control subset of `c-02-memory-quality-control` skill.                       |
 | worktree contract        | Local runtime state file for worktree-backed tasks.                                                           | The parser/writer lives in `mcp/src/agents_remember/worktrees/worktree_contract.py`; `c-09-git-worktree-manager` skill creates and consumes contracts beside the task wrapper's `task.md`. |
 | worktree integration     | The approved `c-09-git-worktree-manager` skill phase that lands closed task work back onto source branches.                                | `ff-only` requires unchanged source ancestry; `replay` supports parallel non-overlapping work and blocks conflicts before main moves.               |
-| memory baseline adoption | The one-time action of turning current external-memory onboarding into the first ledgered `memory.md` baseline. | `c-10-adopt-memory-baseline` skill checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to `c-09-git-worktree-manager` skill.                                     |
+| memory baseline adoption | Adopting current external-memory onboarding into attributed memory history with a rebuildable ledger cache. | `c-10-adopt-memory-baseline` skill checks drift first, requires explicit drift acceptance when needed, and delegates attributed content creation to the baseline implementation; cache refresh creates no commit.                                     |
 | runtime AGENTS template  | A package-owned `AGENTS.md` source under `mcp/src/agents_remember/package_data/runtime/agents-md-files/`.                                             | Current templates are coordinator, skills, system, and tasks; there is no memory-repo `AGENTS.md` template or expected memory-repo root instruction file. |
 | MCP runtime settings     | A trusted settings file outside the coordinator root that controls the MCP server.                              | It provides `coordinationRoot`, `workspaceRoot`, allowed repos/providers, timeout caps, and optional contract paths; coordinator files do not grant authority. |
 
@@ -2168,7 +2268,7 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 
 - An older review recorded unrelated `resolve_auto_editor` checks in coordinator tools guidance. This is historical and was not reasserted against live coordination during isolated L31 recovery.
 - The current source registry is useful as a discovery index but has no direct external domain evidence for this repo's own skill/workflow mechanics.
-- External-memory onboarding for `agents-remember` is ledgered; future closeouts must keep the code-to-memory mapping current.
+- External-memory closeouts must preserve actual code/memory output identity and attribution. The consumer ledger is computed from that history and must not gate Git operations.
 - The memory quality package is now the home for drift integrity and update-history style checks; further quality checks should be added under `memory_quality/style` or `memory_quality/integrity`.
 
 ## Historical Review Notes
@@ -2220,6 +2320,9 @@ commands remain self-updating; the static pin belongs only to reproducible candi
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a source under this repo route moved since
+  the recorded verification commit (`mcp/tests/evidence-lifecycle.toml`). Re-read the overview; it makes no
+  claim about that file, so no wording changed. Verification metadata remains closeout-owned.
 - 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added the real Codex 0.151.0 twice-fresh ambient/hosted spawning harness, connected-tool startup gate, canonical replacement-routing proof, and route-local onboarding. Verification remains closeout-owned.
 
 - 2026-08-30T11:47+02:00 — 260821-ARSPAWN-L3 recorded one public spawn verb, the disjoint

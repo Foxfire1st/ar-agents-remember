@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T10:26:37+02:00|
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -15,6 +16,8 @@
 [models overview](../overview.md)
 
 ## Hot Path Summary
+
+Operation recovery and integration authority carry code and memory-content commits only. `mutation_evidence.py` keeps the actual `head`/`headTree` and adds `contentHeadTree` for memory comparisons with root `memory.md` excluded. Prepared state admits the ordered code/content prefix and separately proves the certified content tree when an existing raw memory output still contains a legacy cache.
 
 This route is the strict vocabulary for root-journal operations: generations, closeout-door and successor publication, worker termination, direct landing, legacy migration proof, and public legal controls.
 
@@ -68,6 +71,14 @@ None.
 | Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:14-39 |
 | Asynchronous operation records keep private identity out of the public projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:338-432; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
 
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Recovery records have two output commits. | L66-L72 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| A filtered content head does not replace actual Git head/tree facts. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| Prepared state has an ordered two-leg prefix. | L112-L128 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+
 ## Docs References
 
 No Domain Documentation source is configured.
@@ -97,7 +108,7 @@ Closeout lifecycle records are strict schema 3.0 and carry normalized effective 
 
 ## 260821-CLIVE-L2 Current Architecture
 
-The journal record is the durable authority after scheduling claim transfer. Retry preserves accepted input; recovery reconciles the same generation; cancellation requires exact Git/process evidence; revision publishes one linked successor. Direct landing has its own accepted input and ledger intent. Schema-1 proof is isolated and removable.
+The journal record is the durable authority after scheduling claim transfer. Retry preserves accepted input; recovery reconciles the same generation; cancellation requires exact Git/process evidence; revision publishes one linked successor. Direct landing has its own accepted input and memory-content mutation evidence; the ledger intent is retired. Schema-1 proof is isolated and removable.
 
 ### Reconciled Source Evidence
 
@@ -149,7 +160,7 @@ candidates while the current attestation contains ten.
 coherence response carries that same pair on prepared, published, valid, and typed-refusal paths;
 `pairField`, `expected`, `observed`, and `nextArgs` preserve exact mismatch and recovery facts
 without exposing a second authority. This makes a record from another otherwise-valid checkout,
-base, branch, onboarding root, ledger, or contract structurally ineligible for the current leaf.
+base, branch, onboarding root or contract structurally ineligible for the current leaf. The consumer cache path is excluded from candidate identity.
 
 ## CCR-R18@v1 Generation-Coherent Projection Contracts
 
@@ -185,6 +196,19 @@ normal closeout/integration workers do not select, populate, or require them. Mo
 normal transaction acceptance evidence.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Removed ledger intent/output authority and documented raw versus filtered memory snapshot identities. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/models/lifecycles/` route changed since the recorded verification commit.
+  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
+  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
+  remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route's files last
+  moved before this task line. Re-read the route card and spot-checked its cited anchors against the
+  current source: they still resolve. No wording changed; verification metadata remains
+  closeout-owned.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: recorded that `door_response.py` was deleted with the closeout-door tool entry point (commit `6982c6a7`) and dropped the stale "public join result" claim. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 

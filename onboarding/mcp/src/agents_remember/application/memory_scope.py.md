@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T07:05+02:00 |
-| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -103,6 +103,17 @@ caller does not reconstruct missing values or silently substitute another failur
 An invalid projector result is therefore an implementation defect that remains loud.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/application/memory_scope.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (import-only: the candidate-pair resolvers now live under
+  `memory_quality`). Re-read the card against the current source: every cited resolver range is
+  still exact and the card never names the moved module path. No wording changed; verification
+  metadata remains closeout-owned.
 - 2026-09-10T03:45:55+02:00 — CCR-L42 final predecessor-history curation: reconciled current source behavior, retained-history provenance, and exact citation extents; verification metadata remains closeout-owned.
 
 - 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented selected prepared-source reads and retained history anchoring while preserving current candidate identity; verification metadata remains closeout-owned.

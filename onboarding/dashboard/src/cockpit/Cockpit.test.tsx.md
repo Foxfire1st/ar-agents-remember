@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T15:04+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -147,18 +147,18 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
+| `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:860-910; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | `GALLERY` fixtures + the `applySnapshot` hydration pattern. | `GalleryEntry`; `seed` | dashboard/src/cockpit/Cockpit.test.tsx:29-33; dashboard/src/dev/fixtures.ts:11-11; dashboard/src/dev/fixtures.ts:127-131 |
 | The shared jsdom stubs the render relies on. | "jsdom omits scrollIntoView"; "jsdom's media elements don't implement playback" | dashboard/src/test/setup.ts:86-86; dashboard/src/test/setup.ts:125-125 |
-| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | "renders complete bodies for direct"; "discards task A's late body after selecting task B and hydrates B exactly once" | dashboard/src/cockpit/Cockpit.test.tsx:336-396; dashboard/src/cockpit/Cockpit.test.tsx:398-440 |
-| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | "defaults to Operations" | dashboard/src/cockpit/Cockpit.test.tsx:767-794 |
+| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | "renders complete bodies for direct"; "discards task A's late body after selecting task B and hydrates B exactly once" | dashboard/src/cockpit/Cockpit.test.tsx:338-398; dashboard/src/cockpit/Cockpit.test.tsx:400-442 |
+| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | "defaults to Operations" | dashboard/src/cockpit/Cockpit.test.tsx:769-796 |
 | The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. | "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:783-783 |
-| The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). | `withStates` | dashboard/src/cockpit/Cockpit.test.tsx:448-457 |
-| `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. | `railProjection`; `WARN_ROW`; "keeps a handoff state and a queue warning apart in the one rail that shows both"; "speaks the severity of an attention row into the accessibility tree"; "passes axe on the panel the severity label lives in" | dashboard/src/cockpit/Cockpit.test.tsx:859-907; dashboard/src/cockpit/Cockpit.test.tsx:909-919; dashboard/src/cockpit/Cockpit.test.tsx:921-931; dashboard/src/cockpit/Cockpit.test.tsx:933-949; dashboard/src/cockpit/Cockpit.test.tsx:951-961 |
+| The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). | `withStates` | dashboard/src/cockpit/Cockpit.test.tsx:450-459 |
+| `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. | `railProjection`; `WARN_ROW`; "keeps a handoff state and a queue warning apart in the one rail that shows both"; "speaks the severity of an attention row into the accessibility tree"; "passes axe on the panel the severity label lives in" | dashboard/src/cockpit/Cockpit.test.tsx:861-909; dashboard/src/cockpit/Cockpit.test.tsx:911-921; dashboard/src/cockpit/Cockpit.test.tsx:923-933; dashboard/src/cockpit/Cockpit.test.tsx:935-951; dashboard/src/cockpit/Cockpit.test.tsx:953-963 |
 | The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
 | The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. | "task-state" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:673-673 |
-| The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). | `taskDoc` | dashboard/src/test/fixtures/wire.ts:282-287 |
-| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:467-474 |
+| The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). | `taskDoc` | dashboard/src/test/fixtures/wire.ts:284-289 |
+| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:466-473 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 
@@ -186,6 +186,12 @@ type-aligned with the canonical projection contract. Discard rendering is owned 
 lifecycle-list routes, not by this cockpit composition suite.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 8 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:783-783. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `metricsFor` repointed to dashboard/src/types/projection.ts:467-474. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
@@ -209,10 +215,10 @@ lifecycle-list routes, not by this cockpit composition suite.
   the seeds still call `metricsFor(...)`.
 
 - 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: the body listed neither of the two new describes, so
-  both were added. cit:(["workspace rollup — the handoff reaches the header"], dashboard/src/cockpit/Cockpit.test.tsx:443-476) pins
+  both were added. cit:(["workspace rollup — the handoff reaches the header"], dashboard/src/cockpit/Cockpit.test.tsx:445-478) pins
   `[data-testid="task-metrics"]` containing `2 awaiting you` for two `awaiting-developer` lifecycles and
   containing no `"awaiting"` — while still reading `1 running` / `1 blocked` — when none are handed back.
-  cit:(["the left rail shows lifecycle states and attention severities at the same time"], dashboard/src/cockpit/Cockpit.test.tsx:849-962) renders
+  cit:(["the left rail shows lifecycle states and attention severities at the same time"], dashboard/src/cockpit/Cockpit.test.tsx:851-964) renders
   the whole `CockpitShell` on purpose and adds the accessibility-tree assertions: I confirmed against
   `AttentionQueue.tsx` L222-L230 that the severity really is a `role="img"` + `aria-label` wrapper (so
   `getByRole("img", { name: "Severity: warn" })` is a tree query, not an attribute read) and against

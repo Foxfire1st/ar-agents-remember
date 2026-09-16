@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](../overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -22,13 +22,15 @@ Bound private lifecycle identity before developer-facing serialization.
 
 ### Logic
 
+The bounded migrated-output payload reports proven code and memory-content commits. It carries no `ledgerCommitProven` field: public recovery describes real Git outputs, while downstream ledger-cache availability supplies no lifecycle proof.
+
 The public surface is `PublicEvidencePair`, `MigratedLifecycleClassification`, `public_lifecycle_evidence_pair`, `public_lifecycle_evidence`, `public_failure_evidence`, `classify_migrated_lifecycle`. This file bounds public refusal evidence and next actions. Missing, unreadable, mismatched, or ambiguous artifacts remain typed decisions with expected/observed facts; they are never downgraded to absence and private operation keys never cross the public boundary.
 
 ### Conventions
 
 Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
 - Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
@@ -40,21 +42,39 @@ None recorded beyond the explicit terminal-archive boundary recorded by the gove
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `MigratedLifecycleClassification` reports proven code and memory output without a ledger-proof field. | L25-L57 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py) |
+| `classify_migrated_lifecycle` classifies the retained migration proof without inventing new outputs. | L117-L126 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py) |
+
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. | `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:15-18; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:24-58; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:61-79 |
+| The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. | L16-L18; L25-L57; L60-L78 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional cross-repository evidence applies. | — | — |
+
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f033ea2db12ac48e27df0ea5b08205fc1757e9901bbd327f89f55133ab781bd2. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:52:19+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-13T09:43:07+00:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | `## Documentation` | README.md:178-191 |
 | The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | `## Run The Dashboard`; "autoStart" | README.md:138-177 |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-298 |
-| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:320-325 |
+| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | "## Status" | README.md:320-325 |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:326-329 |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:330-334 |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | `# Agents Remember Documentation` | docs/README.md:1-65 |
@@ -224,6 +224,7 @@ Dagger evidence routes stay labelled and cannot publish lifecycle acceptance; di
 Vitest remains the only supported host test diagnostic.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `## Status` repointed to README.md:320-325. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `## Stability` repointed to README.md:326-329. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `## Contributing` repointed to README.md:330-334. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.

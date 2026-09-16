@@ -5,18 +5,19 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T15:02+02:00|
-| lastVerifiedCommitHash | `1eb6301a804a0db1a17bc4d6606be02b90c3825b` |
-| lastVerifiedCommitDate | 2026-09-11T12:48:35+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [worktrees overview](../overview.md)
 
-## IAS Frozen Source-Pair Serialization Boundary
+## IAS Frozen Contract-Activation Serialization Boundary
 
-The source-pair selector and sync transaction run under the same repository integration authority
+The per-contract activation record and the sync transaction run under the same repository integration authority
 that serializes protected-source movement. Remote refresh is evidence gathered before the lock;
 the admitted local source tips, pinned authority refs, contract re-read, selection transition, and
 base-pair finalization are proven under authority. No ambient checkout or prior queue row becomes a
@@ -39,6 +40,10 @@ Integration no longer owns a quality gate, a publication fence, an integration-c
 organizational-completion boundary; all four were deleted by the closeout-door cut (commit `fad9808e`).
 
 ## Hot Path Summary
+
+Follow `integration_ref_transaction.py` for code/memory ref publication and source-ancestry checks, `direct_landing/` for journaled memory writes, and `closeout/preparation/` for retained private outputs. No route requires a ledger commit or validates cached rows to authorize Git work.
+
+## Detailed Route Context
 
 Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. `lifecycle_operation_location.py` owns path confinement and publication state; `lifecycle_operation_binding.py` owns only the pure canonical identity/digest bytes that publication proves. This route also owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, and integration reconciliation. The bounded schema-1 legacy repair route this summary used to list was deleted with the legacy package.
 
@@ -88,30 +93,18 @@ establish that a production continuation is installed or that the candidate has 
   those originals; a result payload, latest report, or another generation cannot substitute for them.
 - Exact-pair consumers have one candidate-identity owner; disabling the duplicate configured check
   never disables repository-root, separation, task, or enclosure authority.
-- External-memory ledger order is authoritative: the newest same-code row is current, while older
-  exact rows remain audit history. Memory-only landing appends one current row; integration and
-  organizational-completion repair preserve and prove the required exact historical edges.
+- Integration publishes the admitted code and memory-content commits. It proves exact source ancestry, object existence, ownership, substantive cleanliness and ref compare-and-swap. The consumer cache supplies none of those facts.
+- Cache-only absence, edits or index conflicts are ignored in memory-domain content observations. Non-cache content differences and conflicts remain refusal conditions.
 - The closeout door is journal-owned state (`<worktree_group>/reports/closeout-door.json`, plus the
   operation record's own publication). `WorktreeContract` no longer carries a `closeout_door` field;
   a contract that still carries the key parses, the key is never read, and the next rewrite drops it.
 - Integration reports a fact — integrated, checks passed. It never completes a master task document.
 
-## Recovery Uses Current Ordered Authority
+## Recovery Proves Actual Git Outputs
 
-Direct-landing recovery recognizes an already-created external-memory ledger commit from the live
-canonical ledger, not by reconstructing a unique mapping. The newest row must exactly map this
-operation code commit to its memory-content commit; every accepted pre-operation row must remain an
-immutable suffix; ledger metadata and canonical rendering must match; and the ledger commit must
-prove the exact memory parent, before/after ledger blobs, and ledger-only changed path. Older exact
-same-code rows remain valid audit history.
+Direct landing retains accepted input and proves the actual memory-content commit through journaled mutation evidence, current branch/HEAD, source ancestry and exact substantive content. If no memory content changed, it can reuse the existing memory head without manufacturing attribution or a cache-maintenance commit. If content changed, the one memory-content commit carries the shared `Code-Commit:` trailer.
 
-Cancelled closeout replacement likewise admits only the current retained lifecycle state together
-with the cancelled disposition; the detached worker exit proof that earlier revisions of this section
-named was deleted with the operation plane, and the *contract-owned* copy of the waiting door went
-with the contract field. The door itself survives in its own journal and is read through
-`live_closeout_door`, which is what cancellation now consults for the observed disposition. Neither
-rule adds a fallback reader: both narrow recovery to the current canonical authority plus exact
-retained evidence.
+The writer removes root `memory.md` from the memory index at the final staging/commit boundary, so force-staging the ignored cache after admission cannot include it in the output. Cache refresh is a post-output observation and cannot substitute for or invalidate Git proof. Cancellation and replacement retain their independent journal/worker/ownership checks.
 
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
@@ -119,7 +112,7 @@ Closeout integration separates four owners: the contract lifecycle lease seriali
 
 ## 260821-CLIVE-L2 Current Architecture
 
-One admitted contract observation enters each public mutation flow; the mutation owner rereads that exact authority under its existing lease/lock. Journal input and proven output are immutable. Retry/recover remain same-generation, revise is safe-cancel plus write-ahead successor, and worker authority survives until termination proof. Direct landing journals every memory/ledger cut. Terminal cleanup refuses until L5 archive proof. The legacy schema-1 repair route and the pre-locator adoption route it once listed were deleted as capabilities by the de-entanglement cut.
+One admitted contract observation enters each public mutation flow; the mutation owner rereads that exact authority under its existing lease/lock. Journal input and proven output are immutable. Retry/recover remain same-generation, revise is safe-cancel plus write-ahead successor, and worker authority survives until termination proof. Direct landing journals memory-content mutation and publication evidence; cache refresh is informational. Terminal cleanup refuses until L5 archive proof. The legacy schema-1 repair route and the pre-locator adoption route it once listed were deleted as capabilities by the de-entanglement cut.
 
 The route decomposition mirrors those boundaries without adding new authority: normal lifecycle state is under `lifecycle/` and direct landing under `direct_landing/`. The `legacy/` package that held the only schema-1 reader no longer exists. Parent-level integration modules coordinate Git/ref publication and organizational repair across those owners.
 
@@ -131,9 +124,9 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | Completed organizational proof binds original selected references through the operation owner. | `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
 | Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:80-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:181-267 |
 | Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
-| Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:125-143; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:170-242 |
-| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:113-170 |
-| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:583-593; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:662-694 |
+| Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165 |
+| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-115; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:118-175 |
+| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:582-592; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:661-693 |
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
 
@@ -142,7 +135,7 @@ Closeout scheduling intent begins as an immutable door generation published in i
 commands publish exact task/contract bytes under the short repository-scoped task CAS, then refresh
 the disposable projection as a downstream effect. Starting closeout atomically transfers the exact
 first-ready waiting door into the stable root operation journal; claim intent is durable before
-worker launch. From that point, lifecycle, source-journal identity, commits, memory, ledger,
+worker launch. From that point, lifecycle, source-journal identity, commits and memory content,
 certification, integration, cancel, retire, supersede, and recovery evidence remain journal-owned
 even if task changes invalidate the projection.
 
@@ -176,7 +169,7 @@ does not create a second authority route, queue-owned lifecycle evidence, or a c
 
 ## Integrated IAS Recovery Contract
 
-The closeout child now resumes retained prepared C/M/L publication before original-head admission. The default application service bundle installs `PreparedCloseoutContinuation`; the service boundary remains explicit and selected journal/certificate identities still govern execution. Protected-source integration, root-journal ownership and Dagger certification boundaries are unchanged by the helper extractions.
+The closeout child now resumes retained prepared code/memory-content publication before original-head admission. The default application service bundle installs `PreparedCloseoutContinuation`; the service boundary remains explicit and selected journal/certificate identities still govern execution. Protected-source integration, root-journal ownership and Dagger certification boundaries are unchanged by the helper extractions.
 
 ## CCR-R12@v5 Current Integration Boundary
 
@@ -187,17 +180,28 @@ invoking a merge hook. It does not automatically run strict code quality, memory
 certification, curator coherence, or independent review; full suites are an explicit developer
 request. Earlier selected-certificate wording describes retained historical/explicit evidence.
 
-**Cleanup is automatic on a successful integration.** Once the prepared pair has landed and the
-contract records `integration_status="completed"`, integration reclaims its own enclosure by
-running the existing terminal cleanup procedure; there is no separate cleanup prompt. The procedure
-reports, in operator language, what it removed and what it did not across all four target kinds —
-worktrees, merged local task branches, the reports directory, and the enclosure root — and the
-integration result carries that report. The result reloads the contract so its status facts reflect
-the post-cleanup cell. A cleanup failure does not fail the integration: the result still reports
-`integrated`, and the refusal is reported with its reason, cleanup state and blockers. The
-contract's `cleanup` cell keeps the refusal visible as `cleanup-pending`, whose next operation is
-`retry_cleanup` against `worktree_cleanup`. A refused or partial integration cleans up nothing —
-that is exactly when the enclosure evidence is still needed.
+**Reclamation is automatic and unprompted — and it is not integration's (260831-LOCR-L31).** A
+successful integration publishes the landed pair through the shared landing writer, records
+`integration_status="completed"` with `cleanup="pending"`, and **stops there**. It reclaims nothing,
+and the integration result carries no cleanup report: its `cleanup` key is the untouched contract cell
+and its summary says the worktrees are reclaimed when the task edge is finalized. Terminal
+reclamation belongs to `lifecycle_finalize_task`, which runs the existing terminal cleanup procedure
+and shapes the operator report — the inventory of what was removed and what was left in place across
+all four target kinds (worktrees, merged local task branches, the reports directory, and the enclosure
+root).
+
+**Why it moved.** Reclaiming inside integration completed the enclosure's cleanup cell before
+integration returned, so the one guard that routes a landed leaf onward to `lifecycle_finalize_task`
+(`next_step.py::_gate_after`, keyed on `contract.cleanup != "completed"`) could never fire. A genuine
+landing therefore reported `nextOperation: "done"` while the leaf's task document stayed `planning`
+and its master row stayed `inProgress` — silently, on leaves L29 and L30. Keeping the landing and the
+reclamation in one function made the edge that finalizes the task unreachable.
+
+Because reclamation now runs after the landing, a cleanup refusal **blocks finalization** rather than
+being reported beside a completed landing: the leaf document and its master row are left open over an
+enclosure that is still on disk, which is exactly the honest state. A refused or partial integration
+still cleans up nothing, and a dry-run finalization reports cleanup's own plan unshaped instead of a
+completed-reclamation sentence.
 
 ## Source-Moved Recovery Guidance
 
@@ -283,7 +287,166 @@ and relocated several route members. On this route specifically:
   `memory_quality/` so the pre-closeout quality service owns its own candidate identity
   (`0b63d6fc`, `be517eec`), and `prepared_certification.py` moved the other way (`deb032fb`).
 
+## Terminal Task State Gates Integration-Branch Retirement
+
+Retiring a series' integration branch now depends on the *master's own task document*, not only on an
+enclosure census. `integration_branch_authority.py::_require_series_task_terminal` is that guard,
+shared by the cleanup and abandon arms of `require_terminal_worktree`. It exists because
+`require_series_children_retired` walks `task_root/enclosures`, and a child that was never started
+has no enclosure to walk — so a master whose remaining leaves are all still `planning` reads as fully
+retired there. That is how `ar/260831_lifecycle-owned-completion-relay` could have had its branch
+retired while most of its leaves had never been created.
+
+The vocabulary is deliberately asymmetric. `worktree_cleanup` still requires `Completed` exactly:
+cleanup proves a completion fact. `worktree_abandon` accepts `Completed` **or** `abandoned`, and two
+refusals carry the reasoning: an in-progress master cannot be retired through abandon at all, and an
+`abandoned` master whose contract already records a landed line — `integration_status` in
+`{"completed", "checkpointed"}` (260831-LOCR-L30) — is refused because abandoning asserts that none
+of the work was taken. Once part of it landed, finally or at a checkpoint of a still-open master, the
+honest terminal route is to mark the never-integrated rows abandoned and complete the master instead.
+The refusal message names both states: "this master already landed work into its source branch".
+`series_closeout.py::_require_atomic_master_complete` keeps its `!= "Completed"` test for the same
+reason and names abandonment distinctly (`atomic-series-closeout-master-abandoned`): an abandoned
+master is reclaimed with `worktree_abandon` and is never closed out. And
+`organizational_completion.py::require_published_organizational_master_completion` reports
+"this organizational master is abandoned, not completed" rather than the generic
+not-durably-published message.
+
+## Historical milestone context: 260831-LOCR-L30/L34 Checkpoint Landing On This Route
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+`worktrees/series_closeout.py` gained `publish_series_checkpoint_under_authority`, the non-final
+master exit, and `worktrees/modules/integrate.py` gained the `checkpoint_landing_result` route that
+reaches it. The route keeps every ref-protecting authority this overview describes — the series
+contract binding, the atomic landing authority, the replay/ff source-state gate, the source-lineage
+proof and the master-handover gate — and drops only the completion assumptions the final series route
+proves (`_require_atomic_master_complete`, `_require_every_atomic_leaf_landed`, and the completed
+closeout). It runs no cleanup and records `checkpointed` rather than `completed`, so the master keeps
+its worktrees, branches and enclosure. A master that is already `Completed` is refused with
+`atomic-series-checkpoint-master-complete`, so a checkpoint can never downgrade a finished integration.
+Detail lives on the `series_closeout.py`, `integrate.py`, `landing_record.py`,
+`integration_ref_transaction.py` and `integration_branch_authority.py` file cards.
+
+**260831-LOCR-L34 repaired this route's reachability and its fail-open hole.** The L30 form read the
+commits to land from the contract's closeout cells — the very completion facts an unfinished master does not
+have — and required `closeout_status == "completed"`, so the route was unreachable in both directions.
+It now captures its own candidate (`capture_series_checkpoint_refs`: the live code and memory
+work-branch tips, with their ledger mapping proved through `exact_series_memory_closeout`, the
+exact-mapping reader; the *final* series route may additionally accept the reconciled pair through
+`series_memory_closeout`, 260831-LOCR-L36) and publication **requires** that `expected` value,
+revalidating it against the live tips immediately before the ref move
+(`atomic-series-checkpoint-candidate-moved`). The transaction on
+this route carries the route difference as data, and since **260913-LCA-L11** that data is exactly one
+fact: `LandingAdmission` holds the checkpoint's own captured candidate, or nothing extra for the final
+routes. The L34 form also carried the finished master's ledger **shape** — the leaf-chain prefix, or
+the leaf projection form for an unfinished master, selected by `_require_preserved_ledger_history` —
+and **all of it is removed**: the developer's ruling of 2026-09-14T08:15+02:00 made the rebuild
+outrank the tracked ledger file, so a landing no longer reads the table for what it *should* have
+said, only for whether each row it carries is true. `_integrated_ledger_pair` and its source-blob
+read are gone with the rule, `LandingAdmission.expected_series_ledger_prefix` and its
+`atomic_series_ledger_prefix` producer are gone, and `require_integrated_ledger_mapping` keeps four
+promises that were never about the file (the landed pair's mapping, per-row truth through
+`_require_true_rows`, the conditional descent from the exact memory source, and the header naming its
+own first row). The preview/apply parity invariant this repair came from is inventoried on
+[the worktrees route overview](../overview.md) and in
+[`memory_quality/overview.md`](../../memory_quality/overview.md); the removal and its cost are
+recorded on the worktrees route and on the `integration_ref_transaction.py` card.
+
+## Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The landing output carrier has only code and memory-content commits. | L63-L67 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Only actual memory ancestry determines this integration proof. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Direct memory writes exclude the consumer cache. | L175-L236 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
+
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced direct recovery ledger proofs and landing row validation with two-output Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route's only change
+  is inside `closeout/preparation/memory_output.py` (its git call now passes
+  `GitRunnerOptions(input_text=…)`). Re-read the overview: it names neither that module nor the
+  runner, and its live-door and shared-renderer statements still hold. No wording changed.
+  Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
+  `mcp/src/agents_remember/worktrees/integration/` route changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
+  the recorded verification commit (`closeout/preparation/memory_output.py`). Re-read the route
+  card: it makes no claim about that module, and its existing statements about the shared renderer
+  and the live door read still hold. No wording changed; verification metadata remains
+  closeout-owned.
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's checkpoint/landing paragraph, which
+  described the L34 shape as current. The ledger-preservation check is **removed** by the developer's
+  2026-09-14T08:15+02:00 ruling — it protected the tracked `memory.md`, which is derived state — so
+  `LandingAdmission` now carries only the checkpoint's captured candidate,
+  `_require_preserved_ledger_history` and `_integrated_ledger_pair` are gone,
+  `expected_series_ledger_prefix`/`atomic_series_ledger_prefix` are gone, and the surviving promises
+  are the mapping, per-row truth, the conditional source descent and the header. Added the matching
+  invariant and recorded the known gap (a same-code-commit row reversal can land unreported) as
+  pending a decision on the worktrees route. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): corrected the one sentence above that placed the rendering definition in
+  `models/closeout/input.py`. Since L4 that method is a delegation to
+  `kernel.memory_attribution.render_memory_content_message`, the one writer for all five memory-content
+  producers, so this route's direct-landing leg (`_direct_memory_commit`, commit site `:270`, naming
+  `operation_input.codeCommit` at `:272`) reaches the shared renderer through the closeout model rather
+  than through a route-local or model-local format. Nothing else on this route changed: the trailer is
+  still written at creation, before `prove_git_commit` journals the object, and the `memory.md`-only
+  ledger commit still carries none. Verification metadata remains closeout-owned; no acceptance claim
+  and no verification stamp advanced.
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): the
+  branch-addressed route's memory-content commit is now attributed in the object —
+  `_direct_memory_commit` takes the verified `code_commit` and commits
+  `effectiveInput.memory_content_message(code_commit)`, one `Code-Commit: <sha>` trailer from the same
+  single `models/closeout/input.py` rendering the worktree closeout route uses, while the
+  `memory.md`-only ledger commit carries none. Recorded it beside the ordered-authority paragraph
+  whose ledger row recovery reads, and rebound the stale direct-landing evidence row (`73-115`;
+  `118-175`). Verification metadata remains closeout-owned; no acceptance claim and no verification
+  stamp advanced.
+- 2026-09-13T17:56+02:00 — 260831-LOCR-L36: corrected the checkpoint-route paragraph. The route is a
+  partial **publication** rather than a pause, its capture proves its ledger mapping through
+  `exact_series_memory_closeout` (the exact-mapping reader), and the *final* series route may
+  additionally accept the reconciled pair a `worktree_sync` produced through `series_memory_closeout`.
+  The conserved integration plane is unchanged; what changed is which reader each route may claim.
+  Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:44+02:00 — Retitled and corrected the serialization-boundary section to the per-contract activation record now that activation is keyed per series contract; the frozen integration plane itself (protected-ref compare-and-swap, ancestry proof, source-state gate, clean-checkout proof, ledger-mapping proof) is unchanged by that re-keying and no change to it is claimed. Content change; `lastVerifiedCommitHash` remains closeout-owned.
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded the checkpoint reachability repair on this route
+  — the route had required a completed closeout it also made unreachable, so it could not be entered
+  from either side; it now captures its own live candidate refs and revalidates them at publication,
+  the route difference travels as `LandingAdmission` data through one transaction, and a paused
+  master's ledger is proved as the leaf projection form rather than against the completion census.
+  Corrected the section's "two completion assumptions" to include the completed-closeout gate, and
+  pointed to the preview/apply parity invariant inventory on the worktrees route overview and in
+  `memory_quality/overview.md`. Content change, not a range repoint; verification metadata remains
+  closeout-owned and no acceptance claim is made.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 route impact: integration no longer reclaims. Replaced the
+  "cleanup is automatic on a successful integration" boundary with the landed-and-stop account, and
+  recorded **why** the ownership moved: reclaiming inline completed the enclosure's cleanup cell before
+  integration returned, so the `next_step.py::_gate_after` guard keyed on `contract.cleanup !=
+  "completed"` could never fire — a genuine landing reported `nextOperation: "done"` while the leaf
+  document stayed `planning` and its master row stayed `inProgress`, silently on L29 and L30. Recorded
+  that the result carries no cleanup report (the `cleanup` key is the untouched contract cell), that
+  `lifecycle_finalize_task` owns the terminal procedure and its shape, and that a cleanup refusal now
+  blocks finalization instead of being reported beside a completed landing. The retired
+  `retry_cleanup` next operation is no longer this route's post-landing projection. Verification
+  metadata remains closeout-owned; no route acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the non-final series exit and the
+  checkpoint integration route on this route, and widened the abandon-refusal account from
+  `integration_status == "completed"` to `{"completed", "checkpointed"}` with the value behind it.
+  Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-11T23:05:00+00:00: Integration-branch retirement curation: recorded that retiring a series' integration branch now requires the master's own terminal task state through `_require_series_task_terminal`, why the enclosure census cannot see unstarted work, and the deliberate `Completed`-only versus `Completed`-or-`abandoned` asymmetry plus the two named refusals. Content change, not a range repoint.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "LifecycleControlAction = Literal[", "class LifecycleControlCommand:", "def control_operation(", `_operation_specific_projected_result`, `_projected_operation_result`, `operation_projection` repointed to mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:582-592, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:661-693. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T15:02+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: recorded in the current integration boundary that a successful integration reclaims its own enclosure through the existing terminal cleanup procedure, that a refused or partial integration cleans up nothing, and that a cleanup failure does not fail the integration — the refusal is reported and the contract's `cleanup` cell holds `cleanup-pending` for a `retry_cleanup`. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the deleted `integration_quality.py` composition paragraph and its evidence row, corrected the door from contract-owned to journal-owned (`<worktree_group>/reports/closeout-door.json`), narrowed the cancellation-recovery wording to the contract-owned copy that actually went, recorded the four deleted route members and what moved versus what did not, and added the master-completion-is-undecided gap with its two owed checks. Verification metadata remains pinned because only the cut-affected claims were reconciled; this records source documentation only and makes no acceptance or certification claim.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the dead `legacy/` route member and its stale evidence row, repaired the `closeout/memory_candidate_pair.py` reference to `memory_quality/memory_candidate_pair.py`, recorded the deleted lock/door/operation/legacy planes and the four relocated members, and dropped the deleted worker/door wording from the recovery and integration-boundary sections. This records source documentation only; it makes no acceptance or certification claim.

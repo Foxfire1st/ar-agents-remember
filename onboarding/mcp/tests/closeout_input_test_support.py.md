@@ -5,74 +5,97 @@
 | repository | agents-remember |
 | path | `mcp/tests/closeout_input_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-15T01:02 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Nearest governing overview](overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-Provides canonical typed closeout admissions, normalized `WorktreeArgs`, and mutation-evidence recording/builders for L1 tests. It replaces repeated fixtures that previously smuggled raw or blank message fields below validation.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`) makes `closeout_worktree_args` default
-`certification_profile` to `Path("mcp/certification-profile-v1.json")`, so closeout fixtures
-carry the repository-owned profile reference exactly like the real application path.
+Provides shared typed closeout inputs, operation setup, mutation evidence recording/builders,
+and finalization fixtures. It composes production models rather than parallel test-only input shapes.
 
 ## Code Commentary
 
 ### Logic
 
-The helpers construct production `EffectiveCloseoutInput` and accepted admission values rather than parallel test-only models. `MutationEvidenceRecorder` captures progress transitions, while builders create intent, reconciled-unchanged, and commit-proven states with the same snapshot vocabulary as the operation store.
+`closeout_operation_input` and `closeout_worktree_args` normalize explicit code/memory messages
+through the production input boundary. Unknown fixture keywords are rejected; there is no ledger
+message default or ledger parameter. The arguments retain the repository-owned certification
+profile default where that fixture needs one.
+
+`start_closeout_operation` maps enabled messages into canonical admission. Legacy journal-plane
+fixtures may obtain a deliberately synthetic waiting generation and bypass only its first-ready
+scheduling assertion; a fixture with real scheduling evidence keeps that fence. The synthetic
+current generation no longer carries ledger memory/provenance/dependency fields.
+
+`MutationEvidenceRecorder` checks monotonic intent/proven transitions and stable before/expected
+trees. The builders construct intent, reconciled-unchanged, and commit-proven typed evidence for the
+remaining legs. Running/terminal helpers advance explicit fixture records through their store.
+`publish_closeout_finalization` projects actual code and memory content commits into recovery cells,
+without a ledger output.
+
+### Conventions
+
+The support is a test composition boundary, not production admission authority. Its narrowly
+scoped scheduling patch must stay visible in callers' evidence claims. Queue fixtures and operation
+input/evidence fixtures retain separate responsibilities.
 
 ### Invariants And Boundaries
 
-- Test setup must cross the same normalized-input boundary as production.
-- Evidence helpers record expected calls; they do not weaken production authority checks.
-- Queue fixtures remain separate from admission fixtures.
+- Enabled real outputs cross the same message normalization used by production.
+- No helper synthesizes a ledger leg or accepts an obsolete ledger keyword.
+- Mutation builders retain exact generation and before/expected/proven evidence shapes.
+- Fixture setup or a consumer declaration is not execution or certification evidence.
+
+### Todos
+
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-See task `260821-CLIVE-L1` L1-R1 through L1-R6.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:90-136; mcp/tests/closeout_input_test_support.py:342-367 |
-| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:50-84; mcp/tests/closeout_input_test_support.py:395-417; mcp/tests/closeout_input_test_support.py:420-451; mcp/tests/closeout_input_test_support.py:454-466 |
+| The recorder verifies typed progress transitions. | L64-L94 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| Canonical setup passes only enabled code/memory messages. | L97-L140; L156-L227 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| Finalization publishes code/memory recovery cells. | L352-L379 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| Input and WorktreeArgs builders share production normalization. | L390-L414; L417-L438 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| Evidence builders retain the explicit durable states. | L441-L463; L466-L497; L500-L512 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
 
 ## Cross-Repo References
 
-No meaningful cross-repository reference applies.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
 
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `MutationEvidenceRecorder`. The L2 additions force immutable normalized input, exact generation retention, evidence-derived cancellation/recovery, and pre-authority refusal of invalid calls. A failed first call remains task-addressably recoverable without amending accepted intent.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current test source exercises `MutationEvidenceRecorder`. | `MutationEvidenceRecorder` | mcp/tests/closeout_input_test_support.py:50-80 |
-
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Builds explicit normalized closeout inputs and journal mutations for behavioral fixtures, including waiting-door publication, finalization, mutation intent, reconciled-unchanged evidence, and commit proof.
-
-### Current Invariants
-
-- Enabled legs receive explicit nonblank messages; disabled legs remain typed not-applicable.
-- Fixture mutations preserve one operation generation and never synthesize fallback input.
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:02 UTC — Reconciled shared fixture inputs, waiting-generation fields, and finalization cells with code/memory-only outputs; retained explicit scheduling bypass scope, profile defaults, and evidence-state builders. Working candidate verified by source inspection; commit metadata records real committed history only.
+
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `MutationEvidenceRecorder`, `closeout_operation_input`, `start_closeout_operation`, `with_commit_proven`, `with_mutation_intent`, `with_reconciled_unchanged` repointed to mcp/tests/closeout_input_test_support.py:395-420, mcp/tests/closeout_input_test_support.py:448-470, mcp/tests/closeout_input_test_support.py:473-504, mcp/tests/closeout_input_test_support.py:507-519, mcp/tests/closeout_input_test_support.py:64-94, mcp/tests/closeout_input_test_support.py:97-141. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile default in closeout_worktree_args.
 
 

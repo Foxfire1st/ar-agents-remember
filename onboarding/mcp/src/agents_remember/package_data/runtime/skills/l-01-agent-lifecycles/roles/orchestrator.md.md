@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
+| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,9 @@ role, then synchronize.
 - The orchestrator is backend-only and does not become manager, worker, reviewer, curator, or
   developer-facing architect.
 - A persisted `executionGraph` is optional; the explicit graph-less choice runs the
-  source-pair-selected atomic-sequential default and retains all planning judgments.
+  per-contract-activated atomic-sequential default, which describes the sprint's shape — every
+  commanded master executes atomically — and serializes nothing across masters, while retaining all
+  planning judgments.
 - Task-document mutation is upstream of runtime selection; affected queue projections are
   invalidated and rebuilt after planning changes.
 - The queue observes activation and owns no lifecycle, commit, or selection evidence.
@@ -83,9 +85,13 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `## Job P — Portfolio (streamline + plan)`; `## Job O — Orchestrate (execute the plan)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:183-259; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:260-486 |
-| The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; "## Topology Choice And Canonical executionGraph Adoption Payload" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:127-168 |
+| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `## Job P — Portfolio (streamline + plan)`; `## Job O — Orchestrate (execute the plan)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:183-277; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:278-506 |
+| The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; "## Topology Choice And Canonical executionGraph Adoption Payload" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-72; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:127-168 |
 | Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
+| The shipped role now states the graph-less default directly: canonical commanded order is the stable tie-break and nothing serializes its masters. | "nothing serializes its masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:264-267 |
+| The shipped role now states that per-contract activation records each master's own `reconciling -> active` transition and serializes nothing across masters. | "Per-contract activation records each master's own" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:345-347 |
+| The shipped role's closeout queue observes each contract's own activation facts instead of a paused former master. | "Queue rows only project each contract's own" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:350-351 |
+| The shipped topology diagram shows each atomic master on its own branch with one landing into super. | "atomic master B branch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:454-456 |
 
 ## Cross-Repo References
 
@@ -139,8 +145,12 @@ The orchestrator recomputes the ready frontier after every material event and re
 evidence, author, confidence, and supersession before a priority/queue judgment changes selection.
 Organizational leaves land directly as released; the last one forms the exact proposed final
 candidate and receives the full master check before super moves. Atomic masters expose no partial
-leaf state to super; source-pair activation may pause one live master and select another, while the
-separate landing authority serializes protected-ref movement. Integration refs are never repair
+leaf state to super; the per-contract activation record lets two sprint-commanded atomic masters
+that share one protected source pair hold independent records, so activating one never auto-pauses,
+replaces, or waits on another, while the separate landing authority serializes protected-ref
+movement. Nothing serializes the graph-less sprint itself (developer ruling): a sprint with no
+`executionGraph` declares no dependency, so independent atomic masters proceed concurrently and only
+explicit graph waves still gate on `predecessor-incomplete:`. Integration refs are never repair
 workbenches; fixes return to an owning/reopened or new scoped leaf.
 
 ## 260815-DAG-L13 Scheduling Default Doctrine
@@ -175,20 +185,63 @@ graph adoption from that state attaches all masters first and then publishes one
 nodes-plus-evidence-edges batch. No fake graph, partial bootstrap, runtime fallback, or mandatory-
 graph compatibility path exists.
 
-## IAS Activation, Queue, And Conflict Boundary
+## IAS Per-Contract Activation, Queue, And Conflict Boundary
 
-Before atomic implementation exposure, manager/worker dispatch selects the exact source pair as
-`reconciling`, auto-pauses the former selection, source-syncs the selected master, and publishes
-`active` only when both bases are current. Reviewer/curator inspection does not switch selection,
-and pausing preserves chats, processes, worktrees, contracts, and claimed journals.
+Before atomic implementation exposure, manager/worker dispatch activates the requested canonical
+contract as `reconciling`, source-syncs that contract's two protected branches, and publishes
+`active` only when both bases are current. The activation record is keyed by the series contract,
+not the protected source pair, so two atomic masters commanded by one sprint and sharing that pair
+hold independent records: activating one never auto-pauses, replaces, or blocks the other, and the
+only activation waiting reason is `atomic-series-reconciling` for the contract's own in-flight
+reconciliation. Reviewer/curator inspection does not activate a contract, and nonterminal sibling
+contracts keep their chats, processes, worktrees, contracts, and claimed journals untouched.
 
 Task authoring never waits for activation or queue permission. The queue is a disposable observer
-of active/reconciling/paused/vacant waiting facts. Malformed selector state fails closed only for
+of active/reconciling/vacant waiting facts. Malformed activation state fails closed only for
 affected runtime admission/projection and is archived/replaced by a selecting operation; no
 contract-presence fallback exists. Technically derivable retained conflicts are resolved through
 the advertised continue/cancel operation; only genuine semantic ambiguity returns to the architect.
 
+**Shipped text corrected (260831-LOCR-L36 round 2).** The mirrored runtime role this card
+describes — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` —
+now carries the corrected doctrine in its own text: the graph-less adoption paragraph at `:264-267`
+says "canonical commanded order is the stable tie-break, and nothing serializes its masters — a
+graph-less sprint declares no dependencies, so independent masters proceed concurrently, no master is
+held because another is selected, and none is retired"; the execution-loop paragraph at `:345-347`
+says "Per-contract activation records each master's own `reconciling -> active` transition and
+serializes nothing across masters", with only the landing lane separately serializing conflicting
+protected-ref movement, and that "Queue rows only project each contract's own active/reconciling
+waiting facts" (`:350-351`); atomic step 4 at `:409-413` requires "the master's own contract
+activation to be `active`" and records that "an unfinished master retains its branch and journals";
+and the topology diagram at `:454-456` shows each atomic master on its own branch with one landing
+into super. The
+earlier shipped-source debt note is therefore removed — a repo-wide grep for `source-pair-scoped`,
+`source-pair-selected`, the "logically pauses the former master" admission, one-selected-master-at-a-time
+and source-pair activation wording returns 0 hits in the code worktree.
+
 ## Update History
+- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
+  shipped-source debt row and debt paragraph and replaced them with the corrected shipped ranges —
+  the role's graph-less paragraph now says "nothing serializes its masters" `:264-267`, per-contract
+  activation "serializes nothing across masters" `:345-347`, queue rows "only project each contract's
+  own active/reconciling waiting facts" `:350-351`, atomic step 4 requires the master's own contract
+  activation `:409-413`, and the topology diagram shows one landing per atomic master `:454-456`.
+  Body prose now states the developer ruling (nothing serializes a graph-less sprint;
+  `atomic-sequential` is sprint shape, not a scheduling mechanism; independent atomic masters proceed
+  concurrently; per-contract activation records each contract's own `reconciling -> active`; only
+  explicit `executionGraph` waves gate on `predecessor-incomplete:`), and the Job P/Job O and
+  template `## Rules` ranges were re-grepped and repointed to `:183-277`/`:278-506` and `:14-72`.
+  Source documentation only; verification metadata remains closeout-owned and no acceptance or test
+  claim is made.
+- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote this card's activation
+  boundary from source-pair selection with an auto-paused former master to the per-contract
+  activation record — each series contract owns its record, the only waiting reason is
+  `atomic-series-reconciling`, and a foreign master is never a reason to wait or pause — and
+  recorded the shipped-source debt that the frozen mirrored orchestrator role still states the
+  removed per-source-pair rule at `:264-265`, `:321-324`, `:344`, `:348`, and `:407-411`, flagged
+  for a future code leaf. That debt observation is superseded by the 260831-LOCR-L36 round-2 entry
+  above: the shipped text is corrected and the debt note is removed. Source documentation only; verification metadata remains closeout-owned
+  and no acceptance or test claim is made.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: recorded the baseline/fix-verification review packet, atomic-child master-review boundary, and explicit three-round/developer-authorization rule in the synchronized runtime role card.
 

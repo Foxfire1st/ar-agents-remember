@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,7 +18,11 @@
 
 Owns the terminal `lifecycle_finalize_task` worktree operation: prove that a
 closed task's landed commit is present on the recorded parent source branch,
-verify or run cleanup, and reconcile task documents to `Completed`.
+run (or verify) reclamation, and reconcile task documents to `Completed`.
+
+Since 260831-LOCR-L31 this module is the **only** landing-side route that reclaims. Integration
+publishes the landed refs and stops; the terminal reclamation of the enclosure belongs here, which
+is what makes the task edge finalization actually reachable.
 
 ## Code Commentary
 
@@ -36,11 +40,33 @@ ancestry on the local recorded source branch. It intentionally does not infer
 squash-merge equivalence; squash recovery is a manual/emergency path because it
 breaks commit-lineage based memory lookup.
 
-Cleanup is handled as part of the finalization operation. If the contract is
-already cleaned, the response records `already-completed`; otherwise the module
-delegates to `cleanup_result` with `approved=not dry_run` and
-`teardown_providers` carried through. Cleanup failures return
-`cleanup-blocked` and leave task documents unchanged.
+Cleanup is handled as part of the finalization operation, and it is the **only** route that reclaims
+an integrated enclosure: `worktree_integrate` lands the refs and stops, so a landed-but-unfinalized
+leaf still owns its worktrees, its merged local branches, its reports directory and its enclosure
+root. `_run_or_verify_cleanup` is the whole seam
+cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:277-311):
+
+- If the contract is already cleaned, the response records `already-completed` without calling
+  cleanup at all.
+- Otherwise it delegates to `cleanup_result` with `approved=not dry_run` and `teardown_providers`
+  carried through.
+- The `except RuntimeError` branch is unchanged: a raised cleanup refusal becomes
+  `returncode 2` with `state: "blocked"`, which the caller reports as `cleanup-blocked` and which
+  leaves task documents untouched. A failed cleanup therefore refuses **before** the task edge closes
+  rather than marking a leaf and its master row `Completed` over an enclosure that is still on disk.
+
+**The report is shaped here, and only for a real reclamation (260831-LOCR-L31).** A real,
+completed reclamation is passed through
+`cleanup_report(contract, result.payload)`
+cit:(["cleanup_report(contract, result.payload)"], mcp/src/agents_remember/worktrees/modules/finalize.py:310-310)
+— the operator-facing sentence and inventory documented on its own card. The gate in front of that
+call is load-bearing in both directions: when `args.dry_run` or `result.returncode != 0`, the cleanup
+payload is returned **unchanged**, because a preview lists what cleanup *would* remove (so shaping it
+would assert a reclamation that never happened) and a refusal must stay readable in cleanup's own
+words, its `blockers` and partial inventory intact. The run-and-catch half that used to own this
+reporting (`automatic_cleanup.run_automatic_cleanup`, deleted by this same change) had no caller left
+once reclamation moved here.
+cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53)
 
 After cleanup and task-truth reconciliation converge, `_finalized_result` performs an idempotent
 exact terminal activation release before archiving a root series task. A release failure returns
@@ -66,7 +92,9 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Final result releases exact terminal selection before root task archival and reports retryable release failure. | `_finalized_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:144-220 |
 | Exact terminal release is independent of queue/task scheduling state. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
-| Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-635 |
+| Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:637-637 |
+| The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/finalize.py:310-310 |
+| The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule. | `cleanup_report`; "ALREADY_CLEAN = \"already-clean\"" | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-23; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Carryover completion is proven against the official memory ledger here. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:117-117 |
 | Task document JSON/markdown reconciliation uses the task document service. | "def write_task_doc(task_root: Path" | mcp/src/agents_remember/tasks/store.py:108-108 |
@@ -100,6 +128,29 @@ before bytes move. Projection refresh failure is reported separately and never r
 accepted finalization write.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
+  260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting
+  `def cleanup_result` from line 632 to 633. The anchor was re-read at `cleanup.py:633-633`, where the
+  definition still sits; the cited symbol and its meaning are unchanged.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 root integration to `lifecycle_finalize_task`: this
+  module is now the **only** landing-side route that reclaims, because `worktree_integrate` stopped
+  running cleanup inside itself. Recorded the two-part `_run_or_verify_cleanup` seam: the unchanged
+  `already-completed` short-circuit and `except RuntimeError` → `returncode 2` / `state: "blocked"`
+  refusal (which still leaves task documents untouched), plus the new report shaping through
+  `cleanup_report(contract, result.payload)` and its load-bearing gate — the cleanup payload is
+  returned unchanged when `args.dry_run` or `result.returncode != 0`, so a preview never asserts a
+  reclamation that did not happen and a refusal keeps its own `blockers` and partial inventory.
+  Noted that the run-and-catch half which used to own this reporting
+  (`automatic_cleanup.run_automatic_cleanup`) was deleted with zero callers once reclamation moved
+  here. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_finalized_result` repointed to mcp/src/agents_remember/worktrees/modules/finalize.py:143-219. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def cleanup_result" repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-632. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `LifecycleFinalizeTests` repointed to mcp/tests/test_lifecycle_finalize.py:28-176. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-26T08:45+02:00 — Restored the canonical Cross-Repo reference section for this changed

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,15 @@ Checks JSON-primary task rendering and persistence: progress counts parent and c
 The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
+
+The shared `ApplicationTests` fixture gained a master prerequisite in 260913-LCA-L5:
+`_create` (`:476-496`) now calls `_ensure_parent_master` (`:498-501`) before authoring its leaf, and
+`_ensure_parent_master` writes the parent master through `_create_parent_master` (`:503-520`) only when
+it is absent. This is not incidental scaffolding: the task-doc authoring plane refuses a leaf document
+authored under a task root with no master document at all, because nothing would ever bind the leaf's
+derived `seriesContractPath` and `enclosures[]` (see the `application/task_docs/task_doc_tools.py`
+card). The helper keeps every leaf operation in this module on the flow the plane allows — master
+document present, series contract not yet bootstrapped — rather than weakening the refusal.
 
 ### Conventions
 
@@ -58,15 +67,16 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Progress counts every declared parent and child | `test_progress_counts_every_declared_parent_and_child` | mcp/tests/test_task_document.py:124-144 |
-| Current step prefers active then first unfinished then none | `test_current_step_prefers_active_then_first_unfinished_then_none` | mcp/tests/test_task_document.py:146-157 |
-| Golden small light doc | `test_golden_small_light_doc` | mcp/tests/test_task_document.py:161-236 |
-| Decision cell escapes pipe and newline | `test_decision_cell_escapes_pipe_and_newline` | mcp/tests/test_task_document.py:238-242 |
-| Code example fence preserves blank lines | `test_code_example_fence_preserves_blank_lines` | mcp/tests/test_task_document.py:244-259 |
-| Real subtask extensions round trip content complete | `test_real_subtask_extensions_round_trip_content_complete` | mcp/tests/test_task_document.py:261-288 |
-| Golden master | `test_golden_master` | mcp/tests/test_task_document.py:292-360 |
-| Write then read roundtrips and leaves no tmp | `test_write_then_read_roundtrips_and_leaves_no_tmp` | mcp/tests/test_task_document.py:367-375 |
-| Batch failure removes new files published before later document | `test_batch_failure_removes_new_files_published_before_later_document` | mcp/tests/test_task_document.py:377-398 |
+| The leaf-operation fixture's master prerequisite: every `_create` ensures a parent master exists before authoring its leaf, which is the authoring flow the plane allows. | `_create`; `_ensure_parent_master`; `_create_parent_master` | mcp/tests/test_task_document.py:476-496; mcp/tests/test_task_document.py:498-501; mcp/tests/test_task_document.py:503-520 |
+| Progress counts every declared parent and child | `test_progress_counts_every_declared_parent_and_child` | mcp/tests/test_task_document.py:126-146 |
+| Current step prefers active then first unfinished then none | `test_current_step_prefers_active_then_first_unfinished_then_none` | mcp/tests/test_task_document.py:148-159 |
+| Golden small light doc | `test_golden_small_light_doc` | mcp/tests/test_task_document.py:231-306 |
+| Decision cell escapes pipe and newline | `test_decision_cell_escapes_pipe_and_newline` | mcp/tests/test_task_document.py:308-312 |
+| Code example fence preserves blank lines | `test_code_example_fence_preserves_blank_lines` | mcp/tests/test_task_document.py:314-329 |
+| Real subtask extensions round trip content complete | `test_real_subtask_extensions_round_trip_content_complete` | mcp/tests/test_task_document.py:331-358 |
+| Golden master | `test_golden_master` | mcp/tests/test_task_document.py:362-430 |
+| Write then read roundtrips and leaves no tmp | `test_write_then_read_roundtrips_and_leaves_no_tmp` | mcp/tests/test_task_document.py:437-445 |
+| Batch failure removes new files published before later document | `test_batch_failure_removes_new_files_published_before_later_document` | mcp/tests/test_task_document.py:447-468 |
 
 ## Cross-Repo References
 
@@ -77,6 +87,22 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
+  `52875e7a`): recorded the fixture's new master prerequisite — `_create` now calls `_ensure_parent_master`
+  before authoring a leaf, because the authoring plane refuses a leaf under a task root with no master
+  document at all (nothing would ever bind its derived `seriesContractPath`/`enclosures[]`). Stated that
+  the helper keeps this module on the flow the plane allows rather than weakening the refusal. Added one
+  reference row for the three helpers and repaired three stale ranges measured with AST
+  (`test_progress_counts_every_declared_parent_and_child` 124-144 → 126-146,
+  `test_current_step_prefers_active_then_first_unfinished_then_none` 146-157 → 148-159, and the
+  already-drifted `test_golden_small_light_doc` 161-236 → 231-306). Verification metadata remains
+  closeout-owned; no execution or acceptance claim.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_decision_cell_escapes_pipe_and_newline` repointed to mcp/tests/test_task_document.py:308-312. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_code_example_fence_preserves_blank_lines` repointed to mcp/tests/test_task_document.py:314-329. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_real_subtask_extensions_round_trip_content_complete` repointed to mcp/tests/test_task_document.py:331-358. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_golden_master` repointed to mcp/tests/test_task_document.py:362-430. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_write_then_read_roundtrips_and_leaves_no_tmp` repointed to mcp/tests/test_task_document.py:437-445. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_batch_failure_removes_new_files_published_before_later_document` repointed to mcp/tests/test_task_document.py:447-468. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 

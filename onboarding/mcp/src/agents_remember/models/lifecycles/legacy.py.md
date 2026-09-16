@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/legacy.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ Bounded audit vocabulary for the one supported schema-1 closeout incident.
 ## Code Commentary
 
 ### Logic
+
+The bounded proof preserves the observed legacy code output, original approval and code
+message, and the unfinished memory-content message. It has no `ledgerCommitMessage`; migration
+can retain unfinished memory intent without reintroducing a ledger writer or cache authority.
 
 The public surface is `LegacyCloseoutMigrationProof`. This module is strict evidence vocabulary, not an I/O or scheduling owner. Its models keep generation, publication, enclosure, termination, legacy, and direct-landing facts explicit so partial or contradictory state fails validation instead of being inferred from queue rows or task prose.
 
@@ -42,19 +46,31 @@ None recorded.
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines `LegacyCloseoutMigrationProof` as its public seam. | `LegacyCloseoutMigrationProof` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-54 |
+| The bounded legacy proof retains unfinished memory intent after verified code without a ledger message. | L12-L52 | [mcp/src/agents_remember/models/lifecycles/legacy.py](mcp/src/agents_remember/models/lifecycles/legacy.py) |
+| The module defines `LegacyCloseoutMigrationProof` as its public seam. | L12-L52 | [mcp/src/agents_remember/models/lifecycles/legacy.py](mcp/src/agents_remember/models/lifecycles/legacy.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Narrowed the supported legacy proof to unfinished memory-content intent after verified code. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,6 +71,13 @@ This card establishes test behavior, not a separate cross-repository protocol or
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 4 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
 
@@ -108,7 +115,7 @@ This card establishes test behavior, not a separate cross-repository protocol or
   dismiss row L1437-L1447; L1493-L1505 → **L1447-L1457; L1503-L1515** (its first range, L1387-L1410,
   sits above the hunk and was re-verified unmoved); Task 34 retention L1927-L1995; L2022-L2052 →
   **L1937-L2005; L2032-L2062**; raw stream L2063-L2076; L2113-L2142 → **L2073-L2086; L2123-L2152**.
-  The MX-FIX-1 trio cit:([`StreamEventsTests`], mcp/tests/test_serving.py:379-477), both dirty-probe rows cit:([`BuildInfoTests`], mcp/tests/test_serving_cli.py:36-181) and the
+  The MX-FIX-1 trio cit:([`StreamEventsTests`], mcp/tests/test_serving.py:95-123), both dirty-probe rows cit:([`BuildInfoTests`], mcp/tests/test_serving_cli.py:36-181) and the
   `_build_wire` helper cit:([`_build_wire`], mcp/tests/test_serving.py:84-92) are above the hunk and were re-verified unmoved. No test was
   added, removed or renamed. Verification metadata pinned until closeout stamps the L5 commit.
 

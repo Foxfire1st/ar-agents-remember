@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/memory_census.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T18:57+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,6 +59,16 @@ None; this module consumes the resolved local code/memory pair only.
 
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/memory_quality/memory_census.py` changed since the recorded verification
+  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (the `MemoryCensusScope` import now comes from
+  `memory_quality.memory_census_scope`). Re-read the card against the current source: all five cited
+  ranges (45-125, 254-318, 320-393, 395-443, 445-498, 501-534) still hold and the card names no
+  import path. No wording changed; verification metadata remains closeout-owned.
 - 2026-09-09T23:45:19+02:00 — CCR-L42 census regression reconciliation: documented current-versus-historical metadata authority, preservation of pre-existing absent rows without a removal blocker, and the moved old/new row behavior. Verification metadata remains unchanged until closeout.
 
 - 2026-09-09T18:57:35+02:00 — CCR-L42 census repair: documented current-candidate metadata authority, historical-only removal context, and the current source ranges for sidecar and edited-document handling. Verification metadata remains unchanged until closeout.

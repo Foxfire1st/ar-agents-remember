@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operation_model_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T01:01+00:00 |
+| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
+| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,11 +22,16 @@ Lifecycle mutation-proof and worker-binding model invariants.
 
 ### Logic
 
+The recovery-proof fixture contains only `codeCommit` and `memoryContentCommit`. It still
+proves that a recorded output cannot contradict exact commit evidence, including the refusal
+when the recorded code SHA changes. Removing the fake `ledgerCommit` attribute aligns this
+existing case with the production model; it removes no test scenario.
+
 Mutation history and the irreversible boundary require exact commit proof; recovery commits cannot contradict that proof. Worker PID, lease, fingerprint and termination evidence must form one complete authority rather than independently populated optional facts.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card describes the current uncommitted LCA-L9 proof-test candidate. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -40,7 +45,7 @@ No file-local implementation change is requested by this reconciliation.
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
@@ -48,21 +53,25 @@ No Domain Documentation entries are configured in this memory root. These are re
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Mutation history and irreversible boundary require exact proof. | `test_mutation_history_and_irreversible_boundary_require_exact_proof` | mcp/tests/test_lifecycle_operation_model_helpers.py:16-39 |
-| Recovery commits cannot contradict commit proof. | `test_recovery_commits_cannot_contradict_commit_proof` | mcp/tests/test_lifecycle_operation_model_helpers.py:62-74 |
-| Worker binding and termination evidence are one authority. | `test_worker_binding_and_termination_evidence_are_one_authority` | mcp/tests/test_lifecycle_operation_model_helpers.py:57-101 |
+| Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions. | L62-L74 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Mutation history and irreversible boundary require exact proof. | L36-L59 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Recovery commits cannot contradict commit proof. | L62-L74 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Worker binding and termination evidence are one authority. | L77-L121 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
 
 ## Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
+
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `test_recovery_commits_cannot_contradict_commit_proof` repointed to mcp/tests/test_lifecycle_operation_model_helpers.py:62-74. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-14T17:20+02:00 |
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4`|
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -95,14 +95,16 @@ package-root identity; failure remains omission, never a crash.
 
 ### 260731-EFA-L3 — Both Probes Run On The One Git Runner
 
-This module no longer spawns git itself. cit:([`_git_short_head`], mcp/src/agents_remember/serving/build_info.py:104-114) and `_git_worktree_dirty`
-cit:(["def _git_worktree_dirty("], mcp/src/agents_remember/serving/build_info.py:117-117) each call `run_git` from `agents_remember.kernel.git_command` — the package's single
+This module no longer spawns git itself. cit:([`_git_short_head`], mcp/src/agents_remember/serving/build_info.py:104-118) and `_git_worktree_dirty`
+cit:(["def _git_worktree_dirty("], mcp/src/agents_remember/serving/build_info.py:121-121) each call `run_git` from `agents_remember.kernel.git_command` — the package's single
 runner — with the module's own bound:
 
 ```python
 _PROBE_TIMEOUT_SECONDS = 2
 ...
-result = run_git(anchor, ["rev-parse", "--short", "HEAD"], timeout=_PROBE_TIMEOUT_SECONDS)
+result = run_git(
+    anchor, ["rev-parse", "--short", "HEAD"], GitRunnerOptions(timeout=_PROBE_TIMEOUT_SECONDS)
+)
 ```
 
 Two things change for the stamp, both in its favour:
@@ -173,11 +175,11 @@ is proven by repository source and tests.
 | `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:933-933 |
 | The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text(" | scripts/sync-dashboard.py:147-147; scripts/sync-dashboard.py:157-157 |
-| The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:108-109 |
+| The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:110-111 |
 | The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state. | `payload` | mcp/src/agents_remember/serving/build_info.py:59-73 |
 | The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
-| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:124-130 |
-| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:133-184 |
+| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:140-146 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment; both probes here pass their 2s bound as `GitRunnerOptions(timeout=...)`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
 
 
 ## Cross-Repo References
@@ -195,6 +197,8 @@ Serving build identity now distinguishes a proven dirty checkout from an unprova
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `_git_short_head` and `_git_worktree_dirty` now pass their 2s bound as `GitRunnerOptions(timeout=_PROBE_TIMEOUT_SECONDS)`, the timeout keyword having become a field of the runner's one options object; the timeout class each probe names is unchanged and stays deliberately tighter than the runner's 300s local default. Re-derived the ranges the migration shifted (`_git_short_head` 104-114 → 104-118, `_git_worktree_dirty` 117 → 121, and the runner row `124-130; 133-184` → `140-146; 149-213`).
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" repointed to .github/workflows/publish-mcp-to-pypi.yml:110-110; .github/workflows/publish-mcp-to-pypi.yml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: "function ServingBuildStamp()" repointed to dashboard/src/cockpit/Cockpit.tsx:933-933. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: repointed the strict payload authority to

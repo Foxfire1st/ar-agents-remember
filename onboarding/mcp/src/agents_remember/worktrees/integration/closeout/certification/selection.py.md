@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,14 +58,14 @@ The configured Domain Documentation registry has no entries. The source below es
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact object kinds and the loaded graph have typed owners. | `load_typed`; `LoadedCertificationSelection` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:84-92; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:95-103 |
-| Readback follows bounded explicit generations and validates every original graph binding. | `require_selected_certification`; `_load_selection`; `_load_predecessor` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:105-109; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:112-183; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:210-240 |
-| Inherited terminals and recompiled admissions retain the exact original context. | `_require_inherited_terminals`; `_recompile_admission` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:292-307; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:353-407 |
-| Complete terminal chains and every recovery decision are checked against the retained certificate pool. | `_require_terminal_chain`; `_require_recovery_history` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:410-428; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:431-458 |
-| Terminal loading reopens original publication bytes and validates full result/certificate authority. | `load_selected_terminal`; `terminal_selection` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:474-516; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:519-534 |
-| Memory inputs have exact canonical byte storage and typed readback. | `recovery_memory_inputs`; `retain_memory_inputs` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:537-547; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:550-557 |
-| Only explicit interrupted evidence can be replaced; red retry requires a successor. | `_require_interrupted_terminal`; `require_unchanged_retry_admissible` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:560-576; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:116-124 |
-| Selection uses a live-owner CAS and preserves terminal history on the permitted replacement. | `select_certification_state`; `select_recorded_terminals` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:579-597; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:600-633 |
+| Exact object kinds and the loaded graph have typed owners. | `load_typed`; `LoadedCertificationSelection` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:85-93; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:96-104 |
+| Readback follows bounded explicit generations and validates every original graph binding. | `require_selected_certification`; `_load_selection`; `_load_predecessor` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:106-110; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:113-184; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:211-241 |
+| Inherited terminals and recompiled admissions retain the exact original context. | `_require_inherited_terminals`; `_recompile_admission` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:293-308; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:354-408 |
+| Complete terminal chains and every recovery decision are checked against the retained certificate pool. | `_require_terminal_chain`; `_require_recovery_history` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:411-429; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:432-459 |
+| Terminal loading reopens original publication bytes and validates full result/certificate authority. | `load_selected_terminal`; `terminal_selection` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:475-517; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:520-535 |
+| Memory inputs have exact canonical byte storage and typed readback. | `recovery_memory_inputs`; `retain_memory_inputs` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:538-548; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:551-558 |
+| Only explicit interrupted evidence can be replaced; red retry requires a successor. | `_require_interrupted_terminal`; `require_unchanged_retry_admissible` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:561-577; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:117-125 |
+| Selection uses a live-owner CAS and preserves terminal history on the permitted replacement. | `select_certification_state`; `select_recorded_terminals` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:580-598; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:601-634 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,19 @@ No cross-repository implementation or external protocol is owned here.
 | No separately configured cross-repository source is used for this card. | — | — |
 ## Update History
 
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the one-line import shift
+  was already repaired by adding one to all seventeen ranges; re-checked every definition position
+  against the frozen file and each range now covers its construct. No wording changed. Verification
+  metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py` changed since
+  the recorded verification commit. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  `live_closeout_door` import at `:42`, shifting every definition by one line. Re-read the card and
+  added one to all 17 cited ranges so each covers its construct again; no claim text depended on the
+  changed door read. Verification metadata remains closeout-owned.
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-09-06T21:46:58+00:00 — Reconciled landed IAS helper ownership and source anchors. Verification pins and historical evidence remain unchanged; no certification or delivery is asserted.

@@ -5,64 +5,89 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Protected integration ref ownership and external-pair crash recovery.
+Protect exact integration-ref ownership, two-output CAS races, and real object/ancestry checks independently of cached ledger data.
 
 ## Code Commentary
 
 ### Logic
 
-Branch aliases, nested checkouts and memory names cannot bypass protected-ref refusal. If code CAS succeeds while a competing memory update wins, recovery preserves that raced memory ref and reports the torn pair. A code-only crash with unchanged expected memory completes the exact memory ref on retry.
+The class exercises protected branch aliases/nested checkouts/memory names, a code CAS followed by a competing memory CAS, and successful publication with missing or damaged cache data. The torn-pair case preserves the raced memory ref and reports accepted/intended code and actual memory commits. Cache-damage cases verify the accepted refs land without increasing reachable memory history.
+
+Two minimal real-repository cases exercise the surviving proof directly: accepted memory outside the exact source ancestry refuses, and an absent accepted code object refuses even when memory is current. Historical table-row/header tests and their cache-commit fixture machinery are retired; arbitrary cached rows are no longer a publication predicate.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+The broader cases use the shared configured authority fixture; the object/ancestry cases use a minimal contract so the Git predicate is the subject. These assertions do not certify a live installation.
 
 ### Invariants And Boundaries
 
-A torn pair is not permission to clobber concurrent memory work. The retained three cases do not prove the historical bootstrap-WAL or broad surface census.
+- A torn pair never permits clobbering concurrent memory work.
+- Cache damage cannot change accepted output identity or block ref movement.
+- The accepted code object and memory source ancestry remain mandatory.
+- Fixture setup and historical coverage notes do not imply additional retained scenarios.
 
 ### Todos
 
-No file-local implementation change is requested by this reconciliation.
+No new file-local follow-up is identified by this source reconciliation.
 
 ## Docs References
 
-No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Branch alias nested checkout and memory name cannot bypass refusal. | `test_branch_alias_nested_checkout_and_memory_name_cannot_bypass_refusal` | mcp/tests/test_integration_branch_authority.py:50-74 |
-| External pair cas retains torn pair without clobbering memory race. | `test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race` | mcp/tests/test_integration_branch_authority.py:76-166 |
-| External code only crash completes the exact memory ref on retry. | `test_external_code_only_crash_completes_the_exact_memory_ref_on_retry` | mcp/tests/test_integration_branch_authority.py:168-213 |
+| Protected branch aliases and nested/foreign workbench identities refuse. | L54-L78 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| A competing memory CAS is preserved after code has landed. | L80-L170 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Cache absence/corruption cannot affect the accepted pair or create another memory commit. | L172-L213 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Real accepted-object and source-ancestry failures remain enforced. | L262-L277; L280-L290 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Production ref preparation and publication proof. | L103-L160; L163-L232; L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
 
 ## Cross-Repo References
 
-No cross-repository implementation evidence is required for these local test and fixture claims.
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Consolidated ledger row/header clauses into actual accepted-object/ancestry checks and cache-independent ref movement; preserved branch-ownership and torn-pair CAS regressions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 curator (uncommitted change set on `ar/260913-lca-l11-ar`,
+  base `4214d7a1`): the module's landing-clause surface was rewritten rather than trimmed, and this
+  card previously did not describe it at all. Recorded the six-case inventory with ranges: the
+  mapping clause (including a table that names the landed code commit with *different* memory
+  content), the **conditional** source-ancestry clause with the divergent-source fixture that makes
+  it bite, the replacement row-truth rule with the two shapes now **asserted as accepted** (a
+  dropped and a duplicated source row — the shapes a rebuild produces), the unchanged reclosed-leaf
+  accumulation case, and the two new module-level cases that drive `_require_true_rows` directly
+  over a minimal contract. Recorded why the accepted cases are kept rather than deleted, and that
+  the card must not be read as licensing a weakened rule. Repointed the two case ranges that had
+  drifted and corrected "the retained three cases" to the measured population. Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-12T01:26:36+00:00: Generated citation repair: `test_r4_no_crash_recovery_path_exists_after_a_torn_ref_move` repointed to mcp/tests/test_closeout_kept_rules_pins.py:286-300. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b5cbe38ab438de766feb0fc3860228f5125b623ebbee641f90211d51326d68e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T23:05:00+00:00: The claim said a code-only crash completes the exact memory ref on retry and cited `test_external_code_only_crash_completes_the_exact_memory_ref_on_retry`; that capability and its case were removed, and the behaviour now lands as the negative pin `test_r4_no_crash_recovery_path_exists_after_a_torn_ref_move` in `mcp/tests/test_closeout_kept_rules_pins.py`.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_branch_alias_nested_checkout_and_memory_name_cannot_bypass_refusal` repointed to mcp/tests/test_integration_branch_authority.py:132-156. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 
@@ -93,11 +118,3 @@ No cross-repository implementation evidence is required for these local test and
 - 2026-08-16T03:29+02:00 — No content impact: retargeted the injected Git-error mock to the extracted repository-facts owner so the same fail-closed public assertion remains executable after the size split. Verification remains closeout-owned.
 - 2026-08-16T03:24+02:00 — 260815-DAG-L4: moved shared fixture builders to the dedicated support module without changing the production routes or assertions. Verification remains closeout-owned.
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: created integration branch authority forcing onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.
-## Docs References
-
-No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
-
-
-## Cross-Repo References
-
-This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

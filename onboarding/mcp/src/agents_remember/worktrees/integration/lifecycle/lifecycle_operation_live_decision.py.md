@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](../overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -22,13 +22,15 @@ Bounded live-evidence refusals shared by lifecycle controls.
 
 ### Logic
 
+Live refusal dispatch retains initial-door, direct-landing, and immutable-Git evidence checks. It no longer invokes a ledger-recovery classifier, so malformed or missing computed cache bytes cannot become a developer-decision refusal.
+
 The public surface is `raise_live_evidence_decision`, `immutable_recovery_refusal`. This file bounds public refusal evidence and next actions. Missing, unreadable, mismatched, or ambiguous artifacts remain typed decisions with expected/observed facts; they are never downgraded to absence and private operation keys never cross the public boundary.
 
 ### Conventions
 
 Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
 - Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
@@ -40,21 +42,39 @@ None recorded beyond the explicit terminal-archive boundary recorded by the gove
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `raise_live_evidence_decision` dispatches genuine publication and Git contradictions without inspecting ledger bytes. | L32-L72 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py) |
+| `immutable_recovery_refusal` turns immutable-evidence contradictions into bounded recovery refusals. | L75-L116 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py) |
+
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | `raise_live_evidence_decision`; `immutable_recovery_refusal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:35-84; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:87-128 |
+| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | L32-L72; L75-L116 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional cross-repository evidence applies. | — | — |
+
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=d406e65c6fed439e79d0e1e5b98e10e8ea7dbe7f2abf65985ec36b14b37b6c2e. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed initial-door, ledger-recovery, and worker-termination package relocations; live lifecycle decisions are unchanged.
 

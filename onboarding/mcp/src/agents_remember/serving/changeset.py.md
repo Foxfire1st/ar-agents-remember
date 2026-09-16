@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-09-06T21:54:05+00:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`     |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-14T07:05+02:00 |
+| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6`     |
+| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -167,7 +167,7 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:81-84; mcp/src/agents_remember/worktrees/modules/git.py:217-220; mcp/src/agents_remember/worktrees/modules/git.py:271-310 |
 | Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe. | "def route_sidecar_status(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:91-106 |
 | Shared path confinement resolves the requested path and refuses repository escape. | "def confine_rel(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-49 |
-| The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/worktrees/task_resolver.py:18-23 |
+| The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". `slugify` is now defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/tasks/task_paths.py:25-28; mcp/src/agents_remember/worktrees/task_resolver.py:16-27 |
 | The app factory that calls `register_changeset_routes` before `mount_static`. | "def register_changeset_routes(app: FastAPI" | mcp/src/agents_remember/serving/changeset.py:503-503 |
 
 | The task change-set envelope carries code/memory changes and counters. | "class TaskChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:834-840 |
@@ -190,6 +190,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 
 ## Update History
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator: repaired the `slugify` half of the contract row after
+  the 260913-LCA-L5 move. `slugify` is now defined in `mcp/src/agents_remember/tasks/task_paths.py:25-28`
+  and re-exported by `worktrees/task_resolver.py` (whose `:16-27` is the import block that publishes it),
+  so the previous `task_resolver.py:18-23` anchor no longer resolved to a definition. The claim itself —
+  leaf-id normalization goes through `slugify(worktree_name)` — is unchanged, and no source file this card
+  documents changed. Verification metadata remains closeout-owned; no execution or acceptance claim.
 
 - 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.
 

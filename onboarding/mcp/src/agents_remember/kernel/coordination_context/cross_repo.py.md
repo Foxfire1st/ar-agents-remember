@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/cross_repo.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,12 +28,12 @@ branch (`git_branch`) and HEAD (`git_head_or_empty`), optionally checks the
 matching external memory repo branch, and reads the memory ledger when memory
 inclusion is enabled. It returns included, included-code-only, or excluded state
 with concrete reasons. `run_git` is no longer defined here; it is imported from
-`agents_remember.kernel.git_command` and re-exported via cit:([`__all__`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:12-18)
+`agents_remember.kernel.git_command` and re-exported via cit:([`__all__`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:16-22)
 alongside the two git helpers and the two resolvers.
 
 Both git helpers name a timeout class rather than taking the runner's default:
-cit:([`git_branch`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:21-29) and cit:([`git_head_or_empty`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:32-38) pass
-`timeout=GIT_METADATA_TIMEOUT_SECONDS` (30s). Context resolution runs on
+cit:([`git_branch`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:25-37) and cit:([`git_head_or_empty`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:40-50) pass
+`GitRunnerOptions(timeout=GIT_METADATA_TIMEOUT_SECONDS)` (30s). Context resolution runs on
 essentially every tool call and both commands are constant-time reads, so 30s
 can only be reached when git is blocked on an index lock — and inheriting the
 runner's `GIT_LOCAL_TIMEOUT_SECONDS` (300s) would let one wedged
@@ -46,7 +46,7 @@ failing it.
 - A stalled git is not laundered into an exclusion reason. `git_branch` and
   `git_head_or_empty` return `""` only for a **non-zero return code**, and
   `code_repo_exclusion` reads an empty branch as "detached or not a git
-  repository" (cit:([`code_repo_exclusion`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:108-116)). A timeout raises `subprocess.TimeoutExpired` out of
+  repository" (cit:([`code_repo_exclusion`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:120-128)). A timeout raises `subprocess.TimeoutExpired` out of
   the runner instead, so a wedged adjacent repo surfaces as a failure rather
   than as a confident, wrong exclusion.
 - `includeCode=false` is excluded because there is no code repo branch to
@@ -66,10 +66,10 @@ No external documentation is needed for the local cross-repo resolver.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| `run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
 | Cross-repo entries are parsed from settings before this module resolves repository state. | `parse_cross_repo_allow`; `parse_cross_repo_allow_entry` | mcp/src/agents_remember/kernel/coordination_context/setting_values.py:44-58; mcp/src/agents_remember/kernel/coordination_context/setting_values.py:61-70 |
-| External memory ledger parsing supplies memory compatibility facts. | `parse_ledger_text`; `parse_ledger_rows` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104; mcp/src/agents_remember/kernel/memory_ledger.py:123-132 |
-| Worktree support tests cover branch-gated cross-repo inclusion and legacy-string exclusion. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
+| External memory ledger parsing supplies memory compatibility facts. | `parse_ledger_text`; `parse_ledger_rows` | mcp/src/agents_remember/kernel/memory_ledger.py:58-63; mcp/src/agents_remember/kernel/memory_ledger.py:144-153 |
+| Worktree support tests cover branch-gated cross-repo inclusion and legacy-string exclusion. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 
 ## Cross-Repo References
 
@@ -80,17 +80,28 @@ No separate repository evidence is needed; the module reports adjacent repo fact
 | No static cross-repo references are required. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 2 claim(s) whose anchor no longer sat in its cited range and normalised 1 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `git_branch` and `git_head_or_empty` now call `run_git(repo_root, [...], GitRunnerOptions(timeout=GIT_METADATA_TIMEOUT_SECONDS))`, the timeout keyword having become a field of the runner's one options object. Their timeout class is unchanged. Re-derived the citation ranges the migration shifted (`__all__` 12-18 → 16-22, `git_branch` 21-29 → 25-37, `git_head_or_empty` 32-38 → 40-50, `code_repo_exclusion` 108-116 → 120-128, `run_git` 85-151 → 149-213).
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `parse_ledger_rows`, `parse_ledger_text` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:138-147, mcp/src/agents_remember/kernel/memory_ledger.py:52-57. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:948-1023. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 5 citation claims (4 table rows, 1 prose citation); scoped recheck clean (0 findings).
 
 - 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: body updated. The Logic prose was true but no
-  longer complete: cit:([`git_branch`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:21-29) and cit:([`git_head_or_empty`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:32-38) now import and pass
+  longer complete: cit:([`git_branch`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:25-37) and cit:([`git_head_or_empty`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:40-50) now import and pass
   cit:([`GIT_METADATA_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:9-9), because the runner's default moved from a hard-coded 5s to
   `GIT_LOCAL_TIMEOUT_SECONDS = 300` and these two constant-time reads sit on the path of
   essentially every tool call. Added the reason and a boundary that only became worth stating once
   a timeout existed: the `""` return is reserved for a non-zero return code, which
-  cit:([`code_repo_exclusion`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:108-116) reports as "detached or not a git repository", whereas a stall
+  cit:([`code_repo_exclusion`], mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:120-128) reports as "detached or not a git repository", whereas a stall
   raises `TimeoutExpired` and so cannot be laundered into that exclusion reason. Repaired 1
   citation into a file this leaf changed: the git-runner row's unanchored "run_git import" became
   `L53-L55` (the three timeout constants) and `L67-L96` (`run_git`'s signature and body). The other

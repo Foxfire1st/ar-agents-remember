@@ -1,74 +1,92 @@
 # mcp/tests/test_worktree_support_tests_1.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/tests/test_worktree_support_tests_1.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/test_worktree_support_tests_1.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T01:02 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[Nearest governing overview](overview.md)
+
+Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
+The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
-Exercises master start and abandon while preserving the parent series. Its fixture uses actual task/worktree setup and compares the parent after cleanup; the card no longer attributes unrelated split-family closeout tests to this one retained method.
+Exercises master/leaf start, attach, early binding refusal, queue projection, and leaf abandon
+while preserving the parent series. The single retained scenario uses real temporary repositories
+and task/worktree artifacts.
 
 ## Code Commentary
 
 ### Logic
 
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
+The scenario creates a sprint with an atomic master and leaf, starts that leaf with external
+memory, and checks the exact series/leaf branch and parent-contract relationships. It verifies the
+leaf document's lifecycle/enclosure references and checks that reattach preserves them.
+
+The early-closeout helper alters binding facts to prove refusal, then restores the task document.
+The queue helper uses normalized code/memory messages and checks that the one member points to the
+expected canonical leaf task. It no longer supplies a ledger message. Finally, abandon removes the
+leaf enclosure while the parent series contract and its branch remain.
 
 ### Conventions
 
-The table lists retained test definitions, not collected parametrized or subtest counts.
-Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+The card describes this retained method rather than restoring earlier split-family tests from
+history. Shared support builds the repositories and typed inputs; the case checks public behavior
+at its stated boundaries and does not stand in for every closeout route.
 
 ### Invariants And Boundaries
 
-Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
-cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
-an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
-work. This source inspection does not claim a newly executed test or acceptance result.
+- Starting/attaching the leaf preserves canonical parent and document binding.
+- Invalid binding is still refused before closeout work.
+- Queue fixture intent uses only code and memory outputs.
+- Abandoning the leaf must not remove the parent series contract or branch.
 
 ### Todos
 
-No additional implementation scope is opened by this memory reconciliation.
+No new implementation or live-state operation is authorized by this documentation pass.
 
 ## Docs References
 
-The repository has no configured Domain Documentation source. These claims concern its own test
-fixtures and assertions, so the exact retained source is the direct evidence.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-Each current definition below can be inspected in the exact source file. Historical references
-to removed methods are superseded by this current inventory.
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Master start and abandon preserve parent series | `test_master_start_and_abandon_preserve_parent_series` | mcp/tests/test_worktree_support_tests_1.py:179-344 |
+| The fixture queue and early refusal helpers retain typed inputs and exact bindings. | L44-L124; L127-L174 | [mcp/tests/test_worktree_support_tests_1.py](mcp/tests/test_worktree_support_tests_1.py) |
+| The retained lifecycle scenario preserves the parent through start/attach/abandon. | L178-L343 | [mcp/tests/test_worktree_support_tests_1.py](mcp/tests/test_worktree_support_tests_1.py) |
+| Shared closeout arguments normalize the two real content messages. | L417-L438 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
 
 ## Cross-Repo References
 
-This card establishes test behavior, not a separate cross-repository protocol or live installation.
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
+| No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:02 UTC — Documented the queue helper input after ledger-message retirement while retaining the one start/attach/refusal/abandon scenario and exact parent-series preservation checks. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `test_master_start_and_abandon_preserve_parent_series` repointed to mcp/tests/test_worktree_support_tests_1.py:179-344. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.

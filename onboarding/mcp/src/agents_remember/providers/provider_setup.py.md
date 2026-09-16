@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -179,10 +179,10 @@ provider stack is POSIX-hosted anyway.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:988-1025; mcp/src/agents_remember/worktrees/modules/start.py:1138-1170 |
+| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:983-1020; mcp/src/agents_remember/worktrees/modules/start.py:1133-1165 |
 | Benchmark preparation calls package-local provider setup instead of a source script. | `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Provider lifecycle calls are captured through package-local command capture. | `run_package_main` | mcp/src/agents_remember/kernel/primitives/command_capture.py:12-39 |
-| CGC seed orchestration and bundle rewriting now live outside the facade. | `cgc_seed_bundle`, `rewrite_cgc_bundle_paths` | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
+| CGC seed orchestration and bundle rewriting now live outside the facade. | "def cgc_seed_bundle("; "def rewrite_cgc_bundle_paths(" | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
 | Shared settings and command helpers live in the setup common module. | `run_command`, `LifecycleCommand`, `run_lifecycle` | mcp/src/agents_remember/providers/setup_common.py:109-146; mcp/src/agents_remember/providers/setup_common.py:159-172; mcp/src/agents_remember/providers/setup_common.py:175-218 |
 | Setup payload summaries and failed-phase compaction live in the setup reporting module. | `finalize_setup_payload` | mcp/src/agents_remember/providers/setup_reporting.py:45-66 |
 
@@ -190,6 +190,20 @@ provider stack is POSIX-hosted anyway.
 
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
+  this claim with its verification provenance because one or more of its anchors resolved more than
+  once at the verification commit, so no historical location was unique. Repaired the citation, not
+  the claim: each anchor that named a construct by bare name now names its exact declaration text,
+  which resolves once in the code tree, and any range that had drifted off its construct was re-read
+  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
+  the claim is about. Verification metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_provider_setup_request`, `run_or_launch_provider_setup` repointed to mcp/src/agents_remember/worktrees/modules/start.py:1037-1074, mcp/src/agents_remember/worktrees/modules/start.py:1187-1219. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 

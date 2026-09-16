@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T07:20+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -318,11 +318,11 @@ own server contracts, so no external code path is cited as authority.
 | Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 | Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:18-18; dashboard/src/data/submitClient.ts:238-238 |
 | Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:397-423; dashboard/src/data/railModel.ts:451-473 |
+| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:408-434; dashboard/src/data/railModel.ts:462-484 |
 | The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:329-400; dashboard/src/dev/ScenarioPlayer.tsx:21-39 |
-| Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. | "export interface SeriesSubTaskNode", "export interface TaskSubTaskRefNode", "export type SubTaskRow" | dashboard/src/types/projection.ts:561-568; dashboard/src/types/projection.ts:793-815 |
-| The server series builder sorts only fully stamped rows before projection. | `_series_subtask_nodes` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:260-277 |
+| The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:55-55; dashboard/src/data/store.ts:329-401; dashboard/src/dev/ScenarioPlayer.tsx:21-107 |
+| Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. | "export interface SeriesSubTaskNode", "export interface TaskSubTaskRefNode", "export type SubTaskRow" | dashboard/src/types/projection.ts:560-560; dashboard/src/types/projection.ts:792-792; dashboard/src/types/projection.ts:814-814 |
+| The server series builder sorts only fully stamped rows before projection. | `_series_subtask_nodes` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:314-331 |
 | The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:46-46; scripts/sync-projection-types.py:57-57 |
 
 ## Current Requirement Artifact Boundary
@@ -354,6 +354,13 @@ requirements with the task-document selector). Consumers: the requirement-link p
 notes-reader viewer, TaskNotes references, and detail-panel task prose.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 curator: re-anchored one citation into `snapshots_impl/_task_documents.py` after that file grew by 52–57 lines for the tolerant read edge (the server series builder `_series_subtask_nodes` moved 260-277 → 314-333; the cited file changed, this route's own sources did not). No dashboard source, renderer, or fixture is in that change set, so the route's behavior and ownership contract are unchanged. Verification metadata unchanged; no verification stamp advanced.
 
 
 

@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-11T15:04+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -16,18 +17,26 @@
 
 ## IAS Frozen Public Lifecycle Composition
 
-Start, attach, dispatch, and explicit sync share one atomic-series selecting transaction. A new
-selection auto-pauses the prior live series, publishes `reconciling`, reconciles the exact protected
-code/memory source pair, and publishes `active` only after current-base proof. `worktree_sync`
-becomes a resumable contract-addressed operation: genuine conflicts remain available for agent
-resolution, `continue` validates the staged result, and `cancel` restores only pinned
-operation-owned heads.
+Start, attach, dispatch, and explicit sync share one atomic-series selecting transaction. The
+activation record it writes is keyed **per series contract** (`contract_fingerprint` over the
+canonical resolved contract path), so a new selection transitions only that contract's own record:
+`reconciling`, reconcile its pinned protected code/memory source pair, then `active` only after
+current-base proof. Cross-master exclusivity between atomic masters that share one sprint's code and
+memory source branches is gone — every refusal the admission projection describes is corrective
+action on the addressed contract, a foreign master is never named as a blocker, and the only
+surviving activation waiting reason is `atomic-series-reconciling`. The graph-less default is not a
+serialization authority either: `atomic-sequential` describes the sprint's shape — every commanded
+master executes atomically — and serializes nothing, because a graph-less sprint declares no
+dependencies. Real wave dependencies still gate through the sprint execution graph's own
+`predecessor-incomplete:` reasons. `worktree_sync` becomes a
+resumable contract-addressed operation: genuine conflicts remain available for agent resolution,
+`continue` validates the staged result, and `cancel` restores only pinned operation-owned heads.
 
 Cleanup and abandon remain terminal lifecycle operations, not scheduling mutations. After their
 terminal publication and outside lifecycle/store locks, they may vacate only the exact selected
-terminal contract before destructive contract cleanup. A paused series cannot clear a newer
-selection. Missing or malformed activation/journal authority is not replaced by a legacy or
-queue-derived fallback reader.
+terminal contract before destructive contract cleanup. The terminal release addresses exactly the
+contract it was given and never clears another contract's record. Missing or malformed
+activation/journal authority is not replaced by a legacy or queue-derived fallback reader.
 
 Master-series bootstrap also treats the transient-journal to durable-contract handoff as one
 observation boundary. On apply, `startup/start_contract.py` evaluates
@@ -58,10 +67,13 @@ registered consumer ownership in the evidence catalog.
 
 ## Purpose
 
+Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.
+
 The `worktrees/modules` package contains the extracted implementation modules
 behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycle
 status guidance, start preparation, onboarding refresh, strict code-quality gating, closeout, integration,
-cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
+cleanup, cleanup report shaping, lifecycle finalization, abandon, the stop-only master pause,
+provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
 `task_reopen` enters through the task-doc application route and executes `worktrees/reopen.py`; this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
@@ -77,6 +89,10 @@ under `startup/`; `start.py` remains the coordinating mutation entrypoint.
 Older EFA/L23 paragraphs below preserve the migration account and its original flat module names. Their wrapper discovery, local interpreter selection, citation-first ordering and schema-1/2 descriptions are historical; current paths are `quality/gate.py`, `quality/clean_executor.py`, `quality/closeout_memory.py`, and `quality/published_manifest.py`. Provider setup/teardown moved to `application/provider_runtime.py`, and `reopen.py` to `worktrees/`.
 
 ## Hot Path Summary
+
+`closeout_external.py` writes one attributed memory-content commit or reuses the actual unchanged head. `git.py` excludes root `memory.md` before staging and at the final memory commit boundary; cache-only changes cannot request a commit. `guidance.py` proves carryover from memory commit ancestry, and `integrate.py` publishes only the admitted code/memory pair.
+
+## Detailed Route Context
 
 Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists.
 
@@ -101,7 +117,7 @@ merge ordering while rechecking lineage after long quality work; the closeout li
 self-heals a settleable stale break through the sync transaction, and integration remains
 failure-atomic before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
 `startup/start_result.py` separates result projection from start coordination, and the external
-`worktrees/closeout_recovery.py` reconciles post-claim code, memory, and ledger commits without
+`worktrees/queue/closeout_recovery.py` reconciles post-claim code and memory-content commits without
 replaying completed irreversible steps.
 
 - `git.py` owns this route's Git vocabulary — the typed helpers and small repository
@@ -178,10 +194,9 @@ replaying completed irreversible steps.
   by a raised `closeout-approval` `GateNode` — never the working tree; the unused
   `contract_has_worktree_changes` import was dropped. **Slice 05m**
   adds the public `carryover_done(contract) -> (done, carryoverDoneAt)`: it reads the
-  OFFICIAL ledger (`memory_repo_path/memory.md` via `load_ledger`/`find_mapping`) to
-  detect whether the landed code commit (`integrated_code_commit`, else `code_commit`)
-  was carried home, returning the carry commit's `%cI` as the milestone (external-only;
-  internal/disabled → `(True, "")`). `lifecycle_guidance` now splits the
+  actual landed memory-content commit and the official memory source ancestry to
+  prove whether content was carried home, returning that commit's `%cI` as the milestone
+  (external-only; internal/disabled → `(True, "")`). Cache rows do not decide cleanup. `lifecycle_guidance` now splits the
   `integration_status == "completed"` branch on it — not carried → phase
   `carryover-pending` routing the existing `memory_carryover_apply` (carryover must run
   while the parked memory branch still exists), carried → `cleanup-pending` carrying
@@ -202,6 +217,24 @@ replaying completed irreversible steps.
   vocabulary that `worktree_contract._vocabulary_cell` substituted for. It is the one place a
   degraded contract read becomes visible to whoever called a worktree tool, and it says that
   the phase beside it was computed from the substituted values.
+  **`NextTool."worktree_cleanup"` is deliberately retained (260831-LOCR-L31).** This module's
+  `cleanup-pending` branch was its last writer here, but it is not orphaned:
+  `application/worktree_status.py::_project_terminal_contract_status` sets
+  `"nextTool": archive.cleanupOperation` on a terminal contract, and `cleanupOperation` is
+  `TerminalCleanupOperation = Literal["worktree_cleanup", "worktree_abandon"]`. That producer also
+  writes the same value into `nextAction`, and the pair is **undeclared and unchecked**: the
+  `worktree_status` payload validates through `WorktreeStatusResponse`, which inherits
+  `extra="allow"` from `FlexibleResponseModel` and declares none of `nextAction` / `nextTool` /
+  `nextArgs`, so the values pass through verbatim with no error. `WorktreeSummary` is never on that
+  path — it is built only inside `worktree_status_packet`'s helpers — so its single-value
+  `nextAction` literal (`Literal["developer-decision"]`) stays honest where it lives.
+  `"worktree_abandon"` has never been a `NextTool` member, so that `nextTool` is out-of-vocabulary.
+  The branch is reachable (a failed contract amendment is rolled back while the locator stays
+  `terminal-archived` → `terminal-archive-ready`), the emitted guidance is **correct** — retrying the
+  named tool resumes — and only the typing is missing. The mechanism, the recommended fix, and the
+  fact that `test_wire_vocabulary_exhaustiveness.py` no longer has test bodies to enforce
+  produced == declared are recorded on `models/worktree.py.md`. Do not reconcile this by deleting
+  `worktree_cleanup`.
 - `landing.py` (slice 5h; hardened 5l P2) observes the successful-landing arc
   best-effort — `git ls-remote` branch tips (`origin/<feat>`, `origin/mem-main`) +
   a best-effort `gh pr list`, all timeout-bounded and `stdin=DEVNULL` (the #49
@@ -235,8 +268,10 @@ interactive fresh-probe surface, while `projected_status_payload` consumes only 
 immutable landing snapshot. The recurring projector therefore never invokes `git ls-remote` or
 `gh` through guidance; missing and stale observations remain explicit.
 - `start.py`, `startup/start_contract.py`, `startup/leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
-  `automatic_cleanup.py`, `finalize.py`, and `abandon.py`
+  `finalize.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
+  `cleanup_report.py` is deliberately **not** in that list: it owns no operation, only the operator
+  report for a reclamation `finalize.py` already performed (260831-LOCR-L31).
   `start.py` calls `startup.start_contract.build_start_contract` to resolve the requested leaf ref through the
   `worktrees/leaf_refs.py` task-tree resolver before any start write; accepted refs persist the canonical
   task doc id in the leaf contract, while no-match/ambiguous refs return a `WorktreeCommandResult`
@@ -261,7 +296,7 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   `cleanup.py` carryover-guarded and work-branch-retiring: `cleanup_result` now HARD-REFUSES
   (raises) when integration is completed but `guidance.carryover_done` is false (external
   memory) — cleanup deletes the parked memory branch carryover reads from, so the carry
-  must run first; the proof is the official ledger, not a contract stamp. After the guard
+  must run first; the proof is reachability of the real memory output from the official memory source. After the guard
   it retires work branches only after proving they are reachable from the contract's
   recorded source branch (`merge-base --is-ancestor work_branch source_branch`), then
   deletes them with `git branch -D`; this avoids Git's ambient `HEAD`/upstream merge
@@ -279,13 +314,25 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   memory fast-forwards atomically: it pre-validates that both fast-forwards are
   possible before mutating either branch and rolls both heads back on any
   memory-side failure, so integration never lands a half-integrated state.
-  A completed integration then reclaims its own enclosure automatically: `automatic_cleanup.py`
-  (`run_automatic_cleanup`) reruns the existing `cleanup_result` procedure with `approved=True`,
-  `dry_run=False` and `teardown_providers=True`, and reports in operator language what it removed
-  and what it did not across worktrees, merged local branches, the reports directory and the
-  enclosure root. A refused or partial integration cleans up nothing — that is when the evidence is
-  still needed — and a cleanup refusal after a real landing is reported without failing the
-  integration.
+  **Integration lands and stops; finalization reclaims (260831-LOCR-L31).** A completed integration
+  publishes the landed refs through `landing_record.py::record_landed_integration` and returns. It
+  runs no cleanup and its payload carries no cleanup report — the `cleanup` key there is the untouched
+  contract cell. Terminal reclamation belongs to `finalize.py::_run_or_verify_cleanup`, which runs the
+  existing `cleanup_result` procedure with `approved=not dry_run` / `teardown_providers` and shapes a
+  real successful reclamation through the pure shaper `cleanup_report.py::cleanup_report`.
+  **Why the ownership moved:** while `_integrated_result` reclaimed inline, cleanup had already
+  reached `completed` when it returned, so the one guard that routes a landed leaf to
+  `lifecycle_finalize_task` (`next_step.py::_gate_after`, keyed on `contract.cleanup != "completed"`)
+  could never fire. A real landing therefore reported `nextOperation: "done"` while the leaf document
+  stayed `planning` and its master row stayed `inProgress` — silently, on leaves L29 and L30.
+  A refused or partial integration cleans up nothing — that is when the enclosure evidence is still
+  needed — and a cleanup refusal at finalization now **blocks the task-edge close** instead of being
+  reported after a landing that already claimed to be done. A checkpoint landing reclaims nothing
+  either, and an unfinished master landed at a checkpoint is never finalized, so it keeps its
+  worktrees, branches and enclosure.
+  The report shaper is gated by its caller: a dry run or a nonzero cleanup return code is passed
+  through in cleanup's own words, because a preview must not assert a reclamation that never happened
+  and a refusal must keep its `blockers` and partial inventory.
   `abandon.py` is the discard-without-integration sibling: it reclaims the
   isolated provider stack and removes worktrees/branches without requiring a
   prior integration.
@@ -362,12 +409,12 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   `integration_reopen.would_reopen`, and apply reopens `integration_status` only
   when the new code or memory-content commit is not yet on the recorded source
   branch. Clean no-op re-closeout keeps the completed integration state and does
-  not duplicate an already-present ledger mapping.
+  not create a synthetic memory output or a cache-only commit.
   260718-CHATS-L5I inserts the strict `code_quality_gate.py` adapter after
   preview/approval validation and before every apply **commit**. A quality failure
-  therefore creates no code, memory or ledger commit and leaves contract and
+  therefore creates no code or memory-content commit and leaves contract and
   applied-gate state untouched; only a clean wrapper result permits `commit_if_dirty`
-  and the subsequent onboarding/ledger sequence. **Since 260731-EFA-L4 the gate is not
+  and the subsequent onboarding and memory-content sequence. **Since 260731-EFA-L4 the gate is not
   reached directly**: `closeout_result` (line 743) calls `_gate_staged_code` (line 684) at line 786,
   which stages the code worktree first, so the *index* is one mutation that now precedes
   the gate and survives a refusal. See the L4 section below for why staging is what makes
@@ -410,12 +457,22 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:35-44; mcp/src/agents_remember/models/worktree.py:242-242 |
+| Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
+| Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:598-635; mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:184-236 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:256-256; mcp/src/agents_remember/models/worktree.py:40-40 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
-| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
+| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval`; `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:206-209 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| External closeout chooses substantive memory output and refreshes the cache afterwards. | L36-L76 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
+| Final memory staging removes and excludes the cache. | L191-L197 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| Carryover completion is actual memory ancestry. | L189-L212 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
 
 ## Historical 260731-EFA-L2 Lifecycle Parameter Objects
 
@@ -541,8 +598,8 @@ these have no vocabulary to check against, which is exactly why they stay where 
 | --- | --- |
 | `abandon.py` line 74 | `cleanup="abandoned"` |
 | `cleanup.py` line 395 | `cleanup="completed"` |
-| `integrate.py` line 120 | `integration_status="blocked"` |
-| `integrate.py` line 490 | `integration_status="completed"`, `cleanup="pending"` |
+| `integration/master_review_gate.py` (the `blocked_integration_payload` owner since the closeout-door cut) | `integration_status="blocked"` |
+| `modules/landing_record.py` (the single landing writer since L29; `integrate.py::_integrated_result` and `_checkpoint_result` both call it) | `integration_status="completed"`, `cleanup="pending"` — or `integration_status="checkpointed"` with `cleanup` untouched when `checkpoint=True` (260831-LOCR-L30) |
 | `closeout.py` line 831 (`ContractCells` at 848) | `human_review_status`, `closeout_status`, `integration_status`, `cleanup` |
 | `start.py` line 141 | `memory_mode="disabled"` (the memory-disabled downgrade) |
 
@@ -794,9 +851,12 @@ Terminal series artifacts are ignored and reported through `startup/start_result
 `staleSeriesArtifact` fact. `integrate.py` surfaces the queue consume's stale-by-evidence siblings
 on the result payload (`staleByEvidence`, each naming `worktree_sync`).
 
-IAS supersedes that lane owner. Current start/attach/dispatch selects one master per exact source
-pair, pauses the former without retirement, reconciles before exposure, and leaves task authoring
-upstream. Current queue projection observes the selector and never recreates the old owner from
+IAS supersedes that lane owner. Current start/attach/dispatch reconciles the commanded master in its
+own contract-keyed activation record, without pausing any other master and without claiming a shared
+source pair, and leaves task authoring upstream. Under the graph-less default nothing serializes the
+masters: `atomic-sequential` describes the sprint's shape (every commanded master executes
+atomically) and declares no dependency, so independent masters proceed concurrently. Current queue
+projection observes the addressed contract's own record and never recreates the old owner from
 contract census.
 
 ## 260815-DAG Master Full-Gate Repair Route Impact
@@ -805,7 +865,7 @@ contract census.
 
 ## 260821-CLIVE-L1 Execution Modules
 
-`args.py` transports one normalized effective closeout input, while legacy synchronous CLI apply fails closed. `closeout.py` coordinates journal-authorized execution and exact contract finalization and threads that effective value explicitly through every code/external/recovery consumer; external-memory refresh, memory commit, and ledger commit have moved to the new single owner `closeout_external.py`. That owner uses explicit accepted messages and mutation evidence with no generated ledger subject or fallback. Guidance remains contract-pure: it publishes only static `intent_note` and routes exact candidate-derived requirements to preview/apply. Abandon and cleanup call lifecycle compatibility explicitly under the pure serialization lease.
+`args.py` transports one normalized effective closeout input, while legacy synchronous CLI apply fails closed. `closeout.py` coordinates journal-authorized execution and exact contract finalization and threads that effective value explicitly through every code/external/recovery consumer; external-memory refresh and the memory-content commit belong to `closeout_external.py`. That owner uses accepted messages and Git mutation evidence, excludes the consumer cache from content, and refreshes it only as a post-output observation. Guidance remains contract-pure: it publishes only static `intent_note` and routes exact candidate-derived requirements to preview/apply. Abandon and cleanup call lifecycle compatibility explicitly under the pure serialization lease.
 
 ## 260821-CLIVE-L2 Current Architecture
 
@@ -817,9 +877,9 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:226-275; mcp/src/agents_remember/worktrees/modules/closeout.py:688-725 |
-| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-710 |
-| Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:705-739 |
+| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-708 |
+| Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
 
 ## 260821-DAGQC-L4 No Route Impact
@@ -969,13 +1029,351 @@ The parity candidate composes the sidecar and governing route body/history check
 The closeout/integration module route now treats normal delivery as a transaction boundary. Closeout
 preserves explicit approval, candidate/source identity, Git safety, and recovery evidence, commits
 code through the staged-index transaction helper, performs raw external-memory metadata/entity/index
-refresh, then commits memory content and the ledger mapping. Integration validates and publishes a
-prepared pair with ref/tree compare-and-swap and no merge commit. Normal routes do not automatically
-run strict code quality, memory quality, selected certification, curator coherence, or independent
-review; full suites are an explicit developer request. The older quality-altitude sections remain
-historical context for pre-R12 behavior.
+refresh, then commits substantive memory content with its `Code-Commit:` attribution when needed.
+The ledger is rebuilt as a consumer cache; it creates no extra commit. Integration validates and
+publishes a prepared pair with ref/tree compare-and-swap and no merge commit. Normal routes do not
+automatically run strict code quality, memory quality, selected certification, curator coherence, or
+independent review; full suites are an explicit developer request. The older quality-altitude
+sections remain historical context for pre-R12 behavior.
+
+## Historical milestone context: 260831-LOCR-L30/L34 Checkpoint Landing In This Route
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+`integrate.py` gained `checkpoint_landing_result` and `_checkpoint_result`, and
+`landing_record.py`'s single writer gained `LandedIntegration` plus a `checkpoint` flag. The checkpoint
+path selects `series_closeout.publish_series_checkpoint_under_authority`, records `checkpointed`
+through the shared writer, and runs no automatic cleanup, so an unfinished master landed at a
+checkpoint keeps its worktrees, branches and enclosure. `record_landing.py` (the PR route) calls the same writer with the bundled
+`LandedIntegration` and no checkpoint flag, so the terminal `integration` cell still has exactly one
+definition. `git_worktree_manager.py` re-exports `checkpoint_landing_result`.
+
+**Superseded by 260831-LOCR-L34, which repaired the route's reachability.** The keyword-only
+`checkpoint: bool` flag is gone; `checkpoint_landing_result` now reads the `CheckpointLanding` value
+built by `checkpoint_landing_eligibility` — the route's own capture of the live series code and memory
+work-branch tips plus their proved ledger mapping — because the old path read the contract's closeout
+cells, which an unfinished master does not have and which made the route unreachable in both
+directions. The
+checkpoint no longer calls `validate_integrate_contract`. L34 also made the ledger projection a
+preview-side proof for **both** routes (`_require_ledger_projection` runs before the dry-run branch),
+gave the protected-ref edge a required `operation` name so a checkpoint's `integration-ref-race`
+payload routes the operator back to the checkpoint rather than to `worktree_integrate`, and extracted
+the closeout completion gate into `series_closeout.require_closeout_publication_authority` so
+`closeout_preview_payload` refuses what the closeout apply refuses. The full preview/apply parity
+invariant and its instance inventory live on [the worktrees route overview](../overview.md) and in
+[`memory_quality/overview.md`](../../memory_quality/overview.md).
+
+**260913-LCA-L11 removed this route's ledger-history dimension.** The developer's ruling of
+2026-09-14T08:15+02:00 made the rebuild outrank the tracked ledger file, so the shared landing proof
+no longer judges the landed table against the source file's row list or row order. Concretely on this
+route: `_landing_admission(*, checkpoint)` lost its `contract` parameter, because the finished
+master's ledger prefix it used to derive (`series_closeout.atomic_series_ledger_prefix`) is deleted
+with its only consumer; `_require_ledger_projection` no longer receives `expected_series_prefix` or
+`checkpoint`; and `LandingAdmission` carries one fact, the checkpoint's captured candidate. The
+preview/apply parity instances 4 and 5 are unchanged and now hold by construction rather than by both
+surfaces deriving the same ledger shape. What the proof still refuses — the landed pair's mapping,
+per-row truth, the memory content's descent from the exact source, and a header that disagrees with
+its own first row — is inventoried on the `worktrees/overview.md` route and the
+`integration_ref_transaction.py` card; the removal's known cost is recorded there too.
+
+The typed-vocabulary table below therefore names `landing_record.py` as the call site of the landing
+cells rather than `integrate.py`, and `integration/master_review_gate.py` as the `blocked` call site.
+
+### The Three Downstream Readers A Checkpoint Had To Teach
+
+Fixing the writer was not enough: three readers keyed on `integration_status == "completed"` and
+described a checkpointed series wrongly. All three are now corrected in-tree, and each is documented
+where it lives rather than here.
+
+- `guidance.py::_post_integration_phase` gained a `checkpointed` branch returning the existing
+  `worktree-started` phase with `continue_work` / `worktree_status`; without it the projection fell
+  through to `integration-pending` and pointed an open series at `worktree_integrate`, which refuses
+  it. No new `WorktreePhase` member was added — the alias is a closed `Literal` mirrored by the
+  dashboard, and the summary carries the checkpoint truth.
+- `closeout.py::_landed_source_heads` (renamed from `_completed_integration_source_heads`) now admits
+  the commit a checkpoint recorded as an expected source head; base-only heads made the checkpoint's
+  own landed move refuse as "source branch moved since task start".
+- `record_landing.py`'s `already-recorded` guard covers `checkpointed` too, so the pull-request route
+  cannot upgrade an open series into `completed` + `cleanup="pending"`.
+
+The remaining `integration_status == "completed"` sites are deliberate: they ask "is this contract
+complete?", and a checkpoint must read as not complete. They are listed and dispositioned on the
+`closeout.py` card.
+
+## 260831-LOCR-L36 Contract-Keyed Atomic-Series Activation
+
+The activation record behind start/attach/dispatch/sync moved from one file per **protected source
+pair** to one file per **series contract**. Two atomic masters commanded by one sprint derive the
+same protected source pair (same code/memory repository and branch; only the work branches differ),
+so the older key let the second master's selection replace the first and report the first as
+paused-by. Each contract now owns its record at
+`controlplane/atomic-series-activation/<contract_fingerprint>.json`, where `contract_fingerprint` is
+the sha256 of the canonical resolved contract path. `AtomicSeriesActivationRecord` is
+`schemaVersion "2.0"` carrying `contractFingerprint` and no `sourcePair`/`sourcePairFingerprint`;
+`AtomicSeriesActivationObservation` carries `contract_path` + `contract_fingerprint`; and
+`observe_atomic_series`/`observe_atomic_series_path` take the contract rather than a pair.
+`_require_record_identity` refuses to adopt any record that is not this exact contract
+(`atomic-series-activation-contract-mismatch`). `atomic_series_admission_projection` emits
+`contractFingerprint` and no `classification`, `blocking`, or `sourcePair`, and
+`activation_waiting_reason(observation)` takes only the observation and returns only
+`atomic-series-reconciling`. The terminal release, the cancellation-owner guard, the
+sync-continuation guard, the terminal-contract selection refusal, the corrupt-record archive path,
+and the bounded 8192-char diagnostic detail are unchanged in semantics and are now addressed per
+contract. Everything under `worktrees/integration/**` and `worktree_integrate` is untouched, and the
+graph-less sprint scheduling default is unchanged: `atomic-sequential` describes the sprint's shape
+(every commanded master executes atomically) and serializes nothing — nothing serializes a graph-less
+sprint — while attaching a master to a graph-less sprint still reports graphNode
+`deferred-no-graph-default`.
+
+## 260831-LOCR-L37 The Stop-Only Pause Module
+
+`pause.py` is a new module in this route and the whole of it is one operation:
+`pause_result(args, current_contract)` releases one atomic master's selection, publishes nothing and
+hands the turn back. It belongs in `modules/` because it is an operation a public tool reaches through
+the facade — `git_worktree_manager` imports and re-exports `pause_result` — not a helper inside another
+module's seam.
+
+It adds no authority. The release is delegated to the existing
+`activation/atomic_series_activation_release.py::release_atomic_series_selection`, the same call sync
+cancellation and terminal cleanup already make; the pause contributes the caller-facing shape, not a
+second scheduling or vacancy mechanism. The module performs no Git, imports no integration, landing,
+closeout or ledger module, and writes exactly one thing — the activation snapshot recording that this
+contract is no longer selected.
+
+The refusals come from the release authority and are explained, never suppressed: an addressed record
+this contract does not own refuses as `atomic-series-activation-release-unreadable`, and a non-series
+contract is refused here as `pause-requires-atomic-master` because a leaf owns no selection of its own.
+Every refusal returns `paused: False` and, like the success payload, proposes no next call.
+
+Read the file's own card ([`pause.py.md`](pause.py.md)) for the split against
+`worktree_checkpoint_landing`, which remains the separate publication in `integrate.py`, and for the
+measured import-closure evidence that the stop cannot reach a publication.
+
+## 260831-LOCR-L38 The Already-Vacant Stop
+
+A master holding no selection is already stopped — that is the ordinary state of a master between
+landings — so the pause reports it as the success it is instead of failing an intent it has just
+satisfied. `_already_stopped_result` answers the release authority's
+`atomic-series-activation-selection-missing` status itself, but only after `observe_atomic_series`
+confirms the record is `vacant`; the success is explicit (`atomic-series-already-vacant`, `paused: true`,
+`_ALREADY_VACANT_SUMMARY` naming that no selection was held) so a caller can tell it apart from a real
+release, and it writes nothing at all. This is the one release outcome the pause answers itself:
+`_RELEASE_REFUSAL_DETAIL` no longer carries a `selection-missing` entry. An unreadable record and a
+record naming another master stay refusals, because neither proves the master is inactive, and
+`release_atomic_series_selection` is unchanged because explicit sync cancellation still requires an
+existing exact selection.
+
+The companion change is the removal of the child-admission seal: `worktrees/atomic_series_seal.py` and
+its `require_series_accepting_leaves` predicate are deleted, so no closeout/integration/cleanup cell
+refuses a leaf and a master that took a checkpoint landing can still admit the next one.
+`mcp/tests/test_lifecycle_playthrough_end_to_end.py` plays the whole lifecycle in order and proves it.
+
+## Historical milestone context: 260913-LCA-L1 Memory-Content Commit Attribution
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+A closeout's memory content is now attributed inside the commit object rather than only beside it in
+the tracked ledger table. `EffectiveCloseoutInput.memory_content_message(code_commit)`
+(`models/closeout/input.py`) returns the closeout's own
+message verbatim and appends the trailer as its own final paragraph, so
+`git interpret-trailers --parse` and `git log --format='%(trailers:key=Code-Commit)'` both read it as
+data and `Code-Commit: <sha>` names the code commit that same closeout landed.
+
+The key itself is declared once, and not here: since 260913-LCA-L2 it lives in
+`kernel/memory_attribution.py` — the module that reads the trailer back out of the history — and
+`models/closeout/input.py` imports it (`input.py:9`). The direction is fixed by `layers.toml`
+(`kernel` ranks below `models`, so a kernel module importing a model would import upward), and
+`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit. The writer and the reader
+therefore cannot drift into two literals, which is the failure this section's whole design is about:
+a writer whose key the reader does not parse looks like "no attribution exists" rather than like a bug.
+
+That is the closeout-shaped way in to the one definition, and both sanctioned closeout routes render
+through it: this route's `_commit_memory_content` (`closeout_external.py`, handed
+`code_commit=change.commit` by `external_closeout_commits`) and the branch-addressed direct-landing
+route's `_direct_memory_commit` (`integration/direct_landing/direct_landing_execution.py`, handed
+`code_commit=operation_input.codeCommit`). Neither rewrites the closeout message; the trailer is
+appended, never substituted. Since 260913-LCA-L4 the method delegates to
+`kernel.memory_attribution.render_memory_content_message`, which is the one writer for all five
+producers — the production/maintenance/direct-landing `worktrees` family included — so the format is not
+owned anywhere under `worktrees/` (see the producer-surface section below).
+
+The seam is the message construction rather than a later step because the message is hashed into the
+object: `commit_verified_staged` runs `git commit --no-verify -m <message>` on the already-staged tree
+(returning HEAD unchanged when nothing is staged) and `commit_if_dirty` is `git add -A` plus
+`git commit -m <message>`, so the rendered string *is* the commit's message, and `prove_git_commit`
+journals that exact sha on the next statement. Adding the attribution afterwards could only be
+`git commit --amend`, which rewrites an object already proved and recorded as `memoryContentCommit`.
+`git notes` was rejected for the same reason — notes are not bound by the hash.
+
+The `memory.md`-only ledger commit is deliberately excluded: it has no code counterpart to name, and a
+second trailered commit for one code commit would project a duplicate row. Absence is the detection,
+not a legacy state to tolerate.
+
+## Historical milestone context: 260913-LCA-L4 The Producer Surface Is Total (5 Producers, 0 Untrailered)
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+A memory commit that names no code commit contributes no ledger row, and the projected ledger cannot tell
+that apart from a producer that kept the old shape — the pairing is simply gone. So the transition is
+either total or it is a silent hole in the map, and L4 made it total. The census below was measured at
+base `5bb124d4` from source and **corrects** the master's 2026-09-13T22:05 decision in two places:
+`worktrees/queue/closeout_recovery.py:209` is that route's CODE leg rather than a memory-content producer,
+and the producer the first census missed is `worktrees/integration/closeout/preparation/memory_output.py`.
+
+This route's own producer is `_commit_memory_content` (`closeout_external.py`, commit site `:165`): it
+commits `effective_input.memory_content_message(code_commit)` (`:167`), which is now a delegation to
+`kernel.memory_attribution.render_memory_content_message` — the one writer of the trailer. Nothing about
+the route changed apart from that delegation: same message body, same leg, same gates, same refusals. A
+resumed closeout that still owes its memory commit reaches this same producer, which is why the recovery
+route is attributed without owning a commit site of its own.
+
+The five producers, each reaching the shared renderer, are: `closeout_external.py:165` (this route);
+`integration/direct_landing/direct_landing_execution.py:270`; `preparation/memory_output.py:92` (its
+memory-content leg only); `memory/carryover.py:846`; and `memory/baseline.py:210`. Every other commit site
+is trailerless **by rule with a recorded reason**, not by omission: every ledger leg; the recovery route's
+code commit; `sync_transaction_git.py`'s memory merge commits (two memory parents and no single code
+commit to name); and carryover's nothing-to-carry path, which creates no commit at all.
+
+Two of the five take their commit message as a **public argument of another tool** — carryover's
+`CarryoverCommitMessages.memory` and baseline's hard-coded adopt subject — which is why the renderer
+appends the attribution as its own final block after a blank line rather than weaving it into the caller's
+body: the body may be several paragraphs and its own last paragraph may itself be `Key: value` lines, and
+a producer must never edit the string it was handed. The census is enforced from source by
+`mcp/tests/test_memory_attribution_producers.py`, and the recovery route's behavioural half lives in
+`mcp/tests/test_transaction_only_worktree_delivery.py::test_closeout_recovery_attributes_the_memory_commit_it_still_owed`.
 
 ## Update History
+
+- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected closeout, final staging, carryover/cleanup, and integration routing; prior three-leg milestone prose labelled historical. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/modules` carries local unstaged changes not represented in
+  HEAD. Re-read the card against the frozen on-disk source and re-checked its claims and cited
+  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
+  metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T15:05+02:00 — No route impact: 260913-LCA-L8 made a terminal blockage unrepresentable
+  without a name and a reason inside `modules/terminal_validation.py`, named every non-removal result
+  in `application/provider_runtime.py::remove_tree`, and moved the `cleanup.py` / `abandon.py` call
+  sites onto the `TerminalResult` bundle. The route's purpose, its terminal cleanup and abandon
+  operations, their entry points and their refusals are unchanged: a genuinely blocked cleanup or
+  abandon still blocks with its own reason. The only route-level repair is the re-derived
+  `cleanup_result` anchor (`cleanup.py:632-707` → `633-708`) after the import line shifted it; the
+  enforcement detail lives on the three file cards. Verification metadata remains closeout-owned; no
+  acceptance claim.
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): recorded that the shared landing proof on this route lost
+  its ledger-history dimension under the developer's 2026-09-14T08:15+02:00 ruling — `_landing_admission`
+  no longer takes the contract (there is no series ledger prefix left to derive),
+  `_require_ledger_projection` no longer receives `expected_series_prefix`/`checkpoint`, and
+  `LandingAdmission` carries only the checkpoint's captured candidate. The L34 preview/apply parity
+  account above is unchanged and now holds by construction. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): added the producer-surface section above. This route's `_commit_memory_content` now reaches
+  the kernel's one renderer through the closeout model, and the section records the corrected census
+  (5 producers, 0 untrailered) with the two corrections, the five producer sites, the
+  trailerless-by-rule sites with their reasons, and the append-as-final-block rule the public-argument
+  producers force. The attribution section above already carried the L1/L2 ownership corrections; its
+  statement that "both sanctioned routes render through" `EffectiveCloseoutInput.memory_content_message`
+  remains true and is now additionally true of three producers that never see that type. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:22+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`): corrected
+  the ownership sentence in the attribution section above, which placed
+  `CODE_COMMIT_TRAILER_KEY = "Code-Commit"` in `models/closeout/input.py`. The key is declared once in
+  `kernel/memory_attribution.py` (the reader) and imported by that model (`input.py:9`), so
+  `grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit; the direction is the one
+  `layers.toml` permits, since `kernel` ranks below `models`. The render path, the two routes and the
+  `memory.md`-only ledger exclusion this section documents are unchanged. The entry below stands as
+  the record of what was true when L1 wrote it. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): recorded
+  that the memory-content commit closeout creates is now attributed inside the object — exactly one
+  `Code-Commit: <sha>` trailer naming the code commit that same closeout landed, rendered by the single
+  `EffectiveCloseoutInput.memory_content_message(code_commit)` definition and used by both the worktree
+  route (`closeout_external.py::_commit_memory_content`) and the direct-landing route, with the
+  `memory.md`-only ledger commit deliberately left unattributed. Corrected the CCR-R12@v5 transaction
+  boundary paragraph, which described the two commits without saying which one carries the
+  attribution. Verification metadata remains closeout-owned; no acceptance claim and no verification
+  stamp advanced.
+- 2026-09-13T20:42+02:00 — Child-admission seal removal and the already-vacant stop (uncommitted
+  260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): corrected the L37 paragraph
+  that said a contract with no selection "refuses as `atomic-series-activation-selection-missing`" — the
+  pause now answers that status itself as the `atomic-series-already-vacant` success after confirming
+  the observation is `vacant`, so it is no longer among the explained refusals. Added the L38 section
+  recording the already-stopped branch, the unchanged release authority, and the deleted
+  `atomic_series_seal.py` child-admission seal with the ordered playthrough as its regression proof.
+  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new `modules/pause.py` — the stop-only pause
+  that delegates to the existing release authority, adds no second scheduling or publication authority,
+  performs no Git, and returns a proposal-free result. Corrected two paragraphs that still used the
+  retired sense of "paused" for an unfinished/checkpointed master ("a paused master keeps its
+  worktrees", "cells, which a paused master does not have") now that "paused" names the released
+  state. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: the checkpoint landing is a partial
+  publication of an unfinished master, not a pause, so this route's cleanup paragraph now says "an
+  unfinished master landed at a checkpoint" where it said "a paused master". Wording only; the
+  reclamation account (a checkpoint reclaims nothing and is never finalized) is unchanged and no
+  verification stamp advanced.
+- 2026-09-13T15:03:18+02:00 — 260831-LOCR-L36 round 2: stated the developer ruling where this route describes the graph-less default and selection. The IAS composition section now says the graph-less default is not a serialization authority — `atomic-sequential` describes the sprint's shape (every commanded master executes atomically) and serializes nothing, because a graph-less sprint declares no dependencies — the superseded DAG-L13 section records the same under IAS, and the L36 section corrects its closing sentence: the graph-less scheduling default is unchanged (nothing serializes it) while the `deferred-no-graph-default` value belongs to `attach_master`'s graphNode reporting, not to scheduling. No per-contract activation text was weakened: a foreign master is still never named as a blocker and `atomic-series-reconciling` is still the only waiting reason. Source-pair wording is retained only where the sync/integration plane genuinely remains per pair. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36 route impact: recorded the contract-keyed atomic-series activation that replaces the per-protected-source-pair record. The IAS lifecycle section no longer says a new selection "auto-pauses the prior live series"; it now states the record is keyed per series contract, that a foreign master is never a waiting reason, that the only surviving activation waiting reason is `atomic-series-reconciling`, and that real wave dependencies remain the sprint execution graph's `predecessor-incomplete:` reasons. Replaced the "a paused series cannot clear a newer selection" sentence with the per-contract terminal-release statement, corrected the superseded DAG-L13 paragraph's "selects one master per exact source pair, pauses the former", and added a route-level account of the re-keying. Rebound three stale reference rows: the route-index row's `kernel/route_index.py` range (now anchors `build_route_indexes` at `184-236`), the two `models/worktree.py` cells (`phase: WorktreePhase` → `255-255`, `WorktreePhase = Literal[` → `40-40`), and the approval-retention cells (now anchored `CONSUMED_APPROVAL_GATE_KINDS` at `interaction_retention.py:52-54` and `:206-209`). Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded that the L30 checkpoint route was unreachable in
+  both directions and what replaced its mechanism — the `CheckpointLanding` value from
+  `checkpoint_landing_eligibility` instead of the closeout-cell read and the `checkpoint: bool` flag,
+  the removal of `validate_integrate_contract` from that path, the shared `_require_ledger_projection`
+  before the dry-run branch for both routes, the required `operation` name on the protected-ref edge
+  fixing the `integration-ref-race` `nextTool`, and the closeout gate extraction into
+  `series_closeout.require_closeout_publication_authority`. Pointed to the full preview/apply parity
+  invariant and instance inventory on the worktrees route overview and in `memory_quality/overview.md`.
+  Content change, not a range repoint; verification metadata remains closeout-owned and no acceptance
+  claim is made.
+- 2026-09-12T20:12+02:00 — **Final correction: the seam account in the two entries below is
+  superseded by the verified mechanism.** The body previously said the projector's write violated
+  `WorktreeSummary`'s typed `nextAction` on a strict model; that is false — `WorktreeSummary` is never
+  on that path. The settled account, now in the body and on `models/worktree.py.md`, is that
+  `WorktreeStatusResponse` inherits `extra="allow"` (`FlexibleResponseModel`) and declares none of
+  `nextAction` / `nextTool` / `nextArgs`, so the projector's pair passes through verbatim and
+  unchecked; `WorktreeSummary.nextAction` is honest where it lives; the branch is reachable via the
+  rolled-back contract amendment that leaves the locator `terminal-archived`; the emitted guidance is
+  correct and retrying the named tool resumes; only the typing is missing; and
+  `test_wire_vocabulary_exhaustiveness.py` has no test bodies left to enforce produced == declared.
+  The `NextTool."worktree_cleanup"` retention and its reason are unchanged. Verification metadata
+  remains closeout-owned; no route acceptance claim.
+- 2026-09-12T20:02+02:00 — **Body corrected (superseded by the 20:12 entry above): `WorktreeSummary`
+  does declare `nextAction`**, as `Literal["developer-decision"] | None = None`
+  (`models/worktree.py:281`, inside the class at :236-292). The earlier claim that it was undeclared
+  was false. See the 20:12 entry for the verified mechanism that replaces the interim "strict model /
+  type violation" reading. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 route impact: recorded that integration lands the refs and
+  stops while `finalize.py::_run_or_verify_cleanup` owns terminal reclamation, with the pure shaper
+  `cleanup_report.py::cleanup_report` producing the operator report for a completed reclamation and
+  its caller gating a dry run or a nonzero return code out of that shaping. Recorded **why** the
+  ownership moved: reclaiming inline left `cleanup` already `completed` when `_integrated_result`
+  returned, so the `next_step.py::_gate_after` guard keyed on that cell could never fire and leaves
+  L29/L30 reported `done` with `planning` leaf documents and `inProgress` master rows. Dropped the
+  deleted `automatic_cleanup.py` from this route's operation-owner list, noted `cleanup_report.py` owns
+  no operation, added "cleanup report shaping" to the purpose, and recorded that
+  `NextTool."worktree_cleanup"` is deliberately retained because
+  `application/worktree_status.py::_project_terminal_contract_status` still emits it — together with
+  the seam that write opens; **its mechanism is settled in the 20:12 entry above**. Added two
+  reference rows. Verification metadata remains closeout-owned; no route acceptance claim.
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded the three downstream readers the
+  checkpoint state had to teach (guidance's `worktree-started` projection, closeout's
+  `_landed_source_heads`, the pull-request `already-recorded` guard), and that the remaining
+  completed-only sites are deliberate with their census on the `closeout.py` card. Verification
+  metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the checkpoint integration route, the
+  `LandedIntegration`/`checkpoint` widening of the single landing writer, and corrected the
+  typed-vocabulary call-site table, which still placed the `blocked` and
+  `completed`/`cleanup="pending"` cells inline in `integrate.py`. Verification metadata remains
+  closeout-owned; no acceptance claim.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "WorktreePhase = Literal[", "phase: WorktreePhase", `closeout_preview_payload`, `closeout_result` repointed to mcp/src/agents_remember/models/worktree.py:253-253, mcp/src/agents_remember/models/worktree.py:35-35, mcp/src/agents_remember/worktrees/modules/closeout.py:224-273, mcp/src/agents_remember/worktrees/modules/closeout.py:705-739. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `cleanup_result` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T15:04+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: added `automatic_cleanup.py` to the modules owning the c-09 lifecycle operations, and recorded on the integration description that a completed integration reclaims its enclosure through `run_automatic_cleanup` (reusing `cleanup_result` with `approved=True` / `dry_run=False` / `teardown_providers=True`), that a refused or partial integration cleans up nothing, and that a cleanup refusal is reported without failing the integration. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry: recorded `modules/closeout_lineage.heal_current_source_lineage` as the self-healing closeout lineage guard and the rewording of the source-moved recovery guidance through `worktree_sync` plus a new targeted closeout. `replay` remains supported. Verification metadata remains closeout-owned.

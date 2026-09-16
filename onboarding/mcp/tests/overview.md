@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `11d1ed0e5542818283bf7fb012a7bdd642aaba2e` |
-| lastVerifiedCommitDate | 2026-09-11T18:45:26+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -15,6 +16,8 @@
 [MCP package overview](../overview.md)
 
 ## Purpose
+
+Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.
 
 This route retains a small behavior-oriented verification population plus shared fixtures. The
 terminal-evidence cursor suite is a focused unit-regression module for no-loss deque envelopes,
@@ -25,18 +28,13 @@ is protected or restoring an old matrix.
 
 ## Hot Path Summary
 
+For the ledger retirement, start with transaction-only delivery, direct landing, integration/checkpoint concurrency, memory ledger projection and backfill tests. Assertions distinguish cache-only conditions from actual content, ancestry, ref and ownership failures. The retained producer census checks every active attributed memory writer; no scenario expects a third ledger commit.
+
 Start with the distinct failure or user operation, then locate its retained owner. Checkout isolation, Dagger registry locking, private Git preparation, protected-ref recovery, durable-store races, submission authority and native framing each retain concrete behavioral protection. Compiler/certificate fixtures establish library contracts; they are not live Dagger, Codex or final-memory execution evidence. Preparation checks can guide memory repair before certification without becoming Gate 5.
 
 ## CCR-R12@v5 Transaction-Only Delivery Route
 
-`test_transaction_only_worktree_delivery.py` is the focused behavioral route for normal public
-closeout and integration. It proves code, external-memory, and ledger delivery; paired integration
-publication; source-movement refusal; and non-invocation of configured failing pre-commit hooks
-through the transaction commit helpers. The route patches quality, certification, and curator
-helpers to fail if called, so it distinguishes transaction behavior from optional preparation.
-Normal closeout/integration do not require strict code quality, memory quality, selected
-certification, curator coherence, or independent review; full suites are only an explicit developer
-request.
+`test_transaction_only_worktree_delivery.py` exercises real public closeout and paired integration. It checks actual code/memory refs and the memory-content `Code-Commit:` trailer, source movement refusals, configured-hook behavior, interrupted recovery and cache rebuilds. Missing, malformed or changed cache bytes do not create commit objects or gate delivery. The suite retains real content/ref failures instead of replacing them with cache checks. This overview describes coverage, not a current aggregate test result.
 
 ## Retained Behavioral Routes
 
@@ -62,21 +60,67 @@ request.
 | Conversation projection and assets | `test_conversation_active_service.py`, `test_conversation_control_attachments.py` | Ordering, honest pagination, one-use assets and unknown-outcome retention. |
 | Canonical terminal-evidence mapping | `test_terminal_evidence_mapping.py`, `test_conversation_native_ingestion.py` | Native projectors remain the terminal-outcome authority; malformed or open frames make no terminal claim and do not hide a later canonical outcome. |
 | Protocol framing | `test_codex_native_history.py`, `test_pi_rpc_process.py` | Bounded paging/correlation and real fixture subprocess behavior. |
-| L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate; preparation evidence only. |
-| CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, and configured-hook non-invocation; focused behavior evidence only. |
+| L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate. The activation admission is contract-scoped: a refusal carries no `classification`/`blocking`/`sourcePair*` key and never names a foreign master as blocker or retry precondition. Preparation evidence only. |
+| CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Public code/memory delivery, interruption recovery, source/ref safety, hooks, memory attribution and cache-only no-op behavior. |
+| Ledger attribution and the projected source ledger | `test_memory_ledger.py`, `test_worktree_sync.py` | Git-only computed rows, cache misses/malformed bytes and hand edits, attributed source history, and cache-independent synchronization. |
+| Producer census and the one renderer | `test_memory_attribution_producers.py` | Five memory-content producers and zero untrailered, measured from source: the trailer key identifier and its interpolation appear in exactly one production module, no production module spells the trailer as a quoted literal, each of the five producers reaches a shared renderer entry, and a hostile multi-paragraph caller body survives byte for byte with the trailer appended as its own final block. The two non-closeout producers are driven end to end through the public `memory_carryover_apply` and `memory_baseline_adopt`. Source census plus real-repository cases. **Superseding the note this row used to carry: the module's `unit-regression` lane row now exists** (`mcp/tests/test-evidence-lanes.toml:68`, added by the commit that landed L4), so the manifest loads. |
+| Leaf document master-link binding | `test_leaf_doc_master_link_binding.py` | The derived master link, end to end on real repositories: a leaf authored through `task_doc` with no series contract acquires `seriesContractPath` and its one `enclosures[]` ref when it is started; an already-damaged document (`lifecycleId` stale, no link) is repaired by its next start with objective, requirements, steps and title unchanged; a leaf under a task root with no master document is refused with `seriesContractPath`, the exact missing `task.json` and the remedy, writing nothing; and the planning flow (master plus two leaves, no start) still succeeds, still unstamped. Integration lane: one disposable code repository and one external memory repository per case. The restamp decision table is the unit half in `test_task_document_application_1.py`. |
+| Closeout recovery attribution | `test_transaction_only_worktree_delivery.py` | Interrupted closeout proves actual journaled code/memory commits and refuses forged output evidence; cache state is immaterial. |
 | Closeout auto-carry and parked candidate | `test_source_lineage.py` (`CloseoutSourceLineageHealTests`), `test_sync_parked_candidate.py` | The closeout boundary carries a settleable stale break, refuses a preview without mutating, escalates an unprovable break, and returns a parked dirty candidate through the sync transaction (restore on completed/resume/cancel, kept unmerged-index refusal); transaction-level detail lives in the new unit-lane module. |
+| Memory-history trailer backfill | `test_memory_backfill.py` | Disposable history rewrite selection, loss reporting, byte-faithful objects, trailer-only acceptance, idempotence and multi-ref CLI publication. |
 
 | Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
+| Public tool-surface inventory | `test_tools.py` (`PublicSurfaceInventoryTests`) | Live registration order against a probe `FastMCP` equals `PUBLIC_TOOLS`, and the advertised names have response models that validate. Hermetic inventory contract: the probe starts no server and touches no provider. |
+| Worktree next-move typing and enforcement | `test_worktree_status_terminal_next_tool.py` | The `terminal-archive-ready` branch of `worktree_status` names the accepted cleanup operation, its emitted args bind to the real tool signature (checked with `inspect.signature(...).bind`), the envelope declares `nextAction`/`nextTool`/`nextArgs`, and the `PUBLIC_TOOLS` membership validator is driven in both directions. Integration lane: real worktree services and a real repository under `tmp_path`. First coverage of that branch. |
+| Stop-only pause, and the pause/publication split | `test_pause_stop_only_end_to_end.py`, `test_pause_is_not_publication.py` | The public `worktree_pause` stops an atomic master over one real temporary Git world holding two masters: it releases only this contract's activation record to `vacant`, leaves the other master's record byte-identical and still `active`, moves no ref and creates no commit (both repositories' tips, complete object databases, coordination tree, both worktrees, the enclosure and every task document measured identical before and after), reports `paused: true` with **no** `nextTool`/`nextArgs`/`nextOperation` at the top level or inside `nextStep`, reports a never-selected master as the explicit `atomic-series-already-vacant` success (that case asserted a refusal before the 260831-LOCR-L38 change set) while still refusing a leaf contract / a record naming another contract without writing anything, is idempotent, and resumes through `worktree_sync` with nothing published. Its sibling is the structural half: `test_pause_is_not_publication.py` (architecture-fitness) asserts the pause module's static import closure is disjoint from all twelve publication modules — measured 60 modules including the root, 5 direct imports, 54 beyond them — with non-vacuity assertions and named witnesses so a walker stopping at the direct imports fails rather than passes, so the stop cannot become the checkpoint publication. `worktree_checkpoint_landing` is the separate, explicitly requested publication and no case here reaches it. Integration + architecture-fitness lanes. |
+| Checkpoint landing plan/apply parity | `test_checkpoint_landing_end_to_end.py` | Public unfinished-master checkpoints, actual paired refs, idempotent retry, cache independence, and real source/content/ref-race refusal parity. |
+| Sub-task index reachability across a writer skew | `test_task_documents_graph_projection.py` (`SubTaskIndexReachabilityTests`) | Projection-only unit evidence that a completed leaf whose durable JSON carries a field this reader's schema does not know stays reachable from the master's sub-task index, an unstarted row keeps resolving, and a document with a required field deleted is still withheld. `_index_doc` reproduces the dashboard's own index rule (`sliceForRef`) rather than approximating it. Hermetic temporary task root; one case, one helper, no lane change. |
+| Cross-master concurrency on one protected source pair | `test_cross_master_concurrency.py`, `test_atomic_series_activation.py` | One sprint commands every atomic master from its own source branches, so two atomic masters share one protected source pair; each keeps its own activation record. Both masters stay ready and progress, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks no sibling (the same statement the stop-only pause now makes as a real public operation, `worktree_pause`, proved separately in `test_pause_stop_only_end_to_end.py`), a conflicting or stale publication is refused at the pair (`blocked-non-ff`, `atomic-series-checkpoint-candidate-moved`), and a master that reconciles with a landed sibling finishes through ordinary public closeout and final integration rather than a checkpoint. A graph-less sprint serializes nothing — `executionGraph=None` resolves to the `atomic-sequential` sprint shape (every commanded master executes atomically, no dependency is declared) and both masters hold their own activation concurrently with no waiting reason. Only a real sprint-graph wave edge still gates (`predecessor-incomplete:`). Integration lane: real temporary Git repositories and the public operations. |
+| Capacity refusal source classification | `test_closeout_projection_source_classification.py` | The three states of a projected source stay distinct on the code its own raiser published. `graph_context` refuses a sprint whose authored graph is one node past `MAX_CLOSEOUT_MASTERS` with `closeout-queue-master-capacity-exceeded` — its own declared code, read back from the refusal rather than retyped — and that code classifies `invalid`, because the source was read and is past its bound; `contract-unreadable` and `atomic-series-contract-unreadable` still report `unreadable`; and the ordinary projected source stays readable with no problems and classifies `active`. The classifier tests membership of `closeout_queue_errors.py`'s `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains. Integration lane: real temporary Git repositories through `QueueFixture` and the production graph admission path. |
+| Terminal blocker reasons | `test_terminal_blocker_reasons.py` | A cleanup or finalize blockage always names the component it stopped on and a non-empty reason. The L6 shape — terminal archive proven, provider runtime already gone — finalizes on the first call with an empty `notRemoved` inventory; a real permission failure on the provider tree blocks with `remove_tree`'s own `permission denied: ...` reason, closes nothing and refuses identically on retry; and both invariant owners are driven directly (`_blocker` refuses a missing, blank or non-string reason, and `remove_tree` names a reason whenever it reclaimed nothing). The L6 payload is reproduced through the provider port boundary, not by re-enacting the original physical event. Integration lane; one new module, no deleted module. |
 
 ## Fixture Roles And Claims
 
 `test_agent_notifier.py` and `test_agent_notifier_ladder.py` supply row/topology builders. `test_codex_app_server_adapter.py` and `test_codex_adapter_thread_demux.py` supply transport/observation helpers. `test_closeout_queue.py`, `test_closeout_projection_member_helpers.py`, `test_final_codex_models.py`, `test_gate_certification_evidence.py`, `test_memory_citation_fix.py` and `test_observer_projection.py` likewise retain shared setup rather than their former standalone matrices.
+
+**The citation fixtures now build real Git provenance (260831-LOCR-L33).** The continuity rule the
+leaf introduced — a tree-wide relocation is admitted only when no cited file survives and the anchor
+existed in a cited file at the document's `lastVerifiedCommitHash` with the same extent kind — is
+only expressible against a real repository, so `test_memory_citation_fix.py`'s shared `Tree` gained
+`history()`, `stamp()` and `remove_source()`, and its `document()`/`card()` accept a `stamp` that
+lands a `lastVerifiedCommitHash` row **inside** the metadata table (never below the citation header,
+where it would parse as another claim). `Tree.row()` locates a citation row by its table header
+rather than a fixed index, so card metadata cannot shift it. `test_citation_document_transaction.py`'s
+`Scenario` carries the same stamp and its fixture commits the verified tree before deleting both
+cited files; the TypeScript move fixtures in `test_memory_citation_grammars.py` and the
+`_two_failing_cards` helper in `test_memory_citation_fix_scopes.py` were given provenance the same
+way. The previously pinned relocation tests therefore still test the legitimate kind-preserving move
+instead of having their expectations relaxed, and `test_memory_citation_resolution.py` adds
+`MechanicallyProjectedRangeTests`, which pins that a range written by the mechanical projection is
+surfaced with the support question rather than an assertion that the citation is current.
 
 Preserve useful shared fixtures only for real consumers. Fake inspectors, synthetic profile inputs, hand-built report payloads and pending finalizers must stay labeled as such. A source-range citation proves the described assertion exists; only a retained execution record proves it ran. Whole-master review and aggregation must assess actual protection rather than historical test names or counts.
 
 ## Isolation And Collection
 
 Root test conftest sets candidate imports and disposable home/config/data/cache paths, removes inherited credentials and live-provider opt-ins, and restores owned global state. Ordinary units do not automatically bootstrap application composition; tests request `worktree_services` when that boundary matters. Integration-only modules are skipped before import during unit runs. Collection budgets inspect already selected items without nested pytest or a second repository scan.
+
+## Deliberate Test Inventory Reduction
+
+The test route was reduced on purpose, and a card that cites a name which no longer exists is
+evidence of that reduction, not evidence of a lost or damaged file. Commit `d3610903` ("Reduce test
+inventory and make coverage diagnostic", 2026-09-06) is the large one: 594 files changed, 604
+insertions against 235,366 deletions, stating that it reduced Python test/support code by 79% and
+that it replaced coverage floors with collected-case budgets. Four later cuts removed specific
+named surface as well: `173bb01e` (2026-09-10) deleted the detached lifecycle worker and drove every
+fixture onto the synchronous path; `b06b3a27` (2026-09-10) removed the master route-review gate that
+integration never consulted, under an explicit developer ruling that quality is checked focused
+within the leaves; `6982c6a7` (2026-09-10) cut the door-operation-journal plane and deleted the
+`closeout_door` tool entry point; and `2ec5d244` (2026-09-11) deleted the tests its own remaining
+failures exposed as dead. Recover a deletion's cause with `git log -S '<symbol>' -- mcp/tests` (or
+`git log --diff-filter=D -- mcp/tests`) before treating a missing test name as an accident. A
+shrinking coverage table therefore belongs in the card as recorded negative knowledge, with the
+removing commit where it can be proven, and never as a silently shorter list.
 
 ## Historical Context
 
@@ -94,41 +138,805 @@ Memory quality is useful before gate admission: a contract-scoped full request o
 
 Preparation does not grant a final certificate. The interactive catalog projection explicitly lacks affected-closure and code-prefix authority. The existing prepared-memory adapter consumes the selected four original code terminals and exact prepared candidate, runs the final memory producer, publishes its physical result and selects Gate 5 through the normal owner. Finalization requires that selected original fifth certificate and its bound memory inputs. MCAR continues from these existing owners; this overview does not declare the unfinished master accepted or create a second final proof path.
 
-Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
+Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the cache path is informational. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
-The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 188 test-shaped modules: 108 unit-regression, 2 public-contract, 51 integration, 14 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty. That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 150-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 202 test-shaped modules: 114 unit-regression, 2 public-contract, 57 integration, 16 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty (260831-LOCR-L32 added one integration member — `test_worktree_status_terminal_next_tool.py` — 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py`, 260831-LOCR-L36 added `test_cross_master_concurrency.py`, 260831-LOCR-L37 added two: `test_pause_stop_only_end_to_end.py` to integration and `test_pause_is_not_publication.py` to architecture-fitness, and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to integration; the declared collected-case budgets are 1000 unit and 250 integration, the integration ceiling having been raised from 200 by L37 with a developer-authorized tradeoff block in `pyproject.toml`). That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 200-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+
+**Superseded counts (260913-LCA-L5 curator, measured at the current change set):** the sentence above records the
+pre-L4 population. The manifest now holds 204 modules on disk and 204 entries — 115 unit-regression,
+2 public-contract, 58 integration, 16 architecture-fitness, 13 provider-conformance, with
+stress-durability and migration empty — the growth being L4's `test_memory_attribution_producers.py`
+(row 68, unit-regression) and L5's `test_leaf_doc_master_link_binding.py` (row 152, integration). The
+`test-evidence-lanes.toml` card carries the per-lane brackets and is the owner of record.d it does not restore any retired matrix.
+
+**Current counts (260913-LCA-L7 curator, measured at the current change set):** the L5 paragraph
+above is superseded. The manifest now holds 205 modules on disk and 205 entries — 115
+unit-regression (entry rows 5-120), 2 public-contract (122-124), 59 integration (126-185), 16
+architecture-fitness (187-203), 13 provider-conformance (205-218), with stress-durability and
+migration empty. The single addition is this leaf's `test_closeout_projection_source_classification.py`,
+registered in the **integration** lane at row 137 by the same change set that created it: it composes
+the real `QueueFixture` over temporary Git repositories and drives the production graph admission and
+projection path, so that is its behaviour-preserving lane. The `test-evidence-lanes.toml` card owns the
+per-lane brackets; membership is selection and cost classification only, never execution or
+acceptance evidence.
+
+**Current counts (260913-LCA-L8 curator, measured at the current change set):** the L7 paragraph
+above is superseded. The manifest now holds 206 modules on disk and 206 entries — 115 unit-regression
+(entry rows 5-120), 2 public-contract (122-124), 60 integration (126-186), 16 architecture-fitness
+(188-204), 13 provider-conformance (206-219), with stress-durability and migration empty. The single
+addition is this leaf's `test_terminal_blocker_reasons.py`, registered in the **integration** lane at
+entry row 177 by the same change set that created it: it drives the public landing, integration and
+`lifecycle_finalize_task` routes over real temporary repositories and worktrees, so that is its
+behaviour-preserving lane. The `test-evidence-lanes.toml` card owns the per-lane brackets;
+membership is selection and cost classification only, never execution or acceptance evidence.
+
+260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
+load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
+refuses a manifest that omits one — so the seven tracked modules that declared no lane (one of them,
+`test_record_landing.py`, shipped by the immediately preceding leaf) were a hard load failure rather
+than a silent default. The leaf's own `test_checkpoint_landing.py` joined them. Detail lives in the
+`test-evidence-lanes.toml` card, which is the owner of record for lane membership.
+
+The same leaf's follow-up added three more forcing cases, one per behaviour the checkpoint state had
+to teach, and this route gained two new file cards with them:
+
+- `test_post_integration_cleanup_guidance.py::test_a_checkpointed_series_keeps_working_instead_of_being_told_to_integrate`
+  — a checkpointed contract projects `worktree-started` + `continue_work` + `worktree_status`, not
+  `integration-pending` + `worktree_integrate` (the tool that refuses while the series is open).
+- `test_record_landing.py::RecordLandingTests::test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration`
+  — the pull-request route reports `already-recorded` for a checkpointed contract and leaves both cells
+  as the checkpoint wrote them.
+- `test_closeout_kept_rules_pins.py::test_r3_closeout_accepts_the_source_head_a_checkpoint_landed`
+  — the ancestry validator accepts the commit a checkpoint recorded as its own landed head, with
+  `test_r3_closeout_refuses_when_the_source_branch_moved` still refusing foreign movement.
+
+The latter two modules had no file card before this pass and are now covered
+(`test_post_integration_cleanup_guidance.py.md`, `test_closeout_kept_rules_pins.py.md`). All three
+cases were proven non-vacuous by temporary production mutation, which is why each is documented as the
+assertion set that failed without its fix. Lane membership is unchanged: all three files were already
+registered, so no manifest row moved.
 The current evidence-lifecycle registry declares both registered consumers in each shared
 closeout-input and curator-coherence support row. Registry SHA
 `15bea1c01f402c382dad1667dec601313bb8aabfc511bb8cedac66076287606a1` and validator PASS42 are
 source/diagnostic evidence only; they do not establish execution or acceptance.
+## Public-Surface Inventory Contract
+
+`test_tools.py::PublicSurfaceInventoryTests` (260831-LOCR-L29) is the executor of a
+surface-agreement invariant that had none. `server_info` reports `PUBLIC_TOOLS` itself, so the
+comparison it made possible was self-referential; `worktree_record_landing` shipped registered by
+`mcp/registration/closeout.py`, advertised by FastMCP, and absent from both `PUBLIC_TOOLS` and
+`TOOL_RESPONSE_MODELS`, and every existing case stayed green while the tool could not return a
+payload.
+
+The two cases register `TOOL_REGISTRARS` against a probe `FastMCP("inventory-probe")` and compare
+the live `asyncio.run(server.list_tools())` order to `PUBLIC_TOOLS`, then drive one
+`finalize_tool_response("worktree_record_landing", ...)` call so a missing registry row fails here
+rather than at a caller. `_permissive_registration_config()` only has to satisfy registrars that
+close over the config without reading it during registration, so these cases stay about the
+inventory rather than about building a runtime; the probe is hermetic and reaches no network.
+
+`test_worktree_status_terminal_next_tool.py` (260831-LOCR-L32) is the same shape of executor one layer
+down: the *advertised vocabulary of one surface* had no enforcement. `PUBLIC_TOOLS` moved from
+`mcp/tools/base.py` to the zero-import `models` leaf `models/tools/public_roster.py`
+cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-86) so that
+`models/worktree.py::WorktreeCommandResponse` could read it, declare `nextAction` / `nextTool` /
+`nextArgs`
+cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:323-323), and refuse a `nextTool` outside the roster
+(`_require_registered_public_next_tool`
+cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:354-365)). Before that the envelope was `extra="allow"` and
+declared none of the keys, so `application/worktree_status.py::_project_terminal_contract_status`'s
+write crossed the wire verbatim and unchecked. The suite reaches the real `terminal-archive-ready`
+state for both `worktree_cleanup` and `worktree_abandon`, binds the emitted args against the real
+builder signature, and pins the validator in both directions — including that the registered but
+non-public `session_retire` is refused on the worktree surface while the `task_doc` surface still
+accepts it. That branch had **zero** coverage before this module.
+
+## Historical milestone context: Checkpoint Landing Plan/Apply Parity
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+`test_checkpoint_landing_end_to_end.py` (260831-LOCR-L34) is the boundary executor for the rule the
+leaf is really about: **a preview that plans an operation does not enforce it, and the two surfaces
+must be maintained as one.** The seam-level checkpoint suite proved each gate in isolation; this
+module drives the registered public operations over one real temporary Git world per case and asserts
+that the pair agrees.
+
+It is deliberately not a duplicate of the seam suite:
+
+- it starts from the state the deadlock made unreachable — a master whose `closeout_status` is still
+  `not-started`, asserted rather than fabricated — and verifies both destination refs and the ledger
+  mapping after a successful checkpoint, so the route is proven reachable end to end rather than only
+  eligible;
+- it exercises refusal parity by iterating `(dry_run=True, dry_run=False)` for each divergent ledger
+  and asserting the same refusal text and the same unmoved refs on both surfaces, which is what
+  catches a preview and an apply implemented separately;
+- it drives the **public** `worktree_checkpoint_landing_tool` and the public closeout preview/apply
+  tools, because the original defect lived in the tool surface a caller actually reaches.
+
+The invariant, its full instance inventory (five fixed, two reported-not-fixed, one adjacent
+verdict/state-string shape) and the reasons for each disposition are recorded on the
+`worktrees/overview.md` route and summarized in `memory_quality/overview.md`. The module also carries
+the only recorded `UNREPRODUCED FLAKE` of this leaf — seen once on a mutated build, never on the real
+tree — documented on its own card.
+
+## Historical milestone context: 260913-LCA-L2 Ledger Attribution Coverage
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+The ledger's source became the memory commits' own `Code-Commit:` attribution, and this route carries
+the proof for both halves of that sentence.
+
+`test_memory_ledger.py` grew a second fixture world and ten cases. `_AttributedWorld` builds a line
+where each mapping is two commits — the content commit carrying the trailer and the ledger commit
+pinning the row into `memory.md` and carrying none — with one code commit attributed twice (the
+superseding pair the ledger keeps both copies of) and one memory commit carrying no trailer. The
+closed-loop case asserts the projection equals the rows the tracked table carried at **every**
+checkpoint of that line; the hand-edit case writes a row into the table under a matching header and
+asserts the projection does not move; the remaining cases cover the pre-trailer blob fallback, the
+bootstrap source that contributes no rows, `exclude` selecting a branch's own commits, the
+last-block-wins parse that ignores a body mention, the trailer naming a commit the code repository
+lacks, a multi-trailer final block read by key, a mapping that arrived through a merge, and the round
+trip that proves the writer's key and the reader's key are one key. The six pre-existing projection
+cases in the same file still hold because they reach the reader through the per-commit blob fallback,
+which is why that fallback cannot be removed without losing their rows.
+
+**The literal `Code-Commit` text in these test modules is a deliberate independent oracle.** A case
+that read `CODE_COMMIT_TRAILER_KEY` would follow a wrong constant instead of catching it, so the
+trailer-parse and trailer-round-trip cases spell the key out and must not be "corrected" to import the
+constant. The one case that does touch the constant —
+`test_the_rendered_trailer_is_the_one_the_reader_parses` — uses it to prove the *writer* renders the
+key the reader parses, and proves it through a real commit rather than by comparing two literals.
+
+`test_worktree_sync.py` gained the suite's first coverage of the mid-cycle refusal: a code tip the
+official memory line does not map returns `blocked` with `official line is mid-cycle`, leaves the work
+branch at its pre-sync head, and syncs once the pair is completed. That refusal is produced by the
+**named-ref** ledger read in `sync_transaction_authority.preflight_official_pair`, not by the
+projected source ledger, so the case is the regression guard that this leaf's reader change left the
+detection where it was.
+
+## Historical milestone context: 260913-LCA-L4 Producer Census And The One Renderer
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+`test_memory_attribution_producers.py` is the leaf's new module and the census that makes the trailer
+transition total. A memory commit with no `Code-Commit:` trailer contributes no ledger row, and the
+projected ledger cannot tell that apart from a producer that kept the old shape, so the surface is either
+complete or silently holey. The module holds five cases: a one-definition census (the key identifier and
+its interpolation appear in exactly one production module, and no module spells the trailer as a quoted
+literal), a producer census (five producers, each asserted to reach a shared renderer entry), a dialect
+case (a hostile multi-paragraph body survives byte for byte with the trailer as its own final block), and
+two end-to-end cases driving the public `memory_carryover_apply` and `memory_baseline_adopt` on real
+disposable repositories.
+
+The census is measured at base `5bb124d4` and **corrects** the master's 2026-09-13T22:05 decision in two
+places: `worktrees/queue/closeout_recovery.py:209` is the recovery route's CODE leg, not a producer, and
+the producer the first census missed is `preparation/memory_output.py:92`. The corrected result is 5
+memory-content producers and 0 untrailered — `closeout_external.py:165`,
+`direct_landing_execution.py:270`, `preparation/memory_output.py:92` (memory-content leg only),
+`carryover.py:846`, `baseline.py:210` — with every trailerless site carrying a recorded reason: each
+ledger leg, `closeout_recovery.py:209` as a code commit, `sync_transaction_git.py:304`/`:333` memory merge
+commits (two memory parents, no single code commit to name), and carryover's nothing-to-carry path, which
+creates no commit.
+
+Two durable rules the module enforces from source: the trailer key is declared once and must never be
+spelled as a quoted literal in a second production module, and the trailer is **appended as its own final
+block** rather than woven into the caller's body — because carryover and baseline take that body as a
+public argument of another tool and a caller may pass a multi-paragraph message whose last paragraph is
+itself `Key: value` lines.
+
+`test_transaction_only_worktree_delivery.py` gained the behavioural half for the route that has no memory
+commit site of its own: `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` interrupts a
+real public closeout after its code commit, resumes it through the journalled recovery cell (a wrong cell
+is asserted to refuse first), and reads both documented git readers against the resumed shas. The leaf
+also moved one import in `test_memory_ledger.py` — `CODE_COMMIT_TRAILER_KEY` now comes from
+`kernel.memory_attribution`, because the writing model stopped naming it — and registered the new module
+as an exact consumer of two shared-support artifacts in `mcp/tests/evidence-lifecycle.toml`; no case and
+no assertion in `test_memory_ledger.py` changed.
+
+## 260913-LCA-L5 Leaf Master-Link Binding, And The Fixture Correction It Forced
+
+The change set's new module is `test_leaf_doc_master_link_binding.py` (integration lane, row 152): the
+derived master link proven end to end, plus the fail-closed half — a leaf under a task root with no master
+document is refused with its remedy. Its focused decision-table half is the new
+`LeafDocMasterLinkBindingTests` class in `test_task_document_application_1.py`.
+
+**One test was removed and must not be restored as it stood.**
+`test_task_document_application_1.py`'s `test_create_writes_both_files` authored a bare leaf through
+`task_doc` under a task root with no master document; the authoring plane now refuses exactly that
+scenario, because nothing would ever bind the leaf's derived `seriesContractPath`/`enclosures[]`. The
+file-write behavior it asserted survives in `test_leaf_create_syncs_parent_master_row` and in the new
+end-to-end module.
+
+Four existing test modules gained a prerequisite the refusal made mandatory, and each is a fixture
+correction rather than a weakened assertion:
+
+- `test_task_document.py` — shared `ApplicationTests._create` now ensures a parent master exists
+  (`_ensure_parent_master`), keeping every leaf operation on the flow the plane allows.
+- `test_task_doc_review_public.py` — `_create` writes the task root's master document first, because the
+  review API is exercised on a leaf.
+- `test_closeout_queue.py` — `_leaf` now binds `seriesContractPath` alongside `enclosures[]`.
+- `test_transaction_only_worktree_delivery.py` — `_bind_task_without_review` does the same.
+
+The last two are the load-bearing part, and they are why the fixture change is not cosmetic: a leaf
+document with an exact enclosure address but no `seriesContractPath` now **refuses closeout by name**
+(`task-enclosure-binding-master-link-missing`, raised by `worktrees/task_leaf_binding.py`) where it
+previously read as `present` and passed silently. Those two fixtures had been modelling the damage state
+that a start repairs, so four unrelated closeout cases began refusing until they carried the field
+`task_doc` actually stamps. That is an intended consequence of the change, not an accident.
+
+Lane membership was reconciled against the current manifest in the same change set: 204 modules on disk
+and 204 manifest entries, 115 unit-regression, 2 public-contract, 58 integration, 16 architecture-fitness
+and 13 provider-conformance, with stress-durability and migration empty. `load_lane_manifest` stays
+fail-closed, and both new-module rows (the L4 census and this leaf's binding suite) exist, so the
+manifest loads. Detail lives on the `test-evidence-lanes.toml` card, the owner of record for lane
+membership.
+
+## 260913-LCA-L10 Sub-Task Index Reachability
+
+The projection reads durable task documents written by other, independently versioned processes, so one
+of them may carry a field this reader's schema has never heard of. Until this leaf each of the reader's
+five parse sites caught `ValueError` and **dropped the whole document**, so a completed leaf written by a
+newer build disappeared from `analytics.taskDocuments` and the dashboard's sub-task row rendered as dead
+text while unstarted rows stayed live — a version skew that presented as a status filter. The read edge
+now tolerates exactly that skew (purely `extra_forbidden` keys pruned and re-validated) and nothing else.
+Authoring did not move: `write_task_doc` still takes a validated `TaskDocument`, so it must refuse such a
+document.
+
+`test_task_documents_graph_projection.py` carries the behavioural proof. Its new
+`SubTaskIndexReachabilityTests::test_completed_leaf_written_by_another_build_stays_reachable_from_the_index`
+builds one master with three rows over a temporary task root, republishes the completed leaf's durable
+JSON with an unknown field at the step level, writes a second document with a required field deleted, and
+asserts through `read_task_documents`: the skewed completed row resolves with its real identity and
+progress (`("01_DONE", "Completed", 1, 1)`), the unstarted row resolves as before, and the broken row is
+`None`. The helper `_index_doc` reproduces the dashboard's own index rule (`sliceForRef`) rather than
+approximating it, so the assertion is the property the projection owes an authored row; reverting the
+single tolerant condition fails exactly this case.
+
+Two mechanics a future reader must not "fix": the skewed JSON is written with `Path.write_text`, not
+`write_task_doc`, precisely because `write_task_doc` must refuse it; and the unknown field is spelled
+`checkpoint` on a step, mirroring where the live skew landed (`step.note`, `tasks/document.py:121`)
+without depending on a field this reader may later learn. The module gained one case and one helper,
+its lane row is unchanged, and no budget moved.
+
+## Historical milestone context: 260913-LCA-L11 The Rebuild Outranks The Ledger File: Three Modules Grew Cases, None Was Added
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+**No new test module and no deleted module.** The change set is seven modified files, three of them
+test modules, and this route's module population and lane membership are unchanged. What grew is
+coverage of a rule that changed direction.
+
+`test_checkpoint_landing_end_to_end.py` is the behavioural proof and six of its cases were rewritten.
+Three changed **direction** and now assert an ACCEPTANCE rather than a refusal — a reordered source
+region, a reversed superseding pair, and the interleaved projection on the leaf route — because the
+file-preservation rule that refused them is gone. Each keeps its scenario and asserts the landing (the
+leaf case by measuring that both destination refs really moved), which is the difference between a
+relaxed rule and a rule that stopped running; a case that only asserted the surviving refusal would
+read as if the file rule were still in force, and a deleted case would hide the change entirely. The
+reversal case is the leaf's central piece of negative knowledge: reversing a superseding pair for one
+code commit now lands and **nothing at the landing reports it**, so it carries the hazard in its
+docstring and points at the transaction card's record of it as a gap pending a decision.
+`test_a_unioned_master_line_still_refuses_a_content_difference` narrowed to the untrue row (the
+`dropped`/`duplicated` corruptions are deleted with a comment saying why, and the reorderings are
+asserted as landing below the refusal), and
+`test_a_hand_edited_master_ledger_is_refused_by_the_preview_and_the_apply` kept its fabricated row
+precisely so the refusal is attributed to the new row-truth rule rather than to an earlier gate.
+
+`test_integration_branch_authority.py` carries the clause inventory, and this is where the
+removed-and-unwitnessed gaps were closed. The landing's four surviving promises now each have their
+own case: the mapping clause (including a table that names the landing's code commit with *different*
+memory content), the **conditional** source-ancestry clause with a divergent source line the fixture
+asserts is really divergent, row truth against both repositories, and the header. Two shapes the old
+rule refused — a dropped source row and a duplicated one — are **asserted as accepted** rather than
+deleted, and two new module-level cases drive `_require_true_rows` directly over a minimal contract so
+the two row-truth clauses are witnessed without a whole enclosure.
+
+`test_memory_ledger.py` gained the reader's two failure-shaped cases: a source row whose memory commit
+the source cannot carry is excluded at the read with its reason and its count instead of vanishing,
+and a partially trailered line still reads its pre-rule rows. The second is the reader's second,
+independent defect — a 479-row source with one trailered commit read as a ONE-ROW source, which is the
+"looks like no attribution exists" failure in its most expensive form. The `_content_commit` helper
+exists because a row's memory cell must now name a commit git can resolve.
+
+## Historical milestone context: The Sync Half Of The Ledger Rule And The Mid-Flight Result
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+**The sync half of the same ruling is proved in the transaction.** `test_worktree_sync.py` gained
+`test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current`
+(`:206-243`): it commits a memory content commit, rewrites `memory.md` so its one row maps the code
+base to that newer content commit — the stale-duplicate shape a recomputed table produces — and
+asserts the public `sync_result` returns `already-current` with no `dropped parent mapping` text
+anywhere in the payload and the memory work branch unmoved. Under the removed rule the source's own
+row had to survive in the resolution, which is why that same thirteen-row shape left a correctly
+closed master permanently unsyncable. The case is the transaction's regression guard; the
+projection's own exclusion reporting stays with `test_memory_ledger.py`.
+
+`test_atomic_series_activation.py` gained `ReconcilingResultTests` (`:231-297`) and two cases that
+drive `_reconciling_result`, the reporting boundary the public selecting operation composes, against
+a mid-flight `reconciling` record. The first asserts a `synced` pass is **not** reported as success:
+return code 2, state `atomic-series-reconciling`, the activation observation attached unchanged, and
+a summary naming the master's task-document ref and contract path, its publication time, its
+revision, both `worktree_sync` exits, and the pass's own message last. The second uses a `blocked`
+refusal and asserts the mid-flight identity is stated **before** the refusal's own words, so the
+caller reads the state it must resolve rather than the symptom. Neither addition created a module or
+moved a lane: both files already carried their rows.
+
+## 260913-LCA-L8 A Cleanup Blocker Always Names Its Reason
+
+**One new module, no deleted module, no lane moved.** The leaf's new module is
+`mcp/tests/test_terminal_blocker_reasons.py`, registered in the **integration** lane at entry row 177
+by the same change set that created it.
+
+The defect was an operator-facing contradiction. `lifecycle_finalize_task` on one leaf's enclosure
+answered `state: cleanup-blocked` with `blockers: [{"provider": "providerRuntime", "reason": null}]`,
+while the same payload proved the terminal archive, reported the providers `torn-down` with their
+runtime already removed, and said in its own summary that enclosure deletion may continue. Cleanup
+stopped on that blockage anyway, preserved the citation-source index with `terminal-operation-failed`,
+and left the leaf un-finalized; an immediate retry reclaimed two worktrees, two branches, the reports
+directory and the enclosure root, and finalized the edge. Read from source, the **first call was
+wrong**, not a real cause the retry re-observed as resolved: the blocker was constructed in
+`worktrees/modules/terminal_validation.py`, where a result dict with no `reason` key became `None` and
+the item still counted as blocked, and the only producer able to hand it `{"removed": False}` with no
+reason at all was `application/provider_runtime.py::remove_tree`'s post-reclaim "still present"
+branch — every other non-removal path already named a reason.
+
+The change makes a reasonless blocker impossible to emit rather than merely unlikely.
+`terminal_validation._blocker(component, reason)` is now the only construction path for a terminal
+blockage and raises `RuntimeError` naming the component when the reason is missing, blank or not a
+string; `_blocked_reason(item)` answers a reasonless or malformed item in operator language
+(`no reason reported by the terminal result`, `invalid-result`); and every call site routes through
+both. `TerminalResult` and `TerminalExpectation` bundle the outputs with preview-versus-real, which is
+also what lets the dry-run path read preflight previews as previews and replaced the five-keyword
+builder signature with one bundle argument at every call site; the change set adds no `# noqa` and no
+per-file ignore. On the producer side, `remove_tree` sets a non-empty reason on every
+`removed: False` result. This adds no teardown capability: a genuinely blocked teardown still blocks,
+with its own reason.
+
+The module holds seven cases in two groups. The whole-tool cases build a real landed leaf through the
+shared external-memory authority fixture, complete the integration through the public
+`worktree_integrate_tool`, and call the public `lifecycle_finalize_task_tool`: the L6 shape — provider
+runtime already gone, the port answering `already-absent` — must finalize on the **first** call with
+an empty `notRemoved` inventory, both worktrees and the enclosure root really gone and the leaf
+document `Completed`; and a real permission failure on the provider-runtime tree must refuse as
+`cleanup-blocked` / `blocked` with `remove_tree`'s own `permission denied: ...` reason as its single
+blocker, close nothing, and refuse identically on the retry. **The L6 payload is reproduced through
+the provider port boundary rather than by triggering the original physical event**: the case
+substitutes the teardown answer the port would return, so it pins the decision the tool makes given
+that answer. The remaining cases drive the two invariant owners directly — the reasonless
+`{"removed": False}`, a blank producer reason, an unnameable reason refused at its own source, the
+`remove_tree` result shape, and the post-reclaim branch that could answer silently.
+
+The module is a declared exact consumer of nine `mcp/tests/evidence-lifecycle.toml` artifacts —
+`closeout_input_test_support.py` (`:331`), `curator_coherence_test_support.py` (`:391`),
+`integration_branch_authority_test_support.py` (`:435`), `repository_profile_test_support.py`
+(`:565`), the two `repository_profiles/node` fixture files (`:604`, `:643`),
+`gate_certification_test_support.py` (`:955`), `source_selection_test_support.py` (`:1012`) and
+`selected_lifecycle_test_support.py` (`:1038`) — and of the ambient-role runner in
+`dependency_ownership.py` (`:82`). Consumer declarations are ownership accounting only; they are not
+execution or acceptance evidence.
+
+## Historical milestone context: 260913-LCA-L3 The Trailer Backfill's Own Contract
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+**One new module, no deleted module, one lane row added.** The leaf's new module is
+`mcp/tests/test_memory_backfill.py`, registered in the **unit-regression** lane at
+`mcp/tests/test-evidence-lanes.toml:69` by the same change set that created it. It declares no
+`mcp/tests/evidence-lifecycle.toml` consumer row, and that is correct rather than an omission: its
+only imports are the production modules under test plus stdlib, so it reaches no
+`consumer_scope = "exact"` shared support artifact. `mcp/tests/test_git_command.py` was migrated
+with it — the stalled-command timeout case and the raw-commit stdin case now build
+`GitRunnerOptions(...)` instead of passing keyword arguments, which is the only change either case
+carries.
+
+The leaf delivers the migration **tool** and its measurements, not a rewritten history, and an
+external review found two defects that are now fixed. The pre-fix backfill had been applied on this
+master's own memory line, verified, and then **reverted by developer ruling**: rewriting the shared
+ancestors renumbered them, so the master's memory line and its super branch shared no common ancestor
+and the plane's lineage gate refused everything downstream. The fixed tool has **not** been applied to
+any real repository; its evidence is fixtures plus a read-only plan measurement. The backfill is an
+explicit step at this master's integration into IAS, and the shared source line `7317108b` still
+carries **0** `Code-Commit:` trailers. The worker's re-measurement also replaced the leaf
+document's census, and this route records the measured values: 474 tracked rows and 419 distinct code
+commits at the shared line are exact, while "104 duplicate rows" is 55 (every one sharing a code sha
+with another row and naming a different memory commit), "513 trailers" is 419 at the shared line and
+428 at the master's tip, and "10 skips" is 67 and 44 under the superseded vocabulary.
+
+**The first reviewed defect was the selection, and the cases pin the fixed rule from both sides.**
+The rule is a decision the code makes and therefore a decision a test has to pin, and it has two
+halves: a maximum matching, so no code commit is left unnamed while a memory commit that could have
+named it stands empty — code commits offered most-constrained-first, a tie between two equally
+constrained claims going to the older row read off the table — and then a fill giving every memory
+commit the matching did not reach its own oldest row, because a matching is symmetric and the format
+is not. `test_every_recorded_pairing_that_can_be_carried_gets_its_own_trailer` asserts both pairings of
+one code commit keep a trailer, which is what the fill exists for;
+`test_the_winner_does_not_depend_on_hash_order` swaps two rows in the same table and asserts the
+bottom-most row's owner wins in both, which is the defect stated directly; and
+`test_a_contested_memory_commit_names_the_oldest_claim_and_reports_the_loss` asserts the loser through
+`lost_claims` with its `winner` named and the plan not empty. The skip vocabulary is now closed at five
+literals split into holes and declines, and the two declines are asserted apart:
+`test_a_declined_row_names_whether_it_is_a_duplicate_or_a_lost_mapping` holds the two tables a single
+count cannot tell apart, and only `lost_code_commits` separates a decline that cost nothing from one
+that lost a mapping. A plan that lost a mapping is asserted to be non-empty and to carry a different
+digest from a plan that did not, because the digest is what an apply is pinned to.
+
+Idempotence is proved twice — the second plan over a migrated line is empty with the branch tip
+unmoved, and the rewrite itself replays tree, both identities, both dates and the subject, so a rebuilt
+commit differs from its original in its trailer block alone and an untouched commit reproduces its own
+object id.
+
+**The acceptance proof changed shape, and that is the second half of the first defect.**
+`test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded` reads the rewritten tip
+through `_ABSENT_LEDGER`, a declared path no commit carries, so the table contributes nothing and the
+mapped historical pairings are compared against Git-parsed trailers by set equality — failing if any
+carryable pairing is omitted and asserting the one that cannot be carried as a reported loss. The
+earlier proof read the table the migration carries forward, and because `read_ledger_source` unions
+table rows into trailer rows it proved the table had survived rather than that the trailers preserve
+the pairings, which is how 60 omissions passed a green suite.
+`test_a_content_bearing_duplicate_that_would_be_dropped_fails_the_proof` reproduces the documented
+drop shape against the trailer-only read.
+
+**The second reviewed defect was on the command path, so the command path has its own class.**
+`MemoryBackfillCliTests` drives `run` through the same parser the console script builds against a real
+leaf contract whose memory work branch is a NAME: a rescue set built from a name and read back as a
+hash can never compare equal, so the reviewed code wrote its rescue refs and then refused, and the
+retry tripped the existing-ref check on refs its own predecessor had created.
+`test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` asserts the first apply completes
+from a name, moves the branch and leaves the rescue ref on the pre-rewrite tip, and that a second
+apply returns 0 having moved neither the ref nor the branch. Every fixture is a throwaway pair of Git
+repositories under `tempfile`; nothing here reads or writes the coordination tree, the installed
+memory repository, or any shared ref. The module makes no claim that a backfill has been applied to
+the real memory repository — that sequencing decision belongs to the master's integration step, not to
+this route's evidence.
+
 ## Repo-Internal References
 
-These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
+These current source and policy ranges establish the development/certification distinction and the
+existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785 |
-| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:308-328; mcp/src/agents_remember/application/memory_quality/controller.py:331-383; mcp/src/agents_remember/application/memory_quality/controller.py:413-550 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:553-589 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
+| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
+| The live public-surface inventory contract for the advertised MCP tool tuple. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-329 |
+| The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
+| The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-329; mcp/src/agents_remember/models/worktree.py:355-363 |
+| The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:175-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
+| The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
+| The recorded flake note the L34 module carries. | "UNREPRODUCED FLAKE, RECORDED 2026-09-13" | mcp/tests/test_checkpoint_landing_end_to_end.py:835-835 |
+| The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
+| The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:465-512; mcp/tests/test_cross_master_concurrency.py:529-563; mcp/tests/test_cross_master_concurrency.py:565-620; mcp/tests/test_cross_master_concurrency.py:752-780; mcp/tests/test_cross_master_concurrency.py:784-852 |
+| The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:146-146 |
+| The L37 stop boundary proof: the public pause, the measured world, the eight independently-failing cases and the refusals. Its never-selected case now asserts the already-vacant success rather than a refusal. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing` | mcp/tests/test_pause_stop_only_end_to_end.py:84-436; mcp/tests/test_pause_stop_only_end_to_end.py:148-166; mcp/tests/test_pause_stop_only_end_to_end.py:201-232; mcp/tests/test_pause_stop_only_end_to_end.py:234-261; mcp/tests/test_pause_stop_only_end_to_end.py:263-284 |
+| The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
+| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:163-163; mcp/tests/test-evidence-lanes.toml:196-196 |
+| The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. | `LifecyclePlaythroughTests`; `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173; mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-173 |
+| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:157-157 |
+| The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
+| The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
+| **260913-LCA-L8:** the new module's lane registration, added by the same change set that created it — integration, because it drives the public landing, integration and finalization routes over real temporary repositories and worktrees. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:178-178 |
+| **260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason`; `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220; mcp/tests/test_terminal_blocker_reasons.py:223-243; mcp/tests/test_terminal_blocker_reasons.py:246-259 |
+| **260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item. | `_blocker`; `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:639-655; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:624-636 |
+| **260913-LCA-L8:** the producer whose result could answer `removed: False` with no reason, now naming every non-removal. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
+| **260913-LCA-L8:** the nine exact-consumer rows the new module's change set adds to the evidence registry. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/evidence-lifecycle.toml:331-331; mcp/tests/evidence-lifecycle.toml:391-391; mcp/tests/evidence-lifecycle.toml:435-435; mcp/tests/evidence-lifecycle.toml:565-565; mcp/tests/evidence-lifecycle.toml:604-604; mcp/tests/evidence-lifecycle.toml:643-643; mcp/tests/evidence-lifecycle.toml:955-955; mcp/tests/evidence-lifecycle.toml:1012-1012; mcp/tests/evidence-lifecycle.toml:1038-1038 |
+| **260913-LCA-L8:** the declaration that gives the new module ownership of the ambient-role runner for targeted selection. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:82-82 |
+| The removed case's scenario, now refused by design: the guard that makes a task root with no master document unbindable. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:619-649 |
+| The refusal the two corrected closeout fixtures had to satisfy. | `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
+| **The mid-flight reporting boundary:** a completed pass beside a reconciling selection is not this call's success, and a refusal left beside one leads with the mid-flight state. | `ReconcilingResultTests`; `test_a_completed_pass_beside_a_mid_flight_selection_is_not_success`; `test_a_refusal_that_left_a_record_mid_flight_leads_with_that_state`; `_reconciling_result` | mcp/tests/test_atomic_series_activation.py:231-297; mcp/tests/test_atomic_series_activation.py:255-274; mcp/tests/test_atomic_series_activation.py:276-297; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294 |
+| The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. | `class ActivationFixture`; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:63-111; mcp/tests/test_atomic_series_activation.py:122-145; mcp/tests/test_atomic_series_activation.py:179-214 |
+| The registered admission refusal now addresses only the addressed contract's own state. | `test_registered_sync_refusal_addresses_only_this_contracts_own_state` | mcp/tests/test_activation_admission_registered.py:178-221 |
+| The L2 mid-cycle case: the refusal by name, the unmoved work branch, and the completed pair that then syncs. | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `map_official_memory` | mcp/tests/test_worktree_sync.py:101-110; mcp/tests/test_worktree_sync.py:176-204 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Public closeout exercises the actual pair, attribution and cache-independent delivery. | L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Cache damage cannot change the accepted integration pair or block ref publication. | L172-L213 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| The migration acceptance proof reads only committed trailers. | L458-L541 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
 
 ## Docs And Cross-Repo References
 
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): the route's L3 section, the
+  ledger-attribution coverage row, the memory-backfill coverage row and four reference rows were
+  corrected for the review's second pair of defects. The backfill's ref move now travels as one
+  `update-ref --stdin` stream of one instruction per line plus exactly one terminating newline
+  (`_update_ref_stream`), because a blank line is an EMPTY COMMAND to git and aborted the whole
+  transaction for any run that declared two or more branches; `test_two_declared_branches_move_together_in_one_transaction`
+  drives two real branches through the public apply route and is recorded in the L3 section and the
+  module's reference row. The projection now asks the code half of a row's truth of the source's own
+  rows at the boundary where the code repository is in hand, excluding with `code-commit-missing` and
+  reporting through `sourceExcludedRows`/`sourceExcludedReasons`, while `LedgerWorld.code_repository`
+  widened to optional so a world naming none keeps its rows; the two new `test_memory_ledger.py` cases
+  are recorded in this route's `test_memory_ledger.py` paragraph, its coverage row and a new reference
+  row. The section's opening now states that two external reviews found four defects, all fixed, and
+  keeps the statement that the tool has not been applied to any real repository. Every anchor into the
+  two shifted modules and the two shifted test modules was re-derived against the working source:
+  `MemoryBackfillApplyTests` 399-629 → 399-676, `MemoryBackfillCliTests` 754-902 → 801-949,
+  `is_empty` unchanged, `carry_ledger_cells` 927-972 → 940-985, `read_ledger_source` 302-350 →
+  315-363, `test_a_source_row_the_source_cannot_carry_is_reported_not_kept` 495-522 → 496-523,
+  `test_a_partially_trailered_source_still_reads_its_pre_rule_rows` 525-552 → 601-628,
+  `_AttributedWorld` 345-401 → 346-402, and the ten L2 ledger-attribution ranges 404-431 → 405-432,
+  434-453 → 435-454, 456-485 → 457-486, 597-603 → 673-679, 606-622 → 682-698, 625-648 → 701-724,
+  651-663 → 727-739, 666-695 → 742-771, 698-733 → 774-809 and 736-766 → 812-842. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
+- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Rewrote current test-route expectations for cache independence and preserved old scenario histories as historical; removed stale assertion citations. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the test-inventory
+  changes are the frozen ones. Re-read the overview and re-checked its cited ranges: they hold, and
+  the new shared-support module is registered in the catalog it names. No wording changed.
+  Verification metadata remains closeout-owned.
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): `mcp/tests` carries local
+  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 5
+  claim(s) whose anchor no longer sat in its cited range and normalised 12 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). 3 claim(s) were declined as ambiguous or not the subject
+  and were left for a reading curator. No claim wording changed; every rewritten range was read back
+  at its current position. Verification metadata remains closeout-owned.
+- 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
+  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
+  both are fixed, so this route's L3 section, its retained-route row and its reference rows were
+  corrected. The section now records that the rule is a maximum matching plus a fill (the fill is
+  load-bearing because a matching is symmetric and the format is not), that a conflict resolves on the
+  table's recorded order and is proved by swapping two rows, that the skip vocabulary is five literals
+  split into holes and declines with `lost_claims` naming each loser and its winner, that a plan which
+  lost a mapping is neither empty nor digest-equal to one that did not, and that the acceptance proof
+  is now trailer-only — it reads the rewritten tip through `_ABSENT_LEDGER`, whereas the earlier proof
+  read the table the migration carries forward and, because `read_ledger_source` unions table rows into
+  trailer rows, proved the table had survived rather than the trailers, which is how 60 omissions
+  passed a green suite. Added the fifth class: `MemoryBackfillCliTests` drives the real registered
+  command path against a branch-name tip and a second apply, because the reviewed second defect — a
+  rescue set built from a name and read back as a hash, plus the rescue guard running before the
+  empty-plan check — was invisible from every kernel-level case. The route row and the three reference
+  rows were rewritten to the current case names and ranges (the L3 module grew 543 → 906 lines and the
+  kernel module 686 → 1024), and the section now states plainly that the fixed tool has not been
+  applied to any real repository: its evidence is fixtures plus a read-only plan measurement, and the
+  rewrite is deferred to this master's integration into IAS. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-14T17:20+02:00 — 260913-LCA-L3 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l3-ar`, base `7317108b`): registered the leaf's new `test_memory_backfill.py` in the
+  retained route table and added the route section for it (unit-regression lane at
+  `mcp/tests/test-evidence-lanes.toml:69`, and no `evidence-lifecycle.toml` consumer row because its
+  only imports are the production modules under test plus stdlib). Records the migration's contract
+  as this route's evidence — the one-trailer rule and its reported skips, the closed four-literal skip
+  vocabulary, the total old→new identity map, the byte-faithful replay, the second-run no-op, and the
+  rescue-ref and digest refusals — and states the reversal plainly: the apply was verified and then
+  reverted by developer ruling because rewriting the shared ancestors removed the master's common
+  ancestor with its super, so the shared line still carries 0 trailers and the backfill is an explicit
+  step at this master's integration into IAS. Records the worker's re-measurement replacing the leaf
+  document's census (474 rows / 419 distinct code commits exact; 55 duplicate rows, not 104; 419 at
+  the shared line and 428 at the tip, not 513; 67 and 44 skips, not 10) and notes that
+  `test_git_command.py`'s two migrated call sites now build `GitRunnerOptions`. Two anchors in the
+  L11 reference row were repointed to their current ranges: `read_ledger_source`
+  `ledger_projection.py:299-349` → `:302-350`, which this change set moved by adding three lines
+  above it, and — inside the same row — the two `test_memory_ledger.py` ranges that already fell short
+  of the test functions they name (`:473-502` → `:495-522`, `:503-532` → `:525-552`). Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator (uncommitted change set on `ar/260913-lca-l8-ar`):
+  registered the leaf's new `test_terminal_blocker_reasons.py` in the retained route table
+  (integration lane, entry row 177) — a cleanup or finalize blockage always names its component and a
+  non-empty reason, the L6 shape finalizes on the first call, a real permission failure blocks with
+  its own reason and refuses identically on retry, and both invariant owners are driven directly —
+  added the route section recording the measured defect and its source diagnosis, and reconciled the
+  population to the current manifest, measured rather than carried: 206 modules on disk and 206
+  entries, 115 unit-regression (5-120), 2 public-contract (122-124), 60 integration (126-186), 16
+  architecture-fitness (188-204), 13 provider-conformance (206-219), with stress-durability and
+  migration empty. Superseded the L7 paragraph by adding the current counts beside it; the
+  `test-evidence-lanes.toml` card remains the owner of record for lane membership. Re-derived every
+  manifest anchor in the reference table (the L36 row `:144` → `:145`, the L37 rows `:161`/`:193` →
+  `:162`/`:195`, the playthrough `:155` → `:156`, the L5 row `:152` → `:153`) and, while re-deriving,
+  corrected three rows whose cited ranges no longer hold their anchors at all: the L34 flake note
+  (`1181-1192`), the L2 ledger cases in `test_memory_ledger.py` (all eleven ranges, moved by later
+  insertions in that file) and `attributed_commits` in `kernel/memory_attribution.py` (`148-179`).
+  Those three are pre-existing drift from other leaves, not consequences of this change. Membership
+  is selection and cost classification only; no execution or acceptance claim, and the verification
+  stamps remain closeout-owned.
+- 2026-09-14T14:20+02:00 — 260913-LCA-L7 curator (uncommitted change set on `ar/260913-lca-l7`):
+  registered the leaf's new `test_closeout_projection_source_classification.py` in the retained route
+  table (integration lane, entry row 137) — it refuses a sprint whose authored graph is one node past
+  the master bound with the raiser's own declared code, proves that code classifies `invalid` rather
+  than `unreadable`, keeps the genuinely unreadable codes reporting `unreadable`, and leaves the
+  ordinary source readable with no problems — and reconciled the population to the current manifest,
+  measured rather than carried: 205 modules on disk and 205 entries, 115 unit-regression (5-120), 2
+  public-contract (122-124), 59 integration (126-185), 16 architecture-fitness (187-203), 13
+  provider-conformance (205-218), with stress-durability and migration empty. Superseded the L5
+  paragraph by adding the current counts beside it; the `test-evidence-lanes.toml` card remains the
+  owner of record for lane membership. Membership is selection and cost classification only; no
+  execution or acceptance claim, and the verification stamps remain closeout-owned.
+- 2026-09-14T13:20+02:00 — The sync half of the ledger ruling and the mid-flight result (curator on the
+  landed `ab47182` change set of the 260913 ledger line): **no module was added or deleted and no lane
+  row moved.** Added the route section recording two additions — `test_worktree_sync.py`'s
+  `test_a_descendant_memory_ledger_that_dropped_a_source_row_is_current`, which proves the transaction
+  reports a row its source cannot carry as `already-current` rather than refusing it, and
+  `test_atomic_series_activation.py`'s `ReconcilingResultTests`, which pins a completed pass beside a
+  mid-flight selection as `atomic-series-reconciling` with the stuck contract, its publication time,
+  its revision and both exits named, and a refusal beside one as leading with that state. Added three
+  reference rows, corrected the activation suite's stale fixture/case anchors, and noted the sync case
+  in the ledger-row of the routing table. Verification metadata remains closeout-owned; no execution
+  or acceptance claim and no verification stamp advanced.
+- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): three test modules gained cases and **no module was added
+  or deleted**, so the route population and lane membership are unchanged. Added the route section
+  recording where the coverage went: three `test_checkpoint_landing_end_to_end.py` cases changed
+  **direction** and now assert a landing (a reordered source region, a reversed superseding pair, the
+  interleaved projection on the leaf route), with the reversal's hazard carried in the case and
+  recorded as a gap pending a decision; `test_integration_branch_authority.py` gained the landing's
+  full clause inventory, including the dropped and duplicated source rows now asserted as **accepted**
+  and two module-level `_require_true_rows` cases; and `test_memory_ledger.py` gained the excluded-row
+  case and the partially-trailered-source case. Corrected the two retained-route rows that described
+  the ledger reader's old fallback framing and the checkpoint module's refusal list, and repointed the
+  L34 reference row's class extent (`412-1190` → `412-1211`) and its `_closeout_preview` /
+  hand-edited-ledger case ranges. Added three reference rows for the new cases. Verification metadata
+  remains closeout-owned; no execution, acceptance or certification claim and no verification stamp
+  advanced.
+- 2026-09-14T10:16+02:00 — 260913-LCA-L10 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l10-ar`, base `4214d7a1`): added a route section and a `Retained Behavioral Routes` row
+  for the reachability case this change set adds to the existing
+  `test_task_documents_graph_projection.py` — `SubTaskIndexReachabilityTests` with its `_index_doc` helper,
+  proving through `read_task_documents` that a completed leaf written by a newer build stays reachable
+  from the master's sub-task index, that an unstarted row keeps resolving, and that a document with a
+  required field deleted is still withheld. Recorded the two mechanics that must not be "fixed" later (the
+  direct `Path.write_text` because `write_task_doc` must refuse the skewed document, and the `checkpoint`
+  field on a step mirroring where the live skew landed), and recorded for the route that the pre-change
+  parse sites **deleted the whole document** rather than skipping it — which is what produced the
+  dead-text sub-task rows — while the authoring plane was never loosened. The module
+  gained one case and one helper, its lane row (`mcp/tests/test-evidence-lanes.toml:108`) and both case
+  budgets are unchanged, and no new module was added. Verification metadata remains closeout-owned; no
+  verification stamp advanced and no execution or acceptance claim is made here.
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
+  `ar/260913-lca-l5-ar`, base `52875e7a`): added a route section and a `Retained Behavioral Routes` row
+  for the change set's new `test_leaf_doc_master_link_binding.py` (integration lane, row 152) — the
+  derived master link end to end, plus the fail-closed half. Recorded that
+  `test_task_document_application_1.py`'s `test_create_writes_both_files` was **removed** because its
+  scenario is now refused by design, and that four existing modules gained a prerequisite the refusal
+  forced (`test_task_document.py._ensure_parent_master`, `test_task_doc_review_public.py._create`'s master
+  write, and the `seriesContractPath` binding in `test_closeout_queue._leaf` and
+  `test_transaction_only_worktree_delivery._bind_task_without_review`), with the reason the last two are
+  load-bearing rather than cosmetic. **Corrected the L4 open item rather than carrying it**: the producer
+  census module's `unit-regression` lane row now exists at `mcp/tests/test-evidence-lanes.toml:68`, so the
+  fail-closed load failure the L4 row and history entry predicted does not hold. Reconciled the population
+  to the measured current manifest (204 modules, 204 entries: 115 unit-regression, 2 public-contract, 58
+  integration, 16 architecture-fitness, 13 provider-conformance) in a superseding clause under the stale
+  paragraph, and re-derived three shifted lane rows (cross-master concurrency 143 → 144, the pause suite
+  159 → 161, the pause architecture guard 191 → 193, the playthrough 153 → 155). Verification metadata
+  remains closeout-owned; no execution or acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`, base
+  `5bb124d4`): route refresh. Registered the leaf's new module
+  `test_memory_attribution_producers.py` (the producer census: one-definition guard, five producers each
+  reaching the shared renderer, the append-as-final-block dialect, and the two public-tool end-to-end
+  cases) and the recovery case the leaf added to `test_transaction_only_worktree_delivery.py` in a new
+  route section and two `Retained Behavioral Routes` rows, recorded the corrected census (5 producers and
+  0 untrailered, correcting the master's 2026-09-13T22:05 decision in two places), the trailerless-by-rule
+  sites with their reasons, and the two durable rules the census enforces. Also recorded the
+  `test_memory_ledger.py` import move (no case or assertion changed) and the new module's registration as
+  a consumer in `mcp/tests/evidence-lifecycle.toml`. **Open item recorded, not repaired:** the new module
+  still has no lane row, so `load_lane_manifest` fails closed — the measurement and the consequence are in
+  the new section above and on the `test-evidence-lanes.toml` card; the repair is code work, not memory
+  work. Added a new file card for the new module. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:25+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the ledger
+  attribution group gained a tenth case, `test_the_rendered_trailer_is_the_one_the_reader_parses`,
+  after the writer and the reader were found to hold two separate `Code-Commit` literals (found by
+  the L2 curator's first pass and reported to the owner, who fixed the code in the same change set).
+  It renders
+  through the real writer, commits the message and reads the code commit back out through the real
+  reader, so a writer-side key change loses the row and fails that case instead of passing silently.
+  Registered it in the route paragraph and the reference row, and recorded the rule a future curator
+  needs: the literal `Code-Commit` text in these test modules is a deliberate independent oracle and
+  must not be "corrected" to read the constant. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:12+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`):
+  registered the nine new `test_memory_ledger.py` cases that prove the ledger's source is the memory
+  commits' own `Code-Commit:` attribution — the every-checkpoint closed loop against the tracked
+  table, the hand edit that cannot move the projection, the pre-trailer blob fallback, the bootstrap
+  source that contributes no rows, `exclude`, the last-block-wins parse, the unknown-code-commit
+  drop, the by-key multi-trailer read, and the merged-in mapping — plus the `test_worktree_sync.py`
+  case that is the suite's first coverage of the `official line is mid-cycle` refusal, which comes
+  from the named-ref ledger read rather than the projected source. Added the route paragraph, the
+  retained-route row and the reference rows; recorded that the six pre-existing projection cases in
+  the same file still pass only because of the per-commit blob fallback. Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): the
+  CCR-R12@v5 transaction-only route now also proves the memory attribution — the new
+  `_assert_memory_attribution` reader checks the memory-content commit's `%B`, the exactly-one
+  `Code-Commit:` count, `git interpret-trailers --parse`, and
+  `git log --format=%(trailers:key=Code-Commit)` against the real shas public closeout returned, and
+  asserts the `memory.md`-only ledger commit returns `""`; `test_direct_landing.py` carries the same
+  checks for the branch-addressed route. Assertions only: no new test module, test function, or
+  parametrized case, so the retained population and both case budgets are unchanged. Verification
+  metadata remains closeout-owned; no execution, acceptance, or certification claim.
+- 2026-09-13T20:42+02:00 — Child-admission seal removal and the already-vacant stop (uncommitted
+  260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): registered the new
+  `test_lifecycle_playthrough_end_to_end.py` (integration) in the retained route table and the
+  reference table, corrected the pause route-table row so it no longer says the stop refuses a
+  never-selected master (it now reports `atomic-series-already-vacant`), re-derived the population to
+  202 modules with 57 integration members, and shifted the two L37 lane-registration rows
+  (`test-evidence-lanes.toml:158` → `:159`, `:190` → `:191`). Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: registered the leaf's two new modules in the
+  retained route table — `test_pause_stop_only_end_to_end.py` (integration; the public stop measured
+  against refs, object databases, coordination tree, worktrees, enclosure and every task document, with
+  the proposal-free hand-back and every refusal) and `test_pause_is_not_publication.py`
+  (architecture-fitness; the import-closure guard that keeps the stop from becoming the checkpoint
+  publication) — and re-derived the population and budgets from the manifest: 201 modules, 56
+  integration, 16 architecture-fitness, budgets 1000 unit / 250 integration. Corrected the cross-master
+  row, which called a pause "an ordinary stop that is no tool call" — the leaf makes the pause a real
+  public operation, so that parenthetical is now false and has been replaced. Added three reference
+  rows. Membership is selection and cost classification only; no execution or acceptance claim, and the
+  verification stamps remain closeout-owned.
+- 2026-09-13T15:00:56+02:00 — 260831-LOCR-L36 curator (round 2): registered the new ninth cross-master case `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters` in the `Retained Behavioral Routes` row and in the L36 reference row, and corrected that row's wording — a graph-less sprint serializes nothing, `atomic-sequential` is the sprint shape, and only a real sprint-graph wave edge still gates. Rebound that reference row's four stale cross-master ranges (131-162, 286-321, 338-372, 451-479) and added the graph-less range 483-551. Targeted edits only; unrelated sections are byte-identical. Source-route documentation only: no execution, acceptance or certification claim.
+- 2026-09-13T14:46+02:00 — Curator citation repoint: two inline `cit:(...)` references in the public-surface inventory still cited `models/worktree.py:334-340` / `367-376` for the next-move triple and `_require_registered_public_next_tool`; both now resolve at `322-322` and `355-364` after `models/worktree.py` shrank. Claim wording unchanged.
+- 2026-09-13T14:20:09+02:00 — 260831-LOCR-L36 curator: added a `Retained Behavioral Routes` row for the contract-scoped cross-master concurrency work (`test_cross_master_concurrency.py` with the rewritten `test_atomic_series_activation.py`) — one protected source pair shared by two sprint-commanded atomic masters, each keeping its own record, with a conflicting or stale publication refused at the pair and only the sprint graph's wave edge still gating — and refreshed the L38 admission row to say the admission is contract-scoped (no `classification`/`blocking`/`sourcePair*`, never a foreign master as blocker). Reconciled the route population to the current manifest (199 modules: 114 unit-regression, 2 public-contract, 55 integration, 15 architecture-fitness, 13 provider-conformance; budgets 1000 unit / 200 integration), added four reference rows, and rebound the seven stale ranges this table carried into `models/worktree.py` and `test_checkpoint_landing_end_to_end.py`. Source-route documentation only: no execution, acceptance or certification claim, and lane membership stays owned by the `test-evidence-lanes.toml` card.
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:12+00:00 — 260831-LOCR-L34 curator: added a `Retained Behavioral Routes` row and a
+  Checkpoint Landing Plan/Apply Parity section for the new integration module
+  `test_checkpoint_landing_end_to_end.py`, which drives the public checkpoint and closeout operations
+  over real temporary Git repositories and asserts that each divergence refuses at **both** the
+  preview and the apply — the boundary executor for the preview/apply parity invariant, whose full
+  inventory lives on the `worktrees/overview.md` route. Reconciled the route population to the current
+  manifest (198 modules: 114 unit-regression, 2 public-contract, 54 integration, 15
+  architecture-fitness, 13 provider-conformance; budgets 1000 unit / 200 integration) and corrected the
+  last stale "150-collected-case cap" bound in the same paragraph. Added three reference rows.
+  Source-route documentation only: no execution, acceptance or certification claim, and lane
+  membership stays owned by the `test-evidence-lanes.toml` card.
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded in the route body that the citation
+  fixtures now build real Git provenance (`Tree.history`/`stamp`/`remove_source`, the `stamp`
+  metadata row written inside the metadata table, and the header-anchored `Tree.row` locator;
+  `Scenario` stamping its verified tree before deleting both cited files), so the previously pinned
+  relocation tests still exercise the legitimate kind-preserving move rather than relaxed
+  expectations, and recorded the new `MechanicallyProjectedRangeTests`. Content change in the
+  Fixture Roles And Claims body, not a range repoint.
+- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: added a `Retained Behavioral Routes` row and a
+  Public-Surface Inventory Contract paragraph for the new integration module
+  `test_worktree_status_terminal_next_tool.py`, which is the first coverage of the
+  `terminal-archive-ready` branch and the executor for the worktree surface's advertised next move.
+  Reconciled the route population to the current manifest (197 modules: 114 unit-regression, 2
+  public-contract, 53 integration, 15 architecture-fitness, 13 provider-conformance; budgets 1000
+  unit / 200 integration) and added three reference rows. Source-route documentation only: no
+  execution, acceptance or certification claim, and lane membership stays owned by the
+  `test-evidence-lanes.toml` card.
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded the three new forcing cases (guidance
+  checkpoint projection, the pull-request `already-recorded` guard, the checkpoint landed source
+  head) and that two of those modules — `test_post_integration_cleanup_guidance.py` and
+  `test_closeout_kept_rules_pins.py` — gained file cards, so this route's covered set grew by two.
+  Lane membership is unchanged. Source-route documentation only: no execution, acceptance or
+  certification claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: reconciled the retained population to the current
+  manifest (196 modules: 114 unit-regression, 2 public-contract, 52 integration, 15
+  architecture-fitness, 13 provider-conformance) and recorded the fail-closed repair that made the
+  manifest loadable — seven tracked modules had declared no lane, seven plus this leaf's own new
+  module were registered. Source-route documentation only: no execution, acceptance or certification
+  claim, and lane membership stays owned by the `test-evidence-lanes.toml` card.
+- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: added the
+  `PublicSurfaceInventoryTests` row to the retained behavioral routes and a Public-Surface Inventory
+  Contract section recording why the advertised/inventoried/registered agreement needed an executor
+  (the `server_info` comparison was self-referential), plus its reference row. The probe is
+  hermetic; no execution or acceptance claim. No route impact on the other retained behavioral
+  routes: no protected scenario changed.
+- 2026-09-11T23:05:00+00:00: Recorded the route-wide cause of this route's shrunken inventory as durable negative knowledge. `git log -S` proves the removals: `d3610903` reduced test/support code by 79% (235,366 deletions) and replaced coverage floors with case budgets, `173bb01e` deleted the detached lifecycle worker, `b06b3a27` removed the master route-review gate, `6982c6a7` cut the door-operation-journal plane, and `2ec5d244` deleted the tests its remaining failures exposed as dead. Cards citing a deleted test name now have a route-level home for that fact instead of inventing per-file provenance; a shorter coverage table is deliberate removal, not loss. No route impact for the retained behavioral routes: no protected scenario changed.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: four test modules were deleted by the cut and their references removed here — `test_integration_ref_transaction.py` (`173bb01e`, removed with the mid-crash ref-recovery capability), `test_worktree_integrate_quality_gate.py` (`9e1743c1`), and `test_closeout_memory_certification_reuse.py` / `test_prepared_publication_recovery.py` (`2ec5d244`). The candidate/protected-ref row no longer claims exact-recovery coverage it no longer has. Only the deleted-test references were reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no execution or acceptance claim.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry and parked candidate: registered `test_sync_parked_candidate.py` in the unit-regression lane, added the `CloseoutSourceLineageHealTests` boundary class to `test_source_lineage.py`, and reconciled the retained population to 183 files (99 unit, 55 integration). No case budget was raised. Source-route evidence only; no execution or acceptance claim.
-- 2026-09-10T11:55:00+02:00 — Post-sync union curation for 260831-LOCR-L03: kept the sibling's richer current-population paragraph and its R28/landing-debt rationale, framed the L38 candidate's own 179-file figure as historical, recorded the lane-manifest card as owner of record for lane membership, and advanced the counts to the union population (187 files: 103 unit-regression) that includes this leaf's own canonical terminal-evidence mapping row. No range was carried over from the stashed side and no history entry was dropped. This records source documentation only and makes no acceptance or certification claim.
-
-- 2026-09-10T11:53+02:00 — 260831-LOCR-L09 curator: resolved this route's sync merge, added the state-signal boundary-delivery route (persist-before-marker, held working target, same-row delivery at the next admissible boundary across replacement/restart/failed submission), and reconciled the merged population to 187 modules (103 unit-regression) including both the LOCR-L28 deferred-terminal-work row and this leaf's boundary-delivery module. This records source documentation only; it makes no acceptance or certification claim.
-
-- 2026-09-10T11:25:00+02:00 — Re-read this overview's L38 population sentence against the current manifest, framed its 179-file figure as that candidate's historical count, and recorded the lane-manifest card as the owner of record for current lane membership. This records source documentation only and makes no acceptance or certification claim.
-
-- 2026-09-10T11:24+02:00 — 260831-LOCR-L28 curator: re-derived the retained test population against the current evidence manifest after the authorized repair of three missing CCR landing-debt lane registrations (179 → 186 files: 102 unit-regression, 2 public checks, 55 integration, 14 architecture, 13 provider). This leaf's own deferred-work module also moved from integration to unit-regression for the same 150-case integration cap. Body claim only; no execution, certification or acceptance claim is made.
-
 - 2026-09-10T12:23+02:00 — 260831-LOCR-L20 curator post-sync refresh: reconciled this route's
   retained-population account to the post-sync manifest union — 187 files (103 unit-regression,
   2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance). The delta
@@ -136,6 +944,20 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   registers in `unit-regression`. The two synced conflicts were resolved hunk-by-hunk with the synced
   side authoritative for ranges and structure, and both sides' genuine history entries were retained.
   Classification and preparation evidence only; no execution, Gate 5, or acceptance claim.
+
+- 2026-09-10T11:55:00+02:00 — Post-sync union curation for 260831-LOCR-L03: kept the sibling's richer current-population paragraph and its R28/landing-debt rationale, framed the L38 candidate's own 179-file figure as historical, recorded the lane-manifest card as owner of record for lane membership, and advanced the counts to the union population (187 files: 103 unit-regression) that includes this leaf's own canonical terminal-evidence mapping row. No range was carried over from the stashed side and no history entry was dropped. This records source documentation only and makes no acceptance or certification claim.
+
+- 2026-09-10T11:53+02:00 — 260831-LOCR-L09 curator: resolved this route's sync merge, added the state-signal boundary-delivery route (persist-before-marker, held working target, same-row delivery at the next admissible boundary across replacement/restart/failed submission), and reconciled the merged population to 187 modules (103 unit-regression) including both the LOCR-L28 deferred-terminal-work row and this leaf's boundary-delivery module. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-10T11:52:46+02:00 — 260831-LOCR-L25 curator (route impact, sync advance): resolved the merge with landed LOCR-L28 (`e26b55db`) and re-derived this route's population against the synced manifest, now 187 test-shaped modules (103 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance) because this leaf's own parked-external-await separation guard joins the landed 186. The two population paragraphs that the merge left standing are consolidated into one current account above. Supersedes the 186 / 102 figures recorded by both leaves. No execution, acceptance, or certification claim; verification metadata remains closeout-owned.
+
+- 2026-09-10T11:25:00+02:00 — Re-read this overview's L38 population sentence against the current manifest, framed its 179-file figure as that candidate's historical count, and recorded the lane-manifest card as the owner of record for current lane membership. This records source documentation only and makes no acceptance or certification claim.
+
+- 2026-09-10T11:24+02:00 — 260831-LOCR-L28 curator: re-derived the retained test population against the current evidence manifest after the authorized repair of three missing CCR landing-debt lane registrations (179 → 186 files: 102 unit-regression, 2 public checks, 55 integration, 14 architecture, 13 provider). This leaf's own deferred-work module also moved from integration to unit-regression for the same 150-case integration cap. Body claim only; no execution, certification or acceptance claim is made.
+
+- 2026-09-10T11:22:48+02:00 — 260831-LOCR-L25 curator (route impact, correction): corrected the restored-row classification after the integration lane's 150-case cap rejected the first split. All three CCR landing-debt rows `8885939e` omitted (`test_review_state.py`, `test_task_doc_review_public.py`, `test_transaction_only_worktree_delivery.py`) register as `unit-regression`, so the route now records 186 retained test-shaped modules as 102 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness and 13 provider-conformance, superseding the 100/57 split recorded at 11:04 on the same tree. Source documentation only: no execution, acceptance, or certification claim, and verification metadata remains closeout-owned.
+
+- 2026-09-10T11:04:12+02:00 — 260831-LOCR-L25 curator (route impact, manifest repair): re-derived the manifest population after the developer-authorized repair of the three CCR landing-debt rows that `8885939e` omitted (`test_review_state.py` unit-regression; `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py` integration). The route records 186 retained test-shaped modules in place of the previous 183, and notes that all three restored modules already had file cards. **The integration split in this entry was superseded by the 11:22 correction above.** Source documentation only: no execution, acceptance, or certification claim, and verification metadata remains closeout-owned.
 
 - 2026-09-10T10:55+02:00 — 260831-LOCR-L20 curator manifest refresh: reconciled this route's
   retained-population account to the repaired closed manifest — 186 files (102 unit-regression,
@@ -148,15 +970,9 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 
 - 2026-09-10T10:32:23+02:00 — LOCR-R21 curator reconciliation against the synced base (code `6096941f`, memory `71d7f73a`): resolved the re-applied WIP conflict by retaining both landed LOCR-L08 entries and this leaf's own terminal-liveness route entry, and recorded the module's composition boundary. This route records the LOCR-R21 hysteresis proof only; sibling cadence (`R12`) and sweep non-overlap (`R22`) cases are still in their own unlanded worktrees and compose into the same module later. Verification metadata remains closeout-owned.
 
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: added the retained terminal-catalog batch and sweeper non-overlap proof surface to the route map — counted atomic replacements (zero clean, one dirty, one dirty-partial) and real-thread contention returning the committed snapshot without a second probe. Cadence, hysteresis, and cross-store post-commit ownership remain with their leaves; this records source documentation only and claims no execution, acceptance, or certification.
-
-- 2026-09-10T11:52:46+02:00 — 260831-LOCR-L25 curator (route impact, sync advance): resolved the merge with landed LOCR-L28 (`e26b55db`) and re-derived this route's population against the synced manifest, now 187 test-shaped modules (103 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance) because this leaf's own parked-external-await separation guard joins the landed 186. The two population paragraphs that the merge left standing are consolidated into one current account above. Supersedes the 186 / 102 figures recorded by both leaves. No execution, acceptance, or certification claim; verification metadata remains closeout-owned.
-
-- 2026-09-10T11:22:48+02:00 — 260831-LOCR-L25 curator (route impact, correction): corrected the restored-row classification after the integration lane's 150-case cap rejected the first split. All three CCR landing-debt rows `8885939e` omitted (`test_review_state.py`, `test_task_doc_review_public.py`, `test_transaction_only_worktree_delivery.py`) register as `unit-regression`, so the route now records 186 retained test-shaped modules as 102 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness and 13 provider-conformance, superseding the 100/57 split recorded at 11:04 on the same tree. Source documentation only: no execution, acceptance, or certification claim, and verification metadata remains closeout-owned.
-
-- 2026-09-10T11:04:12+02:00 — 260831-LOCR-L25 curator (route impact, manifest repair): re-derived the manifest population after the developer-authorized repair of the three CCR landing-debt rows that `8885939e` omitted (`test_review_state.py` unit-regression; `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py` integration). The route records 186 retained test-shaped modules in place of the previous 183, and notes that all three restored modules already had file cards. **The integration split in this entry was superseded by the 11:22 correction above.** Source documentation only: no execution, acceptance, or certification claim, and verification metadata remains closeout-owned.
-
 - 2026-09-10T10:06:31+02:00 — 260831-LOCR-L25 curator (route impact): added the parked-external-await separation guard to the retained behavioral route table, extended the state-signal routing boundary with the open-turn non-wake case, and re-derived the current manifest population (183 files: 99 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance) past the frozen L38 snapshot. File-level detail lives in the two changed and one new test cards. This records source documentation only; it makes no execution, acceptance, or certification claim, and verification metadata remains closeout-owned.
+
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: added the retained terminal-catalog batch and sweeper non-overlap proof surface to the route map — counted atomic replacements (zero clean, one dirty, one dirty-partial) and real-thread contention returning the committed snapshot without a second probe. Cadence, hysteresis, and cross-store post-commit ownership remain with their leaves; this records source documentation only and claims no execution, acceptance, or certification.
 
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
@@ -173,9 +989,9 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 - 2026-09-08T14:38:13+02:00 — 260831-LOCR-L08 curator: independently re-read the existing final-catalog and prepared-memory adapter references against current source; retained both claims and corrected their source ranges.
 
 - 2026-09-08T14:35+02:00 — 260831-LOCR-L28 curator: added the deferred-terminal-work route to the retained behavioral map and fixture claims. The new hermetic proof covers sweeper-side commit/release/drain ordering, aborted-pass suppression, row-local quarantine continuation, and unguarded post-commit escape without rollback; caller no-lock ownership and final acceptance remain explicitly outside this route update.
-- 2026-09-08T14:25+02:00 — LOCR-R21 curator: added the current terminal-liveness proof route to the retained behavior map, corrected the two reopened internal source ranges, and preserved the route's development-versus-certification boundary. This leaf changes test proof only; verification metadata remains closeout-owned.
-
 - 2026-09-08T14:30:38+02:00 — Added the L03 canonical terminal-evidence mapping route and its explicit unit-regression inventory entry. The route records diagnostic protection only; execution, lifecycle ownership, certification and acceptance remain with their existing owners.
+
+- 2026-09-08T14:25+02:00 — LOCR-R21 curator: added the current terminal-liveness proof route to the retained behavior map, corrected the two reopened internal source ranges, and preserved the route's development-versus-certification boundary. This leaf changes test proof only; verification metadata remains closeout-owned.
 
 - 2026-09-08T14:23:36+02:00 — 260831-LOCR-L12 curator: recorded the retained terminal-liveness
   cadence/readiness route and its sweeper-local boundary. The route remains a diagnostic test

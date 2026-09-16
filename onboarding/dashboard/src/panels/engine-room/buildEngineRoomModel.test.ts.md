@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -48,9 +48,9 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 | `node`/`lifecycle`/`worktreeEngine` fixture factories | `node`; `lifecycle`; `worktreeEngine` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:10-42; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:44-58; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:60-69 |
 | Lifecycle join + workspace lift + fallback cases | `buildEngineRoomModel`; `workspaceEngines`; `fallbackStacks`; `usesFallback` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:39-39; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:59-59; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:63-63 |
 | `enclosureKey` = worktreeGroup stable-across-id-swap case | `enclosureKey` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:132-134 |
-| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:234-275 |
-| LifecycleProjection is the generated projection contract consumed by this surface. | "export interface LifecycleProjection {" | dashboard/src/types/projection.ts:366-384 |
-| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:514-525 |
+| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:233-233 |
+| LifecycleProjection is the generated projection contract consumed by this surface. | "export interface LifecycleProjection {" | dashboard/src/types/projection.ts:365-365 |
+| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:513-513 |
 
 ## Series-Contract Notes
 
@@ -58,6 +58,11 @@ The stable-key regression uses a real-node id ending in `series-contract.md`, pr
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
+  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

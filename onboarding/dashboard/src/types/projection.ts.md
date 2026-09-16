@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:51:23+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -28,14 +28,24 @@ The lifecycle phase vocabulary now includes `recovering-private-preparation`. Th
 
 ### Logic
 
+The generated `LifecycleOperationProjection.phase` union has no `ledger-commit` or
+`direct-ledger-commit` member. It mirrors the Python lifecycle vocabulary: code and memory output
+publication remain observable, while the downstream ledger cache creates no separate commit phase.
+
 The generator emits lifecycle, task, attention, engine, and metrics wire shapes together with checked
 state vocabularies. Structural additions share one `TaskDocumentRef` interface. Task documents
 remain the hierarchy authority; lifecycle and hosted-occupant fields are optional runtime
 attachments.
 
 `LifecycleOperationProjection` gains the optional `taskIntent?: TaskIntentIdentity` (line 349),
-and the new `TaskIntentIdentity` interface (line 687-693) mirrors the JSON Schema refinements:
+and the new `TaskIntentIdentity` interface (line 750-754) mirrors the JSON Schema refinements:
 the required 64-hex `digest` and the closed `schema: "task-intent/v1"` union.
+
+Since 260913-LCA-L6 the mirror carries no refinement comment on `CloseoutQueueNode.members`: the
+candidate population is unbounded, so the generated interface declares the array as a plain
+`members: CloseoutCandidateNode[]` (line 144). The 256-entry refinements that remain in this
+generated file belong to other collections — `CloseoutCandidateNode.reasons` (line 130) and
+`CloseoutQueueNode.sourceProblems` (line 149).
 
 ### Conventions
 
@@ -47,6 +57,9 @@ rather than hand-maintaining parallel declarations.
 - The task-document reference is repository-qualified and level-explicit.
 - Runtime ids remain projections/correlation, not structural seat identity.
 - Generated TypeScript and schema artifacts must remain synchronized.
+- Only refinements the producer's Python schema actually carries are emitted, so a collection the
+  producer leaves unbounded (today `CloseoutQueueNode.members`) gets no bound comment here either;
+  the dashboard never adds a limit the server does not enforce.
 - The task-intent identity is observation-only: the dashboard never mints or mutates a digest.
 
 ### Todos
@@ -57,23 +70,33 @@ None.
 
 No Domain Documentation source is configured.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:699-702 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:648-682 |
-| Execution nodes name their kind, leaf-id segment and task reference. | "export interface TaskExecutionNode {" | dashboard/src/types/projection.ts:725-729 |
-| An execution endpoint carries a task reference and optional leaf id. | "export interface TaskExecutionEndpointNode {" | dashboard/src/types/projection.ts:711-714 |
-| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | "export interface TaskExecutionEdgeNode {" | dashboard/src/types/projection.ts:704-709 |
-| The graph contains typed node and edge arrays. | "export interface TaskExecutionGraphNode {" | dashboard/src/types/projection.ts:716-719 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:817-830 |
-| The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:362-362 |
-| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:751-755 |
+| The lifecycle phase union mirrors the code/memory-only vocabulary. | L352-L352 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Structural analytics fields use the shared task-document reference. | L698-L701 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Generated task documents carry real hierarchy and optional runtime attachment. | L647-L681 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Execution nodes name their kind, leaf-id segment and task reference. | L724-L728 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| An execution endpoint carries a task reference and optional leaf id. | L710-L713 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | L703-L708 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The graph contains typed node and edge arrays. | L715-L718 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Workspace projection remains the generated top-level wire contract. | L816-L829 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The optional canonical task-intent identity on lifecycle operations. | L361-L361 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The generated `task-intent/v1` identity interface. | L750-L754 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No separate external implementation source applies to this file. | N/A | N/A |
 
 ## L23 Source-Lineage Mirror
 
@@ -99,9 +122,9 @@ The generated TypeScript mirror now carries optional lifecycle-operation `genera
 status vocabulary. These fields describe root-journal-owned operation state to dashboard consumers;
 they do not make the dashboard or disposable closeout projection an operation authority.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:331-349 |
+| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | L334-L363 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 
@@ -109,13 +132,28 @@ The generated mirror removes `AtomicBlockerNode` and the old mutable queue candi
 `CloseoutQueueNode` now exposes exact-current service/source condition, bounded problems, and
 generation-keyed `CloseoutProjectionMemberNode` rows; member classification is the closed
 `ready | waiting | blocked` display vocabulary. These interfaces describe a disposable producer view
-only and transfer no scheduling or operation authority to the browser.
+only and transfer no scheduling or operation authority to the browser. The `members` array itself
+carries no item ceiling since 260913-LCA-L6 — see that section below — while `sourceProblems` and
+each row's `reasons` keep their 256-entry refinements.
 
 `DiscardUnstartedProofNode` and `DiscardedSubTaskNode` expose audited discard-before-start evidence.
 Required series and optional task-document discard count/history fields remain distinct from live
 subtasks and completed progress. Supported runtime-only schema constraints are emitted immediately
 above their TypeScript properties as stable `JSON Schema refinements` comments, including nested item
 constraints; TypeScript shape alone is not runtime validation.
+
+## 260913-LCA-L6 Unbounded Closeout Queue Members
+
+The regenerated mirror no longer documents a `maxItems` refinement on `CloseoutQueueNode.members`:
+`members: CloseoutCandidateNode[]` is emitted with no refinement comment because the producer's
+Python schema dropped the candidate cap, and a sprint may now declare any number of leaves. The
+neighbouring refinements are untouched — `CloseoutCandidateNode.reasons` keeps
+`{"maxItems":256}` and `CloseoutQueueNode.sourceProblems` keeps its own. No dashboard-side behaviour
+changes: the panel still renders whatever rows the producer serves.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## 260824-PDLS Invalidation Outcome Mirror
 
@@ -146,6 +184,15 @@ returns on snapshots.
 
 ## Update History
 
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Reconciled the generated TypeScript lifecycle phases with the two-output transaction. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 5
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the regenerated mirror dropped the `JSON Schema refinements: {"maxItems":256}` comment from `CloseoutQueueNode.members` with the closeout candidate cap, so the mirror now states that the candidate population is unbounded and only `CloseoutCandidateNode.reasons` and `CloseoutQueueNode.sourceProblems` keep 256-entry refinements. Added the L6 section plus two evidence rows (queue node 143-152, candidate node 124-133) and rebound the drifted anchors `TaskDocumentRef` 699-702 → 698-701, `TaskDocNode` 648-682 → 647-681, `TaskIntentIdentity` 751-755 → 750-754 and `WorkspaceProjection` 817-830 → 816-829. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
 - 2026-09-06T21:51:23+00:00 — Reconciled the landed IAS source delta and actual preparation/fixture boundaries; existing verification pins and history are preserved.
 
 - 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
@@ -153,10 +200,10 @@ returns on snapshots.
 
 - 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocumentRef` repointed to dashboard/src/types/projection.ts:699-702. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocNode` repointed to dashboard/src/types/projection.ts:648-682. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocNode` repointed to dashboard/src/types/projection.ts:647-681. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `WorkspaceProjection` repointed to dashboard/src/types/projection.ts:817-830. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `taskIntent` repointed to dashboard/src/types/projection.ts:362-362. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskIntentIdentity` repointed to dashboard/src/types/projection.ts:751-755. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskIntentIdentity` repointed to dashboard/src/types/projection.ts:750-754. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the optional `meaningfulRevision` field on the generated `LifecycleOperationProjection` interface.
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the regenerated lifecycle envelope types (schema/state-matrix versions, incoherent status, identity/componentBindings/worker/approval/recommendedAction cells). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.

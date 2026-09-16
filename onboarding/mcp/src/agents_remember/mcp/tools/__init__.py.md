@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
-| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
+| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -37,6 +37,11 @@ only the advertised MCP tools. 260713-TES-L4 adds `operator_inbox_supersede_payl
 260815-DAG-L16 adds `direct_landing_payload` to the import block and `__all__` per the same pattern.
 260815-DAG-L15 adds `memory_quality_check_start_payload` / `memory_quality_check_poll_payload` to
 the `memory` import block and `__all__` per the same pattern (the async quality surface, L15-R7).
+260831-LOCR-L30 adds `worktree_checkpoint_landing_payload` to the `.worktree` import block and
+`__all__` per the same pattern, so the partial-master landing builder is reachable from the package
+boundary the registrar imports. 260831-LOCR-L37 adds `worktree_pause_payload` the same way (import
+block at `:104`, `__all__` at `:196` inside the `:115-201` extent), so the stop's payload builder is
+reachable from the same boundary as the publication's.
 
 ### Invariants And Boundaries
 
@@ -53,18 +58,18 @@ the `memory` import block and `__all__` per the same pattern (the async quality 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `gate_response_wait_payload` is imported from `gates`. | "from .gates import (" | mcp/src/agents_remember/mcp/tools/__init__.py:20-28 |
-| `gate_response_wait_payload` is listed in `__all__`. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:116-116 |
+| `gate_response_wait_payload` is listed in `__all__`. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:115-115 |
 | The gate response wait payload builder is owned by the `gates` submodule. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:171-188 |
 | The post payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-37 |
 | The poll payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_poll_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:51-68 |
 | The consume payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:71-86 |
-| The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. | "from .operator_inbox import (" | mcp/src/agents_remember/mcp/tools/__init__.py:60-60 |
+| The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. | "from .operator_inbox import (" | mcp/src/agents_remember/mcp/tools/__init__.py:59-59 |
 | The orchestration nudge payload builder is owned by the `orchestration` submodule. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| The orchestration nudge payload builder is re-exported by this facade. | "from .orchestration import orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:66-66 |
+| The orchestration nudge payload builder is re-exported by this facade. | "from .orchestration import orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:65-65 |
 | The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| The lifecycle finalizer payload builder is re-exported by this facade. | "from .lifecycle_finalize import lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:46-46 |
+| The lifecycle finalizer payload builder is re-exported by this facade. | "from .lifecycle_finalize import lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:45-45 |
 | The terminal payload builders (`attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) are owned by the `terminal` submodule. | `attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:27-44; mcp/src/agents_remember/mcp/tools/terminal.py:47-64; mcp/src/agents_remember/mcp/tools/terminal.py:67-84; mcp/src/agents_remember/mcp/tools/terminal.py:87-96 |
-| The terminal payload builders are re-exported by this facade. | "from .terminal import (" | mcp/src/agents_remember/mcp/tools/__init__.py:90-90 |
+| The terminal payload builders are re-exported by this facade. | "from .terminal import (" | mcp/src/agents_remember/mcp/tools/__init__.py:89-89 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -89,7 +94,8 @@ The current source seams include the module-level vocabulary. The public schema/
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the module-level vocabulary at this ownership boundary. | `__all__` | mcp/src/agents_remember/mcp/tools/__init__.py:114-199 |
+| The current module exposes the module-level vocabulary at this ownership boundary; the anchor is the stop builder's own `__all__` entry, which pins the list this claim is about. | "\"worktree_pause_payload\"," | mcp/src/agents_remember/mcp/tools/__init__.py:115-201 |
+| The pause payload builder is re-exported by this facade from the `.worktree` import block and listed in the `__all__` extent, exactly per the documented pattern. | "from .worktree import (" | mcp/src/agents_remember/mcp/tools/__init__.py:88-110; mcp/src/agents_remember/mcp/tools/__init__.py:115-201 |
 
 ## 260821-CLIVE Closeout-Door Export
 
@@ -106,11 +112,33 @@ second action implementation.
 
 ## 260831-CCR-L15 Status-Wait Export
 
-The package surface now re-exports `worktree_status_wait_payload` (added to the import
-list and to `__all__`) so registration and conformance imports resolve the read-only
-wait payload from the tools package boundary.
+**Superseded.** The `worktree_status_wait_payload` builder and its tool were removed; this facade
+re-exports no wait payload today. Recorded so the paragraph above is not read as current.
 
 ## Update History
+- 2026-09-13T17:20:55+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical
+  projection): re-read the `__all__` claim against the current source and re-cited it to the
+  declaration itself, `"__all__ = ["` at `mcp/src/agents_remember/mcp/tools/__init__.py:115-201`, which
+  is the list the claim names and the extent the L37 export extended. The wording holds unchanged; the
+  previous range had arrived from a generated anchor-range projection, which is not evidence that a
+  claim still holds.
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: re-exported `worktree_pause_payload` from `.worktree` in
+  the import block (`:104`) and `__all__` (`:196`), per the documented re-export pattern, and
+  re-derived the `__all__` extent (`115-201`). Reference health: the
+  `260831-CCR-L15 Status-Wait Export` section is marked superseded — the wait builder and its tool are
+  gone. The facade contract this sidecar describes is unchanged. Verification metadata remains
+  closeout-owned; no acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: re-exported `worktree_checkpoint_landing_payload`
+  from `.worktree` in the import block and `__all__`, per the documented re-export pattern, and
+  re-derived the `__all__` extents shifted by it. The facade contract this sidecar describes is
+  unchanged. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:113-113. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "from .operator_inbox import (" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "from .orchestration import orchestration_nudge_manager_payload" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "from .lifecycle_finalize import lifecycle_finalize_task_payload" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "from .terminal import (" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:89-89. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `__all__` repointed to mcp/src/agents_remember/mcp/tools/__init__.py:113-197. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:116-116. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait_payload` package export.

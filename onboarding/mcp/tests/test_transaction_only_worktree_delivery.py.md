@@ -5,51 +5,103 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_transaction_only_worktree_delivery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T07:24:09+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-15T01:15+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
+
+The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[Nearest governing route overview](overview.md)
 
 ## Purpose
 
-Protects the CCR-R12@v5 transaction-only closeout and integration boundary at the public worktree
-tool surface.
+Protect public transaction-only closeout/integration and recovery with two accepted outputs and a disposable memory cache.
 
 ## Code Commentary
 
-The focused tests patch strict code quality, memory quality, selected certification, and curator
-coherence entry points to fail if normal closeout or integration calls them. They then exercise the
-real public closeout and paired integration routes: closeout must produce the code, external-memory,
-and ledger commits with the exact ledger mapping; integration must publish the prepared pair; and a
-source-ref movement must refuse before protected pair publication.
+### Logic
 
-Each scenario installs a real failing `pre-commit` hook in both repositories and probes it once to
-prove the hook itself is active, then asserts that the normal code and memory transaction commits
-leave no hook log. This captures the bounded commit contract: closeout stages and uses
-`commit_verified_staged` with `--no-verify`, while integration moves existing refs/tree state and
-creates no merge commit or merge-hook path.
+The seven existing scenario definitions forbid the named quality, certification, curator, and review-related acceptance entry points while exercising the real transaction paths. Public closeout begins with malformed cache text and must create exactly one code commit and one memory commit; recovery begins with a missing cache, interrupts after code publication, rejects a wrong recovery code identity, and resumes without another code commit.
 
-## Invariants And Boundaries
+Configured failing pre-commit hooks are probed to prove they work, then the transaction scenarios assert no hook log. `_assert_memory_attribution` checks the exact memory message and both native trailer readers, and verifies memory.md is absent from the memory-content commit. The resulting cache is present and untracked; retired ledger result fields are absent. Integration still publishes exact refs and refuses a moved source before pair publication.
 
-- Normal public closeout/integration does not acquire a quality or certification acceptance tool.
-- Closeout preserves the code-to-memory ledger mapping and sequential recovery evidence.
-- Integration refuses source movement before changing the protected pair.
-- Hook non-invocation is tested only for the configured repository hooks installed by the scenario;
-  it does not imply that arbitrary external commands cannot run outside these commit paths.
-- This file records focused behavior protection, not full-suite certification or independent review.
+The sync/recloseout case passes the accepted code commit to _commit_memory_content and proves an unchanged memory candidate reuses the actual merged head. The final two cache tests derive canonical data from Git, keep an already-correct cache unchanged, recreate a missing cache, and repair malformed, forged, reordered, or header-inconsistent text. They compare refs and all commit objects in both repositories and preserve real file bytes and clean content state.
+
+### Conventions
+
+Existing mocks forbid acceptance-tool calls or inject the deliberate interruption; they do not mask production failures. The cache test fixture creates no ledger-only commit and never treats its observed cache as canonical input. Scenario definitions and their execution receipts are separate evidence.
+
+### Invariants And Boundaries
+
+- Normal transaction delivery does not acquire the forbidden acceptance tools.
+- Recovery retains exact code identity and one real memory output.
+- Both Git trailer readers see the attribution, while the committed tree contains no memory cache.
+- Cache rebuilds change no refs, commit objects, or substantive content.
+- Hook non-invocation applies to the installed scenario hooks, not arbitrary unrelated commands.
+
+### Todos
+
+No new file-local follow-up is identified by this source reconciliation.
+
+## Docs References
+
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Public closeout delivers code, memory, and ledger while acceptance helpers are forbidden. | `test_public_closeout_commits_code_memory_and_ledger_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:216-292 |
-| Public integration publishes the prepared pair without acceptance helpers and without configured hooks. | `test_public_integration_merges_prepared_pair_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:293-337 |
-| Source movement refuses before protected pair publication. | `test_public_integration_ref_movement_refuses_before_pair_merge` | mcp/tests/test_transaction_only_worktree_delivery.py:338-388 |
+| Named acceptance-tool prohibition and real failing-hook probes. | L120-L146; L149-L173 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| One code/memory commit, cache absence from the committed tree, and both trailer readers. | L176-L208; L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Interrupted public closeout resumes only its exact accepted code identity. | L321-L448 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Integration publishes accepted refs or refuses source movement before publication. | L451-L504; L507-L560 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| A recloseout after sync records the actual memory head. | L574-L607 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Cache materialization preserves both repositories' refs/commit objects and real content. | L610-L679; L682-L702; L705-L743 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+
+## Cross-Repo References
+
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 
 ## Update History
+
+- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Kept seven collected scenarios while removing retired ledger imports/outputs and third commits; public malformed/missing-cache delivery and cache-only materialization now prove two-output, hook, ref, trailer, and zero-Git-mutation behavior. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
+  `52875e7a`): recorded that `_bind_task_without_review` now binds `seriesContractPath` alongside its
+  canonical enclosure binding, and why — the helper had been modelling the damage state, and a leaf
+  document with an exact enclosure address but no master link now refuses closeout by name
+  (`task-enclosure-binding-master-link-missing`) instead of passing silently. Added that rule as an
+  invariant and a reference row. Re-derived every range and both inline citations against the current
+  source with AST: the change's one import plus seven lines in `_bind_task_without_review` shifted every
+  later definition by seven (`_assert_memory_attribution` 176-221 → 183-227, closeout 223-318 → 230-325,
+  recovery 321-445 → 328-452, integration 448-501 → 455-508, ref-movement 504-558 → 511-564).
+  Verification metadata remains closeout-owned; no execution or acceptance claim.
+- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
+  base `5bb124d4`): the file gained the recovery route's behavioural case,
+  `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` (`:321-445`) — a real public
+  closeout interrupted after its code commit, resumed through `git_worktree_manager.closeout_result`
+  with a `LifecycleOperationRecoveryCommits` cell that leaves the memory commit owed, plus a wrong-cell
+  refusal asserted first so the resume is provably the recovery route. This is the behavioural half of
+  the L4 producer census: the recovery module has no memory-content commit site of its own and reaches
+  `closeout_external.py`'s producer transitively. Corrected the invariant that said the file gained no
+  new test function (it did, at L4), recorded that the reader now serves two routes, and rebound every
+  row shifted by the new imports and case (`_assert_memory_attribution` 172-215 → 176-221, closeout
+  219-315 → 223-318, integration 317-370 → 448-501, ref-movement 373-427 → 504-558). Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): assertion-only extension. Added the shared `_assert_memory_attribution` reader and called it from `test_public_closeout_commits_code_memory_and_ledger_without_acceptance_tools`, so the public closeout path is now checked for exactly one `Code-Commit: <code sha>` trailer inside the memory-content commit object (by `%B`, `git interpret-trailers --parse`, and `%(trailers:key=Code-Commit)`) and for no trailer at all on the `memory.md`-only ledger commit. The re-closeout test's direct call into `_commit_memory_content` now passes `code_commit=`. No new test function and no new parametrized case. Rebound every stale row (`test_public_closeout...` 219-315, `_assert_memory_attribution` 172-215, `test_public_integration_merges...` 317-370, `test_public_integration_ref_movement...` 373-427). Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_public_closeout_commits_code_memory_and_ledger_without_acceptance_tools` repointed to mcp/tests/test_transaction_only_worktree_delivery.py:172-257. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_public_integration_merges_prepared_pair_without_acceptance_tools` repointed to mcp/tests/test_transaction_only_worktree_delivery.py:260-313. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_public_integration_ref_movement_refuses_before_pair_merge` repointed to mcp/tests/test_transaction_only_worktree_delivery.py:316-369. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-10T07:24:09+02:00 — Added with CCR-R12@v5 source commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`. The hook-aware focused run passed 3 tests in 5.95s (measured wall 6.213346s); this is targeted behavior evidence and not a full-suite or certification claim.

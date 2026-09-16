@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Hangar.test.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-04T10:05+02:00|
-| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
-| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -64,11 +64,11 @@ operations never expose controls or projection refresh effects.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test (filters rows through `hasLiveWorktree`). | `Hangar` | dashboard/src/panels/Hangar.tsx:72-138 |
+| The component under test (filters rows through `hasLiveWorktree`). | `Hangar` | dashboard/src/panels/Hangar.tsx:76-152 |
 | The shared existence-truth visibility selector. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
-| The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
-| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:204-222 |
-| The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering. | `legalControls`; `projectionEffects`; "shows the durable live command" | dashboard/src/panels/Hangar.test.tsx:140-166 |
+| The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | `dashboardStore` | dashboard/src/data/store.ts:329-401 |
+| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:203-221 |
+| The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering. | `legalControls`; `projectionEffects`; "shows the durable live command" | dashboard/src/panels/Hangar.test.tsx:140-169 |
 
 ## CCR-R18@v1 Fixture Envelope Fields
 
@@ -76,6 +76,11 @@ operations never expose controls or projection refresh effects.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the Hangar fixture lifecycle operation gaining the schema/state-matrix version literals. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-24T15:28+02:00 — No content impact: added the generated contract's required empty

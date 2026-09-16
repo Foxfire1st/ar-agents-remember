@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
+| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose

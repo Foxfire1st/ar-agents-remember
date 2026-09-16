@@ -5,82 +5,108 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-15T01:06 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[Integration overview](../overview.md)
+[Nearest governing overview](../overview.md)
+
+Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
+candidate. The commit fields identify the latest real commit touching this file; they do not
+identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Executes direct landing as a durable, candidate-bound lifecycle operation with quality and publication evidence.
+Executes and recovers the actual memory-content output of an accepted direct-landing generation.
+The code commit already exists; this module either commits changed memory with its attribution or
+reuses the accepted clean memory HEAD.
 
 ## Code Commentary
 
 ### Logic
 
-It prepares the direct attempt, verifies candidate identity, runs integration quality, performs code/memory/ref publication, records mutation evidence, and classifies exact recovery actions.
+`execute_direct_landing` checks mechanical convergence, reconciles durable Git evidence, builds the
+operation-bound Git arguments, and calls `_direct_memory_commit`. After the real memory output is
+known, it refreshes the consumer cache best effort and finishes the journal with `codeCommit`,
+`memoryContentCommit`, and `ledgerCache`. `memory.memoryHead` is the actual memory-content/ref output.
 
-The ledger leg compares the new memory content with the newest mapping for the unchanged code
-commit. A historical same-code row is not a conflict: settings-only memory changes produce a new
-memory commit and prepend a new current ledger row while retaining prior rows.
+`_direct_memory_commit` reuses a proven or recovered commit, archives an unchanged interrupted
+attempt before retry, and validates a prepared mutation against its accepted parent/ref/tree.
+For a clean accepted snapshot it records the existing memory HEAD without a new commit or invented
+attribution. For changed content it publishes intent, commits through the shared helper with
+`exclude_paths=("memory.md",)`, and proves that the output matches the bound tree.
 
-The exact-current-mapping path is deliberately split into three named predicates: mapping identity,
-exact working-versus-HEAD ledger bytes, and the shared clean-at-expected-HEAD snapshot check. The
-split removes compound control flow from `_existing_direct_mapping` without changing any accepted
-or refused state. Clean-snapshot semantics are imported from `integration.mutation_evidence` so
-execution and recovery cannot drift into separate definitions.
+The memory message comes from `EffectiveCloseoutInput.memory_content_message(code_commit)`. The
+caller-owned body and the single final attribution block are inside the object before its receipt
+is published. The old ledger execution object, byte intent, mapping checks, and ledger commit path
+are deleted.
+
+`execute_or_require_direct_landing_recovery` preserves typed ambiguity and interruption diagnostics
+on the same generation. The lifecycle recovery owner must resume that generation before invoking
+execution again; directly skipping its requeue step is not a valid recovery call.
 
 ### Conventions
 
-Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
-the public function or model instead of re-deriving its lower-level state machine.
+Prepared-state and clean-state checks use the shared mutation-evidence API with `memory_cache=True`.
+This file owns execution sequencing, not a second definition of cache parsing, Git cleanliness, or
+message rendering.
 
 ### Invariants And Boundaries
 
-- Every mutation is journaled and candidate-bound; partial publication resumes from durable evidence; direct landing never masquerades as queued closeout.
-- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
-  fallback or compatibility shadow.
-- Exact current mappings remain idempotent. A different historical mapping for the same code commit
-  means the memory/ledger legs are pending, not terminally conflicting.
-- Clean repository reuse means the shared snapshot predicate at the exact current HEAD; this file
-  does not own a second status-fingerprint implementation.
+- A produced memory commit must match the journaled parent/ref and expected content tree.
+- Cache refresh failure cannot turn a completed Git output into a failed ledger publication.
+- Clean reuse may have no attribution for the newly accepted code state; that absence is a fact.
+- Recovery cannot replace accepted input or silently adopt changed code, refs, or memory content.
 
 ### Todos
 
-None recorded.
+No new file-local follow-up is established by this documentation pass.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No external documentation claim is made.
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `_LedgerExecution` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:66-71 |
+| No configured external domain-documentation evidence. | — | — |
 
 ## Repo-Internal References
 
-The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+These repository-relative targets were checked in the L9 code checkout. The cited ranges support
+the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `_LedgerExecution` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:66-71 |
-| Exact mapping reuse separates mapping identity, ledger-byte equality, and clean-at-HEAD proof. | `_existing_direct_mapping`; `_require_head_ledger_bytes` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:349-403 |
-| The clean snapshot definition has one integration owner. | `snapshot_is_clean_at_head` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:41-61 |
+| Execution publishes or reuses real memory output and refreshes the cache afterward. | L42-L75; L175-L236; L316-L337 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
+| Prepared attempts preserve repository and exact pre-commit tree evidence. | L239-L255; L258-L287 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
+| Shared mutation intent and proof retain actual object checks. | L84-L105; L270-L301; L504-L518 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
+| The lifecycle recovery owner resumes the generation before execution. | L39-L70 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py) |
+| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | L274-L314; L316-L340 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 
 ## Cross-Repo References
 
-No cross-repository source is allowed by the resolved settings, and this unit owns no external
-protocol claim.
+Configured code and memory repositories or temporary fixture repositories are described through
+the package-local implementation above. No additional external or sibling-repository evidence
+source is configured for this file's claims.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_LedgerExecution` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:66-71 |
+| No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+
+- 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
+
+
+- 2026-09-15T00:51 UTC — Removed all ledger execution and recovery claims; documented one attributed content commit or clean HEAD reuse, cache-excluding shared staging, best-effort cache refresh, and lifecycle-owned recovery resumption. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+
+
+- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): `_direct_memory_commit` gained a required keyword-only `code_commit`, and `execute_direct_landing` passes `operation_input.codeCommit`, so this branch-addressed closeout route commits `effectiveInput.memory_content_message(code_commit)` — the closeout's own body plus exactly one `Code-Commit: <sha>` trailer naming the verified code commit, rendered from the shared `EffectiveCloseoutInput` definition instead of a route-local copy. Recorded that `_direct_ledger_commit` is deliberately unattributed (`message_for("ledger")`, no trailer). Rebound the stale ranges on this card (`_existing_direct_mapping`/`_require_head_ledger_bytes` 365-420, `snapshot_is_clean_at_head` mutation_evidence.py:42-57) and added the attribution rows. Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 
 - 2026-08-27T18:33+02:00 — Simplified the exact-current-mapping branch into named predicates and
   centralized clean-snapshot truth in mutation evidence. Behavior and refusal vocabulary remain

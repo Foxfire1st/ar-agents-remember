@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,11 +38,15 @@ lock. If it changed during refresh, the result is `sync-contract-changed-retry` 
 canonical contract path; the function never mutates against the stale object.
 
 Under authority, series contracts delegate to
-`sync_selected_atomic_series_under_authority`: the source-pair selector becomes `reconciling`, the
-exact pair is reconciled, and only a proven-current candidate becomes `active`. Leaf/direct
-contracts delegate to `sync_contract_under_authority`. Durable operation phase, retained conflicts,
-continue/cancel, exact rollback, ledger-pair admission, and contract base updates belong to the
-focused sync transaction modules rather than this facade.
+`sync_selected_atomic_series_under_authority`: this contract's own contract-keyed activation record
+becomes `reconciling`, its pinned source pair is reconciled, and only a proven-current candidate
+becomes `active`. The activation record is keyed per series contract (`contract_fingerprint` over the
+canonical contract path), so a sync never reads, pauses, or names another master's record — the only
+surviving activation waiting reason is `atomic-series-reconciling` on the addressed contract, and
+genuine wave dependencies stay with the sprint execution graph's own `predecessor-incomplete:`
+reasons. Leaf/direct contracts delegate to `sync_contract_under_authority`. Durable operation phase,
+retained conflicts, continue/cancel, exact rollback, ledger-pair admission, and contract base updates
+belong to the focused sync transaction modules rather than this facade.
 
 ### Conventions
 
@@ -59,11 +63,12 @@ refs are re-read under the integration lock. Resolution uses `resolution_action`
 
 - Input validation precedes fetch, selector publication, journal writes, and Git mutation.
 - Preview is observation-only and cannot claim selection or operation lifecycle authority.
-- The contract is re-read under the source-pair integration lock after remote refresh.
+- The contract is re-read under the repository integration lock after remote refresh.
 - A genuine merge conflict is retained in the reported worktree for agent resolution; it is not
   aborted or converted into queue state.
-- Atomic-series exposure follows successful exact reconciliation; selection never comes from task
-  prose, queue order, or a compatibility reader.
+- Atomic-series exposure follows successful exact reconciliation of THIS contract's own activation
+  record; selection never comes from task prose, queue order, another master's record, or a
+  compatibility reader.
 - Expected contract/source failures return a controlled result rather than escaping the public MCP
   boundary.
 
@@ -84,12 +89,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind. | `sync_result`; `_sync_live` | mcp/src/agents_remember/worktrees/modules/sync.py:29-68; mcp/src/agents_remember/worktrees/modules/sync.py:71-100 |
+| The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind. | `sync_result`; `_sync_live` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67; mcp/src/agents_remember/worktrees/modules/sync.py:70-98 |
 | Shared upstream refresh reports per-side evidence without treating the remote as local mutation authority. | `fetch_source_upstreams` | mcp/src/agents_remember/worktrees/sync_source_refresh.py:9-29 |
-| Atomic-series sync binds the public wrapper to the exact transaction: it validates ownership, publishes `reconciling`, reconciles the source pair, retains incomplete work in reconciling, and publishes `active` only after current-source proof. | `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:136-163; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:167-229 |
-| Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111 |
-| Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305; mcp/src/agents_remember/worktrees/sync_transaction_state.py:308-324 |
-| Focused integration tests exercise public preview, retained conflicts, continuation, cancellation, and recovery. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:116-195 |
+| Atomic-series sync binds the public wrapper to the exact transaction on this contract's own activation record: it validates ownership, publishes `reconciling`, reconciles the pinned source pair, retains incomplete work in reconciling, and publishes `active` only after current-source proof; a foreign master is never read or named. | `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:134-161; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
+| Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110 |
+| Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
+| Focused integration tests exercise public preview, retained conflicts, continuation, cancellation, and recovery. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:116-264 |
 
 ## Cross-Repo References
 
@@ -103,6 +108,20 @@ No meaningful cross-repo references found.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (reopened-claim judgement): the checker reopened
+  the `WorktreeSyncTests` claim because that construct changed after verification and a generated
+  repair had already moved its range mechanically. Re-read the claim against
+  `mcp/tests/test_worktree_sync.py`: the class is defined at `:116` and the cited range (116-195)
+  sits inside it, so the row still describes the focused integration suite. Retained; verification
+  metadata remains closeout-owned.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
+  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36: corrected the atomic-series sync description to the contract-keyed activation record (keyed by `contract_fingerprint` over the canonical contract path, not by protected source pair). The prose no longer says "the source-pair selector becomes `reconciling`"; it now says this contract's own record does, that a sync never reads/pauses/names another master's record, and that the only surviving activation waiting reason is `atomic-series-reconciling` on the addressed contract. Corrected the invariant that called the lock a "source-pair integration lock" (it is the repository integration lock) and the exposure invariant that implied a shared selection. Re-verified every reference row against the frozen code worktree: `sync_selected_atomic_series_under_authority` (`atomic_series_activation_transaction.py:134-161`) and `_sync_selected_atomic_series_under_authority` (`:164-226`) still hold — the declaration at 134 ends at 161 and the private owner at 164 ends at 226 — so both ranges are retained unchanged. No verification stamp advanced; no acceptance claim.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `_sync_live`, `_sync_selected_atomic_series_under_authority`, `observe_sync_operation`, `sync_result`, `sync_selected_atomic_series_under_authority` repointed to mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:134-161, mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226, mcp/src/agents_remember/worktrees/modules/sync.py:28-67, mcp/src/agents_remember/worktrees/modules/sync.py:70-98, mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

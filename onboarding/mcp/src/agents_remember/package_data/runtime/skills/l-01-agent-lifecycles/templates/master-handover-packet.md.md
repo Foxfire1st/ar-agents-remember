@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated            | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -91,6 +91,17 @@ candidate. Missing, stale, unresolvable, or candidate-mismatched evidence blocks
 summary prose cannot override it.
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md`
+  changed since the recorded verification commit. Re-read the card against the frozen on-disk source
+  and re-checked its claims and cited ranges: nothing this card asserts is falsified by the change,
+  so no wording changed. Verification metadata remains closeout-owned; no verification stamp
+  advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
+  the recorded verification commit (one template line drops the `/replay` spelling). Re-read the
+  card: it names no replay vocabulary and its byte-identity claim with the canonical skill copy
+  still holds. No wording changed; verification metadata remains closeout-owned.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: replaced copied lineage/ledger-map implications

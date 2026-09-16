@@ -5,9 +5,10 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
-| lastUpdated            | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -30,6 +31,8 @@ catalog, closeout evidence, and upstream contract register instead of packing th
 dashboard route overview.
 
 ## Hot Path Summary
+
+`observable-lifecycle.md` describes code/memory-content Git transaction phases and a separate computed ledger cache. A cache refresh is not a third transaction phase or a closeout/integration acceptance condition.
 
 In-repo design documentation for the dashboard and Python verification architecture. Child route `engine-room/` is the engine-room design
 reference — a living spec paired with the prototype/scenario player the React engine room was built from.
@@ -113,6 +116,12 @@ needed to establish the route model.
 | The explicit upstream gaps and one-Chats cutover ruling. | `# Session cockpit upstream register and Chats decision brief` | docs/design/dashboard/session-cockpit-upstream-register.md:1-66 |
 | The bounded series closeout evidence pack. | `# Session cockpit closeout evidence` | docs/design/dashboard/session-cockpit-closeout-evidence.md:1-154 |
 
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The implementation produces/reuses memory content before refreshing its cache. | L36-L76 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
+
 ## R39 Design Evidence Disposition
 
 The cockpit performance/evidence design document now labels its test-capable measurement command as
@@ -153,6 +162,9 @@ organizational leaves retain their applicable independent route review. The evid
 certification model remains unchanged; this update records where the route review is owned.
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned observable-lifecycle route guidance with separate cache refresh. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: converted the two engine-room
   cross-memory rows to direct navigation links. Their relationship remains documented without

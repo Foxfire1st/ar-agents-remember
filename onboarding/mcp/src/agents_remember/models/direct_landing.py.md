@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,10 +23,14 @@ addressed direct landing result with a typed `state` (`landed` / `would-land` / 
 
 ### Logic
 
+`codeCommit` and `memoryContentCommit` are the real output identities. `ledgerCache` is
+optional diagnostic data from refreshing the downstream projection; it is not a commit reference
+or evidence required to make a landing successful. The retired `ledgerCommit` field is absent.
+
 `DirectLandingResponse` extends `ToolResponse` with `operation: Literal["direct_landing"]`,
 `state`, a bounded `summary`, and optional `status`/`detail` (so a fail-closed refusal still
 reports its typed reason), plus the commit evidence fields `contractPath`, `codeCommit`,
-`memoryContentCommit`, `ledgerCommit`, `dryRun`, and a `memory` facts dict.
+`memoryContentCommit`, `dryRun`, and a `memory` facts dict, plus optional `ledgerCache` diagnostics.
 
 ### Conventions
 
@@ -50,25 +54,34 @@ None recorded.
 
 No configured Domain Documentation source applies.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-55 |
-| Registered as the `direct_landing` tool response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:148-227 |
-| Produced by the admitted direct-landing coordinator. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
-| Memory/ledger execution and same-generation recovery are journaled below the coordinator. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
+| Real code/memory SHAs are separate from optional ledgerCache diagnostics. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
+| The response model shape for the direct landing operation. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
+| Registered as the `direct_landing` tool response model. | L214-L214 | [mcp/src/agents_remember/models/tools/tool_registry.py](mcp/src/agents_remember/models/tools/tool_registry.py) |
+| Produced by the admitted direct-landing coordinator. | L113-L125 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
+| Memory-content execution and same-generation recovery are journaled below the coordinator. | L42-L75; L78-L135 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No separate external implementation source applies to this file. | N/A | N/A |
 
 ## 260821-CLIVE-L1 Response Contract
 
 The direct-landing response carries normalized `effectiveInput` on success/preview and typed
 `invalidFields`, `resolvedPlan`, and `correctedCall` on refusal. L2 adds journal generation and
 recovery evidence to that public contract: synchronous invocation and lock serialization remain,
-but partial memory/ledger publication is reconciled and resumed through the canonical root journal.
+but partial memory-content publication is reconciled and resumed through the canonical root journal.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -76,9 +89,9 @@ The current source seams include `DirectLandingResponse`. The response vocabular
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `DirectLandingResponse` at this ownership boundary. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-55 |
+| The current module exposes `DirectLandingResponse` at this ownership boundary. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
 
 ## 260821-DAGQC-L2 Closed Outcome Vocabulary
 
@@ -90,6 +103,14 @@ once carried was removed by the closeout-door cut (commit `fad9808e`); a direct 
 carries or reports a door generation.
 
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Distinguished actual output SHAs from optional ledger-cache diagnostics in direct landing responses. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `DirectLandingResponse` repointed to mcp/src/agents_remember/models/direct_landing.py:20-54. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:147-225. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `direct_landing` repointed to mcp/src/agents_remember/worktrees/direct_landing.py:117-129. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `DirectLandingResponse` repointed to mcp/src/agents_remember/models/direct_landing.py:20-54. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that `DirectLandingResponse.doorGenerationId` was removed and that the closed-outcome section no longer declares a door recovery field. Verification metadata remains pinned because only the cut-affected claim was reconciled; source documentation only, no acceptance claim.
 

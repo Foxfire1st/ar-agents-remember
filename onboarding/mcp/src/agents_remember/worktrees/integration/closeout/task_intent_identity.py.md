@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-03T12:30:00+02:00                  |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated            | 2026-09-14T20:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview      | `overview.md`                             |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ intent before closeout admission proceeds.
 
 ### Logic
 
-- `contract_task_intent_candidate` (line 21) resolves the exact candidate: a supplied typed
+- `contract_task_intent_candidate` (line 22) resolves the exact candidate: a supplied typed
   `TaskDocumentRef` via `TaskDocumentTopology.resolve`, or, for a leaf enclosure contract, the
   terminal leaf document through `resolve_terminal_leaf_doc`. It refuses a missing leaf document
   (`task-intent-task-document-missing`), requires an explicit typed reference for series closeout
@@ -33,9 +33,9 @@ intent before closeout admission proceeds.
   refuses candidates outside the contract task root
   (`task-intent-task-document-outside-root`), and refuses master documents
   (`task-intent-leaf-required`).
-- `contract_task_intent` (line 60) runs the candidate resolution and returns the canonical
+- `contract_task_intent` (line 61) runs the candidate resolution and returns the canonical
   `task_intent_identity(contract.task_root, candidate)` digest.
-- `current_door_task_intent` (line 69) is the admission boundary: it requires a live closeout
+- `current_door_task_intent` (line 70) is the admission boundary: it requires a live closeout
   door generation (`closeout-door-missing`, next action `closeout_door.declare`), recomputes the
   current intent from the door's own `taskDocumentRef`, and raises
   `closeout-door-task-intent-stale` (next action `closeout_door.update-provenance`) unless the
@@ -64,9 +64,9 @@ The configured Domain Documentation registry is empty; no external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact contract-owned candidate resolution with confinement and leaf-only rules. | `contract_task_intent_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:21-57 |
-| Canonical identity computation over the resolved candidate. | `contract_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:60-66 |
-| Live-door currentness requirement used by closeout admission. | `current_door_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:69-85 |
+| Exact contract-owned candidate resolution with confinement and leaf-only rules. | `contract_task_intent_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:22-58 |
+| Canonical identity computation over the resolved candidate. | `contract_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:61-67 |
+| Live-door currentness requirement used by closeout admission. | `current_door_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:70-86 |
 | The identity producer it delegates to. | `task_intent_identity` | mcp/src/agents_remember/tasks/task_intent.py:180-193 |
 | The terminal leaf-doc resolver used by leaf contracts. | `resolve_terminal_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:92-123 |
 | The typed models behind the intent state. | `TaskIntentIdentity`; `TaskIntentState` | mcp/src/agents_remember/models/task_intent/__init__.py:55-59; mcp/src/agents_remember/models/task_intent/__init__.py:68-68 |
@@ -80,6 +80,16 @@ digest stales the door before any evidence reuse. It is part of the L25 landed c
 (`99dc249b`).
 
 ## Update History
+
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
+  `mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py` changed since the
+  recorded verification commit. Re-read the card against the frozen on-disk source and re-checked
+  its claims and cited ranges: nothing this card asserts is falsified by the change, so no wording
+  changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
+  `live_closeout_door` import and now reads the door live, shifting every later definition by one
+  line. Re-derived the three in-prose line references and their three cited ranges; no claim text
+  changed. Verification metadata remains closeout-owned.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `resolve_terminal_leaf_doc` repointed to mcp/src/agents_remember/tasks/leaf_doc.py:92-123. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):

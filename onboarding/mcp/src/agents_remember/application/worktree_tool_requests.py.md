@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/worktree_tool_requests.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,13 @@ the operation-composition facade.
 
 ## Code Commentary
 
+### Logic
+
+`CloseoutCommitMessages` and `OperationControlRequest` expose only code and memory subjects.
+`LandedCommits` records the landed code SHA and optional memory-content SHA; it carries no ledger
+output. Approval, candidate admission, generation checks, and corrective dispositions retain their
+separate typed meanings.
+
 `TaskIdentity`, `TaskBases`, and `StartExecution` describe task creation. `OperationControlRequest`
 describes one public lifecycle-control request and normalizes public JSON-shaped caller, grade, and
 admission values into their canonical models. `CloseoutCommitMessages` remains separate from
@@ -33,7 +40,11 @@ normal start execution, preview-only closeout approval, and no-task-doc finaliza
 `LifecycleControlAction` is imported from the integration control owner rather than re-declared at
 the application boundary.
 
-## Invariants And Boundaries
+### Conventions
+
+Keep request concepts immutable and approval separate from commit text; normalize only the canonical typed public values.
+
+### Invariants And Boundaries
 
 - This module owns request data and input normalization; it performs no Git, filesystem, journal,
   queue, or task-document mutation.
@@ -42,27 +53,48 @@ the application boundary.
   `OperationControlRequest.__post_init__`; unknown compatibility shapes are not inferred.
 - Callers use these exact types and defaults; they must not re-derive equivalent dictionaries.
 
+### Todos
+
+No additional file-local TODO is established by this candidate review.
+
 ## Docs References
 
 No external Domain Documentation source is configured. These are repository-owned application
 contracts.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external domain-documentation source applies. | N/A | N/A |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Task-start concepts and shared defaults have one definition. | `TaskIdentity`; `TaskBases`; `StartExecution`; `DEFAULT_TASK_BASES`; `DEFAULT_START_EXECUTION` | mcp/src/agents_remember/application/worktree_tool_requests.py:15-63 |
-| Lifecycle control reconstructs only canonical typed public values. | `OperationControlRequest` | mcp/src/agents_remember/application/worktree_tool_requests.py:66-95 |
-| Closeout approval, messages, and finalization documents remain separate concepts. | `CloseoutCommitMessages`; `CloseoutApproval`; `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-117; mcp/src/agents_remember/application/worktree_tool_requests.py:120-125; mcp/src/agents_remember/application/worktree_tool_requests.py:132-138 |
-| Start consumes its extracted request type. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:111-208 |
-| Operation control consumes its extracted request type. | `worktree_operation_control_tool` | mcp/src/agents_remember/application/worktree_tools.py:545-565 |
-| Closeout apply consumes its extracted request type. | `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:361-379 |
+| Raw closeout/control messages and landed commits contain only code/memory values. | L68-L107; L111-L115; L119-L128 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Task-start concepts and shared defaults have one definition. | L17-L30; L34-L48; L52-L57; L60-L60; L63-L63 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Lifecycle control reconstructs only canonical typed public values. | L68-L107 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Closeout approval, messages, and finalization documents remain separate concepts. | L111-L115; L132-L136; L144-L149 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Start consumes its extracted request type. | L103-L200 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Operation control consumes its extracted request type. | L534-L554 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Closeout apply consumes its extracted request type. | L353-L368 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed ledger subjects and landed-ledger identities from the documented request concepts. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
+- 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_operation_control_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:539-559. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T01:06:15+00:00: Generated citation repair: `worktree_operation_control_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:503-523. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_start_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:103-200. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_operation_control_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:464-484. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_closeout_apply_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:353-368. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `worktree_start_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:111-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `worktree_operation_control_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:545-565. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `worktree_closeout_apply_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:361-379. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.

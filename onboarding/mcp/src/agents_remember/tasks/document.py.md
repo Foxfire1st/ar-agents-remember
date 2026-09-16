@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
+| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -107,6 +107,15 @@ A `Step` also carries an optional `outcome` (R2): the checkbox-line deliverable,
 `title`. It is `None`-defaulted so `exclude_none` keeps existing step JSON byte-identical; the renderer puts
 `outcome` on the `- [ ]` line (a bare step with neither `outcome` nor substeps renders as just its heading).
 
+Since 260831-LOCR-L33 a `Step` also carries an optional `note` — the same free prose `SubStep`
+already carried, `None`-defaulted for the same byte-identical `exclude_none` reason. **This field is
+a root-cause fix, not an additive nicety**: before it existed the schema had nowhere to put a
+top-level note, so `task_doc`'s `set_step` accepted a caller's `note` and silently discarded it
+regardless of the update key set. Any future "the caller's field vanished" report on a persisted
+model should first ask whether the field is declared here at all. `Step.note` is classified `AUDIT`
+in `document_field_effects.py`; that taxonomy is exhaustive and fails closed, so an unclassified new
+field refuses validation before write.
+
 A leaf doc also carries an optional `codeExamplesNote` (R3): a free string explaining why `codeExamples`
 is empty (e.g. "Drafted at the plan gate."), so a deferred planning slice reads as *deferred* rather than
 as if no examples are needed. It is `None`-defaulted (`exclude_none` keeps existing JSON byte-identical);
@@ -163,6 +172,12 @@ cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/rou
 - **Route-review content addressing is all-or-nothing (R03):** partial digest fields, an invalid
   dependency declaration, or a non-matching record digest all refuse validation, so no record can
   mix hashed and unhashed evidence.
+- **Derived placement resolves on terminal state, not completion (master abandonment):**
+  `derived_leaf_placement` consumes `resolved_refs` — the masters that reached a terminal decision,
+  `Completed` **or** `abandoned` — never a completed-only set. A segment blocked only by an abandoned
+  master is therefore scheduled instead of blocked forever, and callers build that set with
+  `tasks/readiness.py::master_is_terminal`. Abandonment must stop gating dependents, because
+  otherwise dropping a master would be worse than leaving it open.
 
 ### Todos
 
@@ -180,11 +195,13 @@ No Domain Documentation sources are configured for this repository-internal pers
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. | `Step` | mcp/src/agents_remember/tasks/document.py:111-129 |
 | Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
 | The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:344-397 |
 | Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:285-306 |
 | The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-153 |
 | The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:327-334 |
+| Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. | `derived_leaf_placement`; `_latest_unblocked_segment` | mcp/src/agents_remember/tasks/document.py:398-432; mcp/src/agents_remember/tasks/document.py:435-452 |
 
 ## L23 Final Candidate Disposition
 
@@ -210,6 +227,14 @@ exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 ## Update History
 
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: `Step` gained the optional `note` field
+  (`None`-defaulted, `exclude_none`-preserving), recorded as the root cause of the observed
+  loss — the schema had no field for a top-level note, so `set_step` accepted it and silently
+  dropped it whatever the update key set did. Also recorded that `Step.note` is classified `AUDIT`
+  in `document_field_effects.py` and that the taxonomy fails closed for an unclassified field.
+  Verification metadata remains closeout-owned; no acceptance claim.
+
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: `derived_leaf_placement` and `_latest_unblocked_segment` now take `resolved_refs` (terminal masters — `Completed` or `abandoned`) instead of `completed_refs`, and the invariant plus its source row record that a segment blocked only by an abandoned master schedules instead of blocking forever. Content change, not a range repoint.
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `resolve_graph_endpoint` repointed to mcp/src/agents_remember/tasks/document.py:285-306. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 

@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Lifecycle operation integration overview](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -22,20 +22,22 @@ Purely projects one retained lifecycle operation generation for public status co
 
 ### Logic
 
+The operation-specific result projection uses initial-door contradictions and direct-landing evidence, with no ledger byte/tree contradiction branch. Cache state does not replace the record-bound result, suppress a legal control, or recommend manual transaction recovery.
+
 It combines the durable record with door, integration, direct, and organizational evidence, parses timestamps, and emits stable result/control-neutral fields.
 
 Current missing-intent classification distinguishes recovery reuse from safe completion of an already requested cancellation. Missing canonical task intent cannot authorize retry or recovery. The bounded override names `lifecycle-operation-task-intent-unavailable`; terminal generations may retire and republish while active ones require their existing recovery authority or developer decision.
 
-`_operation_cancellable` is record-free: it requires a present contract, no blocking intent flag and an exact `cancel` legal control. It does not reconstruct permission from irreversible-boundary or retained-generation heuristics. `_exit_proven_cancellation_pending` preserves the existing cancellation surface when requested cancellation has proven worker exit. See `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:540-580`.
+`_operation_cancellable` is record-free: it requires a present contract, no blocking intent flag and an exact `cancel` legal control. It does not reconstruct permission from irreversible-boundary or retained-generation heuristics. `_exit_proven_cancellation_pending` preserves the existing cancellation surface when requested cancellation has proven worker exit. See `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:536-576`.
 
-Malformed or non-mapping public result evidence becomes the bounded `incoherent` envelope with expected/observed facts, no legal controls, no recommended action and `cancellable: false`; it is not a reusable operation result or an unhandled assertion. The canonical task intent is exposed only when present. See `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:484-521`.
+Malformed or non-mapping public result evidence becomes the bounded `incoherent` envelope with expected/observed facts, no legal controls, no recommended action and `cancellable: false`; it is not a reusable operation result or an unhandled assertion. The canonical task intent is exposed only when present. See `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:480-517`.
 
 ### Conventions
 
 Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
 the public function or model instead of re-deriving its lower-level state machine.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - Projection is read-only and cannot repair or advance state; ambiguous or stale inputs remain visible rather than being normalized away.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
@@ -49,31 +51,37 @@ None recorded.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No external documentation claim is made.
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-319 |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `_operation_specific_projected_result` projects initial-door and direct-landing evidence without ledger decisions. | L658-L683 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| `_recommended_control` orders legal recommended controls without creating new authority. | L463-L477 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-319 |
-| Missing-intent blocking, the public unavailable override, and cancellability. | `legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:225-270; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:550-580 |
-| Exit-proven cancellation-pending state keeps its cancel surface. | `_exit_proven_cancellation_pending`; `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:540-547; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:596-632 |
-| The wire now carries the canonical intent identity when present. | "def _coherent_operation_projection("; "def _incoherent_operation_projection(" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:175-222; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:484-521 |
+| Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) | L231-L233; L546-L565; L568-L576 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) | L536-L543; L592-L627 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| The wire now carries the canonical intent identity when present. (`_coherent_operation_projection`; `_incoherent_operation_projection`) | L172-L219; L480-L517 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-319 |
+| No additional cross-repository evidence applies. | — | — |
 
 ## CCR-R02@v2 Legacy Intent Projection Barrier
 
@@ -91,17 +99,22 @@ Both envelope builders — the coherent adapter and the incoherent refusal adapt
 record-bound status snapshot (including a wait snapshot) carries the durable meaningful-state
 cursor of the journal revision it projects.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Coherent envelope carries the record cursor. | `_coherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:175-222 |
-| Incoherent refusal envelope carries the record cursor too. | `_incoherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:484-521 |
-| The envelope field being populated. | `meaningfulRevision` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:379-379 |
+| Coherent envelope carries the record cursor. (`_coherent_operation_projection`) | L172-L219 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| Incoherent refusal envelope carries the record cursor too. (`_incoherent_operation_projection`) | L480-L517 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| The envelope field being populated. (`meaningfulRevision`) | L375-L375 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
 
 ## CCR-L42 current candidate
 
 Recommended-control ordering now prefers `resume` before `recover` and `retry` when the public legal controls allow it; the projection remains record-bound and does not authorize a control by recommendation alone.
 
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=975ffa26f4e45b99c4dc250f58e08b287dbee525b38a11dedfcbb7788d30e753. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "def _coherent_operation_projection(", "def _incoherent_operation_projection(", `_exit_proven_cancellation_pending`, `_general_projected_result` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:175-175, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:483-483, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:539-546, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:595-630. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_incoherent_operation_projection` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:483-520. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T00:26:00+02:00 — CCR-L42 citation repair: replaced the ambiguous `taskIntent` anchor with the two unique envelope-builder declarations that carry the field. Claims and verification stamps remain unchanged; no acceptance claim.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Recommended-control ordering now prefers `resume` before `recover` and `retry` when the public legal controls allow it; the projection remains record-bound and does not authorize a control by recommendation alone.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `meaningfulRevision` repointed to mcp/src/agents_remember/models/lifecycles/operation_projection.py:379-379. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.

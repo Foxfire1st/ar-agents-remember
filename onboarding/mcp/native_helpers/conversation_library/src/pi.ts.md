@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/native_helpers/conversation_library/src/pi.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
+| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ live gate and the real open.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | `serveJsonLines`, `buildHandshake`, `pageByOffset`, `windowByOrdinal`, `signatureOf`, `failureFor`, `raiseHelperError` | mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:150-178; mcp/native_helpers/conversation_library/src/protocol.ts:181-188; mcp/native_helpers/conversation_library/src/protocol.ts:239-241; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286; mcp/native_helpers/conversation_library/src/protocol.ts:306-325 |
-| The Python Pi port calls list/read/resolve-resume-target through the locked helper host. | `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/pi.py:72-320 |
+| The Python Pi port calls list/read/resolve-resume-target through the locked helper host. | `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/pi.py:80-328 |
 
 ## Cross-Repo References
 
@@ -86,6 +86,13 @@ participates.
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 1 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.

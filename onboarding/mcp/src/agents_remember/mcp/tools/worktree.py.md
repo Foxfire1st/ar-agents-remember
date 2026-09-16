@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-15T00:51+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -26,14 +26,31 @@ L23 types integration strategy at the payload edge and adds task-addressed lifec
 
 ### Logic
 
+Integration and checkpoint payload builders forward only contract path, integration strategy,
+and `dry_run`. Closeout message objects contain code and memory intent only. These transport
+adapters neither request nor synthesize a ledger commit.
+
 Holds `worktree_start_payload`, `worktree_attach_payload`,
-`worktree_status_payload`, `worktree_closeout_preview_payload`,
+`worktree_pause_payload`, `worktree_status_payload`, `worktree_closeout_preview_payload`,
 `worktree_closeout_apply_payload`, `worktree_integrate_payload`,
+`worktree_checkpoint_landing_payload`, `worktree_record_landing_payload`,
 `worktree_cleanup_payload`, and `worktree_abandon_payload`. Each forwards typed
 arguments to the matching `application.worktree_tools` function and returns
 through `base._tool_payload`. The former `direct_closeout_preview_payload` /
 `direct_closeout_apply_payload` builders were removed with the direct-closeout
 tool surface (issue #62): closeout is worktree-only.
+
+`worktree_checkpoint_landing_payload` (260831-LOCR-L30) forwards `contract_path`, the typed
+`strategy`, and `dry_run` to `worktree_checkpoint_landing_tool`, the
+partial-master landing route; like its integrate sibling it is transport-thin and owns no authority
+or completion decision of its own.
+
+`worktree_pause_payload` (260831-LOCR-L37) is the thinnest builder in the module: it takes only
+`contract_path`, forwards it to `worktree_pause_tool`, and wraps the result through `_tool_payload`
+under the operation name `worktree_pause`. It owns no decision — not whether the master may be
+paused, not what the release writes, and above all not whether anything is published. The
+publication in this same module is `worktree_checkpoint_landing_payload`; the two are separate
+builders for separate tools and neither routes to the other.
 
 `worktree_start_payload` now wraps its application entry point result with
 `summarize_command_logs` (imported from `providers.lifecycle.log_capture`)
@@ -72,6 +89,10 @@ The MCP tools themselves still publish flat signatures; the packing happens one 
 `mcp/registration/worktrees.py` and `mcp/registration/closeout.py`, because a model-typed tool
 parameter would republish the tool as a nested object.
 
+### Conventions
+
+Each payload builder forwards the application contract and wraps its result through the common payload owner, without adding Git or cache interpretation.
+
 ### Invariants And Boundaries
 
 - Transport-thin: worktree/closeout behavior lives in
@@ -85,26 +106,33 @@ parameter would republish the tool as a nested object.
 - Sync payload transport preserves the shared literal types and canonical contract address; it
   cannot select by operation id or supply a compatibility fallback.
 
+### Todos
+
+No additional file-local TODO is established by this candidate review.
+
 ## Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 The source itself and its governing route are sufficient for this thin payload adapter.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Start, sync, attach, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54; mcp/src/agents_remember/mcp/tools/worktree.py:57-74; mcp/src/agents_remember/mcp/tools/worktree.py:77-86; mcp/src/agents_remember/mcp/tools/worktree.py:89-98 |
+| Integration payloads forward contract, strategy, and preview choice without ledger intent. | L141-L156; L159-L174 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | L43-L53; L56-L73; L76-L85; L88-L95; L98-L107 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | L159-L174 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | L88-L95 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned transport adapter.
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
 
 ## Series-Contract Notes
@@ -122,18 +150,36 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54; mcp/src/agents_remember/mcp/tools/worktree.py:57-74; mcp/src/agents_remember/mcp/tools/worktree.py:77-86 |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | L43-L53; L56-L73; L76-L85 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
 
 ## 260831-CCR-L15 Status-Wait Payload Export
 
-The module now imports `LifecycleStatusWaitRequest` /
-`worktree_status_wait_tool` and exports
-`worktree_status_wait_payload`, which wraps the read-only wait application tool into the
-standard `_tool_payload` envelope for the public `worktree_status_wait` tool.
+**Superseded.** The `worktree_status_wait_payload` builder and the `worktree_status_wait` tool it
+served were removed; this module exports no wait payload today and the name appears nowhere in the
+worktree payload surface. Recorded so the L15 paragraph above is not read as current.
 
 ## Update History
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed the ledger-message parameter from the documented integration payload forwarding. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+
+- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded `worktree_pause_payload` — one `contract_path`
+  forwarded to `worktree_pause_tool` under the `worktree_pause` operation name, owning no decision,
+  and explicitly not the publication that `worktree_checkpoint_landing_payload` performs. Re-derived
+  the shifted payload-builder ranges (`worktree_start_payload` 43-55, `worktree_sync_payload` 56-75,
+  `worktree_attach_payload` 76-87, `worktree_pause_payload` 88-95, `worktree_status_payload` 98-109,
+  `worktree_checkpoint_landing_payload` 161-179). Reference health: the
+  `260831-CCR-L15 Status-Wait Payload Export` section is marked superseded — the builder and its tool
+  are gone. Verification metadata remains closeout-owned; no acceptance claim.
+
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing_payload` to
+  the builder inventory and its reference row, and re-derived the payload-builder ranges shifted by
+  it. Transport plumbing only; the entry point that owns the checkpoint decision is
+  `application/worktree_tools.py::worktree_checkpoint_landing_tool`. Verification metadata remains
+  closeout-owned; no acceptance claim.
+
+- 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: repointed the payload-builder reference rows to the extents those builders occupy now (`worktree_start_payload` 41-51, `worktree_sync_payload` 54-71, `worktree_attach_payload` 74-83, `worktree_status_payload` 86-95) after `worktree_record_landing_payload` was added to the module by this leaf; prose unchanged. Verification metadata remains closeout-owned.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=b2a91233ad8b0711876374fe62d6dd92c829fffa1b0e268c60fd8e35fb43199c; verification metadata remains unchanged because commit-owned realization is pending.
 

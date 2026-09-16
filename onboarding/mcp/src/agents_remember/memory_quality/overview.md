@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
-| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00|
+| lastUpdated | 2026-09-15T00:56:17+00:00 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -21,6 +22,10 @@ groups integrity checks that compare onboarding to source state and style
 checks that enforce repository memory conventions.
 
 ## Hot Path Summary
+
+`memory_candidate_pair.py` binds repository/worktree identity, branches, bases, onboarding and contract facts without requiring a cached ledger file or hashing its path into authority. Citation provenance snapshots read substantive memory content while excluding only root `memory.md`; actual source/candidate drift remains detectable.
+
+## Detailed Route Context
 
 `check.py` is the public package-level runner. It can execute style-only checks
 without repository context, or combine drift integrity and style checks when an
@@ -99,6 +104,43 @@ dependency on the closeout plane.
   `reportPath` and `actionableCount` with `.get(...)`, not `[...]`: those keys accompany a
   `checked` status only, which the guard above the return has established but the type cannot
   carry across.
+- **A preview that plans an operation does not enforce it, and the two surfaces must be maintained
+  as one (260831-LOCR-L34).** Every diagnostic on this route has a non-mutating preview and a
+  mutating apply — `citation_fix`'s dry run and apply, `memory_quality_check`'s report vs the
+  closeout-owned refresh, the citation document transaction's prospective digest vs its write. A plan
+  is read as a promise by a human deciding what to do next and by an agent composing the next call, so
+  a preview that answers "this would succeed" while its apply refuses is a defect in the plan, not
+  merely in the apply. The inventory of known instances (and the deliberate exceptions) is maintained
+  on the `worktrees/overview.md` route; this route's own previews are subject to the same rule.
+
+## Historical milestone context: The Preview/Apply Parity Invariant (260831-LOCR-L34)
+
+This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.
+
+The invariant was established while repairing the worktree checkpoint route, and it is recorded here as
+well as on the `worktrees/overview.md` route because **the memory-quality surfaces are the ones a bulk
+mechanical migration will touch next**. `citation_fix`, the citation document transaction, and the
+onboarding refresh plan each present a preview and an apply that must agree about eligibility; the
+route-observed instances below are the evidence that this agreement is not self-maintaining:
+
+- five instances where a preview promised what its apply refused were **fixed** in the leaf that found
+  them (series closeout's `would-closeout` on a partial master — the original, and the one that misled
+  a human into writing a false note; the checkpoint route's eligibility; the `integration-ref-race`
+  payload's hardcoded `nextTool`; the checkpoint's ledger projection; and the ordinary integration dry
+  run's unevaluated projection);
+- two were **reported and deliberately not fixed** (`worktree_start`, whose dry run skips two binding
+  checks because that is a reservation compare-and-swap and not safely separable; and the
+  `memory_carryover_plan` / `memory_carryover_apply` pair, where the apply additionally enforces
+  `require_ordinary_repository_checkout` and `ensure_clean`);
+- one **adjacent shape** is recorded: `worktree_abandon` / `worktree_cleanup` evaluate their preflight
+  on the dry run and report blockers, but return `ok=true, state="would-abandon"` / `"would-cleanup"`
+  where the apply returns `ok=false, state="abandon-blocked"` / `"blocked"`, and `worktree_cleanup`'s
+  summary does not name the blockers at all. That is a verdict/state-string divergence, not a missing
+  evaluation, and turning it into a refusal would be a public state-vocabulary change.
+
+Every one of the six was found by **exercising an operation rather than by reading it**. That is the
+practical rule for this route: when a preview and an apply are two implementations of one decision,
+exercise the pair, and prefer a single shared eligibility evaluation over two agreeing copies.
 
 ## Repo-Internal References
 
@@ -111,6 +153,12 @@ dependency on the closeout plane.
 | The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126 |
+
+Current working-candidate evidence for this route:
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Memory candidate identity excludes consumer cache availability. | L48-L129 | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
 
 ## Historical 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
@@ -288,6 +336,35 @@ separate. The current closeout path does not invoke it; a readiness result is no
 
 Exact unique anchor repair still uses the shared source-index oracle. In prepared private C `b34f4a59562b76a3e2413027468e0f699117b36f`, the fixer accepts or declines a projection before staging its edit. `citations/documents/transaction.py` owns full-document rendering, grouped generated history, last-read original-byte comparison, source-cell/projection bindings and the identity of the held source-index lease. A conflict refuses the complete affected document batch; independent documents may still publish. Scoped passing normalization uses the same document boundary without inventing a unique-move projection.
 
+Since 260831-LOCR-L33 a tree-wide retarget is admitted only when **continuity is proved**: no cited
+file may still exist, the tree-wide sighting must be unique, and the anchor must have existed in a
+cited file at the document's `lastVerifiedCommitHash` carrying the same extent KIND there. The fixer
+resolves that per document through `repair.continuity_for` and `Walk.continuity`;
+`migration.place` consults the same authority through `Pass.continuity`, so both relocation routes
+answer from one owner. A cited file that survives is the claim's own evidence, so an anchor that left
+it is a stale range rather than a move. Three new decline codes name the refusals
+(`anchor_left_live_file`, `anchor_continuity_unproven`, `anchor_kind_changed`).
+
+**Why the first design was wrong, recorded here because the same mistake is available elsewhere:** an
+earlier guard refused only while a cited file *survived*, so **deleting** the cited file fell through
+to the same tree-wide lookup and reproduced the identical wrong binding while reporting success. File
+deletion does not establish that the replacement evidence supports the claim. The lesson is the rule:
+"provenance-based matching fails open when provenance is unavailable" is an argument for *refusing*,
+not for a cheaper guard.
+
+The review surface for a changed-but-current claim was corrected too. A range written by the
+mechanical projection passes the currency test by construction — the projection picked the
+declaration it wrote — so when the document's generated `Update History` bullet names the claim's
+anchors, `claim_reopen` now says the citation is **not shown to be current** and asks whether the
+construct at the new location supports the claim's own words. That item is **enforced**, not
+report-only: its severity is `"error" if bullets else "warning"`. A projected range is unverified
+evidence — nothing in the tree records whether anyone reviewed the projection, and the check cannot
+prove a review happened — so it must force an explicit disposition rather than sit in the
+`surfacedFindings` bucket a curator can read past. The cost is deliberate and total: every
+mechanically projected range now blocks until somebody disposes of it. The ordinary evidence-change
+item keeps its `warning`, and nothing demotes this item (`_demote_preexisting_provenance_debt` moves
+only `code == INVALID`); with no git view every finding stays enforced.
+
 LF and CRLF bytes remain lossless. A preview returns a validated prospective final digest while reporting zero completed writes. If an admitted scoped document disappears after a detected conflict, `findingsRemaining` is null and the existing refusal keeps the result red; the checker does not claim an empty successful scan. Initially missing input still refuses before source acquisition.
 
 The application retains write-scope authorization and the source index retains frozen source authority. Neither supplies a memory-file mutex. Atomic replacement avoids partial files but cannot exclude an uncooperative writer between the final read and replacement. Gate 5 and private-candidate delivery remain pending.
@@ -296,7 +373,11 @@ The application retains write-scope authorization and the source index retains f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:336-381 |
+| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:354-399 |
+| A relocation proves continuity through the established provenance path before a tree-wide match is admitted. | `Continuity`; `continuity_for`; `_retarget` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:159-240; mcp/src/agents_remember/memory_quality/style/citations/repair.py:243-253; mcp/src/agents_remember/memory_quality/style/citations/repair.py:356-387 |
+| The walk resolves one document's continuity and feeds it to the planner. | `Walk`; `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:201-220; mcp/src/agents_remember/memory_quality/style/citations/fixer.py:269-325 |
+| The migration pass consults the same continuity authority before a cross-file relocation, although its continuity branches are unreachable from that entry point by construction. | `Pass`; `place` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:63-87; mcp/src/agents_remember/memory_quality/style/citations/migration.py:415-461 |
+| A mechanically projected range is ENFORCED at `error` severity with the support question instead of asserting currency; the ordinary evidence-change item stays `warning`. | `_projected_review_message`; `surfaced_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:315-339; mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:341-386 |
 | Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
 
 ## Gate-5 Registry And Execution Boundary
@@ -346,7 +427,7 @@ checks, missing-onboarding/index observations and curator coherence against a pr
 view no longer lives here: commit `deb032fb` moved it to
 [worktrees/integration/closeout/prepared_certification.py](../worktrees/integration/closeout/prepared_certification.py.md)
 because a pre-closeout quality service must not depend on the closeout plane. The closeout plane may
-depend on this route; not the reverse. Red results remain evidence and cannot authorize M/L output
+depend on this route; not the reverse. Red results remain evidence and cannot authorize memory-content output
 preparation.
 
 ## Memory-Candidate Roots Relocated In
@@ -364,6 +445,36 @@ dependency.
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
 ## Update History
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented cache-independent candidate pair identity and citation content snapshots. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:05+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
+  as both an invariant bullet and a section, naming the five fixed instances, the two
+  reported-not-fixed ones (`worktree_start`'s non-separable reservation CAS; the memory-carryover
+  plan/apply pair) and the `worktree_abandon`/`worktree_cleanup` verdict/state-string adjacent shape,
+  with the observation that every instance was found by exercising an operation rather than by reading
+  it. Recorded why this route carries it: its own `citation_fix` / citation-transaction /
+  onboarding-refresh previews are the surfaces a planned bulk mechanical migration will touch next.
+  The full inventory remains owned by the `worktrees/overview.md` route. Content change, not a range
+  repoint; verification metadata remains closeout-owned and no acceptance claim is made.
+- 2026-09-13T02:05+02:00 — 260831-LOCR-L33 route curation (delta after publish): the projected-range
+  review item is now **enforced** (`severity="error" if bullets else "warning"`) rather than
+  report-only, so a mechanically projected range blocks until it is disposed of; recorded the
+  rationale (unverified evidence must force a disposition), the cost (every projected range blocks),
+  that the ordinary evidence-change item keeps its `warning`, that only `code == INVALID` is ever
+  demoted to pre-existing debt, and that with no git view every finding stays enforced. Also recorded
+  that the migration pass's continuity branches are unreachable from its own entry point by
+  construction. **Supersedes the severity "still warning / undecided policy call" statement in the
+  entry below.** Source-evidence rows updated.
+- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 route curation: recorded the continuity-based relocation
+  rule (no live cited file, a unique tree-wide sighting, and a proved same-kind origin at the
+  document's verification stamp), that the fixer and the migration pass consult one authority
+  (`Walk.continuity` / `Pass.continuity` behind `repair.continuity_for`), the three new refusal codes,
+  why the first design failed open on a *deleted* cited file, and the corrected review surface for a
+  mechanically projected range (the support question instead of a currency assertion, severity still
+  `warning` as an undecided policy call). Source-evidence rows added. Route ownership and publication
+  semantics are otherwise unchanged.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: moved the `prepared_certification.py` sidecar out to `worktrees/integration/closeout/` (commit `deb032fb`) and moved the `future_code_candidate.py`, `memory_candidate_pair.py` and `memory_census_scope.py` sidecars in from the closeout route (commits `0b63d6fc`, `be517eec`), repairing the dead `prepared_certification.py.md` link and recording the new candidate-root ownership. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored the readiness projection
   row to the current `_attach_final_full_catalog` declaration; certification ownership and route

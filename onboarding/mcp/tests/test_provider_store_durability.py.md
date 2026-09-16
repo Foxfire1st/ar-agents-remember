@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No record is lost when an append races a compaction | `test_no_record_is_lost_when_an_append_races_a_compaction` | mcp/tests/test_provider_store_durability.py:45-52 |
+| No record is lost when an append races a compaction | `test_no_record_is_lost_when_an_append_races_a_compaction` | mcp/tests/test_provider_store_durability.py:44-52 |
 
 ## Cross-Repo References
 
@@ -70,6 +70,13 @@ This card establishes test behavior, not a separate cross-repository protocol or
 
 ## Update History
 
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
+  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 1 further
+  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`). 9 further claim(s) were declined because the solution they name no longer
+  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
+  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
+  current position. Verification metadata remains closeout-owned.
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
 
@@ -163,7 +170,7 @@ This card establishes test behavior, not a separate cross-repository protocol or
   (`STRESS_PROFILE`'s 4 × 50) across four runs and 0 at four times the volume. **Recorded the
   case-list separation as a contract rather than as tidiness:** the provider adapters joined the
   shared instrument, but `CASES` stays the six control-plane stores and `PROVIDER_CASES` is its own
-  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:595-595), so widening the instrument cannot silently widen
+  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:453-453), so widening the instrument cannot silently widen
   what `test_controlplane_store_durability.py` asserts — and `ProviderCaseRegistryTests`
   cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:817-826)
   is the assertion that fails if that stops holding. **Recorded the tolerance argument

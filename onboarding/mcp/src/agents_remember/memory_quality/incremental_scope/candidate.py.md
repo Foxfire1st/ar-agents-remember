@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -33,19 +33,19 @@ cit:([`ContractScopeAuthority`], mcp/src/agents_remember/memory_quality/incremen
 `candidate-memory-root-missing`), resolves the pair, captures the future code candidate tree and the
 memory candidate tree (a Git index staged from the memory worktree under
 `reports/.scope-candidate-*/`), observes the task pair, and derives code/memory `GitTreeDelta`s
-cit:([`observe_scope_candidate`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-99).
+cit:([`observe_scope_candidate`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-95).
 `observe_contract_task_pair` uses the closeout door as the immutable task baseline: it requires a
 typed `TaskIntentIdentity`, exact contract/task/base-commit identity, and matching candidate trees,
 then builds the baseline `CanonicalTaskObservation` from the door generation, schema version,
-topology fingerprint, and intent cit:([`observe_contract_task_pair`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:102-149).
+topology fingerprint, and intent cit:([`observe_contract_task_pair`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:98-111).
 `observe_contract_task` walks the canonical task topology (leaf → master → sprint), derives the R01
 topology fingerprint from the authored execution graph, reads R02 `task_intent_identity`, and
 re-verifies the JSON/Markdown task sources with the CAS source observer before emitting the
-candidate observation cit:([`observe_contract_task`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:152-210).
+candidate observation cit:([`observe_contract_task`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:114-172).
 `observe_git_tree_delta` derives roots solely from `git diff-tree -r --name-status -z
 --find-renames` between the base tree and candidate tree; `_parse_name_status` splits NUL records
 and maps rename endpoints plus add/modify/delete changes with exact blobs
-cit:([`observe_git_tree_delta`, `_parse_name_status`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:213-296).
+cit:([`observe_git_tree_delta`, `_parse_name_status`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:175-198; mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:201-258).
 
 ### Conventions
 
@@ -80,12 +80,16 @@ helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pair identity and roots come from the canonical memory candidate pair owner. | `resolve_memory_candidate_pair`, `MemoryCandidatePairIdentity` | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:48-144 |
-| Code candidate tree comes from the memory-quality future-code capture. | `capture_future_code_candidate` | mcp/src/agents_remember/memory_quality/future_code_candidate.py:25-54 |
-| Intent identity and topology fingerprint come from R02/R01 owners. | `task_intent_identity`, `candidate_task_topology_fingerprint` | mcp/src/agents_remember/tasks/task_intent.py:180-212; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:190-211 |
-| Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. | `observe_scope_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-99 |
+| Pair identity and roots come from the canonical memory candidate pair owner. | `resolve_memory_candidate_pair`, "return MemoryCandidatePairIdentity(" | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:48-144 |
+| Code candidate tree comes from the memory-quality future-code capture. | `capture_future_code_candidate` | mcp/src/agents_remember/memory_quality/future_code_candidate.py:25-52 |
+| Intent identity and topology fingerprint come from R02/R01 owners. | `task_intent_identity`, `candidate_task_topology_fingerprint` | mcp/src/agents_remember/tasks/task_intent.py:180-193; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:190-209 |
+| Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. | `observe_scope_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-95 |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The pair-owner row anchored `MemoryCandidatePairIdentity`, which resolves three times in `memory_candidate_pair.py` (import, return annotation, and construction), so the claim could not be compared with its provenance. That anchor is now the exact constructor call text `return MemoryCandidatePairIdentity(`, which occurs once inside the cited extent; `resolve_memory_candidate_pair`, the cited range, and the claim's wording are unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `observe_contract_task_pair` repointed to mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:98-111. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `observe_contract_task` repointed to mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:114-172. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `observe_git_tree_delta`; `_parse_name_status` repointed to mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:175-198; mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:201-258. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the pair-resolver and future-code-capture citations to their relocated `memory_quality/` paths (commits `0b63d6fc`). Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
 

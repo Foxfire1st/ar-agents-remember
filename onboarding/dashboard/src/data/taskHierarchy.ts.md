@@ -5,9 +5,9 @@
 | repository             | agents-remember                           |
 | path                   | `dashboard/src/data/taskHierarchy.ts`     |
 | doc_type               | `file-level-onboarding`                   |
-| lastUpdated | 2026-08-20T04:48+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-14T19:00+02:00 |
+| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -113,15 +113,15 @@ navigation aligned with the master task reader.
 | --- | --- | --- |
 | The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys. | "export function findParentTaskMatch" | dashboard/src/data/taskHierarchy.ts:43-43 |
 | The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows. | "export function taskDocHierarchyLabel", "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357; dashboard/src/data/taskHierarchy.ts:53-53 |
-| The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer. | "export function buildRailModel" | dashboard/src/data/railModel.ts:397-397 |
-| The task document mirror provides the required orchestrates list these helpers read. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:648-682 |
-| The task-doc master reference is distinct from a series row and may carry linkedLifecycleId. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:793-801 |
-| ParentTaskMatch uses the series-row model, which can carry createdAt. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
+| The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer. | "export function buildRailModel" | dashboard/src/data/railModel.ts:408-408 |
+| The task document mirror provides the required orchestrates list these helpers read. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:647-647 |
+| The task-doc master reference is distinct from a series row and may carry linkedLifecycleId. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:792-792 |
+| ParentTaskMatch uses the series-row model, which can carry createdAt. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:560-560 |
 | `orderedByCreation` is exported here and shared with `DetailPanel`'s `seriesAsMasterDoc`, which replaced the panel's byte-identical private copy. | "export function taskDocParentKey", "export const DetailPanel" | dashboard/src/data/taskHierarchy.ts:58-58; dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 | Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering. | "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
 | DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
-| Focused tests cover BY REPO hierarchy nesting/indentation and numbered leaf labels; the enclosure-opened leaf parent link is pinned in the DetailPanel suite. | "limits sidebar rows to root docs" | dashboard/src/panels/lifecycle-list/admission.test.tsx:19-19 |
-| The enclosure-opened leaf's parent-task link case. | "renders the gate respond drawer with the full request packet" | dashboard/src/panels/detail-panel/gateRespond.test.tsx:8-8 |
+| Focused tests cover BY REPO hierarchy nesting/indentation and numbered leaf labels; the enclosure-opened leaf parent link is pinned in the DetailPanel suite. | "limits sidebar rows to root docs" | dashboard/src/panels/lifecycle-list/admission.test.tsx:19-151 |
+| The enclosure-opened leaf's parent-task link case. | "renders the gate respond drawer with the full request packet" | dashboard/src/panels/detail-panel/gateRespond.test.tsx:8-16 |
 
 ## Cross-Repo References
 
@@ -132,6 +132,13 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is involved. | — | — |
 
 ## Update History
+
+- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
+  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
+  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
+  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
+  back at its current position. Verification metadata remains closeout-owned.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "export function buildRailModel" repointed to dashboard/src/data/railModel.ts:408-408. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 

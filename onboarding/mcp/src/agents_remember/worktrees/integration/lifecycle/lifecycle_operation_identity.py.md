@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-09-15T00:53 |
+| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
+| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
@@ -20,24 +20,46 @@ Derives a stable fingerprint of the lifecycle cells that change only when a sequ
 
 ## Code Commentary
 
+### Conventions
+
+Accepted input, exact Git facts, and typed owner results stay distinct from disposable projections.
+
+### Todos
+
+None recorded for the ledger-retirement boundary.
+
 ### Logic
+
+The contract-state fingerprint includes the real code and memory content outputs for closeout and integration, together with bases, status, and cleanup. Retired ledger commit fields are absent, and consumer-cache changes cannot alter sequential-operation identity.
 
 `operation_state_fingerprint` serializes the contract's base commits, closeout/integration status, candidate commits, integrated commits, and cleanup state into a sorted JSON payload and SHA-256 hashes it.
 
-### Invariants And Boundaries
+#### Invariants And Boundaries
 
 - Only lifecycle cells that advance monotonically with a sequential operation are hashed.
 - The fingerprint is consumed by organizational completion repair to reject a contract that no longer matches its accepted operation state.
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+The following current source boundaries establish the ledger-retirement behavior.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Stable fingerprint over advancing lifecycle cells. | `operation_state_fingerprint` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py:11-28 |
+| `operation_state_fingerprint` hashes advancing code/memory contract cells without ledger commit identity. | L16-L31 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
+| `closeout_contract_sha256` hashes the exact canonical contract-publication text. | L34-L38 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
+| `operation_key` derives operation identity from canonical contract path, kind, and fingerprint. | L41-L43 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
 
-## Documentation References
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Stable fingerprint over advancing lifecycle cells. (`operation_state_fingerprint`) | L16-L31 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
 
-No configured domain-documentation or cross-repository source applies to this file.
+## Docs References
+
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external source applies. | — | — |
 
 ## 260821-CLIVE-L1 Canonical Publication Identity
 
@@ -47,7 +69,18 @@ Closeout identity hashes normalized durable input and candidate provenance. Fina
 
 `operation_key` is owned here: SHA-256 over the canonical resolved contract path, operation kind and fingerprint separated by NUL bytes. Callers import this identity directly; the coordinator no longer owns its implementation.
 
+## Cross-Repo References
+
+No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No additional cross-repository evidence applies. | — | — |
+
 ## Update History
+
+- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=b6941df0add58b6ca0e0887b4bd2e929c26ab44daa3761a8105ab847aad0b2bd. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
+
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=31d7cc8d61facb7cbb9f199c437c99b12ae2780e0791a4e32921d01ac8dd90b3; verification metadata remains unchanged because commit-owned realization is pending.
 
@@ -60,10 +93,3 @@ Closeout identity hashes normalized durable input and candidate provenance. Fina
 
 
 - 2026-08-17T12:09+02:00 — 260815-DAG-L5: created onboarding for the lifecycle-operation state fingerprint.
-## Docs References
-
-No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
-
-## Cross-Repo References
-
-This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
