@@ -115,7 +115,7 @@ No external or domain documentation is configured for this memory root
 | The identity-resolution outcomes the duplicate and override cases pin. | `resolve_instructions`; `_require_one_identity` | mcp/src/agents_remember/models/role_capsules/resolution.py:135-191; mcp/src/agents_remember/models/role_capsules/resolution.py:221-261 |
 | The tool-policy narrowing the tool cases pin. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
 | The outcome shape whose exactly-one-of rule the two outcome cases pin. | `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:46-88 |
-| The admission cases live in the sibling module, not here. | `test_every_shipped_role_compiles_to_the_routing_its_own_role_file_declares` | mcp/tests/test_role_capsule_admission.py:471-520 |
+| The admission cases live in the sibling module, not here. | `test_every_shipped_role_compiles_to_the_routing_its_own_role_file_declares` | mcp/tests/test_role_capsule_admission.py:469-518 |
 | The corpus test this leaf was required to preserve; it was not edited and still passes. | `ROLE_ORDER`; `OPERATION_KEYS` | mcp/tests/test_role_instruction_corpus.py:32-42; mcp/tests/test_role_instruction_corpus.py:56-64 |
 
 The falsifiability probe that exercised these cases (seeds M01–M10, `all 10 seeded mutations were
