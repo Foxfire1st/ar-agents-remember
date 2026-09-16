@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastUpdated | 2026-09-16T17:45+02:00 |
+| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -658,10 +658,47 @@ behaviour evidence about the boundary and not evidence that any tool is wired to
 | The unit node that drives the conforming merge end to end through the public operations. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
 | The published-file freeze and install contract the merge's last step reuses rather than duplicating. | `freeze_closed_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
 
+## 260915-KS-L6 The Portable Export/Import Joins As A Fourth Seam
+
+The route gained one module, `application/knowledge_export.py`, and still no new authority. It is the **fourth**
+composition seam over the experimental knowledge substrate, beside the single candidate write
+(`knowledge.py`), the candidate-lifecycle/publication seam (`knowledge_snapshot.py`) and the guarded merge
+(`knowledge_merge.py`), and it exists for the same reason as the three before it: exporting and importing a
+whole dataset is a different composed operation from any of them, and keeping them apart leaves each entry
+point readable as one intent.
+
+- **It hands over and returns unchanged.** `export_knowledge_artifact` and `import_knowledge_artifact` delegate
+  to `export_knowledge_dataset` / `import_knowledge_dataset` and return the storage layer's typed result as it
+  is, so a caller branches on `state`/`refusal` rather than on an application-level wrapper.
+- **Two halves are read-only and produce no database at all.** `validate_knowledge_artifact` answers whether an
+  artifact is a complete export of a supported generation and what logical dataset it holds, and
+  `canonical_body_of_artifact` returns that dataset's canonical body — **after validating it**, because a body
+  is what a comparison is made of and a refused artifact has no identity to compare.
+- **A refusal is a value on both halves**, including the file read: `read_knowledge_artifact` returns
+  `selected_input_unavailable` for a path it cannot read and `invalid_export` for bytes that are not UTF-8,
+  and nothing on this boundary raises an `OSError` or a `UnicodeDecodeError` for a caller to catch.
+- **Two non-claims are carried where a reader of the artifact looks for them**: an export is **not** a filtered
+  read response and **not** a Markdown projection, and an import creates **no Git commit** and restores **no
+  Git ancestry**. Capturing an artifact into a memory tree, or committing a restored database, stays with the
+  existing candidate-tree and closeout owner.
+
+The wiring boundary did **not** move: like its three siblings, this module has **no non-test importer in
+`mcp/src`**, so its evidence is behaviour evidence about the boundary and not evidence that any tool is wired
+to it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The seam's five entry points and the non-claims it carries in its own docstring. | `export_knowledge_artifact`; `import_knowledge_artifact`; `validate_knowledge_artifact`; `read_knowledge_artifact`; `canonical_body_of_artifact` | mcp/src/agents_remember/application/knowledge_export.py:60-63; mcp/src/agents_remember/application/knowledge_export.py:66-74; mcp/src/agents_remember/application/knowledge_export.py:77-96; mcp/src/agents_remember/application/knowledge_export.py:99-109; mcp/src/agents_remember/application/knowledge_export.py:112-126 |
+| The defect the layer below makes unreachable. | `KnowledgeArtifactSeamDefect` | mcp/src/agents_remember/application/knowledge_export.py:129-130 |
+| The storage operations this seam delegates to. | `export_knowledge_dataset`; `import_knowledge_dataset`; `read_artifact` | mcp/src/agents_remember/memory/knowledge/export_import.py:133-192; mcp/src/agents_remember/memory/knowledge/export_import.py:195-244; mcp/src/agents_remember/memory/knowledge/export_import.py:257-290 |
+| The vocabulary this seam takes and returns unchanged. | `ExportRequest`; `ExportResult`; `ImportRequest`; `ImportResult`; `PortableValidation` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:136-176; mcp/src/agents_remember/models/knowledge/portable.py:66-98 |
+| The nodes that drive the conforming round trip and the filtered-response refusal through the public seam. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_a_filtered_read_response_cannot_validate_as_a_complete_export" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427; mcp/tests/test_knowledge_portable_roundtrip.py:667-696 |
+
 ## Update History
 
 - **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T00:56:17+00:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
 
+- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the fourth composition seam — `application/knowledge_export.py` — and why the portable export/import boundary is its own module rather than more entry points on any sibling: the four seams now divide the knowledge surface into the write, the lifecycle-and-publication, the merge, and the portable artifact, so each entry point stays readable as one intent. The card records the five entry points (two pure delegations, the read-only validation that produces **no database at all**, the value-or-refusal file reader whose two failures carry different codes, and the body that is handed out only for an artifact the validator accepted), the two non-claims the ruled intent made explicit (an export is not a filtered read response or a Markdown projection; an import creates no Git commit and restores no Git ancestry), and the wiring boundary that did **not** move: like its three siblings, this module has no non-test importer in `mcp/src`. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the third composition seam — `application/knowledge_merge.py` — and why the guarded common-base merge is its own module rather than more entry points on either sibling: the three seams now divide the knowledge surface into the write, the lifecycle-and-publication, and the merge, so each entry point stays readable as one intent. The card records the resolve-then-merge pair returning the storage layer's typed values unchanged, the carried absence of any compatibility verdict, and the non-claim the ruled design made explicit: **the adapter is callable rather than wired** — no Git merge driver, attribute or commit exists on this path, and activation is an explicit later change. The wiring boundary is re-recorded because it did not move: like its two siblings, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the second composition seam — `application/knowledge_snapshot.py` — and why the lifecycle/publication half is its own module rather than more entry points on `application/knowledge.py`: each entry point stays readable as one intent. The card records the derived write destination (so write and publish cannot name different files), the two publication entry points sharing one install contract, and the read-side gate being exposed rather than decided. **Two non-claims are stated rather than left to inference**: the seam creates no Git commit (capturing a published file into a memory tree is the existing candidate-tree owner's operation) and no IAS landing is reachable from it. The wiring boundary is re-recorded because it did not move: like `application/knowledge.py`, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.

@@ -5,25 +5,25 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastUpdated | 2026-09-16T17:45+02:00 |
+| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
 
-Working candidate verification: source inspected at 2026-09-16T13:45 +02:00 against the uncommitted KS-L5 candidate.
+Working candidate verification: source inspected at 2026-09-16T17:45 +02:00 against the uncommitted KS-L6 candidate.
 The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
 exact consumers. The catalog currently contains **48 artifact records and nine executable replacement
-contracts** (measured by `load_evidence_inventory` on the uncommitted KS-L5 candidate); those
-declarations are not records that a test ran.
+contracts** (re-counted on the uncommitted KS-L6 candidate: 48 `[[artifact]]` and 9 `[[contract]]` blocks);
+those declarations are not records that a test ran.
 
 ## Code Commentary
 
@@ -149,6 +149,26 @@ check is measured against:
   module is not in the certifying collection path, and because the boundary module could not go in the unit lane:
   the unit population sits exactly at its declared ceiling after this leaf.
 
+**260915-KS-L6 added no contract and no artifact; it declared two new consumers in three existing lists.**  The
+portable export/import leaf's two suites consume shared support that already existed — the branching knowledge
+fixture (its authored dataset), the snapshot-lifecycle harness (the closed published destination a fresh install is
+refused against) and the merge case harness (the dataset that came *through* L5's merge, which the roundtrip module
+exports and restores). Declaring them is what the validator compares against the source, so leaving them out would
+have refused the whole catalog for **any** input, and it is also the honest statement that this leaf needed no new
+harness of its own:
+
+- the `knowledge-identity-branching-fixture` row's `consumers` list gained
+  `test_knowledge_portable_boundaries.py` and `test_knowledge_portable_roundtrip.py`;
+- the `knowledge-snapshot-lifecycle-cases` row gained `test_knowledge_portable_boundaries.py` — **only the boundary
+  module**, because the roundtrip module does not import the snapshot harness;
+- the `common-base-merge-cases` row gained both portable modules.
+
+Three consumer-list insertions move every row below them, so the five knowledge contract blocks now resolve at
+`:1031-1059` (branching fixture), `:1061-1084` (graph case support), `:1086-1108` (candidate batch), `:1110-1133`
+(snapshot lifecycle) and `:1135-1159` (common-base merge). The declared population is **unchanged at 48 artifacts
+and 9 contracts**. The two consumer modules were registered in `test-evidence-lanes.toml` in the same change — both
+in `integration` (rows 140-141) — because the unit population sits exactly at its declared ceiling.
+
 ### Conventions
 
 The catalog is a policy/configuration input and is not counted as an artifact inside itself.
@@ -186,14 +206,17 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The schema version and the large-fixture discovery threshold remain explicit. | `schema_version`; `large_fixture_bytes` | mcp/tests/evidence-lifecycle.toml:1-2 |
-| The four retained non-knowledge contracts and their evidence nodes. | `ar-durable-store/1.0-process-race-evidence`; `conversation-control-public-route-contract`; `next-supported-pi-rpc-activity-recording`; `synthetic-test-evidence-candidate` | mcp/tests/evidence-lifecycle.toml:4-22 |
+| The four retained knowledge contracts and their evidence nodes. | `ar-durable-store/1.0-process-race-evidence`; `conversation-control-public-route-contract`; `next-supported-pi-rpc-activity-recording`; `synthetic-test-evidence-candidate` | mcp/tests/evidence-lifecycle.toml:4-22 |
 | Closeout fixture support names the retained code/memory transaction replacement. | `closeout_fixture_test_support.py` | mcp/tests/evidence-lifecycle.toml:264-281 |
 | Closeout-input support declares the cleanup-guidance consumer. | `closeout_input_test_support.py` | mcp/tests/evidence-lifecycle.toml:282-308 |
-| The knowledge branching fixture's contract and artifact row, whose consumer list 260915-KS-L2 corrected to the five source-observed importers. | `knowledge-identity-branching-fixture` | mcp/tests/evidence-lifecycle.toml:1031-1057 |
-| The knowledge graph case-support contract and its matching artifact row, added by 260915-KS-L2 with three declared consumers. | `knowledge-graph-case-support` | mcp/tests/evidence-lifecycle.toml:1059-1082 |
-| The candidate-batch case-harness contract and its artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node. | `candidate-batch-case-harness` | mcp/tests/evidence-lifecycle.toml:1084-1106 |
-| **The snapshot-lifecycle contract and artifact row this leaf added, with an exact two-consumer list and a real evidence node.** | `knowledge-snapshot-lifecycle-cases` | mcp/tests/evidence-lifecycle.toml:1108-1130 |
-| **The common-base-merge contract and artifact row this leaf added, with an exact two-consumer list and a real evidence node.** | `common-base-merge-cases` | mcp/tests/evidence-lifecycle.toml:1132-1151 |
+| **The knowledge branching fixture's contract and artifact row, whose consumer list 260915-KS-L2 corrected to the five source-observed importers and 260915-KS-L6 extended to the two portable modules.** | `knowledge-identity-branching-fixture` | mcp/tests/evidence-lifecycle.toml:1031-1059 |
+| The knowledge graph case-support contract and its matching artifact row, added by 260915-KS-L2 with three declared consumers. | `knowledge-graph-case-support` | mcp/tests/evidence-lifecycle.toml:1061-1084 |
+| The candidate-batch case-harness contract and its artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node. | `candidate-batch-case-harness` | mcp/tests/evidence-lifecycle.toml:1086-1108 |
+| **The snapshot-lifecycle contract and artifact row, with an exact consumer list that 260915-KS-L6 extended to the portable boundary module.** | `knowledge-snapshot-lifecycle-cases` | mcp/tests/evidence-lifecycle.toml:1110-1133 |
+| **The common-base-merge contract and artifact row, whose exact consumer list 260915-KS-L6 extended to both portable modules.** | `common-base-merge-cases` | mcp/tests/evidence-lifecycle.toml:1135-1159 |
+| **The two consumer declarations 260915-KS-L6 added to the branching-fixture row.** | "mcp/tests/test_knowledge_portable_boundaries.py"; "mcp/tests/test_knowledge_portable_roundtrip.py" | mcp/tests/evidence-lifecycle.toml:1057-1058 |
+| **The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.** | "mcp/tests/test_knowledge_portable_boundaries.py" | mcp/tests/evidence-lifecycle.toml:1131-1131 |
+| **The two consumer declarations 260915-KS-L6 added to the merge-case row.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" | mcp/tests/evidence-lifecycle.toml:1157-1158 |
 | **The node that makes that contract's claim real: both sides' disjoint edits survive into a closed, published candidate that carries no verdict.** | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
 | **The node that makes that contract's closedness claim real: a WAL-resident batch is published whole while a main-file copy is not.** | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 | The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered. | `unit-regression` | mcp/tests/test-evidence-lanes.toml:5-73 |
@@ -214,6 +237,7 @@ No additional configured external or sibling-repository evidence is claimed.
 
 - **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T01:02; `lastVerifiedCommitHash` `88784fb26aab810c8a284f1e73e6f9bd727a5963`; `lastVerifiedCommitDate` 2026-09-16T08:31:51+02:00.
 
+- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): measured the catalog rather than carrying the L5 numbers — **48 artifacts and 9 contracts**, unchanged by this leaf — and recorded what this leaf actually did to it: **no new contract and no new artifact**, only two new consumer declarations across three existing lists (both portable modules in the branching-fixture row and in the `common-base-merge-cases` row, and the **boundary module only** in the `knowledge-snapshot-lifecycle-cases` row, because the roundtrip module does not import that harness). The card states why that is a contract obligation rather than bookkeeping: the validator derives each artifact's real test importers and refuses a declared set that differs, so leaving them out would refuse the catalog for any input. It also records that the three insertions moved the knowledge blocks — now `:1031-1059`, `:1061-1084`, `:1086-1108`, `:1110-1133` and `:1135-1159` — and re-derived the two long-stale block ranges this card still carried from 2026-09-13 (`closeout_input_test_support.py` `282-341` → `282-308`, `curator_coherence_test_support.py` `342-401` → `329-390`, both re-measured against the working file rather than shifted). Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): measured the catalog rather than carrying the L4 numbers — **48 artifacts and 9 contracts** (`load_evidence_inventory` on the frozen uncommitted candidate, and `evidence-lifecycle: PASS (48 governed artifacts)` from the public validator) — and recorded the one contract/artifact pair this leaf added: `common-base-merge-cases` for `mcp/tests/merge_case_test_support.py`, with an explicit artifact row, an exact two-consumer list, and an evidence node whose subject is precisely what the harness exists to make measurable (both sides' own work surviving into a **closed, published** candidate with no verdict attached). The card also records that the two consumer modules were registered in the same change — the unit module in `unit-regression` and the boundary module in `integration`, the latter because the unit population sits exactly at its declared ceiling — and that the snapshot contract's own ranges above were re-derived after this leaf's insertion moved them. Verification metadata remains closeout-owned.
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): measured the catalog rather than carrying the L3 numbers — **47 artifacts and 8 contracts** (counted on the frozen uncommitted candidate) — and recorded the one contract/artifact pair this leaf added: `knowledge-snapshot-lifecycle-cases` for `mcp/tests/snapshot_lifecycle_test_support.py`, with an exact two-consumer list, an explicit artifact row, and a chosen evidence node
   (`test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not`) whose subject is precisely what the harness exists to make measurable. The card also records that the two consumer modules were registered in the `unit-regression` lane in the same change. **This pass also completed the superseded table migration for this document**: both remaining `Finding | Citations | Source Path` tables were rewritten to `Finding | Anchor | Source` with `path:start-end` citations resolving to the working source, which clears the three pre-existing `citation_table_columns_wrong` findings this card carried. Verification metadata remains closeout-owned.

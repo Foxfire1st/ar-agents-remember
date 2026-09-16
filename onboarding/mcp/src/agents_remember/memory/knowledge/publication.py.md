@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c`|
-| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| lastUpdated | 2026-09-16T17:45+02:00 |
+| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26`|
+| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -56,6 +56,12 @@ It re-reads the stage and refuses `snapshot_incomplete` if the stage is gone or 
 and verified** (its physical digest is re-checked against `PreparedKnowledgeSnapshot.file_digest`), then takes the
 destination lock and installs.
 
+`destination_observation(destination_path)` is the public **admission** reading, and it is deliberately not the
+authority for a replace. It answers what one destination holds right now, without writing or locking it, so an
+operation can refuse an occupied or unexpected destination *before* it does expensive work and can name what it
+found. Publication takes its own reading again under the destination lock, and **that locked reading is the one
+that decides** — a dataset that moved between the two is caught there.
+
 `_install` is where the destination contract lives:
 
 - `_observe_destination` reads the destination's identity **without writing it**; an unreadable destination is a
@@ -94,7 +100,11 @@ next publication take an unheld lock.
   what is on disk.
 - **`no_change` is a retained-bytes outcome**, decided on the **logical** digest rather than on bytes or mtime.
 - **The destination lock is a live `flock` resource beside the destination.** It is never deleted, and it is the
-  one file a captured memory tree will contain besides the snapshot itself.
+  one file a captured memory tree will contain besides the snapshot itself — **because the destination's own
+  directory is a published location, not a workbench**: the portable import stages its database in a private
+  temporary directory and installs it by atomic replace, so the destination directory holds the published file
+  and this lock and nothing else. Whether a memory-tree *capture* of a destination directory enumerates files or
+  the directory is **L4's open question Q1**, carried forward rather than answered here.
 - **A published snapshot carries knowledge only while the exact code/memory inputs in the candidate receipt and
   the caller's resolved context live.** The publication moves a database, not a binding: the receipt's inputs and
   the consumer's context are what make the published bytes meaningful at a point in time.
@@ -125,16 +135,18 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The composed publication entry point, including its identity re-check and lock ordering. | `publish_candidate_snapshot` | mcp/src/agents_remember/memory/knowledge/publication.py:66-111 |
 | The reusable install half and its stage-digest re-check. | `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
-| The install: observe without writing, compare exactly, retain on `no_change`, replace, then read back. | `_install`; `_observe_destination`; `_matches_expected` | mcp/src/agents_remember/memory/knowledge/publication.py:176-212; mcp/src/agents_remember/memory/knowledge/publication.py:260-268; mcp/src/agents_remember/memory/knowledge/publication.py:271-276 |
+| The install: observe without writing, compare exactly, retain on `no_change`, replace, then read back. | `_install`; `_observe_destination`; `_matches_expected` | mcp/src/agents_remember/memory/knowledge/publication.py:176-212; mcp/src/agents_remember/memory/knowledge/publication.py:273-281; mcp/src/agents_remember/memory/knowledge/publication.py:284-289 |
+| **The public admission reading this leaf added, which never decides a replace — the locked reading does.** | `destination_observation`; `_DestinationObservation` | mcp/src/agents_remember/memory/knowledge/publication.py:260-270; mcp/src/agents_remember/memory/knowledge/publication.py:252-257 |
 | The readback that decides between `published`, `publication_failed` and the honest durability code. | `_readback` | mcp/src/agents_remember/memory/knowledge/publication.py:215-249 |
-| The destination-stale refusal and the candidate-moved refusal, each naming both digests. | `_stale_destination`; `_stale_candidate_refusal` | mcp/src/agents_remember/memory/knowledge/publication.py:279-293; mcp/src/agents_remember/memory/knowledge/publication.py:296-314 |
-| The candidate lock that protects the working database, released before the destination lock is taken. | `_freeze_under_candidate_lock`; `exclusive_candidate_lock` | mcp/src/agents_remember/memory/knowledge/publication.py:323-339; mcp/src/agents_remember/memory/knowledge/store.py:487-506 |
-| The private stage directory, its cleanup and the suppression that protects the caller's refusal. | `_private_stage_directory`; `_discard_stage_directory` | mcp/src/agents_remember/memory/knowledge/publication.py:342-350; mcp/src/agents_remember/memory/knowledge/publication.py:353-362 |
-| The hidden lock resource that lands `.<published-name>.lock` beside the destination. | `_publication_lock_resource`; `exclusive_file_lock` | mcp/src/agents_remember/memory/knowledge/publication.py:365-373; mcp/src/agents_remember/kernel/file_lock.py:87-116 |
-| The freeze procedure behind the stage, and the stage shape it returns. | `freeze_closed_snapshot`; `discard_stage`; `PreparedKnowledgeSnapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:206-209; mcp/src/agents_remember/models/knowledge/snapshot.py:224-236 |
+| The destination-stale refusal and the candidate-moved refusal, each naming both digests. | `_stale_destination`; `_stale_candidate_refusal` | mcp/src/agents_remember/memory/knowledge/publication.py:292-306; mcp/src/agents_remember/memory/knowledge/publication.py:309-327 |
+| The candidate lock that protects the working database, released before the destination lock is taken. | `_freeze_under_candidate_lock`; `exclusive_candidate_lock` | mcp/src/agents_remember/memory/knowledge/publication.py:336-352; mcp/src/agents_remember/memory/knowledge/store.py:487-506 |
+| The private stage directory, its cleanup and the suppression that protects the caller's refusal. | `_private_stage_directory`; `_discard_stage_directory` | mcp/src/agents_remember/memory/knowledge/publication.py:355-363; mcp/src/agents_remember/memory/knowledge/publication.py:366-375 |
+| The hidden lock resource that lands `.<published-name>.lock` beside the destination. | `_publication_lock_resource`; `exclusive_file_lock` | mcp/src/agents_remember/memory/knowledge/publication.py:378-386; mcp/src/agents_remember/kernel/file_lock.py:87-116 |
+| The freeze procedure behind the stage, and the stage shape it returns. | `freeze_closed_snapshot`; `discard_stage`; `PreparedKnowledgeSnapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:92-137; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:234-237; mcp/src/agents_remember/models/knowledge/snapshot.py:224-236 |
 | The atomic replace whose directory fsync records the new name, not the bytes under it. | `atomic_replace`; `fsync_file` | mcp/src/agents_remember/kernel/atomic_write.py:78-92; mcp/src/agents_remember/kernel/atomic_write.py:95-105 |
-| The read-only dataset identity every comparison in this module uses. | `dataset_identity`; `logical_digest` | mcp/src/agents_remember/memory/knowledge/logical.py:118-138; mcp/src/agents_remember/memory/knowledge/logical.py:82-85 |
+| The read-only dataset identity every comparison in this module uses. | `dataset_identity`; `logical_digest` | mcp/src/agents_remember/memory/knowledge/logical.py:141-161; mcp/src/agents_remember/memory/knowledge/logical.py:82-85 |
 | The publication outcome vocabulary and the destination request. | `SnapshotPublicationResult`; `SnapshotDestinationRequest`; `PublishSnapshotRequest` | mcp/src/agents_remember/models/knowledge/snapshot.py:259-293; mcp/src/agents_remember/models/knowledge/snapshot.py:239-249; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256 |
+| **The second caller of the admission reading: the portable import's destination check, which runs before any staging work.** | `_destination_refusal` | mcp/src/agents_remember/memory/knowledge/export_import.py:336-361 |
 | The nodes that protect the publication's failure behaviour. | "test_a_failed_replacement_leaves_the_prior_destination_byte_identical"; "test_a_publication_whose_readback_fails_reports_the_destination_it_actually_left"; "test_a_logical_no_op_retains_the_published_bytes" | mcp/tests/test_knowledge_snapshot_publication.py:112-141; mcp/tests/test_knowledge_snapshot_publication.py:143-176; mcp/tests/test_knowledge_snapshot_publication.py:178-202 |
 
 ## Cross-Repo References
@@ -147,4 +159,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T17:45+02:00 — 260915-KS-L06 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): **recorded the public admission reading this leaf added and the destination directory's real contents.** `destination_observation(destination_path)` exposes the existing observe-without-writing read so the portable import can refuse an occupied or unexpected destination **before** any staging work; the card states the rule that keeps it honest — it is an *admission* reading and never the authority for a replace, because publication takes its own reading again under the destination lock and that locked reading is the one that decides. It also corrects the destination-directory account: the directory holds the published database **and** this module's `.lock` resource, and the reason, which is that a destination directory is a published location rather than a workbench (the import stages privately and installs by atomic replace) — with **L4's open capture question Q1 carried forward rather than answered here**. Citation ranges that the portable import's introduction moved or that this leaf's own read re-derived were corrected, including two rows the L5 pass left on pre-L6 values. Verification metadata: lastUpdated advanced, commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new publication module. It records replace-or-nothing as a refusal invariant, the logical-digest `no_change` that deliberately retains existing bytes, the two locks that are never nested, the hidden `.<published-name>.lock` resource beside the destination (and that deleting it is **not** the fix, because it is the live `flock`), the durability-versus-install distinction between `publication_failed` and `publication_durability_unconfirmed`, and the two carried statements a consumer needs: a published snapshot carries knowledge only while the receipt's exact inputs and the caller's resolved context live, and `authorization_ref` is carried but never examined here. The disclosed `atomic_write` nuance (directory fsync after `os.replace`) is cross-referenced to its own card rather than restated as a property of this module. Verification metadata remains empty until closeout stamps the code commit.

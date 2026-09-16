@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastUpdated | 2026-09-16T17:45+02:00 |
+| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -923,8 +923,54 @@ the second names no row.
 | The node that asserts the published outcome carries no verdict field and reports the coverage record. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
 | The boundary node that holds the conflict record to the engine's own row identity. | "test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:165-184 |
 
+## 260915-KS-L6 The Portable Vocabulary, And The Boundary It Draws Around External Input
+
+The knowledge sub-route gained its **fifteenth module**, `models/knowledge/portable.py`, and
+`models/knowledge/result.py` gained two operation names and one refusal code. The portable vocabulary is the
+wire shape of the artifact contract, and three splits carry it — each exists because collapsing it would make a
+statement the code cannot support:
+
+- **A request versus an admitted identity.** `ExportRequest.expected_identity` is **required**, because an export
+  is addressed at a dataset rather than at whatever a path currently holds; storage re-reads it before encoding.
+- **A validated artifact versus a published dataset.** `PortableValidation` reports what was *checked* — with
+  `row_counts` over every canonical table **including the empty ones**, because "present and empty" is the fact
+  that separates a complete export from one that dropped a collection — while `ImportResult` reports what now
+  *exists*. Neither can carry a verdict and neither can grant acceptance: a row whose `state_at_origin` says
+  `accepted` crosses as that stored value and nothing more.
+- **A staging fact versus a destination fact.** An import can validate perfectly and still not publish, so
+  `ImportResult.verified_identity` is carried **independently of `state`**, and the model refuses to construct
+  unless the verified identity and the destination's identity agree on the logical digest.
+
+`ImportRequest.expected_destination` is a **closed two-mode choice** in effect — the exact identity the caller
+observed, or `None` for "expected to be absent" — and there is no third mode: an occupied destination nobody
+admitted is `destination_occupied` rather than replaced, and a named-but-absent destination is `destination_stale`
+rather than a silent fresh install. `expected_repository_id` is optional and only narrows.
+
+**The one vocabulary addition is the narrowest member of the whole refusal union.** `invalid_export` exists
+because the portable artifact is the only input on any of these paths that can be **malformed as a document** —
+an unknown envelope field, a missing manifest key, a repeated JSON key, a row whose fields are not the declared
+columns in declared order, a value the declared type cannot hold, or a text that is not the canonical rendering of
+the document it holds — which is this route's own recorded rule ("a code is a vocabulary decision, not a
+raise-site convenience") at its sharpest. `unsupported_schema`, `duplicate_identity`, `invalid_reference` and
+`destination_occupied` are shared with the paths where the failure is the same fact. The two operations are
+separate for the same reason the merge pair is: an export answers "what is this dataset, logically" and an import
+answers "may this artifact become a dataset here".
+
+**One convention is worth stating here because it is a deliberate non-change:** `models/knowledge/__init__.py`
+does **not** re-export the portable (or merge) vocabulary, so a consumer reaches it as
+`agents_remember.models.knowledge.portable` — the shape the merge vocabulary already follows.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The portable sub-route module, its three splits and its deliberately absent verdict. | `ExportRequest`; `ImportRequest`; `PortableValidation`; `ExportResult`; `ImportResult` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:66-98; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:136-176 |
+| The one code and the two operations this leaf added to the shared vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:72-120; mcp/src/agents_remember/models/knowledge/result.py:36-69 |
+| The five factories that produce the portable boundary's codes. | `invalid_export_refusal`; `non_canonical_export_refusal`; `unsupported_schema_refusal`; `destination_occupied_refusal`; `destination_absent_refusal`; `import_validation_failed_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:26-50; mcp/src/agents_remember/memory/knowledge/export_refusals.py:53-75; mcp/src/agents_remember/memory/knowledge/export_refusals.py:78-102; mcp/src/agents_remember/memory/knowledge/export_refusals.py:105-126; mcp/src/agents_remember/memory/knowledge/export_refusals.py:129-148; mcp/src/agents_remember/memory/knowledge/export_refusals.py:151-172 |
+| The encoder and reader this vocabulary describes. | `parse_export`; `validate_export`; `encode_export` | mcp/src/agents_remember/memory/knowledge/export_portable.py:436-489; mcp/src/agents_remember/memory/knowledge/export_portable.py:606-651; mcp/src/agents_remember/memory/knowledge/export_portable.py:255-280 |
+| The nodes that hold the round trip and the no-promotion rule to this vocabulary. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_accepted_origin_state_crosses_as_data_and_is_not_promoted" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427; mcp/tests/test_knowledge_portable_roundtrip.py:428-443 |
+
 ## Update History
 
+- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the knowledge sub-route's fifteenth module and the **portable wire vocabulary** it serves, plus the two operations and one code `models/knowledge/result.py` grew. The card states the three splits the module is built around — a required admitted identity on the export request, a validation report versus a published result neither of which can carry a verdict, and a staging fact versus a destination fact with the verified identity carried independently of the state — the closed two-mode destination admission with no third mode, and the `row_counts` over all ten tables that separates a complete export from one that dropped a collection. It records the one vocabulary addition as the **narrowest** member of the refusal union and why (the portable artifact is the only input that can be malformed *as a document*), and the deliberate non-change that this package's `__init__.py` does not re-export the vocabulary — a consumer names `models.knowledge.portable`, as the handoff tells the next leaves to. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the knowledge sub-route's fourteenth module and the **structural merge vocabulary** it serves — the explicit input that carries the identity a caller admitted, the closed two-member base claim, the coverage facts that separate "changed" from "carried an operation", the two-shape conflict record and the outcome. The card states the absence the module is built around (no field can carry a verdict, and `structurally_merged` is the entire claim), the two shapes a consumer must not flatten (`duplicate_identity` fires even on byte-identical payloads; `delete_reference_conflict` names no row because the engine supplies none and reports no count), and the two operations plus twelve refusal codes `models/knowledge/result.py` grew. The pre-existing citation rows in this card were re-derived after the L5 insertions moved every anchor below them. Verification metadata remains closeout-owned.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the knowledge sub-route's thirteenth module and the **local-working-object vocabulary** it serves — the candidate layout and its sealed receipt, the closed snapshot stage carrying both identities, the publication request/result pair, the publication-state measurement, and the two-member disposal union. Three absences are stated as the contract: the receipt carries **no dataset digest** (so a caller cannot hand-write the identity its publication will be compared against), the closed disposal union has no "looked disposable" member, and `authorization_ref` is **carried rather than examined** because permissibility is this layer's question and the approval chain is the caller's. The card also records the six operations and seven refusal codes `models/knowledge/result.py` grew, and restates the `no_change` distinction where the codes are actually declared — two result states are reachable, the refusal code still has no producer. Verification metadata remains closeout-owned.

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l05` uncommitted source; base `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastUpdated | 2026-09-16T17:45+02:00 |
+| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1281,7 +1281,62 @@ Two rules this leaf's evidence teaches, and both are about what a survivor means
 | The lane rows the two modules were registered in, and the budget statement they sit under. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:5-73; mcp/tests/test-evidence-lanes.toml:138-139 |
 | The two guard docstrings that state their own call site's unreachability. | `require_applied_changes`; `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152 |
 
+## 260915-KS-L6 The Portable Suites, Split By The 1200-Line Limit
+
+This route gained **two** test modules, both registered in the **integration** lane (rows 140-141), and the split
+between them is a **file-size decision** rather than a classification preference: the roundtrip module reached
+1155 lines and one file may not exceed the repository's 1200-line hard limit, so the boundary population is a
+second module that **imports the first module's helpers** rather than copying them. There is still exactly one
+definition of what an artifact, a refusal or a published row count is, and the two modules are one evidence set.
+
+`mcp/tests/test_knowledge_portable_roundtrip.py` (18 nodes) holds the artifact contract and the export/import
+population. Its cases are **consolidated by protected property** rather than split one per assertion — the
+population has a declared ceiling and each node names the one failure it exists to catch:
+
+- **Completeness** — one node mutates an artifact through thirteen defects (a dropped collection, a truncated
+  table, an unknown table, a value the declared type cannot hold, a reordered or renamed column, a repeated key)
+  and asserts the check that catches each; the filtered-response pair keeps it honest, because a projection is
+  refused *because it is not the format* and a complete projection of the source tables does validate.
+- **Refusal without partial acceptance** — the destination's file digest and the destination directory's contents
+  are measured after the fact, so "nothing was published" is a measurement rather than a promise.
+- **Preservation** — every stored ID, provenance value and relation endpoint is held to the round trip, and the
+  `state_at_origin` **value** crosses while nothing promotes it.
+- Two nodes make the contract's own claims measurable: the artifact this encoder produces is the one this reader
+  accepts (so the round trip is a proof rather than a coincidence), and a dataset that came **through L5's merge**
+  is exportable and restorable — the composition the next leaves consume.
+
+`mcp/tests/test_knowledge_portable_boundaries.py` (6 nodes) holds the five properties the ordinary path cannot
+fail from outside: the freeze's closure measured on the **published destination**; the canonical form of the whole
+document (every non-canonical spelling axis, `canonical_document`'s assertions, and **all seven header keys
+respelled with a different JSON type** — each refused, each passing the whole-document gate, which is what proves
+the refusal is the header check's); the **staged sealed-aggregate read** with every retained row of both revision
+tables tampered and the destination held byte-identical; destination admission before any staging work; and the
+typed read of an artifact that is not readable UTF-8 text.
+
+Two rules this leaf's evidence teaches, and both are about what a survivor means:
+
+- **A reachable guard with no killing node is reported, not claimed.** The header's namespace-binding check
+  (`export_portable.py:911`) is reachable and verdict-changing — removing it makes a byte-canonical artifact whose
+  header names another namespace validate and install — and no node in the leaf's population kills it. It is
+  written up as an **observation for L9** with its mutation and reachability proof rather than presented as
+  coverage.
+- **A non-canonical spelling is a different document, and the cases say which check refused.** The canonical node
+  asserts the refusal's identity (`invalid_export`, `record_id == "<canonical document>"`) as well as the verdict,
+  and the leaf's final round extended these cases rather than adding a case, so the population stayed at 255
+  integration cases.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The roundtrip module's three falsified properties, the helper set and the two claims made measurable. | "test_the_artifact_is_one_deterministic_document_of_the_declared_shape"; `artifact_of`; `envelope_of`; `import_into` | mcp/tests/test_knowledge_portable_roundtrip.py:277-301; mcp/tests/test_knowledge_portable_roundtrip.py:110-112; mcp/tests/test_knowledge_portable_roundtrip.py:114-116; mcp/tests/test_knowledge_portable_roundtrip.py:142-146 |
+| **The node the leaf's guarantee rests on: the canonical form is the only form the reader accepts, including every header type.** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts" | mcp/tests/test_knowledge_portable_boundaries.py:132-258 |
+| **The staged sealed-aggregate read, with every retained revision row tampered.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:482-532 |
+| The import's close/verify step and the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:533-570; mcp/tests/test_knowledge_portable_boundaries.py:88-131 |
+| The destination-admission and typed-read boundary nodes. | "test_destination_admission_refuses_before_any_staging_work"; "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" | mcp/tests/test_knowledge_portable_boundaries.py:571-633; mcp/tests/test_knowledge_portable_boundaries.py:634-685 |
+| **The guard this leaf reports rather than claims: reachable, verdict-changing, no killing node.** | `bound` | mcp/src/agents_remember/memory/knowledge/export_portable.py:893-920 |
+| The two lane rows this leaf registered, and the three consumer lists it extended. | `integration`; `knowledge-identity-branching-fixture`; `knowledge-snapshot-lifecycle-cases`; `common-base-merge-cases` | mcp/tests/test-evidence-lanes.toml:140-141; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159 |
+
 ## Update History
+- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the portable half's pair of suites and the reason they are split — **the 1200-line hard limit**, not classification, so the boundary module imports the roundtrip module's helpers and the two are one evidence set with one definition of an artifact and a refusal. The paragraph states what each node protects (the consolidated completeness/refusal-inertness/preservation groups, the deterministic-artifact node, the recomposition through L5's merge, and the five boundary properties including the whole-document canonical form with all seven header types and the staged sealed-aggregate read), and it records the rule this leaf's evidence teaches rather than leaving it to be rediscovered: **a reachable guard with no killing node is reported, not claimed** — the header namespace-binding check at `export_portable.py:911` is written up as an observation for **L9** with its mutation and reachability proof. It also records that the final fix round extended these cases rather than adding one, so the integration population stayed at 255, and the three consumer lists the two modules were added to. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the merge half's own pair of suites and the reason they are split — the unit population sits exactly at its declared ceiling after this leaf, so the merge's whole contract is five unit cases and every scenario needing its own three-commit Git world went to the integration lane. The paragraph states what each node is the mutation target for, and it records the two rules this leaf's evidence teaches rather than leaving them to be rediscovered: **a broken mutation is not a killed guard** (the first matrix scored a `NameError` as a kill; the harness now refuses to score a crash, and the re-derived headline is 17 of 21 killed with four named non-experiments) and **a guard whose call site is unreachable is described as one** rather than presented as coverage. It also records the new governed harness (`common-base-merge-cases`, exact two-consumer list) and, as its load-bearing design fact, that its `shape` callback runs before the commits are built. Verification metadata remains closeout-owned.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the candidate and snapshot half's own pairs — the batch suite plus its command-union sibling and the standalone label guard, and the new candidate-lifecycle and publication suites sharing one registered harness (`knowledge-snapshot-lifecycle-cases`, exact two-consumer list). The paragraph states why that harness's evidence node is `test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not`: the claim being protected is that a published snapshot is *closed*, and only a comparison against a bare main-file copy measures it. It also names the lifecycle suite's two distinctive nodes — the live-reader state the removed WAL/SHM peer unlink destroyed, and a real child interpreter that exits with an uncommitted write transaction open — and re-states that a module missing from either registry fails the load rather than passing quietly. Verification metadata remains closeout-owned.

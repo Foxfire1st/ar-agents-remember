@@ -5,15 +5,42 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastUpdated | 2026-09-16T17:45+02:00 |
+| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [Tests overview](overview.md)
+
+## 260915-KS-L6 Lane Rows (Declared) — **the current account, which supersedes every per-lane number below**
+
+The KS-L6 change set adds **two** modules and their rows in the same change — `test_knowledge_portable_roundtrip.py`
+and `test_knowledge_portable_boundaries.py` — both in the **integration** lane at
+`mcp/tests/test-evidence-lanes.toml:140-141`. The lane is not a preference here, it is forced: the unit population
+sits exactly at its declared `unit_case_budget` of 1000, so a unit row would refuse collection, and both modules are
+boundary executors anyway — they create real SQLite databases under `tmp_path`, publish and re-open closed files, and
+measure destination bytes and directory contents.
+
+Measured against the working manifest, the population is closed in both directions at **221 modules on disk and 221
+declared entries**, with the current brackets: unit-regression **127** at rows 6-132, public-contract 2 at 135-136,
+integration **63** at 139-201, architecture-fitness 16 at 204-219 and provider-conformance 13 at 222-234, with
+stress-durability (236) and migration (238) empty. The two portable modules sort into the alphabetical integration
+run, which is why they are rows 140-141 rather than at the end of the lane; every later integration row moved by two.
+
+Their registration is the same precondition it has been at every KS leaf: an unregistered `test_*.py` module makes
+`load_lane_manifest` refuse the repository, which `evidence_lanes.pytest_collection_modifyitems` turns into a
+collection error. Classification only — never execution or acceptance evidence.
+
+**The declared budget pair moved for this leaf, and the values earlier entries of this card record are stale.**
+`integration_case_budget` is now **300** at `pyproject.toml:186` (raised by this leaf's fix round from 250, with the
+doctrine-required dated tradeoff entry above the pair stating each added case's distinct protection, the case count,
+the support size and the measured runtime); `unit_case_budget` stays **1000** at `pyproject.toml:185` and no KS leaf
+may raise it, because the real unit population is 1003 under the warning override this host needs — the pre-existing
+defect recorded as **D-7** and routed to L9. Every integration count that includes the four anyio-affected modules
+says so; the lane itself is **255 cases + 41 subtests** and it runs green with no `--ignore`.
 
 ## Purpose
 
@@ -559,9 +586,9 @@ Registration is classification only; it is never execution or acceptance evidenc
 - Evidence class is separate from whether a test invokes a real external producer.
 - Current source membership governs; old final-Codex executor/status-wait/deleted-edge lists do not.
 - Host development pytest is supported; only explicit certification requires Dagger admission.
-- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1000, `integration_case_budget` 250 — `pyproject.toml:149-150`; the 150 and 200 values in earlier entries of this card are stale). A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
+- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1000 at `pyproject.toml:185`, `integration_case_budget` **300** at `pyproject.toml:186`; the 150, 200 and 250 values in earlier entries of this card are stale). A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
 - Full suites and whole-candidate review occur at master completion, not once for every lane or leaf.
-- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` 250 (root `pyproject.toml:149-150`), enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
+- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` **300** (root `pyproject.toml:185-186`), enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
 
 ## Docs References
 
@@ -598,7 +625,9 @@ The exact source declarations below establish the current behavior; this invento
 | The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (row 79 now, after the L4 insertions) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:79-79 |
 | **The L4 snapshot pair is registered in the unit-regression lane by the same change set that created them (rows 69 and 75)** — both modules are hermetic: temporary directories under `tmp_path`, in-process APSW databases driven through the real admitted destination and the real publication lock, and a child interpreter used only as a crash probe, with no integration marker, no repository working tree and no network. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:69-69; mcp/tests/test-evidence-lanes.toml:75-75 |
 | **The knowledge block's current membership across all four KS leaves**, whose insertion order is why the rows are not contiguous by leaf. | "mcp/tests/test_knowledge_store.py" | mcp/tests/test-evidence-lanes.toml:69-76 |
-| The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value. | "integration_case_budget = 250" | pyproject.toml:150-150 |
+| **The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value — raised to 300 by this leaf's fix round.** | "integration_case_budget = 300" | pyproject.toml:186-186 |
+| **The unit ceiling that stays unchanged and must not be raised, cited as the pinned key and value.** | "unit_case_budget = 1000" | pyproject.toml:185-185 |
+| **The two lane rows this leaf registered in the same change, both in `integration` because the unit population sits exactly at its declared ceiling.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" | mcp/tests/test-evidence-lanes.toml:140-141 |
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
 | Retained unit-regression membership, including the R28 deferred-work, canonical terminal-evidence mapping and L23 registration-order proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-128 |
 | The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 191 now, after the L4, seal-removal, L5, L7, L8, L3, L01 and L17 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:193-193 |
@@ -631,6 +660,7 @@ No separate cross-repository authority is established by this file.
 ## Update History
 
 - **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T15:02+02:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00.
+- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): registered the change set's two new knowledge modules and re-measured the whole manifest rather than carrying the L5 numbers — **221 declarations and 221 modules on disk**, with the current brackets unit-regression 127 at rows 6-132, public-contract 2 at 135-136, integration **63** at 139-201, architecture-fitness 16 at 204-219 and provider-conformance 13 at 222-234. Both additions are `test_knowledge_portable_roundtrip.py` and `test_knowledge_portable_boundaries.py` in the **integration** lane (rows 140-141), and the lane is forced rather than preferred: the unit population sits exactly at its declared 1000-case ceiling, and both modules are boundary executors (real databases under `tmp_path`, published closed files, destination bytes and directory contents measured). **The declared budget pair is corrected in this card**: `integration_case_budget` is now **300** at `pyproject.toml:186` (raised by this leaf's fix round with the doctrine-required dated tradeoff above the pair) and `unit_case_budget` stays **1000** at `pyproject.toml:185`; every earlier entry's `250` at `pyproject.toml:150` is stale, including the reference row that carried it — which is also the one pre-existing `citation_claim_reopened` finding this card owned, so that finding is cleared by re-pointing the claim at the key's current line and value. The lane-section layout is unchanged but a new leading section carries the current account so a reader does not have to reconstruct it from eight historical as-of records. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): registered the change set's two new knowledge modules and re-measured the whole manifest rather than carrying the L4 numbers — **219 declarations and 219 modules on disk**, with the current brackets unit-regression 127 at rows 6-133, public-contract 2 at 135-136, integration 61 at 139-200, architecture-fitness 16 at 202-218 and provider-conformance 13 at 220-233. The two additions are `test_knowledge_guarded_merge.py` in **unit-regression** (row 73) and `test_knowledge_guarded_merge_boundaries.py` in **integration** (row 139); the split is a budget decision, because the unit population sits exactly at its declared 1000-case ceiling after this leaf and each boundary scenario needs its own three-commit Git world. Every entry-row citation in this card below the insertions was re-derived against the new bytes. Verification metadata remains closeout-owned.
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): registered the change set's two new knowledge modules in the **unit-regression** lane — `test_knowledge_candidate_workspace.py` at row 69 and `test_knowledge_snapshot_publication.py` at row 75 — and re-measured the manifest rather than carrying the L3 numbers: **217 modules on disk and 217 declared entries** with no undeclared module and no stale row, 126 unit-regression (6-131), 2 public-contract (134-135), 60 integration (138-197), 16 architecture-fitness (200-215), 13 provider-conformance (218-230), and stress-durability (232) and migration (234) empty. Both modules are hermetic — `tmp_path` directories, in-process APSW databases driven through the real admitted destination and the real publication lock, and a child interpreter used only as a crash probe — so the default unit lane is each one's behaviour-preserving classification. Their insertion inside the alphabetical knowledge block is why the rows are 69 and 75 rather than adjacent, and it is also why every entry-row citation below moved by two: **this pass re-derived all of them against the working manifest** (the `unit-regression`, `integration`, `architecture-fitness`, `provider-conformance`, `stress-durability` and `migration` row citations plus the twelve per-leaf row citations), which clears the pre-existing `citation_anchor_absent_from_range` findings this card carried. Classification only, so lane membership is not execution or acceptance evidence; verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): registered the change set's three new knowledge modules in the **unit-regression** lane — `test_candidate_batch_commands.py` and `test_candidate_batch_transaction.py` at entry rows 18-19, `test_knowledge_label_operations.py` at row 70; all three are hermetic and driven through the real admitted destination, no integration marker, no repository or subprocess — and re-measured the manifest rather than carrying the L2 numbers: 215 modules on disk and 215 declared entries with no undeclared module and no stale row, 124 unit-regression (5-130), 2 public-contract (131-134), 62 integration (135-196), 18 architecture-fitness (197-214), 13 provider-conformance (215-229), stress-durability and migration empty. The five earlier knowledge modules are now at rows 69-74 and were re-cited. Recorded again why the rows are load-bearing rather than bookkeeping: an unregistered module makes `load_lane_manifest` refuse the repository, which raises at collection. Classification only, so lane membership is not execution or acceptance evidence; verification metadata remains closeout-owned.
