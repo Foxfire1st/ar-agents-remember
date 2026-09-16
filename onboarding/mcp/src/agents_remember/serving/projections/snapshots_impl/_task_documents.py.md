@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404` |
-| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 | governingOverview      | `../overview.md`                                       |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ text alters the body revision and open readers refetch.
 | The repository's own stated read-versus-enforcement split this change follows. | "The read is deliberately the TOLERANT one" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:121-123 |
 | Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes. | `_Doc`; `Step.note` | mcp/src/agents_remember/tasks/document.py:73-76; mcp/src/agents_remember/tasks/document.py:111-121 |
 | The durable-data writer takes an already-validated document, so it can write no unknown key. | `write_task_doc` | mcp/src/agents_remember/tasks/store.py:108-109 |
-| The bound measured irrelevant to this defect and left unchanged; the reader's payload window. | `TASK_DOCUMENT_SUMMARY_LIMIT` | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:24-24 |
+| The reader projects every canonical task document, and the removed summary bound with the rationale for its removal. | `_master_docs_by_ref` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:435-463; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:63-69 |
 | The dead-text element a withheld document produced, unchanged by this leaf. | "not authored as a task document yet" | dashboard/src/panels/detail-panel/taskReader.tsx:434-434 |
 | The legacy-bare-node `ref` synthesis that leaves one loc path unprunable. | `_lift_legacy_ref` | mcp/src/agents_remember/tasks/document.py:212-219 |
 | The sixth same-class drop site, in the closeout-queue reader rather than this leaf's five and left unchanged. | `read_closeout_queues` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:22-38 |
@@ -92,7 +92,7 @@ text alters the body revision and open readers refetch.
 
 ## 260815-DAG-L12 Render-Ready Graph View Wiring
 
-Both snapshot readers now project `TaskDocNode.executionGraphView` (L12-R4): `_task_doc_node` was split into the include-body-gated `_reader_fields` and the sprint-only `_execution_graph_fields` behind a bundled `_TaskDocProjectionOptions` (`include_body` + `master_docs`), and `_master_docs_by_ref` builds the title/status/nature join table from the bounded payload window (root `task.json` documents are never evicted, so a sprint's commanded masters are always present). `_execution_graph_view` does the tasks-domain walk — derived waves, resolved edge endpoints, joined titles, per-master facts — and feeds the primitives-only `build_execution_graph_view` builder (the observer package must not import tasks). Docs without a graph project `None`; `_task_doc_body_revision` is unchanged.
+Both snapshot readers now project `TaskDocNode.executionGraphView` (L12-R4): `_task_doc_node` was split into the include-body-gated `_reader_fields` and the sprint-only `_execution_graph_fields` behind a bundled `_TaskDocProjectionOptions` (`include_body` + `master_docs`), and `_master_docs_by_ref` builds the title/status/nature join table from the whole projected task-document set — every valid master under `tasks/<repo>/<task>/` is indexed, so a sprint's commanded masters are always present (no bound evicts any document; see the removal rationale at `_common.py:63-69`). `_execution_graph_view` does the tasks-domain walk — derived waves, resolved edge endpoints, joined titles, per-master facts — and feeds the primitives-only `build_execution_graph_view` builder (the observer package must not import tasks). Docs without a graph project `None`; `_task_doc_body_revision` is unchanged.
 
 
 ## 260821-CLIVE Discarded-Unstarted Projection
@@ -155,16 +155,44 @@ for a union branch label in an edge endpoint. It is fail-closed, not corruption;
 those shapes today; and closing it would change the semantics of the proven fix, so it is recorded
 rather than repaired.
 
-**Not the cause and not the fix:** `TASK_DOCUMENT_SUMMARY_LIMIT = 250`
-(`snapshots_impl/_common.py:24`) is unchanged and was measured irrelevant — the withheld documents sat
-well inside the summary window, so the missing rows were never an eviction or a tightened bound and
-raising the limit would not have restored them. The dashboard renderer was not changed either; it was
-correct, and a truthy `match` is what the projection owed it.
+**Not the cause and not the fix:** `TASK_DOCUMENT_SUMMARY_LIMIT = 250` was measured irrelevant to this
+defect — the withheld documents sat well inside the summary window, so the missing rows were never an
+eviction or a tightened bound and raising the limit would not have restored them. The dashboard renderer
+was not changed either; it was correct, and a truthy `match` is what the projection owed it.
+
+**That bound no longer exists (260916-TDPU).** `TASK_DOCUMENT_SUMMARY_LIMIT`,
+`SERIES_DOCUMENT_SUMMARY_LIMIT`, `_bounded_task_document_payloads` and `_stat_mtime_ns` are deleted, so
+this reader projects **every** canonical task document under `tasks/<repo>/<task>/`; the measurement
+above stands as the reason the bound was never load-bearing, not as a live constraint. The removal
+rationale is recorded in the code at `_common.py:63-69`. See the 2026-09-16 entry below.
 
 **Found for follow-up, not changed here:** a sixth same-class drop site outside this leaf's five, at
 `snapshots_impl/_closeout_queue.py:33-36`.
 
 ## Update History
+
+- 2026-09-16T14:20+02:00 — 260916-TDPU (`ar/260916-tdpu`, base `67b21aeb`) curator: **the
+  task-document summary bound is removed, and this card now states the uncapped contract.** Deleted
+  from the serving projections were `TASK_DOCUMENT_SUMMARY_LIMIT`, `SERIES_DOCUMENT_SUMMARY_LIMIT`,
+  `_bounded_task_document_payloads` and `_stat_mtime_ns`; all three readers now project every
+  canonical task document under `tasks/<repo>/<task>/` (measured on the live root at this change:
+  517 canonical documents, 462 subTask / 55 master, against the old cap of 250 — 267 documents were
+  withheld before it). Corrected the false current-claim prose: the Repo-Internal References row that
+  asserted the limit was "left unchanged" cited a `_common.py:24-24` line that no longer holds any
+  limit, and is replaced by the reader's actual contract plus the rationale anchor at
+  `_common.py:63-69`; the L12 section no longer says `_master_docs_by_ref` builds its join table "from
+  the bounded payload window" or that root documents "are never evicted" (nothing is evicted now); the
+  L10 section's "`TASK_DOCUMENT_SUMMARY_LIMIT = 250` ... is unchanged" is corrected in place, with the
+  historical measurement retained as the reason the bound was never load-bearing. The code-side
+  falsehood of the same class — `_master_docs_by_ref`'s docstring at
+  `_task_documents.py:442-443`, which still claimed root documents were exempt from a bounded payload
+  window — is corrected in the same change set. Rationale recorded in the code at `_common.py:63-69`:
+  the eviction was silent and untested, so an operator saw a master whose sub-task rows were not
+  clickable with no diagnostic and no way to tell a missing document from an unreadable one. Ranges
+  this entry adds or touches were read back at their current positions (`_master_docs_by_ref`
+  `435-463`, `_common.py:63-69`); other citation ranges on this card are unchanged by this leaf and
+  were not re-derived — the boundary check reports that pre-existing drift separately. Verification
+  metadata remains closeout-owned; no verification stamp advanced and no code commit exists yet.
 
 - 2026-09-14T10:16+02:00 — 260913-LCA-L10 (curator, uncommitted change set on `ar/260913-lca-l10-ar`,
   base `4214d7a1`): the module's read edge became version-tolerant. Documented `_projected_document`

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
