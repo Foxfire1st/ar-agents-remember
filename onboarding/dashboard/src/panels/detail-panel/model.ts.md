@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/model.ts`                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
