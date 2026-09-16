@@ -8,11 +8,11 @@
 | lastUpdated            | 2026-09-16T08:01+02:00 |
 | lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
 | lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
-| governingOverview      | `../../../../../overview.md` |
+| governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../overview.md)
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -236,6 +236,14 @@ and source-pair activation wording returns 0 hits in the code worktree.
 
 ## Update History
 
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: Repaired citations this leaf falsified: the canonical lifecycle corpus was consolidated (the router shrank 620 → 179 lines; all nine role files and several templates were rewritten), so the cited anchors and ranges no longer resolved. No behavioral claim changed — the cited rule was re-pointed at its current home. Verification metadata remains closeout-owned. The `Job P — Portfolio (streamline + plan)` / `Job O — Orchestrate (execute the plan)` row now cites the real (bold-lead, not `##`) anchors at `:102-163` and `:164-306`; the previous `:278-506` exceeded the rewritten file's 459 lines.
 
 

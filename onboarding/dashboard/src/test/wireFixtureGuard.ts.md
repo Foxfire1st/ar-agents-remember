@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/wireFixtureGuard.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`       |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -194,7 +194,7 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 | `excessPropertyVerdict` — undeclared properties, and the union blend no single member declares. | `excessPropertyVerdict` | dashboard/src/test/wireFixtureGuard.ts:609-658 |
 | `reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned. | `reconcileWithRegistry` | dashboard/src/test/wireFixtureGuard.ts:673-693 |
 | The registry, planted bypasses and vacuity checks this module deliberately does not own. | `SANCTIONED_WIRE_SITES` | dashboard/src/test/wireFixtureGuard.test.ts:51-188 |
-| `SubTaskRow` and the two `extra="forbid"` models whose collapse the union rule reproduces. | `SubTaskRow` | dashboard/src/types/projection.ts:814-814 |
+| `SubTaskRow` and the two `extra="forbid"` models whose collapse the union rule reproduces. | `SubTaskRow` | dashboard/src/types/projection.ts:838-838 |
 | Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. | `ChangedFile` | dashboard/src/data/changeset.ts:12-18 |
 | Same, for the read-only files API client. | `RepoCatalogEntry` | dashboard/src/data/files.ts:22-26 |
 | Same, for the coordination-notes API client. | `NoteEntry` | dashboard/src/data/notes.ts:10-15 |

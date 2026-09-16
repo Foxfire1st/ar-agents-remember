@@ -6,8 +6,8 @@
 | path | `mcp/tests/conftest.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
+| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,8 +30,10 @@ live opt-ins, spawn identity and credential variables are scrubbed before tests 
 The lane manifest is read once into an integration-file set. Default `not integration` collection
 skips those files before importing them; collected integration members receive their marker.
 `pytest_collection_finish` counts selected parametrized items directly and raises UsageError for
-invalid or exceeded budgets. Pyproject supplies the operative 1000 unit/150 integration values;
-the parser’s standalone integration fallback is 100, so it must not be mistaken for repository policy.
+invalid or exceeded budgets. Pyproject supplies the operative 1100 unit/300 integration values
+(raised by 260831-LOCR-L24 from 1000/250 on the tradeoff recorded there); the parser’s standalone
+defaults are those same declared values, so a direct `pytest_addoption` read cannot disagree with
+repository policy.
 
 `--certify` explicitly requests genuine Dagger admission and then imports the certifying service
 plugin. Ordinary integration tests bind/reset worktree services through their fixture; units request

@@ -1,0 +1,148 @@
+# mcp/tests/test_serving_terminal_catalog_read.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/test_serving_terminal_catalog_read.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-15T13:57+02:00 |
+| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
+| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Tests overview](overview.md)
+
+Reviewed at 2026-09-15T13:57+02:00 against the leaf base `67b21aeb`; the module itself is an
+uncommitted candidate at that base, so normal closeout owns the final verification-metadata stamping
+and the hash above records only the base the card was read against.
+
+## Purpose
+
+This integration-lane module is the regression proof that `GET /api/terminal/sessions` **projects**
+the stored terminal catalog and never produces it. Every case drives the real registered route
+through the real composed app (`create_app`) or the real route-registration function, so it fails if
+the request path regains any producer behaviour: a liveness sweep, an adapter probe, an evidence
+cursor advance, a catalog row mutation, or a compaction.
+
+The load-bearing distinction is instrument **reach**, which the module states for each instrument
+instead of implying one total guarantee.
+
+## Code Commentary
+
+### Logic
+
+Routes are entered through `_RouteUnderTest`, which composes the production catalog, the production
+sweeper, and the production route registration over a temporary catalog file, then records the file's
+bytes before and after. Four instruments cover disjoint paths by which this process can reach a
+seat's adapter or its store:
+
+- `_ProbeLedger` counts each observation instrument the **sweeper's** injected `LivenessProbe` uses,
+  so "zero adapter evidence reads" is counted for the producer rather than inferred from the absence
+  of a sweep.
+- `_ReaderLedger` counts at the **readers themselves**, which is the one place a route-side read and
+  a sweeper-side read have in common. `_reader_patch_targets()` composes its patch set from two
+  binding shapes and neither alone is sufficient: `_READER_SEAMS` covers the plain names a read
+  resolves when it is bound **by name** (the route module's own globals, installed with
+  `create=True`, plus the canonical attributes on `harness_control_client` and
+  `terminal_evidence`), and an identity sweep over every loaded `agents_remember` module matches
+  globals whose value **is** one of `_PRODUCTION_READERS`, reached with `is` and never by name. That
+  second shape is what catches a module-level `from … import reader as alias`: the aliased global
+  *is* the function object, so patching names misses it and rebinding the defining module does not
+  touch it either. Seven targets result, deduplicated per `(module, attribute)`. `_counting_reader`
+  counts first and **delegates** to the production reader, so a mutating candidate fails on the count
+  rather than on an exception the double invented.
+- `_RecordingCatalog` subclasses the real `TerminalCatalog` and counts `_write_disk` — the one seam
+  every durable write passes through — plus the port calls a caller asks for. Subclassing rather than
+  proxying keeps the ledger honest: a write is reachable only through a real method.
+- `_RecordingSweeper` counts invocations and can stand in for a stale or failing observer.
+
+The ten cases group by claim: `StoredSnapshotProjectionTests` issues one hundred GETs and asserts
+one hundred equivalent answers with every ledger at zero; `ProducerSeparationTests` splits probe,
+cursor advance, row mutation and compaction into four cases, each on its own instrument rather than
+as one aggregate; `RouteSeamReaderTests` pins the no-probing clause where the request path would have
+to reach for it; `ObserverIndependenceTests` proves the catalog changes between two reads because the
+background observer ran, and that an observer which has failed still serves the stored snapshot
+instead of being repaired by the request; `RequestPathPurityGuardTests` is the negative guard that no
+request enters a catalog producer; and `RouteContractStabilityTests` drives the composed app to pin
+path, declared model, conditional-key behaviour and status semantics.
+
+### Conventions
+
+`unittest.TestCase` through `_ProjectionTestCase`, with temporary catalogs under `tempfile` and a
+`FastAPI` + `fastapi.testclient.TestClient` surface rather than a parallel fake of the production
+seams. The module issues real HTTP requests, so it is classified in the repository's `integration`
+evidence lane (`mcp/tests/test-evidence-lanes.toml:172`) — its `TestClient` neighbours, not the
+hermetic unit-lane liveness modules. It starts no process, opens no socket, and publishes nothing.
+Focused host results are development evidence and grant no certification authority.
+
+### Invariants And Boundaries
+
+The route must keep serializing `runtime.catalog.list()` under the unchanged
+`TerminalSessionsResponse` declaration with `response_model_exclude_unset=True`; re-adding
+`runtime.liveness_sweeper.refresh()`, advancing a cursor, mutating a row, compacting, or adding an
+adapter read during serialization each fails a named case. Two limits are deliberate and recorded
+rather than papered over. First, **the reader instrument's reach is bounded by binding shape**: a
+reader reached through anything that is not a module global — a function default such as
+`LivenessProbe`'s `snapshot_reader` field, a closure cell, a class attribute, a dict entry, an
+instance attribute — is invisible to `_ReaderLedger`; the argument-path shapes of those are covered
+by the tmux counter and `record_liveness_probe` instead, and the residue was measured by the
+independent reviewer as a disclosed limit banked for a hardening leaf. The module therefore claims
+"no module-global reader binding reaches the request path", not "no read of any shape is possible".
+Second, `test_one_hundred_gets_produce_one_hundred_equivalent_answers` is content-vacuous on its own
+(an empty catalog would also give one unique response text); content is pinned by
+`RouteContractStabilityTests` and the failed-observer case, so the suite is not vacuous overall but
+that one case must not be cited alone as content evidence.
+
+### Todos
+
+None. Closing the disclosed binding-shape residue means patching a seam both shapes share (the
+`harness_control_client` transport/exchange function) rather than the reader bindings, which is a
+scope decision owned by a separate hardening leaf and not by this module.
+
+## Docs References
+
+No Domain Documentation entries are configured in the resolved memory root. The module tests
+repository-owned serving behaviour, so no external domain claim is needed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
+## Repo-Internal References
+
+The cases are grounded in the production route, its catalog port, and the readers a route-side read
+would have to reach; these references describe the behaviour under test and do not claim a
+certification result.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The catalog GET is a projection of stored state and names no sweeper. | `api_terminal_sessions` | mcp/src/agents_remember/serving/_app_terminal_routes.py:156-162 |
+| The route serializes each row through the shared payload helper. | `_catalog_payload` | mcp/src/agents_remember/serving/_app_common.py:359-360 |
+| `list()` takes the catalog `RLock` before testing `self._batch`, so a foreign thread waits for an in-flight batch and then reads the committed atomic file. | `list`; `_read_snapshot` | mcp/src/agents_remember/serving/terminal_catalog.py:80-84; mcp/src/agents_remember/serving/terminal_catalog.py:364-372 |
+| The batch holds both the exclusive file lock and the `RLock` across the whole unit of work, so the in-memory buffer is reachable only reentrantly by the batch-owning thread. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:282-313 |
+| `_write_disk` is the one seam every durable write passes through, which is why the write ledger is complete regardless of the port method used. | `_write_disk` | mcp/src/agents_remember/serving/terminal_catalog.py:422-432 |
+| `list_committed()` is the sweeper's own non-blocking contention read, called only from the two contention paths — not a projection read. | `list_committed` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92 |
+| The production readers the identity sweep resolves against by object identity. | `read_control_snapshot`; `read_entry_terminal_evidence` | mcp/src/agents_remember/serving/harness_control_client.py:133-142; mcp/src/agents_remember/serving/terminal_evidence.py:187-196 |
+| The sweeper whose re-introduction on the request path the module's cases detect. | `TerminalCatalogLivenessSweeper.refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
+| The candidate classifies this module once, in the explicit integration lane. | "mcp/tests/test_serving_terminal_catalog_read.py" | mcp/tests/test-evidence-lanes.toml:177-177 |
+
+## Cross-Repo References
+
+No meaningful cross-repository implementation boundary is established by this repository-owned
+regression module.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
+## Update History
+
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator: created this file card for the leaf's new
+  catalog-read regression module. Recorded what it protects (the GET route is a projection of stored
+  state: no sweep, no adapter probe, no cursor advance, no row mutation, no compaction, unchanged
+  path/model/conditional-key/status semantics), the four instruments and the two binding shapes the
+  reader ledger needs, the negative guard, and — explicitly — the two limits the module does not
+  claim: the reader instrument's binding-shape residue and the 100-GET case's content-vacuity in
+  isolation. This module is ordinary version-controlled test source, so it carries no
+  evidence-lifecycle registration. Verification remains closeout-owned because the source is an
+  uncommitted candidate; the pinned hash records only the base the card was reviewed against.

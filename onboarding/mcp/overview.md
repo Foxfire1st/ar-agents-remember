@@ -1516,6 +1516,8 @@ two name no object at all.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the packaged lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured, which records the 14 new and 17 rewritten files under `package_data/runtime/skills/l-01-agent-lifecycles/**`, the generated-never-authored boundary (`skills/` canonical; `scripts/sync-skills.py --check` proves byte-identity), and the consequence that this generated `mcp/**` copy is the governed onboarding surface for a canonical tree that sits outside this memory root's path rules. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: No route impact: this change set is five paths inside `mcp/src/agents_remember/serving/` and `mcp/tests/`, and it changes the state-signal posting/recovery contract, not the package boundary this overview owns (public tool roster, activation/admission, certification, memory preparation, structural agent boundary, route model). The package-level statements above stand as written; the affected contract is recorded on `serving/overview.md`, the three serving file cards, and the tests route.
+
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,

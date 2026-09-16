@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated | 2026-09-06T21:59:04+00:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `a5f5380badf357622daf1965a7a0e3caf91b51ff`|
+| lastVerifiedCommitDate | 2026-09-16T08:34:21+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview

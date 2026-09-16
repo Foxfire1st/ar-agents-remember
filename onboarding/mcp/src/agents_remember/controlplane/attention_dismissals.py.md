@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/attention_dismissals.py`      |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`                         |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -118,11 +118,11 @@ not need a row in this store.
 | --- | --- | --- |
 | Projection tick that prunes rows after folding live lifecycle state. | `prune_lifecycles` | mcp/src/agents_remember/serving/projections/projection_store.py:236-272 |
 | Reducer suppression check that requires the acknowledgement lifecycle to match the item lifecycle. | "def _is_dismissed(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:79-79 |
-| Serving route that records lifecycle acknowledgements or cancels gate-open items. | "def _dismissal_response(" | mcp/src/agents_remember/serving/_app_routes.py:267-267 |
+| Serving route that records lifecycle acknowledgements or cancels gate-open items. | "def _dismissal_response(" | mcp/src/agents_remember/serving/_app_routes.py:275-275 |
 | Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune: `prune_lifecycles` through `_prune_locked` and the module-level `_keep_current_record`. | `_keep_current_record` | mcp/src/agents_remember/controlplane/attention_dismissals.py:138-141 |
 | `dismiss` holds `exclusive_access` across the read and the rewrite; `_replace` delegates to `rewrite_lines` and never unlinks. | `exclusive_access` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135 |
 | `ATTENTION_DISMISSAL_OWNERSHIP` records why a single-writer store is still locked and names the 31.45 percent an unlocked draft measured. | `ATTENTION_DISMISSAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:164-180 |
-| The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click. | "def _dismissal_response(" | mcp/src/agents_remember/serving/_app_routes.py:267-267 |
+| The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click. | "def _dismissal_response(" | mcp/src/agents_remember/serving/_app_routes.py:275-275 |
 
 ## Update History
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

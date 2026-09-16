@@ -694,7 +694,7 @@ is exactly as unverified as a hand-written one, merely unverified in one place i
 **Be precise about what each artifact pins.** `dashboard/src/fixtures/snapshot.json` remains a
 hand-maintained sampled payload. `dashboard/src/types/projection.ts`, however, is generated from
 `WorkspaceProjection.model_json_schema()` plus the served projection tail, and
-the code-quality `stale_generated_files` comparison detects schema and TypeScript bytes that differ from the generator cit:([`stale_generated_files`], mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-608). Fixture builders are type-checked against that
+the code-quality `stale_generated_files` comparison detects schema and TypeScript bytes that differ from the generator cit:([`stale_generated_files`], mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:614-620). Fixture builders are type-checked against that
 generated mirror, `wireFixtureGuard` refuses fixture-side opt-outs, and `contract.test.ts` measures
 how completely the manual sample exercises the mirror. The human-maintained boundary is sample
 coverage, not the producer-to-TypeScript contract.

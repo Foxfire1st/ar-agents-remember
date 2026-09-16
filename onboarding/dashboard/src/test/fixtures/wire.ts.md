@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ cit:(["GENERATED FILE; DO NOT EDIT", "Canonical core model", "Schema artifact", 
 implements both update and check modes cit:([`check`, `main`], scripts/sync-projection-types.py:43-51; scripts/sync-projection-types.py:54-65).
 The fixture contract documents that `snapshot.json` is the independent hand-authored sample while
 schema generation closes producer fields and vocabulary a sample can miss
-The sample introduces no served field missing from the mirror. cit:(["has no served field the mirror is missing"], dashboard/src/test/contract.test.ts:457-459); The sample covers declared structural paths except explicit residue. cit:(["reaches every declared path except the named residue"], dashboard/src/test/contract.test.ts:473-477); Every sampled registered vocabulary value must be legal. cit:(["carries only values the mirror's vocabulary declares, at every registered path"], dashboard/src/test/contract.test.ts:497-506); The contract keeps master and series sub-task row fields distinct. cit:(["keeps the master and series sub-task row models distinct"], dashboard/src/test/contract.test.ts:606-636).
+The sample introduces no served field missing from the mirror. cit:(["has no served field the mirror is missing"], dashboard/src/test/contract.test.ts:477-479); The sample covers declared structural paths except explicit residue. cit:(["reaches every declared path except the named residue"], dashboard/src/test/contract.test.ts:493-497); Every sampled registered vocabulary value must be legal. cit:(["carries only values the mirror's vocabulary declares, at every registered path"], dashboard/src/test/contract.test.ts:517-526); The contract keeps master and series sub-task row fields distinct. cit:(["keeps the master and series sub-task row models distinct"], dashboard/src/test/contract.test.ts:606-636).
 The generator’s explicit `--check` command remains available. The former Python drift-test module was retired; it is not current acceptance evidence.
 
 The chain, as drawn in the source:
@@ -157,9 +157,9 @@ does not.
 | `snapshot.json` remains the hand-maintained sample while the source names the producer-to-TypeScript link as generated and checked. | "is NOT generated; it remains a hand-maintained"; "producer-to-TypeScript link is generated and checked" | dashboard/src/test/fixtures/wire.ts:22-23 |
 | `projection.ts` marks itself generated and names its schema, generator, regeneration command, and drift check. | "GENERATED FILE; DO NOT EDIT"; "Canonical core model"; "Schema artifact"; "Served-only tail"; "Generator:"; "Regenerate:"; "Drift check:" | dashboard/src/types/projection.ts:1-7 |
 | The projection generator implements both check and generation paths. | `check`; `main` | scripts/sync-projection-types.py:43-51; scripts/sync-projection-types.py:54-65 |
-| The sample introduces no served field missing from the mirror. | "has no served field the mirror is missing" | dashboard/src/test/contract.test.ts:457-459 |
-| The sample covers declared structural paths except explicit residue. | "reaches every declared path except the named residue" | dashboard/src/test/contract.test.ts:473-477 |
-| Every sampled registered vocabulary value must be legal. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:497-506 |
+| The sample introduces no served field missing from the mirror. | "has no served field the mirror is missing" | dashboard/src/test/contract.test.ts:477-479 |
+| The sample covers declared structural paths except explicit residue. | "reaches every declared path except the named residue" | dashboard/src/test/contract.test.ts:493-497 |
+| Every sampled registered vocabulary value must be legal. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:517-526 |
 | The contract keeps master and series sub-task row fields distinct. | "keeps the master and series sub-task row models distinct" | dashboard/src/test/contract.test.ts:606-636 |
 | How the defaults stay honest: required fields only, every value taken from a served row, optionals deliberately omitted. | "HOW THE DEFAULTS STAY HONEST"; "annotated with the mirror type"; "a required field the server adds fails to compile"; "Only the REQUIRED fields are carried"; "staleSeconds"; "silently change what an attention-queue test is measuring"; `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:15-20; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
 | `demandServed` and the eight served anchors it demands the snapshot keep. | `demandServed`; `SERVED_LIFECYCLE`; `SERVED_ENCLOSURE`; `SERVED_PROVIDER`; `SERVED_TASK_DOC`; `SERVED_ENGINE_PROCESS`; `SERVED_PICKUP`; `SERVED_ATTENTION`; `SERVED_GATE` | dashboard/src/test/fixtures/wire.ts:73-76; dashboard/src/test/fixtures/wire.ts:78-91 |
@@ -168,7 +168,7 @@ does not.
 | `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | "metrics: metrics ?? metricsFor(lifecycles)" | dashboard/src/test/fixtures/wire.ts:344-344 |
 | `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. | `reparsed` | dashboard/src/test/fixtures/wire.ts:396-398 |
 | `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The fixture bases draw their lifecycle sample from the hand-maintained oracle. | "\"lifecycles\": [" | dashboard/src/fixtures/snapshot.json:1824-1961 |
+| The fixture bases draw their lifecycle sample from the hand-maintained oracle. | "\"lifecycles\": [" | dashboard/src/fixtures/snapshot.json:1791-1791 |
 | The fixture bases draw their enclosure sample from the same oracle. | "\"enclosures\": [" | dashboard/src/fixtures/snapshot.json:1166-1822 |
 | The oracle carries its independent analytics sample. | "\"analytics\": {" | dashboard/src/fixtures/snapshot.json:3-1112 |
 | The agent-pickup builder takes its sample from analytics. | "\"agentPickups\": [" | dashboard/src/fixtures/snapshot.json:4-41 |
@@ -176,7 +176,7 @@ does not.
 | The attention-item builder takes its sample from analytics. | "\"attentionQueue\": [" | dashboard/src/fixtures/snapshot.json:42-79 |
 | The engine-process builder takes its sample from analytics. | "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:96-574 |
 | The provider builder takes its sample from the top-level providers array. | "const SERVED_PROVIDER = demandServed(SERVED.providers[0], \"providers[0]\");" | dashboard/src/test/fixtures/wire.ts:80-80 |
-| The served snapshot supplies the code provider and memory provider in its top-level provider array. | "\"totalTokens\": 2800 }, \"providers\": [" | dashboard/src/fixtures/snapshot.json:1972-1997 |
+| The served snapshot supplies the code provider and memory provider in its top-level provider array. | "\"totalTokens\": 2800 }, \"providers\": [" | dashboard/src/fixtures/snapshot.json:1939-1941 |
 | The override constraint every builder takes, and the three limits it documents. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
 | The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. | "catches a smuggled field where there is no assertion to ban"; "fixtures/wire.ts::reparsed" | dashboard/src/test/wireFixtureGuard.test.ts:512-534 |
 | `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |

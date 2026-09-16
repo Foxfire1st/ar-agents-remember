@@ -6,8 +6,8 @@
 | path | `mcp/tests/curator_coherence_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
+| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_common.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`                                        |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`                                        |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -25,11 +25,20 @@ modules.
 
 `TerminalAttachTaskRequest` accepts the canonical task-document reference and role used by the
 assignment route. Shared runtime/collaborator records keep topology, catalog, host, projection, and
-cache dependencies explicit for route handlers.
+cache dependencies explicit for route handlers. `_ServingRuntime` is the one collaborator bundle the
+lifespan and the read routes share, so a fact written by one half and served by the other cannot land
+on two different objects: since `LOCR-R17@v1` it carries `observer_health`
+(`TerminalObserverHealthPublisher`) on the same observer root and the same serving clock as the
+liveness sweeper. `stream_events` takes the observer-health payload as an optional keyword and passes
+it into `served_state_tail`, so the SSE `snapshot` carries `terminalObserverHealth` beside the
+heartbeat while a `delta` — one projection node, not a state body — carries no tail at all.
 
 ### Conventions
 
-Wire parsing belongs here; structural qualification and mutation delegate to owned services.
+Wire parsing belongs here; structural qualification and mutation delegate to owned services. The
+serve-time tail arguments are optional keywords, and absence is a valid served answer rather than an
+error: a caller with no build stamp, no heartbeat reader, or no observer-health source still produces
+a valid body.
 
 ### Invariants And Boundaries
 
@@ -49,7 +58,9 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:286-291 |
+| Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:300-304 |
+| The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`. | `_ServingRuntime` | mcp/src/agents_remember/serving/_app_common.py:458-479 |
+| The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`. | `stream_events` | mcp/src/agents_remember/serving/_app_common.py:120-157 |
 
 ## Cross-Repo References
 
@@ -63,6 +74,19 @@ let the serving process register task-bound worker/reviewer/curator first eviden
 retention can erase the only execution row; absence of a registrar is fail-closed for deletion.
 
 ## Update History
+
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
+  base `99534dc5`, `_app_common.py` +19/−2): the shared runtime bundle and the SSE assembly gained
+  the observer-health seam, so the body was corrected in place. `_ServingRuntime` now carries a
+  required `observer_health` (`TerminalObserverHealthPublisher`) built on the same observer root and
+  serving clock as the liveness sweeper — the lifespan PUBLISHES this serving lifetime's accumulator
+  through it and the read routes resolve the persisted row through it, so the two halves of
+  `LOCR-R17@v1` cannot drift onto different lifetimes or files. `stream_events` gained the matching
+  optional keyword and passes it into `served_state_tail`, so the `snapshot` carries
+  `terminalObserverHealth` while a `delta` (one projection node, not a state body) carries no tail.
+  Recorded that these tail arguments are optional keywords whose absence is a valid served answer.
+  Reference ranges re-derived against the candidate (`TerminalAttachTaskRequest` `286-291` →
+  `300-304`) with two new rows. Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented the two task-execution registration collaborators. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

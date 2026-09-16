@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskDocuments.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `dca949f3c1652d76edf277eef86c6399c4ab8404`|
-| lastVerifiedCommitDate |                                                  2026-09-14T10:26:38+02:00|
+| lastVerifiedCommitHash |                                                  `e9678c56e7f441371584ad8a18e2b9380cb38cf0`|
+| lastVerifiedCommitDate |                                                  2026-09-15T20:50:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ link state is recorded rather than silently treated as already landed.
 | --- | --- | --- |
 | The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
 | `useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
-| The serving route maps projection readiness and the confined snapshot read to HTTP responses. | "def _task_document_response(runtime: _ServingRuntime" | mcp/src/agents_remember/serving/_app_routes.py:102-102 |
+| The serving route maps projection readiness and the confined snapshot read to HTTP responses. | "def _task_document_response(runtime: _ServingRuntime" | mcp/src/agents_remember/serving/_app_routes.py:109-109 |
 | The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | "def read_task_document_body(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:166-166 |
 | That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404. | `_projected_document` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:81-105 |
 

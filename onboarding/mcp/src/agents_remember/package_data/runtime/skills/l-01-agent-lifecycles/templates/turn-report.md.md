@@ -8,11 +8,11 @@
 | lastUpdated | 2026-09-16T08:01+02:00 |
 | lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
 | lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
-| governingOverview | `../../../../../overview.md` |
+| governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../overview.md)
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -108,6 +108,14 @@ The turn-report template now requires review mode, sealed baseline and outstandi
 
 ## Update History
 
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.**
   This card still said a missing turn report is nudged by the agent-notifier sweep; the canonical
   template was corrected in this leaf to state the shipped boundary — the relay derives only the

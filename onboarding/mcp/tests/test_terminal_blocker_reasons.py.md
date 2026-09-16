@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_blocker_reasons.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45`|
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33`|
+| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -151,7 +151,7 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 | The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:54-96; mcp/src/agents_remember/application/worktree_services.py:203-211 |
 | The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:862-893 |
 | The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:157-316; mcp/tests/integration_branch_authority_test_support.py:67-118; mcp/tests/test_transaction_only_worktree_delivery.py:66-90 |
-| The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:127-197 |
+| The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:128-198 |
 | The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. | "REPOSITORY_TEST_INPUT_CONSUMERS: dict[Path, frozenset[Path]]" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-184 |
 
 ## Cross-Repo References

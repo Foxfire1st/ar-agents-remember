@@ -391,6 +391,15 @@ orchestrator transitions fail closed when the ambient structural seat lacks the 
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
 
+260831-LOCR-L17: the evidence path `mcp/src/agents_remember/serving/app.py` is in this entity's
+curated set and changed in this leaf, so the row is refreshed here as a reconciliation rather than a
+fingerprint edit. The leaf adds one composition value to `_build_serving_runtime` — a single
+`serving_clock` shared by the sweeper, the runtime and the new observer-health publisher, plus that
+publisher on `_ServingRuntime` — and changes nothing about landed status, cleanup outcome,
+dashboard identity, retention, or the archive's own boundary. **The evidence path set is unchanged
+and no fingerprint value was hand-edited**; `git-blob-set-v1` cannot be derived by inspection, so it
+is recomputed from the landed commit at closeout. No acceptance claim is made.
+
 260831-LOCR-L36 second pass: the evidence path
 `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`
 changed in the L36 skill rewrite that regenerated the package-data copy, so the entity is consistent
@@ -435,6 +444,14 @@ CCR cumulative source verification: No content impact: the changed shared applic
 ### Seat Retirement
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
+
+260831-LOCR-L17: the same `serving/app.py` change touches this entity's curated evidence set (that
+file is one of its six paths), so the row is reconciled here. The leaf's edit is composition only —
+one shared serving clock and one observer-health publisher wired onto the serving runtime — and it
+adds no retirement route, policy, or terminal-catalog behaviour: retirement authority, its refusal
+shapes, and the catalog evidence blobs are untouched. **Evidence path set unchanged; no fingerprint
+was hand-edited**, and closeout recomputes the stored value from the landed commit. No acceptance
+claim is made.
 
 CCR cumulative source verification: No content impact: the sole changed fingerprint source, serving/app.py, registers requirement-reader routes. Retirement policy and terminal-catalog evidence blobs are unchanged from the prior IAS candidate.
 
@@ -700,6 +717,36 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
   rows against the real code commit.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator (entity-evidence intersection, scoped review of two rows): the leaf rewrote the role-instruction corpus, which changed evidence paths cited by **Seat Landing Archive** (`roles/orchestrator.md`, `roles/manager.md`, `templates/manager-brief.md`) and **Source Lineage** (`roles/manager.md`, `templates/curator-brief.md`). Both rows were re-read against the rewritten sources. **Seat Landing Archive:** the three L36-quoted sentences no longer exist verbatim (a grep for all three returns zero hits), so that section's quotes were **rebased** onto the current shipped wording at `roles/orchestrator.md:155-157`, `:187-189`, and `:229-232`; the entity's claim — landing depends on the master's own per-contract activation, never on being the single selected master of a protected source pair — is preserved unchanged. **Source Lineage:** a reconciliation note records that its lineage assertions still hold against the rewritten `roles/manager.md` and `templates/curator-brief.md`. **No evidence path changed and no fingerprint was hand-advanced**: the catalog's `git-blob-set-v1` algorithm resolves committed `HEAD` blobs, and this rewrite is uncommitted working-tree WIP, so the stored values remain reproducible and the rows are left for closeout's automatic recomputation from the landed commit. No acceptance, coherence, or certification claim is made.
+
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
+  `99534dc5`): **no entity impact, and no fingerprint hand-advanced.** Two entity rows were flagged as
+  reconciled because the leaf changes `mcp/src/agents_remember/serving/app.py`, which appears in the
+  curated evidence sets of **Seat Landing Archive** and **Seat Retirement**: `_build_serving_runtime`
+  now resolves one `serving_clock` for the sweeper, the runtime and the observer-health publisher, and
+  constructs that publisher on `_ServingRuntime.observer_health`. That is composition wiring; it adds no
+  retirement route or policy, changes no landed status, cleanup outcome, dashboard identity or
+  retention semantics, and introduces no new entity. Both rows carry a reconciliation note above and
+  their evidence path sets are unchanged. The stored `git-blob-set-v1` values are NOT hand-edited:
+  they cannot be derived by inspection and are recomputed from the landed commit at closeout, which is
+  why the catalog's own fingerprint rows remain pinned to the last committed refresh. No acceptance or
+  certification claim is made.
+
+- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
+  `ar/260831-locr-l38`, base `67b21aeb`): **no entity impact, and no fingerprint hand-advanced.**
+  The leaf's change set is exactly two test modules (`mcp/tests/test_pause_stop_only_end_to_end.py`
+  and `mcp/tests/test_tools.py`) and `mcp/src/**` is byte-identical to HEAD. Neither path appears in
+  any entity's curated evidence-path set, so every stored `git-blob-set-v1` value still resolves from
+  committed `HEAD` blobs and the change set cannot move one. The two surfaces the leaf touched in
+  prose terms were reviewed and neither is an inventory subject: the **pause route** is stated where
+  it belongs (the `Worktree Contract` entry's per-contract activation note and the pause card), and
+  the **atomic-series activation record** has no entity of its own — its per-contract address, release
+  and observation are recorded inside **Sprint Closeout Queue** and **Worktree Integration**, whose
+  claims this leaf does not falsify (they say each contract's own record decides its state, that no
+  master is paused or blocked by another's selection, and that a release addresses only its own
+  contract — all still true, and now proved through the public pause for the vacant/foreign/unreadable
+  record shapes as well). No inventory prose changed, no evidence path set changed.
+  Verification metadata remains closeout-owned; no acceptance claim.
+
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,

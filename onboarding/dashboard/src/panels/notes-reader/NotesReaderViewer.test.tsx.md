@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ No meaningful cross-repo references found.
 | `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:258-301 |
 | The seed task document is checked against the generated TaskDocNode. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:647-647 |
 | Analytics requires agentPickups and expectationRows arrays, along with the other projected collections. | "export interface Analytics {" | dashboard/src/types/projection.ts:92-106 |
-| The seeded snapshot satisfies the generated workspace contract. | "export interface WorkspaceProjection {" | dashboard/src/types/projection.ts:816-816 |
+| The seeded snapshot satisfies the generated workspace contract. | "export interface WorkspaceProjection {" | dashboard/src/types/projection.ts:840-840 |
 | The seed derives metrics through the shared lifecycle rollup helper. | "export function metricsFor(" | dashboard/src/types/projection.ts:466-466 |
 
 ## Update History

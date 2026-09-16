@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-skills.py`       |
 | doc_type               | `file-level-onboarding`        |
 | lastUpdated            | 2026-09-06T22:07:53+00:00 |
-| lastVerifiedCommitHash |                               `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash |                               `2652ca8622d53111fa333657685483efc053c43b`|
+| lastVerifiedCommitDate | 2026-09-16T07:34:15+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview

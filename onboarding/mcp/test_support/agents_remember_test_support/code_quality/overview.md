@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `d6d39c1b18f29f939b82340c8f5d32419b17ad84` |
+| lastVerifiedCommitDate | 2026-09-15T22:17:27+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,14 @@
 Repository verification infrastructure for quality planning, exact test selection, Dagger-produced evidence, diagnostic scoring, causal failure reporting and retry reuse. Shipping it alongside source does not make it operational product behavior. Static checks include product and verification inputs; production coverage and CRAP measurement exclude tests and support.
 
 ## Hot Path Summary
+
+`projection_types.py` renders the dashboard projection contract from the Python wire schemas: it folds
+the served projection's own definitions into the generated TypeScript and compares that definition set
+EXACTLY, so extending `ServedWorkspaceProjection` forces a declaration here plus a regeneration of
+`dashboard/src/types/projection.ts`. Its keyword vocabulary is closed and fails closed: a refinement
+TypeScript cannot enforce structurally (a `minimum`/`maximum`, a length, a pattern) is emitted beside
+the affected property, and an undeclared keyword refuses generation instead of disappearing from
+either contract.
 
 `quality_plan.py` owns typed configuration and command planning; `check.py` executes/interprets the rails. `profile_selection.py` publishes the selected population and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `retry_proof.py`, `retry_coverage.py` and child-environment helpers preserve admitted retry inputs without leaking outer retry/progress controls into candidate tests.
 
@@ -70,6 +78,16 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
+  `99534dc5`, `projection_types.py` +30/−11): this route's generator changed, so a body section was
+  added rather than an annotation. `projection_types.py` now states the current contract: the served
+  projection's definitions are folded into the generated TypeScript and compared EXACTLY, so extending
+  `ServedWorkspaceProjection` forces a declaration here plus a regeneration; and its keyword vocabulary
+  is closed and fails closed, emitting an unenforceable refinement beside the affected property while
+  refusing an undeclared keyword. The leaf's own change was the `maximum` refinement (so the observer
+  health record's 32-bit counters state their ceiling) and the `TerminalObserverHealth` declaration;
+  detail lives in the file card. Verification metadata remains closeout-owned; no stamp advanced.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/test_support/agents_remember_test_support/code_quality` carries local unstaged changes not

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
+| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
