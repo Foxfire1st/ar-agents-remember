@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3` |
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastUpdated | 2026-09-16T11:30+02:00 |
+| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -817,8 +817,58 @@ vocabulary is the *result state*, and a consumer must not branch on the code.
 | The seam entry point that applies a batch under the admitted provenance. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
 | The lane rules the batch operation applies before it takes the lock. | `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
 
+## 260915-KS-L4 The Snapshot Vocabulary
+
+The knowledge sub-route grew a thirteenth module, `models/knowledge/snapshot.py`, and the vocabulary it adds is a
+**local working object's** vocabulary rather than a stored shape's: one candidate directory, its sealed receipt,
+one closed snapshot stage, one publication request/result, the publication-state measurement a read gates on, and
+the closed disposal union. `models/knowledge/result.py` grew six operations and seven refusal codes in the same
+change, and the facade re-exports all of it.
+
+Three model-level rules carry the contract, and each is the reason a field is missing rather than present:
+
+- **The receipt carries no dataset digest.** `CandidateReceipt` records namespace, lane, the exact code and memory
+  inputs, the schema generation and the candidate reference, and seals every one of them with `receipt_digest` —
+  but the *dataset's* logical identity is deliberately absent, because a caller that could state it could hand-write
+  the identity its publication would later be compared against. The identity is read from the database or it does
+  not exist, and `build_candidate_receipt` derives rather than accepts.
+- **Every result is closed, and `state` is the only branch.** `CandidateResult`, `SnapshotPublicationResult`,
+  `PublicationState` and `CandidateDisposalResult` each refuse an inconsistent combination at construction: a
+  refusal carries its refusal and reports nothing it did not establish, a non-refusal names what it reached, and a
+  refused publication reports **no** destination identity at all. `PreparedKnowledgeSnapshot` carries both the
+  logical identity and the physical `file_digest` because publication decides two different questions — "is this
+  the same knowledge?" and "is this the file I froze?".
+- **The disposal union has exactly two members, and its authorization is carried, not examined.**
+  `CandidateDisposition` is `DiscardCandidate | PublishedCandidate` discriminated on `kind`; there is no "it looked
+  disposable" mode. `DiscardCandidate.authorization_ref` is stored because the caller owns the approval chain,
+  while this layer decides only permissibility (whether the named identity is the one the candidate holds now, and
+  therefore whether discarding abandons work no retained publication covers).
+
+The refusal vocabulary's own rule is unchanged by the addition and worth restating where the codes are declared:
+`no_change` remains a **result state** in two vocabularies (the batch's `MutationResult` and the publication's
+`SnapshotPublicationResult`) and a refusal code with no producer, and `snapshot_incomplete` /
+`publication_durability_unconfirmed` exist because "the private stage did not complete" and "the replacement
+completed but cannot be confirmed" need different remedies.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The snapshot vocabulary's own module: layout, receipt, stage, publication and disposal.** | `CANDIDATE_DATABASE_NAME`; `CandidateReceipt`; `PreparedKnowledgeSnapshot`; `SnapshotPublicationResult`; `CandidateDisposition` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-54; mcp/src/agents_remember/models/knowledge/snapshot.py:109-141; mcp/src/agents_remember/models/knowledge/snapshot.py:224-236; mcp/src/agents_remember/models/knowledge/snapshot.py:259-293; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354 |
+| The two derived paths that keep write and publication on one file. | `candidate_database_path`; `candidate_receipt_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-62; mcp/src/agents_remember/models/knowledge/snapshot.py:64-67 |
+| The typed admitted handle that confers no authority by itself. | `AdmittedCandidateDestination` | mcp/src/agents_remember/models/knowledge/snapshot.py:70-93 |
+| The baseline that requires the identity the caller admitted for it. | `CandidateBaseline` | mcp/src/agents_remember/models/knowledge/snapshot.py:96-106 |
+| The receipt's sealing helper and the one derived constructor. | `receipt_digest`; `build_candidate_receipt` | mcp/src/agents_remember/models/knowledge/snapshot.py:144-148; mcp/src/agents_remember/models/knowledge/snapshot.py:151-185 |
+| The destination request whose "expected absent" mode is the only way to overwrite. | `SnapshotDestinationRequest`; `PublishSnapshotRequest` | mcp/src/agents_remember/models/knowledge/snapshot.py:239-249; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256 |
+| The measurement that reports two identities and guesses nothing. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
+| The carried-not-examined authorization reference and the verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
+| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-57; mcp/src/agents_remember/models/knowledge/result.py:61-89 |
+| The facade that re-exports the whole snapshot surface as the served vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:121-214 |
+| The lifecycle and publication operations that produce these values. | `create_candidate`; `publish_candidate_snapshot`; `publication_state` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/materialization.py:34-99 |
+| The second composition seam that admits these values and returns them unchanged. | `admitted_candidate_destination`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
+| The node that proves the publication outcome is a measurement rather than a claim. | "test_a_logical_no_op_retains_the_published_bytes" | mcp/tests/test_knowledge_snapshot_publication.py:178-202 |
+
 ## Update History
 
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the knowledge sub-route's thirteenth module and the **local-working-object vocabulary** it serves — the candidate layout and its sealed receipt, the closed snapshot stage carrying both identities, the publication request/result pair, the publication-state measurement, and the two-member disposal union. Three absences are stated as the contract: the receipt carries **no dataset digest** (so a caller cannot hand-write the identity its publication will be compared against), the closed disposal union has no "looked disposable" member, and `authorization_ref` is **carried rather than examined** because permissibility is this layer's question and the approval chain is the caller's. The card also records the six operations and seven refusal codes `models/knowledge/result.py` grew, and restates the `no_change` distinction where the codes are actually declared — two result states are reachable, the refusal code still has no producer. Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
   `27242ecb`): recorded the knowledge sub-route's growth from eleven modules to twelve and the **write-boundary
   vocabulary** it now serves — the resolved-context-versus-authored-content split with the digest that seals it and

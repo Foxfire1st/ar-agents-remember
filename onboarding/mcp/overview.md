@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
+| lastUpdated | 2026-09-16T11:30+02:00 |
+| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1386,6 +1386,7 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
 
 ## Update History
 
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **No route impact:** reviewed this overview as the nearest governing route for `kernel/atomic_write.py`, whose only change is one added helper. `fsync_file` extends the module's existing durability contract (the file-data half, for a producer that wrote the file through another owner) without adding, moving or retiring a route responsibility, and the module's own card carries the disclosure that its directory fsync runs after `os.replace`. The kernel route therefore has no new pillar, no new charter wording and no boundary change to record here; the substantive account lives in `mcp/src/agents_remember/kernel/atomic_write.py.md` and in the `memory/` route overview's L4 section.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
   `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
@@ -1393,7 +1394,7 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
   remains closeout-owned.
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T00:00+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
@@ -1412,7 +1413,7 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
   verification stamp advanced.
 
-- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+- 2026-09-15T00:00+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.

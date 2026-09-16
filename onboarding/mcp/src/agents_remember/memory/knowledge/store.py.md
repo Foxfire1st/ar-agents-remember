@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/memory/knowledge/store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
-| governingOverview | `../../../overview.md` |
+| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c`|
+| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../../overview.md)
+[memory route overview](../overview.md)
 
 ## Purpose
 
@@ -93,6 +93,16 @@ the three here and the eight graph operations — supply it.
 `open_knowledge_store` creates or validates the schema at the path; `open_existing_knowledge_store` refuses a
 missing path and validates without creating or repairing.
 
+**`close()` unlinks nothing, and that is the correction this leaf made.** The method used to close the connection
+and then call `discard_closed_wal_peers`, whose docstring claimed it ran only when the last connection was closed
+— an enforcement the code did not have. It was not harmless: SQLite removes its WAL and SHM peers itself when the
+last connection closes cleanly, but a **reader** holding a read transaction blocks the checkpoint, so a writer's
+committed frames can still be only in the WAL when a closing writer unlinks it. The committed batch was then
+absent from the main file and the database was left unreadable until it was rebuilt. The call was therefore
+**removed rather than made conditional**, because the function cannot know whether another connection — in this
+process or another — still holds the database; a candidate's durability contract is that no journal or WAL file is
+ever deleted to make the database look clean, and SQLite already does the right thing on a clean close.
+
 ### Conventions
 
 **One resource lock, one transaction.** Every mutation holds the candidate database's exclusive file lock
@@ -151,6 +161,12 @@ declares pending predecessors, and the layer that enforces in that case is the b
 "restore" the immediate check without re-reading that decision — checking mid-batch would refuse a batch whose
 command order is legal simply because another command's row is not visible yet.
 
+One item this leaf **closes**: `close()` used to call `discard_closed_wal_peers` unconditionally. Do not
+reintroduce a peer unlink on any close path in this package — the WAL/SHM files beside a candidate are SQLite's
+own recovery state, a reader can block the checkpoint that would have made the unlink safe, and the durability
+node that reaches the failure is
+`mcp/tests/test_knowledge_candidate_workspace.py::test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit`.
+
 ## Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -164,22 +180,23 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The opened store: its bound namespace, validated schema, connection and lock path — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:93-110 |
-| The read surface, including the seal-verifying single-revision read. | `get_revision`; `get_invariant`; `list_revision_ids`; `get_repository` | mcp/src/agents_remember/memory/knowledge/store.py:127-183 |
-| The one atomic insert-only revision operation and its ordered checks. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:231-265; mcp/src/agents_remember/memory/knowledge/store.py:346-363 |
-| The two-caller identity contract: `confirm_repeat` decides whether a stored identity is a confirmation or a stale read. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:512-549; mcp/src/agents_remember/memory/knowledge/store.py:336-344 |
-| The module-level revision aggregate insert, including the pending-predecessor skip of the immediate FK check. | `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:551-608 |
-| The predecessor ownership rule with its batch-declared set, and the single-record lineage rule that can accept wider edges. | `require_same_invariant_predecessors`; `require_acyclic_lineage`; `find_lineage_cycle` | mcp/src/agents_remember/memory/knowledge/store.py:611-639; mcp/src/agents_remember/memory/knowledge/store.py:674-705; mcp/src/agents_remember/memory/knowledge/store.py:641-657 |
-| The batch-facing in-transaction helpers and the live identity read. | `insert_invariant_identity`; `insert_revision_aggregate`; `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:272-289; mcp/src/agents_remember/memory/knowledge/store.py:291-301; mcp/src/agents_remember/memory/knowledge/store.py:303-316 |
-| The membership query, which is not the write rule. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:375-394 |
-| The transaction and lock boundary, with its required failure context and propagate-a-defect rule, now published with private aliases. | `within_immediate`; `immediate_transaction`; `exclusive_candidate_lock`; `_within_immediate`; `_exclusive_candidate_lock`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/store.py:443-465; mcp/src/agents_remember/memory/knowledge/store.py:467-474; mcp/src/agents_remember/memory/knowledge/store.py:486-506; mcp/src/agents_remember/memory/knowledge/store.py:507-509; mcp/src/agents_remember/memory/knowledge/refusals.py:815-826 |
-| The write helper the batch and the single-record operations share. | `write` | mcp/src/agents_remember/memory/knowledge/store.py:476-484 |
-| The label-edit delegation and the module that owns the guard. | `set_invariant_label` | mcp/src/agents_remember/memory/knowledge/store.py:267-270; mcp/src/agents_remember/memory/knowledge/labels.py:40-59 |
+| The opened store: its bound namespace, validated schema, connection and lock path — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:92-110 |
+| **The close that unlinks nothing**, and the reason the peer unlink was removed rather than made conditional. | `close` | mcp/src/agents_remember/memory/knowledge/store.py:113-124 |
+| The read surface, including the seal-verifying single-revision read. | `get_revision`; `get_invariant`; `list_revision_ids`; `get_repository` | mcp/src/agents_remember/memory/knowledge/store.py:169-187; mcp/src/agents_remember/memory/knowledge/store.py:142-156; mcp/src/agents_remember/memory/knowledge/store.py:157-168; mcp/src/agents_remember/memory/knowledge/store.py:128-141 |
+| The one atomic insert-only revision operation and its ordered checks. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:232-267; mcp/src/agents_remember/memory/knowledge/store.py:347-365 |
+| The two-caller identity contract: `confirm_repeat` decides whether a stored identity is a confirmation or a stale read. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:513-551; mcp/src/agents_remember/memory/knowledge/store.py:337-346 |
+| The module-level revision aggregate insert, including the pending-predecessor skip of the immediate FK check. | `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:552-611 |
+| The predecessor ownership rule with its batch-declared set, and the single-record lineage rule that can accept wider edges. | `require_same_invariant_predecessors`; `require_acyclic_lineage`; `find_lineage_cycle` | mcp/src/agents_remember/memory/knowledge/store.py:612-641; mcp/src/agents_remember/memory/knowledge/store.py:675-707; mcp/src/agents_remember/memory/knowledge/store.py:642-659 |
+| The batch-facing in-transaction helpers and the live identity read the whole snapshot half resolves against. | `insert_invariant_identity`; `insert_revision_aggregate`; `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:273-291; mcp/src/agents_remember/memory/knowledge/store.py:292-303; mcp/src/agents_remember/memory/knowledge/store.py:304-318 |
+| The membership query, which is not the write rule. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:376-396 |
+| The transaction and lock boundary, with its required failure context and propagate-a-defect rule, now published with private aliases. | `within_immediate`; `immediate_transaction`; `exclusive_candidate_lock`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/store.py:444-467; mcp/src/agents_remember/memory/knowledge/store.py:468-476; mcp/src/agents_remember/memory/knowledge/store.py:487-512; mcp/src/agents_remember/memory/knowledge/refusals.py:815-826 |
+| The write helper the batch and the single-record operations share. | `write` | mcp/src/agents_remember/memory/knowledge/store.py:477-486 |
+| The label-edit delegation and the module that owns the guard. | `set_invariant_label` | mcp/src/agents_remember/memory/knowledge/store.py:268-272; mcp/src/agents_remember/memory/knowledge/labels.py:40-59 |
 | The graph modules that reuse this store's lock and transaction helpers. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/anchors.py:49-72; mcp/src/agents_remember/memory/knowledge/memberships.py:88-109; mcp/src/agents_remember/memory/knowledge/realizations.py:61-85 |
-| The create-versus-reopen open functions. | `open_knowledge_store`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/store.py:707-725; mcp/src/agents_remember/memory/knowledge/store.py:727-740 |
-| The reused lock primitive this store does not reimplement. | `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py |
+| The create-versus-reopen open functions. | `open_knowledge_store`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/store.py:708-727; mcp/src/agents_remember/memory/knowledge/store.py:728-742 |
+| The reused lock primitive this store does not reimplement. | `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py:87-116 |
 | The node that pins the two-caller identity contract on the single-record side. | "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses" | mcp/tests/test_knowledge_store.py:139-178 |
-| The requirement packet the original four properties belong to, and the batch increment that consumes these helpers. | `KS-R01@v1`; `KS-R03@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R01-v1-immutable-knowledge-identity.md; ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R03-v1-atomic-candidate-writes.md |
+| The node that would fail if a close-time peer unlink came back. | "test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit" | mcp/tests/test_knowledge_candidate_workspace.py:206-246 |
 
 ## Cross-Repo References
 
@@ -191,6 +208,7 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **recorded that `close()` no longer unlinks WAL/SHM peers, with the reason.** The method used to close the connection and then call `discard_closed_wal_peers`, whose docstring claimed it ran only after the last connection closed. The reviewer established that the unconditional unlink **destroyed a committed batch** whenever a reader held a read transaction: the reader blocks SQLite's checkpoint, so the writer's committed frames are still only in the WAL when the closing writer unlinks it, and the committed rows are then absent from the main file. The call was removed rather than made conditional — the function cannot know whether another connection holds the database — and SQLite checkpoints and removes its own peers on the last clean close, so the explicit removal added nothing on the happy path and a data-loss path on the unhappy one. The card's Todos now close the item that previously handed this on, and state the forward rule: do not reintroduce a peer unlink on any close path in this package. Citation ranges in this card were re-derived against the working tree (this file lost one import line and `close()` lost three), and two pre-existing malformed task-path citation rows were replaced by the node that would fail if the unlink came back. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **corrected this card's `create_invariant` sentence, which had become false, and recorded the plumbing the candidate-change batch forced.** The L1 card said only that `create_invariant` treats a stored row with the same label as `no_change`; the shipped contract is a **two-caller** one and the card now states both halves: the single-record operation passes `confirm_repeat=True` (an identical repeat is `no_change`, a different label refuses `duplicate_identity`), while a batch command passes `confirm_repeat=False` and refuses *any* stored identity — a batch authors new identities, so a stored row under one means the caller's read is stale. The reviewer's baseline round had falsified the one-sided sentence (`RV-2`), and the fix round restored the branch and pinned it with a node. Also recorded: the invariant insert bodies are now module-level `insert_invariant`/`insert_revision` (with `require_same_invariant_predecessors`, `require_acyclic_lineage` and `find_lineage_cycle` accepting a batch's declared edges, where `extra_predecessors` is supplied only by `lineage.declared_cycle`), the batch-facing `insert_invariant_identity`/`insert_revision_aggregate`/`snapshot_identity`/`immediate_transaction` additions, the public names with their kept private aliases, the pending-predecessor skip of the immediate foreign-key check, and the disclosed exposure that the published helpers assume the caller already holds the lock and the transaction. Also repaired this card's `governingOverview` and Governing Overview link, which pointed at `../../overview.md` — the application route — from the `knowledge/` directory that needs three levels. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): **superseded the L1 account of where the lineage rule lives.** The earlier card described `_require_no_lineage_cycle`, `_graph_cycle_vertices`, `_post_insert_lineage`, `_descendants` and `_CycleScan` as this file's own, and named the "seven canonical tables … have no operations". The traversal has left for `memory/knowledge/lineage.py` so one owner serves both the invariant and the new family lineage graph, the guard was renamed `_require_acyclic_lineage` and now delegates, and `_within_immediate` gained a required `SqliteFailureContext` so a mapped constraint failure can name the operation and table it came from. The card now also records this store's shared-plumbing role for the four graph modules and that it still writes only its own four tables. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new concrete knowledge store. It records the one-lock/one-transaction rule, the insert-only contract, the post-insert reach of the lineage guard (the round-2/round-3 review outcome for sealed findings `RV-2` and `RV-4`), the defensive status of the deferred-FK check, and the linear lineage cost. Verification metadata remains empty until closeout stamps the code commit.

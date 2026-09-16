@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3` |
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastUpdated | 2026-09-16T11:30+02:00 |
+| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,22 @@ For the ledger retirement, start with transaction-only delivery, direct landing,
 Start with the distinct failure or user operation, then locate its retained owner. Checkout isolation, Dagger registry locking, private Git preparation, protected-ref recovery, durable-store races, submission authority and native framing each retain concrete behavioral protection. Compiler/certificate fixtures establish library contracts; they are not live Dagger, Codex or final-memory execution evidence. Preparation checks can guide memory repair before certification without becoming Gate 5.
 
 For the knowledge substrate, start with the five knowledge modules and their two shared support artifacts: `test_knowledge_store.py` (invariant identity and lineage), `test_knowledge_family_revision.py` (family revisions and the family lineage), `test_knowledge_relation_rules.py` (anchors, memberships and claims, including the anchored-claim transaction), `test_knowledge_graph_reads.py` (the two relation directions compared by identity) and `test_knowledge_revision_seals.py` (the sealed predecessor field on both payloads, which exists because round 1 could not kill it). Both support modules are registered contracts in `mcp/tests/evidence-lifecycle.toml` with exact consumer lists, and all five modules are unit-regression rows in `mcp/tests/test-evidence-lanes.toml`.
+
+**The candidate and snapshot half now has its own pairs.** `test_candidate_batch_transaction.py` and
+`test_candidate_batch_commands.py` cover the batch boundary and its command union (sharing
+`candidate_batch_test_support.py` as their registered harness, with `test_knowledge_label_operations.py` existing
+for the standalone label guard the batch path could not see), and `test_knowledge_candidate_workspace.py` and
+`test_knowledge_snapshot_publication.py` cover the candidate lifecycle and the publication contract, sharing
+`snapshot_lifecycle_test_support.py` — registered as `knowledge-snapshot-lifecycle-cases` with an exact
+two-consumer list. **That support module's evidence node is
+`test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not`, and the node is chosen for its
+subject rather than its convenience:** the suite's load-bearing claim is that a published snapshot is *closed*,
+which is only measurable by showing a committed-but-WAL-resident batch surviving into the published file while a
+bare main-file copy of the same database does not carry it. The lifecycle suite's two durability nodes are its
+other distinctive protection: one reaches the live-reader state that the removed unconditional WAL/SHM peer unlink
+destroyed, and one uses a **real child interpreter** that exits with an uncommitted write transaction open. All
+four modules registered by L3 and L4, and both support harnesses, are unit-regression rows with registered
+contracts; a test-shaped module missing from either registry fails the load rather than passing quietly.
 
 ## CCR-R12@v5 Transaction-Only Delivery Route
 
@@ -787,6 +803,7 @@ Two rules this leaf's evidence teaches, and both are about what a named node pro
 
 ## Update History
 
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the candidate and snapshot half's own pairs — the batch suite plus its command-union sibling and the standalone label guard, and the new candidate-lifecycle and publication suites sharing one registered harness (`knowledge-snapshot-lifecycle-cases`, exact two-consumer list). The paragraph states why that harness's evidence node is `test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not`: the claim being protected is that a published snapshot is *closed*, and only a comparison against a bare main-file copy measures it. It also names the lifecycle suite's two distinctive nodes — the live-reader state the removed WAL/SHM peer unlink destroyed, and a real child interpreter that exits with an uncommitted write transaction open — and re-states that a module missing from either registry fails the load rather than passing quietly. Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
   `27242ecb`): recorded the candidate-batch suite and the guard a passing suite could not see — three new
   unit-lane modules (the transaction boundary's 27 nodes, the union and receipt's 9, and a 6-node label-operations

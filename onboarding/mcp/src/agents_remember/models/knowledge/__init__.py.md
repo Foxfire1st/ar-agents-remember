@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/models/knowledge/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash |  `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate |  2026-09-16T08:41:27+02:00|
+| lastVerifiedCommitHash |  `3332a4ce7029777d49feca22b499350435a9f83c`|
+| lastVerifiedCommitDate |  2026-09-16T11:50:16+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[models route overview](../../../overview.md)
+[models route overview](../overview.md)
 
 ## Purpose
 
@@ -38,6 +38,15 @@ The file is a re-export barrel plus `__all__`. It imports from `agents_remember.
 `.result` (the requests, results, `KnowledgeOperation`, `KnowledgeRefusal`, `KnowledgeRefusalCode`) and
 `.source` (`FileLocator`, `GitBlobIdentity`, `LineRangeLocator`, `SourceAnchor`, `SourceAnchorDraft`,
 `SourceIdentity`, `SourceLocator`, `SymbolLocator`).
+
+**`.snapshot` is the eighth source this leaf added**: the local candidate layout (`CANDIDATE_DATABASE_NAME`,
+`CANDIDATE_RECEIPT_NAME` and the two path builders), the receipt and its sealing helpers
+(`CANDIDATE_RECEIPT_VERSION`, `CandidateReceiptVersion`, `CandidateReceipt`, `build_candidate_receipt`,
+`receipt_digest`), the lifecycle value objects (`AdmittedCandidateDestination`, `CandidateBaseline`,
+`CandidateResult`), the publication vocabulary (`PreparedKnowledgeSnapshot`, `SnapshotDestinationRequest`,
+`PublishSnapshotRequest`, `SnapshotPublicationResult`, `PublicationState`) and the closed disposal union
+(`DiscardCandidate`, `PublishedCandidate`, `CandidateDisposition`, `CandidateDisposalResult`). Every one of
+those names is now in `__all__`.
 
 `__all__` is explicit and sorted, so the served surface is a declared list rather than "whatever the
 submodules happen to export".
@@ -86,11 +95,13 @@ The rows below cite the submodules this facade re-exports and the two consumers 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results and source locators. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:98-170 |
-| The internal rules deliberately kept off the served surface. | `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/result.py:85-100; mcp/src/agents_remember/models/knowledge/result.py:102-111; mcp/src/agents_remember/models/knowledge/base.py:40-56 |
-| The storage owner writes these values rather than defining its own copies — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:86-104 |
-| The composition seam admits a destination and builds every graph request from this vocabulary. | `admitted_knowledge_destination`; `admitted_revision_request`; `admitted_family_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:106-124; mcp/src/agents_remember/application/knowledge.py:125-140; mcp/src/agents_remember/application/knowledge.py:213-225; mcp/src/agents_remember/application/knowledge.py:260-274 |
+| The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators and — since this leaf — the whole snapshot vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:121-214 |
+| The eighth source module this leaf added to the facade, re-exported name by name. | `build_candidate_receipt`; `candidate_database_path`; `candidate_receipt_path`; `receipt_digest` | mcp/src/agents_remember/models/knowledge/__init__.py:87-111; mcp/src/agents_remember/models/knowledge/snapshot.py:58-62; mcp/src/agents_remember/models/knowledge/snapshot.py:64-67; mcp/src/agents_remember/models/knowledge/snapshot.py:144-148 |
+| The internal rules deliberately kept off the served surface. | `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/result.py:105-121; mcp/src/agents_remember/models/knowledge/result.py:122-132; mcp/src/agents_remember/models/knowledge/base.py:40-56 |
+| The storage owner writes these values rather than defining its own copies — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:92-110 |
+| The composition seams that admit a destination and build every request from this vocabulary. | `admitted_knowledge_destination`; `admitted_revision_request`; `admitted_family_request`; `admitted_claim_request`; `admitted_candidate_destination` | mcp/src/agents_remember/application/knowledge.py:125-140; mcp/src/agents_remember/application/knowledge.py:144-157; mcp/src/agents_remember/application/knowledge.py:327-337; mcp/src/agents_remember/application/knowledge.py:374-386; mcp/src/agents_remember/application/knowledge_snapshot.py:67-82 |
 | The shared branching fixture authors its identity and graph halves from these same models. | `build_branching_knowledge_fixture`; `BranchingKnowledgeFixture` | mcp/tests/knowledge_fixture_test_support.py:203-263; mcp/tests/knowledge_fixture_test_support.py:161-188 |
+| The snapshot harness that consumes the newly re-exported names end to end. | `build_case`; `publish` | mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:357-380 |
 
 ## Cross-Repo References
 
@@ -102,5 +113,6 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded that the facade gained an **eighth source module** — `models/knowledge/snapshot.py` — and re-exports its whole surface: the local candidate layout, the sealed receipt and its two helpers, the lifecycle value objects, the publication vocabulary and the closed disposal union, all of them now in `__all__`. The card states what the exported vocabulary deliberately cannot carry (no field is a verdict; the receipt carries no dataset digest and no path) so a reader of the facade does not look for authority in it. The card's `governingOverview` link was repaired from `../../../overview.md` — which resolves to the repository-root overview — to `../overview.md`, the models route overview named by the memory census. Citation ranges were re-derived against the working tree, including rows that had drifted from their anchors. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): recorded the graph half's additions to the served surface (family shapes, relation shapes and their read models, the authored role vocabulary with `UNCLASSIFIED_ROLE`, the eight operations' requests and results, the anchor endpoint union, the family payload version and its sealing helpers) and the names the facade deliberately keeps off it (the two outcome rules, the acceptance rule, `SqliteFailureContext`, `RefusalFacts`, `KnowledgeStorageError`). This remains a re-export barrel: it defines nothing of its own and must not become an owner of validation. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new knowledge-vocabulary facade. It records the served surface as the explicit `__all__` re-export list and the ownership rule that literal vocabularies are defined in their owning submodule and imported by the decider. Verification metadata remains empty until closeout stamps the code commit.

@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3` |
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l03` uncommitted source; base `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
+| lastUpdated | 2026-09-16T11:30+02:00 |
+| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c` |
+| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -581,8 +581,50 @@ extension, and the worker report's claim that `KS-R03` "resolved" that observati
 | The composed-path case that drives the boundary end to end through this seam. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-109 |
 | The case that proves the operation refuses a context smuggled past the model seal. | "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:1120-1160 |
 
+## 260915-KS-L4 The Snapshot Lifecycle Joins As A Second Seam
+
+The route gained one module, `application/knowledge_snapshot.py`, and no new authority. It is the **second
+composition seam**: the candidate lifecycle (create, clone, open, disposal authorization) and snapshot publication
+are a different composed operation from the single candidate write, and keeping them apart leaves each entry point
+readable as one intent rather than one module with two jobs.
+
+Three things matter to a later reader:
+
+- **The write destination is derived, not passed twice.** `candidate_write_destination` builds the
+  `AdmittedKnowledgeDestination` from the admitted candidate's own layout, so a caller cannot write into one
+  database and publish another; `admitted_candidate_destination` is the typed handle the admitted-authority path
+  calls after its own checks, and it **confers no authority by itself** — it exists so a deserialized request
+  cannot become admitted input.
+- **Two publication entry points share one contract.** `publish_knowledge_snapshot` freezes and installs one
+  candidate's point, while `publish_prepared_knowledge_snapshot` installs an already-frozen stage through the
+  *same* path — so a caller that produced a validated closed database (a merged result, an import, a restored
+  artifact) reaches a destination atomically against an expected identity, with no second install route to keep
+  correct.
+- **The read-side gate is exposed, not decided.** `knowledge_publication_state` returns the comparison between a
+  live candidate and the closed snapshot a read is about to answer from; the caller decides what to do about a
+  difference, because publishing is an explicit operation and no read may publish rows.
+
+**Two non-claims the ruled design made explicit are recorded here because a later reader will look for them.**
+This seam **creates no Git commit** — the published snapshot is a closed file, and capturing it into a memory tree
+is the existing candidate-tree owner's operation — and **no IAS landing is reachable from it**; the writable
+candidate belongs to the experimental master. And the wiring boundary did **not** move: like
+`application/knowledge.py`, this module has **no non-test importer in `mcp/src`**, so its composed-path cases are
+behaviour evidence about the boundary and not evidence that any tool is wired to it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The admitted-destination constructor that confers no authority by itself. | `admitted_candidate_destination` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82 |
+| The write destination derived from the candidate layout rather than passed twice. | `candidate_write_destination` | mcp/src/agents_remember/application/knowledge_snapshot.py:85-99 |
+| The three lifecycle delegations. | `create_knowledge_candidate`; `clone_knowledge_candidate`; `open_knowledge_candidate` | mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:110-115; mcp/src/agents_remember/application/knowledge_snapshot.py:118-123 |
+| The two publication entry points that share one contract. | `publish_knowledge_snapshot`; `publish_prepared_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:134-139; mcp/src/agents_remember/application/knowledge_snapshot.py:142-147 |
+| The read-side publication gate exposed rather than decided. | `knowledge_publication_state` | mcp/src/agents_remember/application/knowledge_snapshot.py:150-155 |
+| The storage operations the seam delegates to, including the two locks that are never nested. | `create_candidate`; `publish_candidate_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
+| The disposal verdict whose authority the caller owns. | `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
+| The composed-path harness that drives the seam end to end through the public operations. | `build_case`; `publish` | mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:357-380 |
+
 ## Update History
 
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the second composition seam — `application/knowledge_snapshot.py` — and why the lifecycle/publication half is its own module rather than more entry points on `application/knowledge.py`: each entry point stays readable as one intent. The card records the derived write destination (so write and publish cannot name different files), the two publication entry points sharing one install contract, and the read-side gate being exposed rather than decided. **Two non-claims are stated rather than left to inference**: the seam creates no Git commit (capturing a published file into a memory tree is the existing candidate-tree owner's operation) and no IAS landing is reachable from it. The wiring boundary is re-recorded because it did not move: like `application/knowledge.py`, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
   `27242ecb`): recorded the candidate-write boundary joining the seam — the context resolution that reads the live
   dataset identity and seals it (the only way a batch's precondition is built, because `CandidateResolution` has no

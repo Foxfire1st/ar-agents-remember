@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash |  `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate |  2026-09-16T10:27:28+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l03` uncommitted source; base `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
+| lastUpdated | 2026-09-16T11:30+02:00 |
+| lastVerifiedCommitHash |  `3332a4ce7029777d49feca22b499350435a9f83c`|
+| lastVerifiedCommitDate |  2026-09-16T11:50:16+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -24,8 +24,8 @@ The route owns two distinct responsibilities, and they are deliberately not the 
    onboarding from a source branch into an open recovery leaf.
 2. **Concrete knowledge storage** (`knowledge/`) — the APSW-backed SQLite candidate that holds repository,
    invariant, revision, family, anchor, membership and realization identity. Added by 260915-KS-L1 as an
-   experimental increment and extended by 260915-KS-L2; it is a durable record store, so it ranks here with the
-   record stores rather than with the application layer that admits its writes.
+   experimental increment and extended by 260915-KS-L2, 260915-KS-L3 and 260915-KS-L4; it is a durable record
+   store, so it ranks here with the record stores rather than with the application layer that admits its writes.
 
 The two responsibilities share a package rank and a charter paragraph, not a mechanism: nothing in the
 lifecycle modules imports `knowledge/`, and nothing in `knowledge/` reads, writes or migrates Markdown onboarding.
@@ -50,8 +50,13 @@ own the four graph concepts and their tables, `knowledge/lineage.py` owns the on
 graphs apply (including the batch's declared-edge caller), `knowledge/labels.py` owns the two label edits and their
 row-digest guard, and `knowledge/endpoints.py` owns the shared relation-endpoint check; `knowledge/schema.py` owns the
 declaration of the ten STRICT tables, the fifteen immutability triggers and `schema_fingerprint()`;
-`knowledge/connection.py` owns the pragma contract, the one-row reader and the open-time schema validation;
-`baseline.py` / `carryover.py` / `carryover_authority.py` own baseline adoption and branch carryover. The import
+`knowledge/connection.py` owns the pragma contract, the one-row reader, the read-only connection every identity
+confirmation uses, and the open-time schema validation; `baseline.py` / `carryover.py` / `carryover_authority.py`
+own baseline adoption and branch carryover. **The snapshot half** lives in `knowledge/candidate_workspace.py`
+(create, resume, clone, disposal verdict), `knowledge/candidate_receipt.py` (the sealed receipt and its binding
+comparison), `knowledge/closed_snapshot.py` (the one freeze procedure both publication and cloning use),
+`knowledge/publication.py` (atomic, verifiable install under a destination lock), `knowledge/materialization.py`
+(the read-side publication gate), and `knowledge/logical.py`'s `dataset_identity` entry point. The import
 direction is enforced: no package ranked below `memory` (rank 12) may import `memory.knowledge`, and `application`
 (rank 21) is its only consumer.
 
@@ -184,6 +189,55 @@ must not branch on the code. And `application/knowledge.py` still has **no non-t
 batch boundary exists inside the seam, but the seam is wired to no tool or entry point, which is what the packet
 means by "public MCP names and transport wiring are later extensions".
 
+### 260915-KS-L4 The Candidate Lifecycle And Snapshot Publication
+
+This route gained the **snapshot half** and no new authority: six new modules
+(`knowledge/{candidate_workspace,candidate_receipt,closed_snapshot,publication,materialization}.py` plus the
+second composition seam in `application/knowledge_snapshot.py`), with `connection.py`, `store.py`, `logical.py`
+and `refusals.py` changing and `schema.py` **not** touched — the schema stays `ar-knowledge-sqlite/v1`,
+`PRAGMA user_version = 1`, ten tables, fifteen triggers and the same `schema_fingerprint()`.
+
+What the snapshot half owns, stated once because a reader of this route needs the boundary before the mechanism:
+
+- **A candidate is a local working object, and its identity is read rather than asserted.** The directory holds one
+  writable database plus the sealed receipt that binds it to its admission; the receipt deliberately carries **no**
+  dataset digest, so a caller cannot hand-write the identity its publication will be compared against. Creation is
+  two-phase (build and verify privately, then expose the complete directory), an occupied destination is refused
+  as a resume attempt, and a clone comes from a *closed* representation produced by the same freeze publication
+  uses — never from a WAL-dependent main file.
+- **A published snapshot is closed, and closedness is proven.** The freeze pins a read view, copies through
+  SQLite's own backup so a committed-but-WAL-resident batch is included and an uncommitted writer's rows are not,
+  establishes the `delete` journal mode on a fresh connection to the finished copy (a backup destination *inherits*
+  the source's mode), reopens it read-only to prove no peer and the pinned dataset, and flushes the file's own data
+  before anything renames it.
+- **Publication is replace-or-nothing, against an admitted identity.** The destination lock is a hidden `flock`
+  resource beside the file it protects, and an identical logical dataset returns `no_change` with the existing
+  bytes retained — page layout is not knowledge, and rewriting would dirty a memory tree for nothing observable.
+- **A read gates on the comparison and never resolves it.** `materialization.publication_state` reports
+  `current` or `candidate_snapshot_unpublished` with both identities and leaves the decision to the caller; no read
+  publishes rows or attaches them to an older memory tree.
+- **Disposal is a verdict, not a deletion.** A `discard` must name the identity the candidate holds *now* (so an
+  authorization cannot be replayed against newer unpublished work) and a `published` disposition must point at a
+  database that reopens to that same logical dataset. Removing the directory stays with the enclosure owner.
+
+**The durability correction this leaf carried is the reason two long-standing cards changed.** `store.close()` no
+longer unlinks WAL/SHM peers, and `connection.discard_closed_wal_peers` now states a caller precondition instead of
+a close-time rule: the unlink could not know whether another connection held the database, a reader holding a read
+transaction blocks the checkpoint that would have made it safe, and an unconditional call destroyed a committed
+batch. SQLite removes its own peers on the last clean close, so the call was removed rather than made conditional.
+`connection` also gained `open_read_only_database` (the connection every identity confirmation uses, so a check
+cannot repair what it checks) and `journal_mode`.
+
+**Two carried limitations and one disclosure belong here rather than being rediscovered.** `application/
+knowledge_snapshot.py` — like `application/knowledge.py` — has **no non-test importer in `mcp/src`**: the lifecycle
+and publication exist inside the seam, with no tool wired to them. `authorization_ref` on a disposal is **carried
+but never examined**, because permissibility is this layer's question and the approval chain is the caller's.
+And the `kernel/atomic_write.py` directory fsync runs **after** `os.replace`, so a post-rename failure is reported
+as a replace failure — which is why a create can answer `destination_occupied` for the destination holding the
+complete candidate it just created, and why a publication can return `publication_failed` where
+`publication_durability_unconfirmed` would be the honest code. The non-claim narrows again: the still-unclaimed
+behaviour is now L5–L8 (Git merging, portable roundtrip, selective read and candidate diff).
+
 ## Invariants And Boundaries
 
 - **Import direction is one-way.** `memory.knowledge` imports `kernel.canonical_json`, `kernel.file_lock` and
@@ -199,8 +253,8 @@ means by "public MCP names and transport wiring are later extensions".
 - **Vocabulary is defined where it decides.** Literal states, operation names, refusal codes and version strings
   live in `models.knowledge` and are imported by the decider, never defined by the decider and imported back down.
 - **This is an experimental increment on the master's branch pair.** No IAS landing is implied, legacy Markdown
-  remains operational authority, and the still-unclaimed behaviour is now L4–L8 (snapshot publication, Git merging,
-  portable roundtrip, selective read and candidate diff). The admitted batch contract *is* claimed by this route as
+  remains operational authority, and the still-unclaimed behaviour is now L5–L8 (Git merging, portable roundtrip,
+  selective read and candidate diff) — snapshot publication is claimed by this route as of `KS-R04@v1`. The admitted batch contract *is* claimed by this route as
   of `KS-R03@v1` — one lock, one transaction, one closed command union and one resolved dataset identity — while the
   `task-candidate` lane deliberately refuses until a later leaf supplies a checkable binding. The graph half is
   claimed as of `KS-R02@v1`: families, anchors, memberships and realization claims are stored and readable from both
@@ -253,6 +307,7 @@ checkout, but neither establishes a boundary contract here.
 
 ## Update History
 
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): reviewed the route because its meaning changed, not only its file list. The storage package gained its **snapshot half** in five new `knowledge/` modules plus a second composition seam, with `schema.py` untouched, and this account records the five boundaries a reader needs before the mechanism: local working identity read rather than asserted (a receipt with no dataset digest), two-phase creation with occupied-destination-as-resume, a clone taken from a closed representation, closedness *proven* after a freeze that has to establish the journal mode on a fresh connection, replace-or-nothing publication against an admitted identity with a `no_change` that retains bytes, and disposal as a verdict whose two grounds are both identity-checked. **The durability correction is recorded as the reason two long-standing cards changed**: `store.close()` no longer unlinks WAL/SHM peers and `discard_closed_wal_peers` is now a caller precondition, because the unlink could not know whether another connection held the database and an unconditional call destroyed a committed batch when a reader blocked SQLite's checkpoint. The Hot Path Summary now names the snapshot modules in the same breath as the batch boundary. Two carried limitations and one disclosure are stated as limitations rather than properties: the new seam has no non-test importer in `mcp/src`, `authorization_ref` is carried but never examined, and the `atomic_write` directory fsync runs after `os.replace` (so a post-rename failure is reported as a replace failure). The explicit non-claim was narrowed from "L4–L8 behaviour" to "L5–L8 behaviour". Verification metadata remains closeout-owned.
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): reviewed the route because its meaning changed, not only its file list. The storage package gained the substrate's **single typed write boundary** in six new modules (`candidate`, `candidate_records`, `batch_preconditions`, `batch_commands`, `labels`, `logical`) with seven changed, and `schema.py` untouched. This account records the one-lock/one-transaction boundary and the published in-transaction helpers, the all-or-nothing property as measured evidence rather than a promise, the completed-graph validation axis with `lineage.declared_cycle` as the only supplier of the batch's declared edges, the fail-closed lane rules (baseline by name, `task-candidate` until a checkable binding exists), the resolved-not-asserted dataset identity, and the factual closed receipt. The explicit non-claim was narrowed from "L3–L8 behaviour" to "L4–L8 behaviour". **Two carried limitations are recorded as limitations rather than properties**: the refusal code `no_change` still has no producer (only the result state is reachable), and `application/knowledge.py` still has no non-test importer in `mcp/src`, so the boundary is not yet wired to any tool. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`):
   reviewed the route because its meaning changed, not only its file list. The storage package gained its relation

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c`|
+| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,15 @@ the application layer instead.
 `.connection`; `CANONICAL_COLUMNS`, `CANONICAL_TABLES`, `IMMUTABILITY_TRIGGERS`, `SCHEMA_USER_VERSION`,
 `create_schema_statements`, `schema_fingerprint` and `schema_manifest` from `.schema`; and
 `OpenedKnowledgeStore`, `open_existing_knowledge_store` and `open_knowledge_store` from `.store`.
+
+**One exported name carries a caller precondition, and it is the one to read before calling anything here:**
+`discard_closed_wal_peers` unlinks `-wal`/`-shm` peers and may be used only by a caller that has independently
+established that **no connection holds the database**. Since 260915-KS-L4 no close path in this package calls it —
+`OpenedKnowledgeStore.close()` relies on SQLite, which checkpoints its WAL and removes both peers itself on the last
+clean close — because the unlink cannot know whether another connection (in this process or another) still has the
+file open, and a reader holding a read transaction blocks that checkpoint, so an unconditional call destroyed a
+committed batch. Its remaining callers are an offline repair or an enclosure cleanup that owns the file. The
+function is still exported because that legitimate use exists; it is not a lifecycle call.
 
 ### Conventions
 
@@ -83,5 +92,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the **caller precondition on the one exported name that has one**. `discard_closed_wal_peers` is still re-exported, but since this leaf no close path in the package calls it: `OpenedKnowledgeStore.close()` relies on SQLite's own last-clean-close behaviour, because the unconditional unlink destroyed a committed batch whenever a reader held a read transaction and blocked the checkpoint. The card states the legitimate remaining use (an offline repair or enclosure cleanup that owns the file exclusively), which is why the name stays exported, and states that it is not a lifecycle call. The re-export list itself is unchanged by this leaf, so no other body text moved. Verification metadata remains closeout-owned.
 
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new concrete knowledge-storage package facade. It records the package's ownership boundary, the one-way import direction and the create-versus-reopen split. Verification metadata remains empty until closeout stamps the code commit.
