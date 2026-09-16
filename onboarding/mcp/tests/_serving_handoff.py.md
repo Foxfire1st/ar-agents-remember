@@ -6,8 +6,8 @@
 | path | `mcp/tests/_serving_handoff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T21:25+02:00 |
-| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
-| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
+| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
+| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

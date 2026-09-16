@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash |  `9bef02374f7dc80b7bddceef5a9e08651169fd7d`|
-| lastVerifiedCommitDate |  2026-09-15T13:35:34+02:00|
+| lastVerifiedCommitHash |  `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
+| lastVerifiedCommitDate |  2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
