@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-runtime.py`      |
 | doc_type               | `file-level-onboarding`        |
 | lastUpdated            | 2026-09-06T22:07:53+00:00 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `2652ca8622d53111fa333657685483efc053c43b`             |
+| lastVerifiedCommitDate | 2026-09-16T07:34:15+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
