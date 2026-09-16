@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastUpdated | 2026-09-16T14:15+02:00 |
+| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
+| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -135,6 +136,32 @@ rows this card cites sit after the insertion and are one line higher than the L7
 them: `test_worktree_status_terminal_next_tool.py` `:182` → `:183` and
 `test_pause_is_not_publication.py` `:194` → `:195`; `test_pause_stop_only_end_to_end.py` `:162`, the
 playthrough `:156`, the L7 row `:137` and the L4 row's lane are unchanged.
+
+## 260915-CAPS-L5 Lane Row (Declared)
+
+The L5 change set adds `mcp/tests/test_codex_capsule_delivery.py` **and** its row in the same change.
+The row is `mcp/tests/test-evidence-lanes.toml:216`, in the **provider-conformance** lane, inserted
+alphabetically between `test_codex_app_server_adapter_turns.py` and
+`test_harness_control_claude.py`. That is its behaviour-preserving lane: the module's subject is the
+vendor app-server's instruction channel — an instruction-channel fixture generated from the installed
+`codex-cli 0.151.0` schema, one live native case, and the Codex adapter/session seam — which is exactly
+what the sibling `test_codex_app_server_*` modules are classified as. The module carries **28 collected
+cases and no `integration` marker**, so nothing here spends integration budget.
+
+**Additive proof, measured by the loader itself.** Before the row the fail-closed loader reported
+**7** findings including this module; after it, **6** — and the module is absent from them. No existing
+row was edited, reordered or removed.
+
+**Measured population at this candidate.** 216 `mcp/tests/test_*.py` modules on disk, **210** manifest
+rows — unit-regression **118**, public-contract 2, integration 60, architecture-fitness 16,
+provider-conformance **14**, with stress-durability and migration empty — so **6 modules remain
+unregistered**, and they are exactly the pre-existing D9 set owned by the final-verification leaf:
+`test_eve_adapter.py`, `test_eve_protocol.py`, `test_role_capsule_admission.py`,
+`test_role_capsule_compiler.py`, `test_role_instruction_corpus.py`, `test_task_projection.py`. This leaf
+added its own row and **did not** touch the other six; the loader's exact output is the pin.
+
+Classification only: lane membership is not execution or acceptance evidence, and the six D9 rows are
+not this leaf's to classify.
 
 ## 260915-CAPS-L4 Lane Row (Declared) — And The Unit Population Now Refuses Collection
 
@@ -265,8 +292,8 @@ The exact source declarations below establish the current behavior; this invento
 | Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs. The range moved by +2 when this change set and L4 each inserted one row additively into the same list. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-128 |
 | Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:129-190 |
 | Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:191-208 |
-| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:209-223 |
-| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:224-224; mcp/tests/test-evidence-lanes.toml:226-226 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:209-224 |
+| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:225-226; mcp/tests/test-evidence-lanes.toml:227-228 |
 | L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:129-129 |
 | The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 | The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:224-224 |
@@ -292,6 +319,18 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository authority is established by this file.
 
 ## Update History
+
+- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: registered the leaf's new
+  `mcp/tests/test_codex_capsule_delivery.py` in the **provider-conformance** lane (entry row 216,
+  between `test_codex_app_server_adapter_turns.py` and `test_harness_control_claude.py`) — its subject
+  is the vendor app-server instruction channel, the same lane as its sibling `test_codex_app_server_*`
+  modules, and its 28 cases carry no `integration` marker. Additive proof by the loader itself: 7
+  findings including this module before the row, 6 after, and the module absent from them. Reconciled
+  the brackets this insertion moved (provider-conformance 209-224, stress-durability 225-226,
+  migration 227-228). Measured population at this candidate: 216 modules on disk, 210 rows (118
+  unit-regression, 2 public-contract, 60 integration, 16 architecture-fitness, 14 provider-conformance),
+  so the **six D9 modules remain unregistered** — named in the new section and left to L11.
+  Classification only; verification metadata stays at the current committed base `c1dbebf8`.
 - 2026-09-16T11:43:27+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:129-129. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-16T11:43:27+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:224-224. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-16T11:43:27+00:00: Generated citation repair: "mcp/tests/test_state_signal_boundary_delivery.py" repointed to mcp/tests/test-evidence-lanes.toml:101-101. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.

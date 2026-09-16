@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-16T09:00+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastUpdated | 2026-09-16T14:15+02:00 |
+| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
+| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -46,6 +46,54 @@ This identity is diagnostic and acceptance evidence, not package-update policy. 
 registrations continue to launch `uvx --refresh-package agents-remember-mcp
 agents-remember-mcp@latest`; the disposable ARSPAWN acceptance runner launches exact local source
 only so it cannot accidentally certify a stale published artifact.
+
+## 260915-CAPS-L5 Codex Capsule Delivery
+
+**One new route member and five touched ones, and the capsule is a value the whole way.** The new
+module is `capsule_delivery.py`: the delivery value type (`CodexCapsuleDelivery` over a
+`CapsuleBindingIdentity`), the refresh decision (`plan_refresh`), and the legacy-chain switch
+(`legacy_instruction_switch`). It sits at `serving` rank deliberately — the compiler (L2) and the
+admission surface (L4) rank **above** `serving`, so the capsule arrives as an admitted value this rank
+may consume but must not import. It defines what the seam consumes over `models`-rank imports only.
+
+The carrier chain, which is the route-level fact:
+
+```
+TerminalLaunchRequest.control.capsule_delivery   terminal_opener.py (caller-facing field)
+  -> RunnerConfig.capsule_delivery               harness_control_runner.py
+  -> payload key "capsuleDelivery"               ONLY when a capsule is present
+  -> parse_runner_config                         (malformed value REFUSES)
+  -> both factory calls in _prepare_controlled_launch
+  -> create_harness_protocol_adapter(capsule_delivery=...)
+  -> CodexAppServerSettings.capsule_delivery     codex_app_server_session.py
+```
+
+Two invariants of this route must survive any later edit, and both are measured rather than asserted:
+
+1. **The capsule-free wire is byte-identical to base.** The payload key is *omitted*, not null: the
+   base module and the candidate module produce the same eight keys, the same 344-character encoded
+   token and the same token sha256. Anything that makes the key unconditional breaks every existing
+   launch path.
+2. **A malformed or channel-less capsule refuses.** `_optional_capsule_delivery` raises rather than
+   dropping it, and `_require_capsule_channel` refuses a capsule for any harness other than `codex`.
+   A caller that asked for a capsule must never receive a capsule-free process.
+
+**Lifetime.** The installed app-server (measured `codex-cli 0.151.0`) exposes instruction fields on
+`thread/start`, `thread/resume` and `thread/fork` and **none** on `turn/start`, so an ordinary message
+cannot re-apply the role corpus. The seam therefore applies one capsule per admitted binding at a
+thread-open boundary, re-states identical bytes on the same digest, and for a changed revision opens a
+bounded fresh thread (or a fork when the caller offers one) instead of stacking a second revision — an
+unsupported refresh is reported through the plan's reason, never faked. The host's own
+`instructionSources` list is published verbatim as observation, and the legacy startup chain is
+suppressed per launch through the existing thread `config` key `project_doc_max_bytes: 0`.
+
+**Declared limits on this route, stated as limits.** The vendor-side effect of re-sending
+`developerInstructions` on `thread/resume` is unmeasured (0.151.0 persists no rollout until a real turn
+runs), so `IN_PLACE` is schema- and unit-proven only; `FORK_THREAD` has no production caller; no live
+spawn through `terminal_opener` was exercised; and the delivered payload is bounded by nothing here —
+the largest shipped capsule measures **120,536 chars, 92.0 % of Linux `MAX_ARG_STRLEN` (131,072)** with
+~10 KB headroom, and past that the spawn fails with `E2BIG` before any AR surface can report it
+(defect `D12`, routed to the final-verification leaf with a required bound and pre-encoding refusal).
 
 ## Purpose
 
@@ -662,7 +710,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   discovery, validate against the live model/model-local effort catalog, construct a fresh
   configured adapter, and preserve exact failure evidence over IPC. The daemon request can now
   supply an optional complete pair through this same launch path; a selectionless request still
-  lets the native authenticated catalog choose its default without creating a second authority.
+  lets the native authenticated catalog choose its default without creating a second authority. Since
+  260915-CAPS-L5 the same path also carries one optional admitted role capsule
+  (`capsule_delivery`) from the launch boundary to the adapter settings, through a payload key that is
+  emitted **only** when a capsule is present — so a capsule-free launch is byte-identical to base — and
+  the factory refuses a capsule for any harness without a verified instruction channel. The
+  resolved-selection factory call now passes its selection as one `LaunchSelection` pair, a
+  no-exemption answer to `PLR0913` rather than a behaviour change.
 
 - `claude_stream_capabilities.py`, `claude_stream_protocol.py`, `claude_stream_startup.py`, and
   `harness_control_claude.py` — correlate `control_request/list_models` before the steady-state
@@ -679,7 +733,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
   readiness; later turns reuse the resolved effort. Initialize identity accepts a product-agnostic
   server-product/version followed by optional diagnostics ending in the exact clientInfo name/version suffix, while the
-  primary product version must still agree with thread evidence.
+  primary product version must still agree with thread evidence. When a role capsule is delivered
+  (260915-CAPS-L5), this session occupies the schema-supported `developerInstructions` field at the
+  thread-open boundary only — there is no turn-level instruction field — compares the **recorded**
+  binding identity and semantic digest before re-stating identical bytes, drops `threadId` and opens a
+  bounded fresh thread for a changed revision or an unknown one, publishes the host's own
+  `instructionSources` verbatim, and suppresses the host's project-document load per launch through
+  `project_doc_max_bytes: 0`. A capsule-free open is unchanged.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
   `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
@@ -942,6 +1002,21 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+
+- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: **route meaning changed for one new member plus five
+  touched ones, so the body was updated rather than given a no-impact entry.** Added
+  `capsule_delivery.py` (the delivery value type, the refresh decision, the legacy-chain switch) and
+  the carrier chain that now runs `TerminalLaunchRequest.control.capsule_delivery` → `RunnerConfig` →
+  the **conditionally** emitted `capsuleDelivery` payload key → parse → both factory calls →
+  `CodexAppServerSettings.capsule_delivery`. Recorded the two invariants a later editor must not break —
+  the capsule-free wire is byte-identical to base (same eight keys, 344-char token, same sha256) and a
+  malformed or channel-less capsule **refuses** rather than dropping — plus the lifetime rule the
+  installed protocol forces (no `turn/start` instruction field, one capsule per admitted binding, a
+  changed revision opens a bounded fresh thread) and the three declared limits (unmeasured vendor
+  `thread/resume` effect, `FORK_THREAD` without a production caller, the `D12` payload bound at 92.0 %
+  of `MAX_ARG_STRLEN` with an `E2BIG` failure mode). Updated the two Route Model bullets the change
+  reaches. Verification metadata stays pinned to the last committed source (`c1dbebf8`); the candidate
+  is uncommitted and closeout owns the stamp.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **No route impact from the A2
   revision.** The route meaning recorded at 09:00 below is unchanged — the A2 round repaired and

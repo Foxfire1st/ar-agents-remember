@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-16T14:15+02:00 |
+| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
+| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +20,7 @@
 Contains strict Codex app-server model, thread, state, interaction, submission-ledger, activity,
 terminal, transcript, and reconciliation parsing helpers used by the native adapter/session pair.
 260718-CHATS-L0E adds the `thread/read` → native-evidence-frame flatten helper.
+260915-CAPS-L5 adds the thread-open `instructionSources` observation to `CodexThreadEvidence`.
 
 ## Code Commentary
 
@@ -40,6 +42,14 @@ L0E's `native_evidence_frames_from_thread` flattens one `thread/read` thread int
 `nativeParentId`, every item must carry a unique `id` and a `type`, and a repeated id raises
 `CodexAppServerError` instead of manufacturing a cursor that could overlap or skip items across
 pages. Item payloads cross whole as the frame `raw`; `created_at` stays `None` rather than invented.
+
+**CAPS-L5's `_instruction_sources`,** called from `parse_thread_open_response`, reads the thread-open
+response's `instructionSources` — the **host's own** list of instruction documents it loaded for that
+thread — onto `CodexThreadEvidence.instruction_sources`. An absent or null field is a legitimate answer
+on a version that does not expose it and yields `()`; a present value that is not a list of non-empty
+strings raises `CodexAppServerError` naming the method. This is observation, not authority: the session
+publishes it verbatim so automatic host injection (for example a workspace `AGENTS.md`) is visible, and
+the legacy-chain switch's *reason* is built from it.
 
 ### Conventions
 
@@ -63,6 +73,9 @@ version remains the negotiated Codex version and must later agree with thread ev
   closed; paging never proceeds without per-item uniqueness.
 - A host-first initialize response without the exact requested client name/version suffix is not
   accepted as Agents Remember's app-server session.
+- **The instruction-source observation is reported, never authored.** `instructionSources` is the
+  host's own list; an absent field is `()` (a version that does not expose it) while a malformed one
+  raises, and nothing here may synthesize a source the host did not report.
 
 ### Todos
 
@@ -84,9 +97,10 @@ the same strict thread and event helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Session reads all model pages and validates desired/effective model-local settings against these rows. | `discover` | mcp/src/agents_remember/serving/codex_app_server_session.py:214-224 |
+| Session reads all model pages and validates desired/effective model-local settings against these rows. | `discover` | mcp/src/agents_remember/serving/codex_app_server_session.py:245-255 |
 | Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | `submit`; `_start_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:285-310; mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-530 |
-| Initialize parsing extracts the primary Codex product version while requiring exact client identity on host-first responses. | `validate_initialize_response` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-164 |
+| Initialize parsing extracts the primary Codex product version while requiring exact client identity on host-first responses. | `validate_initialize_response` | mcp/src/agents_remember/serving/codex_app_server_state.py:139-169 |
+| Thread-open parsing now also reads the host's own loaded instruction documents onto the evidence object. | `_instruction_sources`; `parse_thread_open_response`; `CodexThreadEvidence` | mcp/src/agents_remember/serving/codex_app_server_state.py:274-294; mcp/src/agents_remember/serving/codex_app_server_state.py:297-327; mcp/src/agents_remember/serving/codex_app_server_state.py:59-75 |
 
 ## Cross-Repo References
 
@@ -97,6 +111,13 @@ No external repository boundary is implemented by this parser module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: documented the thread-open `instructionSources`
+  observation on `CodexThreadEvidence` — absent/null yields `()`, a malformed present value raises with
+  the method named, and the value is host-reported observation published verbatim (the legacy-chain
+  switch's reason is built from it). Re-anchored `discover` and `validate_initialize_response` and added
+  the observation's ranges. Verification metadata moves to the last committed source `c1dbebf8`;
+  closeout re-stamps the real code commit.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
