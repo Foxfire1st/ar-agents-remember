@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
+| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,9 @@
 ## Purpose
 
 Opens or reuses hosted occupants and persists their structural task-document-and-role binding. Runtime
-launch mechanics remain plane-owned behind structural dispatch.
+launch mechanics remain plane-owned behind structural dispatch. Since 260915-CAPS-L5 it also carries
+the admitted role capsule from the launch boundary onto the runner configuration, as an optional
+value it transports but never derives.
 
 ## Code Commentary
 
@@ -42,6 +44,13 @@ A harness kind always runs behind the control runner, so for a PATH TUI the two 
 they diverge only for a harness whose runtime is an application. Answering both with detection alone is
 what let a detected eve row resolve to an argv whose program exists nowhere — a false affordance rather
 than a launch.
+
+**The capsule's caller-facing half (260915-CAPS-L5).** `ControlRunnerRequest.capsule_delivery` is where
+whoever admits a role capsule at the launch boundary states it, and `_session_command` copies it onto
+`RunnerConfig.capsule_delivery` — one field, unchanged, no derivation. The opener does not compile,
+select, render or validate the capsule; it transports an admitted value, and `None` (every existing
+construction site) is the ordinary legacy launch. A capsule is therefore a caller's decision, never an
+opener default.
 
 `open_terminal_session` validates launch and task binding, refuses an occupied singular seat, creates
 the catalog row, and starts the hosted process. The opener scrubs inherited daemon identity before
@@ -80,6 +89,9 @@ or through an operator API boundary.
   detected and still must refuse this path by name; only a caller that states
   `session_backend=True` may resolve it, because that caller spawns the runner rather than the harness.
 - This module allocates occupants; it does not define public seat addresses.
+- **The capsule is transported, never derived.** `capsule_delivery` is copied from the request onto the
+  runner configuration unchanged; the opener never compiles, selects or renders one, and `None` keeps
+  every existing launch path exactly as it was.
 
 ### Todos
 
@@ -93,16 +105,17 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:484-503 |
-| Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:628-651 |
-| The request field that states which launchability question a caller is asking. | `TerminalLaunchRequest`; `session_backend` | mcp/src/agents_remember/serving/terminal_opener.py:125-174 |
-| The two branches: terminal open asks for an existing program, session backend asks for a startable runtime. | `_require_launchable_harness`; `terminal_launch_detail`; `is_detected`; `harness_detection_detail` | mcp/src/agents_remember/serving/terminal_opener.py:299-319; mcp/src/agents_remember/serving/harnesses.py:93-107; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
+| Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:494-513 |
+| Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:639-662 |
+| The request field that states which launchability question a caller is asking. | `TerminalLaunchRequest`; `session_backend` | mcp/src/agents_remember/serving/terminal_opener.py:136-184 |
+| The two branches: terminal open asks for an existing program, session backend asks for a startable runtime. | `_require_launchable_harness`; `terminal_launch_detail`; `is_detected`; `harness_detection_detail` | mcp/src/agents_remember/serving/terminal_opener.py:309-329; mcp/src/agents_remember/serving/harnesses.py:93-107; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
 | The seat-spawning caller that sets `session_backend=True`. | `_spawn_launch_request` | mcp/src/agents_remember/application/terminal_tools.py:732-766 |
 | The cases: a terminal open of eve refuses by name and yields no argv, a session-backend spawn still resolves, and the path harnesses are unaffected in both modes. | `EveTerminalLaunchTests` | mcp/tests/test_eve_product_integration.py:632-707 |
-| Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:777-830 |
-| Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:177-198 |
-| The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:560-625 |
-| Structural admission consumes the shared task-binding authority before process creation. | `_task_binding_refusal` | mcp/src/agents_remember/serving/terminal_opener.py:746-774 |
+| Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:788-841 |
+| Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:188-208 |
+| The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:571-636 |
+| Structural admission consumes the shared task-binding authority before process creation. | `_task_binding_refusal` | mcp/src/agents_remember/serving/terminal_opener.py:757-785 |
+| The caller-facing half of the capsule carrier, and the one place it is populated onto the runner configuration. | `ControlRunnerRequest`; `capsule_delivery`; `_session_command` | mcp/src/agents_remember/serving/terminal_opener.py:112-132; mcp/src/agents_remember/serving/terminal_opener.py:534-568 |
 
 ## Cross-Repo References
 
@@ -116,6 +129,14 @@ unavailable lineage returns a typed `OpenTerminalResult` with detail and the
 strict projection; non-structural terminals retain their existing path.
 
 ## Update History
+- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: recorded the capsule's caller-facing half at this
+  boundary — `ControlRunnerRequest.capsule_delivery` and its unchanged copy onto
+  `RunnerConfig.capsule_delivery` in `_session_command` — with the rule that the opener transports an
+  admitted value and never derives one. Re-anchored **nine** ranges in this card that this leaf's own
+  addition shifted (`TerminalLaunchRequest`, `_require_launchable_harness`, `_scrub_daemon_identity_env`,
+  `_binding_conflict_owner`, `open_terminal_session`, `SpawnProvenance`, `_opened_catalog_entry`,
+  `_task_binding_refusal`, and the new capsule row), so L8's landed claims keep pointing at their
+  constructs. Verification metadata stays at the current committed base `c1dbebf8`; closeout re-stamps.
 - 2026-09-16T11:42:31+00:00: Generated citation repair: `_scrub_daemon_identity_env` repointed to mcp/src/agents_remember/serving/terminal_opener.py:484-503. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-16T11:42:31+00:00: Generated citation repair: `_task_binding_refusal` repointed to mcp/src/agents_remember/serving/terminal_opener.py:746-774. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
 

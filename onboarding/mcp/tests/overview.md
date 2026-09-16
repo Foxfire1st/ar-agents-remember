@@ -5,15 +5,43 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-16T14:15+02:00 |
+| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
+| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [MCP package overview](../overview.md)
+
+## 260915-CAPS-L5 Codex Capsule-Delivery Test Population
+
+One module and two fixtures join this route. `test_codex_capsule_delivery.py` collects **28 cases**
+(`pytest --collect-only -m ""` → `28 tests collected`; the default selection collects the same 28 — the
+module carries **no `integration` marker**), registered in `test-evidence-lanes.toml` under
+**`provider-conformance`** at entry row 216, between `test_codex_app_server_adapter_turns.py` and
+`test_harness_control_claude.py`. That lane is its behaviour-preserving one: its subject is the vendor
+app-server's instruction channel — a schema fixture generated from the installed `codex-cli 0.151.0`,
+one live native case, and the Codex adapter/session seam — exactly like its sibling
+`test_codex_app_server_*` modules.
+
+Two fixtures arrive with it, both **expiry artifacts pinned to the installed CLI version**:
+
+- `codex_app_server_instruction_channels.json` — the independent side of the wire comparison: the
+  instruction fields per thread-open request (`baseInstructions` + `developerInstructions` on
+  `thread/start`, `thread/resume`, `thread/fork`; **none** on `turn/start`, which is the fact the whole
+  lifetime design rests on) and the response's `instructionSources`. Read by the test, never imported
+  from the module under test.
+- `codex_app_server_model_page.json` — one captured real `model/list` page, because the leaf's first
+  hand-written drafts were rejected by the production parser. The durable answer was to capture the
+  vendor's real reply and pin it.
+
+The module's shape is worth naming: it drives **production** seams and doubles only two things — the
+transport (so wire shape is asserted without a vendor process) and the transient capability-preflight
+discoverer (so the launch-boundary case does not start a second vendor process); the real adapter in
+those cases still comes from the production factory. Its load-bearing cases are noted on its sidecar.
+The live case is gated by a `skipif` version check, so a skip is never a pass.
 
 ## 260915-CAPS-L4 Capsule And Skill-Serving Test Population
 
@@ -868,6 +896,15 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: **route meaning changed**, so this overview gained a
+  section rather than a no-impact entry. Added the L5 test population — `test_codex_capsule_delivery.py`
+  at **28 collected cases and no `integration` marker**, registered under **`provider-conformance`** at
+  entry row 216 — plus the two expiry fixtures it reads (`codex_app_server_instruction_channels.json`
+  and `codex_app_server_model_page.json`), naming the `turn/start` instruction-field absence the
+  lifetime design rests on and why a captured `model/list` page replaced hand-written drafts. Recorded
+  the module's two deliberate doublings (transport, transient discoverer) and the live case's
+  skip-not-pass guard. Verification metadata stays pinned to the last committed source (`c1dbebf8`).
 
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: refreshed this route section
   against the settled candidate. Corrected the population from 21 to **30 collected items (28 unit + 2
