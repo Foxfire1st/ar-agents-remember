@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash |  `4eb2b1992f6183fba06e9f31aa664d9a93094c26`|
-| lastVerifiedCommitDate |  2026-09-16T18:28:38+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
+| lastUpdated | 2026-09-16T23:50+02:00 |
+| lastVerifiedCommitHash |  `1ff1893f44d875073d58af863238501a6be35288`|
+| lastVerifiedCommitDate |  2026-09-16T23:58:57+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,12 @@ import operation, its private stage and its staged sealed-aggregate verification
 `knowledge/export_refusals.py` (the boundary's refusal vocabulary), with the artifact's header carrying the *same*
 logical digest `knowledge/logical.py` defines — there is one digest definition, not two. The import
 direction is enforced: no package ranked below `memory` (rank 12) may import `memory.knowledge`, and `application`
-(rank 21) is its only consumer.
+(rank 21) is its only consumer. **The read half** is `knowledge/read.py` (the requirement's finite selection policy,
+executed once over one snapshot, plus whole-item paging over an already-selected scope),
+`knowledge/read_queries.py` (one statement per lookup, all on the caller's connection), `knowledge/read_anchors.py`
+(the anchor observation against the requested code tree) and `knowledge/read_refusals.py` (the read's refusal
+vocabulary), with `knowledge/logical.py`'s public `cell_value` as the one decoder a read page and the logical
+digest share.
 
 ## Detailed Route Context
 
@@ -397,6 +402,84 @@ for **L9**.
 
 
 
+### 260915-KS-L7 The Selective Recorded-Scope Read
+
+This route gained **the read half** and still no new authority: four new modules
+(`knowledge/{read,read_queries,read_anchors,read_refusals}.py`), the fifth composition seam in
+`application/knowledge_read.py`, and **no change to `schema.py`** — the schema stays
+`ar-knowledge-sqlite/v1`, `PRAGMA user_version = 1`, ten tables, fifteen triggers and the same
+`schema_fingerprint()`. Two existing storage modules changed, and each change is small and load-bearing:
+`logical.py` gained the public `cell_value` (the one decoder a read page and the digest share), and
+`base.py` gained `require_plain_git_path` (the one Git-pathspec rule both typed path boundaries apply).
+
+**The selection policy is the requirement's own table, and its stopping rule is the load-bearing design
+fact: the containing-family set is frozen *before* membership expansion.** Reading `P`, `I1` or exact `F`
+in the packet's `P → I1`, `F → {I1, J1}`, `G → {J1, K1}` graph returns I1's and J1's realizations,
+**advertises** J1's `G` membership, and **excludes K1** until `G` is selected explicitly in a subsequent
+expansion. The frontier is `memberships_of(I) − F0`, advertised and never traversed — a sibling's
+membership in another family is a recorded fact the caller can act on, not permission for this read to walk
+that family.
+
+**Three properties a consumer may rely on, each enforced at model construction rather than by discipline:**
+
+- **A page's counts describe the declared selected set, not the remaining tail.** `primary_items_total` is
+  the same number on every page of the walk, `primary_items_returned` is the walk's cumulative figure, and
+  the slice size is `len(page.items)`. The three satisfy `returned + remaining == total` **at every
+  position**, and `KnowledgeReadCounts` refuses its own arithmetic contradiction. Round 1 of this leaf's
+  review sealed this as a defect: restating the total as the tail makes page 2 of a 17-item walk report 16
+  and the last page 1 — the requirement's own non-conforming example, *"a one-item page implies that the
+  invariant has only one implementation"*.
+- **A truncated page can never be presentable as a complete family.** `KnowledgeReadPage` refuses to exist
+  with `has_more == enumeration_complete`, or with `has_more` disagreeing with the presence of a
+  continuation.
+- **Nothing in the response can be read as a verdict or a current pointer.** Every statement, role,
+  rationale and lifecycle crosses as the authored text it is stored as; the models have **no field** that
+  could hold a "current", "accepted", "severity" or "ranked" marker, which is how the requirement's
+  *Forbidden Overreach* is enforced structurally. An identity seed returns every retained revision grouped
+  by identity, and a display version selects nothing.
+
+**The path-refusal contract is the one review corrected most sharply, and the correction is the interesting
+part — a refusal must describe the actual cause.** Git pathspec **magic** is the leading-`:` family
+(`:(exclude)`, `:!`, `:(top)`, `:/`) plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and
+NUL; the glob characters `*`, `?` and `[` are **literal characters** to `ls-tree` (measured on
+`git 2.54.0`), so a legitimate anchor containing them must be authorable, seedable and resolvable. Round 1
+refused them, which made such an anchor un-authorable and reported a file the tree really holds as
+`path_absent` — *a false statement about the repository rather than a refusal of a malformed spelling*. The
+read path therefore distinguishes **three genuinely different facts**, and a caller must never be told a
+path is absent when the real reason is its spelling:
+
+| Outcome | The fact |
+| --- | --- |
+| `path_absent` | Git answered, and the requested tree holds nothing at that path |
+| `unsupported_locator` | the spelling is not addressable, so the tree was never asked; the cause is in `detail` |
+| `recorded_object_unavailable` | the lookup did not answer: the tree is absent, or Git ran and failed, or Git could not be run at all |
+
+The same rule was applied to the leaf's other refusal sites — `registration_absent` fires only for a path
+with no recorded claim, `selector_absent` only for an identity the snapshot does not hold, and each
+`snapshot_unavailable` variant names the comparison that fired.
+
+**Two honest limits belong here rather than in a footnote.** `_tree_entry`'s **non-zero-exit** branch is
+reachable by no input on this host and is an **explicitly disclosed unasserted defensive branch** (L9 ledger
+**A6**); a published claim that a mutation made it reachable was **withdrawn** by the leaf's own evidence
+erratum, because the kill that appeared to prove it also appears with the production line untouched — so it
+must never be read as coverage. And `_manifest_digest`'s inclusion of each item's `selection_reasons` is a
+**reachable covered gap** with no killing node (L9 ledger **A4**).
+
+**Where the read is addressed and what it never does.** The context names one namespace, one exact logical
+snapshot and optionally one exact code tree; all three are verified against the file that was actually
+opened, through three separate comparisons where the schema generation is its own statement rather than a
+corollary of the digest. `task_ref=None` is a **supported** baseline state — a read during planning needs no
+leaf, no enclosure and no fabricated task. The connection is opened **read-only**, so "a refused read
+persisted nothing" is a property of the handle rather than a rollback, and the evidence measures it. A
+continuation is a **binding**, not a position: snapshot, context, selector, policy and schema are checked
+before the file is opened and the manifest and position after the selection exists, and a cursor that binds
+something else is refused with **no partial page**. Nothing on this path writes, falls back to a working
+tree, to `HEAD` or to Markdown, resolves a symbol locator, or attaches a semantic verdict.
+
+**The leaf's own population and its forward constraint.** 46 leaf cases (21 unit + 25 integration), across
+three test modules whose shared fixture is registered as the governed artifact `knowledge-read-scope-cases`
+— **L8 must split the unit module before adding cases**, because it sits at 1 163 of the 1 200-line limit.
+
 ## Invariants And Boundaries
 
 - **Import direction is one-way.** `memory.knowledge` imports `kernel.canonical_json`, `kernel.file_lock` and
@@ -412,13 +495,21 @@ for **L9**.
 - **Vocabulary is defined where it decides.** Literal states, operation names, refusal codes and version strings
   live in `models.knowledge` and are imported by the decider, never defined by the decider and imported back down.
 - **This is an experimental increment on the master's branch pair.** No IAS landing is implied, legacy Markdown
-  remains operational authority, and the still-unclaimed behaviour is now **L7–L8** (selective snapshot read and
-  candidate diff) — the portable roundtrip is claimed by this route as of `KS-R06@v1`, the Git-side merging half as
-  of `KS-R05@v1`, and snapshot publication as of `KS-R04@v1`. The admitted batch contract *is* claimed by this route as
+  remains operational authority, and the still-unclaimed behaviour is now **L8** (the invariant-family candidate
+  diff) — the selective recorded-scope read is claimed by this route as of `KS-R07@v1`, the portable roundtrip as of
+  `KS-R06@v1`, the Git-side merging half as of `KS-R05@v1`, and snapshot publication as of `KS-R04@v1`. The admitted batch contract *is* claimed by this route as
   of `KS-R03@v1` — one lock, one transaction, one closed command union and one resolved dataset identity — while the
   `task-candidate` lane deliberately refuses until a later leaf supplies a checkable binding. The graph half is
   claimed as of `KS-R02@v1`: families, anchors, memberships and realization claims are stored and readable from both
-  directions, while anchor **resolution** remains `KS-R07`'s and is deliberately absent here.
+  directions; anchor **resolution** is now claimed by this route as of `KS-R07@v1`, in
+  `knowledge/read_anchors.py`, and is still deliberately absent from the write path.
+- **A refusal describes the actual cause.** No path on this route reports an absence for a spelling it refused,
+  and every refusal code names a distinct fact a caller acts on — the rule `KS-R07@v1` established across the read
+  path and inherited by L8/L9. A boundary that refuses something must let the caller tell an absence from a
+  malformed input.
+- **The read half is read-only by construction.** Every statement the read issues is a `SELECT` on a connection
+  opened through `open_read_only_database`; "a refused read persisted nothing" is therefore a property of the
+  handle, not a rollback the code remembers.
 - **A published write helper assumes the caller's lock and transaction.** The batch forced those helpers public; a
   future caller that invokes one outside a transaction would write an autocommitted row silently. Every shipped call
   site satisfies the precondition, and keeping the rule is what the one-lock/one-transaction invariant rests on.
@@ -441,6 +532,17 @@ one leaf's curation pass.
 | The merge's refusal vocabulary, one factory per observable failure point. | `schema_mismatch_refusal`; `conflicting_values_refusal`; `duplicate_identity_refusal`; `delete_reference_conflict_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:21-45; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:70-94; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:97-121; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:124-151 |
 | The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111 |
 | The measurement the merge reports, and the merge's own third composition seam. | `MergeCoverage`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/models/knowledge/merge.py:293-346; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
+| **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** | `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` | mcp/src/agents_remember/memory/knowledge/read.py:178-219; mcp/src/agents_remember/memory/knowledge/read.py:323-333; mcp/src/agents_remember/memory/knowledge/read.py:336-371; mcp/src/agents_remember/memory/knowledge/read.py:450-461 |
+| Whole-item paging over an already-selected scope. | `page_of_scope` | mcp/src/agents_remember/memory/knowledge/read.py:743-797 |
+| **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** | `_page_counts` | mcp/src/agents_remember/memory/knowledge/read.py:823-847 |
+| The count model that refuses its own arithmetic contradiction at construction. | `KnowledgeReadCounts` | mcp/src/agents_remember/models/knowledge/read.py:404-448 |
+| **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** | `observe_anchor`; `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:101-172; mcp/src/agents_remember/memory/knowledge/read_anchors.py:308-334; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
+| The read's refusal vocabulary, one factory per observable failure point. | `selector_absent_refusal`; `registration_absent_refusal`; `page_budget_too_small_refusal`; `continuation_binding_mismatch_refusal`; `snapshot_unavailable_refusal`; `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-57; mcp/src/agents_remember/memory/knowledge/read_refusals.py:60-79; mcp/src/agents_remember/memory/knowledge/read_refusals.py:82-108; mcp/src/agents_remember/memory/knowledge/read_refusals.py:111-135; mcp/src/agents_remember/memory/knowledge/read_refusals.py:138-156; mcp/src/agents_remember/memory/knowledge/read_refusals.py:159-177 |
+| **The one decoder a read page and the logical digest share.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:224-232 |
+| The read's path lookup, which is how a path seed selects. | `fetch_realizations_at_path` | mcp/src/agents_remember/memory/knowledge/read_queries.py:208-244 |
+| The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:192-207 |
+| The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-602 |
+| **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
 | The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/test_knowledge_guarded_merge.py:248-312 |
 | The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | `common-base-merge-cases` | mcp/tests/evidence-lifecycle.toml:1135-1159 |
 
@@ -514,6 +616,8 @@ checkout, but neither establishes a boundary contract here.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): reviewed the route because its meaning changed again — four new `knowledge/read_*.py`-family modules add **the read half** of the experimental knowledge substrate, with `schema.py` untouched (still `ar-knowledge-sqlite/v1`, ten tables, fifteen triggers and the same `schema_fingerprint()`), plus two small load-bearing changes to existing modules (`logical.py`'s public `cell_value` as the one decoder a read page and the digest share, and `base.py`'s `require_plain_git_path` as the one Git-pathspec rule). The body records the **stopping rule** (the containing-family set frozen before membership expansion, which is what makes the traversal finite and what produces the packet's `P → I1`, `F → {I1, J1}`, `G → {J1, K1}` result with K1 excluded until `G` is selected explicitly), **three properties a consumer may rely on** (the corrected page counts — the declared total on every page, the walk's cumulative figure, the slice size in `len(page.items)`, enforced by a model validator; a truncated page that cannot be presentable as complete; and a response with **no field** that could hold a current-truth marker, a severity or a ranking), and **the path-refusal contract review corrected most sharply** — pathspec magic is the leading-`:` family plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and NUL, while `*`, `?` and `[` are literal characters to `ls-tree`, and the read path distinguishes `path_absent`, `unsupported_locator` and `recorded_object_unavailable` **so a caller is never told a path is absent when the real reason is its spelling**. It records the two honest limits rather than burying them — the **withdrawn** mutation claim over `_tree_entry`'s non-zero-exit branch, which stays an explicitly disclosed unasserted defensive branch (L9 **A6**), and `_manifest_digest`'s composition as a reachable covered gap (L9 **A4**) — the read-only/never-falls-back/cursor-as-binding boundaries, and the forward constraint that **L8 must split the 1 163-line unit module before adding cases**. The explicit non-claim narrows from L7–L8 to **L8**, and anchor resolution is now claimed as of `KS-R07@v1` instead of recorded as absent. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 
 - 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): reviewed the route because its meaning changed again — three new `knowledge/export_*.py` modules add **the portable half**, the artifact format `ar-knowledge-export/v1` and its import, with no schema change (still `ar-knowledge-sqlite/v1`, ten tables, fifteen triggers and the same `schema_fingerprint()`). The body records the leaf's guarantee in the only form a consumer may rely on — **every accepted artifact is the canonical rendering of the logical content it carries**, so two artifacts that both validate and declare the same `logicalDigest` are the same bytes — and states that acceptance is **two** checks that are both needed: the whole-document gate (the exact rendering, at every level the format declares an order or a spelling for) and the header check (every declaration the one this build implements **and of the type this build writes**, with `userVersion` compared type-strictly so `1.0` and `true` are refused by name). It records what the digest covers and what the document form covers instead, the closed two-mode destination admission, the private stage and its sealed-aggregate verification, the never-patches-a-live-destination rule, the single body constructor that keeps one digest definition, the encoder's missing filesystem side effect, and the destination directory's real contents with **L4's open capture question Q1 carried forward**. Two staged checks are recorded as **documented non-experiments** rather than coverage, and the header namespace-binding guard at `:911` is recorded as a reachable guard with no killing node, reported for **L9**. The still-unclaimed behaviour narrows from L6–L8 to **L7–L8**. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): reviewed the route because its meaning changed again — six new `knowledge/merge*.py` modules add **the merge half** of the experimental knowledge substrate with no schema change (still `ar-knowledge-sqlite/v1`, ten tables, fifteen triggers and the same `schema_fingerprint()`). The body records the ordered contract and why each step's position is load-bearing, the closed base claim, the one-comparison-per-input preflight, the changeset-not-patchset and coverage-by-replay rules, the aborting application, and the conflict record's engine-supplied old-side key. It states the two collision shapes a consumer must not flatten (an equal-payload same-ID insert is a conflict; two authored successors are not), the absent verdict, the callable-but-unwired adapter, the two recorded **non-experiments**, and the two pinned-binding facts recorded as facts rather than excuses. The still-unclaimed behaviour narrows from L5–L8 to L6–L8. Verification metadata remains empty until closeout stamps the code commit.

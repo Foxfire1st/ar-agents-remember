@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:48:32+00:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae`|
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated | 2026-09-16T23:50+02:00 |
+| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288`|
+| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,13 +26,13 @@ Ruff targets Python 3.13 and enforces C901 and the PLR complexity rules. E501 an
 
 Pyright covers the checkout, with explicit import environments for source, verification support, tests and scripts. The selected interpreter is supplied by the quality owner. Coverage measurement includes branches and Python subprocesses for delivery reports; ordinary pytest is unmeasured. Product and verification package roots are classified separately, and the file-size detector remains armed.
 
-Pytest defaults to four workers and excludes the integration marker. It collects the repository's class naming convention, excludes imported test classes, treats xfail success strictly, and requires registered markers/configuration. Budgets are 1000 unit and **250** integration collected cases, including parametrization — the integration ceiling was raised 200 -> 250 by 260831-LOCR-L37 on explicit developer authorization, and the raise carries a dated tradeoff block in the source naming the distinct protection each added case buys, the case count, the support cost, and the measured elapsed runtime. The single testpaths declaration is mcp/tests. Warning policy has three explicit third-party exceptions. Current marker declarations distinguish integration, evidence categories and the inherited fitness selector; the removed environment-gated runner and old vendor matrix are not current execution routes.
+Pytest defaults to four workers and excludes the integration marker. It collects the repository's class naming convention, excludes imported test classes, treats xfail success strictly, and requires registered markers/configuration. **Budgets are `unit_case_budget = 1250` (`pyproject.toml:286`) and `integration_case_budget = 340` (`pyproject.toml:287`)** — collected cases, including parametrization, enforced on the selected population. **Both values moved for `260915-KS-L7`, and the move is a merged-line sizing defect rather than a defect of either side:** the merged base `4eb2b199` collected **1138 unit cases against a ceiling of 1100** *before any L7 line*, and because `pytest_collection_finish` raises `UsageError` on an over-budget population the whole unit run executed **zero** tests. The official line alone at its own tip `8dd62345` collected 1014/1100 and the KS parent `7db50f8f` collected 1003/1100 — **both green** — so the sizing question was ruled on by the master's owning seat and is not re-litigated here; the raise is **headroom, not a target**, and the four earlier dated tradeoff entries above the pair are intact. Each raise carries the doctrine-required dated block immediately above the key stating the distinct protection, the case count, the support size and the measured runtime cost. The single testpaths declaration is mcp/tests. Warning policy has three explicit third-party exceptions. Current marker declarations distinguish integration, evidence categories and the inherited fitness selector; the removed environment-gated runner and old vendor matrix are not current execution routes.
 
 Radon configuration shapes diagnostic reports. Coverage has no acceptance percentage floor; production CRAP20 review and exact report integrity belong to the quality owner, not a numerical floor in this file.
 
 ### Conventions
 
-Keep configuration ownership singular. Changes to budgets require the protection and cost tradeoff specified by repository policy — the `integration_case_budget` raise to 250 is the worked example: the block above the key states the distinct protection, the case count, the support size and the measured runtime cost, and `mcp/tests/test_suite_budget.py` pins the same values. Do not restore retired source-text census tests or infer their continued protection from historical comments.
+Keep configuration ownership singular. Changes to budgets require the protection and cost tradeoff specified by repository policy: the block above the key states the distinct protection, the case count, the support size and the measured runtime cost. **Every number in such a block must carry the command that reproduces it** — L7's round 2 found three load-independent line counts and both module wall times stale there because they had been measured before the round's own last edit, so the entry now names, in the entry itself, the command for each class of number (sizes by `wc -l`, populations by `pytest --collect-only`, wall times by repeated serial runs) and states that a wall time is a **range over a named run list** rather than a single measurement. Do not restore retired source-text census tests or infer their continued protection from historical comments.
 
 ### Invariants And Boundaries
 
@@ -56,7 +56,9 @@ No new configuration or test obligation is introduced here.
 | Type-checker scope and import environments. | "[tool.pyright]" | pyproject.toml:43-66 |
 | Measurement and operational package ownership. | "[tool.coverage.run]" | pyproject.toml:68-88 |
 | Radon reports. | "[tool.radon]" | pyproject.toml:90-119 |
-| Budgets, populations, collection and strictness, including the integration ceiling raise and its tradeoff block. | "[tool.pytest.ini_options]"; `integration_case_budget`; `unit_case_budget` | pyproject.toml:121-150; pyproject.toml:149-150 |
+| The pytest configuration section the budget pair lives in. | "[tool.pytest.ini_options]" | pyproject.toml:121-287 |
+| **The declared budget pair, and the merged-line raise this leaf executed.** | `integration_case_budget`; `unit_case_budget` | pyproject.toml:286-287 |
+| **The dated entry that carries the raise, its merged-line attribution and the command-per-number rule.** | "2026-09-16 -- unit 1100 -> 1250 and integration 300 -> 340" | pyproject.toml:209-285 |
 | Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. | "ignore::starlette.exceptions.StarletteDeprecationWarning" | pyproject.toml:189-201 |
 
 ## Cross-Repo References
@@ -66,6 +68,8 @@ No new configuration or test obligation is introduced here.
 | No cross-repository implementation is claimed. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **recorded the merged-line budget raise and the rule the raise's own correction produced.** The pinned pair is now **`unit_case_budget = 1250`** and **`integration_case_budget = 340`**, raised by the master's owning seat through the dated entry at `:209-285` because the merged base carried **1138 unit cases against the ceiling of 1100** *before any L7 line* and an over-budget population makes `pytest_collection_finish` raise `UsageError`, so the whole unit run executed zero tests. The card states the attribution as measured so it is not misread as a regression: the official line alone collected 1014/1100 and the KS parent 1003/1100, both green, and this atomic master is the first line carrying both populations — **a merged-line sizing defect, not a defect of either side, and not re-litigated here**. It records that the raise is headroom rather than a target, that the four earlier dated entries are intact, and that L7's 21 unit and 25 integration cases took the populations to 1159 and 304. It also carries the **command-per-number rule** this leaf's round 2 forced, together with the two stale-figure patterns that produced it (line counts and module wall times published after the bytes moved), and corrects this card's stale "1000 unit / 250 integration" pair and its line citations. Verification metadata remains empty until closeout stamps the code commit.
 
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the developer-authorized
   `integration_case_budget` raise 200 -> 250 and the dated tradeoff block that now precedes the key

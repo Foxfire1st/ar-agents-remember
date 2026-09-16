@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
-| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
+| lastUpdated | 2026-09-16T23:50+02:00 |
+| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
+| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -694,7 +694,67 @@ to it.
 | The vocabulary this seam takes and returns unchanged. | `ExportRequest`; `ExportResult`; `ImportRequest`; `ImportResult`; `PortableValidation` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:136-176; mcp/src/agents_remember/models/knowledge/portable.py:66-98 |
 | The nodes that drive the conforming round trip and the filtered-response refusal through the public seam. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_a_filtered_read_response_cannot_validate_as_a_complete_export" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427; mcp/tests/test_knowledge_portable_roundtrip.py:667-696 |
 
+## 260915-KS-L7 The Selective Read Joins As A Fifth Seam
+
+The route gained one module, `application/knowledge_read.py`, and still no new authority. It is the **fifth**
+composition seam over the experimental knowledge substrate, beside the candidate write (`knowledge.py`), the
+candidate-lifecycle/publication seam (`knowledge_snapshot.py`), the guarded merge (`knowledge_merge.py`) and the
+portable export/import (`knowledge_export.py`), and its subject is a different composed operation again: one
+bounded, snapshot-consistent page of the recorded scope a seed names.
+
+**Three boundaries this seam owns, each because getting it wrong is a different kind of wrong:**
+
+- **The read is read-only, and that is how a refusal persists nothing.** The connection is opened through
+  `open_read_only_database`, so the strongest statement available is a `SELECT`; "a refused read left the file
+  byte-identical" is a property of the handle rather than a rollback the code remembers. `read_row_counts` is the
+  measurement half — the same read-only handle, so a caller can take per-table counts before and after a refusal
+  and compare.
+- **A baseline read needs no task.** `task_ref=None` is served: the seam never resolves a leaf contract, never
+  asks an enclosure owner for one and never fabricates a task, because planning has to be able to read recorded
+  knowledge before a leaf exists.
+- **A continuation is a binding, not a position.** Snapshot, context, selector, policy and schema are checked
+  **before the file is opened** — a cursor binding another selection is a defect of the request and not a fact
+  about the bytes, and reporting it as a snapshot problem would send the caller to re-select a dataset they
+  selected correctly — while the manifest and the position are checked **after** the selection exists, before any
+  page is built. No cursor refusal returns a partial page.
+
+**The ordered sequence inside the one connection**: verify the declared snapshot through **three separate
+comparisons** (namespace, schema generation, logical dataset — the schema check is its own statement rather than
+a corollary of the digest, because a context can keep the file's real digest while declaring another generation);
+select the scope; decide the typed absence (`registration_absent` for a path with no recorded claim,
+`selector_absent` for an identity the snapshot does not hold, and a **recorded** identity with no memberships and
+no claims served as an empty-but-real selection); check the continuation against the selection; cut the page; and
+turn a page too small for its next item into `page_budget_too_small` with the exact minimum.
+
+**`open_read_context` is the constructor, and it is what keeps the snapshot honest:** it opens the file
+read-only, reads the logical identity the file actually holds and returns a context naming **that** snapshot, so a
+caller cannot hand-write the snapshot a read will be verified against — it can only resolve one, and the read
+compares that resolution again against the file it opens.
+
+**Two non-claims are carried in the module's own docstring.** Every failure this seam models is a typed refusal
+inside the result, but the one class that does **not** reach it is a caller passing an object which is not one of
+the two typed models: that is a programming error at the call site rather than a modeled read failure, and the
+signature is what the boundary claim rests on. And a caller whose input is rejected must be able to tell an
+absence from a malformed input: the seam never reports a path absent for a spelling the read path refused.
+
+The wiring boundary did **not** move: like its four siblings, this module has **no non-test importer in
+`mcp/src`**, and the requirement's own boundary is explicit that the public tool name stays separate from the
+concrete application function.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The seam's three entry points. | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-602 |
+| **The read-only handle, the request-level cursor check before the file is opened, and the ordered sequence.** | `_read_inside_snapshot`; `_select_and_page` | mcp/src/agents_remember/application/knowledge_read.py:195-225; mcp/src/agents_remember/application/knowledge_read.py:228-271 |
+| **The three snapshot comparisons, each naming the comparison that fired.** | `_snapshot_identity_refusal` | mcp/src/agents_remember/application/knowledge_read.py:274-313 |
+| **The scope-dependent half of the binding, including a position past the end of the selection.** | `_continuation_refusal`; `_manifest_binding_mismatch` | mcp/src/agents_remember/application/knowledge_read.py:316-337; mcp/src/agents_remember/application/knowledge_read.py:496-516 |
+| The two absence codes and the recorded-but-empty selection served rather than refused. | `_absence_refusal` | mcp/src/agents_remember/application/knowledge_read.py:357-389 |
+| The storage layer this seam delegates to. | `select_recorded_scope`; `page_of_scope`; `anchor_resolver_for` | mcp/src/agents_remember/memory/knowledge/read.py:178-219; mcp/src/agents_remember/memory/knowledge/read.py:743-797; mcp/src/agents_remember/memory/knowledge/read_anchors.py:47-59 |
+| The vocabulary this seam takes and returns. | `KnowledgeReadContext`; `KnowledgeReadRequest`; `KnowledgeReadResult`; `KnowledgeReadPage` | mcp/src/agents_remember/models/knowledge/read.py:216-263; mcp/src/agents_remember/models/knowledge/read.py:278-288; mcp/src/agents_remember/models/knowledge/read.py:485-511; mcp/src/agents_remember/models/knowledge/read.py:451-482 |
+| **The nodes that drive the task-free baseline read and the binding refusals through the public seam.** | "test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping" | mcp/tests/test_knowledge_read_boundaries.py:465-497; mcp/tests/test_knowledge_read_boundaries.py:725-762 |
+
 ## Update History
+
+- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the route's **fifth composition seam**, `application/knowledge_read.py`, and the three boundaries it owns: the **read-only handle** that makes "a refused read persisted nothing" structural (with `read_row_counts` as the measurement half), the **task-free baseline read** that never fabricates a leaf, and the **cursor as a binding** whose request-level checks run before the file is opened while its manifest and position checks run where the selection exists — with no cursor refusal ever returning a partial page. The card records the ordered sequence and the three separate snapshot comparisons (namespace, schema generation, logical dataset) where the schema check is its own statement rather than a corollary of the digest, the two absence codes with the recorded-but-empty selection served rather than refused, and `open_read_context` as the constructor that stops a caller hand-writing the snapshot a read is verified against. It carries the seam's two non-claims in the module's own terms (every modelled failure is a typed refusal, while a caller passing a non-model object is a programming error at the call site; and a caller must be able to tell an absence from a malformed input) and records that the wiring boundary did **not** move — like its four siblings the seam has no non-test importer in `mcp/src`. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 
 - **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T00:56:17+00:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
 

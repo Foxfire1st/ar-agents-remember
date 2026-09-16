@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
-| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
+| lastUpdated | 2026-09-16T23:50+02:00 |
+| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
+| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,13 @@ For the ledger retirement, start with transaction-only delivery, direct landing,
 
 Start with the distinct failure or user operation, then locate its retained owner. Checkout isolation, Dagger registry locking, private Git preparation, protected-ref recovery, durable-store races, submission authority and native framing each retain concrete behavioral protection. Compiler/certificate fixtures establish library contracts; they are not live Dagger, Codex or final-memory execution evidence. Preparation checks can guide memory repair before certification without becoming Gate 5.
 
-For the knowledge substrate, start with the five knowledge modules and their two shared support artifacts: `test_knowledge_store.py` (invariant identity and lineage), `test_knowledge_family_revision.py` (family revisions and the family lineage), `test_knowledge_relation_rules.py` (anchors, memberships and claims, including the anchored-claim transaction), `test_knowledge_graph_reads.py` (the two relation directions compared by identity) and `test_knowledge_revision_seals.py` (the sealed predecessor field on both payloads, which exists because round 1 could not kill it). Both support modules are registered contracts in `mcp/tests/evidence-lifecycle.toml` with exact consumer lists, and all five modules are unit-regression rows in `mcp/tests/test-evidence-lanes.toml`.
+For the knowledge substrate, start with the five knowledge modules and their two shared support artifacts: `test_knowledge_store.py` (invariant identity and lineage), `test_knowledge_family_revision.py` (family revisions and the family lineage), `test_knowledge_relation_rules.py` (anchors, memberships and claims, including the anchored-claim transaction), `test_knowledge_graph_reads.py` (the two relation directions compared by identity) and `test_knowledge_revision_seals.py` (the sealed predecessor field on both payloads, which exists because round 1 could not kill it). Both support modules are registered contracts in `mcp/tests/evidence-lifecycle.toml` with exact consumer lists, and all five modules are unit-regression rows in `mcp/tests/test-evidence-lanes.toml`. **The read half adds three more** and one shared support artifact:
+`test_knowledge_read_scope.py` (unit-regression — the selection policy, the corrected page counts, revision
+grouping, budget, the execution bound and typed absence), `test_knowledge_read_boundaries.py` (integration —
+the seven anchor observations against a real committed Git tree, the snapshot/namespace/schema refusals and the
+continuation bindings) and `test_knowledge_read_paths.py` (integration — what a *path* is to this read: an
+address, not a pattern), all three consuming the governed artifact `read_scope_test_support.py` under contract
+`knowledge-read-scope-cases`.
 
 **The candidate and snapshot half now has its own pairs.** `test_candidate_batch_transaction.py` and
 `test_candidate_batch_commands.py` cover the batch boundary and its command union (sharing
@@ -1335,7 +1341,69 @@ Two rules this leaf's evidence teaches, and both are about what a survivor means
 | **The guard this leaf reports rather than claims: reachable, verdict-changing, no killing node.** | `bound` | mcp/src/agents_remember/memory/knowledge/export_portable.py:893-920 |
 | The two lane rows this leaf registered, and the three consumer lists it extended. | `integration`; `knowledge-identity-branching-fixture`; `knowledge-snapshot-lifecycle-cases`; `common-base-merge-cases` | mcp/tests/test-evidence-lanes.toml:140-141; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159 |
 
+## 260915-KS-L7 The Read Suites, And The Path Contract They Measure
+
+This route gained **three** test modules and one **governed support artifact**, and the split between them is a
+file-size decision as much as a classification one:
+
+- `mcp/tests/test_knowledge_read_scope.py` — **unit-regression** (row `mcp/tests/test-evidence-lanes.toml:75`),
+  21 nodes, hermetic: temporary directories, in-process APSW databases built through the public store
+  operations, no repository working tree, no network. **It is at 1 163 of the 1 200-line limit, 37 lines of
+  headroom, and L8 must split it before adding cases.**
+- `mcp/tests/test_knowledge_read_boundaries.py` — **integration** (`:157`), 20 nodes over a real committed Git
+  tree, a real published database and real snapshot/namespace refusals.
+- `mcp/tests/test_knowledge_read_paths.py` — **integration** (`:158`), 5 nodes that measure Git's own
+  `ls-tree` behavior with their own subprocess calls.
+- `mcp/tests/read_scope_test_support.py` — the shared fixture, registered as an **artifact**
+  (`shared-support` / `internal-canonical` / `unit-regression`) under the new contract
+  `knowledge-read-scope-cases`, with the three modules above as its exactly-declared consumers. Fix round 2
+  added the path module to that consumer list after splitting the over-limit integration module — a **consumer
+  change, not a new artifact**.
+
+**A new test module costs three registry touch-points and this leaf paid all three**: its lane row, its path in
+the support artifact's `consumers` list, and the evidence-catalog digest re-pin
+(`LIFECYCLE_CATALOG_SHA256` → `461121ca…`, with the contract/artifact counts 10/51) in
+`mcp/tests/test_dependency_ownership_ast_helpers.py`. Miss any one and `load_lane_manifest` or the catalog
+validator refuses the repository, so the failure is a **hard collection error rather than a quiet gap**.
+
+**The path module is the one the review made load-bearing, and its contract is worth stating here because it
+was corrected twice.** Git pathspec **magic** is the leading-`:` family (`:(exclude)`, `:!`, `:(top)`, `:/`)
+plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and NUL; the characters `*`, `?` and `[` are
+**literal characters** to `ls-tree` (measured on `git 2.54.0` by the case itself), so a legitimate anchor
+containing them must be authorable, seedable and resolvable. Round 1 refused them, which made such an anchor
+un-authorable and reported a file the tree really holds as `path_absent` — *a false statement about the
+repository rather than a refusal of a malformed spelling*. The module therefore measures the three genuinely
+different facts apart (`path_absent`, `unsupported_locator` with the cause in `detail`, and
+`recorded_object_unavailable`), and it drives the two producers of the last one separately.
+
+**Two honest limits travel with these suites, and neither is coverage.** `_tree_entry`'s **non-zero-exit**
+branch is reachable by no input on this host; a published mutation claim that it was made reachable was
+**withdrawn** by the leaf's own evidence erratum, because the kill that appeared to prove it also appears with
+the production line untouched — so the branch stays an **explicitly disclosed unasserted defensive branch**
+(L9 ledger **A6**) and must never be read as protection. And `_manifest_digest`'s inclusion of each item's
+`selection_reasons` is a **reachable covered gap** with no killing node (L9 ledger **A4**).
+
+**One more rule this leaf's evidence teaches, and it is about what a survivor means:** a sweep must run on the
+frozen bytes it claims to describe. This leaf's first sweeps ran before the test module's last write, which is
+why the published attribution of one kill was off by one line; the correction is in the erratum, and the
+practical rule for a successor is to re-run the sweep after **any** edit rather than re-using a result.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The count semantics the review corrected, and the requirement's own non-conformance example.** | "test_a_page_budget_of_one_item_still_advertises_the_second_location" | mcp/tests/test_knowledge_read_scope.py:547-657 |
+| **The completeness node that derives the mandatory set from recorded rows rather than from the implementation's own page manifest.** | "test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection" | mcp/tests/test_knowledge_read_scope.py:658-721 |
+| The ordering node the review sealed as HIGH, and the truncated-page node. | "test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label"; "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness" | mcp/tests/test_knowledge_read_scope.py:722-837; mcp/tests/test_knowledge_read_scope.py:838-871 |
+| **The three path facts, and the case that authors, stores, seeds and resolves a path holding glob characters.** | "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent"; "test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob" | mcp/tests/test_knowledge_read_paths.py:370-444; mcp/tests/test_knowledge_read_paths.py:256-369 |
+| The lookup that ran and could not answer, refused as unavailable rather than absent. | "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:445-538 |
+| The lookup that could not be run at all, reported as the same fact. | "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:539-644 |
+| The continuation bindings, each with its own control, and the read-only property on a real file. | "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" | mcp/tests/test_knowledge_read_boundaries.py:664-724; mcp/tests/test_knowledge_read_boundaries.py:893-941 |
+| The read fixture and its registered contract. | `build_read_scope_fixture`; `knowledge-read-scope-cases` | mcp/tests/read_scope_test_support.py:266-284; mcp/tests/evidence-lifecycle.toml:1198-1221 |
+| The unit-lane row the read's selection module occupies. | "mcp/tests/test_knowledge_read_scope.py" | mcp/tests/test-evidence-lanes.toml:75 |
+| The two integration-lane rows the read's boundary and path modules occupy. | "mcp/tests/test_knowledge_read_boundaries.py"; "mcp/tests/test_knowledge_read_paths.py" | mcp/tests/test-evidence-lanes.toml:157; mcp/tests/test-evidence-lanes.toml:158 |
+| **The catalog digest re-pin that a new test module obliges.** | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-62 |
+
 ## Update History
+- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the **read half's three suites and the governed support artifact they share**. The section gives the lane and the reason for each module (the unit module hermetic over in-process databases; the boundaries module over a real committed Git tree and a real published database; the paths module measuring Git's own `ls-tree` behavior with its own subprocess calls), names the split as a **file-size decision** — fix round 2 pushed the boundaries module past the 1 200-line limit and the cases moved rather than the limit being waived — and states the three registry touch-points a new test module obliges, all of which this leaf paid (lane row, support-artifact `consumers` list, catalog digest re-pin `461121ca…` with counts 10/51), because missing any one is a **hard collection error rather than a quiet gap**. **The path contract is recorded in the form the review corrected it**: pathspec magic is the leading-`:` family plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and NUL, while `*`, `?` and `[` are **literal characters** to `ls-tree` and a legitimate anchor containing them must be authorable, seedable and resolvable — round 1's over-broad refusal reported a file the tree really holds as `path_absent`. **Two honest limits travel with the suites and neither is coverage**: the **withdrawn** mutation claim over `_tree_entry`'s non-zero-exit branch, which stays an explicitly disclosed unasserted defensive branch (L9 **A6**), and `_manifest_digest`'s composition as a reachable covered gap (L9 **A4**). The entry also records the rule about what a survivor means — **a sweep must run on the frozen bytes it describes** — and the forward constraint that **L8 must split the 1 163-line unit module before adding cases**. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the portable half's pair of suites and the reason they are split — **the 1200-line hard limit**, not classification, so the boundary module imports the roundtrip module's helpers and the two are one evidence set with one definition of an artifact and a refusal. The paragraph states what each node protects (the consolidated completeness/refusal-inertness/preservation groups, the deterministic-artifact node, the recomposition through L5's merge, and the five boundary properties including the whole-document canonical form with all seven header types and the staged sealed-aggregate read), and it records the rule this leaf's evidence teaches rather than leaving it to be rediscovered: **a reachable guard with no killing node is reported, not claimed** — the header namespace-binding check at `export_portable.py:911` is written up as an observation for **L9** with its mutation and reachability proof. It also records that the final fix round extended these cases rather than adding one, so the integration population stayed at 255, and the three consumer lists the two modules were added to. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the merge half's own pair of suites and the reason they are split — the unit population sits exactly at its declared ceiling after this leaf, so the merge's whole contract is five unit cases and every scenario needing its own three-commit Git world went to the integration lane. The paragraph states what each node is the mutation target for, and it records the two rules this leaf's evidence teaches rather than leaving them to be rediscovered: **a broken mutation is not a killed guard** (the first matrix scored a `NameError` as a kill; the harness now refuses to score a crash, and the re-derived headline is 17 of 21 killed with four named non-experiments) and **a guard whose call site is unreachable is described as one** rather than presented as coverage. It also records the new governed harness (`common-base-merge-cases`, exact two-consumer list) and, as its load-bearing design fact, that its `shape` callback runs before the commits are built. Verification metadata remains closeout-owned.
 
