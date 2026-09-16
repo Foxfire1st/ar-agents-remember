@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-16T09:00+02:00 |
+| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
+| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -471,7 +471,7 @@ each model; running adapters serve their retained startup catalog while transien
 only the native protocol handshake/catalog path. The ACP Sense 1 projection uses the `model` and
 `thought_level` category shape; unknown current values are omitted rather than fabricated.
 
-Claude, Codex, and Pi built-ins negotiate the structured fields their adapters
+Claude, Codex, Pi, and eve built-ins negotiate the structured fields their adapters
 consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is
 limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the
 daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. Resource
@@ -618,6 +618,29 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   selectors and `SetResult` establishes the setter evidence boundary. The combined launchable adapter
   seam joins synchronous cached advertise, transient native discovery, and native launch knobs. No
   ACP transport, global effort enum, or composer-paste fallback belongs in this port.
+  `BUILTIN_PROTOCOL_HARNESSES` names four ids (`claude`, `codex`, `pi`, `eve`); this is the
+  **protocol-adapter** registry and it is deliberately separate from the kernel's developer-curated
+  terminal harness set, which still carries no `eve` row.
+
+- `eve_adapter.py` with `eve_events.py`, `eve_protocol.py`, `eve_stream_cursor.py`,
+  `eve_interactions.py`, `eve_runtime_client.py` and `eve_runtime_launch.py` — the native eve
+  session adapter (260915-CAPS-L6), and the only built-in whose native process is an **AR-owned
+  application** rather than a `PATH` command. It speaks eve's documented HTTP session protocol
+  exclusively: health-derived readiness, a durable session id bound to one bridge epoch, and the
+  NDJSON event stream consumed on an **absolute event-index cursor** (`meta.id` deduplicates an
+  overlapping replay but is never the resume position). Acceptance is reported separately from turn
+  completion and from session retirement; ordinary deliveries are queued explicitly rather than
+  inheriting eve's cancellation-backed `steer`; a lost submit response reconciles
+  accepted/rejected/unresolved from durable evidence and is never repeated; `interrupt` is
+  turn-addressed, replayed once per observed pair, and reports acceptance only because eve's cancel is
+  cooperative and settles later on the stream. Session identity and the stream cursor are published on
+  the existing `AdapterSnapshot` (`vendor_session_id`, `raw["streamCursor"]`), so no second
+  orchestration registry exists. The adapter **carries** `AR_BINDING_REF` / `AR_CAPSULE_DIGEST` /
+  `AR_WORKSPACE_ROOT` to the runtime but compiles and selects no capsule — that seam belongs to the
+  capsule/workspace route — and its model/effort setters report `unsupported` honestly because eve's
+  model is a compiled application value. The controlled application itself lives in the repo-root
+  `eve_runtime/` tree, which sits outside this route and outside the repository's onboarding
+  `pathRules`.
 
 - `harness_capability_catalog.py` — the pre-session discovery authority. It resolves only the
   built-in native registry rows, fingerprints effective argv plus the canonical executable/stat
@@ -919,6 +942,30 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **No route impact from the A2
+  revision.** The route meaning recorded at 09:00 below is unchanged — the A2 round repaired and
+  strengthened the same seven modules without adding, removing or repurposing a route member. Three A2
+  corrections are recorded on the file cards rather than as route changes, because each stays inside
+  one module's contract: the two launch selectors (`AR_EVE_RUNTIME_ROOT`, `AR_EVE_NODE`) became live
+  rather than documented-but-inert; the queued `turnPolicy` is now spelled on the **follow-up** as well
+  as the create, from the wire module's one literal; and the replay window has a single owner
+  (`EveEventDeduplicator`) after the inline copy was deleted. Verification metadata remains
+  closeout-owned; the source is uncommitted and no stamp was advanced.
+
+- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: **route meaning changed**, so this overview's body
+  was updated rather than given a no-impact entry. Added the native eve session adapter to the Route
+  Model with its load-bearing properties (absolute event-index cursor over stable envelope ids;
+  acceptance distinct from turn completion and session retirement; explicit queued ordinary delivery
+  instead of eve's cancellation-backed `steer`; reconcile that never repeats a possibly accepted
+  write; turn-addressed replay-once interrupt reporting acceptance only; session identity and cursor
+  published on the existing `AdapterSnapshot`, no second registry; carries a capsule binding without
+  compiling or selecting one; honest `unsupported` model/effort setters). Corrected the built-in
+  harness roster from three to four ids and recorded that the protocol-adapter registry is separate
+  from the kernel's developer-curated terminal harness set, which still has no `eve` row. Bounded the
+  route explicitly: the controlled `eve_runtime/` application sits at the repository root, outside
+  this route and outside the onboarding `pathRules`. Verification metadata stays pinned to the last
+  committed source until closeout stamps the candidate commit.
 
 - 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
+| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -25,6 +25,40 @@ unsupported-harness refusal, bounded Pi continuation, and liveness failure conta
 named `test_*.py` may still contain only builders; its filename and historical sidecar do not
 establish current test coverage. Read the current file card and source before claiming a scenario
 is protected or restoring an old matrix.
+
+## 260915-CAPS-L6 Native eve Adapter Test Population
+
+Five modules join this route for the native eve session adapter (`CAPS-R06@v1`), and their shapes
+differ in a way a reader must not flatten: **two are collected suites and three are support or
+explicit-run scripts.**
+
+- `test_eve_protocol.py` (collected) — wire-contract conformance, nine classes. Beyond the original
+  framing/parsing/routing faces it now carries `EveReplayWindowTests` (the bounded replay window's
+  eviction, size-1, id-less and non-positive cases), `EveWireBodyTests` (create *and* follow-up both
+  spell the queued policy), and `EveWireRequestTests`, which drives the **production**
+  `EveRuntimeProcess` through `httpx.MockTransport` so the sent request is asserted instead of
+  inferred from a double.
+- `test_eve_adapter.py` (collected) — ten case classes, one per named scenario, driving the real
+  adapter and mapper through the transport seam; only the eve process is replaced.
+- `eve_adapter_test_support.py` (not collected) — the deterministic **transport** double, shared by the
+  adapter suite. It is not an adapter double; replacing the adapter there would make every case
+  vacuous. Its cancel observation records the `(session_id, turn_id)` pair so a wrong-turn cancel can
+  fail.
+- `eve_fixture_model.py` (not collected) — a deterministic OpenAI-compatible model **provider** the
+  live fixture starts as a child process.
+- `live_eve_native_fixture.py` (not collected, run explicitly) — the live proof against a real eve
+  process, real HTTP and a real durable stream. It needs Node ≥ 24 and an installed dependency tree,
+  which is exactly why it must not join the default suite; its JSON artifacts are the evidence, not a
+  pytest exit code.
+
+`test_harness_launch.py` is extended rather than joined: `_knob_values` now collects `knobs.env`
+beside argv and session config, because eve's model and effort are compiled application values with no
+argv spelling. The parametrized launch-vocabulary contract therefore covers four harnesses, driven
+from `sorted(BUILTIN_PROTOCOL_HARNESSES)` — the registry the factory itself consults.
+
+Route consequence: "the suite protects this scenario" now depends on `test_*.py` collection for the
+two adapter/protocol suites and on an explicit `--report-dir` run for the live fixture. A live
+scenario is only proved by its artifact, and a blocked run is not a pass.
 
 ## 260915-CAPS-L2 Role-Capsule Compiler And Admission Coverage
 
@@ -715,6 +749,8 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve adapter's test population. Added § 260915-CAPS-L6 Native eve Adapter Test Population, which states the distinction this route now depends on: two of the five new modules are pytest-collected suites and three are support or explicit-run scripts, so "the suite protects this scenario" is proved by collection for the former and by a `--report-dir` artifact for the live fixture. Also records the A2 strengthening (the production client driven through a mock transport, the bounded replay window, the request-shaped cancel observation) and the `_knob_values` env carrier that holds the launch-vocabulary contract at four harnesses. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Role-Instruction Corpus Contract, which places the new shipped module `test_role_instruction_corpus.py` in this route and states the properties it protects (nine-role registry, the six-section readable order, the frozen eight-operation vocabulary, a prose-free manifest, every cited relative path resolving, a missing manifest source reported rather than accepted, and the `SANCTIONED_SIBLING_REFERENCES` independence rule). A new card was created for the module in this route. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 

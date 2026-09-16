@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/tests/test_harness_launch.py` |
 | doc_type               | `file-level-onboarding`            |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash |                                    `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate |                                    2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-16T10:15+02:00 |
+| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
+| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,13 +24,33 @@ Harness-specific launch vocabulary and exact model identity.
 
 Pi accepts only the full provider-qualified catalog key. Effective launch refuses a different model. Applying native knobs preserves fixed argv/environment and rejects duplicate selector authority; a parameterized harness population carries the selected model and effort through each native vocabulary.
 
+`_knob_values` is the extraction helper that defines what "carried into its own launch vocabulary"
+means, and 260915-CAPS-L6 extended it to collect **`knobs.env`** beside `knobs.argv` and
+`knobs.session_config.values()`. The reason is eve: its model and reasoning effort are compiled
+application values with no argv vocabulary, so its selection rides the launch environment the adapter
+composes (`eve_launch_knobs` returns `argv=()` with the model/effort in `env`). Without the env
+carrier the parametrized case failed for `eve`; extending the helper was preferred over weakening the
+assertion or excluding `eve` from the parametrization. The parametrization is over
+`sorted(BUILTIN_PROTOCOL_HARNESSES)` — the registry `create_harness_protocol_adapter` itself consults
+— so it now covers four harnesses.
+
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card describes the retained source at the leaf's uncommitted candidate over IAS `d3610903`.
+Historical entries below record earlier test populations; they do not require restoring removed cases.
+Source inspection is memory preparation and does not claim a test run or acceptance.
+
+A carrier added to `LaunchKnobs` must be reflected in `_knob_values`, or the contract silently stops
+covering that carrier for every harness at once.
 
 ### Invariants And Boundaries
 
 Catalog identity owns selection; an ambiguous model suffix is not a substitute. These cases do not start vendor processes or prove every historical catalog-validation edge.
+
+The population is a registry parametrization, not a list: adding a fifth harness to
+`BUILTIN_PROTOCOL_HARNESSES` holds it to the contract without an edit here, and excluding one would
+defeat the contract this file exists to assert. The test asserts the shared contract rather than any
+harness's own flag spelling.
 
 ### Todos
 
@@ -53,7 +73,11 @@ The retained source anchors below support the fixture roles and assertion bounda
 | Pi requires the exact provider qualified catalog key. | `test_pi_requires_the_exact_provider_qualified_catalog_key` | mcp/tests/test_harness_launch.py:40-71 |
 | Effective launch still refuses a genuinely different model. | `test_effective_launch_still_refuses_a_genuinely_different_model` | mcp/tests/test_harness_launch.py:108-116 |
 | Apply launch knobs preserves fixed argv and refuses duplicate authority. | `test_apply_launch_knobs_preserves_fixed_argv_and_refuses_duplicate_authority` | mcp/tests/test_harness_launch.py:119-154 |
-| Every harness carries a clean selection into its own launch vocabulary. | `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:178-185 |
+| Every harness carries a clean selection into its own launch vocabulary. | `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:188-196 |
+| The extraction helper enumerates every carrier, including the launch environment added for eve. | `_knob_values` | mcp/tests/test_harness_launch.py:173-186 |
+| eve is the environment-only harness whose addition forced the carrier extension. | `eve_launch_knobs` | mcp/src/agents_remember/serving/eve_runtime_launch.py:310-327 |
+| The two environment names eve's selection rides on are module constants rather than inline strings, which is what makes the carrier assertable. | `MODEL_ENV`; `EFFORT_ENV` | mcp/src/agents_remember/serving/eve_runtime_launch.py:70-71 |
+| The registry the parametrization drives is the one the adapter factory consults. | `BUILTIN_PROTOCOL_HARNESSES`; `harness_launch_knobs` | mcp/src/agents_remember/serving/harness_control_factories.py:33-54 |
 
 ## Cross-Repo References
 
@@ -64,6 +88,19 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the body is retained (this file is
+  byte-identical between the A1 and A2 candidates), and three citation findings were **repaired**
+  rather than restamped. The parametrized case's range was corrected to the lines it occupies now
+  (`:188-196`; the file ends at 196), the helper's range was tightened to `:173-186`, and the eve row
+  was split so every anchor names its own declaring source: `eve_launch_knobs` at
+  `eve_runtime_launch.py:310-327`, and the `MODEL_ENV` / `EFFORT_ENV` constants at `:70-71` — the
+  previous single row cited `:301-317`, which holds neither constant, and the claim could not be
+  compared with its provenance because those identifiers resolve in more than one file. Verification
+  metadata moves to the leaf's current base `e9300687`; the candidate is uncommitted, so the governed
+  closeout re-stamps the real code commit and no hash was invented here.
+
+- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: body updated for the env-carrier extension. `_knob_values` now collects `knobs.env` beside argv and session config, because eve's selection is environment-only; the parametrized contract case therefore covers four harnesses instead of failing for the fourth. Recorded the deliberate choice to extend the helper rather than weaken the assertion or exclude eve, and the standing rule that a new `LaunchKnobs` carrier must be reflected here. Verification metadata is pinned to the leaf's base commit `67b21aeb` because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
+| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -507,6 +507,34 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 ## Hot Path Summary
 
 The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
+
+## 260915-CAPS-L6 Native eve Session Adapter Route Impact
+
+The `mcp` route gains a native **eve** protocol adapter (`CAPS-R06@v1`). The structural change a
+future reader must know about:
+
+- `serving/` gains seven modules: `eve_adapter.py` (the adapter), `eve_protocol.py` (the wire contract,
+  route builders, the one `TURN_POLICY_QUEUE` literal, and the single `EveEventDeduplicator`),
+  `eve_events.py` (event translation and normalized state), `eve_interactions.py` (the bounded pending
+  interaction queue), `eve_runtime_client.py` (the HTTP transport and its request-body builders),
+  `eve_runtime_launch.py` (application-root resolution, staging and launch environment), and
+  `eve_stream_cursor.py` (the absolute-index NDJSON decoder).
+- `serving/harness_control_factories.py` is the one seam that changes an existing registry:
+  `BUILTIN_PROTOCOL_HARNESSES` is now `claude`, `codex`, `pi`, **`eve`**, and `_LAUNCH_KNOBS` maps eve
+  to its environment-only launch vocabulary.
+- `kernel/harnesses.py` is **unchanged in behaviour** — its curated `HARNESSES` tuple still holds three
+  rows and its docstring now records why. The two registries answer different questions:
+  terminal-launchable `PATH` harnesses versus constructible hosted protocol adapters. An `eve` harness
+  id resolves through the protocol factory only, and terminal-harness exposure remains the
+  capability-catalog/packaging leaf's decision.
+- The runtime application itself is a **repository-root** tree (`eve_runtime/`) rather than a package
+  under `mcp/`; see the root overview's route-impact note for its onboarding boundary.
+- `mcp/tests/` gains the five-module eve test population (two collected suites, three support or
+  explicit-run scripts); the route-level account is on `mcp/tests/overview.md`.
+
+Route consequence: the adapter boundary, the capability port and the interrupt port are all AR's
+existing seams. This leaf adds an implementation of them, not a new plane — so no new service,
+registry or orchestration layer appears in this route.
 
 ## 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured
 
@@ -1421,6 +1449,8 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Native eve Session Adapter Route Impact, recording the seven new `serving/eve_*.py` modules, the one existing registry that changes (`BUILTIN_PROTOCOL_HARNESSES` now includes `eve`), the deliberate non-change in `kernel/harnesses.py` and why the two registries answer different questions, the repository-root runtime tree, and the five-module test population. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the packaged lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured, which records the 14 new and 17 rewritten files under `package_data/runtime/skills/l-01-agent-lifecycles/**`, the generated-never-authored boundary (`skills/` canonical; `scripts/sync-skills.py --check` proves byte-identity), and the consequence that this generated `mcp/**` copy is the governed onboarding surface for a canonical tree that sits outside this memory root's path rules. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 

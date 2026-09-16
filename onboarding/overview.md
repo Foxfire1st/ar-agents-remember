@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
+| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
@@ -216,6 +216,31 @@ workspace ar-coordination/
 | Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles — now a **thin router** plus a shared `core/`, nine self-contained role files, eight `operations/` blocks, a prose-free `composition-manifest.json`, and reference-only rationale/rulings — and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
 | Runtime AGENTS templates | [mcp/src/agents_remember/package_data/runtime/agents-md-files](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files)                                                                                                        | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
 | System defaults      | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples)                                                                                          | Example settings, sources, and tools files used as scaffolding material.                                       |
+
+### 260915-CAPS-L6 Route Impact — A Native eve Session Adapter, And A Root Tree Outside The Path Rules
+
+`260915-CAPS-L6` (`CAPS-R06@v1`) adds a native eve session adapter to the repository. Two facts belong
+at repository altitude because they change the shape of the tree rather than the behaviour of one
+module:
+
+1. **The controlled application is a new repository-root tree, `eve_runtime/`.** It is an AR-owned eve
+   application (`package.json`, `package-lock.json`, `README.md`, `agent/**`), not a package under
+   `mcp/`, and the adapter launches it as a child process instead of shelling out to a `PATH` command.
+   **This tree is outside this memory root's `pathRules` and deliberately has no sidecars.** Its
+   authored surface is documented where it is consumed: the launch module's card owns root resolution,
+   staging and the launch environment; the wire module's card owns the queue policy the authored
+   channel mirrors; the live fixture's card owns the workspace-confined tool contract. Inventing
+   sidecars for an ungoverned tree would create onboarding no rule maintains, and the canonical
+   `skills/**` tree is the standing precedent for the same boundary.
+2. **The adapter is an implementation of existing seams, not a new plane.** It registers in
+   `serving/harness_control_factories.py`'s built-in protocol set (now four ids) while the kernel's
+   developer-curated terminal harness set keeps three rows. No new service, scheduler, registry or
+   approval surface appears, and the requirement's exclusions (no production cutover, no global
+   configuration change, no replacement agent loop) are preserved.
+
+Machine-local build products the change set introduces (`eve_runtime/.eve/`, `node_modules/`,
+`.output/`) are ignored by the `.gitignore` entries the same change set adds; they are not repository
+content and are never onboarded.
 
 ### 260915-CAPS-L1 Route Impact — Lifecycle Corpus Restructured And Made Single-Source
 
@@ -915,6 +940,8 @@ integration branch also changed: it now requires the master's own terminal task 
 only an enclosure census, because a child that was never started has no enclosure to walk.
 
 ## Update History
+
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Route Impact, which records the two repository-altitude facts this leaf changes: the controlled application is a new repository-root tree (`eve_runtime/`) that is **outside this memory root's `pathRules` and deliberately has no sidecars** — its authored surface is documented on the cards of the modules that consume it — and the adapter implements AR's existing adapter/capability/interrupt seams rather than introducing a service, scheduler, registry or approval plane. Also records that the machine-local build products the change set introduces are gitignored, not repository content. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation (`CAPS-R01@v1`). The Code Structure "Lifecycle + task workflow" row now names the corpus's actual shape (thin router + `core/` + nine role files + eight `operations/` blocks + `composition-manifest.json` + `reference/`) instead of the retired "router + minimal frame + per-role lifecycles" description, and the new § 260915-CAPS-L1 Route Impact section records the structural change, the canonical-vs-generated boundary, and the onboarding consequence that the canonical `skills/**` tree is outside this memory root's path rules while its generated `mcp/**` copy is governed. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
