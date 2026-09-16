@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
+| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -144,7 +144,70 @@ admitted bytes has a fictional revision.
 This package is also the **L3 seam for the later task projection**: it accepts any
 `CapsuleTaskProjectionSource` and passes it through untouched. Task state is never read, rendered,
 or rewritten at this boundary; verifying a projection's bytes against its declared digest happens
-inside the pure compiler.
+inside the pure compiler. **That projection is the task-context projection, not the closeout-queue
+projection** — the two share a word and no owner, and the section below states the distinction.
+
+## 260915-CAPS-L3 Task-Context Projection Boundary
+
+`mcp/src/agents_remember/application/task_projection/` is a **new package** on this route and the
+implementation of the seam the L2 boundary above only declared. It computes the smallest complete
+task projection the bound role and operation need, from authority that already exists, and returns a
+value: ten modules, 2,431 lines, and no writer anywhere in the package.
+
+**Naming disambiguation — "projection" names two unrelated things in this repository.** This
+package's *projection* is a **task-context projection**: one task document, its declared requirement
+packets and its admitted worktree/branch binding, rendered as model-visible Markdown. The
+**closeout-queue projection** is a different owner entirely — `tasks/document_refs.py::projection_sprints_affected_by_master`
+and the closeout-queue writers compute *which sprints a write affects* so the disposable queue can
+be rebuilt. The two share the word and nothing else: different inputs, different outputs, different
+consumers, no shared type, no call path in either direction. A card or a reader that conflates them
+is wrong; the new file-level cards under this package each carry the same disambiguation.
+
+The package's whole shape follows from one requirement — the projection is **either complete or
+refused**. There is no partial projection, no fallback branch, no nearest task match and no silent
+scope widening. The sixteen `projection-*` refusal codes are declared by
+`agents_remember.errors.TaskProjectionSourceError`, which subclasses `AgentsRememberError` directly
+rather than the capsule family, because a projection failure happens *before* any capsule
+compilation.
+
+**The consumer contract (L4/L5/L7).** One resolution per admitted binding, one projection per
+operation: `resolve_task_projection_scope` binds the admitted facts against the enclosure contract,
+the coordination context and the task topology; `project_task_context` assembles the value;
+`task_context_of` converts it into the compiler's frozen `CapsuleTaskContext`; and
+`TaskProjectionSource` is that same thing behind the compiler's one-method protocol. The delivered
+`markdown` carries its own binding block and revision, so an adapter delivers it verbatim instead of
+re-rendering or re-ordering it.
+
+**Two consumer obligations, both admissions rather than guesses.** The admitted task reference must
+be the task layer's canonical key, `"<repository>/<path-under-tasks/<repository>>"`. A requirement
+the bound task document declares as **exact text** needs an admitted, version-addressed packet
+location — and the preferred route is to declare the packet on the task document as an
+`approved-requirement-packet` reference, which the task-intent owner verifies and which needs no
+consumer input. That typed route is the **standardized policy** (owner ruling of 2026-09-16T10:15 on
+the L3 leaf document): requiring every consumer to supply a packet location would spread task
+knowledge into transport adapters and turn a missing packet into a runtime surprise.
+
+**The read plan is the requirement, not an optimisation.** `selection._READ_ALTITUDES` is a total
+table over `(own altitude, parent bucket)` with no default branch, and one rule is load-bearing: a
+leaf-altitude seat **never** reads a sprint-altitude ancestor. A leaf reads its own document plus
+its immediate parent when that parent is a master; when the parent is a sprint, the leaf reads its
+own document only and the sprint arrives as an expansion reference carrying its entry count. Only the
+bound document's own decisions are injected, so "the smallest complete task projection" cannot
+become "the whole series history".
+
+**Nothing is clipped and nothing is silently dropped.** Every obligation, negative constraint and
+failure obligation is carried verbatim from the packet that declares it — no length budget exists
+anywhere in the package — and material deliberately not injected is named under "Expansion
+references", so "referenced" is a visible decision with a link rather than an omission.
+
+**Read-only is asserted, not claimed.** Nothing in the package imports a writer, a transport or a
+task-JSON reader; a structural AST case walks every module and fails on any of them, and the live
+probe digests the real task tree before and after both a successful projection and every refusal,
+byte-identical. No cache write, status stamp or "helpful" repair belongs on this read path.
+
+The Knowledge Substrate master is **not** a dependency: a later knowledge view plugs in through the
+`TaskKnowledgeExpansionSource` protocol, no implementation ships, and with no source the projection
+reports the channel as unadmitted instead of quietly omitting it.
 
 ## Detailed Route Context
 
@@ -531,6 +594,8 @@ than comment. The preview/apply parity invariant that produced this repair is in
 `worktrees/overview.md` route and in `memory_quality/overview.md`.
 
 ## Update History
+
+- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: route body updated for the task-context projection package (`CAPS-R03@v1`), which **implements the seam the L2 section above only declared** — L2 accepted any `CapsuleTaskProjectionSource` and passed it through; this package is the thing that fills it. Added the `260915-CAPS-L3 Task-Context Projection Boundary` section: the complete-or-refused rule and why the refusal family sits outside the capsule family, the L4/L5/L7 consumer contract, the two admissions with the **typed `approved-requirement-packet` route as the standardized policy** (owner ruling 2026-09-16T10:15), the total read plan with its never-read-a-sprint-ancestor rule, the no-clipping and referenced-is-not-omitted rules, and read-only as an asserted property. **Records the naming disambiguation explicitly**: this route now owns a *task-context* projection, which is not the *closeout-queue* projection owned by `tasks/document_refs.py::projection_sprints_affected_by_master` and the closeout writers — same word, unrelated owners, inputs, outputs and consumers. Also added the disambiguation sentence to the L2 section's L3-seam paragraph so a reader arriving there is not left to guess. Verification metadata remains closeout-owned; no acceptance claim is made.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected application argument/result routing, record landing and checkpoint authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

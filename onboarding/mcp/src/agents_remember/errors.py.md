@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/errors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
+| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,14 @@ The role-capsule compiler adds a fourth family at the end of the module. cit:([`
 
 Two subclasses narrow the family by defect source and are declarative today: cit:([`CapsuleManifestError`], mcp/src/agents_remember/errors.py:508-511) for an invalid canonical manifest or declared source path, and cit:([`CapsuleSourceError`], mcp/src/agents_remember/errors.py:512-513) for an absent, unreadable, unconfined, or non-UTF-8 instruction source. Neither overrides the base behavior; they exist so a caller can distinguish *which side of the boundary* refused without parsing the status string. **A third subclass, `CapsuleBindingError`, was removed on the A3 candidate** — the binding-defect class no longer has a distinct type, so do not cite one.
 
+The **task-context projection** appends a separate family at the very end of the module rather than a fourth `Capsule*` member. cit:([`TaskProjectionSourceError`], mcp/src/agents_remember/errors.py:516-560) is raised when an admitted task/worktree binding cannot be projected into task context, and it deliberately subclasses `AgentsRememberError` **directly**, not `CapsuleCompilationError`: a projection that could not read its task has failed *before* any capsule compilation, and filing that under the capsule family would tell a caller the compiler refused when it was never reached. It keeps the same explainable-refusal shape — `status` a stable branchable code, `detail` the exact defect for an operator who does not know the internals, `next_action` the **owner that has to change something** — and adds one field of its own: `owner_status` carries the status the existing AR owner raised when this refusal wraps one, **so a caller can still branch on the owner's own vocabulary instead of matching prose**.
+
+Its status vocabulary is **not** registered in `agents_remember.models.role_capsules.statuses`; the sixteen codes are raised at their own sites under `application/task_projection/`: `projection-binding-mismatch`, `projection-binding-unresolved`, `projection-branch-mismatch`, `projection-contract-unavailable`, `projection-memory-binding-unavailable`, `projection-operation-unsupported`, `projection-repository-mismatch`, `projection-requirement-declaration-unresolved`, `projection-requirement-packet-invalid`, `projection-requirement-packet-missing`, `projection-requirement-packet-unresolved`, `projection-role-altitude-mismatch`, `projection-scope-ambiguous`, `projection-task-binding-mismatch`, `projection-task-reference-invalid`, `projection-task-unknown`. Because they are absent from `CAPSULE_STATUSES`, do not assert membership there: the projection codes and the capsule codes are two vocabularies with two owners.
+
+The family's defining invariant is that **a projection is either complete or refused** — there is no partial projection and no fallback to another branch, another task or a broader scope. It never repairs what it could not resolve, so the current task document is untouched by any of these refusals.
+
+**The class is not interchangeable with `CapsuleCompilationError`.** `TaskProjectionSourceError` has no `conflicts` field and its `response_fields()` publishes `status`/`detail` plus `nextAction`/`ownerStatus`; the capsule family publishes `nextAction`/`conflicts`. A caller that branches on one family's response keys must not assume the other's.
+
 ### Conventions
 
 Raise the narrow typed family rather than a generic exception when a domain contract is known. Expected and observed dictionaries are copied at response boundaries; only certification findings are recursively frozen.
@@ -52,6 +60,10 @@ Raise the narrow typed family rather than a generic exception when a domain cont
 - `response_fields()` is the **bounded** projection: it adds `nextAction` and `conflicts` only when they exist, and it must never be widened to carry lower-layer diagnostics.
 - The three `Capsule*` subclasses are boundary markers, not behavior. Adding a distinct meaning to one of them is a contract change for every caller that branches on the exception type.
 - A compilation failure never becomes a partially valid capsule, so this family is raised **instead of** returning content — it is never a warning channel.
+- A task-context projection is **either complete or refused**. There is no partial projection, no fallback branch, no nearest task match and no silent scope widening; a projection never repairs what it could not resolve.
+- `TaskProjectionSourceError` keeps the wrapped owner's own status in `owner_status`. Do not collapse it into the projection's vocabulary — the whole point is that a caller can branch on the owner's code rather than on prose.
+- `TaskProjectionSourceError` subclasses `AgentsRememberError` directly and **not** `CapsuleCompilationError`: a projection failure happens before any capsule compilation, so `except CapsuleCompilationError` must not be read as covering it.
+- The sixteen `projection-*` codes are not members of `CAPSULE_STATUSES`. Do not assert membership there or register them in `models/role_capsules/statuses.py`.
 
 ### Todos
 
@@ -83,6 +95,10 @@ The error families preserve distinct authority, recovery and transport meanings.
 | The consumer that turns this family into a value with an explanation instead of an escaping exception. | `compile_admitted_capsule`; `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:44-80 |
 | The registered refusal-code vocabulary these errors carry. | `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/statuses.py:27-41 |
 | The failure cases that assert a refusal advertises its own reason and remedy. | `test_a_refusal_still_produces_an_explanation_manifest` | mcp/tests/test_role_capsule_compiler.py:851-867 |
+| The task-context projection refusal: complete-or-refused, with the wrapped owner's status preserved. It subclasses `AgentsRememberError` directly, so it is **not** in the `Capsule*` family and is not covered by `except CapsuleCompilationError`. | `TaskProjectionSourceError`; `render`; `response_fields` | mcp/src/agents_remember/errors.py:516-560; mcp/src/agents_remember/errors.py:545-550; mcp/src/agents_remember/errors.py:552-560 |
+| The producer that raises this family for every unresolved or contradictory binding input. | `resolve_task_projection_scope`; `read_packet` | mcp/src/agents_remember/application/task_projection/scope.py:292-373; mcp/src/agents_remember/application/task_projection/packets.py:83-130 |
+| The refusal that proves `None` is never a substitute for an unprojectable admitted task. | `TaskProjectionSource` | mcp/src/agents_remember/application/task_projection/provider.py:56-103 |
+| The case that pins the failure taxonomy: each unresolvable input returns its own status. | `test_every_unresolvable_input_returns_its_own_source_resolution_status` | mcp/tests/test_task_projection.py:621-696 |
 
 ## Cross-Repo References
 
@@ -93,6 +109,8 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: body updated for the second family this route's leaf appended, `TaskProjectionSourceError` (`CAPS-R03@v1`, `+47/−0`). Recorded it as a family that subclasses `AgentsRememberError` **directly rather than `CapsuleCompilationError`** — a projection failure happens before any compilation, so `except CapsuleCompilationError` must not be read as covering it — with the `status`/`detail`/`next_action` shape it shares with L2's family plus its own `owner_status` field, and the explicit note that its sixteen `projection-*` codes are **not** in `CAPSULE_STATUSES`. Added four invariants and four Repo-Internal rows. **Line numbers of every pre-existing class were re-verified against the current source and are unchanged**: the append is purely additive at the end of the file, so no earlier citation in this card or in any other card citing `errors.py` needed repair. Note one deliberate non-repair: the two L2 entries immediately below cite `CapsuleCompilationError` at `464-506` and `render`/`response_fields` at `490-496`/`497-506`, while the current source has `464-505`, `490-495` and `497-505` — each end bound one line long. Those citations belong to the L2 leaf and this L3 append did not move them (the append starts at 516, below both), so they are left exactly as L2 wrote them rather than silently rewritten from a different leaf's pass. Verification metadata is left at its previous stamp because the source is uncommitted — the governed closeout stamps the real code commit, and no hash was invented here.
 
 - 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate (review follow-up, not a source change). `CapsuleBindingError` **no longer exists** — the family is now `CapsuleCompilationError` plus only `CapsuleManifestError` and `CapsuleSourceError`, and the file shrank 517 → 513 lines, so the previous entry's "purely additive, no earlier citation needed repair" no longer holds. Replaced the three-subclass sentence with the two that exist, stated the removal explicitly so no later reader re-cites it, widened `CapsuleSourceError`'s description to include the new non-UTF-8 case, and corrected both ranges (`508-511`, `512-513`). **The removal also falsified the created entry's claim that every pre-existing class range was unchanged.** Because the family shrank, the tail classes moved (513 total now vs 517), and this card's own citation table carried ranges that were **already stale before this leaf** and are now further off: the certification row was hand-repaired from stale pre-leaf values to the current `26-37`/`38-43`/`44-49`/`50-55`/`56-69`, and the harness/history row to `325-334`/`335-345`/`346-356`/`373-387`/`449-463`. The explanation-only rows for `CuratorCoherenceError`, `ConfiguredContractAuthorityError`/`RereadError` and the pair/final-certification family are text-only and are deliberately re-pointed in a later pass, not here; the `TokenizerVocabularyError` and `NativeHistoryUnavailable` ranges visible in the July 31 history entry below are **inert historical provenance** the entry itself declares as such and are not current citations. Verification metadata stays at its previous stamp — the source is uncommitted and no hash was invented here.
 

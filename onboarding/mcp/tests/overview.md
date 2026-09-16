@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
+| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -113,6 +113,69 @@ seeded mutations were caught`) that is **not** a product artifact and is deliber
 into `mcp/tests/`; it lives in the coordination task tree and expires on the next change to
 `mcp/tests/test_role_capsule_*.py`, at which point these shipped cases are its executable
 replacement.
+
+## 260915-CAPS-L3 Task-Context Projection Coverage
+
+One new module covers the task-context projection: `test_task_projection.py` holds **9 test
+functions (9 collected)**, all unit, built on a synthetic coordination tree that mirrors the real
+enclosure's topology. Unit population 989 → **998** against a budget of 1000; integration 10
+deselected and untouched — no integration case was added, because no boundary under test is
+integration-only.
+
+**The module's docstring states the anti-vacuity rule as contract:** every case derives its expected
+side from a source the projection does not feed — the fixture files written to disk, the task
+layer's own frozen vocabularies, or an independently parsed copy of the projection's output. A
+comparison whose two sides both came from the projection would be vacuous, and this repository's
+reviews have rejected that class twice. Hold a new case to the same rule.
+
+**Three cases carry more weight than their size suggests.** The **import-surface case** parses every
+module in the package and asserts no writer, transport or task-JSON import appears — that is what
+makes "task truth is read only through the owners" and "the projection is read-only" checkable
+properties rather than prose claims. The **byte-identical case** digests the whole synthetic task
+tree before and after both a successful projection *and* every refusal, which is the observable
+consequence of the read-only contract. The **seam case** runs the projection through the compiler
+protocol and then forges a digest to prove the compiler refuses it, so the seam is shown to be
+two-way rather than decorative.
+
+**The remaining six own one property each:** cross-task isolation (two leaves never leak each
+other's private content), altitude scope (a sprint's decision log reaches an orchestrator but is
+never injected for a leaf), operation specificity (each frozen operation selects its own channels and
+document), the failure taxonomy (each unresolvable input returns its own status), three-plane
+separation (a historical record and a proposal never read as a current obligation), and no
+truncation (an obligation is carried verbatim while a section the packet lacks is a reported gap).
+
+**A fixture trap worth not repeating.** The synthetic tree took three rounds (`CAPS-L3-EV5`–`EV7`)
+to mirror the real topology: a leaf enclosure needs `kind: leaf` *with* a `leaf_id`, an
+external-memory contract needs its ledger leg, and — the subtle one — **an internal memory root
+silently wins over an external coordination hint**, so a fixture with an internal memory root
+searched the task tree in the wrong place. A new fixture that does not reproduce the external
+topology will exercise the wrong resolution path and still look green.
+
+Independent falsifiability for these cases came from a task-local probe (seeds `M01`–`M20`, `all
+seeded mutations were caught`, `vacuous: 0`) that is **not** a product artifact and is deliberately
+not promoted into `mcp/tests/`; it lives in the coordination task tree and expires on the next change
+to `mcp/src/agents_remember/application/task_projection/**` or `mcp/tests/test_task_projection.py`, at
+which point these shipped cases are its executable replacement. That probe found a vacuous seed in
+its own first run (`CAPS-L3-EV10`: a planted "silent fallback" was blocked by a second guard, so the
+target case passed for the wrong reason); the probe now fails on a vacuous seed by design.
+
+**Pyright reports exactly one finding for this module** — `Import "pytest" could not be resolved` —
+which is this repository's pre-existing condition for every pytest-importing test module, reproduced
+on the untouched shipped `test_role_capsule_compiler.py` as the control. No scoping change and no
+`# type: ignore` was added to hide it.
+
+**This module has no evidence-lane row, and the route must not be read as if it did.** The
+fail-closed loader `load_lane_manifest` derives the expected test population from the
+tracked-and-untracked modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any
+test file without an explicit lane, so `test_task_projection.py`'s absence from
+`test-evidence-lanes.toml` means the manifest **does not load** as this candidate stands — the
+`pytest_collection_modifyitems` hook that calls the loader and `code_quality/check.py` both turn that
+into a failure. This is a code-side gap for the owning seat, not an onboarding one, and it is **not
+this leaf's alone**: `test_role_capsule_compiler.py` and `test_role_capsule_admission.py` (from
+`CAPS-R02@v1`) and `test_role_instruction_corpus.py` (from `CAPS-R01@v1`) are missing from both
+manifests too, so the correct repair is a four-row change. Derived from the loader's source rather
+than executed: this curation seat runs Python 3.10 and the repository requires `>=3.13,<3.14`, so
+`import tomllib` fails and the loader could not be run here.
 
 ## Hot Path Summary
 
@@ -750,6 +813,7 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 
 ## Update History
 
+- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: **route body updated** for the task-context projection's coverage module. Added § 260915-CAPS-L3 Task-Context Projection Coverage: the new module and its 9 collected cases, the anti-vacuity rule its docstring states as contract, the three cases that carry more weight than their size (the structural import-surface walk, the byte-identical non-mutation case, and the two-way compiler-seam case), the remaining six properties, the fixture-topology trap that took three rounds to mirror (`CAPS-L3-EV5`–`EV7`, chiefly that an internal memory root silently wins over an external coordination hint), the task-local `M01`–`M20` falsifiability probe and its self-caught vacuous seed (`CAPS-L3-EV10`), and the pre-existing pytest-unresolvable pyright condition. **Also recorded a scoped blocker for the owning seat**: this module has no evidence-lane row, and `load_lane_manifest` is fail-closed, so the manifest does not load as the candidate stands; the same gap exists for the three modules from `CAPS-R01@v1`/`CAPS-R02@v1`, making the correct repair a four-row change. That finding is derived from the loader's source, not executed — this seat has Python 3.10 and the repository requires `>=3.13,<3.14`. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve adapter's test population. Added § 260915-CAPS-L6 Native eve Adapter Test Population, which states the distinction this route now depends on: two of the five new modules are pytest-collected suites and three are support or explicit-run scripts, so "the suite protects this scenario" is proved by collection for the former and by a `--report-dir` artifact for the live fixture. Also records the A2 strengthening (the production client driven through a mock transport, the bounded replay window, the request-shaped cancel observation) and the `_knob_values` env carrier that holds the launch-vocabulary contract at four harnesses. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Role-Instruction Corpus Contract, which places the new shipped module `test_role_instruction_corpus.py` in this route and states the properties it protects (nine-role registry, the six-section readable order, the frozen eight-operation vocabulary, a prose-free manifest, every cited relative path resolving, a missing manifest source reported rather than accepted, and the `SANCTIONED_SIBLING_REFERENCES` independence rule). A new card was created for the module in this route. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
