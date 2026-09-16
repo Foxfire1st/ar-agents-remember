@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `88784fb26aab810c8a284f1e73e6f9bd727a5963` |
+| lastVerifiedCommitDate | 2026-09-16T08:31:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
