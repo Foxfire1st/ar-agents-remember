@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
+| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../overview.md`                  |
 
@@ -680,8 +680,9 @@ to that tuple and drives one `finalize_tool_response` call for the repaired name
 ## 260831-LOCR-L32 The Public Roster Joins This Route, And The Worktree Next Move Is Enforced
 
 This route's `tools/` leaf gained `public_roster.py` — a zero-import module whose whole body is the
-62-name literal `PUBLIC_TOOLS`
-cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-86). It is the tuple's **single definition**; `mcp/tools/base.py`
+`PUBLIC_TOOLS` literal
+cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-90) — **62 names at this
+leaf, 63 from 260831-LOCR-L37, and 66 since 260915-CAPS-L4**. It is the tuple's **single definition**; `mcp/tools/base.py`
 now re-exports that identical object instead of declaring its own, so
 `agents_remember.mcp.tools.PUBLIC_TOOLS`, `PUBLIC_TOOL_RESPONSE_MODELS`, the live registration order,
 and the `public_surface` pin all still name the same tuple with no consumer change.
@@ -729,7 +730,81 @@ waiting reasons. Real wave dependencies still gate through the sprint execution 
 `predecessor-incomplete:` reasons, and everything under `worktrees/integration/**` is untouched by
 this change.
 
+## 260915-CAPS-L4 The Capsule And Skill-Resource Wire Contracts
+
+This route gained two modules that own the AR MCP surface's wire vocabulary for the capsule operation
+and the SEP-2640 skills transport. Both are value modules: dataclasses or strict response models plus
+their rendering, with no behavior that decides a selection, a permission or a trust level.
+
+- `role_capsule_resources.py` — the three strict response envelopes (`role_capsule_compile`,
+  `skill_catalog_list`, `skill_catalog_read`) and their nested payloads, plus the bridge-name and
+  `server-supplied-data` trust constants. The capsule envelope carries **both** shapes: `ok` false plus
+  a typed `refusalStatus` is a refusal, not an error type, and the identity/provenance fields are
+  optional precisely because a refusal legitimately carries only what was established before it
+  refused.
+- `skill_resources.py` — the discovery registry (`SkillResourceEntry`, `SkillResourceFile`,
+  `SkillResourceCatalog`, `UnreadableSkill`), the **SEP-2640 entry shape**
+  (`{uri, frontmatter, resources:[{uri,digest,size}]}`), this server's own Agent Skills discovery index,
+  and the `_meta` provenance block. Identity is `origin` + name, which is what keeps two servers serving
+  a same-named skill distinct. `entry_documents()` is the **enumeration surface** the `skills/list`
+  method returns; `discovery_metadata()` is what this server's own listing tools hand out; neither can
+  reach a file body.
+
+Two vocabulary facts that belong at route level, because they are the route's own
+"defined here, imported by whoever decides it" rule applied to a security property:
+
+- **`contentTrust` is a stated constant, not an inferred or settable field**, and
+  **`declaredAllowedTools` is an observation, never a grant** — a host MUST NOT honor mechanisms
+  declared in skill content, and no field on these models is a channel through which it could. The
+  leaf's mutation probe removes the related guarantee on the admitted-policy side (`M2`) and its named
+  case fails.
+- **`requestedTools` and `grantedTools` are separate fields on the capsule envelope.** The compiler
+  narrows every request against the admitted policy snapshot; keeping both on the wire is what makes
+  that narrowing auditable rather than invisible.
+
+A third fact, added by the post-rejection repairs and worth carrying here because it is a wire-shape
+decision rather than a reader's choice: **the entry's `frontmatter` is the verbatim `SKILL.md`
+frontmatter, not a two-field summary.** SEP-2640 §Enumeration requires *"every field the author wrote,
+not a curated subset"*, so `SkillResourceEntry.frontmatter` carries the whole YAML map the reader
+produced, and `license`, `metadata` and future specification fields pass through unchanged. A nested
+skill is published flat: an ordinary entry whose `uri` merely shares a path prefix with its parent's.
+
+Both modules import nothing from `mcp` — the same `models` rank constraint this route's
+`tools/public_roster.py` records. The protocol methods that consume these values live on the `mcp`
+route (`registration/skills_extension.py`), which is the correct direction for this rank.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The capsule envelope keeps one shape for success and refusal, with the seat facts it established. | `RoleCapsuleResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115 |
+| The requested-versus-granted split that makes the compiler's narrowing auditable. | `CapsuleRequestedToolPayload`; `RoleCapsuleResponse.grantedTools` | mcp/src/agents_remember/models/role_capsule_resources.py:56-60; mcp/src/agents_remember/models/role_capsule_resources.py:112-112 |
+| Identity is origin plus name, and a listing cannot reach a body. | `SkillResourceEntry.identity`; `discovery_metadata` | mcp/src/agents_remember/models/skill_resources.py:83-87; mcp/src/agents_remember/models/skill_resources.py:149-170 |
+| The trust statement is a constant and a declared tool set is observed, never applied. | `SERVER_SUPPLIED_CONTENT_TRUST`; `declared_allowed_tools` | mcp/src/agents_remember/models/role_capsule_resources.py:31-32; mcp/src/agents_remember/models/skill_resources.py:219-234 |
+| The three registry rows that make the new names returnable. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:155-238 |
+
 ## Update History
+
+- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
+  `ar/260915-caps-l4`, base `b00a4ac2`): refreshed this route section against the settled candidate.
+  `skill_resources.py` now owns the **SEP-2640 entry shape** (`{uri, frontmatter, resources:[{uri,digest,size}]}`)
+  and the enumeration surface (`entry_documents()`), distinct from this server's own
+  `discovery_metadata()` listing and its own Agent Skills discovery index. Added the route-level fact
+  the repairs introduced: an entry's `frontmatter` is the **verbatim** `SKILL.md` frontmatter — "every
+  field the author wrote, not a curated subset" — with `license`, `metadata` and future specification
+  fields passing through, and nested skills published flat. Recorded that the protocol methods consuming
+  these values live on the `mcp` route, which is the correct direction for the `models` rank. Verification
+  metadata remains closeout-owned; no acceptance claim is made.
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
+  base `b00a4ac2`): added the two new wire-contract modules to this route — `role_capsule_resources.py`
+  (the three strict envelopes, with the capsule's shared success/refusal shape and the deliberate
+  `requestedTools` versus `grantedTools` split) and `skill_resources.py` (the discovery registry, the
+  index document and the `_meta` provenance block). Recorded the two security-property vocabulary facts
+  at route level: the trust statement is a stated constant and a declared tool set is an observation
+  never applied, with the mutation-probe entry that makes the related admitted-policy guarantee
+  executable. Corrected the L32 section's roster literal from "62-name" to the measured lineage
+  (**62 at that leaf, 63 from L37, 66 since this change**) and repointed its single-definition range to
+  `models/tools/public_roster.py:22-90`. Verification metadata remains closeout-owned; no acceptance
+  claim is made.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Updated model routing and checkpoint result vocabulary; retained only informational cache exposure. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

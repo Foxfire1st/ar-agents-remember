@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
-| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
+| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
+| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -26,11 +26,46 @@ cannot pass as the code under review.
 260831-LOCR-L37 added one advertised name to that inventory — `worktree_pause`, the stop-only pause
 registered by the working-half worktree registrar and carried by `PUBLIC_TOOLS` and
 `TOOL_RESPONSE_MODELS` in the same leaf — so the ordered inventory, the live registration and the
-response-model registry still agree at 63 names. The verb publishes nothing: it releases one atomic
+response-model registry agreed at 63 names from that leaf until 260915-CAPS-L4 raised the count. The
+verb publishes nothing: it releases one atomic
 master's activation selection and hands the turn back, and the explicitly requested publication of an
 unfinished master remains the separate `worktree_checkpoint_landing`. This package route owns the
 advertisement of both; the semantics live on the `registration/`, `tools/` and `worktrees/` child
 routes.
+
+260915-CAPS-L4 added three more advertised names — `role_capsule_compile`, `skill_catalog_list` and
+`skill_catalog_read` — so the three surfaces still agree at **66** names. They are declared by the new
+`mcp/registration/capsule_serving.py` family (the thirteenth registrar), reached through the new
+`mcp/tools/capsule_serving.py` payload builders, and carried by `RoleCapsuleResponse`,
+`SkillCatalogListResponse` and `SkillCatalogReadResponse` in `models/role_capsule_resources.py`. All
+three names were **appended** to `TOOL_REGISTRARS`, `PUBLIC_TOOLS` and `TOOL_RESPONSE_MODELS` together,
+so no existing tool's advertised position moved.
+
+That same family also made this package advertise **MCP resources** for the first time, and it carries
+the SEP-2640 skills transport: every file of the 14 shipped skills plus this server's own
+`skill://index.json` resource (85 registered resources), the `io.modelcontextprotocol/skills` capability
+declared in the `initialize` result, and the extension's **two mandatory protocol methods**
+`skills/list` and `skills/get`. The methods are implemented in
+`mcp/registration/skills_extension.py` as bounded explicit method support, because the pinned
+`mcp==1.29.1` SDK has no skills affordance at all (zero case-insensitive `skill` matches, no
+`extensions` field on `ServerCapabilities`, and an unmodelled method refused with `-32602`).
+`skill_catalog_list` and `skill_catalog_read` are this server's own tool reads over the same registry
+for a client that is not resource-aware. The resources are read from the package's generated
+`package_data/runtime/skills/` copy rather than the canonical root `skills/` tree, which is what makes
+a served revision reproducible.
+
+Two distinctions a reader of this route must not flatten:
+
+- **The declaration is a commitment.** SEP-2640 §Capability Declaration: *"declaring the extension
+  itself commits the server to `skills/list` and `skills/get`."* The capability is therefore installed
+  in the same function that installs the methods, so the advertisement cannot outrun the implementation.
+  A round-1 candidate declared the capability and answered neither; that gap is what the review blocked
+  on and what the shipped code closes.
+- **`skill://index.json` is this server's own convenience resource, not the extension's enumeration
+  surface.** SEP-2640 enumerates through `skills/list`, whose entries carry verbatim frontmatter and
+  per-file digests; the index keeps the Agent Skills well-known-discovery shape and its wire description
+  says so.
+
 
 The same canonical dispatch-advertisement validator is reusable at real-client boundaries that
 expose only one deferred tool-search result. The Codex clean-room proof therefore records the exact
@@ -1449,6 +1484,33 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
+  base `b00a4ac2`): corrected this route's top-level inventory claim — the ordered `PUBLIC_TOOLS`
+  inventory, the live registration and the response-model registry now agree at **66** names, not 63,
+  after this change appended `role_capsule_compile`, `skill_catalog_list` and `skill_catalog_read`
+  through the new thirteenth registrar `mcp/registration/capsule_serving.py`. Recorded the second,
+  larger route-level fact: this package now advertises **MCP resources** for the first time (85: every
+  file of the 14 shipped skills plus `skill://index.json`) through the SEP-2640 skills transport, and
+  the two new `skill_catalog_*` tools are this server's own reads over
+  the same registry for a client that is not resource-aware. Also recorded that the
+  served corpus is the generated `package_data/runtime/skills/` copy rather than the canonical root
+  `skills/` tree, which is what makes a served revision reproducible. The 63-name sentence is kept as
+  the lineage it was and now says it held until this change. Verification metadata remains
+  closeout-owned; no acceptance claim.
+
+- 2026-09-16T11:50+02:00 — 260915-CAPS-L4 curator, **post-verdict correction**: the independent
+  baseline review landed (`260915-CAPS-L4-verdict-baseline.md`, recommendation **BLOCK**,
+  `CAPS-R04@v1` `rejected`) and refuted the spec claim the entry above rested on. The final SEP-2640
+  introduces **three protocol methods** and makes `skills/list` + `skills/get` mandatory for any server
+  declaring the extension — the declaration *is* the commitment — while this server answers neither
+  (`-32602`); the handoff's "no new protocol methods" was a **misquotation** (`F-L4-06`, `F-L4-05`).
+  Added the rejection banner to this route's inventory section, removed the sentence asserting the
+  false claim, and recorded that the 66-name agreement, the three advertised tools and the 85-resource
+  registration are all real and independently reproduced while the **conformance** claim is not. **The
+  onboarding describing this transport must not be treated as settled current intent, and must be
+  refreshed when fix leaf F1 repairs the surface.**
+
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Native eve Session Adapter Route Impact, recording the seven new `serving/eve_*.py` modules, the one existing registry that changes (`BUILTIN_PROTOCOL_HARNESSES` now includes `eve`), the deliberate non-change in `kernel/harnesses.py` and why the two registries answer different questions, the repository-root runtime tree, and the five-module test population. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 

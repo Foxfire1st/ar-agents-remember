@@ -6,14 +6,70 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
-| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
+| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
+| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [MCP package overview](../overview.md)
+
+## 260915-CAPS-L4 Capsule And Skill-Serving Test Population
+
+One module joins this route: `test_capsule_serving.py`, **30 collected items** — **28 in the unit
+population and 2 marked `integration`** — registered in `test-evidence-lanes.toml` under
+`unit-regression` at entry row 19. It grew from 21 to 30 items across the leaf's two repair rounds.
+
+Its shape is worth naming because two different kinds of case live in one module:
+
+- **Twenty-eight hermetic cases** over a `World` fixture: a disposable coordination root with a contract
+  and leaf/master task documents, plus a synthetic skills corpus whose bytes the cases can predict
+  (including a nested skill). They cover capsule admission and refusal (the role string cannot acquire
+  another role, an unknown role gets its own status, a task path escaping the task root is refused, the
+  manifest decides the source set rather than the caller, a moved task document is **re-read** while a
+  recorded admission whose bytes moved is **refused**, the operation writes nothing to the tree it
+  reads, and altitude admission is pinned across **every** role the document can carry so a hardcoded
+  role fails) and skill serving (origin and revision kept, a body whose bytes changed since the catalog
+  refused, reading grants none of the tools the frontmatter names, a resource read leaves the tool
+  surface and response registry unchanged, same-named skills from two servers stay distinct, the
+  discovery registry is not the model-visible catalog, a skill body is not composed into the instruction
+  stream, a non-conforming skill directory is recorded not served).
+- **Two real-process exchanges**, the only `integration` members: the shipped entry point is started as
+  its own process and driven by the **installed SDK's own client** (`mcp.client.stdio` +
+  `ClientSession`) — an implementation independent of the server code under test. The exchange observes
+  the negotiated capabilities, the resource list, the index, a selected body, a supporting file, a
+  refusal, **and both extension methods** (`skills/list`, plus `skills/get` with an absent URI refused
+  `-32602`); the other attempts a traversal path from the live process and requires the read to be
+  refused.
+
+The cases the repairs added are the ones worth naming here, because they are what makes the module's
+coverage claim honest rather than self-derived: `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`,
+`test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` (this server's own index
+shape, asserted separately from the enumeration surface),
+`test_a_catalog_record_that_escapes_its_skill_directory_is_refused`,
+`test_the_index_reader_refuses_while_a_skill_cannot_be_served`,
+`test_a_skill_whose_directory_name_disagrees_with_its_name_is_recorded_not_served`,
+`test_the_extension_declaration_is_installed_once_per_server`, and
+`test_a_nested_skill_is_published_flat_like_any_other`. Each drives one previously-unpinned guard
+directly instead of asserting from a neighbouring surface.
+
+Three cases run against the **shipped corpus** rather than the synthetic one (the corpus parses and
+every served skill has a root revision, the composition manifest declares the skill that is served, the
+index document is the expected shape); those are the cases that would catch packaging drift between the
+canonical root `skills/` tree and the served copy. The module also carries
+`test_the_mutation_harness_can_actually_fail`, which is what keeps the leaf's seeded-mutation evidence
+honest.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The fixture world and the synthetic corpus every hermetic case is built from. | `World`; `_synthetic_corpus` | mcp/tests/test_capsule_serving.py:308-308; mcp/tests/test_capsule_serving.py:419-419 |
+| The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree. | `test_a_caller_changing_the_role_string_cannot_acquire_another_role`; `test_the_manifest_decides_the_source_set_not_the_caller`; `test_the_capsule_operation_writes_nothing_to_the_tree_it_reads` | mcp/tests/test_capsule_serving.py:639-639; mcp/tests/test_capsule_serving.py:651-651; mcp/tests/test_capsule_serving.py:690-690 |
+| The guards the repairs pinned, each driven directly by its own case. | `test_a_catalog_record_that_escapes_its_skill_directory_is_refused`; `test_the_index_reader_refuses_while_a_skill_cannot_be_served`; `test_the_extension_declaration_is_installed_once_per_server`; `test_a_nested_skill_is_published_flat_like_any_other` | mcp/tests/test_capsule_serving.py:1321-1321; mcp/tests/test_capsule_serving.py:1348-1348; mcp/tests/test_capsule_serving.py:1389-1389; mcp/tests/test_capsule_serving.py:1489-1489 |
+| The SEP entry contract, asserted separately from this server's own index shape. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`; `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` | mcp/tests/test_capsule_serving.py:1008-1008; mcp/tests/test_capsule_serving.py:1040-1040 |
+| The two independent-SDK-client exchanges, including both extension methods and the `-32602` refusal. | `test_a_real_client_and_server_exchange_over_the_installed_sdk`; `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1195-1195; mcp/tests/test_capsule_serving.py:1268-1268 |
+| The case that keeps the seeded-mutation evidence honest. | `test_the_mutation_harness_can_actually_fail` | mcp/tests/test_capsule_serving.py:1301-1301 |
+| The lane row that selects this module into the unit population. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:19-19 |
 
 ## Purpose
 
@@ -812,6 +868,29 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: refreshed this route section
+  against the settled candidate. Corrected the population from 21 to **30 collected items (28 unit + 2
+  integration)**, re-derived every fixture and case line number against the current 1,535-line module,
+  and named the cases the two repair rounds added — the SEP entry contract, this server's own index
+  shape asserted separately from the enumeration surface, and the four previously-unpinned guards each
+  driven by its own case. Recorded that the exchange case now exercises **both extension methods**,
+  including `skills/get` on an absent URI refused `-32602`, and dropped the reference to a helper the
+  module no longer carries. Verification metadata remains closeout-owned; no acceptance claim is made.
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
+  base `b00a4ac2`): **route body updated** — added § 260915-CAPS-L4 Capsule And Skill-Serving Test
+  Population, placing the new `test_capsule_serving.py` in this route and stating the properties it
+  protects (19 hermetic admission/serving cases over a `World` fixture and a synthetic corpus, 2
+  real-process exchanges driven by the installed SDK's own client, and 3 shipped-corpus cases that
+  would catch packaging drift between the canonical root `skills/` tree and the served copy). A new
+  card was created for the module in this route. Recorded that the module is registered in
+  `test-evidence-lanes.toml` under `unit-regression` at entry row 19, and that the default unit
+  selection on this branch refuses collection at 1083 collected cases against a 1000 ceiling (64 of
+  that overage predating this leaf) — a current-state fact about the route's verification population,
+  left un-repaired because raising a declared budget is an owner decision. Verification metadata
+  remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was
+  invented.
 
 - 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: **route body updated** for the task-context projection's coverage module. Added § 260915-CAPS-L3 Task-Context Projection Coverage: the new module and its 9 collected cases, the anti-vacuity rule its docstring states as contract, the three cases that carry more weight than their size (the structural import-surface walk, the byte-identical non-mutation case, and the two-way compiler-seam case), the remaining six properties, the fixture-topology trap that took three rounds to mirror (`CAPS-L3-EV5`–`EV7`, chiefly that an internal memory root silently wins over an external coordination hint), the task-local `M01`–`M20` falsifiability probe and its self-caught vacuous seed (`CAPS-L3-EV10`), and the pre-existing pytest-unresolvable pyright condition. **Also recorded a scoped blocker for the owning seat**: this module has no evidence-lane row, and `load_lane_manifest` is fail-closed, so the manifest does not load as the candidate stands; the same gap exists for the three modules from `CAPS-R01@v1`/`CAPS-R02@v1`, making the correct repair a four-row change. That finding is derived from the loader's source, not executed — this seat has Python 3.10 and the repository requires `>=3.13,<3.14`. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve adapter's test population. Added § 260915-CAPS-L6 Native eve Adapter Test Population, which states the distinction this route now depends on: two of the five new modules are pytest-collected suites and three are support or explicit-run scripts, so "the suite protects this scenario" is proved by collection for the former and by a `--report-dir` artifact for the live fixture. Also records the A2 strengthening (the production client driven through a mock transport, the bounded replay window, the request-shaped cancel observation) and the `_knob_values` env carrier that holds the launch-vocabulary contract at four harnesses. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.

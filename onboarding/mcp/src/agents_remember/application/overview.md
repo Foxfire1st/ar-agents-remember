@@ -6,14 +6,55 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
-| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
+| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
+| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary
+
+This route gained one package, `skill_resources/`, which is the application half of the AR MCP surface
+for **role capsules** and **reusable skills**. It carries two deliberately separate surfaces, and the
+separation is the contract:
+
+- **The capsule operation** (`capsule.py`, `operation.py`) is one narrow read-only call: admitted task
+  binding in, typed capsule or a refusal-with-remedy out. It resolves the worktree enclosure, derives
+  the seat from the task document's **own altitude** and validates the caller's `role` string against
+  it — so the role argument is an input to a check and never the source of the seat — projects the task
+  context through `application/task_projection/`, admits exactly the source files the canonical
+  composition manifest routes, and compiles through `application/role_capsules/`. It reads no
+  caller-named path and writes nothing.
+- **The skills transport's reading half** (`catalog.py`, `frontmatter.py`, `provider.py`) builds the
+  host discovery registry and serves the bytes one `skill://` resource addresses. Discovery and
+  delivery are kept apart: a listing hands out metadata and cannot reach a body, one selected file is
+  re-read on demand, containment inside the skill's own directory is proven **before** any byte is
+  read, and the bytes are re-checked against the revision the catalog recorded.
+
+Two cross-route facts a reader of this route should carry:
+
+- **A refusal is a value, not an exception.** `CapsuleCompilationError` and `TaskProjectionSourceError`
+  carry a stable status, an operator-legible detail and a named remedy, and `CapsuleCompileOutcome`
+  keeps the binding it established in **both** shapes, so an operator always sees which seat and which
+  revision the operation addressed.
+- **The corpus is the packaged skills copy.** The default tree is the package's own generated
+  `package_data/runtime/skills/` copy rather than the canonical root `skills/` tree, because publishing
+  the packaged copy is what makes a served revision reproducible. A corpus root, its manifest and its
+  publishing `origin` are admitted together.
+
+The route's ordinary boundary holds unchanged: no MCP or protocol types are read at this layer, and the
+`mcp` registration layer owns turning these values into tools and resources.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The capsule operation's four refusal-capable steps, each returning a value rather than raising. | `compile_task_capsule`; `CapsuleCompileOutcome` | mcp/src/agents_remember/application/skill_resources/capsule.py:111-216 |
+| The seat is derived from the task document and the declared role is validated against it. | `_admitted_facts` | mcp/src/agents_remember/application/skill_resources/capsule.py:272-330 |
+| Discovery is separated from delivery: the listing carries no body and one read is re-checked. | `build_skill_catalog`; `read_served_file` | mcp/src/agents_remember/application/skill_resources/catalog.py:72-92; mcp/src/agents_remember/application/skill_resources/catalog.py:114-145 |
+| The served tree is the packaged runtime skills copy, and a corpus travels with its origin. | `shipped_skill_tree`; `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:39-63 |
+| The application entry points the registration layer calls. | `role_capsule_compile_tool`; `skill_catalog_list_tool`; `skill_catalog_read_tool` | mcp/src/agents_remember/application/skill_resources/operation.py:68-107 |
 
 ## IAS Per-Contract Activation Application Boundary
 
@@ -594,6 +635,19 @@ than comment. The preview/apply parity invariant that produced this repair is in
 `worktrees/overview.md` route and in `memory_quality/overview.md`.
 
 ## Update History
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
+  base `b00a4ac2`): added the `skill_resources/` package to this route and recorded its two
+  deliberately separate surfaces — the narrow read-only capsule operation (seat derived from the task
+  document's altitude, role string validated and never authoritative, source set routed by the
+  canonical composition manifest, no caller-named path) and the skills transport's reading half
+  (discovery registry separated from delivery, containment proven before the read, bytes re-checked
+  against the recorded revision). Recorded two facts a reader of this route needs: a refusal is a typed
+  **value** carrying status, detail and remedy with the binding preserved in both shapes, and the served
+  corpus is the **packaged** `package_data/runtime/skills/` copy rather than the canonical root
+  `skills/` tree (a corpus root, its manifest and its publishing origin are admitted together). Stated
+  that the route's ordinary boundary is unchanged: no MCP or protocol types are read at this layer.
+  Verification metadata remains closeout-owned; no acceptance claim is made.
 
 - 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: route body updated for the task-context projection package (`CAPS-R03@v1`), which **implements the seam the L2 section above only declared** — L2 accepted any `CapsuleTaskProjectionSource` and passed it through; this package is the thing that fills it. Added the `260915-CAPS-L3 Task-Context Projection Boundary` section: the complete-or-refused rule and why the refusal family sits outside the capsule family, the L4/L5/L7 consumer contract, the two admissions with the **typed `approved-requirement-packet` route as the standardized policy** (owner ruling 2026-09-16T10:15), the total read plan with its never-read-a-sprint-ancestor rule, the no-clipping and referenced-is-not-omitted rules, and read-only as an asserted property. **Records the naming disambiguation explicitly**: this route now owns a *task-context* projection, which is not the *closeout-queue* projection owned by `tasks/document_refs.py::projection_sprints_affected_by_master` and the closeout writers — same word, unrelated owners, inputs, outputs and consumers. Also added the disambiguation sentence to the L2 section's L3-seam paragraph so a reader arriving there is not left to guess. Verification metadata remains closeout-owned; no acceptance claim is made.
 

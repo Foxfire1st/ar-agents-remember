@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
+| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                     |
 
@@ -90,12 +90,17 @@ for keeping registration declarations separate from implementation.
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; an ambient caller with no plane seat declares `caller` (role + task_document_ref) on each (L16-R3); public gate/lifecycle ids are absent. |
 | `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
+| `capsule_serving.py` | `role_capsule_compile`, `skill_catalog_list`, `skill_catalog_read` — **and** the MCP resource set for the SEP-2640 skills transport (`skill://index.json` plus one resource per served skill file), plus the `io.modelcontextprotocol/skills` capability declaration and the call that installs the extension's two protocol methods. The one family that registers resources and protocol methods as well as tools. |
+| `skills_extension.py` | **The SEP-2640 extension's two mandatory protocol methods** — `skills/list` and `skills/get` — added as bounded explicit method support against the SDK's own dispatch. Carries no `@server.tool()` declaration: it extends the session's request union, the server's message dispatcher, and the SDK's `request_handlers` map. |
 
-Twelve registrars and 63 tools registered by decorator, and the advertised tuple `PUBLIC_TOOLS` lists
-the same 63 names. 260831-LOCR-L37 added the last one: `worktree_pause`, declared by
-`worktrees.py::_register_worktree_stop_tools`, which is the fourth registrar in that family. It went to
-both sides at once — the decorator and the tuple — for the reason the L29 repair exists. Since 260831-LOCR-L32 that tuple's one definition is
-`mcp/src/agents_remember/models/tools/public_roster.py:22-85`, a zero-import `models` leaf;
+Thirteen registrars and 66 tools registered by decorator, and the advertised tuple `PUBLIC_TOOLS` lists
+the same 66 names. 260915-CAPS-L4 added the last three: `role_capsule_compile`, `skill_catalog_list` and
+`skill_catalog_read`, declared by the new `capsule_serving.py` family and **appended** to both sides
+(and to `TOOL_RESPONSE_MODELS`) in one change — the L29 rule applied by construction, and appending
+rather than inserting so no existing tool's advertised position moved. The most recent membership
+change before it was 260831-LOCR-L37's `worktree_pause`, declared by
+`worktrees.py::_register_worktree_stop_tools`, which is the fourth registrar in that family. Since 260831-LOCR-L32 that tuple's one definition is
+`mcp/src/agents_remember/models/tools/public_roster.py:22-90`, a zero-import `models` leaf;
 `mcp/tools/base.py` re-exports the identical object, so nothing in this route changed. The two sets
 are equal, and since 260831-LOCR-L29 that equality is checked
 directly: `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` registers every `TOOL_REGISTRARS`
@@ -357,7 +362,77 @@ signature, no `PUBLIC_TOOLS` entry, and no response model, and the tool count an
 are unchanged. A reader looking for the operation set in the published schema will not find it;
 the description is the contract.
 
+## 260915-CAPS-L4 The Capsule And Skill-Serving Family — Tools Plus Resources
+
+This route gained a thirteenth family module, `capsule_serving.py`, registering three tools and, for
+the first time on this route, an MCP **resource set**. Two things about it are route-level facts rather
+than file-local detail:
+
+**1. A family module may now register resources, and that does not change what "registered" means
+here.** The SEP-2640 skills transport serves each skill file as an MCP resource read with
+`resources/read`, alongside this server's own `skill://index.json` resource and the
+`io.modelcontextprotocol/skills` capability declared in the `initialize` result. A live server now
+advertises 85 resources (one per file of the 14 shipped skills, plus the index) alongside its 66 tools.
+`skill_catalog_list` and `skill_catalog_read` are this server's own tool reads over the same registry
+for a client that is not resource-aware.
+
+**1b. And it installed the extension's two mandatory protocol methods — the first time this route has
+carried a protocol method rather than a tool.** `skills_extension.py` registers `skills/list` and
+`skills/get` against the SDK's own dispatch as **bounded explicit method support**, because the pinned
+`mcp==1.29.1` has no skills affordance: zero case-insensitive `skill` matches, no `extensions` field on
+`ServerCapabilities`, and an unmodelled method refused `-32602`. Three additive changes, nothing else:
+the session's request-validation union gains the two request types, the server's message dispatcher
+recognises them as requests (without that hook a request is *silently dropped* and the call hangs
+rather than failing), and the two handlers join the SDK's own `request_handlers` map. Both handlers
+answer from the same catalog the resources are registered from.
+
+**2. The declaration, the methods and the resources are installed together in one function.**
+`declare_skills_extension(server)` and `install_extension_methods(server._mcp_server)` are adjacent
+calls in `_register_skill_resources`, right after the catalog proves servable. That adjacency is the
+contract, not a convenience: SEP-2640 §Capability Declaration says *"declaring the extension itself
+commits the server to `skills/list` and `skills/get`"*, so a server may not advertise the capability and
+answer neither. The leaf's seeded-mutation probe removes the declaration coupling (`M5`) and the live
+exchange case fails on the missing `extensions` key; the round-1 candidate failed on exactly the
+opposite side of this pairing, which is why the two install together.
+
+**3. This server's own index resource is not the extension's enumeration surface.**
+`skill://index.json` keeps the Agent Skills well-known-discovery shape and its wire description says so;
+SEP-2640 enumerates through `skills/list`, whose entries carry verbatim frontmatter and per-file digests.
+
+The three advertised names were **appended** to `TOOL_REGISTRARS` and to `PUBLIC_TOOLS` together with
+their `TOOL_RESPONSE_MODELS` rows. Appending matters on this route: the tuple's order is the advertised
+order, so a registrar inserted in the middle would renumber every later position and both
+order-comparing surfaces would report a violation that is really a reordering.
+
+The registered signatures stay flat, as this route's defining contract requires — `skill_catalog_read`
+publishes only `uri`, and the corpus `origin`/`root` overrides its payload builder accepts are
+deliberately absent from the wire.
+
 ## Update History
+- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
+  `ar/260915-caps-l4`, base `b00a4ac2`): refreshed this route section against the settled candidate.
+  **Removed the round-1 rejection banner** and recorded the settled transport instead: the route now
+  carries the SEP-2640 extension's **two mandatory protocol methods** (`skills/list`, `skills/get`) from
+  the new `skills_extension.py`, added as bounded explicit method support against the SDK's dispatch,
+  with the three additive changes and the load-bearing dispatcher hook stated, and with the declaration,
+  the methods and the resources installed together because the declaration is itself the commitment.
+  Kept and sharpened the distinction that this server's own `skill://index.json` is a convenience
+  resource and **not** the extension's enumeration surface. Added the `skills_extension.py` row to the
+  layout. The 13-registrar / 66-tool census and the append-only ordering rule are unchanged. Earlier
+  entries in this card's history remain as their own leaves' as-of records. Verification metadata
+  remains closeout-owned; no acceptance claim.
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`, base
+  `b00a4ac2`): added the `capsule_serving.py` row to the layout and recorded the second family-module
+  form on this route — a module that registers an MCP **resource set** as well as tools. Corrected the
+  route census from twelve registrars / 63 tools to **thirteen / 66**, named the three appended
+  advertised names, and stated why appending (not inserting) is the route's ordering rule. Recorded
+  that the extension declaration and the resource registration are coupled in one function with the
+  mutation-probe entry that makes the coupling executable, and that the new tools' published signatures
+  stay flat with the corpus
+  overrides kept off the wire. Repointed the roster's single-definition range to
+  `models/tools/public_roster.py:22-90`. Earlier counts in this card's dated sections remain as their
+  own leaves' as-of records. Verification metadata remains closeout-owned; no acceptance claim.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned advertised tool contract with two input legs and informational cache outputs. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

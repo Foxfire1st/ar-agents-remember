@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
+| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                   |
 
@@ -176,7 +176,8 @@ calling me" session-id resolution anywhere in this codebase.
 
 `base.py` **re-exports** the advertised tuple — its one definition moved to the zero-import `models`
 leaf `models/tools/public_roster.py` at 260831-LOCR-L32, and `base.py` imports it at L14 and declares
-it in `__all__` at L19, so the same 62-name object stays importable from this package. `base.py` also
+it in `__all__` at L19, so the same **66**-name object stays importable from this package (62 at the
+move, 63 from 260831-LOCR-L37, 66 since 260915-CAPS-L4). `base.py` also
 forwards `_tool_payload` to `application/tool_response.py::complete_tool_response`. That application owner attaches bounded task-addressed guidance and notifier banners before `models/tools/tool_response.py::finalize_tool_response` performs its single validation/dump/token pass, then emits the completed call. `application/next_step.py` owns guidance. Gate policy and gate-log reclamation now live in `application/gate_tools.py`; this route's `gates.py` forwards public structural requests and separately retained internal exact-id adapters. `terminal.py`, `operator_inbox.py`, and the nudge helper likewise retain internal adapters; their exports do not advertise tools. `leaf_ref.py` is absent.
 
 | Finding | Anchor | Source |
@@ -189,7 +190,7 @@ forwards `_tool_payload` to `application/tool_response.py::complete_tool_respons
 
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
-| `base.py`       | `TRANSPORT`, `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point — plus the **re-export** of the exact ordered 62-name `PUBLIC_TOOLS` tuple, whose one definition moved to `models/tools/public_roster.py` at 260831-LOCR-L32 (L14 import, L19 `__all__`). Since 260731-EFA-L4 the choke point's order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
+| `base.py`       | `TRANSPORT`, `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point — plus the **re-export** of the exact ordered `PUBLIC_TOOLS` tuple, whose one definition moved to `models/tools/public_roster.py` at 260831-LOCR-L32 (L14 import, L19 `__all__`; the tuple held 62 names at the move, 63 from 260831-LOCR-L37, and **66** since 260915-CAPS-L4). Since 260731-EFA-L4 the choke point's order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
 | `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. 260731-EFA-L4: `next_step_for` returns `NextStep \| None` — the MODEL, not a dump of it — because the hint is a declared field of the response envelope and serializing it is the choke point's single `model_dump`; returning a dict here is what made the hint a key written into an already-dumped, already-token-counted payload. `_guidance_for` correspondingly widens `lifecycle_guidance`'s TypedDict with `dict(...)`: this hint layer reads guidance defensively by key and never re-emits its vocabulary. |
 | `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `server_info` carries the shared boot-resolved serving-build payload; `compact_runtime_install_payload`. |
 | `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
@@ -506,7 +507,61 @@ The dated sections in this card that say `base.py`'s `PUBLIC_TOOLS` "gained" a n
 accurate history; the names, counts and registry rules they record still hold. Only the definition's
 location changed, and it is now `models/tools/public_roster.py`.
 
+## 260915-CAPS-L4 Capsule And Skill Payload Builders
+
+This route gained three builders in one new submodule, `capsule_serving.py`. They are transport-thin in
+the ordinary way — each re-shapes the declaration's flat arguments into the application request record,
+calls one application entry point, and returns the result through `_tool_payload` — but two of their
+properties are route-level facts:
+
+- **The corpus override is a test seam, not a capability.** `skill_catalog_list_payload` and
+  `skill_catalog_read_payload` accept optional `origin` / `root` keyword-only arguments, and the
+  application layer serves the shipped corpus when neither is supplied. The registered declarations in
+  `registration/capsule_serving.py` pass **no** override, so a live client cannot point the server at a
+  different tree; the seam exists so the leaf's test module can drive a synthetic corpus without
+  touching the shipped one. This is the route's flatness rule holding on the wire while the builder
+  side keeps the extra parameter — the same asymmetry the builders' parameter objects exist for.
+- **A refusal is already a value by the time it arrives here.** `RoleCapsuleResponse` carries the
+  refusal in the same envelope as a success (`ok` false plus a typed `refusalStatus`), so these
+  builders wrap a refusal exactly as they wrap a capsule. Nothing on this route translates an
+  application refusal into a transport error.
+
+The three names sit at the tail of `PUBLIC_TOOLS` and of `TOOL_RESPONSE_MODELS`, appended rather than
+inserted so no existing advertised position moved.
+
+One boundary this route must not blur: these three tools are **this server's own reads**. The
+extension's enumeration surface is the `skills/list` **protocol method**, implemented on the
+registration route (`registration/skills_extension.py`), not a tool — and the `skill://index.json`
+resource this server also publishes is its own convenience surface in the Agent Skills discovery shape,
+which is likewise not the extension's enumeration result.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The capsule builder re-shapes the flat declaration arguments into the application request record. | `role_capsule_compile_payload` | mcp/src/agents_remember/mcp/tools/capsule_serving.py:22-41 |
+| The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default. | `skill_catalog_list_payload`; `skill_catalog_read_payload` | mcp/src/agents_remember/mcp/tools/capsule_serving.py:44-63 |
+| The declarations that call these builders, which pass no corpus override to the wire surface. | `_register_skill_tools` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:121-140 |
+| The capsule envelope carries its refusal in the same shape as a success. | `RoleCapsuleResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115 |
+| The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. | `install_extension_methods` | mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153 |
+| This server's own index resource, kept deliberately distinct from that method. | `index_resource` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:228-251 |
+
 ## Update History
+- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
+  `ar/260915-caps-l4`, base `b00a4ac2`): re-anchored the `_register_skill_tools` range against the
+  current 278-line registration module and added the boundary row this route needs after the repairs:
+  the three tools here are this server's **own** reads, while the extension's enumeration surface is the
+  `skills/list` protocol method implemented on the registration route, and this server's
+  `skill://index.json` resource is its own convenience surface rather than that method's result. The two
+  properties recorded below (the corpus override as a test seam, refusal-as-value) are unchanged.
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`, base
+  `b00a4ac2`): added the three new builders of `capsule_serving.py` to this route and recorded the two
+  properties worth carrying at route level — the corpus `origin`/`root` override is a test seam the
+  registered signatures deliberately exclude from the wire, and a refusal arrives already shaped as a
+  value in the same envelope as a success, so no transport-level translation exists here. Corrected the
+  advertised-name count this card carried in two current-state places (the `base.py` paragraph and the
+  `base.py` layout row) from 62 to the measured **66** (62 at the L32 move, 63 from 260831-LOCR-L37, 66
+  since this change), and recorded that the three names were appended at the tail. Verification
+  metadata remains closeout-owned; no acceptance claim.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented removal of ledger message forwarding from the public worktree adapter. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

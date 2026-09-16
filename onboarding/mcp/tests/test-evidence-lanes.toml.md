@@ -6,8 +6,8 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
+| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -136,6 +136,49 @@ them: `test_worktree_status_terminal_next_tool.py` `:182` → `:183` and
 `test_pause_is_not_publication.py` `:194` → `:195`; `test_pause_stop_only_end_to_end.py` `:162`, the
 playthrough `:156`, the L7 row `:137` and the L4 row's lane are unchanged.
 
+## 260915-CAPS-L4 Lane Row (Declared) — And The Unit Population Now Refuses Collection
+
+The L4 change set adds `mcp/tests/test_capsule_serving.py` **and** its row in the same change, so the
+manifest stays closed over the modules it declares at **208 rows** — the L3 population plus this one.
+The row is `mcp/tests/test-evidence-lanes.toml:19`, in the **unit-regression** lane, inserted
+alphabetically between `test_causal_quality_preflight.py` and `test_certification_lane_bridge.py`. That
+is its behaviour-preserving lane: 19 of the module's 21 cases are hermetic (a disposable coordination
+root and a synthetic skills corpus, no integration marker) and only the two real-process exchanges are
+marked `integration`, so the module's default lane is unit-regression and only its two marked items
+spend integration budget.
+
+Measured brackets at this leaf, by entry row: unit-regression **117** entries at rows 5-121,
+public-contract 2 at 124-126, integration 60 at 128-189, architecture-fitness 16 at 190-207,
+provider-conformance 13 at 208-222, with stress-durability (223-224) and migration (225-226) empty. The
+Purpose paragraph above carries the L3 measurement (207 modules, 116 unit-regression); these are the
+measured L4 numbers and the one addition is this module.
+
+**The unit population now refuses collection on this branch, and this leaf did not cause it.** The
+default unit selection collects **1083** cases against `unit_case_budget = 1000`
+(`pyproject.toml:149`), and it already collected **1064** against that ceiling at the leaf's base — so
+the overage is 83 and **64 of it predates this leaf**. This leaf's contribution is 19 unit cases over
+two new public surfaces and it did **not** edit the ceiling, move the module into another lane to dodge
+the check, or drop a case. The enforcement point is
+`conftest.pytest_collection_finish`, which raises `pytest.UsageError` for the unit population **before
+any case executes**, so a default `pytest` run cannot execute on this worktree at all. The integration
+population is 227 against its 250 ceiling and is not implicated. This is recorded rather than repaired
+because raising a declared case budget requires an explicit change tradeoff and is an owner-level
+decision (the leaf's `F-L4-01`, escalated to the master's owning seat; L11 owns the ceiling and the
+master-tip overage).
+
+**Six tracked test modules remain undeclared.** The manifest declares 208 rows while **214**
+`mcp/tests/test_*.py` modules exist on disk: `test_eve_adapter.py`, `test_eve_protocol.py`,
+`test_role_capsule_admission.py`, `test_role_capsule_compiler.py`, `test_role_instruction_corpus.py`
+and `test_task_projection.py`. These are the pre-existing master-tip gaps recorded as `D9` in
+`notes/product-defects-observed.md` and owned by L11; `load_lane_manifest` names exactly these six and
+`test_capsule_serving.py` is **not** among them. This leaf added its own row and deliberately touched no
+other entry.
+
+Measured current brackets, by entry row: unit-regression 117 entries at rows 5-121, public-contract 2
+at 124-126, integration 60 at 128-189, architecture-fitness 16 at 190-207, provider-conformance 13 at
+208-222, stress-durability and migration empty; the one insertion at `:19` moved every cited row below
+it one line higher.
+
 ## Code Commentary
 
 ### Logic
@@ -242,11 +285,32 @@ The exact source declarations below establish the current behavior; this invento
 | The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (entry row 69) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
 | The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value. | "integration_case_budget = 250" | pyproject.toml:150-150 |
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
+| The L4 capsule-and-skill-serving suite is registered in the unit-regression lane by the same change set that created it (entry row 19) — 19 of its 21 cases are hermetic over a disposable coordination root and a synthetic skills corpus and only its two real-process exchanges carry the integration marker, so that is its behaviour-preserving lane. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:19-19 |
+| The unit collected-case ceiling this leaf's default selection now exceeds, which refuses collection before any case executes. | "unit_case_budget = 1000" | pyproject.toml:149-149 |
 ## Cross-Repo References
 
 No separate cross-repository authority is established by this file.
 
 ## Update History
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`, base
+  `b00a4ac2`): registered the change set's new `mcp/tests/test_capsule_serving.py` in the
+  **unit-regression** lane at entry row 19 — 19 of its 21 cases are hermetic and only its two
+  real-process exchanges are marked `integration`, so the default unit lane is its
+  behaviour-preserving classification — and re-measured rather than carried: 208 declared rows, 117
+  unit-regression (5-121), 2 public-contract (124-126), 60 integration (128-189), 16
+  architecture-fitness (190-207), 13 provider-conformance (208-222), stress-durability and migration
+  empty. **Recorded the collection refusal as current state, not as a repair**: the default unit
+  selection collects 1083 against `unit_case_budget = 1000` (`pyproject.toml:149`) and already
+  collected 1064 against that ceiling at this leaf's base, so 64 of the 83-case overage predates it;
+  `conftest.pytest_collection_finish` therefore raises `pytest.UsageError` before any case runs. The
+  ceiling was not edited and the module was not moved into another lane to dodge the check — raising a
+  declared budget needs an explicit tradeoff and is the owner's decision (`F-L4-01`, L11 owns the
+  ceiling). Also recorded that the manifest declares 208 rows while **214** `test_*.py` modules exist
+  on disk, the six undeclared modules being the pre-existing `D9` master-tip gaps owned by L11
+  (`test_capsule_serving.py` is not among them). Corrected the Repo-Internal References table to add
+  the L4 row and the unit-budget row; the one insertion at `:19` moves every cited row below it one
+  line higher than this card's earlier entries record. Classification only: lane membership is not
+  execution, certification or acceptance evidence, and the verification stamps remain closeout-owned.
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): registered the change set's new `mcp/tests/test_memory_backfill.py` in the
   **unit-regression** lane at entry row 69 — its cases drive the backfill plan and apply paths against
