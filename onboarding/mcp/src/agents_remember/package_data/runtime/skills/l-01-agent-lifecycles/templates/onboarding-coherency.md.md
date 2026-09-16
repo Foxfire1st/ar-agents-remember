@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 
 ## Purpose
 
@@ -52,8 +52,8 @@ This bundle copy is written by fan-out sub-agents and consumed by the reviewer's
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Onboarding-Coherency Template` | skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48 |
-| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence. | "onboarding-coherency" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:358-359 |
-| The orchestrator's memory-quality checks consume this report; the analysis is written by the orchestrator's own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop. | `## No Native Sub-Agents — role seats only (doctrine, ruled 2026-08-05)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:499-526 |
+| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence. | `../templates/onboarding-coherency.md`; `## 3 — Normal Workflow` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:147-147; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:100-139 |
+| The orchestrator's checks consume this report, written by its own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop; the no-native-sub-agents rule moved into the shared operation block in 260915-CAPS-L1. | "**No native sub-agents**"; `# Operation — Coordination` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:45-45; skills/l-01-agent-lifecycles/operations/coordination.md:1-1 |
 | The frame defines the onboarding-vs-code lens as paired read_ar_files + memory_quality_check + drift. | `## The Three Review Lenses` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:212-243 |
 
 ## Cross-Repo References
@@ -65,6 +65,9 @@ No sibling repository evidence is needed for this report template.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: Repaired citations this leaf falsified: the canonical lifecycle corpus was consolidated (the router shrank 620 → 179 lines; all nine role files and several templates were rewritten), so the cited anchors and ranges no longer resolved. No behavioral claim changed — the cited rule was re-pointed at its current home. Verification metadata remains closeout-owned. The reviewer row now cites the live `../templates/onboarding-coherency.md` mention and the Normal Workflow section; the orchestrator row cites the live `**No native sub-agents**` sentence and the operation block that now owns that rule, replacing the removed `## No Native Sub-Agents …` heading and the over-long `:499-526` range.
+
 - 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the reviewer backing-evidence row: reviewer.md names this report in its Artifact Obligations instead of citing the template path from a lens. Verification metadata remains closeout-owned.
 
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

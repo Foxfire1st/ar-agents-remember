@@ -5,14 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a`|
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| governingOverview      | `../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../../../overview.md)
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
@@ -20,6 +20,15 @@ The portable **architect** lifecycle: the developer-facing owner seat for the `l
 stack. It owns the design conversation, drawing-board rounds, decision pacing, and durable rulings
 back to backend seats. It is a sync-propagated (`scripts/sync-skills.py`) package-data copy of the
 canonical `skills/l-01-agent-lifecycles/roles/architect.md`.
+
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
+with `**Inherits:**` rather than restating them: all five shared blocks (`core/authority.md`,
+`core/invariants.md`, `core/lifecycle-frame.md`, `core/loop.md`, `core/acceptance.md`) plus
+`operations/orientation.md`, `operations/planning.md`, `operations/coordination.md`,
+`operations/review.md`, and `operations/recovery.md`. It is still the corpus's longest role file (383
+lines) because it is the only seat that may wear another role's hat.
 
 ## Code Commentary
 
@@ -43,6 +52,16 @@ plan, examples before risky change, and an implementation plan derived from the 
 rather than substituted for them.
 
 ### Logic
+
+**Where the doctrine this card used to describe now lives.** The consolidation moved the architect's
+shared rules out of the role file and out of the router into single homes, so the sections below still
+describe rules in force at their new anchors: seat authority, immutability, the dispatch transaction,
+takeover, the escalation ladder, clarification triage, delegated series authority, the decision relay,
+and notify-and-stop are `core/authority.md`; the task-doc → branch → worktree spine, default behavior,
+and knob resolution are `core/invariants.md`; the trust checkpoint and provider-degradation handling are
+`core/lifecycle-frame.md`; the three-party loop, tiers, rounds/convergence, and requirement-compilation
+precedence are `core/loop.md`; completion truth, per-ID acceptance envelopes, and attempt lineage are
+`core/acceptance.md`.
 
 The synchronized dispatch table distinguishes ordinary identity-free architect bootstrap from an
 explicit named-role task-seat takeover. Once hosted, architect dispatch remains plane-authorized;
@@ -143,14 +162,16 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| This package-data artifact contains the synchronized architect lifecycle. | `# Lifecycle — Architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-391 |
-| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:36-36 |
-| Master attachment keeps graph-node equality conditional on graph presence and states that the graph-less default serializes nothing. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:123-160 |
-| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:187-187 |
-| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:123-123 |
-| The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-182 |
-| The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
-| The shipped architect role now names the graph-less default instead of the removed source-pair-selected wording. | "where nothing serializes the masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:134-143 |
+| This package-data artifact contains the synchronized architect lifecycle, in the corpus's readable order. | `# Lifecycle — Architect`; `## 1 — Purpose And Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:14-52 |
+| The role names the shared sources it composes with instead of restating them. | `**Inherits:**` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:12-12 |
+| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | `### Spool-up — the chain is self-driving`; `### Mandatory Requirement-Compilation Gate — before task topology` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:89-114; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:115-156 |
+| Master attachment keeps graph-node equality conditional on graph presence and states that the graph-less default serializes nothing. | `### Adding a master to a running sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:171-201 |
+| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | `### Event routing` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:202-217 |
+| The shipped architect role still names the graph-less default rather than the removed source-pair-selected wording. | "where nothing serializes the masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:188-189 |
+| The architect is the one seat that may wear another role's hat, and the corpus permits exactly that one sibling reference. | `SANCTIONED_SIBLING_REFERENCES`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/tests/test_role_instruction_corpus.py:84-89; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:366-383 |
+| The router's registry still names architect as the developer-facing owner seat. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:123-123 |
+| The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-15 |
+| The canonical source owns this doctrine. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-14 |
 
 ## Cross-Repo References
 
@@ -241,6 +262,22 @@ verified requirement contradiction to developer-approved semantic revision. Work
 classification never rewrites the canonical packet.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical architect role was rewritten (383 lines) into the corpus's readable order and declares its
+  ten inherited sources with `**Inherits:**`. Updated Purpose (readable order, inherited sources, and why
+  this remains the longest role file — it is the one seat that may wear another role's hat), Logic (a new
+  "where the doctrine this card used to describe now lives" paragraph mapping every shared rule to its
+  single `core/` home), and Repo-Internal References (the three citations whose anchors no longer exist —
+  `Strategist pass — propose, never auto-run.`, `## Adding A Master To A Running Sprint`, `Sprint attach`
+  — replaced by current anchors, plus rows for `**Inherits:**`, the knob block,
+  `SANCTIONED_SIBLING_REFERENCES`, and the canonical source). The graph-less claim this card tracks is
+  preserved verbatim in the shipped role at `:188-189`. **Metadata repair:** `governingOverview` pointed
+  at `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP
+  package overview"; corrected to `../../../../../overview.md`, and the missing blank line between the
+  metadata table and `## Governing Overview` was restored. Verification metadata remains closeout-owned —
+  the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
   shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
   the frozen architect role now says a first graph bootstrap onto a graph-less sprint runs "the

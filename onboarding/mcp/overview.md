@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -507,6 +507,27 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 ## Hot Path Summary
 
 The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
+
+## 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured
+
+The packaged runtime skill tree under `mcp/src/agents_remember/package_data/runtime/skills/` gained 14
+files and had 17 rewritten in 260915-CAPS-L1 (`CAPS-R01@v1`), because the canonical
+`skills/l-01-agent-lifecycles/` corpus was consolidated and `scripts/sync-skills.py` propagated it. For
+this route the load-bearing facts are:
+
+- **The packaged copy is generated, never authored.** `SKILL.md` is now a 179-line router (was 620) and
+  carries no doctrine; the rules it used to hold live in the new `core/` (six blocks), `operations/`
+  (eight blocks), and `reference/` (two files) siblings, with `composition-manifest.json` holding the
+  prose-free routing metadata a future deterministic compiler selects from. Editing any packaged file
+  directly is drift — the canonical tree is `skills/`, and `scripts/sync-skills.py --check` proves the
+  copy byte-identical.
+- **The nine packaged role files were rewritten into one readable order** and now declare their shared
+  sources with `**Inherits:**` rather than restating them. A packaged role file names a sibling role file
+  only to wear that hat or dispatch that seat.
+- **This route's cards are the corpus's governed onboarding.** The canonical `skills/**` tree is outside
+  this memory root's `pathRules` include set, so this generated `mcp/**` copy is the mapped surface: it
+  gained 18 new cards (the manifest, `core/` ×6, `operations/` ×8, `reference/` ×2) and 17 existing cards
+  were updated in the body.
 
 ## Detailed Route Context
 
@@ -1341,6 +1362,8 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the packaged lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured, which records the 14 new and 17 rewritten files under `package_data/runtime/skills/l-01-agent-lifecycles/**`, the generated-never-authored boundary (`skills/` canonical; `scripts/sync-skills.py --check` proves byte-identity), and the consequence that this generated `mcp/**` copy is the governed onboarding surface for a canonical tree that sits outside this memory root's path rules. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

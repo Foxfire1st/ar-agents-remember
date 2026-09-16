@@ -6,15 +6,24 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
 
-This route owns canonical lifecycle doctrine: the session router, shared frame, role registry,
-role-specific loops, dispatch briefs, durable reports, review criteria, and authority templates.
-Generated package/harness trees mirror this route and never define independent behavior.
+This route owns canonical lifecycle doctrine: the session router, the shared `core/` blocks, the role
+registry, the nine self-contained role lifecycles, the eight `operations/` procedure blocks, the
+reference-only rationale and rulings, the composition manifest, dispatch briefs, durable reports, review
+criteria, and authority templates. Generated package/harness trees mirror this route and never define
+independent behavior.
+
+260915-CAPS-L1 restructured this route: `SKILL.md` is now a **thin router with no doctrine** (620 → 179
+lines), `core/` · `operations/` · `reference/` · `composition-manifest.json` are new, and all nine role
+files were rewritten into one readable order (purpose/authority → required inputs → normal workflow →
+permitted writes → stop/escalation → completion/handoff, then the knob block) with an `**Inherits:**`
+line naming their shared sources. A role file now names a sibling role file only to wear that hat or
+dispatch that seat.
 
 ## Hot Path Summary
 
@@ -210,7 +219,23 @@ deliberately left untouched pending a follow-up decision on whether this mirror 
 removed. That mismatch between the declared path rules and the enforced checking scope is itself the
 recorded defect.
 
+**260915-CAPS-L1 decision, recorded rather than implied.** This leaf rewrote the canonical route (the
+router became a thin router; `core/` · `operations/` · `reference/` · `composition-manifest.json` were
+added; all nine role files were rewritten), so a contract-scoped quality pass reports this route's
+unmodified bodies. The curator updated **this overview**, because route meaning genuinely changed and the
+overview is the right home for it. It deliberately did **not** refresh the legacy role/criteria/template
+sidecars under `onboarding/skills/l-01-agent-lifecycles/**`: they sit outside `pathRules.include`, they are
+already declared knowingly stale by this section, and a partial hand-refresh would leave them
+inconsistent with each other while duplicating the governed cards that do exist — the 18 new and 17
+updated cards on the tracked generated copy under
+`onboarding/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/**`. The follow-up
+decision this section already asks for (govern or remove the mirror) also determines whether those cards
+should be refreshed or deleted, so resolving it now by hand would prejudge it. No fingerprint or
+verification stamp was advanced.
+
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual 260915-CAPS-L1 shape (thin router + `core/` + nine role files + eight `operations/` blocks + `reference/` + `composition-manifest.json`), and the Ungoverned Mirror Status section records this pass's explicit decision: the overview is updated because route meaning changed, while the legacy `onboarding/skills/l-01-agent-lifecycles/**` sidecars are deliberately left untouched because they are outside `pathRules.include`, already declared knowingly stale, and a partial hand-refresh would duplicate the governed cards on the tracked generated `mcp/**` copy without resolving the govern-or-remove question this section already raises. No verification stamp or fingerprint was advanced.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned role/template handoff doctrine with two outputs and non-authoritative cache status. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

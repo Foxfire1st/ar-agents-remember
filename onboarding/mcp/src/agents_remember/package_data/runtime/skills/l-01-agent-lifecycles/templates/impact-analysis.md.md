@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 
 ## Purpose
 
@@ -43,8 +43,8 @@ This bundle copy is written by fan-out sub-agents and consumed by the orchestrat
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Impact-Analysis Template` | skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52 |
-| The orchestrator's portfolio integrity bulwark consumes this report; its fan-out sub-agents write it while AR mutations stay in the orchestrator main loop. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-463 |
-| The frame's artifact-obligation doctrine keeps AR mutations in the main loop while sub-agents write templated reports. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
+| The orchestrator's portfolio integrity bulwark consumes this report, written by its own loop or a dispatched seat while AR mutations stay in the orchestrator main loop. | `# Lifecycle — Orchestrator`; "portfolio integrity after the design returns" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:383-383 |
+| The frame's artifact-obligation doctrine keeps AR mutations in the main loop while sub-agents write templated reports. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:125-142 |
 
 ## Cross-Repo References
 
@@ -55,6 +55,9 @@ No sibling repository evidence is needed for this report template.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: Repaired citations this leaf falsified: the canonical lifecycle corpus was consolidated (the router shrank 620 → 179 lines; all nine role files and several templates were rewritten), so the cited anchors and ranges no longer resolved. No behavioral claim changed — the cited rule was re-pointed at its current home. Verification metadata remains closeout-owned. Also rebased an earlier `SKILL.md:6-416` citation to `:125-142` in this pass. The orchestrator row now cites the role head plus the live portfolio-integrity sentence instead of the pre-rewrite `:1-463`.
+
 
 - 2026-08-11T19:58+02:00 — Reconciled `impact-analysis.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: deleted the unresolvable

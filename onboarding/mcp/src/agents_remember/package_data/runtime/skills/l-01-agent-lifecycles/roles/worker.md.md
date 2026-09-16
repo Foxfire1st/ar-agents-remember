@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `../../../../../../../overview.md` |
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| governingOverview | `../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../../../overview.md)
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
@@ -20,39 +20,55 @@ This file is the packaged runtime artifact synchronized exactly from canonical
 `skills/l-01-agent-lifecycles/roles/worker.md`. It gives installed runtimes the same one-real-leaf
 builder lifecycle and owns no independent worker doctrine.
 
-## Logic
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
+with `**Inherits:**` instead of restating them (`core/authority.md`, `core/invariants.md`,
+`core/lifecycle-frame.md`, `core/acceptance.md`, `operations/orientation.md`,
+`operations/implementation.md`, `operations/recovery.md`). The build procedure it used to carry inline
+now lives once in `operations/implementation.md`, and the targeted-check contract it owes its owner
+lives once in `operations/closeout.md` § The targeted-check contract.
 
-The synchronized caller matrix keeps worker target-only: only the owning manager is its ordinary
-plane-hosted caller, while an identity-free launcher may target it only for explicit
-developer-declared takeover. Dispatch/tools rows remain structural documentation, not settings
-keys.
+## Code Commentary
 
-The synchronized worker advances an attempt only at review handoff or after reviewer rejection,
-logs internal runs separately, and appends a lightweight requirement-specific record linked to
-content-addressed expanded evidence.
+### Logic
 
-The packaged source carries the canonical worker's brief/task-document intake, worktree and coding-
-guideline orientation, implementation loop, leaf-scoped checks, mandatory turn report, structural
-parent escalation, and separation from curator/closeout machinery. The complete tree is copied from
-canonical skills; package-only workflow additions are forbidden drift.
+The synchronized worker is the builder with a **no-commit contract** at leaf altitude: it implements
+exactly the leaf plan inside the leaf's code worktree, runs its targeted checks, and writes the turn
+report — and it does not commit, land, close out, integrate, decide gates, or write onboarding.
 
-The synchronized worker runs relevant targeted checks after changes and fixes and before handoff,
-recording exact commands and failed or not-run states. Full quality, full tests, full memory quality,
-certification, and review remain explicit operations and are not automatic closeout or integration
-prerequisites.
+Its acceptance duty is now stated as one envelope per owned primary stable ID + version: `satisfied`,
+`blocked`, or `approved-change`, with delivery rationale and citations (code uses file path + symbol;
+non-code work uses the deliverable path + section/anchor), verification rationale that names the
+failure the evidence would catch, and the exact command and result. Attempt identity is a separate
+axis: the worker appends an immutable candidate-bound attempt record to the leaf's requirement attempt
+journal before review handoff, and internal test/evidence reruns are logged as experimental protocol
+events rather than minting attempts. A malformed row that was never handed off is voided without
+consuming an ID; a malformed handed-off row is rejected by the independent reviewer. All of this is
+authored once in `core/acceptance.md`, which the role now inherits rather than restating.
 
-## Conventions
+A worker that never touches a mutating AR tool never instantiates a lifecycle; where it does mutate,
+it runs its own. Escalation is one rung up, and a red targeted check is reported rather than worked
+around.
+
+### Conventions
 
 - Change worker doctrine only in canonical `skills/`.
 - Propagate and verify through `scripts/sync-skills.py`.
 - Keep this file byte-identical while retaining its own path-specific verification metadata.
-- Do not append task-local deltas to the packaged artifact card.
+- Do not append task-local deltas to the packaged artifact card. The corpus's single-source rule is
+  the reason: this role states its own seat's side of a shared rule and never restates the whole of
+  it.
 
-## Invariants And Boundaries
+### Invariants And Boundaries
 
 - Installation cannot grant workers gates, closeout, integration, task-state, or memory authority.
 - Worker identity remains canonical leaf document plus role.
-- Durable turn report and terminal/finalizer truth remain the completion evidence.
+- The worker never commits: it leaves the worktree dirty for the owning seat's transaction.
+- Durable turn report and terminal/finalizer truth remain the completion evidence — and terminal
+  truth attests only that the turn ended, so the owner's validation is what accepts the handoff.
+- **This role file names no sibling role file.** The corpus forbids learning one's own obligations
+  from another seat's prose; the shipped check fails on any non-sanctioned reference.
 
 
 ## CCR-R12@v5 Transaction Boundary
@@ -63,10 +79,14 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged worker is one leaf-scoped builder with a report terminal state. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
-| Its build phase produces evidence for a separate curator. | "### 3 — Build" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:73-73 |
-| The canonical source owns this doctrine. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
-| MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
+| The packaged worker declares its seat purpose, authority boundary, and no-commit contract. | `## 1 — Purpose And Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:16-50 |
+| The role opens by naming the shared sources it composes with rather than restating them. | `**Inherits:**` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:12-14 |
+| The build procedure the worker follows has one home outside the role file. | `# Operation — Implementation`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/implementation.md:1-1; skills/l-01-agent-lifecycles/operations/implementation.md:69-80 |
+| The targeted-check contract the worker owes its owner has one home outside the role file. | `## The targeted-check contract (what closeout consumes as evidence)` | skills/l-01-agent-lifecycles/operations/closeout.md:22-42 |
+| The role declares the readable order and the knob block after the handoff section. | `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:144-169; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:170-170 |
+| The canonical source owns this doctrine. | `# Lifecycle — Worker` | skills/l-01-agent-lifecycles/roles/worker.md:1-14 |
+| A non-sanctioned sibling-role reference fails the shipped corpus check, which is why this role file names none. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:84-89 |
+| MCP package data is copied from canonical skills and checked for drift. | `TARGETS`; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## R39 Generic Worker Checks
 
@@ -103,6 +123,23 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical worker role was rewritten (187 lines) into the corpus's readable order and now declares
+  its inherited sources with `**Inherits:**`. Updated Purpose (readable order plus inherited sources,
+  and where the build procedure and targeted-check contract now live), Logic (leaf altitude, the
+  no-commit boundary, the per-ID acceptance envelope with its citation classes, attempt-vs-protocol-event
+  separation, the two malformed-row outcomes, and lifecycle non-instantiation), Invariants (the
+  never-commits rule and the no-sibling-role-reference rule the shipped check enforces), and
+  Repo-Internal References (the two citations whose anchors no longer exist — `## What This Seat Is`
+  and `### 3 — Build` — replaced by current anchors, plus rows for `operations/implementation.md`,
+  `operations/closeout.md`, and `SANCTIONED_SIBLING_REFERENCES`). The preserved task-delta sections
+  below still describe rules in force; their live homes are `core/acceptance.md` (acceptance, attempts,
+  completion truth) and `operations/closeout.md` (the targeted-check contract). **Metadata repair:**
+  `governingOverview` pointed at `../../../../../../../overview.md` (the repository root overview) while
+  its link text said "MCP package overview"; corrected to `../../../../../overview.md`. Verification
+  metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit
+  hash was invented.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "### 3 — Build" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 

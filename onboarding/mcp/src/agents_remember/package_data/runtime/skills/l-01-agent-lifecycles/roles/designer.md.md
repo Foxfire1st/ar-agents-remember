@@ -5,15 +5,33 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated            | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| governingOverview | `../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
 Packaged runtime copy of the optional sprint-bound designer lifecycle. The canonical
 `skills/l-01-agent-lifecycles/roles/designer.md` owns the role; the sync process publishes this
 exact artifact without a separate packaged interpretation.
+
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
+with `**Inherits:**` rather than restating them (`core/authority.md`, `core/invariants.md`,
+`core/loop.md`, `core/acceptance.md`, `operations/orientation.md`, `operations/planning.md`). The
+reframing and evidence-first design method it applies now lives once in `operations/planning.md`, and
+its altitude is stated structurally: the designer is **a HAT the architect pulls inline**, with a
+separate sprint chair optional, and it produces task/design artifacts without a worktree.
+
+**This role file names no sibling role file.** The corpus forbids learning one's own obligations from
+another seat's prose; only wearing a hat or dispatching that seat may cite `roles/<other>.md`, and the
+shipped check fails on any other reference.
 
 ## Code Commentary
 
@@ -55,6 +73,18 @@ No sibling repository evidence is needed for this doctrine file.
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical designer role was rewritten (129 lines) into the corpus's readable order and declares its
+  inherited sources with `**Inherits:**`. Updated Purpose with the readable order, the inherited sources,
+  the structural hat/no-worktree boundary, and where the design method now lives; added the
+  no-sibling-role-reference rule the shipped check enforces; and replaced the canonical-source range
+  (which pointed at the pre-rewrite file). **Metadata repair:** `governingOverview` was absent from this
+  card (the c-05 content model requires the field and its `## Governing Overview` section); added as
+  `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this
+  generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp
+  was advanced and no commit hash invented.
+
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced stale Operations creation with
   architect-owned dispatch, separated explicit ambient takeover, and fixed structural-row

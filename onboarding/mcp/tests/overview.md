@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -31,6 +31,22 @@ is protected or restoring an old matrix.
 For the ledger retirement, start with transaction-only delivery, direct landing, integration/checkpoint concurrency, memory ledger projection and backfill tests. Assertions distinguish cache-only conditions from actual content, ancestry, ref and ownership failures. The retained producer census checks every active attributed memory writer; no scenario expects a third ledger commit.
 
 Start with the distinct failure or user operation, then locate its retained owner. Checkout isolation, Dagger registry locking, private Git preparation, protected-ref recovery, durable-store races, submission authority and native framing each retain concrete behavioral protection. Compiler/certificate fixtures establish library contracts; they are not live Dagger, Codex or final-memory execution evidence. Preparation checks can guide memory repair before certification without becoming Gate 5.
+
+## 260915-CAPS-L1 Role-Instruction Corpus Contract
+
+`test_role_instruction_corpus.py` is the focused check the lifecycle-corpus consolidation added to this
+route. It is a **shipped repository test**, not a task-local fixture, and it protects the corpus's shape
+rather than its prose: every role in the registry has exactly one readable source; every role source
+carries the agreed six-section order, its `**Inherits:**` line, and its knob block after the handoff
+section; the composition manifest resolves every role, operation, core block, template, and criteria
+catalog it names; the registry is exactly nine roles with the ambient launcher as a routing condition
+rather than a tenth role; the manifest carries no instruction prose; every relative path the corpus cites
+resolves; and a manifest entry pointing at a missing source is **reported rather than silently accepted**.
+
+Its `SANCTIONED_SIBLING_REFERENCES` table makes the corpus's independence rule executable — a role file
+may name a sibling role file only to wear that hat or dispatch that seat, and anything else fails the
+check by design. Because the assertions are property-based on the corpus's shape, they stay valid as role
+prose changes; only a corpus shape change should require editing the module.
 
 ## CCR-R12@v5 Transaction-Only Delivery Route
 
@@ -645,6 +661,8 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Role-Instruction Corpus Contract, which places the new shipped module `test_role_instruction_corpus.py` in this route and states the properties it protects (nine-role registry, the six-section readable order, the frozen eight-operation vocabulary, a prose-free manifest, every cited relative path resolving, a missing manifest source reported rather than accepted, and the `SANCTIONED_SIBLING_REFERENCES` independence rule). A new card was created for the module in this route. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

@@ -5,15 +5,25 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:04+02:00 |
-| lastVerifiedCommitHash |  `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate |  2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash |  `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate |  2026-09-16T08:23:52+02:00|
+| governingOverview | `../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
 Packaged runtime copy of the canonical architect dispatch packet. The root
 `skills/l-01-agent-lifecycles/templates/architect-brief.md` owns the content;
 `scripts/sync-skills.py` installs and checks this artifact byte-for-byte.
+
+The canonical template gained the single-source marker in 260915-CAPS-L1: **it feeds inputs and does not
+author rules** — the architect's duties live in `../roles/architect.md`, the launcher's in
+`../core/launcher.md`, and the dispatch transaction in `../core/authority.md`, and if a value in the
+packet disagrees with those files they win. The rows carry this sprint's *values* for those contracts.
 
 ## Code Commentary
 
@@ -54,6 +64,12 @@ No external domain source governs this synchronized projection.
 No sibling-repository contract defines this synchronized projection.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **first real body update since creation.** The
+  canonical architect brief gained the single-source marker naming `../roles/architect.md`,
+  `../core/launcher.md`, and `../core/authority.md` as the rule owners; this card's Purpose now records
+  that marker and the values-vs-rules boundary. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 
 - 2026-08-30T12:04+02:00 — 260821-ARSPAWN-L3 created onboarding for the packaged architect brief.
   Verification metadata remains blank until governed closeout stamps the first source commit.

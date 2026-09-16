@@ -5,19 +5,25 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
+| lastUpdated            | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| governingOverview      | `../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../../../overview.md)
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
 Packaged runtime copy of the durable manager-to-orchestrator master handover. The canonical template
 owns its shape; the sync process publishes this exact artifact.
+
+260915-CAPS-L1 corrected this template's completion wording to the shipped truth boundary: the artifact
+is durable and terminal/finalizer truth wakes the current orchestrator, but that terminal outcome
+**attests only that the manager's turn ended** — it does not attest that the packet is complete or
+correct. The orchestrator validates the packet, and rule 4's receiver-side revalidation is what accepts
+it. The template now names `../core/acceptance.md` as the single home of that boundary.
 
 ## Code Commentary
 
@@ -61,9 +67,10 @@ This bundle copy is the shape the manager job posts at master exit; it reference
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Master-Handover-Packet Template` | skills/l-01-agent-lifecycles/templates/master-handover-packet.md:1-77 |
-| The manager posts this packet to the orchestrator at master exit. | `# Lifecycle — Manager` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-319 |
+| The manager posts this packet to the orchestrator at master exit; the manager's durable handoff artifact is this packet, validated by the orchestrator. | `# Lifecycle — Manager`; `## Which artifact each seat hands over, and who validates` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-16; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
 | The required verdict slot references the independent master-exit adversarial verdict artifact bound to the proposed candidate. | `# Verdict Template (adversarial reviewer)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:1-188 |
-| The frame lists the master-handover packet among the per-role artifact obligations. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:1-456 |
+| The router lists the master-handover packet among the templates the spawning seats compile from. | `## Companion Files` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:125-142 |
+| This template and `verdict.md` are the manager's two artifact templates in the composition manifest. | `composition-manifest.json` — `roles.manager.templates` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1 |
 
 ## Cross-Repo References
 
@@ -91,6 +98,14 @@ candidate. Missing, stale, unresolvable, or candidate-mismatched evidence blocks
 summary prose cannot override it.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical template's completion wording was corrected in this leaf: terminal/finalizer truth attests
+  only that the manager's turn ended, the orchestrator validates the packet, and rule 4's receiver-side
+  revalidation is what accepts it — with `../core/acceptance.md` named as the boundary's single home.
+  The card now records that correction, and two citations with dead ranges (`roles/manager.md:1-319`,
+  `SKILL.md:1-456`) were repointed to current anchors. **Metadata repair:** `governingOverview` pointed at `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP package overview"; corrected to `../../../../../overview.md`, and the missing blank line between the metadata table and `## Governing Overview` was restored. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md`

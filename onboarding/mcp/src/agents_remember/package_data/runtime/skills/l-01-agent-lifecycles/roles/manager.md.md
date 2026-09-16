@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `../../../../../../../overview.md` |
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| governingOverview | `../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../../../overview.md)
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
@@ -150,6 +150,22 @@ revision, delivery attempt, and content digest separate and states that memory r
 closeout admission consume the same validator. Historical Markdown cannot satisfy the handoff.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical manager role was rewritten (356 lines) into the corpus's readable order and declares its
+  eleven inherited sources with `**Inherits:**`. Updated Purpose (readable order, inherited sources,
+  and where the leaf-loop procedure and closeout transaction now live) and added the owner-side truth
+  boundary — the manager validates the builder report, the reviewer verdict when requested, and the
+  curator handoff before advancing state, while the relay supplies only the mechanical turn-ended
+  signal. Repo-Internal References: the three citations whose anchors no longer exist —
+  `## What This Seat Is`, `## Hosted Role Dispatch`, `Curator onboarding handoff.` — were replaced by
+  current anchors, plus rows for `**Inherits:**`, `operations/closeout.md`, and the four leaf-altitude
+  criteria catalogs this seat's reviewer verdicts bind to. **Metadata repair:** `governingOverview`
+  pointed at `../../../../../../../overview.md` (the repository root overview) while its link text said
+  "MCP package overview"; corrected to `../../../../../overview.md`, and the missing blank line between
+  the metadata table and `## Governing Overview` was restored. Verification metadata remains
+  closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`

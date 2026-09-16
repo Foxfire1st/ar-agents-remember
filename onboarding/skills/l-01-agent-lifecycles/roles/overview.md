@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
@@ -15,6 +15,16 @@
 This route owns the self-contained lifecycle for each role. Every file states what one seat is,
 which task-document altitude it occupies, the loop and artifacts it owns, its communication path,
 and the work it must refuse or escalate.
+
+260915-CAPS-L1 rewrote all nine files here into one readable order — purpose and authority → required
+inputs → normal workflow → permitted writes and actions → stop and escalation cases → completion and
+handoff, then the machine-readable knob block — and each now declares the shared sources it composes
+with in an `**Inherits:**` line instead of restating them, because the shared rules moved into a new
+sibling `core/` and the procedures into `operations/`. A role file may name a sibling role file only to
+wear that hat or dispatch that seat (architect → designer; orchestrator → strategist, designer;
+strategist → manager; reviewer → manager); the shipped corpus check fails on any other reference. The
+route's files are 2,792 → 2,322 lines in total, and the router that selects between them is no longer a
+doctrine source.
 
 ## Hot Path Summary
 
@@ -196,6 +206,16 @@ review limit remain in force.
 
 ## Ungoverned Mirror Status (known defect)
 
+**260915-CAPS-L1 decision, recorded rather than implied.** This leaf rewrote all nine canonical role
+files, so a contract-scoped quality pass reports this route's cards as unmodified bodies against changed
+sources. The curator updated **this overview**, because route meaning genuinely changed. It deliberately
+did **not** refresh the per-role cards under `onboarding/skills/l-01-agent-lifecycles/roles/**`: they sit
+outside `pathRules.include`, they are already declared knowingly stale below, and a partial hand-refresh
+would leave them mutually inconsistent while duplicating the governed cards on the tracked generated copy
+under `onboarding/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/**`.
+The govern-or-remove decision this section already asks for also determines whether those cards should be
+refreshed or deleted. No fingerprint or verification stamp was advanced.
+
 This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's
 `skills/**` route. `skills/**` is absent from `settings.json`'s `pathRules.include`, so this whole
 onboarding tree sits outside normal onboarding census coverage: it is legacy and ungoverned. It is
@@ -208,6 +228,9 @@ removed. That mismatch between the declared path rules and the enforced checking
 recorded defect.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual shape (nine files in one readable order with `**Inherits:**` lines, a new sibling `core/`, procedures moved to `operations/`, sanctioned sibling references only, 2,792 → 2,322 lines), and the Ungoverned Mirror Status section records this pass's explicit decision to update the route overview while deliberately leaving the per-role cards under `onboarding/skills/l-01-agent-lifecycles/roles/**` unrefreshed (outside `pathRules.include`, already declared stale, and a partial refresh would duplicate the governed `mcp/**` cards without resolving the govern-or-remove question). No verification stamp or fingerprint was advanced.
+
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned role/template handoff doctrine with two outputs and non-authoritative cache status. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

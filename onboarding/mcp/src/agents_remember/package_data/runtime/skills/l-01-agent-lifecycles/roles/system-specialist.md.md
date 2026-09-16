@@ -5,9 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| governingOverview | `../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
@@ -22,6 +27,16 @@ lifecycle the l-01 registry defines (`kernel/agentic_settings.py` `KNOWN_ROLES`)
 ## Code Commentary
 
 ### Logic
+
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block, with the fixed-shape
+investigation report carried as its handoff artifact. It declares its shared sources with
+`**Inherits:**` rather than restating them (`core/authority.md`, `core/invariants.md`,
+`core/acceptance.md`, `operations/orientation.md`, `operations/recovery.md`). The recovery moves it
+drives now live once in `operations/recovery.md`, and the provider-degradation response protocol
+(including the managers' stop-starting rule and the orchestrator's stop authority) lives once in
+`core/lifecycle-frame.md`.
 
 The synchronized caller matrix keeps system-specialist target-only: the orchestrator is its
 ordinary plane-hosted caller, while an identity-free launcher may target it only for explicit
@@ -69,9 +84,10 @@ response protocol (task doc `08_degradation-protocol-and-system-specialist.json`
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — System Specialist` | skills/l-01-agent-lifecycles/roles/system-specialist.md:1-102 |
+| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — System Specialist` | skills/l-01-agent-lifecycles/roles/system-specialist.md:1-14 |
 | The detector this seat investigates: degradation events, metrics snapshot, critical failsafe. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
-| The orchestrator role file that dispatches this seat on a degradation-alert and reads its report. | `## Provider Degradation Alert` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:111-131 |
+| The shared provider-degradation response protocol this seat operates inside. | `## Provider degradation, as every seat meets it` | skills/l-01-agent-lifecycles/core/lifecycle-frame.md:57-70 |
+| The recovery moves this seat's investigation feeds. | `# Operation — Recovery`; `## The recovery moves, and when each applies` | skills/l-01-agent-lifecycles/operations/recovery.md:1-1; skills/l-01-agent-lifecycles/operations/recovery.md:20-34 |
 | The role census / escalation ladder registering `system-specialist` as the ninth portable role. | "system-specialist" | skills/l-01-agent-lifecycles/templates/manager-brief.md:165-165 |
 | The inbox role/message-kind schema this seat is addressed through (`AgentRole.system-specialist`, `degradation-alert`) — vocabulary moved to models/operator_inbox.py by L9. | "AgentRole = Literal["; "degradation-alert" | mcp/src/agents_remember/models/operator_inbox.py:20-20; mcp/src/agents_remember/models/operator_inbox.py:42-42 |
 
@@ -89,6 +105,15 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.**
+  The canonical system-specialist role was rewritten (150 lines) into the corpus's readable order and
+  declares its inherited sources with `**Inherits:**`. Updated Logic with the readable order, the
+  inherited sources, and where the recovery moves and provider-degradation protocol now live. Repo-
+  Internal References: the orchestrator-role citation whose anchor (`## Provider Degradation Alert`) no
+  longer resolves was replaced with the two current homes of that rule, and the canonical-source
+  citation range was corrected to the rewritten file's real head. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "system-specialist" repointed to skills/l-01-agent-lifecycles/templates/manager-brief.md:165-165. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "system-specialist" repointed to skills/l-01-agent-lifecycles/templates/manager-brief.md:167-167. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 

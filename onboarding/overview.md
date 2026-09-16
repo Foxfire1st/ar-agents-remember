@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
@@ -213,9 +213,38 @@ workspace ar-coordination/
 | Package dependency contract | [layers.toml](agents-remember/layers.toml) | Declares one fail-closed top-level package order and one charter per package. The repository-neutral `certification` contract is rank 3 between wire models and the stateful control plane; later integer ranks shift without changing their package charters or runtime behavior. |
 | MCP package          | [mcp](agents-remember/mcp)                                                                                                                                                       | Package-managed MCP server exposing context, runtime install, skills install, provider, worktree, memory, benchmark, settings-derived lifecycle, and memory quality tools. |
 | Core skills (C-*)    | [mcp/src/agents_remember/package_data/runtime/skills](agents-remember/mcp/src/agents_remember/package_data/runtime/skills)                                                                                                           | Resolver, memory quality control, repo bootstrap, onboarding maintenance, and related support skills — flat directly under `skills/`. |
-| Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles (router + minimal frame + per-role lifecycles), and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
+| Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles — now a **thin router** plus a shared `core/`, nine self-contained role files, eight `operations/` blocks, a prose-free `composition-manifest.json`, and reference-only rationale/rulings — and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
 | Runtime AGENTS templates | [mcp/src/agents_remember/package_data/runtime/agents-md-files](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files)                                                                                                        | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
 | System defaults      | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples)                                                                                          | Example settings, sources, and tools files used as scaffolding material.                                       |
+
+### 260915-CAPS-L1 Route Impact — Lifecycle Corpus Restructured And Made Single-Source
+
+The `l-01-agent-lifecycles` instruction corpus was consolidated across the whole repository route in
+260915-CAPS-L1 (requirement `CAPS-R01@v1`). The structural change future readers must know about:
+
+- **The entrypoint is now a router and carries no doctrine.** `SKILL.md` went from 620 to 179 lines and
+  contains only the three routing conditions, the nine-role registry, the composition map, an
+  orientation diagram of the super-integration topology, and pointers.
+- **Four new layers hold what the entrypoint used to carry**: `core/` (six shared blocks — authority,
+  invariants, lifecycle-frame, loop, acceptance, launcher), `operations/` (eight operation-scoped
+  procedure blocks on a frozen vocabulary), `reference/` (rationale and the durable-rulings index), and
+  `composition-manifest.json` (prose-free routing metadata for the deterministic capsule compiler).
+- **All nine role files were rewritten into one readable order** — purpose/authority → required inputs →
+  normal workflow → permitted writes → stop/escalation → completion/handoff, then the knob block — and
+  each declares its shared sources with `**Inherits:**` instead of restating them. A role file may name a
+  sibling role file only for wearing that hat or dispatching that seat.
+- **The canonical tree is `skills/`; every other tree is generated.** `scripts/sync-skills.py` writes the
+  MCP package-data runtime copy and the eight harness starter trees, and `--check` proves them
+  byte-identical. Editing a generated copy is drift.
+
+**Onboarding consequence, recorded because it is a boundary rather than a defect:** the canonical
+`skills/**` tree sits **outside this memory root's `pathRules` include set** (`mcp/**`, `dashboard/src/**`,
+`scripts/**`, `installer/**`, `runtime/**`, `examples/mcp/**`, `AGENTS.md`, `README.md`), so the canonical
+corpus has no sidecars of its own. The sidecars for this corpus live on its tracked generated copy under
+`mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/**`, which is governed — that
+tree gained 18 new cards in this pass (the manifest, `core/` ×6, `operations/` ×8, `reference/` ×2) and 17
+existing cards were updated in the body. The legacy `onboarding/skills/l-01-agent-lifecycles/**` tree is
+outside the current path rules and is retained as history.
 
 ## Functional Areas
 
@@ -886,6 +915,8 @@ integration branch also changed: it now requires the master's own terminal task 
 only an enclosure census, because a child that was never started has no enclosure to walk.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation (`CAPS-R01@v1`). The Code Structure "Lifecycle + task workflow" row now names the corpus's actual shape (thin router + `core/` + nine role files + eight `operations/` blocks + `composition-manifest.json` + `reference/`) instead of the retired "router + minimal frame + per-role lifecycles" description, and the new § 260915-CAPS-L1 Route Impact section records the structural change, the canonical-vs-generated boundary, and the onboarding consequence that the canonical `skills/**` tree is outside this memory root's path rules while its generated `mcp/**` copy is governed. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled root delivery, baseline, glossary and verification guidance to actual Git outputs and the computed consumer cache. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

@@ -5,14 +5,30 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| governingOverview | `../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../overview.md)
 
 ## Purpose
 
 Packaged runtime copy of the complete worker dispatch brief. The canonical template owns the packet;
 the sync process installs this exact artifact.
+**Single-source marker (260915-CAPS-L1).** The canonical template now states its own boundary
+explicitly: **this template feeds inputs; it does not author rules.** Where a value here disagrees with
+the seat's role file, the operation block, or the core truth boundary, those files win. The packaged
+copy carries that marker verbatim through `scripts/sync-skills.py`, so installed runtimes cannot read a
+template value as doctrine.
+
+The canonical template now names the same single homes the marker points at, and installed runtimes see
+them: `../roles/worker.md` for the seat's own duties, `../operations/implementation.md` and
+`../operations/closeout.md` for the build procedure and the targeted-check contract, and
+`../core/acceptance.md` for the acceptance envelope, attempt lineage, and completion truth. The rows in
+the packet carry this leaf's *values* for those contracts.
 
 ## Code Commentary
 
@@ -109,6 +125,12 @@ a malformed handed-off attempt requires independent rejection before successor h
 The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical worker brief gained the single-source marker naming the four files that own the rules the
+  packet only carries values for; the packaged copy now records that marker and the exact sources it
+  names. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
+| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-215 |
-| The strategist role that fills this template as method phase 8 and chooses either topology. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-263 |
+| The strategist role that fills this template and chooses either topology. | `# Lifecycle — Strategist`; `## 3 — Normal Workflow` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-16; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:68-135 |
 | The plan-review criteria re-derive effective priority and validate either explicit-graph or graph-less topology. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-140 |
 | The shipped template's derived-wave walk now says nothing serializes a graph-less sprint instead of the removed source-pair-selected exposure walk. | "nothing serializes a graph-less" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174 |
 
@@ -157,6 +157,9 @@ one-selected-master-at-a-time and source-pair activation wording returns 0 hits 
 The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
 
 ## Update History
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: Repaired citations this leaf falsified: the canonical lifecycle corpus was consolidated (the router shrank 620 → 179 lines; all nine role files and several templates were rewritten), so the cited anchors and ranges no longer resolved. No behavioral claim changed — the cited rule was re-pointed at its current home. Verification metadata remains closeout-owned. The strategist row now cites the rewritten file's real head range (`:1-16`, was `:1-263` against a 197-line file).
+
 - 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
   shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
   the template's derived-wave walk now reads "nothing serializes a graph-less sprint — it declares no
