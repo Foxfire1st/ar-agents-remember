@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
@@ -36,7 +36,7 @@ The earlier frontend milestone introduced broader static measurement and a chang
 
 `agents-remember` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, MCP tools, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. Durable memory is reached through three retrieval substrates routed by `c-04-retrieval-strategy-router` skill: **by path** (a source file's deterministic one-to-one onboarding unit, verified against Git history), **by meaning** (semantic memory search over the onboarding), and **by relationship** (a code-relationship graph). By-path notes are the core and need no provider; meaning and relationship are served by opt-in Docker providers (GrepAI, CodeGraphContext) and return candidate routing evidence, not proof. Overviews and entity catalogs use route scopes or curated evidence fingerprints before an agent relies on them. The earlier sidecar-only, anti-retrieval positioning (no embeddings / no vector store) predated those providers and has been retired from the public spine and from this overview's framing.
 
-The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. `c-08-ar-coordination-context-resolver` skill exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`; `c-09-git-worktree-manager` skill owns worktree lifecycle mutation, ordinary series integration back to source branches, and the narrowly policy-gated branch-addressed landing of an explicitly selected leaf implemented without an enclosure. It also documents `task_reopen` — reopening a fully landed leaf task in place under its exact leaf id — while `c-10-adopt-memory-baseline` skill provides the adoption path for existing external-memory onboarding that needs adoption into attributed memory history.
+The current checked-in guidance places durable memory in a **memory repository of its own** and keeps `ar-coordination/` as local coordination. Selective external memory repos under `ar-coordination/memory-repos/ar-<repo>/` are the only supported topology, with `disabled` available for a task that carries no memory lane; the former repo-local `ar-memory/` internal mode was **removed from the product** and is now refused by name with its exact artifact rather than substituted or defaulted. `c-08-ar-coordination-context-resolver` skill exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`; `c-09-git-worktree-manager` skill owns worktree lifecycle mutation, ordinary series integration back to source branches, and the narrowly policy-gated branch-addressed landing of an explicitly selected leaf implemented without an enclosure. It also documents `task_reopen` — reopening a fully landed leaf task in place under its exact leaf id — while `c-10-adopt-memory-baseline` skill provides the adoption path for existing external-memory onboarding that needs adoption into attributed memory history.
 
 The provider runtime guidance now routes through the MCP/package boundary:
 MCP settings outside the coordinator are authority, coordinator files can only
@@ -63,7 +63,7 @@ onboarding pass.
 | Feature | What It Offers | Primary Surface |
 | --- | --- | --- |
 | Path-derived onboarding memory | Deterministic Markdown memory beside source files, plus route overviews and repo entity catalogs for larger scopes. | `README.md`, `onboarding/`, `c-05-create-or-update-onboarding-files` skill |
-| Internal and external memory roots | Repo-local `ar-memory/` by default, selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/`, and computed `memory.md` consumer caches derived from committed code/memory attribution. | `c-00-initialize-memory-repo` skill, `c-08-ar-coordination-context-resolver` skill, `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `kernel/memory_ledger.py` |
+| External memory roots (and the disabled mode) | Selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/` are the **only supported topology**, plus `disabled` for a task that carries no memory lane and computed `memory.md` consumer caches derived from committed code/memory attribution. The former repo-local `ar-memory/` internal mode was **removed from the product**; a contract, settings file or memory root that still records it is reported with its exact artifact and refused with status `memory-mode-unsupported`, naming the supported set and the route out — never substituted with `external` and never migrated automatically. `repo-sidecar` survives only as a per-artifact storage placement, not as a memory topology. | `c-00-initialize-memory-repo` skill, `c-08-ar-coordination-context-resolver` skill, `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `kernel/memory_mode.py`, `kernel/memory_ledger.py` |
 | Context resolution and startup packets | Resolved code, coordination, memory, onboarding, task, temp, ledger, storage, path-rule, cross-repo, provider-summary, worktree, Git, and optional drift facts through compact `ContextPacketV2`; detailed provider state is intentionally excluded. | `c-08-ar-coordination-context-resolver` skill, `resolve_context`, `context_packet`, `ContextPacketV2` |
 | Memory quality control | Task-start drift classification, closeout memory quality, new-file missing-onboarding checks, overview/entity fingerprint checks, and update-history style checks. | `c-02-memory-quality-control` skill, `drift_check`, `memory_quality_check`, `check_missing_onboarding` |
 | Retrieval routing | Semantics, Relationship, and Intent routing across provider accelerators, route indexes, onboarding, and bounded source confirmation. | `c-04-retrieval-strategy-router` skill, `overview.index.json`, GrepAI tools, CGC tools |
@@ -292,7 +292,7 @@ service rather than the lowest domain contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4. | "order = ["; "[package.certification]"; "[package.controlplane]" | layers.toml:19-59; layers.toml:105-126 |
-| The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction. | `load_contract`; `undeclared_dirs`; `build_report` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:63-68; mcp/test_support/agents_remember_test_support/code_quality/layering.py:122-141; mcp/test_support/agents_remember_test_support/code_quality/layering.py:280-340 |
+| The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction. | `load_contract`; `undeclared_dirs`; `build_report` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:62-68; mcp/test_support/agents_remember_test_support/code_quality/layering.py:118-139; mcp/test_support/agents_remember_test_support/code_quality/layering.py:280-293 |
 
 ### Public Documentation
 
@@ -513,8 +513,8 @@ This repository is selected into an external coordination workspace by configure
 | GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
 | The staged-quality boundary refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality; the transaction-only closeout no longer imports it. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
 | The staged-quality owner enforces its exact-candidate delivery boundary. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
-| Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy. | `## Quality gates` | CONTRIBUTING.md:63-110 |
-| Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
+| Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy. | `## Quality gates` | CONTRIBUTING.md:64-187 |
+| Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:94-94 |
 | The MCP settings example declares repository and coordination authority. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
 | The memory-repo tools example provides the `Code Quality` section. | "Code Quality" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md:11-11 |
 
@@ -888,10 +888,10 @@ The committed package layout mirrors those owners: public adapters are under `ap
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:326-364 |
-| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-113; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:473-517 |
-| Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:155-225 |
-| Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172 |
+| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:102-163; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:403-461 |
+| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:79-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:512-556 |
+| Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-222 |
+| Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169 |
 
 ## Historical milestone context: 260824-PDLS — Python Evidence Altitudes
 
@@ -940,6 +940,10 @@ integration branch also changed: it now requires the master's own terminal task 
 only an enclosure census, because a child that was never started has no enclosure to walk.
 
 ## Update History
+- 2026-09-16T12:05:38+00:00: Generated citation repair: "providers/runners/grepai" repointed to mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T12:05:38+00:00: Generated citation repair: `operation_projection` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **governing-intent change** — the removal of `internal` memory mode (`CAPS-R12@v1`). Two current-tense claims on this root overview were false the moment the removal landed and are corrected rather than annotated: "What This Repo Is" no longer distinguishes `ar-memory/` as durable internal memory (external memory repos are now the only supported topology, with `disabled` for a task carrying no memory lane, and the removed repo-local mode is **refused by name** with its exact artifact rather than substituted or defaulted), and the Feature Inventory row formerly keyed "Internal and external memory roots" now reads "External memory roots (and the disabled mode)" and states the refusal, the no-silent-migration rule, and that `repo-sidecar` survives as a per-artifact placement rather than a topology. The separate `ar-memory-*` versioned schema identifiers (`ar-memory-ledger/v1`, `ar-memory-candidate-pair/v1`, `ar-memory-census/v1`) are wire contracts and were deliberately left unchanged. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Route Impact, which records the two repository-altitude facts this leaf changes: the controlled application is a new repository-root tree (`eve_runtime/`) that is **outside this memory root's `pathRules` and deliberately has no sidecars** — its authored surface is documented on the cards of the modules that consume it — and the adapter implements AR's existing adapter/capability/interrupt seams rather than introducing a service, scheduler, registry or approval plane. Also records that the machine-local build products the change set introduces are gitignored, not repository content. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
@@ -2205,10 +2209,10 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:308-328; mcp/src/agents_remember/application/memory_quality/controller.py:331-383; mcp/src/agents_remember/application/memory_quality/controller.py:413-550 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:553-589 |
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
-| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
+| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:
 

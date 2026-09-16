@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2`
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

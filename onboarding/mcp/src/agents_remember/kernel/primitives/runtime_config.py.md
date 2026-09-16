@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

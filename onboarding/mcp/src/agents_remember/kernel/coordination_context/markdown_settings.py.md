@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -37,10 +37,16 @@ global path-rule branches to focused helper modules.
 - Legacy cross-repo strings remain invalid for v2 and are surfaced as excluded.
 - Legacy cross-repo and global path-rule helper modules keep this state machine
   below the repository maintainability threshold.
-- Empty `mode:`/`layout:`/`default:` scalars fall back to the topology-derived
-  default from `__post_init__` (`default_storage_mode(self.topology)`), not a
-  hardcoded `"external"`; `mode:` and `layout:` share one branch and are treated
-  as aliases.
+- Empty `mode:`/`layout:`/`default:` scalars fall back to the settings model's own
+  value (`_try_apply_storage_mode` keeps `self.settings.mode`,
+  `_try_apply_storage_default` keeps `self.settings.default`), not to a hardcoded
+  `"external"`; `mode:` and `layout:` share one branch and are treated as aliases,
+  and `mode:` also writes `default` from `mode`. That fallback value is now the
+  module-level `DEFAULT_STORAGE_MODE` (`"memory-repo"`) declared in
+  `kernel/coordination_context/models.py`: with `internal` removed,
+  `default_storage_mode(topology)` no longer exists and no storage default is
+  topology-derived. `repo-sidecar` survives as a declarable per-path placement
+  (`is_sidecar_storage`), not as a memory topology.
 
 ## Docs References
 
@@ -54,7 +60,8 @@ No external documentation is needed for this project fallback parser.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns topology defaults when no settings file exists. | `parse_coordination_settings` | mcp/src/agents_remember/kernel/coordination_context/settings.py:50-72 |
+| `parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns the `StorageSettings` defaults — `DEFAULT_STORAGE_MODE` = `"memory-repo"` — when no settings file exists. It takes no `topology` parameter any more. | `parse_coordination_settings` | mcp/src/agents_remember/kernel/coordination_context/settings.py:48-68 |
+| The topology-derived storage default is gone; `StorageSettings.mode`/`.default` are the one non-topology default. | `DEFAULT_STORAGE_MODE` | mcp/src/agents_remember/kernel/coordination_context/models.py:40-40 |
 
 ## Cross-Repo References
 
@@ -65,6 +72,8 @@ No cross-repository evidence is needed for this fallback parser.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **deleted-symbol claim re-anchored** for the removal of `internal` memory mode (`CAPS-R12@v1`). The Invariants entry claimed empty storage scalars fall back to a *topology-derived* default from `__post_init__` via `default_storage_mode(self.topology)` — that function no longer exists anywhere in the package, `topology` no longer appears in this module, and the fallback is now the model's own `DEFAULT_STORAGE_MODE` (`"memory-repo"`). The entry was re-worded to the current mechanism (the private `_try_apply_storage_mode` / `_try_apply_storage_default` keep `self.settings.mode` / `.default`) and now records that `repo-sidecar` survives only as a per-path placement. The Repo-Internal row for `parse_coordination_settings` was also corrected: it no longer takes a `topology` parameter and returns `StorageSettings` defaults rather than topology defaults, and its range moved to `settings.py:48-68`. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D9 complete settings-selection construct evidence for the same-reviewer residual delta.
 

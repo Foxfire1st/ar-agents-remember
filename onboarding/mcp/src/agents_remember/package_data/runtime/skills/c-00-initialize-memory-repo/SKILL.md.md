@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-03T18:58+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 
 ## Purpose
 
@@ -24,11 +24,12 @@ not install the coordinator runtime, expose harness skills, create task
 worktrees, or generate onboarding content. If the coordinator runtime scaffold is
 missing or stale, it requests `runtime_install`; it explicitly avoids
 `skills_install` in the package-based first-run path because copied starter
-packages already carry harness-visible skills. It defaults to internal memory
-under `<code-repository-root>/ar-memory/`; when the developer explicitly chooses
-external memory, it creates or repairs
-`<coordination-root>/memory-repos/ar-<repo-name>/` after verifying the
-coordinator runtime has already been installed. It creates missing `system/`,
+packages already carry harness-visible skills. `external` is the **only supported
+topology**: it creates or repairs `<coordination-root>/memory-repos/ar-<repo-name>/`
+after verifying the coordinator runtime has already been installed. Repo-local
+internal memory under `<code-repository-root>/ar-memory/` was **removed from the
+product** and is reported by its exact path with the route out rather than created
+or migrated. It creates missing `system/`,
 `onboarding/`, and `docs/` directories plus starter `settings.md`,
 `settings.json`, `sources.md`, and `tools.md` files, adding `docs/.gitkeep` for
 empty external memory repos so the scaffold can be committed. It leaves
@@ -66,9 +67,9 @@ No external documentation is needed for this repository-local skill.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `c-00-initialize-memory-repo` skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content; package-based first-run setup gets harness skills from copied starter packages and uses `skills_install` only for maintenance/manual paths. | `skills_install` | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:45-46 |
-| Internal memory resolves to repo-local `ar-memory/`; explicit external memory resolves to `ar-coordination/memory-repos/ar-<repo>/` after runtime install is verified. | "<code_repository_root>/ar-memory" | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:68-68 |
-| Starter settings examples keep storage and path rules under memory-layer `system/settings.json` and seed common generated/vendor/build/local excludes. | "Machine-readable storage" | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:150-150 |
-| Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. | "Preserve existing" | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:314-314 |
+| Repo-local `ar-memory/` **was removed from the product** and is now reported by its exact path with the route out rather than created, read or migrated; explicit external memory resolves to `ar-coordination/memory-repos/ar-<repo>/` after runtime install is verified, and `external` is the only supported topology. | `Also check the code repository for a repo-local `ar-memory/` directory.` | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:102-104 |
+| Starter settings examples keep storage and path rules under memory-layer `system/settings.json` and seed common generated/vendor/build/local excludes. | `path settings` | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:148-148 |
+| Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. | "Preserve existing" | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:268-268 |
 
 ## Cross-Repo References
 
@@ -80,6 +81,8 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The card's Purpose said the skill "defaults to internal memory under `<code-repository-root>/ar-memory/`" and treated external memory as the explicit alternative; it now states `external` as the **only supported topology**, records that the repo-local root was removed from the product and is reported rather than created or migrated, and re-anchors the removal rows to the corrected generated text (`SKILL.md:102-104`, `:262-264`) after the earlier ranges moved. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 6 initial citation findings (3 anchor, 0 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-06-03T18:58+02:00: Updated for package-first first-run setup: this skill initializes or repairs memory roots only, requests `runtime_install` only for missing/stale coordinator scaffold, and leaves initial harness skills/files to copied starter packages; `skills_install` is maintenance/manual. Verification metadata stays pinned until closeout.

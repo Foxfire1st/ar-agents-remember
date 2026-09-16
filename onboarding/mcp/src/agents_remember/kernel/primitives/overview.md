@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 
 ## What This Area Is
 

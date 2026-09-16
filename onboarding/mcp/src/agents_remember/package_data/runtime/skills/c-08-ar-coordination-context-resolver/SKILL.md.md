@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 
 ## Purpose
 
@@ -47,7 +47,7 @@ No external domain documentation applies to this repository-local skill contract
 | --- | --- | --- |
 | The skill accepts `code_repository_name`, optional `code_repository_root`, and `task_name`; no-task-name contexts resolve the repo task namespace, while task-name contexts resolve current wrapper task folders and persisted `*-ar` contract folders. | "Root series contracts live at" | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:22-22 |
 | The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data. | "cross-repo facts" | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:10-10 |
-| Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use MCP settings or explicit/installed/default package roots for coordination, require supported memory roots, and fail clearly when no memory exists. | "repo-local internal memory or selected external memory" | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:10-10 |
+| Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use MCP settings or explicit/installed/default package roots for coordination, require supported memory roots, and fail clearly when no memory exists. A removed `internal` request or a repo-local `ar-memory/` root is refused by name with `memory-mode-unsupported`, never falling through to the external root; `external` is the only supported topology. | `## Resolution Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:57-65 |
 | Consumers include `c-02-memory-quality-control` skill, `c-03-repo-bootstrap` skill, c-04-retrieval-strategy-router, `c-05-create-or-update-onboarding-files` skill, task workflows, and `c-09-git-worktree-manager` skill; boundaries keep `c-08-ar-coordination-context-resolver` skill out of mutation work. | "c-02-memory-quality-control" | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:95-95 |
 | The package implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and MCP/JSON output. | `coordination_context_resolver` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:149-149 |
 
@@ -65,6 +65,8 @@ The packaged resolver skill now teaches active task-name lookup, optional `paren
 
 ## Update History
 
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The resolution-rules row quoted "repo-local internal memory or selected external memory" from `SKILL.md:10-10`, text that the correction removed; it now anchors the `## Resolution Rules` section (`:57-65`) and records that a removed `internal` request or a repo-local `ar-memory/` root is refused by name with `memory-mode-unsupported`, never falling through to the external root. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the five `n/a`-anchor
   table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns
   zero findings.

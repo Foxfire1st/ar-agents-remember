@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/symbol_index.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview

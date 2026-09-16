@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/reducer_impl/_processes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2`                                        |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview

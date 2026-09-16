@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

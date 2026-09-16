@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This file is the human-facing settings example for a repo-local or external memo
 
 ### Logic
 
-The example explains that memory-layer settings belong under either `<repo>/ar-memory/system/` or `ar-coordination/memory-repos/ar-<repo>/system/`. It assigns onboarding storage, path eligibility, cross-repo allowances, repo-specific sources/tools/coding guidance, and workflow notes to the memory layer.
+The example explains that memory-layer settings belong under `ar-coordination/memory-repos/ar-<repo>/system/`; repo-local internal memory under `<repo>/ar-memory/` was **removed from the product**, so it is no longer a location for anything. It assigns onboarding storage, path eligibility, cross-repo allowances, repo-specific sources/tools/coding guidance, and workflow notes to the memory layer.
 
 ### Conventions
 
@@ -57,6 +57,8 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The Logic section told readers memory-layer settings belong under "either `<repo>/ar-memory/system/` or `ar-coordination/memory-repos/ar-<repo>/system/`"; the first location no longer exists, so the claim now names only the external memory repo and records the removal. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 3 citation rows to plain
   sources with literal anchors (settings.md 3-11, 13-25, 27-42). Zero findings remain.
 

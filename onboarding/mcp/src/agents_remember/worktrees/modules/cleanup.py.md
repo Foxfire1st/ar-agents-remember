@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -87,7 +87,7 @@ the apply reports `cleanup-blocked`.
 message mentions "carryover") when integration is `completed` but
 `guidance.carryover_done(contract)` is false — because cleanup deletes the parked
 memory branch before its exact landed mapping has been proven on the named source.
-Current `carryover_done` proves the actual memory commit against named source history. The computed ledger file has no admission role; internal/disabled memory has nothing to carry and passes vacuously.
+Current `carryover_done` proves the actual memory commit against named source history. The computed ledger file has no admission role; a disabled-memory contract has no memory worktree to carry and passes vacuously. (The source comment was reworded by `CAPS-R12@v1` from the removed "internal/disabled" pairing to the supported set; the behaviour is unchanged, and the removed `internal` mode is no longer named here.)
 
 **Branch cleanup** operates on the just-finalized child edge only. It removes task
 work branches after proving they are reachable from the contract's corresponding
@@ -243,6 +243,8 @@ proof and never reconstructs deleted live state.
 
 ## Update History
 
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The carryover note repeated the source comment's removed "internal/disabled" pairing as current behaviour; it now states the supported `disabled` case and records that the source comment was reworded by this leaf with behaviour unchanged. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-09-15 — LCA L9 terminal delivery: The contract-derived terminal mutation authority identifies the external-memory checkout separately. `remove_registered_worktree` discards changes to its root ledger cache through the shared cache owner before ordinary Git removal. No force flag is added for cache handling. Code files named `memory.md`, other memory paths and branch-ancestry safeguards retain their normal protection.
 
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base

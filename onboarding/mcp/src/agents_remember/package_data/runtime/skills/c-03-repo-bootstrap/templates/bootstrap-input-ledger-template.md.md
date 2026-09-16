@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md` |
 | doc_type               | `file-level-onboarding`                                                                          |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`                                                                                               |
-| lastVerifiedCommitDate |                                                                                                  2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2`                                                                                               |
+| lastVerifiedCommitDate |                                                                                                  2026-09-16T14:24:58+02:00|
 
 ## Purpose
 

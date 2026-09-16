@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../overview.md`                              |
 

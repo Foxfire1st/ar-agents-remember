@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_kept_rules_pins.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

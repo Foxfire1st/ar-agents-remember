@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
