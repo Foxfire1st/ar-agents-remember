@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-09-15T22:40 |
+| lastUpdated | 2026-09-16T10:10+02:00 |
 | lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
 | lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00 |
 | status      | active                 |
@@ -628,7 +628,45 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
 | User recovery | Alt+Up requests exact withdrawal; unchanged drafts auto-restore by revision CAS, concurrent edits create one explicit recovery slot, and replace/keep-current/dismiss are local exact decisions. |
 ```
 
+### Knowledge Candidate-Change Boundary Deferral (260915-KS-L3)
+
+This leaf adds a second load-bearing cross-layer entity: the **knowledge candidate-change boundary** — the single
+typed, all-or-nothing write operation the rest of the knowledge substrate mutates through. One admitted candidate
+context plus a `ChangeBatch` (expected context, explicit expected-record identities, a closed twelve-command union)
+becomes a `MutationResult` under one resource lock and one `BEGIN IMMEDIATE` transaction, with every refusal leaving
+the stored dataset unchanged. It spans `models/knowledge/` (the context, command union, batch and receipt
+vocabulary), `memory/knowledge/` (the operation, its preconditions, its apply step and the canonical logical
+dataset identity), `application/knowledge.py` (the composition seam that resolves the context and supplies the
+admitted provenance) and `kernel/canonical_json.py` (the encoder the context digest and the logical digest are
+computed through). The requirement it manifests is `KS-R03@v1`.
+
+**No inventory entry and no fingerprint row are added in this pass, for the same reason the L1 deferral records.**
+A `git-blob-set-v1` fingerprint resolves `HEAD:<path>` blobs and every file that would evidence this entity is
+**uncommitted** in the leaf's code worktree, so a row written now would fail to resolve or would advance a
+fingerprint onto a tree that does not exist yet — which this seat is forbidden to do. The refresh is owned by the
+closeout/index transaction that commits the code, and it must add the matching `## Entity Inventory` entry in the
+same pass because the quality check reconciles the fingerprint table against the inventory.
+
+| Deferred entity | Evidence paths for the refresh |
+| --- | --- |
+| Knowledge candidate-change boundary | `mcp/src/agents_remember/models/knowledge/candidate.py`; `mcp/src/agents_remember/memory/knowledge/candidate.py`; `mcp/src/agents_remember/memory/knowledge/batch_preconditions.py`; `mcp/src/agents_remember/memory/knowledge/batch_commands.py`; `mcp/src/agents_remember/memory/knowledge/candidate_records.py`; `mcp/src/agents_remember/memory/knowledge/logical.py`; `mcp/src/agents_remember/application/knowledge.py`; `mcp/src/agents_remember/kernel/canonical_json.py` |
+
+The subsystem's own account of current intent lives in the file cards under
+`onboarding/mcp/src/agents_remember/{models,memory}/knowledge/` and in
+[`memory/overview.md`](mcp/src/agents_remember/memory/overview.md) meanwhile, so a reader is not left without a
+route while the fingerprint is pending.
+
 ## Update History
+
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
+  `27242ecb`): reviewed this catalog against the change set and recorded the one additional load-bearing entity the
+  leaf introduces — the knowledge candidate-change boundary spanning `models/knowledge`, `memory/knowledge`,
+  `application/knowledge.py` and `kernel/canonical_json.py` — as a **deferred** row with its evidence set named. No
+  fingerprint row was added and no fingerprint was advanced, because a `git-blob-set-v1` fingerprint resolves
+  committed `HEAD` blobs and every evidencing file is uncommitted in this leaf; the refresh belongs to the
+  transaction that commits the code, and it must add the matching `## Entity Inventory` entry in the same pass.
+  Recorded in `### Knowledge Candidate-Change Boundary Deferral (260915-KS-L3)`. The L1 deferral for the knowledge
+  invariant revision remains open for the same reason and is unaffected by this entry.
 
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): reviewed this catalog against the change set and recorded the one load-bearing entity the leaf

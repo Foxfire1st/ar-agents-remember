@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/endpoints.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
-| governingOverview | `../../overview.md` |
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../overview.md)
+[memory route overview](../../../overview.md)
 
 ## Purpose
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
 | governingOverview | `../overview.md` |
 
@@ -609,17 +609,17 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
 | The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-329; mcp/src/agents_remember/models/worktree.py:355-363 |
 | The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:175-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
-| The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:74-74 |
+| The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane (row 77 after the KS-L3 insertions). | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:77-77 |
 | The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
 | The L36 cross-master forcing module: both masters stay ready, each master's work stays private until it lands, releasing a master's activation publishes nothing and blocks nobody, a conflicting or stale publication is refused at the pair, and a master that reconciles with a landed sibling completes through ordinary closeout and final integration. Anchor N is the node whose span is range N. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b`; `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; `test_a_dependent_master_still_waits_for_its_unfinished_predecessor`; `test_a_graph_less_sprint_serializes_nothing_between_its_atomic_masters` | mcp/tests/test_cross_master_concurrency.py:131-165; mcp/tests/test_cross_master_concurrency.py:409-472; mcp/tests/test_cross_master_concurrency.py:473-508; mcp/tests/test_cross_master_concurrency.py:509-684; mcp/tests/test_cross_master_concurrency.py:722-753; mcp/tests/test_cross_master_concurrency.py:754-847 |
-| The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:151-151 |
+| The L36 lane registration the fail-closed manifest requires (row 154 after the KS-L2 and KS-L3 insertions). | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:154-154 |
 | The L37 stop boundary proof: the public pause, the measured world, the eight independently-failing cases and the refusals. Its never-selected case now asserts the already-vacant success rather than a refusal. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing` | mcp/tests/test_pause_stop_only_end_to_end.py:84-436; mcp/tests/test_pause_stop_only_end_to_end.py:148-166; mcp/tests/test_pause_stop_only_end_to_end.py:201-232; mcp/tests/test_pause_stop_only_end_to_end.py:234-261; mcp/tests/test_pause_stop_only_end_to_end.py:263-284 |
 | The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:168-168; mcp/tests/test-evidence-lanes.toml:201-201 |
+| The L37 lane registrations the fail-closed manifest requires, one per new module (both rows moved again with the KS-L2 and KS-L3 insertions: the pause suite to row 171 and the AST-only guard to row 204). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:171-171; mcp/tests/test-evidence-lanes.toml:204-204 |
 | The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. | `LifecyclePlaythroughTests`; `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173; mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-173 |
-| The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:162-162 |
-| The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:73-73 |
-| The L5 binding module's lane registration, added by the same change set that created it. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:159-159 |
+| The lane registration the fail-closed manifest requires for that module (row 165 after the KS-L2 and KS-L3 insertions). | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:165-165 |
+| The L4 census module's lane row, which closed the gap the L4 route section recorded (row 76 after the KS-L3 insertions). | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:76-76 |
+| The L5 binding module's lane registration, added by the same change set that created it (row 162 after the KS-L2 and KS-L3 insertions). | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:162-162 |
 | **260913-LCA-L8:** the new module's lane registration, added by the same change set that created it — integration, because it drives the public landing, integration and finalization routes over real temporary repositories and worktrees. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:183-183 |
 | **260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`; `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason`; `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:116-161; mcp/tests/test_terminal_blocker_reasons.py:164-220; mcp/tests/test_terminal_blocker_reasons.py:223-243; mcp/tests/test_terminal_blocker_reasons.py:246-259 |
 | **260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item. | `_blocker`; `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:639-655; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:624-636 |
@@ -635,11 +635,11 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Public closeout exercises the actual pair, attribution and cache-independent delivery. | L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| Cache damage cannot change the accepted integration pair or block ref publication. | L172-L213 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
-| The migration acceptance proof reads only committed trailers. | L458-L541 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| Public closeout exercises the actual pair, attribution and cache-independent delivery. | `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
+| Cache damage cannot change the accepted integration pair or block ref publication. | `test_cache_damage_cannot_change_the_accepted_pair` | mcp/tests/test_integration_branch_authority.py:172-213 |
+| The migration acceptance proof reads only committed trailers. | `test_migration_acceptance_reads_only_committed_trailers` | mcp/tests/test_memory_backfill.py:458-541 |
 
 ## Docs And Cross-Repo References
 
@@ -650,8 +650,9 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 This route gained one test module and one governed support module, and both are load-bearing for the repository's
 own evidence machinery rather than only for the leaf.
 
-`mcp/tests/test_knowledge_store.py` — 22 nodes, all in the **unit-regression** lane and carrying no integration
-marker. It is the executable counterpart of the knowledge requirement's failure list: the divergent-successor
+`mcp/tests/test_knowledge_store.py` — 23 nodes, all in the **unit-regression** lane and carrying no integration
+marker. (The 23rd arrived with `KS-R03`: it pins the identity operation's two-caller repeat contract, which the
+candidate-batch refactor had silently changed. See the KS-L3 section below.) It is the executable counterpart of the knowledge requirement's failure list: the divergent-successor
 read, identity reuse with differing content, dangling and cross-invariant predecessors, the two-branch lineage
 refusal, database-level immutability, the seal covering the predecessor set, the schema-generation validation and
 the layer-direction guard. Two of its nodes are enforcement-load-bearing in the sense that disabling the mechanism
@@ -678,11 +679,11 @@ and silently break the registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The 22-node suite and its unit-lane placement. | "mcp/tests/test_knowledge_store.py" | mcp/tests/test-evidence-lanes.toml:71-71 |
+| The knowledge suite and its unit-lane placement (row 74 after the KS-L3 insertions). | "mcp/tests/test_knowledge_store.py" | mcp/tests/test-evidence-lanes.toml:74-74 |
 | The suite's one-to-one card, which enumerates what each node protects. | "# mcp/tests/test_knowledge_store.py" | onboarding/mcp/tests/test_knowledge_store.py.md:1-125 |
-| The fixture's registered stable contract row and its matching artifact row. | "knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1031-1052 |
+| The fixture's registered stable contract row and its matching artifact row. | `knowledge-identity-branching-fixture` | mcp/tests/evidence-lifecycle.toml:1032-1032 |
 | The fixture's one-to-one card, including the relocation rationale. | "The shared branching knowledge fixture." | onboarding/mcp/tests/knowledge_fixture_test_support.py.md:19-26 |
-| The enforcement-load-bearing nodes a disabled guard fails. | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle`; `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:413-462; mcp/tests/test_knowledge_store.py:509-544 |
+| The enforcement-load-bearing nodes a disabled guard fails (re-cited after the KS-L3 node insertion shifted the file). | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle`; `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:453-502; mcp/tests/test_knowledge_store.py:549-584 |
 | The manifest rule that makes an unregistered module a hard load failure. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
 | The fixture builder the suite composes — re-cited against the working tree, where the same builder gained the graph half. | `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:203-263 |
 
@@ -732,9 +733,9 @@ collection error and the quality path swallows into a run without retry proof. R
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The four graph modules and their unit-lane rows. | "mcp/tests/test_knowledge_family_revision.py"; "mcp/tests/test_knowledge_graph_reads.py"; "mcp/tests/test_knowledge_relation_rules.py"; "mcp/tests/test_knowledge_revision_seals.py" | mcp/tests/test-evidence-lanes.toml:67-70 |
-| The graph case-support contract and its three declared consumers. | "knowledge-graph-case-support" | mcp/tests/evidence-lifecycle.toml:1058-1081 |
-| The corrected branching-fixture row, whose consumer list now names all five importers. | "knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1031-1056 |
+| The four graph modules and their unit-lane rows (rows 69-73 after the KS-L3 insertions). | "mcp/tests/test_knowledge_family_revision.py"; "mcp/tests/test_knowledge_graph_reads.py"; "mcp/tests/test_knowledge_relation_rules.py"; "mcp/tests/test_knowledge_revision_seals.py" | mcp/tests/test-evidence-lanes.toml:69-73 |
+| The graph case-support contract and its three declared consumers. | `knowledge-graph-case-support` | mcp/tests/evidence-lifecycle.toml:1060-1060 |
+| The corrected branching-fixture row, whose consumer list now names all six importers. | `knowledge-identity-branching-fixture` | mcp/tests/evidence-lifecycle.toml:1032-1032 |
 | The field-isolating seal node and the four read-path nodes that make the seal's evidence honest. | "test_an_invariant_revision_digest_seals_its_predecessor_set"; "test_a_family_revision_read_refuses_after_a_predecessor_edge_is_added" | mcp/tests/test_knowledge_revision_seals.py:63-95; mcp/tests/test_knowledge_revision_seals.py:96-123 |
 | The requirement's own falsifier: the two directions compared as identity sets. | "test_two_realizations_resolve_from_either_direction_with_the_same_claim_ids"; "test_overlapping_families_answer_both_directions_with_the_same_member_ids" | mcp/tests/test_knowledge_graph_reads.py:35-65; mcp/tests/test_knowledge_graph_reads.py:66-99 |
 | The atomicity nodes: a refusal leaves the whole-database row counts unmoved. | "test_a_new_anchor_and_its_claim_are_one_transaction"; "test_a_membership_endpoint_that_does_not_exist_refuses_and_writes_nothing" | mcp/tests/test_knowledge_relation_rules.py:77-117; mcp/tests/test_knowledge_relation_rules.py:118-159 |
@@ -742,8 +743,61 @@ collection error and the quality path swallows into a run without retry proof. R
 | The graph support module's one-to-one card, which records its owner and consumer set. | "test support, not production code" | onboarding/mcp/tests/knowledge_graph_test_support.py.md:25-26 |
 | The corrected fixture card, whose graph-half paragraph records the extension-in-place rule. | "which extends the same fixture" | onboarding/mcp/tests/knowledge_fixture_test_support.py.md:19-26 |
 
+## 260915-KS-L3 The Candidate-Batch Suite, And The Guard A Passing Suite Could Not See
+
+This route gained three test modules and one governed support module, and the fourth is a case where the missing
+evidence was itself the defect.
+
+`mcp/tests/test_candidate_batch_transaction.py` (27 nodes) is the requirement's verification evidence: the
+all-or-nothing proof (mutating the rollback to a commit fails a named node), the database-caught rollback at a
+**non-final** command, the competing-writer refusal, the lane and admission refusals, the preconditions, the
+completed-graph lineage rule with a spy that fails when the shared rule is neutered, and the removal receipts.
+`mcp/tests/test_candidate_batch_commands.py` (9 nodes) covers the closed union and the receipt's fidelity.
+`mcp/tests/test_knowledge_label_operations.py` (6 nodes) exists because the batch path carries an **independent
+copy** of the label expectation rule: deleting the CAS in `labels.py` left every batch case green (sealed finding
+`260915-KS-L3-RV-4`), so the standalone operations needed their own module before the guard was load-bearing at
+all. All three are in the **unit-regression** lane (rows 18-19 and 70).
+
+`mcp/tests/candidate_batch_test_support.py` is the new governed support module, registered in
+`mcp/tests/evidence-lifecycle.toml` as contract `candidate-batch-case-harness` with exactly two declared consumers
+and an evidence node that is a real passing node. It builds its candidate through the **real seam** — an admitted
+destination plus contexts resolved through `resolve_candidate_context` — so a case authors its batch against an
+identity the application actually read; and it measures refusals through a **separately opened store**, which is
+what makes "nothing was written" a measurement. Its one deliberate raw write exists because the typed operations
+forbid the state a duplicate-pair case needs.
+
+Two rules this leaf's evidence teaches, and both are about what a named node proves:
+
+- **A node named for a mechanism must discriminate that mechanism.** The baseline round's "database-caught" node
+  actually asserted the concept's own pre-check (removing it left the node green), and the "context digest" node
+  asserted the model validator rather than the operation's re-derivation. Each is now split so the mutation that
+  removes the mechanism fails the node that names it.
+- **A green suite is not a preservation proof.** `test_knowledge_store.py` grew one node
+  (`test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses`) because 54 upstream cases passed while
+  the refactor had silently changed `create_invariant`'s observable answer for an identical repeat.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The batch pair's unit-lane rows and the transaction module's atomicity nodes. | "mcp/tests/test_candidate_batch_commands.py"; "mcp/tests/test_candidate_batch_transaction.py" | mcp/tests/test-evidence-lanes.toml:18-19 |
+| The label-operations suite's row and the reason it exists as a separate module. | "mcp/tests/test_knowledge_label_operations.py" | mcp/tests/test-evidence-lanes.toml:70-70 |
+| The candidate-batch case-harness contract, its artifact row, evidence node and exact consumer set. | `candidate-batch-case-harness` | mcp/tests/evidence-lifecycle.toml:1085-1085 |
+| The branching fixture's row, whose consumer list gained this leaf's label suite. | `knowledge-identity-branching-fixture` | mcp/tests/evidence-lifecycle.toml:1032-1032 |
+| The node that pins the identity operation's two-caller contract after the refactor broke it. | "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses" | mcp/tests/test_knowledge_store.py:139-178 |
+| The two split nodes that keep the database path and the concept guard separately proven. | "test_a_database_refusal_mid_batch_names_the_command_that_actually_failed"; "test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse" | mcp/tests/test_candidate_batch_transaction.py:993-1060; mcp/tests/test_candidate_batch_transaction.py:1062-1118 |
+
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
+  `27242ecb`): recorded the candidate-batch suite and the guard a passing suite could not see — three new
+  unit-lane modules (the transaction boundary's 27 nodes, the union and receipt's 9, and a 6-node label-operations
+  suite that exists because the batch path carries an independent copy of the label expectation rule and stayed
+  green when the CAS was deleted, sealed finding `260915-KS-L3-RV-4`), one new governed support module registered
+  as `candidate-batch-case-harness` with an explicit artifact row, a real evidence node and exactly two declared
+  consumers, and the branching fixture's consumer list gaining this leaf's label suite. Also recorded the two
+  reusable rules the evidence teaches: a node named for a mechanism must discriminate it (the "database-caught"
+  and "context digest" nodes were both split for that reason), and a green suite is not a preservation proof (one
+  upstream node was added because 54 cases passed while `create_invariant`'s answer had changed).
+  Verification metadata remains closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
   `60e0820e`): recorded the graph suite and the two registry changes it forced — four new unit-lane modules
   (family revision rules, relation rules, graph reads, and a fix-verification seal module whose existence is the
@@ -759,7 +813,7 @@ collection error and the quality path swallows into a run without retry proof. R
   `mcp/tests/evidence-lifecycle.toml`, and the load-bearing reason the fixture lives under `mcp/tests/**` rather
   than `mcp/test_support/**`. Verification metadata remains closeout-owned.
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T00:00+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): the route's L3 section, the
@@ -786,7 +840,7 @@ collection error and the quality path swallows into a run without retry proof. R
   651-663 → 727-739, 666-695 → 742-771, 698-733 → 774-809 and 736-766 → 812-842. Verification
   metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
 
-- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+- 2026-09-15T00:00+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Rewrote current test-route expectations for cache independence and preserved old scenario histories as historical; removed stale assertion citations. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.

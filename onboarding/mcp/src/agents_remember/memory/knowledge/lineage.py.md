@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/lineage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
-| governingOverview | `../../overview.md` |
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../overview.md)
+[memory route overview](../../../overview.md)
 
 ## Purpose
 
@@ -36,6 +36,21 @@ the reason the two graphs cannot drift into describing different rules.
   cycle (`candidate_on_cycle=True`, every cycle vertex is named), or the candidate merely descends from
   a stored cycle (`candidate_on_cycle=False`, only the cycle vertices it reaches are named). The two
   branches exist because the remedies differ, not because the wording is being reused.
+- `find_cycle` takes `extra_predecessors`: the declared edges of **other** revisions authored in the
+  same batch. A batch may author several revisions at once, so the graph a candidate has to be judged
+  against is the stored graph plus every edge the batch declares — including edges between two
+  revisions that do not exist yet. Judging without them would let a batch write a cycle that neither
+  revision could have written alone.
+- `declared_cycle` is the batch-aware caller, and since `KS-R03` it is a real one. It gathers the edges
+  a batch declares, judges each *declaring* revision with `find_cycle`, and supplies that revision's
+  wider edge set through an `extras` callable. `batch_preconditions._require_declared_acyclic` calls it
+  with `extras=_wider_edges`, which returns the other declared revisions' edges. **This call site is
+  the only one that supplies `extra_predecessors`**: `store.require_acyclic_lineage` uses the default
+  and is the single-record rule, so the parameter is wired rather than merely declared. The earlier
+  account of this module said the mechanism existed while no caller passed a value; that claim was
+  false and is corrected here.
+- Only the declaring revisions are reported. A stored revision's position was settled when it was
+  written, and a cycle that merely passes through one is already refusable by the single-record rule.
 - **The reach is deliberately wider than adjacency.** A candidate is refused when inserting it would
   leave it on a cycle **or** when a retained revision reachable from it through predecessors is
   already on one. The second branch exists because a stored cycle is a fact about the object's past
@@ -59,7 +74,10 @@ the reason the two graphs cannot drift into describing different rules.
   SQLite's `UNION` deduplication changes which rows a recursive CTE revisits, so a traversal written
   that way does not close a cycle.
 - `post_insert_graph` and `descendants` are exported so a caller can reason about the same graph the
-  guard reasoned about, instead of rebuilding it.
+  guard reasoned about, instead of rebuilding it. `post_insert_graph` folds `extra_predecessors` into
+  the graph exactly as stored edges, which is what makes an intra-batch cycle visible to the same rule.
+- The batch path never grows a second cycle rule. `batch_preconditions` gathers the edge sets and asks
+  this module; a local graph build there would be the drift this module exists to prevent.
 
 ### Invariants And Boundaries
 
@@ -68,6 +86,11 @@ the reason the two graphs cannot drift into describing different rules.
 - **Raw cyclic state can only arise outside these operations.** Admission requires every declared
   predecessor to exist already and the vocabulary refuses a self-referencing payload, so no operation
   can build a cycle; that is why the guard is demonstrated against a graph written by hand.
+- **A judgement must reach the shared rule to count as enforcement.** The batch's declared-edge
+  exclusion is proven by neutering `find_cycle` and watching the refusal disappear and three named
+  nodes fail; a docstring or a wrapper may not claim an enforcement no caller performs.
+- **One caller supplies wider edges.** `declared_cycle` is that caller; `require_acyclic_lineage`'s
+  default is the single-record rule. Adding a second supplier would be a second rule in disguise.
 - **Both branches must be worded for the branch they describe.** The descending branch must not claim
   self-reachability, because nothing points at that candidate.
 - **Determinism.** Every iteration and every returned member set is sorted, so the refusal text and the
@@ -96,13 +119,16 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two applications this one rule serves, stated in the module docstring. | "One acyclic-lineage rule, shared by the invariant and the family lineage graphs." | mcp/src/agents_remember/memory/knowledge/lineage.py:1-1 |
-| The write-path rule and its two branches. | `find_cycle`; `CycleFinding` | mcp/src/agents_remember/memory/knowledge/lineage.py:71-86; mcp/src/agents_remember/memory/knowledge/lineage.py:41-52 |
-| The membership query, which is not the write rule. | `edges_on_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:89-109 |
-| The post-insert graph construction the guard reasons over. | `post_insert_graph`; `descendants` | mcp/src/agents_remember/memory/knowledge/lineage.py:112-125; mcp/src/agents_remember/memory/knowledge/lineage.py:151-162 |
-| The Tarjan classification and its reason for not being a recursive CTE. | `cycle_vertices`; `_CycleScan` | mcp/src/agents_remember/memory/knowledge/lineage.py:128-148; mcp/src/agents_remember/memory/knowledge/lineage.py:171-239 |
+| The write-path rule, its two branches and its `extra_predecessors` parameter. | `find_cycle`; `CycleFinding` | mcp/src/agents_remember/memory/knowledge/lineage.py:107-131; mcp/src/agents_remember/memory/knowledge/lineage.py:42-52 |
+| The batch-aware caller that supplies the declared edges, and the only caller that does. | `declared_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:71-105 |
+| The membership query, which is not the write rule. | `edges_on_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:134-155 |
+| The post-insert graph construction the guard reasons over, which folds the wider edges in as stored ones. | `post_insert_graph`; `descendants` | mcp/src/agents_remember/memory/knowledge/lineage.py:157-179; mcp/src/agents_remember/memory/knowledge/lineage.py:204-216 |
+| The Tarjan classification and its reason for not being a recursive CTE. | `cycle_vertices`; `_CycleScan` | mcp/src/agents_remember/memory/knowledge/lineage.py:181-202; mcp/src/agents_remember/memory/knowledge/lineage.py:224-290 |
 | The two edges queries, one per lineage graph. | `invariant_edges`; `family_edges` | mcp/src/agents_remember/memory/knowledge/lineage.py:55-61; mcp/src/agents_remember/memory/knowledge/lineage.py:63-68 |
-| The invariant-side application and the rule it states once above the guard. | `_require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:391-417 |
-| The family-side application, which reuses this rule rather than restating it. | `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/families.py:186-203 |
+| The invariant-side application, which states the rule once above the guard and uses the default wider-edge set. | `require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:674-705 |
+| The family-side application, which reuses this rule rather than restating it. | `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/families.py:238-253 |
+| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:181-204; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:225-253; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:256-264 |
+| The spy node that asserts the shared rule is reached carrying the batch's declared edges, and the nodes that fail when the rule is neutered or the wider edges are emptied. | "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:605-674; mcp/tests/test_candidate_batch_transaction.py:561-603 |
 | The two-branch refusal wording, shared so the relations cannot describe different rules. | `_lineage_cycle_wording`; `lineage_cycle_refusal`; `family_lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:290-309; mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286 |
 | The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:370-390 |
 | The declared predecessor tables this module reads. | `invariant_predecessor`; `family_predecessor`; `family_predecessor_parent_endpoint` | mcp/src/agents_remember/memory/knowledge/schema.py:157-172; mcp/src/agents_remember/memory/knowledge/schema.py:202-217; mcp/src/agents_remember/memory/knowledge/schema.py:273-274 |
@@ -117,4 +143,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **recorded the batch-aware caller and corrected the earlier account of this rule.** `find_cycle` gained `extra_predecessors` (the declared edges of other revisions authored in the same batch) and `declared_cycle` is the caller that supplies them — `batch_preconditions._require_declared_acyclic` passes `extras=_wider_edges`, and that call site is the **only** one that supplies a value, while `store.require_acyclic_lineage` uses the default and is the single-record rule. The L3 fix round found that a docstring here had claimed the enforcement while no caller performed it; the claim is now true and the card says how it is proven (neutering `find_cycle` removes the refusal and fails three named nodes). Also recorded that a batch's declarations are validated over the completed graph rather than the request order, and that the batch path must not grow a second cycle rule. Citation ranges were re-derived; the `governingOverview` link was repaired from `../../overview.md` to the three-level path. Verification metadata remains closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the extracted shared lineage rule. It records that the rule left `store.py` so one owner serves both graphs, the deliberate second branch whose reach is wider than adjacency, the distinction between the write-path rule and the membership query, and the recorded reason the traversal is Python rather than a recursive SQL CTE. Verification metadata remains empty until closeout stamps the code commit.

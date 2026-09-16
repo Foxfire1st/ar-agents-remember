@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash |  `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate |  2026-09-16T08:41:27+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash |  `76c7697ca275a8d2764729145c950c166f3f9ec3`|
+| lastVerifiedCommitDate |  2026-09-16T10:27:28+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l03` uncommitted source; base `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -38,10 +38,17 @@ admitted authority writes through rather than authors.
 
 ## Hot Path Summary
 
-`knowledge/store.py` owns the one insert-only revision operation, the package's shared candidate lock and its
-one-immediate-transaction wrapper, and the invariant half's tables; `knowledge/{families,anchors,memberships,realizations}.py`
+`knowledge/candidate.py` owns the **one admitted multi-record write boundary** (`change_candidate`): one lock, one
+`BEGIN IMMEDIATE`, a closed twelve-command union, and an all-or-nothing refusal. Everything else in the storage
+package is composed by it or called through it. `knowledge/batch_preconditions.py` holds every read-only
+precondition (including the completed-graph lineage pass), `knowledge/batch_commands.py` is the only module that
+applies a batch and the pass that re-proves the rows it left, `knowledge/candidate_records.py` is the identity
+vocabulary both read, and `knowledge/logical.py` owns the canonical logical dataset identity.
+`knowledge/store.py` owns the one insert-only single-record revision operation, the package's shared candidate lock
+and its one-immediate-transaction wrapper, and the invariant half's tables; `knowledge/{families,anchors,memberships,realizations}.py`
 own the four graph concepts and their tables, `knowledge/lineage.py` owns the one acyclic-lineage rule both lineage
-graphs apply, and `knowledge/endpoints.py` owns the shared relation-endpoint check; `knowledge/schema.py` owns the
+graphs apply (including the batch's declared-edge caller), `knowledge/labels.py` owns the two label edits and their
+row-digest guard, and `knowledge/endpoints.py` owns the shared relation-endpoint check; `knowledge/schema.py` owns the
 declaration of the ten STRICT tables, the fifteen immutability triggers and `schema_fingerprint()`;
 `knowledge/connection.py` owns the pragma contract, the one-row reader and the open-time schema validation;
 `baseline.py` / `carryover.py` / `carryover_authority.py` own baseline adoption and branch carryover. The import
@@ -139,6 +146,44 @@ reachable from it through predecessors — and `families.create_family_revision`
 that merely descends from a stored cycle is therefore refused even though its own lineage is acyclic, and the
 refusal says so rather than claiming self-reachability.
 
+### 260915-KS-L3 The One Typed Write Boundary
+
+This route gained the substrate's **single mutation entry point** and no new authority. Six modules were added
+(`knowledge/{candidate,candidate_records,batch_preconditions,batch_commands,labels,logical}.py`) and seven changed
+(`knowledge/{store,anchors,families,memberships,realizations,lineage,refusals}.py`); `schema.py` was **not**
+touched, so the schema stays `ar-knowledge-sqlite/v1`, `PRAGMA user_version = 1`, ten tables, fifteen triggers and
+the same `schema_fingerprint()`.
+
+What the batch boundary owns, stated once because a reader of this route needs the boundary before the mechanism:
+
+- **One lock, one transaction, one writer.** `change_candidate` takes the candidate's exclusive lock, opens one
+  `BEGIN IMMEDIATE`, and composes the per-concept helpers the single-record operations already use. Those helpers
+  are published and assume the caller holds the lock and the transaction — that is what makes a multi-command batch
+  possible without nesting a second transaction, and nothing enforces it (the disclosed exposure).
+- **All-or-nothing is a measured property, not a promise.** A refusal returns `after == before` and the transaction
+  has rolled back; the evidence is a node that fails when the rollback is mutated to a commit, plus refusal cases
+  that measure table counts and the logical digest through a separately opened store.
+- **Validation is over the completed graph.** A revision may declare a predecessor any command in the same batch
+  creates, wherever it sits in the sequence; `lineage.declared_cycle` judges the batch's own declarations through the
+  shared rule (`extra_predecessors` is supplied only there), and an intra-batch cycle is refused by name before any
+  row exists. The after-integrity pass re-proves both stored graphs.
+- **The lane boundary fails closed.** `baseline` is refused by name (`target_not_candidate`) before the lock, and
+  `task-candidate` refuses `unauthorized_scope` until a resolved, owner-validated task binding can be required and
+  checked — this increment writes **only** `draft-candidate`, and the packet's task-authority sentence is satisfied
+  by refusing rather than by trusting a caller's reference.
+- **The dataset identity is resolved, never asserted.** `application/knowledge.py` reads it from the live candidate
+  and seals it into the context; the operation re-derives the seal and compares the logical digest inside its own
+  transaction. A stale batch is refused with both digests named and is never silently rebased.
+- **The receipt is factual and closed.** `MutationResult` reports before/after identities and the rows the batch
+  wrote or removed, with `state` exactly `written | removed`; a removal is reported with the digest the row had, and
+  a command whose effect was already stored contributes no entry. There is no field a semantic verdict could occupy.
+
+**Two carried limitations belong in this account rather than being rediscovered.** The refusal *code* `no_change`
+still has no producer — only the *result state* `MutationResult.state == "no_change"` is reachable, and a consumer
+must not branch on the code. And `application/knowledge.py` still has **no non-test importer in `mcp/src`**: the
+batch boundary exists inside the seam, but the seam is wired to no tool or entry point, which is what the packet
+means by "public MCP names and transport wiring are later extensions".
+
 ## Invariants And Boundaries
 
 - **Import direction is one-way.** `memory.knowledge` imports `kernel.canonical_json`, `kernel.file_lock` and
@@ -154,10 +199,15 @@ refusal says so rather than claiming self-reachability.
 - **Vocabulary is defined where it decides.** Literal states, operation names, refusal codes and version strings
   live in `models.knowledge` and are imported by the decider, never defined by the decider and imported back down.
 - **This is an experimental increment on the master's branch pair.** No IAS landing is implied, legacy Markdown
-  remains operational authority, and the still-unclaimed behaviour is L3–L8 (the admitted batch contract, snapshot
-  publication, Git merging, portable roundtrip, selective read and candidate diff). The graph half *is* claimed by
-  this route as of `KS-R02@v1`: families, anchors, memberships and realization claims are stored and readable from
-  both directions, while anchor **resolution** remains `KS-R07`'s and is deliberately absent here.
+  remains operational authority, and the still-unclaimed behaviour is now L4–L8 (snapshot publication, Git merging,
+  portable roundtrip, selective read and candidate diff). The admitted batch contract *is* claimed by this route as
+  of `KS-R03@v1` — one lock, one transaction, one closed command union and one resolved dataset identity — while the
+  `task-candidate` lane deliberately refuses until a later leaf supplies a checkable binding. The graph half is
+  claimed as of `KS-R02@v1`: families, anchors, memberships and realization claims are stored and readable from both
+  directions, while anchor **resolution** remains `KS-R07`'s and is deliberately absent here.
+- **A published write helper assumes the caller's lock and transaction.** The batch forced those helpers public; a
+  future caller that invokes one outside a transaction would write an autocommitted row silently. Every shipped call
+  site satisfies the precondition, and keeping the rule is what the one-lock/one-transaction invariant rests on.
 
 ## Repo-Internal References
 
@@ -203,6 +253,7 @@ checkout, but neither establishes a boundary contract here.
 
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): reviewed the route because its meaning changed, not only its file list. The storage package gained the substrate's **single typed write boundary** in six new modules (`candidate`, `candidate_records`, `batch_preconditions`, `batch_commands`, `labels`, `logical`) with seven changed, and `schema.py` untouched. This account records the one-lock/one-transaction boundary and the published in-transaction helpers, the all-or-nothing property as measured evidence rather than a promise, the completed-graph validation axis with `lineage.declared_cycle` as the only supplier of the batch's declared edges, the fail-closed lane rules (baseline by name, `task-candidate` until a checkable binding exists), the resolved-not-asserted dataset identity, and the factual closed receipt. The explicit non-claim was narrowed from "L3–L8 behaviour" to "L4–L8 behaviour". **Two carried limitations are recorded as limitations rather than properties**: the refusal code `no_change` still has no producer (only the result state is reachable), and `application/knowledge.py` still has no non-test importer in `mcp/src`, so the boundary is not yet wired to any tool. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`):
   reviewed the route because its meaning changed, not only its file list. The storage package gained its relation
   half — family identity and sealed family revisions, source anchors, exact-revision memberships, realization

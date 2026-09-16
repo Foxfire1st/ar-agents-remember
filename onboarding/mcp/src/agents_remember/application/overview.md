@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l03` uncommitted source; base `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -546,8 +546,51 @@ that will consume it is `KS-R03`'s.
 | The graph modules the new operations delegate to. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:112-141; mcp/src/agents_remember/memory/knowledge/anchors.py:49-70; mcp/src/agents_remember/memory/knowledge/memberships.py:59-80; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83 |
 | The composed-path case that drives admit -> create -> reopen -> read through this seam. | "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:566-680 |
 
+## 260915-KS-L3 The Candidate-Write Boundary Joins The Seam
+
+The same module gained the candidate-write boundary, and the seam's contract still did not change: every new
+entry point opens the admitted destination, delegates and closes in a `finally`, and provenance keeps coming from
+the destination rather than from the payload.
+
+Three additions matter to a later reader:
+
+- **`resolve_candidate_context` / `build_candidate_context` are the only way a batch's dataset precondition is
+  built.** The application opens the destination read-only, reads the identity the candidate actually holds
+  (`OpenedKnowledgeStore.snapshot_identity()`) and seals the whole resolution into a context digest. A caller
+  therefore cannot hand-write the dataset identity its batch will be compared against — `CandidateResolution`
+  deliberately has no field for it — and the operation re-derives the seal inside its own transaction.
+- **`change_knowledge_candidate` passes `destination.authorship` into the operation as a keyword argument**, so no
+  part of a submitted batch can become the stored author, authorization or instant. The batch is a value; the
+  authority is the admission's.
+- **The two label operations** (`set_knowledge_invariant_label`, `set_knowledge_family_label`) are the same
+  open/delegate/close shape over the two guarded label edits.
+
+**The boundary that did not move, and that a later reader most needs: this module still has no non-test importer
+in `mcp/src`.** Adding `change_knowledge_candidate` inside `application/knowledge.py` does not give the module an
+importer — a `grep` for one is still empty — so the seam's composed-path cases are behaviour evidence about the
+boundary and not evidence that it is wired into any tool. The packet makes transport wiring an explicit later
+extension, and the worker report's claim that `KS-R03` "resolved" that observation was withdrawn in review.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The two label operations the seam exposes. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-238; mcp/src/agents_remember/application/knowledge.py:240-250 |
+| The context resolution and its pure sealing step. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
+| The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
+| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:361-378; mcp/src/agents_remember/models/knowledge/candidate.py:137-178 |
+| The lane rules the seam's entry point reaches, and the operation that applies them. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
+| The composed-path case that drives the boundary end to end through this seam. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-109 |
+| The case that proves the operation refuses a context smuggled past the model seal. | "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:1120-1160 |
+
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
+  `27242ecb`): recorded the candidate-write boundary joining the seam — the context resolution that reads the live
+  dataset identity and seals it (the only way a batch's precondition is built, because `CandidateResolution` has no
+  dataset-identity field), the batch operation that takes `destination.authorship` so a payload cannot supply
+  provenance, and the two label operations — and re-recorded the boundary that did **not** move: the seam still has
+  no non-test importer in `mcp/src`, adding a function inside the module does not create one, and the worker
+  report's "resolved" claim about that observation was withdrawn in review. Verification metadata remains
+  closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
   `60e0820e`): recorded the graph operations joining the seam — eight builders that attach the destination's
   provenance and namespace exactly as the revision builder does, eight open-delegate-close operations, and the one

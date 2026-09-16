@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
 | governingOverview | `overview.md` |
 
@@ -15,14 +15,15 @@
 
 [Nearest governing overview](overview.md)
 
-Working candidate verification: source inspected at 2026-09-16T08:20 UTC against the uncommitted KS-L2 candidate.
+Working candidate verification: source inspected at 2026-09-16T10:05 UTC against the uncommitted KS-L3 candidate.
 The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
-exact consumers. The catalog currently contains 45 artifact records and six executable replacement
-contracts; those declarations are not records that a test ran.
+exact consumers. The catalog currently contains **46 artifact records and seven executable replacement
+contracts** (measured by `load_evidence_inventory` on the uncommitted KS-L3 candidate); those
+declarations are not records that a test ran.
 
 ## Code Commentary
 
@@ -85,6 +86,23 @@ The documented "intent, not observation" caveat now applies only forward: the KS
 and a **later** leaf that is expected to extend either artifact must add itself to the relevant
 `consumers` list in the same change, because the validator compares that list to the source.
 
+**260915-KS-L3 added the seventh contract and the 46th artifact, and corrected one existing consumer
+list.** The candidate-batch leaf needed a harness no existing support module could carry:
+
+- A new contract `candidate-batch-case-harness` binds `mcp/tests/candidate_batch_test_support.py` —
+  `shared-support` / `internal-canonical` / `unit-regression` / `in-process` / `cadence = "affected"` /
+  `lifetime = "permanent"` / `consumer_scope = "exact"` — to the node
+  `mcp/tests/test_candidate_batch_transaction.py::test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch`
+  (a real, passing node), with exactly two declared consumers, the two candidate-batch modules. Its
+  `source_version_or_generator` says what the harness builds rather than naming a generator: an admitted
+  destination built through `initialize_knowledge_namespace` plus contexts resolved through
+  `resolve_candidate_context`. That sentence is the contract — a future edit that hand-writes a context
+  would break exactly what the harness exists to guarantee.
+- The `knowledge-identity-branching-fixture` row gained `test_knowledge_label_operations.py` as a sixth
+  observed consumer, because the new label-operations suite builds its cases on that fixture. The row's
+  declared set is derived from the source by the validator, so the addition was mandatory rather than
+  optional bookkeeping.
+
 Other artifact categories and ownership declarations retain their own scopes. Consumer rows are
 accounting for source-observed support use, including transitive use where declared; they do not
 establish acceptance, installed-executor fidelity, or a production run.
@@ -131,6 +149,8 @@ Source declarations and test assertions are distinguished from execution and acc
 | Curator support also declares the cleanup-guidance consumer. | L329-L389 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
 | The knowledge branching fixture's contract row and its matching artifact row, whose consumer list 260915-KS-L2 corrected to the five source-observed importers. | L1031-L1056 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
 | The knowledge graph case-support contract and its matching artifact row, added by 260915-KS-L2 with three declared consumers. | L1058-L1081 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
+| The candidate-batch case-harness contract and its matching artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node. | L1083-L1107 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
+| The one-to-one card for the batch harness, which records what it builds through the real seam. | "One admitted candidate built through the real seam" | [mcp/tests/candidate_batch_test_support.py.md](mcp/tests/candidate_batch_test_support.py.md) |
 | The lane rows that keep the four graph test modules in the certifying collection path. | L67-L70 | [mcp/tests/test-evidence-lanes.toml](mcp/tests/test-evidence-lanes.toml) |
 | The graph support module's one-to-one card, which records its registered owner and consumer set. | — | [onboarding/mcp/tests/knowledge_graph_test_support.py.md](onboarding/mcp/tests/knowledge_graph_test_support.py.md) |
 | The referenced transaction test definition exists in the current source. | L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
@@ -147,6 +167,7 @@ No additional configured external or sibling-repository evidence is claimed.
 
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): measured the catalog rather than carrying the L2 numbers — **46 artifacts and 7 contracts** (`load_evidence_inventory` on the frozen candidate) — and recorded the two changes this leaf made: (1) a new contract `candidate-batch-case-harness` for `mcp/tests/candidate_batch_test_support.py` with an explicit artifact row, an evidence node that is a real passing node, and exactly two declared consumers (the two batch modules); its `source_version_or_generator` states the harness builds an admitted destination plus contexts *resolved* through the application seam, which is the property a future edit must not break; (2) the `knowledge-identity-branching-fixture` row gained `test_knowledge_label_operations.py` as a sixth observed consumer, because the new standalone label suite builds on that fixture — the validator derives real importers and refuses a differing declared set, so the addition was mandatory. Verification metadata remains closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): measured the catalog rather than carrying the L1 numbers — **45 artifacts and 6 contracts** (`load_evidence_inventory` on the frozen candidate) — and recorded the two changes the graph leaf made: (1) it **corrected the branching fixture's consumer list**, which named one module while five now import it, and widened that row's `source_version_or_generator` and `permanence_rationale` to state that the same builder carries the graph scenario as well (the artifact's `introduced_by` stays `260915-KS-L1`: it was extended in place, not forked); (2) it added contract `knowledge-graph-case-support` for `mcp/tests/knowledge_graph_test_support.py` with exactly three declared consumers. The "declared consumers are intent, not observation" caveat is now narrowed to a forward rule: the validator derives each artifact's real test importers and refuses a differing declared set, so a later leaf that extends either artifact must add itself to that row in the same change. Verification metadata remains closeout-owned.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): recorded the fifth contract `knowledge-identity-branching-fixture` and the 44th artifact row for the shared branching knowledge fixture (`shared-support`, `internal-canonical`, `unit-regression`, `in-process`, `permanent`, `consumer_scope = "exact"`, one observed consumer), corrected the populated counts in the Purpose and Logic text to the measured 44 artifacts / 5 contracts, and recorded that the artifact's governed path is why the fixture lives under `mcp/tests/**` — a row naming the module's former `mcp/test_support/**` location is stale by construction and its consumer proof is underivable. The anticipated L2–L8 consumers are named as intent in the fixture's own card and deliberately not listed as declared consumers here. Verification metadata remains closeout-owned.
 

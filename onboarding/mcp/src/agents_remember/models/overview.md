@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3` |
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l02` uncommitted source; base `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
 | governingOverview      | `../../../../overview.md`                  |
 
@@ -721,7 +721,7 @@ absolute, backslash, UNC or parent-escaping path so a stored record never carrie
 | The provenance envelope and its normalized-UTC requirement. | `Authorship` | mcp/src/agents_remember/models/knowledge/authorship.py:32-88 |
 | The shared source identity, locator union and the relative-POSIX-path rule — now split into the draft and the stored anchor, with a real `UUID` identity. | `SourceLocator`; `SourceAnchorDraft`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:79-81; mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:125-128 |
 | The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph half extended. | `KnowledgeRefusalCode`; `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:52-69; mcp/src/agents_remember/models/knowledge/result.py:246-265 |
-| The storage owner that writes this vocabulary. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:86-104 |
+| The storage owner that writes this vocabulary. | `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:93-110 |
 | The later requirement packets the shared envelope and locator are declared for. | — | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R07-v1-selective-snapshot-read.md; ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R08-v1-invariant-family-candidate-diff.md |
 
 ## 260915-KS-L2 The Graph Vocabulary, And The Repaired Anchor Identity
@@ -767,11 +767,68 @@ never be mistaken for the other object's identity.
 | The shared accepted/proposed rule both revision aggregates apply at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
 | The extended served surface, including the graph names. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:98-170 |
 | The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:208-213; mcp/src/agents_remember/models/knowledge/result.py:197-207; mcp/src/agents_remember/models/knowledge/result.py:190-196; mcp/src/agents_remember/models/knowledge/result.py:350-366 |
-| The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `create_realization_claim`; `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:112-141; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83; mcp/src/agents_remember/memory/knowledge/store.py:86-104 |
+| The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `create_realization_claim`; `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83; mcp/src/agents_remember/memory/knowledge/store.py:93-110 |
 | The requirement this graph vocabulary belongs to. | `KS-R02@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R02-v1-registered-family-and-realization-graph.md |
+
+## 260915-KS-L3 The Candidate-Change Vocabulary
+
+This route's knowledge sub-route grew from eleven modules to twelve, and the vocabulary it serves now covers the
+**write boundary** rather than only the stored shapes. `candidate.py` is the whole vocabulary of the one
+candidate-change operation: the resolved context, the expected-record model, the closed command union, the batch
+and its factual receipt. Three of its rules are the model-level half of a storage contract:
+
+- **A resolved context is compared, never trusted.** `KnowledgeContext` carries what the admitted runtime
+  resolved, and `context_digest` seals every field but itself; `CandidateResolution` deliberately has **no**
+  dataset-identity field, so an application cannot pass a remembered digest — it can only read one. The model
+  validator refuses an unsealed context at construction, and the operation re-derives the digest inside its
+  transaction, which is the only defence against a `model_copy`-built batch that bypasses the validator.
+- **The union is the reach.** `ProposedCommand` is twelve frozen members discriminated on `kind` with
+  `extra="forbid"`: there is no promotion member, no approval member, no arbitrary-SQL member and no free-form
+  field, so "this operation never accepts knowledge" and "a payload cannot confer authority" are properties of
+  the vocabulary rather than rules the operation remembers to apply. Command payloads carry **no** `Authorship`:
+  the admitted envelope is attached by the store, and a draft that arrived with its own is re-stamped.
+- **Expected state, never assumed state.** `ExpectedRecord` is `present` with a digest or `absent` without one,
+  and there is deliberately no third mode — "I did not say" is not an expectation. `ChangeBatch` refuses two
+  expectations for one record.
+
+The receipt is part of the contract too: `RecordIdentity.state` is exactly `written | removed`, a removal carries
+the digest the row had, a command whose effect was already stored contributes no entry, and
+`MutationResult._require_consistent_receipt` refuses a refusal that changed anything, a non-refused result with a
+refusal, a `no_change` result with entries, a `changed` result with an empty entry list, or a `changed` result
+whose two identities are equal.
+
+`models/knowledge/result.py` grew the two label-edit request/result pairs and the two candidate-boundary codes
+(`target_not_candidate`, `promotion_not_supported`), while the `task-candidate` lane deliberately reuses
+`unauthorized_scope`. **The refusal code `no_change` remains declared with no producer** — the reachable
+vocabulary is the *result state*, and a consumer must not branch on the code.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:85-87 |
+| The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:137-178 |
+| The module-level digest the validator calls and the operation re-derives. | `def context_digest` | mcp/src/agents_remember/models/knowledge/candidate.py:181-191 |
+| The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:218-240 |
+| The closed twelve-member union with no promotion, approval or SQL member; the twelve kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:243-358 |
+| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:361-378 |
+| The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:381-406; mcp/src/agents_remember/models/knowledge/candidate.py:409-452; mcp/src/agents_remember/models/knowledge/candidate.py:194-215 |
+| The two candidate-boundary codes and the three operations this leaf added to the served vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation`; `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:55-75; mcp/src/agents_remember/models/knowledge/result.py:36-53; mcp/src/agents_remember/models/knowledge/result.py:440-461 |
+| The operation that consumes this vocabulary. | `change_candidate` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80 |
+| The composition seam that resolves a context from a live candidate and seals it. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
+| The seam entry point that applies a batch under the admitted provenance. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
+| The lane rules the batch operation applies before it takes the lock. | `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
 
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
+  `27242ecb`): recorded the knowledge sub-route's growth from eleven modules to twelve and the **write-boundary
+  vocabulary** it now serves — the resolved-context-versus-authored-content split with the digest that seals it and
+  the deliberately absent dataset-identity field on `CandidateResolution`, the expected-versus-assumed rule, the
+  closed twelve-command union whose members make promotion, approval and arbitrary SQL unrepresentable, and the
+  factual receipt whose consistency validator the operation's results must satisfy. Also recorded the two
+  label-edit request/result pairs, the two candidate-boundary refusal codes (`target_not_candidate`,
+  `promotion_not_supported`) and the deliberate reuse of `unauthorized_scope` for the unvalidatable task lane, with
+  the carried limitation that the *refusal code* `no_change` still has no producer while the *result state* is the
+  reachable vocabulary. Verification metadata remains closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
   `60e0820e`): recorded the knowledge sub-route's growth from nine modules to eleven and the graph vocabulary it
   now serves (family identity and the immutable family revision; the two relations, the closed authored role

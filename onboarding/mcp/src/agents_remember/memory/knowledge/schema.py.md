@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/schema.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281`|
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
-| governingOverview | `../../overview.md` |
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../overview.md)
+[memory route overview](../../../overview.md)
 
 ## Purpose
 

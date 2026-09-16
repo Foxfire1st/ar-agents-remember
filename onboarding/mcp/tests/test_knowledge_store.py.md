@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281`|
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,12 +32,13 @@ invariant id and provenance to be overridden); `_disable_immutability_triggers` 
 `_write_raw_edge` (write cyclic state **outside** the operation, with a docstring stating why the triggers are
 dropped); and a `_revision_and_edge_counts` helper used by the refusal-invariance assertions.
 
-22 collected nodes, all in the unit lane and with no integration marker:
+23 collected nodes, all in the unit lane and with no integration marker. The `KS-R03` increment added the one node marked below:
 
 | Node | Protects |
 | --- | --- |
 | `test_two_same_label_successors_reopen_as_separate_revisions` | two `v2` successors stay independently addressable with their exact statements after a close/reopen cycle |
 | `test_reopening_the_same_path_keeps_identity_and_schema` | reopen validates the same generation instead of creating or repairing |
+| `test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses` | **added by `KS-R03`**: the single-record identity operation confirms an identical repeat (`no_change`) and refuses a different label under one id (`duplicate_identity`) — the two-caller contract the batch refactor nearly unified away |
 | `test_created_revision_stores_the_digest_the_store_recomputed` | the stored seal is the store's recomputation, not caller input |
 | `test_identical_aggregate_is_no_change` | re-submitting the same aggregate is `no_change` rather than a duplicate refusal |
 | `test_reused_revision_identity_with_other_content_refuses` | an identity reuse with different content refuses and leaves the stored row unchanged |
@@ -68,10 +69,17 @@ code, offending record, row counts) rather than internal call order.
 ### Invariants And Boundaries
 
 - The suite is the executable counterpart of the requirement's failure list. Two nodes are load-bearing for
-  enforcement rather than for reading: disabling `_require_no_lineage_cycle` makes
+  enforcement rather than for reading: disabling the write-path lineage guard makes
   `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle` and
   `test_lineage_guard_fires_before_the_candidate_insert` fail; reintroducing the superseded refusal wording fails
   the descending node and the branch node.
+- **`test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses` is not a duplicate of the
+  aggregate node.** `test_identical_aggregate_is_no_change` covers revision reuse; this one covers the *identity*
+  operation, and it exists because the `KS-R03` refactor moved the invariant insert into a shared helper and
+  silently dropped the `no_change` branch — the base tree returned `no_change` for an identical repeat while the
+  candidate refused `duplicate_identity` (sealed finding `260915-KS-L3-RV-2`). The repair restored the branch via
+  `confirm_repeat` and this node would fail if it were removed again. The suite passed 54/54 while the behaviour
+  was wrong, which is why the node had to be added rather than a passing suite trusted.
 - Cyclic state has no reachable creation path through `create_revision` — admission accepts only existing
   predecessors and the vocabulary refuses a self-referencing payload — so the cycle cases write the raw edges
   outside the operation and say so. That construction is labelled, not a workaround: the finding it once carried
@@ -79,7 +87,7 @@ code, offending record, row counts) rather than internal call order.
 - The module is registered in exactly one lane, `unit-regression`, in `mcp/tests/test-evidence-lanes.toml`.
   Without that row `load_lane_manifest` refuses the repository and the certifying collection path cannot start, so
   the registration is a load-bearing part of this change set rather than bookkeeping.
-- The 22 nodes all live inside the unit collected-case budget; no integration marker is used and no case spawns a
+- The 23 nodes all live inside the unit collected-case budget; no integration marker is used and no case spawns a
   repository or a subprocess.
 
 ### Todos
@@ -101,16 +109,18 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The divergent-successor read, the node registered as the shared fixture's evidence node. | `test_two_same_label_successors_reopen_as_separate_revisions` | mcp/tests/test_knowledge_store.py:87-113 |
-| The identity reuse refusal and its unchanged stored row. | `test_reused_revision_identity_with_other_content_refuses` | mcp/tests/test_knowledge_store.py:176-203 |
-| The write-path guard's descending branch, including the wording assertions. | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle` | mcp/tests/test_knowledge_store.py:413-462 |
-| The before-the-insert evaluation a disabled guard fails. | `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:509-544 |
-| The database-level immutability proof against the stored revision rows. | `test_stored_revision_rows_refuse_update_and_delete` | mcp/tests/test_knowledge_store.py:599-627 |
-| The seal covering more than the statement. | `test_payload_digest_seals_more_than_the_statement` | mcp/tests/test_knowledge_store.py:628-648 |
-| The seam case that drives the production composition path. | `test_application_seam_initializes_and_extends_one_namespace` | mcp/tests/test_knowledge_store.py:696-748 |
-| The layer-direction case. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:749-768 |
+| The two-caller identity contract the `KS-R03` repair restored, added to this suite in that same change. | `test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses` | mcp/tests/test_knowledge_store.py:139-178 |
+| The identity reuse refusal and its unchanged stored row. | `test_reused_revision_identity_with_other_content_refuses` | mcp/tests/test_knowledge_store.py:216-243 |
+| The write-path guard's descending branch, including the wording assertions. | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle` | mcp/tests/test_knowledge_store.py:453-502 |
+| The before-the-insert evaluation a disabled guard fails. | `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:549-584 |
+| The database-level immutability proof against the stored revision rows. | `test_stored_revision_rows_refuse_update_and_delete` | mcp/tests/test_knowledge_store.py:639-667 |
+| The seal covering more than the statement. | `test_payload_digest_seals_more_than_the_statement` | mcp/tests/test_knowledge_store.py:668-688 |
+| The seam case that drives the production composition path, including the batch entry points this leaf added to that module. | `test_application_seam_initializes_and_extends_one_namespace` | mcp/tests/test_knowledge_store.py:736-788 |
+| The layer-direction case. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:789-807 |
 | The shared fixture every case builds from. | `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:90-133 |
-| The lane registration that makes the repository's manifest load. | `unit-regression` | mcp/tests/test-evidence-lanes.toml:67-67 |
-| The fixture's registered stable contract and evidence node. | `knowledge-identity-branching-fixture` | mcp/tests/evidence-lifecycle.toml |
+| The lane registration that makes the repository's manifest load (row 74 in the current manifest, after the `KS-R03` insertions). | `unit-regression` | mcp/tests/test-evidence-lanes.toml:74-74 |
+| The fixture's registered stable contract and evidence node. | `knowledge-identity-branching-fixture` | mcp/tests/evidence-lifecycle.toml:1030-1056 |
+| The store contract the added node pins, including the two-caller distinction. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:512-549; mcp/src/agents_remember/memory/knowledge/store.py:336-344 |
 
 ## Cross-Repo References
 
@@ -122,4 +132,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **extended this card for the node the review forced.** The suite is now 23 nodes: `test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses` was added because the candidate-batch refactor moved the invariant insert into a shared helper and silently dropped its `no_change` branch, so a repeated identical `create_invariant` refused `duplicate_identity` where the base commit confirmed it (sealed finding `260915-KS-L3-RV-2`). The fix restored the branch behind `confirm_repeat` and this node pins it. The card records why the node is not a duplicate of `test_identical_aggregate_is_no_change` (identity versus aggregate) and that the 54 upstream cases passed while the behaviour was wrong — a passing suite is not a preservation proof. Citation ranges were re-derived against the grown file and the lane row re-cited. Verification metadata remains closeout-owned.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new focused suite. It records the 22-node census with what each node protects, the two mutation-proved enforcement nodes (sealed findings `RV-1`/`RV-2`/`RV-4`), the labelled outside-the-operation construction of cyclic state, and the load-bearing `unit-regression` registration. Verification metadata remains empty until closeout stamps the code commit.

@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/realizations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
-| governingOverview | `../../overview.md` |
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../overview.md)
+[memory route overview](../../../overview.md)
 
 ## Purpose
 
@@ -34,7 +34,12 @@ directions have to answer with the same claim identities because they are the sa
   still names it. Inside the transaction the endpoint check runs first, then `_record_anchor` decides
   the anchor's provenance: an existing anchor named by identity is looked up and refused if absent; a
   new anchor is constructed through `anchors.source_anchor_from_draft` and written by
-  `anchors.insert_anchor_row` **inside this same transaction**.
+  `anchors.insert_anchor_row` **inside this same transaction**. Since `KS-R03` the claim's own write is
+  the in-transaction helper `insert_realization_claim`, which the candidate-change batch composes as
+  well; it returns `None` for the one case that is a no-op (the identical claim already stored) and
+  raises `KnowledgeRefused` for every other conflict, so the operation and the batch each decide what
+  a no-op means in their own vocabulary (`no_change` for the single-record result, no receipt entry for
+  the batch).
 - The anchor write deliberately precedes the claim's own duplicate checks. A newly authored anchor and
   the claim about it are one act of authorship, so a refusal raised after that write rolls the anchor
   back instead of leaving an orphan location behind.
@@ -45,7 +50,8 @@ directions have to answer with the same claim identities because they are the sa
 - `list_claims_for_invariant_revision` and `list_claims_for_anchor` select the same claim columns from
   the same table. There is no derived store, no cache and no second list anywhere in the package.
 - `remove_realization_claim` requires the caller's expected row digest; a mismatch is
-  `stale_precondition`, and the earlier dataset keeps the removed row.
+  `stale_precondition`, and the earlier dataset keeps the removed row. Both checks live in the
+  in-transaction `delete_realization_claim`, which the batch composes.
 
 ### Conventions
 
@@ -69,6 +75,12 @@ directions have to answer with the same claim identities because they are the sa
 - **The reverse read is the same rows.** The `claim_id` values returned from either direction are the
   stored identities, which is why the two can be compared as sets.
 - **Removal is explicit and never repoints**, and the baseline dataset retains the removed claim.
+- **The in-transaction helpers assume the caller's transaction.** `insert_realization_claim` and
+  `delete_realization_claim` write through `store.write` and are composed by the single-record
+  operation and by the batch; nothing enforces that a caller holds the lock and the transaction.
+- **A claim that records its own anchor is two written rows.** The batch's receipt reports both (the
+  claim and the anchor), and the anchor's digest is read from the stored row rather than derived from
+  the request.
 - **Not this module's job.** The anchor's own lifetime and removal (`anchors.py`), memberships
   (`memberships.py`), and anchor *resolution* against a selected snapshot (`KS-R07`). Nothing here
   decides behavioral relevance or traverses the graph; the finite traversal policy is `KS-R07` and the
@@ -93,13 +105,15 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The claim operation, including the anchor endpoint decision and the anchored transaction grouping. | `create_realization_claim`; `_insert_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:61-83; mcp/src/agents_remember/memory/knowledge/realizations.py:84-122 |
-| The in-transaction anchor recording (existing lookup, absent refusal, new-anchor write). | `_record_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:123-159 |
-| The endpoint-union resolution that separates naming an anchor from recording one. | `_requested_anchor_id` | mcp/src/agents_remember/memory/knowledge/realizations.py:288-294 |
-| The forward read (invariant revision to claims). | `list_claims_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/realizations.py:238-254 |
-| The reverse read (anchor to claims) over the same rows. | `list_claims_for_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:255-269 |
-| The explicit removal with its expected-row-digest contract. | `remove_realization_claim`; `_delete_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:160-181; mcp/src/agents_remember/memory/knowledge/realizations.py:182-212 |
-| The stored anchor construction and narrow write hook the claim transaction reuses. | `source_anchor_from_draft`; `insert_anchor_row` | mcp/src/agents_remember/memory/knowledge/anchors.py:90-106; mcp/src/agents_remember/memory/knowledge/anchors.py:107-112 |
+| The claim operation, including the anchor endpoint decision and the anchored transaction grouping. | `create_realization_claim`; `_insert_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:61-83; mcp/src/agents_remember/memory/knowledge/realizations.py:84-91 |
+| The in-transaction claim insert both the operation and the batch command compose, with its `None`-means-no-op answer. | `insert_realization_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:93-141 |
+| The in-transaction anchor recording (existing lookup, absent refusal, new-anchor write). | `_record_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:144-179 |
+| The endpoint-union resolution that separates naming an anchor from recording one. | `_requested_anchor_id` | mcp/src/agents_remember/memory/knowledge/realizations.py:321-326 |
+| The forward read (invariant revision to claims). | `list_claims_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/realizations.py:271-286 |
+| The reverse read (anchor to claims) over the same rows. | `list_claims_for_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:288-301 |
+| The explicit removal with its expected-row-digest contract, and the in-transaction helper the batch composes. | `remove_realization_claim`; `_delete_claim`; `delete_realization_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:181-201; mcp/src/agents_remember/memory/knowledge/realizations.py:203-210; mcp/src/agents_remember/memory/knowledge/realizations.py:212-244 |
+| The batch command that composes the claim insert and reports its two written rows. | `_add_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:435-457 |
+| The stored anchor construction and narrow write hook the claim transaction reuses. | `source_anchor_from_draft`; `insert_anchor_row` | mcp/src/agents_remember/memory/knowledge/anchors.py:82-97; mcp/src/agents_remember/memory/knowledge/anchors.py:99-119 |
 | The row codec and expected-row digest for the claim relation. | `claim_row`; `claim_row_digest`; `decode_claim_row` | mcp/src/agents_remember/memory/knowledge/records.py:429-440; mcp/src/agents_remember/memory/knowledge/records.py:441-462; mcp/src/agents_remember/memory/knowledge/records.py:463-483 |
 | The closed authored role vocabulary and the explicit unclassified member. | `RealizationRole`; `UNCLASSIFIED_ROLE` | mcp/src/agents_remember/models/knowledge/graph.py:36-44; mcp/src/agents_remember/models/knowledge/graph.py:46-46 |
 | The claim vocabulary and its two read shapes. | `RealizationClaimDraft`; `RealizationClaim`; `RealizationClaims`; `AnchorRealizations` | mcp/src/agents_remember/models/knowledge/graph.py:65-85; mcp/src/agents_remember/models/knowledge/graph.py:87-94; mcp/src/agents_remember/models/knowledge/graph.py:112-118; mcp/src/agents_remember/models/knowledge/graph.py:120-129 |
@@ -116,4 +130,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **extended this card for the batch composition it enabled.** The claim's write is now the in-transaction helper `insert_realization_claim`, returning `None` for the identical-claim no-op and refusing every other conflict, and the removal's two checks moved into `delete_realization_claim`; the card records the `None`-means-no-op contract because the two callers translate it differently (a `no_change` result versus no receipt entry), and that a claim recording its own anchor produces **two** written rows in the batch receipt. Also recorded that both helpers assume the caller's lock and transaction, with nothing enforcing it. Citation ranges were re-derived; the `governingOverview` link was repaired from `../../overview.md` to the three-level path. Verification metadata remains closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the new realization module. It records the authored-not-inferred rule as the module's central boundary (a graph-valid claim stays a claim), the anchored transaction grouping that makes an orphan anchor impossible on a refusal path, the one-claim-per-pair guarantee, and the structural reason the forward and reverse reads cannot disagree — they select the same claim columns from the same table. Verification metadata remains empty until closeout stamps the code commit.

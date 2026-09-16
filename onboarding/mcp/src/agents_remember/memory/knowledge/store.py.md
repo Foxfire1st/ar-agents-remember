@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate | 2026-09-16T08:41:27+02:00|
-| governingOverview | `../../overview.md` |
+| lastUpdated | 2026-09-16T10:10+02:00 |
+| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
+| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../overview.md)
+[memory route overview](../../../overview.md)
 
 ## Purpose
 
@@ -21,7 +21,11 @@ contract and a candidate mutation; it owns no transport, no approval decision an
 
 It is also the package's **shared plumbing**: the exclusive candidate lock and the one-immediate-transaction
 wrapper live here and are reused by the sibling graph modules, which take the opened store as their first
-argument instead of opening a transaction of their own.
+argument instead of opening a transaction of their own. Since `KS-R03` it additionally exposes the
+**in-transaction primitives** the candidate-change batch composes (`insert_invariant_identity`,
+`insert_revision_aggregate`, and the module-level `insert_invariant` / `insert_revision` /
+`require_same_invariant_predecessors` / `require_acyclic_lineage` / `find_lineage_cycle`), plus
+`snapshot_identity()` and `immediate_transaction()`.
 
 ## Code Commentary
 
@@ -39,14 +43,24 @@ Mutations, each under `_exclusive_candidate_lock` and inside `_within_immediate`
 
 - `create_repository` inserts the namespace row; an existing identical row is `no_change`, an existing row with a
   different authority home is refused (`repository_rebind_refusal`).
-- `create_invariant` checks scope, then treats a stored row with the same label as `no_change` and one with a
-  different label as `duplicate_identity`.
+- `create_invariant` checks scope and delegates the insert to the module-level `insert_invariant` with
+  `confirm_repeat=True`. **Two callers ask two different questions about one stored row, and the flag is the
+  difference:** the single-record operation treats an identical repeat as a *confirmation* (`no_change`) and
+  refuses only a repeat carrying a different label (`duplicate_identity`), while a candidate-batch command passes
+  `confirm_repeat=False` and refuses *any* stored identity with the same code — a batch authors new identities, so
+  a stored row under one it believed it was creating means the caller's read is stale. The row digest, not the
+  label text, is what a later edit names.
 - `create_revision` checks scope, seals the draft through `records.sealed_revision_from_draft` (a `ValueError`
-  becomes `invalid_payload_refusal`), then `_insert_revision` performs, in order: identity reuse check
-  (same digest → `no_change`; different digest → `duplicate_identity`), unknown-invariant check,
-  `_require_same_invariant_predecessors` (dangling → `invalid_reference`, cross-invariant → `invalid_reference`
-  naming both invariants), `_require_acyclic_lineage`, the revision INSERT, the predecessor edge INSERTs, and
-  `_require_referential_integrity`.
+  becomes `invalid_payload_refusal`), then the module-level `insert_revision` performs, in order: owning-identity
+  availability, the identity reuse check (an already-stored revision → `duplicate_identity`, where the
+  single-record operation's `no_change` answer is decided *before* this call by `_insert_revision` comparing the
+  stored `payload_digest`), `require_same_invariant_predecessors` (dangling → `invalid_reference`, cross-invariant
+  → `invalid_reference` naming both invariants), `require_acyclic_lineage`, the revision INSERT, the predecessor
+  edge INSERTs, and `require_referential_integrity` — the last one **skipped when the batch declared pending
+  predecessors**, because a predecessor another command has not written yet is a legal deferred-FK violation until
+  `COMMIT`.
+- `set_invariant_label` delegates the one mutable identity field to `labels.set_invariant_label`, which owns the
+  guard.
 
 **The lineage rule no longer lives in this file.** The traversal left `store.py` for
 `memory/knowledge/lineage.py`, so one owner serves both the invariant graph (here) and the family graph
@@ -88,31 +102,41 @@ transaction, so a refusal can never leave a partial aggregate. A lock capability
 
 **Insert-only.** There is no update or delete path for a revision, no upsert and no standalone predecessor-append
 operation: a successor is a new revision naming its exact predecessors, and the database refuses the alternative
-even if a future caller forgets.
+even if a future caller forgets. The one mutable field in the whole store is an identity row's `display_label`,
+and even that edit names the row digest it expects (`labels.py`).
 
 ### Invariants And Boundaries
 
-- The store never accepts a caller-supplied `payload_digest`; it recomputes the seal (`create_revision` and
-  `records.sealed_revision_from_draft`).
-- Every write is scoped to the bound namespace: `scope_refusal` runs before any DML and returns
-  `unauthorized_scope`.
-- A refusal is inert: all checks that can refuse run before the first INSERT, and the transaction rolls back on
-  any later failure, so the offending row counts do not move.
-- The lineage guard's reach is the **post-insert graph**; a revision whose own lineage is acyclic can still be
+- **The store never accepts a caller-supplied `payload_digest`; it recomputes the seal (`create_revision` and
+  `records.sealed_revision_from_draft`).**
+- **Every write is scoped to the bound namespace: `scope_refusal` runs before any DML and returns
+  `unauthorized_scope`.**
+- **A refusal is inert: all checks that can refuse run before the first INSERT, and the transaction rolls back on
+  any later failure, so the offending row counts do not move.**
+- **The lineage guard's reach is the post-insert graph; a revision whose own lineage is acyclic can still be
   refused when it descends from a stored cycle. Raw cyclic state can only arise outside the operation, because
-  admission accepts only existing predecessors and the vocabulary refuses a self-referencing payload.
+  admission accepts only existing predecessors and the vocabulary refuses a self-referencing payload.**
 - **The lock and transaction helpers are package plumbing, not a private detail of the invariant operations.**
-  The graph modules (`families`, `anchors`, `memberships`, `realizations`) call `_exclusive_candidate_lock` and
-  `_within_immediate` on the opened store, which is what makes "one lock, one transaction" true for every
+  The graph modules (`families`, `anchors`, `memberships`, `realizations`) call `exclusive_candidate_lock` and
+  `within_immediate` on the opened store, which is what makes "one lock, one transaction" true for every
   mutation in the package rather than only for the ones defined here.
 - **This store owns the invariant half only.** The family, anchor, membership and realization tables are written
   by their own modules; a new operation belongs in the module that owns its concept, not here.
-- `_require_referential_integrity` is belt-and-braces: deferred composite-FK violations abort at `COMMIT` and
+- **`require_referential_integrity` is belt-and-braces: deferred composite-FK violations abort at `COMMIT` and
   immediate ones raise at the INSERT, so its `KnowledgeStorageError` path is defensive rather than the ordinary
-  enforcement.
-- The per-write lineage cost is linear in the object's stored edges (`lineage.invariant_edges` loads the
+  enforcement.**
+- **The batch-facing helpers are published with no enforcement that a caller holds the lock and the transaction.**
+  `write`, `within_immediate`'s sibling `immediate_transaction`, `insert_invariant_identity`,
+  `insert_revision_aggregate`, the two module-level inserts and the three graph `insert_*`/`delete_*` helpers all
+  assume the caller already owns both, which is what lets the batch span many commands without nesting a second
+  `BEGIN IMMEDIATE` or re-taking the lock. Every shipped call site satisfies it — the single-record operations
+  open their own transaction and the batch opens one for the whole request — and the private aliases
+  (`_within_immediate`, `_write`, `_exclusive_candidate_lock`) keep the earlier spelling working. A future caller
+  that invokes one of these outside a transaction would write an autocommitted row silently; that is the
+  disclosed exposure, not a property this file enforces.
+- **The per-write lineage cost is linear in the object's stored edges (`lineage.invariant_edges` loads the
   invariant's whole edge set); bounded today because one invariant's revision count is the only input, and worth a
-  sizing check when bulk or imported revisions arrive (KS-R03/KS-R05).
+  sizing check when bulk or imported revisions arrive (KS-R03/KS-R05).**
 
 ### Todos
 
@@ -120,6 +144,12 @@ None recorded for this leaf's slice. The six canonical tables this file does not
 `family_revision`, `family_predecessor`, `source_anchor`, `family_member`, `realization_claim`) now have
 operations, but they belong to the graph modules and are documented in their own cards; this store still writes
 only `repository`, `invariant`, `invariant_revision` and `invariant_predecessor`.
+
+One open item this leaf hands on: `require_referential_integrity` is skipped by `insert_revision` when the batch
+declares pending predecessors, and the layer that enforces in that case is the batch's
+`require_after_integrity` pass before `COMMIT`, with SQLite's own deferred constraints as the backstop. Do not
+"restore" the immediate check without re-reading that decision — checking mid-batch would refuse a batch whose
+command order is legal simply because another command's row is not visible yet.
 
 ## Docs References
 
@@ -134,18 +164,22 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The opened store: its bound namespace, validated schema, connection and lock path — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:86-104 |
-| The read surface, including the seal-verifying single-revision read. | `get_revision`; `get_invariant`; `list_revision_ids`; `get_repository` | mcp/src/agents_remember/memory/knowledge/store.py:120-177 |
-| The one atomic insert-only revision operation and its ordered checks. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:224-259; mcp/src/agents_remember/memory/knowledge/store.py:296-344 |
-| The lineage rule as stated once, including the post-insert scope and the before-any-write evaluation. | "The lineage rule, stated once" | mcp/src/agents_remember/memory/knowledge/store.py:315-326 |
-| The renamed two-branch enforcement, which now delegates to the shared lineage module. | `_require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:391-417 |
-| The shared lineage traversal that left this file, and the family graph that applies the same rule. | `find_cycle`; `cycle_vertices`; `_CycleScan`; `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/lineage.py:71-86; mcp/src/agents_remember/memory/knowledge/lineage.py:128-148; mcp/src/agents_remember/memory/knowledge/lineage.py:171-239; mcp/src/agents_remember/memory/knowledge/families.py:186-203 |
-| The membership query, which is not the write rule. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:370-390 |
-| The transaction and lock boundary, with its required failure context and propagate-a-defect rule. | `_within_immediate`; `_exclusive_candidate_lock`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/store.py:475-498; mcp/src/agents_remember/memory/knowledge/store.py:509-522; mcp/src/agents_remember/memory/knowledge/refusals.py:596-607 |
-| The graph modules that reuse this store's lock and transaction helpers. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:112-141; mcp/src/agents_remember/memory/knowledge/anchors.py:49-70; mcp/src/agents_remember/memory/knowledge/memberships.py:59-80; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83 |
-| The create-versus-reopen open functions. | `open_knowledge_store`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/store.py:523-542; mcp/src/agents_remember/memory/knowledge/store.py:543-556 |
+| The opened store: its bound namespace, validated schema, connection and lock path — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:93-110 |
+| The read surface, including the seal-verifying single-revision read. | `get_revision`; `get_invariant`; `list_revision_ids`; `get_repository` | mcp/src/agents_remember/memory/knowledge/store.py:127-183 |
+| The one atomic insert-only revision operation and its ordered checks. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:231-265; mcp/src/agents_remember/memory/knowledge/store.py:346-363 |
+| The two-caller identity contract: `confirm_repeat` decides whether a stored identity is a confirmation or a stale read. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:512-549; mcp/src/agents_remember/memory/knowledge/store.py:336-344 |
+| The module-level revision aggregate insert, including the pending-predecessor skip of the immediate FK check. | `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:551-608 |
+| The predecessor ownership rule with its batch-declared set, and the single-record lineage rule that can accept wider edges. | `require_same_invariant_predecessors`; `require_acyclic_lineage`; `find_lineage_cycle` | mcp/src/agents_remember/memory/knowledge/store.py:611-639; mcp/src/agents_remember/memory/knowledge/store.py:674-705; mcp/src/agents_remember/memory/knowledge/store.py:641-657 |
+| The batch-facing in-transaction helpers and the live identity read. | `insert_invariant_identity`; `insert_revision_aggregate`; `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:272-289; mcp/src/agents_remember/memory/knowledge/store.py:291-301; mcp/src/agents_remember/memory/knowledge/store.py:303-316 |
+| The membership query, which is not the write rule. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:375-394 |
+| The transaction and lock boundary, with its required failure context and propagate-a-defect rule, now published with private aliases. | `within_immediate`; `immediate_transaction`; `exclusive_candidate_lock`; `_within_immediate`; `_exclusive_candidate_lock`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/store.py:443-465; mcp/src/agents_remember/memory/knowledge/store.py:467-474; mcp/src/agents_remember/memory/knowledge/store.py:486-506; mcp/src/agents_remember/memory/knowledge/store.py:507-509; mcp/src/agents_remember/memory/knowledge/refusals.py:815-826 |
+| The write helper the batch and the single-record operations share. | `write` | mcp/src/agents_remember/memory/knowledge/store.py:476-484 |
+| The label-edit delegation and the module that owns the guard. | `set_invariant_label` | mcp/src/agents_remember/memory/knowledge/store.py:267-270; mcp/src/agents_remember/memory/knowledge/labels.py:40-59 |
+| The graph modules that reuse this store's lock and transaction helpers. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/anchors.py:49-72; mcp/src/agents_remember/memory/knowledge/memberships.py:88-109; mcp/src/agents_remember/memory/knowledge/realizations.py:61-85 |
+| The create-versus-reopen open functions. | `open_knowledge_store`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/store.py:707-725; mcp/src/agents_remember/memory/knowledge/store.py:727-740 |
 | The reused lock primitive this store does not reimplement. | `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py |
-| The requirement packet the four properties belong to. | `KS-R01@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R01-v1-immutable-knowledge-identity.md |
+| The node that pins the two-caller identity contract on the single-record side. | "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses" | mcp/tests/test_knowledge_store.py:139-178 |
+| The requirement packet the original four properties belong to, and the batch increment that consumes these helpers. | `KS-R01@v1`; `KS-R03@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R01-v1-immutable-knowledge-identity.md; ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R03-v1-atomic-candidate-writes.md |
 
 ## Cross-Repo References
 
@@ -157,5 +191,6 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **corrected this card's `create_invariant` sentence, which had become false, and recorded the plumbing the candidate-change batch forced.** The L1 card said only that `create_invariant` treats a stored row with the same label as `no_change`; the shipped contract is a **two-caller** one and the card now states both halves: the single-record operation passes `confirm_repeat=True` (an identical repeat is `no_change`, a different label refuses `duplicate_identity`), while a batch command passes `confirm_repeat=False` and refuses *any* stored identity — a batch authors new identities, so a stored row under one means the caller's read is stale. The reviewer's baseline round had falsified the one-sided sentence (`RV-2`), and the fix round restored the branch and pinned it with a node. Also recorded: the invariant insert bodies are now module-level `insert_invariant`/`insert_revision` (with `require_same_invariant_predecessors`, `require_acyclic_lineage` and `find_lineage_cycle` accepting a batch's declared edges, where `extra_predecessors` is supplied only by `lineage.declared_cycle`), the batch-facing `insert_invariant_identity`/`insert_revision_aggregate`/`snapshot_identity`/`immediate_transaction` additions, the public names with their kept private aliases, the pending-predecessor skip of the immediate foreign-key check, and the disclosed exposure that the published helpers assume the caller already holds the lock and the transaction. Also repaired this card's `governingOverview` and Governing Overview link, which pointed at `../../overview.md` — the application route — from the `knowledge/` directory that needs three levels. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): **superseded the L1 account of where the lineage rule lives.** The earlier card described `_require_no_lineage_cycle`, `_graph_cycle_vertices`, `_post_insert_lineage`, `_descendants` and `_CycleScan` as this file's own, and named the "seven canonical tables … have no operations". The traversal has left for `memory/knowledge/lineage.py` so one owner serves both the invariant and the new family lineage graph, the guard was renamed `_require_acyclic_lineage` and now delegates, and `_within_immediate` gained a required `SqliteFailureContext` so a mapped constraint failure can name the operation and table it came from. The card now also records this store's shared-plumbing role for the four graph modules and that it still writes only its own four tables. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new concrete knowledge store. It records the one-lock/one-transaction rule, the insert-only contract, the post-insert reach of the lineage guard (the round-2/round-3 review outcome for sealed findings `RV-2` and `RV-4`), the defensive status of the deferred-FK check, and the linear lineage cost. Verification metadata remains empty until closeout stamps the code commit.
