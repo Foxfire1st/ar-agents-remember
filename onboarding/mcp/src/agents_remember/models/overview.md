@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastUpdated | 2026-09-16T09:38+02:00 |
+| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
+| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../overview.md`                  |
 
@@ -99,6 +99,51 @@ the task_reopen payload carries the enclosure contract state.
 ## Hot Path Summary
 
 Closeout and landing models expose code/memory outputs; `DirectLandingResponse.ledgerCache` is an informational cache-refresh result. The lifecycle models distinguish actual Git heads from filtered memory content and retain no ledger commit alias.
+
+## 260915-CAPS-L2 Role-Capsule Contract And Compiler
+
+`mcp/src/agents_remember/models/role_capsules/` is a **new sub-route** on this route: the master's
+frozen role-capsule DTO surface plus the pure logic that compiles it. It is the first thing on this
+route whose entire contract is about *what an agent seat is given*, so its reading order is worth
+stating once.
+
+The package reads in six steps, and each step is one module: `vocabulary.py` declares the frozen
+nine roles/eight operations and the four composition roots; `manifest.py` parses the canonical
+authored `composition-manifest.json` into typed entries **without touching the filesystem**;
+`selection.py` turns an admitted binding into a scope by exact membership (no scoring, no
+nearest-match, no fallback operation); `source_set.py` proves the admitted files agree with the
+locked plan **in both directions**; `resolution.py` reduces each identity to exactly one block,
+collapsing byte-identical duplicates and stopping on an equal-authority contradiction;
+`tools.py` narrows requested tool identities against the admitted policy snapshot; and
+`compiler.py` seals the result with the semantic digest and the diagnostic manifest.
+
+Three separations are load-bearing and easy to collapse by accident:
+
+1. **admitted input / content output / diagnostic output** — the DTOs in `types.py` keep these
+   structurally apart, which is why `types.py` was split at 704 lines and the diagnostic
+   projection extracted into `diagnostics.py` (541 + 217 after the A3 repairs). **Nothing in `diagnostics.py` may ever
+   feed `semantic_digest`**; timestamps, unselected sources, conflict rows and refusal text are
+   deliberately outside the capsule's identity.
+2. **a request is not a grant** — tool requests are narrowed against `CapsuleToolPolicy`; nothing in
+   this package can add a capability the policy did not already permit. **The skill channel is a
+   different shape and must not be described with this one:** `compiler.skill_references` builds one
+   content-addressed `CapsuleSkillReference` per declared skill (`identity`/`origin`/`uri`/`revision`)
+   and consults **no** policy — a skill reference is a pointer to separately delivered content, so it
+   is *carried*, and the only thing that can invalidate it is a skill root file that was not admitted.
+3. **declared vocabulary over the manifest** — the role/operation registry is declared in code and
+   handed to the parser, so a manifest edit fails compilation instead of minting a new role.
+
+The semantic digest is a `\t`-separated canonical document over the seat, operation, repository,
+work branch, task reference and document digest, requirement identities, the specializations
+**actually composed**, one line per composed block with its revision, one line per requested tool id
+in sorted order, one `skill` line per carried reference, and the task context when supplied. Order is
+part of identity, not presentation over it. Nine shipped roles compile from disk twice to one digest
+each and to nine different digests, so the digest is neither a constant nor order-insensitive.
+
+`layers.toml` places this package in `models` (rank 2) precisely because it holds only
+dependency-free value types, canonical source parsing, and selection logic. The contract's declared
+target is not yet met tree-wide — the tree reports 16 pre-existing violations, **none** naming a
+role-capsule module — so do not present the layer contract as currently satisfied.
 
 ## Detailed Route Context
 

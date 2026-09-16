@@ -6,13 +6,13 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
-| governingOverview      | `../../../../../overview.md` |
+| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3`|
+| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../overview.md)
+[MCP package overview](../../../../../../overview.md)
 
 ## Purpose
 
@@ -225,6 +225,8 @@ citation re-open findings on this document report. Where a section above still c
 the old router body, the citation was rebased to the new home or dropped as superseded.
 
 ## Update History
+
+- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: **governing-link repair, and a correction of the L1 entry below.** This card's `governingOverview` and its `## Governing Overview` link had been changed by 260915-CAPS-L1 from `../../../../../../overview.md` (six steps) to `../../../../../overview.md` (five), reasoning that the shorter path reached the nearest route-local overview. Both paths were tested against the filesystem on this pass and the reasoning is inverted: `onboarding/mcp/src/agents_remember/package_data/runtime/` is the directory that exists — the `skills/` segment does not — so this card's directory is **five** real levels below `onboarding/`, and the six-step path resolves to `onboarding/mcp/overview.md`, which is exactly what the link text names. The five-step path resolves to `onboarding/mcp/src/overview.md`, which does not exist. Metadata field and link are both corrected back to `../../../../../../overview.md`. Found while creating this leaf's cards for the same `l-01-agent-lifecycles` directory, whose governing links carried the identical defect. No body content changed and no verification stamp advanced — the source is uncommitted, so the stamp stays closeout-owned.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body rewritten for the corpus consolidation.**
   The canonical `skills/l-01-agent-lifecycles/SKILL.md` became a 179-line router (was 620) and gave up

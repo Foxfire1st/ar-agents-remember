@@ -5,14 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
-| governingOverview      | `../../../../../overview.md` |
+| lastUpdated            | 2026-09-16T09:38+02:00 |
+| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
+| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../overview.md)
+[MCP package overview](../../../../../../overview.md)
 
 ## Purpose
 
@@ -47,11 +47,46 @@ as `injected: false`, so reference material stays out of the normative path.
 `notes` array restates the three anti-duplication rules: no prose here, exactly one source per
 instruction, and task facts travelling as a separate context channel.
 
+**Declared capability metadata (added by 260915-CAPS-L2).** The routing plane now also declares
+*what each seat asks for*, which is a different thing from *what it is permitted*. The manifest
+gained **41 keys and lost none** against the file L1 shipped: a new top-level `skills` object, a
+per-role `tools` array and `skills` array, and a `launcher.operations` list.
+
+- **`skills`** (top level, **new**) — the declared skill registry, keyed by skill name. The one
+  entry is `l-01-agent-lifecycles` = `{"origin": "agents-remember/skills", "uri":
+  "skill://agents-remember/skills/l-01-agent-lifecycles", "source": "SKILL.md"}`. Identity is
+  **origin plus skill name**, because a bare name collides across servers; `source` names the
+  skill's root instruction file, whose content digest is what a reference's `revision` means. A
+  bare `skills: ["l-01-agent-lifecycles"]` on a role is therefore a *pointer into this registry*,
+  not a name that stands alone.
+- `roles.<role>.tools` — the tool identities the role's compiled capsule requests. **27 ids across
+  the nine roles, 14 distinct.** Every one is held against the published tool roster by the shipped
+  check, so a typo is an error rather than an inert request. They are **requests, not grants**: the
+  compiler narrows them against the admitted `CapsuleToolPolicy` snapshot and refuses an id outside
+  it. A role-to-tool table authored in Python instead would be a second source of truth about a
+  role — exactly what this corpus's one-source-per-instruction rule forbids — and in
+  `application/` it would read as a grant rather than a request.
+- `roles.<role>.skills` — **one skill reference per role**, each pointing into the registry above.
+  **This channel is carried, not narrowed**: the compiler builds a content-addressed reference
+  (`origin`, `identity`, `uri`, `revision`) and consults **no** permission policy, because a skill
+  reference points at separately delivered content rather than asking for a capability. Do not
+  describe it as narrowed or granted.
+- `launcher.operations` — `[]` became `["orientation", "coordination"]`. This is the one addition
+  the compiler relies on: without it the launcher seat has no permitted operation, and **every
+  launcher compilation is refused `operation-not-applicable` by design.**
+
+These key families are what a role capsule returns as its separately typed requested-tool
+identities and optional skill references, so the compiler can obey that requirement without
+inventing a second authority. A declared skill's root file must be admitted, or its revision would
+be a fiction; both the metadata plane and the compiled plane fail closed.
+
 ### Conventions
 
 Edit the canonical `skills/l-01-agent-lifecycles/composition-manifest.json` and let
 `scripts/sync-skills.py` propagate it. A new operation name or a role source that does not exist is
-rejected by the shipped check rather than tolerated.
+rejected by the shipped check rather than tolerated. `tools` and `skills` are treated as
+**optional** by the parser, so their presence is additive and removing them leaves a manifest that
+still parses and compiles for every role (returning no requests and no skill references).
 
 ### Invariants And Boundaries
 
@@ -62,6 +97,24 @@ rejected by the shipped check rather than tolerated.
 - Exactly one source per instruction; `core/` is authored once and a role file never restates a shared
   rule.
 - The launcher is `is_role: false` and has no entry under `roles`.
+- **A declared tool identity is a request, never a permission.** This file says what a role asks
+  for; the admitted `CapsuleToolPolicy` snapshot says what is permitted. Do not merge the two
+  authorities, and do not treat this file as a policy source.
+- Every declared tool id must exist in the published tool roster, and every declared source path
+  must exist on disk. The shipped check is what holds both.
+- `tools`, `skills` and `launcher.operations` are additive and independently removable; the
+  compiler must not require them for any role that declares none. `launcher.operations` is the
+  documented exception with a behavioral consequence: reverting it to `[]` makes every launcher
+  compilation refuse `operation-not-applicable`.
+- A generated copy is never hand-edited. This card documents the packaged copy; its content is
+  byte-identical to the canonical source (all ten copies share one sha256).
+- **The skill channel is carried, not narrowed.** `skills.<name>` declares `origin`/`uri`/`source`,
+  and a role's `skills` entry is a pointer into that registry. The compiler consults no permission
+  policy for a skill reference, so describing one as narrowed, permitted, or granted is wrong. What
+  *is* enforced is that each declared skill's root `source` file must be admitted, or its revision
+  would be a fiction.
+- A skill name in `roles.<role>.skills` must resolve in the top-level `skills` object. An
+  unresolvable declaration is refused (`_require_role_skills_are_declared`), never dropped.
 
 ### Todos
 
@@ -78,9 +131,22 @@ repository prose consumed by the skill router.
 
 ## Repo-Internal References
 
-| The manifest resolves every role and operation source and keeps the registry at nine roles. | `test_manifest_resolves_every_role_and_operation_source`; `ROLE_ORDER`; `OPERATION_KEYS` | mcp/tests/test_role_instruction_corpus.py:199-225; mcp/tests/test_role_instruction_corpus.py:32-42; mcp/tests/test_role_instruction_corpus.py:56-64 |
-| A manifest entry pointing at a missing source, an unknown operation, an unknown core block, or a missing criteria catalog is reported instead of silently accepted. | `test_manifest_reports_a_missing_source_instead_of_accepting_it` | mcp/tests/test_role_instruction_corpus.py:291-329 |
+The plan is consumed by the deterministic capsule compiler through the package
+`agents_remember.models.role_capsules`; the rows below are the consuming seams and the shipped
+guards that hold this file's declarations true.
+
+| The manifest resolves every role and operation source and keeps the registry at nine roles. | `test_manifest_resolves_every_role_and_operation_source`; `ROLE_ORDER`; `OPERATION_KEYS` | mcp/tests/test_role_instruction_corpus.py:244-270; mcp/tests/test_role_instruction_corpus.py:32-42; mcp/tests/test_role_instruction_corpus.py:56-64 |
+| A manifest entry pointing at a missing source, an unknown operation, an unknown core block, or a missing criteria catalog is reported instead of silently accepted. | `test_manifest_reports_a_missing_source_instead_of_accepting_it` | mcp/tests/test_role_instruction_corpus.py:464-502 |
 | The canonical source of this metadata plane. | `"schema": "ar-role-capsule-composition/v1"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
+| Declared tool identities are **requests** narrowed against the admitted policy snapshot, never grants; an id outside it is refused. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
+| **The declared skill registry and the skill entry shape** — the parser that turns `skills.<name>` into `CapsuleSkillEntry`. | `CapsuleSkillEntry`; `_parse_skills` | mcp/src/agents_remember/models/role_capsules/manifest.py:94-110; mcp/src/agents_remember/models/role_capsules/manifest.py:455-478 |
+| **Skill references are carried, not narrowed.** | `skill_references`; `skills_declared_identity` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193; mcp/src/agents_remember/models/role_capsules/sources.py:126-138 |
+| A declared skill must resolve in the registry, and its root file must be admitted. | `_require_role_skills_are_declared`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/manifest.py:479-508; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
+| The parser treats `tools` and `skills` as optional and refuses a manifest that disagrees with the frozen vocabulary or routes two identities at one file. | `parse_composition_manifest`; `CapsuleRoleEntry` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216; mcp/src/agents_remember/models/role_capsules/manifest.py:63-82 |
+| Every tool id this plan declares exists in the published roster — the guard that makes a typo an error rather than an inert request. | `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` | mcp/tests/test_role_capsule_admission.py:219-228 |
+| The plan still parses and compiles for every role with `tools`/`skills` absent, and the launcher refusal is `operation-not-applicable` when `launcher.operations` is empty. | `test_every_shipped_role_compiles_from_disk_twice_to_one_digest`; `test_launcher_is_refused_an_operation_no_role_inherits_to_it`; `test_emptying_the_launcher_operations_refuses_instead_of_compiling` | mcp/tests/test_role_capsule_admission.py:471-520; mcp/tests/test_role_capsule_compiler.py:544-556; mcp/tests/test_role_capsule_admission.py:766-818 |
+| The carried skill channel against the shipped corpus: one reference per declaration, revision follows the admitted bytes. | `test_every_shipped_role_that_declares_a_skill_carries_one_reference_per_declaration`; `test_the_skill_revision_follows_the_admitted_skill_bytes` | mcp/tests/test_role_capsule_admission.py:603-617; mcp/tests/test_role_capsule_admission.py:657-694 |
+| L1's own corpus check still passes unedited against this change (6 passed). | `ROLE_ORDER` | mcp/tests/test_role_instruction_corpus.py:32-42 |
 
 ## Cross-Repo References
 
@@ -91,5 +157,9 @@ No sibling-repository contract defines this instruction file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which grew this change. The diff against L1's shipped file is now **41 keys added, 0 removed, 0 values changed** (was 38) because the manifest gained a **new top-level `skills` object** declaring the skill registry — `l-01-agent-lifecycles` = `{origin: "agents-remember/skills", uri: "skill://agents-remember/skills/l-01-agent-lifecycles", source: "SKILL.md"}`. Documented that registry and the `CapsuleSkillEntry` shape it parses into, and corrected this card's central distinction: the previous entry called all three key families "declared requests, never grants" and leaned on the tool-narrowing rule. That is right for `tools` and **wrong for `skills`** — a skill reference is **carried**, `skill_references` consults no policy, and identity is `origin + skill` because a bare name collides across servers. Added two invariants (carried-not-narrowed; a skill name must resolve in the registry) and four reference rows, and refreshed every range. The file remains a **cross-leaf change carried by the L2 candidate**, ruled ACCEPTED by the owning seat on 2026-09-16. All ten copies still share one sha256. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
+
+- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: body updated for the three key families this leaf added to the routing plane. Documented the per-role `tools` array (27 declared ids across the nine roles, 14 distinct, each held against the published roster) and `skills` array (one corpus skill reference per role) as **declared requests, never grants**, and `launcher.operations` changing from `[]` to `["orientation", "coordination"]` — the one addition with a behavioral consequence, since reverting it makes every launcher compilation refuse `operation-not-applicable` by design. Added five invariants (request-versus-permission, roster/source existence, independent removability of the three families, the launcher exception, and the never-hand-edit-the-generated-copy rule) and five Repo-Internal rows. The change is a **cross-leaf change carried by the L2 candidate** — `skills/l-01-agent-lifecycles/composition-manifest.json` is L1's artifact — ruled ACCEPTED by the owning seat on 2026-09-16 after independently reproducing the structural diff (38 keys added, 0 removed, 0 values changed), L1's corpus test (6 passed, unedited) and `scripts/sync-skills.py --check` (exit 0). All ten copies of this file share one sha256. **Governing-link repair:** this card's `governingOverview` and its `## Governing Overview` link were corrected from five steps to **six** (`../../../../../../overview.md`), which is the level that actually resolves to `onboarding/mcp/overview.md` — the `skills/` segment above this directory does not exist, so the card sits five real levels below `onboarding/`, and the five-step form resolved to a nonexistent `onboarding/mcp/src/overview.md`. The same defect and the same repair apply to the sibling `SKILL.md.md` card, which records the correction in its own history; both were found while creating this leaf's cards for this directory. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for `skills/l-01-agent-lifecycles/composition-manifest.json` — a file added by the role-instruction corpus consolidation. The canonical source is It is the routing-metadata plane the deterministic capsule compiler (a later leaf) selects from.; the packaged copy is produced by `scripts/sync-skills.py` and is not hand-edited. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.

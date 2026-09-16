@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-16T09:38+02:00 |
+| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
+| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,10 @@ Task-intent failures carry an explicit next action. Seat occupancy, dispatch evi
 
 Harness errors distinguish a request that sent no bytes, one that may have been sent, a busy adapter that proved zero bytes were sent, request-id conflicts, stale bridge epochs and non-pending interaction responses. Tokenizer and grammar failures remain explicit integrity failures; native-history unavailability does not automatically invalidate the harness adapter.
 
+The role-capsule compiler adds a fourth family at the end of the module. cit:([`CapsuleCompilationError`], mcp/src/agents_remember/errors.py:464-506) is the typed refusal a capsule compilation raises, and its shape is what makes a refusal *explainable* rather than merely fatal: `status` is a stable, branchable code (the thirteen in `agents_remember.models.role_capsules.statuses`, plus the application tier's source-admission codes), `detail` names the exact defect for an operator who does not know the internals, `next_action` names **the owner that has to change something**, and `conflicts` carries the structured contradiction rows when the refusal is a stopped conflict. `conflicts` is frozen through `MappingProxyType` per row, so a caller cannot mutate a refusal's evidence after the fact. Two projections are provided: cit:([`render`], mcp/src/agents_remember/errors.py:490-496) is the one-line operator-facing text (`"<status>: <detail> (remedy: <next_action>)"`, with the remedy omitted when empty), and cit:([`response_fields`], mcp/src/agents_remember/errors.py:497-506) is the bounded fact set that adds `nextAction` and `conflicts` only when present, so a lower-layer diagnostic never leaks into a response.
+
+Two subclasses narrow the family by defect source and are declarative today: cit:([`CapsuleManifestError`], mcp/src/agents_remember/errors.py:508-511) for an invalid canonical manifest or declared source path, and cit:([`CapsuleSourceError`], mcp/src/agents_remember/errors.py:512-513) for an absent, unreadable, unconfined, or non-UTF-8 instruction source. Neither overrides the base behavior; they exist so a caller can distinguish *which side of the boundary* refused without parsing the status string. **A third subclass, `CapsuleBindingError`, was removed on the A3 candidate** — the binding-defect class no longer has a distinct type, so do not cite one.
+
 ### Conventions
 
 Raise the narrow typed family rather than a generic exception when a domain contract is known. Expected and observed dictionaries are copied at response boundaries; only certification findings are recursively frozen.
@@ -43,6 +47,11 @@ Raise the narrow typed family rather than a generic exception when a domain cont
 - A busy-adapter error means zero operation bytes were sent. Generic disconnects cannot establish that retry safety.
 - Pair, coherence and final certification errors report missing authority; constructing an error does not validate or repair that authority.
 - Grammar and tokenizer failures never silently replace the configured parser or vendored vocabulary.
+- A capsule refusal is a **value with a remedy**, not a bare abort: `status` is a stable branching contract, `detail` is operator-facing prose, and `next_action` names the owner that has to change something.
+- `conflicts` rows are frozen at construction. A caller may read a refusal's structured contradiction evidence but must not mutate it.
+- `response_fields()` is the **bounded** projection: it adds `nextAction` and `conflicts` only when they exist, and it must never be widened to carry lower-layer diagnostics.
+- The three `Capsule*` subclasses are boundary markers, not behavior. Adding a distinct meaning to one of them is a contract change for every caller that branches on the exception type.
+- A compilation failure never becomes a partially valid capsule, so this family is raised **instead of** returning content — it is never a warning channel.
 
 ### Todos
 
@@ -63,12 +72,17 @@ The error families preserve distinct authority, recovery and transport meanings.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Policy-free lock capability failure. | `LockCapabilityError` | mcp/src/agents_remember/errors.py:22-23 |
-| Immutable certification findings and pre-execution statuses. | `CertificationContractError`; `CertificationProfileError`; `CertificationExecutorPrerequisiteError`; `CloseoutReadinessContractError`; `DaggerRuntimeAuthorityError` | mcp/src/agents_remember/errors.py:26-35; mcp/src/agents_remember/errors.py:38-41; mcp/src/agents_remember/errors.py:44-47; mcp/src/agents_remember/errors.py:50-53; mcp/src/agents_remember/errors.py:56-67 |
+| Immutable certification findings and pre-execution statuses. | `CertificationContractError`; `CertificationProfileError`; `CertificationExecutorPrerequisiteError`; `CloseoutReadinessContractError`; `DaggerRuntimeAuthorityError` | mcp/src/agents_remember/errors.py:26-37; mcp/src/agents_remember/errors.py:38-43; mcp/src/agents_remember/errors.py:44-49; mcp/src/agents_remember/errors.py:50-55; mcp/src/agents_remember/errors.py:56-69 |
 | Bounded configured-contract authority and reread errors. | `ConfiguredContractAuthorityError`; `ConfiguredContractRereadError` | mcp/src/agents_remember/errors.py:123-133; mcp/src/agents_remember/errors.py:143-165 |
 | Separate coherence, exact-pair and final-certification response shapes. | `CuratorCoherenceError`; `MemoryCandidatePairError`; `CuratorCoherencePairError`; `FinalCertificationError` | mcp/src/agents_remember/errors.py:180-211; mcp/src/agents_remember/errors.py:226-262; mcp/src/agents_remember/errors.py:265-285; mcp/src/agents_remember/errors.py:288-318 |
-| Composition, integrity, harness retry safety and history failures. | `ConversationCompositionError`; `TokenizerVocabularyError`; `GrammarUnavailableError`; `HarnessAdapterDisconnectedError`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:325-332; mcp/src/agents_remember/errors.py:335-343; mcp/src/agents_remember/errors.py:346-354; mcp/src/agents_remember/errors.py:373-385; mcp/src/agents_remember/errors.py:449-461 |
+| Composition, integrity, harness retry safety and history failures. | `ConversationCompositionError`; `TokenizerVocabularyError`; `GrammarUnavailableError`; `HarnessAdapterDisconnectedError`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:325-334; mcp/src/agents_remember/errors.py:335-345; mcp/src/agents_remember/errors.py:346-356; mcp/src/agents_remember/errors.py:373-387; mcp/src/agents_remember/errors.py:449-463 |
 | Control-plane translation preserves the durable-store error family. | `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360 |
 | Host registry translation preserves typed pre-launch authority refusal. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
+| Role-capsule compilation refusal with its stable status, remedy and frozen conflict rows. | `CapsuleCompilationError`; `render`; `response_fields` | mcp/src/agents_remember/errors.py:464-506 |
+| The two capsule subclasses that mark which boundary refused. `CapsuleBindingError` was removed on the A3 candidate and must not be cited. | `CapsuleManifestError`; `CapsuleSourceError` | mcp/src/agents_remember/errors.py:508-511; mcp/src/agents_remember/errors.py:512-513 |
+| The consumer that turns this family into a value with an explanation instead of an escaping exception. | `compile_admitted_capsule`; `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:44-80 |
+| The registered refusal-code vocabulary these errors carry. | `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/statuses.py:27-41 |
+| The failure cases that assert a refusal advertises its own reason and remedy. | `test_a_refusal_still_produces_an_explanation_manifest` | mcp/tests/test_role_capsule_compiler.py:851-867 |
 
 ## Cross-Repo References
 
@@ -79,6 +93,10 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate (review follow-up, not a source change). `CapsuleBindingError` **no longer exists** — the family is now `CapsuleCompilationError` plus only `CapsuleManifestError` and `CapsuleSourceError`, and the file shrank 517 → 513 lines, so the previous entry's "purely additive, no earlier citation needed repair" no longer holds. Replaced the three-subclass sentence with the two that exist, stated the removal explicitly so no later reader re-cites it, widened `CapsuleSourceError`'s description to include the new non-UTF-8 case, and corrected both ranges (`508-511`, `512-513`). **The removal also falsified the created entry's claim that every pre-existing class range was unchanged.** Because the family shrank, the tail classes moved (513 total now vs 517), and this card's own citation table carried ranges that were **already stale before this leaf** and are now further off: the certification row was hand-repaired from stale pre-leaf values to the current `26-37`/`38-43`/`44-49`/`50-55`/`56-69`, and the harness/history row to `325-334`/`335-345`/`346-356`/`373-387`/`449-463`. The explanation-only rows for `CuratorCoherenceError`, `ConfiguredContractAuthorityError`/`RereadError` and the pair/final-certification family are text-only and are deliberately re-pointed in a later pass, not here; the `TokenizerVocabularyError` and `NativeHistoryUnavailable` ranges visible in the July 31 history entry below are **inert historical provenance** the entry itself declares as such and are not current citations. Verification metadata stays at its previous stamp — the source is uncommitted and no hash was invented here.
+
+- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: body updated for the typed role-capsule refusal family this leaf appended (`CAPS-R02@v1`). Added the Logic paragraph for `CapsuleCompilationError` (stable `status`, operator-facing `detail`, the `next_action` owner remedy, `MappingProxyType`-frozen `conflicts`) with its two projections `render()` and the bounded `response_fields()`, plus the three boundary-marker subclasses `CapsuleManifestError`, `CapsuleSourceError` and `CapsuleBindingError`; added five invariants covering remedy-carrying refusals, frozen conflict rows, the bounded projection, the subclasses as contract, and the never-a-partial-capsule rule; added five Repo-Internal rows for the new family and its consumer. **Line numbers of every pre-existing class were re-checked and are unchanged**: the append is purely additive at the end of the file (449-461 still holds `NativeHistoryLimitExceeded`), so no earlier citation in this card or in the 19 other cards citing this file needed repair. Verification metadata is left at its previous stamp because the source is uncommitted — the governed closeout stamps the real code commit, and no hash was invented here.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

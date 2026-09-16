@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastUpdated | 2026-09-16T09:38+02:00 |
+| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
+| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -107,6 +107,44 @@ abandon now also ends the ambient lifecycle it anchors).
 ## Hot Path Summary
 
 `worktree_tool_requests.py` carries only code/memory commit messages and landed commits. `worktree_tools.py` forwards that pair unchanged; `memory_tools.py` exposes baseline/carryover cache observations without a ledger commit argument. Adapters do not recreate retired guards or synthesize a third output.
+
+## 260915-CAPS-L2 Role-Capsule Admission And Compile Boundary
+
+`mcp/src/agents_remember/application/role_capsules/` is a **new package** on this route and the
+only role-capsule code that touches the filesystem. It exists because the pure compiler in
+`models/role_capsules/` deliberately opens no file: reading sources, resolving a confined root, and
+turning a refusal into a value all belong here.
+
+`compile_admitted_capsule(binding, request, projection=None)` is the whole surface. It admits via
+`admit_capsule_sources`, recovers the manifest bytes from the admitted set, and calls the pure
+compiler — converting a typed `CapsuleCompilationError` into a returned outcome rather than letting
+it escape. `CapsuleCompilationOutcome` is **exactly one** of a compiled capsule or a refusal (its
+`__post_init__` raises if neither or both are present), carries the manifest in both shapes, and
+reports `semantic_digest` as `None` for a refusal because a refusal has no identity. A source tree
+that cannot be read at all produces the same refusal shape as a selection defect, carrying the
+admitted-facts half of the manifest, since those facts were true regardless.
+
+Admission itself is **explicit rather than eager**: the caller names every path it wants read, and
+the boundary proves containment **before any byte is read**, so a traversal attempt fails without
+the root being probed outside itself. Requested paths are root-relative POSIX paths; the manifest
+path is read but is not an instruction block, so it carries the reserved metadata identity
+`meta:composition-manifest` and is composed into no capsule. The admitted order is fixed — manifest,
+then `core`/`role`/`operation`/`specialization`, each alphabetical — so two admissions of one tree
+are directly comparable.
+
+**Decoding is not this layer's job.** This boundary records each source's bytes and their content
+digest; the value layer (`models/role_capsules/sources.py`) is where a source is decoded and where
+**`source-not-utf8`** is raised. Do not look for that code here, and do not add lenient decoding to
+this boundary — a source that does not decode is a defect, not a file to be coerced.
+
+The admitted set is proven against the locked plan by `models/role_capsules/source_set.py`, which
+also requires **every declared skill's root file** to have been admitted — a skill reference without
+admitted bytes has a fictional revision.
+
+This package is also the **L3 seam for the later task projection**: it accepts any
+`CapsuleTaskProjectionSource` and passes it through untouched. Task state is never read, rendered,
+or rewritten at this boundary; verifying a projection's bytes against its declared digest happens
+inside the pure compiler.
 
 ## Detailed Route Context
 

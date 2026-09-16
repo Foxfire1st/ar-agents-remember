@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| lastUpdated | 2026-09-16T09:38+02:00 |
+| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
+| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -25,6 +25,60 @@ unsupported-harness refusal, bounded Pi continuation, and liveness failure conta
 named `test_*.py` may still contain only builders; its filename and historical sidecar do not
 establish current test coverage. Read the current file card and source before claiming a scenario
 is protected or restoring an old matrix.
+
+## 260915-CAPS-L2 Role-Capsule Compiler And Admission Coverage
+
+Two new modules cover the deterministic role-capsule compiler, split by the boundary they exercise.
+`test_role_capsule_compiler.py` holds **49 test functions (50 collected)** on the compiler's
+observable properties, built on an in-memory fixture that mirrors the canonical manifest schema so a
+case varies exactly one fact; `test_role_capsule_admission.py` holds **43 test functions (54
+collected)** covering the frozen vocabulary, the manifest parser, source admission, the shipped
+corpus end to end, the routing agreement between each role's own file and the compiled capsule, and
+the carried skill channel. Together: **104 passed**. Unit population 885 → **989** against a budget
+of 1000; integration 225 of 250 and unchanged — no integration case was added.
+
+**Three boundaries carry the review repairs.** First, **routing agreement**: the admission module
+now cross-checks each role's own canonical source against the manifest it routes from, over every
+declared operation, so a manifest that quietly disagrees with the prose it routes to fails. Second,
+**the carried skill channel**: a declared skill produces exactly one reference per declaration with
+a revision that follows the admitted bytes; a role declaring none gets an empty tuple; a missing or
+unknown skill is refused rather than dropped. Third, **source-value integrity**: revision-equals-
+digest, decodes-to-nothing, and non-UTF-8 are refused in the compiler module, and
+`test_a_source_that_is_not_utf8_text_is_refused` is the only case proving the `source-not-utf8` code
+is reachable.
+
+**The two capability channels are asserted separately, and that is deliberate.** Tool ids are
+policy-narrowed — a request outside the admitted snapshot is refused. Skill references are carried —
+**no permission assertion exists over a skill reference anywhere in either module**, because the
+implementation makes no policy call for them. Merging the two into one "capability" case would hide
+exactly the distinction the code draws.
+
+The split is deliberate and worth preserving. The compiler module must **not** read the real corpus:
+a fixture that mirrors the shipped tree can only be mutated by editing the thing under test, which
+is how a vacuous assertion gets written. `test_role_capsule_admission.py` is therefore the only
+role-capsule test that reads the real tree, and its 9-way parametrization is what makes "every
+shipped role compiles from disk twice to one digest" a corpus claim rather than a single-role claim.
+
+Two cases carry more weight than their size suggests. `test_the_role_and_operation_literals_agree_with_their_runtime_tuples`
+guards a **deliberate duplication**: the frozen registry is declared twice — a PEP 695 literal for
+the type checker and a runtime tuple for selection — because PEP 695 `type` aliases do not answer
+`get_args`, so the ruff-preferred alias form silently produced an *empty* runtime registry. The
+duplication is the fix, and this case is its guard.
+`test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` holds every tool id the
+manifest declares against the published roster, so a typo is an error rather than an inert request.
+
+The determinism assertions must stay **falsifiable**. An order-insensitive or input-insensitive
+digest would make the whole determinism group vacuous, which is exactly what a seeded-mutation probe
+found in an early candidate: the case then compared one fixed order with itself. Two cases were
+added as the repair — order is identity, and a real binding change moves the digest — and the
+structure-only guard `test_the_compiler_modules_import_no_network_client` sits beside the behavioral
+`test_composition_succeeds_with_network_and_model_access_denied`.
+
+Independent falsifiability for these cases came from a task-local probe (seeds M01–M10, `all 10
+seeded mutations were caught`) that is **not** a product artifact and is deliberately not promoted
+into `mcp/tests/`; it lives in the coordination task tree and expires on the next change to
+`mcp/tests/test_role_capsule_*.py`, at which point these shipped cases are its executable
+replacement.
 
 ## Hot Path Summary
 

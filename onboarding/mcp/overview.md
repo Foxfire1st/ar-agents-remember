@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
+| lastUpdated | 2026-09-16T09:38+02:00 |
+| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
+| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -528,6 +528,65 @@ this route the load-bearing facts are:
   this memory root's `pathRules` include set, so this generated `mcp/**` copy is the mapped surface: it
   gained 18 new cards (the manifest, `core/` ×6, `operations/` ×8, `reference/` ×2) and 17 existing cards
   were updated in the body.
+
+## 260915-CAPS-L2 Deterministic Role-Capsule Compiler And Its Cross-Leaf Manifest Change
+
+`mcp/src/agents_remember/models/role_capsules/` and
+`mcp/src/agents_remember/application/role_capsules/` are **new packages** on this route: one pure,
+harness-independent compiler that turns admitted AR facts plus canonical instruction sources into
+an ordered role capsule, and one application-tier boundary that does the file I/O the compiler
+refuses to do. The split is the route's load-bearing structure — `models` holds the frozen value
+types, the manifest parser, selection, resolution and the seal; `application` holds admitted-context
+resolution and source reading. Nothing in the `models` half opens a file, reaches a network, or
+calls a model, and two shipped cases assert that composition succeeds with model and network access
+denied and that no network client is imported at all.
+
+The compiler is deterministic by construction: fixed composition order (core → role → operation →
+specialization) that is itself part of the semantic digest, one block per canonical instruction
+identity, sorted tool ids, no timestamps and no diagnostics inside the digest, and no concurrency
+(eve's concurrent resolver was deliberately **not** adopted, because resolution timing would make
+the composed order nondeterministic). Identical admitted facts and source bytes produce identical
+ordered content and the same digest; the nine shipped roles compile from disk twice to one digest
+each, and they compile to nine **different** digests.
+
+Two properties are worth carrying forward. First, **a refusal is a value, not an exception that
+escapes**: `CapsuleCompilationOutcome` is exactly one of a capsule or a refusal, a refusal still
+carries the admitted-facts half of the diagnostic manifest so a failure explains itself, and
+`mcp/src/agents_remember/errors.py` gained the `CapsuleCompilationError` family to type it (two
+subclasses today — `CapsuleManifestError` and `CapsuleSourceError`; a third, `CapsuleBindingError`,
+was removed by this leaf's review repairs). Second, **a required block's absence is falsifiable**:
+the admitted file set is validated against the locked plan in both directions, because a loader that
+only fetched what the manifest asked for could never report that something mandatory was never
+admitted.
+
+**A third property matters because it is the easiest to get wrong: the two capability channels are
+not the same shape.** Requested **tool ids** are narrowed against the admitted `CapsuleToolPolicy`
+snapshot, and a request outside it is refused. Declared **skill references** are **carried**, not
+narrowed: `compiler.skill_references` builds one content-addressed reference per declaration
+(`identity`/`origin`/`uri`/`revision`) and consults no policy at all, because a skill reference
+points at separately delivered content rather than asking for a capability. Saying the compiler
+"narrows tool identities and skill references against the permission policy" is false for skills —
+and the shipped cases assert the two channels separately precisely so that a merged description
+cannot pass.
+
+**Cross-leaf effect on this route's packaged corpus.** This leaf extended L1's
+`skills/l-01-agent-lifecycles/composition-manifest.json` with per-role `tools[]` and `skills[]`
+plus `launcher.operations[]`, and the governed generated copy under
+`mcp/src/agents_remember/package_data/runtime/skills/` moved with it (all ten copies share one
+sha256). The change is purely additive — 38 keys added, 0 removed, 0 values changed — and it is
+**not** a permission model: the manifest declares what a role *asks for*, the admitted
+`CapsuleToolPolicy` snapshot decides what is *permitted*, and the compiler refuses a request
+outside it. `launcher.operations` changing from `[]` to `["orientation","coordination"]` is the one
+addition with a behavioral consequence; reverting it makes every launcher compilation refuse
+`operation-not-applicable` by design. The owning seat ruled the change ACCEPTED on 2026-09-16 after
+independently reproducing the structural diff, L1's unedited corpus test (6 passed) and
+`scripts/sync-skills.py --check` (exit 0).
+
+**Layer contract status.** `layers.toml` declares a target order and deliberately fails against the
+current tree; measured on this candidate the tree reports 16 pre-existing violations (all
+`worktrees -> memory_quality` and its siblings). None names a role-capsule module, every internal
+import from the new modules points at a strictly lower rank, and there are 0 undeclared imports. Do
+not read the layer contract as currently satisfied.
 
 ## Detailed Route Context
 
