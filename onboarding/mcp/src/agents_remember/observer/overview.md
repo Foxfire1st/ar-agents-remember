@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
-| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview

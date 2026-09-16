@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated            | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `dca949f3c1652d76edf277eef86c6399c4ab8404` |
-| lastVerifiedCommitDate | 2026-09-14T10:26:38+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 
 ## What This Area Is
 
@@ -156,7 +156,7 @@ authority; projection never exposes worker or resume identity.
 
 ## 260815-DAG-L12 Route Impact
 
-The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes valid master payloads from the bounded window, `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
+The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes every valid master payload in the projected set — no bound evicts a document, so all of them are indexed (260916-TDPU; it formerly indexed only the bounded payload window) — `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
 
 
 ## 260815-DAG Master Full-Gate Repair Route Impact
@@ -202,14 +202,33 @@ and the strict read remains with authoring and the enforcement folds.
 Why it mattered at route level: a completed leaf whose JSON carried a step-level `note` from a newer
 build vanished from `analytics.taskDocuments`, so the dashboard's sub-task index rendered that row as
 dead text while unstarted rows stayed live — a version skew that presented as a status filter. Nothing
-about the summary window was involved: `TASK_DOCUMENT_SUMMARY_LIMIT = 250` was measured irrelevant and is
-unchanged, and no dashboard file is in this change set.
+about the summary window caused it: `TASK_DOCUMENT_SUMMARY_LIMIT = 250` was measured irrelevant to that
+defect, and that change set touched no dashboard file. (That limit no longer exists — 260916-TDPU
+removed the task-document summary bound, so the route now projects every canonical document; see the
+2026-09-16 entry below. 260916-TDPU's only dashboard edits are comments recording this removal, in
+`detail-panel/model.ts` and `detail-panel/masterSeries.test.tsx`.)
 
 Two things stay out of scope deliberately, recorded on the reader's card rather than repaired here: a
 sixth same-class drop site at `snapshots_impl/_closeout_queue.py:33-36`, and the residual unprunable-loc
 gap (a loc pydantic augments, such as the legacy `ref`), which stays fail-closed.
 
 ## Update History
+
+- 2026-09-16T14:20+02:00 — 260916-TDPU route impact (curator, uncommitted change set on
+  `ar/260916-tdpu`, base `67b21aeb`): **the task-document summary bound is gone from this route.**
+  `TASK_DOCUMENT_SUMMARY_LIMIT`, `SERIES_DOCUMENT_SUMMARY_LIMIT`, `_bounded_task_document_payloads` and
+  `_stat_mtime_ns` were deleted from `snapshots_impl/`, so the readers on this route project every
+  canonical task document under `tasks/<repo>/<task>/` — 517 documents measured on the live root against
+  the old cap of 250, i.e. 267 previously withheld documents now reach `analytics.taskDocuments`. The
+  route-level consequence: an operator can no longer be shown a master whose sub-task rows are simply
+  absent, which is exactly the failure the removed bound produced silently. Corrected the stale
+  current-claim prose on this card — the L12 route-impact sentence said `_master_docs_by_ref` indexed
+  "the bounded window", and the L10 section called the limit "unchanged"; both now state the uncapped
+  route. The removal rationale is recorded in the code at `snapshots_impl/_common.py:63-69`. No
+  dashboard file changes behavior: this change set's only dashboard edits are prose recording the
+  removal, in `detail-panel/model.ts` and `detail-panel/masterSeries.test.tsx`. No served value other
+  than document count changed. Verification metadata remains closeout-owned; no verification stamp
+  advanced.
 
 - 2026-09-14T10:16+02:00 — 260913-LCA-L10 route impact (curator, uncommitted change set on
   `ar/260913-lca-l10-ar`, base `4214d7a1`): the task-document reader's five read-edge call sites now share

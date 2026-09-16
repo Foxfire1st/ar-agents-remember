@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                        |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8`                                        |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -22,8 +22,6 @@ Shared file-surface helpers for the observer snapshot readers. The readers split
 
 - `_TaskDocumentLifecycleMaps`
 - `_iter_task_document_payloads`
-- `_bounded_task_document_payloads`
-- `_stat_mtime_ns`
 - `_iter_task_json`
 - `_read_json`
 - `_as_int`
@@ -50,6 +48,19 @@ bounded task-addressed phase, timing, command, report, and failure guidance. Wor
 resume identities remain private to recovery.
 
 ## Update History
+
+- 2026-09-16T14:20+02:00 — 260916-TDPU (`ar/260916-tdpu`, base `67b21aeb`) curator: **the module no
+  longer carries any task-document summary bound.** `_bounded_task_document_payloads` and
+  `_stat_mtime_ns` are deleted, so both are dropped from Code Commentary;
+  `_iter_task_document_payloads` (`_common.py:42-60`) returns every canonical task document the
+  reader enumerated. The rationale the removal records lives in the module's own comment at
+  `_common.py:63-69`: the old `TASK_DOCUMENT_SUMMARY_LIMIT` (250 roots-plus-newest-leaves) evicted
+  silently and untested, so an operator saw a master whose sub-task rows were not clickable with no
+  diagnostic and no way to tell a missing document from an unreadable one. If a bound is ever
+  reintroduced it must be larger, must announce its own truncation, and must offer a way to reach
+  what it hid. This card's stated one-to-one mirror is what the two deleted rows had contradicted.
+  Verification metadata remains closeout-owned; no verification stamp advanced.
+
 - 2026-08-14T06:34+02:00 — L23 final candidate review: shared snapshot construction attaches the
   latest validated task-addressed lifecycle operation and keeps private worker/recovery identity out
   of the served projection. Verification remains closeout-owned.
