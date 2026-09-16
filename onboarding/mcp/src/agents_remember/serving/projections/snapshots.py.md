@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8`       |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -40,13 +40,15 @@ already-parsed `WorktreeContract` (the parse-and-skip moved into the snapshot bu
 `WorktreeContract` instances are cached across ticks — readers must treat them as immutable and never
 mutate them.
 
-### 260707-HFX2-L13 Bounded Task Summaries And On-Demand Bodies
+### 260707-HFX2-L13 Task Summaries And On-Demand Bodies
 
-Task-document scans still share the short TTL parse cache, but the always-on task and series surfaces
-now take the newest bounded window (250 nodes each) and omit reader bodies. `_task_doc_node` computes
-`bodyRevision` from the omitted fields and receives an explicit `include_body` choice. Lifecycle
-binding was factored into `_TaskDocumentLifecycleMaps` so summary and on-demand paths resolve the same
-runtime context.
+Task-document scans still share the short TTL parse cache, and the always-on task and series surfaces
+project **every** canonical task document — the newest bounded window of 250 nodes each was removed by
+260916-TDPU, so no summary bound remains (see that entry in the Update History and the rationale at
+`snapshots_impl/_common.py:63-69`). The summary surfaces still omit reader bodies; `_task_doc_node`
+computes `bodyRevision` from the omitted fields and receives an explicit `include_body` choice.
+Lifecycle binding was factored into `_TaskDocumentLifecycleMaps` so summary and on-demand paths resolve
+the same runtime context.
 
 Since 260731-EFA-L2 that map arrives **whole**: `_task_doc_node(doc, path, maps, now, *,
 include_body)` takes the `_TaskDocumentLifecycleMaps` and calls `_task_doc_lifecycle_id` itself,
@@ -58,9 +60,10 @@ Both call sites shrank to one line each as a result.
 `read_task_document_body` accepts a projected `docPath`, resolves candidates, requires the final path
 to be a real file under `coordination_root/tasks` (including after symlink resolution), validates the
 task-document schema, and returns the full node. This confinement is necessary because the HTTP
-endpoint accepts a client-provided path. The summary window currently truncates silently and still
-carries full per-document step/sub-task lists; those are accepted round-1 N4 follow-ups, not claims of
-completion in L13.
+endpoint accepts a client-provided path. The summary window no longer truncates at all — its 250-node
+bound was removed by 260916-TDPU, so every canonical task document is projected (see the Update
+History); the summary surfaces still carry full per-document step/sub-task lists, which is an accepted
+round-1 N4 follow-up, not a claim of completion in L13.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -380,6 +383,12 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 - **Task-document existence is archive/delete based:** active JSON-primary task docs project regardless
   of lifecycle binding or terminal status. Moving a task doc under `0_archive/` or deleting it is what
   removes it from Operations; completed/abandoned status is filter/history state, not disappearance.
+- **There is no task-document summary bound (260916-TDPU):** `TASK_DOCUMENT_SUMMARY_LIMIT`,
+  `SERIES_DOCUMENT_SUMMARY_LIMIT`, `_bounded_task_document_payloads` and `_stat_mtime_ns` are gone, so
+  the readers project every canonical document they enumerate — no window, no eviction, no truncation
+  flag. Reintroducing a bound requires a larger one that announces its own truncation and offers a way
+  to reach what it hid (`snapshots_impl/_common.py:63-69`); a silent cap is what this removal exists to
+  end.
 - **Masters have two surfaces:** `read_task_documents` projects the concrete active master document for
   direct Operations selection, while `read_series_documents` also projects the folder-keyed checklist
   aggregation. Series progress reads the master's *declared* `subTasks[]` status, never a slice's leaf
@@ -447,6 +456,21 @@ reparses only changed/new stat identities and removes deleted entries. The new
 facts on heartbeat ticks.
 
 ## Update History
+
+- 2026-09-16T14:20+02:00 — 260916-TDPU (`ar/260916-tdpu`, base `67b21aeb`) curator: **the always-on
+  task and series surfaces are no longer bounded.** `TASK_DOCUMENT_SUMMARY_LIMIT`,
+  `SERIES_DOCUMENT_SUMMARY_LIMIT`, `_bounded_task_document_payloads` and `_stat_mtime_ns` were deleted
+  from the serving projections, so `read_task_documents` and `read_series_documents` project every
+  canonical task document under `tasks/<repo>/<task>/` — measured at 517 documents on the live root
+  against the old cap of 250. Corrected the stale current-claim prose on this card: the L13 section
+  heading and its "newest bounded window (250 nodes each)" sentence now state the uncapped contract,
+  and its note that "the summary window currently truncates silently" is corrected (there is no window
+  to truncate). Added the matching boundary invariant so the uncapped rule is stated where a reader
+  looks for the surface's limits. Rationale for the removal, recorded in the code at
+  `_common.py:63-69`: the eviction was silent and untested, so an operator saw a master whose sub-task
+  rows were not clickable with no diagnostic and no way to tell a missing document from an unreadable
+  one. Verification metadata remains closeout-owned; no verification stamp advanced and no code commit
+  exists yet.
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
   range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 5 further

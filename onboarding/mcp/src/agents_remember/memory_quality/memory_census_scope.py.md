@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/memory_census_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
-| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00 |
+| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
+| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

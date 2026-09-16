@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../overview.md`                              |
 
@@ -142,7 +142,14 @@ models/projections/workspace.py schema --A--> generated types/projection.ts
 ```
 
 - **Producer schema → generated mirror.** Enforced by the projection generator, its Python
-  regressions, and `scripts/sync-projection-types.py --check`.
+  regressions, and `scripts/sync-projection-types.py --check`. A serve-time key added to
+  `ServedWorkspaceProjection` is therefore never a one-file change: the generator's folded definition
+  set is compared exactly, and the new closed unions reach this side as `contract.test.ts` `Record`s —
+  so the companion pair (generated mirror regenerated, `VOCABULARIES`/`KnownUnsampled` registry updated,
+  and the served sample in `fixtures/snapshot.json` carrying a value) has to move together, verified
+  with `npm run typecheck` plus the contract vitest and not with Python tests alone (`LOCR-R17@v1`
+  measured exactly that: a type-only allowlist turns `tsc` green while the runtime walk still fails
+  `no served value at projection.terminalObserverHealth.status`).
 - **Fixture builders against the mirror.** Enforced by `tsc -b`. Every base in
   `test/fixtures/wire.ts` is assembled from `snapshot.json` **and annotated with its mirror type**,
   so it is pinned from both sides: a required field the mirror gains fails to compile until it is
@@ -566,7 +573,7 @@ fields; the task-artifact takeover remains independently discriminated by notes/
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The generated lifecycle mirror carries the cursor beside coherent identity and version fields. | "export interface LifecycleOperationProjection {" | dashboard/src/types/projection.ts:334-334 |
-| The fixture supplies a meaningful revision for the sample operation. | "\"meaningfulRevision\": 1," | dashboard/src/fixtures/snapshot.json:1225-1225 |
+| The fixture supplies a meaningful revision for the sample operation. | "\"meaningfulRevision\": 1," | dashboard/src/fixtures/snapshot.json:1223-1223 |
 
 
 ## Integrated IAS Recovery Contract
@@ -574,6 +581,21 @@ fields; the task-artifact takeover remains independently discriminated by notes/
 The generated lifecycle phase union and schema now include `recovering-private-preparation`. This is a server-owned recovery state projected through the existing lifecycle view; it adds no frontend command or recovery authority. Keep the schema and TypeScript mirror generated from the same producer.
 
 ## Update History
+
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
+  `99534dc5`, `types/projection.ts` +25, `fixtures/snapshot.json` +17, `test/contract.test.ts` +24):
+  the route gained a serve-time key, so the producer-contract subsection was extended rather than
+  annotated. Recorded the rule this leaf measured rather than asserted: adding a key to
+  `ServedWorkspaceProjection` forces the companion pair to move together — the generator's folded
+  definition set is compared exactly, the mirror is regenerated, `contract.test.ts`'s
+  `VOCABULARIES`/`KnownUnsampled` registry is updated, and the served sample carries a value for every
+  newly closed union — verified with `npm run typecheck` plus the contract vitest, because a
+  type-only allowlist turns `tsc` green while the runtime walk still fails. The sample's new
+  `terminalObserverHealth` reading is degraded on purpose (three of the five unions are nullable, so
+  only a non-null reading can satisfy a string-vocabulary check), and it is sampled rather than
+  allowlisted. Detail lives in the three file cards. Verification metadata remains closeout-owned; no
+  stamp advanced.
+
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented generated wire vocabulary and fixture/test alignment without removing consumer ledger displays. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

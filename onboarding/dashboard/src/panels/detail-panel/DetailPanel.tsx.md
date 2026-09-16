@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -315,7 +315,7 @@ master leg of the drill-down).
 | Selection attribution looks for the closest task-leaf wrapper. | "function leafKeyForAnchor(" | dashboard/src/data/selection.ts:34-36 |
 | Mouse selection context carries the leaf key read from that wrapper. | "export function readSelection(selection: Selection" | dashboard/src/data/selection.ts:39-49 |
 | `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. | `findParentTaskMatch`; `parentTaskLinkForDoc`; `orderedByCreation`; `parentSelectionKey` | dashboard/src/data/taskHierarchy.ts:43-51; dashboard/src/data/taskHierarchy.ts:68-82; dashboard/src/data/taskHierarchy.ts:152-156; dashboard/src/data/taskHierarchy.ts:145-150 |
-| SubTaskRow is the union of the distinct task-master and series row shapes. | "export type SubTaskRow =" | dashboard/src/types/projection.ts:814-814 |
+| SubTaskRow is the union of the distinct task-master and series row shapes. | "export type SubTaskRow =" | dashboard/src/types/projection.ts:838-838 |
 | Task-master rows may carry a linked lifecycle id and masterRef. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:792-792 |
 | Series rows instead carry optional creation time. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:560-560 |
 | The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:590-611; mcp/src/agents_remember/observer/projection.py:804-819 |

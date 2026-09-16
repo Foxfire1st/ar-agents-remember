@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `9f0309447d6820d90e59279abc84f87f1ccbb3b3` |
-| lastVerifiedCommitDate | 2026-09-13T22:28:36+02:00|
+| lastVerifiedCommitHash | `a5f5380badf357622daf1965a7a0e3caf91b51ff` |
+| lastVerifiedCommitDate | 2026-09-16T08:34:21+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview

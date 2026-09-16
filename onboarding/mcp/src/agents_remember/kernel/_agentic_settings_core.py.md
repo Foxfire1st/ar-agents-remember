@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `a5f5380badf357622daf1965a7a0e3caf91b51ff` |
+| lastVerifiedCommitDate | 2026-09-16T08:34:21+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview

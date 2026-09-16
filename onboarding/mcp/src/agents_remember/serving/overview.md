@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastUpdated | 2026-09-15T20:42+02:00 |
+| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
+| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -29,7 +29,9 @@ MCP server advertising exact `dispatch_agent`. The shared readiness parser owns 
 tool shape, settled absence, and timeout; the adapter has no alternate tool-name or discovery
 fallback. Dispatch briefs allow one bounded spawn-to-bridge convergence window without creating a
 second caller attempt. Agent-notifier sweeps refresh canonical terminal liveness themselves, so
-queued brief/message progress does not accidentally depend on dashboard browser polling. Control
+queued brief/message progress does not accidentally depend on dashboard browser polling; the serving
+lifespan is now the steady-state owner of that refresh, so notifier enablement is no longer part of
+the observation contract (see *Current Terminal-Observation Ownership*). Control
 socket diagnostics distinguish absent, refused, and timed-out endpoints without claiming process
 death from socket state alone.
 
@@ -184,6 +186,21 @@ suppressing it as a held signal; without the state-signal-scoped admission such 
 delivery path at all. Every other row kind keeps the ordinary redelivery path, and an unparseable
 attempt clock is still refused.
 
+State signals now carry an explicit durable order — row persisted, marker stamped, delivery
+attempted — enforced at the posting primitive rather than by the emitter's call sequence.
+`owner_signals._post_owner_signal` runs `OwnerSignalOptions.after_persist` after the row is durable
+and on the sweep fold and strictly before `deliver_inbox_entry`, and `_emit_state_signal` is its only
+supplier today (it stamps `state_signal_emitted_for` there instead of after the post returns), so a
+failed marker write leaves one pending unmarked row and makes zero adapter submissions. Delivery
+eligibility is re-checked at the shared action: `_agent_notifier_actions._state_signal_awaits_marker`
+refuses a pending state-signal row whose own seat still reports that row's evidence without the
+marker, and `_drain_boundary` inherits the guard by delegating to `_redeliver`. Predicate order is
+therefore not what protects the row — the boundary-drain finder reaches the shared action without the
+held-on-boundary filter the generic finder applies. Coalescing follows the same source identity: a
+`state-signal` row renews on the exact `subjectAgentId` plus the normalized ask, so an R08 rebind
+renews and re-addresses that row while two replacement seats never renew each other; every other kind
+keeps the structural task-document + role key.
+
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
 dispatch claim, exact full-operation-ref completion, early-terminal dominance, response bypass,
@@ -234,6 +251,36 @@ byte-identical), an `unsupported` terminal receipt on non-capable adapters, and 
 is byte-preserved. Two additive IPC actions (`interrupt`, `operation-timeline`) keep the protocol
 at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays the control
 child's obligation.
+
+### Current Terminal-Observation Ownership
+
+Terminal catalog observation is a serving-lifespan responsibility, not a request-driven side effect.
+`_app_lifespan.py::_terminal_observation_loop` is the route's one steady-state owner: it calls the
+existing `TerminalCatalogLivenessSweeper.refresh` through the drained off-loop helper and sleeps
+`DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` only after each attempt returns, so the cadence is
+completion-relative and non-overlapping, and a closed dashboard, a headless process, a model turn, or
+a disabled agent notifier cannot stop catalog turn truth from advancing. The notifier's own inline
+refresh remains a consumer of the same sweeper and is not the ownership contract. The
+terminal-session GET route is **projection-only and names no sweeper at all** — it serializes the
+current catalog snapshot and cannot itself make that snapshot newer — so it is not a consumer of
+this clock either (`LOCR-R02@v1`). The sweeper's starting-row and full-sweep clocks stay inside the
+sweeper.
+
+Steady state is not the whole contract: the same file also takes **one pre-serve observation prime**
+(`_app_lifespan.py::_prime_terminal_observation`, `LOCR-R18@v1`). The lifespan order is migrate → compact → **start the serving-lifetime observer-health accumulator and attempt its initial record** → one contained observation prime → `runtime.projector.prime()` → create the recurring loops
+→ yield, so the initial projection and the first notifier sweep read a catalog a canonical pass has
+already committed rather than depending on the first scheduled tick or on a request. The prime is the
+same canonical sweeper entry point as every later pass — no startup-only reader, cursor, or catalog
+mutation — and it is a due full sweep, not an extra one. Its `except Exception` containment is the
+requirement and not a defect: a recoverable observation failure must not become a serving outage, so
+the projection prime and every recurring loop still start and the steady-state owner retries on its
+first cadence, while `CancelledError` still propagates into the shutdown drain. The prime now also PUBLISHES: every completed observation attempt — the prime's included, with
+`phase="startup"` — records the observer stage's own health through
+`terminal_observer_health.py` (`LOCR-R17@v1`), so the earlier statement that this route defines no
+health surface for a prime outcome is superseded. What stands is the boundary: this route owns the
+observer's own reading and no readiness gate, cursor, queue or task-authoring authority derives from
+it, and the read routes never rewrite the record. One limit is still recorded rather than implied: the
+delivered ordering witness does not constrain prime-versus-migration/compaction — that edge rests on the production straight-line order.
 
 ### Historical Slice-04 Through HFX Serving Account
 
@@ -734,14 +781,17 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   claim or move the structural binding for an existing session without respawn; delegates to
   `terminal_task_assignment.assign_terminal_session_to_task`, returning typed invalid/taken/unknown
   refusals without mutation or the accepted binding), `GET
-  /api/terminal/sessions` (return non-terminated sessions via
-  `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
-  non-overlapping; a rate-limited caller still runs the bounded one-second starting-row fast path,
-  and a caller that loses the non-blocking sweep lock returns the last ATOMICALLY REPLACED catalog
-  file (`TerminalCatalog.list_committed()`) rather than a snapshot read that would wait on the
-  active sweep's batch lock; each admitted path observes its selection inside exactly one
-  dirty-gated catalog batch, so a clean sweep performs zero file replacements and a dirty one
-  performs exactly one; WebSocket attach + the paste
+  /api/terminal/sessions` (a PROJECTION of stored state only: it serializes
+  `runtime.catalog.list()` through `_catalog_payload` and cannot itself make that snapshot newer —
+  no sweep, no adapter probe, no evidence-cursor advance, no row mutation, no compaction, and the
+  module names no sweeper at all. Observation is the serving lifespan's own clock, so a caller may
+  observe a snapshot between two background ticks and a closed dashboard, a headless process, or a
+  disabled notifier cannot stop turn truth from advancing. `list()` rather than `list_committed()`
+  because a request thread waits for an in-flight batch on the catalog `RLock` and then reads
+  committed bytes, whereas `list_committed()` is the sweeper's own non-blocking contention read and
+  can serve a demonstrably older snapshot; the resulting wait is bounded, lands on a threadpool
+  worker because the handler is a plain `def`, never the event loop, and is strictly smaller than
+  the full inline sweep it replaced; WebSocket attach + the paste
   endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
   replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
   `POST /api/terminal/{session}/terminate` (kill tmux and mark the catalog row terminated),
@@ -919,6 +969,68 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
+  `99534dc5`, `_app_lifespan.py` +63/−2 with the new `terminal_observer_health.py`): the startup
+  contract changed again, so the body was corrected rather than annotated. The lifespan order this
+  route documents is now migrate → compact → **observer-health lifetime start and its initial
+  record** → observation prime → projection prime → recurring loops → yield: the
+  serving-lifetime accumulator is begun before the prime so the prime's own outcome is the first
+  transition published and a failed initial write costs the counters nothing. **Superseded:** the
+  previous entry's statement that this route defines no health or readiness payload for a prime
+  outcome. `LOCR-R17@v1` landed it — `_observe_terminal_catalog(runtime, phase)` publishes success
+  and failure for the prime (`phase="startup"`) and for every steady pass, and the served reading is
+  a separate `terminalObserverHealth` payload beside the notifier heartbeat, additively on the same
+  state body. What stands is the boundary: no readiness gate, cursor, marker, queue or task-authoring
+  authority derives from health, the read routes never rewrite the record, and the cutoff is the
+  configured sweep cadence rather than browser traffic. Recorded with it as an owner-visible negative
+  fact: the notifier's pre-existing inline refresh publishes no health transition, so a live notifier
+  beside a dead observer loop ages the record into `stale` — conservative, never a false `healthy`.
+  Verification metadata remains closeout-owned; no stamp advanced.
+
+
+- 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted change set on `ar/260831-locr-l18`,
+  base `d868486c`, `_app_lifespan.py` +26/−0): the route's startup contract changed, so this
+  overview's current-intent section was extended in the body rather than annotated. The route now
+  takes one pre-serve observation prime before `runtime.projector.prime()` and before any recurring
+  loop exists, so the lifespan order this route documents is migrate → compact → one contained
+  observation prime → projection prime → recurring loops → yield, and the initial projection and the
+  first notifier sweep read a catalog a canonical pass has already committed instead of depending on
+  the first scheduled tick or on a request. Recorded with it: the prime is the same canonical sweeper
+  entry point with no startup-only reader or mutation and is a due full sweep rather than an extra
+  one; its `except Exception` containment is the requirement, because observation degradation must not
+  become a serving outage, while `CancelledError` still reaches the shutdown drain; this route defines
+  no health/readiness payload for a prime outcome (that is `LOCR-R17@v1`'s contract); and the
+  prime-versus-migration/compaction edge rests on the production straight-line order, not on the
+  delivered ordering witness. The steady-state ownership account, the GET route's projection-only
+  contract, and the sweeper's own clocks are unchanged. Verification metadata remains closeout-owned;
+  no stamp advanced.
+
+- 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
+  base `67b21aeb`): the route's terminal-observation ownership changed, so this overview gained a
+  current-intent section rather than a history-only note. `_app_lifespan.py::_terminal_observation_loop`
+  is now the serving lifespan's one steady-state caller of the existing
+  `TerminalCatalogLivenessSweeper.refresh`, on a completion-relative non-overlapping attempt cadence
+  that needs no HTTP request, no open dashboard, no model turn, and no enabled agent notifier. The
+  ARSPAWN-L5 paragraph was corrected rather than deleted: its account of the notifier refreshing
+  liveness before each sweep remains true for the notifier path, and it now names the serving
+  lifespan as the steady-state owner so it no longer reads as the ownership contract. The GET route,
+  the notifier's inline refresh, and both sweeper clocks are unchanged; whether the notifier's inline
+  refresh should remain a second recurring caller is not decided here. Verification metadata remains
+  closeout-owned; no stamp advanced.
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: extended the current structural seat and routing contract with the state-signal durable order and its recovery identity. The row is persisted before the emitted marker, which is now stamped from `OwnerSignalOptions.after_persist` inside `_post_owner_signal` and strictly before any delivery attempt; delivery eligibility is re-checked at the shared action by `_state_signal_awaits_marker`, which `_drain_boundary` inherits, so predicate order is not the protection. Coalescing for `state-signal` rows is the exact `subjectAgentId` plus the normalized ask, while every other kind keeps the structural task-document + role key. Canonical seat selection, boundary-drain admission, and the shared delivery path itself are unchanged.
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
+  base `67b21aeb`): the route account changed, so this overview's served-surface list was corrected
+  in the body rather than annotated. The `GET /api/terminal/sessions` clause said the route returned
+  `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()` — a producer with a rate-limited fast
+  path and a committed-snapshot contention read. It now states the current contract: the route
+  serializes `runtime.catalog.list()` through `_catalog_payload` and cannot make its own snapshot
+  newer, names no sweeper, probes nothing, writes nothing, and compacts nothing; observation is the
+  serving lifespan's own clock. The `list()`-versus-`list_committed()` ruling is recorded with its
+  reason (a request thread waits on the batch `RLock` and then reads committed bytes, while
+  `list_committed()` is the sweeper's own contention read and can serve an older snapshot), together
+  with the accepted bounded wait on a threadpool worker and the unchanged WebSocket-attach/paste
+  direct observations. The sweeper's own card carries the matching correction to its caller account.
+  Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.

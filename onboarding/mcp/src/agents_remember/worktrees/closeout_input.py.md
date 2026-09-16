@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_input.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash |  `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
+| lastVerifiedCommitDate |  2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

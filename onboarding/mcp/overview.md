@@ -1386,6 +1386,8 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
 
 ## Update History
 
+- **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T13:15+02:00; `lastVerifiedCommitHash` `a5f5380badf357622daf1965a7a0e3caf91b51ff`; `lastVerifiedCommitDate` 2026-09-16T08:34:21+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
+
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **No route impact:** reviewed this overview as the nearest governing route for `kernel/atomic_write.py`, whose only change is one added helper. `fsync_file` extends the module's existing durability contract (the file-data half, for a producer that wrote the file through another owner) without adding, moving or retiring a route responsibility, and the module's own card carries the disclosure that its directory fsync runs after `os.replace`. The kernel route therefore has no new pillar, no new charter wording and no boundary change to record here; the substantive account lives in `mcp/src/agents_remember/kernel/atomic_write.py.md` and in the `memory/` route overview's L4 section.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
@@ -1393,6 +1395,8 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
   `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
   remains closeout-owned.
+
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: No route impact: this change set is five paths inside `mcp/src/agents_remember/serving/` and `mcp/tests/`, and it changes the state-signal posting/recovery contract, not the package boundary this overview owns (public tool roster, activation/admission, certification, memory preparation, structural agent boundary, route model). The package-level statements above stand as written; the affected contract is recorded on `serving/overview.md`, the three serving file cards, and the tests route.
 
 - 2026-09-15T00:00+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

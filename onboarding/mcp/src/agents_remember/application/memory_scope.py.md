@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash |  `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
+| lastVerifiedCommitDate |  2026-09-16T12:23:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `8a46bc8d186d9444bf9a83b21ad4683ec4937e3d`|
-| lastVerifiedCommitDate | 2026-09-11T11:04:29+02:00|
+| lastUpdated | 2026-09-15T13:15+02:00 |
+| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6`|
+| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -52,6 +52,15 @@ scope and does not silently treat every sprint role as a notifier subject. Unsta
 reviewers retain only the deterministic old leaf-manager meaning while those rows drain; master and
 sprint reviewer notifications require the generation's explicit parent stamp.
 
+`state_signal_ask(entry, evidence_id)` cit:([`state_signal_ask`], mcp/src/agents_remember/serving/state_signals.py:506-519) is the one derivation of a seat's
+canonical state-signal ask — terminal outcome plus the exact `terminal_evidence_id`. Three readers
+share it rather than re-spelling the text: the emitter that mints the row
+(`_emit_state_signal`), the kind-scoped coalescing lookup that finds that row again
+(`owner_signals._coalesces_on_source` on the same normalized ask), and the action-time marker guard
+that decides whether a pending row is the unmarked half of an interrupted post
+(`_agent_notifier_actions._state_signal_awaits_marker`). Deriving it once is what keeps the emit
+identity and the recovery identity from drifting apart.
+
 ### Conventions
 
 Task hierarchy determines ownership; runtime ids only correlate observed episodes.
@@ -75,6 +84,10 @@ Task hierarchy determines ownership; runtime ids only correlate observed episode
   sweep.
 - Reviewer notification follows the generation's structural parent, while non-reviewer expansion
   remains bounded to the notifier's historical subordinate classes.
+- The ask that identifies a state signal is derived once (`state_signal_ask`) and is the same
+  identity for emitting it, coalescing it, and fencing its delivery; no reader parses the ask or
+  mints a second key. It carries the terminal outcome and the evidence id, so a later turn is a
+  different identity and re-arms the seat.
 
 ### Todos
 
@@ -95,12 +108,15 @@ No Domain Documentation source is configured.
 | Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope. | `_notifier_subject_owner_id` | mcp/src/agents_remember/serving/state_signals.py:397-414 |
 | Boundary drain admits a pending row whose target turn boundary follows its last recorded attempt. | `_boundary_follows_last_attempt` | mcp/src/agents_remember/serving/state_signals.py:440-456 |
 | Boundary-drain eligibility for a no-attempt row is state-signal-scoped; the sweep reuses the same durable pending row. | `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:459-498 |
+| One canonical ask identity (terminal outcome + evidence id) shared by the emitter, the coalescing lookup and the action-time marker guard. | `state_signal_ask` | mcp/src/agents_remember/serving/state_signals.py:506-519 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: recorded `state_signal_ask` as the module's one canonical ask identity (terminal outcome + exact `terminal_evidence_id`) and the three readers that share it — the state-signal emitter, the kind-scoped coalescing lookup, and the action-time marker guard in the shared redelivery action. The evidence id stays in the identity, so a later turn is a different ask and re-arms the seat. No predicate, boundary-drain or owner-derivation behavior changed.
 
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: recorded the boundary-drain predicate `_boundary_follows_last_attempt` and its call from `evaluate_boundary_drain_findings` — a pending row with no attempt clock is drainable only for `messageKind == "state-signal"` (the set whose clock an occupant rebind resets and whose push the boundary gate owns), while every other kind and every unparseable clock keep the previous refusal. Also repaired a duplicated garbled sentence in the Logic section and re-derived the construct ranges. Verification metadata remains closeout-owned.
 

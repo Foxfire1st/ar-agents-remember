@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/masterSeries.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-24T15:28+02:00                                        |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8`                  |
+| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
