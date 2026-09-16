@@ -104,16 +104,16 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The harness and its real-seam setup, including the context resolved from the live candidate. | `CandidateHarness`; `build_candidate_harness` | mcp/tests/candidate_batch_test_support.py:92-236; mcp/tests/candidate_batch_test_support.py:237-278 |
-| The two measurements, each taken through its own opened store. | `logical_digest(store`; `table_counts(store` | mcp/tests/candidate_batch_test_support.py:279-287; mcp/tests/candidate_batch_test_support.py:288-297 |
+| The two measurements, each taken through its own opened store. | `logical_digest`; `table_counts` | mcp/tests/candidate_batch_test_support.py:279-287; mcp/tests/candidate_batch_test_support.py:288-297 |
 | The refusal probe and the evidence object a case asserts on. | `RefusalEvidence`; `measure_refusal` | mcp/tests/candidate_batch_test_support.py:298-323; mcp/tests/candidate_batch_test_support.py:324-345 |
 | The removal seeds and the digest each removal must name. | `RemovalSeed`; `removal_seeds`; `record_is_gone` | mcp/tests/candidate_batch_test_support.py:346-355; mcp/tests/candidate_batch_test_support.py:431-534; mcp/tests/candidate_batch_test_support.py:535-544 |
 | The deliberate raw write that places the row the operations forbid. | `insert_raw_membership` | mcp/tests/candidate_batch_test_support.py:545-577 |
-| The registered contract, artifact row, evidence node and exact consumer set. | "candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1085-1085 |
+| The registered contract, artifact row, evidence node and exact consumer set. | "contract:candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1101-1101 |
 | The admitted destination and namespace initialization the harness drives. | `initialize_knowledge_namespace`; `resolve_candidate_context` | mcp/src/agents_remember/application/knowledge.py:160-191; mcp/src/agents_remember/application/knowledge.py:252-273 |
 | The harness's one-to-one card, which records what it builds. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:19-31 |
 | The operation the harness applies its batches through. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
 | The two declared consumers' own first nodes, which measure a refusal through this harness. | "test_every_declared_command_is_applied_and_read_back"; "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_commands.py:114-209; mcp/tests/test_candidate_batch_transaction.py:62-110 |
-| The registry validator that derives real importers and refuses a differing declared consumer set. | `def load_evidence_inventory` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:162-166 |
+| The registry validator that derives real importers and refuses a differing declared consumer set. | `load_evidence_inventory` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:162-166 |
 
 ## Cross-Repo References
 

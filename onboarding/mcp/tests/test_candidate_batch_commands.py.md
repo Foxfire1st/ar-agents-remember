@@ -110,7 +110,7 @@ No domain documentation source is configured for this repository (`system/source
 | The held expectation and the two closed-union boundary cases. | "test_an_expected_record_that_matches_permits_the_batch"; "test_the_closed_union_refuses_an_unknown_field_and_an_unknown_command"; "test_two_expectations_for_one_record_are_refused_at_the_boundary" | mcp/tests/test_candidate_batch_commands.py:337-371; mcp/tests/test_candidate_batch_commands.py:372-405; mcp/tests/test_candidate_batch_commands.py:406-422 |
 | The model-level seal case, whose operation-level twin lives in the transaction module. | "test_the_context_digest_seals_the_whole_resolved_context" | mcp/tests/test_candidate_batch_commands.py:423-438 |
 | The unit-lane rows that make the module's classification explicit. | "mcp/tests/test_candidate_batch_commands.py" | mcp/tests/test-evidence-lanes.toml:18-18 |
-| The shared harness this module drives and its registered contract. | "candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1085-1085 |
+| The shared harness this module drives and its registered contract. | "contract:candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1101-1101 |
 | The operation under test and the union it accepts. | `change_candidate`; `ProposedCommand` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/models/knowledge/candidate.py:342-358 |
 
 ## Cross-Repo References
