@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
+| lastUpdated | 2026-09-16T22:19+02:00 |
+| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l16-ar` uncommitted source; base `8997e184efe67e853a60780912ef5ac21844a323` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,11 @@ finding: six test files carry no explicit lane. Those six —
 **pre-existing at the pristine base** and are none of them this leaf's modules; this leaf adds two rows
 and closes none of that gap. Every count stated in the earlier sections below is an earlier
 measurement and must be read as such.
+
+**This paragraph is the L7 candidate's measurement, not the current one.** Measured at the L16
+candidate (base `8997e184` plus its change set): **232 declared rows** against **238** modules on disk,
+the same six D9 modules unregistered. The L16 section below carries that measurement; nothing in this
+paragraph is a claim about the current population.
 
 Lane brackets as measured now: unit-regression 134 entries (key `:5`), public-contract 2 (`:141`),
 integration 63 (`:145`), architecture-fitness 17 (`:210`), provider-conformance 14 (`:229`), with
@@ -55,6 +60,29 @@ existing lanes, plus `test_memory_quality_is_independent_of_the_closeout_plane.p
 hermetic focused suites and the integration lane is capped at 200 collected cases
 (`pyproject.toml:135`; the "150" this card's earlier entries recorded is stale), so nothing was
 moved into it beyond the one module that genuinely exercises an integration boundary.
+## 260915-CAPS-L16 Lane Row (Declared)
+
+The L16 change set adds `mcp/tests/test_citation_source_index_membership.py` **and** its row in the same
+change, so the manifest stays closed in that change set. The row is
+`mcp/tests/test-evidence-lanes.toml:26`, in the **unit-regression** lane, inserted alphabetically
+between `test_checkpoint_landing.py` and `test_cli_discovery.py`. That is its behaviour-preserving
+lane: the module's seven cases build disposable code roots and drive the real citation source index
+in-process — they start no server, launch no process and touch no product surface — so the hermetic
+default unit lane is where a previously-unmarked module already ran. **Lane row added; no case added
+to any capped population that was not already there.**
+
+Measured at this leaf's synced base `8997e184` **plus** this change set, by counting the manifest's
+declared path rows and the modules on disk: **232 declared rows** against **238** `mcp/tests/test_*.py`
+modules, so **six** modules remain unregistered — exactly the pre-existing D9 set owned by the
+final-verification leaf (`test_eve_adapter.py`, `test_eve_protocol.py`, `test_role_capsule_admission.py`,
+`test_role_capsule_compiler.py`, `test_role_instruction_corpus.py`, `test_task_projection.py`). This
+leaf closed none of that gap. The lane keys still sit at unit-regression `:5`, public-contract `:143`,
+integration `:147`, architecture-fitness `:212`, provider-conformance `:231`, with stress-durability
+(`:247`) and migration (`:249`) empty; the one insertion at `:26` pushes every row below it down one
+line, so the section immediately above records the previous candidate's row numbering and is that
+leaf's as-of record. Classification only: lane membership is not execution, certification or
+acceptance evidence.
+
 ## 260913-LCA-L4 Pending Lane Row (Open At L4, Resolved Since)
 
 **Resolved — see the L5 section below.** At the L4 change set the manifest was one row short.
@@ -581,6 +609,17 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository authority is established by this file.
 
 ## Update History
+
+- 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **one row added — `test_citation_source_index_membership.py`
+  at `:26`, unit-regression** — and the population re-measured at this leaf's synced base `8997e184` plus
+  its change set: **232 declared rows** against **238** modules on disk, leaving exactly the six
+  pre-existing D9 modules unregistered (this leaf closed none of that gap and added no case to a capped
+  population that was not already there). A new declared section carries the measurement and the
+  behaviour-preserving lane rationale; the older "Current population" paragraph is now explicitly marked
+  as the L7 candidate's measurement rather than the current one, because the insertion at `:26` moved
+  every row below it and a reader must not take its 230/236 pair as current. Verification metadata moves
+  to `8997e184` with the reviewed working candidate named; the candidate is deliberately uncommitted, so
+  the governed closeout stamps the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **two rows added and the population re-measured at
   the current base.** Registered this leaf's `mcp/tests/test_eve_capsule_binding.py` in

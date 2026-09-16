@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_eve_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,6 +59,21 @@ an adapter over a `FakeRuntimeFactory`. Ten case classes then hold the contract:
 - `EveAdapterSessionCompletionTests` — session retirement is distinguished from a turn boundary.
 - `EveAdapterIsolationTests` — two concurrent sessions with interleaved events keep separate
   transcripts, identities and pending sets.
+- `EveRuntimeTransportFakeContractTests` (1142) — the double really implements the protocol it stands
+  in for. `compact_session` and `clear_session` arrived on `EveRuntimeTransport` when eve's
+  session-control routes landed and the double did not gain them, so every case handing it to
+  `EveSessionAdapter` was a type error only pyright could see (D19). The typed
+  `transport: EveRuntimeTransport = FakeEveRuntime()` assignment is the static half, re-checked by the
+  whole-tree pyright gate; the behavioural half is what a type checker cannot see, because a member
+  that exists and does nothing is a double that lies about the runtime it replaces — compaction must
+  keep the history and record a summary, clear must drop it and keep the session identity, and both
+  must refuse an unknown session.
+- **Every case that starts the real launch calls `require_installed_eve_application` first** — one
+  reach in the `_started` funnel (262) that 30 cases pass through, plus three cases that build the
+  adapter and call `start`/`discover` directly (302, 315, 328). The transport is a double, but `start`
+  is the real launch path and it stages the application; without the machine-local install the case
+  **cannot run on this machine**, so it skips by name and states the missing path and the exact install
+  command rather than failing as if the product were broken.
 
 ### Conventions
 
@@ -88,6 +103,13 @@ an adapter over a `FakeRuntimeFactory`. Ten case classes then hold the contract:
   `live_eve_native_fixture.py`'s scope, and neither substitutes for the other.
 - A pending input request refuses further ordinary delivery until it is answered; that is asserted
   here rather than left to the adapter's own documentation.
+- **A protocol member the double lacks is a failure of the double, and only a type checker will say
+  so** until a case calls it. The contract class above exists because pyright's seven errors were the
+  only trace of the gap; a member that exists but does nothing is caught by the behavioural half.
+- **A machine-local dependency is named, not retried and not silently skipped.** The guard states what
+  is missing and how to install it, so a fresh checkout reports `skipped` with a reason and a
+  provisioned run executes the cases; nothing here installs the runtime, because a suite whose verdict
+  depends on which machine ran it is the defect the guard removes.
 
 ### Todos
 
@@ -125,6 +147,19 @@ No external repository boundary is implemented by this test.
 | The launch-time verification that makes a partial binding unlaunchable, which is why the suite could not keep its fabricated cwd and two-variable environment. | `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
 
 ## Update History
+
+- 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the suite gained a protocol pin and a named
+  environment guard** (defect D19, repaired by this leaf). `EveRuntimeTransportFakeContractTests` (new,
+  three cases) pins that the deterministic double implements `compact_session` and `clear_session`,
+  which `EveRuntimeTransport` gained without the double following: the static half is a typed
+  assignment the whole-tree pyright gate re-checks, the behavioural half covers what a type checker
+  cannot see. The same change calls `require_installed_eve_application` at the `_started` funnel and at
+  the three cases that start the launch directly, so the launch-dependent cases skip **by name** with
+  the missing path and the exact install command instead of failing as a product defect; coverage of
+  the reaches was proved per case in its own process, and the failure set that moved between schedules
+  (the D20 staging fail-open) is now deterministic. Verification metadata moves to this leaf's synced
+  base `8997e184`; the candidate is deliberately uncommitted, so the governed closeout stamps the real
+  code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the suite's launches now carry a complete,
   verifiable capsule binding.** `_launch` previously hand-wrote `AR_WORKSPACE_ROOT` and

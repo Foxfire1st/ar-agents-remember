@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_eve_product_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastUpdated | 2026-09-16T22:19+02:00 |
+| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,6 +108,12 @@ the floor (`conftest` isolates `HOME`, so the nvm candidate list is empty under 
 - These are **unit** cases in the evidence-lane manifest (see the lane row), so the default selection
   collects them; the two integration-marked cases elsewhere in the file are deselected by the default
   selection.
+- **Every helper that starts the real launch calls `require_installed_eve_application` first** —
+  `_start_eve` (574, six callers), `_evidence_frames` (1296) and `_projected` (1579). The transport is
+  a double, but `start` is the real launch path and it stages the application, so without the
+  machine-local `eve_runtime/node_modules` install there is nothing to stage and the case **cannot run
+  on this machine**; it skips by name, stating the missing path and the exact install command, rather
+  than failing as though the product were broken.
 
 ### Invariants And Boundaries
 
@@ -126,6 +132,13 @@ the floor (`conftest` isolates `HOME`, so the nvm candidate list is empty under 
   are in the leaf's evidence package.
 - **The census is a transcription, not a check.** Do not read `_PINNED_RUN_CENSUS` as re-verified by
   the suite; the module states the limit in place.
+- **A missing machine-local dependency is named, never retried and never silently skipped.** The guard
+  says what is absent and how to install it, so an unprovisioned checkout reports `skipped` with a
+  reason while a provisioned run executes the cases. Nothing here installs the runtime: a suite whose
+  verdict depends on which machine ran it is the defect the guard removes. The production fail-open it
+  works around — `stage_runtime_root` stages before it checks the install, so a second staging call in
+  the same process passes without it (**D20**) — is **reported, not repaired** here; it belongs to the
+  leaf that owns `serving/eve_runtime_launch.py`.
 
 ### Todos
 
@@ -173,6 +186,19 @@ than a sibling Agents Remember repository.
 | The transport the double replaces, and the pinned release whose event vocabulary the census records. | `dependencies` | eve_runtime/package.json:14-20; eve_runtime/README.md:10-22 |
 
 ## Update History
+
+- 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the launch-dependent reaches now skip by name**
+  (defect D19, repaired by this leaf). `require_installed_eve_application` is called from `_start_eve`
+  (six callers), `_evidence_frames` and `_projected`, so a checkout without the machine-local
+  `eve_runtime/node_modules` install reports `skipped` with the missing path and the exact install
+  command instead of failing as a product defect — eight install-dependent cases across this module
+  and its sibling were the measured failing set, and the same guard makes the schedule-dependent
+  failure set deterministic (its cause, D20's half-staged-destination fail-open in
+  `stage_runtime_root`, is **reported and routed, not repaired here**). The body's Conventions and
+  Invariants sections now carry the reaches and the "named, never retried, never silently skipped"
+  boundary. Verification metadata moves to this leaf's synced base `8997e184`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
 
 - 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: created this card for a file added by the eve
   product-integration change set. Records the thirteen classes and the owner each drives, the

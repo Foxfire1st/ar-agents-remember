@@ -5,14 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
-| governingOverview      | `../../../../../overview.md` |
+| lastUpdated            | 2026-09-16T22:19+02:00 |
+| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../overview.md)
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -73,5 +73,17 @@ No sibling-repository contract defines this instruction file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-16T22:19+02:00 — **No content impact:** 260915-CAPS-L16 curator. The canonical source gained
+  one pronoun — the curator's exit says terminal/finalizer evidence attests only that **this** turn
+  ended — and this card's Logic describes the curator/manager job split and the three fed inputs, not
+  the completion-truth wording, so nothing in the body asserts the sentence that moved. Reviewed
+  against the change set and deliberately left as written rather than reworded to match a one-word
+  diff. **Repaired in the same pass (D16):** this card's `governingOverview` field and link pointed five
+  levels up, at `onboarding/mcp/src/agents_remember/overview.md`, which does not exist — the card's own
+  link text says "MCP package overview", which from `operations/` is **seven** levels up. Both now
+  resolve to `onboarding/mcp/overview.md`. Verification metadata moves to this leaf's synced base
+  `8997e184`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for `skills/l-01-agent-lifecycles/operations/curation.md` — a file added by the role-instruction corpus consolidation. The canonical source is an operation-scoped procedure block extracted from interleaved role prose (curation).; the packaged copy is produced by `scripts/sync-skills.py` and is not hand-edited. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.

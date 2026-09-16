@@ -5,14 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/rulings.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba` |
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
-| governingOverview      | `../../../../../overview.md` |
+| lastUpdated            | 2026-09-16T22:19+02:00 |
+| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../../../../overview.md)
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -75,5 +75,20 @@ No sibling-repository contract defines this instruction file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-16T22:19+02:00 — **No content impact:** 260915-CAPS-L16 curator. The canonical source's
+  LOCR-1 migration-map row gained a sentence break (the anchor cell now ends `…*Completion Truth And
+  Handoff Acceptance*.`) — punctuation in a historical anchor name, taken to break a detector's
+  reverse-window adjacency, with the anchor's identity and every ruling it carries unchanged. This
+  card's Logic enumerates the standing ruling index and the supersession rule, which that row does not
+  alter, so nothing in the body asserts the sentence that moved; reviewed and deliberately left as
+  written. The one-home fact the row names (`core/acceptance.md` owns the boundary) is unchanged and
+  remains the reason the pre-consolidation `SKILL.md` section is not restored. **Repaired in the same
+  pass (D16):** this card's `governingOverview` field and link pointed five levels up, at
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist — the card's own link text says
+  "MCP package overview", which from `reference/` is **seven** levels up. Both now resolve to
+  `onboarding/mcp/overview.md`. Verification metadata moves to this leaf's synced base `8997e184`; the
+  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit and no
+  hash or fingerprint was invented here.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for `skills/l-01-agent-lifecycles/reference/rulings.md` — a file added by the role-instruction corpus consolidation. The canonical source is a reference-only index of the durable rulings the corpus implements, with their supersessions.; the packaged copy is produced by `scripts/sync-skills.py` and is not hand-edited. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.

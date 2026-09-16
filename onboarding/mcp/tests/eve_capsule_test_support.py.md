@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/eve_capsule_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastUpdated | 2026-09-16T22:19+02:00 |
+| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,30 +39,41 @@ capsule compiled from this world.
 
 ### Logic
 
-`build_world` (457) is the entry point and returns a frozen `FixtureWorld` (396). The world is assembled
+`build_world` (465) is the entry point and returns a frozen `FixtureWorld` (404). The world is assembled
 from composable pieces rather than one monolith:
 
 | Piece | What it builds |
 | --- | --- |
-| `repository_with_commit` (147) | one real repository with one commit on a named branch |
-| `add_worktree` (165) | one real `git worktree` checkout on a named branch, so the linked-worktree `.git`-file shape is exercised rather than the plain-directory shape only |
-| `composition_corpus` (175) | the authored corpus the compiler's instruction blocks come from |
-| `_sprint_document` / `_master_document` / `_leaf_document` (296, 268, 250) | the three real task documents the projection reads |
-| `ContractAddresses` (326) + `_contract_text` (336) | the enclosure contract as a real file, addressed the way the resolver expects |
-| `fixture_carrier_for` (565) | the one call into production `materialize_eve_binding`, returning the carrier path and digest |
+| `repository_with_commit` (155) | one real repository with one commit on a named branch |
+| `add_worktree` (173) | one real `git worktree` checkout on a named branch, so the linked-worktree `.git`-file shape is exercised rather than the plain-directory shape only |
+| `composition_corpus` (183) | the authored corpus the compiler's instruction blocks come from |
+| `_sprint_document` / `_master_document` / `_leaf_document` (304, 276, 258) | the three real task documents the projection reads |
+| `ContractAddresses` (334) + `_contract_text` (344) | the enclosure contract as a real file, addressed the way the resolver expects |
+| `fixture_carrier_for` (573) | the one call into production `materialize_eve_binding`, returning the carrier path and digest |
 
-`binding_env` (622) and `launch_env` (635) render the two environment shapes a launch can carry — a
+`binding_env` (630) and `launch_env` (643) render the two environment shapes a launch can carry — a
 complete binding and the unbound case — so a case can state which half is missing without hand-writing
 variable names.
 
 **The frozen vocabularies are spelled here rather than imported** (`ALL_ROLES`, `ALL_OPERATIONS`,
-`ROLE_ALTITUDES`, `OPERATIONS_BY_ROLE`, 63-118, with `CORE_BLOCKS` at 120). This is deliberate: a
+`ROLE_ALTITUDES`, `OPERATIONS_BY_ROLE`, 63-127, with `CORE_BLOCKS` at 128). This is deliberate: a
 fixture that imported what the compiler enforces could not disagree with it, and the compiler's refusal
 on a partial or contradictory manifest is itself behaviour worth keeping honest.
 
+**"Spelled rather than imported" only holds while the spelling is current** — that is the boundary the
+sixteen failures of D19 taught. `bootstrap` is the tenth role and the ninth operation (260915-CAPS-L13
+added it to `CAPSULE_ROLES`, `CAPSULE_OPERATIONS` and the real `composition-manifest.json`), and a
+fixture that stopped at nine no longer *disagreed* with the compiler: it failed it, with
+`HarnessControlError: manifest-vocabulary-mismatch: … compiler-only=['bootstrap']`. The four entries
+were therefore added — `ALL_ROLES` += `bootstrap`, `ALL_OPERATIONS` += `bootstrap`,
+`ROLE_ALTITUDES["bootstrap"] = "free-agent"`, `OPERATIONS_BY_ROLE["bootstrap"] = ("orientation",
+"bootstrap", "recovery")` — mirroring the sibling fixture in `test_capsule_serving.py`, which already
+carried them. The two fixtures must move together: whoever adds the next role adds it in both, or this
+one silently starts failing the compiler it exists to check.
+
 ### Conventions
 
-- `run_git` (123) is the only way git is invoked, and it fails loudly on a non-zero exit rather than
+- `run_git` (131) is the only way git is invoked, and it fails loudly on a non-zero exit rather than
   returning a partial result a case might assert against.
 - Git identity is configured inside the fixture so a case never depends on the operator's global git
   config.
@@ -78,6 +89,9 @@ on a partial or contradictory manifest is itself behaviour worth keeping honest.
   would let the git-identity comparison pass without ever reading git metadata.
 - **The fixture must not import the vocabulary it is used to test against** — see above. Importing
   `ALL_ROLES` from the compiler would make the corpus unable to disagree with the compiler.
+- **A stale spelling is not a disagreement.** A vocabulary that stops one role short of the compiler
+  fails it instead of testing it, so the spelled sets track the compiler's current vocabulary and the
+  sibling fixture in `test_capsule_serving.py` moves with them.
 - **The world is real, not hermetic-by-deletion.** Cases assert against bytes this fixture wrote into
   its own corpus, so a corpus change shows up as a failing case rather than a silently updated
   expectation.
@@ -105,9 +119,9 @@ was available for this file.
 | The production producer this fixture drives, and the carrier type its result is handed back as. | `materialize_eve_binding`; `EveBoundLaunch`; `carrier_digest` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-291 |
 | The environment names the fixture renders, imported into the launch module from the carrier module so the fixture cannot invent a spelling the launch does not read. | `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV`; `CAPSULE_PATH_ENV`; `WORKSPACE_ROOT_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:34-37; mcp/src/agents_remember/serving/eve_runtime_launch.py:41-48 |
 | The compiler and projection inputs this fixture supplies for real. | `compile_task_capsule`; `resolve_task_projection_scope` | mcp/src/agents_remember/application/skill_resources/__init__.py; mcp/src/agents_remember/application/task_projection/__init__.py |
-| The lifecycle catalog row for this support module, including its four consumers and its replacement contract. | `path = "mcp/tests/eve_capsule_test_support.py"` row | mcp/tests/evidence-lifecycle.toml:714-724 |
-| The focused cases that consume this world, and the runtime cases that execute the shipped TypeScript against it. | `world` fixture; `test_runtime_verifier_accepts_the_admitted_carrier_and_workspace` | mcp/tests/test_eve_capsule_binding.py:63-65; mcp/tests/test_eve_capsule_runtime.py:182-203 |
-| The live native fixture that compiles a capsule from this world and launches the real eve runtime against it. | `build_world` consumer | mcp/tests/live_eve_native_fixture.py:87-95 |
+| The lifecycle catalog row for this support module, including its four consumers and its replacement contract. | `path = "mcp/tests/eve_capsule_test_support.py"` row | mcp/tests/evidence-lifecycle.toml:715-726 |
+| The focused cases that consume this world, and the runtime cases that execute the shipped TypeScript against it. | `world` fixture; `test_runtime_verifier_accepts_the_admitted_carrier_and_workspace` | mcp/tests/test_eve_capsule_binding.py:59-61; mcp/tests/test_eve_capsule_runtime.py:182-203 |
+| The live native fixture that compiles a capsule from this world and launches the real eve runtime against it. | `build_world` consumer | mcp/tests/live_eve_native_fixture.py:87-95; mcp/tests/live_eve_native_fixture.py:1175-1175 |
 
 ## Cross-Repo References
 
@@ -119,6 +133,27 @@ local to the test's temporary directory.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the frozen vocabularies caught up with the
+  compiler** (defect D19, repaired by this leaf). `bootstrap` — the tenth role and ninth operation
+  since 260915-CAPS-L13 — was added to `ALL_ROLES`, `ALL_OPERATIONS`, `ROLE_ALTITUDES`
+  (`free-agent`) and `OPERATIONS_BY_ROLE`, mirroring the sibling fixture in `test_capsule_serving.py`,
+  which already carried the four entries. This is what the card's own "spelled rather than imported"
+  rule requires to stay true: a spelling that stops one role short does not *disagree* with the
+  compiler, it fails it (`manifest-vocabulary-mismatch: … compiler-only=['bootstrap']`), which is what
+  sixteen cases in `test_eve_capsule_binding.py` did until this change — and because the fixture now
+  agrees, those cases **run and assert** instead of being skipped. The boundary sentence for that rule
+  and the "the two fixtures move together" coupling were added to the body and to the invariants.
+  Citation repair in the same pass, stated plainly: this change shifted every anchor at and below the
+  vocabulary block by +8 lines, so the body's piece table and `run_git` were re-derived against the
+  candidate. The card's anchors had **already** drifted 8 lines before this leaf's bytes (they were
+  authored against a pre-L13 revision of the file, not against the leaf base), and three cross-file
+  citations that were near-misses but still wrong were corrected with them (the catalog row, the
+  binding suite's `world` fixture, the live fixture's consumer call). Left as written rather than
+  re-derived: the two anchors that do resolve (`test_eve_capsule_runtime.py:182-203`, the live fixture's
+  import block). Verification metadata moves to this leaf's synced base `8997e184`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: created this card for the fixture world added by
   this leaf's change set. Records that it builds real git repositories, real `git worktree` checkouts,
