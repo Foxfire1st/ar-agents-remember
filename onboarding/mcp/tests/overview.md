@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
+| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
+| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
 
@@ -351,11 +351,25 @@ are gone. The rule is now normative: **curation is complete on every leaf** — 
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
 operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
-`qualityChecklistStatus=ready-for-closeout`; the **combined** `checklistStatus` then reports
-`coherence-required`, which is when the coherence authority is published and validated. **Field-name
-correction (`D35`, made by 260915-CAPS-L10):** `ready-for-closeout` is never a value of the combined
-`checklistStatus` — read the raw field to end the loop and the combined field to decide the coherence
-gate (`application/memory_quality/controller.py:664,671,678,687`).
+`qualityChecklistStatus=ready-for-closeout`. The **combined** `checklistStatus` is rewritten to
+`coherence-required` **only when the coherence record is then missing or stale** — that is the coherence
+gate, cleared by publishing the `curator_coherence` authority with `prepare` → `publish` → `validate`.
+On the success path, where the record is already current, the combined field is **not rewritten** at all
+and keeps its incoming `ready-for-closeout` value, with `closeoutReady=true`; `ready-for-closeout` is
+therefore observable in the combined field once the whole pipeline is already complete. **Field-name
+correction (`D35`, made by 260915-CAPS-L10):** this sentence previously named
+`checklistStatus=ready-for-closeout` as the loop's termination condition; read the raw field to end the
+loop and the combined field to decide the coherence gate
+(`application/memory_quality/controller.py:664`, `:671`, `:678`, `:685-687`).
+
+**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** The `D35` correction above originally rested
+on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute claim is
+**literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path model now
+stated here. The field-name correction it supported still holds; only its stated warrant was wrong.
+**Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
+**onboarding cards** that carried the wrong form, while `CAPS-R19` corrected the **shipped sources** — the
+five loop-gate carriers, their nine generated copies, and the guard registry's own docstring — and brought
+`docs/reference/mcp-tools.md` into both the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`.
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -1195,6 +1209,7 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`)** in the CAPS-L18 section — `ready-for-closeout` is never a value of the combined `checklistStatus`; the curator repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). **No test-surface change:** this leaf's code delta is zero, it adds no module and touches no lane row, so this route's population, its budgets and its `D9` residual are unchanged (`D9` remains L11's six historical modules). Verification metadata is left alone: the candidate is uncommitted and the governed closeout stamps the real code commit.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: this route gained **one module** —
   `test_capsule_experiment_install.py`, 19 cases — plus two rows in `test_sync_runtime.py`. The

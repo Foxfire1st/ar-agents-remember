@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
+| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098`|
+| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
@@ -231,16 +231,33 @@ are gone. The rule is now normative: **curation is complete on every leaf** — 
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
 operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
-`qualityChecklistStatus=ready-for-closeout`; the **combined** `checklistStatus` then reports
-`coherence-required`, which is when the coherence authority is published and validated.
+`qualityChecklistStatus=ready-for-closeout`. The **combined** `checklistStatus` is rewritten to
+`coherence-required` **only when the coherence record is then missing or stale** — that is the coherence
+gate, cleared by publishing the `curator_coherence` authority with `prepare` → `publish` → `validate`.
 
 **Field-name correction (`D35`, made by 260915-CAPS-L10).** The sentences above and in the shipped
-sources previously named `checklistStatus=ready-for-closeout` as the loop's termination condition.
-`ready-for-closeout` is **never** a value of the combined `checklistStatus` — it is the value of the
-**raw** `qualityChecklistStatus`. Read the raw field to decide whether the repair loop can end, and the
+sources previously named `checklistStatus=ready-for-closeout` as the loop's termination condition. The
+loop's gate is the **raw** `qualityChecklistStatus`; the **combined** `checklistStatus` is rewritten to
+`coherence-required` **only when the coherence record is then missing or stale**, which is the coherence
+gate that `prepare` → `publish` → `validate` must clear. On the success path, where the record is already
+current, the combined field is **not rewritten** and keeps its incoming `ready-for-closeout` value, with
+`closeoutReady=true`; so `ready-for-closeout` *is* a value the combined field can hold, but only once the
+whole pipeline is already complete. Read the raw field to decide whether the repair loop can end, and the
 combined field to decide whether the coherence gate applies; `closeoutReady` is `true` only after the
-coherence authority validates (`application/memory_quality/controller.py:664`, `:671`, `:678`, `:687`).
-A curator following the old wording watches the combined field and can never satisfy the condition.
+coherence authority validates (`application/memory_quality/controller.py:664`, `:671`, `:678`,
+`:685-687`). A curator following the old wording watches the combined field sit at `action-required` while
+repairs are outstanding and then flip to `coherence-required` at the exact moment they finish — the gate
+it waits on is unsatisfiable precisely while the wait matters, and the next required action is not a
+repair at all.
+
+**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** The `D35` correction above originally rested
+on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute claim is
+**literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path model now
+stated here. The field-name correction it supported still holds; only its stated warrant was wrong.
+**Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
+**onboarding cards** that carried the wrong form, while `CAPS-R19` corrected the **shipped sources** — the
+five loop-gate carriers, their nine generated copies, and the guard registry's own docstring — and brought
+`docs/reference/mcp-tools.md` into both the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`.
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -278,6 +295,7 @@ verification stamp was advanced.
 
 ## Update History
 
+- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the corpus restructure is labelled as structure, not as a measured saving.** Added the measured qualification to Purpose: the `620 → 179` router change moved doctrine into the new sibling layers rather than removing it, the one measurement that exists points the other way at the worker elevation (delivered capsule **11,828** vs a **5,928** legacy chain, **+5,900**; like-for-like 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE**. Also **corrected a landed defect (`D35`)** in the CAPS-L18 section: `ready-for-closeout` is never a value of the combined `checklistStatus`; the repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp or fingerprint advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual 260915-CAPS-L1 shape (thin router + `core/` + nine role files + eight `operations/` blocks + `reference/` + `composition-manifest.json`), and the Ungoverned Mirror Status section records this pass's explicit decision: the overview is updated because route meaning changed, while the legacy `onboarding/skills/l-01-agent-lifecycles/**` sidecars are deliberately left untouched because they are outside `pathRules.include`, already declared knowingly stale, and a partial hand-refresh would duplicate the governed cards on the tracked generated `mcp/**` copy without resolving the govern-or-remove question this section already raises. No verification stamp or fingerprint was advanced.

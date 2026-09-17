@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
+| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
+| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
@@ -519,11 +519,24 @@ operation is re-run after every repair until `curatorActionableCount=0` and the 
 
 **The two status fields are different fields, and a reader who merges them loops forever** (`D35`, a
 landed-defect repair recorded by 260915-CAPS-L10). Read the **raw** `qualityChecklistStatus` to decide
-whether the repair loop can end. Once it reaches `ready-for-closeout` the **combined** `checklistStatus`
-reports `coherence-required` — `ready-for-closeout` is never a value of the combined field — and
-`closeoutReady` becomes `true` only after the structured coherence authority validates.
-`application/memory_quality/controller.py` is the authority: `:664` publishes the raw field, `:671` gates
-on it, `:678` publishes the combined `coherence-required`, `:687` sets `closeoutReady` after validation.
+whether the repair loop can end. Once it reaches `ready-for-closeout`, the **combined** `checklistStatus`
+is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; on the
+success path, where the record is already current, the combined field is not rewritten at all and keeps
+its incoming `ready-for-closeout` value, with `closeoutReady=true`. `ready-for-closeout` therefore *is*
+observable in the combined field, but only once the whole pipeline — repairs and validation — is already
+complete. `application/memory_quality/controller.py` is the authority: `:664` publishes the raw field,
+`:671` gates on it, `:678` publishes the combined `coherence-required`, `:685-687` leave the combined
+field untouched when the record is current and set `closeoutReady` after validation.
+
+**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** This card's `D35` correction originally
+rested on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute
+claim is **literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path
+model above. The field-name correction the sentence supported is still right; only its stated warrant was
+wrong. **Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
+**onboarding cards** that carried the wrong form, and `CAPS-R19` (`260915-CAPS-L19`) corrected the
+**shipped sources** — the five loop-gate carriers, their nine generated copies, the guard registry's own
+docstring — and brought `docs/reference/mcp-tools.md` into both the loop-gate census and the guard's
+`LOOP_GATE_DOCUMENTS`.
 The sentence this section previously carried named the combined field as the loop's termination
 condition; that was wrong in the shipped sources and in the cards that quoted them, and it is corrected
 here and on the other affected cards.
@@ -1084,6 +1097,7 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **one stale citation repaired by hand on this card (D14 route).** The evidence-table row `PreparedMemoryCertificationAdapter` cited `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, a path that does not exist at this leaf's code base `304de8e2`; the adapter now lives at the application rank. Re-read at the base: `mcp/src/agents_remember/application/prepared_certification.py` is 813 lines and declares `class PreparedMemoryCertificationAdapter:` at **749**, so the row now reads `application/prepared_certification.py:749-813`. Per-document `citation_fix` is unreachable in a leaf worktree (`D14`), so this is a hand repair and it is recorded here rather than stamped.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the master's measured result reaches this route, and it is negative.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation that could be measured (delivered `orientation` capsule **11,828** tokens against a **5,928** baseline, **+5,900**; the like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), obligation preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED**, with disposition **REVISE**. The section also records the delivery result that *did* hold (a started eve session's own system block carries the capsule exactly once — on the second call, after compaction, clear and resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, the explicit statement that **no IAS landing is authorized**, and the residuals with owners (`F-1`…`F-7`, the UNRUN matched baseline, `D34`, `D35`). **Corrected a landed defect (`D35`):** the CAPS-L18 section told a curator to iterate until `checklistStatus=ready-for-closeout`, which is never a value of the combined field; the loop's termination condition is the **raw** `qualityChecklistStatus`, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` is true only after the coherence authority validates (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.

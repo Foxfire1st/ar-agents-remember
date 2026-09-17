@@ -6,8 +6,8 @@
 | path                   | `mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-17T12:30+02:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
+| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
+| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview
