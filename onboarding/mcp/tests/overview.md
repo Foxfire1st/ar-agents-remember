@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `../overview.md` |
 
@@ -39,6 +39,28 @@ the seven anchor observations against a real committed Git tree, the snapshot/na
 continuation bindings) and `test_knowledge_read_paths.py` (integration — what a *path* is to this read: an
 address, not a pattern), all three consuming the governed artifact `read_scope_test_support.py` under contract
 `knowledge-read-scope-cases`.
+
+**The schema-generation and envelope half is its own pair plus one shared support module.**
+`test_knowledge_schema_generations.py` covers the generation registry: that generation 1's fingerprint
+recomputes byte-identically to its pinned constant and that the gate **raises** when one recorded
+generation-1 field is perturbed (one DDL string, one trigger body, one column tuple — a pin observed only
+passing is a comment), that the artifact key lookup is type-strict so `1.0`, `"1"` and `true` are refused
+while the integer `1` resolves, that an unregistered version is refused by the open path, that creating a
+store declares generation 2 while opening a generation-1 file reports generation 1 **with generation 1's
+recorded fingerprint**, and the acceptance check a partial fix fails: adding and populating a
+generation-2 table **changes** the generation-2 logical digest.
+`test_knowledge_merge_generations_and_envelope.py` covers the mixed-generation preflight and the payload
+seam: a v1/v1/v2 merge refused before any session exists with its positional role and expected/observed
+versions and all three inputs byte-identical afterwards, **a v1/v1/v1 merge on this generation-2 build
+passing** with generation 1's ten tables attached, an envelope payload refused with `invalid_payload` and
+no row written, and the route hierarchy cases. `generation_test_support.py` is their shared harness: it
+builds a **real generation-1 dataset from generation 1's own recorded DDL**, which is what every case
+asserting a generation-1 fact must use — a fixture created by the build is generation 2, so a digest or
+context built from the literal `"ar-knowledge-sqlite/v1"` describes a dataset the fixture does not hold.
+`test_knowledge_routes.py` adds eighteen cases over the route *write* layer: confinement refusals for every
+refused path form, an existing route returned for an already-authored path rather than a second row, an
+unauthored parent refused, a three-node cycle refused with the rollback restoring the hierarchy, the
+association's four refusals, idempotent re-statement, and `None` for an explicitly ungoverned row.
 
 **The candidate and snapshot half now has its own pairs.** `test_candidate_batch_transaction.py` and
 `test_candidate_batch_commands.py` cover the batch boundary and its command union (sharing
@@ -841,6 +863,7 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 ---
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **route meaning changed** — the knowledge suite gained two modules and one shared harness for a schema that stopped being a build-time singleton. The body now records the generation-registry pair (`test_knowledge_schema_generations.py`: the pinned generation-1 fingerprint recomputed and the gate exercised in the **failing** direction on three independent perturbations, the type-strict artifact key lookup, the unregistered-version refusal on the open path, creation declaring generation 2 while a generation-1 file still reports generation 1 with its recorded fingerprint, and the acceptance check a partial fix fails — adding and populating a generation-2 table **changes** the generation-2 digest), the preflight/envelope pair (`test_knowledge_merge_generations_and_envelope.py`: the v1/v1/v2 refusal before any session with byte-identical inputs, **the v1/v1/v1 merge on the generation-2 build passing** with generation 1's ten tables attached, and `invalid_payload` with no row written) and `test_knowledge_routes.py`'s eighteen cases over the route write layer. It records the harness rule a later case must not break: `generation_test_support.py` builds a real generation-1 dataset from generation 1's own recorded DDL, because a fixture created by the build is generation 2 and a digest or context built from the literal `ar-knowledge-sqlite/v1` then describes a dataset the fixture does not hold. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_memory_backfill.py" repointed to mcp/tests/test-evidence-lanes.toml:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_cross_master_concurrency.py" repointed to mcp/tests/test-evidence-lanes.toml:179-179. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" repointed to mcp/tests/test-evidence-lanes.toml:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1154,7 +1177,7 @@ and silently break the registry.
 | The suite's one-to-one card, which enumerates what each node protects. | "# mcp/tests/test_knowledge_store.py" | onboarding/mcp/tests/test_knowledge_store.py.md:1-125 |
 |  The fixture's registered stable contract row and its matching artifact row. | "knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1032-1032  |
 | The fixture's one-to-one card, including the relocation rationale. | "The shared branching knowledge fixture." | onboarding/mcp/tests/knowledge_fixture_test_support.py.md:19-26 |
-| The enforcement-load-bearing nodes a disabled guard fails (re-cited after the KS-L3 node insertion shifted the file). | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle`; `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:453-502; mcp/tests/test_knowledge_store.py:549-584 |
+| The enforcement-load-bearing nodes a disabled guard fails (re-cited after the KS-L3 node insertion shifted the file). | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle`; `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:494-546; mcp/tests/test_knowledge_store.py:590-623 |
 | The manifest rule that makes an unregistered module a hard load failure. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
 | The fixture builder the suite composes — re-cited against the working tree, where the same builder gained the graph half. | `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:203-263 |
 
@@ -1253,7 +1276,7 @@ Two rules this leaf's evidence teaches, and both are about what a named node pro
 | The label-operations suite's row and the reason it exists as a separate module. | "mcp/tests/test_knowledge_label_operations.py" | mcp/tests/test-evidence-lanes.toml:72-72 |
 |  The candidate-batch case-harness contract, its artifact row, evidence node and exact consumer set. | 'id = "candidate-batch-case-harness"' | mcp/tests/evidence-lifecycle.toml:1086-1105  |
 |  The branching fixture's row, whose consumer list gained this leaf's label suite. | "knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1032-1032  |
-| The node that pins the identity operation's two-caller contract after the refactor broke it. | "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses" | mcp/tests/test_knowledge_store.py:139-178 |
+| The node that pins the identity operation's two-caller contract after the refactor broke it. | "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses" | mcp/tests/test_knowledge_store.py:180-217 |
 | The two split nodes that keep the database path and the concept guard separately proven. | "test_a_database_refusal_mid_batch_names_the_command_that_actually_failed"; "test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse" | mcp/tests/test_candidate_batch_transaction.py:993-1060; mcp/tests/test_candidate_batch_transaction.py:1062-1118 |
 
 ## 260915-KS-L5 The Merge Suites, Split By The Budget Their Contract Could Not Fit
@@ -1358,12 +1381,12 @@ Two rules this leaf's evidence teaches, and both are about what a survivor means
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The roundtrip module's three falsified properties, the helper set and the two claims made measurable. | "test_the_artifact_is_one_deterministic_document_of_the_declared_shape"; `artifact_of`; `envelope_of`; `import_into` | mcp/tests/test_knowledge_portable_roundtrip.py:277-301; mcp/tests/test_knowledge_portable_roundtrip.py:110-112; mcp/tests/test_knowledge_portable_roundtrip.py:114-116; mcp/tests/test_knowledge_portable_roundtrip.py:142-146 |
+| The roundtrip module's three falsified properties, the helper set and the two claims made measurable. | "test_the_artifact_is_one_deterministic_document_of_the_declared_shape"; `artifact_of`; `envelope_of`; `import_into` | mcp/tests/test_knowledge_portable_roundtrip.py:317-342; mcp/tests/test_knowledge_portable_roundtrip.py:119-120; mcp/tests/test_knowledge_portable_roundtrip.py:123-124; mcp/tests/test_knowledge_portable_roundtrip.py:165-168 |
 | **The node the leaf's guarantee rests on: the canonical form is the only form the reader accepts, including every header type.** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts" | mcp/tests/test_knowledge_portable_boundaries.py:132-258 |
-| **The staged sealed-aggregate read, with every retained revision row tampered.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:482-532 |
-| The import's close/verify step and the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:533-570; mcp/tests/test_knowledge_portable_boundaries.py:88-131 |
-| The destination-admission and typed-read boundary nodes. | "test_destination_admission_refuses_before_any_staging_work"; "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" | mcp/tests/test_knowledge_portable_boundaries.py:571-633; mcp/tests/test_knowledge_portable_boundaries.py:634-685 |
-| **The guard this leaf reports rather than claims: reachable, verdict-changing, no killing node.** | `bound` | mcp/src/agents_remember/memory/knowledge/export_portable.py:893-920 |
+| **The staged sealed-aggregate read, with every retained revision row tampered.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:534-582 |
+| The import's close/verify step and the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:585-617; mcp/tests/test_knowledge_portable_boundaries.py:94-132 |
+| The destination-admission and typed-read boundary nodes. | "test_destination_admission_refuses_before_any_staging_work"; "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" | mcp/tests/test_knowledge_portable_boundaries.py:623-680; mcp/tests/test_knowledge_portable_boundaries.py:686-736 |
+| **The guard this leaf reports rather than claims: reachable, verdict-changing, no killing node.** | `bound` | mcp/src/agents_remember/memory/knowledge/export_portable.py:984-1005 |
 | The two lane rows this leaf registered, and the three consumer lists it extended. | `integration`; `knowledge-identity-branching-fixture`; `knowledge-snapshot-lifecycle-cases`; `common-base-merge-cases` | mcp/tests/test-evidence-lanes.toml:154; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159 |
 
 ## 260915-KS-L7 The Read Suites, And The Path Contract They Measure

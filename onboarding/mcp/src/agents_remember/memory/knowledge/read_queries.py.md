@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read_queries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7`|
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -121,7 +121,7 @@ No domain documentation source is configured for this repository (`system/source
 | The path seed's entry point and the claims of the selected invariant set. | `fetch_realizations_at_path`; `fetch_realizations_for_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:208-279 |
 | **The shared existence shape, and the four probes that answer "does this snapshot hold this record, by this key".** | `_row_exists`; `invariant_revision_is_recorded`; `family_revision_is_recorded`; `membership_is_recorded`; `realization_claim_is_recorded` | mcp/src/agents_remember/memory/knowledge/read_queries.py:293-296; mcp/src/agents_remember/memory/knowledge/read_queries.py:299-309; mcp/src/agents_remember/memory/knowledge/read_queries.py:311-321; mcp/src/agents_remember/memory/knowledge/read_queries.py:323-331; mcp/src/agents_remember/memory/knowledge/read_queries.py:356-369 |
 | **The predecessor-edge union both tables feed, and the reason a consumer must ask each table with its own probe.** | `fetch_predecessor_edges` | mcp/src/agents_remember/memory/knowledge/read_queries.py:333-354 |
-| **The one cell decoder a read page and the logical digest share, made public for exactly this reuse.** | `cell_value`; `_cell` | mcp/src/agents_remember/memory/knowledge/logical.py:224-232; mcp/src/agents_remember/memory/knowledge/logical.py:235-247 |
+| **The one cell decoder a read page and the logical digest share, made public for exactly this reuse.** | `cell_value`; `_cell` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248; mcp/src/agents_remember/memory/knowledge/logical.py:251-263 |
 | The declarations these statements are built from. | `CANONICAL_TABLES`; `CANONICAL_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema.py:31-45; mcp/src/agents_remember/memory/knowledge/schema.py:47-112 |
 | **The node that asserts the union identity back against the two per-table edge sets, and the two dangling-edge failure lines.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence" | mcp/tests/test_knowledge_diff_scope.py:424-530 |
 

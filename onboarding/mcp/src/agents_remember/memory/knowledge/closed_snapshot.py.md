@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/closed_snapshot.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `4eb2b1992f6183fba06e9f31aa664d9a93094c26`|
-| lastVerifiedCommitDate | 2026-09-16T18:28:38+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -129,13 +129,13 @@ No domain documentation source is configured for this repository (`system/source
 | The peer probe and the stage-only cleanup whose failure is suppressed. | `journal_peers`; `discard_stage`; `_discard_owned_stage` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:223-231; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:234-237; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:269-280 |
 | The refusal for a candidate that moved between admission and acquisition. | `_stale_candidate_refusal` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:252-266 |
 | The file flush that the directory fsync in `atomic_replace` does not substitute for. | `fsync_file`; `atomic_replace` | mcp/src/agents_remember/kernel/atomic_write.py:95-105; mcp/src/agents_remember/kernel/atomic_write.py:78-92 |
-| The read-only connection and journal-mode reader the verification uses. | `open_read_only_database`; `journal_mode`; `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:55-66; mcp/src/agents_remember/memory/knowledge/connection.py:69-72; mcp/src/agents_remember/memory/knowledge/connection.py:106-122 |
+| The read-only connection and journal-mode reader the verification uses. | `open_read_only_database`; `journal_mode`; `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:52-63; mcp/src/agents_remember/memory/knowledge/connection.py:69-72; mcp/src/agents_remember/memory/knowledge/connection.py:106-122 |
 | The stage shape this procedure returns. | `PreparedKnowledgeSnapshot` | mcp/src/agents_remember/models/knowledge/snapshot.py:224-236 |
 | **The second producer this leaf added: the portable import stages its dataset and closes it through the same step.** | `_stage_imported_dataset` | mcp/src/agents_remember/memory/knowledge/export_import.py:364-405 |
 | The publication that installs a frozen stage, and the clone that reuses this same procedure. | `publish_prepared_snapshot`; `_build_cloned_candidate` | mcp/src/agents_remember/memory/knowledge/publication.py:114-170; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:246-291 |
 | The node that proves a WAL-resident batch is published whole while a main-file copy is not. | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 | **The node this leaf owns for the closure, which measures the property on the published destination.** | "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:88-131 |
-| **The node that proves the import's stage is closed before it is published.** | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" | mcp/tests/test_knowledge_portable_boundaries.py:533-570 |
+| **The node that proves the import's stage is closed before it is published.** | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" | mcp/tests/test_knowledge_portable_boundaries.py:585-617 |
 
 ## Cross-Repo References
 

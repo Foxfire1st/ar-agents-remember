@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7`|
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -217,7 +217,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The nodes that measure the corrected page counts: a one-item page still advertising the second location, and the union of all pages equalling the declared set.** | "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection" | mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_scope.py:658-721 |
 | The ordering, truncation, budget, bound and absence nodes. | "test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label"; "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position"; "test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total" | mcp/tests/test_knowledge_read_scope.py:722-837; mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:872-901; mcp/tests/test_knowledge_read_scope.py:902-929 |
 | **The node that kills mutation `R30` — the per-side exact-revision address the override exists for.** | "test_explicit_side_selectors_address_a_different_exact_revision_on_each_side" | mcp/tests/test_knowledge_diff_scope.py:390-421 |
-| The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share. | `read_scope_test_support.py`; `cell_value` | mcp/tests/read_scope_test_support.py:1-51; mcp/src/agents_remember/memory/knowledge/logical.py:224-232 |
+| The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share. | `read_scope_test_support.py`; `cell_value` | mcp/tests/read_scope_test_support.py:1-51; mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
 
 ## Cross-Repo References
 

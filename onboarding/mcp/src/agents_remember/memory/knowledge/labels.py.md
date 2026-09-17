@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/labels.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ No domain documentation source is configured for this repository (`system/source
 | The batch command that shares these apply steps and omits a receipt row when nothing was written. | `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:474-510 |
 | The batch's own copy of the expectation rule, which is why the standalone path needs its own evidence. | `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:311-348 |
 | The standalone operations' entry points in the composition seam. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-250 |
-| The store method that delegates here. | `set_invariant_label` | mcp/src/agents_remember/memory/knowledge/store.py:267-270 |
+| The store method that delegates here. | `set_invariant_label` | mcp/src/agents_remember/memory/knowledge/store.py:291-294 |
 | The six nodes that drive the standalone entry points, including the stale-expectation case the batch path cannot cover. | "test_a_stale_invariant_label_expectation_refuses_and_leaves_the_row_identical"; "test_a_stale_family_label_expectation_refuses_and_leaves_the_row_identical" | mcp/tests/test_knowledge_label_operations.py:94-140; mcp/tests/test_knowledge_label_operations.py:205-244 |
 | The node that pins the no-op label edit inside a mixed batch. | "test_a_no_op_label_edit_inside_a_mixed_batch_is_not_reported_as_a_write" | mcp/tests/test_candidate_batch_transaction.py:799-845 |
 

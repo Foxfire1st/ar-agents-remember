@@ -6,8 +6,8 @@
 | path | `mcp/tests/knowledge_fixture_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -105,7 +105,7 @@ No domain documentation source is configured for this repository (`system/source
 | The step assertion that makes a fixture failure loud. | `_require` | mcp/tests/knowledge_fixture_test_support.py:614-623 |
 | The graph-half construction phases, each authored through the public operations. | `_build_identity_half`; `_build_graph_half`; `_create_families`; `_create_realizations` | mcp/tests/knowledge_fixture_test_support.py:309-327; mcp/tests/knowledge_fixture_test_support.py:328-335; mcp/tests/knowledge_fixture_test_support.py:380-439; mcp/tests/knowledge_fixture_test_support.py:492-539 |
 |  The registered stable contract, its evidence node and its five declared consumers. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1031-1056  |
-| The identity-conflict nodes that cover the contract in aggregate. | `test_two_same_label_successors_reopen_as_separate_revisions`; `test_reused_revision_identity_with_other_content_refuses` | mcp/tests/test_knowledge_store.py:87-111; mcp/tests/test_knowledge_store.py:216-241 |
+| The identity-conflict nodes that cover the contract in aggregate. | `test_two_same_label_successors_reopen_as_separate_revisions`; `test_reused_revision_identity_with_other_content_refuses` | mcp/tests/test_knowledge_store.py:89-113; mcp/tests/test_knowledge_store.py:257-282 |
 | The operations the fixture authors through, both halves. | `create_repository`; `create_invariant`; `create_revision`; `create_family`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/store.py:180-259; mcp/src/agents_remember/memory/knowledge/families.py:78-95; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83 |
 
 ## Cross-Repo References

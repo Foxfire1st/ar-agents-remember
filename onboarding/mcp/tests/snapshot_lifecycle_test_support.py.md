@@ -6,8 +6,8 @@
 | path | `mcp/tests/snapshot_lifecycle_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The deterministic candidate inputs a case's receipt carries. | `DEFAULT_AUTHORITY_HOME`; `CODE_TREE_ID`; `MEMORY_TREE_ID` | mcp/tests/snapshot_lifecycle_test_support.py:78-80 |
+| The deterministic candidate inputs a case's receipt carries. | `DEFAULT_AUTHORITY_HOME`; `CODE_TREE_ID`; `MEMORY_TREE_ID` | mcp/tests/snapshot_lifecycle_test_support.py:79-81 |
 | The real-child-interpreter crash script and its open uncommitted transaction. | `_CRASH_SCRIPT` | mcp/tests/snapshot_lifecycle_test_support.py:85-129 |
 | The one case runner and its lifecycle verbs. | `SnapshotCase`; `build_case`; `create`; `clone`; `clone_from`; `derive_case`; `open_candidate` | mcp/tests/snapshot_lifecycle_test_support.py:130-176; mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:207-211; mcp/tests/snapshot_lifecycle_test_support.py:213-221; mcp/tests/snapshot_lifecycle_test_support.py:235-244; mcp/tests/snapshot_lifecycle_test_support.py:223-233; mcp/tests/snapshot_lifecycle_test_support.py:246-250 |
 | The authored-write helper that drives the real batch boundary. | `write_record`; `write_label_on_live_store`; `add_raw_invariant` | mcp/tests/snapshot_lifecycle_test_support.py:261-291; mcp/tests/snapshot_lifecycle_test_support.py:301-321; mcp/tests/snapshot_lifecycle_test_support.py:333-345 |
@@ -113,6 +113,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `mcp/tests/test_knowledge_candidate_workspace.py` in the row 104 of this card from mcp/tests/test-evidence-lanes.toml:69-69 to mcp/tests/test-evidence-lanes.toml:70, the extent of the construct the claim is about (the checker named line(s) [70] as its live location); re-pointed `mcp/tests/test_knowledge_snapshot_publication.py` in the row 104 of this card from mcp/tests/test-evidence-lanes.toml:70 to mcp/tests/test-evidence-lanes.toml:79, the extent of the construct the claim is about (the checker named line(s) [79] as its live location)
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new shared snapshot-lifecycle harness. It records the one-runner/one-probe-set design and why it is shared rather than copied (both suites measure isolation, closure, durability and recovery the same way), the through-the-public-operations rule with its two declared raw-state exceptions, the real-child-interpreter crash probe that makes the recovery claim a process fact rather than a simulated one, and the registry contract with an exact two-consumer list whose node is a real node in a consumer. Verification metadata remains empty until closeout stamps the code commit.

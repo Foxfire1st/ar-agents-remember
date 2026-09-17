@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -146,7 +146,7 @@ No domain documentation source is configured for this repository (`system/source
 | The batch operation and the lane rules the seam's entry point reaches. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
 | The graph modules the new operations delegate to. | `create_family`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:79-96; mcp/src/agents_remember/memory/knowledge/anchors.py:49-70; mcp/src/agents_remember/memory/knowledge/memberships.py:88-109; mcp/src/agents_remember/memory/knowledge/realizations.py:61-83 |
 | The layer charter that keeps this composition one-directional. | "[package.memory]" | layers.toml:206-222 |
-| The focused cases that prove the seam, the composed graph path, the candidate batch and the layer direction. | `test_application_seam_initializes_and_extends_one_namespace`; `test_lower_ranked_owners_do_not_import_the_memory_domain`; "test_the_application_seam_authors_a_graph_through_an_admitted_destination"; "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-62; mcp/tests/test_knowledge_relation_rules.py:566-566; mcp/tests/test_knowledge_store.py:736-786; mcp/tests/test_knowledge_store.py:789-807 |
+| The focused cases that prove the seam, the composed graph path, the candidate batch and the layer direction. | `test_application_seam_initializes_and_extends_one_namespace`; `test_lower_ranked_owners_do_not_import_the_memory_domain`; "test_the_application_seam_authors_a_graph_through_an_admitted_destination"; "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-62; mcp/tests/test_knowledge_relation_rules.py:566-566; mcp/tests/test_knowledge_store.py:736-786; mcp/tests/test_knowledge_store.py:838-856 |
 
 ## Cross-Repo References
 

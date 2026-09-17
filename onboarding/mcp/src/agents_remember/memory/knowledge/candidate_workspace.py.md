@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/candidate_workspace.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -141,7 +141,7 @@ No domain documentation source is configured for this repository (`system/source
 | The freeze procedure a clone reuses, and its closed-file guarantee. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109 |
 | The result vocabulary these operations return. | `CandidateResult`; `CandidateDisposalResult`; `CandidateDisposition` | mcp/src/agents_remember/models/knowledge/snapshot.py:188-221; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354 |
 | The new refusal codes the lifecycle introduced, including the honest durability code. | `selected_input_unavailable_refusal`; `snapshot_incomplete_refusal`; `publication_durability_unconfirmed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-902; mcp/src/agents_remember/memory/knowledge/refusals.py:951-974; mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039 |
-| The nodes that protect the lifecycle's load-bearing behaviours. | "test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit"; "test_a_crash_restart_keeps_the_committed_batch_and_drops_the_abandoned_one"; "test_a_failed_candidate_flush_is_refused_before_the_directory_is_exposed" | mcp/tests/test_knowledge_candidate_workspace.py:206-246; mcp/tests/test_knowledge_candidate_workspace.py:248-279; mcp/tests/test_knowledge_candidate_workspace.py:365-387 |
+| The nodes that protect the lifecycle's load-bearing behaviours. | "test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit"; "test_a_crash_restart_keeps_the_committed_batch_and_drops_the_abandoned_one"; "test_a_failed_candidate_flush_is_refused_before_the_directory_is_exposed" | mcp/tests/test_knowledge_candidate_workspace.py:206-246; mcp/tests/test_knowledge_candidate_workspace.py:286-316; mcp/tests/test_knowledge_candidate_workspace.py:403-425 |
 
 ## Cross-Repo References
 

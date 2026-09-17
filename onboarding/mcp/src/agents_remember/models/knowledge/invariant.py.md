@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/invariant.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -84,8 +84,8 @@ No domain documentation source is configured for this repository (`system/source
 | The complete revision aggregate and its validators, including the self-predecessor rule. | `InvariantRevision`; `_require_self_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/invariant.py:56-115 |
 | The shared accepted/proposed rule this validator now delegates to. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
 | The read-back shape that pins the sorted predecessor set. | `StoredInvariantRevision` | mcp/src/agents_remember/models/knowledge/invariant.py:116-127 |
-| The stored `invariant_revision` table this aggregate is written to, with its immutability triggers. | `invariant_revision`; `invariant_revision_no_update`; `invariant_revision_no_delete` | mcp/src/agents_remember/memory/knowledge/schema.py:136-156; mcp/src/agents_remember/memory/knowledge/schema.py:304-311 |
-| The insert-only operation that seals and stores one aggregate, or refuses without any row. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:224-259; mcp/src/agents_remember/memory/knowledge/store.py:296-344 |
+| The stored `invariant_revision` table this aggregate is written to, with its immutability triggers. | `invariant_revision`; `invariant_revision_no_update`; `invariant_revision_no_delete` | mcp/src/agents_remember/memory/knowledge/schema.py:185-205; mcp/src/agents_remember/memory/knowledge/schema.py:353-361 |
+| The insert-only operation that seals and stores one aggregate, or refuses without any row. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:224-259; mcp/src/agents_remember/memory/knowledge/store.py:370-387 |
 | The requirement packet whose normative property this model encodes: requirement packet `KS-R01@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References

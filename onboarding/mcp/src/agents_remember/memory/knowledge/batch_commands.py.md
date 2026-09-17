@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/batch_commands.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -123,8 +123,8 @@ No domain documentation source is configured for this repository (`system/source
 | The removal steps, each reporting the digest the row had when it was deleted. | `_remove_anchor`; `_remove_member`; `_remove_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:513-548 |
 | The no-op label edit that contributes no receipt entry. | `_apply_label`; `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:267-278; mcp/src/agents_remember/memory/knowledge/batch_commands.py:474-510 |
 | The after-integrity re-proof: foreign keys, every revision seal, both lineage graphs. | `require_after_integrity`; `_require_sealed_rows`; `_require_acyclic_graph` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:554-570; mcp/src/agents_remember/memory/knowledge/batch_commands.py:573-584; mcp/src/agents_remember/memory/knowledge/batch_commands.py:604-617 |
-| The store's two batch-facing primitives, which the apply step calls instead of a nested operation. | `insert_invariant_identity`; `insert_revision_aggregate` | mcp/src/agents_remember/memory/knowledge/store.py:272-301 |
-| The invariant identity and revision insert bodies the same call reaches. | `insert_invariant`; `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:512-549; mcp/src/agents_remember/memory/knowledge/store.py:551-608 |
+| The store's two batch-facing primitives, which the apply step calls instead of a nested operation. | `insert_invariant_identity`; `insert_revision_aggregate` | mcp/src/agents_remember/memory/knowledge/store.py:296-325 |
+| The invariant identity and revision insert bodies the same call reaches. | `insert_invariant`; `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:536-572; mcp/src/agents_remember/memory/knowledge/store.py:575-632 |
 | The family half's in-transaction inserts, which the batch composes rather than re-implementing. | `insert_family`; `insert_family_revision` | mcp/src/agents_remember/memory/knowledge/families.py:110-131; mcp/src/agents_remember/memory/knowledge/families.py:173-208 |
 | The anchor insert and delete the batch shares with the anchor operation. | `insert_anchor_row`; `delete_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:99-119; mcp/src/agents_remember/memory/knowledge/anchors.py:184-207 |
 | The membership draft-sealing insert, which is where the batch's member row digest is computed. | `insert_family_member_draft` | mcp/src/agents_remember/memory/knowledge/memberships.py:61-86 |

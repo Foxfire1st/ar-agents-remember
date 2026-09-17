@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/family.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ No domain documentation source is configured for this repository (`system/source
 | The payload this revision's digest seals, including the sorted predecessor set. | `canonical_family_revision_payload`; `family_revision_payload_digest` | mcp/src/agents_remember/models/knowledge/digest.py:71-92; mcp/src/agents_remember/models/knowledge/digest.py:93-96 |
 | The row codec and seal-verifying decode that turn these values into stored rows. | `family_revision_row`; `decode_family_revision_row`; `sealed_family_revision_from_draft` | mcp/src/agents_remember/memory/knowledge/records.py:287-302; mcp/src/agents_remember/memory/knowledge/records.py:327-356; mcp/src/agents_remember/memory/knowledge/records.py:303-326 |
 | The storage owner that writes and reads these values. | `create_family`; `create_family_revision`; `get_family_revision` | mcp/src/agents_remember/memory/knowledge/families.py:79-94; mcp/src/agents_remember/memory/knowledge/families.py:133-160; mcp/src/agents_remember/memory/knowledge/families.py:267-282 |
-| The declared `family` and `family_revision` tables these values map onto. | `family`; `family_revision` | mcp/src/agents_remember/memory/knowledge/schema.py:173-183; mcp/src/agents_remember/memory/knowledge/schema.py:184-201 |
+| The declared `family` and `family_revision` tables these values map onto. | `family`; `family_revision` | mcp/src/agents_remember/memory/knowledge/schema.py:222-232; mcp/src/agents_remember/memory/knowledge/schema.py:233-250 |
 | The requirement this vocabulary's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/source.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ No domain documentation source is configured for this repository (`system/source
 | The draft/stored split, the repository-relative POSIX path rule, and the repaired `UUID` identifier field. | `SourceAnchorDraft`; `SourceAnchor`; `_require_confined_relative_posix_path` | mcp/src/agents_remember/models/knowledge/source.py:82-127; mcp/src/agents_remember/models/knowledge/source.py:130-133 |
 | **The Git-pathspec half of the path rule, delegated to the one shared validator so the write path and the seed path cannot disagree.** | `require_plain_git_path` | mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | **The node that measures a pathspec-magic spelling being refused at this boundary and never answered as an absence.** | "test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence" | mcp/tests/test_knowledge_read_paths.py:178-255 |
-| The stored `source_anchor` table, its immutability trigger and its canonical column order. | `source_anchor`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:218-230; mcp/src/agents_remember/memory/knowledge/schema.py:336-340 |
+| The stored `source_anchor` table, its immutability trigger and its canonical column order. | `source_anchor`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:267-279; mcp/src/agents_remember/memory/knowledge/schema.py:385-389 |
 | The codec that derives the canonical identity text and decodes an anchor row through the discriminated union. | `anchor_row`; `anchor_row_digest`; `decode_anchor_row` | mcp/src/agents_remember/memory/knowledge/records.py:226-236; mcp/src/agents_remember/memory/knowledge/records.py:366-381; mcp/src/agents_remember/memory/knowledge/records.py:237-246 |
 | The single construction point that attaches provenance to a draft. | `source_anchor_from_draft` | mcp/src/agents_remember/memory/knowledge/anchors.py:82-96 |
 | The later requirement packets this vocabulary is declared shared with: requirement packets `KS-R07` and `KS-R08`, which live in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address them. | — | — |

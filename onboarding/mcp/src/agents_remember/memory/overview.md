@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
+| lastUpdated | 2026-09-17T19:11+00:00 |
+| lastVerifiedCommitHash |  `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate |  2026-09-17T22:32:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `../../../overview.md` |
 
@@ -23,9 +23,10 @@ The route owns two distinct responsibilities, and they are deliberately not the 
    memory repository, adopting an existing onboarding tree as a first ledgered baseline, and carrying richer
    onboarding from a source branch into an open recovery leaf.
 2. **Concrete knowledge storage** (`knowledge/`) — the APSW-backed SQLite candidate that holds repository,
-   invariant, revision, family, anchor, membership and realization identity. Added by 260915-KS-L1 as an
-   experimental increment and extended by 260915-KS-L2, 260915-KS-L3 and 260915-KS-L4; it is a durable record
-   store, so it ranks here with the record stores rather than with the application layer that admits its writes.
+   invariant, revision, family, anchor, membership and realization identity, and since 260915-KS-L10 also the
+   `Route` scope entity and the typed record envelope. Added by 260915-KS-L1 as an experimental increment and
+   extended by every leaf through 260915-KS-L10; it is a durable record store, so it ranks here with the record
+   stores rather than with the application layer that admits its writes.
 
 The two responsibilities share a package rank and a charter paragraph, not a mechanism: nothing in the
 lifecycle modules imports `knowledge/`, and nothing in `knowledge/` reads, writes or migrates Markdown onboarding.
@@ -55,7 +56,12 @@ and its one-immediate-transaction wrapper, and the invariant half's tables; `kno
 own the four graph concepts and their tables, `knowledge/lineage.py` owns the one acyclic-lineage rule both lineage
 graphs apply (including the batch's declared-edge caller), `knowledge/labels.py` owns the two label edits and their
 row-digest guard, and `knowledge/endpoints.py` owns the shared relation-endpoint check; `knowledge/schema.py` owns the
-declaration of the ten STRICT tables, the fifteen immutability triggers and `schema_fingerprint()`;
+declaration of generation 1's ten STRICT tables, its fifteen immutability triggers and the structural manifest and
+fingerprint of a *generation record*; `knowledge/schema_generations.py` owns **which generations exist** — generation
+1 pinned as data with its fingerprint constant and drift gate, generation 2 = generation 1 plus `knowledge/schema_v2.py`'s
+six appended tables — and the dispatch that selects one from the dataset rather than from the running build;
+`knowledge/record_envelope.py` owns the one payload-admissibility seam; `knowledge/routes.py` owns the route
+confinement rule, the acyclic-hierarchy walk and the route/association write and read operations;
 `knowledge/connection.py` owns the pragma contract, the one-row reader, the read-only connection every identity
 confirmation uses, and the open-time schema validation; `baseline.py` / `carryover.py` / `carryover_authority.py`
 own baseline adoption and branch carryover. **The snapshot half** lives in `knowledge/candidate_workspace.py`
@@ -549,16 +555,154 @@ the existence probe's line is reachable, called 3 times, but only its *differing
 this route claims the comparison's *behaviour*, which five independent review rounds could not falsify,
 and not the leaf's evidence prose, which is explicitly contested there.
 
+### 260915-KS-L10 The Generation Registry, The Record Envelope, And `Route` As A Scope Axis
+
+This route's meaning changed in a way that **supersedes** what earlier leaves recorded about the schema, so this
+section states the change first and then the contradiction it retires.
+
+**The schema stopped being a build-time singleton and became a registry of frozen, selectable generations.**
+`knowledge/schema_generations.py` owns the registry. `SchemaGeneration` is a frozen record of everything one
+generation must answer about itself — schema name, `user_version`, the ordered table manifest, and per table the
+declared column order, the primary-key tuple and the typed-JSON column set, plus the required-SQLite-feature set,
+the table DDL, the index DDL, the trigger set and the structural fingerprint. The key and typed-JSON registries are
+part of the pinned structure rather than derivations from DDL: generation 1's DDL never spells `json_valid`, and a
+key tuple is declared data the encoder checks *against* the column list.
+
+**Generation 1 is pinned as data, and dispatching to it is a read of the dataset.** `GENERATION_1` delegates every
+declaration to `schema.py` — which keeps them verbatim, unchanged — and takes its fingerprint from the recorded
+constant `GENERATION_1_FINGERPRINT` (`bae805d6…`, measured at revision `420669c4`, the pre-refactor head).
+`require_pinned_generation_1_unchanged()` recomputes that fingerprint from the recorded record and **fails rather
+than warns** on drift, raising `KnowledgeSchemaPinError`; the recorded recovery is to correct the change, never to
+re-pin the constant to whatever the code now computes. Generation 2 is **composed** as an explicit append —
+generation 1's tables plus `schema_v2.APPENDED_TABLES` — and its fingerprint is derived from the composition rather
+than recorded.
+
+**Two key spaces, deliberately not interchangeable.** An open SQLite file declares its generation through
+`PRAGMA user_version` **alone**, because the application schema name is not stored in the file (the name
+`inspect_schema` reports is the *build's*), so `generation_of_database` resolves by version. A portable artifact
+carries `schema` as well, so `generation_of_artifact` resolves by the **pair**, and it is **type-strict on the
+version before it is a lookup**: `1 == 1.0 == True` in Python, so an equality-keyed lookup would resolve `1.0` and
+`true` to generation 1, which the shipped reader deliberately refuses. Selection happens once per operation and
+every later digest, manifest, key registry and table-attachment decision in that operation uses the selected
+generation.
+
+**Initialization declares; it does not select.** An empty database has no version to read, so
+`create_or_validate_schema` declares the newest supported generation (`CURRENT_GENERATION`, `GENERATIONS[-1]`).
+This is the only place a build's own generation decides anything, and it decides only what brand-new data
+declares. Consequence a reader must not miss: **a store created by this build is generation 2**, so
+new tables are reachable only through generation-2 creation, while a generation-1 file stays generation 1.
+
+**What this leaf contradicts in the previously recorded intent.** Two statements that older leaves wrote as
+current intent are now false, and they are retired here rather than left to be believed:
+
+1. **"`SCHEMA_USER_VERSION = 2` is how a schema change happens"** (the L1 charter paragraph at *Owns*, and the
+   invariant this section previously stated as *the schema is a generation, not a file*). `SCHEMA_USER_VERSION`
+   keeps its shipped meaning as **generation 1's** `user_version`, because generation 1's fingerprint is computed
+   from it; it is no longer the build's current version and no longer moves when the schema grows. A new schema
+   shape is a **new registered generation record** (`GENERATION_2` = `ar-knowledge-sqlite/v2` / `2`), and
+   `CURRENT_GENERATION` — not `SCHEMA_USER_VERSION` — is what a created store declares.
+2. **"All ten tables participate, because the body is derived from `schema.CANONICAL_TABLES`"**
+   (`logical.py`'s invariant). The encoder is now **parameterised over the selected generation**: the body
+   projects the table mapping into *that* generation's declared order, so a generation-1 dataset still digests
+   over generation 1's ten tables including the empty ones, while a generation-2 dataset digests over sixteen. The
+   property that survives, and that is the point, is that **the digest is total over its own generation's
+   manifest** — a table that appears or disappears within a generation is still a difference, and no digest is
+   ever computed over the intersection of two generations.
+
+**An unchanged version-1 dataset keeps its version-1 identity, exactly, and that is the acceptance test.**
+Its `body_version`, its `schema`, its `user_version = 1` and the pinned generation-1 fingerprint all stay what
+they were, and opening it under this build reports generation 1. **No migration or cutover operation exists**:
+nothing in opening, publishing, merging, exporting or reading upgrades a dataset's generation, and the honest
+answer for a version-1 candidate met by generation-2 code is "it is version 1". Generation-2 datasets are
+**different datasets with different digests**, never reported as equal to or as a continuation of the
+generation-1 digest of the same rows.
+
+**Additive-only, and mechanically checkable.** Generation 2's manifest **begins with** generation 1's ten tables
+in generation 1's exact order, carrying generation 1's exact declared columns, keys and typed-JSON sets; it may
+only append. `schema_v2.py` therefore expresses the governing-route association as three **new join tables**
+(`source_anchor_route`, `invariant_route`, `family_route`), each taking the governed entity's key as its own
+primary key, rather than as a `governing_route_id` column added to a generation-1 table — appending a column would
+change that table's declared column set while generation 1's record must keep declaring it. A `knowledge_record`
+is new in generation 2, so *it* carries `governing_route_id` directly. **No `ALTER TABLE` appears anywhere in the
+package**; the phrase occurs once in `schema_v2.py`, inside its own docstring, as the prohibition.
+
+**The record envelope has a real payload seam, and no identity of its own.** `knowledge_record` carries `kind`,
+`authority_home`, `lifecycle`, `record_schema`, an optional governing route and provenance — and **no content
+address, no logical digest and no fingerprint column**, so it cannot quietly become a second identity authority.
+`record_schema` names which frozen shape the revision was written against; it is not a fingerprint. The payload
+lives on `record_revision` (`payload` is the typed-JSON column, `TEXT NOT NULL CHECK (json_valid(payload))`, which
+is why generation 2 adds `json_functions` to its feature set), and the revision is sealed by immutable triggers.
+`knowledge/record_envelope.py` is the **one** place any write path decides admissibility: `PAYLOAD_MODELS` maps the
+`(kind, record_schema)` pair to exactly one frozen Pydantic model, `KIND_SCHEMAS` is derived from that registry
+rather than restated, and `validate_record_payload(...)` returns the validated model or a refusal with the shipped
+code **`invalid_payload`** — no row written, before/after digest unchanged. This leaf registers exactly **one
+marked-internal conformance kind** (`internal_conformance` / `internal-conformance/v1`) purely to exercise the
+seam; the product kinds are later leaves and are added *beside* it, not by replacing it.
+
+**`Route` is now an operable scope axis, not a table with a constraint.** `knowledge/routes.py` owns the two rules
+and the three operations. Confinement walks a nine-entry rule table and refuses the first breached form — a
+non-string, a NUL, a backslash, a drive letter, a UNC form, an absolute path, a trailing separator, a spelling that
+is not already normalised, and an empty/dot segment or traversal — returning an admitted path **unchanged**:
+normalisation is a *comparison*, never a repair, because rewriting is how two spellings become one route while a
+caller believes it authored two. Acyclicity is a `UNION`-deduplicated recursive CTE anchored on the **edge**
+`(route_id, parent_route_id)`, run inside the caller's transaction after the insertions and before the commit, so a
+cycle refuses the whole batch; the one-node cycle is the table's own `CHECK`. `author_route` normalises, returns an
+**existing** route's id when one is already authored for that path (writing no second row), refuses an unauthored
+parent, inserts, then returns the cycle refusal for the caller to roll back. `set_governing_route` accepts exactly
+three governed generation-1 entities, is idempotent when the same association is re-stated, and **refuses a
+different route for an already-governed row** rather than re-pointing it. `find_governing_route` returns the
+governing id or `None`, and `None` is a fact rather than a default: it is never "the repository root". **Scope is
+never inferred** — nothing in this package derives route membership from a name, a folder ancestry, a path prefix
+or a symbol string.
+
+**The merge preflight reads each input's generation first and refuses a disagreement before any session exists.**
+`merge_schema.selected_generation` names the positional role that disagreed and carries the expected and observed
+versions as facts, leaving all three inputs byte-identical; it does not pick a winner, migrate an input or proceed.
+The silent failure this closes is shipped and documented: changeset application carries no operation for a table it
+never attached, so a table present on only one side is a change set that vanishes while SQLite returns success.
+When the inputs *do* agree, **that agreed generation is the operation's selected generation**, and the structural
+comparison and the session's table attachment both use it — so **a v1/v1/v1 merge on this generation-2 build still
+attaches generation 1's ten tables and is byte-comparable to its pre-refactor result**, which is a required passing
+case rather than a conservative default. Nothing here activates or widens a production merge driver; this is input
+validation on the existing application-callable path.
+
+**What remains deliberately unbuilt, recorded so it is not assumed.** No migration or cutover operation; no
+production merge driver; no product record kinds; no second storage engine or binding. And one honest gap this
+route carries: requirement 4.2's confinement rule names "no escaping symlink at resolution", and the module
+docstring repeats it, but `normalize_route_path` refuses only the **lexical** forms and performs no symlink
+resolution. A reader must not assume the code checks that clause.
+
 ## Invariants And Boundaries
 
+- **A schema generation is data, and dispatch reads the dataset.** `knowledge/schema_generations.py` owns which
+  generations exist; `GENERATION_1` is pinned with its fingerprint constant and guarded by a gate that **fails,
+  never warns**; `GENERATION_2` is composed as an append. A dataset's generation is selected from what the dataset
+  declares (version alone for an open file, the type-strict `(schema, userVersion)` pair for an artifact), and
+  every later decision in that operation uses the selected generation. **`SCHEMA_USER_VERSION` is generation 1's
+  `user_version`, not the build's current version**; `CURRENT_GENERATION` is what a *created* store declares, and
+  creation is a declaration rather than a selection because an empty database has no version to read.
+- **Generation 1 is immutable and additive-only.** Its ten tables keep their exact declaration order, columns,
+  keys, constraints and triggers, and its recorded fingerprint never moves; a generation that would reorder,
+  rename, retype, drop or weaken an earlier generation's declaration is a **schema divergence to escalate**, never
+  a member of the registry and never a re-pin. **No `ALTER TABLE` against a generation-1 table exists in this
+  package**, which is why the governing-route association lives in generation-2 join tables.
+- **An unknown generation is refused, never migrated.** Not repaired, not re-created, and never re-read under a
+  different generation to obtain a green result. No operation in this route upgrades a dataset, and an unchanged
+  version-1 dataset keeps its version-1 digest byte for byte.
+- **Every digest is total over its own generation's manifest.** No digest is computed over the intersection of two
+  generations' tables, and no "same knowledge" verdict is returned across a generation boundary. Opening an
+  existing database validates *that* generation's tables, columns and full trigger set.
 - **Import direction is one-way.** `memory.knowledge` imports `kernel.canonical_json`, `kernel.file_lock` and
   `models.knowledge`; no package ranked below `memory` may import it back. A focused test guards this so a later
   reverse import fails a check rather than passing review.
 - **Insert-only, one lock, one transaction.** Every mutation holds the candidate's exclusive file lock and runs
   inside one `BEGIN IMMEDIATE`; a refusal rolls back, so an expected failure never leaves a partial aggregate.
-- **The schema is a generation, not a file.** A schema change is `ar-knowledge-sqlite/v2` with
-  `SCHEMA_USER_VERSION = 2`, never a silent edit of version 1, because `schema_fingerprint()` and the merge
-  preflight both compare it. Opening an existing database validates tables, columns and the full trigger set.
+  The route operations follow the same rule: `author_route` and `set_governing_route` insert inside the caller's
+  transaction and **return** their refusals rather than rolling back themselves, and the acyclicity walk is what
+  makes a cycle a whole-batch rollback rather than a partial hierarchy.
+- **Scope is never inferred.** Route membership, family composition and every association between records are
+  authored, stored facts: a path prefix, a directory name, a symbol string or a prose mention is never a
+  relationship, and a path comparison the read layer performs is a resolution fact rather than authored membership.
 - **Refusals are returned values.** A caller branches on a typed code, never on message text; a storage failure
   with no contract code is reported as a defect (`KnowledgeStorageError`), not as an outcome to handle.
 - **Vocabulary is defined where it decides.** Literal states, operation names, refusal codes and version strings
@@ -594,55 +738,55 @@ one leaf's curation pass.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The merge orchestration: the ordered sequence, the one-lock policy, the conflict taxonomy and the engine-supplied conflict key. | `merge_knowledge_datasets`; `_TAXONOMY`; `_conflict_record`; `_freeze_merged` | mcp/src/agents_remember/memory/knowledge/merge.py:131-163; mcp/src/agents_remember/memory/knowledge/merge.py:608-614; mcp/src/agents_remember/memory/knowledge/merge.py:626-637; mcp/src/agents_remember/memory/knowledge/merge.py:698-734 |
+| The merge orchestration: the ordered sequence, the one-lock policy, the conflict taxonomy and the engine-supplied conflict key. | `merge_knowledge_datasets`; `_TAXONOMY`; `_conflict_record`; `_freeze_merged` | mcp/src/agents_remember/memory/knowledge/merge.py:131-163; mcp/src/agents_remember/memory/knowledge/merge.py:652-657; mcp/src/agents_remember/memory/knowledge/merge.py:670-681; mcp/src/agents_remember/memory/knowledge/merge.py:698-734 |
 | The base resolution: the closed two-member claim and the two refusals a base claim can earn. | `resolve_merge_base`; `_ancestry_refusal`; `_uniqueness_refusal` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge_base.py:181-196; mcp/src/agents_remember/memory/knowledge/merge_base.py:199-224 |
-| The structural preflight that runs before any session exists, and the declared manifest it compares against. | `require_supported_structure`; `declared_structure`; `compare_structures` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:121-139; mcp/src/agents_remember/memory/knowledge/merge_schema.py:78-88; mcp/src/agents_remember/memory/knowledge/merge_schema.py:142-183 |
+| The structural preflight that runs before any session exists, and the declared manifest it compares against. | `require_supported_structure`; `declared_structure`; `compare_structures` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:230-262; mcp/src/agents_remember/memory/knowledge/merge_schema.py:173-188; mcp/src/agents_remember/memory/knowledge/merge_schema.py:265-311 |
 | The changeset half: the directional delta build, the aborting application, the old-side conflict key and the coverage replay. | `build_delta`; `apply_changeset`; `_conflicting_key`; `replay_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:185-220; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:223-263; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:266-289; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:292-331 |
 | The postcondition half, including the two call sites this leaf recorded as unreachable by a black-box case. | `require_structural_validity`; `require_immutable_revisions_preserved`; `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:73-101; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152; mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211 |
 | The merge's refusal vocabulary, one factory per observable failure point. | `schema_mismatch_refusal`; `conflicting_values_refusal`; `duplicate_identity_refusal`; `delete_reference_conflict_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:21-45; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:70-94; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:97-121; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:124-151 |
 | The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111 |
-| The measurement the merge reports, and the merge's own third composition seam. | `MergeCoverage`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/models/knowledge/merge.py:293-346; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
+| The measurement the merge reports, and the merge's own third composition seam. | `MergeCoverage`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
 | **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** | `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` | mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:342-352; mcp/src/agents_remember/memory/knowledge/read.py:355-390; mcp/src/agents_remember/memory/knowledge/read.py:469-480 |
 | Whole-item paging over an already-selected scope. | `page_of_scope` | mcp/src/agents_remember/memory/knowledge/read.py:743-797 |
 | **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** | `_page_counts` | mcp/src/agents_remember/memory/knowledge/read.py:823-847 |
 | The count model that refuses its own arithmetic contradiction at construction. | `KnowledgeReadCounts` | mcp/src/agents_remember/models/knowledge/read.py:404-448 |
 | **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** | `observe_anchor`; `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:101-172; mcp/src/agents_remember/memory/knowledge/read_anchors.py:308-334; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | The read's refusal vocabulary, one factory per observable failure point. | `selector_absent_refusal`; `registration_absent_refusal`; `page_budget_too_small_refusal`; `continuation_binding_mismatch_refusal`; `snapshot_unavailable_refusal`; `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-57; mcp/src/agents_remember/memory/knowledge/read_refusals.py:60-79; mcp/src/agents_remember/memory/knowledge/read_refusals.py:82-108; mcp/src/agents_remember/memory/knowledge/read_refusals.py:111-135; mcp/src/agents_remember/memory/knowledge/read_refusals.py:138-156; mcp/src/agents_remember/memory/knowledge/read_refusals.py:159-177 |
-| **The one decoder a read page and the logical digest share.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:224-232 |
+| **The one decoder a read page and the logical digest share.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
 | The read's path lookup, which is how a path seed selects. | `fetch_realizations_at_path` | mcp/src/agents_remember/memory/knowledge/read_queries.py:208-244 |
 | The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:192-207 |
 | The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-602 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
-| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:301-373; mcp/tests/evidence-lifecycle.toml:1136-1136 |
 |  The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1135-1159  |
 
 **The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The `ar-knowledge-export/v1` format: the one encoder, the canonical-form guarantee, the two acceptance checks and the digest-coverage statement.** | `EXPORT_FORMAT`; `encode_export`; `parse_export`; `canonical_document`; `_validate_header` | mcp/src/agents_remember/memory/knowledge/export_portable.py:108-108; mcp/src/agents_remember/memory/knowledge/export_portable.py:255-280; mcp/src/agents_remember/memory/knowledge/export_portable.py:436-489; mcp/src/agents_remember/memory/knowledge/export_portable.py:324-356; mcp/src/agents_remember/memory/knowledge/export_portable.py:694-746 |
-| The whole-document gate, its `<canonical document>` refusal identity and the bounded statement of how the text differs. | `_non_canonical_refusal`; `_canonical_difference` | mcp/src/agents_remember/memory/knowledge/export_portable.py:549-581; mcp/src/agents_remember/memory/knowledge/export_portable.py:584-603 |
-| The envelope builder and the declared orders it re-imposes: columns, nested keys and the manifest. | `export_envelope`; `_ordered_rows`; `_plain_tables` | mcp/src/agents_remember/memory/knowledge/export_portable.py:187-219; mcp/src/agents_remember/memory/knowledge/export_portable.py:222-242; mcp/src/agents_remember/memory/knowledge/export_portable.py:376-401 |
-| The dataset-level checks: declared column order, declared types, primary-key uniqueness, namespace binding and the recomputed seal. | `validate_export`; `_validate_table_rows`; `_typed_row`; `_validate_dataset` | mcp/src/agents_remember/memory/knowledge/export_portable.py:606-651; mcp/src/agents_remember/memory/knowledge/export_portable.py:770-811; mcp/src/agents_remember/memory/knowledge/export_portable.py:814-854; mcp/src/agents_remember/memory/knowledge/export_portable.py:893-952 |
-| The reachable, verdict-changing namespace guard with no killing node (an observation for L9). | `bound` | mcp/src/agents_remember/memory/knowledge/export_portable.py:893-920 |
+| **The `ar-knowledge-export/v1` format: the one encoder, the canonical-form guarantee, the two acceptance checks and the digest-coverage statement.** | `EXPORT_FORMAT`; `encode_export`; `parse_export`; `canonical_document`; `_validate_header` | mcp/src/agents_remember/memory/knowledge/export_portable.py:116-116; mcp/src/agents_remember/memory/knowledge/export_portable.py:493-546; mcp/src/agents_remember/memory/knowledge/export_portable.py:277-302; mcp/src/agents_remember/memory/knowledge/export_portable.py:367-399; mcp/src/agents_remember/memory/knowledge/export_portable.py:758-815 |
+| The whole-document gate, its `<canonical document>` refusal identity and the bounded statement of how the text differs. | `_non_canonical_refusal`; `_canonical_difference` | mcp/src/agents_remember/memory/knowledge/export_portable.py:613-645; mcp/src/agents_remember/memory/knowledge/export_portable.py:648-667 |
+| The envelope builder and the declared orders it re-imposes: columns, nested keys and the manifest. | `export_envelope`; `_ordered_rows`; `_plain_tables` | mcp/src/agents_remember/memory/knowledge/export_portable.py:187-219; mcp/src/agents_remember/memory/knowledge/export_portable.py:222-242; mcp/src/agents_remember/memory/knowledge/export_portable.py:419-448 |
+| The dataset-level checks: declared column order, declared types, primary-key uniqueness, namespace binding and the recomputed seal. | `validate_export`; `_validate_table_rows`; `_typed_row`; `_validate_dataset` | mcp/src/agents_remember/memory/knowledge/export_portable.py:967-1026; mcp/src/agents_remember/memory/knowledge/export_portable.py:842-885; mcp/src/agents_remember/memory/knowledge/export_portable.py:888-928; mcp/src/agents_remember/memory/knowledge/export_portable.py:670-715 |
+| The reachable, verdict-changing namespace guard with no killing node (an observation for L9). | `bound` | mcp/src/agents_remember/memory/knowledge/export_portable.py:984-996 |
 | **The export and import operation: validation before any database work, a private stage, the closed two-mode destination admission and publication on exact digest equality.** | `export_knowledge_dataset`; `import_knowledge_dataset` | mcp/src/agents_remember/memory/knowledge/export_import.py:133-192; mcp/src/agents_remember/memory/knowledge/export_import.py:195-244 |
 | **The staged sealed-aggregate read: every retained revision's payload re-derived through the shared decoders before publish.** | `_sealed_aggregate_refusal`; `_SEALED_AGGREGATES` | mcp/src/agents_remember/memory/knowledge/export_import.py:463-494; mcp/src/agents_remember/memory/knowledge/export_import.py:127-130 |
 | The staged verification, including the documented non-experiment (the digest equality no black-box case can falsify). | `_verify_staged_dataset` | mcp/src/agents_remember/memory/knowledge/export_import.py:408-460 |
 | The two-mode destination admission read before any staging, and the private stage that is never the destination. | `_destination_refusal`; `_stage_imported_dataset`; `_private_stage_directory` | mcp/src/agents_remember/memory/knowledge/export_import.py:336-361; mcp/src/agents_remember/memory/knowledge/export_import.py:364-405; mcp/src/agents_remember/memory/knowledge/export_import.py:597-605 |
 | The value-or-refusal file reader whose two failures carry different codes. | `read_artifact` | mcp/src/agents_remember/memory/knowledge/export_import.py:257-290 |
 | The portable boundary's refusal vocabulary, one factory per observable failure point. | `invalid_export_refusal`; `non_canonical_export_refusal`; `unsupported_schema_refusal`; `destination_occupied_refusal`; `destination_absent_refusal`; `import_validation_failed_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:26-50; mcp/src/agents_remember/memory/knowledge/export_refusals.py:53-75; mcp/src/agents_remember/memory/knowledge/export_refusals.py:78-102; mcp/src/agents_remember/memory/knowledge/export_refusals.py:105-126; mcp/src/agents_remember/memory/knowledge/export_refusals.py:129-148; mcp/src/agents_remember/memory/knowledge/export_refusals.py:151-172 |
-| **The one body constructor the export seals through, so the scan and the artifact cannot define the digest twice.** | `logical_body_from_tables`; `logical_digest_of_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:102-121; mcp/src/agents_remember/memory/knowledge/logical.py:123-126 |
+| **The one body constructor the export seals through, so the scan and the artifact cannot define the digest twice.** | `logical_body_from_tables`; `logical_digest_of_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:95-129; mcp/src/agents_remember/memory/knowledge/logical.py:132-135 |
 | **The shared "prove this finished file is a closed database" step the import's stage is closed through.** | `require_closed_database` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-89 |
 | The admission reading the import's destination check uses, exported from publication. | `destination_observation` | mcp/src/agents_remember/memory/knowledge/publication.py:260-270 |
 | The two portable operations and the one code they added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-69; mcp/src/agents_remember/models/knowledge/result.py:72-120 |
 | The portable wire vocabulary: the request identities, the validation report and the two results. | `ExportRequest`; `ImportRequest`; `PortableValidation`; `ExportResult`; `ImportResult` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:66-98; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:136-176 |
 | The fourth composition seam, its five entry points and its two non-claims. | `export_knowledge_artifact`; `import_knowledge_artifact`; `validate_knowledge_artifact`; `canonical_body_of_artifact` | mcp/src/agents_remember/application/knowledge_export.py:60-63; mcp/src/agents_remember/application/knowledge_export.py:66-74; mcp/src/agents_remember/application/knowledge_export.py:77-96; mcp/src/agents_remember/application/knowledge_export.py:112-126 |
 | **The node the guarantee rests on: the canonical form is the only form the reader accepts, including all seven header types.** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts" | mcp/tests/test_knowledge_portable_boundaries.py:132-258 |
-| **The node that proves an artifact whose sealed payload contradicts its digest is refused before publish.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:482-532 |
-| The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:533-570; mcp/tests/test_knowledge_portable_boundaries.py:88-131 |
+| **The node that proves an artifact whose sealed payload contradicts its digest is refused before publish.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:534-582 |
+| The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:585-617; mcp/tests/test_knowledge_portable_boundaries.py:94-132 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:571-633 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-|  The registry rows this leaf added: two integration lane rows and the three exact consumer declarations. | "mcp/tests/test_knowledge_portable_roundtrip.py"; "knowledge-identity-branching-fixture"; "knowledge-snapshot-lifecycle-cases"; "common-base-merge-cases" | mcp/tests/test-evidence-lanes.toml:140-141; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159  |
+|  The registry rows this leaf added: two integration lane rows and the three exact consumer declarations. | "mcp/tests/test_knowledge_portable_roundtrip.py"; "knowledge-identity-branching-fixture"; "knowledge-snapshot-lifecycle-cases"; "common-base-merge-cases" | mcp/tests/test-evidence-lanes.toml:157-157; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159  |
 
 **The pre-L6 rows below remain in the superseded two-column shape** and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside one leaf's curation pass.
 
@@ -686,6 +830,7 @@ checkout, but neither establishes a boundary contract here.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **reviewed the route because its recorded intent was contradicted, not merely extended.** The leaf removed the premise this route was written on: the schema stopped being one build-time shape whose `SCHEMA_USER_VERSION` moved when the DDL changed, and became a registry of frozen, selectable generations (`knowledge/schema_generations.py` — generation 1 pinned as data with its fingerprint constant and a gate that **fails rather than warns**, generation 2 composed as an append and declared in `knowledge/schema_v2.py`), with dispatch reading the dataset: `PRAGMA user_version` alone for an open file, the type-strict `(schema, userVersion)` pair for an artifact, and creation declaring `CURRENT_GENERATION` because an empty database has no version to read. The body now states that contradiction and retires it explicitly: **`SCHEMA_USER_VERSION = 2` is no longer how a schema change happens**, and **the encoder is no longer derived from `schema.CANONICAL_TABLES`** — it is parameterised over the selected generation, so every digest is total over its own generation's manifest and an unchanged version-1 dataset keeps its version-1 digest byte for byte. It records the additive-only rule and why the governing-route association is three new join tables rather than a column on a generation-1 table (**no `ALTER TABLE` anywhere in the package**), the envelope's payload seam with its one internal conformance kind and the shipped `invalid_payload` code, `Route` as an operable scope axis (nine-entry confinement rule table with normalisation-as-comparison, an acyclicity walk anchored on the edge, `author_route` returning an existing route rather than a second row, `set_governing_route` refusing a different route for an already-governed row, and `find_governing_route`'s `None` as a fact rather than a default), and the mixed-generation merge preflight that refuses before any session exists while **a v1/v1/v1 merge on this build must still pass** under generation 1. The still-unclaimed behaviour narrows from L9 to **L10**, and one honest gap is recorded rather than implied: requirement 4.2's "no escaping symlink at resolution" clause has no implementation — `normalize_route_path` refuses only the lexical forms. Verification metadata: lastUpdated advanced, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` repointed to mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:342-352; mcp/src/agents_remember/memory/knowledge/read.py:355-390; mcp/src/agents_remember/memory/knowledge/read.py:469-480. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_frontier_expansions` in the row 605 of this card from mcp/src/agents_remember/memory/knowledge/read.py:469-470 to mcp/src/agents_remember/memory/knowledge/read.py:224, the extent of the construct the claim is about (the checker named line(s) [224, 355] as its live location); re-pointed `_member_revision_ids` in the row 605 of this card from mcp/src/agents_remember/memory/knowledge/read.py:224 to mcp/src/agents_remember/memory/knowledge/read.py:216, the extent of the construct the claim is about (the checker named line(s) [216, 342] as its live location); re-pointed `_sort_key` in the row 605 of this card from mcp/src/agents_remember/memory/knowledge/read.py:216 to mcp/src/agents_remember/memory/knowledge/read.py:444, the extent of the construct the claim is about (the checker named line(s) [444, 469] as its live location)

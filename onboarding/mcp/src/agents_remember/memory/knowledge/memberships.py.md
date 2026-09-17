@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/memberships.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -115,7 +115,7 @@ No domain documentation source is configured for this repository (`system/source
 | The single definition of a missing relation endpoint, shared with the claim relation. | `require_family_revision_endpoint`; `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:25-40; mcp/src/agents_remember/memory/knowledge/endpoints.py:42-56 |
 | The row codec and expected-row digest that make the stale-caller refusal possible. | `member_row`; `member_row_digest`; `decode_member_row` | mcp/src/agents_remember/memory/knowledge/records.py:382-391; mcp/src/agents_remember/memory/knowledge/records.py:392-412; mcp/src/agents_remember/memory/knowledge/records.py:413-428 |
 | The vocabulary this module stores and returns. | `FamilyMemberDraft`; `FamilyMember`; `FamilyMembers`; `InvariantFamilies` | mcp/src/agents_remember/models/knowledge/graph.py:49-56; mcp/src/agents_remember/models/knowledge/graph.py:58-63; mcp/src/agents_remember/models/knowledge/graph.py:96-102; mcp/src/agents_remember/models/knowledge/graph.py:104-109 |
-| The declared `family_member` table, its unique tuple, its index and its no-repoint trigger. | `family_member`; `family_member_invariant_revision`; `family_member_no_repoint` | mcp/src/agents_remember/memory/knowledge/schema.py:231-247; mcp/src/agents_remember/memory/knowledge/schema.py:277-278; mcp/src/agents_remember/memory/knowledge/schema.py:341-345 |
+| The declared `family_member` table, its unique tuple, its index and its no-repoint trigger. | `family_member`; `family_member_invariant_revision`; `family_member_no_repoint` | mcp/src/agents_remember/memory/knowledge/schema.py:280-296; mcp/src/agents_remember/memory/knowledge/schema.py:327-328; mcp/src/agents_remember/memory/knowledge/schema.py:390-394 |
 | The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/result.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7`|
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -219,6 +219,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): No content impact: this leaf changed the *cited* sources, not this file's own source, and the card's claim bytes were re-read against the current anchored construct and retained; only citation ranges were re-derived where a cited file grew. No row, citation or claim was deleted, and the verification metadata is not advanced because the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **extended the operation union to the baseline-to-candidate comparison and re-derived every citation range against the new bytes.** `KnowledgeOperation` gained **one** member, `diff_knowledge_scope` — one rather than two for the same reason the read pair is one: a first comparison and a continuation are two ways of asking one question and a caller branches on the refusal code, not on which of the two it passed. **The measured union is now twenty-six operations, and the code union stays at forty-four: L8 added no refusal code at all.** That is recorded as a fact rather than a silence — the comparison's whole failure surface is R07's own six codes plus `selected_input_unavailable`, which the L4 publication path already produced, and a one-sided absence travels as a **value beside the page** (`side_absences`) rather than as a seventh refusal — and the card says so explicitly, because "this leaf needed no new vocabulary" and "this leaf's vocabulary was never reviewed" must not read alike. Every citation below the operation insertion moved by four lines and was re-measured rather than shifted. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 

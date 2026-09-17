@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/canonical_json.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No domain documentation source is configured for this repository (`system/source
 | The duplicate-key-refusing decoder a stored typed column is read through. | `decoded_json`; `require_mapping` | mcp/src/agents_remember/kernel/canonical_json.py:46-69 |
 | The revision seal computed through this encoder. | `revision_payload_digest` | mcp/src/agents_remember/models/knowledge/digest.py:55-58 |
 | The typed-column storage path that reuses this encoder and decoder. | `encode_typed_column`; `decode_typed_column` | mcp/src/agents_remember/memory/knowledge/records.py:56-61; mcp/src/agents_remember/memory/knowledge/records.py:64-67 |
-| The schema fingerprint computed through this encoder. | `schema_fingerprint` | mcp/src/agents_remember/memory/knowledge/schema.py:375-392 |
+| The schema fingerprint computed through this encoder. | `schema_fingerprint` | mcp/src/agents_remember/memory/knowledge/schema.py:425-442 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -130,8 +130,8 @@ No domain documentation source is configured for this repository (`system/source
 | The receipt model that makes the no-moved-dataset-without-an-entry case unrepresentable, and the operation's own builder for it. | `MutationResult`; `_changed_result` | mcp/src/agents_remember/models/knowledge/candidate.py:409-452; mcp/src/agents_remember/memory/knowledge/candidate.py:196-209 |
 | The preconditions this operation runs inside the transaction. | `require_preconditions` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:79-86 |
 | The only writing step and the after-integrity re-proof. | `apply_commands`; `require_after_integrity` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:147-172; mcp/src/agents_remember/memory/knowledge/batch_commands.py:554-570 |
-| The lock the operation takes once, outside its transaction — declared on the opened store. | `exclusive_candidate_lock` | mcp/src/agents_remember/memory/knowledge/store.py:486-505 |
-| The transaction wrapper the operation takes directly, because it spans many commands — also declared on the opened store. | ``immediate_transaction`` | mcp/src/agents_remember/memory/knowledge/store.py:467-474 |
+| The lock the operation takes once, outside its transaction — declared on the opened store. | `exclusive_candidate_lock` | mcp/src/agents_remember/memory/knowledge/store.py:509-526 |
+| The transaction wrapper the operation takes directly, because it spans many commands — also declared on the opened store. | ``immediate_transaction`` | mcp/src/agents_remember/memory/knowledge/store.py:491-498 |
 | The task-lane refusal wording, which names the missing binding rather than the unsupported lane. | `batch_task_binding_unresolved_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:620-649 |
 | The composed-path case that drives this operation through the admitted destination. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-110 |
 | The lane refusals' own nodes. | "test_a_baseline_lane_is_refused_as_a_non_candidate_target"; "test_a_task_candidate_lane_is_refused_until_its_binding_can_be_resolved" | mcp/tests/test_candidate_batch_transaction.py:374-394; mcp/tests/test_candidate_batch_transaction.py:1162-1188 |

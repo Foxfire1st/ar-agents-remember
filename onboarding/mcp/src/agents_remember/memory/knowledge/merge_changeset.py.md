@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/merge_changeset.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -59,17 +59,17 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The delta: its changeset bytes, its digest and its emptiness. | `MaterializedChange`; `changeset_digest`; `is_empty` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:108-129; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:120-123; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:126-129 |
+| The delta: its changeset bytes, its digest and its emptiness. | `MaterializedChange`; `changeset_digest`; `is_empty` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:108-129; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:120-123; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:130-134 |
 | One materialised operation and the three-valued semantics of its columns. | `MaterializedChange` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:73-104 |
-| The capability check read from the binding's own compile options, the required capability, and the not-supplied marker that is not SQL `NULL`. | `require_session_capability`; `NOT_SUPPLIED` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:160-182; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:59-59 |
+| The capability check read from the binding's own compile options, the required capability, and the not-supplied marker that is not SQL `NULL`. | `require_session_capability`; `NOT_SUPPLIED` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:160-182; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:60-60 |
 | The directional delta build with every canonical table attached before the changeset is read. | `build_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:185-220 |
 | The aborting application and the callback that copies the facts it was handed. | `apply_changeset` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:223-263 |
 | The conflict key read from the operation's **old** values, with the `INSERT` exception. | `_conflicting_key` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:266-289 |
 | The coverage replay that no return code can substitute for. | `replay_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:292-331 |
-| What one application attempt did, with the engine's own `detail` and the optional unapplied count. | `_unapplied_count`; `conflicted` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:133-157; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:393-404; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:154-157 |
-| The optional unapplied count, distinct from zero. | `_unapplied_count` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:393-404 |
+| What one application attempt did, with the engine's own `detail` and the optional unapplied count. | `_unapplied_count`; `conflicted` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:137-162; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:415-426; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:158-162 |
+| The optional unapplied count, distinct from zero. | `_unapplied_count` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:415-426 |
 | The session-capability and coverage refusals this module produces. | `session_unavailable_refusal`; `changeset_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:199-218; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:221-245 |
-| The unit node that proves a subset delta is accepted by SQLite and refused by both completeness measures. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-250 |
+| The unit node that proves a subset delta is accepted by SQLite and refused by both completeness measures. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:301-301 |
 | The boundary nodes that hold the conflict key to the engine's own operation. | "test_a_table_carrying_an_insert_and_a_conflicting_update_names_the_conflicting_row" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:135-162 |
 
 ## Cross-Repo References
@@ -81,6 +81,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate` in the row 72 of this card from mcp/tests/test_knowledge_guarded_merge.py:183-242 to mcp/tests/test_knowledge_guarded_merge.py:248-250, the extent of the construct the claim is about (the checker named line(s) [19, 248] as its live location)
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new changeset module. It records the three trust facts (a changeset rather than a patchset, operations materialised before the cursor advances, coverage proven by replay rather than by a return code), the silent direction hazard, and the corrected conflict-key contract this leaf's review round 2 produced: the key is copied inside the callback and read from the operation's **old** values, because an `UPDATE`'s new side carries the not-supplied marker where its key columns are, and reconstructing a key from the changeset names a different operation whenever a table carries more than one. It also records the three-valued column semantics (`NOT_SUPPLIED` is not SQL `NULL`) and that an unapplied count is optional rather than zero. Verification metadata remains empty until closeout stamps the code commit.

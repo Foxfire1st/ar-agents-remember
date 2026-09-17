@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_export.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -117,11 +117,11 @@ No domain documentation source is configured for this repository (`system/source
 | **The body that is only handed out for an artifact the validator accepted.** | `canonical_body_of_artifact` | mcp/src/agents_remember/application/knowledge_export.py:112-126 |
 | The defect the layer below makes unreachable. | `KnowledgeArtifactSeamDefect` | mcp/src/agents_remember/application/knowledge_export.py:129-130 |
 | The four storage operations this seam delegates to. | `export_knowledge_dataset`; `import_knowledge_dataset`; `read_artifact`; `artifact_digest` | mcp/src/agents_remember/memory/knowledge/export_import.py:133-192; mcp/src/agents_remember/memory/knowledge/export_import.py:195-244; mcp/src/agents_remember/memory/knowledge/export_import.py:257-290; mcp/src/agents_remember/memory/knowledge/export_import.py:247-254 |
-| The reader and validator the seam composes for its read-only half. | `parse_export`; `validate_export`; `logical_body_of_artifact` | mcp/src/agents_remember/memory/knowledge/export_portable.py:436-489; mcp/src/agents_remember/memory/knowledge/export_portable.py:606-651; mcp/src/agents_remember/memory/knowledge/export_portable.py:660-670 |
+| The reader and validator the seam composes for its read-only half. | `parse_export`; `validate_export`; `logical_body_of_artifact` | mcp/src/agents_remember/memory/knowledge/export_portable.py:493-546; mcp/src/agents_remember/memory/knowledge/export_portable.py:670-715; mcp/src/agents_remember/memory/knowledge/export_portable.py:724-734 |
 | The request and result vocabulary this seam takes and returns unchanged. | `ExportRequest`; `ExportResult`; `ImportRequest`; `ImportResult`; `PortableValidation` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:136-176; mcp/src/agents_remember/models/knowledge/portable.py:66-98 |
 | The three sibling seams this module sits beside. | `write_authorship`; `publish_prepared_knowledge_snapshot`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge.py:102-124; mcp/src/agents_remember/application/knowledge_snapshot.py:142-147; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
 |  The layer ranks that make a lower owner consume models rather than this module. | "package.memory"; "package.application" | layers.toml:206-207; layers.toml:314-315  |
-| The nodes that drive the conforming round trip and the read-only recovery recipe through the public operations. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_a_filtered_read_response_cannot_validate_as_a_complete_export" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427; mcp/tests/test_knowledge_portable_roundtrip.py:667-696 |
+| The nodes that drive the conforming round trip and the read-only recovery recipe through the public operations. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_a_filtered_read_response_cannot_validate_as_a_complete_export" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427; mcp/tests/test_knowledge_portable_roundtrip.py:712-739 |
 
 ## Cross-Repo References
 

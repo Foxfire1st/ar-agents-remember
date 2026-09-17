@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -139,12 +139,12 @@ No domain documentation source is configured for this repository (`system/source
 | **The public admission reading this leaf added, which never decides a replace — the locked reading does.** | `destination_observation`; `_DestinationObservation` | mcp/src/agents_remember/memory/knowledge/publication.py:260-270; mcp/src/agents_remember/memory/knowledge/publication.py:252-257 |
 | The readback that decides between `published`, `publication_failed` and the honest durability code. | `_readback` | mcp/src/agents_remember/memory/knowledge/publication.py:215-249 |
 | The destination-stale refusal and the candidate-moved refusal, each naming both digests. | `_stale_destination`; `_stale_candidate_refusal` | mcp/src/agents_remember/memory/knowledge/publication.py:292-306; mcp/src/agents_remember/memory/knowledge/publication.py:309-327 |
-| The candidate lock that protects the working database, released before the destination lock is taken. | `_freeze_under_candidate_lock`; `exclusive_candidate_lock` | mcp/src/agents_remember/memory/knowledge/publication.py:336-352; mcp/src/agents_remember/memory/knowledge/store.py:487-506 |
+| The candidate lock that protects the working database, released before the destination lock is taken. | `_freeze_under_candidate_lock`; `exclusive_candidate_lock` | mcp/src/agents_remember/memory/knowledge/publication.py:336-352; mcp/src/agents_remember/memory/knowledge/store.py:509-526 |
 | The private stage directory, its cleanup and the suppression that protects the caller's refusal. | `_private_stage_directory`; `_discard_stage_directory` | mcp/src/agents_remember/memory/knowledge/publication.py:355-363; mcp/src/agents_remember/memory/knowledge/publication.py:366-375 |
 | The hidden lock resource that lands `.<published-name>.lock` beside the destination. | `_publication_lock_resource`; `exclusive_file_lock` | mcp/src/agents_remember/memory/knowledge/publication.py:378-386; mcp/src/agents_remember/kernel/file_lock.py:87-116 |
 | The freeze procedure behind the stage, and the stage shape it returns. | `freeze_closed_snapshot`; `discard_stage`; `PreparedKnowledgeSnapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:92-137; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:234-237; mcp/src/agents_remember/models/knowledge/snapshot.py:224-236 |
 | The atomic replace whose directory fsync records the new name, not the bytes under it. | `atomic_replace`; `fsync_file` | mcp/src/agents_remember/kernel/atomic_write.py:78-92; mcp/src/agents_remember/kernel/atomic_write.py:95-105 |
-| The read-only dataset identity every comparison in this module uses. | `dataset_identity`; `logical_digest` | mcp/src/agents_remember/memory/knowledge/logical.py:141-161; mcp/src/agents_remember/memory/knowledge/logical.py:82-85 |
+| The read-only dataset identity every comparison in this module uses. | `dataset_identity`; `logical_digest` | mcp/src/agents_remember/memory/knowledge/logical.py:141-161; mcp/src/agents_remember/memory/knowledge/logical.py:74-77 |
 | The publication outcome vocabulary and the destination request. | `SnapshotPublicationResult`; `SnapshotDestinationRequest`; `PublishSnapshotRequest` | mcp/src/agents_remember/models/knowledge/snapshot.py:259-293; mcp/src/agents_remember/models/knowledge/snapshot.py:239-249; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256 |
 | **The second caller of the admission reading: the portable import's destination check, which runs before any staging work.** | `_destination_refusal` | mcp/src/agents_remember/memory/knowledge/export_import.py:336-361 |
 | The nodes that protect the publication's failure behaviour. | "test_a_failed_replacement_leaves_the_prior_destination_byte_identical"; "test_a_publication_whose_readback_fails_reports_the_destination_it_actually_left"; "test_a_logical_no_op_retains_the_published_bytes" | mcp/tests/test_knowledge_snapshot_publication.py:173-173; mcp/tests/test_knowledge_snapshot_publication.py:204-204; mcp/tests/test_knowledge_snapshot_publication.py:239-239 |

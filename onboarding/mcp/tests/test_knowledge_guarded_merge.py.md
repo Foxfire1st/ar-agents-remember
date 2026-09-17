@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_guarded_merge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -65,11 +65,11 @@ No domain documentation source is configured for this repository (`system/source
 | The registered evidence node of `contract:common-base-merge-cases`. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
 | The conflict node, including the exact conflict-key assertion. | "test_both_conflicting_edits_refuse_whole_and_preserve_every_input" | mcp/tests/test_knowledge_guarded_merge.py:318-386 |
 | The base and input-defect node. | "test_every_base_and_every_input_defect_refuses_without_moving_a_dataset" | mcp/tests/test_knowledge_guarded_merge.py:392-486 |
-| The partial delta that reproduces a missing `session.attach` and is accepted by SQLite. | `_partial_delta` | mcp/tests/test_knowledge_guarded_merge.py:747-777 |
-| The measured orientation assertion that replaced a constant-true predicate. | `assert_removal_orientation` | mcp/tests/test_knowledge_guarded_merge.py:645-660 |
+| The partial delta that reproduces a missing `session.attach` and is accepted by SQLite. | `_partial_delta` | mcp/tests/test_knowledge_guarded_merge.py:809-839 |
+| The measured orientation assertion that replaced a constant-true predicate. | `assert_removal_orientation` | mcp/tests/test_knowledge_guarded_merge.py:702-717 |
 | The harness the cases are built on, and its real three-commit Git scenario. | `build_case`; `GitBranchWorld` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:72-78 |
 | The boundary module that carries the scenarios needing their own world. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
-| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:154; mcp/tests/test-evidence-lanes.toml:138-139 |
+| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:154; mcp/tests/test-evidence-lanes.toml:157-157 |
 |  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1132-1152  |
 
 ## Cross-Repo References
@@ -81,6 +81,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `integration` in the row 72 of this card from mcp/tests/test-evidence-lanes.toml:5-73 to mcp/tests/test-evidence-lanes.toml:154, the extent of the construct the claim is about (the checker named line(s) [154] as its live location)
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new unit suite. It records the five-case contract, each case's named guard and what it fails on, the whole-outcome assertion rule that makes input preservation measured rather than assumed, and — the fact a successor most needs — that the register-time failure this leaf's review found twice was a *text claim outrunning its bytes*: the module docstring now names the nodes that exist, and `assert_removal_orientation` measures both orientations (0/0 against 1/1) instead of returning a constant-true predicate. It also records that the fifth case holds the conflict key to the engine's own operation, which is the regression guard for the corrected contract. Verification metadata remains empty until closeout stamps the code commit.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/anchors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -113,9 +113,9 @@ No domain documentation source is configured for this repository (`system/source
 | Explicit removal, with its two refusals both evaluated before the delete. | `remove_source_anchor`; `_delete_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:153-173; mcp/src/agents_remember/memory/knowledge/anchors.py:175-182 |
 | The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request. | `delete_anchor`; `RemoveSourceAnchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:184-207; mcp/src/agents_remember/models/knowledge/candidate.py:302-306 |
 | The anchor-codec row and digest, which derive the canonical identity text at the storage boundary. | `anchor_row`; `anchor_row_digest`; `decode_anchor_row` | mcp/src/agents_remember/memory/knowledge/records.py:226-236; mcp/src/agents_remember/memory/knowledge/records.py:366-381; mcp/src/agents_remember/memory/knowledge/records.py:237-246 |
-| The locator union and the confined relative-path rule this module stores without resolving. | `SourceAnchorDraft`; `SourceAnchor`; `SourceLocator` | mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:125-128; mcp/src/agents_remember/models/knowledge/source.py:79-81 |
+| The locator union and the confined relative-path rule this module stores without resolving. | `SourceAnchorDraft`; `SourceAnchor`; `SourceLocator` | mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:130-133; mcp/src/agents_remember/models/knowledge/source.py:76-79 |
 | The refusal factories this module's refusals come from. | `duplicate_anchor_refusal`; `referenced_anchor_refusal`; `missing_expected_row_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:420-441; mcp/src/agents_remember/memory/knowledge/refusals.py:553-567; mcp/src/agents_remember/memory/knowledge/refusals.py:514-530 |
-| The declared `source_anchor` table, its index and its payload trigger. | `source_anchor`; `source_anchor_path`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:218-230; mcp/src/agents_remember/memory/knowledge/schema.py:276-276; mcp/src/agents_remember/memory/knowledge/schema.py:336-340 |
+| The declared `source_anchor` table, its index and its payload trigger. | `source_anchor`; `source_anchor_path`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:267-279; mcp/src/agents_remember/memory/knowledge/schema.py:326-326; mcp/src/agents_remember/memory/knowledge/schema.py:385-389 |
 | The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/merge_refusals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905`|
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No domain documentation source is configured for this repository (`system/source
 | The two result-side refusals: incomplete coverage, and a result missing an intended change. | `changeset_incomplete_refusal`; `changeset_postcondition_failed_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:221-245; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:248-270 |
 | The shared factory and the SQLite-error mapper this module deliberately leaves where they are. | `refusal`; `map_sqlite_error` | mcp/src/agents_remember/memory/knowledge/refusals.py:57-77; mcp/src/agents_remember/memory/knowledge/refusals.py:828-871 |
 | The codes these factories produce, one per observable failure point. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:66-111 |
-| The taxonomy in the operation that maps an application failure onto one of these factories. | `_TAXONOMY` | mcp/src/agents_remember/memory/knowledge/merge.py:608-614 |
+| The taxonomy in the operation that maps an application failure onto one of these factories. | `_TAXONOMY` | mcp/src/agents_remember/memory/knowledge/merge.py:652-657 |
 
 ## Cross-Repo References
 

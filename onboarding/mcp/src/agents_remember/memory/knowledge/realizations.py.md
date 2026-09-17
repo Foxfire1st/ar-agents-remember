@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/realizations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -117,7 +117,7 @@ No domain documentation source is configured for this repository (`system/source
 | The row codec and expected-row digest for the claim relation. | `claim_row`; `claim_row_digest`; `decode_claim_row` | mcp/src/agents_remember/memory/knowledge/records.py:429-440; mcp/src/agents_remember/memory/knowledge/records.py:441-462; mcp/src/agents_remember/memory/knowledge/records.py:463-483 |
 | The closed authored role vocabulary and the explicit unclassified member. | `RealizationRole`; `UNCLASSIFIED_ROLE` | mcp/src/agents_remember/models/knowledge/graph.py:36-44; mcp/src/agents_remember/models/knowledge/graph.py:46-46 |
 | The claim vocabulary and its two read shapes. | `RealizationClaimDraft`; `RealizationClaim`; `RealizationClaims`; `AnchorRealizations` | mcp/src/agents_remember/models/knowledge/graph.py:65-85; mcp/src/agents_remember/models/knowledge/graph.py:87-94; mcp/src/agents_remember/models/knowledge/graph.py:112-118; mcp/src/agents_remember/models/knowledge/graph.py:120-129 |
-| The declared `realization_claim` table, its two indexes and its no-rewrite trigger. | `realization_claim`; `realization_claim_invariant_revision`; `realization_claim_anchor`; `realization_claim_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:248-268; mcp/src/agents_remember/memory/knowledge/schema.py:279-280; mcp/src/agents_remember/memory/knowledge/schema.py:281-282; mcp/src/agents_remember/memory/knowledge/schema.py:346-350 |
+| The declared `realization_claim` table, its two indexes and its no-rewrite trigger. | `realization_claim`; `realization_claim_invariant_revision`; `realization_claim_anchor`; `realization_claim_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:297-315; mcp/src/agents_remember/memory/knowledge/schema.py:329-331; mcp/src/agents_remember/memory/knowledge/schema.py:330-331; mcp/src/agents_remember/memory/knowledge/schema.py:395-399 |
 | The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References

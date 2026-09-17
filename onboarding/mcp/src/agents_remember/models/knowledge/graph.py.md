@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/graph.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ No domain documentation source is configured for this repository (`system/source
 | The membership operations that store and read these values. | `create_family_member`; `list_members`; `list_families_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/memberships.py:255-267; mcp/src/agents_remember/memory/knowledge/memberships.py:270-284 |
 | The realization operations that store and read these values. | `create_realization_claim`; `list_claims_for_invariant_revision`; `list_claims_for_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:61-81; mcp/src/agents_remember/memory/knowledge/realizations.py:271-285; mcp/src/agents_remember/memory/knowledge/realizations.py:288-300 |
 | The row codecs and expected-row digests the drafts deliberately omit. | `member_row_digest`; `claim_row_digest` | mcp/src/agents_remember/memory/knowledge/records.py:392-412; mcp/src/agents_remember/memory/knowledge/records.py:441-462 |
-| The declared relation tables these values map onto. | `family_member`; `realization_claim` | mcp/src/agents_remember/memory/knowledge/schema.py:231-247; mcp/src/agents_remember/memory/knowledge/schema.py:248-268 |
+| The declared relation tables these values map onto. | `family_member`; `realization_claim` | mcp/src/agents_remember/memory/knowledge/schema.py:280-296; mcp/src/agents_remember/memory/knowledge/schema.py:297-315 |
 | The requirement this vocabulary's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References

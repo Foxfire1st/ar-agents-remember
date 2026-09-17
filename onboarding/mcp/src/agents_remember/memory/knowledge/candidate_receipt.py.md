@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/candidate_receipt.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ No domain documentation source is configured for this repository (`system/source
 | The refusal this module returns for a receipt that is not this admission's. | `candidate_binding_changed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:904-928 |
 | The lifecycle caller that reads both candidate inputs before anything else. | `_candidate_inputs` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:430-454 |
 | The schema identity the fingerprint comparison is made against. | `inspect_schema`; `KnowledgeSchemaIdentity` | mcp/src/agents_remember/memory/knowledge/connection.py:106-123; mcp/src/agents_remember/models/knowledge/context.py:24-30 |
-| The node that proves a candidate the admission cannot verify is refused with its bytes intact. | "test_a_candidate_the_admission_cannot_verify_is_refused_with_its_bytes_intact" | mcp/tests/test_knowledge_candidate_workspace.py:137-162 |
+| The node that proves a candidate the admission cannot verify is refused with its bytes intact. | "test_a_candidate_the_admission_cannot_verify_is_refused_with_its_bytes_intact" | mcp/tests/test_knowledge_candidate_workspace.py:175-198 |
 
 ## Cross-Repo References
 

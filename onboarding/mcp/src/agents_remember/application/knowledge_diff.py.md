@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_diff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
@@ -179,7 +179,7 @@ No domain documentation source is configured for this repository (`system/source
 | The comparison request, the side that names one snapshot and its selector, and the typed result. | `KnowledgeDiffRequest` | mcp/src/agents_remember/models/knowledge/diff.py:245-253 |
 | The result that is a page or a refusal, never both. | `KnowledgeDiffResult` | mcp/src/agents_remember/models/knowledge/diff.py:501-570 |
 | One side of a comparison: the exact snapshot and the per-side selector. | `KnowledgeDiffSide` | mcp/src/agents_remember/models/knowledge/diff.py:182-205 |
-| **The one operation member this seam's results carry.** | "diff_knowledge_scope" | mcp/src/agents_remember/models/knowledge/result.py:37-75 |
+| **The one operation member this seam's results carry.** | "diff_knowledge_scope" | mcp/src/agents_remember/models/knowledge/result.py:36-78 |
 
 ## Cross-Repo References
 
@@ -192,5 +192,6 @@ the module never consults a remote.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the comparison's application seam — the route's **sixth** composition seam, with four entry points (`open_diff_side`, `git_tree_difference_probe`, `diff_knowledge_scope`, `diff_row_counts`). It records the four boundaries the seam owns: **R07's selection run twice** with the per-side exact-revision address as the only addition to the selection contract; **the binding as the invalidation** (a candidate whose bytes moved presents another `after` identity and is refused rather than continued); **a missing side refuses with no `HEAD` substituted** and an absent/unreadable file refused without a binding at all; and **one side's absence reported, not raised**, with the operation refusing outright only when neither side selected anything. It states the ordered sequence with the two properties that make it safe (both sides verified **before either is selected**; the request-level cursor checks decided **before** the comparison binding so a caller who changed the question is told that), the three separate snapshot comparisons per side, the page arithmetic (`items_total` on every page, the display's own two numbers travelling beside it), the two R07 absence codes with the recorded-but-empty selection served rather than refused, the four typed failure classes `_reading_failure` maps, and the two non-claims the module's own docstring carries. It also records that the wiring boundary did **not** move — like its five siblings the seam has **no non-test importer in `mcp/src`** and introduces no MCP tool name. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

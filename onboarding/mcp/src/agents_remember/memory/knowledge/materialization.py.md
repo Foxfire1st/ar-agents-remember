@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/materialization.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -96,8 +96,8 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The three-way measurement and the five branches it reports. | `publication_state` | mcp/src/agents_remember/memory/knowledge/materialization.py:34-99 |
 | The separate restatement step that keeps the state a measurement. | `unpublished_refusal` | mcp/src/agents_remember/memory/knowledge/materialization.py:102-120 |
-| The read-only dataset identity both sides are read through. | `dataset_identity`; `open_read_only_database` | mcp/src/agents_remember/memory/knowledge/logical.py:141-142; mcp/src/agents_remember/memory/knowledge/connection.py:55-66 |
-| The live candidate identity the comparison starts from. | `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:304-318 |
+| The read-only dataset identity both sides are read through. | `dataset_identity`; `open_read_only_database` | mcp/src/agents_remember/memory/knowledge/logical.py:153-175; mcp/src/agents_remember/memory/knowledge/connection.py:52-63 |
+| The live candidate identity the comparison starts from. | `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:327-340 |
 | The read-side refusal the unpublished state is restated as. | `candidate_snapshot_unpublished_refusal`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:930-949; mcp/src/agents_remember/memory/knowledge/refusals.py:882-902 |
 | The value this module returns and the caller-facing claim it supports. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
 | The application entry point that exposes the gate. | `knowledge_publication_state` | mcp/src/agents_remember/application/knowledge_snapshot.py:150-155 |

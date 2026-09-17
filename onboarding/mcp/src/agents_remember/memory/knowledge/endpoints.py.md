@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/endpoints.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ No domain documentation source is configured for this repository (`system/source
 | The invariant-revision endpoint check. | `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:42-56 |
 | The refusal these checks raise, with its endpoint kind and identity facts. | `missing_relation_endpoint_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:442-469 |
 | The narrow ownership read that answers the family half. | `family_id_of_revision` | mcp/src/agents_remember/memory/knowledge/families.py:285-301 |
-| The seal-verifying read that answers the invariant half. | `get_revision` | mcp/src/agents_remember/memory/knowledge/store.py:161-177 |
+| The seal-verifying read that answers the invariant half. | `get_revision` | mcp/src/agents_remember/memory/knowledge/store.py:192-207 |
 | The membership operation that calls both checks before its write. | `create_family_member` | mcp/src/agents_remember/memory/knowledge/memberships.py:88-107 |
 | The realization operation that calls the invariant check before its write. | `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:61-83 |
 

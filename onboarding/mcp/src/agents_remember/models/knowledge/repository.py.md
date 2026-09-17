@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/repository.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash |  `60e0820e6cb3b1d160518b9f8c7ac6241323a281`|
-| lastVerifiedCommitDate |  2026-09-15T22:46:24+02:00|
+| lastVerifiedCommitHash |  `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate |  2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The namespace model and its nonblank authority-home rule. | `RepositoryIdentity` | mcp/src/agents_remember/models/knowledge/repository.py:19-31 |
-| The `repository` table this identity keys, and its no-update/no-delete triggers. | `repository`; `repository_no_update`; `repository_no_delete` | mcp/src/agents_remember/memory/knowledge/schema.py:118-123; mcp/src/agents_remember/memory/knowledge/schema.py:286-294 |
+| The `repository` table this identity keys, and its no-update/no-delete triggers. | `repository`; `repository_no_update`; `repository_no_delete` | mcp/src/agents_remember/memory/knowledge/schema.py:118-123; mcp/src/agents_remember/memory/knowledge/schema.py:337-344 |
 | Rebinding a populated store to another namespace or authority home is refused. | `repository_rebind_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:162-181 |
 | A request naming a foreign namespace refuses before any DML. | `scope_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:80-101 |
 

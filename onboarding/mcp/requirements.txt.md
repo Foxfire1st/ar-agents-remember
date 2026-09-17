@@ -6,8 +6,8 @@
 | path                   | `mcp/requirements.txt`                     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-15T22:40+02:00                     |
-| lastVerifiedCommitHash | `60e0820e6cb3b1d160518b9f8c7ac6241323a281` |
-| lastVerifiedCommitDate | 2026-09-15T22:46:24+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -44,8 +44,8 @@ The in-file comment in `mcp/pyproject.toml` above that entry is the durable reco
 | MCP package metadata declares the same runtime dependencies. | "pydantic>=2,<3" | mcp/pyproject.toml:28-28 |
 | The exact SQLite-binding pin, with the session build-option reason recorded inline above it. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26 |
 | The same pin in this manifest, which must agree with the package metadata. | "apsw==3.53.4.0" | mcp/requirements.txt:2-2 |
-| Pydantic response contracts live under the models package. | `# mcp/src/agents_remember/models/ - Response Contract Models Overview` | onboarding/mcp/src/agents_remember/models/overview.md:1-506 |
-| The store that consumes the binding. | `open_database`; `apply_connection_contract` | mcp/src/agents_remember/memory/knowledge/connection.py:28-51 |
+| Pydantic response contracts live under the models package: the base model every knowledge vocabulary model inherits, declared against the pinned range. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
+| The store that consumes the binding. | `open_database`; `apply_connection_contract` | mcp/src/agents_remember/memory/knowledge/connection.py:26-32 |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -130,8 +130,8 @@ No domain documentation source is configured for this repository (`system/source
 | The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:181-204; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:225-253; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:256-264 |
 | The spy node that asserts the shared rule is reached carrying the batch's declared edges, and the nodes that fail when the rule is neutered or the wider edges are emptied. | "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:605-674; mcp/tests/test_candidate_batch_transaction.py:561-603 |
 | The two-branch refusal wording, shared so the relations cannot describe different rules. | `_lineage_cycle_wording`; `lineage_cycle_refusal`; `family_lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:290-309; mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286 |
-| The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:370-390 |
-| The declared predecessor tables this module reads. | `invariant_predecessor`; `family_predecessor`; `family_predecessor_parent_endpoint` | mcp/src/agents_remember/memory/knowledge/schema.py:157-172; mcp/src/agents_remember/memory/knowledge/schema.py:202-217; mcp/src/agents_remember/memory/knowledge/schema.py:273-274 |
+| The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:399-418 |
+| The declared predecessor tables this module reads. | `invariant_predecessor`; `family_predecessor`; `family_predecessor_parent_endpoint` | mcp/src/agents_remember/memory/knowledge/schema.py:206-221; mcp/src/agents_remember/memory/knowledge/schema.py:251-266; mcp/src/agents_remember/memory/knowledge/schema.py:323-324 |
 
 ## Cross-Repo References
 

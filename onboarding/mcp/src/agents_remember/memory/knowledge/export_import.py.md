@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/export_import.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -160,7 +160,7 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's three shaping decisions and the never-does list, in the form a consumer may rely on. | "The artifact is parsed with duplicate-key detection"; "What this operation never does" | mcp/src/agents_remember/memory/knowledge/export_import.py:1-40 |
-| The two operation names a caller branches on. | `EXPORT_OPERATION`; `IMPORT_OPERATION` | mcp/src/agents_remember/memory/knowledge/export_import.py:115-116 |
+| The two operation names a caller branches on. | `EXPORT_OPERATION`; `IMPORT_OPERATION` | mcp/src/agents_remember/memory/knowledge/export_import.py:117-118 |
 | **The export: the identity re-read that makes "the artifact I produced is the dataset I admitted" checkable, and the encode through the one encoder.** | `export_knowledge_dataset` | mcp/src/agents_remember/memory/knowledge/export_import.py:133-192 |
 | **The import sequence: validate, admit the destination, stage, verify, close, publish.** | `import_knowledge_dataset` | mcp/src/agents_remember/memory/knowledge/export_import.py:195-244 |
 | The value-or-refusal file reader and its two different codes (`selected_input_unavailable` for unreadable, `invalid_export` for non-UTF-8). | `read_artifact` | mcp/src/agents_remember/memory/knowledge/export_import.py:257-290 |
@@ -173,11 +173,11 @@ No domain documentation source is configured for this repository (`system/source
 | The single shared "prove this finished file is a closed database" step both producers call. | `require_closed_database` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-89 |
 | The publication protocol every install goes through, and the admission reading the destination check uses. | `publish_prepared_snapshot`; `destination_observation` | mcp/src/agents_remember/memory/knowledge/publication.py:114-170; mcp/src/agents_remember/memory/knowledge/publication.py:260-270 |
 | The shared decoders the sealed check owns the seal through, and the typed-column encoder the load uses. | `decode_revision_row`; `decode_family_revision_row`; `decode_predecessor_rows`; `encode_typed_column` | mcp/src/agents_remember/memory/knowledge/records.py:153-187; mcp/src/agents_remember/memory/knowledge/records.py:327-354; mcp/src/agents_remember/memory/knowledge/records.py:222-223; mcp/src/agents_remember/memory/knowledge/records.py:56-61 |
-| The reader, encoder, envelope builder and validator this operation composes rather than re-implements. | `parse_export`; `validate_export`; `encode_export`; `export_envelope`; `file_digest` | mcp/src/agents_remember/memory/knowledge/export_portable.py:436-489; mcp/src/agents_remember/memory/knowledge/export_portable.py:606-651; mcp/src/agents_remember/memory/knowledge/export_portable.py:255-280; mcp/src/agents_remember/memory/knowledge/export_portable.py:187-219; mcp/src/agents_remember/memory/knowledge/export_portable.py:679-682 |
+| The reader, encoder, envelope builder and validator this operation composes rather than re-implements. | `parse_export`; `validate_export`; `encode_export`; `export_envelope`; `file_digest` | mcp/src/agents_remember/memory/knowledge/export_portable.py:493-546; mcp/src/agents_remember/memory/knowledge/export_portable.py:670-715; mcp/src/agents_remember/memory/knowledge/export_portable.py:277-302; mcp/src/agents_remember/memory/knowledge/export_portable.py:199-239; mcp/src/agents_remember/memory/knowledge/export_portable.py:743-746 |
 | The refusal vocabulary of this boundary, one factory per observable failure point. | `invalid_export_refusal`; `unsupported_schema_refusal`; `destination_occupied_refusal`; `destination_absent_refusal`; `import_validation_failed_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:26-50; mcp/src/agents_remember/memory/knowledge/export_refusals.py:78-102; mcp/src/agents_remember/memory/knowledge/export_refusals.py:105-126; mcp/src/agents_remember/memory/knowledge/export_refusals.py:129-148; mcp/src/agents_remember/memory/knowledge/export_refusals.py:151-172 |
-| **The node that proves an artifact whose sealed payload contradicts its digest is refused before publish, over both revision tables.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:483-532 |
+| **The node that proves an artifact whose sealed payload contradicts its digest is refused before publish, over both revision tables.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:534-582 |
 | **The node that proves destination admission refuses before any staging work, with every state's own code.** | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:572-633 |
-| The nodes that prove a successful import leaves no stage journal or peer behind, and that a refused import preserves the destination byte-for-byte. | "test_a_successful_import_leaves_no_stage_journal_or_peer_behind"; "test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage" | mcp/tests/test_knowledge_portable_roundtrip.py:1031-1031; mcp/tests/test_knowledge_portable_roundtrip.py:1053-1053 |
+| The nodes that prove a successful import leaves no stage journal or peer behind, and that a refused import preserves the destination byte-for-byte. | "test_a_successful_import_leaves_no_stage_journal_or_peer_behind"; "test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage" | mcp/tests/test_knowledge_portable_roundtrip.py:1083-1102; mcp/tests/test_knowledge_portable_roundtrip.py:1105-1123 |
 
 ## Cross-Repo References
 
@@ -189,6 +189,7 @@ nothing on this path reads a second repository, resolves a Git object or writes 
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T07:33:51+00:00: Generated citation repair: "test_a_successful_import_leaves_no_stage_journal_or_peer_behind"; "test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage" repointed to mcp/tests/test_knowledge_portable_roundtrip.py:1031-1031; mcp/tests/test_knowledge_portable_roundtrip.py:1053-1053. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/tests/test_knowledge_portable_roundtrip.py:1053 to the row 180 of this card as the citation for `test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage`: no cited file carried the construct, and the checker named line(s) [1053] in this file as its live location

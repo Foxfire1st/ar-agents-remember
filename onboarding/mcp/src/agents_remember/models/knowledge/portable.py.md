@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/portable.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -124,8 +124,8 @@ No domain documentation source is configured for this repository (`system/source
 | The identity shape both requests and both results carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:113-122 |
 | The refusal shape a refused validation or result carries. | `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/result.py:148-158 |
 | The operation that consumes this vocabulary. | `export_knowledge_dataset`; `import_knowledge_dataset` | mcp/src/agents_remember/memory/knowledge/export_import.py:133-192; mcp/src/agents_remember/memory/knowledge/export_import.py:195-244 |
-| The reader, validator and encoder this vocabulary describes. | `parse_export`; `validate_export`; `encode_export` | mcp/src/agents_remember/memory/knowledge/export_portable.py:436-489; mcp/src/agents_remember/memory/knowledge/export_portable.py:606-651; mcp/src/agents_remember/memory/knowledge/export_portable.py:255-280 |
-| The nodes that hold the round trip, the preservation rule and the destination behaviour to this vocabulary. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_accepted_origin_state_crosses_as_data_and_is_not_promoted"; "test_a_destination_is_replaced_only_for_the_admitted_identity" | mcp/tests/test_knowledge_portable_roundtrip.py:357-427; mcp/tests/test_knowledge_portable_roundtrip.py:429-443; mcp/tests/test_knowledge_portable_roundtrip.py:927-985 |
+| The reader, validator and encoder this vocabulary describes. | `parse_export`; `validate_export`; `encode_export` | mcp/src/agents_remember/memory/knowledge/export_portable.py:493-546; mcp/src/agents_remember/memory/knowledge/export_portable.py:670-715; mcp/src/agents_remember/memory/knowledge/export_portable.py:277-302 |
+| The nodes that hold the round trip, the preservation rule and the destination behaviour to this vocabulary. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_accepted_origin_state_crosses_as_data_and_is_not_promoted"; "test_a_destination_is_replaced_only_for_the_admitted_identity" | mcp/tests/test_knowledge_portable_roundtrip.py:357-427; mcp/tests/test_knowledge_portable_roundtrip.py:473-486; mcp/tests/test_knowledge_portable_roundtrip.py:1023-1080 |
 
 ## Cross-Repo References
 
