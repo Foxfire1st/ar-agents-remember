@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/batch_preconditions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -140,19 +140,19 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The single entry point and the order it fixes. | `require_preconditions` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:79-86 |
+| The single entry point and the order it fixes. | "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:118-126 |
 | The four rules the module is built on, stated once in its docstring. | "Four rules shape the checks" | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1-21 |
-| The expectation comparison, including the expected-absence branch. | `require_expected_records` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:89-110 |
-| The one-authored-act duplicate rule and the accepted-origin refusal. | `require_distinct_commands`; `require_no_accepted_origin` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:113-129; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:132-144 |
-| The insertion-is-never-an-upsert rule. | `require_insertions_absent` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:147-163 |
-| The completed-graph rule stated where the whole-batch pending set is built. | `require_command_targets` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:166-178 |
-| The lineage pass that hands the batch's own declarations to the shared rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:181-204; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:225-253; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:256-264 |
-| The per-command dispatch and the identity/label check. | `require_command_target`; `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:282-308; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:311-348 |
-| The two aggregate checks, which admit an owner a command in the same batch declares. | `_require_new_invariant_revision`; `_require_new_family_revision` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:366-401; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:404-439 |
-| The refusal that states the completed-graph remedy rather than prescribing a reorder. | `_uncreated_predecessor` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:442-454 |
-| The shared endpoint check and its per-noun remedy wording. | `_ENDPOINT_NOUN`; `_require_endpoint` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:535-567 |
+| The expectation comparison, including the expected-absence branch. | `require_expected_records` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:129-150 |
+| The one-authored-act duplicate rule and the accepted-origin refusal. | `require_distinct_commands`; `require_no_accepted_origin` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:153-169; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:172-190 |
+| The insertion-is-never-an-upsert rule. | `require_insertions_absent` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:209-225 |
+| The completed-graph rule stated where the whole-batch pending set is built. | `require_command_targets` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:228-240 |
+| The lineage pass that hands the batch's own declarations to the shared rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:243-327 |
+| The per-command dispatch and the identity/label check. | `require_command_target`; `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:352-451 |
+| The two aggregate checks, which admit an owner a command in the same batch declares. | `_require_new_invariant_revision`; `_require_new_family_revision` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:469-542 |
+| The refusal that states the completed-graph remedy rather than prescribing a reorder. | `_uncreated_predecessor` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:545-557 |
+| The shared endpoint check and its per-noun remedy wording. | "_ENDPOINT_NOUN: dict[str, str] = {"; `_require_endpoint` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:776-783; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:786-809 |
 | The shared lineage rule this pass calls with the batch's declared edges. | `declared_cycle`; `find_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:71-105; mcp/src/agents_remember/memory/knowledge/lineage.py:107-131 |
-| The identity vocabulary this module reads through. | `present`; `pending_identities`; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:145-169 |
+| The identity vocabulary this module reads through. | `present`; `pending_identities`; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:190-195; mcp/src/agents_remember/memory/knowledge/candidate_records.py:198-204; mcp/src/agents_remember/memory/knowledge/candidate_records.py:207-214 |
 | The node that proves the completed-graph pass refuses a cycle the operation cannot yet see. | "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:561-604 |
 | The node that proves a batch may author its lineage in any order. | "test_a_batch_may_author_its_lineage_in_any_order" | mcp/tests/test_candidate_batch_transaction.py:470-516 |
 
@@ -165,5 +165,12 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `require_preconditions` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:118-126. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `require_expected_records` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:129-150. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `require_insertions_absent` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:209-225. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `require_command_targets` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:228-240. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `_uncreated_predecessor` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:545-557. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `_ENDPOINT_NOUN`; `_require_endpoint` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:776-783; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:786-809. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `present`; `pending_identities`; `inserted_identities` repointed to mcp/src/agents_remember/memory/knowledge/candidate_records.py:207-214; mcp/src/agents_remember/memory/knowledge/candidate_records.py:198-204; mcp/src/agents_remember/memory/knowledge/candidate_records.py:190-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the batch precondition module. It records the four shaping rules (expectations are comparisons, an insertion is never an upsert, a command list is one authored act, and validation is over the completed graph), the read-only boundary that makes a refused batch leave the dataset untouched, the whole-sequence pending set that makes a forward reference legal, and the lineage pass that hands the batch's declared edges to the shared rule instead of growing a second cycle rule. Also recorded the carried anchor-removal asymmetry as the open item. Verification metadata remains empty until closeout stamps the code commit.

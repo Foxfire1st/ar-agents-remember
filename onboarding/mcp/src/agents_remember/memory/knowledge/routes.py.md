@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/routes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -83,6 +83,15 @@ route that is not authored (`missing_expected_row`); a governed row that is not 
 `find_governing_route` returns the governing route's id, or `None` for an explicitly ungoverned row:
 `None` is a fact, not a default, and it is never "the repository root".
 
+**The existence question is public — `route_exists(connection, repository_id, route_id)` → `bool`.**
+The private `_route_exists` this module already carried is the same function under its public name,
+and `_route_exists` is kept as a one-line delegating alias so no existing caller moves. It is public
+because the writer that needs it now lives in another module: a facet write that records a
+*governing* route has to answer this question before it stores the governed row, where a named route
+that does not exist is a dangling reference to refuse and `None` is the different fact —
+the explicit ungoverned state requirement 4.4 permits. The body is the same `_ROUTE_BY_ID` lookup it
+always was, so the rename publishes a question and adds no new way to decide membership.
+
 ### Conventions
 
 - Expected failures are **returned `KnowledgeRefusal` values, never raised** — every guard in this
@@ -147,10 +156,10 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The confinement rule table: nine refused forms, first breach wins, and an admitted path returned unchanged. | `normalize_route_path` | mcp/src/agents_remember/memory/knowledge/routes.py:75-89 |
-| The recursive-CTE acyclicity walk, anchored on the edge rather than the route, returning `None` or one `lineage_cycle` refusal. | `None`; `lineage_cycle` | mcp/src/agents_remember/memory/knowledge/routes.py:92-144 |
+| The recursive-CTE acyclicity walk, anchored on the edge rather than the route, returning `None` or one `lineage_cycle` refusal. | `require_acyclic_routes`; `lineage_cycle` | mcp/src/agents_remember/memory/knowledge/routes.py:93-145 |
 | The write layer's two request objects. | `RouteDraft` | mcp/src/agents_remember/memory/knowledge/routes.py:171-179 |
 | Route authoring: normalise, return an existing route for an already-authored path, refuse an unauthored parent, insert, then check the hierarchy inside the caller's transaction. | `author_route` | mcp/src/agents_remember/memory/knowledge/routes.py:225-279 |
-| The read side of the association, and why `None` is a fact rather than a default. | `None` | mcp/src/agents_remember/memory/knowledge/routes.py:282-301 |
+| The read side of the association, and why `None` is a fact rather than a default. | `find_governing_route` | mcp/src/agents_remember/memory/knowledge/routes.py:306-352 |
 | The governed-entity map — three generation-1 entities, one join table and key column each — and the four refusals plus the idempotent re-statement. | `_GOVERNED_TABLES` | mcp/src/agents_remember/memory/knowledge/routes.py:195-199 |
 | The `route` table the walk reads: repository-relative `path`, self-referencing deferred parent, one-node cycle `CHECK`, rebind and delete triggers. | `path`; `CHECK` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:103-204 |
 | The three join tables whose primary keys make "at most one governing route per governed row" a constraint. | `APPENDED_PRIMARY_KEYS`; `source_anchor_route` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:81-88 |
@@ -171,4 +180,5 @@ local checkout path is environment configuration that never becomes portable ide
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the leaf's one change to this module: `_route_exists` became the public `route_exists` with the docstring that says why the question is asked from outside, and `_route_exists` remains as a one-line delegating alias. The body states what a reader must not infer from the rename — the lookup is the same `_ROUTE_BY_ID` statement, so the module publishes a question rather than new authority — and names the caller that needs it: the facet write path's governing-route reference check, which must answer it before storing a governed row while `None` stays the explicit ungoverned state. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): created this one-to-one card for the route write layer. The leaf's first attempt delivered the `route` table and its constraint but no operation that could author a route or attach a governed row to one, which left `Route` as a constraint rather than a scope axis; this card records the authored side that closed that gap. It records the nine-entry confinement rule table with normalisation-as-comparison rather than repair, the acyclicity walk anchored on the edge (an anchor on the route false-positived on an acyclic chain), the ordering inside `author_route` that returns an existing route for an already-authored path, the three governed entities and why the join table's primary key makes "at most one governing route" a constraint, `None`-is-a-fact on the read side, and the two recorded gaps: the unimplemented symlink clause of the confinement rule and the read side's inability to distinguish "ungoverned" from "not a governed entity". Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

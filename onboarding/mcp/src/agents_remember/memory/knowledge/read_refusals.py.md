@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read_refusals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288`|
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -59,6 +59,15 @@ the refusal.
 family identity which does not exist asked the wrong question, while a caller that named a path with no
 recorded claims asked a right question whose answer is that nothing is recorded there yet. Folding them
 together would tell one of the two callers something false about the repository.
+
+**Three of the six factories now carry the operation they refuse for.**
+`selector_absent_refusal`, `snapshot_unavailable_refusal` and `selection_incomplete_refusal` each take
+an `operation: KnowledgeOperation = _OPERATION` keyword whose default is this module's own
+`read_knowledge_scope`, so the facet selection seam raises those same three codes under
+`read_facet_scope` through the shared factories instead of a parallel copy of their messages. The
+default keeps every existing caller byte-identical; `registration_absent_refusal`,
+`page_budget_too_small_refusal` and `continuation_binding_mismatch_refusal` still name `_OPERATION`
+unconditionally, and the six-code vocabulary itself is unchanged.
 
 ### Conventions
 
@@ -123,4 +132,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the one behavioural change this leaf made to the module — **three factories now carry the operation they refuse for**. `selector_absent_refusal`, `snapshot_unavailable_refusal` and `selection_incomplete_refusal` take an `operation: KnowledgeOperation = _OPERATION` keyword, so the facet selection seam raises the same three codes under `read_facet_scope` through the shared factories rather than a second copy of their wording, while the default leaves every existing caller byte-identical. The body states that the other three factories still name `_OPERATION` unconditionally and that the six-code vocabulary is unchanged. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): created this one-to-one card for the read's refusal vocabulary. It records the six factories and the three groupings a consumer acts on — **absence** (`selector_absent`, `registration_absent`, a fact about the recorded graph and explicitly not a verdict of "no semantic impact"), **wrong snapshot** (`continuation_binding_mismatch`, `snapshot_unavailable` and the shared codes, none of which returns partial items), and **budget** (`page_budget_too_small`, which reports the exact minimum and leaves the position unchanged) — plus the property that makes "a refused read persisted nothing" structural rather than remembered: the operation only issues `SELECT` on a connection it opened read-only. It also records that a schema this build cannot read surfaces as `snapshot_unavailable` naming both generations rather than as `unsupported_schema`, and that no code in this vocabulary can name a semantic verdict. Verification metadata remains empty until closeout stamps the code commit.

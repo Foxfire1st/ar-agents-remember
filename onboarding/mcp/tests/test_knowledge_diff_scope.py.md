@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_diff_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
@@ -156,7 +156,7 @@ repository source and package-local evidence only.
 | **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:678-739 |
 | The no-trees expansion that claims no change set. | "test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set" | mcp/tests/test_knowledge_diff_scope.py:742-779 |
 | The fixture these cases run on. | `build_diff_fixture`; `DiffFixture` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/diff_scope_test_support.py:148-186 |
-| **The unit-lane row this module occupies, and the governed support artifact it consumes.** | "mcp/tests/test_knowledge_diff_scope.py"; `knowledge-diff-cases` | mcp/tests/test-evidence-lanes.toml:76-76; mcp/tests/evidence-lifecycle.toml:1208-1226 |
+| **The unit-lane row this module occupies, and the governed support artifact it consumes.** | "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" | mcp/tests/evidence-lifecycle.toml:1254-1254 |
 
 ## Cross-Repo References
 

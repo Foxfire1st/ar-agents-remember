@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
@@ -21,14 +21,28 @@ The commit fields identify the latest real commit touching this source; they do 
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
-exact consumers. **The catalog now contains 52 artifact records and eleven executable replacement contracts**,
-counted on this leaf's frozen candidate by counting the blocks (`52 [[artifact]]` and `11 [[contract]]`), with the
+exact consumers. **The catalog now contains 54 artifact records and thirteen executable replacement contracts**,
+counted on this leaf's frozen candidate by counting the blocks (`54 [[artifact]]` and `13 [[contract]]`), with the
 file's own sha256 re-measured as
-`4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747`; those declarations are not records that a test ran.
-The four earlier counts are kept because they are different states of the same merged line, not competing
+`19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa`; those declarations are not records that a test ran.
+The six earlier counts are kept because they are different states of the same merged line, not competing
 measurements: **48 / 9** at the pre-sync `KS-L6` base, **50 / 9** on the merged base `4eb2b199` (the incoming
-official line's two extra artifacts), **51 / 10** after `KS-L7` added its one contract/artifact pair, and
-**52 / 11** after `KS-L8` added its own.
+official line's two extra artifacts), **51 / 10** after `KS-L7` added its one contract/artifact pair,
+**52 / 11** after `KS-L8` added its own, **53 / 12** after `KS-L10` re-scoped the generation contract's
+source/version statement and re-pinned the digest to `9b057632…`, and **54 / 13** after `KS-L11` added the pair
+below.
+
+**260915-KS-L11 added the thirteenth contract and the 54th artifact and re-pinned the catalog digest in the
+same change.** The facet suite's shared harness `mcp/tests/facet_test_support.py` is a *governed artifact*
+(`shared-support` / `internal-canonical` / **`unit-regression`** / `in-process` / `cadence = "affected"` /
+`lifetime = "permanent"`), registered at `:1196-1212` under the new contract `knowledge-facet-cases` at
+`:1191-1194`, whose evidence node is
+`mcp/tests/test_knowledge_facets.py::test_the_seam_registry_is_exactly_the_eight_declared_subtypes`. Its declared
+consumers are exactly the one facet suite. The same change restated the `knowledge-generation-cases` contract's
+`source_version_or_generator` and `permanence_rationale` so they describe **every** registered generation rather
+than generation 1 alone — a wording change to an existing row, not a new contract. The catalog digest pinned in
+`mcp/tests/test_dependency_ownership_ast_helpers.py` moved with it
+(`9b057632…` → `19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa`).
 
 **260915-KS-L8 added the eleventh contract and the 52nd artifact, extended one existing consumer list, and
 re-pinned the catalog digest in the same change.** The comparison's shared fixture
@@ -227,22 +241,22 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The schema version and the large-fixture discovery threshold remain explicit. | `schema_version`; `large_fixture_bytes` | mcp/tests/evidence-lifecycle.toml:1-2 |
-|  The four retained knowledge contracts and their evidence nodes. | "ar-durable-store/1.0-process-race-evidence"; "conversation-control-public-route-contract"; "next-supported-pi-rpc-activity-recording"; "synthetic-test-evidence-candidate" | mcp/tests/evidence-lifecycle.toml:4-22  |
+| The four retained knowledge contracts and their evidence nodes. | "id = \"ar-durable-store/1.0-process-race-evidence\""; "id = \"conversation-control-public-route-contract\""; "id = \"next-supported-pi-rpc-activity-recording\""; "id = \"synthetic-test-evidence-candidate\"" | mcp/tests/evidence-lifecycle.toml:4-22 |
 |  Closeout fixture support names the retained code/memory transaction replacement. | "closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:264-281  |
 |  Closeout-input support declares the cleanup-guidance consumer. | "closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-308  |
-|  **The knowledge branching fixture's contract and artifact row, whose consumer list 260915-KS-L2 corrected to the five source-observed importers and 260915-KS-L6 extended to the two portable modules.** | "knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1031-1059  |
-|  The knowledge graph case-support contract and its matching artifact row, added by 260915-KS-L2 with three declared consumers. | "knowledge-graph-case-support" | mcp/tests/evidence-lifecycle.toml:1061-1084  |
-|  The candidate-batch case-harness contract and its artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node. | "candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1086-1108  |
-|  **The snapshot-lifecycle contract and artifact row, with an exact consumer list that 260915-KS-L6 extended to the portable boundary module.** | "knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1110-1133  |
-|  **The common-base-merge contract and artifact row, whose exact consumer list 260915-KS-L6 extended to both portable modules.** | "common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1135-1159  |
-| **The two consumer declarations 260915-KS-L6 added to the branching-fixture row.** | "mcp/tests/test_knowledge_portable_boundaries.py"; "mcp/tests/test_knowledge_portable_roundtrip.py" | mcp/tests/evidence-lifecycle.toml:1057-1058 |
-| **The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.** | "mcp/tests/test_knowledge_portable_boundaries.py" | mcp/tests/evidence-lifecycle.toml:1131-1131 |
-| **The two consumer declarations 260915-KS-L6 added to the merge-case row.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" | mcp/tests/evidence-lifecycle.toml:1157-1158 |
-| **The node that makes that contract's claim real: both sides' disjoint edits survive into a closed, published candidate that carries no verdict.** | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| **The knowledge branching fixture's contract and artifact row, whose consumer list 260915-KS-L2 corrected to the five source-observed importers and 260915-KS-L6 extended to the two portable modules.** | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1031-1059 |
+| The knowledge graph case-support contract and its matching artifact row, added by 260915-KS-L2 with three declared consumers. | "id = \"knowledge-graph-case-support\"" | mcp/tests/evidence-lifecycle.toml:1061-1084 |
+| The candidate-batch case-harness contract and its artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node. | "id = \"candidate-batch-case-harness\"" | mcp/tests/evidence-lifecycle.toml:1086-1108 |
+| **The snapshot-lifecycle contract and artifact row, with an exact consumer list that 260915-KS-L6 extended to the portable boundary module.** | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1110-1133 |
+| **The common-base-merge contract and artifact row, whose exact consumer list 260915-KS-L6 extended to both portable modules.** | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1135-1159 |
+| **The two consumer declarations 260915-KS-L6 added to the branching-fixture row.** | "owner = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1036-1059 |
+| **The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.** | "owner = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1115-1133 |
+| **The two consumer declarations 260915-KS-L6 added to the merge-case row.** | "owner = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1140-1159 |
+| **The node that makes that contract's claim real: both sides' disjoint edits survive into a closed, published candidate that carries no verdict.** | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376 |
 | **The node that makes that contract's closedness claim real: a WAL-resident batch is published whole while a main-file copy is not.** | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 |  The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-73  |
 | The one-to-one card for the batch harness, which records what it builds through the real seam. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:1-40 |
-|  The snapshot harness card, which records the registered owner and the exact consumer set. | "knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1111-1111; mcp/tests/evidence-lifecycle.toml:1119-1119; mcp/tests/evidence-lifecycle.toml:1127-1127; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
+| The snapshot harness card, which records the registered owner and the exact consumer set. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1111-1111; mcp/tests/evidence-lifecycle.toml:1119-1119; mcp/tests/evidence-lifecycle.toml:1127-1127; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
 | The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools" | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
 
 ## Cross-Repo References
@@ -255,6 +269,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): measured the catalog rather than carrying the L8 numbers — **54 artifacts and thirteen contracts** (`54 [[artifact]]`, `13 [[contract]]`), with the file's sha256 re-measured as `19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa` — against **53 / 12** at `KS-L10` (`9b057632…`) and **52 / 11** at `KS-L8`. It records the one contract/artifact pair this leaf added — `knowledge-facet-cases` for `mcp/tests/facet_test_support.py`, `unit-regression` / `in-process`, with exactly one declared consumer, `mcp/tests/test_knowledge_facets.py` — and the wording-only change to the existing `knowledge-generation-cases` row, whose source and permanence statements now describe every registered generation instead of generation 1 alone. The three-registry-touch-point rule the card states is paid in full for the new module (lane row, its path in the artifact's own consumers list, and the catalog re-pin). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-17T03:31:11+02:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T01:02; `lastVerifiedCommitHash` `88784fb26aab810c8a284f1e73e6f9bd727a5963`; `lastVerifiedCommitDate` 2026-09-16T08:31:51+02:00.

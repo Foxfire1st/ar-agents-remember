@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -118,16 +118,16 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two applications this one rule serves, stated in the module docstring. | "One acyclic-lineage rule, shared by the invariant and the family lineage graphs." | mcp/src/agents_remember/memory/knowledge/lineage.py:1-1 |
-| The write-path rule, its two branches and its `extra_predecessors` parameter. | `find_cycle`; `CycleFinding` | mcp/src/agents_remember/memory/knowledge/lineage.py:107-131; mcp/src/agents_remember/memory/knowledge/lineage.py:42-52 |
+| The three applications this one rule serves, stated in the module docstring. | "One acyclic-lineage rule, shared by the invariant, family and decision-supersession graphs." | mcp/src/agents_remember/memory/knowledge/lineage.py:1-1 |
+| The write-path rule, its two branches and its `extra_predecessors` parameter. | `find_cycle`; `CycleFinding` | mcp/src/agents_remember/memory/knowledge/lineage.py:53-157 |
 | The batch-aware caller that supplies the declared edges, and the only caller that does. | `declared_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:71-105 |
-| The membership query, which is not the write rule. | `edges_on_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:134-155 |
-| The post-insert graph construction the guard reasons over, which folds the wider edges in as stored ones. | `post_insert_graph`; `descendants` | mcp/src/agents_remember/memory/knowledge/lineage.py:157-179; mcp/src/agents_remember/memory/knowledge/lineage.py:204-216 |
-| The Tarjan classification and its reason for not being a recursive CTE. | `cycle_vertices`; `_CycleScan` | mcp/src/agents_remember/memory/knowledge/lineage.py:181-202; mcp/src/agents_remember/memory/knowledge/lineage.py:224-290 |
-| The two edges queries, one per lineage graph. | `invariant_edges`; `family_edges` | mcp/src/agents_remember/memory/knowledge/lineage.py:55-61; mcp/src/agents_remember/memory/knowledge/lineage.py:63-68 |
+| The membership query, which is not the write rule. | `edges_on_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:160-180 |
+| The post-insert graph construction the guard reasons over, which folds the wider edges in as stored ones. | `post_insert_graph`; `descendants` | mcp/src/agents_remember/memory/knowledge/lineage.py:183-241 |
+| The Tarjan classification and its reason for not being a recursive CTE. | `cycle_vertices`; `_CycleScan` | mcp/src/agents_remember/memory/knowledge/lineage.py:207-318 |
+| The two edges queries, one per lineage graph. | `invariant_edges`; `family_edges` | mcp/src/agents_remember/memory/knowledge/lineage.py:67-80 |
 | The invariant-side application, which states the rule once above the guard and uses the default wider-edge set. | `require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:674-705 |
 | The family-side application, which reuses this rule rather than restating it. | `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/families.py:238-253 |
-| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:181-204; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:225-253; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:256-264 |
+| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:243-327 |
 | The spy node that asserts the shared rule is reached carrying the batch's declared edges, and the nodes that fail when the rule is neutered or the wider edges are emptied. | "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:605-674; mcp/tests/test_candidate_batch_transaction.py:561-603 |
 | The two-branch refusal wording, shared so the relations cannot describe different rules. | `_lineage_cycle_wording`; `lineage_cycle_refusal`; `family_lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:290-309; mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286 |
 | The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:399-418 |
@@ -142,6 +142,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `edges_on_cycle` repointed to mcp/src/agents_remember/memory/knowledge/lineage.py:160-180. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **recorded the batch-aware caller and corrected the earlier account of this rule.** `find_cycle` gained `extra_predecessors` (the declared edges of other revisions authored in the same batch) and `declared_cycle` is the caller that supplies them — `batch_preconditions._require_declared_acyclic` passes `extras=_wider_edges`, and that call site is the **only** one that supplies a value, while `store.require_acyclic_lineage` uses the default and is the single-record rule. The L3 fix round found that a docstring here had claimed the enforcement while no caller performed it; the claim is now true and the card says how it is proven (neutering `find_cycle` removes the refusal and fails three named nodes). Also recorded that a batch's declarations are validated over the completed graph rather than the request order, and that the batch path must not grow a second cycle rule. Citation ranges were re-derived; the `governingOverview` link was repaired from `../../overview.md` to the three-level path. Verification metadata remains closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the extracted shared lineage rule. It records that the rule left `store.py` so one owner serves both graphs, the deliberate second branch whose reach is wider than adjacency, the distinction between the write-path rule and the membership query, and the recorded reason the traversal is Python rather than a recursive SQL CTE. Verification metadata remains empty until closeout stamps the code commit.

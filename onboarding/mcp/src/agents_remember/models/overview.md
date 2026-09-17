@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-18T05:05:00+02:00 |
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -766,7 +766,7 @@ never be mistaken for the other object's identity.
 | The two payload versions and the family payload's sealed field set. | `FAMILY_REVISION_PAYLOAD_VERSION`; `canonical_family_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:26-27; mcp/src/agents_remember/models/knowledge/digest.py:71-90 |
 | The shared accepted/proposed rule both revision aggregates apply at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
 | The extended served surface, including the graph names. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:123-202 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:266-270; mcp/src/agents_remember/models/knowledge/result.py:273-281; mcp/src/agents_remember/models/knowledge/result.py:284-287; mcp/src/agents_remember/models/knowledge/result.py:449-463 |
+| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:281-478 |
 | The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/store.py:92-510 |
 | The requirement this graph vocabulary belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
@@ -782,7 +782,7 @@ and its factual receipt. Three of its rules are the model-level half of a storag
   dataset-identity field, so an application cannot pass a remembered digest — it can only read one. The model
   validator refuses an unsealed context at construction, and the operation re-derives the digest inside its
   transaction, which is the only defence against a `model_copy`-built batch that bypasses the validator.
-- **The union is the reach.** `ProposedCommand` is twelve frozen members discriminated on `kind` with
+- **The union is the reach.** `ProposedCommand` is eighteen frozen members discriminated on `kind` with
   `extra="forbid"`: there is no promotion member, no approval member, no arbitrary-SQL member and no free-form
   field, so "this operation never accepts knowledge" and "a payload cannot confer authority" are properties of
   the vocabulary rather than rules the operation remembers to apply. Command payloads carry **no** `Authorship`:
@@ -804,13 +804,13 @@ vocabulary is the *result state*, and a consumer must not branch on the code.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:85-87 |
+| The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:99-99; mcp/src/agents_remember/models/knowledge/candidate.py:101-101 |
 | The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:137-178 |
-|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:181-191  |
-| The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:218-240 |
-| The closed twelve-member union with no promotion, approval or SQL member; the twelve kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:243-358 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:361-378 |
-| The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:381-406; mcp/src/agents_remember/models/knowledge/candidate.py:409-452; mcp/src/agents_remember/models/knowledge/candidate.py:194-215 |
+|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:207-207  |
+| The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:244-266 |
+| The closed eighteen-member union with no promotion, approval or SQL member; the eighteen kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:372-392; mcp/src/agents_remember/models/knowledge/candidate.py:394-394 |
+| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:397-414 |
+| The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:220-488 |
 | The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation`; `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:511-531 |
 | The operation that consumes this vocabulary. | `change_candidate` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80 |
 | The composition seam that resolves a context from a live candidate and seals it. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
@@ -920,7 +920,7 @@ the second names no row.
 | The merge operation that consumes this vocabulary. | `merge_knowledge_datasets` | mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
 | The base resolution that produces the value this vocabulary consumes. | `resolve_merge_base` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105 |
 | The third composition seam that takes these values and returns them unchanged. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
-| The node that asserts the published outcome carries no verdict field and reports the coverage record. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| The node that asserts the published outcome carries no verdict field and reports the coverage record. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376 |
 | The boundary node that holds the conflict record to the engine's own row identity. | "test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:165-184 |
 
 ## 260915-KS-L6 The Portable Vocabulary, And The Boundary It Draws Around External Input
@@ -1129,10 +1129,80 @@ carries a route's identity as a fingerprint.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two operations the route write layer added, so a route refusal names a route operation. | `author_route`; `set_governing_route` | mcp/src/agents_remember/models/knowledge/result.py:43-44 |
-| The shipped code an inadmissible record payload is refused with — reused rather than widened. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:83 |
+| The shipped code an inadmissible record payload is refused with — reused rather than widened. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:96-96 |
 | The route rules' refusal shapes and the frozen request objects they report on. | `normalize_route_path`; `set_governing_route` | mcp/src/agents_remember/memory/knowledge/routes.py:76-90; mcp/src/agents_remember/memory/knowledge/routes.py:398-480 |
 
+## 260915-KS-L11 The Authored-Judgment Vocabulary
+
+The knowledge sub-route gained its **eighteenth and nineteenth modules** — `models/knowledge/facet.py`
+and `models/knowledge/facet_read.py` — and the widening of the operation's own vocabulary in
+`models/knowledge/candidate.py` and `models/knowledge/result.py`: **eighteen command kinds** (the shipped
+twelve plus six facet commands), **six new operations** and **no new refusal code**:
+`facet.py` added no code of its own, and every failure the write path reports reuses a shipped one
+(`invalid_payload`, `invalid_reference`, `missing_expected_row`, `stale_precondition`,
+`promotion_not_supported`, `lineage_cycle`, `unsupported_schema`) — all seven **reused unchanged**, and the
+four factories the leaf added were mechanisms under codes the vocabulary already declared. The six
+facet acts joined `KnowledgeOperation`, so the operation union stands at **thirty-five members** while the
+refusal-code union stays at **forty-four**.
+
+**One closed list is the whole vocabulary, and everything else is derived from it.** `FACET_KINDS` is the
+eight subtypes; `FacetKind` is the same eight spellings; one frozen payload model per subtype carries that
+subtype's minimum meanings; `FacetPayload` is the discriminated union whose member set is exactly the eight;
+and `FACET_RECORD_SCHEMAS` derives `facet-<kind>/v1` from the kind. A ninth subtype has **no member to
+resolve to**, so it cannot be stored as a generic facet — it becomes the typed `invalid_payload` refusal at
+the envelope seam, which is also why `AddFacet` carries its payload as a mapping: validating it in the
+command would turn that refusal into a parse error.
+
+**Three splits are load-bearing, and each is a place a future edit could undo a guarantee:**
+
+- **Authored content versus provenance.** No payload field can be read as, or substituted for, the record's
+  authorship: a decision's `decider` is content *about who decided*, there is no field for `actor_ref`,
+  `authorization_ref`, `operation_id` or `recorded_at`, and `extra="forbid"` is what refuses a payload that
+  arrives carrying one.
+- **Guidance versus verdict.** `DiagnosticGuidancePayload` requires an interpretation **and** the limit of
+  that interpretation, and carries no field that could hold an assessment, a compatibility verdict, a
+  severity or an endorsement — for any of the eight subtypes.
+- **Recorded designation versus derived currency.** `ExplanationRecord.current_revision_id` is the
+  designation the record *stores*; `None` is the fact "no designation recorded" rather than a fallback to
+  the newest revision, and no field of the read vocabulary could be read as "latest".
+
+**The two closed sets this module declares are deliberately separate declarations.** The four attachment
+endpoint kinds and the two explanation subject kinds spell two names identically because both name the same
+canonical table, but they are separate constants and separate typed unions: an attachment's endpoint set and
+an explanation's subject set are two closed sets that could diverge, and sharing a literal would hide it.
+The **route is deliberately absent from the endpoint set** — the route association is the envelope's own
+`governing_route_id`, and a second route mechanism here would be the competing one the design forbids.
+
+**One precision the union does not carry, stated so it is not inferred:** `AddFacet.facet_kind` is a
+length-bounded `str` rather than the `FacetKind` literal, so the *command* accepts any nonempty kind name
+and the closure is enforced one seam later. That is the deliberate trade above, not an oversight — but a
+reader should not conclude the ninth subtype is unconstructible at the command.
+
+**One deliberate non-change to the facade.** `models/knowledge/__init__.py` does **not** re-export this
+vocabulary, exactly as it does not re-export the portable, merge or comparison vocabularies — a consumer
+names `agents_remember.models.knowledge.facet` or `...facet_read`, and neither module is in the facade
+change set.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one closed list and the declarations derived from it. | `FACET_KINDS`; `FacetPayload`; `FACET_RECORD_SCHEMAS` | mcp/src/agents_remember/models/knowledge/facet.py:68-77; mcp/src/agents_remember/models/knowledge/facet.py:183-193; mcp/src/agents_remember/models/knowledge/facet.py:209-211 |
+| **The six authored commands and the union they join, which is the operation's widened reach.** | `FacetCommand`; "ProposedCommand = Annotated[" | mcp/src/agents_remember/models/knowledge/facet.py:492-500; mcp/src/agents_remember/models/knowledge/candidate.py:372-392 |
+| **The standalone request and the receipt that carries no approval, endorsement or judgement field.** | `FacetWriteRequest`; `FacetWriteResult` | mcp/src/agents_remember/models/knowledge/facet.py:512-529; mcp/src/agents_remember/models/knowledge/facet.py:560-585 |
+| **The facet selection's own policy, the complete-or-refused bound and the page whose completeness is not a settable flag.** | `FACET_SELECTION_POLICY_VERSION`; `FACET_SELECTION_ITEM_LIMIT`; `FacetReadPage` | mcp/src/agents_remember/models/knowledge/facet_read.py:56-56; mcp/src/agents_remember/models/knowledge/facet_read.py:61-61; mcp/src/agents_remember/models/knowledge/facet_read.py:332-354 |
+| The two seed kinds and the six item kinds as closed unions. | `FacetReadSeed`; `FacetReadItem` | mcp/src/agents_remember/models/knowledge/facet_read.py:182-185; mcp/src/agents_remember/models/knowledge/facet_read.py:241-249 |
+| The eight subtypes' payload models and the two nonempty-tuple meanings. | `ScenarioPayload`; `LimitationPayload` | mcp/src/agents_remember/models/knowledge/facet.py:132-143; mcp/src/agents_remember/models/knowledge/facet.py:146-152 |
+| **The nodes that hold the closure, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:306-343 |
+| **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-90; mcp/src/agents_remember/models/knowledge/result.py:82-147 |
+
 ## Update History
+- 2026-09-18T04:55+02:00 — 260915-KS-L11 owning seat (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this route's union claim against the source and re-cited it by hand, replacing a generated projection.** The row and the section above it said *twelve* members; `ProposedCommand` admits **eighteen** after this leaf, which this route's own L11 section already states. Row and prose now agree with `models/knowledge/candidate.py:372-392`, so the citation is an agent's read of the declaration rather than a projected range.
+- 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read the older union row in this route against the source and recorded a contradiction instead of softening it.** The row at `:811` reading "The closed eighteen-member union ... the eighteen kinds are the operation's entire reach" is **no longer true**, and this leaf's own section below says so: `ProposedCommand` now admits **eighteen** members (the shipped twelve plus the six facet commands) and the union row's citation was re-pointed to `372-392` accordingly. The row's *counts* were not rewritten, because a claim's meaning belongs to the owning seat rather than to the citation curator; the correction owed is `twelve` → `eighteen` in both places in that row. This entry also records where the leaf's own route-review entry lives: it was written one section too high (under `## Invariants And Boundaries`) and this round moved it into this section, where the review rail can see it. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `KnowledgeLane`; `CANDIDATE_LANES` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:99-99; mcp/src/agents_remember/models/knowledge/candidate.py:101-101. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:207-207. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `ExpectedRecord` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:244-266. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:397-414. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `invalid_payload` repointed to mcp/src/agents_remember/models/knowledge/result.py:96-96. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the knowledge sub-route's **authored-judgment vocabulary** — `models/knowledge/facet.py` (the closed eight-subtype list and its derived declarations, the four closed attachment endpoints, the two closed explanation subjects, six authored commands, the standalone request and the factual receipt) and `models/knowledge/facet_read.py` (the separate selection's seeds, stored values, items, counts, page and result). The section states the measured unions (**eighteen command kinds**, the shipped twelve plus six) and the unchanged refusal code set — every failure reuses a shipped code — and the **three load-bearing splits**: authored content versus provenance (no payload field can be read as the record's authorship, and `extra="forbid"` refuses one that tries), guidance versus verdict (`DiagnosticGuidancePayload` requires an interpretation and its limit and has nowhere to put an assessment), and recorded designation versus derived currency (`current_revision_id` is stored, `None` is a fact, and no field could be read as "latest"). It records that the two closed sets are **separate declarations** so they can diverge visibly, that the route is **deliberately absent** from the endpoint set because the association is the envelope's own, the precision that `AddFacet.facet_kind` is a length-bounded string while the closure is enforced at the envelope seam, and the deliberate non-change that the facade does not re-export this vocabulary. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **route meaning extended in one place.** This leaf added vocabulary rather than a sub-route: `KnowledgeOperation` gained `author_route` and `set_governing_route`, because `routes.py` had been borrowing `create_invariant_revision` as the operation its refusals named. The body records the refusal vocabulary's deliberate **absence** of growth — an inadmissible record payload reuses the already-shipped `invalid_payload` code, and the route rules reuse `invalid_reference`, `missing_expected_row`, `lineage_cycle` and `relationship_constraint` — and the equally deliberate absence of any `Route` model or schema declaration here, since the generation-2 tables are pinned DDL and the route operations take frozen request dataclasses. No model in this sub-route carries route identity as a fingerprint, so nothing became a second identity authority. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:284-287; mcp/src/agents_remember/models/knowledge/result.py:273-281; mcp/src/agents_remember/models/knowledge/result.py:266-270; mcp/src/agents_remember/models/knowledge/result.py:449-463. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:478-478. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.

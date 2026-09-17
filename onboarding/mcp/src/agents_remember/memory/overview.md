@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash |  `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
-| lastVerifiedCommitDate |  2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash |  `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
+| lastVerifiedCommitDate |  2026-09-18T01:58:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `../../../overview.md` |
 
@@ -672,6 +672,70 @@ route carries: requirement 4.2's confinement rule names "no escaping symlink at 
 docstring repeats it, but `normalize_route_path` refuses only the **lexical** forms and performs no symlink
 resolution. A reader must not assume the code checks that clause.
 
+### 260915-KS-L11 Generation 3, The Facet Write Path, And The Facet-Specific Selection
+
+This route's storage package gained **generation 3** — the authored-judgment facet tables — plus the write
+path, the row codecs and a selection of their own, and its meaning changed in one place that earlier
+sections describe the other way round, so this section states the change first.
+
+**The facet record kind does not live on the envelope alone; it is a sub-route of the write boundary.**
+`knowledge/facets.py` owns **six authored acts**, each with the shipped pair of entry points: the operation
+(`add_facet`, `attach_facet`, `remove_facet_attachment`, `author_explanation`, `add_explanation_revision`,
+`designate_explanation`), which owns the candidate lock and one `BEGIN IMMEDIATE` transaction, and the
+in-transaction step (`apply_facet_command` dispatching through `_STEPS`), which raises `KnowledgeRefused`
+so the batch path rolls the whole batch back. The batch union in `models/knowledge/candidate.py` widened
+from **twelve** command kinds to **eighteen**, and the shipped twelve keep their exact kinds.
+
+**Four rules shape that write path, and each is a place a later edit could silently undo a guarantee:**
+
+1. **The payload seam is the only payload decision point.** `record_envelope.validate_facet_payload`
+   resolves the `(kind, record_schema)` pair, so an unknown or ninth subtype, an undeclared field, a missing
+   meaning and a payload carrying its own `actor_ref` are all the same shipped **`invalid_payload`**
+   refusal, raised before any row exists.
+2. **Provenance comes from the admission, and `authority_home` from the namespace.** Neither is a field of a
+   command, so no part of a submitted payload can become the record's author, authorization or instant.
+3. **A facet is authored as proposed origin data.** `require_proposed_origin` refuses an accepted origin at
+   **both** entry points with the shipped **`promotion_not_supported`**; the accepted-origin consistency
+   rule is inherited from the vocabulary base rather than re-implemented.
+4. **Every reference is checked before the row it belongs to.** A facet revision, a typed endpoint, an exact
+   statement revision of the subject's own kind, a stored **decision** revision for a supersession, a
+   revision of *this* explanation for a designation, and a named governing route are all verified first; a
+   dangling reference is refused rather than stored and is never inferred from a name, a path or prose.
+
+**Generation 3 appends four tables and retypes nothing.** `knowledge/schema_v3.py` declares
+`facet_attachment`, `facet_decision_supersession`, `explanation` and `explanation_revision` in that
+serialization order, with eleven indexes and seven triggers, and `GENERATION_3` composes them onto
+generation 2 exactly as generation 2 composes onto generation 1 — so
+`GENERATION_3.tables[: len(GENERATION_2.tables)] == GENERATION_2.tables` and generation 3's columns for
+each of the first sixteen names are generation 2's. Three shapes are worth naming because they are how the
+requirements are enforced structurally rather than by discipline:
+
+- **Endpoint-kind compatibility is a checked foreign-key group per kind**, not a polymorphic
+  `(facet_revision_id, endpoint_kind, endpoint_id)` triple: the forbidden shape has **no `endpoint_id`
+  column to land in**, and a `CHECK` requires the populated group to match the stored kind.
+- **An explanation's subject is the three-column `(repository_id, identity, revision_id)` reference** both
+  revision tables already declare a `UNIQUE` key for, so "this revision really is a revision of the
+  statement identity it claims" is a constraint of the table rather than a check the write path remembers.
+- **`explanation.current_revision_id` is the one mutable field of that row**, and the
+  `explanation_no_rebind` trigger names every other column — the exception is authored rather than
+  inferred. Supersession adds an edge row and nothing else: the edge table refuses update and delete, so a
+  superseded decision keeps its rows, its digest, its revisions and its attachments.
+
+**Facets are reached by their own selection, not by extending `KS-R07@v1`'s.** `knowledge/facet_read.py`
+declares its own seeds (a facet record, or an exact statement revision), its own item kinds and its own
+declared policy `authored-judgment-facets/v1`, and it shares **no code path** with the recorded-scope read —
+which is why a shipped seed's serialized page stays byte-identical, not because a guard prevents an
+addition. Two properties of that selection are the contract: it is **complete or it refuses** (a selection
+past its declared execution bound raises, and there is no cursor), and **nothing is derived** — an item's
+order is fixed by its kind and stable identifiers, every retained revision is served as its own item, and
+the only statement about which explanation revision matters is the designation the record *stores*.
+
+**One measured divergence is recorded rather than smoothed over.** `_apply_facet_command` constructs a
+`FacetWriteResult` with `state="no_change"` for an empty write, while the receipt model declares
+`state: Literal["applied", "refused"]`; the mismatch is reachable only through an empty write, which the
+digest-guarded designation and the pre-write reference checks make unreachable on every path this leaf's
+cases drive. A later leaf that makes an empty write reachable meets a `ValidationError`, not a third state.
+
 ## Invariants And Boundaries
 
 - **A schema generation is data, and dispatch reads the dataset.** `knowledge/schema_generations.py` owns which
@@ -757,8 +821,8 @@ one leaf's curation pass.
 | The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:192-207 |
 | The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-602 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
-| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:301-373; mcp/tests/evidence-lifecycle.toml:1136-1136 |
-|  The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1135-1159  |
+| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1136-1136 |
+| The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1135-1159 |
 
 **The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
 
@@ -786,7 +850,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:618-650; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:656-656 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-|  The registry rows this leaf added: two integration lane rows and the three exact consumer declarations. | "mcp/tests/test_knowledge_portable_roundtrip.py"; "knowledge-identity-branching-fixture"; "knowledge-snapshot-lifecycle-cases"; "common-base-merge-cases" | mcp/tests/test-evidence-lanes.toml:157-157; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159  |
+| The registry rows this leaf added: two integration lane rows and the three exact consumer declarations. | "integration = ["; "id = \"knowledge-identity-branching-fixture\""; "id = \"knowledge-snapshot-lifecycle-cases\""; "id = \"common-base-merge-cases\"" | mcp/tests/test-evidence-lanes.toml:158-158; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159 |
 
 **The pre-L6 rows below remain in the superseded two-column shape** and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside one leaf's curation pass.
 
@@ -830,6 +894,7 @@ checkout, but neither establishes a boundary contract here.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded **generation 3 and the facet sub-route** — the route's fourth registered generation, the six-act write path with two entry points per act, and the facet-specific selection that does not extend `KS-R07@v1`'s. The section states the four rules shaping the write path (the payload seam as the only payload decision point; provenance from the admission and `authority_home` from the namespace; proposed-origin-only at **both** entry points with the shipped `promotion_not_supported`; and every reference checked before the row it belongs to), the **union widening from twelve command kinds to eighteen** with the shipped twelve unchanged, and the three shapes that make the requirements structural rather than disciplinary: the **per-kind checked foreign-key group** (the forbidden polymorphic shape has no `endpoint_id` column to land in), the **three-column subject reference** that makes a revision's identity claim a table constraint, and `current_revision_id` as the **one mutable field** with the rebind trigger naming every other column while supersession adds an edge row and nothing else. It records the facet selection's own policy name and its two contract properties (complete-or-refused with no cursor; nothing derived, with the stored designation the only currency statement) and why a shipped seed's page stays byte-identical — no shared code path rather than a guard. It also records **one measured divergence** rather than smoothing it over: `_apply_facet_command` constructs `state="no_change"` while the receipt declares only `applied`/`refused`, unreachable on every path the leaf's cases drive. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T20:39:57+00:00: Generated citation repair: "test_destination_admission_refuses_before_any_staging_work" repointed to mcp/tests/test_knowledge_portable_boundaries.py:656-656. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **reviewed the route because its recorded intent was contradicted, not merely extended.** The leaf removed the premise this route was written on: the schema stopped being one build-time shape whose `SCHEMA_USER_VERSION` moved when the DDL changed, and became a registry of frozen, selectable generations (`knowledge/schema_generations.py` — generation 1 pinned as data with its fingerprint constant and a gate that **fails rather than warns**, generation 2 composed as an append and declared in `knowledge/schema_v2.py`), with dispatch reading the dataset: `PRAGMA user_version` alone for an open file, the type-strict `(schema, userVersion)` pair for an artifact, and creation declaring `CURRENT_GENERATION` because an empty database has no version to read. The body now states that contradiction and retires it explicitly: **`SCHEMA_USER_VERSION = 2` is no longer how a schema change happens**, and **the encoder is no longer derived from `schema.CANONICAL_TABLES`** — it is parameterised over the selected generation, so every digest is total over its own generation's manifest and an unchanged version-1 dataset keeps its version-1 digest byte for byte. It records the additive-only rule and why the governing-route association is three new join tables rather than a column on a generation-1 table (**no `ALTER TABLE` anywhere in the package**), the envelope's payload seam with its one internal conformance kind and the shipped `invalid_payload` code, `Route` as an operable scope axis (nine-entry confinement rule table with normalisation-as-comparison, an acyclicity walk anchored on the edge, `author_route` returning an existing route rather than a second row, `set_governing_route` refusing a different route for an already-governed row, and `find_governing_route`'s `None` as a fact rather than a default), and the mixed-generation merge preflight that refuses before any session exists while **a v1/v1/v1 merge on this build must still pass** under generation 1. The still-unclaimed behaviour narrows from L9 to **L10**, and one honest gap is recorded rather than implied: requirement 4.2's "no escaping symlink at resolution" clause has no implementation — `normalize_route_path` refuses only the lexical forms. Verification metadata: lastUpdated advanced, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` repointed to mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:342-352; mcp/src/agents_remember/memory/knowledge/read.py:355-390; mcp/src/agents_remember/memory/knowledge/read.py:469-480. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.

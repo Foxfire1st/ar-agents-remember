@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/batch_commands.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -117,12 +117,12 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The apply loop, the observed failure position and the deferred-foreign-key check at the end of a completed pass. | `apply_commands` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:147-172 |
 | The outcome object that carries what the loop observed. | `BatchApplication`; `observed_failure` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:118-144 |
-| The ledger that produces the receipt and registers batch-created identities. | `BatchLedger`; `written`; `removed` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:85-115 |
+| The ledger that produces the receipt and registers batch-created identities. | `BatchLedger`; "def written("; `removed` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:89-119 |
 | The three-family dispatch and the unreachable-kind defect. | `_apply_command`; `_INSERTING_KINDS`; `_LABELING_KINDS`; `_refuse_unreachable` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:192-223; mcp/src/agents_remember/memory/knowledge/batch_commands.py:295-304 |
-| The two receipt entries a claim that records its own anchor produces. | `_add_claim`; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:435-471 |
-| The removal steps, each reporting the digest the row had when it was deleted. | `_remove_anchor`; `_remove_member`; `_remove_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:513-548 |
-| The no-op label edit that contributes no receipt entry. | `_apply_label`; `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:267-278; mcp/src/agents_remember/memory/knowledge/batch_commands.py:474-510 |
-| The after-integrity re-proof: foreign keys, every revision seal, both lineage graphs. | `require_after_integrity`; `_require_sealed_rows`; `_require_acyclic_graph` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:554-570; mcp/src/agents_remember/memory/knowledge/batch_commands.py:573-584; mcp/src/agents_remember/memory/knowledge/batch_commands.py:604-617 |
+| The two receipt entries a claim that records its own anchor produces. | `_add_claim`; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:458-480; mcp/src/agents_remember/memory/knowledge/batch_commands.py:483-494 |
+| The removal steps, each reporting the digest the row had when it was deleted. | `_remove_anchor`; `_remove_member`; `_remove_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:536-551; mcp/src/agents_remember/memory/knowledge/batch_commands.py:554-560; mcp/src/agents_remember/memory/knowledge/batch_commands.py:563-571 |
+| The no-op label edit that contributes no receipt entry. | `_apply_label`; `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:290-533 |
+| The after-integrity re-proof: foreign keys, every revision seal, both lineage graphs. | `require_after_integrity`; `_require_sealed_rows`; `_require_acyclic_graph` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:577-722 |
 | The store's two batch-facing primitives, which the apply step calls instead of a nested operation. | `insert_invariant_identity`; `insert_revision_aggregate` | mcp/src/agents_remember/memory/knowledge/store.py:296-325 |
 | The invariant identity and revision insert bodies the same call reaches. | `insert_invariant`; `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:536-572; mcp/src/agents_remember/memory/knowledge/store.py:575-632 |
 | The family half's in-transaction inserts, which the batch composes rather than re-implementing. | `insert_family`; `insert_family_revision` | mcp/src/agents_remember/memory/knowledge/families.py:110-131; mcp/src/agents_remember/memory/knowledge/families.py:173-208 |
@@ -144,5 +144,7 @@ writes no Git object, no ledger row and no second repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `_add_claim`; `_anchor_digest` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:458-480; mcp/src/agents_remember/memory/knowledge/batch_commands.py:483-494. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `_remove_anchor`; `_remove_member`; `_remove_claim` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:536-551; mcp/src/agents_remember/memory/knowledge/batch_commands.py:554-560; mcp/src/agents_remember/memory/knowledge/batch_commands.py:563-571. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the batch apply and integrity module. It records the three shaping rules (admitted provenance, a receipt derived from what was touched, an observed failure position), the three-family dispatch, the shared in-transaction primitives that keep the batch from drifting from the single-record operations, the receipt shapes a consumer must read exactly (two entries for a claim that records its anchor, the digest a removal carries, no entry for a no-op edit) and the after-integrity re-proof as defence in depth rather than the sole enforcement. Verification metadata remains empty until closeout stamps the code commit.

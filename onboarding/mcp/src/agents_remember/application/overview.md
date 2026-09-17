@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -576,7 +576,7 @@ extension, and the worker report's claim that `KS-R03` "resolved" that observati
 | The two label operations the seam exposes. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-238; mcp/src/agents_remember/application/knowledge.py:240-250 |
 | The context resolution and its pure sealing step. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
 | The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
-| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:361-378; mcp/src/agents_remember/models/knowledge/candidate.py:137-178 |
+| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:163-414 |
 | The lane rules the seam's entry point reaches, and the operation that applies them. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
 | The composed-path case that drives the boundary end to end through this seam. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-109 |
 | The case that proves the operation refuses a context smuggled past the model seal. | "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:1120-1160 |
@@ -655,7 +655,7 @@ behaviour evidence about the boundary and not evidence that any tool is wired to
 | The defect the layer below makes unreachable. | `KnowledgeMergeSeamDefect` | mcp/src/agents_remember/application/knowledge_merge.py:67-68 |
 | The two storage operations this seam delegates to, in the order the seam exposes them. | `resolve_merge_base`; `require_session_capability` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
 | The vocabulary the seam takes and returns unchanged. | `MergeBaseRequest`; `MergeRequest`; `MergeOutcome` | mcp/src/agents_remember/models/knowledge/merge.py:124-154; mcp/src/agents_remember/models/knowledge/merge.py:189-215; mcp/src/agents_remember/models/knowledge/merge.py:349-391 |
-| The unit node that drives the conforming merge end to end through the public operations. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
+| The unit node that drives the conforming merge end to end through the public operations. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376 |
 | The published-file freeze and install contract the merge's last step reuses rather than duplicating. | `freeze_closed_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
 
 ## 260915-KS-L6 The Portable Export/Import Joins As A Fourth Seam
@@ -837,9 +837,41 @@ lacks.
 | --- | --- | --- |
 | The read-side row counts now resolve the dataset's own generation instead of the build's table list. | `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:587-603 |
 | The diff-side row counts do the same, so coverage describes the dataset it measured. | `diff_row_counts` | mcp/src/agents_remember/application/knowledge_diff.py:826-842 |
-| The generation selector both now call, and the declaration a created store makes. | `generation_of_database`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:234-251; mcp/src/agents_remember/memory/knowledge/schema_generations.py:206 |
+| The generation selector both now call, and the declaration a created store makes. | `generation_of_database`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:242-287 |
+
+## 260915-KS-L11 The Facet Selection Joins As A Sixth Seam
+
+The route gained one module, `application/knowledge_facets.py` — the layer's thirty-second Python module
+and the sixth seam — and no new authority. It is the **sixth composition seam** beside `knowledge.py`, `knowledge_snapshot.py`, `knowledge_merge.py`,
+`knowledge_export.py` and `knowledge_read.py`, and it is a seam rather than more entry points on the read
+because the facet aggregate is a **different selection**: `read_facet_scope` declares its own policy name
+(`authored-judgment-facets/v1`), takes one seed and returns one complete page, and it shares no code path
+with `KS-R07@v1`'s recorded-scope read.
+
+Three boundaries the module owns, and the reason each is the shape it is:
+
+- **The read-only handle is how "a refused facet read persisted nothing" is structural.** The connection is
+  opened through `open_read_only_database`, so the strongest statement available is a `SELECT`; the property
+  is a fact about the handle rather than a rollback the code has to remember.
+- **The declared snapshot is verified before anything is selected, in three separate comparisons** —
+  namespace binding, schema generation, logical dataset — each returning `snapshot_unavailable` with
+  expected and observed as facts. A context describing another dataset is refused by name rather than
+  answered from whatever bytes the path happens to hold.
+- **The selection is complete or it refuses.** A selection past `FACET_SELECTION_ITEM_LIMIT` becomes the
+  shipped `selection_incomplete` carrying its count and bound; there is no cursor, so a caller never
+  receives a page it could read as the whole aggregate when it is not.
+
+**One distinction a later reader must not flatten:** a seed naming nothing recorded is `selector_absent`,
+while a *recorded* facet record with no attachments and no supersession edges is a real page reporting zero
+counts. The module reads that fact (`seed_recorded`) rather than inferring it from an empty item list, so
+"nothing is there" and "the record is there and carries nothing yet" stay different answers.
+
+**The wiring boundary did not move:** like its five siblings this module has no non-tool importer in
+`mcp/src`, so its cases are behaviour evidence about the seam rather than evidence that it is reachable from
+a registered tool. `read_facet_scope` is in the module's `__all__`, and no MCP tool name was introduced.
 
 ## Update History
+- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the route's **sixth composition seam**, `application/knowledge_facets.py` — one context, one seed, one complete page, under its own declared policy `authored-judgment-facets/v1`. The body states the three boundaries the module owns (the **read-only handle** that makes "a refused read persisted nothing" structural; the **three snapshot comparisons** run before any selection, each naming expected and observed; and the **complete-or-refused** selection with no cursor), the distinction a reader must not flatten (**a seed naming nothing is `selector_absent`, while a recorded record with no attachments is a real page with zero counts**, read from `seed_recorded` rather than inferred from an empty list), and gives the seam its correct position in the running count, since the module's own docstring numbers it the fifth while naming five predecessors. The wiring boundary is re-recorded because it did **not** move: no non-tool importer in `mcp/src`, no MCP tool name, and no shared code path with `KS-R07@v1`'s selection — which is why a shipped seed's serialized page stays byte-identical. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **route meaning changed for two helpers, with no new authority.** `read_row_counts` and `diff_row_counts` no longer iterate the pinned generation-1 table list: they resolve the **selected generation from the dataset they open** and iterate that generation's tables, so a generation-2 dataset's coverage and row counts describe the dataset rather than the build. The body records that the seam's own contract is unchanged (no authority conferred, provenance assigned rather than accepted, no acceptance or promotion operation, still the only consumer of `memory.knowledge` from this layer), that a namespace initialized through this seam now declares **generation 2** so it carries six more tables than the generation-1 files earlier leaves produced, and that opening either kind works because the open path selects the generation from the file's own `PRAGMA user_version` while a **mixed-generation** comparison refuses before any session exists. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock

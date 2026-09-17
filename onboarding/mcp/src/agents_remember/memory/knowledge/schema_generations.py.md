@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/schema_generations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -138,14 +138,14 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL. | `SchemaGeneration` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:54-79 |
-| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:145 |
-| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition; the registry ordered oldest first. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:189; mcp/src/agents_remember/memory/knowledge/schema_generations.py:193 |
+| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:149-149 |
+| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition; the registry ordered oldest first. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:194-194 |
 | The only place a build's own generation decides anything, and it decides only what a created store declares. | `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:227-230 |
-| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:208-218 |
+| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:245-255 |
 | The one fingerprint definition, now a function of a record rather than of the running build. | `structure_manifest` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:82-92 |
-| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:234-251 |
-| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:369-402 |
-| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:259-287 |
+| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:270-287 |
+| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:405-438 |
+| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:296-322 |
 | Generation 1's declared tables, columns, keys, JSON columns, DDL, triggers and features — the declarations this module delegates to and never restates. | `CANONICAL_TABLES` | mcp/src/agents_remember/memory/knowledge/schema.py:29-42 |
 | Generation 2's appended tables, which `GENERATION_2` is composed from. | `APPENDED_TABLES`; `APPENDED_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49; mcp/src/agents_remember/memory/knowledge/schema_v2.py:51-76 |
 | The open path that calls this module's dispatch and the creation path that declares a generation. | `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:91-121 |
@@ -165,6 +165,11 @@ and a dataset's identity deliberately excludes Git commits, ledger rows and chec
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `GENERATION_1_FINGERPRINT` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:149-149. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `require_pinned_generation_unchanged` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:245-255. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `generation_of_database` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:270-287. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `generation_of_artifact` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:405-438. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T22:33:10+00:00: Generated citation repair: `declared_columns_for` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:296-322. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:39:57+00:00: Generated citation repair: `generation_of_artifact` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:369-402. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:39:57+00:00: Generated citation repair: `APPENDED_TABLES`; `APPENDED_COLUMNS` repointed to mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49; mcp/src/agents_remember/memory/knowledge/schema_v2.py:51-76. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): created this one-to-one card for the generation registry. It records the three things a reader must not get wrong — a generation is a frozen record rather than the running build, dispatch reads the dataset (version alone for an open file, the type-strict pair for an artifact) while only *creation* declares a generation, and the pin fails rather than warns and is never re-pinned to whatever the code now computes. It records the two different expected-failure shapes (returned refusal on the artifact path, raised error on the open path and for drift), the additive-only rule that decides where the governing-route association may live, and generation 1's fingerprint constant with the revision it was measured at. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

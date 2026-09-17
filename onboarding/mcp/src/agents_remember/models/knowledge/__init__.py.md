@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash |  `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
+| lastVerifiedCommitDate |  2026-09-18T01:58:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -109,7 +109,7 @@ The rows below cite the submodules this facade re-exports and the two consumers 
 | --- | --- | --- |
 | The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators and — since this leaf — the whole snapshot vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:146-262 |
 | The eighth source module this leaf added to the facade, re-exported name by name. | `build_candidate_receipt`; `candidate_database_path`; `candidate_receipt_path`; `receipt_digest` | mcp/src/agents_remember/models/knowledge/__init__.py:112-136; mcp/src/agents_remember/models/knowledge/snapshot.py:58-62; mcp/src/agents_remember/models/knowledge/snapshot.py:64-67; mcp/src/agents_remember/models/knowledge/snapshot.py:144-148 |
-| The internal rules deliberately kept off the served surface. | `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56; mcp/src/agents_remember/models/knowledge/result.py:161-175; mcp/src/agents_remember/models/knowledge/result.py:178-186 |
+| The internal rules deliberately kept off the served surface. | `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56; mcp/src/agents_remember/models/knowledge/result.py:176-201 |
 | The storage owner writes these values rather than defining its own copies — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:92-110 |
 | The composition seams that admit a destination and build every request from this vocabulary. | `admitted_knowledge_destination`; `admitted_revision_request`; `admitted_family_request`; `admitted_claim_request`; `admitted_candidate_destination` | mcp/src/agents_remember/application/knowledge.py:125-140; mcp/src/agents_remember/application/knowledge.py:144-157; mcp/src/agents_remember/application/knowledge.py:327-337; mcp/src/agents_remember/application/knowledge.py:374-386; mcp/src/agents_remember/application/knowledge_snapshot.py:67-82 |
 | The shared branching fixture authors its identity and graph halves from these same models. | `build_branching_knowledge_fixture`; `BranchingKnowledgeFixture` | mcp/tests/knowledge_fixture_test_support.py:203-263; mcp/tests/knowledge_fixture_test_support.py:161-188 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/merge_schema.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -135,7 +135,7 @@ No domain documentation source is configured for this repository (`system/source
 | The index-shape rule that treats an auto-index name as local naming while a declared index name is structure. | `_index_columns` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:497-511 |
 | The stable renderings and whitespace normalisation that make the comparison structural rather than textual. | `_normalized_sql`; `_render_column`; `_render_triggers` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:514-517; mcp/src/agents_remember/memory/knowledge/merge_schema.py:520-524; mcp/src/agents_remember/memory/knowledge/merge_schema.py:545-550 |
 | The schema generation this manifest must match, and the fingerprint the store stamps. | `SCHEMA_USER_VERSION`; `schema_fingerprint` | mcp/src/agents_remember/memory/knowledge/schema.py:27-27; mcp/src/agents_remember/memory/knowledge/schema.py:425-442 |
-| The unit node that refuses seven structural differences plus a reorder, a rename, a weakened trigger body and a changed `user_version`. | "test_every_structural_violation_is_refused_before_a_session_exists" | mcp/tests/test_knowledge_guarded_merge.py:123-216 |
+| The unit node that refuses seven structural differences plus a reorder, a rename, a weakened trigger body and a changed `user_version`. | "def test_every_structural_violation_is_refused_before_a_session_exists(" | mcp/tests/test_knowledge_guarded_merge.py:122-215 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_diff_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
+| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
@@ -120,7 +120,7 @@ repository source and package-local evidence only.
 | **The probe that measured the trees being what makes a gap visible.** | "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible" | mcp/tests/test_knowledge_diff_boundaries.py:817-840 |
 | The production probe these cases drive rather than substitute. | `git_tree_difference_probe` | mcp/src/agents_remember/application/knowledge_diff.py:162-196 |
 | The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1198-1202 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:159-159; mcp/tests/evidence-lifecycle.toml:1242-1242 |
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/test-evidence-lanes.toml:158-158; mcp/tests/evidence-lifecycle.toml:1280-1298 |
 
 ## Cross-Repo References
 
