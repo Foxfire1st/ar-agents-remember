@@ -350,9 +350,12 @@ certification as developer-request-only diagnostics, "never routine closeout/int
 are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and
-`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
-`coherence-required`.
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`; the **combined** `checklistStatus` then reports
+`coherence-required`, which is when the coherence authority is published and validated. **Field-name
+correction (`D35`, made by 260915-CAPS-L10):** `ready-for-closeout` is never a value of the combined
+`checklistStatus` — read the raw field to end the loop and the combined field to decide the coherence
+gate (`application/memory_quality/controller.py:664,671,678,687`).
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -1192,6 +1195,7 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`)** in the CAPS-L18 section — `ready-for-closeout` is never a value of the combined `checklistStatus`; the curator repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). **No test-surface change:** this leaf's code delta is zero, it adds no module and touches no lane row, so this route's population, its budgets and its `D9` residual are unchanged (`D9` remains L11's six historical modules). Verification metadata is left alone: the candidate is uncommitted and the governed closeout stamps the real code commit.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: this route gained **one module** —
   `test_capsule_experiment_install.py`, 19 cases — plus two rows in `test_sync_runtime.py`. The
   section above records what the population protects, that the module is not a seventh `D9` row,

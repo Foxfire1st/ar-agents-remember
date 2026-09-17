@@ -26,6 +26,17 @@ strategist → manager; reviewer → manager); the shipped corpus check fails on
 route's files are 2,792 → 2,322 lines in total, and the router that selects between them is no longer a
 doctrine source.
 
+**The line-count change is a structural fact, not a measured context reduction** (labelled by
+260915-CAPS-L10, which measured the capsule this corpus feeds). Fewer lines in the role files does not
+mean a session reads less: the shared rules and procedures moved into the sibling `core/` and
+`operations/` blocks, and a role's capsule now composes them per role and per operation. The one
+measurement that exists reports the assembled **capsule larger** than the legacy startup chain at the
+worker elevation (**11,828** vs **5,928** tokens, **+5,900**; like-for-like 11,645, **+5,717**), with
+manager and architect **UNMEASURED** (`binding-unresolved`) and **adoption acceptance FAILED** —
+disposition **REVISE**. Obligation preservation is intact (**36/36** across ten declared roles plus
+launcher routing). **No card may describe this route as saving context**; the claim this route may carry
+is the single-source, role-addressed, `**Inherits:**`-declared structure itself.
+
 ## Hot Path Summary
 
 Manager, orchestrator and curator handoffs name actual code/memory output refs and scoped onboarding evidence. They never require a ledger commit, cache freshness proof or cache-repair transaction; downstream consumers can rebuild the ledger from committed attribution.
@@ -235,9 +246,12 @@ certification as developer-request-only diagnostics, "never routine closeout/int
 are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and
-`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
-`coherence-required`.
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`; the **combined** `checklistStatus` then reports
+`coherence-required`, which is when the coherence authority is published and validated. **Field-name
+correction (`D35`, made by 260915-CAPS-L10):** `ready-for-closeout` is never a value of the combined
+`checklistStatus` — read the raw field to end the loop and the combined field to decide the coherence
+gate (`application/memory_quality/controller.py:664,671,678,687`).
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -248,6 +262,7 @@ frozen tip.
 
 ## Update History
 
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the route's line-count restructure is labelled as structure, not as a measured saving.** Added the measured qualification to Purpose: the `2,792 → 2,322` lines moved shared rules and procedures into `core/` and `operations/` rather than removing them, the one measurement that exists reports the assembled capsule **larger** than the legacy startup chain at the worker elevation (**11,828** vs **5,928**, **+5,900**; like-for-like 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE**. Also **corrected a landed defect (`D35`)** in the CAPS-L18 section: `ready-for-closeout` is never a value of the combined `checklistStatus`; the repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp or fingerprint advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual shape (nine files in one readable order with `**Inherits:**` lines, a new sibling `core/`, procedures moved to `operations/`, sanctioned sibling references only, 2,792 → 2,322 lines), and the Ungoverned Mirror Status section records this pass's explicit decision to update the route overview while deliberately leaving the per-role cards under `onboarding/skills/l-01-agent-lifecycles/roles/**` unrefreshed (outside `pathRules.include`, already declared stale, and a partial refresh would duplicate the governed `mcp/**` cards without resolving the govern-or-remove question). No verification stamp or fingerprint was advanced.
 

@@ -83,9 +83,25 @@ certification as developer-request-only diagnostics, "never routine closeout/int
 are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and
-`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
-`coherence-required`.
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`; the **combined** `checklistStatus` then reports
+`coherence-required`, which is when the coherence authority is published and validated. **Field-name
+correction (`D35`, made by 260915-CAPS-L10):** `ready-for-closeout` is never a value of the combined
+`checklistStatus` — read the raw field to end the loop and the combined field to decide the coherence
+gate (`application/memory_quality/controller.py:664,671,678,687`).
+
+**And on this route the wrong field name is not only in prose — it is pinned by the guard.** This
+route's `curation_doctrine.py` owns `CURATION_COMPLETENESS_STATEMENTS`, the required-form table the
+shipped-corpus guard reads, and its `skills/l-01-agent-lifecycles/roles/curator.md` row **requires** the
+fragments `"curatorActionableCount=0"` and `"checklistStatus=ready-for-closeout"`.
+`missing_completeness_statements` and `test_role_instruction_corpus.py::CurationIsCompleteOnEveryLeafTests::
+test_every_canonical_source_states_the_complete_curation_rule` match those fragments on
+`normalize_statement`'s reading, which strips emphasis and collapses whitespace but does **not** change
+case. So a repair that rewrites the sentence to `qualityChecklistStatus=ready-for-closeout` removes the
+lowercase-`c` fragment and turns the guard **red**. `D35`'s repair therefore has to move the declared
+fragment with the sentence, in the canonical source and in this table together. Recorded here by
+260915-CAPS-L10 as a measured obstacle, not repaired: the table is code, and this seat writes onboarding
+only. Owner: the `D35` fix leaf (or L11).
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -96,6 +112,7 @@ frozen tip.
 
 ## Update History
 
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) and recorded the obstacle its repair will hit on this route.** The `CAPS-L18` section now names the **raw** `qualityChecklistStatus` as the repair loop's gate and the combined `checklistStatus=coherence-required` as the coherence gate (`application/memory_quality/controller.py:664,671,678,687`). Added the source-backed statement that this route's `curation_doctrine.py::CURATION_COMPLETENESS_STATEMENTS` **requires** the fragment `"checklistStatus=ready-for-closeout"` for `roles/curator.md`, and that `normalize_statement` is case-preserving, so rewriting the sentence to `qualityChecklistStatus=…` would turn `test_every_canonical_source_states_the_complete_curation_rule` red unless the declared fragment moves with it. Recorded, not repaired — the table is code and this seat writes onboarding only.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/test_support/agents_remember_test_support/testing`, so no route/member/prose/invariant change is required. route-member-count=20; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 

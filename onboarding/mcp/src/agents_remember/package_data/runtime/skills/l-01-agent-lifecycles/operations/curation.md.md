@@ -28,8 +28,12 @@ Every operation block shares one five-part shape — who carries it, required in
 writes memory, the manager compiles the brief and owns the transaction. `## Normal workflow` step 5 is the complete curation check set rather than a named scoped check: the
 curator runs the full `memory_quality_check` operation for the leaf, repairs or escalates every
 curator-actionable finding with its exact returned code, and re-runs it after every repair until
-`curatorActionableCount=0` and `checklistStatus=ready-for-closeout`, publishing the `curator_coherence`
-authority when the checklist then reports `coherence-required`. `## Authority gates` states the same rule
+`curatorActionableCount=0` and the **raw** `qualityChecklistStatus=ready-for-closeout`, publishing the `curator_coherence`
+authority when the **combined** `checklistStatus` then reports `coherence-required`. **Field-name
+correction (`D35`, made by 260915-CAPS-L10):** the sentence above previously named
+`checklistStatus=ready-for-closeout`; `ready-for-closeout` is never a value of the combined field, so read
+the raw field to end the loop and the combined field to decide the coherence gate
+(`application/memory_quality/controller.py:664`, `:671`, `:678`, `:687`). `## Authority gates` states the same rule
 from the other side: the completed curation is the prerequisite the transaction carries, and a subset
 result never stands in for the full operation.
 
@@ -82,6 +86,7 @@ No sibling-repository contract defines this instruction file.
 
 ## Update History
 
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) in the Logic section.** The complete-curation sentence named `checklistStatus=ready-for-closeout` as the loop's termination condition; `ready-for-closeout` is never a value of the combined field. It now names the **raw** `qualityChecklistStatus` as the loop's gate and the **combined** `checklistStatus=coherence-required` as the point at which the `curator_coherence` authority is published, matching `application/memory_quality/controller.py:664,671,678,687`. The 2026-09-17T12:28+02:00 entry below is left as written: it records what CAPS-L18 did, and this entry is the correction of that wording. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Added the changed `## Normal workflow` step 5 and `## Authority gates` rule to Logic: the complete curation check set, its `curatorActionableCount=0` / `checklistStatus=ready-for-closeout` termination condition, and the coherence authority published when the checklist requires it.
 - 2026-09-16T22:19+02:00 — **No content impact:** 260915-CAPS-L16 curator. The canonical source gained
   one pronoun — the curator's exit says terminal/finalizer evidence attests only that **this** turn

@@ -25,6 +25,22 @@ permitted writes → stop/escalation → completion/handoff, then the knob block
 line naming their shared sources. A role file now names a sibling role file only to wear that hat or
 dispatch that seat.
 
+**That restructure is a structural change, NOT a measured context reduction** (labelled by
+260915-CAPS-L10, which measured the capsule this corpus feeds). The `620 → 179` line count describes the
+**router**, and the doctrine it used to carry moved into the new sibling layers rather than disappearing:
+the corpus a session reads is now selected per role and per operation by the deterministic compiler, and
+nothing in that arrangement was measured to be smaller. The one measurement that exists points the other
+way — at the worker elevation the delivered capsule is **11,828** tokens against a **5,928** token legacy
+startup chain (**+5,900**; like-for-like `implementation` capsule 11,645, **+5,717**), the manager and
+architect elevations are **UNMEASURED** (`binding-unresolved`), and **adoption acceptance FAILED** with
+disposition **REVISE**. Obligation preservation is intact (**36/36** across ten declared roles plus
+launcher routing), so the failure is on the reduction half alone. Full account, frozen artifacts and the
+residuals with their owners: `notes/reports/260915-CAPS-L10-worker-report.md`,
+`notes/reports/caps-l10-disposition.md` and the measurement method
+`notes/reports/caps-l10-measurement-method.md` (digest `sha256:902676a6…`). **No card may describe this
+corpus, the compiler or the cutover as saving context**; the design intent was a single-source,
+role-addressed corpus, and that intent is what this route may claim.
+
 ## Hot Path Summary
 
 Manager, orchestrator and curator handoffs name actual code/memory output refs and scoped onboarding evidence. They never require a ledger commit, cache freshness proof or cache-repair transaction; downstream consumers can rebuild the ledger from committed attribution.
@@ -214,9 +230,17 @@ certification as developer-request-only diagnostics, "never routine closeout/int
 are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and
-`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
-`coherence-required`.
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`; the **combined** `checklistStatus` then reports
+`coherence-required`, which is when the coherence authority is published and validated.
+
+**Field-name correction (`D35`, made by 260915-CAPS-L10).** The sentences above and in the shipped
+sources previously named `checklistStatus=ready-for-closeout` as the loop's termination condition.
+`ready-for-closeout` is **never** a value of the combined `checklistStatus` — it is the value of the
+**raw** `qualityChecklistStatus`. Read the raw field to decide whether the repair loop can end, and the
+combined field to decide whether the coherence gate applies; `closeoutReady` is `true` only after the
+coherence authority validates (`application/memory_quality/controller.py:664`, `:671`, `:678`, `:687`).
+A curator following the old wording watches the combined field and can never satisfy the condition.
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -254,6 +278,7 @@ verification stamp was advanced.
 
 ## Update History
 
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the corpus restructure is labelled as structure, not as a measured saving.** Added the measured qualification to Purpose: the `620 → 179` router change moved doctrine into the new sibling layers rather than removing it, the one measurement that exists points the other way at the worker elevation (delivered capsule **11,828** vs a **5,928** legacy chain, **+5,900**; like-for-like 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE**. Also **corrected a landed defect (`D35`)** in the CAPS-L18 section: `ready-for-closeout` is never a value of the combined `checklistStatus`; the repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp or fingerprint advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual 260915-CAPS-L1 shape (thin router + `core/` + nine role files + eight `operations/` blocks + `reference/` + `composition-manifest.json`), and the Ungoverned Mirror Status section records this pass's explicit decision: the overview is updated because route meaning changed, while the legacy `onboarding/skills/l-01-agent-lifecycles/**` sidecars are deliberately left untouched because they are outside `pathRules.include`, already declared knowingly stale, and a partial hand-refresh would duplicate the governed cards on the tracked generated `mcp/**` copy without resolving the govern-or-remove question this section already raises. No verification stamp or fingerprint was advanced.
 

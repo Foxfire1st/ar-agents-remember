@@ -543,6 +543,76 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 
 The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
 
+## 260915-CAPS-L10 Measured Result — The Capsule Did Not Reduce Startup Context (adoption FAILED)
+
+**This section is the measured truth about the capsule chain the rest of this package builds, and it is
+negative.** Every other section on this route describes **structure, correctness and design intent**;
+none of them is evidence of a context reduction, and this section says so explicitly so a reader cannot
+infer one.
+
+- **The delivered capsule is larger than the legacy chain at the one elevation measurable.** `CAPS-R10@v1`
+  behaviour 6 requires a demonstrated reduction in AR-added startup material for matched worker, manager
+  and architect cases. At the **worker** elevation the measured run's **delivered** `orientation` capsule
+  is **11,828 tokens against a 5,928 baseline — +5,900**; the like-for-like `implementation` capsule is
+  **11,645** (**+5,717**). The delivered figure governs.
+- **Manager (`coordination`) and architect (`planning`) are UNMEASURED** — `refused`,
+  `binding-unresolved`, because the frozen world carries no series contract at the master or sprint
+  altitude. They are unmeasured elevations **inside** the adoption failure, not passes.
+- **Obligation preservation is intact: 36/36** across **ten** declared roles plus launcher routing, with
+  the E1 falsification observed. The failure is on the reduction half alone.
+- **The two sides are different kinds of object.** The capsule side is a role- and operation-selected
+  payload; the baseline side is an **unscoped** chain identical for every role and operation. No "saving"
+  across them is claimed anywhere on this route.
+- **Adoption acceptance FAILED; the disposition is REVISE** — a recommendation to the owner, not a
+  decision. A complete report recommends revise/discard and stays a failed adoption acceptance; it never
+  closes an unresolved functional requirement and never weakens mandatory native-eve functionality. **No
+  IAS landing is authorized** by this leaf or by any green result, and the 4k-in-a-32k-window figure
+  remains a stretch direction, never a truncation rule and never an achieved result.
+
+**What the same evidence positively supports — this package's delivery claim, which did hold.** A started
+session really does receive its compiled capsule, and the evidence class is the started session's own
+state:
+
+- **Native eve:** the started session's **own system block** carries the capsule **exactly once** — on the
+  second call, after **compaction**, after **clear** and after **resume**. A **forged** delivery never
+  reached the system block. An **edited carrier** was **refused** (`carrier-digest-mismatch`) and made
+  **no model call**; the seat wrote only its admitted workspace, and an unbound launch was refused with no
+  model call. Scenario summary **8 / 8**. The runtime process was staged from the builder's own worktree
+  and asserted **byte-equal** to the authored tree (`agent.ts` sha256 `287dbbf0…`), with `AR_EVE_EFFORT`
+  present.
+- **Codex:** the capsule arm completed a real representative code leaf end to end — the repair landed in
+  the **admitted** worktree and the fixture check went `1 failed, 2 passed` → **`3 passed`, exit 0**.
+- **Boundary:** the eve arm's model is the fixture's deterministic local provider; what is native is the
+  runtime process, the HTTP transport, the durable event stream and the adapter. `--real-model` was **NOT
+  run** (no hosted credential) and is **UNRUN**, not a pass. The matched **Codex baseline completion is
+  UNRUN-AS-MATCHED** — the legacy chain fails closed without the plane-injected `AR_HOSTED_SESSION_ID`,
+  and a matched baseline therefore needs a **production-control-plane** launch, an owning-seat action.
+
+**Unobservable stays unobservable.** Peak context occupancy is unobservable on **both** harnesses —
+Codex's stream carries cumulative usage only, and `serving/eve_events.py::EveEventMapper._HANDLERS` maps
+no usage frame. Cumulative usage is unobservable on eve. Occupancy and cumulative usage were reported in
+separate columns and **never summed**; the baseline arm's compilation cost is `not-applicable`, an honest
+absence rather than a zero in a total.
+
+**What this result does NOT say.** It is not a claim that the capsule is worse for a real session: the
+legacy figure counts the always-injected routing layer only, while the skill corpus it routes to is read
+on demand and deliberately excluded from the measure — a fair total-instruction-read comparison is a
+session-level measurement that does not exist yet. It is also **not** attributed to the compiler, because
+the two arms differ in installation mechanism as well as in content.
+
+**Design intent, labelled as intent rather than as a measured saving.** The L1 corpus restructure
+(`SKILL.md` 620 → 179 lines) is a **single-source restructuring**; the L2 compiler's determinism,
+refusal-as-value and one-block-per-identity properties are **correctness** properties; and the L9
+installation cutover is an **installation** change whose measured effect on startup material was, at the
+one elevation measured, the **opposite** of a reduction.
+
+**Frozen artifacts.** Method `notes/reports/caps-l10-measurement-method.md` (digest
+`sha256:902676a630075f34b21c70e412eecee51bf8acc42488f3d1fc35a5b4b81ce528`); frozen evidence
+`notes/reports/260915-CAPS-L10-evidence/` (991 entries, index digest `sha256:c6581df2…`); builder report,
+disposition and both verdicts under `notes/reports/260915-CAPS-L10-*` and `notes/reports/caps-l10-*`.
+Both review rounds closed with no open findings; clearing six findings did **not** convert the negative
+result into a pass.
+
 ## 260915-CAPS-L18 Complete Curation Reaches This Route
 
 CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
@@ -551,9 +621,19 @@ certification as developer-request-only diagnostics, "never routine closeout/int
 are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and
-`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
-`coherence-required`.
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`.
+
+**The two status fields are different fields, and a reader who merges them loops forever** (`D35`, a
+landed-defect repair recorded by 260915-CAPS-L10). Read the **raw** `qualityChecklistStatus` to decide
+whether the repair loop can end. Once it reaches `ready-for-closeout` the **combined** `checklistStatus`
+reports `coherence-required` — `ready-for-closeout` is never a value of the combined field — and
+`closeoutReady` becomes `true` only after the structured coherence authority validates.
+`application/memory_quality/controller.py` is the authority: `:664` publishes the raw field, `:671` gates
+on it, `:678` publishes the combined `coherence-required`, `:687` sets `closeoutReady` after validation.
+The sentence this section previously carried named the combined field as the loop's termination
+condition; that was wrong in the shipped sources and in the cards that quoted them, and it is corrected
+here and on the other affected cards.
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -631,6 +711,13 @@ existing seams. This leaf adds an implementation of them, not a new plane — so
 registry or orchestration layer appears in this route.
 
 ## 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured
+
+**Read this section as STRUCTURE, not as a saving.** The consolidation was a design intent — one
+single-source, role-addressed corpus — and it is **not** a measured context reduction: the doctrine
+moved into the new `core/` · `operations/` · `reference/` siblings rather than disappearing, and the one
+measurement that exists (§ 260915-CAPS-L10 Measured Result above) reports the assembled capsule
+**larger** than the legacy startup chain at the worker elevation (**11,828** vs **5,928** tokens, +5,900),
+with adoption acceptance **FAILED**.
 
 The packaged runtime skill tree under `mcp/src/agents_remember/package_data/runtime/skills/` gained 14
 files and had 17 rewritten in 260915-CAPS-L1 (`CAPS-R01@v1`), because the canonical
@@ -1582,7 +1669,19 @@ three boundaries this overview must carry because a reader who misses them will 
 **1. The cutover is an INSTALLATION cutover, and the residual is not settled here.** In `capsule` mode
 the installer does not write the four coordinator `AGENTS.md` targets and **removes** any copy an
 earlier install left, so an opted-in installation injects no legacy startup chain; the disabled run is
-its own positive control. The installed coordinator `skills/` tree is still installed, and it is the
+its own positive control.
+
+**Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
+withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
+install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms
+read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`. So the cutover withholds the coordination root's
+chain while the harness's copy of the same corpus stays readable — the duplicate-corpus path the cutover's
+own docstring says it exists to prevent. Until that surface is decided, **no card and no report may claim
+the legacy corpus is off**, and the surviving read is an **E-harness** effect, never a compiler benefit.
+The duplicate-corpus claim itself was already forbidden (audit `C6`/`C7`); this paragraph adds the
+*measured* reason. Owner: **L9 / the harness-surface owner**, not this leaf.
+
+ The installed coordinator `skills/` tree is still installed, and it is the
 **authored copy the coordination root carries** — what a human, the dashboard or a curator reads —
 **not** the compiler's input. In production the compiler resolves its corpus from the *packaged* tree
 (`application/skill_resources` → `packaged_source_root()/runtime/skills`), so the installed copy is
@@ -1627,7 +1726,7 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
 [tests route](tests/overview.md).
 
 ## Update History
-
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the capsule chain's measured result and its live limit reach this route.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation measurable (delivered `orientation` capsule **11,828** vs a **5,928** baseline, **+5,900**; like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE** and no IAS landing authorized. That section also carries the delivery result that did hold (the started eve session's own system block holds the capsule exactly once — second call, after compaction, after clear and after resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, and the explicit statement that the L1 restructure, the L2 compiler properties and the L9 cutover are **structure, correctness and design intent — not a measured context reduction**. **Qualified the L9 cutover section with the measurement's finding `F-6`:** the withholding is complete inside the coordination root but **not** on the machine — the install does not manage the harness's own skill root and **both** measured arms read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`, so no card may claim the legacy corpus is off (owner L9 / harness-surface). **Corrected a landed defect (`D35`):** the CAPS-L18 section named `checklistStatus=ready-for-closeout` as the repair loop's termination condition, which is never a value of the combined field; the raw `qualityChecklistStatus` is the gate, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **route impact recorded rather than a no-impact marker** —
   the section above states the experimental packaging and cutover boundary, including the two
   claims this route must not invent (the legacy corpus is *not* fully deduplicated; C6/C7's

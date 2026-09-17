@@ -247,6 +247,12 @@ content and are never onboarded.
 The `l-01-agent-lifecycles` instruction corpus was consolidated across the whole repository route in
 260915-CAPS-L1 (requirement `CAPS-R01@v1`). The structural change future readers must know about:
 
+**Read this section as STRUCTURE, not as a saving.** It was always a design intent — one
+single-source, role-addressed corpus — and it is **not** a measured context reduction. The one
+measurement that exists (§ 260915-CAPS-L10 Measured Result) reports the assembled capsule **larger**
+than the legacy startup chain at the worker elevation, and no line-count change is evidence about
+tokens a session reads: the doctrine moved into the new layers below rather than disappearing.
+
 - **The entrypoint is now a router and carries no doctrine.** `SKILL.md` went from 620 to 179 lines and
   contains only the three routing conditions, the nine-role registry, the composition map, an
   orientation diagram of the super-integration topology, and pointers.
@@ -508,9 +514,19 @@ certification as developer-request-only diagnostics, "never routine closeout/int
 are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and
-`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
-`coherence-required`.
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`.
+
+**The two status fields are different fields, and a reader who merges them loops forever** (`D35`, a
+landed-defect repair recorded by 260915-CAPS-L10). Read the **raw** `qualityChecklistStatus` to decide
+whether the repair loop can end. Once it reaches `ready-for-closeout` the **combined** `checklistStatus`
+reports `coherence-required` — `ready-for-closeout` is never a value of the combined field — and
+`closeoutReady` becomes `true` only after the structured coherence authority validates.
+`application/memory_quality/controller.py` is the authority: `:664` publishes the raw field, `:671` gates
+on it, `:678` publishes the combined `coherence-required`, `:687` sets `closeoutReady` after validation.
+The sentence this section previously carried named the combined field as the loop's termination
+condition; that was wrong in the shipped sources and in the cards that quoted them, and it is corrected
+here and on the other affected cards.
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -518,6 +534,101 @@ rule is about the completeness of curation, not about unscoped runs, so "complet
 operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
 leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
 frozen tip.
+
+## 260915-CAPS-L10 Measured Result — The Capsule Did Not Reduce Startup Context (adoption FAILED)
+
+This is the experiment's measured outcome, and it is a **negative result**. It governs every other
+section of this onboarding that describes the role-capsule compiler, the instruction corpus
+restructure, or the experimental cutover: those sections record **structure and design intent**, and
+**none of them is evidence of a context reduction.**
+
+**The measurement.** `CAPS-R10@v1` behaviour 6 requires "a demonstrated reduction in AR-added startup
+material for matched worker, manager and architect cases without missing required obligations." That was
+**not demonstrated.** At the one elevation that could be measured (worker), the capsule is **larger** than
+the legacy chain:
+
+- **The delivered capsule is 11,828 tokens against a 5,928-token baseline — +5,900.** "Delivered" means
+  the `orientation` capsule the measured run actually carried, read back from the consumer's own first
+  prompt and matching it exactly.
+- The like-for-like `implementation` capsule is **11,645** against the same 5,928 (**+5,717**). These are
+  two different compilations, not two measurements of one quantity; the delivered figure is the one that
+  governs, and it makes the gap larger, not smaller.
+- **Manager (`coordination`) and architect (`planning`) are UNMEASURED**, refused with
+  `binding-unresolved` because the frozen world carries no series contract at the master or sprint
+  altitude. They are **unmeasured elevations inside the adoption failure — not passes**, and they are not
+  evidence of a reduction either.
+- **Obligation preservation is intact**: 36/36 cases across **ten** declared roles plus launcher routing,
+  with the E1 falsification observed (a deliberately removed required instruction fails the check). The
+  failure is on the reduction half alone.
+- The two sides are **different kinds of object**: the capsule side is a role- and operation-selected
+  payload (core + this role's block + one operation block); the baseline side is an **unscoped** chain —
+  the same five files for every role and every operation. A "saving" computed across them would compare a
+  selected package with an unselected one, and this onboarding states none.
+
+**The delivery claim that DID hold, and the evidence class that carries it.** Separately from the size
+result, a started session really does receive its compiled capsule:
+
+- On **native eve**, the started session's **own system block** carries the capsule **exactly once** — on
+  the second call, after **compaction**, after **clear** and after **resume**; a **forged** delivery never
+  reached the system block; an **edited carrier** was **refused** (`carrier-digest-mismatch`) and made
+  **no model call**; the seat wrote only its admitted workspace and an unbound launch was refused with no
+  model call. Scenario summary `8 / 8` passed. The runtime process was staged from the builder's own
+  worktree and asserted **byte-equal** to the authored tree (`agent.ts` sha256 `287dbbf0…`).
+- On **Codex**, the capsule arm completed a real representative code leaf end to end: the repair landed in
+  the **admitted** worktree and the fixture check went `1 failed, 2 passed` → **`3 passed`, exit 0**.
+- **Honest boundary:** the eve arm's **model** is the fixture's deterministic local provider. What is
+  native is the runtime process, the HTTP transport, the durable event stream and the adapter.
+  **`--real-model` was NOT run** (no hosted provider credential in this environment) and is recorded
+  **UNRUN**, not as a pass.
+
+**Unobservable values are recorded as unobservable, never estimated.** Peak context occupancy is
+**unobservable on both harnesses** (Codex's stream carries cumulative usage only; eve's
+`serving/eve_events.py::EveEventMapper._HANDLERS` maps no usage frame). Cumulative usage is unobservable
+on eve. Occupancy and cumulative usage were kept in separate columns and **never summed**. The baseline
+arm's compilation cost is `not-applicable`, an honest absence rather than a zero folded into a total.
+
+**The disposition is REVISE, and it is a recommendation to the owner, not a decision.** A complete
+report recommends revise/discard and **remains a failed adoption acceptance**; it never closes an
+unresolved functional requirement, never weakens mandatory native-eve functionality, and **no IAS landing
+is authorized** by this leaf or by any green result. The prior 4k-in-a-32k-window figure stays a **stretch
+direction**, never a hard truncation rule and never a fabricated achieved result.
+
+**Not supportable from this evidence, stated so a reader cannot infer it.** The measurement does **not**
+say the capsule is worse for a real session: the legacy figure counts the always-injected routing layer
+only, and the skill corpus it routes to is read on demand and deliberately excluded from the measure. A
+fair total-instruction-read comparison is a session-level measurement that **does not exist yet**. The
+result is also **not** attributed to the compiler, because the two arms differ in installation mechanism
+as well as in content.
+
+**Frozen artifacts (this section's sources).** Method
+`notes/reports/caps-l10-measurement-method.md` (digest `sha256:902676a630075f34b21c70e412eecee51bf8acc42488f3d1fc35a5b4b81ce528`);
+frozen evidence `notes/reports/260915-CAPS-L10-evidence/` (991 entries, index digest
+`sha256:c6581df2640f2514dde7e51393bcc1c95bb61e92affd62ad79b02906978900d5`); builder report
+`notes/reports/260915-CAPS-L10-worker-report.md`; disposition `notes/reports/caps-l10-disposition.md`;
+verdicts `260915-CAPS-L10-verdict-baseline.md` and `-verdict-fixverify-r2.md`. Both independent review
+rounds closed with no open findings, and clearing six findings did **not** convert this into a pass.
+
+**Design intent is labelled as intent, not as a measured reduction.** Three families of statements
+elsewhere in this onboarding describe real structural changes and must not be read as savings measured by
+this leaf: the `l-01-agent-lifecycles` corpus restructure (`SKILL.md` 620 → 179 lines, doctrine moved into
+`core/` · `operations/` · `reference/`) is a **single-source restructuring**; the L2 compiler's determinism
+and refusal-as-value properties are **correctness** properties; and the L9 installation cutover's
+withholding of the four coordinator `AGENTS.md` targets is an **installation** change whose measured
+effect on startup material was, at the one elevation measured, the opposite of a reduction.
+
+**Residuals carried with owners (recorded, not repaired here).** `F-6`: the install does not manage the
+harness's own skill root — **both measured arms read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`**,
+so the cutover withholds only the coordination root's chain, which is the duplicate-corpus path its own
+docstring says it exists to prevent (owner L9 / harness-surface). `F-5`: a mutation seed is vacuous **by
+construction** because the earlier source read already refuses — a behavioural fact about the compiler's
+refusal order (`models/role_capsules/` owner). **The matched Codex baseline completion is UNRUN**: the
+legacy chain fails closed without the plane-injected `AR_HOSTED_SESSION_ID`, and supplying it by hand
+would hand the product a value its own control plane produces, so a matched baseline needs a launch
+through the **production control plane** — an owning-seat action, not a leaf's. Also filed, not repaired:
+`F-1` (ten roles/nine operations — the code's counts, not the brief's nine/eight), `F-2` (an emptied
+admitted source raises an uncaught `ValueError` instead of the documented refusal shape), `F-3` (launcher
+skill admission), `F-4`/`C4` (`closeout` vs `authorized-closeout`, no reconciliation owner), `F-7` (the
+legacy chain needs the plane's complete identity and fails closed without it) and `D34`/`D35`.
 
 ## Cross-Repo References
 
@@ -973,6 +1084,8 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **one stale citation repaired by hand on this card (D14 route).** The evidence-table row `PreparedMemoryCertificationAdapter` cited `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, a path that does not exist at this leaf's code base `304de8e2`; the adapter now lives at the application rank. Re-read at the base: `mcp/src/agents_remember/application/prepared_certification.py` is 813 lines and declares `class PreparedMemoryCertificationAdapter:` at **749**, so the row now reads `application/prepared_certification.py:749-813`. Per-document `citation_fix` is unreachable in a leaf worktree (`D14`), so this is a hand repair and it is recorded here rather than stamped.
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the master's measured result reaches this route, and it is negative.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation that could be measured (delivered `orientation` capsule **11,828** tokens against a **5,928** baseline, **+5,900**; the like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), obligation preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED**, with disposition **REVISE**. The section also records the delivery result that *did* hold (a started eve session's own system block carries the capsule exactly once — on the second call, after compaction, clear and resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, the explicit statement that **no IAS landing is authorized**, and the residuals with owners (`F-1`…`F-7`, the UNRUN matched baseline, `D34`, `D35`). **Corrected a landed defect (`D35`):** the CAPS-L18 section told a curator to iterate until `checklistStatus=ready-for-closeout`, which is never a value of the combined field; the loop's termination condition is the **raw** `qualityChecklistStatus`, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` is true only after the coherence authority validates (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-16T12:05:38+00:00: Generated citation repair: "providers/runners/grepai" repointed to mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-16T12:05:38+00:00: Generated citation repair: `operation_projection` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
@@ -2245,7 +2358,7 @@ These current source and policy ranges establish the development/certification d
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:308-328; mcp/src/agents_remember/application/memory_quality/controller.py:331-383; mcp/src/agents_remember/application/memory_quality/controller.py:413-550 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:553-589 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:749-813 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:

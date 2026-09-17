@@ -116,9 +116,12 @@ certification as developer-request-only diagnostics, "never routine closeout/int
 are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
 the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
 curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and
-`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
-`coherence-required`.
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`; the **combined** `checklistStatus` then reports
+`coherence-required`, which is when the coherence authority is published and validated. **Field-name
+correction (`D35`, made by 260915-CAPS-L10):** `ready-for-closeout` is never a value of the combined
+`checklistStatus` — read the raw field to end the loop and the combined field to decide the coherence
+gate (`application/memory_quality/controller.py:664,671,678,687`).
 
 Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
 transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
@@ -142,6 +145,7 @@ recorded defect.
 
 ## Update History
 
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`)** in the `CAPS-L18` section. It named `checklistStatus=ready-for-closeout` as the curator repair loop's termination condition; `ready-for-closeout` is never a value of the combined field. The section now names the **raw** `qualityChecklistStatus` as the loop's gate and the combined `checklistStatus=coherence-required` as the coherence gate, matching `application/memory_quality/controller.py:664,671,678,687`. No workflow, gate or authority changed; only the field names, which were the defect. No verification stamp advanced.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled canonical worktree doctrine to cache-independent Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
