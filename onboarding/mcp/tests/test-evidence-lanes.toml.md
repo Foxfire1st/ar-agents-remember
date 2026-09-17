@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l16-ar` uncommitted source; base `8997e184efe67e853a60780912ef5ac21844a323` |
+| lastUpdated | 2026-09-17T10:45+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,6 +60,24 @@ existing lanes, plus `test_memory_quality_is_independent_of_the_closeout_plane.p
 hermetic focused suites and the integration lane is capped at 200 collected cases
 (`pyproject.toml:135`; the "150" this card's earlier entries recorded is stale), so nothing was
 moved into it beyond the one module that genuinely exercises an integration boundary.
+## 260915-CAPS-L15 Lane Row (Declared)
+
+The L15 change set adds `mcp/tests/test_capsule_launch_wiring.py` **and** its row in the same change, so
+the manifest stays closed in that change set. The row is `mcp/tests/test-evidence-lanes.toml:19`, in the
+**unit-regression** lane, inserted alphabetically between `test_causal_quality_preflight.py` and
+`test_capsule_serving.py`. That is its behaviour-preserving lane: the module's fourteen cases drive the
+launch points, the runner preparation and the adapter factory **in process**, with the vendor boundary
+recorded and the tmux host doubled — it starts no real process and calls no vendor — so the hermetic
+default unit lane is where it belongs. **Lane row added; no case added to any capped population that
+was not already there.**
+
+**The loader invariant is the point of this row (defect D9).** `load_lane_manifest` independently proves
+the declared population closed — it derives the repository's actual test modules and refuses a manifest
+that omits one — so a new test module without a lane row is a **hard load failure** for every manifest
+consumer, not a silent gap. L15 followed that rule in the same change that added the module; the six
+historical D9 modules remain the final-verification leaf's, unchanged by this leaf. Classification only:
+lane membership is not execution, certification or acceptance evidence.
+
 ## 260915-CAPS-L16 Lane Row (Declared)
 
 The L16 change set adds `mcp/tests/test_citation_source_index_membership.py` **and** its row in the same
@@ -449,7 +467,18 @@ them.** Every manifest line at or after `:97` shifts by one: `test_serving_obser
 `:123`, and every later lane key with them. The citations into the manifest were therefore **re-derived
 against the current file rather than carried**: 59 live citations across this card, the tests route
 overview and fifteen sibling cards were re-pointed to the line that actually carries their anchor, and
-the dated `## Update History` entries — as-of records of earlier candidates — were deliberately left as
+the dated `## Update History
+
+- 2026-09-17T10:45+02:00 — 260915-CAPS-L15 curator: the manifest gained one row for this leaf's own new
+  module, `mcp/tests/test_capsule_launch_wiring.py`, at `:19` in the **unit-regression** lane — its
+  behaviour-preserving lane, since the module drives the launch points, the real runner preparation and
+  the real adapter factory in process with the vendor boundary recorded and no real process started. A
+  declared section records the row, its insertion point and the D9 rule it satisfies in the same change
+  that adds the module. No row was removed, moved between lanes, or added to a capped population beyond
+  the one module's own. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
+` entries — as-of records of earlier candidates — were deliberately left as
 written. One citation was corrected beyond the shift because it was already stale before this leaf
 (`test_checkpoint_landing_end_to_end.py`, cited at `:143-143`, which the manifest carries at `:140`).
 Classification only: lane membership is not execution, certification or acceptance evidence, and the

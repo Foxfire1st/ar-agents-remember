@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastUpdated | 2026-09-17T10:40+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ log; `sessionCommandsDelivered` means command record plus non-error stdout, not 
 cit:([`TaskAssignmentStatus`], mcp/src/agents_remember/models/terminal.py:20-29) is the closed response vocabulary for document-owned seat assignment attempts: `attached`, `seat-taken`, `unknown-session`, `role-required`, and explicit task-binding/document validation refusals. The operation accepts structural document-and-role intent; it does not expose a leaf-key or occupant-id address.
 cit:([`AttachTerminalSessionToTaskResponse`], mcp/src/agents_remember/models/terminal.py:32-44) is a strict `ToolResponse` with operation `attach_terminal_session_to_task`, the requested session and `taskDocumentRef`, the optional previous document binding and seat role, an optional conflict owner for administrative diagnostics, and optional refusal detail.
 
-cit:([`SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:43-69) is the L2 vocabulary: `spawned-unbriefed` (the only `ok: true`
+cit:([`SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:51-87) is the L2 vocabulary: `spawned-unbriefed` (the only `ok: true`
 case — the seat exists and is bound, and its brief is a separate delivery),
 `brief-delivery-separate` (the refusal of the retired one-call brief contract, raised before any
 settings, catalog or spawn work when the caller passed `context` or `submit=true`), `leaf-taken`
@@ -62,7 +62,16 @@ resolved harness's vocabulary, or any effort for a mapping-less settings-defined
 leaf-ref refusals are also modeled for spawn because a bad leaf key is refused before tmux or
 catalog mutation — and, like `LeafAssignmentStatus`, they arrive as the imported `LeafRefStatus`
 alias rather than as two more hand-typed strings.
-cit:([`SpawnAgentSessionResponse`], mcp/src/agents_remember/models/terminal.py:78-120) is a strict
+
+**`capsule-unavailable` (260915-CAPS-L15)** is the vocabulary's newest member, and it is the
+instruction-delivery half of the launch: the seat **is** role-configured and its capsule could not be
+supplied — no compilable capsule for the role, no verified instruction channel on the harness the
+launch resolved, or a process composed without a compiler. It is refused before any host side effect,
+with the exact stage and role named in the detail, because a session that would run without
+instructions is never started. It joins the pre-spawn validation refusals above: like them it is a
+*decision* the launch point makes, not a failure of the process it was about to start. No member was
+removed or re-spelled to make room for it.
+cit:([`SpawnAgentSessionResponse`], mcp/src/agents_remember/models/terminal.py:96-155) is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
 `label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`, and — since
 260821-ARSPAWN-L1 — `spawnedByKind`: `Literal["plane","ambient","unattributed"] | None`, the
@@ -138,6 +147,12 @@ of serving implementation code.
 - Nullable fields default to `None` so `_tool_payload(..., exclude_none=True)` can omit absent
   previous-owner/conflict data without failing validation.
 - `ok` and token metadata come from the inherited `ToolResponse` envelope.
+- **The per-run instruction mode is recorded, never inferred from an absent field.** `instructionMode`
+  (`dict[str, Any] | None`) carries the launch gate's own compact report — `capsule` with the compiled
+  digest, instruction count and byte size, or `legacy` with the named decision — so "ran without
+  instructions" is legible on the wire instead of being indistinguishable from "ran correctly". It is
+  additive and nullable for the same reason every other optional field here is: an older caller's
+  payload is unchanged, and the key is omitted rather than nulled.
 
 ### Todos
 
@@ -192,6 +207,18 @@ optional because ordinary task-binding, launch-selection, and seat outcomes do
 not manufacture ancestry evidence.
 
 ## Update History
+
+- 2026-09-17T10:40+02:00 — 260915-CAPS-L15 curator: **the spawn vocabulary gained a member and the
+  response gained the per-run mode record.** `capsule-unavailable` joins the status alias — the seat is
+  role-configured and its capsule could not be supplied, refused before any host side effect with the
+  stage and role named — and `SpawnAgentSessionResponse.instructionMode` carries the launch gate's own
+  compact report so a run's instruction mode is published rather than inferred from an empty field.
+  **Nothing was removed or re-spelled**: the vocabulary is additive, which is why no existing payload
+  changes shape. Added the matching invariant and re-anchored the two citation ranges this leaf's
+  insertions shifted (`SpawnAgentSessionStatus`, `SpawnAgentSessionResponse`). Verification metadata
+  moves to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed
+  closeout stamps the real code commit and no hash or fingerprint was invented here.
+
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `ProducedLiteralTests` repointed to mcp/tests/test_wire_vocabulary_exhaustiveness.py:58-58. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 

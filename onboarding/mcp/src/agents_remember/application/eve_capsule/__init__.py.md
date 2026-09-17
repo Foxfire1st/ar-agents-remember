@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/eve_capsule/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastUpdated | 2026-09-17T10:00+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -102,16 +103,20 @@ separator the reference itself uses.
   another binding is refused by name.
 - **No carrier is written on any refusal path.** A partially-written or best-effort carrier is the
   failure this ordering exists to prevent.
-- **The produce-side seam has no production caller yet.** `materialize_eve_binding` is referenced only
-  by its own definition, its `__all__` entry and `mcp/tests/eve_capsule_test_support.py`. Wiring a
-  production launch site that supplies the capsule is **leaf 15's** obligation
-  (`CAPS-R15@v1`), which received it as an explicit transfer (finding `L7R-4`), not a closure. Nothing
-  in this module should be read as that wiring existing.
+- **The produce-side seam now has a production caller** (since `260915-CAPS-L15`).
+  `application/role_capsules/launch.py::_compile_eve_task` calls `materialize_eve_binding` for a wired
+  launch point, so the carrier one bound eve runtime reads is produced by a production path rather than
+  only by `mcp/tests/eve_capsule_test_support.py`. That discharges the **produce** half of finding
+  `L7R-4` — a production caller exists and the consumer's own gate accepts the carrier it writes — but
+  it is **not** "a live eve seat runs with it": a dispatched eve seat still cannot start, because the
+  next refusal is the inherited settings-chain effort gate (**D22**, owner **L17**). Nothing in this
+  module changes for that; it needed no change for the wiring either.
 
 ### Todos
 
-The production launch-site wiring belongs to `CAPS-R15@v1` (leaf 15). This module is complete for its
-own side; it does not need to change for that wiring to be added.
+None for this module's own side. The **live-seat** half of the eve delivery story is the settings-chain
+gate (`D22`), owned by **L17**; the typed-absence end state **(A)** for a taskless admission is a
+successor obligation carried to the final-verification ledger. Neither requires an edit here.
 
 ## Docs References
 
@@ -128,10 +133,11 @@ was available for this file.
 | --- | --- | --- |
 | The one compiler and the one projection this module transports from, unchanged and not re-implemented. | `compile_task_capsule`; `CapsuleCompileRequest`; `resolve_task_projection_scope`; `project_task_context` | mcp/src/agents_remember/application/skill_resources/__init__.py; mcp/src/agents_remember/application/task_projection/__init__.py |
 | The carrier format and the environment names are declared in the models tier, so the producer and the consumer share one spelling. | `EveCapsuleCarrier`; `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-42; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231 |
-| The reader half that proves a carrier before a process exists, and the git-identity check behind it. | `verify_capsule_binding`; `_require_admitted_git_worktree` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527 |
+| The reader half that proves a carrier before a process exists, and the git-identity check behind it. | `verify_capsule_binding`; `_require_admitted_git_worktree` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; mcp/src/agents_remember/serving/eve_runtime_launch.py:518-546 |
 | The in-process reader that applies the carrier the launch verified. | `loadVerifiedCapsule`; `admitWritePath` | eve_runtime/agent/lib/capsule.ts:109-149; eve_runtime/agent/lib/capsule.ts:164-178 |
 | The focused cases over this module's refusals, including the unadmitted-surface and projection-disagreement refusals. | `test_materialize_refuses_an_unadmitted_surface_root`; `test_materialize_refuses_a_projection_that_disagrees_with_the_capsule` | mcp/tests/test_eve_capsule_binding.py:233-240; mcp/tests/test_eve_capsule_binding.py:282-295 |
-| The fixture world that supplies this module's real inputs, and the one place `materialize_eve_binding` is currently called. | `FixtureWorld`; `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:565-620 |
+| The fixture world that supplies this module's real inputs, and — before the wiring landed — the one place `materialize_eve_binding` was called. | `FixtureWorld`; `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:565-620 |
+| The production caller this seam now has, and the launch whose workspace is read back out of the carrier it writes. | `_compile_eve_task`; `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
 | The lifecycle catalog row registering the shared support module this seam's cases rest on, whose four declared consumers the loader re-derives from source. | `path = "mcp/tests/eve_capsule_test_support.py"` row | mcp/tests/evidence-lifecycle.toml:714-724 |
 
 ## Cross-Repo References
@@ -145,6 +151,17 @@ compiler it calls is AR's own.
 
 ## Update History
 
+- 2026-09-17T10:00+02:00 — 260915-CAPS-L15 curator: **the seam gained its production caller, so the
+  invariant that said it had none was corrected in place.** `application/role_capsules/launch.py::_compile_eve_task`
+  now calls `materialize_eve_binding` for a wired launch point, which discharges the **produce** half of
+  `L7R-4` (a production caller exists, and the consumer's own gate accepts the carrier it writes, from
+  the launch's own captured cwd and env — `E8`). The card states explicitly which half that is and which
+  it is not: a dispatched eve seat still cannot start (the inherited settings-chain effort gate, `D22`,
+  owner **L17**), so no reader takes the produce-side discharge for a live-seat one. The reader-half
+  citation was re-anchored for this leaf's insertions, and the fixture row no longer stands in as the
+  seam's only caller. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: created this card for the produce side of the
   capsule/workspace binding seam, added by this leaf's change set. Records the three shaping rules
   (admission precedes execution, one compiler, the admitted worktree rather than a re-derived path),

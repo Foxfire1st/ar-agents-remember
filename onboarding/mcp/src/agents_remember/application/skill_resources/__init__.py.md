@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/skill_resources/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
-| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
+| lastUpdated | 2026-09-17T10:20+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l4` uncommitted source; base `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
 | governingOverview | `../overview.md` |
 
@@ -34,7 +34,9 @@ A pure re-export surface, with one grouping decision that matters:
 
 - `capsule.py` — `compile_task_capsule`, `CapsuleCompileRequest`, `CapsuleSourceSelectionRequest`,
   `CapsuleCompileOutcome`, `routed_admission_request`, `admitted_tool_policy`, `capsule_payload`,
-  `COMPOSITION_MANIFEST`. It reads no caller-named path.
+  `COMPOSITION_MANIFEST`, and — added by `260915-CAPS-L15` — `CapsuleSeatAddress` and
+  `routed_admission_for`, the seat-addressed form of the same routing rule for a caller with no task
+  document and therefore no compile request to hand over. It reads no caller-named path.
 - `catalog.py` — `build_skill_catalog`, `read_served_file`, `require_servable`, `unreadable_skills`,
   `index_resource_meta`, `SkillSourceTree`, `ServedSkillFile`, `SkillCatalogError`.
 - `frontmatter.py` — `parse_skill_frontmatter`, `SkillFrontmatter`, `SkillFrontmatterError`.
@@ -65,6 +67,10 @@ those methods answer with.
   handlers, so the surfaces cannot disagree about what is served.
 - This package owns no permission decision: `admitted_tool_policy` reads the published roster and the
   compiler narrows requests against it.
+- **One routing rule, two addresses.** `routed_admission_request` (enclosure + task path) and
+  `routed_admission_for` (role + operation) are entry points to the *same* manifest selection; neither
+  may grow a selection rule of its own, and the launch path uses the second precisely so a taskless
+  seat cannot re-derive a source set.
 
 ### Todos
 
@@ -118,6 +124,16 @@ No cross-repository implementation dependency governs this package. The MCP SDK 
 against is a pinned external dependency (`mcp==1.29.1` at this leaf), not a sibling repository.
 
 ## Update History
+
+- 2026-09-17T10:20+02:00 — 260915-CAPS-L15 curator: **the re-export surface gained two names, and the
+  grouping entry now records why both routing addresses exist.** `CapsuleSeatAddress` and
+  `routed_admission_for` were added for the launch path: a seat with no task document has no
+  `CapsuleCompileRequest` to hand over and must still use the one manifest selection, so the second
+  entry point takes the two values that actually decide it. The invariant says explicitly that the two
+  are entry points to one rule. Verification metadata moves to this leaf's base `15fa0e2c`; the
+  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit and no
+  hash or fingerprint was invented here.
+
 
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: rewrote this card against the
   settled candidate. **Removed the rejection banner** — its subject was repaired by round 2 and round 3,

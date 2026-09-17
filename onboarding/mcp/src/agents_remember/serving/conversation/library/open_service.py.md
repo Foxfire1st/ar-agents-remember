@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/open_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `34f818a190c35238dca33552d586ea2ace5d9e06`|
-| lastVerifiedCommitDate |  2026-09-16T14:33:47+02:00|
+| lastUpdated | 2026-09-17T11:05+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,21 @@ harness, native identity, and bridge epoch.
 ## Code Commentary
 
 ### Logic
+
+**The one launch point left on the legacy chain — by declared decision (260915-CAPS-L15).**
+`LIBRARY_REOPEN_LEGACY_REASON` is a named module constant and the launch passes
+`legacy_launch_capsule(env.get("AR_SPAWN_ROLE"), LIBRARY_REOPEN_LEGACY_REASON)` explicitly, so a reader
+meets a decision with a reason instead of an absent field. The reason is **measured, not stylistic**:
+this route exists to reopen one exact native conversation and to prove the identity it resumed
+(`_settle_observation` compares `vendor == record.ref.vendor_conversation_id`), while L5's
+`_capsule_refresh_plan` resolves *any* resume this session did not itself open to `FRESH_THREAD`
+(dropping `threadId`). Delivering a capsule here would therefore convert the reopen into a fresh thread
+and destroy the identity proof the route exists for — trading one documented behaviour for another
+rather than adding one. The other two production launch points are wired; the enumeration case
+(`test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain`) fails if a site has
+neither disposition, and a dedicated case pins that this declaration names why. Owner of any future
+capsule-carrying reopen: the final-verification leaf, with the harness delivery leaves that own the
+thread lifecycle.
 
 `OpenOperationLedger` is a bounded (256) in-memory idempotence ledger keyed by (principal,
 requestId) with LRU terminal eviction and a hard refusal when full of live work. `open`
@@ -61,6 +76,11 @@ retirement rests at visible `retire-pending` and never fabricates a tombstone (r
   conversation, draft, focus, and scroll are never touched (there is no browser or Toad state
   in this service at all).
 - No durable conversation index and no in-place `switch_session` identity mutation (leaf R6).
+- **This route runs the legacy chain by declared decision, and the declaration is load-bearing.** The
+  reopen exists to prove the vendor identity it resumed; a capsule applied to a thread this session did
+  not open resolves through the installed protocol as a bounded fresh thread, which would destroy that
+  proof. `LIBRARY_REOPEN_LEGACY_REASON` is the record, and it is passed explicitly — never defaulted
+  into, and never silently omitted.
 
 ### Todos
 
@@ -86,7 +106,10 @@ outcome→status surface end-to-end.
 | Pre-launch polls stay pending, absent-row retirements report pending, and reconcile completes them for real. | `test_prelaunch_poll_stays_pending_then_real_mismatch_retires_for_real`; `test_absent_row_at_retire_reports_pending_and_reconcile_completes_it` | mcp/tests/test_conversation_library_open.py:283-350; mcp/tests/test_conversation_library_open.py:352-416 |
 | Codex resume-thread-id channel, kind guards, identical-replay absorb, and evicted changed-conversation ownership. | `test_codex_open_passes_resume_thread_id_through_the_channel`; `test_non_codex_open_never_carries_resume_thread_id`; `test_codex_open_with_invalid_resume_target_fails_typed`; `test_codex_kind_target_on_non_codex_record_is_rejected`; `test_identical_replay_after_eviction_absorbs_and_opens`; `test_evicted_changed_conversation_never_retires_foreign_session` | mcp/tests/test_conversation_library_open.py:449-483; mcp/tests/test_conversation_library_open.py:485-512; mcp/tests/test_conversation_library_open.py:514-530; mcp/tests/test_conversation_library_open.py:532-547; mcp/tests/test_conversation_library_open.py:594-636; mcp/tests/test_conversation_library_open.py:638-703 |
 | Idempotent replay, conflicts, stale digests, retirement, timeout reconcile, ledger bounds, and untouched foreign rows. | `test_open_proves_exact_identity_and_replays_idempotently`; `test_changed_fingerprint_conflicts_without_launching`; `test_stale_expected_digest_fails_before_launch`; `test_identity_mismatch_retires_and_reports`; `test_timeout_unknown_stays_reconcilable_and_opens_later`; `test_ledger_full_of_live_operations_refuses`; `test_ready_without_vendor_identity_stays_reconcilable_not_retired`; `test_existing_catalog_rows_are_never_touched` | mcp/tests/test_conversation_library_open.py:742-792; mcp/tests/test_conversation_library_open.py:794-834; mcp/tests/test_conversation_library_open.py:854-866; mcp/tests/test_conversation_library_open.py:900-934; mcp/tests/test_conversation_library_open.py:936-982; mcp/tests/test_conversation_library_open.py:984-1012; mcp/tests/test_conversation_library_open.py:1051-1078; mcp/tests/test_conversation_library_open.py:1080-1109 |
-| The tracked opener absorbs identical replays through the live catalog row and carries `resume_thread_id` codex-only. | `_live_open_result`; `_session_command`; `open_terminal_session`; "resume_thread_id = launch.control.resume_thread_id" | mcp/src/agents_remember/serving/terminal_opener.py:431-448; mcp/src/agents_remember/serving/terminal_opener.py:534-568; mcp/src/agents_remember/serving/terminal_opener.py:788-841 |
+| The tracked opener absorbs identical replays through the live catalog row and carries `resume_thread_id` codex-only. | `_live_open_result`; `_session_command`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:439-474; mcp/src/agents_remember/serving/terminal_opener.py:564-598; mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
+| The declared legacy decision this route makes, and the reason it cannot carry a capsule. | `LIBRARY_REOPEN_LEGACY_REASON`; `legacy_launch_capsule` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/src/agents_remember/serving/conversation/library/open_service.py:475-478 |
+| The refresh plan that makes a capsule-carrying reopen a fresh thread, which is why the exclusion is a real trade rather than a gap. | `_capsule_refresh_plan`; `FRESH_THREAD` | mcp/src/agents_remember/serving/capsule_delivery.py:1-531 |
+| The cases pinning the declaration and the launch-point enumeration. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:761-801 |
 
 
 ## Cross-Repo References
@@ -117,6 +140,20 @@ Idempotency, conflict detection and the minted session identity are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-09-17T11:05+02:00 — 260915-CAPS-L15 curator: **this route is the one launch point left on the
+  legacy chain, and the body now says so with its reason.** `LIBRARY_REOPEN_LEGACY_REASON` was added and
+  the launch passes `legacy_launch_capsule(...)` explicitly rather than defaulting into a capsule-less
+  launch. The measured reason is recorded: this route proves the vendor identity it resumed
+  (`_settle_observation`), while L5's refresh plan resolves any resume this session did not open to
+  `FRESH_THREAD` — so a capsule here would trade the identity proof for the instructions, which is a
+  behaviour decision rather than an oversight. Added the matching invariant and four reference rows, and
+  **re-anchored the three opener ranges this leaf's insertions shifted** (`_live_open_result`
+  431-448 → **459-476**, `_session_command` 534-568 → **564-598**, `open_terminal_session`
+  788-841 → **821-879**); the sanctioned per-document `citation_fix` is unreachable in a leaf worktree
+  (D14), so the ranges were re-read by hand against the candidate. Verification metadata moves to this
+  leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the
+  real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: **citation-range-only repair, no content impact.** This card's cross-file row cites three opener constructs, and the L5 candidate's insertion shifted all three (it added the capsule field and its docstring earlier in `terminal_opener.py`). Re-derived against the current tree: `_live_open_result` 386-403 → **431-448**, `_session_command` 489-522 → **534-568**, `open_terminal_session` 742-795 → **788-841**. The claim's wording is unchanged and still holds; the sanctioned per-document `citation_fix` could not be used (no published citation source-index generation for this contract), so the ranges were re-read by hand. Verification metadata unchanged.
 

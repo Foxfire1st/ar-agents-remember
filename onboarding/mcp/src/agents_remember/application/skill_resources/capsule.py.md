@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/skill_resources/capsule.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
-| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l4` uncommitted source; base `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
+| lastUpdated | 2026-09-17T10:15+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -36,7 +36,15 @@ Four steps, each of which can only refuse, in `compile_task_capsule`:
 1. `_enclosure` resolves the enclosure selector through the coordination-context resolver and loads
    the worktree contract. The **repository identity is read out of the resolved contract**, never
    taken from the caller, so the admitted facts and the task reference are anchored to the enclosure
-   that actually owns them.
+   that actually owns them. Since `260915-CAPS-L15` the root that resolution *uses* is resolved first
+   by `_declared_repository_root` — the caller's own value when it supplied one, otherwise
+   `code_repo_path` read out of the contract the request already names — because the **registered**
+   `role_capsule_compile` tool exposes no repository field at all and the coordination resolver refuses
+   without one (defect **D13**). The same resolved root travels onto `AdmittedEnclosure` and is what
+   `_projection` hands the task projection, so projection and admission resolve against one root
+   instead of two derivations; without that second half the projection refused
+   (`projection-binding-unresolved`) in any tree whose repository does not sit directly under the
+   workspace.
 2. `require_repo` gates the resolved repository against the server's authority
    (`repository-not-allowed` on refusal).
 3. `_admitted_facts` builds `CapsuleAdmittedFacts`: the role must be one of the frozen
@@ -55,7 +63,11 @@ Supporting decisions:
 
 - `routed_admission_request` reads the selection from the manifest, never from the caller: the shared
   core blocks this seat composes, its own role file, the operation's file, and the root file of every
-  skill it declares.
+  skill it declares. `routed_admission_for` is the same selection routine taking the two values that
+  actually decide it (`CapsuleSeatAddress`: role + operation), added by `260915-CAPS-L15` so a launch
+  with **no task document** — and therefore no `CapsuleCompileRequest` to hand over — still goes
+  through this one routing rule rather than re-deriving a source set. Both entry points share the
+  routine; neither is a second rule.
 - `_skill_root_source` admits `skills.<name>.source` as the path, and uses the declared `uri` only to
   check provenance (it must begin with `skill://<origin>/` and end in the skill's own name). It never
   re-derives a filesystem path from the URI.
@@ -91,6 +103,12 @@ seat and revision on a refusal too.
 - This module owns no compilation semantics: routing, dedup, conflict and digest rules belong to
   `models/role_capsules/**` and `application/role_capsules/**` (L2), and task projection to
   `application/task_projection/**` (L3).
+- **The repository root has one derivation per compile.** A caller-supplied `code_repository_root` wins
+  when present; otherwise the named contract's `code_repo_path` is the authority. Nothing re-derives a
+  root beside it, and the value the projection receives is the value the admission used.
+- **The registered tool's declared schema is load-bearing.** A schema that loses `contract_path` fails
+  the case that asserts it, because the resolution depends on it — the boundary must stay the surface
+  callers actually have, not a richer request object only tests can build (D13's own lesson).
 
 ### Todos
 
@@ -111,7 +129,11 @@ sources.
 | The seat is derived from the document's altitude and the role string is validated against it, never used as authority. | `_admitted_facts` | mcp/src/agents_remember/application/skill_resources/capsule.py:272-330 |
 | The admitted revision is the digest of the JSON bytes the task store handed over. | `capture_task_doc_source` | mcp/src/agents_remember/tasks/store.py:73-73 |
 | The role/altitude rule the operation checks against. | `TaskDocumentTopology`; `validate_role` | mcp/src/agents_remember/tasks/document_refs.py:87-87; mcp/src/agents_remember/tasks/document_refs.py:250-250 |
-| Selection comes from the manifest, and the declared skill `source` is the admitted path while the `uri` is provenance. | `routed_admission_request`; `_skill_root_source` | mcp/src/agents_remember/application/skill_resources/capsule.py:439-509 |
+| Selection comes from the manifest, and the declared skill `source` is the admitted path while the `uri` is provenance. | `routed_admission_request`; `_skill_root_source` | mcp/src/agents_remember/application/skill_resources/capsule.py:491-512; mcp/src/agents_remember/application/skill_resources/capsule.py:557-586 |
+| The seat-addressed form of the same routing rule, for a caller with no task document. | `CapsuleSeatAddress`; `routed_admission_for` | mcp/src/agents_remember/application/skill_resources/capsule.py:174-184; mcp/src/agents_remember/application/skill_resources/capsule.py:515-554 |
+| D13's repair: the root read out of the contract the request names, and carried onto the enclosure so the projection uses the same one. | `_declared_repository_root`; `AdmittedEnclosure`; `AdmittedEnclosure.code_repository_root`; `_projection` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202; mcp/src/agents_remember/application/skill_resources/capsule.py:262-289 |
+| The registered boundary the repair makes usable, and the case that fails if the declared schema loses the field the resolution depends on. | `role_capsule_compile_tool`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` | mcp/src/agents_remember/application/skill_resources/operation.py:1-120; mcp/tests/test_capsule_launch_wiring.py:975-1022 |
+| The launch compiler that consumes the seat-addressed routing entry point for a taskless seat. | `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
 | The tool policy is a snapshot of the published roster, so a capsule requests tools and never grants them. | `admitted_tool_policy` | mcp/src/agents_remember/application/skill_resources/capsule.py:394-409 |
 | The advertised roster the tool policy snapshots. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-90 |
 | The corpus root, its manifest and its publishing origin travel together as one admission. | `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:50-63 |
@@ -126,6 +148,19 @@ sibling repository.
 
 ## Update History
 
+- 2026-09-17T10:15+02:00 — 260915-CAPS-L15 curator: **this operation became usable through its own
+  registered surface, and gained a seat-addressed routing entry point.** D13's repair is recorded in
+  the body where the resolution happens: `_declared_repository_root` reads the repository root out of
+  the contract the request already names (the registered tool exposes no repository field), and the
+  same root travels onto `AdmittedEnclosure` so `_projection` resolves against one root rather than
+  re-deriving one — the second half without which the projection refused
+  `projection-binding-unresolved` off the workspace-nested layout. Added `CapsuleSeatAddress` +
+  `routed_admission_for` as the same selection routine addressed by the two values that decide it, for
+  a launch with no task document. Two invariants added (one derivation per compile; the registered
+  schema is load-bearing) and five reference rows. Re-anchored the two rows this leaf's insertions
+  shifted. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is deliberately
+  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint was
+  invented here.
 - 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the new capsule operation.
   Recorded the seat-from-document admission rule (the role string is checked, never authoritative),
   the manifest-routed source set (no caller-named path), the store-handed admitted revision, the

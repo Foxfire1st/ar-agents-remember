@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
+| lastUpdated | 2026-09-17T09:55+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -135,6 +135,55 @@ worker and drive every fixture on the synchronous path"): the MCP tools now driv
 door adapter and the `application/lifecycle/legacy_operation_tool.py`,
 `lifecycle_enclosure_tools.py` and `lifecycle_status_wait.py` entry points were deleted by the same
 cut. There is no detached worker composition root or worker-execution mode on this route.
+
+## 260915-CAPS-L15 The Launch Compiler Connects This Route To Production
+
+**Route meaning changed: this route gained the member that makes the capsule chain exist in
+production.** Before it, the compiler (L2), the admission/MCP surface (L4), the Codex carrier (L5) and
+the eve carrier (L7) were each individually proven and **no production launch point supplied a capsule
+to any session** — a dispatched seat and a free agent both launched with no instructions, and every
+green test hand-supplied the intermediate value.
+
+`application/role_capsules/launch.py` is the new member. It adds **no second routing rule**: a
+task-attached seat goes through `compile_task_capsule` — the same operation the registered
+`role_capsule_compile` MCP tool answers — and a taskless seat through `compile_admitted_capsule` with
+the source set built by `routed_admission_for`, the same manifest rule `routed_admission_request` uses.
+The operation is `orientation`, the registered operation's own default. It is reached from the
+`serving`-rank launch points through the `LaunchCapsuleResolver` port (`serving/launch_capsule.py`),
+filled at the composition root, because `serving` (17) may not import `application` (21) — the same
+precedent `register_inbox_execution_evidence` set. The edge count between those layers is **0** and
+stays 0.
+
+Three facts a reader of this route needs:
+
+1. **The free agent's absent task plane is minted here, once.** `FreeAgentSeatAdmission` is the only
+   producer of a taskless `CapsuleAdmittedFacts`; the frozen DTO has no typed absence (all four identity
+   fields are non-blank strings), so the absence is *named* — `task_reference = "free-agent:<role>"` —
+   and deliberately does not parse as a task reference, so the task layer's own parser refuses it
+   loudly rather than resolving it to a document that does not exist. The digest covers the admission
+   the launch actually performed. This is convention **(B)** from the leaf's ruling; the typed-absence
+   end state **(A)** is a successor obligation carried to the final-verification ledger, not done here.
+2. **D13's second half lives in `skill_resources/capsule.py`.** The repair reads the code repository
+   root out of the enclosure contract the caller already names (`_declared_repository_root`) — the
+   registered tool exposes no repository field, so the contract is the authority rather than a second
+   value smuggled in beside it — and carries the same resolved root onto `AdmittedEnclosure` so the task
+   projection resolves against it instead of re-deriving (or failing to derive) one of its own. Without
+   that second half the projection refused with `projection-binding-unresolved` in any tree whose
+   repository does not sit directly under the workspace.
+3. **`skill_resources` gained a seat-addressed routing entry point**, `CapsuleSeatAddress` +
+   `routed_admission_for`, for a caller that has no task document and therefore no
+   `CapsuleCompileRequest` to hand over — and must still use the one routing rule.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. | `compile_launch_capsule`; `_compile_admitted_task`; `_compile_free_agent` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:297-360; mcp/src/agents_remember/application/role_capsules/launch.py:407-448 |
+| The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it. | `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
+| The free agent's named absence and its own content address; the only producer of a taskless admitted-facts value. | `FreeAgentSeatAdmission`; `free_agent_seat_admission`; `workspace_identity` | mcp/src/agents_remember/application/role_capsules/launch.py:126-196; mcp/src/agents_remember/application/role_capsules/launch.py:199-230; mcp/src/agents_remember/application/role_capsules/launch.py:233-247 |
+| D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root`; `_projection`; `_enclosure` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202; mcp/src/agents_remember/application/skill_resources/capsule.py:262-289; mcp/src/agents_remember/application/skill_resources/capsule.py:364-417 |
+| The seat-addressed routing rule and its address type, for a caller with no task document. | `CapsuleSeatAddress`; `routed_admission_for`; `routed_admission_request` | mcp/src/agents_remember/application/skill_resources/capsule.py:174-184; mcp/src/agents_remember/application/skill_resources/capsule.py:515-554; mcp/src/agents_remember/application/skill_resources/capsule.py:491-512 |
+| The declared exports that make the new names this route's public surface. | `CapsuleSeatAddress`; `routed_admission_for` | mcp/src/agents_remember/application/skill_resources/__init__.py:20-31; mcp/src/agents_remember/application/skill_resources/__init__.py:66-95 |
+| The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. | `role_capsule_compile_tool`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` | mcp/src/agents_remember/application/skill_resources/operation.py:1-120; mcp/tests/test_capsule_launch_wiring.py:975-1022 |
+| The two production launch points that reach this member through the port. | `_spawn_launch_request`; `_open_terminal_response`; `resolve_launch_capsule` | mcp/src/agents_remember/application/terminal_tools.py:740-784; mcp/src/agents_remember/serving/_app_terminal_routes.py:239-348; mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
 
 ## Purpose
 
@@ -661,9 +710,15 @@ The load-bearing boundary for a reader of this route:
 
 **The seam's other half is not in this route.** The format is `models/eve_capsule_carrier.py`; the
 launch-time proof is `serving/eve_runtime_launch.py::verify_capsule_binding`; and the in-process reader
-is `eve_runtime/agent/lib/capsule.ts`. **The produce side has no production caller yet** — the only
-caller is the test fixture — and wiring a production launch site is `CAPS-R15@v1`'s obligation, which
-received it by explicit transfer rather than closure.
+is `eve_runtime/agent/lib/capsule.ts`. **The produce side now has a production caller** (since
+`260915-CAPS-L15`): `application/role_capsules/launch.py::_compile_eve_task` calls
+`materialize_eve_binding` for a wired launch point, and the carrier it writes is verified by the
+runtime's own gate from the launch's own captured cwd and env, then read at the live runtime's system
+block (`notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt`). The `L7R-4` transfer
+that asked for this is therefore discharged on the **produce** side — "the produce side has a
+production caller, verified at the consumer's gate" — while the **live-seat** half for a dispatched eve
+seat still waits on the inherited settings-chain gate (**D22**, owner **L17**). The test fixture is no
+longer the only caller, and neither half should be read as the other.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -671,10 +726,27 @@ received it by explicit transfer rather than closure.
 | The projection agreement check that makes the re-derivation a check rather than a second opinion. | `_admitted_projection`; `_require_matching_task_context` | mcp/src/agents_remember/application/eve_capsule/__init__.py:228-279 |
 | The role-authority write surfaces and the smallest-set fallback. | `write_scopes_for`; `ROLE_WRITE_SURFACES` | mcp/src/agents_remember/application/eve_capsule/__init__.py:79-93; mcp/src/agents_remember/application/eve_capsule/__init__.py:327-365 |
 | The capsule surface this package consumes and does not re-implement. | `compile_task_capsule` | mcp/src/agents_remember/application/skill_resources/__init__.py |
-| The launch-time proof and the in-process reader that consume the carrier this route produces. | `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; eve_runtime/agent/lib/capsule.ts:109-149 |
-| The one current caller, which is a test fixture — the produce side's missing production caller. | `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:565-620 |
+| The launch-time proof and the in-process reader that consume the carrier this route produces. | `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; eve_runtime/agent/lib/capsule.ts:109-149 |
+| The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits. | `_compile_eve_task`; `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
+| The test fixture that supplied this seam's inputs before a production caller existed. | `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:565-620 |
+| The production-chain evidence: the consumer's own gate accepts the launch point's carrier, and the live runtime's system block carries it. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
 
 ## Update History
+
+- 2026-09-17T09:55+02:00 — 260915-CAPS-L15 curator: **the produce side gained the production caller this
+  route recorded as missing, so the body was corrected rather than annotated.** The L7 section's closing
+  paragraph said "the produce side has no production caller yet — the only caller is the test fixture"
+  and routed the wiring to `CAPS-R15@v1`. That wiring now exists:
+  `application/role_capsules/launch.py::_compile_eve_task` calls `materialize_eve_binding` for a wired
+  launch point, the runtime's **own** gate accepts the carrier from the launch's own captured cwd and env,
+  and the live runtime's system block carries it (`E8`). The paragraph now states which half of the
+  `L7R-4` transfer is discharged — **the produce side has a production caller, verified at the
+  consumer's gate** — and which half is not: a dispatched eve seat still cannot start, because the next
+  refusal is the inherited settings-chain gate (`D22`, owner **L17**). The reference table gained the
+  production caller, the production-chain evidence row, and the corrected `verify_capsule_binding` range,
+  and the fixture row no longer stands in for the missing caller. Verification metadata moves to this
+  leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the
+  real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained `eve_capsule/`, the **produce
   side** of the eve capsule/workspace binding seam, recorded in the new

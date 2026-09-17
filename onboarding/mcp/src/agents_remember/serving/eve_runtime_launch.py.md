@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/eve_runtime_launch.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastUpdated | 2026-09-17T09:45+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +41,20 @@ tried**; it is never silently replaced by a different application.
 `stage_runtime_root` gives one epoch its own application directory with the installed dependencies
 symlinked, because eve resolves its application root from the process working directory and keeps one
 development server per resolved root — two live runtimes of the same authored application collide
-without it. Staging is idempotent, which is what lets an epoch restart without rebuilding its tree.
+without it. Staging the same **complete** destination twice is idempotent, which is what lets an epoch
+restart without rebuilding its tree.
+
+**The install is checked before anything is copied (defect D20, repaired by 260915-CAPS-L15).** Staging
+used to copy the application surface first and only then discover that the runtime's dependencies were
+missing, so a refused launch left a half-staged directory behind and the **next** staging call in the
+same process found it populated and returned early — passing without the install. A refusal a retry can
+turn into a pass is not a refusal. Now the `source/node_modules` check happens before `destination` is
+touched, so a second call refuses identically and by name, and the early return is guarded by
+`_staged_application(destination)`, which requires **both** halves — the authored surface *and* the
+dependency link — so a half-staged tree is repaired rather than trusted. The measured shape of the
+defect is the reason it matters: L16's environment-gated failures were not stable (which case failed,
+and how many, moved between runs) because whichever case staged first paid the refusal and every later
+stager in that process passed.
 
 `resolve_runtime_spec` builds the `EveRuntimeLaunch` and carries the **caller's interpreter choice
 verbatim** as `node_executable` (`AR_EVE_NODE`). Reading the selector here rather than at spawn is what
@@ -131,6 +145,9 @@ the dashboard needs or advertising a model nothing would use.
   honoured at resolution and the interpreter is carried onto the launch; both are then popped from the
   child environment so the process cannot re-resolve itself elsewhere. Documenting them without
   reading them is the defect this rule exists to prevent.
+- **A refusal is not undoable by a retry (D20).** The dependency install is checked before the
+  destination is touched, and the idempotent early return requires a complete staged application
+  (surface **and** dependency link). A half-staged destination is repaired, never trusted.
 - **The launch carries the interpreter the caller asked for.** A resolved spec's `node_executable` is
   whatever `AR_EVE_NODE` named (or `None` when unset); the search and its refusal happen at spawn, not
   here.
@@ -168,9 +185,11 @@ pass was available for this file.
 | The launch knobs are AR's existing capability-port type, which is why eve participates in the same launch-vocabulary contract as the other harnesses. | `LaunchKnobs` | mcp/src/agents_remember/serving/harness_capabilities.py:136-148 |
 | The declared pins and the operator-facing environment contract are documented beside the application they govern. | `dependencies`; environment table | eve_runtime/package.json:14-20; eve_runtime/README.md:10-46 |
 | The authored application applies the binding this module carries at `session.started`, and the channel's own AR binder is the route gate that refuses an unbound launch before any model work. | `defineDynamic`; `arCapsuleAuth`; `verifyAdmittedWorkspace` | eve_runtime/agent/instructions/ar-binding.ts:1-48; eve_runtime/agent/channels/eve.ts:1-62 |
-| The launch-time proof itself, and the git-identity requirement behind it, whose six refusals each name their defect. | `verify_capsule_binding`; `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527; mcp/src/agents_remember/serving/eve_runtime_launch.py:529-560 |
+| The launch-time proof itself, and the git-identity requirement behind it, whose six refusals each name their defect. | `verify_capsule_binding`; `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; mcp/src/agents_remember/serving/eve_runtime_launch.py:518-546; mcp/src/agents_remember/serving/eve_runtime_launch.py:548-570 |
 | The carrier format and environment names this module verifies against, declared in the models tier so the reader and the writer share one spelling. | `EveCapsuleCarrier`; `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV`; `CAPSULE_PATH_ENV`; `carrier_digest` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-42; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-291 |
-| The produce side of the same seam, which writes the carrier this module reads — and which still has no production caller. | `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206 |
+| The D20 repair: the install is checked before the destination is touched, and the early return requires a complete staged application. | `stage_runtime_root`; `_staged_application` | mcp/src/agents_remember/serving/eve_runtime_launch.py:228-272; mcp/src/agents_remember/serving/eve_runtime_launch.py:274-286 |
+| The case pinning the repaired refusal: a first refusing call followed by a second in the same process refuses identically. | `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:1028-1059 |
+| The produce side of the same seam, which writes the carrier this module reads — and which **now has a production caller**: `application/role_capsules/launch.py::_compile_eve_task` materializes it for a wired launch point, verified from the consumer's side by `E8`. | `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
 | The cases pinning the launch-time verification in both directions, including a workspace checked out on another branch. | `test_launch_verification_accepts_the_admitted_capsule`; `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:355-362; mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
 | The adapter is the only consumer that resolves a spec, hands it to a transport, and verifies the effective selection it produced. | `EveSessionAdapter._resolve_spec`; `_verify_effective_selection` | mcp/src/agents_remember/serving/eve_adapter.py:660-700; mcp/src/agents_remember/serving/eve_adapter.py:892-904 |
 | The factory recovers the applied selection by probing a `LaunchSpec` through this module's reader, so the values that reached the child are the ones verified. | `_eve_expected_selection`; `launch_spec_selection` | mcp/src/agents_remember/serving/harness_control_factories.py:165-186; mcp/src/agents_remember/serving/eve_runtime_launch.py:391-418 |
@@ -178,7 +197,7 @@ pass was available for this file.
 | The runtime's own model fallback, read from the authored application rather than mirrored as a constant. | `runtime_default_model`; `AGENT_SOURCE`; `MODEL_FALLBACK_PATTERN` | mcp/src/agents_remember/serving/eve_runtime_launch.py:62-62; mcp/src/agents_remember/serving/eve_runtime_launch.py:80-80; mcp/src/agents_remember/serving/eve_runtime_launch.py:269-300 |
 | The capability catalog consumes this fallback so a pre-session read names the model the runtime would really use. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
 | The case pinning that the advertised model is the one the runtime would use. | `test_the_advertised_model_is_the_one_the_runtime_would_use` | mcp/tests/test_eve_product_integration.py:985-997 |
-| The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses. | `_knob_values`; `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:173-187; mcp/tests/test_harness_launch.py:189-200 |
+| The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses. | `_knob_values`; `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:173-187; mcp/tests/test_harness_launch.py:189-196 |
 | The OS-level start-failure seed is an operator naming a nonexistent `AR_EVE_NODE`, which only fails because this module reads the selector as given. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:98-116; mcp/tests/live_eve_native_fixture.py:1847-1862 |
 
 ## Cross-Repo References
@@ -189,6 +208,21 @@ pass was available for this file.
 
 ## Update History
 
+- 2026-09-17T09:45+02:00 — 260915-CAPS-L15 curator: **the staging fail-open is repaired, and the
+  produce side now has a production caller.** The `stage_runtime_root` paragraph was corrected rather
+  than appended to: it previously said staging "is idempotent", which was exactly the D20 fail-open —
+  the install was checked **after** the surface was copied, so a refused first call left a half-staged
+  destination and the next call in the same process returned early and passed. The body now records the
+  repaired rule (install checked before the destination is touched; the early return requires
+  `_staged_application`, i.e. surface **and** dependency link) and why it matters (L16's
+  environment-gated failures were not stable because whichever case staged first paid the refusal). Added
+  the matching invariant and two reference rows, and **corrected the produce-side row**: the row said
+  `materialize_eve_binding` still has no production caller, which the candidate falsifies —
+  `application/role_capsules/launch.py::_compile_eve_task` is one, verified from the consumer's side by
+  `E8`. Re-anchored the three `verify_capsule_binding` / `_require_admitted_git_worktree` /
+  `_read_git_head` ranges this leaf's insertions shifted. Verification metadata moves to this leaf's base
+  `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the launch path now proves the binding it
   carries, before a process exists.** `verify_capsule_binding` was added and is called first in
   `resolve_runtime_spec` — ahead of staging an application root or reserving a port — so a launch that

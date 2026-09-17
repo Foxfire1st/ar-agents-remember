@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-15T13:57+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastUpdated | 2026-09-17T10:30+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -90,7 +90,31 @@ as every other durable control-plane store; no second endpoint, alias, history l
 is introduced, and nothing in this composition grants health any catalog, closeout, queue or
 task-authoring authority.
 
+## 260915-CAPS-L15 Capsule-Compiler Composition
+
+`_build_serving_runtime` copies `collaborators.capsule_launch` onto
+`_ServingRuntime.capsule_launch`. This file composes; it does not construct the compiler and does not
+know what it is beyond the port type — the composition root (`cli/dashboard.py::serving_collaborators`)
+binds the `application`-rank callable, because `serving` may not import that tier. The consequence is
+deliberate: a dashboard app whose collaborator record omits the port still builds, and its launch route
+then **refuses** a role-configured launch by name rather than opening a seat with no instructions.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one line that places the capsule-compiler port on the serving runtime. | `_build_serving_runtime`; `ServingCollaborators.capsule_launch` | mcp/src/agents_remember/serving/app.py:242-246; mcp/src/agents_remember/serving/_app_common.py:455-462 |
+| The composition root that binds the real compiler into the collaborator record every `create_app` call uses. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-83 |
+| The gate whose behaviour the port's presence decides. | `resolve_launch_capsule` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
+
 ## Update History
+
+- 2026-09-17T10:30+02:00 — 260915-CAPS-L15 curator: `_build_serving_runtime` now threads the
+  capsule-compiler port from the collaborator record onto the serving runtime, so the dashboard's one
+  launch route can reach an `application`-rank callable without importing that tier. Added a
+  current-intent section (composition, not construction; an omitted port refuses by name rather than
+  launching capsule-less) and the matching reference rows. Verification metadata moves to this leaf's
+  base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real
+  code commit and no hash or fingerprint was invented here.
+
 
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
   base `99534dc5`, `app.py` +11/−1): the composition gained the observer-health seam, so a

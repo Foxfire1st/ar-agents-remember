@@ -6,14 +6,47 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [MCP package overview](../overview.md)
+
+## 260915-CAPS-L15 Launch-Wiring Test Population
+
+One new module, `mcp/tests/test_capsule_launch_wiring.py`, **14 cases**, and it is the acceptance test
+this master lacked: every earlier capsule case hand-supplied the intermediate value, so none of them
+could have failed if no production launch point supplied a capsule at all. This module drives the
+production path and reads the artifact from the **consumer's own side**.
+
+| Case group | What it pins |
+| --- | --- |
+| the acceptance pair | a task-attached seat through the spawn primitive, and a free agent (`bootstrap`, no task document) through the dashboard route — the runner argv the launch point itself built is parsed back out of the base64 the child would exec, the real runner preparation and adapter factory run, and the capsule is read from the session's own `thread/start`, compared against the compiler's own result |
+| the production-chain pair (fix round 1) | the route's own `TerminalSessionSpec` (cwd **and** env) fed to `parse_runner_config` → `_prepare_controlled_launch` → `launch_spec_binding` → `verify_capsule_binding`, and the spawn side's agreement with its own capsule — **replacing a deleted hand-supplied case** (`L15R-2`'s evidence class) |
+| the mode gate and the refusals | every seat class's answer, and an un-compilable role refusing by name with `host.ensured == []` |
+| behaviour 6 | the capsule-free payload byte-identical to the pre-capsule one |
+| the payload bound (`D12`) | exactly one `trustedInstructions` key, and no task context in argv |
+| the enumeration guard | every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the site **set** cannot change silently |
+| `D13` / `D20` | the registered operation resolves a repository through its declared schema; a first refusing stage refuses again in the same process |
+| the free agent's admission | the named absence, and an identity that moves with the seat |
+
+Its lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:19`) — the cases run in process
+with the vendor boundary recorded and the tmux host doubled — and it made three governed artifacts gain
+a consumer row, which is why `evidence-lifecycle.toml`'s byte pin moved at this leaf's tip without any
+population changing. **The live system-block half of the evidence is not here**: it is
+`notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt`, which starts a real eve runtime
+from the production chain's own captured cwd and env.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The acceptance pair, read out of each started session's own first prompt. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | mcp/tests/test_capsule_launch_wiring.py:483-526; mcp/tests/test_capsule_launch_wiring.py:529-574 |
+| The production-chain pair that replaced the hand-supplied case. | `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts`; `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace` | mcp/tests/test_capsule_launch_wiring.py:816-872; mcp/tests/test_capsule_launch_wiring.py:874-918 |
+| The refusal before any host effect, the mode gate, the byte-identical legacy payload, the single-carrier bound and the site enumeration. | `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`; `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class`; `test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload`; `test_the_delivered_payload_carries_the_capsule_once_and_no_task_context`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:577-607; mcp/tests/test_capsule_launch_wiring.py:615-657; mcp/tests/test_capsule_launch_wiring.py:659-710; mcp/tests/test_capsule_launch_wiring.py:712-759; mcp/tests/test_capsule_launch_wiring.py:761-801 |
+| The declared legacy exclusion, the free agent's admission, and the two defect pins. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema`; `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:919-944; mcp/tests/test_capsule_launch_wiring.py:945-968; mcp/tests/test_capsule_launch_wiring.py:975-1022; mcp/tests/test_capsule_launch_wiring.py:1028-1059 |
+| The production-chain evidence the module's in-process cases complement. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
 
 ## 260915-CAPS-L5 Codex Capsule-Delivery Test Population
 
@@ -396,7 +429,18 @@ every previously-latest unit-regression row, so every manifest line at or after 
 `test_serving_observation_loop.py` `:97` → `:98`, `test_serving_startup_prime.py` `:98` → `:99`, L17's
 `test_terminal_observer_health.py` `:122` → `:123`, and every later lane key with them. The 59 live
 citations into the manifest were therefore re-derived against the current file rather than carried, and
-the dated `## Update History` entries below were left as written because they are as-of records of earlier
+the dated `## Update History
+
+- 2026-09-17T11:20+02:00 — 260915-CAPS-L15 curator: the suite gained one module, 14 cases, and this
+  card records what it is *for* rather than only that it exists: the acceptance test the master lacked,
+  driving both production launch points and reading the capsule from each started session's own first
+  prompt, with the expected side being the compiler's own result. A declared section lists the case
+  groups — including the production-chain pair that **replaced a deleted hand-supplied case**
+  (`L15R-2`'s evidence class) — and states where the live system-block half of the evidence lives
+  instead. Five reference rows added. Verification metadata moves to this leaf's base `15fa0e2c`; the
+  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit and no
+  hash or fingerprint was invented here.
+` entries below were left as written because they are as-of records of earlier
 candidates. No case budget is quoted or changed here: `pyproject.toml` is the authority, and this leaf
 adds no collected case to any capped population.
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -542,6 +542,46 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 ## Hot Path Summary
 
 The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
+
+## 260915-CAPS-L15 Launch-Path Capsule Delivery Route Impact
+
+**Route meaning changed for the launch path this package serves, so this card carries a real route
+impact rather than a bare `No route impact` marker.** The master built and individually proved every link
+of the capsule chain — the compiler (L2), the admission/MCP surface (L4), the Codex instruction seam
+(L5), the eve carrier (L7) — and **no production launch point supplied a capsule to any session**. Two
+of the three production launch points are now wired, and the third is a declared exclusion with its
+reason:
+
+| Launch point | State | What supplies the instructions |
+| --- | --- | --- |
+| `application/terminal_tools.py::_spawn_launch_request` (the primitive `dispatch_agent` drives) | **wired** | the capsule compiled at the launch from the role and the admitted binding, on the launch request; `instructionMode` published per run; `capsule-unavailable` refuses by name before any host side effect |
+| `serving/_app_terminal_routes.py::_open_terminal_response` (the dashboard opener — the only production point that starts a **free agent**) | **wired** | the same gate through the injected application-rank port; HTTP 400 `capsule-unavailable`; `instructionMode` on the response |
+| `serving/conversation/library/open_service.py` (the library reopen) | **declared-excluded** | `LIBRARY_REOPEN_LEGACY_REASON` — the route proves the vendor identity it resumed, and a capsule would resolve as a fresh thread |
+
+**The launch runs where its capsule admits.** The admitted workspace is read back out of the carrier the
+runtime re-verifies, so the session cwd, the settings selection the runner itself requires to equal the
+cwd, and the child's `AR_WORKSPACE_ROOT` are **one value** — no launch may be described as running at the
+server's workspace root unconditionally any more.
+
+**Two limitations carried, not smoothed.** A role-configured **eve** seat still cannot be dispatched:
+the capsule gate passes and the next refusal is the inherited settings-chain effort gate (`D22`, owner
+**L17**). And the dashboard route cannot start the *shipped* eve row (it does not set
+`session_backend`), which is pre-existing and also **L17**'s.
+
+**The D13 repair is on this package's registered surface.** `role_capsule_compile` now resolves a
+repository through the schema it actually registers, and a case fails if that schema loses the field the
+resolution depends on. The evidence for both halves is
+`notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt` and
+`mcp/tests/test_capsule_launch_wiring.py`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one decision point every launch point calls, with its three answers and named refusals. | `resolve_launch_capsule`; `LaunchCapsuleMode` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:73-80 |
+| The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
+| The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
+| D13's repair, on the registered operation's own resolution path. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202 |
+| The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. | `LIBRARY_REOPEN_LEGACY_REASON`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/tests/test_capsule_launch_wiring.py:761-801 |
+| The production chain read at the consumer's own gate and at the live runtime's system block. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
 
 ## 260915-CAPS-L6 Native eve Session Adapter Route Impact
 
@@ -1484,6 +1524,18 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## Update History
+
+- 2026-09-17T11:15+02:00 — 260915-CAPS-L15 curator: **route impact recorded rather than a no-impact
+  marker.** The launch path this package serves changed meaning: two of the three production launch
+  points now compile and supply the capsule (the spawn primitive and the dashboard opener), the third is
+  a declared exclusion with its measured reason, the launch runs where its capsule admits (one workspace
+  value across cwd, settings selection and `AR_WORKSPACE_ROOT`), and the D13 repair makes the registered
+  `role_capsule_compile` surface usable. Two limitations are carried with their owner (`D22`'s eve
+  dispatch gate and the dashboard route's `session_backend` gap, both **L17**) so no reader takes the
+  wired path for an eve seat launching end to end. Six reference rows added. Verification metadata moves
+  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
+
 
 - 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
   base `b00a4ac2`): corrected this route's top-level inventory claim — the ordered `PUBLIC_TOOLS`

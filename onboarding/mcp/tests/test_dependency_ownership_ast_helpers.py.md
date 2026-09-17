@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastUpdated | 2026-09-17T10:05+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,20 +27,26 @@ evidence artifact, and leaves the catalog closed over the governed inventory.
 
 An explicitly supported input with no consumers remains complete with a verified no-consumer decision. Unknown input is incomplete. A declared consumer is selected without global invalidation and carries the declared-consumer reason.
 
-**The catalog pin is a byte contract at one tip, and this leaf is the one that re-pinned it.**
-`LIFECYCLE_ARTIFACT_COUNT` and `LIFECYCLE_CATALOG_SHA256` pin `mcp/tests/evidence-lifecycle.toml` by
-population and digest, and `LOCR-R26@v1`'s doctrine is that any further catalog change must re-pin them
-**deliberately**, at its own tip, with the reason recorded. The pin had fallen behind the file: at the
-convergence merge the catalog already read 4 contracts / 50 artifacts while the pin still said 45,
-because the merge carried the landed 260831-LOCR line's governed artifacts in without a re-pin, and
-260915-CAPS-L13 then moved the file again. That stale pin was the single pre-existing integration
-failure every candidate cut from the master tip inherited — not any leaf's finding. This leaf
-re-derived the value at its own tip (`8997e184`, where the catalog is **4 contracts / 51 artifacts**
-because 260915-CAPS-L7's landing added the fifty-first row), re-pinned count `45 → 51` and digest
-`293a187f… → 812211e9…`, and extended the constant's docstring into the **second** deliberate re-pin
-record, naming each intermediate state. The proof's own artifact delta is still exactly empty: this
-leaf registered no artifact and added no consumer, so the freeze still forbids the proof adding or
-widening anything.
+**The catalog pin is a byte contract at one tip, and it has now been re-pinned deliberately three
+times.** `LIFECYCLE_ARTIFACT_COUNT` and `LIFECYCLE_CATALOG_SHA256` pin
+`mcp/tests/evidence-lifecycle.toml` by population and digest, and `LOCR-R26@v1`'s doctrine is that any
+further catalog change must re-pin them **deliberately**, at its own tip, with the reason recorded. The
+pin had fallen behind the file: at the convergence merge the catalog already read 4 contracts / 50
+artifacts while the pin still said 45, because the merge carried the landed 260831-LOCR line's governed
+artifacts in without a re-pin, and 260915-CAPS-L13 then moved the file again. That stale pin was the
+single pre-existing integration failure every candidate cut from the master tip inherited — not any
+leaf's finding. 260915-CAPS-L16 re-derived it at its own tip (`8997e184`, where the catalog is **4
+contracts / 51 artifacts** because 260915-CAPS-L7's landing added the fifty-first row), re-pinning
+count `45 → 51` and digest `293a187f… → 812211e9…`.
+
+**The third deliberate re-pin is `260915-CAPS-L15`'s, and it changed no population.** This leaf added
+**consumer rows only** — `mcp/tests/test_capsule_launch_wiring.py` became an importer of three governed
+artifacts through the shared test support it reaches — so the populations are unchanged at **4
+contracts / 51 artifacts** and the digest moved `812211e9… → 3342a249…`. Nothing was registered, no row
+was removed, and no artifact's identity moved: the constant's docstring carries the third record, naming
+what actually changed (consumer proofs, not the inventory), which is the same shape 260915-CAPS-L7 used
+when its own module became a consumer. The value is re-derived at this leaf's tip (`15fa0e2c` plus its
+own dirty candidate), never borrowed from another base.
 
 ### Conventions
 
@@ -53,7 +60,11 @@ No inferred full-suite population repairs an ownership gap. This retained test d
   catalog last pins the value at its own tip; it is re-derived, never borrowed, and a leaf that edits
   the catalog without re-pinning hands the next candidate a red.
 - **The re-pin is a byte contract, not a closure.** The pinned value is correct at this tip and only at
-  this tip: any later leaf that changes `mcp/tests/evidence-lifecycle.toml` must re-pin again.
+  this tip: any later leaf that changes `mcp/tests/evidence-lifecycle.toml` must re-pin again. This
+  leaf's own re-pin is the proof: consumer rows alone moved the digest, and the populations stayed put.
+- **A consumer row is a catalog change.** Registering, removing or re-identifying an artifact is not
+  what moves the digest by itself — an importer reaching a governed artifact through shared test support
+  does too, which is why the pin is re-derived from the file's bytes rather than maintained by hand.
 
 ### Todos
 
@@ -74,7 +85,8 @@ The retained source anchors below support the fixture roles and assertion bounda
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Repository inputs reach their supported consumers. | `test_repository_inputs_reach_their_supported_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:79-79 |
-| The catalog pin this leaf moved, and the second deliberate re-pin record beside it. | `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-45; mcp/tests/test_dependency_ownership_ast_helpers.py:47-72 |
+| The catalog pin, and the three deliberate re-pin records beside it — the third being this leaf's consumer-rows-only re-derivation, which left the populations unchanged. | `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-45; mcp/tests/test_dependency_ownership_ast_helpers.py:47-78 |
+| The consumer rows this leaf added, which are the entire reason the digest moved. | `consumers` | mcp/tests/evidence-lifecycle.toml:351-351; mcp/tests/evidence-lifecycle.toml:624-624; mcp/tests/evidence-lifecycle.toml:1257-1257 |
 | The population the pin names, re-derived at this leaf's own tip. | `[[artifact]]`; `[[contract]]` | mcp/tests/evidence-lifecycle.toml |
 
 ## Cross-Repo References
@@ -86,6 +98,17 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-17T10:05+02:00 — 260915-CAPS-L15 curator: **the third deliberate re-pin, and it changed no
+  population.** This leaf made `mcp/tests/test_capsule_launch_wiring.py` an importer of three governed
+  artifacts through the shared test support it reaches, so only **consumer rows** moved: the digest went
+  `812211e9… → 3342a249…` with the populations unchanged at 4 contracts / 51 artifacts, and nothing was
+  registered, removed or re-identified. The body was corrected rather than annotated — the section
+  previously described "this leaf" as L16 and the second re-pin record, so it now names all three and
+  states what the third one actually changed. Added the matching invariant (a consumer row is a catalog
+  change; the pin is re-derived from the file's bytes) and a row pointing at the three consumer rows.
+  Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted,
+  so the governed closeout stamps the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the catalog pin was re-derived at this leaf's own
   tip** (the second deliberate re-pin `LOCR-R26@v1` requires). Count `45 → 51`, digest

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastUpdated | 2026-09-17T10:50+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,16 @@ Other artifact categories and ownership declarations retain their own scopes. Co
 accounting for source-observed support use, including transitive use where declared; they do not
 establish acceptance, installed-executor fidelity, or a production run.
 
+**260915-CAPS-L15 added consumer rows only, and that is what moved the byte pin.** The new
+`mcp/tests/test_capsule_launch_wiring.py` reaches three governed artifacts through the shared test
+support it imports, so three `consumers` lists gained one entry each
+(`mcp/tests/evidence-lifecycle.toml:351`, `:624`, `:1257`) — the same shape 260915-CAPS-L7 used. **No
+artifact was registered, no row was removed, and no artifact's identity moved**: the populations are
+unchanged at **4 contracts / 51 artifacts**, while the byte pin in
+`mcp/tests/test_dependency_ownership_ast_helpers.py` moved `812211e9… → 3342a249…` because the file's
+bytes changed. A consumer row is a catalog change; the pin is re-derived from the file, never maintained
+by hand.
+
 **`consumers` is a derived test population, and the loader enforces it.** For `consumer_scope = "exact"`
 the loader re-derives the test modules that reach the artifact from the source graph and reports any
 difference from the declared list, so a row's `consumers` cell is a checkable claim rather than prose.
@@ -71,6 +81,12 @@ supersede historical per-leaf consumer positions and population counts retained 
 - Exact consumer declarations must correspond to actual support use; stale counts are not authority.
 - Registry consistency and permanent-support rationale do not claim execution or certification.
 - Ledger retirement changes the closeout replacement node, not unrelated artifact ownership.
+- **A consumer row is a catalog change.** Adding an importer to a `consumers` list moves the file's
+  bytes and therefore the pin in `test_dependency_ownership_ast_helpers.py`, even when no artifact is
+  registered or removed. The pin is re-derived at the changing leaf's own tip.
+- **Consumer rows are accounting, never acceptance.** A row states that a test module reaches a
+  support artifact; it does not claim the artifact's fidelity, that a test ran, or that a boundary was
+  exercised in production.
 
 ### Todos
 
@@ -109,6 +125,16 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-17T10:50+02:00 — 260915-CAPS-L15 curator: **consumer rows only, and the byte pin moved for
+  that alone.** This leaf's new acceptance module reaches three governed artifacts through the shared
+  test support it imports, so three `consumers` lists each gained one entry; nothing was registered,
+  removed or re-identified, and the populations stayed at 4 contracts / 51 artifacts while the pin went
+  `812211e9… → 3342a249…`. The body states that shape and adds two invariants — a consumer row is a
+  catalog change, and consumer rows are accounting rather than acceptance. Verification metadata moves
+  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
+
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **one artifact row added, one shared-support row
   extended, population re-measured.** The leaf's new `mcp/tests/eve_capsule_test_support.py` is

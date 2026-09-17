@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_terminal_routes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T13:57+02:00 |
-| lastVerifiedCommitHash | `6b057238f3b1c6f8ce1420edf48360ef50d3a38f`                                        |
-| lastVerifiedCommitDate | 2026-09-15T14:05:57+02:00|
+| lastUpdated | 2026-09-17T09:40+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -34,6 +35,33 @@ before calling the same central retirement policy as the MCP path. Thus a sprint
 retire an orchestrator-owned super reviewer merely because both generations share the sprint
 reviewer address.
 
+**Since 260915-CAPS-L15 this route is a wired production launch point for the capsule.** This is the
+only production launch point that starts a **free agent**, so it is where a role-only session with no
+task document receives instructions. `_open_terminal_response` resolves the launch's instruction
+delivery **before any host side effect** through `serving/launch_capsule.py::resolve_launch_capsule`,
+taking the compiler across the injected application-rank port (`runtime.capsule_launch`, filled by
+`cli/dashboard.py::serving_collaborators` — `serving` ranks below `application` in `layers.toml` and
+may not import it). The decision and the record stay here, so this route answers
+`capsule`/`legacy`/`refused` exactly as the spawn primitive does.
+
+- A refusal returns **HTTP 400 `capsule-unavailable`** with the role and the gate's own explanation,
+  before the opener is called; nothing is started.
+- The session's workspace comes from `session_workspace(capsule, server_workspace=config.workspace_root)`
+  and the settings selection follows it through `selection_for_workspace`, so the child's cwd,
+  `ResolvedLaunch.workspace` and the carrier's own `AR_WORKSPACE_ROOT` are one value.
+- The per-run record is published as **`instructionMode`** on the open response, beside the existing
+  catalog entry payload: `capsule` with the digest and byte size, or `legacy` with the named decision.
+
+**One measured reachability limit, disclosed rather than smoothed.** This route does **not** set
+`TerminalLaunchRequest.session_backend`, so `terminal_launch_detail` checks the harness's argv as a
+PATH program — and the **shipped eve row** deliberately is not one (its runtime is the AR-owned Node
+application the session adapter starts). A `POST /api/terminal/{id}` naming the shipped eve row
+therefore answers `bad-kind` and starts no session. That is **pre-existing** (the base tree answers the
+identical refusal), not introduced by this leaf's wiring: the spawn primitive sets
+`session_backend=True` for exactly this reason, and the route's launch case therefore teaches an
+`orchestration.harnesses` row that names a program on PATH. Owner: **L17**, which either starts the
+adapter-owned harness on this route or declares the exclusion by name.
+
 ### Conventions
 
 HTTP routes may use a runtime session id to select the occupant being operated on; the binding itself
@@ -49,6 +77,16 @@ is task document plus role.
 - `GET /api/terminal/sessions` is a **projection**, never a producer: it serializes whatever the
   catalog already holds and cannot itself make that snapshot newer. It names no sweeper, probes no
   adapter, advances no evidence cursor, rewrites no row, and compacts nothing.
+- **The instruction delivery is resolved before any host side effect.** A role-configured session is
+  never started without its capsule; a refusal is HTTP 400 `capsule-unavailable` with the role and the
+  reason, and nothing is started.
+- **The session runs where its capsule admits.** The route passes the reconciled workspace to both the
+  request and the settings selection; a capsule that admits none (a free agent's Codex capsule, a legacy
+  launch) keeps the server's workspace exactly as before.
+- **The route decides no policy of its own.** It calls the one gate and reports what that gate answered;
+  the compile crosses an injected port because this rank may not import `application`.
+- **`session_backend` is deliberately not set here**, and the consequence is stated above rather than
+  implied: an adapter-owned harness row is refused on this route as a PATH-program shape.
 
 ### Todos
 
@@ -62,9 +100,13 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Session route registration owns terminal open/catalog/assignment endpoints. | `_register_terminal_session_routes` | mcp/src/agents_remember/serving/_app_terminal_routes.py:130-205 |
-| Catalog/open payloads use current structural binding. | `_terminal_entry_payload` | mcp/src/agents_remember/serving/_app_terminal_routes.py:207-333 |
-| Task assignment delegates validation and generalized mutation. | `_attach_task_response` | mcp/src/agents_remember/serving/_app_terminal_routes.py:335-388 |
+| Session route registration owns terminal open/catalog/assignment endpoints. | `_register_terminal_session_routes` | mcp/src/agents_remember/serving/_app_terminal_routes.py:136-178 |
+| Catalog/open payloads use current structural binding. | `_terminal_entry_payload` | mcp/src/agents_remember/serving/_app_terminal_routes.py:221-237 |
+| Task assignment delegates validation and generalized mutation. | `_attach_task_response` | mcp/src/agents_remember/serving/_app_terminal_routes.py:392-451 |
+| The wired launch point: the capsule is resolved before any host side effect, a refusal is HTTP 400 `capsule-unavailable`, the workspace comes from the one rule, and the per-run record rides the response as `instructionMode`. | `_open_terminal_response`; `resolve_launch_capsule`; `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/_app_terminal_routes.py:239-348; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
+| The application-rank compiler is injected here rather than imported, because `serving` ranks below `application`. | `ServingCollaborators.capsule_launch`; `serving_collaborators` | mcp/src/agents_remember/serving/_app_common.py:455-462; mcp/src/agents_remember/cli/dashboard.py:67-83 |
+| The route's launchability question and the pre-existing reason an adapter-owned harness is refused here. | `session_backend`; `terminal_launch_detail` | mcp/src/agents_remember/serving/terminal_opener.py:163-173; mcp/src/agents_remember/serving/harnesses.py:110-124 |
+| The cases: a free agent reads its capsule out of its own first prompt through this route, and an un-compilable role refuses before any host effect. | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:529-574; mcp/tests/test_capsule_launch_wiring.py:577-607; mcp/tests/test_capsule_launch_wiring.py:816-872 |
 
 ## Cross-Repo References
 
@@ -122,6 +164,22 @@ preserve status, detail, and the strict projection. The dashboard receives
 operator-actionable evidence while the catalog remains unchanged.
 
 ## Update History
+
+- 2026-09-17T09:40+02:00 — 260915-CAPS-L15 curator: **route meaning changed — this route is now a
+  wired production launch point, so the body was updated rather than annotated.** `_open_terminal_response`
+  resolves the launch's instruction delivery before any host side effect through the one gate, across the
+  injected application-rank port; a refusal is HTTP 400 `capsule-unavailable` with the role named and
+  nothing started; the session workspace comes from the one rule (with the settings selection following
+  it, so cwd / `ResolvedLaunch.workspace` / `AR_WORKSPACE_ROOT` cannot disagree); and the per-run record
+  is published as `instructionMode` beside the entry payload. Added the four invariants and the
+  **disclosed reachability limit** measured by this leaf: the route does not set `session_backend`, so the
+  shipped eve row is refused here as a PATH-program shape (`bad-kind`, no session started) — pre-existing
+  at the base tree, owner **L17**, and stated rather than smoothed so no reader takes the route's
+  free-agent coverage for adapter-owned-harness coverage. Reference rows re-anchored
+  (`_register_terminal_session_routes`, `_terminal_entry_payload`, `_attach_task_response`) with four rows
+  added. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is deliberately
+  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint was
+  invented here.
 
 - 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
   base `67b21aeb`): body update, not a history-only note. `api_terminal_sessions` stopped calling

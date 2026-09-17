@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
-| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| lastUpdated | 2026-09-17T09:35+02:00 |
+| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +20,9 @@
 Opens or reuses hosted occupants and persists their structural task-document-and-role binding. Runtime
 launch mechanics remain plane-owned behind structural dispatch. Since 260915-CAPS-L5 it also carries
 the admitted role capsule from the launch boundary onto the runner configuration, as an optional
-value it transports but never derives.
+value it transports but never derives; since **260915-CAPS-L15** it carries both of the harness
+carriers that resolution can produce — Codex's instruction field and eve's binding environment — and
+refuses a refusal defensively rather than spawning.
 
 ## Code Commentary
 
@@ -45,12 +48,29 @@ they diverge only for a harness whose runtime is an application. Answering both 
 what let a detected eve row resolve to an argv whose program exists nowhere — a false affordance rather
 than a launch.
 
-**The capsule's caller-facing half (260915-CAPS-L5).** `ControlRunnerRequest.capsule_delivery` is where
-whoever admits a role capsule at the launch boundary states it, and `_session_command` copies it onto
-`RunnerConfig.capsule_delivery` — one field, unchanged, no derivation. The opener does not compile,
-select, render or validate the capsule; it transports an admitted value, and `None` (every existing
-construction site) is the ordinary legacy launch. A capsule is therefore a caller's decision, never an
-opener default.
+**The capsule's two carrier halves (260915-CAPS-L5, extended by 260915-CAPS-L15).** The launch point
+resolves one `LaunchCapsule` and passes it on `TerminalLaunchRequest.capsule`; the opener reads it and
+**still derives nothing**:
+
+- **Codex.** `_codex_capsule_delivery(launch)` returns the resolved capsule's `codex_delivery` when it
+  has one, and otherwise falls back to the pre-existing caller field
+  (`launch.control.capsule_delivery`, L5's own seam) — the resolution first, the caller field second, so
+  there is one authority and a caller that supplied a capsule directly is still supported.
+  `_session_command` copies the result onto `RunnerConfig.capsule_delivery`, one field, unchanged.
+- **eve.** `_eve_capsule_env(launch)` returns the resolved capsule's `eve_env`, and
+  `_open_terminal_transaction` folds it into the spawn environment (`spawn_env.update(...)`), which is
+  where L7's loader already reads the binding from (`AR_BINDING_REF`, `AR_CAPSULE_PATH`,
+  `AR_CAPSULE_DIGEST`, plus `AR_WORKSPACE_ROOT`). The names come from the carrier module, so the writer
+  and the reader cannot drift into two spellings. A launch with no capsule contributes nothing, so every
+  pre-existing path is byte-identical.
+
+**A refusal never spawns, even if a caller bypassed the gate.** `open_terminal_session` opens with a
+defensive check: a launch whose `capsule.is_refusal` returns
+`OpenTerminalResult(status="launch-conflict", detail=capsule.explain())` before task binding, before
+the occupied-seat check and before any catalog mutation. Every launch point already refuses a capsule it
+could not supply *before* it builds a request, so this branch is reachable only by a caller that skipped
+that gate — and refusing again is the only outcome that cannot start a role-configured session with no
+instructions.
 
 `open_terminal_session` validates launch and task binding, refuses an occupied singular seat, creates
 the catalog row, and starts the hosted process. The opener scrubs inherited daemon identity before
@@ -89,9 +109,17 @@ or through an operator API boundary.
   detected and still must refuse this path by name; only a caller that states
   `session_backend=True` may resolve it, because that caller spawns the runner rather than the harness.
 - This module allocates occupants; it does not define public seat addresses.
-- **The capsule is transported, never derived.** `capsule_delivery` is copied from the request onto the
-  runner configuration unchanged; the opener never compiles, selects or renders one, and `None` keeps
-  every existing launch path exactly as it was.
+- **The capsule is transported, never derived.** The resolved value is read off the request and placed
+  on the carrier its harness declares — `RunnerConfig.capsule_delivery` for Codex, the spawn environment
+  for eve — and the opener never compiles, selects, renders or validates one. A launch with no capsule
+  contributes nothing to either carrier, which is why every pre-existing path keeps the payload it
+  always sent.
+- **A refusal cannot be spawned.** A launch carrying a refused capsule returns `launch-conflict` before
+  any side effect; this is the defensive second gate behind the launch points' own refusals, not a
+  decision this module makes.
+- **The eve binding environment is written only from the resolved capsule.** Its names come from
+  `models/eve_capsule_carrier.py` through `serving/launch_capsule.py::eve_binding_env()`, so the writer
+  and the runtime's own reader cannot drift.
 
 ### Todos
 
@@ -105,17 +133,19 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:494-513 |
-| Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:639-662 |
-| The request field that states which launchability question a caller is asking. | `TerminalLaunchRequest`; `session_backend` | mcp/src/agents_remember/serving/terminal_opener.py:136-184 |
-| The two branches: terminal open asks for an existing program, session backend asks for a startable runtime. | `_require_launchable_harness`; `terminal_launch_detail`; `is_detected`; `harness_detection_detail` | mcp/src/agents_remember/serving/terminal_opener.py:309-329; mcp/src/agents_remember/serving/harnesses.py:93-107; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
-| The seat-spawning caller that sets `session_backend=True`. | `_spawn_launch_request` | mcp/src/agents_remember/application/terminal_tools.py:732-766 |
+| Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:502-522 |
+| Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:669-692 |
+| The request field that states which launchability question a caller is asking, and the launch's resolved capsule. | `TerminalLaunchRequest`; `session_backend`; `capsule` | mcp/src/agents_remember/serving/terminal_opener.py:137-192 |
+| The two branches: terminal open asks for an existing program, session backend asks for a startable runtime. | `_require_launchable_harness`; `terminal_launch_detail`; `is_detected`; `harness_detection_detail` | mcp/src/agents_remember/serving/terminal_opener.py:317-337; mcp/src/agents_remember/serving/harnesses.py:93-107; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
+| The seat-spawning caller that sets `session_backend=True` and resolves the capsule before this opener runs. | `_spawn_launch_request` | mcp/src/agents_remember/application/terminal_tools.py:740-784 |
 | The cases: a terminal open of eve refuses by name and yields no argv, a session-backend spawn still resolves, and the path harnesses are unaffected in both modes. | `EveTerminalLaunchTests` | mcp/tests/test_eve_product_integration.py:632-707 |
-| Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:788-841 |
-| Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:188-208 |
-| The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:571-636 |
-| Structural admission consumes the shared task-binding authority before process creation. | `_task_binding_refusal` | mcp/src/agents_remember/serving/terminal_opener.py:757-785 |
-| The caller-facing half of the capsule carrier, and the one place it is populated onto the runner configuration. | `ControlRunnerRequest`; `capsule_delivery`; `_session_command` | mcp/src/agents_remember/serving/terminal_opener.py:112-132; mcp/src/agents_remember/serving/terminal_opener.py:534-568 |
+| Open coordinates launch, binding refusal, and persistence, and refuses a refused capsule before any of them. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
+| Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:196-217 |
+| The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:601-668 |
+| Structural admission consumes the shared task-binding authority before process creation. | `_task_binding_refusal` | mcp/src/agents_remember/serving/terminal_opener.py:790-819 |
+| The caller-facing capsule field (L5's own seam), and the one place the resolved delivery is copied onto the runner configuration — resolution first, caller field second. | `ControlRunnerRequest`; `capsule_delivery`; `_codex_capsule_delivery`; `_session_command` | mcp/src/agents_remember/serving/terminal_opener.py:113-133; mcp/src/agents_remember/serving/terminal_opener.py:542-554; mcp/src/agents_remember/serving/terminal_opener.py:564-598 |
+| The eve half is written as the spawn environment the runtime's loader reads, with the names taken from the carrier module. | `_eve_capsule_env`; `eve_binding_env`; `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:556-562; mcp/src/agents_remember/serving/launch_capsule.py:325-334; mcp/src/agents_remember/serving/terminal_opener.py:695-788 |
+| The runtime's own gate validates the carrier against the workspace it admits, which is why the launch's cwd and the carrier's `AR_WORKSPACE_ROOT` are one value. | `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516 |
 
 ## Cross-Repo References
 
@@ -129,6 +159,25 @@ unavailable lineage returns a typed `OpenTerminalResult` with detail and the
 strict projection; non-structural terminals retain their existing path.
 
 ## Update History
+- 2026-09-17T09:35+02:00 — 260915-CAPS-L15 curator: **the opener now carries both carrier halves and
+  refuses a refusal.** `TerminalLaunchRequest.capsule` carries the launch point's resolved value;
+  `_codex_capsule_delivery` returns the resolved delivery first and the pre-existing caller field
+  (`launch.control.capsule_delivery`, L5's seam) second, so there is one authority and a direct caller is
+  still supported; `_eve_capsule_env` supplies the binding environment
+  `_open_terminal_transaction` folds into the spawn environment, with the names taken from the carrier
+  module through `serving/launch_capsule.py::eve_binding_env()` so writer and reader cannot drift. Added
+  the defensive refusal in `open_terminal_session`: a launch carrying a refused capsule returns
+  `launch-conflict` before task binding, before the occupied-seat check and before any catalog mutation.
+  **Superseded in place:** the invariant that said the capsule is only ever copied from
+  `ControlRunnerRequest.capsule_delivery` — the opener still derives nothing, but the value now arrives on
+  the launch request and reaches two carriers, one per harness. The "capsule's caller-facing half" Logic
+  paragraph was rewritten rather than annotated, and every reference row this leaf's own insertions
+  shifted was re-anchored (`TerminalLaunchRequest`, `_require_launchable_harness`,
+  `_scrub_daemon_identity_env`, `_binding_conflict_owner`, `open_terminal_session`, `SpawnProvenance`,
+  `_opened_catalog_entry`, `_task_binding_refusal`, the `ControlRunnerRequest` row) with three rows
+  added for the two carrier readers and the runtime's own workspace gate. Verification metadata moves to
+  this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps
+  the real code commit and no hash or fingerprint was invented here.
 - 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: recorded the capsule's caller-facing half at this
   boundary — `ControlRunnerRequest.capsule_delivery` and its unchanged copy onto
   `RunnerConfig.capsule_delivery` in `_session_command` — with the rule that the opener transports an
