@@ -6,9 +6,9 @@
 | path | `mcp/tests/test_capsule_launch_wiring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T09:15+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,12 @@ delivery:
 - `test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload` — behaviour 6, measured
   as bytes rather than asserted as shape.
 - `test_the_delivered_payload_carries_the_capsule_once_and_no_task_context` — the single-carrier bound
-  (`D12`): exactly one `trustedInstructions` key, and the task context never enters argv.
+  (`D12`): exactly one `trustedInstructions` key, and the task context never enters argv. **L11 extends
+  it with the argv bound itself**: the token the spawn actually receives is asserted
+  `<= ARGV_TOKEN_BOUND_BYTES < MAX_ARGV_TOKEN_BYTES`, and a carrier padded past the kernel limit must
+  be **refused by name** (measured size, bound, seat) with **no argv returned at all** — so no caller
+  can spawn it. The seed is the failure the bound exists to catch rather than a value chosen to trip
+  it.
 - `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` — walks every
   `TerminalLaunchRequest(` construction in `mcp/src/agents_remember/**` with `ast` and fails naming the
   file, the line and the two admissible dispositions; it also fails when the **set** of sites changes,
@@ -144,25 +149,25 @@ No Domain Documentation source is configured in the resolved source registry for
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The acceptance case for a task-attached seat: the spawn primitive's own argv, the real runner and factory, and the capsule read from the session's own `thread/start`. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt` | mcp/tests/test_capsule_launch_wiring.py:483-526 |
-| The acceptance case for a free agent with no task document, through the production dashboard route. | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | mcp/tests/test_capsule_launch_wiring.py:529-574 |
-| The negative case: an un-compilable role refuses by name before any host effect. | `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect` | mcp/tests/test_capsule_launch_wiring.py:577-607 |
-| The one decision point, for every seat class. | `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class` | mcp/tests/test_capsule_launch_wiring.py:615-657 |
-| Behaviour 6 measured as bytes: the capsule-free payload is identical to the pre-capsule one. | `test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload` | mcp/tests/test_capsule_launch_wiring.py:659-710 |
-| The single-carrier bound: exactly one `trustedInstructions` key, and no task context in argv. | `test_the_delivered_payload_carries_the_capsule_once_and_no_task_context` | mcp/tests/test_capsule_launch_wiring.py:712-759 |
-| The enumeration case: every production launch site is wired or declares its legacy chain, and the site set cannot change silently. | `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:761-801 |
-| The one declared legacy exclusion, named with its reason. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule` | mcp/tests/test_capsule_launch_wiring.py:803-814 |
+| The acceptance case for a task-attached seat: the spawn primitive's own argv, the real runner and factory, and the capsule read from the session's own `thread/start`. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt` | mcp/tests/test_capsule_launch_wiring.py:486-530 |
+| The acceptance case for a free agent with no task document, through the production dashboard route. | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | mcp/tests/test_capsule_launch_wiring.py:532-577 |
+| The negative case: an un-compilable role refuses by name before any host effect. | `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect` | mcp/tests/test_capsule_launch_wiring.py:579-615 |
+| The one decision point, for every seat class. | `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class` | mcp/tests/test_capsule_launch_wiring.py:617-659 |
+| Behaviour 6 measured as bytes: the capsule-free payload is identical to the pre-capsule one. | `test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload` | mcp/tests/test_capsule_launch_wiring.py:661-712 |
+| The single-carrier bound: exactly one `trustedInstructions` key, and no task context in argv. **L11 extends this case with D12's argv bound** — the delivered token is asserted under `ARGV_TOKEN_BOUND_BYTES` and a padded carrier is refused by name, with no argv returned. | `test_the_delivered_payload_carries_the_capsule_once_and_no_task_context`; `ARGV_TOKEN_BOUND_BYTES` | mcp/tests/test_capsule_launch_wiring.py:714-803 |
+| The enumeration case: every production launch site is wired or declares its legacy chain, and the site set cannot change silently. | `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:805-845 |
+| The one declared legacy exclusion, named with its reason. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule` | mcp/tests/test_capsule_launch_wiring.py:847-916 |
 | The production-chain eve case: the route's own cwd and env, then the consumer's own gate, then the workspace agreement. | `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:816-872 |
 | The spawn side's agreement with its own capsule about the workspace. | `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace` | mcp/tests/test_capsule_launch_wiring.py:874-918 |
-| The free agent's named absence, and the identity that moves with the seat. | `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat` | mcp/tests/test_capsule_launch_wiring.py:919-944; mcp/tests/test_capsule_launch_wiring.py:945-968 |
-| D13: the registered MCP operation resolves a repository through its declared schema, and a schema losing the field fails the case. | `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` | mcp/tests/test_capsule_launch_wiring.py:975-1022 |
-| D20: a refused stage refuses again in the same process, never passing. | `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:1028-1059 |
-| The two boundary doubles: the vendor-process recorder and the tmux host. | `RecordingTransport`; `_FakeHost` | mcp/tests/test_capsule_launch_wiring.py:131-270; mcp/tests/test_capsule_launch_wiring.py:277-476 |
-| The lane row D9's fail-closed loader requires for every new test module. | `test_capsule_launch_wiring.py` | mcp/tests/test-evidence-lanes.toml:19-19 |
-| The three governed-artifact consumer rows this module added, which re-derived the catalog's byte pin at this leaf's tip without changing the populations. | `consumers` | mcp/tests/evidence-lifecycle.toml:351-351; mcp/tests/evidence-lifecycle.toml:624-624; mcp/tests/evidence-lifecycle.toml:1257-1257 |
-| The pin is a byte contract at one tip and re-derives again for whoever changes the catalog last. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-45 |
+| D13: the registered MCP operation resolves a repository through its declared schema, and a schema losing the field fails the case. | `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` | mcp/tests/test_capsule_launch_wiring.py:1020-1070 |
+| The free agent's named absence, and the identity that moves with the seat. | `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat` | mcp/tests/test_capsule_launch_wiring.py:964-988; mcp/tests/test_capsule_launch_wiring.py:990-1018 |
+| D20: a refused stage refuses again in the same process, never passing. | `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:1072-1104 |
+| The two boundary doubles: the vendor-process recorder and the tmux host. | `RecordingTransport`; `_FakeHost` | mcp/tests/test_capsule_launch_wiring.py:133-277; mcp/tests/test_capsule_launch_wiring.py:279-478 |
+| The lane row D9's fail-closed loader requires for every new test module. | "mcp/tests/test_capsule_launch_wiring.py" | mcp/tests/test-evidence-lanes.toml:23-23 |
+| The three governed-artifact consumer rows this module added, which re-derived the catalog's byte pin at this leaf's tip without changing the populations. | `consumers` | mcp/tests/evidence-lifecycle.toml:38-38; mcp/tests/evidence-lifecycle.toml:58-58; mcp/tests/evidence-lifecycle.toml:77-77 |
+| The pin is a byte contract at one tip and re-derives again for whoever changes the catalog last. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45 |
 | The launch points this module drives, and the modules whose wiring it pins. | `spawn_agent_session_tool`; `_open_terminal_response`; `resolve_launch_capsule`; `compile_launch_capsule` | mcp/src/agents_remember/application/terminal_tools.py:822-931; mcp/src/agents_remember/serving/_app_terminal_routes.py:239-334; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| The production-chain evidence this module complements: the leaf's own E8 transcript, which reads the carrier at the live runtime's system block from the launch's captured values. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
+| **Superseded evidence pointer, kept for the record** — `L15`'s round-1 production-chain transcript no longer exists at this path (`citation_source_vanished`; the enclosing `notes/reports/` tree holds only the master's own artifacts, and L15's evidence directory was never carried into this memory repo). The **live** equivalent claimed by the module is `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` below, plus `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace`. Do not re-cite the deleted file. | `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:860-916 |
 
 ## Cross-Repo References
 
@@ -174,6 +179,8 @@ the fixture it is pinned against lives in this repository.
 | The recorded vendor boundary is the thread-open request, and the capsule travels the instruction field it declares. | `developerInstructions` | mcp/src/agents_remember/serving/capsule_delivery.py:44-52 |
 
 ## Update History
+
+- 2026-09-17T15:56+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): recorded the candidate's **D12 extension of the acceptance case** and re-anchored every range in this card against the working source. The delivered token is now asserted under `ARGV_TOKEN_BOUND_BYTES` (129024) with a padded carrier refused **by name and with no argv returned** — the bound checked where the encoded bytes first exist, so an over-bound launch is refused before any spawn rather than surfacing as an invisible `E2BIG`. Re-anchoring follows the candidate's insertion: the acceptance pair 483-526→**486-530** and 529-574→**532-577**; the pins 577-607→**579-615**, 615-657→**617-659**, 659-710→**661-712**, 712-759→**714-803**, 761-801→**805-845**, 803-814→**847-858**, 816-872→**860-916**, 874-918→**918-962**, 919-944/945-968→**964-988**/**990-1018**, 975-1022→**1020-1070**, 1028-1059→**1072-1104**, and the doubles 131-270/277-476→**133-277**/**279-478**. Three citations repaired beyond a range shift: the lane row pointed at `test-evidence-lanes.toml:19-19` (now **23-23**), the `consumers` rows pointed at lines that no longer hold the anchor (now **38-38 / 58-58 / 77-77**, the pin constant at `test_dependency_ownership_ast_helpers.py:46`), and the `L15 FIX ROUND 1 — E8` transcript is **`citation_source_vanished`** — that path does not exist in either tree, so the row was replaced with a pointer to the live case that now claims it and an explicit "do not re-cite the deleted file", rather than left asserting evidence a reader cannot open. The L15 curator's original entry below is preserved as the dated record it is.
 
 - 2026-09-17T09:15+02:00 — 260915-CAPS-L15 curator: **created this card** (the census reported it
   missing, `integrity.missing_onboarding`). Records the module as the acceptance test the master lacked:

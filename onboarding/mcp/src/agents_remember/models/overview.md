@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview      | `../../../../overview.md`                  |
 
@@ -823,7 +823,25 @@ they are content rather than authority and compaction may legitimately summarize
 | The four environment names declared beside the format so writer and reader cannot drift. | `BINDING_REF_ENV`; `CAPSULE_PATH_ENV`; `CAPSULE_DIGEST_ENV`; `WORKSPACE_ROOT_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:34-42 |
 | The producer that builds this value and the two consumers that verify it, none of them in this route. | `build_carrier`; `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/application/eve_capsule/__init__.py:282-324; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; eve_runtime/agent/lib/capsule.ts:109-149 |
 
+## 260915-CAPS-L11 One Refusal Shape For One Class Of Source Defect
+
+`sources.py` on this route now refuses an **emptied** admitted source the same way it already refused
+a non-UTF-8 one: a typed `CapsuleSourceError` carrying `status="source-empty"`, a detail naming the
+source path, and a next action — rather than a bare `ValueError` escaping `CapsuleSource.text`.
+
+**Why the shape matters rather than the message.** `compile_admitted_capsule` catches only
+`CapsuleCompilationError`, so an untyped raise from the value layer surfaced to an operator as a
+traceback instead of the named refusal the compiler's own boundary promises. One class of defect now
+has one refusal shape at one boundary.
+
+**A property a reader should not have to rediscover:** emptiness is discovered while blocks are
+*composed* — after admission succeeded and a real manifest parsed — so the guard is reachable only
+through a real composition. That is why the leaf's case drives a disposable copy of the shipped
+corpus rather than a fixture, and it is what makes the seed failable.
+
 ## Update History
+
+- 2026-09-17T16:04+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): this route's `sources.py` changed and the route body is updated for it. The card now records the **D25 repair**: an admitted source that decodes to whitespace only is refused as a typed `CapsuleSourceError(status="source-empty")` on the same boundary as `source-not-utf8`, instead of raising a bare `ValueError` that `compile_admitted_capsule` does not catch — one refusal shape for one class of defect, with the leaf's case driving the shipped corpus because emptiness is discovered after admission succeeds. The card's identity-helper and value-type ranges were re-anchored to the candidate, and a stale `nine roles / eight operations` vocabulary on the sibling admission card was corrected to the registry's **ten / nine**. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Earlier entries are preserved exactly as written.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained `eve_capsule_carrier.py`, the
   **format** of the value AR hands a pinned eve runtime before it executes, recorded in the new

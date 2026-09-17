@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
-| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
+| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
 
@@ -1146,6 +1146,28 @@ obligation under an explicit transfer.
 | The live end-to-end capsule scenarios, which are the whole-seam proof rather than a unit claim. | `_scenario_capsule_binding`; `_scenario_capsule_execution` | mcp/tests/live_eve_native_fixture.py:1758-1813; mcp/tests/live_eve_native_fixture.py:1680-1757 |
 | The lifecycle catalog registration for the shared support module, with its four derived consumers. | `path = "mcp/tests/eve_capsule_test_support.py"` row | mcp/tests/evidence-lifecycle.toml:714-724 |
 
+## 260915-CAPS-L11 `D9`'s Six Historical Modules Register, And The Route Closes Its Own Gap
+
+This route's `D9` residual is **closed**. Six historical test modules had been unregistered in
+`mcp/tests/test-evidence-lanes.toml` while the fail-closed loader reported each one by name; L11
+registered all six in `unit-regression` — `test_eve_adapter`, `test_eve_protocol`,
+`test_role_capsule_admission`, `test_role_capsule_compiler`, `test_role_instruction_corpus`,
+`test_task_projection` — and `load_lane_manifest` now returns `LANE-REGISTRY-OK 243 0` with no
+unregistered-module finding.
+
+**Two properties make the registration load-bearing rather than decorative, and both are asserted.**
+Each of the six carries its own row and **collects** (198 cases under the unit selection, 0 under
+`-m integration`), and the seed `S-D9-lane-row-removed` deletes one row and makes the loader
+**refuse by name** rather than fall back to a default classification. Rows added by this master's
+other leaves are unchanged, and no module was moved between lanes by name.
+
+**The route's lesson, worth keeping because the leaf lost time to it:** a manifest fingerprint must
+be **asked of the product**, never rebuilt by hand. An intermediate draft recomputed the digest from
+its own rendering — `file:`-prefixed, merged-sorted terms — and produced a self-consistent value
+(`bfbd21af…`) that described no artifact; the product's own `LaneManifest.digest` for this candidate
+is `61f9fba8…` over 243 files / 0 overrides. Counts and lane dispositions were never in question;
+only the fingerprint was.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the
@@ -1209,6 +1231,7 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-17T16:02+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): **this route's `D9` residual is closed.** L11 registered the six historical modules the fail-closed loader had been naming — `test_eve_adapter`, `test_eve_protocol`, `test_role_capsule_admission`, `test_role_capsule_compiler`, `test_role_instruction_corpus`, `test_task_projection` — all `unit-regression`; the loader now returns `LANE-REGISTRY-OK 243 0` and each module collects (198 unit / 0 integration). The new section above records that, the `S-D9-lane-row-removed` seed proving the rows are load-bearing, and the route-level lesson that a manifest fingerprint must be asked of the product rather than rebuilt by hand. This entry exists because the route body itself changed: the three governed sources on this route (`test-evidence-lanes.toml`, `test_capsule_launch_wiring.py`, `test_role_capsule_admission.py`) all moved, and an external-memory refresh requires updated route content rather than a metadata-only stamp. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. The earlier entries below are left exactly as written, including L10's and L19's field-model entries, whose ordering is a dated record rather than an assertion of current doctrine.
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`)** in the CAPS-L18 section — `ready-for-closeout` is never a value of the combined `checklistStatus`; the curator repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). **No test-surface change:** this leaf's code delta is zero, it adds no module and touches no lane row, so this route's population, its budgets and its `D9` residual are unchanged (`D9` remains L11's six historical modules). Verification metadata is left alone: the candidate is uncommitted and the governed closeout stamps the real code commit.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: this route gained **one module** —

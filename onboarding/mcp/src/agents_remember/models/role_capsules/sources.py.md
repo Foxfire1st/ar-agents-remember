@@ -6,8 +6,9 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/sources.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -26,7 +27,7 @@ is what makes the "a required block is missing" check non-vacuous.
 
 cit:([`CapsuleDeclaredInstruction`], mcp/src/agents_remember/models/role_capsules/sources.py:32-49) is one *declared* instruction unit — a composition root
 plus the block identity it must resolve to, plus the authorities that routed it.
-cit:([`CapsuleSource`], mcp/src/agents_remember/models/role_capsules/sources.py:50-95) is the loaded counterpart: identity, composition root,
+cit:([`CapsuleSource`], mcp/src/agents_remember/models/role_capsules/sources.py:50-104) is the loaded counterpart: identity, composition root,
 root-relative path, raw `content` bytes, and the `revision` that is the content digest of
 those bytes.
 
@@ -39,19 +40,26 @@ exactly the defect class the compiler must be able to report.
 
 - its declared `revision` must equal the digest of its own bytes, or the value is refused — a
   source whose revision is not content-addressed breaks determinism at its root;
-- cit:([`CapsuleSource.text`], mcp/src/agents_remember/models/role_capsules/sources.py:74-93) decodes the bytes as UTF-8 and refuses
+- cit:([`CapsuleSource.text`], mcp/src/agents_remember/models/role_capsules/sources.py:74-103) decodes the bytes as UTF-8 and refuses
   **`source-not-utf8`** when they do not decode; and
-- a source that decodes to nothing but whitespace is refused as a defect rather than delivered
-  as empty instruction content.
+- a source that decodes to nothing but whitespace is refused as **`source-empty`**, a typed
+  `CapsuleSourceError` on the same boundary — *not* a bare `ValueError` escaping
+  `CapsuleSource.text` (defect **D25**, repaired by `260915-CAPS-L11`). The two refusals are one
+  class of defect and take one shape deliberately: `compile_admitted_capsule` catches only
+  `CapsuleCompilationError`, so an untyped raise here would surface to an operator as a
+  traceback rather than as the named refusal the compiler's own boundary promises. Emptiness is
+  discovered while blocks are composed — *after* admission succeeded and a real manifest parsed —
+  so the guard is reachable only through a real composition, which is why the leaf's case drives
+  the shipped corpus rather than a fixture.
 
 **The identity helpers are one vocabulary, and they cover skills as well as blocks.**
-cit:([`instruction_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:96-101) renders a block identity as `"<root>:<name>"`;
-cit:([`specializations_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:102-125) resolves a nested
+cit:([`instruction_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:105-110) renders a block identity as `"<root>:<name>"`;
+cit:([`specializations_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:111-134) resolves a nested
 `specializations/<group>/<name>.md` to the same identity regardless of grouping folder;
-cit:([`skills_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:126-138) renders a **skill** identity as `"<origin>#<skill>"` —
+cit:([`skills_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:135-147) renders a **skill** identity as `"<origin>#<skill>"` —
 the origin is part of the identity because a bare skill name collides across servers, so the same
-name from two servers is deliberately two different references; cit:([`shared_core_reference`], mcp/src/agents_remember/models/role_capsules/sources.py:156-172) names a
-shared core block; and cit:([`root_of_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:139-155) answers which composition root an identity belongs to
+name from two servers is deliberately two different references; cit:([`shared_core_reference`], mcp/src/agents_remember/models/role_capsules/sources.py:165-181) names a
+shared core block; and cit:([`root_of_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:148-164) answers which composition root an identity belongs to
 **for both shapes** — `<root>:<name>` carries its root, while a skill identity does not and is
 recognised by its separator instead. Having exactly one function answer that is what keeps the
 admitted-root agreement check and the identity index from disagreeing about skill identities.
@@ -77,7 +85,11 @@ the bytes actually held in `content`; it is never copied from the manifest. Skil
   bytes breaks the "same bytes compile to the same capsule" property at its root.
 - **`source-not-utf8` is raised here**, in the value layer, not in the application layer. A
   source that does not decode is a defect; it is never truncated, replaced, or decoded leniently.
-- A source that decodes to whitespace only is refused rather than treated as empty content.
+- **`source-empty` is raised here too**, as a typed `CapsuleSourceError` rather than a
+  `ValueError` (D25, `260915-CAPS-L11`). An admitted source that decodes to whitespace only is a
+  source defect of the same class as the non-UTF-8 one: it is refused by name, with the source
+  path and a next action, and it never escapes `CapsuleSource.text` as an exception the
+  compiler's refusal boundary does not catch.
 - `skills_declared_identity` requires a **non-blank** origin and name and raises `ValueError`
   otherwise; identity is `origin + skill`, so dropping the origin silently merges two servers'
   skills into one reference.
@@ -99,7 +111,7 @@ No external or domain documentation is configured for this memory root
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The value types these shapes are composed from and the shared digest guards. | `CapsuleBlockIdentity`; `CapsuleDigest`; `compute_content_digest` | mcp/src/agents_remember/models/role_capsules/types.py:81-86 |
+| The value types these shapes are composed from and the shared digest guards. | `CapsuleBlockIdentity`; `CapsuleDigest`; `compute_content_digest` | mcp/src/agents_remember/models/role_capsules/types.py:52-86 |
 | The admission boundary that reads the bytes these values carry. | `admit_capsule_sources`; `CapsuleAdmissionRequest` | mcp/src/agents_remember/application/role_capsules/sources.py:78-94; mcp/src/agents_remember/application/role_capsules/sources.py:38-77 |
 | The module that proves the admitted set agrees with this declared plan in both directions, including every declared skill root. | `admit_source_set`; `_require_declared_present`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/source_set.py:91-108; mcp/src/agents_remember/models/role_capsules/source_set.py:174-194; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
 | The resolution step that reduces each declared identity to one block. | `gather_candidates`; `resolve_instructions` | mcp/src/agents_remember/models/role_capsules/resolution.py:93-134; mcp/src/agents_remember/models/role_capsules/resolution.py:135-191 |
@@ -116,6 +128,8 @@ No sibling-repository contract defines these values.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T15:50+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): repaired this card's citation ranges against the L11 candidate (`a29a20c6` + the five declared paths) and recorded the **D25 repair** the candidate delivers. `CapsuleSource.text` now refuses an emptied source as a typed **`CapsuleSourceError(status="source-empty")`** instead of raising a bare `ValueError` that `compile_admitted_capsule` does not catch — one refusal shape for the non-UTF-8 and empty-source defects, stated in the body and in the invariants, with the new `source-empty` case ranging to `mcp/tests/test_role_capsule_admission.py`. Advance, not rewrite: `CapsuleSource` 50-95 → **50-104**, `text` 74-93 → **74-103**, `instruction_identity` 96-101 → **105-110**, `specializations_declared_identity` 102-125 → **111-134**, `skills_declared_identity` 126-138 → **135-147**, `root_of_identity` 139-155 → **148-164**, `shared_core_reference` 156-172 → **165-181**, and the types row 81-86 → **52-86** so it holds the `CapsuleBlockIdentity` anchor it names. The L14 curator's D7 table-shape repair above is untouched, as is every earlier entry and every verification stamp.
 
 - 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 

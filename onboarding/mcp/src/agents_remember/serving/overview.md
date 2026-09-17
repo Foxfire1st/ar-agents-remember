@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
-| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview      | `../../../overview.md`                         |
 
@@ -1228,7 +1228,42 @@ L17).
 | The channel-level binder that refuses an unbound launch before any model work, guarding every session route. | `arCapsuleAuth` | eve_runtime/agent/channels/eve.ts:26-62 |
 | The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
 
+## 260915-CAPS-L11 The Argv Bound Is Stated, Enforced, And Measured
+
+`harness_control_runner.py` on this route now carries **D12's bound** as three constants and one
+refusal, and the route's contract is that the check runs where the encoded token first exists —
+**before any caller can spawn it**:
+
+| Symbol | Value | What it is |
+| --- | --- | --- |
+| `MAX_ARGV_TOKEN_BYTES` | `131072` | Linux `MAX_ARG_STRLEN`, the limit on **one** `execve` argument |
+| `ARGV_TOKEN_SAFETY_MARGIN_BYTES` | `2048` | the declared margin held under the kernel limit |
+| `ARGV_TOKEN_BOUND_BYTES` | `129024` | the enforced bound = limit − margin |
+| `_refuse_over_bound_token` | — | refuses by name, before any spawn |
+
+**The whole launch configuration travels as one base64 token** (`argv[3]`), which is why
+`MAX_ARG_STRLEN` — not `ARG_MAX`, which bounds argv and environment together — is the limit that
+binds this mechanism. Past it `execve` fails with `E2BIG` **at spawn**, before this process can
+report anything: otherwise AR-invisible, and indistinguishable from a runtime that crashed on start.
+
+**The refusal names the measured size, the bound, the kernel limit it is derived from, and the seat
+the capsule was compiled for**, because "the session did not start" is not an operator message. The
+margin is deliberately small: the check measures the same byte string the kernel counts, so the
+margin does not have to absorb an approximation, and a larger one would refuse capsules the kernel
+accepts.
+
+**Current width, and the reason the figure is a report rather than a guarantee.** The largest shipped
+pair measures **126,096 B** with the settings-resolved launch a real launch always carries (2,928 B
+under the bound; 126,352 B at the widest realistic shape, where an eve carrier binds the admitted
+worktree to a 102-character cwd — 2,672 B under). At roughly 96 % of the limit the margin is thin,
+and the route to the bound is a **path length** as much as a capsule: the token grows ~1.3320 encoded
+bytes per `cwd` character — the base64 4/3 expansion, so it is the encoding's property rather than
+this capsule's — first crossing the bound about 2,297 characters beyond the server workspace root.
+**Any pair measured over 129024 is a bound re-derivation that stops the loop, never a silent
+re-bound.**
+
 ## Update History
+- 2026-09-17T16:05+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): this route's `harness_control_runner.py` changed, so the body gained the section above rather than a no-impact entry. It states **D12's** delivered contract — the three constants (`MAX_ARGV_TOKEN_BYTES` 131072, `ARGV_TOKEN_SAFETY_MARGIN_BYTES` 2048, `ARGV_TOKEN_BOUND_BYTES` **129024**) and `_refuse_over_bound_token` refusing **before any spawn** — together with the two facts the leaf measured: the bound is **enforced** (refused by name at a `PATH_MAX` cwd), and the route to it is a path length as much as a capsule (~1.3320 encoded bytes per `cwd` character, first crossing ~2,297 characters beyond the server workspace root), so **a headroom figure is only meaningful with its inputs named**. The card's stale forward-routing line ("routed to the final-verification leaf, not to this seam") and L15's superseded 120,536 B / 92.0 % headline were replaced with the measured values. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Earlier entries are preserved exactly as written.
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the route's own `D22` limitation is discharged
   by this leaf, so the body was corrected rather than given a no-impact entry.** The L15 section's
   "two limitations" block was rewritten into a `## 260915-CAPS-L17` section that states what is now

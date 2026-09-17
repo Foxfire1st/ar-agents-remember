@@ -6,9 +6,10 @@
 | path                   | `mcp/tests/test_role_capsule_admission.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
 | governingOverview      | `overview.md`                              |
+| reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 
 ## Governing Overview
 
@@ -21,24 +22,24 @@ parser, and the frozen vocabulary — the boundaries a later leaf consumes. This
 in the role-capsule suite that touches the **real** tree; the compiler module builds its own
 fixture so a failure names one boundary instead of a whole corpus.
 
-**43 test functions → 54 collected cases** (several are parametrized over the nine shipped roles
-and the eight operations).
+**43 test functions → 54 collected cases** (several are parametrized over the **ten** shipped roles
+and the **nine** operations).
 
 ## Code Commentary
 
 ### Logic
 
-Fixtures and helpers: `corpus_tree` (100-114), `request_for` (115-126), `worker_binding` (127-145),
-`_shipped_parsed` (359-362), `_shipped_request` (363-386), `_shipped_binding` (387-416),
-**`declared_inherits` (417-430)**, `_shipped_document` (816-819), `_refuse` (820-829),
-`_manifest_with` (830-906).
+Fixtures and helpers: `corpus_tree` (104-117), `request_for` (118-129), `worker_binding` (130-147),
+`_shipped_parsed` (395-398), `_shipped_request` (399-422), `_shipped_binding` (423-452),
+**`declared_inherits` (453-466)**, `_shipped_document` (852-855), `_refuse` (856-865),
+`_manifest_with` (866-942).
 
 The cases group into seven boundaries:
 
 | Group | Cases | Demonstrates |
 | --- | --- | --- |
-| vocabulary | `test_the_frozen_vocabulary_is_exactly_the_nine_roles_and_eight_operations` (146-152) · `test_the_role_and_operation_literals_agree_with_their_runtime_tuples` (153-159) · `test_the_launcher_is_a_seat_kind_and_not_a_tenth_role` (160-165) · `test_every_documented_refusal_code_is_registered_exactly_once` (166-184) | the registry is exactly nine roles / eight operations; the ambient launcher is a routing condition, not a tenth role; the PEP 695 literals and their runtime tuples cannot drift; the refusal-code set is complete and duplicate-free |
-| root-local admission | `test_admission_reads_every_requested_source_with_its_content_digest` (275-289) · `test_admission_is_reproducible_over_one_unchanged_tree` (290-300) · `test_admission_refuses_a_path_that_escapes_its_root` (301-310) · `test_admission_refuses_a_missing_source_instead_of_skipping_it` (311-319) · `test_admission_refuses_a_root_that_is_not_a_directory` (320-326) · `test_admission_refuses_the_same_path_requested_twice` (327-334) · `test_an_unreadable_source_returns_a_refusal_rather_than_raising` (335-358) · `test_a_source_root_that_is_not_a_path_is_refused` (1146-1156) | digest-carrying reads; reproducibility; traversal, missing source, bad root, double request and unreadable source all refused rather than skipped |
+| vocabulary | `test_the_frozen_vocabulary_is_exactly_the_ten_roles_and_nine_operations` (149-155) · `test_the_role_and_operation_literals_agree_with_their_runtime_tuples` (156-162) · `test_the_launcher_is_a_seat_kind_and_not_a_role` (163-168) · `test_every_documented_refusal_code_is_registered_exactly_once` (169-187) | the registry is exactly **ten roles / nine operations**; the ambient launcher is a routing condition, not an eleventh role; the PEP 695 literals and their runtime tuples cannot drift; the refusal-code set is complete and duplicate-free |
+| root-local admission | `test_admission_reads_every_requested_source_with_its_content_digest` (278-292) · `test_admission_is_reproducible_over_one_unchanged_tree` (293-303) · `test_admission_refuses_a_path_that_escapes_its_root` (304-313) · `test_admission_refuses_a_missing_source_instead_of_skipping_it` (314-322) · `test_admission_refuses_a_root_that_is_not_a_directory` (323-329) · `test_admission_refuses_the_same_path_requested_twice` (330-337) · **`test_an_unreadable_source_returns_a_refusal_rather_than_raising` (338-390)** — which now also drives the **emptied-source (`source-empty`) seed** at 358-390 · `test_a_source_root_that_is_not_a_path_is_refused` (1149-1159) | digest-carrying reads; reproducibility; traversal, missing source, bad root, double request and unreadable source all refused rather than skipped; an **emptied admitted source refuses by name** rather than raising out of the value layer (D25) |
 | manifest parsing | `test_the_shipped_manifest_parses_and_agrees_with_the_frozen_vocabulary` (185-196) · `test_every_role_and_operation_the_shipped_manifest_declares_has_a_source` (197-218) · `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` (219-228) · `test_a_manifest_that_disagrees_with_the_frozen_vocabulary_is_refused` (229-240) · `test_a_manifest_whose_applicability_contradicts_itself_is_refused` (241-254) · `test_a_manifest_that_routes_two_identities_at_one_file_is_refused` (255-274) · `test_the_manifest_parser_refuses_each_metadata_defect` (910-931) · `test_the_specializations_field_must_be_an_array_when_present` (1095-1109) | the real manifest parses and agrees with the frozen vocabulary; a declared tool id outside the published roster is an error, not an inert request; each structural defect has its own refusal |
 | **routing agreement** | **`test_every_role_file_declares_the_core_blocks_and_operations_it_inherits` (433-470)** · **`test_every_shipped_role_compiles_to_the_routing_its_own_role_file_declares` (471-520)** · **`test_every_shipped_role_compiles_deterministically_under_every_declared_operation` (521-543)** · **`test_every_shipped_role_composes_exactly_its_manifest_declared_routing` (698-728)** | the compiled routing and each role's own canonical source agree — the cross-check that keeps the manifest honest against the prose it routes to |
 | **the carried skill channel** | **`test_a_shipped_role_declaring_a_skill_actually_carries_the_reference` (586-605)** · **`test_every_shipped_role_that_declares_a_skill_carries_one_reference_per_declaration` (606-620)** · **`test_a_role_declaring_no_skills_returns_an_empty_reference_tuple` (621-659)** · **`test_the_skill_revision_follows_the_admitted_skill_bytes` (660-697)** · `test_a_skill_reference_whose_root_file_is_not_admitted_is_refused` (1037-1060) · `test_an_unknown_skill_name_is_refused_by_the_manifest_accessor` (1200-1212) | a declared skill is **carried** with its own revision, one reference per declaration; a role declaring none gets an empty tuple; the revision tracks the admitted bytes; a missing or unknown skill is refused, never silently dropped |
@@ -54,7 +55,7 @@ module (50 collected there).
 ### Conventions
 
 A fixture-building case uses `tmp_path`; only the shipped-corpus and routing groups read the real
-tree. Parametrizing over all nine roles and all eight operations is what makes "every shipped role
+tree. Parametrizing over all **ten** roles and all **nine** operations is what makes "every shipped role
 compiles to its declared routing" a corpus claim rather than a single-role claim. This module, not
 the compiler module, owns every case that reads real bytes.
 
@@ -76,8 +77,8 @@ the compiler module, owns every case that reads real bytes.
   implementation does not have.
 - `test_every_documented_refusal_code_is_registered_exactly_once` is the completeness guard for
   `CAPSULE_STATUSES`. It covers the **compiler** tuple; the source-value codes raised outside it
-  (`source-not-utf8` and the admission codes) are deliberately not members and are asserted in the
-  compiler module.
+  (`source-not-utf8`, the **`source-empty`** code added by D25's repair, and the admission codes)
+  are deliberately not members and are asserted in the compiler module.
 - Only this module may read the real corpus; the compiler module deliberately does not.
 - Adding a shipped role or operation requires no new case — the parametrization picks it up — but
   adding one **with no source**, or whose routing disagrees with its own role file, must make the
@@ -100,14 +101,14 @@ No external or domain documentation is configured for this memory root
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The frozen vocabulary and its completeness guard the vocabulary group pins. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS`; `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89; mcp/src/agents_remember/models/role_capsules/statuses.py:27-41 |
+| The frozen vocabulary and its completeness guard the vocabulary group pins. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS`; `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-97; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-119; mcp/src/agents_remember/models/role_capsules/statuses.py:27-43 |
 | The manifest parser the shipped-manifest group exercises against the real file. | `parse_composition_manifest`; `_require_one_path_serves_one_identity`; `_require_operation_applicability_agrees`; `_require_role_skills_are_declared` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216; mcp/src/agents_remember/models/role_capsules/manifest.py:513-553; mcp/src/agents_remember/models/role_capsules/manifest.py:554-601; mcp/src/agents_remember/models/role_capsules/manifest.py:479-508 |
 | The admission boundary the admission group refuses through. | `admit_capsule_sources`; `_require_confined_relative` | mcp/src/agents_remember/application/role_capsules/sources.py:78-94; mcp/src/agents_remember/application/role_capsules/sources.py:169-196 |
 | The both-directions plan validation, including the skill-root gate. | `admit_source_set`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/source_set.py:91-108; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
-| **The carried skill channel** these cases pin, and the helper that names a skill identity. | `skill_references`; `skills_declared_identity`; `CapsuleSkillReference` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193; mcp/src/agents_remember/models/role_capsules/sources.py:126-138; mcp/src/agents_remember/models/role_capsules/types.py:414-434 |
-| The application entry point that converts an admission refusal into an outcome value. | `compile_admitted_capsule`; `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:46-88 |
-| The real corpus this module is the only role-capsule test to read. | `"schema": "ar-role-capsule-composition/v1"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
-| The sibling module that owns the compiler's own property cases. | `test_identical_input_compiles_to_identical_ordered_content_and_digest` | mcp/tests/test_role_capsule_compiler.py:377-388 |
+| **The carried skill channel** these cases pin, and the helper that names a skill identity. | `skill_references`; `skills_declared_identity`; `CapsuleSkillReference` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193; mcp/src/agents_remember/models/role_capsules/sources.py:135-147; mcp/src/agents_remember/models/role_capsules/types.py:414-434 |
+| The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25). | `compile_admitted_capsule`; `CapsuleCompilationOutcome`; `CapsuleSourceError` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:46-88; mcp/src/agents_remember/models/role_capsules/sources.py:74-103 |
+| The real corpus this module is the only role-capsule test to read. | "ar-role-capsule-composition/v1" | skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
+| The sibling module that owns the compiler's own property cases. | `test_identical_input_compiles_to_identical_ordered_content_and_digest` | mcp/tests/test_role_capsule_compiler.py:381-392 |
 
 ## Cross-Repo References
 
@@ -118,6 +119,8 @@ No sibling-repository contract is exercised by these cases.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T15:52+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): recorded the candidate's **D25 case** and corrected the card's stale vocabulary and ranges. The `root-local admission` group now carries the **emptied-source seed** inside `test_an_unreadable_source_returns_a_refusal_rather_than_raising` (338-390): it copies the shipped corpus into a disposable tree, empties a selected source, drives the **real** application boundary, and asserts the outcome is a refusal carrying `status == "source-empty"` rather than an escaping `ValueError` — which is what makes the seed failable. **Corrected a stale vocabulary the card had carried since L2:** the frozen registry is **ten roles / nine operations**, not nine/eight, so the group's cases, the purpose line, the conventions line and the reference row were all corrected to the registry's own current names. Ranges advanced by the candidate's +36 lines: helper inventory 100-114→**104-117**, 115-126→**118-129**, 127-145→**130-147**, 359-362→**395-398**, 363-386→**399-422**, 387-416→**423-452**, 417-430→**453-466**, 816-819→**852-855**, 820-829→**856-865**, 830-906→**866-942**; the vocabulary rows → **82-97** / **98-119** / **27-43**; `test_a_source_root_that_is_not_a_path_is_refused` 1146-1156→**1149-1159**; `skills_declared_identity` 126-138→**135-147**; the compiler sibling case 377-388→**381-392**. The composition-manifest anchor now reads as a **double-quoted literal** (the form the checker accepts) instead of the nested-backtick JSON fragment that named no anchor. The L14 curator's D7 table-shape repair above is untouched, as is every earlier entry and every verification stamp.
 
 - 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 
