@@ -6,8 +6,8 @@
 | path | `mcp/tests/diff_scope_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
@@ -142,12 +142,12 @@ repository source and package-local evidence only.
 | **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** | `_require` | mcp/tests/diff_scope_test_support.py:509-516 |
 | **The baseline fixture this module builds on.** | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-283 |
 | The fixture value the baseline side is read from. | `ReadScopeFixture` | mcp/tests/read_scope_test_support.py:174-239 |
-| **The contract this module's artifact row is registered under.** | "knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1199-1199 |
-| **The artifact row that registers this module, and the replacement contract it declares.** | "mcp/tests/diff_scope_test_support.py" | mcp/tests/evidence-lifecycle.toml:1209-1209; mcp/tests/evidence-lifecycle.toml:1220-1220 |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1250 |
+| **The artifact row that registers this module, and the replacement contract it declares.** | "260915-KS-L8"; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1247; mcp/tests/evidence-lifecycle.toml:1250 |
 | The unit-lane row that keeps the scope module in the certifying collection path. | "mcp/tests/test_knowledge_diff_scope.py" | mcp/tests/test-evidence-lanes.toml:76-76 |
 | The integration-lane row that keeps the boundary module in the certifying collection path. | "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:159-159 |
-| The boundary module's consumer declaration on the read-scope artifact. | "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/evidence-lifecycle.toml:1242-1242 |
-| The scope module's consumer declaration on the read-scope artifact. | "mcp/tests/test_knowledge_diff_scope.py" | mcp/tests/evidence-lifecycle.toml:1243-1243 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1268-1277 |
+| The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1239-1256; mcp/tests/evidence-lifecycle.toml:1268-1277 |
 | **The evidence node the contract names: the removed realization keeps its baseline source in the union.** | "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:309-342 |
 
 ## Cross-Repo References

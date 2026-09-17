@@ -84,11 +84,11 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The version-1 creation path: generation 1's DDL, generation 1's `user_version`, the repository row, then the production open. | `create_generation_1_store` | mcp/tests/generation_test_support.py:34-54 |
 | The module's own reason for existing: a generation-1 fact cannot use the ordinary creation path, and downgrading a generation-2 database would test something else. | "which schema is this" | mcp/tests/generation_test_support.py:1-13 |
-| The pair reader, and why the schema name it reports is the registry's rather than the file's. | `declared_pair`; `declared_schema_name` | mcp/tests/generation_test_support.py:63-77; mcp/tests/generation_test_support.py:57-60 |
+| The pair reader, and why the schema name it reports is the registry's rather than the file's. | `declared_pair`; `declared_schema_name` | mcp/tests/generation_test_support.py:90-104; mcp/tests/generation_test_support.py:84-87 |
 | The DDL and the version both come from generation 1's own record rather than from a literal. | `create_schema_statements`; `GENERATION_1` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:125-131; mcp/src/agents_remember/memory/knowledge/schema_generations.py:150-162 |
 | The version-to-generation resolution this support reads a file through. | `generation_for_version` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:253-256 |
 | The production open paths the support deliberately goes through. | `open_database`; `open_read_only_database`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/connection.py:26; mcp/src/agents_remember/memory/knowledge/connection.py:52; mcp/src/agents_remember/memory/knowledge/store.py:751 |
-| The two modules that consume this support, which are its exact consumer scope. | `create_generation_1_store` | mcp/tests/test_knowledge_schema_generations.py:50; mcp/tests/test_knowledge_merge_generations_and_envelope.py:52 |
+| The two modules that consume this support, which are its exact consumer scope. | `create_generation_1_store` | mcp/tests/test_knowledge_schema_generations.py:62; mcp/tests/test_knowledge_merge_generations_and_envelope.py:61 |
 
 ## Cross-Repo References
 
