@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:50+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
+| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` (synced onto L14's landing) |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -125,6 +126,37 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **consumer rows only again, and the pin re-derived
+  against the MERGED catalog — which is this leaf's own obligation.** The leaf's new test module
+  `mcp/tests/test_eve_effort_runtime.py` starts the shipped runtime, so it consumes three
+  already-governed artifacts and each `consumers` list gained one entry:
+  `mcp/tests/fixtures/repository_profiles/node/package-lock.json` (L649),
+  `mcp/tests/eve_capsule_test_support.py` (L736) and `mcp/tests/test_eve_adapter_test_support.py`
+  (L1186). **Nothing was registered, no row was removed and no artifact's identity moved**, so the
+  populations stay at **4 contracts / 51 artifacts**. The pin is **`563582a0…`**, and it is neither
+  L15's `3342a249…` nor the `22ce7027…` this leaf measured before L15 landed: L15 landed first, so this
+  value covers the **merged** artifact set. Re-derived and independently recomputed this pass —
+  `sha256sum mcp/tests/evidence-lifecycle.toml` = `563582a0542f4a8721d1f717a48e92440c53fdf63a26b68fb43624c56ad90506`,
+  matching the constant at `mcp/tests/test_dependency_ownership_ast_helpers.py:46` (counts 51 / 4 at
+  `:44-:45`). The card's Purpose sentence attributing 51 to "this leaf's one added row" describes the
+  L15 pass and is left as history; **the value, not the sentence, is the claim**, and the rule that a
+  consumer row is a catalog change is what makes this re-derivation mandatory at each changing leaf.
+  **Checker result (post-sync, verbatim).** The refusal this entry first recorded was resolved
+  by the leaf's `worktree_sync`: the pair is now `leaf-candidate` / `acceptanceEligible:true` on
+  code base `d8ed8c21`, and the contract-scoped `memory_quality_check` ran against this
+  worktree. Headline: `ok:false`, `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding and one
+  `style.update_history.history_order` "not newest-first" finding, the latter caused by the
+  future-dated `10:50` stamp on the L15 entry below this one and not by this entry's content
+  (see the `serving/overview.md` entry for the same attribution). The pin above was additionally
+  recomputed directly and independently — it is `e3651d6f…` at **4 contracts / 54 artifacts**
+  after L14 landed its fifty-fourth artifact, not the `563582a0…` this leaf measured pre-sync at
+  51. Verification metadata moves to the synced base `d8ed8c21`; the candidate is deliberately
+  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint
+  was invented here.
 
 - 2026-09-17T10:50+02:00 — 260915-CAPS-L15 curator: **consumer rows only, and the byte pin moved for
   that alone.** This leaf's new acceptance module reaches three governed artifacts through the shared

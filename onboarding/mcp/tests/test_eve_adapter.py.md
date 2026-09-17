@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_eve_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
+| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,14 +31,21 @@ an adapter over a `FakeRuntimeFactory`. Ten case classes then hold the contract:
 
 - `EveAdapterHandshakeTests` — start/handshake, protocol version, capabilities, and the finally-path
   that stops a partially started runtime.
-- `EveAdapterCapabilityTests` — the advertised catalog's honest shape. The reported case is
-  `test_advertise_reports_the_launch_selection_and_no_unbacked_effort_menu`: the catalog publishes the
-  model the runtime compiles and **reports** the launch's effort as configuration
-  (`selected_effort == "high"`), while offering **no** effort option — `model.effort_options == ()`,
-  `supports_effort` is false, `default_effort` is `None`, and `config_options` carries exactly
-  `["model"]`. The pinned application reads no effort value, so a menu would advertise a control whose
-  every value produces the same run; the launch vocabulary still validates a settings-named value at
-  the launch boundary.
+- `EveAdapterCapabilityTests` — the advertised catalog's honest shape, and the launch/live split. The
+  reported case is `test_advertise_reports_the_launch_selection_and_the_backed_effort_menu` (346): the
+  catalog publishes the model the runtime compiles, **reports** the launch's effort as configuration
+  (`selected_effort == "high"`), and offers the effort axis itself —
+  `tuple(option.key for option in model.effort_options) == REASONING_EFFORTS`, `supports_effort` true,
+  `default_effort == PROVIDER_DEFAULT_EFFORT`, every option `launch_settable` and **not**
+  `session_settable`, and `config_options` carries exactly `["model", "effort"]` with the effort
+  option's `current_value` the selection. The pinned application reads `AR_EVE_EFFORT` through eve's
+  own `defineAgent({ reasoning })`, so the menu is a control the runtime honours rather than one whose
+  every value produces the same run. Its sibling
+  `test_the_effort_axis_is_launch_settable_and_never_live_settable` (376) pins the other half against
+  the started runtime: `set_effort` refuses **every** candidate — including the ones this catalog
+  advertises — with `acceptance == "unsupported"` and the requested value echoed as
+  `requested_value`, while `effective_value` stays the model the session is actually running and
+  `selected_effort` stays `"high"`. Neither side is read from the catalog's own menu.
 - `EveAdapterSubmissionTests` — the full protocol fixture distinguishing acceptance from completion;
   an input request becoming a pending interaction and a response targeting it; free-text responses
   using the `text` field with unknown ids refused; preflight refusing while an input request is
@@ -128,13 +136,14 @@ pass was available for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The adapter under test, its limits, id, reasoning vocabulary and event mapper. | `EveSessionAdapter`; `EveAdapterLimits`; `DEFAULT_EVE_ADAPTER_LIMITS`; `EVE_ADAPTER_ID`; `REASONING_EFFORTS` | mcp/src/agents_remember/serving/eve_adapter.py:81-81; mcp/src/agents_remember/serving/eve_adapter.py:90-98; mcp/src/agents_remember/serving/eve_adapter.py:115-121; mcp/src/agents_remember/serving/eve_adapter.py:124-124; mcp/src/agents_remember/serving/eve_adapter.py:144-865 |
+| The adapter under test, its limits, id, reasoning vocabulary and event mapper. | `EveSessionAdapter`; `EveAdapterLimits`; `DEFAULT_EVE_ADAPTER_LIMITS`; `EVE_ADAPTER_ID`; `REASONING_EFFORTS` | mcp/src/agents_remember/serving/eve_adapter.py:82-82; mcp/src/agents_remember/serving/eve_adapter.py:100-110; mcp/src/agents_remember/serving/eve_adapter.py:127-132; mcp/src/agents_remember/serving/eve_adapter.py:135-135; mcp/src/agents_remember/serving/eve_adapter.py:155-936 |
 | The deterministic transport double and its scripted turn builder. | `FakeEveRuntime`; `FakeRuntimeFactory`; `FakeTurn`; `FakeEveSession` | mcp/tests/eve_adapter_test_support.py:26-37; mcp/tests/eve_adapter_test_support.py:40-77; mcp/tests/eve_adapter_test_support.py:80-286; mcp/tests/eve_adapter_test_support.py:289-298 |
 | The cancel observation the interrupt cases assert on is the recorded request pair, not fake state. | `FakeEveSession.cancel_requests`; `_current_turn_id` | mcp/tests/eve_adapter_test_support.py:41-60; mcp/tests/eve_adapter_test_support.py:301-308 |
 | The AR control-wire and adapter-model types the cases assert against. | `LaunchSpec`; `ControlOperationRef`; `SubmissionReceipt`; `ReconciliationResult`; `InterruptResult`; `AdapterEvent`; `PromptRequest`; `InteractionResponse` | mcp/src/agents_remember/models/conversations/control_wire.py:1-200; mcp/src/agents_remember/serving/harness_control_models.py:20-20; mcp/src/agents_remember/serving/harness_control_models.py:105-105; mcp/src/agents_remember/serving/harness_control_models.py:127-127; mcp/src/agents_remember/serving/harness_control_models.py:177-177 |
 | The wire-level cases one layer below this file, which now assert the outgoing request bodies. | `EveCursorTests`; `EveFrameTests`; `EveWireRequestTests` | mcp/tests/test_eve_protocol.py:195-232; mcp/tests/test_eve_protocol.py:140-192; mcp/tests/test_eve_protocol.py:382-522 |
 | The live native proof of the same six scenarios. | `_scenario_protocol`; `_scenario_concurrent` | mcp/tests/live_eve_native_fixture.py:572-622; mcp/tests/live_eve_native_fixture.py:892-1010 |
-| The advertised catalog has no effort menu to assert, and this suite's capability case asserts that absence rather than the retired menu. | `EveAdapterCapabilityTests`; `test_advertise_reports_the_launch_selection_and_no_unbacked_effort_menu`; `_capability_snapshot` | mcp/tests/test_eve_adapter.py:331-370; mcp/src/agents_remember/serving/eve_adapter.py:688-718 |
+| The advertised catalog publishes a backed effort menu, and this suite's capability pair asserts the menu and the launch-only rule against the started runtime. | `EveAdapterCapabilityTests`; `test_advertise_reports_the_launch_selection_and_the_backed_effort_menu`; `test_the_effort_axis_is_launch_settable_and_never_live_settable`; `_capability_snapshot` | mcp/tests/test_eve_adapter.py:343-421; mcp/tests/test_eve_adapter.py:346-374; mcp/tests/test_eve_adapter.py:376-421; mcp/src/agents_remember/serving/eve_adapter.py:699-748 |
+| The other half of the split: the launched application really applies the level, read at the provider boundary by the module that starts it per level. | `EveEffortConsumerTests` | mcp/tests/test_eve_effort_runtime.py:175-214 |
 
 ## Cross-Repo References
 
@@ -147,6 +156,38 @@ No external repository boundary is implemented by this test.
 | The launch-time verification that makes a partial binding unlaunchable, which is why the suite could not keep its fabricated cwd and two-variable environment. | `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
 
 ## Update History
+
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the capability case was rewritten again, so the
+  body was corrected in place.** L8 had rewritten it to assert an *absence*
+  (`…_and_no_unbacked_effort_menu`: `effort_options == ()`, `supports_effort` false,
+  `default_effort` `None`, `config_options == ["model"]`, `REASONING_EFFORTS` not imported). This
+  leaf's candidate gives the pinned application a real `AR_EVE_EFFORT` consumer, so that case was
+  **replaced** by `test_advertise_reports_the_launch_selection_and_the_backed_effort_menu` (346),
+  which asserts the axis is offered and that every option is launch-settable and not session-settable —
+  and a second case was added,
+  `test_the_effort_axis_is_launch_settable_and_never_live_settable` (376), pinning the launch/live
+  split against the started runtime rather than from the menu. Recorded both in the case-class bullet,
+  corrected the capability reference row (which still said the suite asserts the absence), anchored it
+  at the candidate's real ranges and re-anchored the adapter row to the candidate's line numbers
+  (`EVE_ADAPTER_ID` 82, `REASONING_EFFORTS` 100-110, `DEFAULT_EVE_ADAPTER_LIMITS` 135, the class
+  155-936). **Checker result (post-sync, verbatim).** The refusal this entry first recorded was
+  resolved by the leaf's `worktree_sync`: the pair is now `leaf-candidate` /
+  `acceptanceEligible:true` on code base `d8ed8c21`, and the contract-scoped
+  `memory_quality_check` ran against this worktree. Headline: `ok:false`,
+  `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding and one
+  `claim_reopen` error at `:139`. The latter is the **D11 uncommitted-candidate signature** as
+  this master records it: the checker resolves citations against the code base commit, the
+  anchored constructs (`EveSessionAdapter`, `REASONING_EFFORTS`) were changed by this leaf, and
+  a generated citation repair from 2026-09-16 had already rewritten the row's ranges
+  mechanically. This pass **re-anchored that row by hand** to the candidate's real boundaries
+  rather than accepting the projection, and deliberately did **not** advance the verification
+  stamp — stamping an uncommitted tree is forbidden, and the closing evidence is the
+  post-closeout state of the same ranges. Verification metadata moves to the synced base
+  `d8ed8c21`; the candidate is deliberately uncommitted, so the governed closeout stamps the
+  real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the suite gained a protocol pin and a named
   environment guard** (defect D19, repaired by this leaf). `EveRuntimeTransportFakeContractTests` (new,

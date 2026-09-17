@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/eve_adapter_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
+| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,6 +96,28 @@ work is real and the binding is immutable; `test_eve_adapter.py`'s `_launch` spr
 launch environment and takes `cwd` from it, so the fixture cannot drift from what the launch path
 verifies.
 
+**`RecordedModelRequest` (440) and `serve_recording_provider` (467) are the provider boundary this
+module now supplies.** `260915-CAPS-L17` needed to read the **request body a direct provider received**
+— that body *is* the value the effort axis is measured by — and the product's deterministic fixture
+model cannot serve: it answers a scripted plan and traces a **normalized projection** of the request,
+and a projection is exactly what must not be trusted when the body is the field under test. So this is
+a real recording HTTP server (a direct OpenAI-compatible endpoint) that keeps each body verbatim,
+exposing it both as `body` and through `reasoning_effort` (which collapses "absent" to `None` for
+readable assertions, so a case that must distinguish *not sent* from *sent as null* asks
+`"reasoning_effort" in body` directly) and `top_level_keys()`.
+
+`drop_reasoning_effort` is the **instrument's** way to model a boundary that loses the value: the key
+is removed from the request the provider *receives*, in `do_POST` **before** the body is recorded and
+before it answers, so the recorded bytes and the answer describe a request that never carried it. That
+placement is the point — substituting the absence inside an assertion would prove nothing about the
+boundary, which is defect `L17-5`'s lesson and the reason the flag lives here rather than in a case.
+
+`staged_runtime_root` (580) assembles the one application root that keeps the bytes under test the
+checkout's own: `agent` is a **symlink to the authored directory** (so a case compiles what the
+repository ships, recorded edits and all, rather than a reduced application written for the case),
+`node_modules` links to the machine-local install the production stager requires, and the three
+lockfile/tsconfig files are copied. Nothing is installed and nothing is copied into the worktree.
+
 ### Conventions
 
 - The record is decoded through the production frame parser (`parse_event_frame`), so a fixture that
@@ -121,6 +144,15 @@ verifies.
   narrowing opportunity at the call site.** That is D19's lesson: the protocol is the shipped seam, the
   fake that cannot stand in for it is what is wrong, and a type-level failure was the only trace until
   whole-tree pyright ran.
+- **A boundary that loses a value must lose it in the instrument, not in the assertion.** When the
+  field under test is a request body, the recorded bytes are the evidence: `drop_reasoning_effort`
+  removes the key from the request the provider *receives*, before recording and before answering.
+  Replacing this with an assertion-side substitution (or with a case that simply asserts what the
+  fixture model reports) would make the falsifiability seed vacuous.
+- **The bytes measured must be the repository's own.** `staged_runtime_root` links `agent` to the
+  authored tree rather than copying or reducing it, so a case that measures the launched application
+  measures what this repository ships. A copied or hand-written application root would let a
+  measurement pass against something the repository does not contain.
 - **An environment-dependent case skips by name, never silently and never by retry.** The guard states
   the missing path and the exact install command; a bare skip would let a fresh checkout claim coverage
   it never ran, and a bare failure reads as a product defect instead of a missing machine-local install.
@@ -157,7 +189,10 @@ pass was available for this file.
 | The live native fixture is the only artifact that proves the *live runtime* half of the same seam; it drives a real eve process rather than this double. | `TracingEveRuntime`; `_scenario_capsule_binding` | mcp/tests/live_eve_native_fixture.py:123-170; mcp/tests/live_eve_native_fixture.py:1758-1813 |
 | The two session-control members this double had to gain, declared by the production protocol. | `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89 |
 | The cases that pin the two members statically and behaviourally, so a member that exists and does nothing also fails. | `EveRuntimeTransportFakeContractTests` | mcp/tests/test_eve_adapter.py |
-| The named environment guard, its call sites, and the install it names. | `require_installed_eve_application`; `_started`; `_start_eve`; `_evidence_frames` | mcp/tests/eve_adapter_test_support.py:42-61; mcp/tests/test_eve_adapter.py; mcp/tests/test_eve_product_integration.py; eve_runtime/README.md:25 |
+| The named environment guard, its call sites, and the install it names. The two suites were cited as **bare paths** until this pass, so the three anchors could not resolve; they now carry the real ranges. | `require_installed_eve_application`; `_started`; `_start_eve`; `_evidence_frames` | mcp/tests/eve_adapter_test_support.py:44-62; mcp/tests/test_eve_adapter.py:256-277; mcp/tests/test_eve_product_integration.py:682-691; mcp/tests/test_eve_product_integration.py:1547-1567; eve_runtime/README.md:25 |
+| The recording provider boundary this module gained: the raw request body kept verbatim, and the instrument's own drop that models a boundary losing the value. | `RecordedModelRequest`; `serve_recording_provider`; `drop_reasoning_effort`; `_sse_frame` | mcp/tests/eve_adapter_test_support.py:440-465; mcp/tests/eve_adapter_test_support.py:467-574; mcp/tests/eve_adapter_test_support.py:467-473; mcp/tests/eve_adapter_test_support.py:576-578 |
+| The application root the bytes under test come from, and the machine-local install it links to. | `staged_runtime_root`; `EVE_APPLICATION_ROOT` | mcp/tests/eve_adapter_test_support.py:580-599; mcp/tests/eve_adapter_test_support.py:37-37 |
+| The cases that consume the recording boundary and the staged root, one application root and one process per level. | `EveEffortConsumerTests` | mcp/tests/test_eve_effort_runtime.py:175-214 |
 
 ## Cross-Repo References
 
@@ -168,6 +203,31 @@ No external repository boundary is implemented by this support module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the module gained a second, non-double boundary —
+  a real recording provider — and a staged application root.** Recorded in Logic: `RecordedModelRequest`
+  (440) and `serve_recording_provider` (467) exist because the value this leaf measures **is the raw
+  request body**, and the product's deterministic fixture model traces a normalized projection, which
+  must not be trusted for that. The two properties worth stating as contracts were added to Invariants:
+  a boundary that loses a value must lose it **in the instrument** (`drop_reasoning_effort` removes the
+  key from the request the provider receives, before recording and before answering — substituting the
+  absence in an assertion, `L17-5`, proves nothing), and the bytes measured must be the repository's own
+  (`staged_runtime_root`, 580, links `agent` to the authored tree rather than copying or reducing it).
+  Added two reference rows and one for the consuming module. **Checker result (post-sync,
+  verbatim).** The refusal this entry first recorded was resolved by the leaf's `worktree_sync`:
+  the pair is now `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the
+  contract-scoped `memory_quality_check` ran against this worktree. Headline: `ok:false`,
+  `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding, and **one
+  `claim_reopen` error at `:192`** on the older "named environment guard" row, which cited
+  `mcp/tests/test_eve_adapter.py` and `mcp/tests/test_eve_product_integration.py` as **bare
+  paths with no ranges**, so the anchors `_started` / `_start_eve` / `_evidence_frames` could
+  not resolve. That row was repaired in this pass (real ranges added); the finding will clear
+  once the candidate is committed. Verification metadata moves to the synced base `d8ed8c21`;
+  the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the double now implements the whole protocol, and
   the launch-dependent cases skip by name** (defect D19, repaired by this leaf). `compact_session` and

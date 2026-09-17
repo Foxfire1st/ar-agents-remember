@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
+| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -159,19 +160,52 @@ captured cwd **and** env were fed to the consumer's own gate (`launch_spec_bindi
 carrier block and its semantic digest in its own system block
 (`notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt`).
 
-**Two limitations this route carries, stated rather than smoothed:**
+## 260915-CAPS-L17 The settings-chain eve Seat Dispatches, And The Route Exclusion Is Declared
 
-1. **A role-configured eve seat still cannot be dispatched.** The capsule gate passes and the **next**
-   refusal is inherited and downstream: `application/terminal_tools.py::_resolve_harness_dispatch`
-   requires model **and** effort from the settings chain, while eve's honest capability catalogue
-   advertises no launch-settable effort (`supports_effort=False`). Defect **D22**, developer ruling
-   route **(A)**, owner **L17**. Nothing here fixes it, and no card should read the wired path as an eve
-   seat launching end to end.
-2. **The dashboard route cannot start the *shipped* eve row.** The route does not set
-   `TerminalLaunchRequest.session_backend`, so the harness is checked as a PATH program and the shipped
-   eve row is refused `bad-kind` with `host.ensured == []`. Pre-existing (the base tree answers the
-   identical refusal), measured by this leaf, owner **L17**. The spawn primitive sets
-   `session_backend=True` for exactly this reason.
+**The limitation this route carried is now closed for the seat path.** The section above recorded that a
+role-configured eve seat could not be dispatched: the capsule gate passed and the **next** refusal was
+inherited and downstream, because `application/terminal_tools.py::_resolve_harness_dispatch` requires
+model **and** effort from the settings chain while eve's honest capability catalogue advertised no
+launch-settable effort (`supports_effort=False`). That was defect **D22**, developer ruling route
+**(A)**. This leaf discharges it by making the capability real rather than by relaxing the gate that
+noticed its absence: the pinned application now consumes `AR_EVE_EFFORT` through eve's own
+`defineAgent({ reasoning })`, and `serving/eve_adapter.py::_capability_snapshot` therefore publishes the
+effort axis with its default. A settings file naming harness `eve`, a model and an effort for a role now
+resolves through the real dispatch, the runner's PREPARE accepts, the adapter starts the pinned runtime,
+and the model request the runtime issues carries the configured level — read at the provider boundary,
+in the request body a recording provider received, **not** asserted from the catalogue
+(`notes/reports/260915-CAPS-L17-evidence/s2-*-provider-requests.jsonl`; the settings-chain launch is
+`s5-settings-chain.json`).
+
+**No file in this chain moved, and that is the point.** `serving/harness_launch.py`,
+`application/terminal_tools.py` and `serving/_app_terminal_routes.py` are **unchanged** by this leaf;
+what changed is that the catalogue stopped refusing, so `validate_launch_selection` now has a
+launch-settable effort to validate against instead of an empty menu. `harness_launch.py`'s
+settings-chain policy and this route's capsule gate are the same code they were.
+
+**The dashboard route's inability to start the *shipped* eve row is a declared, owned limitation, not
+a repair.** The route deliberately never sets `TerminalLaunchRequest.session_backend`, so
+`resolve_terminal_launch` asks the terminal-program question, and eve's runtime is the AR-owned
+application the session adapter starts itself rather than a `PATH` program. Four requests through the
+real dashboard app measure the outcome exactly (`notes/reports/260915-CAPS-L17-evidence/s6-s7.json`):
+
+| Case | Answer |
+| --- | --- |
+| shipped row, role-configured open | **400 `capsule-unavailable`** at the eve carrier gate |
+| shipped row, roleless open | **400 `bad-kind`**, naming the terminal-program decision |
+| operator-taught row (`orchestration.harnesses.eve` naming a real PATH program), role-configured open | **400 `capsule-unavailable`** at the same gate |
+| operator-taught row, roleless open | **200 `running`**, `instructionMode: legacy` |
+
+**Reason:** an adapter-owned harness has nothing for this route to exec; the caller that asks for a
+session backend is `application/terminal_tools.py` (`session_backend=True`, :765) and this route
+deliberately does not. **The last row is the hazard and is named rather than smoothed:** an
+operator-taught PATH row makes a roleless open return a green `running` session with `legacy`
+instructions — an `eve` session that is **not** the AR runtime. That is the pre-existing teach-a-TUI
+feature, and it is the one route by which the dashboard reports success for `eve` while nothing
+adapter-owned runs. **Owner: the serving/route surface — whichever leaf next owns
+`serving/_app_terminal_routes.py`** — carried in the master's obligation ledger by the
+final-verification leaf. Product pin:
+`mcp/tests/test_eve_product_integration.py::EveTerminalLaunchTests::test_the_declared_exclusion_belongs_to_the_route_and_is_owned`.
 
 **Behaviour 6 — the legacy path — is measured, not asserted.** Three legacy launch shapes (no role, a
 `chat` seat, a worker on `claude`) are **byte-identical** on both trees: the capsule-free payload is the
@@ -1180,8 +1214,10 @@ The produce side of this seam is **not** in this route: it is
 production caller** — `application/role_capsules/launch.py::_compile_eve_task` materializes the carrier
 for a wired launch point (see the L15 section above). The `L7R-4` transfer that asked for that wiring is
 discharged on the **produce** side ("the produce side has a production caller, verified at the
-consumer's gate"); the **live-seat** half is still open and is not this route's — see limitation 1 in
-the L15 section (D22, owner L17).
+consumer's gate"); the **live-seat** half was open at L15's tip and is **closed by
+`260915-CAPS-L17`** — see the `## 260915-CAPS-L17` section above, which records the settings-chain
+launch and the provider-boundary measurement rather than the catalogue's word (D22, discharged by
+L17).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -1193,6 +1229,37 @@ the L15 section (D22, owner L17).
 | The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
 
 ## Update History
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the route's own `D22` limitation is discharged
+  by this leaf, so the body was corrected rather than given a no-impact entry.** The L15 section's
+  "two limitations" block was rewritten into a `## 260915-CAPS-L17` section that states what is now
+  true: the pinned application consumes `AR_EVE_EFFORT` through eve's own `defineAgent({ reasoning })`
+  and the adapter publishes the axis, so a settings-file eve seat for a role resolves through the real
+  dispatch and the effort reaches the model request the runtime issues — measured at the provider
+  boundary, not read from the catalogue. Recorded that **no file in this chain moved**
+  (`harness_launch.py`, `terminal_tools.py`, `_app_terminal_routes.py` are all unchanged by this leaf;
+  what changed is that the catalogue stopped refusing), and kept the dashboard route's exclusion as a
+  **declared, owned** limitation with its reason, its four measured answers (including the
+  operator-taught PATH row that returns `200 running` with `legacy` instructions — a green `eve`
+  session that is not the AR runtime) and its owner. Two earlier sentences that this change falsified
+  were corrected where they were claims rather than history: the L7 section's "limitation 1 … D22,
+  owner L17" pointer, and the L15 entry's present-tense "still cannot be dispatched", which now reads
+  as the past-tense state that entry described. **Checker result (post-sync, verbatim).** The
+  refusal this entry first recorded was resolved by the leaf's `worktree_sync`: the pair is now
+  `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the contract-scoped
+  `memory_quality_check` ran against this worktree. Headline: `ok:false`,
+  `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding, plus
+  **three** `style.update_history.history_order` "not newest-first" findings. The ordering ones
+  are **not** this entry's content: this entry is stamped with the real wall-clock time of the
+  edit while the entry immediately below it claims `2026-09-17T11:00`, a **future** stamp
+  inherited from the L15 pass, and no honest stamp of mine can sort above a future one —
+  satisfying the check would require inventing a future stamp, which this leaf's rules forbid.
+  Reported as an attributed residual rather than papered over. Verification metadata moves to
+  the synced base `d8ed8c21`; the candidate is deliberately uncommitted, so the governed
+  closeout stamps the real code commit and no hash or fingerprint was invented here.
+
 - 2026-09-17T11:00+02:00 — 260915-CAPS-L15 curator: **route meaning changed for the entire launch path,
   so the body was updated rather than given a no-impact entry.** The new
   `## 260915-CAPS-L15 The Launch Paths Compile And Supply The Capsule` section is the current account:
@@ -1200,9 +1267,9 @@ the L15 section (D22, owner L17).
   consumer re-verifies, each harness supplied through **its own** chain (Codex unchanged from L5, eve
   through its launch environment, the codex-only guard real and untouched), the per-launch-point table
   (two wired, one declared-excluded with its reason), and the acceptance evidence read from each started
-  session's own first prompt plus `E8`'s production chain. It states **two limitations rather than
-  smoothing them**: a role-configured eve seat still cannot be dispatched because the next refusal is
-  the inherited settings-chain effort gate (`D22`, owner **L17**), and the dashboard route cannot start
+  session's own first prompt plus `E8`'s production chain. It stated **two limitations rather than
+  smoothing them**: a role-configured eve seat could not be dispatched because the next refusal was
+  the inherited settings-chain effort gate (`D22`, owner **L17**), and the dashboard route could not start
   the *shipped* eve row (pre-existing, measured here, owner **L17**). Behaviour 6 is recorded as measured
   (three legacy launch shapes byte-identical, no `capsuleDelivery`, packet behaviour 6). The L7 section's
   closing paragraph was **corrected in place**: it said the produce side "still has no production

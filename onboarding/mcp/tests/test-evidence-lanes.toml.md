@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:45+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
+| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` (synced onto L14's landing) |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,6 +101,38 @@ integration `:147`, architecture-fitness `:212`, provider-conformance `:231`, wi
 line, so the section immediately above records the previous candidate's row numbering and is that
 leaf's as-of record. Classification only: lane membership is not execution, certification or
 acceptance evidence.
+
+## 260915-CAPS-L17 Lane Row (Declared)
+
+The L17 change set adds `mcp/tests/test_eve_effort_runtime.py` **and** its row in the same change, so the
+manifest stays closed over the modules it declares. The row is
+`mcp/tests/test-evidence-lanes.toml:173`, in the **integration** lane, inserted alphabetically between
+`test_eve_capsule_runtime.py` (`:172`) and `test_git_command.py` (`:174`). That is its
+behaviour-preserving lane: each case starts the **real** runtime process with a complete verified capsule
+binding, boots a real hermetic Node application and reads the request body a live recording provider
+received — so it is a boundary executor, not a hermetic unit. It carries three cases and no `-m`
+override; the integration lane is where they belong.
+
+Measured at this change set by deriving the disk file list and the manifest rows and diffing them:
+**240** `mcp/tests/test_*.py` modules on disk against **234** declared rows, with **no stale row** (every
+declared path exists) and **six** modules unregistered — exactly the pre-existing D9 set owned by the
+final-verification leaf (`test_eve_adapter.py`, `test_eve_protocol.py`, `test_role_capsule_admission.py`,
+`test_role_capsule_compiler.py`, `test_role_instruction_corpus.py`, `test_task_projection.py`). **This
+leaf closed none of that gap** and added no row beyond its own. Lane brackets, by entry row:
+unit-regression 137 entries (key `:5`, rows 6-142), public-contract 2 (key `:144`, rows 145-146),
+integration 64 (key `:148`, rows 149-212), architecture-fitness 17 (key `:214`, rows 215-231),
+provider-conformance 14 (key `:233`, rows 234-247), with stress-durability (`:249`) and migration
+(`:251`) empty.
+
+**Recorded, not repaired: D27 lives in one of the six modules above.** The unregistered
+`mcp/tests/test_eve_adapter.py` is also the module whose
+`EveRegistryTests::test_the_registry_leaves_the_path_harnesses_on_the_ordinary_lookup` asserts an
+environment fact another test in the same run can falsify; `AR_EVE_NODE` in the pytest process
+environment is the confirmed one-variable trigger. Neither the missing lane row nor the assertion's
+shape is this leaf's repair — both are carried with their direction and owner so the next reader finds
+attribution rather than an unexplained red.
+
+Classification only: lane membership is not execution, certification or acceptance evidence.
 
 ## 260913-LCA-L4 Pending Lane Row (Open At L4, Resolved Since)
 
@@ -468,6 +501,31 @@ them.** Every manifest line at or after `:97` shifts by one: `test_serving_obser
 against the current file rather than carried**: 59 live citations across this card, the tests route
 overview and fifteen sibling cards were re-pointed to the line that actually carries their anchor, and
 the dated `## Update History
+
+- 2026-09-17T10:43+02:00 — 260915-CAPS-L17 curator: the manifest gained one row for this leaf's own new
+  module, `mcp/tests/test_eve_effort_runtime.py`, at `:173` in the **integration** lane — its
+  behaviour-preserving lane, since each case starts the real runtime process with a complete verified
+  capsule binding and reads the body a live recording provider received. A declared section records the
+  row, its insertion point, the measured population at this change set (**240** modules on disk, **234**
+  declared rows, no stale row, the same six pre-existing D9 modules unregistered, this leaf closing none
+  of that gap) and the D27 note that one of those six is also the environment-sensitive registry case —
+  carried with its confirmed `AR_EVE_NODE` trigger and its repair direction, **not repaired here**. No
+  row was removed, moved between lanes, or added to a capped population beyond this module's own.
+  **Checker result (post-sync, verbatim).** The refusal this entry first recorded was resolved by the
+  leaf's `worktree_sync`: the pair is now `leaf-candidate` / `acceptanceEligible:true` on code base
+  `d8ed8c21`, and the contract-scoped `memory_quality_check` ran against this worktree. Headline:
+  `ok:false`, `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0 unonboarded).
+  This card's own contribution: one `onboarding_drift_drifted` finding and two
+  `style.update_history.history_order` "not newest-first" findings, attributable to the future-dated
+  `10:45` stamp on the L15 entry below this one (same reasoning as the `serving/overview.md` entry). The
+  population figures in this section were also derived directly from the manifest and the disk file
+  list, independently of the checker. Verification metadata moves to the synced base `d8ed8c21`; the
+  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit and no
+  hash or fingerprint was invented here.
+Verification metadata moves to the synced base `d8ed8c21`; the candidate is deliberately uncommitted, so
+the governed closeout stamps the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-17T10:45+02:00 — 260915-CAPS-L15 curator: the manifest gained one row for this leaf's own new
   module, `mcp/tests/test_capsule_launch_wiring.py`, at `:19` in the **unit-regression** lane — its

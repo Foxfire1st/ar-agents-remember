@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/eve_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
+| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,17 +74,30 @@ rotated runtime — because eve's model and effort are compiled application valu
 validates against `REASONING_EFFORTS` and, when the requested effort was refused, reports the model the
 session is actually running as the effective value rather than echoing the refused request.
 
-**The effort axis is RETIRED from the catalog, and `REASONING_EFFORTS` is not a menu.**
-`_capability_snapshot` publishes `supports_effort=False`, `effort_options=()`, `default_effort=None`;
-`EffortOption` is no longer imported at all. The reason is measured rather than asserted: the pinned
-application reads **no** effort value — there is no `AR_EVE_EFFORT` consumer under `eve_runtime/agent`
-— so an effort menu would advertise a control whose every value produces the same run. The selection
-is still **reported** (`selected_effort`) because the configuration a session was started under is a
-fact, not a menu. `REASONING_EFFORTS` therefore survives as a **launch-validation vocabulary only**:
-a settings-owned selection naming an undocumented level is refused at launch instead of being passed
-through as if it meant something, while a launch naming a documented level still runs identically.
-The distinction to keep straight when reading this module: *validation of a launch* is not
-*advertisement of a control*.
+**The effort axis is PUBLISHED as a launch control, because a runtime consumer exists.**
+`_capability_snapshot` publishes `supports_effort=True`, an `effort_options` tuple built from
+`REASONING_EFFORTS`, and `default_effort=PROVIDER_DEFAULT_EFFORT`; `EffortOption` is imported again.
+The reason is measured rather than asserted: the pinned application **consumes** `AR_EVE_EFFORT`
+through eve's own agent definition (`eve_runtime/agent/agent.ts` reads the variable and applies it via
+`defineAgent({ reasoning })`), and the request body a direct provider receives carries the configured
+level — read at the provider boundary by `mcp/tests/test_eve_effort_runtime.py`, not inferred from
+documentation. The menu is therefore neither manufactured nor a second catalogue: it **is** the
+accepted vocabulary, the same tuple the launch gate validates against, so a published level is one a
+launch can select. Every option is `launch_settable=True` and `session_settable=False`.
+
+`REASONING_EFFORTS` is now `PROVIDER_DEFAULT_EFFORT, none, minimal, low, medium, high, xhigh` — eve's
+own union, mirrored from the installed `AgentReasoningDefinition`
+(`NonNullable<CallSettings["reasoning"]>`), with the AR sentinel as its first member.
+`PROVIDER_DEFAULT_EFFORT` is the sentinel's one declaration: it means *no explicit reasoning*, and the
+authored application answers it by **omitting** the property rather than forwarding the token. The
+vocabulary is confronted against the installed declaration by a drift case and against a recorded
+union constant on a host with no install, so the launch gate and the menu cannot drift from the runtime
+that has to honour a level.
+
+`default_effort` and `selected_effort` remain **different facts and are not folded together**: the
+default is the level a launch that names none runs at, while `selected_effort` is the configuration
+this runtime was started under — a fact about the run rather than a menu. Keeping the axis out of
+`set_effort` is the launch/live split, **not** a retraction of the axis.
 
 `_event_stream` reconnects from the persisted index whenever the reader closes: a closed reader is not
 a dead session, and reconnecting is what tells a live-but-parked session apart from a finished one.
@@ -119,10 +133,17 @@ of creating a replacement.
   applies them before the first model call. Capsule compilation, selection and worktree admission are
   other leaves' scope.
 - **No asset submission.** `submit` refuses an asset-carrying payload rather than dropping the assets.
-- **No effort option is advertised.** `_capability_snapshot` must keep `supports_effort=False`,
-  `effort_options=()` and `default_effort=None`. Publishing a menu would claim a control the pinned
-  runtime does not read; `REASONING_EFFORTS` may not be reused as a catalog source. The one writer that
-  may name an effort is a settings-owned launch selection, and it is validated, not advertised.
+- **Every published effort option is backed by the runtime, and the axis stays launch-only.**
+  `_capability_snapshot` publishes `supports_effort=True`, `effort_options` = `REASONING_EFFORTS` and
+  `default_effort=PROVIDER_DEFAULT_EFFORT`, and every option is `launch_settable=True` /
+  `session_settable=False`. This is the same generic rule in its positive form — a published axis must
+  name its runtime consumer — so the axis may be advertised **only while** the authored application
+  reads `AR_EVE_EFFORT` and applies it through `defineAgent({ reasoning })`; removing that consumer
+  means withdrawing the axis again, not leaving the menu up. The menu may not become a second
+  catalogue: it is `REASONING_EFFORTS` itself, the tuple the launch gate validates against. And the
+  published axis stays a **launch** value: in-session `set_effort` reports `unsupported` for every
+  candidate, including the ones this catalogue advertises, because eve compiles the level into the
+  running application and a change means a new runtime launch.
 - **No second orchestration registry.** Session identity and stream cursor are published on the
   existing `AdapterSnapshot` (`vendor_session_id`, `raw["streamCursor"]`), which is the existing
   session-evidence path the terminal catalog already persists.
@@ -154,10 +175,12 @@ pass was available for this file.
 | Acceptance on a reconciled request is proved from the durable record holding the exact message. | `_proves_delivery`; `_RECONCILE_READ_LIMIT` | mcp/src/agents_remember/serving/eve_adapter.py:868-868; mcp/src/agents_remember/serving/eve_adapter.py:877-889 |
 | The conformance suites drive this real adapter through the transport seam, one class per named scenario. | `EveAdapterHandshakeTests`; `EveAdapterSubmissionTests`; `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests`; `EveAdapterRestartTests` | mcp/tests/test_eve_adapter.py:271-328; mcp/tests/test_eve_adapter.py:373-603; mcp/tests/test_eve_adapter.py:663-723; mcp/tests/test_eve_adapter.py:726-811; mcp/tests/test_eve_adapter.py:814-907; mcp/tests/test_eve_adapter.py:910-958 |
 | The live native fixture proves the same six scenarios against the real runtime over real HTTP. | `_scenario_protocol`; `_scenario_reconnect`; `_scenario_reconcile`; `_scenario_cancel`; `_scenario_restart`; `_scenario_concurrent` | mcp/tests/live_eve_native_fixture.py:572-622; mcp/tests/live_eve_native_fixture.py:625-672; mcp/tests/live_eve_native_fixture.py:675-738; mcp/tests/live_eve_native_fixture.py:774-833; mcp/tests/live_eve_native_fixture.py:849-888; mcp/tests/live_eve_native_fixture.py:1012-1054 |
-| The capability snapshot this adapter publishes: the model is real, the effort axis is not, and no effort option is offered. | `_capability_snapshot`; `supports_effort`; `effort_options`; `default_effort` | mcp/src/agents_remember/serving/eve_adapter.py:688-718 |
-| The launch-validation vocabulary that survives the retirement, and the setter that validates against it without advertising it. | `REASONING_EFFORTS`; `set_effort` | mcp/src/agents_remember/serving/eve_adapter.py:90-98; mcp/src/agents_remember/serving/eve_adapter.py:301-323 |
-| The capability catalog consumes this snapshot, so the retired axis is what the dashboard actually reads. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
-| Cases pin the retirement in both directions: the pinned runtime reads no effort value and the catalog agrees, and the effort setter refuses every candidate including its own vocabulary. | `test_the_pinned_runtime_reads_no_effort_value_and_the_catalog_agrees`; `test_the_effort_setter_refuses_every_candidate_including_its_own_vocabulary`; `test_no_advertised_control_lacks_a_runtime_consumer` | mcp/tests/test_eve_product_integration.py:999-1022; mcp/tests/test_eve_product_integration.py:1024-1041; mcp/tests/test_eve_product_integration.py:1043-1067 |
+| The capability snapshot this adapter publishes: both axes are real, and the effort menu is the accepted vocabulary with its default. | `_capability_snapshot`; `supports_effort`; `effort_options`; `default_effort` | mcp/src/agents_remember/serving/eve_adapter.py:699-748 |
+| The AR sentinel, the accepted reasoning vocabulary mirrored from eve's own union, and the setter that validates against it without echoing it back. | `PROVIDER_DEFAULT_EFFORT`; `REASONING_EFFORTS`; `set_effort` | mcp/src/agents_remember/serving/eve_adapter.py:91-91; mcp/src/agents_remember/serving/eve_adapter.py:100-110; mcp/src/agents_remember/serving/eve_adapter.py:312-334 |
+| The capability catalog consumes this snapshot, so the published axis is what the dashboard actually reads. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
+| The authored consumer that makes the axis real: the application reads the effort input and applies it through eve's own agent definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning`; `defineAgent` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35; eve_runtime/agent/agent.ts:48-48 |
+| The launch input the consumer reads, and the two places the selection is carried into the child environment rather than re-derived. | `EFFORT_ENV`; `build_runtime_env`; `eve_launch_knobs` | mcp/src/agents_remember/serving/eve_runtime_launch.py:87-87; mcp/src/agents_remember/serving/eve_runtime_launch.py:351-375; mcp/src/agents_remember/serving/eve_runtime_launch.py:404-404 |
+| Cases pin the published axis in both directions: the pinned runtime consumes the effort input and the catalog publishes the axis the client would read, and the setter refuses every candidate including its own vocabulary. | `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it`; `test_the_effort_setter_refuses_every_candidate_including_its_own_vocabulary`; `test_no_advertised_control_lacks_a_runtime_consumer` | mcp/tests/test_eve_product_integration.py:1151-1191; mcp/tests/test_eve_product_integration.py:1193-1221; mcp/tests/test_eve_product_integration.py:1222-1261 |
 
 ## Cross-Repo References
 
@@ -166,6 +189,35 @@ pass was available for this file.
 | The controlled application is the pinned published `eve` package, unmodified; nothing is forked or vendored. | exact dependency pins; "the runtime is the unmodified published `eve` package" | eve_runtime/package.json:14-20; eve_runtime/README.md:3-8 |
 
 ## Update History
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **corrected in place: the effort axis is no longer
+  retired.** This leaf's candidate gives the pinned application a real `AR_EVE_EFFORT` consumer
+  (`eve_runtime/agent/agent.ts` reads it and applies it through `defineAgent({ reasoning })`, omitting
+  the property for the `provider-default` sentinel), so the previous entry's whole Logic paragraph and
+  its "no effort option is advertised" invariant were **false against this candidate** — this is the
+  L8 honest retraction being lifted because the capability became real, not a relaxation of the rule
+  that produced it. Rewrote both: `_capability_snapshot` publishes `supports_effort=True`, an
+  `effort_options` tuple that **is** `REASONING_EFFORTS` (not a second catalogue), and
+  `default_effort=PROVIDER_DEFAULT_EFFORT`; all options `launch_settable` and not `session_settable`.
+  Added `PROVIDER_DEFAULT_EFFORT` as a named constant, the vocabulary's provenance (eve's own installed
+  union, with the drift case and the recorded-union fallback), and the positive form of the generic
+  rule: the axis may be advertised **only while** the consumer exists. Kept the launch/live split
+  explicit — `set_effort` still reports `unsupported` for every candidate including the advertised
+  ones, and `selected_effort` is still configuration-as-fact, now a configuration the runtime honours.
+  All six reference rows re-anchored to the candidate's real line numbers, plus rows for the authored
+  consumer and the launch input it reads. **Checker result (post-sync, verbatim).** The refusal
+  this entry first recorded was resolved by the leaf's `worktree_sync`: the pair is now
+  `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the contract-scoped
+  `memory_quality_check` ran against this worktree. Headline: `ok:false`,
+  `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `integrity.onboarding_drift_check.summary`
+  finding — `onboarding_drift_drifted`, "Source has local staged changes not represented in
+  HEAD", which is the expected shape for documenting a staged, uncommitted candidate rather than
+  a claim about the wording. Verification metadata moves to the synced base `d8ed8c21`; the
+  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit
+  and no hash or fingerprint was invented here.
+
 - 2026-09-16T11:41:11+00:00: Generated citation repair: `EveAdapterHandshakeTests`; `EveAdapterSubmissionTests`; `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests`; `EveAdapterRestartTests` repointed to mcp/tests/test_eve_adapter.py:271-328; mcp/tests/test_eve_adapter.py:373-603; mcp/tests/test_eve_adapter.py:663-723; mcp/tests/test_eve_adapter.py:726-811; mcp/tests/test_eve_adapter.py:814-907; mcp/tests/test_eve_adapter.py:910-958. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **the effort axis is retired from the catalog.**

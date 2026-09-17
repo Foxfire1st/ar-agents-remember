@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_capability_catalog.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f`|
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5`|
+| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,10 +71,15 @@ shapes are normalized by the adapter before this module sees them.
 - Discovery calls only the built-in own-adapter port and is token-free; no prompt or model turn is
   submitted.
 - No hardcoded model or effort catalog is used on the default path.
-- Effort remains nested under each model in the returned `CapabilitySnapshot` — but a snapshot may
-  legitimately advertise **no** effort options (`supports_effort=False`, `effort_options=()`), which is
-  what eve's pinned runtime requires because it reads no effort value. The catalog publishes what the
-  adapter's own snapshot declares; it never fills the axis in.
+- Effort remains nested under each model in the returned `CapabilitySnapshot`, and a snapshot may
+  legitimately advertise **no** effort options (`supports_effort=False`, `effort_options=()`) — the
+  catalog publishes what the adapter's own snapshot declares and never fills an axis in itself. Which
+  way eve's snapshot falls is decided **in the adapter, by whether its runtime consumes the axis**, not
+  here: at this leaf's candidate the pinned application reads `AR_EVE_EFFORT` through
+  `defineAgent({ reasoning })`, so `serving/eve_adapter.py` publishes the axis and this module carries
+  it; the axis was withheld before that consumer existed and is withheld again if it is removed.
+  Either way this catalog adds no option of its own — a published axis is always one the adapter's
+  snapshot named a runtime consumer for.
 - **Never ask `which` for a probe-declaring harness.** The install gate must go through
   `harness_runtime_verdict`; a direct `resolver(harness.command)` reintroduces the defect where a
   present runtime is reported as not installed.
@@ -107,7 +113,7 @@ provide the same native adapter construction and argv normalization used by host
 | The shared runner helper converts Codex registry argv to the native app-server boundary without dropping supplied arguments. | `adapter_argv`; "app-server" | mcp/src/agents_remember/serving/harness_control_runner.py:313-321 |
 | The readiness verdict the install gate now consumes, so a probe-declaring harness is gated on its runtime rather than on `PATH`. | `harness_runtime_verdict`; `harness_availability_detail` | mcp/src/agents_remember/kernel/harnesses.py:82-103; mcp/src/agents_remember/kernel/harnesses.py:106-139 |
 | The probed-install identity: the interpreter is the fingerprint for a harness with no command, and a declared-but-absent interpreter still identifies the install. | `_probed_install`; `_runtime_fingerprint`; `_InstalledHarness` | mcp/src/agents_remember/serving/harness_capability_catalog.py:77-81; mcp/src/agents_remember/serving/harness_capability_catalog.py:215-224; mcp/src/agents_remember/serving/harness_capability_catalog.py:227-256 |
-| The adapter-side snapshot the catalog normalizes, including the retired effort axis. | `_capability_snapshot` | mcp/src/agents_remember/serving/eve_adapter.py:688-718 |
+| The adapter-side snapshot the catalog normalizes, whose effort axis is published at this candidate because the runtime consumes it. | `_capability_snapshot` | mcp/src/agents_remember/serving/eve_adapter.py:699-748 |
 | The cases: discovery through the existing factory, the not-ready refusal before discovery, the probed-interpreter fingerprint, and the unknown-harness refusal. | `EveCapabilityDiscoveryTests` | mcp/tests/test_eve_product_integration.py:866-979 |
 
 
@@ -120,6 +126,29 @@ No external repository or ACP transport is used by this catalog.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: corrected one invariant that this leaf's candidate
+  falsifies. The card said a snapshot advertising no effort options is "what eve's pinned runtime
+  requires because it reads no effort value"; the candidate's pinned application **does** read
+  `AR_EVE_EFFORT` (through `defineAgent({ reasoning })`), so eve's snapshot now publishes the axis and
+  this catalog carries it. The invariant is restated as the rule that survives either direction: this
+  module never fills an axis in — it publishes what the adapter's snapshot declares, and which way
+  eve's snapshot falls is decided in the adapter by whether its runtime consumes the axis. The
+  reference row naming the adapter snapshot was re-anchored from the pre-candidate `688-718` to the
+  candidate's `699-748`. No other claim in this card was in question: nothing in
+  `harness_capability_catalog.py` changed in this leaf. **Checker result (post-sync,
+  verbatim).** The refusal this entry first recorded was resolved by the leaf's `worktree_sync`:
+  the pair is now `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the
+  contract-scoped `memory_quality_check` ran against this worktree. Headline: `ok:false`,
+  `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `integrity.onboarding_drift_check.summary`
+  finding — `onboarding_drift_drifted`, "Source has local staged changes not represented in
+  HEAD", which is the expected shape for documenting a staged, uncommitted candidate rather than
+  a claim about the wording. Verification metadata moves to the synced base `d8ed8c21`; the
+  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit
+  and no hash or fingerprint was invented here.
 
 - 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **the install gate is a readiness question, not a
   `which` question.** `_installed_harness` no longer asks `shutil.which(harness.command)` directly: it
