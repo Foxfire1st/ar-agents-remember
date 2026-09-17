@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview      | `../../../../../../overview.md`             |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ source branch, work branch/worktree name, memory mode, landing path, and risks.
 The worktree closeout section is deliberately a routing section, not a parallel
 closeout doctrine. It sends the applicable authority and concrete code, memory-content,
 and ledger transaction inputs to `c-12-closeout` skill. Quality, test, memory-quality,
-certification, and review evidence may be attached when explicitly requested, but no such
+evidence may be attached, and the curator's complete memory-quality result is part of that evidence, but no such
 operation is an automatic closeout or integration prerequisite. For worktree-backed tasks, `c-09-git-worktree-manager` skill
 contributes the task `contract.md` used by `worktree_closeout_preview` and
 `worktree_closeout_apply`; after closeout, `c-09-git-worktree-manager` skill resumes ownership for
@@ -223,7 +223,7 @@ until the real code commit exists.
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current contract: closeout and integration are Git transactions over the authorized code, memory-content, and ledger legs, with preview, conflict, and ref safeguards. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Targeted checks, certification, full quality, full tests, full memory quality, and independent review are contextual evidence or explicit operations; they are not automatic c-09 prerequisites.
+Current contract: closeout and integration are Git transactions over the authorized code, memory-content, and ledger legs, with preview, conflict, and ref safeguards. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Targeted checks, certification, full code quality, full tests, and independent review are contextual evidence or explicit operations rather than automatic c-09 prerequisites; curation is the exception — the curator's complete memory-quality operation travels with the handoff as a prerequisite, and the transaction carries it without invoking it.
 
 ### Docs References
 
@@ -341,6 +341,7 @@ generation.
 
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Updated the closeout/integration contract and the admission paragraph: the curator's complete memory-quality result is part of the evidence that travels with the handoff, and curation is the exception to the explicit-operation rule.
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` changed
   since the recorded verification commit. Re-read the card against the frozen on-disk source and

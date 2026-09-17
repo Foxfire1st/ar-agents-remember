@@ -6,15 +6,15 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-29T08:52+02:00                     |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 
 ## Purpose
 
 This skill defines `c-02-memory-quality-control` skill as on-demand memory-quality diagnostics and scoped
 onboarding checks. It keeps task-start drift evidence and routes missing-onboarding or targeted quality
-work to the owning curator; full memory quality remains an explicit developer-requested operation and
-is not a closeout or integration prerequisite.
+work to the owning curator; the curator runs the complete memory-quality operation as part of curation,
+and closeout and integration carry that completed result as a prerequisite instead of invoking it.
 
 ## Code Commentary
 
@@ -24,9 +24,10 @@ The skill instructs agents to resolve context through `c-08-ar-coordination-cont
 use `drift_check` as task-start evidence, classify clean-source candidates versus dirty active work, and
 run `check_missing_onboarding` or named memory-quality checks only for an approved scoped diagnostic.
 Curators own affected onboarding content and report each check as passed, failed, blocked, or not-run.
-Subset calls remain diagnostic; a complete memory-quality operation, census, coherence publication, or
-certificate runs only on explicit developer request. Closeout and integration consume the prepared memory
-leg and do not invoke or require these operations.
+Subset calls remain diagnostic, and a subset never stands in for the whole operation: the curator runs the
+complete memory-quality operation at the leaf's contract scope and publishes the coherence authority
+whenever the checklist requires it. Closeout and integration consume the prepared memory
+leg and carry that completed curation as a prerequisite rather than invoking it.
 
 ### Conventions
 
@@ -55,7 +56,7 @@ Add tests for `c-02-memory-quality-control` skill against a migrated external me
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current contract: memory-quality work is on-demand diagnostic and repair support. Task-start drift and curator scoped checks remain useful evidence, while full memory quality runs only after an explicit developer request. Closeout and integration consume the prepared Git inputs and do not invoke or require memory-quality, census, coherence, certification, or review operations.
+Current contract: the curator's complete memory-quality operation is part of curation — run at intake and after every repair until `curatorActionableCount=0` and `checklistStatus=ready-for-closeout` — and a named scoped check or a `checks=[...]` subset never stands in for it. Task-start drift remains diagnostic evidence, and the `curator_coherence` authority is published whenever the checklist reports `coherence-required`. Closeout and integration consume the prepared Git inputs and carry the completed curation as a prerequisite without invoking or requiring memory-quality, census, or review operations.
 
 ### Docs References
 
@@ -67,18 +68,18 @@ No external domain documentation applies to this repository-local maintenance sk
 
 ## Repo-Internal References
 
-`c-02-memory-quality-control` skill is the on-demand diagnostics route used for task-start drift, scoped
-missing-onboarding checks, and explicitly requested memory-quality evidence; it is not a closeout or
-integration gate.
+`c-02-memory-quality-control` skill owns the memory-quality operation a curator runs as part of curation,
+together with task-start drift and the missing-onboarding report scoped to the curator's change set. Its
+completed result travels with the curation handoff as a closeout and integration prerequisite.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The quality-control phase table distinguishes task-start drift, curator intake, pre-commit coverage, closeout validation, and targeted style repair. | "## Quality Control Phases" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:30-38 |
 | Task-start quality control preserves the gradual-adoption boundary for historical files without onboarding and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | "Run Task-Start Drift Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:71-107 |
 | Pre-code-commit quality control checks only current worktree additions so newly added files cannot escape onboarding. | "Run Pre-Code-Commit Missing-Onboarding Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:164-180 |
-| Explicitly requested memory-quality work reports the requested scope and uses focused style fixers only after reported findings. | "### 7. Run Full Memory Quality Only On Explicit Developer Request"; "### 8. Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:205-218; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:219-231 |
+| Curation publishes the coherence authority the checklist requires and uses focused style fixers only after reported findings. | "### 7. Publish the Curator Coherence Authority When the Checklist Requires It"; "### 8. Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:209-228; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:229-263 |
 
-| Scoped curator calls provide named diagnostics; complete memory-quality evidence remains explicit developer-requested work. | "Curator Scoped Onboarding Checks"; "Run Full Memory Quality Only On Explicit Developer Request" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:182-205 |
+| The curator handoff runs the complete curation check and repairs or escalates every curator-actionable finding with its exact returned code. | "### 6. Run the Complete Curation Check"; "### 7. Publish the Curator Coherence Authority When the Checklist Requires It" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:189-208; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:209-228 |
 
 ## Cross-Repo References
 
@@ -105,6 +106,7 @@ forbids hand-versioned reports or filename fallback. Same-input quality reruns p
 changed inputs intentionally stale the authority.
 
 ## Update History
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Updated the Purpose, Logic, the CCR-R12@v5 boundary block and the Repo-Internal prose accordingly, and re-pointed the two citation rows whose anchors this leaf renamed (`### 7` is now the coherence-authority step, `### 6` the complete curation check) to their current headings and ranges.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: recorded that curator intake must run the complete validation path and treats subset calls as diagnostics, not green evidence; verification metadata remains closeout-owned.

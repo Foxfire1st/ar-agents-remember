@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,15 @@ Every operation block shares one five-part shape — who carries it, required in
 ### Logic
 
 `## Who carries it, and their job` separates two disjoint jobs in one table: the curator reconciles and
-writes memory, the manager compiles the brief and owns the transaction. `## Required inputs` states the
+writes memory, the manager compiles the brief and owns the transaction. `## Normal workflow` step 5 is the complete curation check set rather than a named scoped check: the
+curator runs the full `memory_quality_check` operation for the leaf, repairs or escalates every
+curator-actionable finding with its exact returned code, and re-runs it after every repair until
+`curatorActionableCount=0` and `checklistStatus=ready-for-closeout`, publishing the `curator_coherence`
+authority when the checklist then reports `coherence-required`. `## Authority gates` states the same rule
+from the other side: the completed curation is the prerequisite the transaction carries, and a subset
+result never stands in for the full operation.
+
+`## Required inputs` states the
 three fed inputs (the landed change set with counters and paths pulled from the leaf contract's recorded
 range; the leaf task doc with its approved requirement-corpus ruling and version-addressed packets; and
 `notes/` with the builder turn report plus the candidate-bound route-review verdict only when review was
@@ -74,6 +82,7 @@ No sibling-repository contract defines this instruction file.
 
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Added the changed `## Normal workflow` step 5 and `## Authority gates` rule to Logic: the complete curation check set, its `curatorActionableCount=0` / `checklistStatus=ready-for-closeout` termination condition, and the coherence authority published when the checklist requires it.
 - 2026-09-16T22:19+02:00 — **No content impact:** 260915-CAPS-L16 curator. The canonical source gained
   one pronoun — the curator's exit says terminal/finalizer evidence attests only that **this** turn
   ended — and this card's Logic describes the curator/manager job split and the three fed inputs, not

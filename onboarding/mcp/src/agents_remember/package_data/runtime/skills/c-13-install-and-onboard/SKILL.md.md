@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview      | `../../../../../../overview.md`            |
 
 ## Governing Overview
@@ -119,7 +119,7 @@ No open file-local todos.
 
 ## CCR-R12@v5 Transaction Boundary
 
-Repository certification profiles and quality operations are optional explicit setup requests. Their absence does not block routine closeout or integration; this installer only reports configured setup and delegates any requested certification or memory/bootstrap work to its owning workflow.
+Repository certification profiles and full code-quality operations are explicit setup requests made only when the developer asks for them. Their absence does not block routine closeout or integration, and they are not curation; this installer only reports configured setup and delegates any requested certification or memory/bootstrap work to its owning workflow, while curation is always complete on every leaf and its result travels with the handoff.
 
 ## Docs References
 
@@ -150,6 +150,7 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Updated the repository-certification paragraph to separate the profile (an explicitly requested operation) from curation (always complete), and re-pointed the `## Stage 6` citation to the line the source now carries it on.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new Stage 3 (Repository Certification Profile) and the renumbered Stage 4/5/6 in the packaged install-and-onboard skill.
 

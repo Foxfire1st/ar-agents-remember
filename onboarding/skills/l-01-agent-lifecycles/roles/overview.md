@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4`|
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
@@ -227,8 +227,28 @@ deliberately left untouched pending a follow-up decision on whether this mirror 
 removed. That mismatch between the declared path rules and the enforced checking scope is itself the
 recorded defect.
 
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and
+`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
+`coherence-required`.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
+
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual shape (nine files in one readable order with `**Inherits:**` lines, a new sibling `core/`, procedures moved to `operations/`, sanctioned sibling references only, 2,792 → 2,322 lines), and the Ungoverned Mirror Status section records this pass's explicit decision to update the route overview while deliberately leaving the per-role cards under `onboarding/skills/l-01-agent-lifecycles/roles/**` unrefreshed (outside `pathRules.include`, already declared stale, and a partial refresh would duplicate the governed `mcp/**` cards without resolving the govern-or-remove question). No verification stamp or fingerprint was advanced.
 
 

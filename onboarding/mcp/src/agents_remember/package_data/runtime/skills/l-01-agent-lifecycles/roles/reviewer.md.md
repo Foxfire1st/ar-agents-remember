@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4`|
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ No task-independent TODO is declared by this job file.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ### Docs References
 
@@ -121,7 +121,7 @@ The reviewer job file is its own source authority for the seat, lenses, seams, d
 | The role declares the readable order, its inherited sources, and the knob block after the handoff section. | `## 1 — Purpose And Authority`; `**Inherits:**`; `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:15-59; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:13-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:216-233; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:234-251 |
 | The exact baseline / fix-verification mode contract has one home outside the role file. | `# Operation — Review`; `## Required inputs` | skills/l-01-agent-lifecycles/operations/review.md:1-1; skills/l-01-agent-lifecycles/operations/review.md:22-34 |
 | The role keeps the two seam rubrics and the three review lenses. | `### MASTER-EXIT — Manager Before Orchestrator Handover`; `### SUPER-EXIT — Orchestrator Before Architect/Developer Handover`; `## 3 — Normal Workflow` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:184-199; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:200-215; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:100-139 |
-| The reviewer names `roles/manager.md` only to return fix leaves to the seat it reports to, which is this role's one sanctioned sibling reference. It appears in the role's own description at `:3`. | `SANCTIONED_SIBLING_REFERENCES`; `description:` | mcp/tests/test_role_instruction_corpus.py:84-89; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:3-3 |
+| The reviewer names `roles/manager.md` only to return fix leaves to the seat it reports to, which is this role's one sanctioned sibling reference. It appears in the role's own description at `:3`. | `SANCTIONED_SIBLING_REFERENCES`; `description:` | mcp/tests/test_role_instruction_corpus.py:110-110; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:3-3 |
 
 ## Cross-Repo References
 
@@ -191,6 +191,7 @@ a malformed handed-off attempt requires independent rejection before successor h
 
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule. Hand-repaired one citation finding this leaf's own source edit drifted (D14): the `SANCTIONED_SIBLING_REFERENCES` range to the test module's current :110.
 - 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
   `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
   The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory

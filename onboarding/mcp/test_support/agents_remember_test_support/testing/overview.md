@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -74,8 +74,29 @@ It must be rebuilt from current source, never copied from a retired route census
 | Certifying setup admits Dagger before candidate preparation. | `prepare_certifying_pytest_bootstrap` | mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:27-39 |
 | Retry execution retains exact explicit affected modules. | `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:63-79 |
 
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+This route gained `curation_doctrine.py`, the retired-sentence registry and required-rule table the
+shipped-corpus guard reads. CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and
+`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
+`coherence-required`.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
+
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/test_support/agents_remember_test_support/testing`, so no route/member/prose/invariant change is required. route-member-count=20; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
 - 2026-08-28T10:03:40+02:00 — Added the complete observed failure-family ownership split and the

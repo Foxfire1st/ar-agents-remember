@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
 
@@ -339,6 +339,27 @@ Its `SANCTIONED_SIBLING_REFERENCES` table makes the corpus's independence rule e
 may name a sibling role file only to wear that hat or dispatch that seat, and anything else fails the
 check by design. Because the assertions are property-based on the corpus's shape, they stay valid as role
 prose changes; only a corpus shape change should require editing the module.
+
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+`test_role_instruction_corpus.py` was extended (6 → 14 cases) with `CurationIsCompleteOnEveryLeafTests`
+and `CurationGuardTeethTests`, which read the new `testing/curation_doctrine.py` registry and sweep the ten
+shipped surfaces. CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and
+`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
+`coherence-required`.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
 
 ## CCR-R12@v5 Transaction-Only Delivery Route
 
@@ -1178,6 +1199,7 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   Verification metadata is left at this leaf's synced base `933b011b`; the candidate is
   deliberately uncommitted.
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T11:50+02:00 — 260915-CAPS-L14 curator: this route gained **two modules** and the reference rows and lane/catalog citations that go with them. `test_citation_index_resilience.py` defends the citation index's shared exclusion register per source, the ruled caps' skip-and-report behaviour, and the quality surface's reported states — with the register's deliberate divergence from Git measured on both sides; `test_fresh_user_harness.py` is the **consumer of record** for the three new `scripts/e2e_harness` governed artifacts and pins the fixture shape and the scenario contract (a step that cannot run is `blocked` by name, never `completed`). Added the corresponding rows, the two `unit-regression` lane rows, and the three `[[artifact]]` rows the leaf registers. **Repaired two stale claims on this route**: the final memory adapter citation still pointed at `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained three modules and two fixture

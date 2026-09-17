@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5`|
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ None recorded.
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
+Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run the complete memory-quality operation with honest failed or not-run status, repairing or escalating every curator-actionable finding with its exact returned code. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Curation is never deferred: the curator always runs the full operation and its completed result is carried as a closeout and integration prerequisite, while full code quality, full tests, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
 
 ## Docs References
 
@@ -233,6 +233,7 @@ the old router body, the citation was rebased to the new home or dropped as supe
 
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the lifecycle-contract paragraph so the curator's duty reads as the complete memory-quality operation carried as a prerequisite rather than scoped checks.
 - 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the tenth role this leaf added**
   (`CAPS-R13@v1`). The registry is now ten roles and nine operations: the Purpose's registry and
   operation counts, the Logic's launcher sentence ("not a tenth role" → "not a role") and the frozen

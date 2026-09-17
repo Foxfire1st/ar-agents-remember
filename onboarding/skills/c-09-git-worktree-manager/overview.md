@@ -6,8 +6,8 @@
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash |  `304de8e272fd9128d035b805f317da5f3090865c`|
+| lastVerifiedCommitDate |  2026-09-17T12:34:11+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
@@ -108,6 +108,25 @@ Current working-candidate evidence for this route:
 | --- | --- | --- |
 | Real memory ancestry is the landing proof. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
 
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and
+`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
+`coherence-required`.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
+
 ## Ungoverned Mirror Status (known defect)
 
 This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's
@@ -123,6 +142,7 @@ recorded defect.
 
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled canonical worktree doctrine to cache-independent Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -542,6 +542,25 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 ## Hot Path Summary
 
 The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
+
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and
+`checklistStatus=ready-for-closeout`, publishing the coherence authority when the checklist then reports
+`coherence-required`.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
 
 ## 260915-CAPS-L15 Launch-Path Capsule Delivery Route Impact
 
@@ -1619,6 +1638,7 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
   path) and that the leaf is entirely unlanded. Verification metadata is left at the leaf's base
   commit; the candidate is deliberately uncommitted, so the governed closeout stamps the real
   code commit.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T11:35+02:00 — 260915-CAPS-L14 curator: **route impact recorded rather than a no-impact marker** for the citation source-index surface this package exposes. Adds the section above (the shared exclusion register and its three sources, the additive caller-exclude surface on the MCP tool and the CLI, the reported-skip cap mechanics under the developer's 2026-08-20 ruling with the v10 manifest and the v9 rebuild, the typed refusals on the quality surface and at the closeout gate, and the mode-independence of all three). **Repairs a stale claim**: the final memory adapter citation still pointed at
   `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. The adjacent `PreparedCloseoutContinuation` range start is corrected to the class's real declaration line. Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 

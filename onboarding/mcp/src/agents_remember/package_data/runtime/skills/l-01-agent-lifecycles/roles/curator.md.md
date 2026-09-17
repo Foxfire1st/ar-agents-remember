@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4`|
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ the structured coherence record and its generated projection, validated by the o
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Repo-Internal References
 
@@ -89,10 +89,10 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 | --- | --- | --- |
 | The packaged curator declares the same seat, authority boundary, and three-way responsibility as the canonical source. | `## 1 — Purpose And Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:14-48 |
 | The role opens by naming the shared sources it composes with rather than restating them. | `**Inherits:**` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:12-12 |
-| The curation procedure — inputs, workflow, authority gates, failure handling, handoff — has one home outside the role file. | `# Operation — Curation`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:113-120 |
-| The role declares the readable order and the knob block after the handoff section. | `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:140-152; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:153-153 |
+| The curation procedure — inputs, workflow, authority gates, failure handling, handoff — has one home outside the role file. | `# Operation — Curation`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:121-128 |
+| The role declares the readable order and the knob block after the handoff section. | `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:165-182 |
 | The canonical source is the doctrine owner. | `# Lifecycle — Curator` | skills/l-01-agent-lifecycles/roles/curator.md:1-12 |
-| A non-sanctioned sibling-role reference fails the shipped corpus check, which is why this role file names none. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:84-89 |
+| A non-sanctioned sibling-role reference fails the shipped corpus check, which is why this role file names none. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:110-110 |
 | MCP package data is an explicit synchronization target. | `TARGETS` | scripts/sync-skills.py:43-47 |
 | Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
@@ -122,6 +122,7 @@ Curator intake now binds the route-review requirement to altitude: standalone an
 
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule. Hand-repaired four citation findings this leaf's own source edit drifted (per-document `citation_fix` is refused in a leaf worktree; D14): `operations/curation.md` `## Handoff / exit` re-pointed to :121-128, the role's `## Knobs, Tool Surface, And Dispatch Authority` range to :165-182, and two `SANCTIONED_SIBLING_REFERENCES` ranges to the test module's current :110.
 - 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
   `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
   The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory

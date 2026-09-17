@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_role_instruction_corpus.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview
@@ -85,6 +85,19 @@ paths that belong to the coordination tree (`system/`, `tasks/`, `notes/`, `runt
 stages a tree whose document cites a repo-relative path that exists nowhere and asserts
 `unresolved_references` reports it, so the link check cannot silently pass by resolving nothing.
 
+### The Complete-Curation Guard (CAPS-R18@v1)
+
+Two cases were added for the master's own doctrine change: `CurationIsCompleteOnEveryLeafTests` sweeps the
+canonical tree **and** all nine generated copies for the eleven retired optional-curation sentences and
+asserts that every canonical source which must state the rule still does, and `CurationGuardTeethTests` is
+the falsifiability half — re-inserting one retired sentence on its own surface must be reported, the
+preserved developer-request doctrine (full code quality and full tests) must read clean, and a statement
+must be reported only on a surface that shipped it. Both read the registry and readers in the new support
+module `mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py`. The module grew from
+6 to 14 cases and stays in its existing `unit-regression` lane, so no lane row and no case budget key was
+touched. The guard's declared limit travels with it: it matches whole retired sentences restricted to the
+files that shipped them, so a restatement of the defect in fresh vocabulary is out of its reach.
+
 ### Conventions
 
 Six cases plus their module-level helpers, no fixtures beyond `tmp_path`, and no network or provider
@@ -135,5 +148,6 @@ No sibling-repository contract defines this corpus check.
 
 ## Update History
 
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: this module was extended by the leaf's own change (6 → 14 cases, 602 → 773 lines) with the complete-curation corpus guard and its falsifiability teeth, which read the new `testing/curation_doctrine.py` registry. Body updated with what the two new classes protect, the nine generated copies they sweep, the lane and budget facts, and the matcher's declared limit. The leaf's citation rows that pointed `SANCTIONED_SIBLING_REFERENCES` at the old :84-89 were re-pointed to :110 in the three role cards that cite it. Verification metadata remains closeout-owned; no stamp was advanced.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body rebased after the module was extended mid-curation.** The code worktree was not frozen while this pass ran: the module grew from 362 to 598 lines and from four to six cases, adding `test_manifest_carries_routing_metadata_not_copied_payloads` (with `manifest_copy_indicators`, `_iter_json_strings`, `manifest_prose_lines`) and `test_link_check_reports_a_repo_relative_anchor_pointed_at_nothing` (with `unresolved_references`), plus the `cited_paths` / `PATH_TOKEN` / `NON_LOCATION_RE` / `SYMBOLIC_FILE_NAMES` / `COORDINATION_ROOT_RE` machinery. This card now describes the current shipped module and cites the six cases at their current line ranges. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for the focused check the leaf added with the role-instruction corpus consolidation. It is a **shipped repository test**, not a task-local fixture: its cases are the executable form of the corpus's shape contract (nine roles, six readable sections, the frozen eight-operation vocabulary, a metadata-only manifest, every cited relative path resolving, and a missing manifest source reported rather than accepted). Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
