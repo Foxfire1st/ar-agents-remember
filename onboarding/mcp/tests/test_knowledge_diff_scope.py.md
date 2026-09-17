@@ -30,7 +30,8 @@ validator, truncation, and the no-trees expansion.
 
 **Frozen identity of this file: 779 lines.** The line numbers in the references below are measured
 against that file. The leaf's own evidence artifacts republish a **`M25`/`M26` citation pair that does
-not exist on these bytes** — `scope:640` / `:678` and `scope:565` / `:620` — and are carried to
+not exist on these bytes** — `scope:640` / `:678` and `scope:565` / `:620`, which are the **pre-round
+741-line file's** numbers — and are carried to
 `KS-R09`/`L9` as documentation debt (ledger entry **A9**, finding **`L8-W1`**). **This card's numbers are
 the measured ones and the ledger is authoritative for the contested pair.**
 
