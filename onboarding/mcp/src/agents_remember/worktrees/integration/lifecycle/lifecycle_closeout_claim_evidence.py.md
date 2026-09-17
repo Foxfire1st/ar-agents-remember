@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ None recorded for the ledger-retirement boundary.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -54,7 +54,7 @@ No external Domain Documentation source is configured for this slice. The curren
 
 No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 
@@ -62,9 +62,9 @@ No separately configured cross-repository implementation governs this file; any 
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `closeout_preview_args` renders contract-addressed preview arguments with enabled code/memory messages. | L8-L17 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py) |
+| `closeout_preview_args` renders contract-addressed preview arguments with enabled code/memory messages. | `closeout_preview_args` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py:8-17 |
 
 ## Update History
 

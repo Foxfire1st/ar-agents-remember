@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -85,14 +85,14 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Data round-trip and current-versus-historical lookup semantics. | L53-L68 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | L91-L179; L315-L335; L338-L360 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Unattributed and partially attributed histories cannot inherit cached pairs. | L499-L519; L550-L569 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Invalid targets are reported and superseding order comes from actual history. | L529-L547; L572-L613 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The real writer/reader round trip and merged-in attribution stay covered. | L717-L751; L754-L784 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The runtime projection under test separates computed mappings from cache observations. | L222-L249; L334-L396 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Data round-trip and current-versus-historical lookup semantics. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Unattributed and partially attributed histories cannot inherit cached pairs. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Invalid targets are reported and superseding order comes from actual history. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| The real writer/reader round trip and merged-in attribution stay covered. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| The runtime projection under test separates computed mappings from cache observations. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
 
 ## Cross-Repo References
 
@@ -100,7 +100,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

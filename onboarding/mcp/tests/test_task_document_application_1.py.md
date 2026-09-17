@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_document_application_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6` |
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,19 +79,19 @@ to removed methods are superseded by this current inventory.
 | Explicit cross series master ref never falls back to local master | `test_explicit_cross_series_master_ref_never_falls_back_to_local_master` | mcp/tests/test_task_document_application_1.py:98-107 |
 | Leaf sync refuses duplicate or mispointed exact parent row before write | `test_leaf_sync_refuses_duplicate_or_mispointed_exact_parent_row_before_write` | mcp/tests/test_task_document_application_1.py:109-142 |
 | Leaf sync demotes completed master when work becomes unresolved | `test_leaf_sync_demotes_completed_master_when_work_becomes_unresolved` | mcp/tests/test_task_document_application_1.py:144-168 |
-| Set status and set field | `test_set_status_and_set_field` | mcp/tests/test_task_document_application_1.py:170-176 |
-| Set field cannot repoint plane owned contract identity | `test_set_field_cannot_repoint_plane_owned_contract_identity` | mcp/tests/test_task_document_application_1.py:178-189 |
+| Set status and set field | `test_set_status_and_set_field` | mcp/tests/test_task_document_application_1.py:184-190 |
+| Set field cannot repoint plane owned contract identity | `test_set_field_cannot_repoint_plane_owned_contract_identity` | mcp/tests/test_task_document_application_1.py:192-203 |
 | Dry run does not mutate existing files | `test_dry_run_does_not_mutate_existing_files` | mcp/tests/test_task_document_application_1.py:191-207 |
 | Dry run would lose flags unmodeled md content | `test_dry_run_would_lose_flags_unmodeled_md_content` | mcp/tests/test_task_document_application_1.py:209-235 |
 | Replace rewrites structural fields and decisions | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:237-280 |
 | Replace rejects document path change | `test_replace_rejects_document_path_change` | mcp/tests/test_task_document_application_1.py:282-296 |
 | Set step updates only and names the parent of a bare substep id | `test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id` | mcp/tests/test_task_document_application_1.py:298-332 |
 | Set step names the parent for a dotted child id | `test_set_step_names_the_parent_for_a_dotted_child_id` | mcp/tests/test_task_document_application_1.py:334-350 |
-| Set step refuses an ambiguous id | `test_set_step_refuses_an_ambiguous_id` | mcp/tests/test_task_document_application_1.py:352-362 |
+| Set step refuses an ambiguous id | `test_set_step_refuses_an_ambiguous_id` | mcp/tests/test_task_document_application_1.py:366-376 |
 | Add step creates one unit and refuses an existing id | `test_add_step_creates_one_unit_and_refuses_an_existing_id` | mcp/tests/test_task_document_application_1.py:364-390 |
 | Remove step requires a reason and records the removal | `test_remove_step_requires_a_reason_and_records_the_removal` | mcp/tests/test_task_document_application_1.py:392-411 |
 | Remove step deletes a done step and repairs a completed document | `test_remove_step_deletes_a_done_step_and_repairs_a_completed_document` | mcp/tests/test_task_document_application_1.py:413-457 |
-| A top level note persists instead of being discarded | `test_a_top_level_note_persists_instead_of_being_discarded` | mcp/tests/test_task_document_application_1.py:459-470 |
+| A top level note persists instead of being discarded | `test_a_top_level_note_persists_instead_of_being_discarded` | mcp/tests/test_task_document_application_1.py:473-484 |
 | A top level note is rendered into the markdown | `test_a_top_level_note_is_rendered_into_the_markdown` | mcp/tests/test_task_document_application_1.py:472-490 |
 | Read steps returns the checklist and changes nothing | `test_read_steps_returns_the_checklist_and_changes_nothing` | mcp/tests/test_task_document_application_1.py:492-529 |
 | Skip step is exact audited and does not cascade | `test_skip_step_is_exact_audited_and_does_not_cascade` | mcp/tests/test_task_document_application_1.py:531-574 |
@@ -107,6 +107,10 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_set_status_and_set_field` repointed to mcp/tests/test_task_document_application_1.py:184-190. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_set_field_cannot_repoint_plane_owned_contract_identity` repointed to mcp/tests/test_task_document_application_1.py:192-203. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_set_step_refuses_an_ambiguous_id` repointed to mcp/tests/test_task_document_application_1.py:366-376. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_a_top_level_note_persists_instead_of_being_discarded` repointed to mcp/tests/test_task_document_application_1.py:473-484. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): recorded that `test_create_writes_both_files` was **removed**, and why it must not be

@@ -78,12 +78,12 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 
 | Entity                              | Algorithm         | Fingerprint                                                               | Evidence Paths                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------------------------- | ----------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Onboarding Unit                     | `git-blob-set-v1` | `sha256:35c83070fb0c5d784d530e4bcea37ada704803603d504b9aaa2739aeb5cade1d` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`                      |
+| Onboarding Unit                     | `git-blob-set-v1` | `sha256:49fc83afcbd5f62230a1e4dacaeb02e495394a06a993537ad47d606ebbdaf1ff` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`                      |
 | Runtime AGENTS Template Package     | `git-blob-set-v1` | `sha256:349717b52a6baf20336bc5e02b7c0ffcacad54441fa6ba02090a84c04148f42c` | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md`; `mcp/src/agents_remember/install/runtime.py`                                                                                                                                                                                                                                    |
 | Coordination Context                | `git-blob-set-v1` | `sha256:744cd1ba7638ef2d232d280ff228e8b7d3930a5b58c51979e2a0f11bed0b7a37` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Path Rule                           | `git-blob-set-v1` | `sha256:1f544d85e78ade878387f698079757e64e31944cce872d03d140d4a2ab564c35` | `mcp/src/agents_remember/kernel/coordination_context_resolver.py`; `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json`; `examples/mcp/settings.example.json`                                                                                                                                                                                                       |
 | Memory Quality Control              | `git-blob-set-v1` | `sha256:ecd6eb112ac39f67073b414c81a2afa51dc0c6926653ab47cb1437b17d904e2c` | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md`; `mcp/src/agents_remember/memory_quality/check.py`; `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
-| File-Level Onboarding Content Model | `git-blob-set-v1` | `sha256:c0be2f53ccca5a2d26b0032f0eededf1624aaf990b8c21f5ff88f377385548e5` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md` |
+| File-Level Onboarding Content Model | `git-blob-set-v1` | `sha256:d321f71ffc2f04758deae51e6f91e0b48e858e239aaad599040240a12f340a3d` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md` |
 | Light Task Artifact                 | `git-blob-set-v1` | `sha256:90bffff6b13e6377070fd9c68acedd2f7a730f4051d493efe144207e7c8cdfe3` | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/requirement-packet-template.md`                                                                                                                                                                                               |
 | External Memory Ledger              | `git-blob-set-v1` | `sha256:4ef5484d18d1479009ca45c9d036a35b1dbcd18e007e6dd29de244528653eaa0` | `mcp/src/agents_remember/kernel/memory_attribution.py`; `mcp/src/agents_remember/kernel/memory_cache.py`; `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/ledger_projection.py` |
 | Sprint Closeout Queue               | `git-blob-set-v1` | `sha256:a6fafc8bc6b520ce455985181786f01b4af49a0129dfe774f5a6e5cde7918077` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py`; `mcp/src/agents_remember/models/closeout/projection.py`; `mcp/src/agents_remember/models/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
@@ -234,11 +234,11 @@ Closeout readiness and recovery bind the actual code/memory candidate, task inte
 
 #### Current Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The cache derives only attributed history. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Cache write failure is reported without a Git publication. | L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| The source reader does not import cached rows. | L222-L249 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| The cache derives only attributed history. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Cache write failure is reported without a Git publication. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| The source reader does not import cached rows. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
 
 ### Sprint Closeout Queue
 
@@ -278,9 +278,9 @@ The ledger cache is not an enabledness choice or an input message. Disabled memo
 
 #### Current Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The normalized input and message vocabulary contain only code/memory. | L127-L165 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| The normalized input and message vocabulary contain only code/memory. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
 
 ### Curator Coherence Authority
 
@@ -320,11 +320,11 @@ CCR cumulative source verification: The journal now separates recordRevision, ad
 
 #### Current Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw Git facts and the filtered memory-content head are separate fields. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| The recovery tuple contains only actual code and memory outputs. | L66-L72 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Recovery verifies refs/ancestry before cache refresh. | L58-L81 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
+| Raw Git facts and the filtered memory-content head are separate fields. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| The recovery tuple contains only actual code and memory outputs. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Recovery verifies refs/ancestry before cache refresh. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
 
 ### Memory Baseline Adoption
 
@@ -343,10 +343,10 @@ CCR cumulative source verification: The journal now separates recordRevision, ad
 
 #### Current Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Adoption creates the memory-content output and refreshes its cache. | L172-L227 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
-| Adoption status is derived from Git attribution. | L230-L233 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| Adoption creates the memory-content output and refreshes its cache. | n/a | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| Adoption status is derived from Git attribution. | n/a | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
 
 ### Branch-Gated Cross-Repo Source
 
@@ -605,10 +605,10 @@ CCR cumulative source verification: Current contract publication additionally re
 
 #### Current Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract stores the actual two outputs and informational cache location. | L229-L281 | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| One normalizer/validator owns contract serialization. | L475-L480 | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The contract stores the actual two outputs and informational cache location. | n/a | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| One normalizer/validator owns contract serialization. | n/a | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ### Worktree Integration
 
@@ -663,10 +663,10 @@ CCR cumulative source verification: Current execution routes the repository-owne
 
 #### Current Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Admission checks actual sources, ancestry and content before refs move. | L103-L160 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
-| Carryover/cleanup readiness proves both outputs reached their official sources. | L189-L212 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Admission checks actual sources, ancestry and content before refs move. | n/a | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Carryover/cleanup readiness proves both outputs reached their official sources. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
 
 ## Ownership Notes
 

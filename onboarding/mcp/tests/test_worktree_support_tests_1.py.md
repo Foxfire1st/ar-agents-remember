@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_support_tests_1.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -68,18 +68,18 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture queue and early refusal helpers retain typed inputs and exact bindings. | L44-L124; L127-L174 | [mcp/tests/test_worktree_support_tests_1.py](mcp/tests/test_worktree_support_tests_1.py) |
-| The retained lifecycle scenario preserves the parent through start/attach/abandon. | L178-L343 | [mcp/tests/test_worktree_support_tests_1.py](mcp/tests/test_worktree_support_tests_1.py) |
-| Shared closeout arguments normalize the two real content messages. | L417-L438 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| The fixture queue and early refusal helpers retain typed inputs and exact bindings. | n/a | [mcp/tests/test_worktree_support_tests_1.py](mcp/tests/test_worktree_support_tests_1.py) |
+| The retained lifecycle scenario preserves the parent through start/attach/abandon. | n/a | [mcp/tests/test_worktree_support_tests_1.py](mcp/tests/test_worktree_support_tests_1.py) |
+| Shared closeout arguments normalize the two real content messages. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

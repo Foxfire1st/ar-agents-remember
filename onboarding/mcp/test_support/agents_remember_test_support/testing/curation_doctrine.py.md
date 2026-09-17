@@ -6,8 +6,8 @@
 | path                   | `mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-17T12:30+02:00 |
-| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
-| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ harness reads the old sentence.
 No external or domain documentation governs this repository-local test-support module; it encodes the
 shipped instruction corpus and the ruling that retired those sentences.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
@@ -84,20 +84,20 @@ The module is the census the shipped-corpus guard reads. Its registry is the **r
 `CURATION_COMPLETENESS_STATEMENTS` the **required** side; the cases that consume both, and the seeded run
 that proves the guard can red, are in `mcp/tests/test_role_instruction_corpus.py`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment. | `RETIRED_CURATION_STATEMENTS` | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:76-205 |
-| The required-rule table names the exact form each canonical surface must state, keyed by shipped path. | `CURATION_COMPLETENESS_STATEMENTS`; `COMPLETE_CURATION_RULE` | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:34-34; mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:207-254 |
-| The nine generated copies are the sweep targets, and the canonical tree is sweep target zero. | `GENERATED_SKILL_COPIES`; `CURATION_DOCTRINE_SURFACES` | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:38-51 |
-| The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half. | `retired_statement_findings`; `doctrine_files`; `retired_curation_findings`; `missing_completeness_statements` | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:261-333 |
-| The consuming cases and the seeded re-insertion that proves the guard can fail. | `CurationIsCompleteOnEveryLeafTests`; `CurationGuardTeethTests` | mcp/tests/test_role_instruction_corpus.py:640-773 |
-| The nine copies are produced from the canonical tree by the generator whose `--check` proves currency. | `TARGETS`; `sync_targets` | scripts/sync-skills.py:43-50; scripts/sync-skills.py:204-228 |
+| The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:76-205 |
+| The required-rule table names the exact form each canonical surface must state, keyed by shipped path. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:34-34; mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:207-254 |
+| The nine generated copies are the sweep targets, and the canonical tree is sweep target zero. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:38-51 |
+| The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:261-333 |
+| The consuming cases and the seeded re-insertion that proves the guard can fail. | n/a | mcp/tests/test_role_instruction_corpus.py:640-773 |
+| The nine copies are produced from the canonical tree by the generator whose `--check` proves currency. | n/a | scripts/sync-skills.py:43-50; scripts/sync-skills.py:204-228 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 

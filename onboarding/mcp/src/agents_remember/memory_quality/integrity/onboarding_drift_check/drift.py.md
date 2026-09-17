@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../overview.md`               |
+
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## Purpose
 
@@ -107,3 +111,4 @@ external classifier via the shared `is_sidecar_storage` predicate from
 - 2026-05-29T12:10+02:00: Split into focused modules (`models`, `git_ops`, `discovery`, `entities`, `inline`, `sidecar`, `report`); `drift.py` is now a re-exporting facade with `classify_source` + `main`. Cleared the file-size hard limit, MI rank C, and the drift CRAP offenders. Metadata pending closeout refresh to the split commit.
 - 2026-05-24T02:47+02:00: Moved from the top-level `drift` package into `memory_quality.integrity.onboarding_drift_check`.
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.
+

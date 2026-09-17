@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/application/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -171,7 +175,6 @@ ever appears it is honored once.
 | The ambient lifecycle: `read.packet` emission and the served-onboarding dedup ledger consumed here. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
 
-
 ## Update History
 
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Split three pooled helper claims and distinguished the ordinary symlink-resolving confiner from the stricter artifact confiner. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
@@ -204,3 +207,4 @@ ever appears it is honored once.
 - 2026-06-23T01:40+02:00 — Slice 07b v1: the controller now passes `repo.repo_id` to `emit_read_packet`, so the emitted `read.packet` carries `data.repoId` (the read's repo). Body + invariant note only — verification metadata pinned until closeout stamps the slice-07b code commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the compact-reset note — the `compact-reset.json` **producer** is **not** a session-hook concern; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). `_maybe_reset_served` (consumer) + the `refresh=true` path remain as defensive scaffolding; `refresh=true` is the working manual reset. Docstring text only. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-06-22T22:33+02:00 — Created for slice 07 (S2+S3): the `read_ar_files` controller — paired source+onboarding batch reads (≤5 files), the net-new `_confined_rel` path-confinement guard, ranged/full source read, storage-mode + route-index onboarding lookup (present→found, absent→missing without probing, external-as-sidecar), the session-deduped front-door auto-attach (repo overview + governing route chain + sidecar `meaningful_body`), facts-only `read.packet` emission, and the `refresh` + compact-reset-marker consumer (the marker producer is deferred to slice-07 S5 / Probe B). Verification metadata pinned until closeout stamps the slice-07 code commit.
+

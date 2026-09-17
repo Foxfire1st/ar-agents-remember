@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -70,31 +70,31 @@ None.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation source applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle phase union mirrors the code/memory-only vocabulary. | L352-L352 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Structural analytics fields use the shared task-document reference. | L698-L701 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Generated task documents carry real hierarchy and optional runtime attachment. | L647-L681 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Execution nodes name their kind, leaf-id segment and task reference. | L724-L728 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| An execution endpoint carries a task reference and optional leaf id. | L710-L713 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | L703-L708 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The graph contains typed node and edge arrays. | L715-L718 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Workspace projection remains the generated top-level wire contract. | L816-L829 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The optional canonical task-intent identity on lifecycle operations. | L361-L361 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated `task-intent/v1` identity interface. | L750-L754 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The lifecycle phase union mirrors the code/memory-only vocabulary. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Structural analytics fields use the shared task-document reference. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Generated task documents carry real hierarchy and optional runtime attachment. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Execution nodes name their kind, leaf-id segment and task reference. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| An execution endpoint carries a task reference and optional leaf id. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The graph contains typed node and edge arrays. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Workspace projection remains the generated top-level wire contract. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The optional canonical task-intent identity on lifecycle operations. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The generated `task-intent/v1` identity interface. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 
@@ -122,9 +122,9 @@ The generated TypeScript mirror now carries optional lifecycle-operation `genera
 status vocabulary. These fields describe root-journal-owned operation state to dashboard consumers;
 they do not make the dashboard or disposable closeout projection an operation authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | L334-L363 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 
@@ -151,9 +151,9 @@ neighbouring refinements are untouched — `CloseoutCandidateNode.reasons` keeps
 `{"maxItems":256}` and `CloseoutQueueNode.sourceProblems` keeps its own. No dashboard-side behaviour
 changes: the panel still renders whatever rows the producer serves.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
 ## 260824-PDLS Invalidation Outcome Mirror
 

@@ -6,9 +6,13 @@
 | path                   | `mcp/tests/test_mcp_stdio_transport.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                           |
+
+## Governing Overview
+
+[overview.md](../overview.md)
 
 ## Purpose
 
@@ -61,3 +65,4 @@ This task extends this suite's production-bound fixtures or assertions for task-
   still holds.
 
 - 2026-06-10T05:30+02:00: Created as the reproducing harness and permanent regression for GitHub #49 (2.5.1).
+

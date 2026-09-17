@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -48,26 +48,26 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Protected branch aliases and nested/foreign workbench identities refuse. | L54-L78 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
-| A competing memory CAS is preserved after code has landed. | L80-L170 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
-| Cache absence/corruption cannot affect the accepted pair or create another memory commit. | L172-L213 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
-| Real accepted-object and source-ancestry failures remain enforced. | L262-L277; L280-L290 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
-| Production ref preparation and publication proof. | L103-L160; L163-L232; L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Protected branch aliases and nested/foreign workbench identities refuse. | n/a | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| A competing memory CAS is preserved after code has landed. | n/a | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Cache absence/corruption cannot affect the accepted pair or create another memory commit. | n/a | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Real accepted-object and source-ancestry failures remain enforced. | n/a | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Production ref preparation and publication proof. | n/a | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

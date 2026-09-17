@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../overview.md`               |
+
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## Purpose
 
@@ -90,3 +94,4 @@ cit:([`classify_external_onboarding`], mcp/src/agents_remember/memory_quality/in
 - 2026-05-31T12:50+02:00 — `classify_sidecar_onboarding_units` now gates non-sidecar storage via the boolean `is_sidecar_storage` predicate instead of the removed `sidecar_storage_label` helper (both imported from `coordination_context_resolver`); corrected the Invariants note to name `is_sidecar_storage` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Extracted an `_early_classification` closure in `classify_overview_onboarding` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; the unused `classify_sidecar_onboarding` aggregator was dropped during the split. Metadata pending closeout refresh to the split commit.
+

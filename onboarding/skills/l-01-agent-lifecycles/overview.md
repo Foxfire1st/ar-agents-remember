@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098`|
-| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
@@ -184,9 +184,9 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Lifecycle publication and recovery carry the actual code/memory outputs. | L66-L72 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Lifecycle publication and recovery carry the actual code/memory outputs. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
 
 ## L23 Pre-Dispatch Lineage
 

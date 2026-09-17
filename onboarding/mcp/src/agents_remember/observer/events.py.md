@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/observer/events.py`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                     |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -56,3 +60,4 @@ Python attribute name — so records must be dumped with
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
 - 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
   until closeout stamps the 2a code commit.
+

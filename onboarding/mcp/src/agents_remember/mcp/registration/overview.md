@@ -6,10 +6,14 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## IAS Worktree Advertisement
 
@@ -226,9 +230,9 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical closeout input rejects a ledger message field. | L46-L52 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Canonical closeout input rejects a ledger message field. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
 
 ## Historical 260731-EFA-L17 Change
 
@@ -347,7 +351,6 @@ timeout survives on this route.
 ## CCR-L42 Refresh Validation Parity
 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
 
 ## CCR-R12@v5 Current Registration Boundary
 
@@ -531,16 +534,12 @@ when a caller narrowed it.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/mcp/registration`, so no route/member/prose/invariant change is required. route-member-count=13; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
-
-
-
 - 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Updated the public inventory to 64 tools, preserved approved nested schema exceptions, and reviewed the read-only status-wait declaration. Verification records source review, not execution or acceptance.
 - 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
 - 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
 
 - 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes the `worktree_status_wait` server-tool registration; route index regenerated.
-
 
 - 2026-08-31T20:30+02:00 — No route impact: the direct-landing MCP description now advertises
   only the explicit leaf-without-enclosure path and excludes ordinary series/master closeout and
@@ -563,7 +562,6 @@ when a caller narrowed it.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: published the one canonical discriminated memory-quality request and removed flat wait/run-id dispatch. Verification metadata remains pinned until architect-owned closeout.
 
-
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
@@ -572,19 +570,15 @@ when a caller narrowed it.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: registration import paths updated; `task_doc` description constant extracted; direct-landing helper renamed. Verified at code commit e5cb139f.
 
-
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: memory_quality_check wait/run_id keyword-only async surface (L15-R7). Verified at code commit de3a0fd9.
-
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `closeout.py` registers the
   `direct_landing` tool (L16-R8); `tasks.py`'s `task_doc` gains `branch_addressed`
   (L16-R6); `gates.py`'s structural declarations accept an optional request-carried `caller`
   (L16-R3). The advertised surface is now 59 tools. Verified at code commit a9d50e08.
 
-
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `task_doc` registration gains the sprint
   linkage operations. Verified at code commit 8071a644.
-
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `tasks.py`'s `task_doc` declaration no
   longer advertises the removed `migrate_execution_topology`; `author_execution_graph` is
@@ -674,3 +668,4 @@ when a caller narrowed it.
   single `PLR0913` per-file-ignore that follows from it and the AST/`--ignore-noqa` suite that holds
   the carve-out shut. Verification metadata is pinned to the pre-change commit until closeout stamps
   the L2 code commit.
+

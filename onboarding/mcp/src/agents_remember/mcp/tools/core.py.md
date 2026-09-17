@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                  |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -91,15 +95,11 @@ remain unchanged; the move removes the former flat application-module ownership.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
-
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed the two runtime import moves and recorded their
   package ownership without claiming a tool-contract change; final provenance remains
@@ -124,3 +124,4 @@ remain unchanged; the move removes the former flat application-module ownership.
 - 2026-05-30T21:33+02:00: Documented `runtime_install_payload` forwarding the full `RuntimeInstallRequest` including `install_provider_deps` and the new `no_cache` flag, and `skills_install_payload`'s `layout`/`overwrite`/`archive_existing` forwarding. Verified against `8927f03`.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the install payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
+

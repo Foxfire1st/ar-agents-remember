@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/isolated.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                         |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -61,7 +65,6 @@ instead of re-pulling it over the network.
 | GrepAI database warm-start is handled by the seed module after isolated target settings exist. | `grepai_clone_bundle`, `_clone_database` | mcp/src/agents_remember/providers/grepai/seed.py:88-101; mcp/src/agents_remember/providers/grepai/seed.py:266-310 |
 | Provider identity helpers derive the worktree instance id and ownership labels. | `provider_instance_id`, `provider_ownership_labels` | mcp/src/agents_remember/kernel/primitives/identity.py:31-57; mcp/src/agents_remember/kernel/primitives/identity.py:123-135 |
 
-
 ## Update History
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
@@ -89,3 +92,4 @@ instead of re-pulling it over the network.
 - 2026-05-31T12:50+02:00 — Source dropped the file-local `_grepai_provider()` helper and now resolves the GrepAI block through the shared `setup_common.provider_settings()` (import switched from `context_providers` to `provider_settings`); behaviour-preserving, Logic prose updated to name the shared helper (1.0.0 review remediation).
 - 2026-05-28T12:32+02:00: Updated after isolated GrepAI settings moved watch logs under `logs/providers/`.
 - 2026-05-27T18:10:12+02:00: Created for the GrepAI worktree warm-start settings slice.
+

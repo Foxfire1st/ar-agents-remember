@@ -6,14 +6,13 @@
 | path | docs/reference/mcp-tools.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | docs/reference/overview.md |
 
 ## Governing Overview
 
-Governing overview: docs/reference/overview.md
-
+[overview.md](overview.md)
 ## Purpose
 
 Reference documentation records the three-state dispatch contract, readiness proof, settings timing, public hosted_session_readiness, tool census, and concurrency ruling.

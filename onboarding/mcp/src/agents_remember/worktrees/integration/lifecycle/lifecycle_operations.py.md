@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -79,24 +79,24 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `_require_series_recording_only` refuses enabled code or memory writes for recording-only series closeout. | L245-L256 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
-| `start_or_observe_closeout_operation` composes closeout admission through the journal-owned lifecycle route. | L210-L242 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
+| `_require_series_recording_only` refuses enabled code or memory writes for recording-only series closeout. | `_require_series_recording_only` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:245-256 |
+| `start_or_observe_closeout_operation` composes closeout admission through the journal-owned lifecycle route. | `start_or_observe_closeout_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:210-242 |
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. (`launch_detached_worker`) | L946-L1041 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
-| R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`) | L33-L71; L62-L62; L445-L481; L858-L878 | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py); [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
+| Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. (`launch_detached_worker`) | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:946-1041 |
+| R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`) | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py); [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

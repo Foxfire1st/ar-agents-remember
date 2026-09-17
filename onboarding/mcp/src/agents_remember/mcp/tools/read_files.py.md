@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/read_files.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:05+02:00                           |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d`       |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                     |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -51,3 +55,4 @@ application entry point.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-22T22:33+02:00 — Created for slice 07: the thin `read_ar_files_payload` wrapper over the controller and `_tool_payload`. Verification metadata pinned until closeout stamps the slice-07 code commit.
+

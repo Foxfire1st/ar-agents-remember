@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -55,3 +59,4 @@ phases (`grepai install`, `grepai clone-db`) through
 - 2026-06-10T07:30+02:00 — `install_enabled_provider` and `prepare_enabled_provider` announce their phases (`grepai install`, `grepai clone-db`) through `setup_progress_from(args)` so background worktree setup is observable mid-run (GitHub #53). Behavior and return shapes unchanged.
 - 2026-05-31T12:50+02:00 — `prepare_enabled_provider` dropped the leading `args.coordination_root` argument from its `load_settings(...)` call to match `setup_common.load_settings`/`settings_path`, which no longer take a `coordination_root` parameter; behaviour-preserving, no documented prose named the call so no prose corrected (1.0.0 review remediation).
 - 2026-05-25T19:50+02:00: Created when GrepAI setup orchestration was extracted out of `provider_setup.py`.
+

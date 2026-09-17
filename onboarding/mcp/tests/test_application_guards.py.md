@@ -6,9 +6,13 @@
 | path                   | `mcp/tests/test_application_guards.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`                         |
-| lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                         |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                           |
+
+## Governing Overview
+
+[overview.md](../overview.md)
 
 ## Purpose
 
@@ -83,3 +87,4 @@ substring of each guard's message rather than the full string.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.
+

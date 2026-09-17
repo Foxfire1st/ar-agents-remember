@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -188,7 +192,6 @@ provider stack is POSIX-hosted anyway.
 
 | The index-state metrics rows the catch-up stage records best-effort. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
 
-
 ## Update History
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
@@ -258,3 +261,4 @@ provider stack is POSIX-hosted anyway.
 - 2026-05-24T05:48+02:00: Updated after CGC seed failure stopped failing provider prepare payloads when the existing refresh fallback is enabled.
 - 2026-05-23T23:46+02:00: Updated after Phase 05 F-05 made provider setup require explicit settings and added the typed `ProviderSetupRequest` service front door.
 - 2026-05-23T13:46+02:00: Added when provider setup moved from the deleted source `scripts/` route into the MCP package.
+

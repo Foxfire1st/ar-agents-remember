@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -75,19 +75,19 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Grammar and path boundaries retain their dedicated assertion classes. | L115-L148; L151-L181; L184-L198; L201-L211 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
-| Selected/full validation and missing-code-root reporting. | L214-L246 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
-| Retained prepared history and cache-independent memory provenance. | L330-L351; L353-L381 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
-| Mechanical projection prompts the support question rather than asserting currency. | L474-L503; L505-L522 | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Grammar and path boundaries retain their dedicated assertion classes. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Selected/full validation and missing-code-root reporting. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Retained prepared history and cache-independent memory provenance. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Mechanical projection prompts the support question rather than asserting currency. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

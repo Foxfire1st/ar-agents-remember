@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -51,25 +51,25 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Terminal preflight, accepted memory ancestry, and integrated source-position checks. | L313-L385; L407-L421 | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
-| Contract reset preserves identity while clearing two-output provenance. | L187-L213; L216-L310 | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
-| Frozen observation, task plans, and canonical publication remain coordinated. | L388-L404; L424-L465; L468-L489; L507-L565; L576-L615 | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
-| Parent lineage compares exact prestart output positions to the configured parent source. | L79-L91; L385-L421; L450-L487 | [mcp/src/agents_remember/worktrees/source_lineage.py](mcp/src/agents_remember/worktrees/source_lineage.py) |
+| Terminal preflight, accepted memory ancestry, and integrated source-position checks. | n/a | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
+| Contract reset preserves identity while clearing two-output provenance. | n/a | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
+| Frozen observation, task plans, and canonical publication remain coordinated. | n/a | [mcp/src/agents_remember/worktrees/reopen.py](mcp/src/agents_remember/worktrees/reopen.py) |
+| Parent lineage compares exact prestart output positions to the configured parent source. | n/a | [mcp/src/agents_remember/worktrees/source_lineage.py](mcp/src/agents_remember/worktrees/source_lineage.py) |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

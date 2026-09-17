@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,38 +62,38 @@ None.
 
 The projection state matrix admits `recovering-private-preparation` under queued, running and input-required states. This keeps retained private work visible without claiming that approval was spent or that logical Git refs were published.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `_RUNNING_PHASES` boundary implements the preparation contract above. | L59-L59 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| The current `_INPUT_REQUIRED_PHASES` boundary implements the preparation contract above. | L95-L95 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| The current `STATE_MATRIX` boundary implements the preparation contract above. | L115-L115 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| The current `_RUNNING_PHASES` boundary implements the preparation contract above. | `_RUNNING_PHASES` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:59-79 |
+| The current `_INPUT_REQUIRED_PHASES` boundary implements the preparation contract above. | `_INPUT_REQUIRED_PHASES` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:95-104 |
+| The current `STATE_MATRIX` boundary implements the preparation contract above. | `STATE_MATRIX` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:115-158 |
 
 ## Docs References
 
 No configured external Domain Documentation source governs these internal wire contracts.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source governs this strict projection vocabulary. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Running, direct, and input-required phase sets use the canonical code/memory-only publication vocabulary. | L59-L79; L80-L86; L95-L104 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| The atomic public envelope and its per-kind state matrix. | L340-L393; L108-L112 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| CCR-R15 meaningful-state cursor on the envelope. | L375-L375 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| Envelope coherence refusals keep observations internally valid. | L195-L215; L407-L418; L421-L440 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| The durable record whose meaningful revision the envelope projects. | L340-L435; L362-L362 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| The wait vocabulary that consumes the cursor. | L14-L25 | [mcp/src/agents_remember/models/lifecycles/operation_wait.py](mcp/src/agents_remember/models/lifecycles/operation_wait.py) |
+| Running, direct, and input-required phase sets use the canonical code/memory-only publication vocabulary. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| The atomic public envelope and its per-kind state matrix. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| CCR-R15 meaningful-state cursor on the envelope. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| Envelope coherence refusals keep observations internally valid. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| The durable record whose meaningful revision the envelope projects. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| The wait vocabulary that consumes the cursor. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_wait.py](mcp/src/agents_remember/models/lifecycles/operation_wait.py) |
 
 ## Cross-Repo References
 
 No cross-repository projection contract is defined here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The envelope is a same-repository task-lifecycle wire contract. | L340-L393 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| The envelope is a same-repository task-lifecycle wire contract. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
 
 ## 260831-CCR-L15 Meaningful Revision On The Envelope
 

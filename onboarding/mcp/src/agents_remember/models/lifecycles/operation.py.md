@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,16 +87,16 @@ None.
 
 Preparation is meaningful operation state and belongs only to the exact closeout operation key/generation with certification authority. Cancellation evidence must bind every selected preparation intent digest as well as prove this generation’s worker exit. Retained private work is separate from approval consumption and published mutation evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `_require_altitude_authority` boundary implements the preparation contract above. | L592-L641 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| The current `_require_cancellation_evidence` boundary implements the preparation contract above. | L909-L927 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| The current `_require_altitude_authority` boundary implements the preparation contract above. | `_require_altitude_authority` | mcp/src/agents_remember/models/lifecycles/operation.py:592-641 |
+| The current `_require_cancellation_evidence` boundary implements the preparation contract above. | `_require_cancellation_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:909-927 |
 
 ## Docs References
 
 No external Domain Documentation source is configured for these internal wire models.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source governs this strict project vocabulary. | — | — |
 
@@ -104,23 +104,23 @@ No external Domain Documentation source is configured for these internal wire mo
 
 The operation model owns strict serialization and cross-field identity checks. The selected-state models own their reference shapes; the store and execution owners perform publication readback and transition checks. The public projection remains a separate same-repository model.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery and integration authority retain real code/memory outputs and validate those outputs against accepted publication. | L66-L72; L170-L186; L689-L692; L729-L737; L957-L978 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Closeout input retains the contract, effective input, approval, policy and corrective dispositions. | L311-L320 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| The durable record carries both selected certification states and the completed quality proof. | L340-L435 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Completed integration requires an exact original full code prefix and a matching result digest. | L208-L245 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Attestation, passing result, comparison base and memory policy are checked together. | L260-L274; L277-L289; L292-L308 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Completed proof must match the selected operation generation, references and integration code authority. | L566-L589 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | L521-L548; L551-L554; L557-L563 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| The public projection intentionally omits private execution identifiers. | L340-L393 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| The R03 dependency vocabulary is shared by these record types. | L21-L30; L98-L118; L226-L235 | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
+| Recovery and integration authority retain real code/memory outputs and validate those outputs against accepted publication. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Closeout input retains the contract, effective input, approval, policy and corrective dispositions. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| The durable record carries both selected certification states and the completed quality proof. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Completed integration requires an exact original full code prefix and a matching result digest. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Attestation, passing result, comparison base and memory policy are checked together. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Completed proof must match the selected operation generation, references and integration code authority. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| The public projection intentionally omits private execution identifiers. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| The R03 dependency vocabulary is shared by these record types. | n/a | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
 
 ## Cross-Repo References
 
 No cross-repository vocabulary is defined here. Config/contract input and the public operation projection are same-repository contracts documented above.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate cross-repository source is required for these model-local claims. | N/A | N/A |
 
@@ -144,11 +144,11 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery evidence records the exact code and memory-content commits. | L66-L72 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Organizational publication intent records and validates accepted/intended task-document bytes and digests. | L75-L104 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Integration publication intent captures the claimed source operation and checks completeness of that identity. | L107-L148 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Recovery evidence records the exact code and memory-content commits. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Organizational publication intent records and validates accepted/intended task-document bytes and digests. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Integration publication intent captures the claimed source operation and checks completeness of that identity. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
 
 ## 260821-CLIVE Journal-Owned Source And Door Evidence
 
@@ -198,14 +198,14 @@ rule, so a waiter compares this field and never `recordRevision`.
 
 The operation record separately retains private preparation state. Original command/output evidence remains distinct from published mutation, approval and certification selection; it cannot be rewritten into a new command or combined with a fabricated publication claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `LifecycleOperationRecoveryCommits` owns the corresponding behavior described above. | L66-L72 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| `OrganizationalTaskPublicationIntent` owns the corresponding behavior described above. | L75-L104 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| `_require_cancellation_evidence` owns the corresponding behavior described above. | L909-L927 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| `_require_organizational_repair_evidence` owns the corresponding behavior described above. | L930-L954 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| `_require_integration_publication` owns the corresponding behavior described above. | L957-L978 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | L981-L1016 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| `LifecycleOperationRecoveryCommits` owns the corresponding behavior described above. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+| `OrganizationalTaskPublicationIntent` owns the corresponding behavior described above. | `OrganizationalTaskPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:75-104 |
+| `_require_cancellation_evidence` owns the corresponding behavior described above. | `_require_cancellation_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:909-927 |
+| `_require_organizational_repair_evidence` owns the corresponding behavior described above. | `_require_organizational_repair_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:930-954 |
+| `_require_integration_publication` owns the corresponding behavior described above. | `_require_integration_publication` | mcp/src/agents_remember/models/lifecycles/operation.py:957-978 |
+| `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | mcp/src/agents_remember/models/lifecycles/operation.py:981-1016 |
 
 ## Update History
 

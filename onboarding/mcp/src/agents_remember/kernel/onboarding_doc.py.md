@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-06T22:01:41+00:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267`                                  |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                  |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -94,3 +98,4 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: added `discover_route_overviews` (doc_type-verified route discovery) for carryover overview candidates.
 - 2026-06-10T04:47+02:00 — Created: extracted shared metadata/route helpers from `worktrees/modules/onboarding.py` and added the body/history classification helpers (`meaningful_body`, `meaningful_body_changed`, `update_history_section`, `new_history_lines`, `has_no_impact_marker`) for the issue #56 memory-integrity gates.
+

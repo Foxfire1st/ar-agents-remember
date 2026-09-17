@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -195,23 +195,23 @@ No additional file-local TODO is established by this candidate review.
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain source applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | L45-L89; L92-L146; L149-L265 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
-| The payload builders these forward to. | L110-L118 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The checkpoint-landing tool declaration and the payload builder it forwards to. | closeout.py: L173-L199; worktree.py: L159-L174 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py); [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | L111-L115; L132-L136 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Refuse to stage anywhere except a task's own throwaway worktree. | L25-L41 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| Refuse before staging when the checkout has unresolved conflicts. | L44-L56 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| Prepare and certify a fresh candidate through the ordinary gate entry point. | L139-L165 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| The case that pins the checkpoint description as a partial publication and denies it is the pause. | L282-L304 | [mcp/tests/test_tools.py](mcp/tests/test_tools.py) |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | L132-L146; L149-L192 | [mcp/src/agents_remember/worktrees/modules/quality/gate.py](mcp/src/agents_remember/worktrees/modules/quality/gate.py) |
+| Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | n/a | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
+| The payload builders these forward to. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The checkpoint-landing tool declaration and the payload builder it forwards to. | n/a | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py); [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Refuse to stage anywhere except a task's own throwaway worktree. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
+| Refuse before staging when the checkout has unresolved conflicts. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
+| Prepare and certify a fresh candidate through the ordinary gate entry point. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
+| The case that pins the checkpoint description as a partial publication and denies it is the pause. | n/a | [mcp/tests/test_tools.py](mcp/tests/test_tools.py) |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | n/a | [mcp/src/agents_remember/worktrees/modules/quality/gate.py](mcp/src/agents_remember/worktrees/modules/quality/gate.py) |
 
 ## Historical R39 Integration Tool Contract
 
@@ -233,9 +233,9 @@ The current source seams include `register_closeout_tools`. The public schema/co
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `register_closeout_tools` at this ownership boundary. | L37-L42 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
+| The current module exposes `register_closeout_tools` at this ownership boundary. | `register_closeout_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:37-42 |
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -252,7 +252,7 @@ closeout-source model.
 
 No separate cross-repository implementation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external implementation source applies. | N/A | N/A |
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_sync.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -53,27 +53,27 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | L247-L289 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| The real Git fixture and attributed official memory update. | L44-L122; L107-L119 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Fast-forward and retained code conflict behavior. | L126-L146; L148-L183 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Cache-independent source admission, start, and candidate identity. | L185-L211; L213-L245; L291-L328 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Native cache-only success, real conflict continuation, and resumed staged-content validation. | L330-L411; L413-L446 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
-| Nonregular journal quarantine preserves the outside target. | L448-L467 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| The real Git fixture and attributed official memory update. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Fast-forward and retained code conflict behavior. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Cache-independent source admission, start, and candidate identity. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Native cache-only success, real conflict continuation, and resumed staged-content validation. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Nonregular journal quarantine preserves the outside target. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/context/cleanup.py`   |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0`                                                    |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                                    |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                                |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -49,3 +53,4 @@ under the expected root before calling `remove_runtime_path`.
 
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-05-29T18:35+02:00: Created when the runtime-artifact cleanup functions were extracted from `core.py` (commit `01f503d`).
+

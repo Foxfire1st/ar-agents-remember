@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,15 +49,15 @@ None recorded beyond the explicit terminal-archive boundary recorded by the gove
 
 Cancellation of retained private preparation first reopens the contract and verifies the preparation’s unchanged logical refs. Those per-intent facts are returned even when no Git mutation evidence exists, and are combined with mutation reconciliation when it does. Absence of published Git mutation is not enough to discard private preparation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `_cancellable_closeout_facts` boundary implements the preparation contract above. | L126-L191 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py) |
+| The current `_cancellable_closeout_facts` boundary implements the preparation contract above. | `_cancellable_closeout_facts` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:126-191 |
 
 ## Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -65,22 +65,22 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `_reconciled_closeout_record` reconciles actual mutations and derives their two recovery commit cells. | L86-L123 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py) |
-| `_cancellable_closeout_facts` combines protected-output and private-preparation facts for cancellation. | L126-L191 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py) |
+| `_reconciled_closeout_record` reconciles actual mutations and derives their two recovery commit cells. | `_reconciled_closeout_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:86-123 |
+| `_cancellable_closeout_facts` combines protected-output and private-preparation facts for cancellation. | `_cancellable_closeout_facts` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:126-191 |
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam. | L34-L83; L212-L232 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py) |
+| The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam. | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

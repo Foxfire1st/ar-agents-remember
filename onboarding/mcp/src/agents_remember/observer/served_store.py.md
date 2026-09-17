@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/observer/served_store.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                     |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -85,3 +89,4 @@ is the working manual reset; the application-side marker consumer
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the module-docstring compact-reset note — the `compact-reset.json` **producer** is **not** planned at the session-hook level; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). The controller-side consumer + `refresh=true` stay as defensive scaffolding. Docstring text only; the `ServedRecord`/`ServedStore` surface is unchanged. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-06-22T22:33+02:00 — Created for slice 07: the `ServedRecord` + `ServedStore` per-lifecycle append-only `served.jsonl` content-hash dedup ledger (GateStore pattern, beside the events/gates logs). Verification metadata pinned until closeout stamps the slice-07 code commit.
+

@@ -6,10 +6,14 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                   |
+
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## IAS Frozen Worktree Payload Boundary
 
@@ -291,26 +295,25 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141 |
-| The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. | `worktree_checkpoint_landing`; `worktree_record_landing` | mcp/src/agents_remember/models/tools/public_roster.py:63-64 |
-| The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:58-58 |
+| The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. | `worktree_checkpoint_landing`; `worktree_record_landing` | mcp/src/agents_remember/models/tools/public_roster.py:64-65 |
+| The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:59-59 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
-| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:225-225 |
+| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:215-215 |
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
 | The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:13-13 |
 | The trusted terminal assignment response carries document-and-role binding plus private session correlation. | "class AttachTerminalSessionToTaskResponse" | mcp/src/agents_remember/models/terminal.py:32-44 |
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The application request owner has only code and memory messages. | L111-L115 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| The application request owner has only code and memory messages. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
 
 ## 260712-TRH-L4 Route Impact
 
 The public tool route now exposes spawn-only creation, exact-session hosted_session_readiness, and an explicit dispatch-brief kind. Legacy context/submit refuses before side effects; promptKeywords apply once after readiness; completion requires delivered plus harness-log-confirmed proof.
-
 
 ### 260713-PHA-L5 Route Contract Review
 
@@ -415,7 +418,7 @@ Tool payload composition preserves the closed application result vocabulary. The
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. | `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:199-206 |
+| Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. | `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:195-202 |
 
 ## 260821-DAGQC-L2 Typed Memory-Quality Adapters
 
@@ -554,6 +557,10 @@ which is likewise not the extension's enumeration result.
 | This server's own index resource, kept deliberately distinct from that method. | `index_resource` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:228-251 |
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_checkpoint_landing`; `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/public_roster.py:64-64; mcp/src/agents_remember/models/tools/public_roster.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_pause` repointed to mcp/src/agents_remember/models/tools/public_roster.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_operation_control_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:195-202. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded that `runtime_install_payload` now takes the run's
   own `RuntimeInstallRequest` instead of four keyword flags, and why (the run's selection input
@@ -621,16 +628,12 @@ which is likewise not the extension's enumeration result.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/mcp/tools`, so no route/member/prose/invariant change is required. route-member-count=21; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
-
-
-
 - 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Separated historical adapter/public-name accounts from current application-owned response, guidance and gate behavior; reviewed the new wait adapter. Verification records source review, not execution or acceptance.
 - 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
 - 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
 
 - 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes the public `worktree_status_wait` tool surface (payload export, package export, `PUBLIC_TOOLS` census); route index regenerated.
-
 
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: the public inventory is 63 names in
   exact live order, and `server_info` projects the shared content-addressed runtime identity.
@@ -644,21 +647,17 @@ which is likewise not the extension's enumeration result.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat quality branching with strict sync/start/poll adapters over the canonical controller. Verification metadata remains pinned until architect-owned closeout.
 
-
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: tool payload modules import paths updated to the moved packages. Verified at code commit e5cb139f.
 
-
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: async memory-quality start/poll payload builders (L15-R7). Verified at code commit de3a0fd9.
-
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `direct_landing_payload` joins the facade
   exports (`mcp/tools/direct_landing.py`), and `PUBLIC_TOOLS` advertises `direct_landing` (59
   names). Verified at code commit a9d50e08.
-
 
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the closeout-queue payload adapter
   and kept ambient identity plus mechanics out of the MCP tool surface. Verification remains
@@ -891,3 +890,4 @@ which is likewise not the extension's enumeration result.
 - 2026-05-26T23:11+02:00: (from `tools.py`) Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI payload forwarding.
 - 2026-05-24T02:47+02:00: (from `tools.py`) Updated after public tool expectations added `memory_quality_check`.
 - 2026-05-23T13:09+02:00: (from `tools.py`) Established for the complete Phase 04 public MCP tool surface.
+

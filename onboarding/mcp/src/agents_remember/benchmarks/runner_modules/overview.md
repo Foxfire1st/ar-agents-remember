@@ -6,9 +6,13 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../overview.md`                  |
+
+## Governing Overview
+
+[overview.md](../../../../overview.md)
 
 ## Purpose
 
@@ -144,3 +148,4 @@ The benchmark runner callers were rewritten by the L9 caller wave: `McpRuntimeCo
 - 2026-05-30T21:51+02:00: Re-verified the route against `825a172`; the module split summary still matches. The only route change since `3f09b75` was `mcp_registration.py` renaming the generated `providerSeconds` cap to `providerSetupSeconds` (documented on its file card).
 - 2026-05-28T12:32+02:00: Updated after benchmark provider settings and scaffolded runtime assets moved logs under the central `logs/` tree.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.
+

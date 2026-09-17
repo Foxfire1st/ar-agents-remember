@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
-| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview      | `../../../../overview.md`                  |
 
@@ -332,9 +332,9 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 | The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-328; mcp/src/agents_remember/models/worktree.py:355-364 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:233-237 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:243-247 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
-| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:479-479 |
+| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:478-478 |
 | The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:459-459 |
 | The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:191-191; mcp/src/agents_remember/models/tools/tool_registry.py:192-192 |
 | Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:236-247; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:250-256; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-315 |
@@ -346,15 +346,15 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:29-40 |
 | The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:40-40; mcp/src/agents_remember/models/worktree.py:50-50; mcp/src/agents_remember/models/worktree.py:59-59 |
-| Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
+| Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:9-9 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Direct landing returns cache observations separately from commits. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
-| Public message transport names only code and memory. | L46-L52 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Direct landing returns cache observations separately from commits. | n/a | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
+| Public message transport names only code and memory. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -574,7 +574,7 @@ Registered tool request/response contracts now live under `models/tools/`; the m
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Strict lifecycle operation record/projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:311-403; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
+| Strict lifecycle operation record/projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340 |
 | Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:32-37; mcp/src/agents_remember/models/queue/closeout_queue.py:40-59 |
 
 ## 260821-DAGQC-L2 Closed Quality And Landing Models
@@ -628,7 +628,7 @@ the coherent lifecycle projection. It introduces no public worker PID or private
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:393-393 |
-| Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:186-186 |
+| Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:193-193 |
 
 
 ## Integrated IAS Recovery Contract
@@ -840,6 +840,11 @@ through a real composition. That is why the leaf's case drives a disposable copy
 corpus rather than a fixture, and it is what makes the seed failable.
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:243-247. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:478-478. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "from agents_remember.models.worktree import (" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:9-9. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "\"worktree_sync\": WorktreeSyncResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:193-193. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T16:04+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): this route's `sources.py` changed and the route body is updated for it. The card now records the **D25 repair**: an admitted source that decodes to whitespace only is refused as a typed `CapsuleSourceError(status="source-empty")` on the same boundary as `source-not-utf8`, instead of raising a bare `ValueError` that `compile_admitted_capsule` does not catch — one refusal shape for one class of defect, with the leaf's case driving the shipped corpus because emptiness is discovered after admission succeeds. The card's identity-helper and value-type ranges were re-anchored to the candidate, and a stale `nine roles / eight operations` vocabulary on the sibling admission card was corrected to the registry's **ten / nine**. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Earlier entries are preserved exactly as written.
 

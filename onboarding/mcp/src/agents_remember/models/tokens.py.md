@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/models/tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -211,3 +215,4 @@ operation-less responses such as `ping`.
 
 - 2026-05-30T22:29+02:00: S6 wiring completed — `_tool_payload` now calls the new `finalize_payload_tokens()` so every MCP response carries a real `tokens`/`tokenizer`/`tokenCountExact` instead of the Pydantic defaults; `response_payload`/`dump_with_token_count` were widened to accept any `ResponseModel`. Removed the pre-S6 "placeholder defaults" note and repaired the stale `mcp/tools.py` reference to `mcp/tools/base.py`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-28T19:52+02:00: Created for the token-accounting model helpers planned for S6 wiring.
+

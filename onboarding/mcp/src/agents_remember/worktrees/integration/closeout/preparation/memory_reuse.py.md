@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain source is configured. | N/A | N/A |
 
@@ -54,19 +54,19 @@ No external Domain Documentation source is configured for this slice. The refere
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | L19-L63 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
-| The exact raw HEAD tree is checked before projected content is inspected. | L451-L465 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
-| Only root memory.md is removed when proving equality with a required memory certificate subject. | L468-L486 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
-| The closed record hashes the raw and certified identities separately. | L43-L69 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
-| The shared exact Git pathspec names only the derived root cache. | L27-L27 | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
+| The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
+| The exact raw HEAD tree is checked before projected content is inspected. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| Only root memory.md is removed when proving equality with a required memory certificate subject. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| The closed record hashes the raw and certified identities separately. | n/a | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
+| The shared exact Git pathspec names only the derived root cache. | n/a | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_input.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash |  `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
-| lastVerifiedCommitDate |  2026-09-16T12:23:53+02:00|
+| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ Revision and public recovery controls are deferred to L2.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -63,24 +63,24 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `resolve_closeout_plan` derives code/memory enabledness from the admitted route and candidate. | L80-L114 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
-| `normalize_closeout_input` validates the two explicit messages and returns one effective input. | L117-L170 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
-| `effective_message_arguments` renders only enabled code/memory messages for next-call guidance. | L316-L322 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| `resolve_closeout_plan` derives code/memory enabledness from the admitted route and candidate. | `resolve_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:80-114 |
+| `normalize_closeout_input` validates the two explicit messages and returns one effective input. | `normalize_closeout_input` | mcp/src/agents_remember/worktrees/closeout_input.py:117-170 |
+| `effective_message_arguments` renders only enabled code/memory messages for next-call guidance. | `effective_message_arguments` | mcp/src/agents_remember/worktrees/closeout_input.py:316-322 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. (`capture_closeout_candidate`) | L193-L207 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
-| Enabled/not-applicable legs derive from validated route, contract, and candidate facts. (`resolve_closeout_plan`) | L80-L114 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
-| Typed refusal and corrected-call data are emitted together. (`CloseoutInputError`; `normalize_closeout_input`) | L50-L77; L117-L170 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
-| Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`) | L173-L190 | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. (`capture_closeout_candidate`) | `capture_closeout_candidate` | mcp/src/agents_remember/worktrees/closeout_input.py:193-207 |
+| Enabled/not-applicable legs derive from validated route, contract, and candidate facts. (`resolve_closeout_plan`) | `resolve_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:80-114 |
+| Typed refusal and corrected-call data are emitted together. (`CloseoutInputError`; `normalize_closeout_input`) | n/a | [mcp/src/agents_remember/worktrees/closeout_input.py](mcp/src/agents_remember/worktrees/closeout_input.py) |
+| Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`) | `require_effective_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:173-190 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

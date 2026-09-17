@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -76,3 +80,4 @@ No configured sibling repository is required for this facade.
 - 2026-05-23T14:20+02:00: Updated after benchmark skill exposure became copy-only and stopped using the deleted `install-skills.sh` route.
 - 2026-05-23T13:46+02:00: Updated after benchmark provider setup stopped invoking the deleted source `scripts/` route.
 - 2026-05-23T13:09+02:00: Copied into the MCP package for Phase 04 benchmark tools.
+

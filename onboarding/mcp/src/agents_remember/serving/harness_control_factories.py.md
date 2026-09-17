@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
-| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `overview.md` |
 
@@ -119,13 +119,13 @@ startup evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter. | "async def _prepare_controlled_launch("; "discoverer = create_harness_protocol_adapter(config.harness_id"; "knobs = harness_launch_knobs("; "launch = apply_launch_knobs(base"; "discovery_env = {"; "validate_launch_selection(selection" | mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
+| The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter. | "async def _prepare_controlled_launch("; "discoverer = create_harness_protocol_adapter(config.harness_id"; "knobs = harness_launch_knobs("; "launch = apply_launch_knobs(base"; "discovery_env = {"; "validate_launch_selection(selection" | mcp/src/agents_remember/serving/harness_control_runner.py:282-282; mcp/src/agents_remember/serving/harness_control_runner.py:308-308; mcp/src/agents_remember/serving/harness_control_runner.py:313-314; mcp/src/agents_remember/serving/harness_control_runner.py:321-321; mcp/src/agents_remember/serving/harness_control_runner.py:323-323 |
 | Claude consumes expected launch evidence and produces native model/effort flags. | `claude_launch_knobs`; `ClaudeStreamJsonAdapter`; "def verify_effective_launch"; `launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:130-144; mcp/src/agents_remember/serving/harness_control_claude.py:147-573; mcp/src/agents_remember/serving/harness_control_runner.py:239-239; mcp/src/agents_remember/serving/harness_launch.py:124-124 |
 | Codex session settings resolve typed or catalog-default model/effort into thread config. | `CodexAppServerSettings`; `connect`; `_thread_params` | mcp/src/agents_remember/serving/codex_app_server_session.py:73-119; mcp/src/agents_remember/serving/codex_app_server_session.py:147-239; mcp/src/agents_remember/serving/codex_app_server_session.py:493-558 |
 | Pi consumes expected launch evidence and produces native provider-qualified model/thinking flags. | `PiRpcAdapter`; `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
 | eve consumes a selection recovered from the applied launch knobs and is constructed with no argv-vocabulary flags. | `EveSessionAdapter` | mcp/src/agents_remember/serving/eve_adapter.py:143-863 |
-| eve's launch vocabulary is the environment, because its model and effort are compiled application values with no argv spelling. | `eve_launch_knobs` | mcp/src/agents_remember/serving/eve_runtime_launch.py:310-327 |
-| The reader that recovers the applied selection from a probe launch spec. | `launch_spec_selection` | mcp/src/agents_remember/serving/eve_runtime_launch.py:328-353 |
+| eve's launch vocabulary is the environment, because its model and effort are compiled application values with no argv spelling. | `eve_launch_knobs` | mcp/src/agents_remember/serving/eve_runtime_launch.py:392-407 |
+| The reader that recovers the applied selection from a probe launch spec. | `launch_spec_selection` | mcp/src/agents_remember/serving/eve_runtime_launch.py:410-437 |
 | This factory's own recovery helper; it refuses a resolved launch that arrives without adapter-produced knobs. | `_eve_expected_selection` | mcp/src/agents_remember/serving/harness_control_factories.py:170-195 |
 | The selection and its knobs are one frozen pair, so the factory's argument count stays inside the repository limit without an exemption. | `LaunchSelection` | mcp/src/agents_remember/serving/harness_control_factories.py:59-69 |
 | The three pre-existing construction guards were extracted with their messages unchanged. | `_require_consistent_launch`; `_require_launch_knobs_present`; `_require_thread_boundary` | mcp/src/agents_remember/serving/harness_control_factories.py:72-83; mcp/src/agents_remember/serving/harness_control_factories.py:86-90; mcp/src/agents_remember/serving/harness_control_factories.py:93-101 |
@@ -140,6 +140,9 @@ No external repository boundary is implemented by this factory.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "async def _prepare_controlled_launch("; "discoverer = create_harness_protocol_adapter(config.harness_id"; "knobs = harness_launch_knobs("; "launch = apply_launch_knobs(base"; "discovery_env = {"; "validate_launch_selection(selection" repointed to mcp/src/agents_remember/serving/harness_control_runner.py:282-282; mcp/src/agents_remember/serving/harness_control_runner.py:313-313; mcp/src/agents_remember/serving/harness_control_runner.py:314-314; mcp/src/agents_remember/serving/harness_control_runner.py:321-321; mcp/src/agents_remember/serving/harness_control_runner.py:308-308; mcp/src/agents_remember/serving/harness_control_runner.py:323-323. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `eve_launch_knobs` repointed to mcp/src/agents_remember/serving/eve_runtime_launch.py:392-407. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `launch_spec_selection` repointed to mcp/src/agents_remember/serving/eve_runtime_launch.py:410-437. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: documented the second optional kwarg
   (`capsule_delivery`, filled into the sole `CodexAppServerSettings` site and **refused** for any

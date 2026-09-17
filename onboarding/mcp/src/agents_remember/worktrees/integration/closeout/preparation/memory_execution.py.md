@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain source is configured. | N/A | N/A |
 
@@ -54,18 +54,18 @@ No external Domain Documentation source is configured for this slice. The refere
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Candidate construction explicitly excludes memory.md and reobserves the selected code view. | L27-L52 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
-| Cache setup is conditional on real non-cache changes before invoking the registered producer. | L55-L79 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
-| The selected fifth terminal must bind the actual cache-free tree and logical pair. | L82-L127 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
-| The memory reuse record carries distinct raw and certified tree identities. | L43-L69 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
+| Candidate construction explicitly excludes memory.md and reobserves the selected code view. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
+| Cache setup is conditional on real non-cache changes before invoking the registered producer. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
+| The selected fifth terminal must bind the actual cache-free tree and logical pair. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
+| The memory reuse record carries distinct raw and certified tree identities. | n/a | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 

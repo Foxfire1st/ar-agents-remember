@@ -6,8 +6,8 @@
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../overview.md`                         |
 
@@ -118,9 +118,9 @@ needed to establish the route model.
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The implementation produces/reuses memory content before refreshing its cache. | L36-L76 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
+| The implementation produces/reuses memory content before refreshing its cache. | n/a | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
 
 ## R39 Design Evidence Disposition
 

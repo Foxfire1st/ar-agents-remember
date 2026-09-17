@@ -6,9 +6,13 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                  |
+
+## Governing Overview
+
+[overview.md](../overview.md)
 
 ## Purpose
 
@@ -56,3 +60,4 @@ so every reader of a layout is unaffected.
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/grepai/context/` route.
 - 2026-05-25T19:33+02:00: Updated after GrepAI context logic was split into constants, layout, workspace, and artifact modules.
 - 2026-05-25T19:16+02:00: Created when GrepAI provider context behavior moved into its own subpackage.
+

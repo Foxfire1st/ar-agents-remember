@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -78,13 +78,13 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed classification checks actual code, memory repository/ref, and candidate evidence. | L30-L53; L77-L134; L137-L162 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
-| Memory receipt inference and output matching are based on actual Git lineage. | L185-L204; L207-L223; L226-L252; L255-L269 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
-| Prepared and committed intent convergence retain exact ref/tree checks. | L300-L319; L322-L333; L336-L355 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
-| Shared snapshots exclude cache data while retaining actual objects. | L42-L57; L410-L473 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| Recovery tests reject code/ref/content drift and accept cache absence or damage. | L274-L314 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
+| Typed classification checks actual code, memory repository/ref, and candidate evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| Memory receipt inference and output matching are based on actual Git lineage. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| Prepared and committed intent convergence retain exact ref/tree checks. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| Shared snapshots exclude cache data while retaining actual objects. | n/a | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
+| Recovery tests reject code/ref/content drift and accept cache absence or damage. | n/a | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 
 ## Cross-Repo References
 
@@ -92,7 +92,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

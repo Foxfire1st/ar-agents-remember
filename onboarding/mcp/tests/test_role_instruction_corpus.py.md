@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_role_instruction_corpus.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
-| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview
@@ -125,24 +125,24 @@ None recorded.
 
 No external or domain documentation governs this repository-local corpus check.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The resolver under test and the six shipped cases. | `_resolve_sources`; `test_manifest_resolves_every_role_and_operation_source`; `test_manifest_carries_routing_metadata_not_copied_payloads`; `test_every_role_source_carries_the_readable_order_and_knob_block`; `test_manifest_reports_a_missing_source_instead_of_accepting_it`; `test_every_relative_path_the_corpus_cites_resolves`; `test_link_check_reports_a_repo_relative_anchor_pointed_at_nothing` | mcp/tests/test_role_instruction_corpus.py:141-156; mcp/tests/test_role_instruction_corpus.py:244-268; mcp/tests/test_role_instruction_corpus.py:350-399; mcp/tests/test_role_instruction_corpus.py:400-463; mcp/tests/test_role_instruction_corpus.py:464-504; mcp/tests/test_role_instruction_corpus.py:505-528; mcp/tests/test_role_instruction_corpus.py:573-598 |
-| The declared corpus contract the cases enforce. | `ROLE_ORDER`; `REQUIRED_SECTIONS`; `MACHINE_SECTION`; `OPERATION_KEYS`; `SANCTIONED_SIBLING_REFERENCES`; `CORPUS_LOCATIONS`; `COORDINATION_ROOT_RE` | mcp/tests/test_role_instruction_corpus.py:32-42; mcp/tests/test_role_instruction_corpus.py:44-52; mcp/tests/test_role_instruction_corpus.py:53-53; mcp/tests/test_role_instruction_corpus.py:56-65; mcp/tests/test_role_instruction_corpus.py:103-111; mcp/tests/test_role_instruction_corpus.py:87-102; mcp/tests/test_role_instruction_corpus.py:112-116 |
-| The manifest this module resolves, and the corpus it governs. | `composition-manifest.json`; `# l-01-agent-lifecycles — The Agent Lifecycles` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1; skills/l-01-agent-lifecycles/SKILL.md:1-22 |
-| Generated copies are checked by the propagation owner, not by this module. | `CANONICAL_SKILLS`; `check_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:179-203 |
+| The resolver under test and the six shipped cases. | n/a | mcp/tests/test_role_instruction_corpus.py:141-156; mcp/tests/test_role_instruction_corpus.py:244-268; mcp/tests/test_role_instruction_corpus.py:350-399; mcp/tests/test_role_instruction_corpus.py:400-463; mcp/tests/test_role_instruction_corpus.py:464-504; mcp/tests/test_role_instruction_corpus.py:505-528; mcp/tests/test_role_instruction_corpus.py:573-598 |
+| The declared corpus contract the cases enforce. | n/a | mcp/tests/test_role_instruction_corpus.py:32-42; mcp/tests/test_role_instruction_corpus.py:44-52; mcp/tests/test_role_instruction_corpus.py:53-53; mcp/tests/test_role_instruction_corpus.py:56-65; mcp/tests/test_role_instruction_corpus.py:103-111; mcp/tests/test_role_instruction_corpus.py:87-102; mcp/tests/test_role_instruction_corpus.py:112-116 |
+| The manifest this module resolves, and the corpus it governs. | n/a | skills/l-01-agent-lifecycles/composition-manifest.json:1-1; skills/l-01-agent-lifecycles/SKILL.md:1-22 |
+| Generated copies are checked by the propagation owner, not by this module. | n/a | scripts/sync-skills.py:15-15; scripts/sync-skills.py:179-203 |
 
 ## Cross-Repo References
 
 No sibling-repository contract defines this corpus check.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 

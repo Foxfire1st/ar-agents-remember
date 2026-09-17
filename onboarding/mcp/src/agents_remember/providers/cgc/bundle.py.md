@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/bundle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:50+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -32,10 +36,10 @@ It builds path replacement pairs for POSIX and platform string variants, safely 
 | --- | --- | --- |
 | CGC seed orchestration calls this module between export and load. | `rewrite_cgc_bundle_paths` | mcp/src/agents_remember/providers/cgc/seed.py:591-607 |
 
-
 ## Update History
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 4 citation findings. Re-anchored the
   seed-orchestration row to `_seed_rewrite`'s `rewrite_cgc_bundle_paths` call (seed.py:591-607) and the
   test row to its exact span (test_provider_setup.py:372-417). Scoped recheck clean.
 - 2026-05-25T19:50+02:00: Created when CGC bundle path rewriting was extracted out of `provider_setup.py`.
+

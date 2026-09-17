@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
-| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -200,11 +200,11 @@ These current source and policy ranges establish the development/certification d
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| A ledger view is derived from Git and cache write failure is only an availability result. | L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Existing preparation retains actual Git binding and allows a distinct memory content view. | L34-L44 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Baseline adoption commits memory content and returns a cache observation. | L172-L227 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| A ledger view is derived from Git and cache write failure is only an availability result. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Existing preparation retains actual Git binding and allows a distinct memory content view. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| Baseline adoption commits memory content and returns a cache observation. | n/a | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
 
 ## Purpose
 

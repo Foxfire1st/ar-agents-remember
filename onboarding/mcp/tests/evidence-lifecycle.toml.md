@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` (synced onto L14's landing) |
 | governingOverview | `overview.md` |
 
@@ -106,7 +106,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -115,20 +115,20 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema and discovery threshold remain explicit. | L1-L2 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
-| Closeout fixture support names the retained code/memory transaction replacement. | L264-L281 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
-| Closeout-input support uses the renamed replacement and declares cleanup-guidance consumption. | L282-L308 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
-| Curator support also declares the cleanup-guidance consumer. | L329-L389 | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
-| The referenced transaction test definition exists in the current source. | L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| The schema and discovery threshold remain explicit. | n/a | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
+| Closeout fixture support names the retained code/memory transaction replacement. | n/a | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
+| Closeout-input support uses the renamed replacement and declares cleanup-guidance consumption. | n/a | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
+| Curator support also declares the cleanup-guidance consumer. | n/a | [mcp/tests/evidence-lifecycle.toml](mcp/tests/evidence-lifecycle.toml) |
+| The referenced transaction test definition exists in the current source. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

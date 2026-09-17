@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T03:43 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -86,22 +86,22 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | L222-L392 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| The actual two-ref apply regression retains the original rescue tip. | L579-L596 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| Runtime proof uses the ordinary Git-only reader. | L467-L550 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| Historical table read/carry and real CLI boundaries stay covered. | L645-L672; L675-L764; L767-L920 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| The production target-update stream emits exactly one newline between commands. | L837-L879 | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
-| The existing CLI case applies two named refs and retries the same target set. | L853-L909 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| The committed implementation uses native reversed topological traversal. | L784-L791 | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| The actual two-ref apply regression retains the original rescue tip. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| Runtime proof uses the ordinary Git-only reader. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| Historical table read/carry and real CLI boundaries stay covered. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| The production target-update stream emits exactly one newline between commands. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| The existing CLI case applies two named refs and retries the same target set. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| The committed implementation uses native reversed topological traversal. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

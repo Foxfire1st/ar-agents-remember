@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -53,24 +53,24 @@ No additional fixture scenario is introduced by this retirement.
 
 No Domain Documentation source is configured for these repository-owned test fixtures.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | L364-L392; L395-L483; L708-L783 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
-| External-memory fixture supplies real isolated Git repositories and current contract inputs. | L395-L483 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
-| The base class provides helper methods rather than collected test cases. | L708-L783 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | n/a | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+| External-memory fixture supplies real isolated Git repositories and current contract inputs. | n/a | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+| The base class provides helper methods rather than collected test cases. | n/a | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
 
 
 ## Cross-Repo References
 
 Temporary fixture repositories do not establish a live cross-repository integration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate external implementation source applies. | N/A | N/A |
 

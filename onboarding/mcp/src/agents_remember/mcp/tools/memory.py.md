@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/memory.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5`                                      |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                      |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                  |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -100,3 +104,4 @@ controller.
 - 2026-06-10T09:00+02:00 — Carryover plan/apply responses compacted for 2.5.2 (GitHub #52): full result filed via `write_tool_report`, wire keeps per-decision capped path lists + `carriedPaths` + `reportPath`, drops `candidates`/`carried` (apply previously repeated every record twice; 7.7k tokens for a 28-file carryover).
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the effectful memory payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
+

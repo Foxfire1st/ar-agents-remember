@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -76,12 +76,12 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The runtime validates and publishes progress, completion, and input-required evidence. | L51-L89; L91-L107; L109-L150 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
-| Request-owned generation construction and memory-only output reconciliation. | L157-L199; L202-L248; L251-L275 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
-| Recovery cells are derived from authoritative mutation evidence. | L27-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
-| The classifier supplies exact memory output evidence. | L77-L134; L185-L204 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| The runtime validates and publishes progress, completion, and input-required evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
+| Request-owned generation construction and memory-only output reconciliation. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
+| Recovery cells are derived from authoritative mutation evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
+| The classifier supplies exact memory output evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
 
 ## Cross-Repo References
 
@@ -89,7 +89,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

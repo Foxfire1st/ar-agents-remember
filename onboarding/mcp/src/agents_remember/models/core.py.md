@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/models/core.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -52,3 +56,4 @@ metadata, and that payload under `servingBuild`.
 
 - 2026-06-06T12:28+02:00: Corrected the core payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created for core MCP response contracts.
+

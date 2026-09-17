@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/controlplane/store.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-06T00:38:37+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -236,7 +240,6 @@ an `applied` snapshot of that kind would already be retained with no TTL the mom
 one. Until then the handover gate is a *guard* (a permitted/refused read) and not a *spend*, and
 nothing prevents the same approved handover gate from permitting two integrations.
 
-
 ## Current Durable-Store Lock Composition
 
 Every gate append and read-filter-rewrite still uses the durable-store boundary. That boundary
@@ -256,7 +259,6 @@ does not replace exclusion or the checkout guard.
 - 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the durable-store dependency claim and verified the entire unchanged GateStore source against its prior verified commit; advanced the genuine verification to C97 after recording the checkout guard and shared kernel lock composition.
 
 - 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
-
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
@@ -318,3 +320,4 @@ does not replace exclusion or the checkout guard.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): GateStore.find cross-lifecycle resolution added. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-06-25T13:10+02:00 — Task 23/24: added physical gate deletion, atomic log replacement, lifecycle-log enumeration, and retention compaction for throwaway gate interactions.
 - 2026-06-18T01:05+02:00 — Created for task 6 slice 6a: the append-only `GateStore`. Verification metadata pinned until closeout stamps the 6a code commit.
+

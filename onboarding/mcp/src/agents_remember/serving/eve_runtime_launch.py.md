@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_runtime_launch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T09:45+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `overview.md` |
 
@@ -188,7 +188,7 @@ pass was available for this file.
 | The launch-time proof itself, and the git-identity requirement behind it, whose six refusals each name their defect. | `verify_capsule_binding`; `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; mcp/src/agents_remember/serving/eve_runtime_launch.py:518-546; mcp/src/agents_remember/serving/eve_runtime_launch.py:548-570 |
 | The carrier format and environment names this module verifies against, declared in the models tier so the reader and the writer share one spelling. | `EveCapsuleCarrier`; `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV`; `CAPSULE_PATH_ENV`; `carrier_digest` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-42; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-291 |
 | The D20 repair: the install is checked before the destination is touched, and the early return requires a complete staged application. | `stage_runtime_root`; `_staged_application` | mcp/src/agents_remember/serving/eve_runtime_launch.py:228-272; mcp/src/agents_remember/serving/eve_runtime_launch.py:274-286 |
-| The case pinning the repaired refusal: a first refusing call followed by a second in the same process refuses identically. | `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:1028-1059 |
+| The case pinning the repaired refusal: a first refusing call followed by a second in the same process refuses identically. | `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:1072-1104 |
 | The produce side of the same seam, which writes the carrier this module reads — and which **now has a production caller**: `application/role_capsules/launch.py::_compile_eve_task` materializes it for a wired launch point, verified from the consumer's side by `E8`. | `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
 | The cases pinning the launch-time verification in both directions, including a workspace checked out on another branch. | `test_launch_verification_accepts_the_admitted_capsule`; `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:355-362; mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
 | The adapter is the only consumer that resolves a spec, hands it to a transport, and verifies the effective selection it produced. | `EveSessionAdapter._resolve_spec`; `_verify_effective_selection` | mcp/src/agents_remember/serving/eve_adapter.py:660-700; mcp/src/agents_remember/serving/eve_adapter.py:892-904 |
@@ -196,7 +196,7 @@ pass was available for this file.
 | The node floor is owned by the readiness module and re-exported here, so detection and launch read one number. | `KERNEL_MINIMUM_NODE_MAJOR`; `MINIMUM_NODE_MAJOR` | mcp/src/agents_remember/serving/eve_runtime_launch.py:38-38; mcp/src/agents_remember/serving/eve_runtime_launch.py:48-52; mcp/src/agents_remember/kernel/eve_runtime_readiness.py:55-60 |
 | The runtime's own model fallback, read from the authored application rather than mirrored as a constant. | `runtime_default_model`; `AGENT_SOURCE`; `MODEL_FALLBACK_PATTERN` | mcp/src/agents_remember/serving/eve_runtime_launch.py:62-62; mcp/src/agents_remember/serving/eve_runtime_launch.py:80-80; mcp/src/agents_remember/serving/eve_runtime_launch.py:269-300 |
 | The capability catalog consumes this fallback so a pre-session read names the model the runtime would really use. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
-| The case pinning that the advertised model is the one the runtime would use. | `test_the_advertised_model_is_the_one_the_runtime_would_use` | mcp/tests/test_eve_product_integration.py:985-997 |
+| The case pinning that the advertised model is the one the runtime would use. | `test_the_advertised_model_is_the_one_the_runtime_would_use` | mcp/tests/test_eve_product_integration.py:1137-1149 |
 | The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses. | `_knob_values`; `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:173-187; mcp/tests/test_harness_launch.py:189-196 |
 | The OS-level start-failure seed is an operator naming a nonexistent `AR_EVE_NODE`, which only fails because this module reads the selector as given. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:98-116; mcp/tests/live_eve_native_fixture.py:1847-1862 |
 
@@ -207,6 +207,8 @@ pass was available for this file.
 | The pinned `eve` release and its Node `>=24` engine requirement come from the published package, not from a sibling Agents Remember repository. | `engines`; exact dependency pins | eve_runtime/package.json:7-8; eve_runtime/package.json:15-20; eve_runtime/README.md:3-8 |
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_a_refused_stage_refuses_again_in_the_same_process` repointed to mcp/tests/test_capsule_launch_wiring.py:1072-1104. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_the_advertised_model_is_the_one_the_runtime_would_use` repointed to mcp/tests/test_eve_product_integration.py:1137-1149. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T09:45+02:00 — 260915-CAPS-L15 curator: **the staging fail-open is repaired, and the
   produce side now has a production caller.** The `stage_runtime_root` paragraph was corrected rather

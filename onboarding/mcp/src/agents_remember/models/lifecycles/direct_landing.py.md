@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -67,12 +67,12 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The accepted input contains code/memory identity and validates route plus intent. | L14-L39 | [mcp/src/agents_remember/models/lifecycles/direct_landing.py](mcp/src/agents_remember/models/lifecycles/direct_landing.py) |
-| The shared snapshot keeps actual object identity and optional content-only comparison. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| The coordinator captures the accepted candidate from actual Git facts. | L425-L457 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
-| Recovery checks the typed facts against the current repositories and refs. | L77-L134 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| The accepted input contains code/memory identity and validates route plus intent. | n/a | [mcp/src/agents_remember/models/lifecycles/direct_landing.py](mcp/src/agents_remember/models/lifecycles/direct_landing.py) |
+| The shared snapshot keeps actual object identity and optional content-only comparison. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| The coordinator captures the accepted candidate from actual Git facts. | n/a | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
+| Recovery checks the typed facts against the current repositories and refs. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
 
 ## Cross-Repo References
 
@@ -80,7 +80,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

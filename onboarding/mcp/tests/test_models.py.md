@@ -6,9 +6,13 @@
 | path                   | `mcp/tests/test_models.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                              |
+
+## Governing Overview
+
+[overview.md](../overview.md)
 
 ## Purpose
 
@@ -52,3 +56,4 @@ a response contract and catches model definitions that are not schema-safe.
 
 - 2026-06-06T12:28+02:00: Corrected the public-tool metadata reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created for public tool response model registry and schema coverage.
+

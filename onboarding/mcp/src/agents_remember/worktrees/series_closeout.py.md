@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -54,26 +54,26 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Final closeout and series integration re-prove canonical completion. | L33-L57; L60-L70; L73-L89 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
-| Checkpoint capture and publication revalidate an explicit two-output candidate. | L93-L101; L104-L122; L125-L144; L147-L178; L181-L194 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
-| Leaf membership, output identity, and ordering remain exact. | L201-L223; L251-L281; L284-L306; L617-L631 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
-| Recorded origins and admitted substantive history preserve reconciled series proof. | L309-L340; L394-L435; L472-L509 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
-| Series cleanliness and actual memory-ref capture exclude cache authority. | L680-L698; L701-L711 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Final closeout and series integration re-prove canonical completion. | n/a | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Checkpoint capture and publication revalidate an explicit two-output candidate. | n/a | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Leaf membership, output identity, and ordering remain exact. | n/a | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Recorded origins and admitted substantive history preserve reconciled series proof. | n/a | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Series cleanliness and actual memory-ref capture exclude cache authority. | n/a | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

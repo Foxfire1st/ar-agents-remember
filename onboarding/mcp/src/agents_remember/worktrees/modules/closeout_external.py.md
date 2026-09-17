@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -63,24 +63,24 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `external_closeout_commits` resumes or creates the memory output, then refreshes its informational cache. | L36-L76 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
-| `_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded. | L79-L110 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
-| `_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication. | L121-L147 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
-| `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. | L150-L159 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
+| `external_closeout_commits` resumes or creates the memory output, then refreshes its informational cache. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:39-79 |
+| `_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
+| `_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication. | `_refresh_external_memory` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:124-150 |
+| `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. | `_report_memory_commit` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:153-162 |
 
 The memory mutation boundary and the cache renderer have separate owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Cache rendering returns informational state and creates no Git commit. | L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Cache rendering returns informational state and creates no Git commit. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
 
 ## Cross-Repo References
 
 The external-memory worktree is another repository governed by the same closeout contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

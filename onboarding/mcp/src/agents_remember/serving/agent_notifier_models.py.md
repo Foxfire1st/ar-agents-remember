@@ -6,14 +6,13 @@
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-24T14:43+02:00|
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
 
-Governing overview: mcp/src/agents_remember/serving/overview.md
-
+[overview.md](overview.md)
 ## Purpose
 
 Defines the immutable notifier finding/action/result records and the injected sweep context shared

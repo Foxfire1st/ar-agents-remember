@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_attribution_producers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:16 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -91,14 +91,14 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The one-definition guard and explicit five-producer census. | L56-L64; L87-L117; L120-L138 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The hostile-body case preserves the message and parses the final attribution. | L141-L163 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The public carryover case verifies one commit and no extra repeat commit with absent cache. | L238-L300 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal. | L303-L387 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The kernel owns the key and the single writer. | L51-L51; L67-L92 | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| Closeout-shaped producers reach that writer through the effective input model. | L144-L162 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| The one-definition guard and explicit five-producer census. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The hostile-body case preserves the message and parses the final attribution. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The public carryover case verifies one commit and no extra repeat commit with absent cache. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The kernel owns the key and the single writer. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
+| Closeout-shaped producers reach that writer through the effective input model. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
 
 ## Cross-Repo References
 
@@ -106,7 +106,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

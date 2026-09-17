@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/controlplane/enforcement.py`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`             |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`             |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                          |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -123,3 +127,4 @@ wrapper around `kind="closeout-approval"`; `CloseoutGuard` aliases `GateGuard`.
   closeout stamps the L4 commit.
 - 2026-06-26T14:16+02:00 — Task 25: updated the open-gate refusal wording to avoid teaching a lower-level wait helper as live agent choreography.
 - 2026-06-18T12:10+02:00 — Created for task 6 slice 6b: the pure `evaluate_closeout_gate` closeout-gate policy + `CloseoutGuard` — the binding rule `worktree_closeout_apply` obeys (a developer-approved gate binds; a model self-approval is rejected; a gateless lifecycle permits). Verification metadata pinned to the task base until closeout stamps the 6b code commit.
+

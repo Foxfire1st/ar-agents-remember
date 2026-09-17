@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/integration_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -52,21 +52,21 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `prove_external_memory_recovery` requires exact accepted memory HEAD/ref and ignores only root cache dirtiness. | L28-L49 | [mcp/src/agents_remember/worktrees/modules/integration_recovery.py](mcp/src/agents_remember/worktrees/modules/integration_recovery.py) |
-| `classify_convergent_recovery_refs` delegates exact ref classification and preserves typed conflicts. | L18-L25 | [mcp/src/agents_remember/worktrees/modules/integration_recovery.py](mcp/src/agents_remember/worktrees/modules/integration_recovery.py) |
+| `prove_external_memory_recovery` requires exact accepted memory HEAD/ref and ignores only root cache dirtiness. | `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-49 |
+| `classify_convergent_recovery_refs` delegates exact ref classification and preserves typed conflicts. | `classify_convergent_recovery_refs` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Convergent refs are classified by the canonical authority classifier and conflicts stay typed. (`classify_convergent_recovery_refs`) | L18-L25 | [mcp/src/agents_remember/worktrees/modules/integration_recovery.py](mcp/src/agents_remember/worktrees/modules/integration_recovery.py) |
-| External-memory proof requires the exact task-memory head to equal the journaled memory-content commit. (`prove_external_memory_recovery`) | L28-L49 | [mcp/src/agents_remember/worktrees/modules/integration_recovery.py](mcp/src/agents_remember/worktrees/modules/integration_recovery.py) |
+| Convergent refs are classified by the canonical authority classifier and conflicts stay typed. (`classify_convergent_recovery_refs`) | `classify_convergent_recovery_refs` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25 |
+| External-memory proof requires the exact task-memory head to equal the journaled memory-content commit. (`prove_external_memory_recovery`) | `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-49 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here; the external memory repository is contract-addressed runtime data.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

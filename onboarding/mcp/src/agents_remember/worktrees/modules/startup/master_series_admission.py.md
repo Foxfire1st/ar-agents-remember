@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -73,18 +73,18 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed admission evidence and bounded refusal projection. | L27-L55; L58-L65; L68-L78; L91-L150 | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
-| Existing contracts are classified before the separate edge checks. | L153-L215; L218-L241; L244-L260; L263-L275 | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
-| External memory is checked through real repository/worktree identity without a ledger-path argument. | L376-L384; L387-L392; L401-L414 | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
+| Typed admission evidence and bounded refusal projection. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
+| Existing contracts are classified before the separate edge checks. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
+| External memory is checked through real repository/worktree identity without a ledger-path argument. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

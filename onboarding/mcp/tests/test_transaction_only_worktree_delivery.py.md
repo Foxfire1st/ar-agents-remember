@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_transaction_only_worktree_delivery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -51,27 +51,27 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Named acceptance-tool prohibition and real failing-hook probes. | L120-L146; L149-L173 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| One code/memory commit, cache absence from the committed tree, and both trailer readers. | L176-L208; L211-L318 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| Interrupted public closeout resumes only its exact accepted code identity. | L321-L448 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| Integration publishes accepted refs or refuses source movement before publication. | L451-L504; L507-L560 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| A recloseout after sync records the actual memory head. | L574-L607 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| Cache materialization preserves both repositories' refs/commit objects and real content. | L610-L679; L682-L702; L705-L743 | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Named acceptance-tool prohibition and real failing-hook probes. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| One code/memory commit, cache absence from the committed tree, and both trailer readers. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Interrupted public closeout resumes only its exact accepted code identity. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Integration publishes accepted refs or refuses source movement before publication. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| A recloseout after sync records the actual memory head. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Cache materialization preserves both repositories' refs/commit objects and real content. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

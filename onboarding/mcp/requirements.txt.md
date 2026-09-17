@@ -6,9 +6,13 @@
 | path                   | `mcp/requirements.txt`                     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -38,3 +42,4 @@ contract dependencies `pydantic>=2,<3` and `tiktoken>=0.12,<1`.
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (4 findings); no Tier-3 findings.
 
 - 2026-05-28T19:52+02:00: Created after requirements added Pydantic/tiktoken and restored the MCP dependency to `1.27.1`.
+

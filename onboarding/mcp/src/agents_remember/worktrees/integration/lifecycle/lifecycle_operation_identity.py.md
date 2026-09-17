@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,21 +43,21 @@ The contract-state fingerprint includes the real code and memory content outputs
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `operation_state_fingerprint` hashes advancing code/memory contract cells without ledger commit identity. | L16-L31 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
-| `closeout_contract_sha256` hashes the exact canonical contract-publication text. | L34-L38 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
-| `operation_key` derives operation identity from canonical contract path, kind, and fingerprint. | L41-L43 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
+| `operation_state_fingerprint` hashes advancing code/memory contract cells without ledger commit identity. | `operation_state_fingerprint` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py:16-31 |
+| `closeout_contract_sha256` hashes the exact canonical contract-publication text. | `closeout_contract_sha256` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py:34-38 |
+| `operation_key` derives operation identity from canonical contract path, kind, and fingerprint. | `operation_key` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py:41-43 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Stable fingerprint over advancing lifecycle cells. (`operation_state_fingerprint`) | L16-L31 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py) |
+| Stable fingerprint over advancing lifecycle cells. (`operation_state_fingerprint`) | `operation_state_fingerprint` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py:16-31 |
 
 ## Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -73,7 +73,7 @@ Closeout identity hashes normalized durable input and candidate provenance. Fina
 
 No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

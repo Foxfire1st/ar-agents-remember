@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/preparation` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -51,11 +51,11 @@ The memory-content message uses the kernel's shared `Code-Commit:` renderer. `me
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected bundle contains code and one memory-content output. | L45-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Existing memory reuse binds raw Git facts and a separately certified content tree. | L19-L63 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
-| Final publication proves and publishes the pair, then refreshes the cache. | L533-L569 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| The selected bundle contains code and one memory-content output. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Existing memory reuse binds raw Git facts and a separately certified content tree. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
+| Final publication proves and publishes the pair, then refreshes the cache. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
 
 ## Integrated IAS Recovery Contract
 

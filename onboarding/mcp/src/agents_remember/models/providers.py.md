@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-31T20:30+02:00     |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -66,3 +70,4 @@ their service payloads can expose provider-specific fields.
 - 2026-06-08T09:57+02:00: Made compact provider `ok` fields optional-null defaults so skipped provider summaries survive public payload serialization and re-validation.
 - 2026-05-31T12:30+02:00 — Dropped `integrity` block from diagnostics commentary; `runnerIntegrityFailed` state and `ProviderDiagnosticsResponse.integrity` field removed (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created for compact provider summaries and the dedicated diagnostics response contract.
+

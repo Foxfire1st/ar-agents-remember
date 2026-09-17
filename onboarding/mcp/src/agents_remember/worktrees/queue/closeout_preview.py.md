@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_preview.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,22 +53,22 @@ None recorded for the ledger-retirement boundary.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `proposed_closeout_commits` separates code/memory Git intent from informational ledger_cache output. | L9-L67 | [mcp/src/agents_remember/worktrees/queue/closeout_preview.py](mcp/src/agents_remember/worktrees/queue/closeout_preview.py) |
-| `closeout_summary` describes named-ref series recording or leaf content and cache refresh. | L70-L81 | [mcp/src/agents_remember/worktrees/queue/closeout_preview.py](mcp/src/agents_remember/worktrees/queue/closeout_preview.py) |
-| `closeout_order` orders real Git outputs, cache refresh, and contract publication without a ledger commit. | L84-L102 | [mcp/src/agents_remember/worktrees/queue/closeout_preview.py](mcp/src/agents_remember/worktrees/queue/closeout_preview.py) |
+| `proposed_closeout_commits` separates code/memory Git intent from informational ledger_cache output. | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-67 |
+| `closeout_summary` describes named-ref series recording or leaf content and cache refresh. | `closeout_summary` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:70-81 |
+| `closeout_order` orders real Git outputs, cache refresh, and contract publication without a ledger commit. | `closeout_order` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:84-102 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Proposed commit payloads separate leaf mutation from exact series recording. (`proposed_closeout_commits`) | L9-L67 | [mcp/src/agents_remember/worktrees/queue/closeout_preview.py](mcp/src/agents_remember/worktrees/queue/closeout_preview.py) |
-| Summary and ordering publish the same lifecycle altitude. (`closeout_summary`; `closeout_order`) | L70-L81; L84-L102 | [mcp/src/agents_remember/worktrees/queue/closeout_preview.py](mcp/src/agents_remember/worktrees/queue/closeout_preview.py) |
+| Proposed commit payloads separate leaf mutation from exact series recording. (`proposed_closeout_commits`) | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-67 |
+| Summary and ordering publish the same lifecycle altitude. (`closeout_summary`; `closeout_order`) | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_preview.py](mcp/src/agents_remember/worktrees/queue/closeout_preview.py) |
 
 ## Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -80,7 +80,7 @@ Preview now requires normalized `effectiveInput` and renders each leg's typed in
 
 No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

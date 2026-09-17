@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../overview.md`               |
+
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## Purpose
 
@@ -68,3 +72,4 @@ document. Current signatures: `classify_entity_fingerprint(catalog, repo_root, r
   Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-05-29T18:35+02:00: Extracted `_entity_fingerprint_from_row`, `_is_table_separator_row`, `_normalized_header_cells`, and an `_early_classification` closure in `classify_entity_fingerprint` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
+

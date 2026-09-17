@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/serving/delta.py`  |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-07T05:06+02:00                      |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`  |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`  |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                               |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -97,3 +101,4 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 - 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the pure `diff_projection` +
   `DeltaEvent` per-entity diff (developer call: per-entity deltas in v1, not deferred).
   Verification metadata pinned until closeout stamps the 4a code commit.
+

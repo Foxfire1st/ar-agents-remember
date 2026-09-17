@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/benchmark.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                        |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -55,3 +59,4 @@ happens in `mcp/registration/benchmarks.py`.
   code commit.
 - 2026-05-31T12:50+02:00 — `codex_benchmark_run_payload`'s `codex_sandbox` default changed from the inline `"danger-full-access"` literal to the `CODEX_BENCHMARK_SANDBOX` constant imported from `benchmarks.runner`; noted the new constant source in Logic (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
+

@@ -6,14 +6,13 @@
 | path | mcp/src/agents_remember/serving/hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
 
-Governing overview: mcp/src/agents_remember/serving/overview.md
-
+[overview.md](overview.md)
 ## Purpose
 
 Hosted readiness is a bounded, read-only check of the exact catalog session's protocol adapter. It

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/named_ref_memory.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -67,12 +67,12 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reader derives attribution at the explicit normalized local branch. | L12-L15 | [mcp/src/agents_remember/worktrees/named_ref_memory.py](mcp/src/agents_remember/worktrees/named_ref_memory.py) |
-| Local ref normalization and ledger derivation have shared owners. | L79-L85 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
-| The kernel derives rows and current/base metadata from committed attribution. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| A tag sharing the source branch name cannot redirect the read, even with a damaged cache. | L338-L360 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| The reader derives attribution at the explicit normalized local branch. | n/a | [mcp/src/agents_remember/worktrees/named_ref_memory.py](mcp/src/agents_remember/worktrees/named_ref_memory.py) |
+| Local ref normalization and ledger derivation have shared owners. | n/a | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| The kernel derives rows and current/base metadata from committed attribution. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| A tag sharing the source branch name cannot redirect the read, even with a damaged cache. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
 
 ## Cross-Repo References
 
@@ -80,7 +80,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

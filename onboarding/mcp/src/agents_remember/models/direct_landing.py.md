@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,25 +54,25 @@ None recorded.
 
 No configured Domain Documentation source applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation source applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Real code/memory SHAs are separate from optional ledgerCache diagnostics. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
-| The response model shape for the direct landing operation. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
-| Registered as the `direct_landing` tool response model. | L214-L214 | [mcp/src/agents_remember/models/tools/tool_registry.py](mcp/src/agents_remember/models/tools/tool_registry.py) |
-| Produced by the admitted direct-landing coordinator. | L113-L125 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
-| Memory-content execution and same-generation recovery are journaled below the coordinator. | L42-L75; L78-L135 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
+| Real code/memory SHAs are separate from optional ledgerCache diagnostics. | n/a | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
+| The response model shape for the direct landing operation. | n/a | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
+| Registered as the `direct_landing` tool response model. | n/a | [mcp/src/agents_remember/models/tools/tool_registry.py](mcp/src/agents_remember/models/tools/tool_registry.py) |
+| Produced by the admitted direct-landing coordinator. | n/a | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
+| Memory-content execution and same-generation recovery are journaled below the coordinator. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 
@@ -89,9 +89,9 @@ The current source seams include `DirectLandingResponse`. The response vocabular
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `DirectLandingResponse` at this ownership boundary. | L20-L54 | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
+| The current module exposes `DirectLandingResponse` at this ownership boundary. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
 
 ## 260821-DAGQC-L2 Closed Outcome Vocabulary
 

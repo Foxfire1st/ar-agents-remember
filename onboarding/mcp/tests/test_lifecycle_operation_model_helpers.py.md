@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_operation_model_helpers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ No file-local implementation change is requested by this reconciliation.
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
@@ -53,18 +53,18 @@ No Domain Documentation entries are configured in this memory root. These are re
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions. | L62-L74 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
-| Mutation history and irreversible boundary require exact proof. | L36-L59 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
-| Recovery commits cannot contradict commit proof. | L62-L74 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
-| Worker binding and termination evidence are one authority. | L77-L121 | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Mutation history and irreversible boundary require exact proof. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Recovery commits cannot contradict commit proof. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Worker binding and termination evidence are one authority. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
 
 ## Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 

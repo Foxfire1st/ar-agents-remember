@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -153,3 +157,4 @@ caps never reach this branch — they skip and report.
   `onboarding_drift_check/models.py`. Added one reference row and citations for the two existing
   drift rows; the Repo-Internal References header was two columns and is now three.
 - 2026-05-24T02:47+02:00: Created for the first combined memory quality runner.
+

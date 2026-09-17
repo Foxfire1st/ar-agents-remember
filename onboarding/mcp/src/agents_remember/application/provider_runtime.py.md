@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/application/provider_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T15:05+02:00                     |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073`                |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -141,3 +145,4 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 4 citation items; scoped citation check now passes.
 
 - 2026-06-01T00:00+02:00 — Created onboarding for the new provider teardown module.
+

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/git_preparation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain source is configured. | N/A | N/A |
 
@@ -54,20 +54,20 @@ No external Domain Documentation source is configured for this slice. The refere
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Existing observations bind raw HEAD/tree and the additional memory-content subject. | L33-L44 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Private paths, object identities, hook policy, and operation identity are validated before capability use. | L47-L85 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| The sealed private capability revalidates the binding and invokes its live owner. | L88-L98 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| File modes and exact no-follow blob bytes are checked, including replacement during observation. | L133-L159 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Only explicit memory observations omit root memory.md from physical membership. | L162-L211 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| The runner requires a memory content subject and proves its entries against the actual raw tree. | L468-L486 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| Existing observations bind raw HEAD/tree and the additional memory-content subject. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| Private paths, object identities, hook policy, and operation identity are validated before capability use. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| The sealed private capability revalidates the binding and invokes its live owner. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| File modes and exact no-follow blob bytes are checked, including replacement during observation. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| Only explicit memory observations omit root memory.md from physical membership. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| The runner requires a memory content subject and proves its entries against the actual raw tree. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 

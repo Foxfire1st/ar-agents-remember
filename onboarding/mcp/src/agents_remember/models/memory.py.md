@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -167,3 +171,4 @@ it. `scope-refused` is terminal domain evidence and is never rewritten as a succ
   pinned until closeout stamps the L2 commit.
 - 2026-06-10T09:00+02:00 — Carryover plan/apply models gained documented optional `decisions`/`reportPath` (plus `carriedPaths` on apply) for the 2.5.2 response compaction (GitHub #52).
 - 2026-05-28T19:52+02:00: Created for memory and onboarding response contracts.
+

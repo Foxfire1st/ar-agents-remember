@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/worktree_tool_requests.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,28 +62,28 @@ No additional file-local TODO is established by this candidate review.
 No external Domain Documentation source is configured. These are repository-owned application
 contracts.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation source applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw closeout/control messages and landed commits contain only code/memory values. | L68-L107; L111-L115; L119-L128 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Task-start concepts and shared defaults have one definition. | L17-L30; L34-L48; L52-L57; L60-L60; L63-L63 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Lifecycle control reconstructs only canonical typed public values. | L68-L107 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Closeout approval, messages, and finalization documents remain separate concepts. | L111-L115; L132-L136; L144-L149 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Start consumes its extracted request type. | L103-L200 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Operation control consumes its extracted request type. | L534-L554 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Closeout apply consumes its extracted request type. | L353-L368 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Raw closeout/control messages and landed commits contain only code/memory values. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Task-start concepts and shared defaults have one definition. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Lifecycle control reconstructs only canonical typed public values. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Closeout approval, messages, and finalization documents remain separate concepts. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Start consumes its extracted request type. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Operation control consumes its extracted request type. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Closeout apply consumes its extracted request type. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History

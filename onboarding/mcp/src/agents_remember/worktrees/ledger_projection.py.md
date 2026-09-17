@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/ledger_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -92,13 +92,13 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Source reads derive only Git attribution and recompute retained revision metadata. | L222-L249; L252-L264 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
-| Contract projection resolves actual memory history independently of cache availability. | L290-L312; L315-L331; L267-L273 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
-| Expected mappings and informational differences are built from the selected Git history. | L334-L396; L156-L183 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
-| The kernel walks committed attribution without reading a ledger file. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Cache forgery/misses and invalid attributed targets have focused regression coverage. | L315-L335; L338-L360; L529-L547 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Source reads derive only Git attribution and recompute retained revision metadata. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Contract projection resolves actual memory history independently of cache availability. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Expected mappings and informational differences are built from the selected Git history. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| The kernel walks committed attribution without reading a ledger file. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Cache forgery/misses and invalid attributed targets have focused regression coverage. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
 
 ## Cross-Repo References
 
@@ -106,7 +106,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

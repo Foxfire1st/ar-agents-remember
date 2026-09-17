@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/record_landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ of the landing flow in the repo's `system/git-workflow.md`.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -116,28 +116,28 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `record_landing_result` validates the recorded code landing and forwards the actual code/memory facts. | L58-L142 | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+| `record_landing_result` validates the recorded code landing and forwards the actual code/memory facts. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:58-142 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) | L36-L66 | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
-| The local route that already recorded its own landing. (`_integrated_result`) | L574-L607 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) | L70-L70 | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
-| The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) | L80-L80 | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
-| Cleanup refuses until the cell this route sets reads completed. (`integration_status`) | L669-L669 | [mcp/src/agents_remember/worktrees/modules/cleanup.py](mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) | L97-L154 | [mcp/src/agents_remember/worktrees/modules/landing.py](mcp/src/agents_remember/worktrees/modules/landing.py) |
-| The MCP tool and payload that expose this operation. (`worktree_record_landing`) | L202-L224 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
-| The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) | L498-L531 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) | L50-L50 | [system/git-workflow.md](system/git-workflow.md) |
+| The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
+| The local route that already recorded its own landing. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
+| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) | n/a | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+| The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) | n/a | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+| Cleanup refuses until the cell this route sets reads completed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
+| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) | n/a | [mcp/src/agents_remember/worktrees/modules/landing.py](mcp/src/agents_remember/worktrees/modules/landing.py) |
+| The MCP tool and payload that expose this operation. (`worktree_record_landing`) | `worktree_record_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:201-224 |
+| The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:498-531 |
+| The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) | `worktree_record_landing` | system/git-workflow.md:50-50 |
 
 ## Cross-Repo References
 
 The operation shells out to nothing. Its only external participant is the pull-request itself, which
 is recorded rather than queried at decision time, so no live external boundary is cited here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

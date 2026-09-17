@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
-| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview      | `../../../overview.md`                         |
 
@@ -215,12 +215,12 @@ same eight keys, no `capsuleDelivery` key appears, and diffing the two transcrip
 | --- | --- | --- |
 | The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. | `resolve_launch_capsule`; `LaunchCapsule`; `LaunchCapsuleMode`; `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:108-159; mcp/src/agents_remember/serving/launch_capsule.py:73-80; mcp/src/agents_remember/serving/launch_capsule.py:233-249; mcp/src/agents_remember/serving/launch_capsule.py:251-273 |
 | The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
-| The runner's own agreement check, which makes the rule product-enforced rather than test-enforced. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:170-177 |
+| The runner's own agreement check, which makes the rule product-enforced rather than test-enforced. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:144-171 |
 | The two channels that exist, named as the only two. | `CAPSULE_CARRIER_HARNESSES` | mcp/src/agents_remember/serving/launch_capsule.py:60-70 |
 | The compiler behind the port, and the workspace read back out of the carrier the consumer re-verifies. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
 | The opener's two carrier readers, and the defensive refusal beside them. | `_codex_capsule_delivery`; `_eve_capsule_env`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:542-554; mcp/src/agents_remember/serving/terminal_opener.py:556-562; mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
 | The codex-only guard that stayed untouched, because the eve carrier does not use the Codex field. | `_require_capsule_channel`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:110-119; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
-| The enumeration guard: every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the set cannot change silently. | `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:761-801 |
+| The enumeration guard: every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the set cannot change silently. | `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:805-844 |
 | The declared legacy exclusion, with its reason. | `LIBRARY_REOPEN_LEGACY_REASON` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124 |
 | The two acceptance transcripts read from each started session's own first prompt, and the production-chain eve case. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:483-526; mcp/tests/test_capsule_launch_wiring.py:529-574; mcp/tests/test_capsule_launch_wiring.py:816-872 |
 | The production-chain evidence: the consumer's own gate from the launch point's own cwd and env, the live system-block read, and the negative control. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
@@ -1223,7 +1223,7 @@ L17).
 | --- | --- | --- |
 | The launch-time proof, its six refusals and its unbound case. | `verify_capsule_binding`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
 | The git-identity requirement that distinguishes the admitted worktree from a directory at the same path. | `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527; mcp/src/agents_remember/serving/eve_runtime_launch.py:529-560 |
-| The ambient-binding pops and the launch-spec-only reader. | `launch_spec_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:430-445 |
+| The ambient-binding pops and the launch-spec-only reader. | `launch_spec_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463 |
 | The two body-less session controls and the resolver-not-rerun fact behind the system-role choice. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-101; mcp/src/agents_remember/serving/eve_runtime_client.py:242-268 |
 | The channel-level binder that refuses an unbound launch before any model work, guarding every session route. | `arCapsuleAuth` | eve_runtime/agent/channels/eve.ts:26-62 |
 | The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
@@ -1263,6 +1263,9 @@ this capsule's — first crossing the bound about 2,297 characters beyond the se
 re-bound.**
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `parse_runner_config` repointed to mcp/src/agents_remember/serving/harness_control_runner.py:144-171. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` repointed to mcp/tests/test_capsule_launch_wiring.py:805-844. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `launch_spec_binding` repointed to mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T16:05+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): this route's `harness_control_runner.py` changed, so the body gained the section above rather than a no-impact entry. It states **D12's** delivered contract — the three constants (`MAX_ARGV_TOKEN_BYTES` 131072, `ARGV_TOKEN_SAFETY_MARGIN_BYTES` 2048, `ARGV_TOKEN_BOUND_BYTES` **129024**) and `_refuse_over_bound_token` refusing **before any spawn** — together with the two facts the leaf measured: the bound is **enforced** (refused by name at a `PATH_MAX` cwd), and the route to it is a path length as much as a capsule (~1.3320 encoded bytes per `cwd` character, first crossing ~2,297 characters beyond the server workspace root), so **a headroom figure is only meaningful with its inputs named**. The card's stale forward-routing line ("routed to the final-verification leaf, not to this seam") and L15's superseded 120,536 B / 92.0 % headline were replaced with the measured values. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Earlier entries are preserved exactly as written.
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the route's own `D22` limitation is discharged
   by this leaf, so the body was corrected rather than given a no-impact entry.** The L15 section's

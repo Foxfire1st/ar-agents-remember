@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/mcp/compact_content.py`     |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-05-29T08:53+02:00                               |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`           |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`           |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                               |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -58,3 +62,4 @@ compacted text remains a faithful mirror of the structured payload.
 
 - 2026-08-03T02:32:19+02:00: Curator W3-B02 anchored 2 Repo-Internal citation rows with 2 exact identifiers and generated source ranges; verification metadata was preserved.
 - 2026-05-29T08:53+02:00: Created onboarding for the FastMCP compact-content shim that minifies the JSON text mirror of tool results.
+

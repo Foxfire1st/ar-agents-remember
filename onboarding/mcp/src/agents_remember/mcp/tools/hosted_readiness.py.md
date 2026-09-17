@@ -6,14 +6,13 @@
 | path | mcp/src/agents_remember/mcp/tools/hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | mcp/src/agents_remember/mcp/tools/overview.md |
 
 ## Governing Overview
 
-Governing overview: mcp/src/agents_remember/mcp/tools/overview.md
-
+[overview.md](overview.md)
 ## Purpose
 
 One payload builder, `hosted_session_readiness_payload` — the read-only, bounded, exact-session

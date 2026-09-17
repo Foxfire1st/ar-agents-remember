@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/recovery.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ None recorded.
 No external or domain documentation governs this repository-local instruction file; it is canonical
 repository prose consumed by the skill router.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
@@ -79,7 +79,7 @@ repository prose consumed by the skill router.
 
 No sibling-repository contract defines this instruction file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 

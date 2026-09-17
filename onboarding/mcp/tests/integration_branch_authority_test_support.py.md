@@ -6,8 +6,8 @@
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -50,25 +50,25 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed external leaves are backed by two actual commits and a disposable cache. | L48-L91 | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
-| Optional lifecycle admission precedes fixture finalization. | L94-L126 | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
-| Configured repository, profile, protected branches, and task topology. | L129-L288; L291-L298 | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
-| Consumers retain ownership, cache-independence, and CAS scenarios. | L53-L213 | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Closed external leaves are backed by two actual commits and a disposable cache. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| Optional lifecycle admission precedes fixture finalization. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| Configured repository, profile, protected branches, and task topology. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| Consumers retain ownership, cache-independence, and CAS scenarios. | n/a | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

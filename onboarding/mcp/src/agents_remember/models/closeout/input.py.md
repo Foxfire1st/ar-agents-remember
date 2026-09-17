@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/closeout/input.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,30 +55,30 @@ None recorded. Public retry/recover/revise controls belong to L2, not this model
 No external Domain Documentation source is configured. The original CLIVE-L1 explicit-input
 requirement remains, with its ledger leg retired by the authorized LCA-L9 change.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation source applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. | L32-L32; L34-L37; L46-L52; L64-L73; L127-L165 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| Raw observations and typed refusal vocabulary are public data. | L46-L52; L76-L84 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| Effective legs are a discriminated union. | L96-L111; L114-L118 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| Only enabled legs can return a raw commit message; this stays the public echo. | L138-L142 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. | input.py: L144-L162; memory_attribution.py: L51-L51; L67-L92 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py); [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. | L25-L25; L32-L59 | [layers.toml](layers.toml) |
-| The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. | L717-L751 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. | L86-L116; L119-L137 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The worktree and direct routes render attributed memory messages at their real commit seams; no ledger commit is produced. | closeout_external.py: L79-L110; direct_landing_execution.py: L175-L236 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py); [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
+| Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Raw observations and typed refusal vocabulary are public data. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Effective legs are a discriminated union. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Only enabled legs can return a raw commit message; this stays the public echo. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py); [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
+| The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. | n/a | [layers.toml](layers.toml) |
+| The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The worktree and direct routes render attributed memory messages at their real commit seams; no ledger commit is produced. | n/a | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py); [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History

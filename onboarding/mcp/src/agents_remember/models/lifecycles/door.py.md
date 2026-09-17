@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/door.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ None recorded.
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation source applies. | N/A | N/A |
 
@@ -82,18 +82,18 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | L89-L142; L146-L155; L158-L196 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | L89-L142; L239-L269 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | L232-L236; L252-L269 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The R03 door dependency vocabulary owned by this record type. | L98-L118; L226-L235; L238-L273 | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
+| Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
+| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
+| The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
+| The R03 door dependency vocabulary owned by this record type. | n/a | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 

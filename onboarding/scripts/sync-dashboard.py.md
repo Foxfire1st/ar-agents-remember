@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-dashboard.py`                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview

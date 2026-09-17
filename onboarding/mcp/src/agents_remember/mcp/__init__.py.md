@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T12:07+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -89,3 +93,4 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-05-30T21:33+02:00: Verified `SERVER_VERSION` is `0.9.4` after the 0.9.0–0.9.4 run; still aligned with `mcp/pyproject.toml`. Repaired the broken builder reference — the former single `mcp/tools.py` was split into the `mcp/tools/` package at `01f503d`, so `ping_payload`/`server_info_payload` now live in `tools/core.py`.
 - 2026-05-29T21:00+02:00: Bumped `SERVER_VERSION` to `0.3.0` for the MCP `0.3.0` release (the act-by-default `dry_run` flip), kept aligned with `mcp/pyproject.toml`.
 - 2026-05-28T15:43+02:00: Created while preparing MCP package release `0.2.0`. Verification metadata remains pinned until closeout commits the source change.
+

@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/observer/save_gate.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T18:45+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -55,3 +59,4 @@ per-repo folders in the dashboard hangar (slice 4).
   (`SaveDecision`, `coerce_save_decision`, `SaveGateRequired`, `compute_scope`,
   and the landing-zone scope constants `UNSCOPED_SCOPE`/`CROSS_REPO_SCOPE`).
   Verification metadata is pinned until closeout stamps the 2c code commit.
+

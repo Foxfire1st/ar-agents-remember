@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/application/coordination_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -62,15 +66,11 @@ resolver path, preserving task-name ergonomics.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
-
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
@@ -89,3 +89,4 @@ resolver path, preserving task-name ergonomics.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `resolve_context_tool` now forwards `parent_task` and `leaf_id` so source API/MCP callers can resolve nested task roots and a specific leaf enclosure by task name. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-31T12:50+02:00 — Source dropped the local `_repo`/`_coord_path` helpers in favor of `require_repo`/`require_within_coordination` imported from shared `controllers/_guards`, switching authority failures from `ValueError` to `AuthorityError` and removing the `Path`/`RepositoryScope`/`path_is_relative_to` imports; corrected Code Commentary, Invariants And Boundaries, and References accordingly (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created when resolver MCP control moved into its own controller module.
+

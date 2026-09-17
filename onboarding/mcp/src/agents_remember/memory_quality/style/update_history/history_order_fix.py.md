@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../overview.md`               |
+
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## Purpose
 
@@ -48,9 +52,9 @@ without writing them.
 | The diagnostic checker provides the timestamp and section parsing helpers. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
 | The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | `rel` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
 
-
 ## Update History
 
 - 2026-08-03T02:54:51+02:00 — W3-B05 curator: anchored 2 Tier-2 table citations with exact source paths; fixer generated all ranges.
 - 2026-05-31T12:50+02:00 — Removed the local `relative_path` helper; `fix_onboarding_root` now calls the shared `rel(path, onboarding_root)` imported from `agents_remember.memory_quality.integrity.onboarding_drift_check.discovery`. Noted the shared helper in Logic and added a References row (1.0.0 review remediation).
 - 2026-05-24T03:09+02:00: Created for the dedicated update-history ordering fix script.
+

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain source is configured. | N/A | N/A |
 
@@ -56,21 +56,21 @@ No external Domain Documentation source is configured for this slice. The refere
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The bundle has code and memory outputs only. | L44-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Created memory uses the one renderer; no-write intent has no message or private root. | L59-L122 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Memory attribution is appended to the caller's body by one shared renderer. | L67-L92 | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | L159-L198 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | L201-L236 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| The stored normalized message becomes the private commit message. | L49-L66 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
-| The committed census checks that every listed producer reaches the shared renderer. | L119-L137 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The bundle has code and memory outputs only. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Created memory uses the one renderer; no-write intent has no message or private root. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Memory attribution is appended to the caller's body by one shared renderer. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
+| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| The stored normalized message becomes the private commit message. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
+| The committed census checks that every listed producer reaches the shared renderer. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 

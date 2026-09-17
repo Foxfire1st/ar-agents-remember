@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`       |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -248,7 +252,6 @@ existing seam rather than adding a second one.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 
-
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated ambient event emission from notifier-root lookup and made the ambient-presence condition explicit. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
@@ -326,3 +329,4 @@ existing seam rather than adding a second one.
   state machine, choke-point emission, heartbeat ticker, TTL project-and-prune
   sweep, and the process registry. Verification metadata is pinned until closeout
   stamps the 2b code commit.
+

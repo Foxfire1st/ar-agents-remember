@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -52,21 +52,21 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `queued_operation_record` retains accepted candidate/task identity and initializes kind-specific evidence. | L33-L71 | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py) |
-| `snapshot_integration_authority` captures actual code/memory target tips and accepted content outputs. | L74-L137 | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py) |
+| `queued_operation_record` retains accepted candidate/task identity and initializes kind-specific evidence. | `queued_operation_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71 |
+| `snapshot_integration_authority` captures actual code/memory target tips and accepted content outputs. | `snapshot_integration_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:74-137 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Queued records retain candidate/task identity and initialize kind-specific evidence. (`queued_operation_record`) | L33-L71 | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py) |
-| Integration authority is captured from completed output and current target refs, with explicit replay boundaries. (`snapshot_integration_authority`) | L74-L137 | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py) |
+| Queued records retain candidate/task identity and initialize kind-specific evidence. (`queued_operation_record`) | `queued_operation_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71 |
+| Integration authority is captured from completed output and current target refs, with explicit replay boundaries. (`snapshot_integration_authority`) | `snapshot_integration_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:74-137 |
 
 ## Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

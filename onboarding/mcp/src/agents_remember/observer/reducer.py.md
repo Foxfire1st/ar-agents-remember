@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -394,7 +398,6 @@ As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks ge
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 
-
 - 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
@@ -514,3 +517,4 @@ As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks ge
 - 2026-06-13T19:30+02:00: Created for slice 3a — the pure fold, the inferred layer
   (paused/abandoned), the corrections fold, action availability, and workspace
   assembly. Verification metadata is pinned until closeout stamps the 3a code commit.
+

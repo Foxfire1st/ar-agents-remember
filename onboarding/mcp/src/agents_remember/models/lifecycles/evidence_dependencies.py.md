@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ No additional file-local TODO is established by this candidate review.
 
 No configured Domain Documentation applies; the dependency encoding is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The encoding has no external authority. | — | — |
 
@@ -93,20 +93,20 @@ No configured Domain Documentation applies; the dependency encoding is repositor
 Every consumer record type binds its own edges through this single encoding; the mutation/cycle
 matrix in the evidence-dependency test suite fixes the contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. | L31-L50; L141-L211 | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
-| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | L94-L131 | [mcp/src/agents_remember/models/lifecycles/curator_coherence.py](mcp/src/agents_remember/models/lifecycles/curator_coherence.py) |
-| The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. | L158-L196 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | L438-L493 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | L292-L347; L449-L491 | [mcp/src/agents_remember/worktrees/route_review.py](mcp/src/agents_remember/worktrees/route_review.py) |
+| The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. | n/a | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
+| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | n/a | [mcp/src/agents_remember/models/lifecycles/curator_coherence.py](mcp/src/agents_remember/models/lifecycles/curator_coherence.py) |
+| The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
+| Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | n/a | [mcp/src/agents_remember/worktrees/route_review.py](mcp/src/agents_remember/worktrees/route_review.py) |
 
 
 ## Cross-Repo References
 
 No separate cross-repository implementation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external implementation source applies. | N/A | N/A |
 

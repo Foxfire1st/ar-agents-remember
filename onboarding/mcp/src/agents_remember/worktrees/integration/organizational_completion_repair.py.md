@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ No additional source-local TODO is introduced by the two-output repair change.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain source is configured. | N/A | N/A |
 
@@ -59,22 +59,22 @@ No external Domain Documentation source is configured for this slice. The refere
 
 These same-repository owners preserve exact journal, pair, task and ref authority. The cache contributes no repair evidence and this module does not infer it from disk state.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Repair evidence is persisted at the exact failed-operation seam. | L150-L171 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| The durable reset identity contains the code/memory pair and exact contract hashes. | L174-L206 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| Preparation proves cancelled ownership, matching pair/task binding and exact reset state. | L209-L250 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| Operation and code/memory source authorities are revalidated. | L440-L452 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| The repair tuple contains the exact code candidate and memory-content commit. | L595-L614 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| The reset clears only the accepted closed pair/state and creates the waiting successor. | L617-L643 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| Publication requires unchanged integration refs, unmoved sources and accepted/reset contract bytes. | L348-L363 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| The actual code and memory source branches must remain at their recorded bases. | L694-L699 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| Repair evidence is persisted at the exact failed-operation seam. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| The durable reset identity contains the code/memory pair and exact contract hashes. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| Preparation proves cancelled ownership, matching pair/task binding and exact reset state. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| Operation and code/memory source authorities are revalidated. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| The repair tuple contains the exact code candidate and memory-content commit. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| The reset clears only the accepted closed pair/state and creates the waiting successor. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| Publication requires unchanged integration refs, unmoved sources and accepted/reset contract bytes. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| The actual code and memory source branches must remain at their recorded bases. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
@@ -88,11 +88,11 @@ The current source seams include `OrganizationalRepairPublicationError`, `Organi
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Reset publication failures retain exact expected/observed state. | L49-L75 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| Classification describes accepted, reset or conflicting contract state. | L92-L111 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
-| The public classifier uses the retained journal repair evidence. | L114-L123 | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| Reset publication failures retain exact expected/observed state. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| Classification describes accepted, reset or conflicting contract state. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| The public classifier uses the retained journal repair evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
 
 ## 260821-CLIVE Repair Successor Publication
 

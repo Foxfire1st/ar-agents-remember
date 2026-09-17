@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing_record.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ None.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -110,27 +110,27 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `LandedIntegration` contains strategy, code commit, and optional memory-content commit. | L28-L33 | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
-| `record_landed_integration` writes the same actual outputs for final and checkpoint landing states. | L36-L66 | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
+| `LandedIntegration` contains strategy, code commit, and optional memory-content commit. | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
+| `record_landed_integration` writes the same actual outputs for final and checkpoint landing states. | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | L259-L259; L260-L260; L261-L261 | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The landed facts this writer now takes as one frozen record. (`LandedIntegration`) | L28-L33 | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
-| The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | L574-L607 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | L890-L927 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| The pull-request route calls the same writer. (`record_landed_integration(`) | L121-L121 | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
-| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) | L669-L669 | [mcp/src/agents_remember/worktrees/modules/cleanup.py](mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | L232-L276 | [mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py](mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py) |
+| The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | n/a | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The landed facts this writer now takes as one frozen record. (`LandedIntegration`) | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
+| The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
+| The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:890-927 |
+| The pull-request route calls the same writer. (`record_landed_integration(`) | n/a | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
+| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | n/a | [mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py](mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py) |
 
 ## Cross-Repo References
 
 This is an in-process contract write with no separate repository or external-system boundary, so
 there is no cross-repository protocol to cite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

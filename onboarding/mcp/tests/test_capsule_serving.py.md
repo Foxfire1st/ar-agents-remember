@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_capsule_serving.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l4` uncommitted source; base `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
 | governingOverview | `overview.md` |
 
@@ -143,21 +143,25 @@ extension specification, SEP-2640).
 | --- | --- | --- |
 | The fixture world and the synthetic corpus (including its nested skill) every hermetic case is built from. | `World`; `_synthetic_corpus` | mcp/tests/test_capsule_serving.py:308-308; mcp/tests/test_capsule_serving.py:419-419 |
 | The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree. | `test_a_caller_changing_the_role_string_cannot_acquire_another_role`; `test_the_manifest_decides_the_source_set_not_the_caller`; `test_the_capsule_operation_writes_nothing_to_the_tree_it_reads` | mcp/tests/test_capsule_serving.py:639-639; mcp/tests/test_capsule_serving.py:651-651; mcp/tests/test_capsule_serving.py:690-690 |
-| Altitude admission is pinned across every role the document can carry, so a hardcoded role fails. | `test_altitude_admission_admits_every_role_the_document_can_carry_and_refuses_the_rest` | mcp/tests/test_capsule_serving.py:1406-1406 |
+| Altitude admission is pinned across every role the document can carry, so a hardcoded role fails. | `test_altitude_admission_admits_every_role_the_document_can_carry_and_refuses_the_rest` | mcp/tests/test_capsule_serving.py:1410-1450 |
 | The re-read and the refusal are separate, correctly-named behaviours. | `test_a_moved_task_document_is_read_again_and_the_capsule_carries_the_new_digest`; `test_a_recorded_admission_whose_bytes_moved_is_refused` | mcp/tests/test_capsule_serving.py:705-705; mcp/tests/test_capsule_serving.py:737-737 |
 | The guards that round 1 found unpinned, each now driven directly by its own case. | `test_a_catalog_record_that_escapes_its_skill_directory_is_refused`; `test_the_index_reader_refuses_while_a_skill_cannot_be_served`; `test_a_skill_whose_directory_name_disagrees_with_its_name_is_recorded_not_served`; `test_the_extension_declaration_is_installed_once_per_server` | mcp/tests/test_capsule_serving.py:1321-1321; mcp/tests/test_capsule_serving.py:1348-1348; mcp/tests/test_capsule_serving.py:1366-1366; mcp/tests/test_capsule_serving.py:1389-1389 |
 | The SEP entry contract and this server's own index shape, asserted separately. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`; `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` | mcp/tests/test_capsule_serving.py:1008-1008; mcp/tests/test_capsule_serving.py:1040-1040 |
-| Nesting is published flat like any other skill. | `test_a_nested_skill_is_published_flat_like_any_other` | mcp/tests/test_capsule_serving.py:1489-1489 |
+| Nesting is published flat like any other skill. | `test_a_nested_skill_is_published_flat_like_any_other` | mcp/tests/test_capsule_serving.py:1496-1542 |
 | The serving guarantees: origin and revision kept, revision re-checked, no grant, no body in the listing. | `test_a_served_skill_keeps_its_origin_and_revision`; `test_a_read_refuses_a_body_whose_bytes_changed_since_the_catalog`; `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names`; `test_the_discovery_registry_is_not_the_model_visible_catalog` | mcp/tests/test_capsule_serving.py:783-783; mcp/tests/test_capsule_serving.py:796-796; mcp/tests/test_capsule_serving.py:811-811; mcp/tests/test_capsule_serving.py:882-882 |
 | The two real-process conformance cases: the exchange (capabilities, both methods, resources, refusal) and the traversal refusal. | `test_a_real_client_and_server_exchange_over_the_installed_sdk`; `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1195-1195; mcp/tests/test_capsule_serving.py:1268-1268 |
-| The case that keeps the seeded-mutation evidence honest. | `test_the_mutation_harness_can_actually_fail` | mcp/tests/test_capsule_serving.py:1301-1301 |
-| The evidence-lane row this module is selected by. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:19-19 |
+| The case that keeps the seeded-mutation evidence honest. | `test_the_mutation_harness_can_actually_fail` | mcp/tests/test_capsule_serving.py:1305-1317 |
+| The evidence-lane row this module is selected by. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:21-21 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_altitude_admission_admits_every_role_the_document_can_carry_and_refuses_the_rest` repointed to mcp/tests/test_capsule_serving.py:1410-1450. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_a_nested_skill_is_published_flat_like_any_other` repointed to mcp/tests/test_capsule_serving.py:1496-1542. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_the_mutation_harness_can_actually_fail` repointed to mcp/tests/test_capsule_serving.py:1305-1317. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_capsule_serving.py" repointed to mcp/tests/test-evidence-lanes.toml:21-21. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: rewrote this card against the
   settled candidate. **Removed the round-1 rejection banner** and replaced it with a "Repair history"

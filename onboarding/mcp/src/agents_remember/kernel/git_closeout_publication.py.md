@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/git_closeout_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain source is configured. | N/A | N/A |
 
@@ -52,20 +52,20 @@ No external Domain Documentation source is configured for this slice. The refere
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | L33-L82 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | L61-L82 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Capability use reopens the caller-owned authority. | L91-L95 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Result records preserve before/after observations and any actual Git command result. | L105-L109 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | L688-L720 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
-| Publication issues one expected-old CAS and does not rerun already-new or existing output. | L760-L783 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| Capability use reopens the caller-owned authority. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| Result records preserve before/after observations and any actual Git command result. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| Publication issues one expected-old CAS and does not rerun already-new or existing output. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 

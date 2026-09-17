@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T17:20+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -208,3 +212,4 @@ No external Domain Documentation source is configured for this memory repo.
 
 - 2026-06-21T05:30+02:00 — Slice 5l P2 (landing-arc probe hardening, so the dashboard follows a REAL remote landing): added `_default_branch` (origin default via `git ls-remote --symref origin HEAD`, fallback `"main"`) and `_main_ref` — the protected target `origin/<base>` is now probed **directly** via `_remote_branch` (base = PR `baseRefName` or `_default_branch`), visible across the whole landing window before any PR and even when `gh` is absent, its `state` tracking whether THIS work landed (`merged`/`planned`/`unknown`, tip in `detail`). This replaces the PR-base-derived origin-main that used to live in `_pr_ref` (now `pr`-only). `_pr_for` requests + returns `createdAt`/`mergedAt`, and `_pr_ref` adds an `at` = gh's milestone time (mergedAt once merged, else createdAt). `landing_refs` hoists the single `_pr_for` lookup then appends `_main_ref` + `_pr_ref`. Module docstring notes the per-tick (~1s) re-probe needs no milestone hook. Verification metadata pinned until closeout stamps the 05l-P2 code commit.
 - 2026-06-18T08:51+02:00 — Created for slice 5h H1: best-effort successful-landing arc observation (`git ls-remote` branch tips + best-effort `gh` PR state, timeout-bounded, `stdin=DEVNULL`, gated to the landing window, honest `factState`). Verification metadata pinned until closeout stamps the 5h code commit.
+

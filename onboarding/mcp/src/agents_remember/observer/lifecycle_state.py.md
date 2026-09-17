@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/observer/lifecycle_state.py` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-08-01T10:40+02:00                               |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`           |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`           |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                        |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -207,3 +211,4 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
 - 2026-06-13T16:41+02:00: Created for slice 2b — the lifecycle state/phase
   vocabulary, `LifecycleState`, the typed errors, and `coerce_phase`. Verification
   metadata is pinned until closeout stamps the 2b code commit.
+

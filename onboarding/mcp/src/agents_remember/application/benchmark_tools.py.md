@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/application/benchmark_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -74,7 +78,6 @@ registration or provider launch.
 | The live-authority reload behind `_live_provider_ids` (containment R1). | `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:137-144 |
 | The workspace-side filter that consumes `allowed_provider_ids`. | `filter_benchmark_provider_ids` | mcp/src/agents_remember/benchmarks/runner_modules/workspace.py:205-238 |
 
-
 ## Update History
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
@@ -102,3 +105,4 @@ registration or provider launch.
   commit.
 - 2026-05-31T12:30+02:00 — Documented benchmarks_enabled disabled-tools gate and switch to shared require_within_coordination guard (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created when benchmark MCP controllers moved into their own domain module.
+

@@ -6,14 +6,13 @@
 | path | skills/l-01-agent-lifecycles/roles/system-specialist.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/roles/overview.md
-
+[overview.md](overview.md)
 ## Purpose
 
 The optional sprint-bound, investigate-first provider-degradation seat.

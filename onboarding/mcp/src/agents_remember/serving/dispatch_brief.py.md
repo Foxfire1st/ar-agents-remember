@@ -6,14 +6,13 @@
 | path | mcp/src/agents_remember/serving/dispatch_brief.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-30T21:25+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
 
-Governing overview: mcp/src/agents_remember/serving/overview.md
-
+[overview.md](overview.md)
 ## Purpose
 
 Governs the first durable message to a newly dispatched child. It is the sole internally exact-pinned

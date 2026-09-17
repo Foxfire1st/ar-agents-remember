@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../../../overview.md` |
 
@@ -224,16 +224,16 @@ memory-carryover vehicle.
 | The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110; mcp/src/agents_remember/worktrees/sync_transaction.py:540-571 |
 | Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
-| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution, and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:304-326; mcp/src/agents_remember/worktrees/sync_transaction.py:336-362; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
+| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution, and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_git.py:399-411; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
 | A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. | L104-L122 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
-| Consumer source rows are derived only from Git attribution. | L222-L249 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
-| Real memory source ancestry remains a landing requirement. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. | n/a | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Consumer source rows are derived only from Git attribution. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Real memory source ancestry remains a landing requirement. | n/a | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
 
 ## Cross-Repo References
 
@@ -751,6 +751,7 @@ message last. Before this the only thing said about that state was the refused p
 complaint, which named neither the stuck contract nor what it was doing.
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:399-411; mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

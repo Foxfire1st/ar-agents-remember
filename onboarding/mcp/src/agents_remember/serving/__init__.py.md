@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/serving/__init__.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-14T11:30+02:00                         |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`     |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`     |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                  |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -38,3 +42,4 @@ package's surface is reached through its submodules (`app.create_app`, `projecto
 
 - 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the serving package marker.
   Verification metadata pinned until closeout stamps the 4a code commit.
+

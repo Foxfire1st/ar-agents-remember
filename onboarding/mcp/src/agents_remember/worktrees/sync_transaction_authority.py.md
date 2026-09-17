@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -50,25 +50,25 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Side planning and exact source-pair reads. | L39-L74; L77-L99; L110-L118 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
-| Pinned ref authority and reconstruction require exact identities. | L121-L126; L129-L143; L146-L151; L168-L195 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
-| Contract identity and base-transition constraints. | L206-L220; L236-L242; L245-L252 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
-| Parked-content restoration and settlement retain the exact stash until safe. | L316-L355; L358-L377; L380-L401; L404-L411 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Side planning and exact source-pair reads. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Pinned ref authority and reconstruction require exact identities. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Contract identity and base-transition constraints. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Parked-content restoration and settlement retain the exact stash until safe. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

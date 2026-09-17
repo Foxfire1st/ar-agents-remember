@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/models/drift.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -55,7 +59,6 @@ context packet had not.
 | The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
 | Both wire models expose the shared `DriftStatus` and optional error diagnostic. | "class DriftSummary"; "class DriftCheckResponse(ToolResponse):" | mcp/src/agents_remember/models/drift.py:14-14; mcp/src/agents_remember/models/memory.py:14-14 |
 
-
 ## Update History
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
@@ -79,3 +82,4 @@ context packet had not.
   exhaustiveness tests that pin it. Verification metadata pinned until closeout stamps the architecture slice.
   commit.
 - 2026-05-28T19:52+02:00: Created for the context-packet drift summary model.
+

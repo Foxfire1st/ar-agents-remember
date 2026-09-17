@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -63,25 +63,25 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier. | L147-L157 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py) |
-| `_resume_control` requests fresh messages for enabled code and memory legs. | L531-L545 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py) |
-| `_integration_control` constructs integration arguments with no ledger commit subject. | L548-L563 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py) |
-| `_direct_successor_control` constructs a direct successor from code identity and the memory-content message. | L566-L588 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py) |
+| `_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier. | `_recovery_evidence_controls` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:147-157 |
+| `_resume_control` requests fresh messages for enabled code and memory legs. | `_resume_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:531-545 |
+| `_integration_control` constructs integration arguments with no ledger commit subject. | `_integration_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:548-563 |
+| `_direct_successor_control` constructs a direct successor from code identity and the memory-content message. | `_direct_successor_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:566-588 |
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Missing-intent closeout/direct-landing recovery and retry controls are withheld. (`_without_legacy_generation_reuse`) | L114-L122 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py) |
+| Missing-intent closeout/direct-landing recovery and retry controls are withheld. (`_without_legacy_generation_reuse`) | `_without_legacy_generation_reuse` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:114-122 |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

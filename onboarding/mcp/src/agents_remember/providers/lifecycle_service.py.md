@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -60,7 +64,6 @@ structured `ok: false` payloads for MCP callers.
 | MCP provider tool application entry points call this service layer. | ["from agents_remember.providers import lifecycle_service"] | mcp/src/agents_remember/application/provider_tools.py:21-21 |
 | CLI/operator implementation functions remain behind the lifecycle facade. | `_EXPORT_MODULES`, `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24; mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
 
-
 ## Update History
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 3 repository-internal application, facade, and service-boundary test references; final scoped result 0 (checker-clean).
@@ -74,3 +77,4 @@ structured `ok: false` payloads for MCP callers.
 - 2026-05-26T12:51+02:00: Updated after removing the CGC provider Python executable from the typed service config.
 - 2026-05-25T19:16+02:00: Updated after the `provider_lifecycle.py` compatibility shim was deleted and service imports wired to `providers.lifecycle` directly.
 - 2026-05-23T20:56+02:00: Created for F-04 so MCP provider tools call a typed lifecycle service instead of the provider lifecycle CLI main.
+
