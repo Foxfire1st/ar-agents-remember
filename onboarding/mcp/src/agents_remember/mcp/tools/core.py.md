@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated            | 2026-09-17T10:20:31+00:00 |
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -30,9 +30,15 @@ arguments to their application entry points (`build_context_packet`, `run_runtim
 `resolve_context_tool`, `skills_install_tool`). `server_info_payload` reports
 `PUBLIC_TOOLS`/`RESERVED_TOOLS` plus the caller-supplied, boot-resolved `ServingBuildPayload`. The
 payload builder serializes that strict model directly and never reprobes or fabricates build
-identity. `runtime_install_payload` forwards a full
-`RuntimeInstallRequest` — `dry_run`, `include_benchmarks`, `install_provider_deps`
-(default `True`), and `no_cache` (default `False`) — then response-budgets the
+identity. **Since 260915-CAPS-L9 `runtime_install_payload(config, request)` takes the run's own
+`RuntimeInstallRequest` unchanged** — the tool builds the request and hands it over, so the knobs
+the tool exposes and the fields the application entry point reads cannot drift apart. That is
+what makes `request.experiment` this run's own selection input: the tool's `experiment` parameter
+supplies it, the `AR_EXPERIMENT` environment variable of the server process is the documented
+fallback for a short-lived CLI/developer run, and the install payload names which one supplied
+the mode in its record's `selectionSource`, so a long-lived server cannot leave an ambient switch
+behind unnoticed. The `write_tool_report` label follows `request.dry_run`. The builder then
+response-budgets the
 result (S4, 2.5.1): the full install detail goes to a temp report via
 `write_tool_report`, and `compact_runtime_install_payload` returns summary
 counts, a rebind digest (`{attempted, ok, phases:[{phase, action, ok}]}`), the
@@ -69,6 +75,12 @@ installation from `application.runtime.skills`. Payload validation and transport
 remain unchanged; the move removes the former flat application-module ownership.
 
 ## Update History
+
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: `runtime_install_payload` now takes one
+  `RuntimeInstallRequest` instead of four keyword flags, which is how the registered tool's new
+  `experiment` parameter becomes the run's own selection input rather than a server-wide ambient
+  setting. Recorded the drift-freedom rationale and the `selectionSource` reporting. This
+  candidate is **uncommitted**; verification metadata remains closeout-owned.
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: the transport-thin builder now accepts the
   application-produced strict payload and has no serving-domain dependency. Verification remains

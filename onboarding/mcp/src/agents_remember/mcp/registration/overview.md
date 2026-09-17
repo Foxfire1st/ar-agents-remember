@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                     |
 
@@ -22,6 +22,18 @@ exposing an uncurrent atomic master.
 Task-document authoring remains independently advertised and wholly upstream. No queue/activation
 lock field or whitelist is added to its schema. Exact parameter descriptions and response-state
 vocabulary are reconciled to the frozen implementation; this source review grants no lifecycle acceptance.
+
+## 260915-CAPS-L9 `experiment` On `runtime_install`
+
+One additive, keyword-only parameter landed on the registered `runtime_install` tool:
+`experiment: str | None = None`. The tool now builds the run's `RuntimeInstallRequest` itself and
+hands it to the payload builder unchanged, so the parameters the public schema publishes and the
+fields the application entry point reads cannot drift apart. Its docstring is the model-visible
+contract and says what the owner's ruling requires: the parameter selects the experimental
+instruction cutover **for this run**; it is a per-call input, **never a setting**; omitting it — with
+no `AR_EXPERIMENT` in the server environment — installs the unmodified runtime; and the returned
+record's `selectionSource` names which input supplied the mode. The registered tool count is
+unchanged: a parameter was added to an existing declaration, not a tool.
 
 ## Purpose
 
@@ -430,6 +442,11 @@ when a caller narrowed it.
 
 ## Update History
 
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the additive keyword-only `experiment` parameter on
+  the registered `runtime_install` tool in the new section above, including that it is a per-call
+  input and never a setting, and that the registered tool count is unchanged. Verification
+  metadata is left at its recorded value; the candidate is deliberately uncommitted.
+- 2026-09-17T11:55+02:00 — 260915-CAPS-L14 curator:
 - 2026-09-17T11:55+02:00 — 260915-CAPS-L14 curator: recorded the additive `exclude` parameter on the registered `citation_fix` tool and what it does at this route's altitude (a per-call narrowing on top of the shared register, validated and refused by name, keyword-only so no existing call changes meaning), in the new section above. The file card for `memory.py` gained the matching service section, a corrected reference table and its own history entry. Verification metadata is left at its recorded value; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on

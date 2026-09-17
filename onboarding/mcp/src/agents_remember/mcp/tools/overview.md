@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                   |
 
@@ -22,6 +22,15 @@ admission completes.
 Task-document payloads remain independent of queue and activation state. A successful mutation may
 cause downstream projection invalidation/rebuild, but no payload builder turns scheduling state into
 authoring permission.
+
+## 260915-CAPS-L9 `runtime_install_payload` Takes The Run's Request
+
+`runtime_install_payload(config, request)` now takes one `RuntimeInstallRequest` instead of four
+keyword flags. The builder is transport-thin and stays that way: the registered tool constructs the
+request, the builder forwards it, and the `write_tool_report` label follows `request.dry_run`. The
+change exists so `request.experiment` — the run's own selection input — reaches the application
+entry point by construction rather than by a keyword list that can drift, and so the install payload
+can report `selectionSource` for the mode it used.
 
 ## Purpose
 
@@ -545,6 +554,12 @@ which is likewise not the extension's enumeration result.
 | This server's own index resource, kept deliberately distinct from that method. | `index_resource` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:228-251 |
 
 ## Update History
+
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded that `runtime_install_payload` now takes the run's
+  own `RuntimeInstallRequest` instead of four keyword flags, and why (the run's selection input
+  reaches the entry point by construction, and the payload can report `selectionSource`).
+  Verification metadata is left at its recorded value; the candidate is deliberately
+  uncommitted.
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
   `ar/260915-caps-l4`, base `b00a4ac2`): re-anchored the `_register_skill_tools` range against the
   current 278-line registration module and added the boundary row this route needs after the repairs:

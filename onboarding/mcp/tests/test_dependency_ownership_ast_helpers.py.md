@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
-| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| lastUpdated | 2026-09-17T10:20:31+00:00 |
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` (synced onto L14's landing) |
 | governingOverview | `overview.md` |
 
@@ -27,15 +27,19 @@ evidence artifact, and leaves the catalog closed over the governed inventory.
 
 An explicitly supported input with no consumers remains complete with a verified no-consumer decision. Unknown input is incomplete. A declared consumer is selected without global invalidation and carries the declared-consumer reason.
 
-**The catalog pin is a byte contract at one tip, and it has now been re-pinned deliberately five
-times.** `LIFECYCLE_ARTIFACT_COUNT` and `LIFECYCLE_CATALOG_SHA256` pin
-`mcp/tests/evidence-lifecycle.toml` by population and digest, and `LOCR-R26@v1`'s doctrine is that any
-further catalog change must re-pin them **deliberately**, at its own tip, with the reason recorded. The
-value at this candidate is **4 contracts / 54 artifacts** and
-**`e3651d6f3ae12a7f52933a0a0e75d3eb3618a0ce18def301467a4138890dcaeb`**, recomputed directly from the
-file this pass (`sha256sum mcp/tests/evidence-lifecycle.toml`) and equal to the constant.
+**The catalog pin is a byte contract at one tip, and it has now been re-pinned deliberately eight
+times — the nine records below, one per deliberate value, in file order.** `LIFECYCLE_ARTIFACT_COUNT`
+and `LIFECYCLE_CATALOG_SHA256` pin `mcp/tests/evidence-lifecycle.toml` by population and digest, and
+`LOCR-R26@v1`'s doctrine is that any further catalog change must re-pin them **deliberately**, at its
+own tip, with the reason recorded. **State both numbers, never the count alone**: the previous
+"five times" wording on this card was itself the cause of a duplicate-ordinal defect (`L17-10`), and
+the docstring's own header now reads exactly
+`re-pinned deliberately eight times since its first pin -- the nine records below`. The value at this
+candidate is **4 contracts / 54 artifacts** and
+**`31c6983d23b04209c87575f8a3506145c2fb782bb5e58a897a4286d8e8d3b2e3`**, recomputed directly from the
+file at this tip (`sha256sum mcp/tests/evidence-lifecycle.toml`) and equal to the constant.
 
-The history the five records carry, in landing order — each value correct **only** at its own tip:
+The history the nine records carry, in landing order — each value correct **only** at its own tip:
 
 | Re-pin | Leaf / when | Population | Digest | What moved |
 | --- | --- | --- | --- | --- |
@@ -43,16 +47,17 @@ The history the five records carry, in landing order — each value correct **on
 | second | `260915-CAPS-L16` (2026-09-16) | 45 → **51** | `293a187f… → 812211e9…` | `260915-CAPS-L7`'s landing added the fifty-first governed artifact row; the pin had been stale since the source-line convergence merge carried the landed 260831-LOCR line's artifacts in without a re-pin (defect **D10**, the one pre-existing integration failure every master-tip candidate inherited) |
 | third | `260915-CAPS-L15` (2026-09-17) | **51** (unchanged) | `812211e9… → 3342a249…` | **consumer rows only** — `mcp/tests/test_capsule_launch_wiring.py` became an importer of three governed artifacts through shared test support |
 | fourth | `260915-CAPS-L14` (2026-09-17) | 51 → **54** | `3342a249…`-era → `5e938c85…` | **three NEW artifacts registered** for the fresh-user acceptance harness under `scripts/e2e_harness/`, each with its own source-derived consumers and an executable `node:` replacement; `mcp/tests/test_fresh_user_harness.py` answers for all three |
-| fifth | **`260915-CAPS-L17` (2026-09-17) — this leaf** | **54** (unchanged) | `5e938c85… → e3651d6f…` | **consumer rows only again** — `mcp/tests/test_eve_effort_runtime.py` starts the shipped runtime and therefore reaches three already-governed artifacts |
+| fifth | `260915-CAPS-L17` (2026-09-17) | **51** (unchanged) | `812211e9…`-era → `563582a0…` | **consumer rows only** — `mcp/tests/test_eve_effort_runtime.py` starts the shipped runtime and therefore reaches three already-governed artifacts; this is L17's **own branch** value |
+| sixth | `260915-CAPS-L17` (2026-09-17) — the merged value at landing | 51 → **54** | `563582a0… → e3651d6f…` | L14 landed first, so this value is re-derived against the merged catalog: L14's fifty-fourth artifact row plus L17's three consumer entries |
+| seventh | `260915-CAPS-L9` (2026-09-17) — this leaf's own branch value | **51** (unchanged) | `8764ea1f…` | **consumer rows only, two of them**, for the one governed artifact this leaf's installer surface reaches (`mcp/tests/fixtures/repository_profiles/node/package-lock.json`): the leaf's new `test_capsule_experiment_install.py` reads the pinned application's committed lockfile through the installer it drives, and the pre-existing `test_install_runtime.py` inherits the same reach through the module it imports |
+| eighth | `260915-CAPS-L9` (2026-09-17) — the first merged value | 51 → **54** | `8764ea1f… → dca9c2f9…` | L14 landed while this leaf was in flight, so the value was re-derived after `worktree_sync` against the merged catalog |
+| ninth | **`260915-CAPS-L9` (2026-09-17) — the merged value at this leaf's landing (this tip)** | **54** (unchanged) | `dca9c2f9… → 31c6983d…` | L17 landed as well, so the value is re-derived a second time against the merged catalog: L14's three registered rows, L17's three consumer entries and this leaf's own two consumer entries, over 4 contracts / 54 artifacts. The measured delta against L17's landed catalog is **exactly this leaf's two added consumer paths and nothing else**, which is why the value could be taken from neither leaf's own figure |
 
-**The fifth re-pin is the one this card was corrected for, and the "merged" qualifier is the whole
-point.** L14 landed first, so this leaf's value is re-derived against the **merged** artifact set —
-L14's three new rows *plus* this leaf's three consumer entries — and it is therefore **neither** L14's
-`5e938c85…` **nor** the `563582a0…` this leaf measured before the sync at 51 artifacts. That pre-sync
-value was a **superseded working measurement, not a record**: it was never correct at any committed
-tip once L14 landed, and the leaf's `worktree_sync` retired it. Nothing was registered by this leaf, no
-row was removed and no artifact's identity moved: the catalog's only new bytes are three consumer
-entries, and the population stayed at 4 contracts / 54 artifacts.
+**The ninth record is the one this card now records, and the "merged" qualifier is the whole point.**
+Both of this leaf's earlier values are superseded working measurements, not records correct at any
+committed tip: `8764ea1f…` was measured at this leaf's own base and `dca9c2f9…` after L14 landed, and
+L17's landing retired the second. Nothing was registered by this leaf, no row was removed and no
+artifact's identity moved: the catalog's only new bytes are two consumer entries.
 
 **Text residue in the constant's own docstring (reported, not repaired here).** The docstring labels
 **two** different entries "Fourth deliberate re-pin" — `260915-CAPS-L14`'s `5e938c85…` and
@@ -119,6 +124,18 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: the pin section was superseded twice more by
+  sibling landings before this pass, so the card was **corrected, not annotated**. It now carries all
+  **nine** deliberate re-pin records in landing order — L17's two (own-branch `563582a0…` and merged
+  `e3651d6f…`) and this leaf's three (own-branch `8764ea1f…`, first merged `dca9c2f9…`, and the merged
+  value at this leaf's landing `31c6983d…`, 4 contracts / 54 artifacts) — with each value marked
+  correct only at its own tip and the two superseded working measurements named as retired rather than
+  recorded. The count is now stated **both ways** on purpose (`re-pinned deliberately eight times …
+  the nine records below`), because the earlier count-only wording was itself the cause of the
+  duplicate-ordinal defect `L17-10`; a card must not paraphrase that header as a bare count.
+  Verification metadata remains closeout-owned: the candidate is uncommitted.
+
 
 - 2026-09-17T10:43+02:00 — 260915-CAPS-L17 curator: **the fifth deliberate re-pin, re-derived against
   the merged catalog, and the card's whole pin section corrected rather than annotated.** This leaf's

@@ -5,11 +5,35 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
-| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| lastUpdated            | 2026-09-17T10:20:31+00:00 |
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
+
+## 260915-CAPS-L9 Experiment-Installation Test Population
+
+`mcp/tests/test_capsule_experiment_install.py` is **new** in this leaf: **19 cases** driving the real
+installer entry points against scratch coordination roots, and reading the resulting tree, the
+returned run record and the compiled capsule text. It is **not** a seventh `D9` module — the
+fail-closed lane loader still names exactly the same six at this tip as at the clean base — and its
+manifest row plus its two `evidence-lifecycle.toml` consumer rows are the whole catalog delta this
+leaf contributes.
+
+What the population is for, stated so the route is not read as more than it is: the cutover pair with
+the disabled run as its positive control and the removal half; the documented way back executed as a
+run; the selection surface (request-then-environment precedence and `selectionSource`) driven through
+the **registered payload builder**; fail-closed refusals that name the capability **and** create no
+coordination root; three separately-labelled screens (received startup material on disk, the
+delivered capsule from the production compile route, and the installed root's corpus read as authored
+source); the run record compared against the pinned `package.json`; the rendered rollback rows; the
+install's confinement to its destination; and the **no-persistence guard**, which content-digests
+every regular file under the coordination root before and after the selected run and demands that
+every hit be a byte-identical authored asset — the root-scoped reading that replaced a first revision
+whose `rglob("*.json")` guard was blind to a `.toml`, a `.txt` or an extension-less switch.
+
+`test_sync_runtime.py` gained two cases (two methods → four): the per-target ignore rule and the
+refusal to report an absent canonical source in sync.
 
 ## Governing Overview
 
@@ -1147,6 +1171,12 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: this route gained **one module** —
+  `test_capsule_experiment_install.py`, 19 cases — plus two rows in `test_sync_runtime.py`. The
+  section above records what the population protects, that the module is not a seventh `D9` row,
+  and that its two `evidence-lifecycle.toml` consumer rows are this leaf's whole catalog delta.
+  Verification metadata is left at this leaf's synced base `933b011b`; the candidate is
+  deliberately uncommitted.
 
 - 2026-09-17T11:50+02:00 — 260915-CAPS-L14 curator: this route gained **two modules** and the reference rows and lane/catalog citations that go with them. `test_citation_index_resilience.py` defends the citation index's shared exclusion register per source, the ruled caps' skip-and-report behaviour, and the quality surface's reported states — with the register's deliberate divergence from Git measured on both sides; `test_fresh_user_harness.py` is the **consumer of record** for the three new `scripts/e2e_harness` governed artifacts and pins the fixture shape and the scenario contract (a step that cannot run is `blocked` by name, never `completed`). Added the corresponding rows, the two `unit-regression` lane rows, and the three `[[artifact]]` rows the leaf registers. **Repaired two stale claims on this route**: the final memory adapter citation still pointed at `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 

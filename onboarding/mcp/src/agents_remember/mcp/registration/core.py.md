@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastUpdated            | 2026-09-17T10:20:31+00:00 |
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -77,8 +77,26 @@ The docstrings are the model-visible contract and carry the semantics that are n
 | Six of the seven payload builders (all but `read_ar_files_payload`). | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | `read_ar_files_payload`, imported through the `mcp.tools` facade. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
+| The registration gained the keyword-only `experiment` parameter and builds the run's request itself. | `RuntimeInstallRequest` | mcp/src/agents_remember/mcp/registration/core.py:123-165 |
+
+## 260915-CAPS-L9 Experiment Parameter On `runtime_install`
+
+The registered `runtime_install` tool gained one additive, keyword-only parameter —
+`experiment: str | None = None` — and now constructs the run's `RuntimeInstallRequest` itself
+instead of forwarding four booleans to the payload builder. Its docstring is the model-visible
+contract for the parameter and says exactly what the ruling requires: it installs the
+experimental instruction cutover **for THIS run** (the legacy AR startup chain is withheld and
+the pinned eve application is installed beside the canonical assets); it is a per-call input,
+**never a setting**; omitting it — with no `AR_EXPERIMENT` in the server environment — installs
+the unmodified runtime; and the returned record's `selectionSource` names which input supplied
+the mode. The registered tool count is unchanged: a parameter was added to an existing
+declaration, not a tool.
 
 ## Update History
+
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the tool's new `experiment` parameter and its
+  per-call-not-setting semantics. This candidate is **uncommitted**; verification metadata
+  remains closeout-owned.
 
 - 2026-09-06T22:15:27+00:00 — Reconciled retained registration behavior and removed deleted wiring-test claims; current policy and verification provenance preserved.
 

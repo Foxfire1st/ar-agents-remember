@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
-| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| lastUpdated | 2026-09-17T10:20:31+00:00 |
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` (synced onto L14's landing) |
 | governingOverview | `overview.md` |
 
@@ -15,14 +15,21 @@
 
 [Nearest governing overview](overview.md)
 
-Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
+Working candidate verification: source inspected at 2026-09-17T10:20 UTC against the uncommitted L9 candidate.
 The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
-exact consumers. The catalog currently contains **51 artifact records** and four executable replacement
-contracts; those declarations are not records that a test ran.
+exact consumers. The catalog currently contains **54 artifact records** and four executable replacement
+contracts; those declarations are not records that a test ran. 260915-CAPS-L9 adds **two consumer
+rows and no artifact row**: `mcp/tests/test_capsule_experiment_install.py` and
+`mcp/tests/test_install_runtime.py` join the `mcp/tests/fixtures/repository_profiles/node/package-lock.json`
+artifact's `consumers` list, because the new module reads the pinned application's committed
+lockfile through the installer it drives and `test_install_runtime.py` inherits the same reach
+through the module it imports. The artifact set has moved since (L14 and L17 land into the same
+file, and the merged pin is re-derived on the merged catalog — never restored from another
+leaf's figure).
 
 The count is re-derived from the file rather than carried: it stood at 43 when an earlier version of
 this paragraph was written, measures **50 at this leaf's synced base `23cc7a72`**, and measures 51 with
@@ -125,8 +132,28 @@ No additional configured external or sibling-repository evidence is claimed.
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 
+## 260915-CAPS-L9 Consumer Rows
+
+The two added rows state reach that is real rather than decorative: the experiment module installs
+and probes the pinned application by reading `package.json` and `package-lock.json`, and the
+pre-existing `test_install_runtime.py` inherits the reach because it imports the installer module
+that now does. Nothing was registered, no row was removed, and the populations are unchanged by
+this leaf apart from its own two consumers. The byte pin over this file is re-derived **at this
+leaf's tip** by the runbook recipe (`31c6983d…`, 4 contracts / 54 artifacts at the merged tip)
+and never restored from a historical figure.
+
 ## Update History
 
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **consumer rows only** — `mcp/tests/test_capsule_experiment_install.py`
+  and `mcp/tests/test_install_runtime.py` join the
+  `mcp/tests/fixtures/repository_profiles/node/package-lock.json` artifact's `consumers` list, because the
+  new module reads the pinned application's committed lockfile through the installer it drives and the
+  pre-existing `test_install_runtime.py` inherits the same reach through the module it imports. Nothing was
+  registered and no row was removed; the catalog's population delta on this leaf's own branch is zero rows
+  at the artifact level. The byte pin over this file is re-derived at this leaf's tip (`31c6983d…`,
+  4 contracts / 54 artifacts on the merged catalog) and never restored from a historical figure. The
+  section above records what the two rows mean rather than only that they exist. Verification metadata
+  remains closeout-owned: the candidate is uncommitted.
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **consumer rows only again, and the pin re-derived
   against the MERGED catalog — which is this leaf's own obligation.** The leaf's new test module
   `mcp/tests/test_eve_effort_runtime.py` starts the shipped runtime, so it consumes three

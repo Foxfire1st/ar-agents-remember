@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastUpdated            | 2026-09-17T10:20:31+00:00 |
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -1555,8 +1555,70 @@ and the CLI gained a caller-supplied `--exclude`.
 Full account on the [memory_quality route](src/agents_remember/memory_quality/overview.md); the
 governed-artifact rows the leaf adds are on the [tests route](tests/overview.md).
 
+## 260915-CAPS-L9 Route Impact — The Experimental Packaging And Cutover Boundary
+
+This leaf packages the capsule experiment and owns the **experimental installation**, and it records
+three boundaries this overview must carry because a reader who misses them will over-read it.
+
+**1. The cutover is an INSTALLATION cutover, and the residual is not settled here.** In `capsule` mode
+the installer does not write the four coordinator `AGENTS.md` targets and **removes** any copy an
+earlier install left, so an opted-in installation injects no legacy startup chain; the disabled run is
+its own positive control. The installed coordinator `skills/` tree is still installed, and it is the
+**authored copy the coordination root carries** — what a human, the dashboard or a curator reads —
+**not** the compiler's input. In production the compiler resolves its corpus from the *packaged* tree
+(`application/skill_resources` → `packaged_source_root()/runtime/skills`), so the installed copy is
+never injected and never compiled; it is not a second delivery of the corpus. **Do not write that "the
+legacy corpus is fully deduplicated."** The traceability audit named **C6** (this leaf's cutover and
+L5's adapter boundary both claimed "no duplicate legacy corpus" with no single acceptance point) and
+**C7** (L5's fresh session per operation boundary versus this leaf's startup cutover are two routes to
+instruction replacement). This leaf's evidence settles the **installation/cutover route** for the four
+`AGENTS.md` targets; the session-start hook surface and the adapter-side prompt construction are the
+residual, and adjudicating the union is **L11's**, not this leaf's.
+
+**2. The selection is recorded per run, and the no-global-switch proof is root-scoped.** The primary
+production input is the registered `runtime_install` tool's own `experiment` parameter; the ambient
+`AR_EXPERIMENT` variable is a documented fallback for a short-lived CLI/developer route, and the run
+record's `selectionSource` says which one won. A selected run whose capsule path is unavailable is
+**refused before its first write** — never quietly `legacy`. The proof that no global switch is left on
+is the root-scoped reading: every regular file under the coordination root is searched as bytes and
+every hit must be a **byte-identical authored asset** (the corpus legitimately names the experiment),
+with a control that the scan found something at all. **Do not write that the experiment is simply
+"on".** There is no persistent switch to leave on, and a deselected run restores the unmodified
+installation.
+
+**3. Nothing here is a production cutover.** The whole leaf is local and unlanded: no commit, no stage,
+no push, no release, no protected branch moved, and no user-level harness configuration written. An eve
+seat **launches** with a real effort consumer since L17 landed, but the **dashboard** route still cannot
+start the shipped eve row because it does not set `session_backend`, so no card may present a
+dashboard-started eve row as a live seat.
+
+**What the route changed.** `install/experiment.py` is new (selection, the three-answer delivery
+decision, the blocking probes, the run record, the rollback plan). `install/runtime.py` gains
+`RuntimeInstallScope` (whose `selection` is a required **resolved** value), a second entry point
+`install_experimental_runtime` over the same private `_install_runtime`, `_capsule_cutover` /
+`WITHHELD_STARTUP_TARGETS`, `_install_assets`, and `install_eve_application`.
+`RuntimeInstallRequest` gains `experiment`. `scripts/sync-runtime.py` gains a fifth target,
+`eve_runtime/` → `package_data/runtime/eve-runtime/`, with a **per-target** ignore set and a
+`source_missing` refusal; that packaged mirror is **generated content, never hand-edited**, and the only
+currency proof is the generator's read-only `--check`. The installed application lands at
+`<coordination_root>/runtime/eve-agent`, reachable through the documented `AR_EVE_RUNTIME_ROOT`
+override; the launch path's packaged probe (`runtime/eve-agent` inside the package) is deliberately left
+unpopulated in a checkout, because populating it would repoint every checkout launch at a
+dependency-less copy. The per-card detail is on the `install` route's cards and the
+[tests route](tests/overview.md).
+
 ## Update History
 
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **route impact recorded rather than a no-impact marker** —
+  the section above states the experimental packaging and cutover boundary, including the two
+  claims this route must not invent (the legacy corpus is *not* fully deduplicated; C6/C7's
+  union is L11's residual, this leaf settles the installation/cutover route only) and the
+  per-run selection with its root-scoped no-global-switch proof. It also records what the route
+  changed (the new `install/experiment.py`, the two entry points over one private installer, the
+  cutover, the packaged mirror and its generator target, and the installed `runtime/eve-agent`
+  path) and that the leaf is entirely unlanded. Verification metadata is left at the leaf's base
+  commit; the candidate is deliberately uncommitted, so the governed closeout stamps the real
+  code commit.
 - 2026-09-17T11:35+02:00 — 260915-CAPS-L14 curator: **route impact recorded rather than a no-impact marker** for the citation source-index surface this package exposes. Adds the section above (the shared exclusion register and its three sources, the additive caller-exclude surface on the MCP tool and the CLI, the reported-skip cap mechanics under the developer's 2026-08-20 ruling with the v10 manifest and the v9 rebuild, the typed refusals on the quality surface and at the closeout gate, and the mode-independence of all three). **Repairs a stale claim**: the final memory adapter citation still pointed at
   `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. The adjacent `PreparedCloseoutContinuation` range start is corrected to the class's real declaration line. Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 

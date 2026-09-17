@@ -5,12 +5,21 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `933b011bdc07eb2ebed0fa64ea3afc019f46b2f5` |
-| lastVerifiedCommitDate | 2026-09-17T10:57:11+02:00|
+| lastUpdated | 2026-09-17T10:20:31+00:00 |
+| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
+| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` (synced onto L14's landing) |
 | governingOverview | `overview.md` |
+
+## 260915-CAPS-L9 Row
+
+This leaf adds **one** manifest row — `mcp/tests/test_capsule_experiment_install.py:19` — and its
+module is **not** a seventh `D9` module: the fail-closed loader still names exactly the same six
+at this tip as at the clean base (`test_eve_adapter`, `test_eve_protocol`,
+`test_role_capsule_admission`, `test_role_capsule_compiler`, `test_role_instruction_corpus`,
+`test_task_projection`). The `test_install_runtime.py` mention at `:74` is pre-existing context
+for the catalog consumer proof, not a row this leaf added.
 
 ## Governing Overview
 
@@ -697,6 +706,12 @@ No separate cross-repository authority is established by this file.
 
 ## Update History
 
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded this leaf's **one** added row
+  (`mcp/tests/test_capsule_experiment_install.py:19`) and the unchanged `D9` set — the fail-closed
+  loader names the same six modules at this tip as at the clean base, and this leaf's module is not a
+  seventh. The `test_install_runtime.py` mention at `:74` is pre-existing catalog-consumer context,
+  not a row this leaf added. Verification metadata remains closeout-owned (the candidate is
+  uncommitted).
 - 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **one row added — `test_citation_source_index_membership.py`
   at `:26`, unit-regression** — and the population re-measured at this leaf's synced base `8997e184` plus
   its change set: **232 declared rows** against **238** modules on disk, leaving exactly the six
