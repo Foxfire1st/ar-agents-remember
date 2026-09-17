@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1397,12 +1397,90 @@ practical rule for a successor is to re-run the sweep after **any** edit rather 
 | The lookup that ran and could not answer, refused as unavailable rather than absent. | "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:445-538 |
 | The lookup that could not be run at all, reported as the same fact. | "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:539-644 |
 | The continuation bindings, each with its own control, and the read-only property on a real file. | "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" | mcp/tests/test_knowledge_read_boundaries.py:664-724; mcp/tests/test_knowledge_read_boundaries.py:893-941 |
-| The read fixture and its registered contract. | `build_read_scope_fixture`; `knowledge-read-scope-cases` | mcp/tests/read_scope_test_support.py:266-284; mcp/tests/evidence-lifecycle.toml:1198-1221 |
-| The unit-lane row the read's selection module occupies. | "mcp/tests/test_knowledge_read_scope.py" | mcp/tests/test-evidence-lanes.toml:75 |
-| The two integration-lane rows the read's boundary and path modules occupy. | "mcp/tests/test_knowledge_read_boundaries.py"; "mcp/tests/test_knowledge_read_paths.py" | mcp/tests/test-evidence-lanes.toml:157; mcp/tests/test-evidence-lanes.toml:158 |
-| **The catalog digest re-pin that a new test module obliges.** | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-62 |
+| The read fixture and its registered contract. | `build_read_scope_fixture`; `knowledge-read-scope-cases` | mcp/tests/read_scope_test_support.py:266-284; mcp/tests/evidence-lifecycle.toml:1203-1207; mcp/tests/evidence-lifecycle.toml:1227-1247 |
+| The unit-lane row the read's selection module occupies. | "mcp/tests/test_knowledge_read_scope.py" | mcp/tests/test-evidence-lanes.toml:76 |
+| The two integration-lane rows the read's boundary and path modules occupy. | "mcp/tests/test_knowledge_read_boundaries.py"; "mcp/tests/test_knowledge_read_paths.py" | mcp/tests/test-evidence-lanes.toml:158; mcp/tests/test-evidence-lanes.toml:159 |
+| **The catalog digest re-pin that a new test module obliges.** | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-65 |
+
+## 260915-KS-L8 The Comparison Suites, And The Evidence Rules They Teach
+
+This route gained **two** test modules and one **governed support artifact**, and the split between them is a
+classification rather than a size decision — both are well under the 1 200-line rail (840 and 779):
+
+- `mcp/tests/test_knowledge_diff_scope.py` — **unit-regression** (row `mcp/tests/test-evidence-lanes.toml:76`),
+  13 nodes, hermetic: temporary directories, two in-process APSW databases built through the public store
+  operations (the candidate copied from the closed baseline and then curated through the store), and two
+  local committed Git trees the fixture writes itself.
+- `mcp/tests/test_knowledge_diff_boundaries.py` — **integration** (`:159`), 15 nodes over the same real trees
+  but **driving the production Git probe** rather than a substitute, plus a real candidate write that moves
+  the logical digest and the serialized response the forbidden-overreach case searches.
+- `mcp/tests/diff_scope_test_support.py` — the shared two-snapshot fixture, registered as an **artifact**
+  (`shared-support` / `internal-canonical` / `integration` / `local-composition`) under the new contract
+  `knowledge-diff-cases`, with exactly those two modules as its declared consumers.
+
+**A new test module costs three registry touch-points and this leaf paid all three twice**: its lane row, its
+path in the relevant artifact's `consumers` list, and the evidence-catalog digest re-pin
+(`LIFECYCLE_CATALOG_SHA256` → `4cf81f10…`, counts **11 / 52**) in
+`mcp/tests/test_dependency_ownership_ast_helpers.py`. It also added the two modules to the **read-scope**
+artifact's consumer list, because the diff fixture builds on the read fixture — a consumer change, not a new
+artifact. The catalog is now **52 artifacts and 11 contracts**, measured by counting the blocks and hashing
+the file, and the lane manifest is **243 declared entries against 243 modules on disk**.
+
+**The coverage-rule reason is the most-corrected contract of this leaf, and its direction is measured rather
+than argued.** Rule 1 is load-bearing alone (removing it turns a missing selection into a real absence,
+`absent_from_snapshot` where `present_outside_selection` is owed). Rule 2 **cannot decide a state its
+neighbours do not** — an authored edge is a foreign key into the snapshot that declares it — so it is kept as
+a short-circuit, and the case asserts its **invariant** half through the published read surface while stating
+that its **family** half is unexercised, because the fixture authors 0 `family_predecessor` rows. Rule 3 is
+load-bearing in the direction that forces its answer **present**: forcing it present turns a genuinely
+deleted realization into a missing selection (two kills), while forcing it **absent** changes no asserted
+state on this population — variant `C` survives all 28 nodes — because the three items it answers for are
+really absent. **Collapsing the three into one is wrong because it turns a missing selection into a real
+absence**, the reverse of what the leaf first claimed; the `2 failed` an earlier artifact published for `C`
+belongs to variant `G`.
+
+**Three evidence rules this leaf's own history teaches, and they are the reason its documentation debt is
+carried rather than papered over:**
+
+- **A citation of a frozen file must be regenerated from that file.** This leaf published a `M25`/`M26`
+  line-number pair under the words *"regenerated from the frozen file"* that is the **pre-round** file's
+  numbering: on the frozen 779-line module `M26`'s node is at **`:603`** and its failing assertion at
+  **`:658`**, and `M25`'s at **`:678`** / **`:716`** — not the `565`/`620` and `640`/`678` the artifacts
+  republish. It is carried to `KS-R09`/`L9` (ledger **A9**, finding **`L8-W1`**) with the replacement text
+  supplied, and **the ledger is authoritative for it**; this route's own cards cite the measured numbers.
+- **A row table attributed to the frozen bytes must have been measured on them.** This leaf's row tables were
+  measured **before** its own last edit — **the same class as `L7-X6`** and now its **second instance** — and
+  every verdict still reproduces on the frozen bytes under the final verification round's own instrument.
+- **A survivor needs a hand-run before it is believed.** An `A2` sentinel that fingerprinted
+  `repr(code.co_consts)` was a **false positive by construction** (a nested code object's `repr` is a heap
+  address) and reported `LOADED-CODE-CHANGED` on a completely unmutated mirror; the leaf withdrew every
+  citation of it and adopted the verifier's content-only fingerprint, whose negative control refuses the run
+  when the declared target did not move. **A sweep whose sentinel cannot fail is not evidence.**
+
+**Four non-kill classes travel with these suites and none of them is coverage:** `M4`, `M8` and `M27` are
+**covered gaps** against this leaf with their closers named, `M23` is a **non-experiment** with its
+reachability bound carried rather than resolved, and `M9`, `M12` and `M21` are **equivalent mutants** with
+the measurement that proves the equivalence. The corrected taxonomy over `M1`…`M27` is **19 assertion kills,
+1 exception death, 3 equivalent mutants, 3 covered gaps, 1 non-experiment = 27**, and **nothing was skipped,
+xfailed, deselected, widened or deleted to reach it** — the final round reproduced all of it with its own
+instrument (39 mutation applications, 126 scored node runs, 41 assertion kills, 1 exception death, 0 broken
+mutations, 0 refusals).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The packet's first non-conforming example, and the node `M1`/`M2` kill.** | "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:309-342 |
+| **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence" | mcp/tests/test_knowledge_diff_scope.py:424-530 |
+| **`M26`'s node on the frozen file: the limitation validator, failing assertion at `:658`.** | "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:603-675 |
+| **`M25`'s node on the frozen file: the truncated comparison, failing assertion at `:716`.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:678-739 |
+| **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict" | mcp/tests/test_knowledge_diff_boundaries.py:481-507 |
+| **The node that drives a real candidate write and refuses its continuation, and the substituted-snapshot refusal.** | "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"; "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page" | mcp/tests/test_knowledge_diff_boundaries.py:325-363; mcp/tests/test_knowledge_diff_boundaries.py:438-475 |
+| The expansion, the visible unattributed gap, and the filter that narrows the display and never the comparison. | "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at"; "test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap"; "test_a_role_filter_narrows_the_display_and_never_the_comparison" | mcp/tests/test_knowledge_diff_boundaries.py:145-182; mcp/tests/test_knowledge_diff_boundaries.py:185-218; mcp/tests/test_knowledge_diff_scope.py:536-573 |
+| **The fixture and the governed contract it is registered under.** | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1198-1202 |
+| **The two lane rows this leaf registered.** | "mcp/tests/test_knowledge_diff_scope.py"; "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:76-76; mcp/tests/test-evidence-lanes.toml:159-159 |
+| **The catalog digest re-pin that a new test module obliges.** | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-65 |
 
 ## Update History
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the **comparison half's two suites and the governed support artifact they share** — `test_knowledge_diff_scope.py` (unit-regression, `:76`, 13 hermetic nodes over two in-process snapshots and two local committed trees) and `test_knowledge_diff_boundaries.py` (integration, `:159`, 15 nodes that **drive the production Git probe**, a real candidate write and the serialized response), with `diff_scope_test_support.py` registered as the artifact `knowledge-diff-cases`. The paragraph states the **three registry touch-points a new test module obliges** — all three paid twice, plus the two consumer rows the read-scope artifact gained — and the measured merged numbers: **52 artifacts / 11 contracts** (digest `4cf81f10…`) and **243 declared lane entries against 243 modules on disk**. **The coverage-rule reason is recorded with the direction each rule was measured in** (rule 1 load-bearing alone; rule 2 a short-circuit whose family half is unexercised because the fixture authors 0 family edges — a stated gap; rule 3 load-bearing in the forced-present direction, with variant `C` surviving 28/28 and the `2 failed` belonging to `G`), together with the statement that **collapsing the rules turns a missing selection into a real absence** — the reverse of the leaf's first claim. It also carries the **three evidence rules this leaf's history teaches** and states the four non-kill classes as disclosures with their closers, so a reader never reads the comparison as fully covered. **The `M25`/`M26` citations in this route's cards are the measured ones for the frozen 779-line module, and the card says explicitly that the ledger is authoritative for the contested pair** and that the leaf's documentation debt was carried to `KS-R09`/`L9` (ledger **A9**/**A10**). Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the **read half's three suites and the governed support artifact they share**. The section gives the lane and the reason for each module (the unit module hermetic over in-process databases; the boundaries module over a real committed Git tree and a real published database; the paths module measuring Git's own `ls-tree` behavior with its own subprocess calls), names the split as a **file-size decision** — fix round 2 pushed the boundaries module past the 1 200-line limit and the cases moved rather than the limit being waived — and states the three registry touch-points a new test module obliges, all of which this leaf paid (lane row, support-artifact `consumers` list, catalog digest re-pin `461121ca…` with counts 10/51), because missing any one is a **hard collection error rather than a quiet gap**. **The path contract is recorded in the form the review corrected it**: pathspec magic is the leading-`:` family plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and NUL, while `*`, `?` and `[` are **literal characters** to `ls-tree` and a legitimate anchor containing them must be authorable, seedable and resolvable — round 1's over-broad refusal reported a file the tree really holds as `path_absent`. **Two honest limits travel with the suites and neither is coverage**: the **withdrawn** mutation claim over `_tree_entry`'s non-zero-exit branch, which stays an explicitly disclosed unasserted defensive branch (L9 **A6**), and `_manifest_digest`'s composition as a reachable covered gap (L9 **A4**). The entry also records the rule about what a survivor means — **a sweep must run on the frozen bytes it describes** — and the forward constraint that **L8 must split the 1 163-line unit module before adding cases**. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the portable half's pair of suites and the reason they are split — **the 1200-line hard limit**, not classification, so the boundary module imports the roundtrip module's helpers and the two are one evidence set with one definition of an artifact and a refusal. The paragraph states what each node protects (the consolidated completeness/refusal-inertness/preservation groups, the deterministic-artifact node, the recomposition through L5's merge, and the five boundary properties including the whole-document canonical form with all seven header types and the staged sealed-aggregate read), and it records the rule this leaf's evidence teaches rather than leaving it to be rediscovered: **a reachable guard with no killing node is reported, not claimed** — the header namespace-binding check at `export_portable.py:911` is written up as an observation for **L9** with its mutation and reachability proof. It also records that the final fix round extended these cases rather than adding one, so the integration population stayed at 255, and the three consumer lists the two modules were added to. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the merge half's own pair of suites and the reason they are split — the unit population sits exactly at its declared ceiling after this leaf, so the merge's whole contract is five unit cases and every scenario needing its own three-commit Git world went to the integration lane. The paragraph states what each node is the mutation target for, and it records the two rules this leaf's evidence teaches rather than leaving them to be rediscovered: **a broken mutation is not a killed guard** (the first matrix scored a `NameError` as a kill; the harness now refuses to score a crash, and the re-derived headline is 17 of 21 killed with four named non-experiments) and **a guard whose call site is unreachable is described as one** rather than presented as coverage. It also records the new governed harness (`common-base-merge-cases`, exact two-consumer list) and, as its load-bearing design fact, that its `shape` callback runs before the commits are built. Verification metadata remains closeout-owned.

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash |  `1ff1893f44d875073d58af863238501a6be35288`|
-| lastVerifiedCommitDate |  2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash |  `c22beb0121946c0637e113ec4cf29da29fd4aec7`|
+| lastVerifiedCommitDate |  2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -479,6 +479,75 @@ tree, to `HEAD` or to Markdown, resolves a symbol locator, or attaches a semanti
 **The leaf's own population and its forward constraint.** 46 leaf cases (21 unit + 25 integration), across
 three test modules whose shared fixture is registered as the governed artifact `knowledge-read-scope-cases`
 — **L8 must split the unit module before adding cases**, because it sits at 1 163 of the 1 200-line limit.
+**L8 paid that constraint rather than waiving it** (see the L8 section below): it added two new modules of
+its own and no case to this one, so the read unit module is unchanged.
+
+### 260915-KS-L8 The Baseline-To-Candidate Comparison, And The One Extension To The Read Policy
+
+This route gained **the comparison half** and still no new authority: two new modules
+(`knowledge/{diff,diff_display}.py`), the sixth composition seam in `application/knowledge_diff.py`, the
+comparison vocabulary in `models/knowledge/diff.py`, and **no change to `schema.py`** — the schema stays
+`ar-knowledge-sqlite/v1`, `PRAGMA user_version = 1`, ten tables, fifteen triggers and the same
+`schema_fingerprint()`. Two existing storage modules changed, both additively: `read.py` gained
+`SelectionQuery.seed_override` (one field, one derived property, and the single seed read the policy uses
+— §"the one extension" below), and `read_queries.py` gained five readers (four existence probes and the
+predecessor-edge union).
+
+**The comparison's single claim, and everything that follows from it: a comparison is the union of two
+independently selected sets, with each item retaining the snapshot it came from.** The selection on each
+side is `KS-R07`'s policy, run by its owner on that side's own read-only connection; this half is handed
+two already-selected sets and never re-decides relevance. Four consequences are the contract:
+
+- **A relationship only the baseline reached stays in the union**, because the union is built from the
+  two selected sets and never from a walk of the candidate. That is why deleting a realization link on
+  the candidate cannot make the baseline's code disappear — the requirement's own non-conforming example.
+- **A record one snapshot holds and the other side's selection did not reach is
+  `present_outside_selection`** — a fact about the selection, reported with the path that reaches it —
+  while a record the other snapshot does not hold at all is `absent_from_snapshot`. **Conflating the two
+  is the design's own named misreading.**
+- **Record changes and source changes are two separate collections.** A **statement-only** change still
+  returns the attributed code on both sides; a **source-only** change is reported as a changed source
+  observation and **cannot** be rendered as a changed obligation, because no record field changed.
+- **No mechanically generated no-consequence judgment exists, by construction** — no field, code path or
+  default can emit an invented *strengthening*, *harmlessness* or neutrality verdict. Missing attribution
+  remains an advertised **gap** (the unattributed changed paths are listed and counted with their reason)
+  rather than being resolved to "no impact".
+
+**The coverage decision is three rules, and the reason is measured rather than argued.** Rule 1 (*did the
+other side select another exact revision of this identity?*) is **load-bearing alone** — removing it turns
+a missing selection into a real absence. Rule 2 (*do the other side's authored predecessor edges name this
+revision?*) **cannot decide a state its neighbours do not**, because an authored edge is a foreign key into
+the snapshot that declares it, so it is kept as a **cheap short-circuit over already-loaded lineage**; its
+invariant half is asserted through the published read surface and its **family half is unexercised**,
+because the fixture authors 0 family edges — a stated gap and not coverage. Rule 3 (*do the other
+snapshot's own tables hold this record, by this item's own key?*) is load-bearing in the direction that
+**forces its answer present**: forcing it present turns a genuinely deleted realization into a missing
+selection (two kills), while forcing it absent changes no asserted state on this population (all 28 nodes
+survive). **Collapsing the three into one is wrong because it turns a missing selection into a real
+absence** — the reverse of what this leaf first claimed, and the correction is what its source comment now
+says.
+
+**The one extension to the read policy, recorded here so it is not re-opened.**
+`SelectionQuery.seed_override` exists so that a comparison does **not** need a second selection rule: a
+comparison runs R07's policy twice, once per snapshot, and the two sides may address *different exact
+revisions of one identity*. `select_recorded_scope` still reads its seed **once** (`read.py:205`), every
+later step is computed from that one local, no diff-shaped branch entered the policy owner, and the only
+production construction site is the comparison's own `_select_side`. The independent reviewer attacked
+the packet's *"R07's policy is the ONLY policy owner"* clause head-on and **could not falsify it**: a
+per-side exact-revision address is a **parameterisation of R07's one rule, not a second relevance rule**,
+and the override is load-bearing (mutation `R30` kills a named node on an assertion). **The owner recorded
+the acceptance.**
+
+**Two honest limits belong here rather than in a footnote.** The comparison's mutation taxonomy leaves
+**three covered gaps** on its own lines (`M4` — a same-id pair with differing projected fields; `M8` —
+the existence probe's line is reachable, called 3 times, but only its *differing* answer is unobserved;
+`M27` — `record_change_only` is true for 0 of 22 items) and **one non-experiment** (`M23` —
+`invariant_revision_is_recorded` is called 0 times), each with the input that would close it named. And
+**three equivalent mutants are disclosed as equivalences rather than counted as kills** (`M9`, `M12`,
+`M21`), each with the measurement that proves the equivalence. None of these is a behavioural defect, and
+**the leaf's contested evidence items are carried to `KS-R09`/`L9`** (ledger entries **A9**/**A10**) —
+this route claims the comparison's *behaviour*, which five independent review rounds could not falsify,
+and not the leaf's evidence prose, which is explicitly contested there.
 
 ## Invariants And Boundaries
 
@@ -495,13 +564,14 @@ three test modules whose shared fixture is registered as the governed artifact `
 - **Vocabulary is defined where it decides.** Literal states, operation names, refusal codes and version strings
   live in `models.knowledge` and are imported by the decider, never defined by the decider and imported back down.
 - **This is an experimental increment on the master's branch pair.** No IAS landing is implied, legacy Markdown
-  remains operational authority, and the still-unclaimed behaviour is now **L8** (the invariant-family candidate
-  diff) — the selective recorded-scope read is claimed by this route as of `KS-R07@v1`, the portable roundtrip as of
+  remains operational authority, and the still-unclaimed behaviour is now **L9** (the foundation fix and
+  certification pass) — the baseline-to-candidate comparison is claimed by this route as of `KS-R08@v1`, the
+  selective recorded-scope read as of `KS-R07@v1`, the portable roundtrip as of
   `KS-R06@v1`, the Git-side merging half as of `KS-R05@v1`, and snapshot publication as of `KS-R04@v1`. The admitted batch contract *is* claimed by this route as
   of `KS-R03@v1` — one lock, one transaction, one closed command union and one resolved dataset identity — while the
   `task-candidate` lane deliberately refuses until a later leaf supplies a checkable binding. The graph half is
   claimed as of `KS-R02@v1`: families, anchors, memberships and realization claims are stored and readable from both
-  directions; anchor **resolution** is now claimed by this route as of `KS-R07@v1`, in
+  directions; anchor **resolution** is claimed by this route as of `KS-R07@v1`, in
   `knowledge/read_anchors.py`, and is still deliberately absent from the write path.
 - **A refusal describes the actual cause.** No path on this route reports an absence for a spelling it refused,
   and every refusal code names a distinct fact a caller acts on — the rule `KS-R07@v1` established across the read
@@ -617,6 +687,7 @@ checkout, but neither establishes a boundary contract here.
 
 ## Update History
 
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): reviewed the route because its meaning changed again — two new `knowledge/diff*.py` modules add **the comparison half** of the experimental knowledge substrate, with `schema.py` untouched (still `ar-knowledge-sqlite/v1`, ten tables, fifteen triggers and the same `schema_fingerprint()`), plus two small additive changes to existing modules (`read.py`'s `SelectionQuery.seed_override` and `read_queries.py`'s five comparison readers). The body records the comparison's **single claim** and its four consequences (a removed before-side realization stays in the union; `present_outside_selection` is not `absent_from_snapshot`; record and source changes are separate collections so a source-only change cannot read as a changed obligation; and **no field, path or default can emit an invented no-consequence judgment**, with missing attribution kept as an advertised gap). It records **the coverage rules with the direction each was measured in** — rule 1 load-bearing alone, rule 2 a short-circuit that cannot decide a state its neighbours do not (its invariant half asserted, its **family half unexercised** because the fixture authors 0 family edges — a stated gap), rule 3 load-bearing in the forced-present direction — and that **collapsing them is wrong because it turns a missing selection into a real absence**, the reverse of the leaf's first claim. **The one extension to the read policy is recorded with the reviewer's evidence so nobody re-opens it**: `seed_override` is a parameterisation of R07's single rule, the policy still reads its seed once, and the mutation that ignores it kills a named node. It also carries the comparison's honest limits (three covered gaps and one non-experiment, each with a named closer; three equivalent mutants disclosed as equivalences) and states plainly that **the leaf's contested items are its evidence prose, carried to `KS-R09`/`L9` (ledger A9/A10), not its behaviour**, which five independent rounds could not falsify. The explicit non-claim narrows from L8 to **L9**. Anchor resolution remains claimed as of `KS-R07@v1`. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): reviewed the route because its meaning changed again — four new `knowledge/read_*.py`-family modules add **the read half** of the experimental knowledge substrate, with `schema.py` untouched (still `ar-knowledge-sqlite/v1`, ten tables, fifteen triggers and the same `schema_fingerprint()`), plus two small load-bearing changes to existing modules (`logical.py`'s public `cell_value` as the one decoder a read page and the digest share, and `base.py`'s `require_plain_git_path` as the one Git-pathspec rule). The body records the **stopping rule** (the containing-family set frozen before membership expansion, which is what makes the traversal finite and what produces the packet's `P → I1`, `F → {I1, J1}`, `G → {J1, K1}` result with K1 excluded until `G` is selected explicitly), **three properties a consumer may rely on** (the corrected page counts — the declared total on every page, the walk's cumulative figure, the slice size in `len(page.items)`, enforced by a model validator; a truncated page that cannot be presentable as complete; and a response with **no field** that could hold a current-truth marker, a severity or a ranking), and **the path-refusal contract review corrected most sharply** — pathspec magic is the leading-`:` family plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and NUL, while `*`, `?` and `[` are literal characters to `ls-tree`, and the read path distinguishes `path_absent`, `unsupported_locator` and `recorded_object_unavailable` **so a caller is never told a path is absent when the real reason is its spelling**. It records the two honest limits rather than burying them — the **withdrawn** mutation claim over `_tree_entry`'s non-zero-exit branch, which stays an explicitly disclosed unasserted defensive branch (L9 **A6**), and `_manifest_digest`'s composition as a reachable covered gap (L9 **A4**) — the read-only/never-falls-back/cursor-as-binding boundaries, and the forward constraint that **L8 must split the 1 163-line unit module before adding cases**. The explicit non-claim narrows from L7–L8 to **L8**, and anchor resolution is now claimed as of `KS-R07@v1` instead of recorded as absent. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 
 - 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): reviewed the route because its meaning changed again — three new `knowledge/export_*.py` modules add **the portable half**, the artifact format `ar-knowledge-export/v1` and its import, with no schema change (still `ar-knowledge-sqlite/v1`, ten tables, fifteen triggers and the same `schema_fingerprint()`). The body records the leaf's guarantee in the only form a consumer may rely on — **every accepted artifact is the canonical rendering of the logical content it carries**, so two artifacts that both validate and declare the same `logicalDigest` are the same bytes — and states that acceptance is **two** checks that are both needed: the whole-document gate (the exact rendering, at every level the format declares an order or a spelling for) and the header check (every declaration the one this build implements **and of the type this build writes**, with `userVersion` compared type-strictly so `1.0` and `true` are refused by name). It records what the digest covers and what the document form covers instead, the closed two-mode destination admission, the private stage and its sealed-aggregate verification, the never-patches-a-live-destination rule, the single body constructor that keeps one digest definition, the encoder's missing filesystem side effect, and the destination directory's real contents with **L4's open capture question Q1 carried forward**. Two staged checks are recorded as **documented non-experiments** rather than coverage, and the header namespace-binding guard at `:911` is recorded as a reachable guard with no killing node, reported for **L9**. The still-unclaimed behaviour narrows from L6–L8 to **L7–L8**. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

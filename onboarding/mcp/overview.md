@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l04` uncommitted source; base `76c7697ca275a8d2764729145c950c166f3f9ec3` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1386,6 +1386,7 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
 
 ## Update History
 
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **No route impact:** reviewed this overview as the nearest governing route above the experimental knowledge substrate, whose meaning changed one level down. The change set adds the baseline-to-candidate comparison inside `memory/knowledge/` (two modules), its vocabulary in `models/knowledge/diff.py`, its composition seam in `application/knowledge_diff.py`, two test modules with one governed support artifact, and two additive changes to existing modules (`memory/knowledge/read.py`'s one-field `SelectionQuery.seed_override`, and five new readers in `memory/knowledge/read_queries.py`). None of that adds, moves or retires an MCP-package responsibility, a charter paragraph or a boundary at **this** altitude: the sub-route's own overviews carry the substantive account, and the package's route table is unchanged. The knowledge substrate's own section below (260915-KS-L1) remains the L1 as-of record and is not extended here.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **No route impact:** reviewed this overview as the nearest governing route above the experimental knowledge substrate, whose meaning changed one level down. The change set adds the selective recorded-scope read inside `memory/knowledge/` (four modules), its vocabulary in `models/knowledge/read.py`, its composition seam in `application/knowledge_read.py`, and three test modules with one governed support artifact. None of that adds, moves or retires an MCP-package responsibility, a charter paragraph or a boundary at **this** altitude: the sub-route's own overviews carry the substantive account, and the package's route table is unchanged. The knowledge substrate's own section below (260915-KS-L1) remains the L1 as-of record and is not extended here.
 
 - **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T13:15+02:00; `lastVerifiedCommitHash` `a5f5380badf357622daf1965a7a0e3caf91b51ff`; `lastVerifiedCommitDate` 2026-09-16T08:34:21+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.

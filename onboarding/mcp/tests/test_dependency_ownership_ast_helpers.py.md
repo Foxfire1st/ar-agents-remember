@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,12 +28,14 @@ An explicitly supported input with no consumers remains complete with a verified
 **The module also carries the evidence catalog's pinned identity, and that pin is a deliberate one.** The three
 constants `LIFECYCLE_CONTRACT_COUNT`, `LIFECYCLE_ARTIFACT_COUNT` and `LIFECYCLE_CATALOG_SHA256` state the
 catalog's declared shape and its exact bytes, so a change to `mcp/tests/evidence-lifecycle.toml` that nobody meant
-is a **hard failure** rather than a silent inventory drift. `260915-KS-L7` moved all three in the same change as
-the catalog edit: **10 contracts, 51 artifacts, digest
-`461121ca16567ab056938b710b19bddb98867581dd4fe3cf7ee2645111d54369`** (from `4 / 45 / 293a187f…`, through the
-`KS-L1`–`KS-L7` registrations). The comment above the constants says what the pin is for and names the digest it
-supersedes; **a future catalog change must re-pin deliberately, in the same change**, and the counts must move with
-the blocks they count.
+is a **hard failure** rather than a silent inventory drift. `260915-KS-L8` moved all three in the same change as
+the catalog edit: **11 contracts, 52 artifacts, digest
+`4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747`** (from `4 / 45 / 293a187f…`, through the
+`KS-L1`–`KS-L8` registrations, and from L7's `10 / 51 / 461121ca…`). The comment above the constants says what
+the pin is for and names the digest it supersedes; **a future catalog change must re-pin deliberately, in the
+same change**, and the counts must move with the blocks they count. The pin's own verification is the module's
+`_assert_the_catalog_kept_its_bytes_and_identities`, which recomputes the file's sha256 and counts both block
+kinds before comparing them to the three constants.
 
 ### Conventions
 
@@ -60,9 +63,11 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Repository inputs reach their supported consumers. | `test_repository_inputs_reach_their_supported_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:74-94 |
-| **The evidence catalog's pinned shape and bytes, and the deliberate re-pin this leaf made in the same change as its catalog row.** | `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-68 |
-| **The contract and artifact blocks the pin counts, added by this leaf.** | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1198-1221 |
+| Repository inputs reach their supported consumers. | `test_repository_inputs_reach_their_supported_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:72-91 |
+| **The evidence catalog's pinned shape and bytes, and the deliberate re-pin this leaf made in the same change as its catalog rows.** | `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-65 |
+| **The check that makes the pin real: the file's bytes recomputed and both block kinds counted before either is compared.** | `_assert_the_catalog_kept_its_bytes_and_identities` | mcp/tests/test_dependency_ownership_ast_helpers.py:162-178 |
+| The closure check over the governed inventory, and the lane-membership check. | `_assert_the_governed_inventory_is_closed`; `_assert_the_proof_is_selected_by_the_lane_manifest` | mcp/tests/test_dependency_ownership_ast_helpers.py:142-159; mcp/tests/test_dependency_ownership_ast_helpers.py:129-139 |
+| **The contract and artifact blocks the pin counts, added by this leaf, and the consumer list its sibling artifact gained.** | "knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1199-1199; mcp/tests/evidence-lifecycle.toml:1209-1209; mcp/tests/evidence-lifecycle.toml:1220-1220; mcp/tests/evidence-lifecycle.toml:1242-1242 |
 
 ## Cross-Repo References
 
@@ -74,6 +79,7 @@ No cross-repository implementation evidence is required for these local test and
 
 ## Update History
 
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the **second deliberate re-pin of the evidence-catalog identity** and re-derived the card's citations against the new bytes — `LIFECYCLE_CONTRACT_COUNT` 10 → **11**, `LIFECYCLE_ARTIFACT_COUNT` 51 → **52**, and `LIFECYCLE_CATALOG_SHA256` `461121ca…` → **`4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747`** (measured on the frozen candidate by counting the blocks and hashing the file). The card now names the check that makes the pin real — `_assert_the_catalog_kept_its_bytes_and_identities`, which recomputes the file's digest and counts both block kinds before comparing them to the constants — and records that this leaf's catalog change is a **new contract/artifact pair** (`knowledge-diff-cases` for `mcp/tests/diff_scope_test_support.py`) **plus** two consumer rows added to the existing read-scope artifact. It also keeps the rule the L7 entry stated, in the form a successor needs: **a catalog change must re-pin deliberately in the same change, with the counts moving with the blocks they count.** Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the **evidence-catalog pin** this module carries and the deliberate re-pin this leaf made alongside its own catalog row — `LIFECYCLE_CONTRACT_COUNT` 4 → **10**, `LIFECYCLE_ARTIFACT_COUNT` 45 → **51**, and `LIFECYCLE_CATALOG_SHA256` `293a187f…` → **`461121ca16567ab056938b710b19bddb98867581dd4fe3cf7ee2645111d54369`**. The card states why the pin exists in the form a successor needs: any change to `mcp/tests/evidence-lifecycle.toml` that nobody meant becomes a hard failure, and **a catalog change must re-pin deliberately in the same change, with the counts moving with the blocks they count**. It also records that the pin's comment names the digest it supersedes, so the history of the freeze is auditable from the source rather than only from this card. Verification metadata remains empty until closeout stamps the code commit.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.

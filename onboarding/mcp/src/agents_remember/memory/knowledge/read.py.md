@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/read.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288`|
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7`|
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -80,6 +80,37 @@ set, ordered), `counts`, `directly_containing_families`, `revision_groups`, the 
 (`selected_invariant_revision_ids`, `selected_family_revision_ids`, `advertised`) and `manifest_digest`,
 with `item_ids()` for the union-versus-declared-set comparison.
 
+### The one thing L8 added to this module: `SelectionQuery.seed_override`
+
+**`SelectionQuery` gained one field and one derived property, and that is the whole of L8's change to
+this module** (the module's other edits are docstring prose; measured against the leaf's own change set,
+21 added lines of which 17 are docstring):
+
+- `seed_override: KnowledgeReadSeed | None = None`;
+- `effective_seed` — `self.seed if self.seed_override is None else self.seed_override`;
+- and `select_recorded_scope` reads `seed = query.effective_seed` as its **single** seed read
+  (`:205`), with every later step — the seed's own revisions, the frozen directly-containing families,
+  the closed member union, the advertised frontier, the item stream and the assembled scope — computed
+  from that one local. No branch, no flag and no second code path was added.
+
+**Why it exists, and the closed question it answers.** A two-snapshot comparison runs this one policy
+**twice**, once per snapshot, and its two sides may address **different exact revisions of one identity**
+(the packet's own words: *"an explicit revision selector may address different before/after revision
+IDs"*). The override lets a side address its own revision without the policy learning a diff-shaped
+branch. The reviewer attacked the packet's *"R07's policy is the ONLY policy owner"* clause head-on and
+**could not falsify it**: the single read above is the whole mechanism; `grep -rn "diff\|Diff" read.py
+read_queries.py` returns only docstring prose; the only production construction site is
+`application/knowledge_diff.py:496 seed_override=side.selector`; every existing caller leaves the field
+`None`, so `effective_seed is seed` on every read path; and the override is **load-bearing rather than
+decorative** — mutation `R30` (`effective_seed` → `self.seed`) kills a named node on an assertion (the
+explicit-per-side-selector node, `test_knowledge_diff_scope.py:390` on the frozen bytes; `:389` on the
+pre-round 741-line file the mutation was measured against). **A per-side exact-revision address is a
+parameterisation of R07's one rule, not a second relevance rule; the owner recorded the acceptance and
+this question must not be re-opened.**
+
+A second construction site belongs in the same sentence: `application/knowledge_read.py` passes no
+override at all, so the read path is provably unaffected.
+
 ### Paging, and the count semantics review corrected
 
 `page_of_scope(scope, PageRequest(context, seed, max_items, max_utf8_bytes, position))` cuts one
@@ -147,9 +178,15 @@ two claims at one location are two claims and one location.
 ### Todos
 
 None recorded. One carried observation belongs to the owning seat: `_manifest_digest`'s composition is a
-reachable covered gap against this leaf (L9 ledger **A4**). **L8 must split
-`mcp/tests/test_knowledge_read_scope.py` before adding cases** — it sits at 1 163 of the 1 200-line
-ceiling, 37 lines of headroom.
+reachable covered gap against this leaf (L9 ledger **A4**). The forward constraint L7 recorded here —
+**L8 must split `mcp/tests/test_knowledge_read_scope.py` before adding cases** — was **paid**: L8 did not
+add a case to that module; it added two new modules of its own, so the read unit module is unchanged at
+1 163 lines and 37 lines of headroom.
+
+**The one extension this module carries for L8 is `SelectionQuery.seed_override`, and it is documented in
+full above** — including the closed reviewer question — because a successor who changes
+`select_recorded_scope` has to know that the override is a parameterisation of the one policy and not a
+second rule.
 
 ## Docs References
 
@@ -164,21 +201,22 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The selection policy in its declared order, with `F0` frozen before membership expansion.** | `select_recorded_scope`; `SelectionSets` | mcp/src/agents_remember/memory/knowledge/read.py:178-219; mcp/src/agents_remember/memory/knowledge/read.py:164-175 |
-| The seed half: a path selects through its claims, an identity selects every retained revision, an exact revision selects one, a family seed selects none here. | `_seed_invariant_revisions` | mcp/src/agents_remember/memory/knowledge/read.py:251-285 |
-| **`F0` read from the recorded membership rows**, and the family seed's own revisions. | `_directly_containing_families` | mcp/src/agents_remember/memory/knowledge/read.py:288-320 |
-| **The stopping rule itself: members of the frozen family set, never "which other families a member belongs to".** | `_member_revision_ids` | mcp/src/agents_remember/memory/knowledge/read.py:323-333 |
-| **The advertised frontier: `memberships_of(I) − F0`, deduplicated, sorted, never traversed.** | `_frontier_expansions` | mcp/src/agents_remember/memory/knowledge/read.py:336-371 |
-| **The declared item order, built only from stored identifiers.** | `_item_stream`; `_sort_key`; `_KIND_ORDER` | mcp/src/agents_remember/memory/knowledge/read.py:392-428; mcp/src/agents_remember/memory/knowledge/read.py:450-461; mcp/src/agents_remember/memory/knowledge/read.py:77-83 |
-| The realization items and the anchor seam, and the two selection stages a per-side diff reads. | `_realization_items`; `_SEED_STAGES`; `_seed_stage` | mcp/src/agents_remember/memory/knowledge/read.py:575-607; mcp/src/agents_remember/memory/knowledge/read.py:435-447 |
-| The assembled scope, the counts and the revision groups. | `_assembled_scope`; `_revision_groups`; `SelectedScope` | mcp/src/agents_remember/memory/knowledge/read.py:613-656; mcp/src/agents_remember/memory/knowledge/read.py:691-709; mcp/src/agents_remember/memory/knowledge/read.py:126-146 |
-| **The manifest digest: kind, identity and selection reasons — and not how the page was cut.** | `_manifest_digest` | mcp/src/agents_remember/memory/knowledge/read.py:712-729 |
-| **Whole-item paging, and the corrected count semantics: the declared total on every page, `returned` cumulative, the slice size in `len(page.items)`.** | `page_of_scope`; `_page_counts`; `_too_small_page`; `_page_bytes` | mcp/src/agents_remember/memory/knowledge/read.py:743-797; mcp/src/agents_remember/memory/knowledge/read.py:823-847; mcp/src/agents_remember/memory/knowledge/read.py:800-820; mcp/src/agents_remember/memory/knowledge/read.py:850-866 |
+| **The selection policy in its declared order, with `F0` frozen before membership expansion, and the one seed read L8 added.** | `select_recorded_scope`; `SelectionSets`; `SelectionQuery` | mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:179-189; mcp/src/agents_remember/memory/knowledge/read.py:150-175 |
+| The seed half: a path selects through its claims, an identity selects every retained revision, an exact revision selects one, a family seed selects none here. | `_seed_invariant_revisions` | mcp/src/agents_remember/memory/knowledge/read.py:270-304 |
+| **`F0` read from the recorded membership rows**, and the family seed's own revisions. | `_directly_containing_families` | mcp/src/agents_remember/memory/knowledge/read.py:307-339 |
+| **The stopping rule itself: members of the frozen family set, never "which other families a member belongs to".** | `_member_revision_ids` | mcp/src/agents_remember/memory/knowledge/read.py:342-352 |
+| **The advertised frontier: `memberships_of(I) − F0`, deduplicated, sorted, never traversed.** | `_frontier_expansions` | mcp/src/agents_remember/memory/knowledge/read.py:355-390 |
+| **The declared item order, built only from stored identifiers.** | `_item_stream`; `_sort_key`; `_KIND_ORDER` | mcp/src/agents_remember/memory/knowledge/read.py:411-447; mcp/src/agents_remember/memory/knowledge/read.py:469-480; mcp/src/agents_remember/memory/knowledge/read.py:77-83 |
+| The realization items and the anchor seam, and the two selection stages a per-side diff reads. | `_realization_items`; `_SEED_STAGES`; `_seed_stage` | mcp/src/agents_remember/memory/knowledge/read.py:594-626; mcp/src/agents_remember/memory/knowledge/read.py:454-466 |
+| The assembled scope, the counts and the revision groups. | `_assembled_scope`; `_revision_groups`; `SelectedScope` | mcp/src/agents_remember/memory/knowledge/read.py:632-675; mcp/src/agents_remember/memory/knowledge/read.py:710-728; mcp/src/agents_remember/memory/knowledge/read.py:126-146 |
+| **The manifest digest: kind, identity and selection reasons — and not how the page was cut.** | `_manifest_digest` | mcp/src/agents_remember/memory/knowledge/read.py:731-748 |
+| **Whole-item paging, and the corrected count semantics: the declared total on every page, `returned` cumulative, the slice size in `len(page.items)`.** | `page_of_scope`; `_page_counts`; `_too_small_page`; `_page_bytes` | mcp/src/agents_remember/memory/knowledge/read.py:762-816; mcp/src/agents_remember/memory/knowledge/read.py:842-866; mcp/src/agents_remember/memory/knowledge/read.py:819-839; mcp/src/agents_remember/memory/knowledge/read.py:869-885 |
 | The exception the application turns into `selection_incomplete`, raised when the selected set exceeds the declared bound. | `SelectionIncomplete` | mcp/src/agents_remember/memory/knowledge/read.py:109-122 |
 | The declared execution bound itself. | `SELECTION_ITEM_LIMIT` | mcp/src/agents_remember/models/knowledge/read.py:94-96 |
 | **The nodes that measure the packet's `P/I1/F/J1/G/K1` rule, including the explicit `G` expansion that reaches K1.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_selecting_the_advertised_family_explicitly_is_what_reaches_the_further_realizations"; "test_an_exact_family_revision_seed_stops_after_its_own_members" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:246-274; mcp/tests/test_knowledge_read_scope.py:206-245 |
 | **The nodes that measure the corrected page counts: a one-item page still advertising the second location, and the union of all pages equalling the declared set.** | "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection" | mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_scope.py:658-721 |
 | The ordering, truncation, budget, bound and absence nodes. | "test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label"; "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position"; "test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total" | mcp/tests/test_knowledge_read_scope.py:722-837; mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:872-901; mcp/tests/test_knowledge_read_scope.py:902-929 |
+| **The node that kills mutation `R30` — the per-side exact-revision address the override exists for.** | "test_explicit_side_selectors_address_a_different_exact_revision_on_each_side" | mcp/tests/test_knowledge_diff_scope.py:390-421 |
 | The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share. | `read_scope_test_support.py`; `cell_value` | mcp/tests/read_scope_test_support.py:1-51; mcp/src/agents_remember/memory/knowledge/logical.py:224-232 |
 
 ## Cross-Repo References
@@ -192,4 +230,5 @@ caller opened; no second repository, ledger or coordination path is read.
 
 ## Update History
 
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **extended this card with the one change L8 made to this module and re-derived every citation range against the new bytes.** The change is `SelectionQuery.seed_override` plus its derived `effective_seed`, and the card now carries it as a **closed question with the reviewer's evidence** so nobody re-opens it: `select_recorded_scope` reads `seed = query.effective_seed` as its single seed read (`:205`) and every later step is computed from that one local, no diff-shaped branch entered the policy owner, the only production construction site is `application/knowledge_diff.py:496`, every existing caller leaves the field `None` so `effective_seed is seed` on the read path, and mutation `R30` kills a named node on an assertion — so a per-side exact-revision address is a **parameterisation of R07's one rule, not a second relevance rule**. The card also records that L7's forward constraint was **paid rather than waived**: L8 added two new test modules and did not add a case to the read unit module, which stays at 1 163 of the 1 200-line limit. Every storage-module citation moved by the 19 lines the docstring addition inserted, so all of them were re-measured rather than shifted, and the `P/I1/F/J1/G/K1`, count-semantics, ordering, truncation and budget rows were re-read at their new positions. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): created this one-to-one card for the recorded-scope selection and its paging. It states the leaf's **load-bearing design fact** — the containing-family set is **frozen before membership expansion**, which is what makes the traversal finite and what produces the requirement's `P → I1`, `F → {I1, J1}`, `G → {J1, K1}` result (I1's and J1's realizations returned, J1's `G` membership **advertised**, K1 excluded until `G` is selected explicitly) — and it states the **count semantics the review corrected**, in the form a consumer must read them: a continuation page's `primary_items_total` is the declared selection total on every page, `primary_items_returned` is the walk's cumulative figure, and the slice size is `len(page.items)`, so a truncated page can never state a smaller scope. It records the declared item order (stored identifiers only), the manifest digest's coverage of selection reasons and not of the page cut, the seven-member anchor vocabulary this module only reports into, and the disclosed **reachable covered gap** in `_manifest_digest`'s composition (L9 ledger **A4**). It also carries the forward constraint that L8 must split this leaf's unit module before adding cases. Verification metadata remains empty until closeout stamps the code commit.

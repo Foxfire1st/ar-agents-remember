@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -1030,7 +1030,7 @@ write path refuses cannot be presented as a seed that is answered with an absenc
 | --- | --- | --- |
 | The read sub-route module: the closed seed union, the context, the page and the cursor. | `KnowledgeReadSeed`; `PathSeed`; `KnowledgeReadContext`; `KnowledgeReadPage`; `KnowledgeReadCursor` | mcp/src/agents_remember/models/knowledge/read.py:204-213; mcp/src/agents_remember/models/knowledge/read.py:144-171; mcp/src/agents_remember/models/knowledge/read.py:216-263; mcp/src/agents_remember/models/knowledge/read.py:451-482; mcp/src/agents_remember/models/knowledge/read.py:514-531 |
 | **The corrected count model and the truncated page that cannot claim completeness.** | `KnowledgeReadCounts`; `KnowledgeReadPage` | mcp/src/agents_remember/models/knowledge/read.py:404-448; mcp/src/agents_remember/models/knowledge/read.py:451-482 |
-| The one operation and six codes this leaf added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-72; mcp/src/agents_remember/models/knowledge/result.py:76-141 |
+| The one operation and six codes this leaf added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:37-75; mcp/src/agents_remember/models/knowledge/result.py:81-144 |
 | **The shared Git-pathspec rule, with `*`, `?` and `[` admitted as literal characters.** | `require_plain_git_path` | mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | The write path's delegation of its pathspec half to that one rule. | `SourceAnchorDraft` | mcp/src/agents_remember/models/knowledge/source.py:82-127 |
 | **The facade's ninth source, which this leaf did add to `__all__`.** | `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/__init__.py:56-79 |
@@ -1038,8 +1038,76 @@ write path refuses cannot be presented as a seed that is answered with an absenc
 | The cursor encoder the read re-exports through the facade. | `cursor_for` | mcp/src/agents_remember/models/knowledge/read.py:561-579 |
 | The nodes that hold these models to their own invariants. | "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_of_one_item_still_advertises_the_second_location" | mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:547-657 |
 
+## 260915-KS-L8 The Comparison Vocabulary
+
+The knowledge sub-route gained its **seventeenth module**, `models/knowledge/diff.py`, and `result.py` gained
+**one** operation — `diff_knowledge_scope` — and **no refusal code at all**, so the measured unions are
+**twenty-six operations and forty-four codes** (L8 is the first knowledge leaf whose boundary needed no new
+refusal vocabulary, and that is recorded as a fact rather than a silence: the comparison's whole failure
+surface is R07's own six codes plus `selected_input_unavailable`, and a one-sided absence travels as a value
+beside the page rather than as a seventh code). The module declares what a comparison may ask and what a
+caller is told; it holds no SQL, no Git resolution and no authority decision.
+
+**Four split lines are the contract, and each is a place a future edit could silently undo a guarantee:**
+
+- **Two snapshots, one selector policy, and no field that could carry a second one.** `KnowledgeDiffSide`
+  carries the exact snapshot and an *optional* selector that **replaces** the request's seed for that side
+  only — the packet's *"an explicit revision selector may address different before/after revision IDs"* as a
+  value. The request has **no field** that could express a computed relevance, a ranking or an inferred
+  impact, so the forbidden second relevance rule is not representable here. The one production path this
+  reaches is `SelectionQuery.seed_override`, documented on the memory route's overview and in the
+  sub-route's own modules — a parameterisation of R07's single rule, **not** a second rule.
+- **Provenance versus verdict.** `KnowledgeDiffSourceChange` carries the two sides' observations and four
+  booleans about which object moved, and **nothing that could hold a severity, a "strengthens", a "harmless"
+  or a neutrality finding**. The record's own field changes are a separate collection on the item, so a
+  source-only change cannot read as a changed obligation — the packet's second non-conforming example made
+  structurally impossible rather than merely avoided.
+- **Absence versus selection.** `DiffCoverage` keeps `present_outside_selection` apart from
+  `absent_from_snapshot`, and `SideAbsence` carries one side's own typed absence **beside** the page rather
+  than replacing it, because a comparison can legitimately find that one side holds nothing for the selector
+  while the other holds records.
+- **A comparison's cursor is not a read's cursor.** `continue_diff_from_cursor` is a separate decoder for a
+  separate document: a read cursor positions a page in one selection and a comparison cursor positions one in
+  a union of two, so presenting either to the other operation is a caller's mistake and both refuse it by
+  name.
+
+**Three model-level invariants a consumer may rely on**, each refused at construction: `KnowledgeDiffPage`
+refuses `has_more == enumeration_complete` or a `has_more` disagreeing with the presence of a continuation
+(**a truncated comparison cannot be presentable as complete**); `KnowledgeDiffCounts` refuses its own
+arithmetic contradiction **and** a display/suppression total larger than the comparison; and
+`KnowledgeDiffResult` refuses to be both a page and a refusal or neither, and **refuses a declared limitation
+that disagrees with its omissions in either direction** — while `no_semantic_assessment_performed` is
+unconditional.
+
+**The closed vocabularies and the one member that was removed.** `DiffItemKind` (five), `DiffCoverage`
+(five), `DiffRecordTransition` (six, whose `superseding`/`superseded` pair is recognised **only** from the
+authored predecessor edge — never a label, a display version or an insertion order), `DiffOmissionReason`
+(three) and `DiffLimitation` (four) are literals rather than free text. `assessment_beyond_this_increment`
+was declared and then **removed** in fix round 1 because nothing in the package constructed it and no
+limitation advertised it: a reason with no producer is dead vocabulary in a table the validator checks in
+both directions. `KNOWLEDGE_DIFF_FIELD_NAMES` is the nine compared record fields in declared order, with
+`selection_reasons` deliberately absent — which route of a selection reached a record is a fact about a
+traversal, not about the record.
+
+**One deliberate non-change to the facade.** `models/knowledge/__init__.py` does **not** re-export the
+comparison vocabulary, exactly as it does not re-export the portable or merge vocabularies — a consumer names
+`agents_remember.models.knowledge.diff`, and the module is not in the facade change set.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The comparison sub-route module: the two sides, the request, the item, the page and the result. | `KnowledgeDiffSide`; `KnowledgeDiffRequest`; `KnowledgeDiffItem`; `KnowledgeDiffPage`; `KnowledgeDiffResult` | mcp/src/agents_remember/models/knowledge/diff.py:182-205; mcp/src/agents_remember/models/knowledge/diff.py:245-253; mcp/src/agents_remember/models/knowledge/diff.py:318-354; mcp/src/agents_remember/models/knowledge/diff.py:475-498; mcp/src/agents_remember/models/knowledge/diff.py:501-570 |
+| **The record half and the source half, with no field that could hold a verdict and `missing_side` as a reason rather than a third change statement.** | `KnowledgeDiffSourceChange` | mcp/src/agents_remember/models/knowledge/diff.py:288-315 |
+| **The binding and the digest derived from it, which is how a candidate change invalidates a continuation by construction.** | `KnowledgeDiffBinding`; `diff_binding_digest` | mcp/src/agents_remember/models/knowledge/diff.py:256-274; mcp/src/agents_remember/models/knowledge/diff.py:277-285 |
+| **The counts that keep the comparison total and the display total apart, and the two closed vocabularies.** | `KnowledgeDiffCounts`; `DiffCoverage`; `DiffRecordTransition` | mcp/src/agents_remember/models/knowledge/diff.py:432-460; mcp/src/agents_remember/models/knowledge/diff.py:118-131; mcp/src/agents_remember/models/knowledge/diff.py:133-140 |
+| The expansion as a value, with the attributed and unattributed changed paths kept apart. | `KnowledgeDiffExpansion` | mcp/src/agents_remember/models/knowledge/diff.py:406-429 |
+| **The comparison's own cursor and its two functions, deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:573-586; mcp/src/agents_remember/models/knowledge/diff.py:589-605; mcp/src/agents_remember/models/knowledge/diff.py:608-621 |
+| **The one operation this leaf added, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:37-75; mcp/src/agents_remember/models/knowledge/result.py:81-144 |
+| **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"; "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other" | mcp/tests/test_knowledge_diff_boundaries.py:481-507; mcp/tests/test_knowledge_diff_boundaries.py:510-540 |
+| The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation. | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:678-739; mcp/tests/test_knowledge_diff_scope.py:603-675 |
+
 ## Update History
 
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the knowledge sub-route's **seventeenth module**, `models/knowledge/diff.py`, and the **one** operation `result.py` gained — with **no new refusal code**, which the card states as a fact rather than a silence (the comparison's failure surface is R07's six codes plus `selected_input_unavailable`, and a one-sided absence is a value beside the page, not a seventh code). The section states the **four split lines** a future edit must not undo: two snapshots with **one** selector policy and no field able to express a second relevance rule (the per-side selector as the packet's *"different before/after revision IDs"* expressed as a value); provenance versus verdict, where a source-only change cannot read as a changed obligation because the record's field changes are a separate collection; absence versus selection, with `present_outside_selection` kept apart from `absent_from_snapshot` and a side's absence carried **beside** the page; and a comparison cursor that is **not** a read cursor. It records the three construction-time invariants (the truncated comparison; the counts' arithmetic **and** display-total bounds; the limitation/omission check running in both directions with `no_semantic_assessment_performed` unconditional), the closed vocabularies with the **removal** of `assessment_beyond_this_increment` as a reason with no producer, the six-state transition union whose supersession pair is read **only** from the authored predecessor edge, and the deliberate non-change that the facade does **not** re-export this vocabulary. It also corrects the `result.py` citation range this card carried, because the operation insertion moved every anchor below it. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the knowledge sub-route's **sixteenth module**, `models/knowledge/read.py`, and the three changes to existing modules (one operation and six refusal codes in `result.py`; the shared path rule in `base.py`; `source.py` delegating its pathspec half to it). The card states the **four load-bearing splits** — a closed five-member seed union carrying no filter, sort, revision preference or display version; the three `primary_items_*` fields describing one **walk** so a one-item page cannot be read as a one-item scope at any position; provenance versus verdict, where **the response has no field that could hold a current-truth marker** (the requirement's *Forbidden Overreach* enforced structurally); and continuing versus re-binding — plus the three model-level invariants refused at construction and the two context rules (`task_ref=None` a supported baseline state; an all-or-nothing source resolution). It records the six new codes with the distinction each carries, the measured union sizes (twenty-five operations, forty-four codes), and one **deliberate difference** from the two preceding leaves: this package's `__init__.py` does **not** re-export the portable or merge vocabularies but **does** re-export the read vocabulary and lists it in `__all__`. It also records the shared pathspec rule with `*`, `?` and `[` admitted. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 
 - 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the knowledge sub-route's fifteenth module and the **portable wire vocabulary** it serves, plus the two operations and one code `models/knowledge/result.py` grew. The card states the three splits the module is built around — a required admitted identity on the export request, a validation report versus a published result neither of which can carry a verdict, and a staging fact versus a destination fact with the verified identity carried independently of the state — the closed two-mode destination admission with no third mode, and the `row_counts` over all ten tables that separates a complete export from one that dropped a collection. It records the one vocabulary addition as the **narrowest** member of the refusal union and why (the portable artifact is the only input that can be malformed *as a document*), and the deliberate non-change that this package's `__init__.py` does not re-export the vocabulary — a consumer names `models.knowledge.portable`, as the handoff tells the next leaves to. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

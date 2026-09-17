@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -748,11 +748,74 @@ concrete application function.
 | **The three snapshot comparisons, each naming the comparison that fired.** | `_snapshot_identity_refusal` | mcp/src/agents_remember/application/knowledge_read.py:274-313 |
 | **The scope-dependent half of the binding, including a position past the end of the selection.** | `_continuation_refusal`; `_manifest_binding_mismatch` | mcp/src/agents_remember/application/knowledge_read.py:316-337; mcp/src/agents_remember/application/knowledge_read.py:496-516 |
 | The two absence codes and the recorded-but-empty selection served rather than refused. | `_absence_refusal` | mcp/src/agents_remember/application/knowledge_read.py:357-389 |
-| The storage layer this seam delegates to. | `select_recorded_scope`; `page_of_scope`; `anchor_resolver_for` | mcp/src/agents_remember/memory/knowledge/read.py:178-219; mcp/src/agents_remember/memory/knowledge/read.py:743-797; mcp/src/agents_remember/memory/knowledge/read_anchors.py:47-59 |
+| The storage layer this seam delegates to. | `select_recorded_scope`; `page_of_scope`; `anchor_resolver_for` | mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:762-816; mcp/src/agents_remember/memory/knowledge/read_anchors.py:47-59 |
 | The vocabulary this seam takes and returns. | `KnowledgeReadContext`; `KnowledgeReadRequest`; `KnowledgeReadResult`; `KnowledgeReadPage` | mcp/src/agents_remember/models/knowledge/read.py:216-263; mcp/src/agents_remember/models/knowledge/read.py:278-288; mcp/src/agents_remember/models/knowledge/read.py:485-511; mcp/src/agents_remember/models/knowledge/read.py:451-482 |
 | **The nodes that drive the task-free baseline read and the binding refusals through the public seam.** | "test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping" | mcp/tests/test_knowledge_read_boundaries.py:465-497; mcp/tests/test_knowledge_read_boundaries.py:725-762 |
 
+## 260915-KS-L8 The Comparison Joins As A Sixth Seam
+
+The route gained one module, `application/knowledge_diff.py`, and still no new authority. It is the **sixth**
+composition seam over the experimental knowledge substrate, beside the candidate write, the
+candidate-lifecycle/publication seam, the guarded merge, the portable export/import and the selective read,
+and its subject is a different composed operation again: **one comparison of two named knowledge snapshots
+and two named code trees, for one selected invariant or family.**
+
+**Four boundaries this seam owns, each because getting it wrong is a different kind of wrong:**
+
+- **The selection is R07's, run twice.** Each side goes through the one policy on **that side's own**
+  read-only connection; the whole of this module's contribution to the selection contract is that a side may
+  name its own exact revision (`seed_override`), which is what lets a before revision and an after revision
+  be addressed separately.
+- **A candidate change invalidates a continuation, because the binding says so.** The cursor binds a digest
+  over both declared snapshots, both resolved contexts, both code trees and both selectors, so a candidate
+  whose bytes changed has another `after` identity and is refused with `continuation_binding_mismatch`
+  rather than continued. **The invalidation is the binding, not a check someone has to remember to write.**
+- **A missing side refuses, and no `HEAD` is substituted.** An absent or unreadable database, or a side
+  naming a snapshot the file does not hold, is refused by name; nothing here reaches for a working tree, a
+  branch or `HEAD`, and the expansion's command names the two **requested** trees.
+- **Absence on one side is reported, not raised.** A side whose own selector named nothing recorded still
+  leaves the other side's union served, with that side's absence carried in `side_absences` — which is what
+  "the removed before-side realization remains in the diff" means at the seam. The operation refuses
+  outright only when **neither** side selected anything, and that refusal names the side that earned it.
+
+**The ordered sequence, and the two properties that make it safe.** Both files are opened read-only; **both
+sides are verified before either is selected** (namespace, schema generation, logical digest — three
+separate comparisons per side, with the schema check its own statement rather than a corollary of the
+digest), so a union can never be built from one verified snapshot and one file that turned out not to be the
+snapshot it declared. And the **request-level** cursor bindings — policy, selector digest, display filter —
+are decided **before** the comparison binding, so a caller who changed the question is told that rather than
+being sent to re-select a dataset they selected correctly. No cursor refusal returns a partial page.
+
+**`open_diff_side` is the constructor, and `diff_row_counts` is the measurement half.** A side can only be
+*resolved* from the identity the file actually holds, so a caller cannot hand-write the snapshot a side is
+verified against; and the row counts are taken through the same read-only handle, so "a refused comparison
+persisted nothing" is measured rather than asserted. The two database paths are separate arguments from the
+sides on purpose: **a side is an identity and a path is where the bytes currently are.**
+
+**The non-claim is the module's own docstring, in the form the requirement wrote it.** The comparison reports
+facts and comparisons of facts; it does not rank, score, approve, certify neutrality or decide that a change
+has no consequence, and **it has no field that could** — which the boundary module measures over the
+serialized response. A filtered or partial response declares its limits and cannot claim the complete
+semantic review it did not perform.
+
+The wiring boundary did **not** move: like its five siblings, this module has **no non-test importer in
+`mcp/src`**, and no MCP tool name is introduced here.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The seam's four entry points. | `diff_knowledge_scope`; `open_diff_side`; `git_tree_difference_probe`; `diff_row_counts` | mcp/src/agents_remember/application/knowledge_diff.py:199-253; mcp/src/agents_remember/application/knowledge_diff.py:128-159; mcp/src/agents_remember/application/knowledge_diff.py:162-196; mcp/src/agents_remember/application/knowledge_diff.py:826-841 |
+| **The ordered body: verify both sides before either selection, select each side with the one policy, compare, collect absences, refuse an empty union, display, page.** | `_select_and_compare`; `_select_side` | mcp/src/agents_remember/application/knowledge_diff.py:397-460; mcp/src/agents_remember/application/knowledge_diff.py:482-498 |
+| **Both sides verified before either is selected, and the three comparisons inside each.** | `_any_side_snapshot_refusal`; `_side_snapshot_refusal` | mcp/src/agents_remember/application/knowledge_diff.py:463-479; mcp/src/agents_remember/application/knowledge_diff.py:744-777 |
+| **The binding computed before either file is opened, and the per-side effective selector it digests.** | `_binding`; `_effective_selector` | mcp/src/agents_remember/application/knowledge_diff.py:310-327; mcp/src/agents_remember/application/knowledge_diff.py:330-333 |
+| **The cursor check order: policy, selector, filter, then the snapshot pair.** | `_cursor_mismatch` | mcp/src/agents_remember/application/knowledge_diff.py:709-741 |
+| **The page arithmetic: the comparison total on every page, the cumulative returned, and the display's own two numbers beside it.** | `_page` | mcp/src/agents_remember/application/knowledge_diff.py:501-545 |
+| The per-side absence vocabulary and the recorded-but-empty selection served rather than refused. | `_side_absences`; `_side_absence_refusal`; `_selector_is_recorded` | mcp/src/agents_remember/application/knowledge_diff.py:556-627 |
+| The four input classes a failed read is mapped onto. | `_reading_failure` | mcp/src/agents_remember/application/knowledge_diff.py:256-279 |
+| **The nodes that drive the real candidate write, the missing side, and the substituted-snapshot refusal through the public seam.** | "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"; "test_a_missing_side_refuses_and_substitutes_no_other_snapshot"; "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page" | mcp/tests/test_knowledge_diff_boundaries.py:325-363; mcp/tests/test_knowledge_diff_boundaries.py:303-322; mcp/tests/test_knowledge_diff_boundaries.py:438-475 |
+
 ## Update History
+
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the route's **sixth composition seam**, `application/knowledge_diff.py` — one comparison of two named knowledge snapshots and two named code trees — and the four boundaries it owns: **R07's selection run twice** with the per-side exact-revision address as the only addition to the selection contract; **the binding as the invalidation** (a candidate whose bytes moved presents another `after` identity and is refused rather than continued, so the invalidation is not a check someone has to remember to write); **a missing side refuses with no `HEAD` substituted**; and **one side's absence reported rather than raised**, with the operation refusing outright only when neither side selected anything. It records the two properties that make the ordered body safe (**both sides verified before either is selected**; the request-level cursor checks decided **before** the comparison binding, so a caller who changed the question is told that), the three separate snapshot comparisons per side, the page arithmetic that keeps the comparison total and the display's two numbers apart, the four typed failure classes the read maps, `open_diff_side` as the constructor that stops a caller hand-writing a side's identity, and `diff_row_counts` as the measurement half of the persisted-nothing property. It carries the module's own non-claim in the requirement's words — the comparison has **no field that could** rank, score, approve or decide neutrality, which the boundary module measures over the serialized response — and records that the wiring boundary did **not** move: like its five siblings the seam has **no non-test importer in `mcp/src`** and introduces no MCP tool name. Every storage-layer citation in the L7 section above was re-derived, because the L8 docstring insertion moved `read.py`'s anchors. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the route's **fifth composition seam**, `application/knowledge_read.py`, and the three boundaries it owns: the **read-only handle** that makes "a refused read persisted nothing" structural (with `read_row_counts` as the measurement half), the **task-free baseline read** that never fabricates a leaf, and the **cursor as a binding** whose request-level checks run before the file is opened while its manifest and position checks run where the selection exists — with no cursor refusal ever returning a partial page. The card records the ordered sequence and the three separate snapshot comparisons (namespace, schema generation, logical dataset) where the schema check is its own statement rather than a corollary of the digest, the two absence codes with the recorded-but-empty selection served rather than refused, and `open_read_context` as the constructor that stops a caller hand-writing the snapshot a read is verified against. It carries the seam's two non-claims in the module's own terms (every modelled failure is a typed refusal, while a caller passing a non-model object is a programming error at the call site; and a caller must be able to tell an absence from a malformed input) and records that the wiring boundary did **not** move — like its four siblings the seam has no non-test importer in `mcp/src`. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 

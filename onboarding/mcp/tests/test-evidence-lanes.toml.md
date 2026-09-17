@@ -5,17 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [Tests overview](overview.md)
 
-## 260915-KS-L7 Lane Rows (Declared) — **the current account, and the merged measurement the earlier accounts awaited**
+## 260915-KS-L8 Lane Rows (Declared) — **the current account**
+
+The KS-L8 change set adds **two** modules and their rows in the same change, and each lane is that
+module's behaviour-preserving classification:
+
+| Module | Lane | Row | Why that lane |
+| --- | --- | ---: | --- |
+| `mcp/tests/test_knowledge_diff_scope.py` | `unit-regression` | `:76` | 13 nodes; hermetic — temporary directories under `tmp_path`, two in-process APSW databases built through the public store operations (the candidate copied from the closed baseline and curated through the store), two local committed Git trees built by the fixture, no integration marker |
+| `mcp/tests/test_knowledge_diff_boundaries.py` | `integration` | `:159` | 15 nodes over the same real trees **driving the production Git probe** rather than a substitute, a real curated candidate database, a real write that moves the logical digest, and the serialized response |
+
+Their shared support module `mcp/tests/diff_scope_test_support.py` is **not** a lane row: it is a governed
+artifact (`shared-support` / `internal-canonical` / `integration` / `local-composition`, contract
+`knowledge-diff-cases`) in `mcp/tests/evidence-lifecycle.toml`, with exactly those two modules as its
+declared consumers — and it is also why `mcp/tests/read_scope_test_support.py`'s consumer list gained the
+same two paths in this change, because the diff fixture builds on the read fixture.
+
+### The merged measurement, taken on this leaf's frozen candidate
+
+**Measured from the manifest and the module population on disk, not derived by adding any earlier
+account:**
+
+| | measured on the frozen candidate |
+| --- | --- |
+| Declared lane entries | **243** |
+| `mcp/tests/test_*.py` modules on disk | **243** |
+| Declared-but-absent / present-but-undeclared | **0 / 0** |
+| Duplicate declarations | **0** |
+| `unit-regression` | **143**, rows `5-149` |
+| `public-contract` | **2**, rows `150-153` |
+| `integration` | **68**, rows `154-223` |
+| `architecture-fitness` | **17**, rows `224-242` |
+| `provider-conformance` | **13**, rows `243-257` |
+| `stress-durability` / `migration` | **0** / **0** (keys at `:258` and `:260`, both closed at `:261`) |
+
+Against the previous leaf: **241 / 241** after `KS-L7` (142 / 2 / 67 / 17 / 13) and **238 / 238** on the
+merged base `4eb2b199` (141 / 2 / 65 / 17 / 13), so this leaf's two modules are the whole difference. The
+insertions sort into the alphabetical knowledge run — the scope module into unit-regression and the
+boundaries module into integration — which is why they are rows `:76` and `:159` rather than adjacent.
+
+**The declared budget pair is unchanged by this leaf:** `unit_case_budget` is **1250** at
+`pyproject.toml:286` and `integration_case_budget` is **340** at `pyproject.toml:287`, and
+`git status --porcelain pyproject.toml` is **empty** — no dated entry, no comment edit, no value moved.
+The raised pair and its merged-line attribution (official 1014/1100 green, KS parent 1003/1100 green,
+merged 1138/1100 red *before any L7 line*) are recorded in the L7 section below and are **not re-opened
+here**: this leaf's populations fit under both ceilings (unit 1172, integration 319 measured by the final
+verification round against the frozen bytes), it consolidated nothing, and it skipped, xfailed,
+deselected or widened nothing.
+
+## 260915-KS-L7 Lane Rows (Declared) — **the previous account, superseded on the counts above**
 
 The KS-L7 change set adds **three** modules and their rows in the same change, and the lane each takes is
 its behaviour-preserving classification:
@@ -93,7 +141,7 @@ collection error. Classification only — never execution or acceptance evidence
 
 **Population measured on the official line at the `260831-LOCR-L39` hardening tip (the incoming account).** Classifies the retained test-shaped modules into explicit evidence categories. **Current population measured at the `260831-LOCR-L39` hardening tip (code base `a5f5380b`): 224 modules on disk and 224 manifest entries — 130 unit-regression (key `:5`, rows 6-135, next key `:137`), 2 public-contract (key `:137`, rows 138-139), 62 integration (key `:141`, rows 142-203), 17 architecture-fitness (key `:205`, rows 206-222) and 13 provider-conformance (key `:224`, rows 225-237); stress-durability (`:239`) and migration (`:241`) are empty. The unit-regression bracket is `:5-135`, the integration bracket is `:141-203`.** The L05 measurement and its method are in the `## 260831-LOCR-L04 Lane Row (Declared)` and `## 260831-LOCR-L05 Lane Row (Declared)` sections below; the `## 260831-LOCR-L06 Lane Row (Declared)` section carries the immediately preceding 215-module measurement (pair code base `e9678c56`), the `## 260831-LOCR-L17 Lane Row (Declared)` section the 214-module one before that and the `## 260831-LOCR-L18 Lane Row (Declared)` section the 213-module one before that. Every count and bracket in the two paragraphs below is an earlier measurement — L23 measured 208 modules, and sibling unit-lane insertions from L01 (`:97`) and L10 then moved the later file lines down; L27's own integration row at `:183` accounts for the rest; those two declared sections are the as-of records that carry their own evidence. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member.
 
-**These two accounts are each an as-of record of the state they were measured against, and neither is the merged tree's count.** The merged counts were measured by this leaf's curator and are recorded in the `260915-KS-L7 Lane Rows (Declared)` section at the top of this card — 241 declared entries against 241 modules on disk — so the placeholder this sentence used to carry is resolved rather than still pending. The two accounts below are kept, not deleted, under the memory doctrine's as-of rule.
+**These two accounts are each an as-of record of the state they were measured against, and neither is the merged tree's count.** The merged counts were measured by this branch's curators and are recorded in the `260915-KS-L8 Lane Rows (Declared)` section at the top of this card — **243 declared entries against 243 modules on disk** on this leaf's frozen candidate, after `KS-L7`'s measured 241/241 — so the placeholder this sentence used to carry is resolved rather than still pending. The two accounts below are kept, not deleted, under the memory doctrine's as-of rule.
 `test_closeout_projection_source_classification.py` (entry row 137) — it composes the real
 `QueueFixture` over temporary Git repositories and drives the production graph admission and
 projection path through `graph_context` and `capture_projection_source`, so that is its
@@ -704,6 +752,7 @@ No separate cross-repository authority is established by this file.
 
 ## Update History
 
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **recorded this leaf's two lane rows and re-measured the whole manifest rather than carrying L7's numbers.** The rows are `test_knowledge_diff_scope.py` (unit-regression, `:76`, 13 hermetic nodes) and `test_knowledge_diff_boundaries.py` (integration, `:159`, 15 nodes that drive the **production Git probe** over two real committed trees and a real curated candidate database) — each the module's behaviour-preserving classification, not a budget consequence. **The measured account: 243 declared entries against 243 modules on disk**, closed in both directions, 0 duplicates, with unit-regression 143 (`5-149`), public-contract 2 (`150-153`), integration 68 (`154-223`), architecture-fitness 17 (`224-242`), provider-conformance 13 (`243-257`) and the two empty lanes; against 241/241 after L7 and 238/238 on the merged base, so this leaf's two modules are the whole difference. The shared support module is named as a *governed artifact* (`knowledge-diff-cases`) rather than a lane row, and the card records that **the read-scope artifact's consumer list gained the same two paths** in this change. **The budget pair did not move**: 1250 / 340 with `pyproject.toml` clean, and the sizing question and its merged-line attribution are left exactly where L7 recorded them. The sentence that said the merged counts were pending now points at this leaf's measured account, and the earlier accounts are kept as as-of records. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **recorded this leaf's three lane rows and, as the closing curator, produced the merged measurement the two labelled accounts were waiting for.** The rows are `test_knowledge_read_scope.py` (unit-regression, `:75`), `test_knowledge_read_boundaries.py` (integration, `:157`) and `test_knowledge_read_paths.py` (integration, `:158`), with the split explained as what it is — the 1 200-line hard limit was paid, not waived — and the shared support module named as a *governed artifact* rather than a lane row. **The merged counts are measured, not derived:** 241 declared entries against 241 modules on disk, with unit-regression 142 (`6-148`), public-contract 2 (`150-152`), integration 67 (`154-221`), architecture-fitness 17 (`223-240`), provider-conformance 13 (`242-255`) and the two empty lanes, and the merged base's own 238/238 recorded beside them so the difference is attributable rather than merged. The sentence that said the merged counts were *pending* now says they were measured and where they are recorded, and the earlier accounts are kept as as-of records under the memory doctrine. The card also carries the raised budget pair **1250 / 340** with the merged-line attribution stated as measured (official 1014/1100 green, KS parent 1003/1100 green, merged 1138/1100 red *before any L7 line*), the note that the raise is headroom rather than a target, and this leaf's own populations (unit 1138 → 1159, integration 279 → 304). Verification metadata remains empty until closeout stamps the code commit.
 
 - **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T15:02+02:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00.

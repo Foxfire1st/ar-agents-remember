@@ -5,43 +5,46 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288` |
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
+| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
 
-Working candidate verification: source inspected at 2026-09-16T23:50 +02:00 against the uncommitted KS-L7 candidate.
+Working candidate verification: source inspected at 2026-09-17T03:15 +02:00 against the uncommitted KS-L8 candidate.
 The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
-exact consumers. **The catalog now contains 51 artifact records and ten executable replacement contracts**,
-counted on this leaf's frozen candidate by counting the blocks (`51 [[artifact]]` and `10 [[contract]]`);
-those declarations are not records that a test ran. The three earlier counts are kept because they are
-different states of the same merged line, not competing measurements: **48 / 9** at the pre-sync `KS-L6`
-base, **50 / 9** on the merged base `4eb2b199` (the incoming official line's two extra artifacts), and
-**51 / 10** after `KS-L7` added its one contract/artifact pair.
+exact consumers. **The catalog now contains 52 artifact records and eleven executable replacement contracts**,
+counted on this leaf's frozen candidate by counting the blocks (`52 [[artifact]]` and `11 [[contract]]`), with the
+file's own sha256 re-measured as
+`4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747`; those declarations are not records that a test ran.
+The four earlier counts are kept because they are different states of the same merged line, not competing
+measurements: **48 / 9** at the pre-sync `KS-L6` base, **50 / 9** on the merged base `4eb2b199` (the incoming
+official line's two extra artifacts), **51 / 10** after `KS-L7` added its one contract/artifact pair, and
+**52 / 11** after `KS-L8` added its own.
 
-**260915-KS-L7 added the tenth contract and the 51st artifact, and re-pinned the catalog digest in the same
-change.** The selective read's shared fixture `mcp/tests/read_scope_test_support.py` is a *governed artifact*
-(`shared-support` / `internal-canonical` / `unit-regression` / `in-process` / `cadence = "affected"` /
-`lifetime = "permanent"`), registered at `:1203-1221` under the new contract `knowledge-read-scope-cases` at
-`:1198-1201`, whose evidence node is
-`mcp/tests/test_knowledge_read_scope.py::test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family`.
-Its declared consumers are exactly the three read test modules — and **fix round 2 then added
-`mcp/tests/test_knowledge_read_paths.py` to that list** after splitting the over-limit integration module, which
-is a consumer change rather than a new artifact: the counts stay ten and fifty-one. The catalog digest pinned in
-`mcp/tests/test_dependency_ownership_ast_helpers.py` moved with it
-(`293a187f…` → `461121ca16567ab056938b710b19bddb98867581dd4fe3cf7ee2645111d54369`). **A new test module costs
-three registry touch-points, and all three were paid**: its row in `mcp/tests/test-evidence-lanes.toml` (the
-path module's row at `:158`), its path in this artifact's `consumers` list, and the catalog digest re-pin. Miss
-any one and collection fails for the whole catalog rather than for the module.
+**260915-KS-L8 added the eleventh contract and the 52nd artifact, extended one existing consumer list, and
+re-pinned the catalog digest in the same change.** The comparison's shared fixture
+`mcp/tests/diff_scope_test_support.py` is a *governed artifact* (`shared-support` / `internal-canonical` /
+**`integration`** / `local-composition` / `cadence = "affected"` / `lifetime = "permanent"`), registered at
+`:1208-1225` under the new contract `knowledge-diff-cases` at `:1198-1201`, whose evidence node is
+`mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union`
+— the node that owns the packet's first non-conforming example, chosen deliberately rather than for convenience.
+Its declared consumers are exactly the two diff modules. **`mcp/tests/read_scope_test_support.py` also gained two
+consumer rows** (`:1242-1243`) because the diff fixture builds on it and the comparison's cases import it — a
+**consumer change rather than a new artifact**, so that row's own `introduced_by` stays `260915-KS-L7`. The catalog
+digest pinned in `mcp/tests/test_dependency_ownership_ast_helpers.py` moved with it
+(`461121ca…` → `4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747`). **A new test module costs
+three registry touch-points, and this leaf paid all three for each of its two modules**: its lane row in
+`mcp/tests/test-evidence-lanes.toml` (`:76` and `:159`), its path in the relevant artifact's `consumers` list, and
+the catalog digest re-pin. Miss any one and collection fails for the whole catalog rather than for the module.
 
 ## Code Commentary
 
@@ -253,6 +256,7 @@ No additional configured external or sibling-repository evidence is claimed.
 
 ## Update History
 
+- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **measured the catalog and recorded the one contract/artifact pair this leaf added, the one consumer list it extended, and the re-pin that came with them.** Counted on the frozen candidate: **52 artifact records and eleven contracts** (`52 [[artifact]]`, `11 [[contract]]`), with the file's sha256 re-measured as `4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747` — the exact value re-pinned at `mcp/tests/test_dependency_ownership_ast_helpers.py:46`. Against **51 / 10** after L7, **50 / 9** on the merged base `4eb2b199` and **48 / 9** at the pre-sync `KS-L6` base: four states of one merged line, recorded as such rather than as competing counts. The new rows are the contract `knowledge-diff-cases` (`:1198-1201`) and its artifact `mcp/tests/diff_scope_test_support.py` (`:1208-1225`, `integration` / `local-composition`), declared with an exact two-consumer list, and its evidence node is the node that owns the packet's first non-conforming example rather than the first node alphabetically. The **`read_scope_test_support.py` row gained two consumer entries** (`:1242-1243`) because the diff fixture builds on the read fixture — a consumer change, so that artifact's `introduced_by` stays `260915-KS-L7` — and the card keeps the three-touch-point obligation a new test module carries, now paid twice over (lane rows `:76` and `:159`). Every earlier count in this card is retained as the as-of record of the state it measured. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **measured the catalog and recorded the one contract/artifact pair this leaf added, together with the three-way registry obligation that pair carries.** Counted on the frozen candidate: **51 artifact records and ten contracts** (`51 [[artifact]]`, `10 [[contract]]`), against **50 / 9** on the merged base `4eb2b199` and **48 / 9** at the pre-sync `KS-L6` base — three states of one merged line, recorded as such rather than as competing counts, because the two registry sidecars and several route overviews had carried the merged numbers as pending. The new rows are the contract `knowledge-read-scope-cases` (`:1198-1201`) and its artifact `mcp/tests/read_scope_test_support.py` (`:1203-1221`), with an exactly-declared three-consumer list that fix round 2 extended by one module after splitting the over-limit integration module — a **consumer change, not a new artifact**, so the counts stay ten and fifty-one. The card also states the obligation a new test module carries and this leaf paid in full: its lane row, its path in this artifact's `consumers`, and the catalog digest re-pin (`293a187f…` → `461121ca…`) in `mcp/tests/test_dependency_ownership_ast_helpers.py`; miss any one and the whole catalog refuses rather than the module failing. Every earlier count in this card is retained as the as-of record of the state it measured. Verification metadata remains empty until closeout stamps the code commit.
 
 - **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T01:02; `lastVerifiedCommitHash` `88784fb26aab810c8a284f1e73e6f9bd727a5963`; `lastVerifiedCommitDate` 2026-09-16T08:31:51+02:00.
