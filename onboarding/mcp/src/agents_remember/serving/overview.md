@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -969,6 +969,8 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): **No route impact:** This route's governed sources under `mcp/src/agents_remember/serving/` are byte-identical to the leaf's code base `c22beb0121946c0637e113ec4cf29da29fd4aec7` (`git diff` over that directory is empty), so no source this overview documents moved in this leaf. The only edits this task made to the document were to its own Update History bodies, restored verbatim from the memory baseline `4b4e4271` after a repair pass had deleted them; no route prose, no invariant and no ownership statement was rewritten, and every citation still resolves inside the range it names.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `_app_lifespan.py` +63/−2 with the new `terminal_observer_health.py`): the startup
   contract changed again, so the body was corrected rather than annotated. The lifespan order this
@@ -988,6 +990,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   Verification metadata remains closeout-owned; no stamp advanced.
 
 
+
 - 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted change set on `ar/260831-locr-l18`,
   base `d868486c`, `_app_lifespan.py` +26/−0): the route's startup contract changed, so this
   overview's current-intent section was extended in the body rather than annotated. The route now
@@ -1005,19 +1008,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   contract, and the sweeper's own clocks are unchanged. Verification metadata remains closeout-owned;
   no stamp advanced.
 
-- 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
-  base `67b21aeb`): the route's terminal-observation ownership changed, so this overview gained a
-  current-intent section rather than a history-only note. `_app_lifespan.py::_terminal_observation_loop`
-  is now the serving lifespan's one steady-state caller of the existing
-  `TerminalCatalogLivenessSweeper.refresh`, on a completion-relative non-overlapping attempt cadence
-  that needs no HTTP request, no open dashboard, no model turn, and no enabled agent notifier. The
-  ARSPAWN-L5 paragraph was corrected rather than deleted: its account of the notifier refreshing
-  liveness before each sweep remains true for the notifier path, and it now names the serving
-  lifespan as the steady-state owner so it no longer reads as the ownership contract. The GET route,
-  the notifier's inline refresh, and both sweeper clocks are unchanged; whether the notifier's inline
-  refresh should remain a second recurring caller is not decided here. Verification metadata remains
-  closeout-owned; no stamp advanced.
-- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: extended the current structural seat and routing contract with the state-signal durable order and its recovery identity. The row is persisted before the emitted marker, which is now stamped from `OwnerSignalOptions.after_persist` inside `_post_owner_signal` and strictly before any delivery attempt; delivery eligibility is re-checked at the shared action by `_state_signal_awaits_marker`, which `_drain_boundary` inherits, so predicate order is not the protection. Coalescing for `state-signal` rows is the exact `subjectAgentId` plus the normalized ask, while every other kind keeps the structural task-document + role key. Canonical seat selection, boundary-drain admission, and the shared delivery path itself are unchanged.
+
 - 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
   base `67b21aeb`): the route account changed, so this overview's served-surface list was corrected
   in the body rather than annotated. The `GET /api/terminal/sessions` clause said the route returned
@@ -1032,6 +1023,21 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   direct observations. The sweeper's own card carries the matching correction to its caller account.
   Verification metadata remains closeout-owned; no stamp advanced.
 
+
+- 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
+  base `67b21aeb`): the route's terminal-observation ownership changed, so this overview gained a
+  current-intent section rather than a history-only note. `_app_lifespan.py::_terminal_observation_loop`
+  is now the serving lifespan's one steady-state caller of the existing
+  `TerminalCatalogLivenessSweeper.refresh`, on a completion-relative non-overlapping attempt cadence
+  that needs no HTTP request, no open dashboard, no model turn, and no enabled agent notifier. The
+  ARSPAWN-L5 paragraph was corrected rather than deleted: its account of the notifier refreshing
+  liveness before each sweep remains true for the notifier path, and it now names the serving
+  lifespan as the steady-state owner so it no longer reads as the ownership contract. The GET route,
+  the notifier's inline refresh, and both sweeper clocks are unchanged; whether the notifier's inline
+  refresh should remain a second recurring caller is not decided here. Verification metadata remains
+  closeout-owned; no stamp advanced.
+
+- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: extended the current structural seat and routing contract with the state-signal durable order and its recovery identity. The row is persisted before the emitted marker, which is now stamped from `OwnerSignalOptions.after_persist` inside `_post_owner_signal` and strictly before any delivery attempt; delivery eligibility is re-checked at the shared action by `_state_signal_awaits_marker`, which `_drain_boundary` inherits, so predicate order is not the protection. Coalescing for `state-signal` rows is the exact `subjectAgentId` plus the normalized ask, while every other kind keeps the structural task-document + role key. Canonical seat selection, boundary-drain admission, and the shared delivery path itself are unchanged.
 - 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.
 
@@ -1043,47 +1049,50 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   verification metadata remains pinned until governed closeout stamps the code commit.
 
 
+
 - 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 
 - 2026-09-06T00:28+02:00 — Updated watcher naming ownership to kernel.file_lock, retained filtering and pacing behavior, restored the nearest MCP overview backlink, and made hot-path routing concise without dropping the retained operating account.
 
-
-
-
 - 2026-09-05T07:27+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reviewed the requirement routes, corrected current conversation/initialize ownership and repaired a literal truncated paragraph while retaining recoverable historical provenance. Verification records source review, not execution or acceptance.
 - 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
 
 - 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the task-local requirement routes (`/api/requirements/{list,read}`), the 61-to-63 route growth, and the `requirements.py` module in this route. File-level detail lives in the serving sidecars and the new requirement cards.
 
-
 - 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded exact operation/request-id
   projection on parent Codex completion and deterministic queued-row convergence. Verification
   remains closeout-owned.
+
 
 - 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 recorded connected-`dispatch_agent` role startup, bounded one-call brief convergence, headless liveness refresh, and honest socket-state diagnostics. Verification remains closeout-owned.
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: recorded `models/core.py` as the shared
   serving-build wire authority. Verification remains closeout-owned.
 
+
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: recorded the one process-scoped,
   content-addressed build identity shared by dashboard and MCP surfaces, plus the production
   self-update versus disposable exact-candidate acceptance boundary. Verification remains
   closeout-owned.
 
+
 - 2026-08-28T14:15+02:00 — No parent-route content impact: the landed candidate changes only the
   Claude mapper inside the governed conversation/projectors child route, whose own overview carries
   the interaction/mutation-diff semantics. Stamped the serving route to committed provenance.
+
 
 - 2026-08-26T16:03+02:00 — Recorded dispatch receipt ownership in its dedicated collaborator and removed a pre-existing
   tool-output truncation banner. The atomic catalog persistence boundary remains singular;
   verification remains closeout-owned.
 
 
+
 - 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 bounded seat serialization, durable brief evidence, and
   delivery-time replacement semantics onto the IAS serving overview. Verification remains
   closeout-owned.
+
 
 - 2026-08-26T10:44:52+02:00 — Documented atomic task-projection refresh and heartbeat retry after transient failure; runtime lifecycle-projection import relocation has no additional route impact.
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented task-first execution registration, projection-only closeout serving, and discarded-subtask history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
@@ -1092,12 +1101,11 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: projection/snapshot import paths updated to the moved queue packages. Verified at code commit e5cb139f.
 
-
-
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents readers. Verified at code commit b7f2c8e2.
 
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: served task docs project sprint
   `seats` + `masterRef` rows. Verified at code commit 8071a644.
+
 
 
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
@@ -1105,11 +1113,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task snapshot serving now exposes the
   execution-topology facts carried by TaskDocNode; HTTP/catalog authority remains otherwise unchanged.
 
+
 - 2026-08-14T12:31:43+02:00 — R44 curator: recorded the metrics worker drain that closes the
   lifespan-shutdown write race. Verification remains closeout-owned.
+
 - 2026-08-14T06:25+02:00 — No route impact: L23's serving-side delta is confined to the projection
   child route attaching the latest task-addressed durable operation; serving ownership and public
   transport composition remain unchanged. Verification stays closeout-owned.
+
 - 2026-08-12T20:20+02:00 — L23 curator: documented serving-side pre-host lineage admission and safe projector cancellation; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary. Verification provenance remains closeout-owned.
@@ -1118,13 +1129,16 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   Desktop initialize grammar, exact Agents Remember client identity, and unchanged primary
   host-version/thread agreement.
 
+
 - 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the notifier's
   protocol-typed hierarchy seam; structural routing behavior and production topology authority are
   unchanged.
 
+
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled serving with plane-owned occupant
   launch/delivery and structural task-document projections; conversation and projection child
   overviews own the route-specific details.
+
 
 - 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 repairs
   `terminal_liveness.py`'s type-only `HarnessId` import to the canonical
@@ -1132,10 +1146,12 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   route responsibilities are unchanged. Verification metadata remains pinned until closeout
   stamps the L21 code commit.
 
+
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the serving/ route body for the current
   staged delivery, terminal-catalog, notifier, projection, and conversation seams; the four
   renamed/repaired sidecar paths are included in this review. Verification metadata remains pinned
   until closeout.
+
 
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "THE LIMIT OF THE
   GUARANTEE" said *"The dashboard's own tests enforce `fixture ⊆ mirror`; `mirror ⊆ server` is
@@ -1152,6 +1168,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   sides in step**, with the caveat that no search of this tree can exclude a generator kept outside
   it. Same correction applied to the 09:10 entry's restatement below. No route-model claim,
   citation, or verification field changed.
+
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: added the wire-contract route impact for the two
   new modules (`response_contract.py`, `served_state.py`) and the seven changed files they touch,
@@ -1182,6 +1199,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   `harness_submission_authority.py` L452-L489 → L528-L565 (`provenance` — the old range held an
   unrelated operator-resolution branch, pre-existing). Verification metadata pinned until closeout
   stamps the L4 commit.
+
 - 2026-07-31T21:02+02:00 — 260731-EFA-L3 curator: corrected the `build_info.py` Route Model bullet,
   which described the build stamp's honesty rules without saying which repository the stamp reads.
   `_git_short_head` and `_git_worktree_dirty` no longer own local `subprocess.run` calls; both now
@@ -1191,6 +1209,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   passed explicitly against the runner's `GIT_LOCAL_TIMEOUT_SECONDS = 300`. `ServingBuild`'s fields,
   the tri-state `dirty` fail-open rule and the version-only fallback are unchanged, as is every
   other serving surface. Verification metadata pinned until closeout stamps the L3 commit.
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 4 cross-file line citations. The codex
   adapter row now cites each thing it names: `_ThreadState` L99-L135 (per-thread demux), `interrupt`
   L375-L422 (exact-active-turn `turn/interrupt` with the `_last_interrupt` replay-once pair),
@@ -1206,6 +1225,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   is the identical-state silence), and cancellation cleanup. All ranges read back; no claim text
   changed.
 
+
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: added the route-impact section naming every parameter object introduced in this route, the three new modules (`cadence.py`, `hosted_session_runtime.py`, `conversation/active/projector/wiring.py`), the six deletions made at the cause, and the liveness-config relocation; corrected the `create_app` signature in the Route Model. Verification metadata stays pinned until closeout.
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: the cockpit bundle and its fingerprint sidecar
   left version control and are now built at release, so a source checkout legitimately serves no
@@ -1215,14 +1235,17 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   "absent means legacy bundle" to "absent means no build happened here". Verification metadata
   remains pre-commit.
 
+
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: gave the Claude subprocess transport's restart contract
   a route-level home — a completed stop releases process and stderr-task ownership so the floor-gated
   re-launch can reuse the object, while a live start still refuses — and named the control-readiness
   and model/effort loss that a retained process caused.
+
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the transport/source/cache/output
   boundary split, runtime-probed history reader, typed IPC, selected-child active route, necessary
   capacity bounds, parent/sibling continuity, and dormant library follow-up. Refreshed the active
   hot-path route count. Verification metadata remains pinned while uncommitted.
+
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the multiplexing remediation in the
   route-impact section — per-thread pending-interaction maps (concurrency is normal traffic; the
@@ -1234,12 +1257,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   L502-L542; L549-L601; L1141-L1162) and codex-adapter (L356-L403; L681-L847; L1056-L1122)
   reference rows against the post-remediation source. Aggregate route-index generation remains
   manager-owned; verification metadata stays pinned (remediation uncommitted).
+
 - 2026-07-26T15:52 — 260718-CHATS-L7 curator: recorded the sub-agent control-substrate changes
   (evidence `thread_id` demux, plural pendings end-to-end, parent-only authority respond guard,
   codex per-thread registry, claude floor-gated sub-agent text flag) and re-anchored the L0E/L2E
   substrate citation ranges the L7 insertions shifted (verified against the current worktree
   source). Aggregate route-index generation remains manager-owned; verification metadata stays
   pinned (L7 uncommitted).
+
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional fixes across
@@ -1255,6 +1280,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   bounded; dormant projector idle-release; `release_session` unwired — F1 accepted-bounding), R6 the
   honest control-socket exit note + the bounded `providers/metrics.py` docker-ps timeout, and the
   durable `dashboard/e2e-chats/` opt-in suite (R7). Verification stays pinned until L5F closeout.
+
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: extended the `terminal_liveness.py` bullet with
   the H1/F2 hosted-interaction synchronizer quarantine — `_observe_control_snapshot` contains a
   poisoned `on_control_snapshot` failure fail-loud on its own row instead of aborting the whole
@@ -1265,6 +1291,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   conversation slice, whose detail is routed to `conversation/overview.md` and its child governors,
   leaving this route's conversation paragraph accurate. Verification metadata stays pinned until L5
   closeout stamps the candidate commit.
+
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: added the "260718-CHATS-L3 implements the control
   child" paragraph to the structured-conversation contract section — the seventeen control routes
   (interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments, read-only
@@ -1273,12 +1300,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   behavior-empty child routers" to the now-implemented reality (active L1, library L2, control L3).
   The substrate contracts, hot paths, and route model are unchanged. Verification metadata stays
   pinned until L3 closeout stamps the candidate commit.
+
 - 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: No route impact: the L3E clip-envelope
   terminal-identity preservation is a file-level additive refinement of `clip_evidence_payload`
   (documented in the `harness_control_models.py` sidecar); the route overview's L0E "32 KiB clip
   with a visible marker" description and the L2E content-less `message_end` note both remain
   accurate and complete for the clip semantics this route describes. Verification metadata remains
   pinned until closeout stamps the candidate commit.
+
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive native control-plane
   substrate — the structural-sub-protocol interrupt write (bridge epoch guard, codex exact-turn,
   pi expected-operation guard, replay-once, claude fail-closed, settlement untouched), the paged
@@ -1286,12 +1315,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   asset channel with resolve-and-verify spool confinement and native codex/pi construction, and
   the once-only withdrawal-recovery payload — plus a hot-path entry and a Current-L2E reference
   section. Verification metadata remains pinned until closeout stamps the candidate commit.
+
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   library paragraph/hot-path/history with the L1 active-serving content after the master memory
   branch advanced; both implemented slices are documented under the L9/L0 contract section with
   detail routed to `conversation/overview.md` and the `conversation/active/`,
   `conversation/projectors/`, `conversation/library/` governors. Verification metadata remains
   pinned until L1 closeout stamps the candidate commit.
+
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the implemented active
   conversation serving under `serving/conversation/active/` and the per-harness mappers under
   `serving/conversation/projectors/` — the two authorized production routes, signed cursor
@@ -1301,6 +1332,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   and L9 contract; detail routed to `conversation/overview.md` and the new
   `conversation/active/overview.md` + `conversation/projectors/overview.md`. Verification
   metadata remains pinned until closeout stamps the candidate commit.
+
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the implemented native
   conversation library under `serving/conversation/library/` — authorized list/read routes,
   live capability gates, the per-app signed cursor/key authority, narrow-only scope, the
@@ -1308,89 +1340,111 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   service with honest retirement — consumed from the untouched L0 composition and L9 contract;
   detail routed to `conversation/overview.md` and the new `conversation/library/overview.md`.
   Verification metadata remains pinned until closeout stamps the candidate commit.
+
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive native evidence and
   resume substrate — reserved-key diversion into the bounded bridge evidence deque with byte-
   identical projections, the three epoch-scoped additive IPC reads across two disjoint coordinate
   domains, per-harness stop-dropping forwarding and codex/pi native pages (claude honestly
   fail-closed), the sole-path submission-provenance batch, and the codex-only resume launch
   channel. Verification metadata remains pinned until closeout stamps the candidate commit.
+
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the conversation runtime
   composition repair — one immutable app-scoped `ConversationRuntime` installed once through the
   existing harness-control registration, the server-resolved local-operator authorization ruling,
   and the two request dependencies that keep child leaves out of the shared composition files.
   Verification metadata remains pinned until closeout stamps the candidate commit.
+
 - 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: refreshed the serving route for one atomic
   projector subscription/publication owner, publish-before-notify ordering, one full failed-prime
   recovery snapshot with identical-state silence, ordinary later deltas, and explicit iterator/
   subscriber cleanup. Root and `mcp/` ancestors were inspected and remain accurate at their
   public-surface granularity. Verification metadata remains pinned until closeout stamps the
   candidate commit.
+
 - 2026-07-18T12:43+02:00 — FEUI-L9R: added packaged-client identity, HTML revalidation, narrow
   pre-session discovery, record-safe raw cursor semantics, and owned tmux-client environment.
   Verification metadata remains pinned pending candidate closeout.
+
 
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the strict normalized
   structured-conversation roof, separate active/library read ports and cursor purposes, three
   behavior-empty owned child routers, single harness-control registration seam, and the rule that
   helper/fixture observations cannot promote capabilities. Verification remains pinned to the
   last committed source until closeout stamps the candidate.
+
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: established the sole
   `HarnessSubmissionAuthority` current contract; documented epoch/full-ref identity, atomic
   withdrawal-vs-dispatch, event-before-publication completion, early-terminal dominance, response
   bypass, safe-retry certificate, raw-free status, bounded retention, and dispatch-now native
   adapters. Marked the former queue facade and ACPUI queue semantics historical.
+
 - 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: recorded discovery-only Claude MCP-selector
   replacement across the accepted argv grammar, byte-preserved normal startup, the live three-harness
   acceptance asymmetries, dynamic evidence boundary, and the visible non-leaking startup-failed stop
   residual. Verification metadata remains pinned until closeout stamps the L5 code commit.
+
 - 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the daemon advertise/launch/set/
   submit/reconcile boundary, bounded install/auth cache and failed-refresh quarantine, exact-session
   first-byte ambiguity and request-id idempotency, raw-free public serialization, liveness-first
   status ordering, and cross-process live-reopen truth with fresh dead replacement. Preserved
   settings-owned role spawn and the durable inbox/brief bus. Verification metadata remains pinned
   until closeout stamps the L4 code commit.
+
 - 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: documented the normalized same-session set
   graph, exact `SetResult` truth table, shared queue ordering and cancellation reclamation, Claude
   exact correlated replay-plus-terminal evidence with the live Fable correction, Codex ordered
   desired/pending/effective fresh-turn behavior, Pi bounded coherent error/clamp readback, and the
   transitive no-paste boundary. Preserved role-based spawn and durable-bus ownership. Verification
   metadata remains pinned until closeout stamps the L3 code commit.
+
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the typed settings-resolved launch
   path, pre-discovery owned-selector refusal, token-free dynamic validation, Claude/Codex/Pi native
   launch channels and asymmetric acceptance evidence, persistent exact launch failures, roleless
   Codex temporal default, and retirement of static/paste native knob mapping. Final audit removed
   a duplicate capability/adapter route inventory so the current contract has one governing home.
+
 - 2026-07-15T20:04+02:00 — 260714-ACPUI-L1 curator: documented the normalized own-adapter
   capability port, dynamic token-free Claude/Codex/Pi catalog paths, model-gated effort, cached
   running advertise, and transient prompt-free discovery. Verification metadata remains pinned
   until closeout stamps the L1 code commit.
+
 - 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: documented the narrow IPC peer-disconnect reply/close
   boundary and delayed-reply bridge reconciliation result.
+
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned Codex null-requestId
   correlation, same-row pending completion, loud failures, and replacement-only queued state.
+
 - 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized obsolete exact-version
   language in the serving route model and made structured consumed capabilities normative.
+
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the serving route for structured capability
   negotiation and the complete reload boundary; recorded R10 as deferred.
+
 - 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled the serving route's normative hosted authority to protocol
   snapshots, inbox-rooted delivery, explicit consume acknowledgement, and diagnostic-only panes/logs.
+
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted cutover, bridge semantics, legacy unsupported,
   dashboard/package parity, R13 inbox-rooting, R14 explicit consume, and diagnostic-only pane signals.
+
 - 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: documented the unregistered, exact Claude Code
   2.1.207 stream-json adapter. Readiness is structured initialize/system-init only; replay acceptance
   is distinct from terminal completion; and disconnect reconciliation never resends. The pinned live
   smoke uses the local `/cost` command. API-429 terminal frames remain failed and retain only safe
   status metadata, never result text or credentials. Verification remains pinned until closeout.
+
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added the stable Codex app-server route model,
   exact `0.144.3` protocol pin, protocol-only reasoning effort, structured interaction and
   reconnect boundaries, and explicit no-registration/no-cutover scope. Verification remains pinned
   until closeout stamps the leaf commit.
+
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: documented the unregistered pinned Pi RPC
   protocol/process/event/adapter chain, strict framing, settlement, UI, and cursor-reconciliation
   boundaries. Verification metadata remains pinned until closeout stamps the L4 code commit.
+
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: added the normalized control contract,
   one-adapter bridge, bounded shared queue, private IPC, transcript/draft surface, unsupported
   adapter boundary, and deliberate no-production-cutover scope to the serving route.
+
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3 route impact (change-driven projection pacing): route
   gains `change_watcher.py` (derived watch roots + input-event filter + `ChangePacer` +
   `ProjectionInputWatcher` on the new `watchfiles>=1.1,<2` core dep); `projector.py`'s
@@ -1405,10 +1459,12 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   adopted hardenings (inbox-lock filter, retryable root derivation). Updated the Hot Path Summary,
   the `app.py`/`daemon.py`/`projector.py` Route Model bullets, and added the `change_watcher.py`
   bullet + pacing invariant. Verification metadata pinned until closeout stamps the PTS-L3 commit.
+
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the serving route for the new
   inbox-reclamation policy, one-catalog-read/one-snapshot boundedness, same-sweep compaction before
   redelivery, body-free aggregate telemetry, no-op silence, 5-second lock-hold characteristics,
   and F3-F6 non-blocking reviewer residuals. Verification metadata remains pinned until closeout.
+
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: serving lifecycle wiring starts and cancels the landing refresher outside the projection tick and preserves host shutdown after refresher failure.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
@@ -1419,20 +1475,24 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   regression. Required/optional/legacy JSON semantics and the serving route's ownership are
   unchanged; the work is a strict-CRAP quality decomposition within the existing catalog module.
 
+
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 serving route impact: added the seat-binding module,
   pair catalog/open/attach/retire semantics, binding-first supervisor/landing behavior, explicit
   role-required attach, and sweep-clock delivery persistence. Verification metadata remains pinned
   until closeout stamps L17.
+
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 serving route impact: replaced pane-rendering acceptance
   with bound harness-log evidence, added calibrated duplicate-safe recovery and catalog provenance,
   explicit Codex argv, replacement-leaf support, and one-row supervisor redelivery. Verification
   metadata remains pinned until closeout stamps the eventual L15 code commit.
 
+
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: added live virtual-cursor river
   compaction, the on-demand task-body endpoint, chain-aware/current-manager supervisor behavior, and
   one-rung-per-row-per-sweep enforcement; recorded the unbound-worker S1 follow-up. Verification
   metadata remains pinned until closeout stamps the eventual L13 code commit.
+
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): route gained `landing.py`,
@@ -1442,12 +1502,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   Verification metadata remains pinned until closeout stamps the HFX2-L11 commit; route index was not
   refreshed in this worker seat because the brief forbids route-index tools.
 
+
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: supervisor redelivery now passes the
   configured/shared 900-second floor through delivery snapshots; pane/seat-liveness signal emission
   checks persisted cooldown state before posting repeated owner inbox rows; `pane-signal: mid-turn`
   is skipped as busy-state noise; and `app.py` wires the new cooldown store/settings into
   `AgentNotifierContext`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
   commit.
+
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R6): `supervisor.py`
   now builds one in-sweep inbox snapshot/index, resolves terminal-rung dead/no-hosted-session rows
   to durable `ladder-resolved`, limits redelivery actions by `redeliver_budget`, and ticks heartbeat
@@ -1455,6 +1517,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   carries the new volatile fields; `app.py` forwards the budget from settings and surfaces the
   metrics on `/api/state`/SSE; `inbox_delivery.py` accepts the shared current snapshot. Verification
   metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
+
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (P-15 tier 3 escalation ladder + dead-man
   respawn, R1-R6): `supervisor.py` gains two predicates (`evaluate_escalation_findings`/
   `evaluate_dead_upstream_findings`) and two actions (`_escalate_rung`/`_signal_dead_upstream`),
@@ -1469,6 +1532,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   gains `rung`; `OperatorInboxStore` gains `advance_rung`. No new lifespan task, no new
   `InboxMessageKind` values. Verification metadata pinned until closeout stamps the
   260707-HFX2-L4 commit.
+
 - 2026-07-08T22:30+02:00 — 260707-HFX2-L3 route impact (paste injector hardening, R1-R5): route
   gains `harness_adapters.py` (the one per-harness delivery adapter interface — claude-code, codex,
   generic fallback) and `injector.py` (the ONE delivery path, `deliver(row) -> {acked, landed-
@@ -1487,6 +1551,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   chip-stacked/quota-modal for both harnesses) and `test_injector.py` (every `DeliveryOutcome`
   branch + an end-to-end injection test against a scripted in-memory tmux pane). Verification
   metadata pinned until closeout stamps the 260707-HFX2-L3 commit.
+
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates, R1-R6):
   route gains `supervisor.py` (the deterministic sweep — five R2 predicate families, R4 action
   dispatcher, `run_agent_notifier_sweep`), `pane_signals.py` (the R2a pane-state classifier), and
@@ -1497,12 +1562,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   `test_pane_signals.py` (8 tests) and `test_supervisor.py` (16 tests, including one seeded-drift
   sweep integration test). Verification metadata pinned until closeout stamps the 260707-HFX2-L2
   commit.
+
 - 2026-07-08T15:45+02:00 — 260707-HFX2-L7 route impact (release-tail supervisor fix): the route's
   existing `supervisor.py` path now defers generic unacked escalation for `"no-hosted-session"` and
   `"unconfirmed"` delivery-failure rows until `PERSISTENT_FAILURE_ATTEMPTS` or an explicit
   `escalatedAt` handoff. No new predicate family, lifespan task, setting, or inbox kind; this is a
   liveness-contract fix inside `evaluate_escalation_findings`, covered by the existing HFX2-L5
   liveness simulations.
+
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issues #12/#4): route gains `retire_policy.py` (server-side retire authority policy),
   `retire.py` (shared retire mechanics), `turn_state.py` (marker-based live turn-state classifier),
@@ -1516,6 +1583,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   guard to the whole retire body so a catalog I/O fault can never fail an already-succeeded
   integrate/finalize — see that file's own sidecar for detail (out of this route's file list).
   Verification metadata pinned until closeout stamps the HFX-L8 commit.
+
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `app.py`'s metrics sampling loop
   now also calls `await asyncio.to_thread(evaluate_provider_degradation, config)` right after
   recording the metrics snapshot, sharing the loop's existing exception-tolerant handling and 30s
@@ -1523,6 +1591,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   events, inbox alerts, critical failsafe) is owned by `providers/degradation.py` under the `mcp/`
   package overview, not this route. Verification metadata pinned until closeout stamps the
   HFX-L7 commit.
+
 - 2026-07-07T23:45+02:00 — 260707-HFX-L5 route impact (catalog liveness hysteresis): the route
   gains `terminal_liveness.py` — `TerminalCatalogLivenessSweeper` (rate-limited 10s, non-overlapping;
   rate-limited/concurrent callers get the persisted catalog without probing) +
@@ -1535,11 +1604,13 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   command-failure storm can no longer mass-exit the fleet, false exits self-heal within one sweep,
   and `app.py`'s `_refresh_catalog_entries` is deleted. Covered by `test_terminal_liveness.py`.
   Verification metadata pinned until closeout stamps the HFX-L5 commit.
+
 - 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal opener and attach-leaf routes now
   normalize accepted leaf refs to canonical qualified task-doc ids before catalog mutation and return
   `400 leaf-ref-not-found` / `400 leaf-ref-ambiguous` before any mutation on invalid refs; added
   `leaf_ref_validation.py` as the serving adapter. Verification metadata pinned until closeout stamps the
   260707-HFX-L4 commit.
+
 - 2026-07-07T22:15+02:00 — 260707-HFX-L3 route impact (capture-verified delivery):
   `terminal_paste.py` reports delivery only after pane capture-verification against ONE
   pre-delivery origin baseline (both harness chip vocabularies; re-capture before any re-paste, so
@@ -1548,6 +1619,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   endpoint's unconfirmed `capture`, and the inbox push's bounded capture-tail `deliveryDetail`
   (`inbox_delivery.py`); `app.py`'s paste route is the same paster mechanic, no separate path.
   Verification metadata pinned until closeout stamps the HFX-L3 commit.
+
 - 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 5 adds the shared
   `scope.decode_capped` codepoint-boundary read cap and wires it through `notes.read_note` /
   `files.read_file` + `_onboarding_doc_body` — an oversize file whose multi-byte char straddles the
@@ -1555,12 +1627,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   route model this overview describes is unchanged (detail in the file sidecars).
   (Stamp is part of the known pre-L2 timestamp-rot corpus condition — the entry predates the
   16:50 one below despite its stamp; MHR-L2 owns the forensic restamp.)
+
 - 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (containment R4): `app.py`'s lifespan now
   runs the provider metrics sampling task beside the projector — `sample_provider_containers` →
   `ProviderMetricsStore.record` every 30s (decoupled from the projection tick),
   exception-tolerant, cancelled at shutdown — making the serving daemon the central containment
   sampler feeding `provider_status`, the statistics board, and the HFX-L7 degradation protocol.
   Verification metadata pinned until closeout stamps the HFX-L1 commit.
+
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `harnesses.py` grew the per-harness
   knob→flag mapping (two-vehicle claude effort vocabulary incl. session-level `ultracode`),
   effective-registry lookups, and the dispatch refusal helpers; `terminal_opener.py` applies the
@@ -1570,6 +1644,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   `GET /api/harnesses` + open route resolve against the effective GLOBAL registry. Route relations
   unchanged (one opener, no parallel spawn path). Verification metadata pinned until closeout
   stamps the L16 commit.
+
 - 2026-07-07T05:36+02:00 — 260703-L15 route impact (the change gate + the build stamp): `delta.py`
   compares stable forms (`VOLATILE_AGE_FIELDS` stripped; volatile-only ticks emit nothing —
   measured ~780 KB/tick → 0), `projector.py` caches the stable form per tick, publishes
@@ -1579,6 +1654,7 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   best-effort short-hash + boot time) the SSE snapshot also carries. Updated the
   `app.py`/`projector.py`/`delta.py` Route Model bullets and added the `build_info.py` bullet.
   Verification metadata pinned until closeout stamps the L15 commit.
+
 - 2026-07-06T23:59:54+02:00 — L14 review follow-up (L14R-3): the catalog column census now names `spawn_role`/`spawnRole` in both places (columns sentence + sessions-wire sentence) — a body edit, superseding the attestation-only entry. Verification metadata pinned until closeout stamps the L14 commit.
 
 - 2026-07-06T23:59:24+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal_catalog.py` gained the migration-safe `spawn_role` column (JSON `spawnRole`) and `terminal_opener.py` records `env["AR_SPAWN_ROLE"]` onto the row at first spawn (write-once, preserved across a role-less re-open) — the Chats command-tree grouping key; the sessions listing exposes it automatically via `entry.to_json()`. Verification metadata pinned until closeout stamps the L14 commit.
@@ -1590,12 +1666,14 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   folder → empty list; depth-capped honest listing; binary-tolerant size-capped reads), registered
   in `app.py` between the change-set routes and the static mount. Closes friction F-M (the notes
   tree had no dashboard surface). Verification metadata pinned until closeout stamps the L9 commit.
+
 - 2026-07-04T23:43+02:00 — L8 route impact: `changeset.py`'s master net routes now resolve the series tip as the contract work branch while it exists, falling back to the source branch after landing/deletion; `/api/changeset/master` counters and `/api/changeset/file-diff?master=...` content share that resolver for code and memory. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: `/api/operator-inbox` now accepts
   agent-role/message/artifact metadata, attempts hosted push through
   `inbox_delivery.py`, and `terminal_paste.py` confirms delivery only on a real
   pasted draft/chip echo across the boot window. Verification metadata pinned
   until closeout stamps the L3 commit.
+
 - 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: the route gains `terminal_opener.py`
   (the shared hosted-session opener extracted from `app.py`'s inline opener handler — leaf claim +
   env-seeded tmux ensure + catalog upsert; `resolve_terminal_launch`/`_terminal_label`/the role-scoped
@@ -1607,11 +1685,13 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   (via `dataclasses.replace` copiers). Covered by `test_terminal_opener.py`, `test_terminal_paste.py`,
   `test_spawn_agent_session.py`. Verification metadata pinned until closeout stamps the L2 commit.
   (Distinct from the 260703-L2 daemon-supervision entry below.)
+
 - 2026-07-03T12:57+02:00 — 260703 L2 route impact: the route gains `daemon.py` — the dashboard
   daemon supervisor (flock-guarded ensure: adopt/spawn/restart-on-mismatch; atomic `daemon.json`;
   identity-checked liveness; TERM→KILL stop; the threaded `maybe_autostart_dashboard` MCP boot
   hook). Covered by `mcp/tests/test_dashboard_daemon.py`. Verification metadata pinned until
   closeout stamps the code commit.
+
 - 2026-07-03T12:50+02:00 — No route impact: L15 changed only pyright-visible narrowing inside changeset.py; the serving surface and behavior are unchanged.
 - 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape route impact: `terminal.py`'s `write_session`
   now cancels tmux copy-mode (new injectable `TmuxModeCanceller`, `tmux send-keys -X cancel` default)
@@ -1619,22 +1699,26 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   scrolled-up non-mouse panes swallowed typing until scrolled back to the bottom. At most one cancel
   per scroll-then-type cycle; mouse-aware panes never trigger it. Verification metadata pinned until
   closeout stamps the follow-up commit.
+
 - 2026-07-02T17:04+02:00 — L9 route impact: added `terminal_leaf_assignment.py` and made
   `app.py`'s existing `attach-leaf` route a move/reassign route over the shared helper. The route now
   shares server-authoritative catalog conflict handling with the agent-facing MCP tool and preserves
   `leaf-taken` no-mutation semantics. Verification metadata pinned until closeout stamps the L9 commit.
+
 - 2026-07-02T16:35+02:00 — Reopened L6 wheel fix route impact: `terminal.py` gained the injectable
   `TmuxConfigurer` seam (default `_tmux_enable_mouse`: per-session `tmux set-option mouse on`, failures
   suppressed, DEVNULL hygiene), asserted by `ensure` after create/probe and by every `attach`. Browser
   wheel input now reaches tmux as mouse reports, scrolling pane history for normal-buffer TUIs and
   passing through to mouse-aware TUIs; pane text selection becomes Shift+drag. Verification metadata
   pinned until closeout stamps the follow-up commit.
+
 - 2026-06-30T00:00:00+02:00 — L5 follow-up route impact: leaf uniqueness is now per **(leaf, role)**. `terminal_catalog.py`
   gained `TerminalSessionRole` / `role_for_kind` / `entry.role` and a role kwarg on `active_for_leaf`; in
   `app.py` `_claim_leaf_or_409` is role-aware — the opener passes `role_for_kind(kind)` and `attach-leaf`
   passes `entry.role`, so a terminal can sit beside the leaf's agent chat (no 409) while a second chat or
   terminal still 409s. Updated the `app.py` opener/attach-leaf + `terminal_catalog.py` Route Model bullets.
   Verification metadata pinned until closeout stamps the L5 commit.
+
 - 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat) route impact: `app.py` gained the leaf→chat registry routes — the
   opener now takes a `leafKey`, claims the leaf via `_claim_leaf_or_409` (`409 leaf-taken`, running-only),
   persists + echoes it, and a new `POST /api/terminal/{session}/attach-leaf` claims a leaf for an existing
@@ -1642,16 +1726,19 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   (migration-safe `to_json`), `with_leaf_key`, and `active_for_leaf` (running-only single-owner lookup).
   Updated the `app.py` + `terminal_catalog.py` Route Model bullets. Verification metadata pinned until
   closeout stamps the L5 commit.
+
 - 2026-06-29T23:00+02:00 — operations-integration L4a route impact: `changeset.py`'s `task` + `file-diff`
   routes gained a `leaf` + `mode` selector (precedence `leaf > master > scope`) for the doc-reader leaf
   views — `committed` (`base → code_commit`) / `working` (`HEAD → worktree`), resolved by leaf-id off the
   persisted enclosure contract (works with no live worktree), with selector validation (400/404). Updated
   the `changeset.py` Route Model bullet. Verification metadata pinned until closeout stamps the L4a commit.
+
 - 2026-06-29T17:00+02:00 — operations-integration L4 follow-up route impact: `changeset.py`'s `master`
   endpoint is now the **NET** series diff (`git diff <master-base> <series-tip>` for code + memory, per-file
   inspectable) rather than the sum-of-leaves, and `/api/changeset/file-diff` gained an optional `master`
   param (the series net file-diff). Updated the `changeset.py` Route Model bullet. Verification metadata
   pinned until closeout stamps the L4 follow-up commit.
+
 - 2026-06-29T15:30+02:00 — operations-integration L3 route impact: added `scope.py` (the shared browse-scope layer extracted from `files.py` — `FileScope`/`resolve_scope`/`run_scoped`/`language_for`/active-enclosure enumeration) and `changeset.py` (the read-only `GET /api/changeset/{task,file-diff,master}` change-set API: per-task `base → current` code+memory counts + status + `hasSidecar`, BEFORE/AFTER file content for the L4 MergeView, and master accumulation) to the Route Model, both registered before the static mount; `files.py` now shares `scope.py`. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
 - 2026-06-28T22:41+02:00 — operations-integration L1 route impact: added `files.py` (the read-only `GET /api/files/{repos,list,read,onboarding}` files API) to the Route Model — the first serving module to bridge to the kernel `CoordinationContext`, registered before the static mount. Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-28T13:54+02:00 — Task 34 route impact: the raw `/api/events` channel (`events.py`) now does
@@ -1659,45 +1746,56 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   materializing the whole history, **filters `lifecycle.heartbeat`** out of the river, and prunes expired
   logs on a slow cadence. Updated the `events.py` Route Model bullet, the Hot Path Summary, and the
   two-resume-models invariant. Verification metadata pinned until closeout stamps the task-34 code commit.
+
 - 2026-06-28T07:45+02:00 — Task 33 route impact: `delta.py` now emits an `activeWorktreeGroups` whole-value
   delta (wrapped `{"activeWorktreeGroups": [...]}`) when the set changes. Verification metadata pinned
   until closeout stamps the code commit.
+
 - 2026-06-28T07:43+02:00 — Task 29 S7 route impact: raw `/api/events` now emits a one-shot `ready`
   event after retained backlog replay, and `/api/actions/dismiss` accepts targetless actionable-drift
   acknowledgements while keeping provider/gate dismissals scoped. Verification metadata pinned until
   closeout stamps the task-29 code commit.
+
 - 2026-06-28T06:08+02:00 — Task 29 route impact: the raw `GET /api/events` channel now applies
   lifecycle-aware backend retention on fresh connections through `observer.event_retention`.
   Terminal lifecycle logs are pruned after the grace window, workspace/lifecycle-less rows are
   age-bounded, active lifecycle histories remain uncapped, and valid `Last-Event-ID` cursors retain
   exact byte-offset resume. Verification metadata pinned until closeout stamps the task-29 code
   commit.
+
 - 2026-06-28T03:21+02:00 — Task 31 route impact: live `create_app` installs a `ProviderStateRefresher`
   into `Projector` so each projection tick can refresh provider current-state before diffing and serving
   the snapshot; sim mode disables that refresher and continues to replay fixture provider state. Detail
   lives in the `app.py`, `projector.py`, and serving-test sidecars. Verification metadata pinned until
   closeout stamps the task-31 code commit.
+
 - 2026-06-27T18:43+02:00 — No route impact: terminal.py added stdin=subprocess.DEVNULL on its 3 tmux subprocess.run sites (#49 stdio-pipe guard) — behavior-preserving hygiene; no change to serving architecture or surfaces.
 - 2026-06-27T02:28+02:00 — Task 22 follow-up: the terminal opener now uses
   `TerminalHost.ensure` to create a detached tmux session instead of opening and closing a starter PTY
   client. This fixes new chats immediately becoming `exited` while preserving per-tab attach.
+
 - 2026-06-27T01:25+02:00 — Task 22 follow-up: terminal WebSockets now attach independent
   `TerminalHost.attach` clients to the same durable tmux session, and the opener detaches its starter
   client after catalog persistence. This fixes multi-tab sharing without competing reads on one PTY fd.
+
 - 2026-06-27T00:45+02:00 — Task 22 follow-up: WebSocket disconnect now detaches the local PTY client
   without ending the durable tmux/catalog row, fixing blank terminal rehydrate after browser refresh.
+
 - 2026-06-27T00:25+02:00 — Task 22 follow-up: terminal catalog termination is now sticky against later
   WebSocket/PTY exit bookkeeping, so the `End` button cannot leave a row visible after refresh.
+
 - 2026-06-26T23:05+02:00 — Task 22: added `terminal_catalog.py` and documented the durable terminal
   session flow across serving: opener persistence, `/api/terminal/sessions`, WebSocket rehydrate with
   tmux probe, explicit terminate, and catalog-backed image upload after restart. Verification metadata
   pinned until closeout stamps the task-22 code commit.
+
 - 2026-06-25T14:02+02:00 — Task 24 reopened: serving actions now support gate-id-only cancel for stale workspace gates while keeping approve/reject/revision lifecycle-targeted.
 - 2026-06-25T13:20+02:00 — Task 23/24: serving route now includes the operator-inbox dismiss endpoint used to delete stale pickup warnings.
 - 2026-06-25T07:26+02:00 — Task 19: `/api/actions/{approve,reject}` now accepts targeted `gateId` and
   optional `note`, rejects blank No/reject reasons, maps stale targeted gate ids to `409 stale-gate`,
   and leaves `/api/operator-inbox` as the message-only Chat path. Verification metadata pinned until
   closeout stamps the code commit.
+
 - 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: documented `POST /api/operator-inbox` as the serving-layer write side for external-chat responses, routing to `operator_inbox_post_payload` with developer/dashboard attribution when the frontend has no hosted session to inject into. Verification metadata pinned until closeout stamps the task-10 code commit.
 - 2026-06-19T20:30 — Task 6 slice 6f: `app.py` gained `POST /api/terminal/{session}/image` (save a validated screenshot under `<cwd>/.dashboard-pastes/` for path-injection) and now opens harnesses `suspend_unsafe`; `terminal.py`'s `write` strips Ctrl-Z (`0x1a`) for suspend-unsafe (bare-pane harness) sessions only — a shell keeps job control. Updated the `app.py`/`terminal.py` Route Model bullets. Verification metadata pinned until closeout stamps the 6f code commit.
 - 2026-06-19T14:05+02:00 — Task 6 slice 6e-4: `terminal.py`'s `_spawn_pty` now gives the child a controlling terminal via `os.login_tty` (`preexec_fn`, setsid + `TIOCSCTTY`) + a seeded default winsize, so tmux honors browser resizes instead of staying at 80×24; the explicit `stdin/stdout/stderr=slave` keeps the child off the MCP stdio pipe (GitHub #49). Updated the `terminal.py` Route Model bullet. Verification metadata pinned until closeout stamps the 6e-4 code commit.
@@ -1712,11 +1810,13 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   `actions.py` (the POST action skeleton) to the Route Model; `app.py` now carries
   `GET /api/events` + `POST /api/actions/{action}` and `projector.py` the `now`/`before_tick`
   seams. Verification metadata pinned until closeout stamps the 4b code commit.
+
 - 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the dashboard serving spine
   (`app.py`, `projector.py`, `delta.py`, `static.py`) over the observer read side — one
   shared projector, snapshot + per-entity SSE deltas, the static mount, localhost posture.
   The raw `event` channel, sim mode, and the POST action skeleton land in 4b. Verification
   metadata pinned until closeout stamps the 4a code commit.
+
 ### 260713-PHA-L6 Reload Boundary
 
 The serving cutover is shared by the dashboard daemon, MCP-owning clients, bridge-backed session

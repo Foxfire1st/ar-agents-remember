@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/families.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -139,7 +139,7 @@ No domain documentation source is configured for this repository (`system/source
 | The payload a family revision's digest seals, including the sorted predecessor set. | `canonical_family_revision_payload`; `sealed_family_revision` | mcp/src/agents_remember/models/knowledge/digest.py:71-92; mcp/src/agents_remember/models/knowledge/digest.py:99-102 |
 | The vocabulary shapes this module stores. | `FamilyDraft`; `FamilyRevisionDraft`; `FamilyRevision`; `StoredFamilyRevision` | mcp/src/agents_remember/models/knowledge/family.py:35-48; mcp/src/agents_remember/models/knowledge/family.py:58-102; mcp/src/agents_remember/models/knowledge/family.py:105-109; mcp/src/agents_remember/models/knowledge/family.py:112-123 |
 | The declared `family`, `family_revision` and `family_predecessor` tables and their indexes. | `family`; `family_revision`; `family_predecessor` | mcp/src/agents_remember/memory/knowledge/schema.py:173-183; mcp/src/agents_remember/memory/knowledge/schema.py:184-201; mcp/src/agents_remember/memory/knowledge/schema.py:202-217 |
-| The requirement this module's first delivered slice belongs to. | `KS-R02@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R02-v1-registered-family-and-realization-graph.md |
+| The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References
 

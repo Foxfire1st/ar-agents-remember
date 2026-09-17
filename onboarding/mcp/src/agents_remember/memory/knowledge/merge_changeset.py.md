@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/merge_changeset.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00 |
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ No domain documentation source is configured for this repository (`system/source
 | What one application attempt did, with the engine's own `detail` and the optional unapplied count. | `_unapplied_count`; `conflicted` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:133-157; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:393-404; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:154-157 |
 | The optional unapplied count, distinct from zero. | `_unapplied_count` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:393-404 |
 | The session-capability and coverage refusals this module produces. | `session_unavailable_refusal`; `changeset_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:199-218; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:221-245 |
-| The unit node that proves a subset delta is accepted by SQLite and refused by both completeness measures. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:183-242 |
+| The unit node that proves a subset delta is accepted by SQLite and refused by both completeness measures. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-250 |
 | The boundary nodes that hold the conflict key to the engine's own operation. | "test_a_table_carrying_an_insert_and_a_conflicting_update_names_the_conflicting_row" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:135-162 |
 
 ## Cross-Repo References
@@ -82,4 +82,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate` in the row 72 of this card from mcp/tests/test_knowledge_guarded_merge.py:183-242 to mcp/tests/test_knowledge_guarded_merge.py:248-250, the extent of the construct the claim is about (the checker named line(s) [19, 248] as its live location)
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new changeset module. It records the three trust facts (a changeset rather than a patchset, operations materialised before the cursor advances, coverage proven by replay rather than by a return code), the silent direction hazard, and the corrected conflict-key contract this leaf's review round 2 produced: the key is copied inside the callback and read from the operation's **old** values, because an `UPDATE`'s new side carries the not-supplied marker where its key columns are, and reconstructing a key from the changeset names a different operation whenever a table carries more than one. It also records the three-valued column semantics (`NOT_SUPPLIED` is not SQL `NULL`) and that an unapplied count is optional rather than zero. Verification metadata remains empty until closeout stamps the code commit.

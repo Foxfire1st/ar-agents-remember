@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -53,26 +53,26 @@ No additional fixture scenario is introduced by this retirement.
 
 No Domain Documentation source is configured for these repository-owned test fixtures.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external source applies. | N/A | N/A |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | L364-L392; L395-L483; L708-L783 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
-| External-memory fixture supplies real isolated Git repositories and current contract inputs. | L395-L483 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
-| The base class provides helper methods rather than collected test cases. | L708-L783 | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
+| External-memory fixture supplies real isolated Git repositories and current contract inputs. | `open_external_contract_fixture` | mcp/tests/test_worktree_support.py:395-483 |
+| The base class provides helper methods rather than collected test cases. | `_unmapped_external_contract` | mcp/tests/test_worktree_support.py:708-783 |
 
 
 ## Cross-Repo References
 
 Temporary fixture repositories do not establish a live cross-repository integration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies. | N/A | N/A |
+| No separate external implementation source applies. | — | — |
 
 ## Update History
 

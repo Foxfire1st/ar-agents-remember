@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,26 +59,26 @@ No open todo is owned here. Direct landing uses the sibling lifecycle direct-lan
 
 See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | L9-L9; L18-L30; L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| The four-state vocabulary is closed and explicit. | L10-L15 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| Snapshot identity includes reflog, index, candidate, and status facts. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| State-specific proof is model validated. | L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | `CloseoutMutationLeg` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:9 |
+| The four-state vocabulary is closed and explicit. | `MutationEvidenceState` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:10-15 |
+| Snapshot identity includes reflog, index, candidate, and status facts. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
+| State-specific proof is model validated. | `_require_state_evidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:33-63 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -86,9 +86,9 @@ The current source seams include `GitMutationSnapshot`, `GitMutationEvidence`. C
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | L18-L30; L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-19 |
 
 ## Update History
 

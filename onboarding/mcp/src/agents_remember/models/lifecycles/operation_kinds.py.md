@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation_kinds.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,34 +46,34 @@ None recorded.
 
 `recovering-private-preparation` is a distinct lifecycle operation phase for retained private work before approval consumption. Callers must not translate it into `recovering-after-claim`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `LifecycleOperationPhase` boundary implements the preparation contract above. | L15-L15 | [mcp/src/agents_remember/models/lifecycles/operation_kinds.py](mcp/src/agents_remember/models/lifecycles/operation_kinds.py) |
+| The current `LifecycleOperationPhase` boundary implements the preparation contract above. | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15 |
 
 ## Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical phase union excludes both retired ledger-commit phases. | L15-L38 | [mcp/src/agents_remember/models/lifecycles/operation_kinds.py](mcp/src/agents_remember/models/lifecycles/operation_kinds.py) |
-| The module defines the closed module vocabulary as its public seam. | L5-L5 | [mcp/src/agents_remember/models/lifecycles/operation_kinds.py](mcp/src/agents_remember/models/lifecycles/operation_kinds.py) |
+| The canonical phase union excludes both retired ledger-commit phases. | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15-38 |
+| The module defines the closed module vocabulary as its public seam. | `LifecycleOperationKind` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:5 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 
 ## 2026-08-26 Shared Control Vocabulary
 

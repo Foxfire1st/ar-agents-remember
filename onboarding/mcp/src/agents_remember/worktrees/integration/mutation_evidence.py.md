@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -80,20 +80,20 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Only enabled code/memory legs receive mutation cells. | L60-L81; L573-L579 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| Intent, expected-output binding, and commit proof retain their order. | L84-L105; L108-L134; L246-L267; L270-L301 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| Interrupted attempts are reconciled from actual Git evidence. | L304-L360; L504-L518 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| Cache-excluded snapshots retain actual object/ref identity. | L42-L57; L389-L407; L410-L473 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| The snapshot model declares the separate content comparison tree. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| Only enabled code/memory legs receive mutation cells. | `initial_closeout_mutation_evidence` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:60-81 |
+| Intent, expected-output binding, and commit proof retain their order. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:84-105 |
+| Interrupted attempts are reconciled from actual Git evidence. | `reconcile_closeout_mutations` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:304-360 |
+| Cache-excluded snapshots retain actual object/ref identity. | `snapshot_is_clean_at_head` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:42-57 |
+| The snapshot model declares the separate content comparison tree. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

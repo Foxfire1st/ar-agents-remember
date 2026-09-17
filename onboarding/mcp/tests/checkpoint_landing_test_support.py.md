@@ -6,8 +6,8 @@
 | path | `mcp/tests/checkpoint_landing_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -50,25 +50,25 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Leaf and accumulated-master pairs are built from real code/memory commits. | L59-L82; L85-L93; L96-L101; L104-L115 | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
-| Temporary branch ownership and real source-content reconciliation. | L48-L56; L118-L130; L133-L139 | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
-| Public checkpoint and canonical master status helpers. | L148-L156; L159-L165; L168-L184 | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
-| The public boundary scenarios consume the shared builders. | L41-L479 | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
+| Leaf and accumulated-master pairs are built from real code/memory commits. | `close_out_leaf` | mcp/tests/checkpoint_landing_test_support.py:59-82 |
+| Temporary branch ownership and real source-content reconciliation. | `branch_checkout` | mcp/tests/checkpoint_landing_test_support.py:48-56 |
+| Public checkpoint and canonical master status helpers. | `checkpoint` | mcp/tests/checkpoint_landing_test_support.py:148-156 |
+| The public boundary scenarios consume the shared builders. | `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate` | mcp/tests/test_checkpoint_landing_end_to_end.py:41-479 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

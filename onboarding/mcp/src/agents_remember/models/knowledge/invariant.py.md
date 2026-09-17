@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/invariant.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash |  `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate |  2026-09-16T08:41:27+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ No domain documentation source is configured for this repository (`system/source
 | The read-back shape that pins the sorted predecessor set. | `StoredInvariantRevision` | mcp/src/agents_remember/models/knowledge/invariant.py:116-127 |
 | The stored `invariant_revision` table this aggregate is written to, with its immutability triggers. | `invariant_revision`; `invariant_revision_no_update`; `invariant_revision_no_delete` | mcp/src/agents_remember/memory/knowledge/schema.py:136-156; mcp/src/agents_remember/memory/knowledge/schema.py:304-311 |
 | The insert-only operation that seals and stores one aggregate, or refuses without any row. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:224-259; mcp/src/agents_remember/memory/knowledge/store.py:296-344 |
-| The requirement packet whose normative property this model encodes. | `KS-R01@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R01-v1-immutable-knowledge-identity.md |
+| The requirement packet whose normative property this model encodes: requirement packet `KS-R01@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References
 
@@ -98,5 +98,7 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `create_revision`; `_insert_revision` at mcp/src/agents_remember/memory/knowledge/store.py:224-259; mcp/src/agents_remember/memory/knowledge/store.py:296-344.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-read the reopened claim in the row 88 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): reviewed-no-impact body correction with a semantic note. The only change to this file is that its accepted/proposed validator now delegates to `base.require_consistent_acceptance` instead of inlining the same two checks, so the new family revision aggregate applies one owner's rule rather than a second copy. The field set, the validators, the two `ValueError` messages, the digest participation and the stored shape are unchanged; the card's validator description and reference ranges were corrected to match. Verification metadata remains empty until closeout stamps the code commit.
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new invariant identity and revision aggregate. It records the display-label-versus-identity separation and the three self-consistency rules. Verification metadata remains empty until closeout stamps the code commit.

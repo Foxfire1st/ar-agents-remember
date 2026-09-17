@@ -6,8 +6,8 @@
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
@@ -97,16 +97,16 @@ Closeout and integration are authorized Git transactions over code and memory-co
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:256-303; skills/c-09-git-worktree-manager/SKILL.md:433-512 |
-| Ordinary series integration and leaf direct landing remain distinct policy routes. | "An ordinary master/series integration has no leaf closeout door of its own"; `directExecutionEnabled` | skills/c-09-git-worktree-manager/SKILL.md:380-380; skills/c-09-git-worktree-manager/SKILL.md:383-383 |
+| Ordinary series integration and leaf direct landing remain distinct policy routes. | "An ordinary master/series integration has no leaf closeout door of its own"; `directExecutionEnabled` | skills/c-09-git-worktree-manager/SKILL.md:381-384; skills/c-09-git-worktree-manager/SKILL.md:383-383 |
 | The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters. | "nothing serializes the masters" | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:162-162 |
 | Public sync composes the selection and transaction owners without exposing private ids. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
 | Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366 |
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Real memory ancestry is the landing proof. | L235-L250 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+| Real memory ancestry is the landing proof. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
 
 ## Ungoverned Mirror Status (known defect)
 
@@ -123,6 +123,7 @@ recorded defect.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `An ordinary master/series integration has no leaf closeout door of its own` in the row 100 of this card from skills/c-09-git-worktree-manager/SKILL.md:380-380 to skills/c-09-git-worktree-manager/SKILL.md:381, the extent of the construct the claim is about (the checker named line(s) [381] as its live location); re-pointed `directExecutionEnabled` in the row 100 of this card from skills/c-09-git-worktree-manager/SKILL.md:381 to skills/c-09-git-worktree-manager/SKILL.md:384, the extent of the construct the claim is about (the checker named line(s) [384] as its live location)
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled canonical worktree doctrine to cache-independent Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 

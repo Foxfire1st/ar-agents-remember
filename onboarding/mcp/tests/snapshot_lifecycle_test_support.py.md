@@ -6,8 +6,8 @@
 | path | `mcp/tests/snapshot_lifecycle_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c`|
-| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,8 +100,8 @@ No domain documentation source is configured for this repository (`system/source
 | The publication and read-gate drivers. | `publish`; `publication_state` | mcp/tests/snapshot_lifecycle_test_support.py:357-380; mcp/tests/snapshot_lifecycle_test_support.py:382-390 |
 | The file-level probes the durability claims rest on. | `journal_peer_names`; `read_journal_mode`; `file_digest`; `byte_copy`; `row_counts`; `logical_identity_of`; `vacuum` | mcp/tests/snapshot_lifecycle_test_support.py:410-418; mcp/tests/snapshot_lifecycle_test_support.py:433-441; mcp/tests/snapshot_lifecycle_test_support.py:404-408; mcp/tests/snapshot_lifecycle_test_support.py:453-459; mcp/tests/snapshot_lifecycle_test_support.py:420-431; mcp/tests/snapshot_lifecycle_test_support.py:443-451; mcp/tests/snapshot_lifecycle_test_support.py:323-331 |
 | The real-process crash probe, which asserts the committed batch survived rather than only reporting it. | `crash_and_abandon`; `CrashOutcome` | mcp/tests/snapshot_lifecycle_test_support.py:477-533; mcp/tests/snapshot_lifecycle_test_support.py:468-475 |
-| The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | `knowledge-snapshot-lifecycle-cases` | mcp/tests/evidence-lifecycle.toml:1108-1130 |
-| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:69-69; mcp/tests/test-evidence-lanes.toml:75-75 |
+|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1110-1130  |
+| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-79; mcp/tests/test-evidence-lanes.toml:75-75 |
 | The application seam this harness admits destinations through. | `admitted_candidate_destination`; `create_knowledge_candidate`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
 
 ## Cross-Repo References
@@ -114,4 +114,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `mcp/tests/test_knowledge_candidate_workspace.py` in the row 104 of this card from mcp/tests/test-evidence-lanes.toml:69-69 to mcp/tests/test-evidence-lanes.toml:70, the extent of the construct the claim is about (the checker named line(s) [70] as its live location); re-pointed `mcp/tests/test_knowledge_snapshot_publication.py` in the row 104 of this card from mcp/tests/test-evidence-lanes.toml:70 to mcp/tests/test-evidence-lanes.toml:79, the extent of the construct the claim is about (the checker named line(s) [79] as its live location)
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new shared snapshot-lifecycle harness. It records the one-runner/one-probe-set design and why it is shared rather than copied (both suites measure isolation, closure, durability and recovery the same way), the through-the-public-operations rule with its two declared raw-state exceptions, the real-child-interpreter crash probe that makes the recovery claim a process fact rather than a simulated one, and the registry contract with an exact two-consumer list whose node is a real node in a consumer. Verification metadata remains empty until closeout stamps the code commit.

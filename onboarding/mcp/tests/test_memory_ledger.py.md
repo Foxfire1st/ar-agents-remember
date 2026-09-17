@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -85,14 +85,14 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Data round-trip and current-versus-historical lookup semantics. | L53-L68 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | L91-L179; L315-L335; L338-L360 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Unattributed and partially attributed histories cannot inherit cached pairs. | L499-L519; L550-L569 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Invalid targets are reported and superseding order comes from actual history. | L529-L547; L572-L613 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The real writer/reader round trip and merged-in attribution stay covered. | L717-L751; L754-L784 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The runtime projection under test separates computed mappings from cache observations. | L222-L249; L334-L396 | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Data round-trip and current-versus-historical lookup semantics. | `test_roundtrip_preserves_newest_same_code_history` | mcp/tests/test_memory_ledger.py:53-68 |
+| Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | `source_rows` | mcp/tests/test_memory_ledger.py:91-179 |
+| Unattributed and partially attributed histories cannot inherit cached pairs. | `test_unattributed_history_does_not_inherit_pairs_from_committed_tables` | mcp/tests/test_memory_ledger.py:499-519 |
+| Invalid targets are reported and superseding order comes from actual history. | `test_invalid_source_and_branch_code_attributions_are_reported` | mcp/tests/test_memory_ledger.py:529-547 |
+| The real writer/reader round trip and merged-in attribution stay covered. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:717-751 |
+| The runtime projection under test separates computed mappings from cache observations. | `read_ledger_source` | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249 |
 
 ## Cross-Repo References
 
@@ -100,13 +100,14 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the module gained the two cases that pin

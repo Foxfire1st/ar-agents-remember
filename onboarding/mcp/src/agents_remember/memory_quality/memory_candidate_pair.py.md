@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/memory_candidate_pair.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,18 +69,18 @@ No additional file-local TODO is established by this candidate review.
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pair resolver derives the consumer cache path, excludes it from the digest, and proves real branch/base authority. | L48-L129; L212-L220; L286-L349 | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
-| Pair resolution and digest construction are centralized. | L48-L129 | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
-| Requested authority is compared before candidate work begins. | L132-L162 | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
-| Work branch, accepted source head, and ancestry are all proven without mutation. | L286-L349 | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
+| The pair resolver derives the consumer cache path, excludes it from the digest, and proves real branch/base authority. | — | — |
+| Pair resolution and digest construction are centralized. | — | — |
+| Requested authority is compared before candidate work begins. | — | — |
+| Work branch, accepted source head, and ancestry are all proven without mutation. | — | — |
 
 ## Cross-Repo References
 
@@ -88,9 +88,9 @@ No additional repository is consulted. The configured contract identifies both s
 repositories.
 
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 ## Update History
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Made the ledger location informational while retaining exact code/memory pair and ancestry proof. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

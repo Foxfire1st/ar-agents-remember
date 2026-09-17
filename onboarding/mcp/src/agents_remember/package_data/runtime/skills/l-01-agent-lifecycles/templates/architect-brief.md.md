@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:04+02:00 |
-| lastVerifiedCommitHash |  `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate |  2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
 
 ## Purpose
 
@@ -47,7 +47,7 @@ No external domain source governs this synchronized projection.
 | --- | --- | --- |
 | The packaged packet carries the same one-call launcher contract. | `# Template — Architect Brief` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:1-10 |
 | The hosted child-authority and no-fallback boundary is embedded in the brief. | "This architect seat is now plane-hosted." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:54-60 |
-| The canonical skill tree is synchronized into package data and harness mirrors. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:195-203 |
+| The canonical skill tree is synchronized into package data and harness mirrors. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:204-205 |
 
 ## Cross-Repo References
 
@@ -55,5 +55,6 @@ No sibling-repository contract defines this synchronized projection.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation scripts/sync-skills.py:204-205 in the row 50 of this card; the repetition added no pooled evidence
 - 2026-08-30T12:04+02:00 — 260821-ARSPAWN-L3 created onboarding for the packaged architect brief.
   Verification metadata remains blank until governed closeout stamps the first source commit.

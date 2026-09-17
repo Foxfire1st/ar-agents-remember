@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/anchors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -116,7 +116,7 @@ No domain documentation source is configured for this repository (`system/source
 | The locator union and the confined relative-path rule this module stores without resolving. | `SourceAnchorDraft`; `SourceAnchor`; `SourceLocator` | mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:125-128; mcp/src/agents_remember/models/knowledge/source.py:79-81 |
 | The refusal factories this module's refusals come from. | `duplicate_anchor_refusal`; `referenced_anchor_refusal`; `missing_expected_row_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:420-441; mcp/src/agents_remember/memory/knowledge/refusals.py:553-567; mcp/src/agents_remember/memory/knowledge/refusals.py:514-530 |
 | The declared `source_anchor` table, its index and its payload trigger. | `source_anchor`; `source_anchor_path`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:218-230; mcp/src/agents_remember/memory/knowledge/schema.py:276-276; mcp/src/agents_remember/memory/knowledge/schema.py:336-340 |
-| The requirement this module's first delivered slice belongs to. | `KS-R02@v1` | ar-coordination/tasks/agents-remember/260915_knowledge-substrate/requirements/KS-R02-v1-registered-family-and-realization-graph.md |
+| The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Cross-Repo References
 

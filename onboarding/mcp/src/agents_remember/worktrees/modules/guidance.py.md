@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -53,27 +53,27 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed payloads and separate lifecycle/recovery builders. | L56-L67; L70-L80; L83-L121; L124-L125; L128-L142; L145-L168 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| Carryover completion is a real two-repository ancestry proof. | L189-L212 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| Phase precedence, finalization guidance, and the still-working checkpoint branch. | L215-L225; L228-L242; L245-L328; L331-L375 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| Freshness, consumer paths, identity fields, and interactive/projected observation. | L378-L428; L431-L483; L486-L490; L493-L495 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| The canonical lifecycle wire vocabularies. | L40-L49; L50-L58; L59-L74 | [mcp/src/agents_remember/models/worktree.py](mcp/src/agents_remember/models/worktree.py) |
-| External completion remains valid with damaged caches and rejects unlanded commits. | L84-L119 | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
+| Typed payloads and separate lifecycle/recovery builders. | `NextGuidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:56-67 |
+| Carryover completion is a real two-repository ancestry proof. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
+| Phase precedence, finalization guidance, and the still-working checkpoint branch. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:215-225 |
+| Freshness, consumer paths, identity fields, and interactive/projected observation. | `base_freshness` | mcp/src/agents_remember/worktrees/modules/guidance.py:378-428 |
+| The canonical lifecycle wire vocabularies. | `WorktreePhase` | mcp/src/agents_remember/models/worktree.py:40-49 |
+| External completion remains valid with damaged caches and rejects unlanded commits. | `test_external_completion_proves_landed_commits_without_reading_the_cache` | mcp/tests/test_post_integration_cleanup_guidance.py:84-119 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

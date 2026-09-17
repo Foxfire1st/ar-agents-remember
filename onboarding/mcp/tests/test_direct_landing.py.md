@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -76,12 +76,12 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture owns real temporary code/memory refs and an admitted series contract. | L92-L153 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
-| The retained scenario proves one content commit and reads its attribution from Git. | L171-L272 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
-| Recovery rejects real drift and accepts cache misses without extra commits. | L274-L314; L316-L340 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
-| The lifecycle recovery owner performs the required same-generation resumption. | L39-L70 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py) |
+| The fixture owns real temporary code/memory refs and an admitted series contract. | `_series_fixture` | mcp/tests/test_direct_landing.py:92-153 |
+| The retained scenario proves one content commit and reads its attribution from Git. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
+| Recovery rejects real drift and accepts cache misses without extra commits. | `_recover_after_interrupted_receipt` | mcp/tests/test_direct_landing.py:274-314 |
+| The lifecycle recovery owner performs the required same-generation resumption. | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
 
 ## Cross-Repo References
 
@@ -89,7 +89,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

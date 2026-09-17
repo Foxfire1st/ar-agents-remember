@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -114,25 +114,25 @@ No additional file-local TODO is established by this candidate review.
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 The source itself and its governing route are sufficient for this thin payload adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration payloads forward contract, strategy, and preview choice without ledger intent. | L141-L156; L159-L174 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | L43-L53; L56-L73; L76-L85; L88-L95; L98-L107 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | L159-L174 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | L88-L95 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| Integration payloads forward contract, strategy, and preview choice without ledger intent. | `worktree_integrate_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:141-156 |
+| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-53 |
+| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:159-174 |
+| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | `worktree_pause_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:88-95 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned transport adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Series-Contract Notes
@@ -150,9 +150,9 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | L43-L53; L56-L73; L76-L85 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-49 |
 
 ## 260831-CCR-L15 Status-Wait Payload Export
 

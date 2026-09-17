@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_merge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00 |
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ No domain documentation source is configured for this repository (`system/source
 | The two storage operations this seam delegates to. | `require_session_capability` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
 | The request and outcome vocabulary this seam takes and returns unchanged. | `MergeBaseRequest` | mcp/src/agents_remember/models/knowledge/merge.py:124-154; mcp/src/agents_remember/models/knowledge/merge.py:189-215; mcp/src/agents_remember/models/knowledge/merge.py:349-391 |
 | The two sibling seams this module sits beside. | `write_authorship`; `publish_prepared_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge.py:102-124; mcp/src/agents_remember/application/knowledge_snapshot.py:142-147 |
-| The layer ranks that make a lower owner consume models rather than this module. | `[package.memory]`; `[package.application]` | layers.toml:206-207; layers.toml:314-315 |
+|  The layer ranks that make a lower owner consume models rather than this module. | "[package.memory]"; "[package.application]" | layers.toml:206-207; layers.toml:314-315  |
 | The unit node that drives the conforming merge end to end through the public operations. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
 
 ## Cross-Repo References

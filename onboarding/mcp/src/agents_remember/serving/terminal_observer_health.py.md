@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_observer_health.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -130,9 +130,9 @@ repository-owned serving contract, so no external domain claim is needed.
 | The bounded, ordered, secret-safe failure classification table. | `TERMINAL_OBSERVER_FAILURE_TYPES`; `classify_terminal_observer_failure` | mcp/src/agents_remember/serving/terminal_observer_health.py:82-90; mcp/src/agents_remember/serving/terminal_observer_health.py:122-128 |
 | Publication rides the observer CALL for both outcomes, and only the phase separates a startup-prime failure from a steady-pass one. | `_observe_terminal_catalog` | mcp/src/agents_remember/serving/_app_lifespan.py:80-107 |
 | The lifespan starts this serving lifetime's accumulator immediately before the prime, and derives the served cutoff from the configured sweep cadence. | `_terminal_observer_health_payload` | mcp/src/agents_remember/serving/_app_lifespan.py:288-352; mcp/src/agents_remember/serving/_app_lifespan.py:376-394 |
-| One shared publisher on one observer root and one serving clock, read by the routes and written by the lifespan. | `_ServingRuntime`; `_build_serving_runtime` | mcp/src/agents_remember/serving/_app_common.py:458-479; mcp/src/agents_remember/serving/app.py:198-198; mcp/src/agents_remember/serving/app.py:242-242 |
+| One shared publisher on one observer root and one serving clock, read by the routes and written by the lifespan. | `_ServingRuntime`; `_build_serving_runtime` | mcp/src/agents_remember/serving/_app_common.py:458-479; mcp/src/agents_remember/serving/app.py:165-171 |
 | The additive, omissive fourth tail key on the served workspace projection. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:50-66; mcp/src/agents_remember/serving/served_state.py:68-75; mcp/src/agents_remember/serving/served_state.py:81-109 |
-| The generated mirror declares this payload and keeps its nulls, and the schema's supported refinement set states the counter ceiling. | `TerminalObserverHealth`; `MAXIMUM`; `SCHEMA_REFINEMENT_KEYWORDS` | dashboard/src/types/projection.ts:802-824; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:35-59 |
+|  The generated mirror declares this payload and keeps its nulls, and the schema's supported refinement set states the counter ceiling. | `TerminalObserverHealth`; "a bounded counter is a contract the schema must state"; `SCHEMA_REFINEMENT_KEYWORDS` | dashboard/src/types/projection.ts:802-824; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:35-59 |
 | The module's executable contract: sixteen cases over the record, the writer, publication, and the served tail. | `TerminalObserverHealthRecordTests`; `TerminalObserverHealthLifespanTests`; `TerminalObserverHealthServedTailTests` | mcp/tests/test_terminal_observer_health.py:220-617; mcp/tests/test_terminal_observer_health.py:619-732; mcp/tests/test_terminal_observer_health.py:734-931 |
 
 ## Cross-Repo References
@@ -145,6 +145,7 @@ payload crosses a process boundary (browser), not a repository one.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/serving/app.py:165-171 in the row 133 of this card; the repetition added no pooled evidence
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
   base `99534dc5`, 13 paths, `git diff | sha256sum` = `b75a785d…`): created this file card for the
   new module. Recorded the current contract rather than a change narrative: the exact

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/candidate_workspace.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c`|
-| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -140,7 +140,7 @@ No domain documentation source is configured for this repository (`system/source
 | The receipt write/read/binding comparison this lifecycle depends on. | `build_receipt_for_candidate`; `read_candidate_receipt`; `receipt_binding_refusal` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:89-99; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:61-86; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:102-160 |
 | The freeze procedure a clone reuses, and its closed-file guarantee. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109 |
 | The result vocabulary these operations return. | `CandidateResult`; `CandidateDisposalResult`; `CandidateDisposition` | mcp/src/agents_remember/models/knowledge/snapshot.py:188-221; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354 |
-| The new refusal codes the lifecycle introduced, including the honest durability code. | `selected_input_unavailable_refusal`; `snapshot_incomplete_refusal`; `publication_durability_unconfirmed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-902; mcp/src/agents_remember/memory/knowledge/refusals.py:951-974; mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1040 |
+| The new refusal codes the lifecycle introduced, including the honest durability code. | `selected_input_unavailable_refusal`; `snapshot_incomplete_refusal`; `publication_durability_unconfirmed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-902; mcp/src/agents_remember/memory/knowledge/refusals.py:951-974; mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039 |
 | The nodes that protect the lifecycle's load-bearing behaviours. | "test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit"; "test_a_crash_restart_keeps_the_committed_batch_and_drops_the_abandoned_one"; "test_a_failed_candidate_flush_is_refused_before_the_directory_is_exposed" | mcp/tests/test_knowledge_candidate_workspace.py:206-246; mcp/tests/test_knowledge_candidate_workspace.py:248-279; mcp/tests/test_knowledge_candidate_workspace.py:365-387 |
 
 ## Cross-Repo References
@@ -153,4 +153,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1040 to mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039, the range the cited construct now occupies
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new candidate lifecycle. It records the four load-bearing properties (two-phase creation that never exposes a half-built candidate, occupied-destination-as-resume, clone-from-a-closed-snapshot, and disposal as a verdict rather than a deletion), the expose ordering that makes `created` honest (verify → seal → read back → flush → install → read back through the ordinary resume path), why a baseline clone deliberately takes no filesystem lock, and the two narrow disposal grounds. It also records that `_close_without_discarding_peers` exists so a later change to `OpenedKnowledgeStore.close` cannot quietly reintroduce a peer unlink underneath the lifecycle. Verification metadata remains empty until closeout stamps the code commit.

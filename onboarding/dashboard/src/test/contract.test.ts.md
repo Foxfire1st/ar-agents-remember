@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`      |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`      |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -120,9 +120,9 @@ No Domain Documentation source is configured in the resolved memory repository. 
 serialization and typecheck contracts are supported by the source references below; this pass
 makes no separately verified external-library documentation claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external documentation source applies. | N/A | N/A |
+| No configured external documentation source applies. | — | — |
 
 ## Repo-Internal References
 
@@ -130,31 +130,31 @@ Two external behaviours are load-bearing: pydantic's `exclude_none` serializatio
 rule that an unused `@ts-expect-error` is itself an error. Both rows anchor on the in-repo fact that
 makes the behaviour load-bearing HERE.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain. | L289-L430 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| Persisted projection state is written by `write_projection` with omitted `None` values. | L158-L164 | [mcp/src/agents_remember/serving/projections/projection_store.py](mcp/src/agents_remember/serving/projections/projection_store.py) |
-| The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance. | L183-L187 | [dashboard/src/test/wireFixtureGuard.test.ts](dashboard/src/test/wireFixtureGuard.test.ts) |
+| Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:289-430 |
+| Persisted projection state is written by `write_projection` with omitted `None` values. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-159 |
+| The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance. | `error` | dashboard/src/test/wireFixtureGuard.test.ts:183-187 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | L30-L30; L34-L34; L62-L62 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | L94-L103; L127-L129 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | L147-L161; L187-L190; L193-L195; L198-L200 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed. | L210-L223; L225-L249 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. | L271-L287; L289-L430 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. | L493-L502 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | L535-L540; L542-L563; L565-L573; L575-L593 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | L626-L626; L627-L627; L628-L628; L629-L629; L647-L647; L648-L648 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| The generated mirror's metric and analytics declarations. | L460-L464; L92-L106 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated mirror's gate and lifecycle projection declarations. | L289-L299; L365-L383 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The sanctioned narrowing the fixture enters through. | L41-L43 | [dashboard/src/test/servedProjection.ts](dashboard/src/test/servedProjection.ts) |
-| The independent fixture supplies the lifecycle rows sampled by the contract. | L1791-L1928 | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
-| The independent fixture supplies the metrics rollup checked against generated count fields. | L1929-L1940 | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
-| The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | L249-L264; L267-L289 | [mcp/src/agents_remember/observer/projection.py](mcp/src/agents_remember/observer/projection.py) |
-| The producer's typed lifecycle vocabularies. | L19-L19; L20-L20 | [mcp/src/agents_remember/models/lifecycles/responses.py](mcp/src/agents_remember/models/lifecycles/responses.py) |
-| The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. | L183-L187 | [dashboard/src/test/wireFixtureGuard.test.ts](dashboard/src/test/wireFixtureGuard.test.ts) |
-| The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. | L20-L20; L21-L21 | [dashboard/src/test/wireFixtureGuard.test.ts](dashboard/src/test/wireFixtureGuard.test.ts) |
+| The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | `directions` | dashboard/src/test/contract.test.ts:30 |
+| `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | `mirrorMustDeclare` | dashboard/src/test/contract.test.ts:127-128 |
+| `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `fixtureMustSample` | dashboard/src/test/contract.test.ts:193-194 |
+| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:225-248 |
+| `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:289-291 |
+| Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. | `UnsampledMirrorPaths` | dashboard/src/test/contract.test.ts:493-502 |
+| Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | `expect` | dashboard/src/test/contract.test.ts:535-540 |
+| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | `distinct` | dashboard/src/test/contract.test.ts:626 |
+| The generated mirror's metric and analytics declarations. | `number` | dashboard/src/types/projection.ts:460-464 |
+| The generated mirror's gate and lifecycle projection declarations. | `string` | dashboard/src/types/projection.ts:289-299 |
+| The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
+| The independent fixture supplies the lifecycle rows sampled by the contract. | `false` | dashboard/src/fixtures/snapshot.json:1791-1928 |
+| The independent fixture supplies the metrics rollup checked against generated count fields. | `awaitingDeveloperCount` | dashboard/src/fixtures/snapshot.json:1929-1940 |
+| The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field` | mcp/src/agents_remember/observer/projection.py:249-264 |
+| The producer's typed lifecycle vocabularies. | `State` | mcp/src/agents_remember/models/lifecycles/responses.py:19 |
+| The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. | `error` | dashboard/src/test/wireFixtureGuard.test.ts:183-187 |
+| The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. | `projection` | dashboard/src/test/wireFixtureGuard.test.ts:20 |
 
 ## Cross-Repo References
 
@@ -162,9 +162,9 @@ No cross-repository boundary. The contract's producer (`observer/projection.py`)
 dashboard mirror) both live in `agents-remember`; the seam this file guards is a language boundary
 inside one repository, not a repository boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer. | L11-L11 | [mcp/src/agents_remember/observer/projection.py](mcp/src/agents_remember/observer/projection.py) |
+| The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer. | `dashboard` | mcp/src/agents_remember/observer/projection.py:11 |
 
 ## L23 Lineage Contract Coverage
 

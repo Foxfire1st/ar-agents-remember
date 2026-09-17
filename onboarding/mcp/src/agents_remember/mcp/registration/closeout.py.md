@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -195,23 +195,23 @@ No additional file-local TODO is established by this candidate review.
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | L45-L89; L92-L146; L149-L265 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
-| The payload builders these forward to. | L110-L118 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The checkpoint-landing tool declaration and the payload builder it forwards to. | closeout.py: L173-L199; worktree.py: L159-L174 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py); [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | L111-L115; L132-L136 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Refuse to stage anywhere except a task's own throwaway worktree. | L25-L41 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| Refuse before staging when the checkout has unresolved conflicts. | L44-L56 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| Prepare and certify a fresh candidate through the ordinary gate entry point. | L139-L165 | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| The case that pins the checkpoint description as a partial publication and denies it is the pause. | L282-L304 | [mcp/tests/test_tools.py](mcp/tests/test_tools.py) |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | L132-L146; L149-L192 | [mcp/src/agents_remember/worktrees/modules/quality/gate.py](mcp/src/agents_remember/worktrees/modules/quality/gate.py) |
+| Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | `_register_direct_landing_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:45-89 |
+| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:110-118 |
+| The checkpoint-landing tool declaration and the payload builder it forwards to. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:173-199; mcp/src/agents_remember/mcp/tools/worktree.py:173-199 |
+| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-115 |
+| Refuse to stage anywhere except a task's own throwaway worktree. | `_refuse_outside_a_linked_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:25-41 |
+| Refuse before staging when the checkout has unresolved conflicts. | `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:44-56 |
+| Prepare and certify a fresh candidate through the ordinary gate entry point. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
+| The case that pins the checkpoint description as a partial publication and denies it is the pause. | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-304 |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:132-146 |
 
 ## Historical R39 Integration Tool Contract
 
@@ -233,9 +233,9 @@ The current source seams include `register_closeout_tools`. The public schema/co
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `register_closeout_tools` at this ownership boundary. | L37-L42 | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
+| The current module exposes `register_closeout_tools` at this ownership boundary. | `register_closeout_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:37-38 |
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -252,9 +252,9 @@ closeout-source model.
 
 No separate cross-repository implementation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external implementation source applies. | N/A | N/A |
+| No external implementation source applies. | — | — |
 
 ## Update History
 

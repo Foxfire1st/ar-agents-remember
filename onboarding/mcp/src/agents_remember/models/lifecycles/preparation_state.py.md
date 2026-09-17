@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/preparation_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,27 +43,27 @@ No source-local TODO is asserted here.
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No configured domain documentation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Selection is an ordered prefix of at most two preparations: code followed by memory content. | L19-L19; L112-L128 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
-| `PreparationCommandTerminal` owns the corresponding behavior described above. | L22-L40 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
-| `PreparationCommand` owns the corresponding behavior described above. | L43-L75 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
-| `OperationPreparationState` owns the corresponding behavior described above. | L112-L128 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
-| `validate_preparation_owner` owns the corresponding behavior described above. | L169-L183 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
-| `validate_preparation_transition` owns the corresponding behavior described above. | L214-L240 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
-| `_validate_leg_transition` owns the corresponding behavior described above. | L243-L267 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| Selection is an ordered prefix of at most two preparations: code followed by memory content. | `PreparationLeg` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:19 |
+| `PreparationCommandTerminal` owns the corresponding behavior described above. | `PreparationCommandTerminal` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:22-23 |
+| `PreparationCommand` owns the corresponding behavior described above. | `PreparationCommand` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:43-44 |
+| `OperationPreparationState` owns the corresponding behavior described above. | `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-113 |
+| `validate_preparation_owner` owns the corresponding behavior described above. | `validate_preparation_owner` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:169-176 |
+| `validate_preparation_transition` owns the corresponding behavior described above. | `validate_preparation_transition` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:214-221 |
+| `_validate_leg_transition` owns the corresponding behavior described above. | `_validate_leg_transition` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:243-249 |
 
 ## Cross-Repo References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+| No cross-repository source is needed for this card. | — | — |
 
 ## Update History
 

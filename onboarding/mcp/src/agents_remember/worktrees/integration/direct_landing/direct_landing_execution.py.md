@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -80,13 +80,13 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Execution publishes or reuses real memory output and refreshes the cache afterward. | L42-L75; L175-L236; L316-L337 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
-| Prepared attempts preserve repository and exact pre-commit tree evidence. | L239-L255; L258-L287 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
-| Shared mutation intent and proof retain actual object checks. | L84-L105; L270-L301; L504-L518 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| The lifecycle recovery owner resumes the generation before execution. | L39-L70 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py) |
-| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | L274-L314; L316-L340 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
+| Execution publishes or reuses real memory output and refreshes the cache afterward. | `execute_direct_landing` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:42-75 |
+| Prepared attempts preserve repository and exact pre-commit tree evidence. | `_require_accepted_memory_prestate` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:239-255 |
+| Shared mutation intent and proof retain actual object checks. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:84-105 |
+| The lifecycle recovery owner resumes the generation before execution. | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
+| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | `_recover_after_interrupted_receipt` | mcp/tests/test_direct_landing.py:274-314 |
 
 ## Cross-Repo References
 
@@ -94,7 +94,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

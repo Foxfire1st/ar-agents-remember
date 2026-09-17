@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `d6d39c1b18f29f939b82340c8f5d32419b17ad84` |
-| lastVerifiedCommitDate | 2026-09-15T22:17:27+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ These current source and policy ranges establish the development/certification d
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | "class PreparedMemoryCertificationAdapter:" | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
+| Final memory adapter requires the selected four-code-terminal prefix. | "class PreparedMemoryCertificationAdapter:" | mcp/src/agents_remember/application/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
 | Exact profile scope and suite execution. | `_require_exact_scope`; `_paths`; `_run_python_suite`; L92-L214 | [Profile rails](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:92-214) |
@@ -78,6 +78,7 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-17T08:16:00+00:00 — 260915-KS-L9 curator (memory-quality closure): re-pointed this route's citation for the final memory certification adapter from `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py` to `mcp/src/agents_remember/application/prepared_certification.py`, which is where that file now lives; the construct did not move within it (`PreparedMemoryCertificationAdapter` is still declared at 721-785, a pure move). No claim wording changed. Recorded because a re-pointed source is a body update.
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `projection_types.py` +30/−11): this route's generator changed, so a body section was
   added rather than an annotation. `projection_types.py` now states the current contract: the served

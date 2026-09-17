@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_blocker_reasons.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33`|
-| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -134,7 +134,7 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public abandon preview is non-mutating and does not invent a removal failure. | L116-L170 | [mcp/tests/test_terminal_blocker_reasons.py](mcp/tests/test_terminal_blocker_reasons.py) |
+| Public abandon preview is non-mutating and does not invent a removal failure. | "would-abandon" | mcp/tests/test_terminal_blocker_reasons.py:116-170 |
 | The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:116-170 |
 | The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry. | `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:173-229 |
 | The exact L6 input — `{"removed": False}` with no reason — is answered in operator language instead of becoming a null reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` | mcp/tests/test_terminal_blocker_reasons.py:232-252 |
@@ -149,8 +149,8 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 | The bundle and the builder the invariant-owner cases drive directly. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:229-243; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:246-288 |
 | The producer whose reason the refusal carries, including the post-reclaim branch this module forces. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
 | The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:54-96; mcp/src/agents_remember/application/worktree_services.py:203-211 |
-| The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:862-893 |
-| The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:157-316; mcp/tests/integration_branch_authority_test_support.py:67-118; mcp/tests/test_transaction_only_worktree_delivery.py:66-90 |
+| The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:855-886 |
+| The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:48-53; mcp/tests/test_transaction_only_worktree_delivery.py:59-60; mcp/tests/integration_branch_authority_test_support.py:129-288 |
 | The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:128-198 |
 | The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. | "REPOSITORY_TEST_INPUT_CONSUMERS: dict[Path, frozenset[Path]]" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-184 |
 
@@ -162,11 +162,28 @@ routes run at all. No production cross-repository authority is claimed by this f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The landing world each whole-tool case builds is a real temporary repository pair. | `_authority_fixture`; `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:157-316; mcp/tests/integration_branch_authority_test_support.py:67-118 |
+| The landing world each whole-tool case builds is a real temporary repository pair. | `_authority_fixture`; `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/integration_branch_authority_test_support.py:129-288 |
 
 ## Update History
+- 2026-09-17T07:33:51+00:00: Generated citation repair: `_authority_fixture`; `_closed_external_leaf_worktrees` repointed to mcp/tests/integration_branch_authority_test_support.py:129-288; mcp/tests/integration_branch_authority_test_support.py:48-91. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-15 — LCA L9 terminal delivery: The existing first-call finalization case also calls public abandon preview before integration. It verifies `would-abandon`, an empty blocker list and an intact worktree, reproducing the omitted preview flag without adding a collected test case.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `lifecycle_finalize_task_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:855-886. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/tests/integration_branch_authority_test_support.py:48 to the row 153 of this card as the citation for `_closed_external_leaf_worktrees`: no cited file carried the construct, and the checker named line(s) [48] in this file as its live location; added mcp/tests/integration_branch_authority_test_support.py:48 to the row 165 of this card as the citation for `_closed_external_leaf_worktrees`: no cited file carried the construct, and the checker named line(s) [48] in this file as its live location; added mcp/tests/integration_branch_authority_test_support.py:48 to the row 153 of this card as the citation for `_closed_external_leaf_worktrees`: no cited file carried the construct, and the checker named line(s) [48] in this file as its live location; added mcp/tests/integration_branch_authority_test_support.py:48 to the row 165 of this card as the citation for `_closed_external_leaf_worktrees`: no cited file carried the construct, and the checker named line(s) [48] in this file as its live location
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_closed_external_leaf_worktrees` in the row 153 of this card from mcp/tests/integration_branch_authority_test_support.py:129-135 to mcp/tests/integration_branch_authority_test_support.py:48-53, the extent of the construct the claim is about (the checker named line(s) [48] as its live location); re-pointed `_closed_external_leaf_worktrees` in the row 165 of this card from mcp/tests/integration_branch_authority_test_support.py:129-135 to mcp/tests/integration_branch_authority_test_support.py:48-53, the extent of the construct the claim is about (the checker named line(s) [48] as its live location); added mcp/tests/integration_branch_authority_test_support.py:48-53 to the row 153 of this card as the citation for `_closed_external_leaf_worktrees`: no cited file carried the construct, and the checker named line(s) [48] in this file as its live location; added mcp/tests/integration_branch_authority_test_support.py:48-53 to the row 165 of this card as the citation for `_closed_external_leaf_worktrees`: no cited file carried the construct, and the checker named line(s) [48] in this file as its live location
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_authority_fixture` in the row 153 of this card from mcp/tests/integration_branch_authority_test_support.py:48-53 to mcp/tests/integration_branch_authority_test_support.py:129-135, the extent of the construct the claim is about (the checker named line(s) [129] as its live location); re-pointed `_authority_fixture` in the row 165 of this card from mcp/tests/integration_branch_authority_test_support.py:48-53 to mcp/tests/integration_branch_authority_test_support.py:129-135, the extent of the construct the claim is about (the checker named line(s) [129] as its live location)
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_closed_external_leaf_worktrees` in the row 153 of this card from mcp/tests/integration_branch_authority_test_support.py:129-135 to mcp/tests/integration_branch_authority_test_support.py:48-53, the extent of the construct the claim is about (the checker named line(s) [48] as its live location); re-pointed `_closed_external_leaf_worktrees` in the row 165 of this card from mcp/tests/integration_branch_authority_test_support.py:129-135 to mcp/tests/integration_branch_authority_test_support.py:48-53, the extent of the construct the claim is about (the checker named line(s) [48] as its live location)
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/tests/integration_branch_authority_test_support.py:129-135 in the row 153 of this card; the repetition added no pooled evidence; kept one copy of the repeated citation mcp/tests/integration_branch_authority_test_support.py:129-135 in the row 165 of this card; the repetition added no pooled evidence
+
+
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: The existing first-call finalization case also calls public abandon preview before integration. It verifies `would-abandon`, an empty blocker list and an intact worktree, reproducing the omitted preview flag without adding a collected test case.
+
 
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
@@ -175,11 +192,13 @@ routes run at all. No production cross-repository authority is claimed by this f
   location was unique. Repaired the citations, not the claims: the lane row now anchors the lane
   block that declares this module, and the ownership row anchors the repository-test-input mapping
   that carries its entry. Verification metadata remains closeout-owned.
+
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
   claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
   card from their anchors against the frozen source snapshot (`agents-remember memory-citations
   --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
   back at its current position. Verification metadata remains closeout-owned.
+
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: created this one-to-one sidecar for the leaf's new
   integration module. Recorded the measured defect (a `providerRuntime` blockage with `reason: null`
   stopped a cleanup whose own payload proved the archive and an already torn-down provider runtime),
@@ -197,3 +216,4 @@ routes run at all. No production cross-repository authority is claimed by this f
   all ownership accounting only, not execution or acceptance evidence. The metadata table records
   the branch base this card was derived against; no commit contains this file yet, closeout owns the
   real stamp, and no acceptance claim is made.
+

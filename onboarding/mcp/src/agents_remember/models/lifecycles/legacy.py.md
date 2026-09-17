@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/legacy.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,27 +46,27 @@ None recorded.
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The bounded legacy proof retains unfinished memory intent after verified code without a ledger message. | L12-L52 | [mcp/src/agents_remember/models/lifecycles/legacy.py](mcp/src/agents_remember/models/lifecycles/legacy.py) |
-| The module defines `LegacyCloseoutMigrationProof` as its public seam. | L12-L52 | [mcp/src/agents_remember/models/lifecycles/legacy.py](mcp/src/agents_remember/models/lifecycles/legacy.py) |
+| The bounded legacy proof retains unfinished memory intent after verified code without a ledger message. | `_require_exact_original_bytes` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-52 |
+| The module defines `LegacyCloseoutMigrationProof` as its public seam. | `LegacyCloseoutMigrationProof` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-13 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 ## Update History
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Narrowed the supported legacy proof to unfinished memory-content intent after verified code. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

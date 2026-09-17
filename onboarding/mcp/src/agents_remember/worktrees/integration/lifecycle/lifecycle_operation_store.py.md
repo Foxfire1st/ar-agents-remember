@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,15 +63,15 @@ None recorded.
 
 Private preparation is selected after generation creation, never injected into a new record. Starting a private command requires the same fully identified active running worker, no cancellation and a validated preparation transition. A preparation update cannot simultaneously publish mutation/history/recovery tuples, consume approval, enter the irreversible boundary or finalize the contract. Retained preparation blocks retirement/supersession or terminal replacement without an explicit proved disposition; completed status requires finalization proof, and cancellation requires unchanged logical-ref evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `_validate_private_preparation_transition` boundary implements the preparation contract above. | L384-L430 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| The current `_validate_private_preparation_transition` boundary implements the preparation contract above. | `_validate_private_preparation_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:384-386 |
 
 ## Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -79,25 +79,25 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. | L89-L102 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
-| `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. | L306-L381 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. | `_validate_recovery_commits_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:89-92 |
+| `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-309 |
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) | L306-L381 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
-| Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`) | L859-L886 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
-| The write-side identity requirement for closeout/direct-landing records. (`_write`) | L897-L918 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
+| Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-309 |
+| Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`) | `_retire_missing_intent_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:859-863 |
+| The write-side identity requirement for closeout/direct-landing records. (`_write`) | `_write` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:897-898 |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 
@@ -124,13 +124,13 @@ revisions after validation and refuses transforms that pre-assign either. The su
 supersede writers bump `meaningfulRevision` alongside the generation/record-revision
 advance, so a successor is always visible to an old-generation waiter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`) | L306-L381 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
-| Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`) | L433-L456 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
-| The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`) | L433-L456 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
-| A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) | L741-L829 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py) |
-| The shared meaningful-change comparison. (`meaningful_state_changed`) | L557-L563 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`) | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-309 |
+| Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`) | `_advance_record_revision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:433-436 |
+| The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`) | `_advance_record_revision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:433-436 |
+| A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) | `replace_terminal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:741-750 |
+| The shared meaningful-change comparison. (`meaningful_state_changed`) | `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:557-560 |
 
 ## Update History
 

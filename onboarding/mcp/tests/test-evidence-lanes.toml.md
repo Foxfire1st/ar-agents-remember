@@ -6,8 +6,8 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
@@ -693,69 +693,97 @@ The exact source declarations below establish the current behavior; this invento
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:6-131 |
+| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 | Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:138-197 |
-| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:200-215 |
-| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:218-230 |
-| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:232-232; mcp/tests/test-evidence-lanes.toml:234-234 |
+| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:224-224 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:243-243 |
+| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:258-258; mcp/tests/test-evidence-lanes.toml:260-260 |
 | L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:138-200 |
-| The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:6-6 |
-| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:232-232 |
-| LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:109-109 |
+| The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
+| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:258-258 |
+| LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:120-120 |
 | The checkpoint landing forcing suite is registered in the unit-regression lane by the same leaf that created it. | "mcp/tests/test_checkpoint_landing.py" | mcp/tests/test-evidence-lanes.toml:26-26 |
-| The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 184 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:194-194 |
-| The L34 boundary suite is registered in the integration lane by the same leaf that created it (row 132 at that leaf; row 134 now, after the L4, L5, L7, L8 and L3 insertions) — it drives the public checkpoint and closeout operations over real temporary Git repositories. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:144-144 |
-| The L36 cross-master forcing module is registered in the integration lane by the same leaf that created it (row 143 at that leaf; row 146 now, after the L4, L5, L7, L8 and L3 insertions); it drives two sprint-commanded atomic masters plus the public checkpoint-landing and integration operations over one real temporary Git world. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:156-156 |
-| The L37 stop boundary suite is registered in the integration lane by the same leaf that created it (row 158 at that leaf; row 163 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:173-173 |
-| The L37 AST-only architecture guard is registered in architecture-fitness by the same leaf that created it (row 190 at that leaf; row 196 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:206-206 |
-| The ordered lifecycle playthrough is registered in the integration lane by the same change set that created it (row 153 at that change set; row 157 now, after the L4, L5, L7, L8 and L3 insertions) — it plays master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf after the landing, over one real temporary Git world. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:167-167 |
-| The L4 producer-census suite is registered in the unit-regression lane by the commit that landed L4, closing the gap the L4 section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:78-78 |
-| The L5 master-link binding suite is registered in the integration lane by the same change set that created it (entry row 154 now, after the L7, L8 and L3 insertions) — it drives the real public `worktree_start` over disposable code and external-memory repositories, so that is its behaviour-preserving lane. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:164-164 |
+| The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 184 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:219-219 |
+| The L34 boundary suite is registered in the integration lane by the same leaf that created it (row 132 at that leaf; row 134 now, after the L4, L5, L7, L8 and L3 insertions) — it drives the public checkpoint and closeout operations over real temporary Git repositories. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:167-167 |
+| The L36 cross-master forcing module is registered in the integration lane by the same leaf that created it (row 143 at that leaf; row 146 now, after the L4, L5, L7, L8 and L3 insertions); it drives two sprint-commanded atomic masters plus the public checkpoint-landing and integration operations over one real temporary Git world. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:179-179 |
+| The L37 stop boundary suite is registered in the integration lane by the same leaf that created it (row 158 at that leaf; row 163 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:196-196 |
+| The L37 AST-only architecture guard is registered in architecture-fitness by the same leaf that created it (row 190 at that leaf; row 196 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:232-232 |
+| The ordered lifecycle playthrough is registered in the integration lane by the same change set that created it (row 153 at that change set; row 157 now, after the L4, L5, L7, L8 and L3 insertions) — it plays master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf after the landing, over one real temporary Git world. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:190-190 |
+| The L4 producer-census suite is registered in the unit-regression lane by the commit that landed L4, closing the gap the L4 section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:85-85 |
+| The L5 master-link binding suite is registered in the integration lane by the same change set that created it (entry row 154 now, after the L7, L8 and L3 insertions) — it drives the real public `worktree_start` over disposable code and external-memory repositories, so that is its behaviour-preserving lane. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:187-187 |
 | The L7 capacity-refusal classification suite is registered in the integration lane by the same change set that created it (entry row 138 now, after the L8 and L3 insertions) — it composes the real `QueueFixture` over temporary Git repositories and drives the production graph admission and projection path, so that is its behaviour-preserving lane. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:138-200 |
-| The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 178 now, after the L3 insertion) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:188-188 |
-| The L2 knowledge graph suite is registered in the unit-regression lane by the same change set that created it (entry rows 69-73) — all four modules are hermetic (temporary directories, in-process APSW databases, no integration marker, no repository or subprocess), so the default unit lane is each one's behaviour-preserving classification. | "mcp/tests/test_knowledge_family_revision.py"; "mcp/tests/test_knowledge_graph_reads.py"; "mcp/tests/test_knowledge_relation_rules.py"; "mcp/tests/test_knowledge_revision_seals.py" | mcp/tests/test-evidence-lanes.toml:70-74 |
-| The L3 candidate-batch pair and the label-operations suite are registered in the unit-regression lane by the same change set that created them (entry rows 18-19, and row 71 now after the L4 insertions) — all three are hermetic (temporary directories, in-process APSW databases driven through the real admitted destination, no integration marker, no repository or subprocess), so the default unit lane is each one's behaviour-preserving classification. | "mcp/tests/test_candidate_batch_commands.py"; "mcp/tests/test_candidate_batch_transaction.py"; "mcp/tests/test_knowledge_label_operations.py" | mcp/tests/test-evidence-lanes.toml:18-19; mcp/tests/test-evidence-lanes.toml:71-71 |
-| The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (row 79 now, after the L4 insertions) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:79-79 |
-| **The L4 snapshot pair is registered in the unit-regression lane by the same change set that created them (rows 69 and 75)** — both modules are hermetic: temporary directories under `tmp_path`, in-process APSW databases driven through the real admitted destination and the real publication lock, and a child interpreter used only as a crash probe, with no integration marker, no repository working tree and no network. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:69-69; mcp/tests/test-evidence-lanes.toml:75-75 |
-| **The knowledge block's current membership across all four KS leaves**, whose insertion order is why the rows are not contiguous by leaf. | "mcp/tests/test_knowledge_store.py" | mcp/tests/test-evidence-lanes.toml:69-76 |
-| **The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value — raised to 300 by this leaf's fix round.** | "integration_case_budget = 300" | pyproject.toml:186-186 |
-| **The unit ceiling that stays unchanged and must not be raised, cited as the pinned key and value.** | "unit_case_budget = 1000" | pyproject.toml:185-185 |
-| **The two lane rows this leaf registered in the same change, both in `integration` because the unit population sits exactly at its declared ceiling.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" | mcp/tests/test-evidence-lanes.toml:140-141 |
+| The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 178 now, after the L3 insertion) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:212-212 |
+| The L2 knowledge graph suite is registered in the unit-regression lane by the same change set that created it (entry rows 69-73) — all four modules are hermetic (temporary directories, in-process APSW databases, no integration marker, no repository or subprocess), so the default unit lane is each one's behaviour-preserving classification. | "mcp/tests/test_knowledge_family_revision.py"; "mcp/tests/test_knowledge_graph_reads.py"; "mcp/tests/test_knowledge_relation_rules.py"; "mcp/tests/test_knowledge_revision_seals.py" | mcp/tests/test-evidence-lanes.toml:71-71; mcp/tests/test-evidence-lanes.toml:73-73; mcp/tests/test-evidence-lanes.toml:77-78 |
+| The L3 candidate-batch pair and the label-operations suite are registered in the unit-regression lane by the same change set that created them (entry rows 18-19, and row 71 now after the L4 insertions) — all three are hermetic (temporary directories, in-process APSW databases driven through the real admitted destination, no integration marker, no repository or subprocess), so the default unit lane is each one's behaviour-preserving classification. | "mcp/tests/test_candidate_batch_commands.py"; "mcp/tests/test_candidate_batch_transaction.py"; "mcp/tests/test_knowledge_label_operations.py" | mcp/tests/test-evidence-lanes.toml:72-72; mcp/tests/test-evidence-lanes.toml:71-71; mcp/tests/test-evidence-lanes.toml:18-18; mcp/tests/test-evidence-lanes.toml:19-19 |
+| The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (row 79 now, after the L4 insertions) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:86-86 |
+| **The L4 snapshot pair is registered in the unit-regression lane by the same change set that created them (rows 69 and 75)** — both modules are hermetic: temporary directories under `tmp_path`, in-process APSW databases driven through the real admitted destination and the real publication lock, and a child interpreter used only as a crash probe, with no integration marker, no repository working tree and no network. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-79; mcp/tests/test-evidence-lanes.toml:75-75 |
+| **The knowledge block's current membership across all four KS leaves**, whose insertion order is why the rows are not contiguous by leaf. | "mcp/tests/test_knowledge_store.py" | mcp/tests/test-evidence-lanes.toml:80-80 |
+| **The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value — raised to 340 on this master's owning seat's measurement, not by this leaf's fix round.** | "integration_case_budget = 340" | pyproject.toml:287-287 |
+| **The unit ceiling, cited as the pinned key and value — raised to 1250 because the merged line collects both campaigns' populations and `pytest_collection_finish` runs no tests at all over an over-budget population.** | "unit_case_budget = 1250" | pyproject.toml:286-286 |
+| **The two lane rows this leaf registered in the same change, both in `integration` because the unit population sits exactly at its declared ceiling.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" | mcp/tests/test-evidence-lanes.toml:156-157 |
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
 | Retained unit-regression membership, including the R28 deferred-work, canonical terminal-evidence mapping and L23 registration-order proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-128 |
-| The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 191 now, after the L4, seal-removal, L5, L7, L8, L3, L01 and L17 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:193-193 |
-| The L34 boundary suite is registered in the integration lane by the same leaf that created it (row 132 at that leaf; row 135 now, after the L4, L5, L7, L8, L3 and L01 insertions) — it drives the public checkpoint and closeout operations over real temporary Git repositories. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:141-141 |
-| The L36 cross-master forcing module is registered in the integration lane by the same leaf that created it (row 143 at that leaf; row 147 now, after the L4, L5, L7, L8, L3 and L01 insertions); it drives two sprint-commanded atomic masters plus the public checkpoint-landing and integration operations over one real temporary Git world. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:153-153 |
-| The L37 stop boundary suite is registered in the integration lane by the same leaf that created it (row 158 at that leaf; row 164 now, after the L4, seal-removal, L5, L7, L8, L3 and L01 insertions). | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:170-170 |
-| The L37 AST-only architecture guard is registered in architecture-fitness by the same leaf that created it (row 190 at that leaf; row 197 now, after the L4, seal-removal, L5, L7, L8, L3 and L01 insertions). | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:205-205 |
-| The ordered lifecycle playthrough is registered in the integration lane by the same change set that created it (row 153 at that change set; row 158 now, after the L4, L5, L7, L8, L3 and L01 insertions) — it plays master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf after the landing, over one real temporary Git world. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:164-164 |
-| The L5 master-link binding suite is registered in the integration lane by the same change set that created it (entry row 155 now, after the L7, L8, L3 and L01 insertions) — it drives the real public `worktree_start` over disposable code and external-memory repositories, so that is its behaviour-preserving lane. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:161-161 |
-| The L7 capacity-refusal classification suite is registered in the integration lane by the same change set that created it (entry row 139 now, after the L8, L3 and L01 insertions) — it composes the real `QueueFixture` over temporary Git repositories and drives the production graph admission and projection path, so that is its behaviour-preserving lane. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:145-145 |
-| The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 179 now, after the L3 and L01 insertions) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:186-186 |
-| The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (entry row 69) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:70-70 |
-| The L23 registration-order proof is registered in the unit-regression lane by the same change set that created it (entry row 118) — it drives the real catalog and sweeper over `tempfile` files with in-process registrar/compactor doubles, so it is hermetic and the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_terminal_liveness_registration_order.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
-| The L27 pane-authority proof is registered in the integration lane by the same change set that created it — entry ordinal **53** of 61 in that lane; file line `:183` at base `52bee429` **plus** this change set (`:182` at that base alone, and `:181` at this candidate's own build base `b368b661`, which is the figure the leaf's verdict and worker report cite). It is hermetic but takes the lane of its sibling `test_terminal_liveness.py`, and a new module of this family needs a row or its application imports run inside ordinary unit collection. | "mcp/tests/test_terminal_liveness_pane_authority.py" | mcp/tests/test-evidence-lanes.toml:188-188 |
+| The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 191 now, after the L4, seal-removal, L5, L7, L8, L3, L01 and L17 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:219-219 |
+| The L34 boundary suite is registered in the integration lane by the same leaf that created it (row 132 at that leaf; row 135 now, after the L4, L5, L7, L8, L3 and L01 insertions) — it drives the public checkpoint and closeout operations over real temporary Git repositories. | "mcp/tests/test_checkpoint_landing_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:167-167 |
+| The L36 cross-master forcing module is registered in the integration lane by the same leaf that created it (row 143 at that leaf; row 147 now, after the L4, L5, L7, L8, L3 and L01 insertions); it drives two sprint-commanded atomic masters plus the public checkpoint-landing and integration operations over one real temporary Git world. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:179-179 |
+| The L37 stop boundary suite is registered in the integration lane by the same leaf that created it (row 158 at that leaf; row 164 now, after the L4, seal-removal, L5, L7, L8, L3 and L01 insertions). | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:196-196 |
+| The L37 AST-only architecture guard is registered in architecture-fitness by the same leaf that created it (row 190 at that leaf; row 197 now, after the L4, seal-removal, L5, L7, L8, L3 and L01 insertions). | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:232-232 |
+| The ordered lifecycle playthrough is registered in the integration lane by the same change set that created it (row 153 at that change set; row 158 now, after the L4, L5, L7, L8, L3 and L01 insertions) — it plays master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf after the landing, over one real temporary Git world. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:190-190 |
+| The L5 master-link binding suite is registered in the integration lane by the same change set that created it (entry row 155 now, after the L7, L8, L3 and L01 insertions) — it drives the real public `worktree_start` over disposable code and external-memory repositories, so that is its behaviour-preserving lane. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:187-187 |
+| The L7 capacity-refusal classification suite is registered in the integration lane by the same change set that created it (entry row 139 now, after the L8, L3 and L01 insertions) — it composes the real `QueueFixture` over temporary Git repositories and drives the production graph admission and projection path, so that is its behaviour-preserving lane. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:171-171 |
+| The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 179 now, after the L3 and L01 insertions) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:212-212 |
+| The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (entry row 69) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:86-86 |
+| The L23 registration-order proof is registered in the unit-regression lane by the same change set that created it (entry row 118) — it drives the real catalog and sweeper over `tempfile` files with in-process registrar/compactor doubles, so it is hermetic and the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_terminal_liveness_registration_order.py" | mcp/tests/test-evidence-lanes.toml:143-143 |
+| The L27 pane-authority proof is registered in the integration lane by the same change set that created it — entry ordinal **53** of 61 in that lane; file line `:183` at base `52bee429` **plus** this change set (`:182` at that base alone, and `:181` at this candidate's own build base `b368b661`, which is the figure the leaf's verdict and worker report cite). It is hermetic but takes the lane of its sibling `test_terminal_liveness.py`, and a new module of this family needs a row or its application imports run inside ordinary unit collection. | "mcp/tests/test_terminal_liveness_pane_authority.py" | mcp/tests/test-evidence-lanes.toml:214-214 |
 | The unit-regression bracket the L23 row sits inside, whose upper bound has moved with each later unit-lane insertion (L23, then L01, then L10). | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-128 |
-| The L01 steady-state observation suite is registered in the unit-regression lane by the same change set that created it (entry row 97) — it drives the real lifespan finalizer, the real sweeper and the real catalog under a virtual event-loop clock and issues no HTTP request, so the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_serving_observation_loop.py" | mcp/tests/test-evidence-lanes.toml:99-99 |
-| The L18 startup-prime proof is registered in the unit-regression lane by the same change set that created it (entry row 98), immediately below its sibling and sharing that sibling's fixture — it drives the real lifespan over a temporary catalog under a virtual clock with no HTTP request and no process, so the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_serving_startup_prime.py" | mcp/tests/test-evidence-lanes.toml:100-100 |
+| The L01 steady-state observation suite is registered in the unit-regression lane by the same change set that created it (entry row 97) — it drives the real lifespan finalizer, the real sweeper and the real catalog under a virtual event-loop clock and issues no HTTP request, so the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_serving_observation_loop.py" | mcp/tests/test-evidence-lanes.toml:115-115 |
+| The L18 startup-prime proof is registered in the unit-regression lane by the same change set that created it (entry row 98), immediately below its sibling and sharing that sibling's fixture — it drives the real lifespan over a temporary catalog under a virtual clock with no HTTP request and no process, so the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_serving_startup_prime.py" | mcp/tests/test-evidence-lanes.toml:117-117 |
 | The unit-regression bracket at the L18 candidate measurement, whose upper bound moved with each later unit-lane insertion (L23, L01, L10, then L18). | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-126 |
 | The integration bracket at the L18 candidate measurement. | `integration` | mcp/tests/test-evidence-lanes.toml:132-194 |
-| The L17 observer-health proof is registered in the unit-regression lane by the same change set that created it (entry row 122, immediately below `test_terminal_liveness_registration_order.py` at `:121`) — it drives the record, the writer, the accumulator and the real `_state_response` handler and `stream_events` generator against stub projectors with no HTTP transport and no server, so the default unit lane is its behaviour-preserving classification. The insertion sits below `test_serving_observation_loop.py` (`:97`) and `test_serving_startup_prime.py` (`:98`), so no earlier row moved. | "mcp/tests/test_terminal_observer_health.py" | mcp/tests/test-evidence-lanes.toml:124-124 |
-| The L06 reviewer-relay proof is registered in the unit-regression lane by the same change set that created it (entry row 68, immediately below `test_lifecycle_operation_model_helpers.py` at `:67` and above `test_memory_attribution_producers.py` at `:69`) — it drives the real observer, the production terminal-evidence lift and the real notifier sweep over a temporary coordination root with no HTTP request, no server and no process, so the default unit lane is its behaviour-preserving classification. Unlike the L17/L18 insertions this row lands inside the unit run above the rows this card cites, which is why every affected citation here was re-derived against the candidate. | "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
-| The L05 worker turn owner wake module is registered in the unit-regression lane by the same change set that created it (entry row 105, immediately below `test_state_signal_restart_recovery.py` at `:104` and above `test_state_signal_structural_dispatch_recovery.py` at `:106`) — it seeds owned worker and manager seats on a real `TerminalCatalog`, drives the real `run_agent_notifier_sweep` over a temporary coordination root with real task documents and the real durable stores, issues no HTTP request, starts no server and starts no process, and asserts the whole inbox store rather than its state-signal subset, so the default unit lane is its behaviour-preserving classification. The insertion sits inside the unit run above the rows this card cites, which is why every affected citation here was re-derived against the candidate rather than carried. | "mcp/tests/test_state_signal_worker_wake.py" | mcp/tests/test-evidence-lanes.toml:105-105 |
-| The L17 observer-health proof is registered in the unit-regression lane by the same change set that created it (entry row 122, immediately below `test_terminal_liveness_registration_order.py` at `:121`) — it drives the record, the writer, the accumulator and the real `_state_response` handler and `stream_events` generator against stub projectors with no HTTP transport and no server, so the default unit lane is its behaviour-preserving classification. The insertion sits below `test_serving_observation_loop.py` (`:97`) and `test_serving_startup_prime.py` (`:98`), so no earlier row moved. | "mcp/tests/test_terminal_observer_health.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
-| The L07 curator-wake proof is registered in the unit-regression lane by the same change set that created it (entry row 102), immediately below `test_state_signal_boundary_delivery.py` at `:101` and above `test_state_signal_relay.py` at `:103` — it drives the real liveness sweeper, the real agent-notifier sweep and the real `run_agent_notifier_sweep` over temporary catalogs and an in-process tmux host, with no HTTP request, no server and no process, so the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_state_signal_curator_wake.py" | mcp/tests/test-evidence-lanes.toml:102-102 |
+| The L17 observer-health proof is registered in the unit-regression lane by the same change set that created it (entry row 122, immediately below `test_terminal_liveness_registration_order.py` at `:121`) — it drives the record, the writer, the accumulator and the real `_state_response` handler and `stream_events` generator against stub projectors with no HTTP transport and no server, so the default unit lane is its behaviour-preserving classification. The insertion sits below `test_serving_observation_loop.py` (`:97`) and `test_serving_startup_prime.py` (`:98`), so no earlier row moved. | "mcp/tests/test_terminal_observer_health.py" | mcp/tests/test-evidence-lanes.toml:144-144 |
+| The L06 reviewer-relay proof is registered in the unit-regression lane by the same change set that created it (entry row 68, immediately below `test_lifecycle_operation_model_helpers.py` at `:67` and above `test_memory_attribution_producers.py` at `:69`) — it drives the real observer, the production terminal-evidence lift and the real notifier sweep over a temporary coordination root with no HTTP request, no server and no process, so the default unit lane is its behaviour-preserving classification. Unlike the L17/L18 insertions this row lands inside the unit run above the rows this card cites, which is why every affected citation here was re-derived against the candidate. | "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" | mcp/tests/test-evidence-lanes.toml:84-84 |
+| The L05 worker turn owner wake module is registered in the unit-regression lane by the same change set that created it (entry row 105, immediately below `test_state_signal_restart_recovery.py` at `:104` and above `test_state_signal_structural_dispatch_recovery.py` at `:106`) — it seeds owned worker and manager seats on a real `TerminalCatalog`, drives the real `run_agent_notifier_sweep` over a temporary coordination root with real task documents and the real durable stores, issues no HTTP request, starts no server and starts no process, and asserts the whole inbox store rather than its state-signal subset, so the default unit lane is its behaviour-preserving classification. The insertion sits inside the unit run above the rows this card cites, which is why every affected citation here was re-derived against the candidate rather than carried. | "mcp/tests/test_state_signal_worker_wake.py" | mcp/tests/test-evidence-lanes.toml:124-124 |
+| The L17 observer-health proof is registered in the unit-regression lane by the same change set that created it (entry row 122, immediately below `test_terminal_liveness_registration_order.py` at `:121`) — it drives the record, the writer, the accumulator and the real `_state_response` handler and `stream_events` generator against stub projectors with no HTTP transport and no server, so the default unit lane is its behaviour-preserving classification. The insertion sits below `test_serving_observation_loop.py` (`:97`) and `test_serving_startup_prime.py` (`:98`), so no earlier row moved. | "mcp/tests/test_terminal_observer_health.py" | mcp/tests/test-evidence-lanes.toml:144-144 |
+| The L07 curator-wake proof is registered in the unit-regression lane by the same change set that created it (entry row 102), immediately below `test_state_signal_boundary_delivery.py` at `:101` and above `test_state_signal_relay.py` at `:103` — it drives the real liveness sweeper, the real agent-notifier sweep and the real `run_agent_notifier_sweep` over temporary catalogs and an in-process tmux host, with no HTTP request, no server and no process, so the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_state_signal_curator_wake.py" | mcp/tests/test-evidence-lanes.toml:121-121 |
 
 ## Cross-Repo References
 
 No separate cross-repository authority is established by this file.
 
 ## Update History
-
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "unit-regression" repointed to mcp/tests/test-evidence-lanes.toml:5-5. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "architecture-fitness" repointed to mcp/tests/test-evidence-lanes.toml:224-224. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "provider-conformance" repointed to mcp/tests/test-evidence-lanes.toml:243-243. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:258-258. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_state_signal_boundary_delivery.py" repointed to mcp/tests/test-evidence-lanes.toml:120-120. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_worktree_status_terminal_next_tool.py" repointed to mcp/tests/test-evidence-lanes.toml:219-219. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_checkpoint_landing_end_to_end.py" repointed to mcp/tests/test-evidence-lanes.toml:167-167. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_cross_master_concurrency.py" repointed to mcp/tests/test-evidence-lanes.toml:179-179. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_pause_stop_only_end_to_end.py" repointed to mcp/tests/test-evidence-lanes.toml:196-196. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_pause_is_not_publication.py" repointed to mcp/tests/test-evidence-lanes.toml:232-232. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" repointed to mcp/tests/test-evidence-lanes.toml:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_memory_attribution_producers.py" repointed to mcp/tests/test-evidence-lanes.toml:85-85. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:187-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_terminal_blocker_reasons.py" repointed to mcp/tests/test-evidence-lanes.toml:212-212. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_knowledge_family_revision.py"; "mcp/tests/test_knowledge_graph_reads.py"; "mcp/tests/test_knowledge_relation_rules.py"; "mcp/tests/test_knowledge_revision_seals.py" repointed to mcp/tests/test-evidence-lanes.toml:71-71; mcp/tests/test-evidence-lanes.toml:73-73; mcp/tests/test-evidence-lanes.toml:77-77; mcp/tests/test-evidence-lanes.toml:78-78. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_memory_backfill.py" repointed to mcp/tests/test-evidence-lanes.toml:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_knowledge_store.py" repointed to mcp/tests/test-evidence-lanes.toml:80-80. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" repointed to mcp/tests/test-evidence-lanes.toml:157-157; mcp/tests/test-evidence-lanes.toml:156-156. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_closeout_projection_source_classification.py" repointed to mcp/tests/test-evidence-lanes.toml:171-171. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:143-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_pane_authority.py" repointed to mcp/tests/test-evidence-lanes.toml:214-214. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_serving_startup_prime.py" repointed to mcp/tests/test-evidence-lanes.toml:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:144-144. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:84-84. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_state_signal_curator_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:121-121. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `mcp/tests/test_knowledge_candidate_workspace.py` in the row 719 of this card from mcp/tests/test-evidence-lanes.toml:69-69 to mcp/tests/test-evidence-lanes.toml:70, the extent of the construct the claim is about (the checker named line(s) [70] as its live location); re-pointed `mcp/tests/test_knowledge_label_operations.py` in the row 717 of this card from mcp/tests/test-evidence-lanes.toml:18-19 to mcp/tests/test-evidence-lanes.toml:72, the extent of the construct the claim is about (the checker named line(s) [72] as its live location); re-pointed `mcp/tests/test_knowledge_snapshot_publication.py` in the row 719 of this card from mcp/tests/test-evidence-lanes.toml:70 to mcp/tests/test-evidence-lanes.toml:79, the extent of the construct the claim is about (the checker named line(s) [79] as its live location); re-pointed `migration` in the row 700 of this card from mcp/tests/test-evidence-lanes.toml:232-232 to mcp/tests/test-evidence-lanes.toml:260, the extent of the construct the claim is about (the checker named line(s) [260] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T15:02+02:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00.
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **recorded this leaf's two lane rows and re-measured the whole manifest rather than carrying L7's numbers.** The rows are `test_knowledge_diff_scope.py` (unit-regression, `:76`, 13 hermetic nodes) and `test_knowledge_diff_boundaries.py` (integration, `:159`, 15 nodes that drive the **production Git probe** over two real committed trees and a real curated candidate database) — each the module's behaviour-preserving classification, not a budget consequence. **The measured account: 243 declared entries against 243 modules on disk**, closed in both directions, 0 duplicates, with unit-regression 143 (`5-149`), public-contract 2 (`150-153`), integration 68 (`154-223`), architecture-fitness 17 (`224-242`), provider-conformance 13 (`243-257`) and the two empty lanes; against 241/241 after L7 and 238/238 on the merged base, so this leaf's two modules are the whole difference. The shared support module is named as a *governed artifact* (`knowledge-diff-cases`) rather than a lane row, and the card records that **the read-scope artifact's consumer list gained the same two paths** in this change. **The budget pair did not move**: 1250 / 340 with `pyproject.toml` clean, and the sizing question and its merged-line attribution are left exactly where L7 recorded them. The sentence that said the merged counts were pending now points at this leaf's measured account, and the earlier accounts are kept as as-of records. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **recorded this leaf's three lane rows and, as the closing curator, produced the merged measurement the two labelled accounts were waiting for.** The rows are `test_knowledge_read_scope.py` (unit-regression, `:75`), `test_knowledge_read_boundaries.py` (integration, `:157`) and `test_knowledge_read_paths.py` (integration, `:158`), with the split explained as what it is — the 1 200-line hard limit was paid, not waived — and the shared support module named as a *governed artifact* rather than a lane row. **The merged counts are measured, not derived:** 241 declared entries against 241 modules on disk, with unit-regression 142 (`6-148`), public-contract 2 (`150-152`), integration 67 (`154-221`), architecture-fitness 17 (`223-240`), provider-conformance 13 (`242-255`) and the two empty lanes, and the merged base's own 238/238 recorded beside them so the difference is attributable rather than merged. The sentence that said the merged counts were *pending* now says they were measured and where they are recorded, and the earlier accounts are kept as as-of records under the memory doctrine. The card also carries the raised budget pair **1250 / 340** with the merged-line attribution stated as measured (official 1014/1100 green, KS parent 1003/1100 green, merged 1138/1100 red *before any L7 line*), the note that the raise is headroom rather than a target, and this leaf's own populations (unit 1138 → 1159, integration 279 → 304). Verification metadata remains empty until closeout stamps the code commit.
 
-- **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T15:02+02:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00.
 - 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): registered the change set's two new knowledge modules and re-measured the whole manifest rather than carrying the L5 numbers — **221 declarations and 221 modules on disk**, with the current brackets unit-regression 127 at rows 6-132, public-contract 2 at 135-136, integration **63** at 139-201, architecture-fitness 16 at 204-219 and provider-conformance 13 at 222-234. Both additions are `test_knowledge_portable_roundtrip.py` and `test_knowledge_portable_boundaries.py` in the **integration** lane (rows 140-141), and the lane is forced rather than preferred: the unit population sits exactly at its declared 1000-case ceiling, and both modules are boundary executors (real databases under `tmp_path`, published closed files, destination bytes and directory contents measured). **The declared budget pair is corrected in this card**: `integration_case_budget` is now **300** at `pyproject.toml:186` (raised by this leaf's fix round with the doctrine-required dated tradeoff above the pair) and `unit_case_budget` stays **1000** at `pyproject.toml:185`; every earlier entry's `250` at `pyproject.toml:150` is stale, including the reference row that carried it — which is also the one pre-existing `citation_claim_reopened` finding this card owned, so that finding is cleared by re-pointing the claim at the key's current line and value. The lane-section layout is unchanged but a new leading section carries the current account so a reader does not have to reconstruct it from eight historical as-of records. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): registered the change set's two new knowledge modules and re-measured the whole manifest rather than carrying the L4 numbers — **219 declarations and 219 modules on disk**, with the current brackets unit-regression 127 at rows 6-133, public-contract 2 at 135-136, integration 61 at 139-200, architecture-fitness 16 at 202-218 and provider-conformance 13 at 220-233. The two additions are `test_knowledge_guarded_merge.py` in **unit-regression** (row 73) and `test_knowledge_guarded_merge_boundaries.py` in **integration** (row 139); the split is a budget decision, because the unit population sits exactly at its declared 1000-case ceiling after this leaf and each boundary scenario needs its own three-commit Git world. Every entry-row citation in this card below the insertions was re-derived against the new bytes. Verification metadata remains closeout-owned.
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): registered the change set's two new knowledge modules in the **unit-regression** lane — `test_knowledge_candidate_workspace.py` at row 69 and `test_knowledge_snapshot_publication.py` at row 75 — and re-measured the manifest rather than carrying the L3 numbers: **217 modules on disk and 217 declared entries** with no undeclared module and no stale row, 126 unit-regression (6-131), 2 public-contract (134-135), 60 integration (138-197), 16 architecture-fitness (200-215), 13 provider-conformance (218-230), and stress-durability (232) and migration (234) empty. Both modules are hermetic — `tmp_path` directories, in-process APSW databases driven through the real admitted destination and the real publication lock, and a child interpreter used only as a crash probe — so the default unit lane is each one's behaviour-preserving classification. Their insertion inside the alphabetical knowledge block is why the rows are 69 and 75 rather than adjacent, and it is also why every entry-row citation below moved by two: **this pass re-derived all of them against the working manifest** (the `unit-regression`, `integration`, `architecture-fitness`, `provider-conformance`, `stress-durability` and `migration` row citations plus the twelve per-leaf row citations), which clears the pre-existing `citation_anchor_absent_from_range` findings this card carried. Classification only, so lane membership is not execution or acceptance evidence; verification metadata remains closeout-owned.
@@ -777,6 +805,7 @@ No separate cross-repository authority is established by this file.
   only, so lane membership is not execution or acceptance evidence; verification metadata remains
   closeout-owned.
 
+
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): registered the change set's new `mcp/tests/test_knowledge_store.py` in the
   **unit-regression** lane at entry row 67 — the module is hermetic (temporary directories, in-process
@@ -792,6 +821,7 @@ No separate cross-repository authority is established by this file.
 
 
 ---
+
 - 2026-09-15T21:40+02:00 — 260831-LOCR-L05 curator, **re-dispatch** (uncommitted change set on
   `ar/260831-locr-l05`, pair code base `67c91534`, memory base `309110f8`,
   `mcp/tests/test-evidence-lanes.toml` +1/−0): registered the change set's new
@@ -819,26 +849,6 @@ No separate cross-repository authority is established by this file.
   membership is not execution, certification or acceptance evidence, and the verification stamps
   remain closeout-owned.
 
-- 2026-09-15T21:21+02:00 — 260831-LOCR-L06 curator, **re-dispatch** (uncommitted change set on
-  `ar/260831-locr-l06`, pair code base `e9678c56`, memory base `ee93a0fc`,
-  `mcp/tests/test-evidence-lanes.toml` +1/−0): registered the change set's new
-  `mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py` in the **unit-regression** lane at
-  file line `:68`, immediately below `test_lifecycle_operation_model_helpers.py` at `:67` and above
-  `test_memory_attribution_producers.py` at `:69` — the module drives the real terminal observer, the
-  production terminal-evidence lift and the real notifier sweep over a temporary coordination root,
-  with no HTTP request, no server and no process, so the hermetic default unit lane is its
-  behaviour-preserving classification. Re-measured the manifest against the candidate rather than
-  carrying the L17 numbers: 215 modules on disk and 215 manifest entries — 122 unit-regression (key
-  `:5`, rows 6-127), 2 public-contract (key `:129`), 62 integration (key `:133`), 16
-  architecture-fitness (key `:197`), 13 provider-conformance (key `:215`), stress-durability (`:230`)
-  and migration (`:232`) empty. Unlike the L17 and L18 insertions this row lands **above** the rows
-  this card cites, so every manifest citation in the module table at or below `:68` was re-derived
-  against the candidate — the L4/L5/L7/L8/L23/L27/L34/L36/L37/L01/L17 module rows plus the
-  `integration` and `stress-durability` key lines — and this card's purpose paragraph was
-  re-measured with them. `LOCR-R09@v1`, `LOCR-R11@v1` and `LOCR-R18@v1` classifications are
-  untouched: no existing row changed lane and no case budget was raised, the budget authority
-  remaining `pyproject.toml`. The leaf is a preservation leaf, so no production byte moved.
-  Verification metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-15T21:25+02:00 — 260831-LOCR-L04 curator (uncommitted change set on `ar/260831-locr-l04`,
   base `e9678c56`, `mcp/tests/test-evidence-lanes.toml` +1/−0): registered the change set's new
@@ -861,6 +871,29 @@ No separate cross-repository authority is established by this file.
   citation already stale before this leaf (the L34 boundary suite at `:143-143` → `:140-140`) was
   corrected to the line that carries it. Verification metadata remains closeout-owned; no stamp
   advanced.
+
+
+- 2026-09-15T21:21+02:00 — 260831-LOCR-L06 curator, **re-dispatch** (uncommitted change set on
+  `ar/260831-locr-l06`, pair code base `e9678c56`, memory base `ee93a0fc`,
+  `mcp/tests/test-evidence-lanes.toml` +1/−0): registered the change set's new
+  `mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py` in the **unit-regression** lane at
+  file line `:68`, immediately below `test_lifecycle_operation_model_helpers.py` at `:67` and above
+  `test_memory_attribution_producers.py` at `:69` — the module drives the real terminal observer, the
+  production terminal-evidence lift and the real notifier sweep over a temporary coordination root,
+  with no HTTP request, no server and no process, so the hermetic default unit lane is its
+  behaviour-preserving classification. Re-measured the manifest against the candidate rather than
+  carrying the L17 numbers: 215 modules on disk and 215 manifest entries — 122 unit-regression (key
+  `:5`, rows 6-127), 2 public-contract (key `:129`), 62 integration (key `:133`), 16
+  architecture-fitness (key `:197`), 13 provider-conformance (key `:215`), stress-durability (`:230`)
+  and migration (`:232`) empty. Unlike the L17 and L18 insertions this row lands **above** the rows
+  this card cites, so every manifest citation in the module table at or below `:68` was re-derived
+  against the candidate — the L4/L5/L7/L8/L23/L27/L34/L36/L37/L01/L17 module rows plus the
+  `integration` and `stress-durability` key lines — and this card's purpose paragraph was
+  re-measured with them. `LOCR-R09@v1`, `LOCR-R11@v1` and `LOCR-R18@v1` classifications are
+  untouched: no existing row changed lane and no case budget was raised, the budget authority
+  remaining `pyproject.toml`. The leaf is a preservation leaf, so no production byte moved.
+  Verification metadata remains closeout-owned; no stamp advanced.
+
 
 - 2026-09-15T21:19+02:00 — 260831-LOCR-L07 curator (uncommitted change set on `ar/260831-locr-l07`,
   base `e9678c56`, `mcp/tests/test-evidence-lanes.toml` +1/−0): registered the change set's new
@@ -885,6 +918,7 @@ No separate cross-repository authority is established by this file.
   membership is not execution, certification or acceptance evidence, and the verification stamps
   remain closeout-owned.
 
+
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
   base `99534dc5`, `mcp/tests/test-evidence-lanes.toml` +1/−0): registered the change set's new
   `mcp/tests/test_terminal_observer_health.py` in the **unit-regression** lane at file line `:122`,
@@ -901,6 +935,7 @@ No separate cross-repository authority is established by this file.
   as its own as-of record. Every line reference in the module table was re-derived against the
   candidate (the L34/L36/L37/L38 and seal-removal rows had drifted by one to six lines as later
   insertions moved them). Verification metadata remains closeout-owned; no stamp advanced.
+
 
 - 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted change set on `ar/260831-locr-l18`,
   base `d868486c`): registered the change set's new `mcp/tests/test_serving_startup_prime.py` in the
@@ -919,6 +954,20 @@ No separate cross-repository authority is established by this file.
   was raised; the integration ceiling stays 250 (`pyproject.toml:150`). Classification only: lane
   membership is not execution, certification or acceptance evidence, and the verification stamps
   remain closeout-owned.
+
+
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
+  base `67b21aeb`): registered the change set's new `mcp/tests/test_serving_terminal_catalog_read.py`
+  in the **integration** lane (entry row 171) — it drives the real registered route over
+  `fastapi.testclient.TestClient` and the real composed `create_app`, so the boundary lane is its
+  behaviour-preserving classification — and re-measured the manifest rather than carrying a count:
+  208 modules on disk and 208 manifest entries, 116 unit-regression, 2 public-contract, 61
+  integration, 16 architecture-fitness, 13 provider-conformance, stress-durability and migration
+  empty, with the 250-case integration ceiling (`pyproject.toml:150`) unchanged and no budget raised.
+  A `## 260831-LOCR-L02 Lane Row (Declared)` section records the measurement and states explicitly
+  that it is this leaf's as-of population over base `67b21aeb`, because concurrent sibling leaves
+  landed their own rows on the same source branch. The Purpose paragraph gained the matching clause.
+  Verification metadata stays closeout-owned: the candidate is uncommitted, so no stamp advanced.
 
 - 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator (uncommitted change set on `ar/260831-locr-l27`,
   base `b368b661`): registered the change set's new `mcp/tests/test_terminal_liveness_pane_authority.py`
@@ -940,6 +989,7 @@ No separate cross-repository authority is established by this file.
   previously presented as current. Classification only: lane membership is not execution,
   certification or acceptance evidence, and the verification stamps remain closeout-owned.
 
+
 - 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator, **post-sync reconciliation** (same change set;
   the memory sync advanced the base from `b368b661` to `163ba8a9` and parked this card's WIP over the
   two incoming memory commits): the sync brought L01's own declared-row section into this card, which
@@ -954,6 +1004,7 @@ No separate cross-repository authority is established by this file.
   Purpose paragraph and the three later lane-bracket citations were recomputed against that base. No
   row changed lane and no case budget moved. The merge is a memory-side reconciliation only: no
   production byte and no entry in the manifest itself was authored by this pass.
+
 
 - 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator, **second post-sync reconciliation** (final
   measurement for this leaf; the base advanced once more, `163ba8a9` → `52bee429`, as L10 landed in the
@@ -971,6 +1022,7 @@ No separate cross-repository authority is established by this file.
   exactly one inserted integration row and no lane, budget or production change. Verification metadata
   is pinned to `52bee429` (code) — the closeout transaction stamps the final commit.
 
+
 - 2026-09-15T13:20+02:00 — 260831-LOCR-L23 curator (uncommitted change set on `ar/260831-locr-l23`,
   base `67b21aeb`): registered the change set's new `mcp/tests/test_terminal_liveness_registration_order.py`
   in the **unit-regression** lane at entry row 118 — the module drives the real `TerminalCatalog` over
@@ -986,6 +1038,7 @@ No separate cross-repository authority is established by this file.
   the Purpose population sentence and the unit bracket citation were the two that moved. No lane
   changed and no case budget was raised. Classification only: lane membership is not execution,
   certification or acceptance evidence, and the verification stamps remain closeout-owned.
+
 - 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
   base `67b21aeb`): registered the change set's new `mcp/tests/test_serving_observation_loop.py` in
   the **unit-regression** lane at entry row 97 — the module injects fakes, issues no HTTP request,
@@ -1011,20 +1064,9 @@ No separate cross-repository authority is established by this file.
   Classification only: lane membership is not execution or acceptance
   evidence, and the verification stamps remain closeout-owned.
 
+
 - 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: registered the change set's new `mcp/tests/test_state_signal_restart_recovery.py` in the **unit-regression** lane at entry row `:101` — its seven cases drive one temporary durable world per case through the retained sweep/action entry points with an injected store fault or a structural rebind, so the hermetic default lane is its behaviour-preserving classification — and re-measured the manifest rather than carrying the L3 numbers: 208 modules on disk and 208 manifest entries, 117 unit-regression (5-122), 2 public-contract (124-126), 60 integration (128-188), 16 architecture-fitness (190-206), 13 provider-conformance (208-221), stress-durability and migration empty. The insertion sits near the end of the unit run, so no row this card cites moved. The module's own card owns the case inventory; this row is selection and cost classification only. Verification metadata remains closeout-owned.
 
-- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
-  base `67b21aeb`): registered the change set's new `mcp/tests/test_serving_terminal_catalog_read.py`
-  in the **integration** lane (entry row 171) — it drives the real registered route over
-  `fastapi.testclient.TestClient` and the real composed `create_app`, so the boundary lane is its
-  behaviour-preserving classification — and re-measured the manifest rather than carrying a count:
-  208 modules on disk and 208 manifest entries, 116 unit-regression, 2 public-contract, 61
-  integration, 16 architecture-fitness, 13 provider-conformance, stress-durability and migration
-  empty, with the 250-case integration ceiling (`pyproject.toml:150`) unchanged and no budget raised.
-  A `## 260831-LOCR-L02 Lane Row (Declared)` section records the measurement and states explicitly
-  that it is this leaf's as-of population over base `67b21aeb`, because concurrent sibling leaves
-  landed their own rows on the same source branch. The Purpose paragraph gained the matching clause.
-  Verification metadata stays closeout-owned: the candidate is uncommitted, so no stamp advanced.
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): registered the change set's new `mcp/tests/test_memory_backfill.py` in the
   **unit-regression** lane at entry row 69 — its cases drive the backfill plan and apply paths against
@@ -1046,6 +1088,7 @@ No separate cross-repository authority is established by this file.
   insertion and are unchanged, and the Purpose paragraph plus the L5, L7 and L8 bracket notes were
   corrected to the measured L3 population; classification only, so lane membership is not execution
   or acceptance evidence and the verification stamps remain closeout-owned.
+
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator (uncommitted change set on `ar/260913-lca-l8-ar`):
   registered the change set's new `mcp/tests/test_terminal_blocker_reasons.py` in the **integration**
   lane (entry row 177) — it builds a real landed leaf over disposable code and external-memory
@@ -1064,6 +1107,7 @@ No separate cross-repository authority is established by this file.
   of their entries (`test_checkpoint_landing_end_to_end.py` `:132` → `:133` and
   `test_cross_master_concurrency.py` `:143` → `:145`). Classification only: lane membership is not
   execution or acceptance evidence, and the verification stamps remain closeout-owned.
+
 - 2026-09-14T14:20+02:00 — 260913-LCA-L7 curator (uncommitted change set on `ar/260913-lca-l7`):
   registered the change set's new `mcp/tests/test_closeout_projection_source_classification.py` in the
   **integration** lane (entry row 137) — it composes the real `QueueFixture` over temporary Git
@@ -1079,6 +1123,7 @@ No separate cross-repository authority is established by this file.
   reference row for it, and left every per-leaf section above as its own as-of record. Classification
   only: lane membership is not execution or acceptance evidence, and the verification stamps remain
   closeout-owned.
+
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
   `52875e7a`): registered the change set's new `mcp/tests/test_leaf_doc_master_link_binding.py` in the
   **integration** lane (entry row 152) — it drives the real public `worktree_start` over one disposable
@@ -1098,6 +1143,7 @@ No separate cross-repository authority is established by this file.
   the L4 and L5 registration rows. The Purpose paragraph above carries pre-L4 counts and is superseded by
   the measured ones; classification only, lane membership is not execution or acceptance evidence, and
   the verification stamps remain closeout-owned.
+
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`, base
   `5bb124d4`): **flagged an open gap rather than repairing it, because the file itself is unchanged and
   the repair is code work.** The change set added `mcp/tests/test_memory_attribution_producers.py` and
@@ -1110,6 +1156,7 @@ No separate cross-repository authority is established by this file.
   `pyproject.toml:155`), the consumer that fails, and the explicit statement that the lane choice is the
   builder's and is not asserted here. The manifest file itself is **not** modified by this curator pass.
   Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
 - 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
   `ar/260831_lifecycle-owned-completion-relay`): registered the change set's new
   `mcp/tests/test_lifecycle_playthrough_end_to_end.py` in the **integration** lane (entry row 153) —
@@ -1126,6 +1173,7 @@ No separate cross-repository authority is established by this file.
   `pyproject.toml:150`, which the L37 entry had already recorded for the reference row. Classification
   only: lane membership is not execution or acceptance evidence, and the verification stamps remain
   closeout-owned.
+
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "stress-durability"; "migration" repointed to mcp/tests/test-evidence-lanes.toml:216-216; mcp/tests/test-evidence-lanes.toml:218-218. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:216-216. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "mcp/tests/test_worktree_status_terminal_next_tool.py" repointed to mcp/tests/test-evidence-lanes.toml:188-188. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1137,6 +1185,7 @@ No separate cross-repository authority is established by this file.
   holds: the cap is the reason the L37 additions and the L30/L34 restorations were classified as they
   were. The previous range arrived from a generated projection and is superseded by this curator
   confirmation.
+
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: registered the leaf's two new modules —
   `mcp/tests/test_pause_stop_only_end_to_end.py` in the **integration** lane (entry row 158) because
   it drives the public pause over a real temporary Git world holding two atomic masters, and
@@ -1149,6 +1198,7 @@ No separate cross-repository authority is established by this file.
   integration lane is capped at 250 collected cases (`pyproject.toml:150`), not 200. Classification
   only: lane membership is not execution or acceptance evidence, and the verification stamps remain
   closeout-owned.
+
 - 2026-09-13T14:20:09+02:00 — 260831-LOCR-L36 curator: registered the leaf's new `mcp/tests/test_cross_master_concurrency.py` in the **integration** lane (row 143) — it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world, so that is its behaviour-preserving lane — and reconciled the population and every lane bracket against the current manifest: 199 modules, 114 unit-regression (5-120), 2 public-contract (121-124), 55 integration (125-181), 15 architecture-fitness (182-198), 13 provider-conformance (199-213), with stress-durability (214-215) and migration (216-217) empty. The insertion shifted the L32 row (176 → 177) and every bracket after the integration block, all re-cited here. Classification only: lane membership is not execution or acceptance evidence, and the verification stamps remain closeout-owned.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:12+00:00 — 260831-LOCR-L34 curator: registered the leaf's new
@@ -1162,6 +1212,7 @@ No separate cross-repository authority is established by this file.
   "150 collected cases" bound in the L30 paragraph with the measured 200. Classification only: lane
   membership is not execution, certification or acceptance evidence, and verification metadata remains
   closeout-owned.
+
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: registered the leaf's new
   `mcp/tests/test_worktree_status_terminal_next_tool.py` in the **integration** lane (row 175) — it
   drives real worktree services and a real repository under `tmp_path`, so that is its
@@ -1173,6 +1224,7 @@ No separate cross-repository authority is established by this file.
   in this card's earlier entries, so the two invariants and the purpose paragraph now cite the
   measured value. Classification only: lane membership is not execution, certification or acceptance
   evidence, and verification metadata remains closeout-owned.
+
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: registered eight members
   (`test_checkpoint_landing.py`, `test_closeout_kept_rules_pins.py`,
   `test_memory_scope_task_derivation.py`, `test_post_integration_cleanup_guidance.py`,
@@ -1184,6 +1236,7 @@ No separate cross-repository authority is established by this file.
   unit-regression, 2 public-contract, 52 integration, 15 architecture-fitness, 13 provider-
   conformance) and every lane bracket citation. Classification only: lane membership is not
   execution, certification or acceptance evidence, and verification metadata remains closeout-owned.
+
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `integration` repointed to mcp/tests/test-evidence-lanes.toml:119-119. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "unit-regression" repointed to mcp/tests/test-evidence-lanes.toml:6-6. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T15:06+02:00 — Parked-candidate lane registration: recorded the new `mcp/tests/test_sync_parked_candidate.py` row in the existing `unit-regression` lane and re-derived every lane-block citation shifted by it; reconciled the current population to 183 files (99 unit-regression, 55 integration). No case budget was raised. Verification metadata remains closeout-owned.
@@ -1198,6 +1251,7 @@ No separate cross-repository authority is established by this file.
   `test_terminal_liveness_deferred_work.py` registers in `unit-regression` at line 104, so the clause
   was dropped as contradicted by the current tree. Lane classification only; focused execution and any
   later acceptance remain separately owned.
+
 
 - 2026-09-10T11:55:00+02:00 — Post-sync union curation for 260831-LOCR-L03: the landed LOCR master tip `bb38d04e` carried the sibling R28 registration and its own re-derivation of the authorized three-row CCR landing-debt repair, while this branch carried the L03 `test_terminal_evidence_mapping.py` row. Both rows are kept, sorted, and this card's population statement and all six lane citations were re-derived against the union to 187 declared modules (103 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance). The sibling's two-range empty-population citation for stress-durability/migration and its R28 attribution were retained, with the R28 attribution moved to the unit-regression row it actually belongs to. Supersedes the 186-module figures recorded below. Classification only; no execution, certification or acceptance claim.
 
@@ -1227,6 +1281,7 @@ No separate cross-repository authority is established by this file.
   183 rows was the count before that restoration. This records lane classification only; focused
   execution and any later acceptance remain separately owned.
 
+
 - 2026-09-10T10:06:31+02:00 — 260831-LOCR-L25 curator: registered the new separation-guard module `mcp/tests/test_parked_external_await_separation.py` in the `unit-regression` lane and re-derived every lane bracket and membership range against the current manifest on the leaf candidate base `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`. The recorded population (96 unit / 54 integration / 179 files) had already drifted from the manifest, which held 98 / 55 / 182 before this leaf's row; it is now recorded as 99 / 55 / 183. Classification only: lane membership is not execution or acceptance evidence, and verification metadata remains closeout-owned.
 
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:203-203. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1239,6 +1294,7 @@ No separate cross-repository authority is established by this file.
   deque-envelope, unsupported-harness, bounded-Pi, and liveness-containment checks to this route's
   account, and re-anchored every lane citation in this card to the tree as it stood. This records lane
   classification only; focused execution and any later acceptance remain separately owned.
+
 
 - 2026-09-08T14:35+02:00 — 260831-LOCR-L28 curator: registered the new `test_terminal_liveness_deferred_work.py` integration proof and re-derived the manifest population and every lane range against the current tree (183 modules: 98 unit-regression, 2 public-contract, 56 integration, 14 architecture-fitness, 13 provider-conformance; stress-durability and migration empty). The lane remains classification metadata; focused results and certification remain closeout-owned.
 
@@ -1270,12 +1326,14 @@ No separate cross-repository authority is established by this file.
   intermediate registrations and the new row shifted the manifest. Verification stamp is the full
   leaf code commit `ce7f10b565f82bc41421d60ba914ee1d0abf61c4`.
 
+
 - 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5 memory pass: recorded the six new
   durable gate-and-rail telemetry suites (unit-regression lanes file rows 178-183) and re-anchored
   every manifest citation shifted by their rows (doctrine 512-514, retry 148/414/515, kernel 141,
   future-code 290, pair 372, ARSPAWN 288/383/413/501, fence 93, CCR-R01 nine suites
   29-30/64/149-152/171-172). Verification stamp advanced to the certified commit
   `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb`.
+
 
 - 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the explicit `integration` lane registration for the new host-authority suite `test_dagger_runtime_authority.py`.
 
@@ -1286,11 +1344,13 @@ No separate cross-repository authority is established by this file.
   (rows 365-369) so each forcing suite enters the closed population exactly once. Verification
   metadata pinned to the owning commit 16d1a4d6.
 
+
 - 2026-09-04T01:15+02:00 - 260831-CCR-L10 Gate-5 memory pass: recorded the CCR-R10 lane registration of
   `mcp/tests/test_citation_deterministic_projection.py` as explicit `integration` evidence (toml row 223)
   and re-anchored every manifest citation shifted by that row (retry 147/401/501, ARSPAWN
   280/370/400/487, future-code 282, pair 364, doctrine 498-500). Verification pinned to the
   leaf code commit 709dd076.
+
 
 - 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `test_serving_requirements.py` integration-lane registration and re-anchored the manifest citations shifted by the new row (doctrine 498-500, ARSPAWN e2e 487, retry-coverage 501).
 
@@ -1303,6 +1363,7 @@ No separate cross-repository authority is established by this file.
   suites 29-30/64/148-151/170-171). Verification remains pinned to the pre-commit source
   history until closeout.
 
+
 - 2026-09-03T12:30+02:00 - 260831-CCR memory curation pass for 6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): recorded the L21 lane registration of `mcp/tests/test_gate_certificate_authority.py` as explicit `unit-regression` evidence so the new forcing suite enters the closed population exactly once. Verification is pinned to the owning commit.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
@@ -1311,11 +1372,13 @@ No separate cross-repository authority is established by this file.
   new forcing suite enters the closed population exactly once. Verification is pinned to the
   owning commit.
 
+
 - 2026-09-01T11:33+02:00 - CCR-L11 Attempt 10 added explicit `unit-regression` ownership for the three focused certification edge suites and re-anchored every manifest citation shifted by those rows. Verification remains closeout-owned.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added explicit `unit-regression` ownership for the
   three focused certification edge suites and re-anchored every manifest citation shifted by
   those rows. Verification remains closeout-owned.
+
 
 - 2026-09-01T08:13+02:00 - Final CCR-R01 reconciliation: expanded the current lane account from six to all nine focused unit-regression suites, including the three coverage-edge companions, and regenerated every manifest citation shifted by their rows. The manifest supplies selection and cost classification only; verification remains closeout-owned.
 
@@ -1324,6 +1387,7 @@ No separate cross-repository authority is established by this file.
   regenerated every manifest citation shifted by their rows. The manifest supplies selection and
   cost classification only; verification remains closeout-owned.
 
+
 - 2026-09-01T05:22+02:00 - 260831-CCR-L01 Attempt 9: added explicit `unit-regression` ownership for the six focused CCR-R01 suites and re-anchored every manifest citation shifted by those rows. The lane declaration governs selection/cost only; accepted task evidence remains reviewer-owned. Verification remains closeout-owned.
 
 - 2026-09-01T05:22+02:00 — 260831-CCR-L01 Attempt 9: added explicit `unit-regression`
@@ -1331,26 +1395,31 @@ No separate cross-repository authority is established by this file.
   those rows. The lane declaration governs selection/cost only; accepted task evidence remains
   reviewer-owned. Verification remains closeout-owned.
 
+
 - 2026-09-01T04:34+02:00 - Added explicit `unit-regression` ownership for the two certification contract suites and repaired every manifest citation shifted by those rows. The manifest remains fail-closed; no default, fallback, or alternate classification authority was introduced.
 
 - 2026-09-01T04:34+02:00 — Added explicit `unit-regression` ownership for the two certification
   contract suites and repaired every manifest citation shifted by those rows. The manifest remains
   fail-closed; no default, fallback, or alternate classification authority was introduced.
 
+
 - 2026-08-31T20:30+02:00 - 260831-DER: explicitly classified `mcp/tests/test_integration_publication_fence.py` in the `unit-regression` lane.
 
 - 2026-08-31T20:30+02:00 — 260831-DER: explicitly classified
   `mcp/tests/test_integration_publication_fence.py` in the `unit-regression` lane.
+
 
 - 2026-08-31T08:05+02:00 - Classified the four A003-unregistered ARSPAWN proof modules exactly once: three integration routes and one architecture-fitness selector-closure route.
 
 - 2026-08-31T08:05+02:00 — Classified the four A003-unregistered ARSPAWN proof modules exactly
   once: three integration routes and one architecture-fitness selector-closure route.
 
+
 - 2026-08-30T15:15:36+02:00 - Classified `test_public_surface_conformance.py` explicitly as integration evidence. Verification remains closeout-owned.
 
 - 2026-08-30T15:15:36+02:00 — Classified `test_public_surface_conformance.py` explicitly as
   integration evidence. Verification remains closeout-owned.
+
 
 - 2026-08-30T04:54+02:00 - Added explicit integration-lane ownership for the exact code-memory candidate-pair suite after the lifecycle Dagger census rejected an unclassified test file. No product or requirement semantics changed.
 
@@ -1358,48 +1427,58 @@ No separate cross-repository authority is established by this file.
   code-memory candidate-pair suite after the lifecycle Dagger census rejected an unclassified
   test file. No product or requirement semantics changed.
 
+
 - 2026-08-29T08:52+02:00 - Added explicit integration classification for the structured curator-coherence forcing suite. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Added explicit integration classification for the structured
   curator-coherence forcing suite. Verification remains closeout-owned.
+
 
 - 2026-08-29T07:35+02:00 - Added explicit integration-lane ownership for the future-code candidate real-Git matrix and repaired exact manifest citations shifted by that row.
 
 - 2026-08-29T07:35+02:00 — Added explicit integration-lane ownership for the future-code
   candidate real-Git matrix and repaired exact manifest citations shifted by that row.
 
+
 - 2026-08-28T14:18+02:00 - Reconciled manifest citations against the committed PDLS candidate; the explicit-lane contract is unchanged.
 
 - 2026-08-28T14:18+02:00 — Reconciled manifest citations against the committed PDLS candidate;
   the explicit-lane contract is unchanged.
+
 
 - 2026-08-28T05:10+02:00 - Removed the two stale Candidate A test rows and retained the renamed kernel regression module in its explicit unit lane after Q5 v19 forced the stale-row refusal.
 
 - 2026-08-28T05:10+02:00 — Removed the two stale Candidate A test rows and retained the renamed
   kernel regression module in its explicit unit lane after Q5 v19 forced the stale-row refusal.
 
+
 - 2026-08-27T18:33+02:00 - Recorded explicit unit-regression membership for the retry coverage composition and quality child-environment suites.
 
 - 2026-08-27T18:33+02:00 — Recorded explicit unit-regression membership for the retry coverage
   composition and quality child-environment suites.
+
 
 - 2026-08-27T18:06+02:00 - Added explicit architecture-fitness membership for the M40-M45 Requirement Attempt Journal structural proof.
 
 - 2026-08-27T18:06+02:00 — Added explicit architecture-fitness membership for the M40-M45
   Requirement Attempt Journal structural proof.
 
+
 - 2026-08-27T17:19+02:00 - Added explicit unit-regression membership for the retry-selection forcing suite in the same change that introduced it.
 
 - 2026-08-27T17:19+02:00 — Added explicit unit-regression membership for the retry-selection
   forcing suite in the same change that introduced it.
+
 
 - 2026-08-27T13:32+02:00 - Added explicit architecture-fitness membership for M39 compilation doctrine and the split tool-signature exemption suite. Verification remains closeout-owned.
 
 - 2026-08-27T13:32+02:00 — Added explicit architecture-fitness membership for M39 compilation
   doctrine and the split tool-signature exemption suite. Verification remains closeout-owned.
 
+
 - 2026-08-27T12:43+02:00 - M38: created the manifest sidecar and recorded explicit registration of the acceptance-envelope structural test. Verification metadata remains empty until governed closeout stamps the PDLS code commit.
 
 - 2026-08-27T12:43+02:00 — M38: created the manifest sidecar and recorded explicit registration
   of the acceptance-envelope structural test. Verification metadata remains empty until governed
   closeout stamps the PDLS code commit.
+

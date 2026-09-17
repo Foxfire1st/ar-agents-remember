@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -80,8 +80,8 @@ helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pair identity and roots come from the canonical memory candidate pair owner. | `resolve_memory_candidate_pair`, "return MemoryCandidatePairIdentity(" | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:48-144 |
-| Code candidate tree comes from the memory-quality future-code capture. | `capture_future_code_candidate` | mcp/src/agents_remember/memory_quality/future_code_candidate.py:25-52 |
+| Pair identity and roots come from the canonical memory candidate pair owner. | `resolve_memory_candidate_pair`, "return MemoryCandidatePairIdentity(" | mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:48-129 |
+| Code candidate tree comes from the memory-quality future-code capture. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
 | Intent identity and topology fingerprint come from R02/R01 owners. | `task_intent_identity`, `candidate_task_topology_fingerprint` | mcp/src/agents_remember/tasks/task_intent.py:180-193; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:190-209 |
 | Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. | `observe_scope_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-95 |
 

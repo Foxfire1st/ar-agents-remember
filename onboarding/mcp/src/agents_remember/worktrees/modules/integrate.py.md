@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -53,27 +53,27 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Ordinary admission requires the accepted code/memory work heads and substantive cleanliness. | L168-L190; L193-L213 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Source snapshots and replay/lineage decisions retain current Git facts. | L268-L274; L283-L314; L317-L334 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Checkpoint capture, route output selection, and shared memory ancestry. | L386-L409; L412-L458; L473-L486; L489-L499 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Addressed handover gates and publication preserve the operation's real identity. | L83-L109; L112-L148; L692-L766; L815-L887 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Final and checkpoint result publication differ without performing reclamation. | L574-L607; L890-L927 | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| The shared writer records the two accepted output commits. | L28-L33; L36-L66 | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
+| Ordinary admission requires the accepted code/memory work heads and substantive cleanliness. | `validate_integrate_contract` | mcp/src/agents_remember/worktrees/modules/integrate.py:168-190 |
+| Source snapshots and replay/lineage decisions retain current Git facts. | `_integration_source_state_block` | mcp/src/agents_remember/worktrees/modules/integrate.py:268-274 |
+| Checkpoint capture, route output selection, and shared memory ancestry. | `CheckpointLanding` | mcp/src/agents_remember/worktrees/modules/integrate.py:386-409 |
+| Addressed handover gates and publication preserve the operation's real identity. | `handover_gate_guard` | mcp/src/agents_remember/worktrees/modules/integrate.py:83-109 |
+| Final and checkpoint result publication differ without performing reclamation. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
+| The shared writer records the two accepted output commits. | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:28-33 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

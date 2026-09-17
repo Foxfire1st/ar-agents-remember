@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,29 +44,29 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The running-owner observation reloads the selected output and builds a bound physical view. | L65-L92 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
-| The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. | L95-L163 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
-| Selected record and intent currentness are rechecked around observation. | L166-L186 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
-| The execution view binds the exact output bytes, raw commit/tree, and logical pair. | L189-L223 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
-| Preparation precedes a fresh observation when the caller requests a prepared view. | L226-L231 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
+| The running-owner observation reloads the selected output and builds a bound physical view. | `observe_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:65-92 |
+| The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. | `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
+| Selected record and intent currentness are rechecked around observation. | `_require_selected_code_current` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:166-186 |
+| The execution view binds the exact output bytes, raw commit/tree, and logical pair. | `_build_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:189-223 |
+| Preparation precedes a fresh observation when the caller requests a prepared view. | `prepare_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:226-231 |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -84,13 +84,13 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Policy, normalized request, exact code proof, and read-only preview. | L86-L100; L139-L193; L196-L254; L287-L307 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
-| Memory admission captures the prepared content snapshot and typed candidate. | L310-L353; L425-L457 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
-| Generation creation and action-required public projection. | L460-L494; L497-L514 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
-| The application owns configured admission and execution serialization. | L55-L104 | [mcp/src/agents_remember/application/lifecycle/direct_landing.py](mcp/src/agents_remember/application/lifecycle/direct_landing.py) |
-| The focused integration scenario verifies cache-independent publication and recovery. | L171-L272 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
+| Policy, normalized request, exact code proof, and read-only preview. | `DirectLandingRequest` | mcp/src/agents_remember/worktrees/direct_landing.py:86-100 |
+| Memory admission captures the prepared content snapshot and typed candidate. | `_direct_memory_admission_snapshot` | mcp/src/agents_remember/worktrees/direct_landing.py:310-353 |
+| Generation creation and action-required public projection. | `_create_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:460-494 |
+| The application owns configured admission and execution serialization. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:55-104 |
+| The focused integration scenario verifies cache-independent publication and recovery. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
 
 ## Cross-Repo References
 
@@ -98,7 +98,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/door_source.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -72,25 +72,25 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `_declare_generation` constructs a door from content, task, and policy evidence without cached ledger inputs. | L381-L475 | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
-| `_door_policy_provenance` resolves admission and scheduling provenance for the declared door. | L478-L506 | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
+| `_declare_generation` constructs a door from content, task, and policy evidence without cached ledger inputs. | `_declare_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:381-388 |
+| `_door_policy_provenance` resolves admission and scheduling provenance for the declared door. | `_door_policy_provenance` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:478-483 |
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The door context binds an authored graph once and returns the sprint carrying that immutable graph generation. (`door_task_context`; `DoorSourceContext`) | L65-L90; L57-L62 | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
-| Generation declaration includes the R03 dependency set and policy provenance resolution. (`_declare_generation`; `_door_policy_provenance`) | L381-L475; L478-L506 | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
-| Transitions re-require the declared dependencies. (`_transitioned_generation`) | L309-L340 | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
+| The door context binds an authored graph once and returns the sprint carrying that immutable graph generation. (`door_task_context`; `DoorSourceContext`) | `door_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:65-69 |
+| Generation declaration includes the R03 dependency set and policy provenance resolution. (`_declare_generation`; `_door_policy_provenance`) | `_declare_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:381-388 |
+| Transitions re-require the declared dependencies. (`_transitioned_generation`) | `_transitioned_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:309-312 |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

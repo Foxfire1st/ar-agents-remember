@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/preparation` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -51,11 +51,11 @@ The memory-content message uses the kernel's shared `Code-Commit:` renderer. `me
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected bundle contains code and one memory-content output. | L45-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Existing memory reuse binds raw Git facts and a separately certified content tree. | L19-L63 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
-| Final publication proves and publishes the pair, then refreshes the cache. | L533-L569 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| The selected bundle contains code and one memory-content output. | `PreparedMemoryOutputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:45-48 |
+| Existing memory reuse binds raw Git facts and a separately certified content tree. | `observe_existing_memory_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:19-63 |
+| Final publication proves and publishes the pair, then refreshes the cache. | `finalize_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:533-569 |
 
 ## Integrated IAS Recovery Contract
 
@@ -68,6 +68,7 @@ The parity candidate composes the sidecar and governing route body/history check
 
 ## Update History
 
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced M/L and C/M/L proof/publication with exact code and memory-content outputs and cache-free certified reuse. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base

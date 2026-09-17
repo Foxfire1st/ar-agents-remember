@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,33 +78,33 @@ No additional source-local TODO is introduced by this pair-proof maintenance. Th
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
 The source separates pair/ancestry proof from task-byte publication. The production caller inspected here is the retained-state classifier; the source definitions do not establish a new automatic landing-to-master-completion edge.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The retained completion plan binds the actual code/memory pair and sibling facts. | L123-L171 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| Scope validation pins execution nature, owning master and canonical child. | L174-L204 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| Sibling contracts require exact identities, code ancestry and any external-memory proof. | L455-L476 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| External memory must name the same repository and exact accepted/integrated content commit. | L547-L569 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| The sibling memory commit must descend from its base and reach the completing source base. | L572-L593 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| Task-byte preparation binds accepted and intended JSON/Markdown. | L250-L301 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| Publication accepts only the exact journaled before/after task byte states. | L304-L338 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| The helper requires Completed status, with a distinct abandonment refusal. | L404-L420 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| The live integration classifier reads retained organizational publication state. | L39-L81 | [mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py](mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py) |
+| The retained completion plan binds the actual code/memory pair and sibling facts. | `organizational_completion_plan` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:123-171 |
+| Scope validation pins execution nature, owning master and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:174-204 |
+| Sibling contracts require exact identities, code ancestry and any external-memory proof. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:455-476 |
+| External memory must name the same repository and exact accepted/integrated content commit. | `_require_sibling_memory_identity` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:547-569 |
+| The sibling memory commit must descend from its base and reach the completing source base. | `_require_sibling_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:572-593 |
+| Task-byte preparation binds accepted and intended JSON/Markdown. | `prepare_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:250-301 |
+| Publication accepts only the exact journaled before/after task byte states. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:304-338 |
+| The helper requires Completed status, with a distinct abandonment refusal. | `require_published_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:404-420 |
+| The live integration classifier reads retained organizational publication state. | `classify_integration_operation` | mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:39-81 |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## CCR-R12@v5 Current Completion Boundary
 
@@ -116,11 +116,11 @@ The current source seams include `OrganizationalCompletionError`, `Organizationa
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pair or ownership failures use the completion error family. | L30-L31 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| Publication conflicts retain exact expected/observed evidence. | L34-L47 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
-| Classification distinguishes convergent, published and conflicting task bytes. | L50-L73 | [mcp/src/agents_remember/worktrees/integration/organizational_completion.py](mcp/src/agents_remember/worktrees/integration/organizational_completion.py) |
+| Pair or ownership failures use the completion error family. | `OrganizationalCompletionError` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:30-31 |
+| Publication conflicts retain exact expected/observed evidence. | `OrganizationalCompletionPublicationError` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:34-47 |
+| Classification distinguishes convergent, published and conflicting task bytes. | `OrganizationalCompletionPublicationState` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:50-73 |
 
 ## 260821-CLIVE Door-Based Completion Proof
 

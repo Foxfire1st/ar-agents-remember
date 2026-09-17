@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/lifecycle_models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,27 +79,27 @@ legs. LCA-L9 retires the ledger leg. The surviving requirement journals each rea
 an unchanged interruption resumes the exact publication path without rerunning gates.
 
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external Domain Documentation source applies. | N/A | N/A |
+| No configured external Domain Documentation source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Finalization order contains code, external memory, and contract publication only. | L32-L36; L39-L43; L215-L250 | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| The exact-candidate observation is the admission boundary's owner-produced input. | L46-L79 | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| Prior-red corrective and recovery records bind digests to semantic envelopes. | corrective.py: L41-L70; lifecycle_models.py: L103-L115; L156-L168 | [mcp/src/agents_remember/models/certification/corrective.py](mcp/src/agents_remember/models/certification/corrective.py); [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | L215-L250; L253-L268 | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| Certificate identities and creation provenance are imported from the R21 certificate owners. | L100-L102; L77-L82 | [mcp/src/agents_remember/certification/certificate_models.py](mcp/src/agents_remember/certification/certificate_models.py) |
+| Finalization order contains code, external memory, and contract publication only. | `FinalizationLeg` | mcp/src/agents_remember/certification/lifecycle_models.py:32-36 |
+| The exact-candidate observation is the admission boundary's owner-produced input. | `ExactCandidateObservation` | mcp/src/agents_remember/certification/lifecycle_models.py:46-79 |
+| Prior-red corrective and recovery records bind digests to semantic envelopes. | `_require_disposition_shape` | mcp/src/agents_remember/models/certification/corrective.py:41-70; mcp/src/agents_remember/certification/lifecycle_models.py:41-70 |
+| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | `_require_ordered_progress` | mcp/src/agents_remember/certification/lifecycle_models.py:215-250 |
+| Certificate identities and creation provenance are imported from the R21 certificate owners. | `GateCertificateIdentity` | mcp/src/agents_remember/certification/certificate_models.py:100-102 |
 
 ## Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository implementation is referenced. | N/A | N/A |
+| No cross-repository implementation is referenced. | — | — |
 
 ## Update History
 

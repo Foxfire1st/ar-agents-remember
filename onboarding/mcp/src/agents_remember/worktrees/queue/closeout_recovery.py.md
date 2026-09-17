@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -60,13 +60,13 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. | L28-L36 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
-| `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. | L39-L55 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
-| `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. | L58-L81 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
-| `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. | L84-L141 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
-| `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. | L144-L160 | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
+| `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. | `MemoryCloseoutOutcome` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:28-32 |
+| `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:39-41 |
+| `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. | `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-59 |
+| `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:84-88 |
+| `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:144-150 |
 
 The current recovery primitives below establish exact two-output proof and cache-independent resumption.
 
@@ -74,7 +74,7 @@ The current recovery primitives below establish exact two-output proof and cache
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

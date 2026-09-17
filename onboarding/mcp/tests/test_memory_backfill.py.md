@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T03:43 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -86,28 +86,29 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | L222-L392 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| The actual two-ref apply regression retains the original rescue tip. | L579-L596 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| Runtime proof uses the ordinary Git-only reader. | L467-L550 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| Historical table read/carry and real CLI boundaries stay covered. | L645-L672; L675-L764; L767-L920 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| The production target-update stream emits exactly one newline between commands. | L837-L879 | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
-| The existing CLI case applies two named refs and retries the same target set. | L853-L909 | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| The committed implementation uses native reversed topological traversal. | L784-L791 | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | `test_a_plan_that_lost_a_mapping_does_not_share_a_digest_with_one_that_did_not` | mcp/tests/test_memory_backfill.py:222-392 |
+| The actual two-ref apply regression retains the original rescue tip. | `test_the_rescue_ref_holds_the_original_tip_before_the_rewrite` | mcp/tests/test_memory_backfill.py:579-596 |
+| Runtime proof uses the ordinary Git-only reader. | `test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded` | mcp/tests/test_memory_backfill.py:467-550 |
+| Historical table read/carry and real CLI boundaries stay covered. | `test_a_tip_with_no_ledger_refuses_rather_than_planning_nothing` | mcp/tests/test_memory_backfill.py:645-672 |
+| The production target-update stream emits exactly one newline between commands. | `_move_targets` | mcp/src/agents_remember/kernel/memory_backfill.py:837-879 |
+| The existing CLI case applies two named refs and retries the same target set. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:853-909 |
+| The committed implementation uses native reversed topological traversal. | `_walk` | mcp/src/agents_remember/kernel/memory_backfill.py:784-791 |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the module gained the multi-target ref

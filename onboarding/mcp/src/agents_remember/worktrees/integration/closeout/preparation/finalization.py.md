@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,34 +48,34 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Prepared output references and exact raw commit bytes are revalidated. | L90-L106 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| Live ownership, contract identity, and selected preparation remain bound. | L109-L145 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| Existing historical memory retains its raw tree while proving the separate certified content. | L243-L268 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| The fifth certificate is checked against the correct content subject and current authorities. | L271-L353 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality. | L356-L387 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| The original per-leg prestate is journaled with the same memory-domain snapshot semantics. | L443-L477 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| Publication checks original state, uses the exact CAS, and records its proof. | L480-L509 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| The accepted pair is proven before the best-effort cache refresh. | L512-L530 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| Only code and memory outputs are published before canonical contract completion. | L533-L569 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
-| Resume requires the same generation and exactly two selected output legs. | L572-L606 | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Prepared output references and exact raw commit bytes are revalidated. | `_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:90-106 |
+| Live ownership, contract identity, and selected preparation remain bound. | `_owner` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:109-145 |
+| Existing historical memory retains its raw tree while proving the separate certified content. | `_physical_memory` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:243-268 |
+| The fifth certificate is checked against the correct content subject and current authorities. | `_live` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:271-353 |
+| Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality. | `_record_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:356-387 |
+| The original per-leg prestate is journaled with the same memory-domain snapshot semantics. | `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
+| Publication checks original state, uses the exact CAS, and records its proof. | `_publish_leg` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:480-509 |
+| The accepted pair is proven before the best-effort cache refresh. | `_closed_payload` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:512-530 |
+| Only code and memory outputs are published before canonical contract completion. | `finalize_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:533-569 |
+| Resume requires the same generation and exactly two selected output legs. | `resume_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:572-606 |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 

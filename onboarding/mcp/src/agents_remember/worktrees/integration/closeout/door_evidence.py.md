@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -48,25 +48,25 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The door candidate contains only real candidate/base and review/memory facts. | L38-L54; L110-L142; L145-L165 | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Current source bases and cache-excluding memory tree capture. | L57-L95; L98-L107 | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Review and task evidence remain independently validated. | L168-L247; L250-L266; L269-L280 | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Cache changes leave memory candidate identity stable while real content changes it. | L208-L240 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| The door candidate contains only real candidate/base and review/memory facts. | `DoorCandidateEvidence` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:38-54 |
+| Current source bases and cache-excluding memory tree capture. | `require_source_bases_current` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:57-95 |
+| Review and task evidence remain independently validated. | `_review_provenance` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:168-247 |
+| Cache changes leave memory candidate identity stable while real content changes it. | `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:208-240 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

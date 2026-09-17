@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -48,24 +48,24 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Observed objects and public conflict/interruption payloads. | L18-L32; L36-L89; L92-L97; L100-L107 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
-| Exact accepted/intended state classification uses the actual memory output. | L118-L124; L127-L168 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
-| Canonical ref reading preserves stable failure categories. | L171-L205 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
+| Observed objects and public conflict/interruption payloads. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:18-32 |
+| Exact accepted/intended state classification uses the actual memory output. | `classify_integration_refs` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:118-124 |
+| Canonical ref reading preserves stable failure categories. | `_read_ref` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:171-205 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash |  `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate |  2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,27 +52,27 @@ None recorded.
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | N/A | N/A |
+| No external domain source is required to establish this repository-owned implementation. | — | — |
 
 ## Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract census observes actual code/memory and integrated output evidence, with no cache requirement. | L247-L297 | [mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
-| The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard. | L247-L297 | [mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
+| The contract census observes actual code/memory and integrated output evidence, with no cache requirement. | `_contract_fact` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297 |
+| The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard. | `_contract_fact` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297 |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | N/A | N/A |
+| No meaningful cross-repository reference applies. | — | — |
 
 ## Update History
 

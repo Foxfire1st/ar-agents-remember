@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/terminal_validation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -113,7 +113,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External-memory preflight excludes the root cache while preserving other dirtiness. | L291-L330 | [mcp/src/agents_remember/worktrees/modules/terminal_validation.py](mcp/src/agents_remember/worktrees/modules/terminal_validation.py) |
+| External-memory preflight excludes the root cache while preserving other dirtiness. | `_worktree_preflight` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:291-330 |
 | Defines the class `BranchTarget`. | `BranchTarget` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:25-31 |
 | Defines the class `TerminalPreflight`. | `TerminalPreflight` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:35-38 |
 | The series child census fails closed on a non-canonical worktree group; the legacy guard preserves a colliding child `reports` enclosure only for legacy-shape contracts. | `require_series_children_retired`; `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:41-65; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:74-85 |
@@ -148,7 +148,8 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 ## Update History
 
-- 2026-09-15 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
 
 
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base

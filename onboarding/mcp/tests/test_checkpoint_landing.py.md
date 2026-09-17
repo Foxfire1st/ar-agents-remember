@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_checkpoint_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -48,26 +48,26 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Checkpoint versus final durable integration cells. | L169-L204 | [mcp/tests/test_checkpoint_landing.py](mcp/tests/test_checkpoint_landing.py) |
-| The checkpoint result retains the pre-existing cleanup state. | L207-L238 | [mcp/tests/test_checkpoint_landing.py](mcp/tests/test_checkpoint_landing.py) |
-| Completion and stale candidate publication refusals. | L241-L305 | [mcp/tests/test_checkpoint_landing.py](mcp/tests/test_checkpoint_landing.py) |
-| The landed-master abandon guard remains enforced. | L308-L347 | [mcp/tests/test_checkpoint_landing.py](mcp/tests/test_checkpoint_landing.py) |
-| Production checkpoint capture and publication authority. | L104-L122; L125-L144; L147-L178 | [mcp/src/agents_remember/worktrees/series_closeout.py](mcp/src/agents_remember/worktrees/series_closeout.py) |
+| Checkpoint versus final durable integration cells. | `test_final_landing_still_records_completed_and_marks_cleanup_pending` | mcp/tests/test_checkpoint_landing.py:169-204 |
+| The checkpoint result retains the pre-existing cleanup state. | `test_checkpoint_result_publishes_without_running_cleanup` | mcp/tests/test_checkpoint_landing.py:207-238 |
+| Completion and stale candidate publication refusals. | `test_publication_refuses_a_candidate_that_moved_after_its_capture` | mcp/tests/test_checkpoint_landing.py:241-305 |
+| The landed-master abandon guard remains enforced. | `test_abandon_guard_still_refuses_a_completed_master` | mcp/tests/test_checkpoint_landing.py:308-347 |
+| Production checkpoint capture and publication authority. | `capture_series_checkpoint_refs` | mcp/src/agents_remember/worktrees/series_closeout.py:104-122 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

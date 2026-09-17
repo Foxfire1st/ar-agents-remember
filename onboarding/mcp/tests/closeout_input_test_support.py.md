@@ -6,8 +6,8 @@
 | path | `mcp/tests/closeout_input_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -74,20 +74,20 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The recorder verifies typed progress transitions. | L64-L94 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
-| Canonical setup passes only enabled code/memory messages. | L97-L140; L156-L227 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
-| Finalization publishes code/memory recovery cells. | L352-L379 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
-| Input and WorktreeArgs builders share production normalization. | L390-L414; L417-L438 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
-| Evidence builders retain the explicit durable states. | L441-L463; L466-L497; L500-L512 | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| The recorder verifies typed progress transitions. | `MutationEvidenceRecorder` | mcp/tests/closeout_input_test_support.py:64-94 |
+| Canonical setup passes only enabled code/memory messages. | `start_closeout_operation` | mcp/tests/closeout_input_test_support.py:97-140 |
+| Finalization publishes code/memory recovery cells. | `publish_closeout_finalization` | mcp/tests/closeout_input_test_support.py:352-379 |
+| Input and WorktreeArgs builders share production normalization. | `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:390-414 |
+| Evidence builders retain the explicit durable states. | `with_mutation_intent` | mcp/tests/closeout_input_test_support.py:441-463 |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

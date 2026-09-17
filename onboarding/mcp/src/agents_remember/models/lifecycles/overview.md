@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -69,15 +69,15 @@ None.
 | --- | --- | --- |
 | Lifecycle response vocabularies and models are owned together. | `LiveState`; `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:16-16; mcp/src/agents_remember/models/lifecycles/responses.py:30-35 |
 | Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:14-39 |
-| Asynchronous operation records keep private identity out of the public projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:338-432; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
+| Asynchronous operation records keep private identity out of the public projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340 |
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery records have two output commits. | L66-L72 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| A filtered content head does not replace actual Git head/tree facts. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| Prepared state has an ordered two-leg prefix. | L112-L128 | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| Recovery records have two output commits. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+| A filtered content head does not replace actual Git head/tree facts. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
+| Prepared state has an ordered two-leg prefix. | `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
 
 ## Docs References
 
@@ -175,8 +175,8 @@ envelope. These revisions have different purposes and must not be substituted fo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:343-439; mcp/src/agents_remember/models/lifecycles/operation.py:525-553; mcp/src/agents_remember/models/lifecycles/operation.py:556-559; mcp/src/agents_remember/models/lifecycles/operation.py:562-568 |
-| The public envelope carries the wait cursor beside versioned identity and component bindings. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
+| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:521; mcp/src/agents_remember/models/lifecycles/operation.py:525-553; mcp/src/agents_remember/models/lifecycles/operation.py:556-559; mcp/src/agents_remember/models/lifecycles/operation.py:562-568 |
+| The public envelope carries the wait cursor beside versioned identity and component bindings. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393 |
 
 ## L34 Preparation Ownership
 
@@ -196,7 +196,10 @@ normal closeout/integration workers do not select, populate, or require them. Mo
 normal transaction acceptance evidence.
 
 ## Update History
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `LifecycleOperationProjection` repointed to mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_MEANINGFUL_STATE_FIELDS` in the row 178 of this card from mcp/src/agents_remember/models/lifecycles/operation.py:343-439 to mcp/src/agents_remember/models/lifecycles/operation.py:521, the extent of the construct the claim is about (the checker named line(s) [521, 554] as its live location)
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Removed ledger intent/output authority and documented raw versus filtered memory snapshot identities. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 

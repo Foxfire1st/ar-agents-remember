@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `76c7697ca275a8d2764729145c950c166f3f9ec3`|
-| lastVerifiedCommitDate | 2026-09-16T10:27:28+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -116,7 +116,7 @@ No domain documentation source is configured for this repository (`system/source
 | The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:85-87 |
 | The portable content identity and the two exact candidate inputs. | `SnapshotIdentity`; `ExactCandidateInput` | mcp/src/agents_remember/models/knowledge/candidate.py:113-122; mcp/src/agents_remember/models/knowledge/candidate.py:125-134 |
 | The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:137-178 |
-| The module-level digest the validator calls and the operation re-derives. | `def context_digest(` | mcp/src/agents_remember/models/knowledge/candidate.py:181-191 |
+|  The module-level digest the validator calls and the operation re-derives. | "def context_digest(" | mcp/src/agents_remember/models/knowledge/candidate.py:181-191  |
 | The receipt entry, including the two-state rule and the no-entry case. | `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:194-215 |
 | The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:218-240 |
 | The twelve-member discriminated union with no promotion, approval or SQL member. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:342-358 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/worktree_tool_requests.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,30 +62,30 @@ No additional file-local TODO is established by this candidate review.
 No external Domain Documentation source is configured. These are repository-owned application
 contracts.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw closeout/control messages and landed commits contain only code/memory values. | L68-L107; L111-L115; L119-L128 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Task-start concepts and shared defaults have one definition. | L17-L30; L34-L48; L52-L57; L60-L60; L63-L63 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Lifecycle control reconstructs only canonical typed public values. | L68-L107 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Closeout approval, messages, and finalization documents remain separate concepts. | L111-L115; L132-L136; L144-L149 | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Start consumes its extracted request type. | L103-L200 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Operation control consumes its extracted request type. | L534-L554 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Closeout apply consumes its extracted request type. | L353-L368 | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Raw closeout/control messages and landed commits contain only code/memory values. | `OperationControlRequest` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107 |
+| Task-start concepts and shared defaults have one definition. | `TaskIdentity` | mcp/src/agents_remember/application/worktree_tool_requests.py:17-30 |
+| Lifecycle control reconstructs only canonical typed public values. | `OperationControlRequest` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107 |
+| Closeout approval, messages, and finalization documents remain separate concepts. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-115 |
+| Start consumes its extracted request type. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-200 |
+| Operation control consumes its extracted request type. | `worktree_operation_control_tool` | mcp/src/agents_remember/application/worktree_tools.py:534-554 |
+| Closeout apply consumes its extracted request type. | `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:353-368 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 ## Update History
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed ledger subjects and landed-ledger identities from the documented request concepts. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

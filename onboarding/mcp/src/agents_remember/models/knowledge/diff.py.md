@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/diff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -174,7 +174,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The node that measures the absence the request shape cannot carry: nine verdict words searched over the whole serialized response, with a positive control.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict" | mcp/tests/test_knowledge_diff_boundaries.py:481-507 |
 | **The node that holds the two change statements apart, and the node that measures the limitation validator.** | "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_boundaries.py:510-540; mcp/tests/test_knowledge_diff_scope.py:603-675 |
 | **The node that measures the truncated comparison, whose failing assertion sits at `:716` on the frozen file.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:678-739 |
-| The one member this leaf added to the operation union, and the vocabulary the new refusals reuse. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:37-75; mcp/src/agents_remember/models/knowledge/result.py:81-144 |
+| The one member this leaf added to the operation union, and the vocabulary the new refusals reuse. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-80; mcp/src/agents_remember/models/knowledge/result.py:81-144 |
 
 ## Cross-Repo References
 
@@ -187,4 +187,5 @@ caller supplied; no second repository, ledger or coordination path is read.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `KnowledgeOperation` in the row 177 of this card from mcp/src/agents_remember/models/knowledge/result.py:37-75 to mcp/src/agents_remember/models/knowledge/result.py:36, the extent of the construct the claim is about (the checker named line(s) [36, 152, 349] as its live location); re-pointed `KnowledgeRefusalCode` in the row 177 of this card from mcp/src/agents_remember/models/knowledge/result.py:36 to mcp/src/agents_remember/models/knowledge/result.py:80, the extent of the construct the claim is about (the checker named line(s) [80, 151] as its live location)
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the comparison's vocabulary and reviewed it against the leaf's frozen bytes. It states the four properties enforced at construction — the per-side selector as the **only** extension to R07's contract with **no field able to carry a second relevance rule**; the record half and the source half as separately typed collections with **no field that could hold a verdict**, which is how the packet's second non-conforming example is made unrepresentable; origin retained on every union item and `present_outside_selection` kept apart from `absent_from_snapshot`; and the limitation/omission check that runs **in both directions** — plus the six-state `record_transition` union whose `superseding`/`superseded` pair is recognised **only** from the authored predecessor edge. It records the three construction-time invariants, the comparison's own cursor decoder (deliberately not the read's), the derived binding digest that makes a candidate change invalidate a continuation by construction, and the removal of `assessment_beyond_this_increment` as a reason with no producer. **The closed `seed_override` question is recorded here with the reviewer's evidence** so a successor does not spend a round on it. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`                 |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`                 |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -91,20 +91,20 @@ No additional file-local TODO is established by this candidate review.
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Carryover registration declares one memory subject and describes the computed cache refresh. | L212-L242 | [mcp/src/agents_remember/mcp/registration/memory.py](mcp/src/agents_remember/mcp/registration/memory.py) |
-| The payload builders for the carryover plan and report-filing apply pair. | L209-L220; L223-L244 | [mcp/src/agents_remember/mcp/tools/memory.py](mcp/src/agents_remember/mcp/tools/memory.py) |
-| The typed sync/start/poll payload builders. | L58-L65; L68-L77; L80-L89 | [mcp/src/agents_remember/mcp/tools/memory.py](mcp/src/agents_remember/mcp/tools/memory.py) |
-| The `MemoryBranches` parameter object. | L309-L314 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The `CarryoverSelection` parameter object. | L322-L338 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The `CarryoverCommitMessages` parameter object. | L342-L345 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
+| Carryover registration declares one memory subject and describes the computed cache refresh. | `memory_carryover_apply` | mcp/src/agents_remember/mcp/registration/memory.py:212-242 |
+| The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:209-220 |
+| The typed sync/start/poll payload builders. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
+| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:309-314 |
+| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:322-338 |
+| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:342-345 |
 
 ## 260815-DAG-L3 Curator Attestation Registration
 
@@ -142,9 +142,9 @@ acceptance pair.
 
 No separate cross-repository implementation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external implementation source applies. | N/A | N/A |
+| No external implementation source applies. | — | — |
 
 ## Update History
 

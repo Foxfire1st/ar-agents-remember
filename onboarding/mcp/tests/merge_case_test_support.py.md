@@ -6,8 +6,8 @@
 | path | `mcp/tests/merge_case_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00 |
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The harness's three responsibilities and the statement that it holds no policy. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/merge_case_test_support.py:1-20 |
+|  The harness's three responsibilities and the statement that it holds no policy. | "It is test support, not production code: it decides nothing, holds no policy" | mcp/tests/merge_case_test_support.py:1-20 |
 | The one case world and the readers a case uses instead of raw paths. | `GitBranchWorld`; `MergeCase`; `state_path`; `databases_by_role` | mcp/tests/merge_case_test_support.py:72-78; mcp/tests/merge_case_test_support.py:82-132; mcp/tests/merge_case_test_support.py:91-94; mcp/tests/merge_case_test_support.py:125-132 |
 | The base state authored through the real store operations and closed through SQLite's own backup. | `author_base_state`; `copy_closed` | mcp/tests/merge_case_test_support.py:153-194; mcp/tests/merge_case_test_support.py:219-239 |
 | The successor rule: a new revision naming its predecessor, never an edit of a sealed row. | `add_revision`; `set_label` | mcp/tests/merge_case_test_support.py:248-285; mcp/tests/merge_case_test_support.py:309-314 |
@@ -73,8 +73,8 @@ No domain documentation source is configured for this repository (`system/source
 | The one binary read, and why it does not go through the text-decoding runner. | `_read_committed_blob` | mcp/tests/merge_case_test_support.py:487-508 |
 | The build order that puts an unusual state inside the commits. | `build_case` | mcp/tests/merge_case_test_support.py:511-571 |
 | The measurement helpers that make input preservation and survival measured rather than asserted. | `table_rows`; `row_counts`; `file_digest`; `journal_peer_names`; `statements_of`; `labels_of` | mcp/tests/merge_case_test_support.py:583-591; mcp/tests/merge_case_test_support.py:594-605; mcp/tests/merge_case_test_support.py:607-611; mcp/tests/merge_case_test_support.py:613-621; mcp/tests/merge_case_test_support.py:623-633; mcp/tests/merge_case_test_support.py:635-645 |
-| The registered artifact that makes this harness an owned contract rather than a private helper. | `contract:common-base-merge-cases` | mcp/tests/evidence-lifecycle.toml:1132-1151 |
-| The two consuming modules, which are the harness's exact consumer scope. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate"; "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge.py:1-33; mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
+|  The registered artifact that makes this harness an owned contract rather than a private helper. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1132-1152  |
+| The two consuming modules, which are the harness's exact consumer scope. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate"; "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge.py:248-250; mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | The store operations the authored states go through. | `create_invariant`; `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:213-230; mcp/src/agents_remember/memory/knowledge/store.py:232-266 |
 
 ## Cross-Repo References

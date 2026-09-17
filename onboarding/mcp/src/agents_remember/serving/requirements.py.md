@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/requirements.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,11 +83,11 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Route registration + the two handlers. | `register_requirements_routes` | mcp/src/agents_remember/serving/requirements.py:181-208 |
+| Route registration + the two handlers. | `register_requirements_routes` | mcp/src/agents_remember/serving/requirements.py:181-182 |
 | Task-context root selection and the registered-root guard. | `_selected_root`; `_registered_root` | mcp/src/agents_remember/serving/requirements.py:45-72; mcp/src/agents_remember/serving/requirements.py:75-87 |
 | The stricter no-symlink confinement reused by read. | `confine_non_symlink_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:52-92 |
 | The declared models + shared scoped-read refusal table. | `RequirementRow`; `RequirementsListing`; `RequirementContents`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:767-798; mcp/src/agents_remember/serving/response_contract.py:1103-1109 |
-| Composition: the app registers this surface. | `register_requirements_routes` | mcp/src/agents_remember/serving/app.py:283-284 |
+| Composition: the app registers this surface. | `register_requirements_routes` | mcp/src/agents_remember/serving/app.py:138 |
 
 
 ## Cross-Repo References
@@ -100,6 +100,7 @@ No cross-repository implementation boundary is owned here.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/src/agents_remember/serving/app.py:138 to the row 86 of this card as the citation for `register_requirements_routes`: no cited file carried the construct, and the checker named line(s) [138, 292] in this file as its live location; re-pointed `register_requirements_routes` in the row 90 of this card from mcp/src/agents_remember/serving/app.py:283-284 to mcp/src/agents_remember/serving/app.py:138, the extent of the construct the claim is about (the checker named line(s) [138, 292] as its live location)
 - 2026-09-05T08:27+02:00 — L31 native curator: Removed the leaked diff-marker bullet after checking root selection; retained the GET-only requirement-packet contract and refreshed the scoped-read refusal-table evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 
 - 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the new

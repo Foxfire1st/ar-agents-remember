@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../overview.md`                              |
 
@@ -238,7 +238,7 @@ enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, 
 emits the TypeScript partition and enumerable tuples from those schema enums.
 `stale_generated_files` compares both committed generated targets with fresh output, so the documented
 `scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
-edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files("], mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:439-439; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:475-475; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-602).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files("], mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:439-451; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:475-475; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-602; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:487-487; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:614-614).
 The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
 sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
 not the cross-language authority.
@@ -469,9 +469,9 @@ references informed product framing only; current code truth stays in agents-rem
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Public lifecycle recovery commits contain only real code and memory outputs. | L66-L72 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Public lifecycle recovery commits contain only real code and memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -582,6 +582,7 @@ The generated lifecycle phase union and schema now include `recovering-private-p
 
 ## Update History
 
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `types/projection.ts` +25, `fixtures/snapshot.json` +17, `test/contract.test.ts` +24):
   the route gained a serve-time key, so the producer-contract subsection was extended rather than

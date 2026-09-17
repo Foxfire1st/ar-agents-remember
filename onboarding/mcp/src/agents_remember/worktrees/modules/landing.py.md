@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T17:20+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,7 +19,7 @@ returns a list it becomes the status payload's `landing` block, and `reducer._en
 composes that onto `EngineProcessNode.landing`.
 
 Two callers reach the probe, and neither is the projection tick: the interactive `status_payload`
-cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:503-503; mcp/src/agents_remember/worktrees/modules/guidance.py:505-505), and `observer/landing_state.LandingStateRefresher`, which holds it as
+cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:493-495), and `observer/landing_state.LandingStateRefresher`, which holds it as
 `observe: LandingObserver = landing_refs` and sweeps landing-active contracts on its own
 `LANDING_REFRESH_INTERVAL_SECONDS = 30.0` cadence with `LANDING_REFRESH_CONCURRENCY = 4`. The
 recurring projection never spawns anything: it renders `unobserved_landing_refs` until the
@@ -133,14 +133,20 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:441-493; mcp/src/agents_remember/worktrees/modules/guidance.py:503-505 |
+| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:493-495; mcp/src/agents_remember/worktrees/modules/guidance.py:431-483 |
 | The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:956-978 |
-| The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304-304 |
-| The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:55-64; mcp/src/agents_remember/kernel/git_command.py:92-92; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
+| The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304 |
+| The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:93; mcp/src/agents_remember/kernel/git_command.py:92; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
 | The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:148-352 |
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/src/agents_remember/worktrees/modules/guidance.py:493 to the row 136 of this card as the citation for `status_payload`: no cited file carried the construct, and the checker named line(s) [493] in this file as its live location; added mcp/src/agents_remember/worktrees/modules/guidance.py:495 to the row 140 of this card as the citation for `landing_refs`: no cited file carried the construct, and the checker named line(s) [495] in this file as its live location; re-pointed `GIT_LOCAL_TIMEOUT_SECONDS` in the row 139 of this card from mcp/src/agents_remember/kernel/git_command.py:55-64 to mcp/src/agents_remember/kernel/git_command.py:93, the extent of the construct the claim is about (the checker named line(s) [93, 128, 229] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `status_payload` in the row 136 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:431-433 to mcp/src/agents_remember/worktrees/modules/guidance.py:493-494, the extent of the construct the claim is about (the checker named line(s) [493] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_status_payload_with_landing` in the row 136 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:493-494 to mcp/src/agents_remember/worktrees/modules/guidance.py:431-433, the extent of the construct the claim is about (the checker named line(s) [431, 490, 495] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `status_payload` in the row 136 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:495 to mcp/src/agents_remember/worktrees/modules/guidance.py:493-494, the extent of the construct the claim is about (the checker named line(s) [493] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `status_payload` in the row 136 of this card to mcp/src/agents_remember/worktrees/modules/guidance.py:493-494, the extent the claim is about (the checker named line(s) [493] as the live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/worktrees/modules/guidance.py:496 to mcp/src/agents_remember/worktrees/modules/guidance.py:495, the range the cited construct now occupies
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
   range of 4 claim(s) whose anchor no longer sat in its cited range and normalised 3 further
   range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations

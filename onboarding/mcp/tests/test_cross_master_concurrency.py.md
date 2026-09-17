@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_cross_master_concurrency.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -51,27 +51,27 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Independent activation, private content, and sibling leaf landing. | L131-L162; L166-L189; L193-L212 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
-| Release and conflicting publication preserve sibling state. | L409-L456; L473-L507 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
-| Ordinary resume/reconciliation/completion preserves actual histories. | L509-L568; L588-L610; L638-L681 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
-| The stopped interval is represented by snapshots, not a pause-tool call. | L358-L389; L570-L586 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
-| Checkpoint and authored/absent dependency behavior remain distinct. | L685-L718; L722-L750; L754-L822 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
-| Fixture commits are two actual outputs with Git-owned attribution. | L224-L288; L338-L348; L628-L636 | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| Independent activation, private content, and sibling leaf landing. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready` | mcp/tests/test_cross_master_concurrency.py:131-162 |
+| Release and conflicting publication preserve sibling state. | `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible` | mcp/tests/test_cross_master_concurrency.py:409-456 |
+| Ordinary resume/reconciliation/completion preserves actual histories. | `test_master_a_resumes_reconciles_and_completes_after_master_b_landed` | mcp/tests/test_cross_master_concurrency.py:509-568 |
+| The stopped interval is represented by snapshots, not a pause-tool call. | `_private_master_a_facts` | mcp/tests/test_cross_master_concurrency.py:358-389 |
+| Checkpoint and authored/absent dependency behavior remain distinct. | `test_explicit_checkpoint_landing_remains_available_when_requested` | mcp/tests/test_cross_master_concurrency.py:685-718 |
+| Fixture commits are two actual outputs with Git-owned attribution. | `_land_leaf_contract` | mcp/tests/test_cross_master_concurrency.py:224-288 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/git_closeout_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -44,30 +44,30 @@ No additional source-local TODO is asserted by this maintenance pass.
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | L33-L82 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | L61-L82 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Capability use reopens the caller-owned authority. | L91-L95 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Result records preserve before/after observations and any actual Git command result. | L105-L109 | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | L688-L720 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
-| Publication issues one expected-old CAS and does not rerun already-new or existing output. | L760-L783 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | `GitCloseoutPublicationBinding` | mcp/src/agents_remember/kernel/git_closeout_publication.py:33-82 |
+| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | `require_prepared_bytes` | mcp/src/agents_remember/kernel/git_closeout_publication.py:61-82 |
+| Capability use reopens the caller-owned authority. | `require_authority` | mcp/src/agents_remember/kernel/git_closeout_publication.py:91-95 |
+| Result records preserve before/after observations and any actual Git command result. | `GitCloseoutPublicationResult` | mcp/src/agents_remember/kernel/git_closeout_publication.py:105-109 |
+| The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | `_observe_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:688-720 |
+| Publication issues one expected-old CAS and does not rerun already-new or existing output. | `publish_git_closeout_ref` | mcp/src/agents_remember/kernel/git_command.py:760-783 |
 
 ## Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 

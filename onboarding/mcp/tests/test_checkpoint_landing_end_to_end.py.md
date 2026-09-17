@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_checkpoint_landing_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -51,26 +51,26 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Initial live-pair capture, source merge, and source divergence. | L67-L122; L124-L147; L149-L163 | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Retry, continued work, and final-route completion semantics. | L165-L201; L203-L226; L228-L259 | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Ordinary leaf cache absence and code-only checkpoint publication. | L278-L302; L396-L410 | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Source-cache damage does not block; real approval/master/race guards survive. | L412-L431; L383-L394; L433-L459; L461-L479 | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Checkpoint publication remains distinct from pause. | L304-L329 | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
+| Initial live-pair capture, source merge, and source divergence. | `test_an_unfinished_master_checkpoints_its_own_refs_end_to_end` | mcp/tests/test_checkpoint_landing_end_to_end.py:67-122 |
+| Retry, continued work, and final-route completion semantics. | `test_retry_is_idempotent_and_continued_work_checkpoints_again` | mcp/tests/test_checkpoint_landing_end_to_end.py:165-201 |
+| Ordinary leaf cache absence and code-only checkpoint publication. | `test_the_ordinary_leaf_route_lands_without_a_cache_file` | mcp/tests/test_checkpoint_landing_end_to_end.py:278-302 |
+| Source-cache damage does not block; real approval/master/race guards survive. | `test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint` | mcp/tests/test_checkpoint_landing_end_to_end.py:412-431 |
+| Checkpoint publication remains distinct from pause. | `test_the_landing_does_not_pose_as_a_pause` | mcp/tests/test_checkpoint_landing_end_to_end.py:304-329 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

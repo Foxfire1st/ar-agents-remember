@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ None recorded beyond the explicit terminal-archive boundary recorded by the gove
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -52,21 +52,21 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `LifecycleControlError` bounds refusal details and emits executable two-message closeout corrections. | L14-L98 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py) |
+| `LifecycleControlError` bounds refusal details and emits executable two-message closeout corrections. | `LifecycleControlError` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py:14-15 |
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LifecycleControlError` as its public seam. | L14-L98 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py) |
+| The module defines `LifecycleControlError` as its public seam. | `LifecycleControlError` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py:14-15 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

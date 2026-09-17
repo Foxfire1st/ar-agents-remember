@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,16 +48,16 @@ L2 owns public recovery and revision behavior; L1 only establishes the evidence 
 
 `closeout_recovery_phase` returns `recovering-private-preparation` for a retained preparation with no claimed approval, irreversible boundary, mutation-recovery requirement, legacy migration or finalized contract proof. Claimed recovery uses `recovering-after-claim`, or `contract-finalization` while waiting. Preparation retains the current generation without manufacturing a consumed approval.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `closeout_generation_retained` boundary implements the preparation contract above. | L93-L108 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
-| The current `closeout_recovery_phase` boundary implements the preparation contract above. | L111-L129 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
+| The current `closeout_generation_retained` boundary implements the preparation contract above. | `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:93-94 |
+| The current `closeout_recovery_phase` boundary implements the preparation contract above. | `closeout_recovery_phase` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:111-116 |
 
 ## Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -65,22 +65,22 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `derive_closeout_recovery_commits` projects only code and memory-content commits from proven evidence. | L27-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
-| `_has_exact_finalization_evidence` requires exact publication proof and the actual output cells for the memory mode. | L144-L158 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
+| `derive_closeout_recovery_commits` projects only code and memory-content commits from proven evidence. | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-32 |
+| `_has_exact_finalization_evidence` requires exact publication proof and the actual output cells for the memory mode. | `_has_exact_finalization_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:144-145 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery commits are projected from proven mutations. (`derive_closeout_recovery_commits`) | L27-L48 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
-| Reported cells must match the projection. (`require_closeout_recovery_projection`) | L82-L90 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
-| Retention requires mutation or exact finalization evidence. (`closeout_generation_retained`) | L93-L108 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
+| Recovery commits are projected from proven mutations. (`derive_closeout_recovery_commits`) | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-32 |
+| Reported cells must match the projection. (`require_closeout_recovery_projection`) | `require_closeout_recovery_projection` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:82-83 |
+| Retention requires mutation or exact finalization evidence. (`closeout_generation_retained`) | `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:93-94 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 
@@ -90,9 +90,9 @@ The current source seams include `derive_closeout_recovery_commits`, `require_cl
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | L27-L48; L82-L90; L93-L108 | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
+| The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-32 |
 
 ## Update History
 

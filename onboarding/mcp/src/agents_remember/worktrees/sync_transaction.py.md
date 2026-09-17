@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:05 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -91,21 +91,21 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The driver validates choices and routes retained or new transactions. | L82-L110; L113-L151; L202-L234 | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
-| Dirty work admission and parking use complete typed side records. | L387-L402; L405-L415; L260-L297; L79-L79 | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
-| Currentness and continuation use Git facts and content-only conflicts. | L333-L359; L539-L570; L573-L594; L597-L629 | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
-| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs. | L117-L141; L144-L163; L285-L292; L362-L395; L437-L455; L490-L498 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
-| Pinned authority and parked-work restoration remain separate owners. | L121-L126; L129-L143; L316-L355; L380-L401 | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
-| Terminal finalization/cancellation and damaged-journal recovery are delegated. | L56-L92; L159-L190; L266-L283; L193-L263 | [mcp/src/agents_remember/worktrees/sync_transaction_recovery.py](mcp/src/agents_remember/worktrees/sync_transaction_recovery.py) |
+| The driver validates choices and routes retained or new transactions. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110 |
+| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides` | mcp/src/agents_remember/worktrees/sync_transaction.py:387-402 |
+| Currentness and continuation use Git facts and content-only conflicts. | `_already_current_result` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359 |
+| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs. | `worktree_dirty_paths` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:117-141 |
+| Pinned authority and parked-work restoration remain separate owners. | `pin_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126 |
+| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92 |
 
 ## Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 

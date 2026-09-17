@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated | 2026-09-15T01:13+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -81,29 +81,29 @@ None known for the MX-FIX-4 application entry point boundary.
 No Domain Documentation source is configured for this repository; this card is grounded in the
 package application entry point and resolver contracts.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | L352-L359 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | L236-L275 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
-| Carryover has one memory subject and forwards it without a ledger-message option. | L342-L345; L391-L408 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| Canonical quality scope is owned by the focused scope module. | L105-L142; L145-L169 | [mcp/src/agents_remember/application/memory_scope.py](mcp/src/agents_remember/application/memory_scope.py) |
-| Typed quality execution and public run translation are owned by the controller. | L111-L121; L124-L156; L159-L221 | [mcp/src/agents_remember/application/memory_quality/controller.py](mcp/src/agents_remember/application/memory_quality/controller.py) |
-| The route-index application entry point forwards resolver-owned authority. | L254-L290 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The route-index builder. | L184-L235 | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py) |
-| The route-index builder receives storage authority explicitly in its typed signature. | L184-L235 | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py) |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:352-359 |
+| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `ledger_status` | mcp/src/agents_remember/memory/baseline.py:236-275 |
+| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:342-345 |
+| Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-142 |
+| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:111-121 |
+| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290 |
+| The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
+| The route-index builder receives storage authority explicitly in its typed signature. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 
 ## Cross-Repo References
 
 The application entry point can target configured sibling repositories, but no external implementation governs
 this package-local dispatch contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 

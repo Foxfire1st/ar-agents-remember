@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -67,21 +67,21 @@ None.
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. | L1971-L2008 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The `$defs` block contains all reusable projection schema definitions. | L2-L2 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| `ActionAvailability` declares reducer-decided action safety for the cockpit. | L3-L46 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| `AgentPickupNode` declares a pending unacked dashboard response. | L47-L304 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The generated `task-intent/v1` identity definition with closed schema and digest pattern. | L4115-L4136 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The optional task-intent reference on the lifecycle operation projection. | L2084-L2094 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. | L630-L692; L638-L638 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
+| The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. | `memory` | dashboard/src/types/projection.schema.json:1971-2008 |
+|  The `$defs` block contains all reusable projection schema definitions. | "$defs" | dashboard/src/types/projection.schema.json:2-2 |
+| `ActionAvailability` declares reducer-decided action safety for the cockpit. | `type` | dashboard/src/types/projection.schema.json:3-46 |
+| `AgentPickupNode` declares a pending unacked dashboard response. | `type` | dashboard/src/types/projection.schema.json:47-304 |
+| The generated `task-intent/v1` identity definition with closed schema and digest pattern. | `intent` | dashboard/src/types/projection.schema.json:4115-4136 |
+| The optional task-intent reference on the lifecycle operation projection. | `null` | dashboard/src/types/projection.schema.json:2084-2094 |
+| The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. | `type` | dashboard/src/types/projection.schema.json:630-692 |
 
 ## L23 Source-Lineage Schema
 
@@ -111,10 +111,10 @@ list of opaque command payloads (bounded to 32 entries; required by the generate
 and unreadable outcomes. The schema remains projection-only; it does not transfer lifecycle
 authority to the dashboard or to the disposable closeout projection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. | L1830-L2116 | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The generated TypeScript mirror requires the legalControls array on its operation observation. | L334-L363 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. | `type` | dashboard/src/types/projection.schema.json:1830-2116 |
+| The generated TypeScript mirror requires the legalControls array on its operation observation. | `string` | dashboard/src/types/projection.ts:334-363 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Contract
 
@@ -163,9 +163,9 @@ populate for record-bound envelopes.
 
 No separate cross-repository implementation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external implementation source applies. | N/A | N/A |
+| No external implementation source applies. | — | — |
 
 ## Update History
 

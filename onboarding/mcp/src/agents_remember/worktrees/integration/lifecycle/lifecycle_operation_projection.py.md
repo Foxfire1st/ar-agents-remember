@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ None recorded.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -61,25 +61,25 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `_operation_specific_projected_result` projects initial-door and direct-landing evidence without ledger decisions. | L658-L683 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
-| `_recommended_control` orders legal recommended controls without creating new authority. | L463-L477 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| `_operation_specific_projected_result` projects initial-door and direct-landing evidence without ledger decisions. | `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661 |
+| `_recommended_control` orders legal recommended controls without creating new authority. | `_recommended_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:463-466 |
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) | L231-L233; L546-L565; L568-L576 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
-| Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) | L536-L543; L592-L627 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
-| The wire now carries the canonical intent identity when present. (`_coherent_operation_projection`; `_incoherent_operation_projection`) | L172-L219; L480-L517 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) | `_legacy_intent_override` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:546-551 |
+| Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) | `_exit_proven_cancellation_pending` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:536-537 |
+| The wire now carries the canonical intent identity when present. (`_coherent_operation_projection`; `_incoherent_operation_projection`) | `_coherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:172-179 |
 
 ## Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 
@@ -99,11 +99,11 @@ Both envelope builders — the coherent adapter and the incoherent refusal adapt
 record-bound status snapshot (including a wait snapshot) carries the durable meaningful-state
 cursor of the journal revision it projects.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Coherent envelope carries the record cursor. (`_coherent_operation_projection`) | L172-L219 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
-| Incoherent refusal envelope carries the record cursor too. (`_incoherent_operation_projection`) | L480-L517 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
-| The envelope field being populated. (`meaningfulRevision`) | L375-L375 | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| Coherent envelope carries the record cursor. (`_coherent_operation_projection`) | `_coherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:172-179 |
+| Incoherent refusal envelope carries the record cursor too. (`_incoherent_operation_projection`) | `_incoherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:480-486 |
+| The envelope field being populated. (`meaningfulRevision`) | `None` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:375 |
 
 ## CCR-L42 current candidate
 

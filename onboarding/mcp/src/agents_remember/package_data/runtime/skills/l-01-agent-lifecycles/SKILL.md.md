@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff`|
-| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,7 @@ No external domain documentation is configured for this repository-local lifecyc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
-| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:195-203 |
+| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:204-205 |
 
 ## Cross-Repo References
 
@@ -180,6 +180,7 @@ The lifecycle doctrine now distinguishes baseline from fix-verification review, 
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation scripts/sync-skills.py:204-205 in the row 91 of this card; the repetition added no pooled evidence
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): corrected the range
   quoted in this card's own earlier entry — the added super-branch note occupies `:596-598`, not
   `:592-595`. The substantive router/registry citation (`:6-416`) still holds. Verification metadata

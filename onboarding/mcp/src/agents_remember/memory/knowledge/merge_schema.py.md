@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/merge_schema.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00 |
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ No domain documentation source is configured for this repository (`system/source
 | The index-shape rule that treats an auto-index name as local naming while a declared index name is structure. | `_index_columns` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:369-383 |
 | The stable renderings and whitespace normalisation that make the comparison structural rather than textual. | `_normalized_sql`; `_render_column`; `_render_triggers` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:386-389; mcp/src/agents_remember/memory/knowledge/merge_schema.py:392-396; mcp/src/agents_remember/memory/knowledge/merge_schema.py:417-422 |
 | The schema generation this manifest must match, and the fingerprint the store stamps. | `SCHEMA_USER_VERSION`; `schema_fingerprint` | mcp/src/agents_remember/memory/knowledge/schema.py:27-27; mcp/src/agents_remember/memory/knowledge/schema.py:375-392 |
-| The unit node that refuses seven structural differences plus a reorder, a rename, a weakened trigger body and a changed `user_version`. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:111-180 |
+| The unit node that refuses seven structural differences plus a reorder, a rename, a weakened trigger body and a changed `user_version`. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-250 |
 
 ## Cross-Repo References
 
@@ -82,4 +82,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate` in the row 73 of this card from mcp/tests/test_knowledge_guarded_merge.py:111-180 to mcp/tests/test_knowledge_guarded_merge.py:248-250, the extent of the construct the claim is about (the checker named line(s) [19, 248] as its live location)
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new structural preflight. It records the manifest derived from the DDL that creates a database rather than from a second description of it, the first-difference comparison and its most-structural-first order, the index-shape rule that treats an auto-index name as local naming while a declared index's name is structure, and the two boundaries a consumer most needs: the preflight runs before a session exists because SQLite can silently skip a table it cannot match, and it neither repairs nor ignores an unfamiliar table to obtain a green result. The card also records that there is exactly one comparison per input against the declared generation and why a pairwise pass would be unreachable — the statement this leaf's review corrected. Verification metadata remains empty until closeout stamps the code commit.

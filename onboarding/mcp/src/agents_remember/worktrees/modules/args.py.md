@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Purpose
@@ -83,7 +83,7 @@ None recorded for the ledger-retirement boundary.
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external source applies. | — | — |
 
@@ -91,17 +91,17 @@ No external Domain Documentation source is configured for this slice. The curren
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `WorktreeArgs` carries normalized closeout input and actual landed code/memory facts. | L33-L110 | [mcp/src/agents_remember/worktrees/modules/args.py](mcp/src/agents_remember/worktrees/modules/args.py) |
-| `report_operation_progress` publishes progress through the exact worker-owned callback. | L113-L116 | [mcp/src/agents_remember/worktrees/modules/args.py](mcp/src/agents_remember/worktrees/modules/args.py) |
+| `WorktreeArgs` carries normalized closeout input and actual landed code/memory facts. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-80 |
+| `report_operation_progress` publishes progress through the exact worker-owned callback. | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:113-114 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Public sync choice and resolution-action vocabularies are owned once by the worktree model. (`MemorySyncChoice`; `SyncResolutionAction`) | L80-L80; L79-L79 | [mcp/src/agents_remember/models/worktree.py](mcp/src/agents_remember/models/worktree.py) |
-| Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) | L36-L43 | [mcp/src/agents_remember/worktrees/modules/models.py](mcp/src/agents_remember/worktrees/modules/models.py) |
-| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. (`build_parser`) | L130-L186 | [mcp/src/agents_remember/worktrees/modules/cli.py](mcp/src/agents_remember/worktrees/modules/cli.py) |
-| Gate delegation policy model (kernel-owned since L9). (`GatePolicy`; `DEFAULT_GATE_POLICY = GatePolicy()`) | L54-L63; L66-L66 | [mcp/src/agents_remember/kernel/primitives/gate_policy.py](mcp/src/agents_remember/kernel/primitives/gate_policy.py) |
+| Public sync choice and resolution-action vocabularies are owned once by the worktree model. (`MemorySyncChoice`; `SyncResolutionAction`) | `MemorySyncChoice` | mcp/src/agents_remember/models/worktree.py:80 |
+| Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:36-43 |
+| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. (`build_parser`) | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:130-131 |
+| Gate delegation policy model (kernel-owned since L9). (`GatePolicy`; `DEFAULT_GATE_POLICY = GatePolicy()`) | `GatePolicy` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-57 |
 
 ## Series-Contract Notes
 
@@ -123,10 +123,10 @@ The current source seams include `WorktreeArgs`, `report_operation_progress`. Th
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) | L33-L110 | [mcp/src/agents_remember/worktrees/modules/args.py](mcp/src/agents_remember/worktrees/modules/args.py) |
-| Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) | L113-L116 | [mcp/src/agents_remember/worktrees/modules/args.py](mcp/src/agents_remember/worktrees/modules/args.py) |
+| Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-80 |
+| Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:113-114 |
 
 ## Current Landed Composition
 
@@ -136,7 +136,7 @@ The internal `integration_certification_owner` field carries the typed journal-o
 
 No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional cross-repository evidence applies. | — | — |
 

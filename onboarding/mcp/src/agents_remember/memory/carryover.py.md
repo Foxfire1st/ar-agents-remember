@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -88,13 +88,13 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Candidate comparison and explicit review selection. | L222-L237; L240-L248; L182-L215; L611-L624 | [mcp/src/agents_remember/memory/carryover.py](mcp/src/agents_remember/memory/carryover.py) |
-| Apply owns one content commit and preserves exact leaf/repository authority. | L698-L791; L794-L830 | [mcp/src/agents_remember/memory/carryover.py](mcp/src/agents_remember/memory/carryover.py) |
-| Target storage is established from effective explicit settings. | L32-L66 | [mcp/src/agents_remember/memory/carryover_authority.py](mcp/src/agents_remember/memory/carryover_authority.py) |
-| Shared committing explicitly excludes the consumer cache. | L191-L197; L200-L207 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
-| The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. | L238-L300 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| Candidate comparison and explicit review selection. | `CarryoverRefs` | mcp/src/agents_remember/memory/carryover.py:222-237 |
+| Apply owns one content commit and preserves exact leaf/repository authority. | `_apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:698-791 |
+| Target storage is established from effective explicit settings. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
+| Shared committing explicitly excludes the consumer cache. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
+| The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:238-300 |
 
 ## Cross-Repo References
 
@@ -102,7 +102,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 

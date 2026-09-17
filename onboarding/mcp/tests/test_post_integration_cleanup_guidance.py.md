@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_post_integration_cleanup_guidance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -48,25 +48,25 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Finalization and retired cleanup-vocabulary assertions. | L49-L65; L68-L81 | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
-| External completion depends on landed commits, never cache text. | L84-L119 | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
-| Checkpoint guidance remains still-working. | L122-L148 | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
-| Production completion and post-integration guidance owner. | L189-L212; L245-L328 | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Finalization and retired cleanup-vocabulary assertions. | `test_a_pending_cleanup_offers_finalization_and_never_a_cleanup_decision` | mcp/tests/test_post_integration_cleanup_guidance.py:49-65 |
+| External completion depends on landed commits, never cache text. | `test_external_completion_proves_landed_commits_without_reading_the_cache` | mcp/tests/test_post_integration_cleanup_guidance.py:84-119 |
+| Checkpoint guidance remains still-working. | `test_a_checkpointed_series_keeps_working_instead_of_being_told_to_integrate` | mcp/tests/test_post_integration_cleanup_guidance.py:122-148 |
+| Production completion and post-integration guidance owner. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

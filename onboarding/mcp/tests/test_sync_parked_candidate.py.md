@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_sync_parked_candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -49,26 +49,26 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Code and memory WIP return, with cache excluded from the memory candidate. | L30-L54; L56-L78 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Genuine reapply conflict and cancellation preserve candidate content. | L80-L115 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Crash recovery and retained-source continuation return parked work. | L117-L144; L146-L171 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Pre-existing genuine conflicts remain a refusal. | L173-L188 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Production parked-content boundary and exact restore proof. | L144-L163; L166-L195; L198-L216 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Code and memory WIP return, with cache excluded from the memory candidate. | `test_parked_candidate_is_carried_and_returned` | mcp/tests/test_sync_parked_candidate.py:30-54 |
+| Genuine reapply conflict and cancellation preserve candidate content. | `test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it` | mcp/tests/test_sync_parked_candidate.py:80-115 |
+| Crash recovery and retained-source continuation return parked work. | `test_resume_returns_the_candidate_a_crash_left_parked` | mcp/tests/test_sync_parked_candidate.py:117-144 |
+| Pre-existing genuine conflicts remain a refusal. | `test_unmerged_index_entries_still_refuse_the_sync` | mcp/tests/test_sync_parked_candidate.py:173-188 |
+| Production parked-content boundary and exact restore proof. | `park_worktree_wip` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:144-163 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

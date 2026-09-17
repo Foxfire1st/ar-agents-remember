@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview      | `../overview.md`                           |
 
@@ -160,16 +160,16 @@ These current source and policy ranges establish the development/certification d
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
 Current working-candidate evidence for this route:
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| A ledger view is derived from Git and cache write failure is only an availability result. | L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Existing preparation retains actual Git binding and allows a distinct memory content view. | L34-L44 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Baseline adoption commits memory content and returns a cache observation. | L172-L227 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| A ledger view is derived from Git and cache write failure is only an availability result. | `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
+| Existing preparation retains actual Git binding and allows a distinct memory content view. | `ExistingGitPreparationBinding` | mcp/src/agents_remember/kernel/git_preparation.py:34-44 |
+| Baseline adoption commits memory content and returns a cache observation. | `adopt_initial_baseline` | mcp/src/agents_remember/memory/baseline.py:172-227 |
 
 ## Purpose
 
@@ -1376,23 +1376,66 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exact binary-wheel pin and the in-file reason tying it to the session build option. | `apsw==3.53.4.0` | mcp/pyproject.toml:21-26 |
-| The same pin in the requirements manifest. | `apsw==3.53.4.0` | mcp/requirements.txt:2-2 |
+|  The exact binary-wheel pin and the in-file reason tying it to the session build option. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26  |
+|  The same pin in the requirements manifest. | "apsw==3.53.4.0" | mcp/requirements.txt:2-2  |
 | The storage home and the one-way import direction, declared as charter wording only. | "[package.memory]" | layers.toml:206-222 |
 | The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
 | The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:16-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
-| The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:151-165 |
-| The route overview this section introduces. | — | onboarding/mcp/src/agents_remember/memory/overview.md |
+| The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:207-221 |
+| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-3 |
 
 ## Update History
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `create_knowledge_revision` repointed to mcp/src/agents_remember/application/knowledge.py:207-221. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+
+- 2026-09-17T03:31:11+02:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T13:15+02:00; `lastVerifiedCommitHash` `a5f5380badf357622daf1965a7a0e3caf91b51ff`; `lastVerifiedCommitDate` 2026-09-16T08:34:21+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **No route impact:** reviewed this overview as the nearest governing route above the experimental knowledge substrate, whose meaning changed one level down. The change set adds the baseline-to-candidate comparison inside `memory/knowledge/` (two modules), its vocabulary in `models/knowledge/diff.py`, its composition seam in `application/knowledge_diff.py`, two test modules with one governed support artifact, and two additive changes to existing modules (`memory/knowledge/read.py`'s one-field `SelectionQuery.seed_override`, and five new readers in `memory/knowledge/read_queries.py`). None of that adds, moves or retires an MCP-package responsibility, a charter paragraph or a boundary at **this** altitude: the sub-route's own overviews carry the substantive account, and the package's route table is unchanged. The knowledge substrate's own section below (260915-KS-L1) remains the L1 as-of record and is not extended here.
+
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **No route impact:** reviewed this overview as the nearest governing route above the experimental knowledge substrate, whose meaning changed one level down. The change set adds the selective recorded-scope read inside `memory/knowledge/` (four modules), its vocabulary in `models/knowledge/read.py`, its composition seam in `application/knowledge_read.py`, and three test modules with one governed support artifact. None of that adds, moves or retires an MCP-package responsibility, a charter paragraph or a boundary at **this** altitude: the sub-route's own overviews carry the substantive account, and the package's route table is unchanged. The knowledge substrate's own section below (260915-KS-L1) remains the L1 as-of record and is not extended here.
 
-- **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T13:15+02:00; `lastVerifiedCommitHash` `a5f5380badf357622daf1965a7a0e3caf91b51ff`; `lastVerifiedCommitDate` 2026-09-16T08:34:21+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
+
+
+
+
+
+
+
+
+
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **No route impact:** reviewed this overview as the nearest governing route for `kernel/atomic_write.py`, whose only change is one added helper. `fsync_file` extends the module's existing durability contract (the file-data half, for a producer that wrote the file through another owner) without adding, moving or retiring a route responsibility, and the module's own card carries the disclosure that its directory fsync runs after `os.replace`. The kernel route therefore has no new pillar, no new charter wording and no boundary change to record here; the substantive account lives in `mcp/src/agents_remember/kernel/atomic_write.py.md` and in the `memory/` route overview's L4 section.
+
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
+  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
+  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
+  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
+  remains closeout-owned.
+
+
+  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
+  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
+  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
+  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
+  remains closeout-owned.
+
+  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
+  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
+  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
+  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
+  remains closeout-owned.
   `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
   `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
   rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
@@ -1401,7 +1444,59 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
 
 - 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: No route impact: this change set is five paths inside `mcp/src/agents_remember/serving/` and `mcp/tests/`, and it changes the state-signal posting/recovery contract, not the package boundary this overview owns (public tool roster, activation/admission, certification, memory preparation, structural agent boundary, route model). The package-level statements above stand as written; the affected contract is recorded on `serving/overview.md`, the three serving file cards, and the tests route.
 
+
+
+
+
+
+
+
+
+
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-09-15T00:00+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+
+
+
+
+
+
+
+
+
+
+- 2026-09-15T00:00+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
@@ -1420,11 +1515,53 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
   verification stamp advanced.
 
-- 2026-09-15T00:00+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
+  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
+  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
+  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
+  declared two or more refs; the L3 review paragraph now states that two external reviews found four
+  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
+  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
+  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
+  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
+  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
+  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
+  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
+  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
+  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
+  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
+  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
+  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
+  declared two or more refs; the L3 review paragraph now states that two external reviews found four
+  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
+  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
+  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
+  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
+  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
+  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
+  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
+  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
+  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
+  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
+  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
+  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
+  declared two or more refs; the L3 review paragraph now states that two external reviews found four
+  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
+  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
+  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
+  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
+  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
+  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
+  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
+  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
+  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
   under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
@@ -1432,10 +1569,40 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
   overview: it names none of those constructs, and the constructs it does describe still hold, so no
   wording changed. Verification metadata remains closeout-owned.
+
+  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
+  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
+  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
+  overview: it names none of those constructs, and the constructs it does describe still hold, so no
+  wording changed. Verification metadata remains closeout-owned.
+
+  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
+  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
+  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
+  overview: it names none of those constructs, and the constructs it does describe still hold, so no
+  wording changed. Verification metadata remains closeout-owned.
+  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
+  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
+  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
+  overview: it names none of those constructs, and the constructs it does describe still hold, so no
+  wording changed. Verification metadata remains closeout-owned.
+
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): `mcp` carries local
   unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
   re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
   no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+
+  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+
+  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
+  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
+  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
+
 - 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
   `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
   both are fixed, so the L3 section above was corrected rather than extended. The selection is no
@@ -1460,6 +1627,78 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
   to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
   claim and no verification stamp advanced.
+
+  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
+  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
+  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
+  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
+  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
+  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
+  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
+  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
+  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
+  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
+  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
+  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
+  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
+  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
+  its own predecessor's refs — every name is now resolved before any ref is written and the
+  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
+  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
+  unions the table into the trailers and the earlier proof therefore proved the table had survived —
+  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
+  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
+  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
+  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
+
+  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
+  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
+  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
+  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
+  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
+  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
+  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
+  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
+  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
+  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
+  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
+  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
+  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
+  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
+  its own predecessor's refs — every name is now resolved before any ref is written and the
+  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
+  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
+  unions the table into the trailers and the earlier proof therefore proved the table had survived —
+  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
+  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
+  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
+  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
+  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
+  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
+  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
+  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
+  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
+  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
+  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
+  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
+  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
+  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
+  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
+  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
+  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
+  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
+  its own predecessor's refs — every name is now resolved before any ref is written and the
+  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
+  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
+  unions the table into the trailers and the earlier proof therefore proved the table had survived —
+  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
+  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
+  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
+  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
+  claim and no verification stamp advanced.
+
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 route impact (curator, uncommitted change set on
   `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
   ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
@@ -1480,6 +1719,66 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
   `d3610903` rather than current coverage, with the retained half described instead. Verification
   metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
+  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
+  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
+  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
+  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
+  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
+  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
+  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
+  reverted by developer ruling because rewriting the shared ancestors removed the master's common
+  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
+  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
+  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
+  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
+  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
+  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
+  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
+  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
+  `d3610903` rather than current coverage, with the retained half described instead. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
+  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
+  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
+  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
+  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
+  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
+  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
+  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
+  reverted by developer ruling because rewriting the shared ancestors removed the master's common
+  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
+  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
+  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
+  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
+  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
+  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
+  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
+  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
+  `d3610903` rather than current coverage, with the retained half described instead. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
+  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
+  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
+  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
+  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
+  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
+  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
+  reverted by developer ruling because rewriting the shared ancestors removed the master's common
+  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
+  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
+  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
+  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
+  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
+  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
+  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
+  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
+  `d3610903` rather than current coverage, with the retained half described instead. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
 - 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
   `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
   `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
@@ -1490,6 +1789,36 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
   this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
   acceptance claim and no verification stamp advanced.
+
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
+  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
+  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
+  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
+  source cannot prove; the fallback framing was the defect's own description — a partially
+  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
+  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
+  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
+  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
+  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
+  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
+  source cannot prove; the fallback framing was the defect's own description — a partially
+  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
+  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
+  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
+  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
+  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
+  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
+  source cannot prove; the fallback framing was the defect's own description — a partially
+  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
+  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
+  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
   `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
   sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
@@ -1500,6 +1829,36 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
   enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
   verification metadata remains closeout-owned and no execution or acceptance claim is made.
+
+  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
+  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
+  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
+  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
+  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
+  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
+  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
+  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
+  verification metadata remains closeout-owned and no execution or acceptance claim is made.
+
+  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
+  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
+  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
+  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
+  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
+  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
+  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
+  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
+  verification metadata remains closeout-owned and no execution or acceptance claim is made.
+  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
+  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
+  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
+  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
+  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
+  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
+  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
+  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
+  verification metadata remains closeout-owned and no execution or acceptance claim is made.
+
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
   `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
   attribution plane. The kernel module now **writes** the trailer as well as reading it
@@ -1514,6 +1873,48 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
   one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
   closeout-owned; no acceptance claim and no verification stamp advanced.
+
+  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
+  attribution plane. The kernel module now **writes** the trailer as well as reading it
+  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
+  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
+  only interpolation as well as the only declaration. Added the producer-surface subsection: the
+  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
+  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
+  trailerless-by-rule sites with their reasons, why carryover and baseline force the
+  append-as-final-block shape, and the census case that enforces it. This route also governs
+  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
+  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
+  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+
+  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
+  attribution plane. The kernel module now **writes** the trailer as well as reading it
+  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
+  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
+  only interpolation as well as the only declaration. Added the producer-surface subsection: the
+  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
+  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
+  trailerless-by-rule sites with their reasons, why carryover and baseline force the
+  append-as-final-block shape, and the census case that enforces it. This route also governs
+  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
+  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
+  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
+  attribution plane. The kernel module now **writes** the trailer as well as reading it
+  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
+  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
+  only interpolation as well as the only declaration. Added the producer-surface subsection: the
+  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
+  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
+  trailerless-by-rule sites with their reasons, why carryover and baseline force the
+  append-as-final-block shape, and the census case that enforces it. This route also governs
+  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
+  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
+  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
+
 - 2026-09-13T23:23+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the measured
   two-literal defect the entry below records is fixed, so this section now states the resolved shape —
   `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
@@ -1523,6 +1924,33 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   that a case now round-trips the real writer's rendered message through a real commit and the real
   reader. The entry below stands as the record of what was true when it was written. Verification
   metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
+  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
+  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
+  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
+  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
+  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
+  that a case now round-trips the real writer's rendered message through a real commit and the real
+  reader. The entry below stands as the record of what was true when it was written. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
+  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
+  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
+  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
+  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
+  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
+  that a case now round-trips the real writer's rendered message through a real commit and the real
+  reader. The entry below stands as the record of what was true when it was written. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
+  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
+  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
+  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
+  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
+  that a case now round-trips the real writer's rendered message through a real commit and the real
+  reader. The entry below stands as the record of what was true when it was written. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+
 - 2026-09-13T23:11+02:00 — 260913-LCA-L2 route impact (uncommitted change set on
   `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
   route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
@@ -1534,6 +1962,39 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   on the new module (the writer's key is its own literal). Detail lives on the new module card and on
   the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
   verification stamp advanced.
+
+  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
+  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
+  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
+  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
+  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
+  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
+  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
+  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+
+  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
+  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
+  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
+  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
+  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
+  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
+  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
+  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
+  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
+  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
+  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
+  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
+  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
+  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
+  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
+
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37 route impact: the advertised MCP surface gained one tool,
   `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
   `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
@@ -1541,23 +2002,107 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   is why it sits in the working half of the surface rather than beside the checkpoint publication in
   the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
   `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
+
+  `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
+  `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
+  response models this overview requires to agree still do. The stop's route publishes nothing, which
+  is why it sits in the working half of the surface rather than beside the checkpoint publication in
+  the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
+  `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
+
+  `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
+  `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
+  response models this overview requires to agree still do. The stop's route publishes nothing, which
+  is why it sits in the working half of the surface rather than beside the checkpoint publication in
+  the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
+  `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
+  `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
+  `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
+  response models this overview requires to agree still do. The stop's route publishes nothing, which
+  is why it sits in the working half of the surface rather than beside the checkpoint publication in
+  the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
+  `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
+
 - 2026-09-13T15:00:56+02:00 — 260831-LOCR-L36 curator (round 2): stated the developer ruling where this route describes the graph-less default and per-contract activation — the `atomic-sequential` default is the sprint's SHAPE (every commanded master executes atomically) and serializes nothing, no master is held because another is selected, waiting reasons are per contract from that contract's own activation record, and a real authored graph still gates on genuine predecessors. The shipped-skill side of the change is documented on the skill routes, not restated here. No verification-metadata change; no execution or acceptance claim.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_closeout_apply_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:109-126. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/mcp/registration/tasks.py:59-71. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the `PreparedMemoryCertificationAdapter` citation to `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, where commit `deb032fb` moved the adapter out of `memory_quality/`. Citation path only; the cited claim is unchanged and verification metadata remains pinned.
+
 - 2026-09-10T06:03:15+00:00 — No content impact: reviewed the packaged closeout instruction making the existing worktree-manager cleanup follow-up mandatory; MCP transaction and cleanup ownership are unchanged.
+
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-08T14:45:44+00:00: CCR-L24 preparation reviewed `PreparedMemoryCertificationAdapter` and `_attach_final_full_catalog` against the current L38-composed code candidate; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
+
 - 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-535. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-08T14:39:58+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:479-542. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-09-06T21:56+00:00 — Reconciled d3610903 development/certification and pre-gate memory preparation policy while preserving the production feature inventory, ownership narratives, invariants and original historical entries. Retired obsolete test citations and marked milestone procedures historical; verification pins remain closeout-owned.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### 2026-09-06T17:13:06+00:00 — L34 implementation memory
@@ -1567,27 +2112,138 @@ Recorded the current private preparation/publication ownership from source. Exis
 - 2026-09-06T14:11:47+00:00 — Candidate curation review correction: Removed stale L32 private-output/delivery status from durable prose and described the current selected-terminal and unbound continuation boundaries. Historical entries and verification stamps are preserved.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-09-06T14:03:43+00:00 — L33 candidate route curation: Routed exact environment reconstruction, generated-input ownership and retained source-applicability evidence to the repository profile card. Preserved earlier source verification stamps and complete history; this records current source structure without a gate or acceptance claim.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Replaced the superseded L32 defect sentence with the actual private-C transaction, preview and conflict behavior; preserved separate remaining production obligations.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Updated cross-route publication and neutral lock ownership; retained the unresolved citation and lifecycle composition boundaries.
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-09-05T07:30+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled current CCR profiles, task intent and evidence limits; corrected public/service ownership and repaired a pre-existing literal truncation. Verification records source review, not execution or acceptance.
+
 - 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the `confine_non_symlink_rel` kernel guard addition in `sidecar_pairing.py`.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 adds focused certification
+  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
+  five-gate foundation, package boundary, and absence of an executor or repository profile remain
+  unchanged. Verification remains closeout-owned.
+
+
+  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
+  five-gate foundation, package boundary, and absence of an executor or repository profile remain
+  unchanged. Verification remains closeout-owned.
+
+  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
+  five-gate foundation, package boundary, and absence of an executor or repository profile remain
+  unchanged. Verification remains closeout-owned.
   forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
   five-gate foundation, package boundary, and absence of an executor or repository profile remain
   unchanged. Verification remains closeout-owned.
@@ -1596,7 +2252,25 @@ Recorded the current private preparation/publication ownership from source. Exis
   foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
   until repository-profile and integration owners land. Verification remains closeout-owned.
 
+
+  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
+  until repository-profile and integration owners land. Verification remains closeout-owned.
+
+  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
+  until repository-profile and integration owners land. Verification remains closeout-owned.
+  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
+  until repository-profile and integration owners land. Verification remains closeout-owned.
+
 - 2026-08-31T20:30+02:00 — No route impact: 260831-DER narrows direct landing to an explicitly
+  selected leaf delivery without an enclosure and restores ordinary series integration without
+  the policy flag. Package ownership and route topology are unchanged.
+
+
+  selected leaf delivery without an enclosure and restores ordinary series integration without
+  the policy flag. Package ownership and route topology are unchanged.
+
+  selected leaf delivery without an enclosure and restores ordinary series integration without
+  the policy flag. Package ownership and route topology are unchanged.
   selected leaf delivery without an enclosure and restores ordinary series integration without
   the policy flag. Package ownership and route topology are unchanged.
 
@@ -1604,7 +2278,25 @@ Recorded the current private preparation/publication ownership from source. Exis
   boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
   than introducing a weaker E2E interpretation. Verification remains closeout-owned.
 
+
+  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
+  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
+
+  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
+  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
+  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
+  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
+
 - 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: documented exact public-surface parity,
+  shared candidate identity, and the preserved eight-harness self-update contract. Verification
+  remains closeout-owned.
+
+
+  shared candidate identity, and the preserved eight-harness self-update contract. Verification
+  remains closeout-owned.
+
+  shared candidate identity, and the preserved eight-harness self-update contract. Verification
+  remains closeout-owned.
   shared candidate identity, and the preserved eight-harness self-update contract. Verification
   remains closeout-owned.
 
@@ -1613,7 +2305,28 @@ Recorded the current private preparation/publication ownership from source. Exis
   architect bootstrap from explicit named-role takeover, and recorded the structural role-table
   rows' non-settings boundary. Verification remains closeout-owned.
 
+
+  caller-declaration summary with process-derived ambient authority, distinguished ordinary
+  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
+  rows' non-settings boundary. Verification remains closeout-owned.
+
+  caller-declaration summary with process-derived ambient authority, distinguished ordinary
+  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
+  rows' non-settings boundary. Verification remains closeout-owned.
+  caller-declaration summary with process-derived ambient authority, distinguished ordinary
+  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
+  rows' non-settings boundary. Verification remains closeout-owned.
+
 - 2026-08-29T22:45+02:00 — MCAR-L03: documented the single contract-derived code-memory pair
+  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
+  including the diagnostic-only repository route and fail-closed revalidation boundary.
+
+
+  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
+  including the diagnostic-only repository route and fail-closed revalidation boundary.
+
+  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
+  including the diagnostic-only repository route and fail-closed revalidation boundary.
   identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
   including the diagnostic-only repository route and fail-closed revalidation boundary.
 
@@ -1621,7 +2334,25 @@ Recorded the current private preparation/publication ownership from source. Exis
   deterministic attestation bridge, and shared memory/closeout validator. Verification remains
   closeout-owned.
 
+
+  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
+  closeout-owned.
+
+  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
+  closeout-owned.
+  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
+  closeout-owned.
+
 - 2026-08-29T05:28+02:00 — MCAR-L02: added the parent-route summary for immutable exact
+  future-code identity, collision-free concurrent observation, and the separate
+  operation-reconciliation boundary.
+
+
+  future-code identity, collision-free concurrent observation, and the separate
+  operation-reconciliation boundary.
+
+  future-code identity, collision-free concurrent observation, and the separate
+  operation-reconciliation boundary.
   future-code identity, collision-free concurrent observation, and the separate
   operation-reconciliation boundary.
 
@@ -1629,22 +2360,76 @@ Recorded the current private preparation/publication ownership from source. Exis
   regression test preserve MCP package ownership and keep the host hook a deterministic non-test
   gate.
 
+
+  regression test preserve MCP package ownership and keep the host hook a deterministic non-test
+  gate.
+
+  regression test preserve MCP package ownership and keep the host hook a deterministic non-test
+  gate.
+  regression test preserve MCP package ownership and keep the host hook a deterministic non-test
+  gate.
+
 - 2026-08-28T10:03:40+02:00 — Reconciled the MCP quality-route summary with Candidate A's deletion;
+  deterministic host checks remain, but no host Python wrapper exists.
+
+
+  deterministic host checks remain, but no host Python wrapper exists.
+
+  deterministic host checks remain, but no host Python wrapper exists.
   deterministic host checks remain, but no host Python wrapper exists.
 
 - 2026-08-27T22:15+02:00 — Synchronized packaged lifecycle projections and structural proof for
   the pre-handoff correction versus post-handoff rejection boundary.
+
+  the pre-handoff correction versus post-handoff rejection boundary.
+
+  the pre-handoff correction versus post-handoff rejection boundary.
+  the pre-handoff correction versus post-handoff rejection boundary.
+
 - 2026-08-27T21:53+02:00 — M40@v2/M44@v2 packaged-skill impact: synchronized review-handoff-only
   attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
   semantics across all runtime projections.
+
+  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
+  semantics across all runtime projections.
+
+  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
+  semantics across all runtime projections.
+  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
+  semantics across all runtime projections.
+
 - 2026-08-26T16:03+02:00 — Memory hygiene: removed a pre-existing tool-output truncation banner
   accidentally committed above the package overview title; route content is unchanged.
 
 
+
+  accidentally committed above the package overview title; route content is unchanged.
+
+  accidentally committed above the package overview title; route content is unchanged.
+  accidentally committed above the package overview title; route content is unchanged.
+
 - 2026-08-26T14:32+02:00 — Corrected the package-wide ledger contract after IAS activation exposed
   an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
   all lifecycle consumers now distinguish current lookup from exact historical containment.
+
+  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
+  all lifecycle consumers now distinguish current lookup from exact historical containment.
+
+  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
+  all lifecycle consumers now distinguish current lookup from exact historical containment.
+  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
+  all lifecycle consumers now distinguish current lookup from exact historical containment.
+
 - 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 package impact: recorded canonical-seat idempotency, bounded
+  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
+  Verification remains closeout-owned.
+
+
+  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
+  Verification remains closeout-owned.
+
+  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
+  Verification remains closeout-owned.
   evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
   Verification remains closeout-owned.
 
@@ -1652,17 +2437,67 @@ Recorded the current private preparation/publication ownership from source. Exis
   pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
   disposable queue ownership, and exact terminal selector release.
 
+
+  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
+  disposable queue ownership, and exact terminal selector release.
+
+  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
+  disposable queue ownership, and exact terminal selector release.
+  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
+  disposable queue ownership, and exact terminal selector release.
+
 - 2026-08-25T17:21+02:00 — Reconciled the final PDLS package ownership and evidence boundaries.
+  Verification remains closeout-owned.
+
+
+  Verification remains closeout-owned.
+
+  Verification remains closeout-owned.
   Verification remains closeout-owned.
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: documented the extracted quality CLI parser and its non-authority boundary at emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; the recorded Dagger gate remains red.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-25T01:56+02:00 — 260824-PDLS reconciled the explicit cohort, lifecycle/cadence registry,
   product-only scoring, shared ownership graph, and causal localization.
+
+  product-only scoring, shared ownership graph, and causal localization.
+
+  product-only scoring, shared ownership graph, and causal localization.
+  product-only scoring, shared ownership graph, and causal localization.
+
 - 2026-08-24T21:23+02:00 — 260824-PDLS introduced the testing route and explicit evidence
   altitude boundary.
 
+
+  altitude boundary.
+
+  altitude boundary.
+  altitude boundary.
+
 - 2026-08-24T14:19+02:00 — No route impact: 260821-DAGQC-L2 synchronized packaged memory-quality and curator examples to the canonical discriminated request while preserving concurrent L4 route material. Verification metadata remains pinned until architect-owned closeout.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled packaged planning,
@@ -1670,27 +2505,132 @@ Recorded the current private preparation/publication ownership from source. Exis
   canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
   guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
   Dagger acceptance remains pending and closeout-owned.
+
+  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
+  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
+  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
+  Dagger acceptance remains pending and closeout-owned.
+
+  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
+  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
+  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
+  Dagger acceptance remains pending and closeout-owned.
+  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
+  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
+  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
+  Dagger acceptance remains pending and closeout-owned.
+
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` becomes the one public spawn tool for both caller kinds; ambient launchers are resolved from the process environment (no `AR_HOSTED_SESSION_ID`) with role-altitude validation, and `spawn_agent_session` stays internal. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: new package routes (`application/task_docs`, `models/queue`, `worktrees/queue`, `worktrees/integration`); `TaskDocResponse` wire-field fix; closeout/reopen refactors; sync-skills orchestration-task copy. Verified at code commit e5cb139f.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: new serving_preflight + memory_quality_runs modules, async memory-quality wait/run_id surface, hardened authoring dialect, and the L7 orchestration_portfolio deletion. Verified at code commit de3a0fd9.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph: mermaid document diagram, shared title join, primitives-only projection builder, serving wiring, application title threading. Verified at code commit b7f2c8e2.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: seat-independent task-execution fallback
   (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
   binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
 
 
+
+  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
+  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
+
+  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
+  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
+  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
+  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
+
 - 2026-08-20T05:02+02:00 — 260815-DAG-L14 route impact: `task_doc` registers
+  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
+  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
+  commit 8071a644.
+
+
+  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
+  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
+  commit 8071a644.
+
+  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
+  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
+  commit 8071a644.
   `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
   sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
   commit 8071a644.
@@ -1703,34 +2643,164 @@ Recorded the current private preparation/publication ownership from source. Exis
   `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
   joined the route, and `migrate_execution_topology` was removed. Verification remains
   closeout-owned.
+
+  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
+  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
+  projection, and graph-less sprints run the atomic-sequential default with a named series lane
+  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
+  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
+  joined the route, and `migrate_execution_topology` was removed. Verification remains
+  closeout-owned.
+
+  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
+  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
+  projection, and graph-less sprints run the atomic-sequential default with a named series lane
+  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
+  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
+  joined the route, and `migrate_execution_topology` was removed. Verification remains
+  closeout-owned.
+  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
+  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
+  projection, and graph-less sprints run the atomic-sequential default with a named series lane
+  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
+  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
+  joined the route, and `migrate_execution_topology` was removed. Verification remains
+  closeout-owned.
+
 - 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 re-rooted the series contract `worktree_group` at `worktrees/<repo>/<master>-ar` so series reports are swept with the group; leaf enclosures and the mcp-route purpose are unchanged.
+
 - 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added `inventory_execution_topology` to `application/task_execution_topology.py`; the mcp-route purpose is unchanged.
+
 - 2026-08-18T10:30+02:00 — No route impact: 260815-DAG-L7 added the orchestrator portfolio loop under worktrees; route purpose unchanged.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-18T01:24+02:00 — No route impact: 260815-DAG-L6 added the blocker-acquisition super-tip precondition (`_require_current_super_tips`) under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added organizational-completion modules under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-15T13:27+02:00 — No route impact: the Pyright repair is an explicit test-only
   optional-result narrowing; MCP source, routing, and behavior are unchanged.
+
+  optional-result narrowing; MCP source, routing, and behavior are unchanged.
+
+  optional-result narrowing; MCP source, routing, and behavior are unchanged.
+  optional-result narrowing; MCP source, routing, and behavior are unchanged.
+
 - 2026-08-15T13:18+02:00 — No route impact: Ruff reformatted one strict evidence predicate and
   ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
+
+  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
+
+  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
+  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
+
 - 2026-08-15T13:08+02:00 — No route impact: the closeout fast-hook repair is import grouping and
   test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
+
+  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
+
+  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
+  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
+
 - 2026-08-15T12:53+02:00 — L3 targeted-gate route impact: tightened canonical judgment-table
   parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
   second queue, evidence authority, or test altitude was added.
+
+  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
+  second queue, evidence authority, or test altitude was added.
+
+  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
+  second queue, evidence authority, or test altitude was added.
+  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
+  second queue, evidence authority, or test altitude was added.
+
 - 2026-08-15T11:25+02:00 — L3 static-gate route impact: separated task-doc queue-scope
   classification and exact evidence comparisons from their orchestration callers without adding a
   second authority or compatibility path.
+
+  classification and exact evidence comparisons from their orchestration callers without adding a
+  second authority or compatibility path.
+
+  classification and exact evidence comparisons from their orchestration callers without adding a
+  second authority or compatibility path.
+  classification and exact evidence comparisons from their orchestration callers without adding a
+  second authority or compatibility path.
+
 - 2026-08-15T11:07+02:00 — L3 Dagger-failure route impact: refined graph-governed task
   publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
   uncertified leaf while preserving one mechanistic queue and lifecycle authority.
+
+  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
+  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
+
+  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
+  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
+  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
+  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
+
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the cross-layer closeout-queue route
+  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
+  remains closeout-owned.
+
+
+  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
+  remains closeout-owned.
+
+  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
+  remains closeout-owned.
   and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
   remains closeout-owned.
 
@@ -1738,10 +2808,40 @@ Recorded the current private preparation/publication ownership from source. Exis
   criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
   auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
   leaf; verification remains closeout-owned.
+
+  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
+  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
+  leaf; verification remains closeout-owned.
+
+  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
+  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
+  leaf; verification remains closeout-owned.
+  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
+  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
+  leaf; verification remains closeout-owned.
+
 - 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: task-document identity mutations can
   no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
   existing single-owner fitness census. Package routing and ownership remain unchanged.
+
+  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
+  existing single-owner fitness census. Package routing and ownership remain unchanged.
+
+  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
+  existing single-owner fitness census. Package routing and ownership remain unchanged.
+  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
+  existing single-owner fitness census. Package routing and ownership remain unchanged.
+
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the MCP task-document surface gains one
+  explicit, previewable execution-topology migration and projects the same canonical nature/graph
+  contract. There is no implicit legacy inference or compatibility reader.
+
+
+  explicit, previewable execution-topology migration and projects the same canonical nature/graph
+  contract. There is no implicit legacy inference or compatibility reader.
+
+  explicit, previewable execution-topology migration and projects the same canonical nature/graph
+  contract. There is no implicit legacy inference or compatibility reader.
   explicit, previewable execution-topology migration and projects the same canonical nature/graph
   contract. There is no implicit legacy inference or compatibility reader.
 
@@ -1750,13 +2850,49 @@ Recorded the current private preparation/publication ownership from source. Exis
   behavior, and package routing are unchanged; verification remains pinned to the last committed
   source until closeout.
 
+
+  existing metrics-shutdown timeout in one test. MCP production, package authority, public
+  behavior, and package routing are unchanged; verification remains pinned to the last committed
+  source until closeout.
+
+  existing metrics-shutdown timeout in one test. MCP production, package authority, public
+  behavior, and package routing are unchanged; verification remains pinned to the last committed
+  source until closeout.
+  existing metrics-shutdown timeout in one test. MCP production, package authority, public
+  behavior, and package routing are unchanged; verification remains pinned to the last committed
+  source until closeout.
+
 - 2026-08-14T11:48:55+02:00 — R42 curator: recorded recovery-proof ownership and the two focused
+  test extractions. Verification remains closeout-owned.
+
+
+  test extractions. Verification remains closeout-owned.
+
+  test extractions. Verification remains closeout-owned.
   test extractions. Verification remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: added the shared environment guard, self-wrapper policy,
   and final altitude topology to the package route. Verification remains closeout-owned.
 
+
+  and final altitude topology to the package route. Verification remains closeout-owned.
+
+  and final altitude topology to the package route. Verification remains closeout-owned.
+  and final altitude topology to the package route. Verification remains closeout-owned.
+
 - 2026-08-14T09:08+02:00 — No route impact: reopened L23 narrows candidate-bound route-review
+  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
+  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
+  provenance remains closeout-owned.
+
+
+  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
+  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
+  provenance remains closeout-owned.
+
+  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
+  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
+  provenance remains closeout-owned.
   admission to its already-documented leaf altitude so repeat series/master closeout can restamp
   the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
   provenance remains closeout-owned.
@@ -1765,7 +2901,28 @@ Recorded the current private preparation/publication ownership from source. Exis
   Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
   transitive lineage rechecks. Verification provenance remains closeout-owned.
 
+
+  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
+  transitive lineage rechecks. Verification provenance remains closeout-owned.
+
+  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
+  transitive lineage rechecks. Verification provenance remains closeout-owned.
+  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
+  transitive lineage rechecks. Verification provenance remains closeout-owned.
+
 - 2026-08-13T14:32+02:00 — L23 final quality-contract review: recorded Dagger-only Agents Remember
+  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
+  base, generated function help, and host execution's diagnostic-only status. Verification remains
+  closeout-owned.
+
+
+  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
+  base, generated function help, and host execution's diagnostic-only status. Verification remains
+  closeout-owned.
+
+  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
+  base, generated function help, and host execution's diagnostic-only status. Verification remains
+  closeout-owned.
   acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
   base, generated function help, and host execution's diagnostic-only status. Verification remains
   closeout-owned.
@@ -1776,27 +2933,102 @@ Recorded the current private preparation/publication ownership from source. Exis
   unchanged; verification provenance remains closeout-owned.
 
 
+
+  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
+  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
+  unchanged; verification provenance remains closeout-owned.
+
+  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
+  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
+  unchanged; verification provenance remains closeout-owned.
+  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
+  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
+  unchanged; verification provenance remains closeout-owned.
+
 - 2026-08-13T09:05+02:00 — L23 integration-gate follow-up: recorded the dedicated application
   runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
   integration transitive post-quality/final rechecks. Exact behavior remains in the application,
   models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
   remains closeout-owned.
+
+  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
+  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
+  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
+  remains closeout-owned.
+
+  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
+  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
+  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
+  remains closeout-owned.
+  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
+  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
+  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
+  remains closeout-owned.
+
 - 2026-08-13T00:07+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented MCP-package ownership of the explicit lifecycle-operation execution mode. The detached task worker declares it before config/service loading, retains live durable-operation authority, and does not claim MCP/dashboard daemon ownership; undeclared checkout CLI isolation remains unchanged. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+
 - 2026-08-12T21:18+02:00 — L23 curator follow-up: documented deterministic native `$HOME/.local/bin` admission after Windows-interoperability filtering; no shell/version-manager discovery or compatibility fallback was added. Verification remains closeout-owned.
+
 - 2026-08-12T20:20+02:00 — L23 curator: documented MCP-wide task-derived lineage admission and recovery ownership; verification remains closeout-owned.
+
 - 2026-08-12T16:54+02:00 — 260731-EFA-L23 installed-runtime route review: detached lifecycle launch
   now preserves installed MCP code selection and the packaged worker composes real services before
   dispatch. Task checkout state remains input, never unpublished runtime code. Verification
   provenance remains closeout-owned.
+
+  now preserves installed MCP code selection and the packaged worker composes real services before
+  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
+  provenance remains closeout-owned.
+
+  now preserves installed MCP code selection and the packaged worker composes real services before
+  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
+  provenance remains closeout-owned.
+  now preserves installed MCP code selection and the packaged worker composes real services before
+  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
+  provenance remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: added the explicit Dagger clean-quality executor and task-addressed durable lifecycle-operation boundary; verification provenance remains closeout-owned.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-12T10:08+02:00 — No route impact: MCP 3.0.0rc7 advances the existing package and
   kernel fallback version authorities without changing package routes, dependencies, entry
   points, or tool behavior. Verification metadata remains pinned until closeout.
 
+
+  kernel fallback version authorities without changing package routes, dependencies, entry
+  points, or tool behavior. Verification metadata remains pinned until closeout.
+
+  kernel fallback version authorities without changing package routes, dependencies, entry
+  points, or tool behavior. Verification metadata remains pinned until closeout.
+  kernel fallback version authorities without changing package routes, dependencies, entry
+  points, or tool behavior. Verification metadata remains pinned until closeout.
+
 - 2026-08-12T09:20+02:00 — No route impact: the 260731-EFA-L20 reopen changes only the executable shape of one checkout-isolation assertion; MCP package behavior and routing are unchanged.
+
 - 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 adds no package behavior or source route; it repairs master-gate proof through test simplification and direct boundary coverage.
+
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: settings,
+  integration, closeout, packaged lifecycle doctrine, and regression tests now
+  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
+  Verification metadata remains pinned until closeout stamps L24.
+
+
+  integration, closeout, packaged lifecycle doctrine, and regression tests now
+  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
+  Verification metadata remains pinned until closeout stamps L24.
+
+  integration, closeout, packaged lifecycle doctrine, and regression tests now
+  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
+  Verification metadata remains pinned until closeout stamps L24.
   integration, closeout, packaged lifecycle doctrine, and regression tests now
   agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
   Verification metadata remains pinned until closeout stamps L24.
@@ -1805,7 +3037,25 @@ Recorded the current private preparation/publication ownership from source. Exis
   deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
   responsibilities; package subsystems and public tool inventory are unchanged.
 
+
+  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
+  responsibilities; package subsystems and public tool inventory are unchanged.
+
+  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
+  responsibilities; package subsystems and public tool inventory are unchanged.
+  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
+  responsibilities; package subsystems and public tool inventory are unchanged.
+
 - 2026-08-12T00:20+02:00 — Corrected the package boundary: the dependency supplies pytest-xdist,
+  root pytest configuration owns worker selection, and the wrapper contributes derived gate
+  arguments only. Verification metadata remains pinned until closeout.
+
+
+  root pytest configuration owns worker selection, and the wrapper contributes derived gate
+  arguments only. Verification metadata remains pinned until closeout.
+
+  root pytest configuration owns worker selection, and the wrapper contributes derived gate
+  arguments only. Verification metadata remains pinned until closeout.
   root pytest configuration owns worker selection, and the wrapper contributes derived gate
   arguments only. Verification metadata remains pinned until closeout.
 
@@ -1813,11 +3063,44 @@ Recorded the current private preparation/publication ownership from source. Exis
   selection in the single pytest rail, and retry-proof invalidation across executor changes.
   Verification metadata remains pinned until closeout.
 
+
+  selection in the single pytest rail, and retry-proof invalidation across executor changes.
+  Verification metadata remains pinned until closeout.
+
+  selection in the single pytest rail, and retry-proof invalidation across executor changes.
+  Verification metadata remains pinned until closeout.
+  selection in the single pytest rail, and retry-proof invalidation across executor changes.
+  Verification metadata remains pinned until closeout.
+
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the package route with the public
   structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
   overviews and one-to-one cards carry the implementation evidence.
 
+
+  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
+  overviews and one-to-one cards carry the implementation evidence.
+
+  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
+  overviews and one-to-one cards carry the implementation evidence.
+  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
+  overviews and one-to-one cards carry the implementation evidence.
+
 - 2026-08-10T19:57:55+02:00 — 260731-EFA-L21 route impact: recorded checkout execution
+  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
+  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
+  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
+  remains pinned until closeout stamps the L21 code commit.
+
+
+  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
+  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
+  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
+  remains pinned until closeout stamps the L21 code commit.
+
+  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
+  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
+  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
+  remains pinned until closeout stamps the L21 code commit.
   classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
   trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
   application, kernel/primitives, controlplane, and tests route cards. Verification metadata
@@ -1828,67 +3111,250 @@ Recorded the current private preparation/publication ownership from source. Exis
   serving seams); file-level details remain in sidecars. Verification metadata remains pinned
   until closeout.
 
+
+  staged package delta (application, models, registration/tools, memory-quality, worktree, and
+  serving seams); file-level details remain in sidecars. Verification metadata remains pinned
+  until closeout.
+
+  staged package delta (application, models, registration/tools, memory-quality, worktree, and
+  serving seams); file-level details remain in sidecars. Verification metadata remains pinned
+  until closeout.
+  staged package delta (application, models, registration/tools, memory-quality, worktree, and
+  serving seams); file-level details remain in sidecars. Verification metadata remains pinned
+  until closeout.
+
 - 2026-07-03T12:55+02:00 — 260703 L1 route impact: the umbrella CLI under `cli/` gains
   `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
   `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
   usability probe vs the tracked placeholder template) — covered by
   `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
   commit.
+
+  `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
+  `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
+  usability probe vs the tracked placeholder template) — covered by
+  `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
+  commit.
+
+  `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
+  `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
+  usability probe vs the tracked placeholder template) — covered by
+  `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
+  commit.
+  `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
+  `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
+  usability probe vs the tracked placeholder template) — covered by
+  `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
+  commit.
+
 - 2026-07-03T12:50+02:00 — No route impact: L15 push-gate fixups (type narrowing + test import hygiene only; the pre-push quality gate now exits 0 across the tree).
+
 - 2026-07-03T11:20+02:00 — No route impact: L14 release bump only (pyproject version + SERVER_VERSION fallback); no mcp behavior or structure change.
+
 - 2026-07-03T02:58+02:00 — No route impact: L13 reopen drill second cycle (marker comment extension only).
+
 - 2026-07-03T02:40+02:00 — No route impact: L13 reopen drill: a marker comment in mcp/tests/conftest.py only; no mcp behavior or structure change.
+
 - 2026-07-03T01:55+02:00 — L12 route impact: provider compose templates gain memory caps; CGC watch hygiene fixed (enriched .cgcignore reaches the watch context, committed bundle excluded per-repo, fired debounce timers popped via a maintained patch, image revision ar2).
+
 - 2026-07-03T00:35+02:00 — L11 route impact: task_reopen tool added (tasks/reopen.py + leaf_doc.py, task_doc-side controller/payload/model); worktree start honors cleanup=reopened and restamps leaf-doc lifecycles; the reducer projects abandon terminality from contracts.
+
 - 2026-07-02T21:45+02:00 — No route impact: the L10 binding repair is a one-line-scale join fix inside
   `observer/snapshots.py` (described in the observer route overview) plus its
   `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
   changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
+
+  `observer/snapshots.py` (described in the observer route overview) plus its
+  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
+  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
+
+  `observer/snapshots.py` (described in the observer route overview) plus its
+  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
+  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
+  `observer/snapshots.py` (described in the observer route overview) plus its
+  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
+  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
+
 - 2026-07-02T20:55+02:00 — No route impact: the L8-r1 correction (pill-click-triggered direct leaf
   paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
   effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
   metadata pinned until closeout stamps the L8-r1 commit.
+
+  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
+  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
+  metadata pinned until closeout stamps the L8-r1 commit.
+
+  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
+  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
+  metadata pinned until closeout stamps the L8-r1 commit.
+  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
+  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
+  metadata pinned until closeout stamps the L8-r1 commit.
+
 - 2026-07-02T20:15+02:00 — No route impact: operations-integration L8 is a dashboard frontend change
   (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
   regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
   surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
   commit.
+
+  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
+  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
+  commit.
+
+  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
+  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
+  commit.
+  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
+  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
+  commit.
+
 - 2026-07-02T18:35+02:00 — No route impact: operations-integration L7 repaired the `cgc_dependencies`
   native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
   guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
   subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
   the L7 commit.
+
+  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
+  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
+  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
+  the L7 commit.
+
+  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
+  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
+  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
+  the L7 commit.
+  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
+  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
+  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
+  the L7 commit.
+
 - 2026-07-02T17:25+02:00 — No route impact: the reopened-L6 copy-mode escape stays inside
   `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
   route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
   narrative changed at this granularity. Verification metadata pinned until closeout stamps the
   follow-up commit.
+
+  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
+  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+
+  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
+  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
+  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+
 - 2026-07-02T17:04+02:00 — L9 route impact: added a package-level agent-facing terminal reassignment tool
   (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
   route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
   Verification metadata pinned until closeout stamps the L9 commit.
+
+  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
+  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
+  Verification metadata pinned until closeout stamps the L9 commit.
+
+  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
+  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
+  Verification metadata pinned until closeout stamps the L9 commit.
+  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
+  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
+  Verification metadata pinned until closeout stamps the L9 commit.
+
 - 2026-07-02T16:35+02:00 — No route impact: the reopened-L6 wheel/paste fixes touch
   `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
   route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
   `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
   narrative changed at this granularity. Verification metadata pinned until closeout stamps the
   follow-up commit.
+
+  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
+  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
+  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+
+  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
+  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
+  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
+  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
+  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+
 - 2026-07-02T15:03+02:00 — No route impact: the L6 alternate-buffer wheel follow-up rebuilt and
   re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
   `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
   package data served by the existing dashboard package path; no MCP package source behavior, tool
   surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
   follow-up commit.
+
+  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
+  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
+  package data served by the existing dashboard package path; no MCP package source behavior, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+
+  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
+  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
+  package data served by the existing dashboard package path; no MCP package source behavior, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
+  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
+  package data served by the existing dashboard package path; no MCP package source behavior, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+
 - 2026-07-02T14:15+02:00 — No route impact: L6 closeout rebuilt and re-synced the generated
   `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
   terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
   static package data served by the existing dashboard package path; no MCP package source behavior,
   tool surface, or subsystem narrative changed.
+
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
+  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
+  static package data served by the existing dashboard package path; no MCP package source behavior,
+  tool surface, or subsystem narrative changed.
+
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
+  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
+  static package data served by the existing dashboard package path; no MCP package source behavior,
+  tool surface, or subsystem narrative changed.
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
+  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
+  static package data served by the existing dashboard package path; no MCP package source behavior,
+  tool surface, or subsystem narrative changed.
+
 - 2026-07-01T01:43+02:00 — No route impact: L6 rebuilt and re-synced the generated
   `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
   frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
   by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
   narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
+
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
+  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
+  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
+  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
+
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
+  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
+  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
+  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
+  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
+  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
+  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
+
 - 2026-06-30T00:00:00+02:00 — No route impact: L5 (Sidebar chat: leaf-keyed attachment) added the leaf→chat registry to
   the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
   (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
@@ -1897,7 +3363,32 @@ Recorded the current private preparation/publication ownership from source. Exis
   change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
   shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
   unchanged. Verification metadata pinned until closeout stamps the L5 commit.
+
+  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
+  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
+  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
+  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
+  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
+  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
+  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
+
+  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
+  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
+  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
+  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
+  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
+  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
+  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
+  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
+  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
+  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
+  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
+  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
+  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
+  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
+
 - 2026-06-29T23:18+02:00 — No route impact: `worktrees/modules/start.py` now derives the recorded memory base from the source branch tip (not the repo HEAD); nothing at the mcp-package route level changes (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
+
 - 2026-06-29T23:00+02:00 — No route impact: operations-integration L4a — `serving/changeset.py` gained the
   doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
   committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
@@ -1905,19 +3396,65 @@ Recorded the current private preparation/publication ownership from source. Exis
   rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
   the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
   Verification metadata pinned until closeout stamps the L4a commit.
+
+  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
+  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
+  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
+  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
+  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
+  Verification metadata pinned until closeout stamps the L4a commit.
+
+  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
+  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
+  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
+  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
+  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
+  Verification metadata pinned until closeout stamps the L4a commit.
+  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
+  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
+  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
+  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
+  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
+  Verification metadata pinned until closeout stamps the L4a commit.
+
 - 2026-06-29T22:57+02:00 — No route impact: the `task_doc` MCP tool docstring now lists the `remove_subtask` op (server.py registration/forwarding only); nothing at the mcp-package route level changes (detail in the server.py / task_doc_tools.py file sidecars; task 260629_post-landing-cleanup L2).
+
 - 2026-06-29T17:00+02:00 — No route impact: operations-integration L4 review follow-up — `serving/changeset.py` gained the master NET change-set (`master_changeset` net `base→tip` + `master_file_diff`, the `/api/changeset/file-diff` `master` param), and the generated `package_data/dashboard/` bundle (+ fingerprint) was rebuilt/re-synced for the master-inspection + code-view readability/scroll polish. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar; the shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L4 follow-up commit.
+
 - 2026-06-29T16:40+02:00 — No route impact: operations-integration L4 rebuilt and re-synced the generated `package_data/dashboard/` bundle (+ the sibling `package_data/dashboard.fingerprint`) with `scripts/sync-dashboard.py` after the Change-Set Viewer frontend source changes under the in-scope root `dashboard/src/` sub-project (new `@codemirror/merge` dep). The shipped bundle remains generated static package data served by the existing dashboard package path; no mcp-package source behavior or tool surface changed. Verification metadata pinned until closeout stamps the L4 code commit.
+
 - 2026-06-29T15:30+02:00 — No route impact: operations-integration L3 added a read-only change-set API (`serving/changeset.py`: `GET /api/changeset/{task,file-diff,master}`) plus a shared `serving/scope.py` (scope resolution + error map extracted from `serving/files.py`) and a new `worktrees/modules/git.py` `changed_files_with_counts` primitive. These are serving-layer / worktrees-module additions documented in the `serving/` and `worktrees/modules/` route overviews and the file sidecars; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L3 code commit.
+
 - 2026-06-29T09:06+02:00 — No route impact: operations-integration L2 rebuilt and re-synced the generated `package_data/dashboard/` bundle (+ the sibling `package_data/dashboard.fingerprint`) with `scripts/sync-dashboard.py` after the File Viewer frontend source changes under the in-scope root `dashboard/src/` sub-project. The shipped bundle remains generated static package data served by the existing dashboard package path; no mcp-package source behavior or tool surface changed. Verification metadata pinned until closeout stamps the L2 code commit.
+
 - 2026-06-28T22:41+02:00 — No route impact: operations-integration L1 added a read-only dashboard files API (`serving/files.py`) plus a shared `kernel/sidecar_pairing.py` helper and its test. These are serving-layer / shared-kernel additions documented in the `serving/` route overview and the file sidecars; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L1 code commit.
+
 - 2026-06-28T20:30+02:00 — No route impact: a `find_worktree_contract` archive-skip + docstring fix under `kernel/coordination_context/`; nothing at the mcp-package route level changes (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
+
 - 2026-06-28T16:17+02:00 — Task 35 route impact: `scripts/sync-dashboard.py --check` is now source-aware —
   `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
   into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
   flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
   the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
   Verification metadata pinned until closeout stamps the code commit.
+
+  `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
+  into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
+  flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
+  the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
+  into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
+  flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
+  the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
+  Verification metadata pinned until closeout stamps the code commit.
+  `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
+  into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
+  flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
+  the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-28T13:54+02:00 — Task 34 route impact: the package-level observer/serving summary now records
   **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
   `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
@@ -1926,13 +3463,58 @@ Recorded the current private preparation/publication ownership from source. Exis
   streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
   `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
   closeout stamps the task-34 code commit.
+
+  **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
+  `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
+  activity rather than on `lifecycle.ended`, `ambient.py`'s heartbeat ticker decays after ~10 min idle,
+  and `/api/events` does one retained-backlog scan per connect, filters `lifecycle.heartbeat`, and
+  streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
+  `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
+  closeout stamps the task-34 code commit.
+
+  **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
+  `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
+  activity rather than on `lifecycle.ended`, `ambient.py`'s heartbeat ticker decays after ~10 min idle,
+  and `/api/events` does one retained-backlog scan per connect, filters `lifecycle.heartbeat`, and
+  streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
+  `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
+  closeout stamps the task-34 code commit.
+  **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
+  `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
+  activity rather than on `lifecycle.ended`, `ambient.py`'s heartbeat ticker decays after ~10 min idle,
+  and `/api/events` does one retained-backlog scan per connect, filters `lifecycle.heartbeat`, and
+  streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
+  `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
+  closeout stamps the task-34 code commit.
+
 - 2026-06-28T07:45+02:00 — Task 33 route impact: the observer projection now exposes an `activeWorktreeGroups`
   field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
   consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
+
+  field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
+  consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
+
+  field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
+  consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
+  field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
+  consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-28T07:43+02:00 — Task 29 S7 route impact: the package summary now records actionable-drift
   provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
   Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
   Verification metadata pinned until closeout stamps the task-29 code commit.
+
+  provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
+  Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
+  Verification metadata pinned until closeout stamps the task-29 code commit.
+
+  provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
+  Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
+  Verification metadata pinned until closeout stamps the task-29 code commit.
+  provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
+  Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
+  Verification metadata pinned until closeout stamps the task-29 code commit.
+
 - 2026-06-28T06:08+02:00 — Task 29 route impact: the package-level observer/serving summary now records
   lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
   `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
@@ -1941,15 +3523,66 @@ Recorded the current private preparation/publication ownership from source. Exis
   worktree groups. Detail lives in the observer and serving route overviews plus the
   `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
   `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
+
+  lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
+  `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
+  after the grace window, fresh raw SSE connections start from retained offsets, projection caches repo
+  surfaces briefly, and worktree provider/runtime data is admitted only for active enclosure-backed
+  worktree groups. Detail lives in the observer and serving route overviews plus the
+  `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
+  `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
+
+  lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
+  `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
+  after the grace window, fresh raw SSE connections start from retained offsets, projection caches repo
+  surfaces briefly, and worktree provider/runtime data is admitted only for active enclosure-backed
+  worktree groups. Detail lives in the observer and serving route overviews plus the
+  `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
+  `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
+  lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
+  `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
+  after the grace window, fresh raw SSE connections start from retained offsets, projection caches repo
+  surfaces briefly, and worktree provider/runtime data is admitted only for active enclosure-backed
+  worktree groups. Detail lives in the observer and serving route overviews plus the
+  `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
+  `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
+
 - 2026-06-28T03:33+02:00 — Task 32 route impact: the package-level observer summary now records
   physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
   for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
   analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
+
+  physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
+  for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
+  analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
+
+  physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
+  for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
+  analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
+  physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
+  for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
+  analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
+
 - 2026-06-28T03:21+02:00 — Task 31 route impact: the package-level dashboard path now refreshes provider
   current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
   projects missing expected provider roles into Engine Room instead of leaving empty provider containers
   ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
   Verification metadata pinned until closeout stamps the task-31 code commit.
+
+  current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
+  projects missing expected provider roles into Engine Room instead of leaving empty provider containers
+  ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
+  Verification metadata pinned until closeout stamps the task-31 code commit.
+
+  current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
+  projects missing expected provider roles into Engine Room instead of leaving empty provider containers
+  ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
+  Verification metadata pinned until closeout stamps the task-31 code commit.
+  current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
+  projects missing expected provider roles into Engine Room instead of leaving empty provider containers
+  ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
+  Verification metadata pinned until closeout stamps the task-31 code commit.
+
 - 2026-06-27T22:00+02:00 — Task 28 route impact (NOTIFY-AND-CONTINUE turn end): the
   `agents_remember.observer` next-step paragraph now records the new non-terminal
   `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
@@ -1960,6 +3593,36 @@ Recorded the current private preparation/publication ownership from source. Exis
   (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
   `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
   stamps the code commit.
+
+  `agents_remember.observer` next-step paragraph now records the new non-terminal
+  `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
+  (notify + stop, no wait/inbox) as the **active** turn-end path, the `_tool_payload`
+  auto-dismiss, the next-step hint **repoint** from `lifecycle_gate`, and the one-line
+  reducer gate-open/blocked-gate dedup; the `agents_remember.controlplane` bullet now
+  records that the `lifecycle_gate`/`operator_inbox_*` turn-end choreography is **parked**
+  (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
+  `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
+  stamps the code commit.
+
+  `agents_remember.observer` next-step paragraph now records the new non-terminal
+  `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
+  (notify + stop, no wait/inbox) as the **active** turn-end path, the `_tool_payload`
+  auto-dismiss, the next-step hint **repoint** from `lifecycle_gate`, and the one-line
+  reducer gate-open/blocked-gate dedup; the `agents_remember.controlplane` bullet now
+  records that the `lifecycle_gate`/`operator_inbox_*` turn-end choreography is **parked**
+  (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
+  `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
+  stamps the code commit.
+  `agents_remember.observer` next-step paragraph now records the new non-terminal
+  `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
+  (notify + stop, no wait/inbox) as the **active** turn-end path, the `_tool_payload`
+  auto-dismiss, the next-step hint **repoint** from `lifecycle_gate`, and the one-line
+  reducer gate-open/blocked-gate dedup; the `agents_remember.controlplane` bullet now
+  records that the `lifecycle_gate`/`operator_inbox_*` turn-end choreography is **parked**
+  (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
+  `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
+  stamps the code commit.
+
 - 2026-06-27T21:20+02:00 — Task 30 route impact: the package-level worktree lifecycle
   summary now records the already-integrated re-closeout reset behavior in
   `worktrees/modules/closeout.py`: changed closeouts reopen integration for
@@ -1967,12 +3630,51 @@ Recorded the current private preparation/publication ownership from source. Exis
   Detailed behavior lives in the `worktrees/modules` route overview and the
   closeout sidecar. Verification metadata pinned until closeout stamps the code
   commit.
+
+  summary now records the already-integrated re-closeout reset behavior in
+  `worktrees/modules/closeout.py`: changed closeouts reopen integration for
+  re-integration, while no-op re-closeouts keep completed integration markers.
+  Detailed behavior lives in the `worktrees/modules` route overview and the
+  closeout sidecar. Verification metadata pinned until closeout stamps the code
+  commit.
+
+  summary now records the already-integrated re-closeout reset behavior in
+  `worktrees/modules/closeout.py`: changed closeouts reopen integration for
+  re-integration, while no-op re-closeouts keep completed integration markers.
+  Detailed behavior lives in the `worktrees/modules` route overview and the
+  closeout sidecar. Verification metadata pinned until closeout stamps the code
+  commit.
+  summary now records the already-integrated re-closeout reset behavior in
+  `worktrees/modules/closeout.py`: changed closeouts reopen integration for
+  re-integration, while no-op re-closeouts keep completed integration markers.
+  Detailed behavior lives in the `worktrees/modules` route overview and the
+  closeout sidecar. Verification metadata pinned until closeout stamps the code
+  commit.
+
 - 2026-06-27T20:16+02:00 — No route impact: the task-27 follow-up adds a gate-await
   branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
   `lifecycle_resume`, carrying the chain through the open gate). The next-step
   engine is already inventoried in this route's `agents_remember.observer` Route
   Model bullet and its architecture is unchanged (detail in the file sidecar).
   Verification metadata pinned until closeout stamps the code commit.
+
+  branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
+  `lifecycle_resume`, carrying the chain through the open gate). The next-step
+  engine is already inventoried in this route's `agents_remember.observer` Route
+  Model bullet and its architecture is unchanged (detail in the file sidecar).
+  Verification metadata pinned until closeout stamps the code commit.
+
+  branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
+  `lifecycle_resume`, carrying the chain through the open gate). The next-step
+  engine is already inventoried in this route's `agents_remember.observer` Route
+  Model bullet and its architecture is unchanged (detail in the file sidecar).
+  Verification metadata pinned until closeout stamps the code commit.
+  branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
+  `lifecycle_resume`, carrying the chain through the open gate). The next-step
+  engine is already inventoried in this route's `agents_remember.observer` Route
+  Model bullet and its architecture is unchanged (detail in the file sidecar).
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-27T18:43+02:00 — Task 27 route impact: the `agents_remember.observer`
   Route Model bullet now records the lifecycle next-step hint engine
   (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
@@ -1982,18 +3684,81 @@ Recorded the current private preparation/publication ownership from source. Exis
   `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
   loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
   Verification metadata pinned until closeout stamps the code commit.
+
+  Route Model bullet now records the lifecycle next-step hint engine
+  (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
+  lifecycle state and attached to every tool response at the `_tool_payload`
+  choke point (one-time `lifecycle_start` `frontHalfRundown` front half, the
+  linear half delegating to `guidance.lifecycle_guidance` with a
+  `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
+  loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  Route Model bullet now records the lifecycle next-step hint engine
+  (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
+  lifecycle state and attached to every tool response at the `_tool_payload`
+  choke point (one-time `lifecycle_start` `frontHalfRundown` front half, the
+  linear half delegating to `guidance.lifecycle_guidance` with a
+  `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
+  loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
+  Verification metadata pinned until closeout stamps the code commit.
+  Route Model bullet now records the lifecycle next-step hint engine
+  (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
+  lifecycle state and attached to every tool response at the `_tool_payload`
+  choke point (one-time `lifecycle_start` `frontHalfRundown` front half, the
+  linear half delegating to `guidance.lifecycle_guidance` with a
+  `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
+  loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-27T15:24+02:00 — Task 22 follow-up route impact: the package-level serving summary now records
   detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
   disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
   behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
   stamps the follow-up code commit.
+
+  detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
+  disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
+  behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
+  stamps the follow-up code commit.
+
+  detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
+  disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
+  behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
+  stamps the follow-up code commit.
+  detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
+  disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
+  behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
+  stamps the follow-up code commit.
+
 - 2026-06-26T23:15+02:00 — Task 22 route impact: the dashboard serving route now persists terminal
   session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
   WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
   metadata pinned until closeout stamps the code commit.
+
+  session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
+  WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
+  metadata pinned until closeout stamps the code commit.
+
+  session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
+  WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
+  metadata pinned until closeout stamps the code commit.
+  session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
+  WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
+  metadata pinned until closeout stamps the code commit.
+
 - 2026-06-26T20:18+02:00 — Task 21 route impact: task-document writes now synchronize same-root master
   rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
   Verification metadata pinned until closeout stamps the code commit.
+
+  rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
+  Verification metadata pinned until closeout stamps the code commit.
+  rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-26T19:40+02:00 — No route impact: task 20 reopened for Event River
   lifecycle-label fallback and only re-synced the generated
   `package_data/dashboard/` bundle under `mcp/` after frontend source changes
@@ -2002,175 +3767,560 @@ Recorded the current private preparation/publication ownership from source. Exis
   no MCP tool surface, serving contract, or package route model changed.
   Verification metadata pinned until closeout stamps the reopened task-20 code
   commit.
+
+  lifecycle-label fallback and only re-synced the generated
+  `package_data/dashboard/` bundle under `mcp/` after frontend source changes
+  in `dashboard/src/data` and `dashboard/src/panels`. The shipped bundle remains
+  generated static package data served by the existing dashboard package path;
+  no MCP tool surface, serving contract, or package route model changed.
+  Verification metadata pinned until closeout stamps the reopened task-20 code
+  commit.
+
+  lifecycle-label fallback and only re-synced the generated
+  `package_data/dashboard/` bundle under `mcp/` after frontend source changes
+  in `dashboard/src/data` and `dashboard/src/panels`. The shipped bundle remains
+  generated static package data served by the existing dashboard package path;
+  no MCP tool surface, serving contract, or package route model changed.
+  Verification metadata pinned until closeout stamps the reopened task-20 code
+  commit.
+  lifecycle-label fallback and only re-synced the generated
+  `package_data/dashboard/` bundle under `mcp/` after frontend source changes
+  in `dashboard/src/data` and `dashboard/src/panels`. The shipped bundle remains
+  generated static package data served by the existing dashboard package path;
+  no MCP tool surface, serving contract, or package route model changed.
+  Verification metadata pinned until closeout stamps the reopened task-20 code
+  commit.
+
 - 2026-06-26T18:43+02:00 — Regression fix: package-level control-plane
   paragraph now records `lifecycle_gate` as blocking until a developer decision
   or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
   by the public junction.
+
+  paragraph now records `lifecycle_gate` as blocking until a developer decision
+  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
+  by the public junction.
+
+  paragraph now records `lifecycle_gate` as blocking until a developer decision
+  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
+  by the public junction.
+  paragraph now records `lifecycle_gate` as blocking until a developer decision
+  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
+  by the public junction.
+  paragraph now records `lifecycle_gate` as create + block + bounded wait, so
+  the public agent-facing junction is no longer described as wait-state
+  initialization only.
+
 - 2026-06-26T18:23+02:00 — No route impact: task 20 rebuilt and re-synced the generated
   `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
   The shipped bundle remains generated static package data served by the existing dashboard package path;
   no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
   closeout stamps the code commit.
+
+  `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
+  The shipped bundle remains generated static package data served by the existing dashboard package path;
+  no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
+  closeout stamps the code commit.
+
+  `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
+  The shipped bundle remains generated static package data served by the existing dashboard package path;
+  no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
+  closeout stamps the code commit.
+  `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
+  The shipped bundle remains generated static package data served by the existing dashboard package path;
+  no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
+  closeout stamps the code commit.
+
 - 2026-06-26T17:05+02:00 — Regression fix: package-level control-plane
+  paragraph now records `lifecycle_gate` as blocking until a developer decision
+  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
+  by the public junction.
+
+  paragraph now records `lifecycle_gate` as blocking until a developer decision
+  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
+  by the public junction.
+
+  paragraph now records `lifecycle_gate` as blocking until a developer decision
+  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
+  by the public junction.
+  paragraph now records `lifecycle_gate` as blocking until a developer decision
+  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
+  by the public junction.
   paragraph now records `lifecycle_gate` as create + block + bounded wait, so
   the public agent-facing junction is no longer described as wait-state
   initialization only.
+
 - 2026-06-26T16:15+02:00 — Task 25 closeout verification: refreshed the package-level
   control-plane paragraph for the unified public `lifecycle_gate` registration and verified
   the `task_doc replace` summary against code commit `2017434`.
+
+  control-plane paragraph for the unified public `lifecycle_gate` registration and verified
+  the `task_doc replace` summary against code commit `2017434`.
+
+  control-plane paragraph for the unified public `lifecycle_gate` registration and verified
+  the `task_doc replace` summary against code commit `2017434`.
+  control-plane paragraph for the unified public `lifecycle_gate` registration and verified
+  the `task_doc replace` summary against code commit `2017434`.
+
 - 2026-06-26T15:33+02:00 — No route impact: task 25 preserves the source branch's
   `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
   control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
   remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
   commit.
+
+  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
+  control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
+  remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
+  commit.
+
+  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
+  control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
+  remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
+  commit.
+  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
+  control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
+  remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
+  commit.
+
 - 2026-06-25T14:02+02:00 — Task 24 reopened: MCP package overview records ambient-bound gate creation plus gate-id-only cancel cleanup for stale workspace-shaped gates.
+
 - 2026-06-25T13:20+02:00 — Task 23/24: MCP package overview now records disposable gate/inbox interaction retention, agent-pickup projection, and the rebuilt dashboard bundle.
+
 - 2026-06-25T09:55+02:00 — GrepAI provider lifecycle now documents and tests non-conflicting preferred auto host ports (`61432` PostgreSQL, `61434` Ollama) while retaining container service ports `5432`/`11434`.
+
 - 2026-06-25T07:26+02:00 — Task 19 gate interaction polish: the MCP package now exposes
   `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
   dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
   ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
   commit.
+
+  `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
+  dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
+  ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
+  commit.
+
+  `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
+  dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
+  ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
+  commit.
+  `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
+  dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
+  ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
+  commit.
+
 - 2026-06-24T18:17+02:00 — No route impact: empty-state backdrop zoom-stability rebuilt and re-synced the
   generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
   `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
   existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
   Verification metadata pinned until closeout stamps the code commit.
+
+  generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
+  `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
+  existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
+  `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
+  existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
+  Verification metadata pinned until closeout stamps the code commit.
+  generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
+  `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
+  existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-24T16:39+02:00 — Task 17 package route correction: refreshed the task-document summary so
   observer projection is active-doc-first with optional lifecycle context, rather than requiring a
   lifecycle key before Operations can show a task. Detail lives in the observer route overview and
   sidecars. Verification metadata pinned until closeout stamps the code commit.
+
+  observer projection is active-doc-first with optional lifecycle context, rather than requiring a
+  lifecycle key before Operations can show a task. Detail lives in the observer route overview and
+  sidecars. Verification metadata pinned until closeout stamps the code commit.
+
+  observer projection is active-doc-first with optional lifecycle context, rather than requiring a
+  lifecycle key before Operations can show a task. Detail lives in the observer route overview and
+  sidecars. Verification metadata pinned until closeout stamps the code commit.
+  observer projection is active-doc-first with optional lifecycle context, rather than requiring a
+  lifecycle key before Operations can show a task. Detail lives in the observer route overview and
+  sidecars. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-24T13:59+02:00 — No route impact: the Task 17 progress-count follow-up only re-synced the
   generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
   `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
   Verification metadata pinned until closeout stamps the follow-up code commit.
+
+  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
+  `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
+  Verification metadata pinned until closeout stamps the follow-up code commit.
+
+  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
+  `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
+  Verification metadata pinned until closeout stamps the follow-up code commit.
+  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
+  `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
+  Verification metadata pinned until closeout stamps the follow-up code commit.
+
 - 2026-06-24T12:57+02:00 — No route impact: the Task 17 master-selection follow-up only re-synced the
   generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
   `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
   metadata pinned until closeout stamps the follow-up code commit.
+
+  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
+  `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
+  metadata pinned until closeout stamps the follow-up code commit.
+
+  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
+  `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
+  metadata pinned until closeout stamps the follow-up code commit.
+  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
+  `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
+  metadata pinned until closeout stamps the follow-up code commit.
+
 - 2026-06-24T12:43+02:00 — No route impact: Task 18 rebuilt and re-synced the generated
   `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
   The MCP package route model is unchanged; the synced assets remain generated output owned by
   `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
   pinned until closeout stamps the code commit.
+
+  `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
+  The MCP package route model is unchanged; the synced assets remain generated output owned by
+  `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
+  pinned until closeout stamps the code commit.
+
+  `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
+  The MCP package route model is unchanged; the synced assets remain generated output owned by
+  `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
+  pinned until closeout stamps the code commit.
+  `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
+  The MCP package route model is unchanged; the synced assets remain generated output owned by
+  `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
+  pinned until closeout stamps the code commit.
+
 - 2026-06-24T12:21+02:00 — No route impact: Task 17 updates `mcp/tests/test_observer_projection.py`
   coverage for observer task/series `createdAt` and master objective projection within the existing
   observer/test route model; no new MCP service domain or package route was added. Verification
   metadata pinned until closeout stamps the code commit.
+
+  coverage for observer task/series `createdAt` and master objective projection within the existing
+  observer/test route model; no new MCP service domain or package route was added. Verification
+  metadata pinned until closeout stamps the code commit.
+
+  coverage for observer task/series `createdAt` and master objective projection within the existing
+  observer/test route model; no new MCP service domain or package route was added. Verification
+  metadata pinned until closeout stamps the code commit.
+  coverage for observer task/series `createdAt` and master objective projection within the existing
+  observer/test route model; no new MCP service domain or package route was added. Verification
+  metadata pinned until closeout stamps the code commit.
+
 - 2026-06-24T08:59+02:00 — No route impact: observer task-document correction keeps
   `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
   JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
   `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
   bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
   changed. Verification metadata pinned until closeout stamps the code commit.
+
+  `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
+  JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
+  `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
+  bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
+  changed. Verification metadata pinned until closeout stamps the code commit.
+
+  `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
+  JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
+  `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
+  bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
+  changed. Verification metadata pinned until closeout stamps the code commit.
+  `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
+  JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
+  `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
+  bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
+  changed. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-24T06:26+02:00 — Series-contract task resolver: refreshed the worktree lifecycle Route Model
   paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
   parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
   root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
   closeout stamps the series-contract resolver code commit.
+
+  paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
+  parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
+  root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
+  closeout stamps the series-contract resolver code commit.
+
+  paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
+  parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
+  root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
+  closeout stamps the series-contract resolver code commit.
+  paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
+  parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
+  root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
+  closeout stamps the series-contract resolver code commit.
+
 - 2026-06-24T00:16+02:00 — Task 14 cleanup correction: updated the worktree lifecycle Route Model paragraph to reflect the current child-edge cleanup contract. Cleanup still hard-refuses before carryover and proves task work branches against the contract source branch, but it no longer retires parent/source branches; those branches are finalized by their own lifecycle edge.
+
 - 2026-06-23T23:04+02:00 — Dashboard task 14 adds the terminal `lifecycle_finalize_task` MCP operation. Refreshed the Hot Path Summary and Route Model for `worktrees/modules/finalize.py`: one branch-edge ancestry proof after landing, memory carryover check, cleanup verification, JSON-primary leaf + immediate parent-row reconciliation, no squash equivalence.
+
 - 2026-06-23T22:31+02:00 — Task 12 S2 clarification: refined the observer summary to distinguish
   GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
   satellites without implying separate per-repo provider processes.
+
+  GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
+  satellites without implying separate per-repo provider processes.
+
+  GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
+  satellites without implying separate per-repo provider processes.
+  GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
+  satellites without implying separate per-repo provider processes.
+
 - 2026-06-23T22:09+02:00 — Task 12 S2 correction: refined the observer read-side summary after GrepAI
   target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
   configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
   without target evidence remain aggregate.
+
+  target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
+  configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
+  without target evidence remain aggregate.
+
+  target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
+  configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
+  without target evidence remain aggregate.
+  target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
+  configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
+  without target evidence remain aggregate.
+
 - 2026-06-23T21:58+02:00 — Task 12 S2 refreshed the observer read-side summary for repo-covered
   workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
   while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
   overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
   `test_observer_projection.py` sidecars.
+
+  workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
+  while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
+  overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
+  `test_observer_projection.py` sidecars.
+
+  workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
+  while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
+  overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
+  `test_observer_projection.py` sidecars.
+  workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
+  while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
+  overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
+  `test_observer_projection.py` sidecars.
+
 - 2026-06-23T16:17+02:00 — Task 13 cleanup correctness: refreshed the `agents_remember.observer` / worktree lifecycle Route Model paragraph for the cleanup source-branch proof and dry-run directory preview fix; detailed behavior lives in the `worktrees/modules` route overview and `cleanup.py` sidecar.
+
 - 2026-06-23T16:02+02:00 — No route impact: task 12 S1 refreshed the shipped dashboard bundle under
   `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
   topology frontend source. The MCP package route model and Python serving/control/tool behavior are
   unchanged; this is generated static frontend package data only.
+
+  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
+  topology frontend source. The MCP package route model and Python serving/control/tool behavior are
+  unchanged; this is generated static frontend package data only.
+
+  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
+  topology frontend source. The MCP package route model and Python serving/control/tool behavior are
+  unchanged; this is generated static frontend package data only.
+  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
+  topology frontend source. The MCP package route model and Python serving/control/tool behavior are
+  unchanged; this is generated static frontend package data only.
+
 - 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: added the serving-layer `POST /api/operator-inbox` bridge to the package overview, tying the dashboard no-hosted-session path to the external-chat operator inbox. Verification metadata pinned until closeout stamps the task-10 code commit.
+
 - 2026-06-23T14:33+02:00 — No route impact: Task 11 refreshed the shipped dashboard bundle under
   `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
   browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
   this is generated static frontend package data only.
+
+  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
+  browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
+  this is generated static frontend package data only.
+
+  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
+  browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
+  this is generated static frontend package data only.
+  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
+  browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
+  this is generated static frontend package data only.
+
 - 2026-06-23T13:44+02:00 — Task 10 backend inbox: documented the external-chat operator inbox as a control-plane sibling to gates and the three new `operator_inbox_*` tools. Verification metadata pinned until closeout stamps the task-10 code commit.
+
 - 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption): refreshed the `agents_remember.controlplane` Route Model bullet for the `GateKind` extension to the full l-01 gate spine (`plan-approval` / `worktree-intent` / `push-approval` added; `closeout-approval` IS the commit gate, tracked by the `gate_create` docstring), and the `agents_remember.observer` bullet for the `worktrees/modules/guidance.py` visibility fix — `lifecycle_guidance` no longer reads a `commit-approval-pending` gate off `git status`, so a dirty worktree projects its honest lifecycle-position phase (closeout-completed → `integration-pending`). The mcp package route model this overview describes is unchanged; per-route detail lives in the `controlplane/` + `worktrees/modules/` route overviews + the `records.py` / `server.py` / `guidance.py` sidecars. Verification metadata pinned until closeout stamps the slice-09 code commit.
+
 - 2026-06-23T01:40+02:00 — No route impact: slice 07b v1 carries the read's `repoId` on the `read.packet` — `observer/ambient.emit_read_packet` now takes `repo_id` and emits `data.repoId`, `controllers/read_files.py` passes `repo.repo_id`, and `mcp/tests/test_read_ar_files.py` asserts it (the dashboard `EventRiver` consumes it, out of this package). No MCP tool signature, controller surface, or schema changed; detail lives in the `controllers/` + `observer/` route overviews + file sidecars, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the slice-07b code commit.
+
 - 2026-06-23T00:53+02:00 — No route impact: slice 07 S4+S5 is doctrine/docstring text only — the `read_ar_files` tool docstring (`mcp/server.py`) now states the research-phase-read role, the `controllers/read_files.py` + `observer/served_store.py` docstrings retarget the compact-reset producer to the post-3.0 agentic-control-plane (consumer + `refresh` kept as defensive scaffolding), and the synced runtime mirrors under `package_data/runtime/` (coordinator `AGENTS.md`, `c-04`/`l-01` `SKILL.md`) carry the research-phase-read doctrine. No MCP tool signature, controller surface, or schema changed; detail lives in the `controllers/` + `observer/` route overviews + file sidecars, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the slice-07 code commit.
+
 - 2026-06-21T06:40+02:00 — Slice 05m (carryover-before-cleanup): refreshed the `agents_remember.observer` Route Model bullet for the carryover-before-cleanup lifecycle correctness landed in `worktrees/modules/` (`guidance.carryover_done` reads the official ledger; the new `carryover-pending` phase routes `memory_carryover_apply` before `cleanup-pending`; `cleanup_result` hard-refuses cleanup until the carry runs and then retires the work + PR'd source branches) and the observer reducer that now follows it (`_GUIDANCE_PHASE` projects `carryover-pending`; the engine-room node carries the display-only `carryoverDoneAt`). The mcp-package detail lives in the `worktrees/modules/` + `observer/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 05m code commit.
+
 - 2026-06-21T05:30+02:00 — Slice 05l Part 2 (landing-arc probe hardening): refreshed the `agents_remember.observer` Route Model bullet for the hardened `worktrees/modules/landing.py` probe — the protected target `origin/<base>` is now probed directly via `ls-remote` (visible across the whole landing window before any PR and independent of `gh`) and the PR ref carries gh's open/merge timestamp on the additive `LandingRefNode.at`, so the dashboard can follow a REAL remote landing; carryover/cleanup lifecycle correctness is a separate upcoming slice (05m). The mcp-package detail lives in the `worktrees/modules/` + `observer/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 05l-P2 code commit.
+
 - 2026-06-21T04:10+02:00 — Slice 05l Part 1 (backend teardown visibility): the `agents_remember.observer` reducer now projects the `abandoned` worktree phase (sourced from `worktrees/modules/guidance.py`'s new `cleanup == "abandoned"` branch) and **drops disposed** (cleaned-up/abandoned) enclosures from the Engine Room `Analytics.engineProcesses` so the frontend (05k) animates the teardown; refreshed the observer Route Model bullet. The mcp-package detail lives in the `observer/` + `worktrees/modules/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 05l-P1 code commit.
+
 - 2026-06-21T02:44+02:00 — No route impact: slice 6g changes are observer-local — `observer/read_task_documents` contract-pairs masters + resolves cross-master links, and `observer/projection.TaskDocNode` gains `subTasks`/`sections`/`masterLifecycleId` (detail in `src/agents_remember/observer/overview.md`). The `mcp/` package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6g code commit.
+
 - 2026-06-19T20:30+02:00 — Task 6 slice 6f: `agents_remember.serving` gained `POST /api/terminal/{session}/image` (save a validated screenshot under the session cwd for path-injection, `python-multipart` dep) and a harness-scoped Ctrl-Z strip on the terminal host. Refreshed the serving Route Model bullet; per-file detail lives in `serving/overview.md` + the `app.py`/`terminal.py` sidecars. Verification metadata pinned until closeout stamps the 6f code commit.
+
 - 2026-06-19T15:50+02:00 — No route impact: the 5h H4 cleanup teardown + landing-source flag fix only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The frontend change lives in the in-scope root `dashboard/src/`. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T15:00+02:00 — No route impact: the 5h H3 remote/PR strip readability + connector pass only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The frontend change lives in the in-scope root `dashboard/src/`. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T14:05+02:00 — No route impact: task 6 slice 6e-4 modified `serving/terminal.py` (controlling-tty via `os.login_tty` + a seeded winsize so tmux honors resize) and `mcp/tests/test_terminal.py` (added `test_spawn_seeds_default_winsize`); both are internal to the already-documented `serving/` sub-route (detail in `serving/overview.md` + the `terminal.py` / `test_terminal.py` sidecars). The `mcp/` package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6e-4 code commit.
+
 - 2026-06-19T13:57+02:00 — No route impact: slice 5h H3 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope; synced from `dashboard/dist`); no mcp-package source behavior changed. The H3 frontend change (engine-room remote/PR landing strip) lives in the in-scope root `dashboard/src/` with its own route + file sidecars. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T07:23+02:00 — No route impact: slice 3c R5 adds a `dry_run` flag to the `task_doc` tool (act-by-default false; true returns `rendered`/`diff`/`wouldLose` without writing) — an optional param on an existing tool, no new tool surface; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T06:39+02:00 — No route impact: the engine-room crash fix rebuilt the shipped dashboard bundle under `package_data/dashboard/` (synced from `dashboard/dist`); it is a generated artifact and no mcp package route surface changed. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T06:03+02:00 — No route impact: slice 3c reopened (R4, leaf-doc fidelity) adds leaf schema fields (`statusNote`/`headerNotes`/`HeaderNote`) + freeform leaf `sections` in the `tasks/` route, a `_MUTABLE_FIELDS`/`set_section` controller tweak, and the synced w-02 skill guidance under `package_data/runtime/skills/`; no MCP tool surface changed (the `task_doc` signature is unchanged) and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T05:15+02:00 — No route impact: slice 3c reopened (R3, deferred-examples honesty) adds an optional `codeExamplesNote` schema field + a renderer branch in the `tasks/` route and the synced w-02 skill guidance under `package_data/runtime/skills/`; no MCP tool surface changed (the `task_doc` tool signature is unchanged) and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T04:18+02:00 — No route impact: slice 3c reopened (R2, heading-vs-outcome) adds an optional `Step.outcome` + a renderer tweak in the `tasks/` route (the checkbox carries the distinct outcome; a bare step is heading-only); detail in the `tasks/` overview + the `document.py`/`render.py` sidecars. The mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T03:17+02:00 — No route impact: slice 3c reopened (R1, masters observable) adds a folder-keyed series/master projection inside the `observer/` route (`read_series_documents` + `SeriesNode`/`Analytics.series`) plus the `series_total`/`series_done` helpers in the `tasks/` route; both carry their own sub-route overviews and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-18T21:27+02:00 — Task 6 slice 6e-2b: `agents_remember.serving` gained `harnesses.py` (the curated harness launch registry — Claude Code/Codex/Pi.dev + `shutil.which` detection) + `app.py`'s `GET /api/harnesses` and a `kind="harness"` opener branch. Refreshed the serving Route Model bullet (opener now spawns a shell *or* a detected harness). Per-file detail lives in the `serving/` route. Verification metadata pinned until closeout stamps the 6e-2b code commit.
+
 - 2026-06-18T21:25+02:00 — No route impact: slice 5h Tier 2 enriches the `observer/` ledger window with per-side commit message + date via a best-effort batched `git log` (detail in the `observer/` overview) and expands `mcp/tests/test_observer_projection.py` under this route with `LedgerCommitMetaTests` (real git repos); the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-18T18:00+02:00 — No route impact: slice 5h's ledger popover extends the `observer/` ledger surface (additive `LedgerNode.rows` / `EngineProcessNode.ledgerRows`; detail in the `observer/` overview) and expands `mcp/tests/test_observer_projection.py` under this route with the windowing tests; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-18T17:40+02:00 — Task 6 slice 6e-2a: `agents_remember.serving` `app.py` gained the `POST /api/terminal/{session}` **opener** (the dashboard spawns + owns a shell session at `config.workspace_root` via the pure `resolve_terminal_launch` → `host.open`; server-resolved command). Refreshed the serving Route Model bullet. Harness kinds + per-harness buttons are 6e-2b. Verification metadata pinned until closeout stamps the 6e-2a code commit.
+
 - 2026-06-18T16:10+02:00 — Task 6 slice 6d-2: `agents_remember.serving` `app.py` gained the `@app.websocket("/api/terminal/{session}")` Mode B2 bridge (PTY ↔ WebSocket — binary out, JSON `stdin`/`resize` in, `{type:exit}` on child exit, attach-only + tmux-persistent) + the `terminal_host` `create_app` param; `pyproject.toml` added the `websockets` core dep (uvicorn's WS impl). Refreshed the serving Route Model bullet; per-file detail lives in the `serving/` route. The xterm.js visual is 6e. Verification metadata pinned until closeout stamps the 6d-2 code commit.
+
 - 2026-06-18T15:40+02:00 — Task 6 slice 6d-1: `agents_remember.serving` gained the **Mode B2 terminal host** (`terminal.py` — a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions, injectable spawn, fixed-argv/localhost posture) + `mcp/tests/test_terminal.py`. Refreshed the serving Route Model bullet; per-file detail lives in the `serving/` route. The WebSocket bridge + `websockets` dep are 6d-2, the xterm.js visual 6e. Verification metadata pinned until closeout stamps the 6d-1 code commit.
+
 - 2026-06-18T14:05+02:00 — No route impact: task 6 slice 6c Part A is within the `agents_remember.observer` sub-route (gate projection — `read_gates` + `_attach_gates` / `_gate_attention` materialize a durable gate onto the lifecycle); the mcp package route model this overview describes is unchanged — detail lives in the `observer/` route overview + file sidecars (the `mcp/tests` test addition has no package-route impact). Verification metadata pinned until closeout stamps the 6c Part A code commit.
+
 - 2026-06-18T12:10+02:00 — Task 6 slice 6b: the `agents_remember.controlplane` domain became **enforcing** — new `enforcement.py` (`evaluate_closeout_gate`) binds `worktree_closeout_apply` on a developer-approved gate, and `agents_remember.serving`'s POST plane records gate decisions (`gate_decide_for_lifecycle`). Refreshed the controlplane + serving Route Model bullets; per-file detail lives in those routes + the synced l-01/c-12-closeout skill sidecars under this package. Verification metadata pinned until closeout stamps the 6b code commit.
+
 - 2026-06-18T08:51+02:00 — No route impact: slice 5h H1 adds the `worktrees/modules/landing.py` best-effort landing-arc probe (detail in the `worktrees/modules/` overview) and the `observer` `landing`/`integrationStrategy` projection fields (detail in the `observer/` overview); the new `mcp/tests/test_landing.py` + the expanded `test_observer_projection.py` under this route carry no mcp-package route-model impact. The mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 5h code commit.
+
 - 2026-06-18T01:05+02:00 — Task 6 slice 6a: new `agents_remember.controlplane` service domain (the gate control-plane substrate — `GateRecord` + `GateStore`) plus the four `gate_*` MCP tools registered through `server.py`/`mcp/tools`/`models` (47-tool surface). Added the controlplane Route Model bullet; per-file detail lives in the new `controlplane/` route and the `gates` sidecars. Verification metadata pinned until closeout stamps the 6a code commit.
+
 - 2026-06-16T03:50+02:00 — No route impact: slice 5f S5 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S5 frontend change (lifecycle-phase header pulse) lives in the in-scope root `dashboard/src/`.
+
 - 2026-06-16T03:40+02:00 — No route impact: slice 5f S4 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S4 frontend change (conduit power-up flow packets) lives in the in-scope root `dashboard/src/`.
+
 - 2026-06-16T03:35+02:00 — No route impact: slice 5f S3 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S3 frontend changes (promotion morph + alarm-parity test) live in the in-scope root `dashboard/src/`.
+
 - 2026-06-16T03:25+02:00 — No route impact: slice 5f S6 closed the §9 observability gaps in `observer/reducer.py` (the `_start_attention` attention source + `start_progress` threading) and `worktrees/modules/start.py` (happy-path start-progress emits); the mcp package route model this overview describes is unchanged — detail lives in the `observer/` + `worktrees/modules/` route overviews and the file sidecars.
+
 - 2026-06-16T03:05+02:00 — No route impact: slice 5f S2 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S2 frontend changes (Engine Room birth motion + fleeting rendering) live in the in-scope root `dashboard/src/`.
+
 - 2026-06-16T02:30+02:00 — No route impact: slice 5f S1 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S1 frontend change (full-bleed cockpit layout) lives in the in-scope root `dashboard/src/`.
+
 - 2026-06-16T01:55+02:00 — No route impact: slice 5f S0 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S0 frontend changes live in the in-scope root `dashboard/src/` with their own route overviews + file sidecars.
+
 - 2026-06-15T19:35+02:00 — No route impact: slice 5e's mcp-side changes (the observer `engineProcesses` surface + `worktrees/start_progress.py` §5.4) are captured in the `observer/` and `worktrees/modules/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged.
+
 - 2026-06-15T17:00+02:00 — No route impact: slice 5d only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The 5d frontend re-architecture (Panda + React Aria) lives in the now-in-scope root `dashboard/src/` with its own route overviews + file sidecars.
+
 - 2026-06-14T23:30+02:00 — Slice 05 (5c): the `agents_remember.observer` read side added persistent
   lifecycle and per-worktree provider projections plus full task content; serving simulation/event
   fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
   after it had no maintained consumer.
+
+  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
+  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
+  after it had no maintained consumer.
+
+  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
+  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
+  after it had no maintained consumer.
+  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
+  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
+  after it had no maintained consumer.
+
 - 2026-06-14T17:30+02:00 — Slice 05 (5b): the `agents_remember.observer` projection gained the server-computed **attention queue** (`AttentionItem` + the derived `Analytics.attentionQueue`, the pure `build_attention_queue` wired through `project_workspace`); refreshed the observer Route Model bullet. The expanded `mcp/tests/test_observer_projection.py` under this route carries no mcp-package route-model impact (detail in the file/route cards). The 5b cockpit panels are frontend, living in the out-of-scope root `dashboard/`. Verification metadata pinned until closeout stamps the 5b code commit.
+
 - 2026-06-14T15:52+02:00 — Slice 05a: the package now ships the **real** dashboard cockpit bundle under `package_data/dashboard/` (the slice-04 placeholder is replaced by the Vite/React build, synced by `scripts/sync-dashboard.py`); added `mcp/tests/test_sync_dashboard.py` and wired `sync-dashboard.py --check` into both githooks + the CI workflow. The mcp package route model is otherwise unchanged (the cockpit React/TS sources live in the out-of-scope root `dashboard/`). Verification metadata pinned until closeout stamps the 5a code commit.
+
 - 2026-06-14T11:30+02:00 — Slice 04 commit 4b: extended `agents_remember.serving` with the raw `event` SSE channel (`events.py` — byte-offset `Last-Event-ID` resume), sim-mode replay (`sim.py` — a replay clock + fixture feeder over the projector's `now`/`before_tick` seams), and the no-mutation `POST /api/actions/{action}` skeleton (`actions.py`); `app.py` gained `/api/events` + `/api/actions`, `cli/dashboard.py` the `--sim`/`--sim-speed` flags. Refreshed the serving Route Model bullet; per-file detail lives in the new + updated `serving/` sidecars. Verification metadata pinned until closeout stamps the 4b code commit.
+
 - 2026-06-14T11:30+02:00 — Slice 04 commit 4a: new `agents_remember.serving` service domain (the dashboard serving spine — FastAPI app, shared projector, per-entity SSE deltas, static mount) with its own route overview, plus the umbrella `agents-remember` CLI (`cli/__main__.py` + `cli/dashboard.py`) and `fastapi`/`uvicorn` core deps. Added the serving Route Model bullet; per-file detail lives in the new `serving/` route + `cli/` sidecars. Verification metadata pinned until closeout stamps the 4a code commit.
+
 - 2026-06-14T00:16+02:00 — No route impact: slice 3c commit 3 extends the `agents_remember.tasks` domain with `kind:"master"` (a `subTasks` series index + ordered `sections`) and the master `task_doc` ops (`set_subtask`/`set_section`); the per-route detail lives in the `tasks/`, `mcp/tools`, and controller overviews + the file sidecars, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
+
 - 2026-06-13T23:10+02:00 — Slice 3c commit 2: the observer read side first added task-document projection (`read_task_documents` → `Analytics.taskDocuments`; later Task 17 made projection active-doc-first with optional lifecycle context), and the `w-02-light-task-workflow` skill under `package_data` adopted JSON-primary authoring (synced from canonical `skills/`). Updated the tasks Route Model bullet (the observer projects them, not "will project"). Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
+
 - 2026-06-13T22:34+02:00 — Slice 3c commit 1: new `agents_remember.tasks` service domain (the JSON-primary `ar-task-document/v1` schema + renderer + store) and the `task_doc` authoring tool registered through `server.py`/`mcp/tools`/`models` (43-tool surface). Added the tasks Route Model bullet; per-file detail lives in the new `tasks/` route and the `task_doc` sidecars. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+
 - 2026-06-13T20:48+02:00 — Slice 3b: the `agents_remember.observer` projection read side gained the analytical surfaces (drift snapshot, sidecar staleness, setup, route coverage, tool reports, ledger) + the rollups; refreshed the observer Route Model bullet (no longer "analytical surfaces land in 3b"). The drift-producer snapshot write in `memory_quality/summary.py` and the expanded `mcp/tests/test_observer_projection.py` under this route carry no mcp-package route-model impact (detail lives in their file/route cards). Verification metadata pinned until closeout stamps the 3b code commit.
+
 - 2026-06-13T19:30+02:00 — Slice 3a: the `agents_remember.observer` domain gained the projection **read side** (`reducer.py`, `projection.py`, `snapshots.py`, `projection_store.py`, plus the shared `paths.py`/`timeutil.py`); the observer Route Model bullet no longer says the read side "arrives in a later slice." Per-file detail lives in the `observer/` route. Verification metadata pinned until closeout stamps the 3a code commit.
+
 - 2026-06-13T18:45+02:00 — No route impact: slice 2c extends the mcp-internal `observer` domain (resume + save gate: `save_gate.py`, ambient `promote`/`attach`) and forwards an `on_unsaved` argument through the lifecycle/worktree tools; the per-route detail lives in the `observer` and `mcp/tools` overviews, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 2c code commit.
+
 - 2026-06-13T16:41+02:00 — Slice 2b: the `agents_remember.observer` domain gained the ambient lifecycle and the six `lifecycle_*` signal tools, and `server.py` + `mcp/tools/base.py` wired the `install_ambient` call plus the `_tool_payload` emission hook; updated the observer Route Model bullet. Per-file detail lives in the `observer/` and `mcp/tools/` routes. Verification metadata pinned until closeout stamps the 2b code commit.
+
 - 2026-06-13T11:15+02:00 — New `agents_remember.observer` service domain (slice 2a of the 3.0 browser-dashboard series): the observable-lifecycle event substrate write side — `ar-observer-event/v1` envelope, local ULID mint, append-only per-lifecycle event store — with its own route overview under this package. Added it to the Route Model; per-file detail lives in the new `observer/` route. Later slices add the ambient lifecycle + signal tools and the projection read side.
+
 - 2026-06-12T19:06+02:00 — No route impact: the issue #83 changes under this route are the worktree-manager facade re-exports, the test additions, the 2.9.1 version bump, and the synced c-12-closeout and l-01-session-job-lifecycle skill copies (issue #83 doctrine plus the two-turn gate protocol); the closeout worklist behavior itself is documented at the `mcp/src/agents_remember/worktrees/modules` route, and the package layout/routing this overview describes is unchanged.
+
 - 2026-06-11T15:20+02:00 — No route impact: carryover gained the memory-only-doc and entity-catalog candidate kinds inside memory/carryover.py and the c-11 packaged skill doc; route structure and module responsibilities on this route are unchanged (detail lives in the per-file cards).
+
 - 2026-06-11T14:07+02:00: No route impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
+
 - 2026-06-11T06:47+02:00 — No route impact: issue #62 removed the `direct_closeout_*` tool surface (server registrations, payload builders, controllers, models, CLI subcommand, tests) — closeout is worktree-only; the package structure this overview describes is unchanged (detail in the file sidecars and sub-route overviews).
+
 - 2026-06-10T10:26+02:00 — No route impact: package version bumped to 2.8.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #54 release; runtime skills (l-01/c-09/c-11) teach the new freshness checkpoints; route behavior unchanged.
+
 - 2026-06-10T09:56+02:00 — Issue #54 sub-task D: new `worktree_sync` tool (mid-task atomic base-pair sync) and the fetch-free `worktree_status` freshness block; route detail lives in the `worktrees/modules` overview.
+
 - 2026-06-10T09:45+02:00 — Issue #54 sub-task C: carryover apply reports `memory_main_advance`, fast-forwarding memory main to the official checkout tip after the carryover commits.
+
 - 2026-06-10T09:30+02:00 — Issue #54 sub-task B: `worktree_start` gained the stale-base preflight (behind/diverged source branches block with `stale_base_choice` recoveries) and the memory source branch auto-template; route detail lives in the `worktrees/modules` overview.
+
 - 2026-06-10T08:39+02:00 — Issue #54 sub-task A: added `kernel/git_freshness.py` (branch-vs-upstream freshness kernel) and the opt-in `context_packet` `include_freshness` section with `ledgerMapsCodeHead`.
+
 - 2026-06-10T08:15+02:00 — No route impact: package version bumped to 2.7.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #53/#58 release; route behavior unchanged.
+
 - 2026-06-10T07:40+02:00 — GitHub #53/#58: added the background-observability invariant (async worktree provider setup with durable heartbeat progress, stale projection, retry path) and the container-form argv invariant; shared context helpers moved to `providers/context_common.py` (facade re-entrancy fix).
+
 - 2026-06-10T06:05+02:00 — No route impact: package version bumped to 2.6.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #56 release; route behavior unchanged.
+
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the Hot Path Summary now records carryover route-overview candidates and guarded official-side index regeneration (`memory/carryover.py`).
+
 - 2026-06-10T05:30+02:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
+
 - 2026-06-10T05:20+02:00 — No route impact: sub-task 2 extended the body gates to route overviews and the c-05 skill doctrine; the route surface described in the sub-task 1 entry already covers both gates and the markers.
+
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: added `kernel/onboarding_doc.py` (shared doc parsing + body/history classification) and the four-case sidecar body gate with in-band no-impact attestation markers to the route surface.
+
 - 2026-06-09T14:52+02:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.
+
 - 2026-06-08T09:57+02:00: Re-verified the MCP package route after PR-39 restored context-packet provider-summary validation and made skipped-provider summaries a modeled optional-null contract.
+
 - 2026-06-06T12:15: Re-verified against the current MCP package surface; corrected stale `mcp/tools.py` and provider lifecycle module references after the `mcp/tools/` package split and provider-first lifecycle packages.
+
 - 2026-05-31T12:40+02:00: Removed the deleted `providers/integrity.py` runner-integrity prose and reference row after the provider-runner integrity feature was removed in the 1.0.0 remediation; `providers/status.py` no longer checks runner integrity.
+
 - 2026-05-29T08:53+02:00: Updated after `server.py` began installing the `mcp/compact_content.py` shim that minifies tool-result text mirrors, and after dev-time tool-response conformance tests landed.
+
 - 2026-05-28T19:52+02:00: Updated after public MCP response payloads were wired through Pydantic models, context packets moved to compact V2, provider diagnostics became the detail boundary, and controllers split by domain.
+
 - 2026-05-28T13:40+02:00: Tightened MCP provider invariants to forbid CGC host `venvRoot`, host executable, and site-packages patch fallback paths.
+
 - 2026-05-28T12:32+02:00: Updated after provider operator logs moved into the central `logs/` tree and provider status began writing current-state snapshots under `logs/providers/status/`.
+
 - 2026-05-25T19:16+02:00: Updated after the legacy `provider_lifecycle.py` facade was deleted and `providers.lifecycle` became the sole lifecycle facade.
+
 - 2026-05-25T19:01+02:00: Updated after provider lifecycle split into focused modules and GrepAI runtime became Docker-only without `_bin`, `_venvs`, host GrepAI, or host Ollama fallback.
+
 - 2026-05-24T02:47+02:00: Updated after drift moved into `memory_quality.integrity` and `memory_quality_check` became the closeout quality gate.
+
 - 2026-05-23T04:29+02:00: Created for the MCP package route after Phase 3 added MCP-owned runtime installation, provider layout convergence, and runner integrity checks.
+
+
+
+
+
+
+
+
+
+

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/startup/start_memory.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `../overview.md` |
 
@@ -48,25 +48,25 @@ No new file-local follow-up is identified by this source reconciliation.
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Source state, named-branch admission, and informational Git-derived metadata. | L19-L32; L35-L59; L62-L71 | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
-| Mtime reuse and divergence handling preserve the current indexing behavior. | L74-L113; L116-L129 | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
-| Missing external repository and explicit disabled-memory outcomes. | L132-L135; L138-L146 | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
-| The informational ledger is reconstructed from commit attribution without a cache read. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Source state, named-branch admission, and informational Git-derived metadata. | `_memory_source_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:19-32 |
+| Mtime reuse and divergence handling preserve the current indexing behavior. | `_sync_worktree_memory_mtimes` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:74-113 |
+| Missing external repository and explicit disabled-memory outcomes. | `_disabled_memory_choice` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:132-135 |
+| The informational ledger is reconstructed from commit attribution without a cache read. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 
 ## Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:16 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ No Domain Documentation source is configured for this repository. No external do
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external domain-documentation evidence. | — | — |
 
@@ -90,13 +90,13 @@ working source and package-local evidence below. The registry is discovery input
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Context, drift, and Git-history adoption decisions. | L71-L82; L89-L114; L236-L245; L248-L275; L284-L322 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
-| Bootstrap branch proof and the one attributed content commit. | L133-L169; L172-L227 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
-| Cache preparation and refresh are separate from Git commit publication. | L44-L62; L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Shared staging excludes derived paths from the content commit. | L191-L197; L200-L207 | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
-| The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. | L303-L387 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| Context, drift, and Git-history adoption decisions. | `resolve_request_context` | mcp/src/agents_remember/memory/baseline.py:71-82 |
+| Bootstrap branch proof and the one attributed content commit. | `_baseline_default_branch` | mcp/src/agents_remember/memory/baseline.py:133-169 |
+| Cache preparation and refresh are separate from Git commit publication. | `prepare_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62 |
+| Shared staging excludes derived paths from the content commit. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
+| The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch` | mcp/tests/test_memory_attribution_producers.py:303-387 |
 
 ## Cross-Repo References
 
@@ -104,7 +104,7 @@ Configured code and memory repositories or temporary fixture repositories are de
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No additional configured cross-repository evidence is claimed. | — | — |
 
