@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:05+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `overview.md` |
 

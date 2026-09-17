@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/source_set.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -79,13 +79,13 @@ None recorded.
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The locked plan and admitted-source shapes this module compares. | `CapsuleDeclaredInstruction`; `CapsuleSource` | mcp/src/agents_remember/models/role_capsules/sources.py:32-49; mcp/src/agents_remember/models/role_capsules/sources.py:50-95 |
 | The refusals this module raises. | `STATUS_MISSING_REQUIRED_INSTRUCTION`; `STATUS_SOURCE_NOT_DECLARED`; `STATUS_SOURCE_ROOT_MISMATCH`; `STATUS_SPECIALIZATION_NOT_ADMITTED` | mcp/src/agents_remember/models/role_capsules/statuses.py:14-21 |
@@ -98,11 +98,13 @@ No external or domain documentation is configured for this memory root
 
 No sibling-repository contract defines this validation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 
 - 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which grew this module 213 → 255 lines and added a **fifth gate**. The card said "four gates"; it now documents `_require_declared_skills_present` — a declared skill whose root file was never admitted is refused, checked for **every** declared skill rather than only the selected seat's, because a skill file is a declared source like any other and a reference without admitted bytes has a fictional revision. Recorded that both planes fail closed (this gate refuses the missing bytes; the compiler refuses the missing reference) and added the matching invariant and reference row. Refreshed every range. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
 

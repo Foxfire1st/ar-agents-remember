@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/source_index.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -51,21 +51,48 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A generation is leased with query telemetry and its candidate selection. | `RepositoryIndex` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:156-237 |
-| Managed authority or root-keyed fixed slots select cache storage. | `cache_paths` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:249-283 |
-| Default acquisition validates, refreshes, or rebuilds under the existing locks. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:323-390 |
-| Frozen acquisition uses bounded published metadata and refuses an unavailable expected snapshot. | `_open_expected_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:403-442 |
-| Readiness must match both roots and the exact candidate selection. | `_ready_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:522-532 |
-| Changed source identities drive content and metadata refresh decisions. | `_validate` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:535-572 |
-| A bounded, validated temporary database is tied to repeated source observations before publication. | `_build_once` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:586-664 |
-| Candidate census and ordinary filesystem traversal retain separate selection semantics. | `_tree_state` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:810-857 |
-| The default walk's population comes from Git, not from what the skip lists happen to not name. | `_git_candidate_paths` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:718-749 |
-| A directory with no candidate beneath it is not part of the candidate and is pruned. | `_candidate_directories`; `_walkable_directory` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:752-767; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:789-807 |
-| One walked file is indexed only when it is inside the Git-reported candidate set. | `_indexed_file` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:770-786 |
-| Snapshot identity hashes indexed paths and content hashes. | `_snapshot_id` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:873-880 |
+| A generation is leased with query telemetry and its candidate selection. | `RepositoryIndex` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:181-198 |
+| Managed authority or root-keyed fixed slots select cache storage. | `cache_paths` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:286-320 |
+| Default acquisition validates, refreshes, or rebuilds under the existing locks. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:360-431 |
+| Frozen acquisition uses bounded published metadata and refuses an unavailable expected snapshot. | `_open_expected_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:444-497 |
+| The generation a lease or a fresh build is served from, carrying the state that produced it. | `_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:508-528 |
+| Readiness must match both roots and the exact candidate selection. | `_ready_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:589-599 |
+| Changed source identities drive content and metadata refresh decisions. | `_validate` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:602-639 |
+| A bounded, validated temporary database is tied to repeated source observations before publication. | `_build_once` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:653-746 |
+| Candidate census and ordinary filesystem traversal retain separate selection semantics. | `_tree_state` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:953-1030 |
+| The default walk's population comes from Git, not from what the skip lists happen to not name. | `_git_candidate_paths` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:792-823 |
+| A directory with no candidate beneath it is not part of the candidate and is pruned. | `_candidate_directories` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:826-841 |
+| The walk's directory and file pruning decisions. | `_walkable_directory` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:890-912 |
+| One walked file is indexed only when it is inside the Git-reported candidate set. | `_indexed_file` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:844-863 |
+| The walk's exclusion decisions, split so a directory rule and a file rule are asked separately. | `WalkScope`; `excluded_directory`; `excluded_file` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:864-887 |
+| The fallback walk that descends when a negation exists instead of pruning the directory. | `_walked_files` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:915-931 |
+| The authority recorded for the ignore file: Git applied it, the register did, or there is none. | `_gitignore_authority` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:934-950 |
 | The Git population this walk asks for, and the bounded executor it uses. | `run_git`; `GitRunnerOptions`; `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py |
 
+### The register this walk consumes (260915-CAPS-L14)
+
+The population this module enumerates is decided by the **shared exclusion register**
+(`exclusion_register.py`), whose three sources reduce to one record: `pathRules.exclude`, the code
+repository's `.gitignore`, and optional caller-supplied excludes. Two consequences are load-bearing
+here:
+
+- **Where Git owns the rules, this walk does not re-apply them.** Inside a work tree `GitSourceCandidate`
+  and `_git_candidate_paths` take membership from Git (`--exclude-standard` has already removed the
+  ignored entries) and `_gitignore_authority` records `"git"` — the patterns are on the record as the
+  rule set that was in force, not as something this walk matched. Outside a work tree the register's
+  bounded `FallbackIgnoreMatcher` applies them and the authority reads `"register"`; a root with no
+  ignore file reads `"absent"`. **One root gives one authority on both acquisition routes.**
+- **A negation no longer silently disables a directory rule.** `WalkScope.excluded_directory` and
+  `excluded_file` are asked separately, and `_walked_files` descends instead of pruning when the
+  ignore file carries a negation, deciding per file. Pruning a directory a later `!` rule re-includes
+  would be the silent omission the fallback must not make.
+
+Exceeding a cap remains a **reported skip naming the file and its size** through
+`apply_source_bounds` — never a silent omission and never a whole-tree refusal.
+
 ## Update History
+
+- 2026-09-17T12:10+02:00 — 260915-CAPS-L14 curator: recorded the **shared exclusion register** this walk now consumes (the three sources, the split `WalkScope.excluded_directory` / `excluded_file` decisions, the descend-on-negation fallback, and the three `gitignoreAuthority` values with one authority per root on both acquisition routes), plus the reported-skip rule. **Re-derived every reference range against the 1186-line source**: this leaf's diff inserted ~300 lines above the walk, so all eleven prior ranges were stale, and `_snapshot_id` was removed from the module — its row is gone rather than repointed. Added rows for `_repository_index`, `WalkScope` / `excluded_directory` / `excluded_file`, `_walked_files` and `_gitignore_authority`. Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **default acquisition is now bounded by Git
   membership** (defect D18, repaired by this leaf). `_git_candidate_paths` asks Git

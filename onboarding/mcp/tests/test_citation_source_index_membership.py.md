@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_citation_source_index_membership.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

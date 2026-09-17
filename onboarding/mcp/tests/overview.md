@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
 
@@ -1095,8 +1095,13 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:308-328; mcp/src/agents_remember/application/memory_quality/controller.py:331-383; mcp/src/agents_remember/application/memory_quality/controller.py:413-550 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:553-589 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:749-813 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
+| The citation index's exclusion register, its ruled caps and its reported-skip behaviour, defended case by case. | `TheExclusionRegisterIsHonouredFromEachSourceIndependently`; `TheRuledCapsSkipAndReportRatherThanRefuse`; `TheQualitySurfaceCannotBeBricked`; `TheRegisteredCitationSurfaceCarriesTheCallerExcludes`; `TheCapsThatStayAsTheyWere` | mcp/tests/test_citation_index_resilience.py:207-415; mcp/tests/test_citation_index_resilience.py:418-557; mcp/tests/test_citation_index_resilience.py:560-665; mcp/tests/test_citation_index_resilience.py:668-707; mcp/tests/test_citation_index_resilience.py:710-720 |
+| The divergence between the register's re-inclusion rule and Git's, measured on both sides. | `test_the_register_admits_a_negated_file_under_an_excluded_directory_where_git_does_not` | mcp/tests/test_citation_index_resilience.py:334-374 |
+| The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins. | `FreshUserFixtureShapeTests`; `FreshUserScenarioContractTests` | mcp/tests/test_fresh_user_harness.py:110-186; mcp/tests/test_fresh_user_harness.py:189-235 |
+| The lane rows that admit both L14 modules to the `unit-regression` lane. | "mcp/tests/test_citation_index_resilience.py"; "mcp/tests/test_fresh_user_harness.py" | mcp/tests/test-evidence-lanes.toml:27-27; mcp/tests/test-evidence-lanes.toml:62-62 |
+| The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. | `path = "scripts/e2e_harness/fresh_user_fixture.py"`; `path = "scripts/e2e_harness/fresh_user_scenario.py"`; `path = "scripts/e2e_harness/run_fresh_user.py"` | mcp/tests/evidence-lifecycle.toml:1266-1285; mcp/tests/evidence-lifecycle.toml:1286-1304; mcp/tests/evidence-lifecycle.toml:1305-1320 |
 | The live public-surface inventory contract for the advertised MCP tool tuple. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-341 |
 | The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
 | The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-329; mcp/src/agents_remember/models/worktree.py:355-363 |
@@ -1142,6 +1147,9 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-17T11:50+02:00 — 260915-CAPS-L14 curator: this route gained **two modules** and the reference rows and lane/catalog citations that go with them. `test_citation_index_resilience.py` defends the citation index's shared exclusion register per source, the ruled caps' skip-and-report behaviour, and the quality surface's reported states — with the register's deliberate divergence from Git measured on both sides; `test_fresh_user_harness.py` is the **consumer of record** for the three new `scripts/e2e_harness` governed artifacts and pins the fixture shape and the scenario contract (a step that cannot run is `blocked` by name, never `completed`). Added the corresponding rows, the two `unit-regression` lane rows, and the three `[[artifact]]` rows the leaf registers. **Repaired two stale claims on this route**: the final memory adapter citation still pointed at `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
+
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained three modules and two fixture
   changes for the eve capsule/workspace binding seam, recorded in the new
   `## 260915-CAPS-L7 The Eve Capsule/Workspace Binding Evidence` section. The section explains the

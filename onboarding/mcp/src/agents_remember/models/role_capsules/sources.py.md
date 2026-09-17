@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/sources.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -91,13 +91,13 @@ None recorded.
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The value types these shapes are composed from and the shared digest guards. | `CapsuleBlockIdentity`; `CapsuleDigest`; `compute_content_digest` | mcp/src/agents_remember/models/role_capsules/types.py:81-86 |
 | The admission boundary that reads the bytes these values carry. | `admit_capsule_sources`; `CapsuleAdmissionRequest` | mcp/src/agents_remember/application/role_capsules/sources.py:78-94; mcp/src/agents_remember/application/role_capsules/sources.py:38-77 |
@@ -111,11 +111,13 @@ No external or domain documentation is configured for this memory root
 
 No sibling-repository contract defines these values.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 
 - 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which grew this module 136 → 172 lines and changed what it owns. Added the **`CapsuleSource.text` UTF-8 guard and the `source-not-utf8` refusal** — this is where that code actually lives, and my curation report had wrongly recorded it as nonexistent after checking only the application layer — plus the revision-equals-digest and whitespace-only guards. Documented the **skill identity** helper `skills_declared_identity` (`<origin>#<skill>`, origin required so two servers' same-named skills stay distinct) and `root_of_identity`, which answers the composition root for **both** identity shapes and is what keeps the admitted-root check and the identity index from disagreeing. Added the matching invariants and two reference rows. Refreshed every range. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
 

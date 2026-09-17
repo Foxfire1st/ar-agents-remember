@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/role_capsules/compilation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -78,13 +78,13 @@ None recorded.
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between. | `compile_role_capsule`; `refused_manifest`; `manifest_for_error` | mcp/src/agents_remember/models/role_capsules/compiler.py:84-140; mcp/src/agents_remember/models/role_capsules/compiler.py:342-357; mcp/src/agents_remember/models/role_capsules/compiler.py:358-372 |
 | The admission step whose refusal is converted into the same outcome shape. | `admit_capsule_sources`; `CapsuleAdmissionRequest` | mcp/src/agents_remember/application/role_capsules/sources.py:78-94; mcp/src/agents_remember/application/role_capsules/sources.py:38-77 |
@@ -97,11 +97,13 @@ No external or domain documentation is configured for this memory root
 No sibling-repository contract consumes this entry point. The projection seam it exposes is
 consumed by a later leaf inside this master, not by another repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 
 - 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: created this card for the admitted compile
   entry point added by the deterministic capsule compiler leaf (`CAPS-R02@v1`). Records the

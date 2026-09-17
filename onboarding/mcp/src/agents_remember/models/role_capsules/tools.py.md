@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -59,13 +59,13 @@ None recorded.
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The admitted policy snapshot and the request/`ToolId` shapes this module works with. | `CapsuleToolPolicy`; `CapsuleToolRequest`; `CapsuleToolId` | mcp/src/agents_remember/models/role_capsules/types.py:182-197; mcp/src/agents_remember/models/role_capsules/types.py:435-450 |
 | The refusal code for a request outside the admitted snapshot. | `STATUS_TOOL_REQUEST_NOT_PERMITTED` | mcp/src/agents_remember/models/role_capsules/statuses.py:22-23 |
@@ -77,11 +77,13 @@ No external or domain documentation is configured for this memory root
 
 No sibling-repository contract defines this narrowing rule.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 
 - 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: created this card for the tool-request
   narrowing boundary added by the deterministic capsule compiler leaf (`CAPS-R02@v1`). Records

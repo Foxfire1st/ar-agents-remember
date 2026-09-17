@@ -6,9 +6,9 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/rationale.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T18:19+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
-| governingOverview      | `../../../../../overview.md` |
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
 
@@ -114,6 +114,8 @@ No sibling-repository contract defines this instruction file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
 
 - 2026-09-16T18:19+02:00 — 260915-CAPS-L13 curator: **refreshed against the A6 source, which corrected the two things this card had recorded as source defects.** The card and the source now agree, and the three parts of the split are stated for what each is:
   1. **The separation table's operations row now reads "nine blocks" in the source** (it read "eight"), so the previous entry's claim that the table "still reads eight blocks" is no longer true and has been replaced: the card now describes the correction that was made and notes that the row and the corpus agree. This was the one false statement in the card, and it was false only because the source caught up with it.

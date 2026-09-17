@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_role_capsule_admission.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -92,13 +92,13 @@ None recorded.
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The frozen vocabulary and its completeness guard the vocabulary group pins. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS`; `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89; mcp/src/agents_remember/models/role_capsules/statuses.py:27-41 |
 | The manifest parser the shipped-manifest group exercises against the real file. | `parse_composition_manifest`; `_require_one_path_serves_one_identity`; `_require_operation_applicability_agrees`; `_require_role_skills_are_declared` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216; mcp/src/agents_remember/models/role_capsules/manifest.py:513-553; mcp/src/agents_remember/models/role_capsules/manifest.py:554-601; mcp/src/agents_remember/models/role_capsules/manifest.py:479-508 |
@@ -113,11 +113,13 @@ No external or domain documentation is configured for this memory root
 
 No sibling-repository contract is exercised by these cases.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 
 - 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which grew this module **429 → 1258 lines** and **30 → 43 test functions (54 collected)**. The old four-group summary no longer described the file: added the three groups the repairs introduced — **routing agreement** (each role's own file must declare the blocks and operations it inherits, and the compiled routing must agree with it across all declared operations), the **carried skill channel** (one reference per declaration, empty tuple for a role declaring none, revision tracking admitted bytes, missing/unknown skill refused), and the **admitted-set and lookup guards** (no-admitted-bytes, duplicate path, manifest dropped mid-compile, blank identity, single narrowing gate, `composing_roots`). Recorded the invariant that no skill case carries a permission assertion, because the channel is carried rather than narrowed. Refreshed every range, including the helper inventory, which now names `declared_inherits` and the `_manifest_with` builder. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
 

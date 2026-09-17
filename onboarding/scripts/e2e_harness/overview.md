@@ -8,8 +8,8 @@
 | onboardingRoute | `onboarding/scripts/e2e_harness/overview.md` |
 | parentOverview | [Repository overview](../../overview.md) |
 | lastUpdated | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 
 ## What This Area Is
 
@@ -48,6 +48,11 @@ Codex driving (`codex_driver.py`), deterministic Responses API behavior (`respon
 `responses_sse.py`), controlled public-advertisement rejection proofs (`dispatch_sentinels.py`),
 scenario flow/control/evidence/runtime modules, structured checkpoint reports, and exact dependency
 selection.
+
+It now carries **two entry points with different admissions**. `run.py` keeps its Dagger admission
+for the ambient role-chat scenario. `run_fresh_user.py` (260915-CAPS-L14) is a second, **host-run**
+entry point for the fresh-user acceptance, with its own fixture module (`fresh_user_fixture.py`) and
+scenario (`fresh_user_scenario.py`).
 
 ## Operating Model
 
@@ -88,6 +93,43 @@ scratch location; inspection cannot add its own index file to the candidate bein
 4. A replacement manager starts; queued and later messages resolve to that occupant without
    repointing the canonical address.
 
+### Fresh-User End-To-End Acceptance (260915-CAPS-L14)
+
+A second flow that shares the route but **not** `run.py`'s admission, fixture, or evidence:
+
+```
+python scripts/e2e_harness/run_fresh_user.py --reports <dir> [--work-root <dir>]
+```
+
+1. `fresh_user_fixture.py` creates two **disposable** repositories from nothing under the run root —
+   `spear-not-main` (spear `dev`, a source over the per-file cap, a vendored tree the register
+   excludes) and `plain-main` (the default path). **These are not the developer's repositories**:
+   nothing here reads the developer's real repositories, this master's coordination tree,
+   `ar-coordination/memory-repos/**`, or any machine-local state.
+2. `fresh_user_scenario.py` drives the packet's flow in order through the product's own entry
+   points: install runtime → `memory_init` → thin bootstrap (`c-03`) → exclusion review → baseline
+   adoption → first worktree task → `citation_fix` + `memory_quality_check` + closeout validation →
+   the free-agent bootstrap seat. One `StepRecord` per call, recording the exact call and the real
+   result; a step that cannot run is `blocked` **by name**, never `completed`.
+3. The free agent is opened the way a user opens it — the product's registered
+   `POST /api/terminal/{session}` with `role='bootstrap'` and **no task document** — and the capsule
+   is read back **from the launch token the session was actually started with**, parsed by the
+   product's own `parse_runner_config`. The expected side is the same application entry point the
+   route itself calls, so neither side is hand-supplied.
+4. `run_fresh_user.py` writes the transcript to `<reports>/fresh-user-acceptance/run.json`, prints a
+   one-line summary, and exits non-zero if any invariant or checkpoint did not pass. The run root is
+   a temporary directory unless `--work-root` names one, so nothing outside it is read or written.
+
+**Why it runs on the host rather than in the Dagger graph.** The packet carries a *clean
+environment* requirement, not a Dagger-graph requirement: the fixtures are created from nothing
+under the run root and no machine-local state is consulted, which is what the certification would
+have bought here.
+
+All three modules are **governed evidence artifacts** (`scripts/e2e_harness/**` is a permanent
+evidence-support root): each carries an `[[artifact]]` row in `mcp/tests/evidence-lifecycle.toml`
+with an owner, a real consumer and an executable replacement node, and
+`mcp/tests/test_fresh_user_harness.py` is the consumer of record that keeps those rows honest.
+
 ## Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
@@ -99,6 +141,7 @@ scratch location; inspection cannot add its own index file to the candidate bein
 | `dispatch_sentinels.py` | negative contract evidence | Mutates the live advertisement and requires canonical-validator rejection at the expected boundary | covered |
 | `scenario.py` | acceptance state flow | Executes and records the spawn, canonical routing, vacancy, and replacement assertions | covered |
 | `scenario_runtime.py` | resource owner | Tears down tmux, dashboard, and response fixtures even on failure | covered |
+| `run_fresh_user.py` | fresh-user acceptance entry point | Host-run (no Dagger admission by design); writes the one transcript and exits non-zero on any failed invariant or checkpoint | covered |
 
 ## Local Invariants And Traps
 
@@ -132,6 +175,11 @@ its candidate-bound evidence.
 | The scenario proves the live spawn chain and replacement-routing sequence through named checkpoints. | `run_scenario` | scripts/e2e_harness/scenario.py:141-194; scripts/e2e_harness/scenario.py:368-531 |
 | The deterministic provider discovers tools from the real request and validates the public dispatch schema. | `ScriptedResponses` | scripts/e2e_harness/responses_server.py:47-127; scripts/e2e_harness/responses_server.py:329-381 |
 | Controlled malformed advertisements must fail through the same canonical validator as the live advertisement. | `dispatch_rejection_sentinels` | scripts/e2e_harness/dispatch_sentinels.py:23-95 |
+| The fresh-user acceptance's disposable fixtures, created from nothing under one run root. | `create_fresh_user_fixture` | scripts/e2e_harness/fresh_user_fixture.py:79-177 |
+| The fresh-user flow, one `StepRecord` per product call. | `run_fixture_scenario`; `run_fresh_user_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:579-807; scripts/e2e_harness/fresh_user_scenario.py:1111-1195 |
+| The free agent's capsule, read back from the launch token the session was started with. | `free_agent_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:948-1051 |
+| The fresh-user acceptance entry point and its transcript. | `main`; `REPORT_DIRECTORY` | scripts/e2e_harness/run_fresh_user.py:32-32; scripts/e2e_harness/run_fresh_user.py:47-82 |
+| The consumer of record that keeps the three modules' lifecycle rows honest. | `test_every_governed_harness_module_this_suite_answers_for_exists` | mcp/tests/test_fresh_user_harness.py:218-222 |
 
 ## Cross-Repo References
 
@@ -159,10 +207,13 @@ is verified at runtime by the real installed client rather than copied from an e
 | `codex_driver.py` | [codex_driver.py.md](codex_driver.py.md) | covered | Real Codex boundary |
 | `dispatch_sentinels.py` | [dispatch_sentinels.py.md](dispatch_sentinels.py.md) | covered | Canonical negative-advertisement proofs |
 | `fixture.py` | [fixture.py.md](fixture.py.md) | covered | Clean-room topology and configuration |
+| `fresh_user_fixture.py` | [fresh_user_fixture.py.md](fresh_user_fixture.py.md) | covered | Fresh-user disposable fixtures (260915-CAPS-L14) |
+| `fresh_user_scenario.py` | [fresh_user_scenario.py.md](fresh_user_scenario.py.md) | covered | Fresh-user end-to-end acceptance flow (260915-CAPS-L14) |
 | `reporting.py` | [reporting.py.md](reporting.py.md) | covered | Structured checkpoint evidence |
 | `responses_server.py` | [responses_server.py.md](responses_server.py.md) | covered | Deterministic tool-driving server |
 | `responses_sse.py` | [responses_sse.py.md](responses_sse.py.md) | covered | Responses SSE wire projection |
 | `run.py` | [run.py.md](run.py.md) | covered | Candidate and replication controller |
+| `run_fresh_user.py` | [run_fresh_user.py.md](run_fresh_user.py.md) | covered | Fresh-user acceptance entry point (260915-CAPS-L14) |
 | `scenario.py` | [scenario.py.md](scenario.py.md) | covered | End-to-end flow and assertions |
 | `scenario_control.py` | [scenario_control.py.md](scenario_control.py.md) | covered | Bounded public control stimulus |
 | `scenario_evidence.py` | [scenario_evidence.py.md](scenario_evidence.py.md) | covered | Failure and routing evidence |
@@ -185,6 +236,8 @@ execution owned by the lifecycle Dagger gate.
 None.
 
 ## Update History
+
+- 2026-09-17T11:30+02:00 — 260915-CAPS-L14 curator: recorded the route's **second entry point**. Adds the *Fresh-User End-To-End Acceptance* flow (the host-run `run_fresh_user.py`, its disposable fixtures, the ordered product-entry-point steps, and the free agent whose capsule is read back from the launch token the session was actually started with), states why that entry point runs on the host rather than in the Dagger graph, and records that all three modules are governed evidence artifacts with lifecycle rows and a consumer of record. Extends *Structures Found Here*, the load-bearing-files table and the file-level onboarding map with the three new modules, and adds their reference rows. States plainly that the fixtures are **disposable repositories created from nothing under one run root — not the developer's repositories**. `run.py` and its Dagger admission are unchanged by this leaf. Verification metadata is left at `602143bd`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `scripts/e2e_harness`, so no route/member/prose/invariant change is required. route-member-count=13; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 

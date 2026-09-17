@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5`                 |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03`                 |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -97,14 +97,43 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Carryover registration declares one memory subject and describes the computed cache refresh. | L212-L242 | [mcp/src/agents_remember/mcp/registration/memory.py](mcp/src/agents_remember/mcp/registration/memory.py) |
-| The payload builders for the carryover plan and report-filing apply pair. | L209-L220; L223-L244 | [mcp/src/agents_remember/mcp/tools/memory.py](mcp/src/agents_remember/mcp/tools/memory.py) |
-| The typed sync/start/poll payload builders. | L58-L65; L68-L77; L80-L89 | [mcp/src/agents_remember/mcp/tools/memory.py](mcp/src/agents_remember/mcp/tools/memory.py) |
-| The `MemoryBranches` parameter object. | L309-L314 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The `CarryoverSelection` parameter object. | L322-L338 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The `CarryoverCommitMessages` parameter object. | L342-L345 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
+| Carryover registration declares one memory subject and describes the computed cache refresh. | `memory_carryover_apply` | mcp/src/agents_remember/mcp/registration/memory.py:226-256 |
+| The payload builder for the carryover plan. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:211-222 |
+| The payload builder for the report-filing apply. | `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:225-246 |
+| The typed sync payload builder. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
+| The typed start payload builder. | `memory_quality_check_start_payload` | mcp/src/agents_remember/mcp/tools/memory.py:68-77 |
+| The typed poll payload builder. | `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:80-89 |
+| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:336-348 |
+| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:349-368 |
+| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:369-376 |
+| The `citation_fix` registration and its caller-exclude parameter. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-129 |
+| The scope object the excludes ride with. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:44-55 |
+| The one construction point that carries them into every citation operation. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:140-156 |
+
+## 260915-CAPS-L14 The Citation Surface Gains A Caller Exclude
+
+The registered `citation_fix` tool gained one optional parameter:
+
+```
+exclude: list[str] | None = None
+```
+
+It is **additive and scoped to one call**. Caller-supplied, code-root-relative globs narrow **that
+call's** acquisition on top of the register every call already honours — the memory layer's
+`settings.json → onboarding.pathRules.exclude` and the code repository's `.gitignore` — so a caller
+cannot accidentally change what another document's repair sees. The globs are packed onto
+`CitationOperationScope.excludes`, validated at that boundary, and carried into the one construction
+point (`_citation_trees`) shared by all four citation operations.
+
+A pattern that cannot mean anything — empty, absolute, or escaping the code root with `..` — is
+refused **by name** rather than quietly matching nothing, because "I excluded it and it is still
+indexed" is the harder failure to see. The parameter is keyword-only, so no existing positional call
+changes meaning. The CLI declares the matching repeatable `--exclude GLOB`.
+
+The register's rule set is reported in the result, so a reader can still see which patterns produced
+the population.
 
 ## 260815-DAG-L3 Curator Attestation Registration
 
@@ -147,6 +176,8 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-17T11:45+02:00 — 260915-CAPS-L14 curator: recorded the registered tool's new optional, keyword-only `exclude: list[str] | None` and what it does — caller-supplied, code-root-relative globs that narrow **one call's** acquisition on top of the register every call already honours (`onboarding.pathRules.exclude` plus the code repo's `.gitignore`), packed onto `CitationOperationScope.excludes` and carried through the shared `_citation_trees` construction point, with a meaningless pattern refused by name. Added the matching CLI note and the service-section above. **Flattened the Repo-Internal References table** from the legacy `| Finding | Citations | Source Path |` shape to the required `| Finding | Anchor | Source |` form: the rows carried `L212-L242`-style shorthand with a link instead of a plain `path:start-end`, and four of them cited parameter objects at stale line numbers, so every row was re-derived against the current source. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Aligned baseline/carryover registration descriptions and message packing with the derived-cache contract. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

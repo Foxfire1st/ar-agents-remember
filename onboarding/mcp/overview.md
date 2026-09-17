@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -195,8 +195,8 @@ These current source and policy ranges establish the development/certification d
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
-| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:749-813 |
+| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-45 |
 
 Current working-candidate evidence for this route:
 
@@ -1523,7 +1523,42 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 "10 skips" is 67 and 44 under the superseded vocabulary, of which 23 are unreachable memory commits and
 two name no object at all.
 
+## 260915-CAPS-L14 Route Impact — The Citation Index's Shared Exclusion Register
+
+**Route impact recorded rather than a no-impact marker.** The citation surface this package exposes
+changed meaning: the source index now consumes a **shared exclusion register** fed by three sources,
+and the CLI gained a caller-supplied `--exclude`.
+
+- **One register, three sources.** `pathRules.exclude` (`onboarding.pathRules.exclude.paths` in the
+  memory layer's `settings.json`), the code repository's `.gitignore`, and optional caller-supplied
+  excludes now reduce to one answer and one **record**: the rule set is serialized onto the manifest
+  of every published generation, so a reader sees which rules produced the population. Inside a Git
+  work tree Git remains the authority and the register records the patterns; outside one a bounded
+  matcher applies them.
+- **The caller-exclude surface is additive and scoped.** `citation_fix` (MCP) declares
+  `exclude: list[str] | None`, and `agents-remember-memory-citations` declares a repeatable
+  `--exclude GLOB`. Both narrow **one call's** population on top of the register; a pattern that
+  cannot mean anything (empty, absolute, or escaping the code root) is refused by name.
+- **Exceeding a cap is reported, never a whole-tree refusal.** Per the developer's 2026-08-20
+  ruling: an oversized file is **skipped with a report entry naming it and its size**, the aggregate
+  default is 512 MiB applied to the post-exclusion/post-skip set, caps are settings-overridable
+  through `onboarding.citationIndex`, and a hard stop remains only past ~2 GiB, reported with
+  offenders and a `nextStep`. The manifest schema is now **v10**; a v9 manifest is refused and
+  rebuilt rather than read as "no register".
+- **The quality surface and the closeout gate both refuse by name.** A capped index is `checked`
+  with its skip list; an unbuildable index is a reported `citation-source-index-unavailable` state;
+  and the closeout certification's `_admitted_source_index` raises a typed
+  `CertificationContractError` instead of letting a bare `ValueError` out of the gate.
+- **The register, the caps and the settings key are mode-independent** — nothing on this surface
+  branches on the memory storage mode.
+
+Full account on the [memory_quality route](src/agents_remember/memory_quality/overview.md); the
+governed-artifact rows the leaf adds are on the [tests route](tests/overview.md).
+
 ## Update History
+
+- 2026-09-17T11:35+02:00 — 260915-CAPS-L14 curator: **route impact recorded rather than a no-impact marker** for the citation source-index surface this package exposes. Adds the section above (the shared exclusion register and its three sources, the additive caller-exclude surface on the MCP tool and the CLI, the reported-skip cap mechanics under the developer's 2026-08-20 ruling with the v10 manifest and the v9 rebuild, the typed refusals on the quality surface and at the closeout gate, and the mode-independence of all three). **Repairs a stale claim**: the final memory adapter citation still pointed at
+  `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. The adjacent `PreparedCloseoutContinuation` range start is corrected to the class's real declaration line. Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-17T11:15+02:00 — 260915-CAPS-L15 curator: **route impact recorded rather than a no-impact
   marker.** The launch path this package serves changed meaning: two of the three production launch

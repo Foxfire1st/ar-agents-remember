@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                     |
 
@@ -408,7 +408,30 @@ The registered signatures stay flat, as this route's defining contract requires 
 publishes only `uri`, and the corpus `origin`/`root` overrides its payload builder accepts are
 deliberately absent from the wire.
 
+## 260915-CAPS-L14 The Citation Tool Gains A Caller Exclude
+
+`memory.py`'s registered `citation_fix` gained one **optional, keyword-only** parameter:
+
+```
+exclude: list[str] | None = None
+```
+
+It is additive and scoped to one call. Caller-supplied, code-root-relative globs narrow **that
+call's** citation acquisition on top of the register every call already honours — the memory layer's
+`settings.json → onboarding.pathRules.exclude` and the code repository's `.gitignore` — so a caller
+repairing one document cannot change the population another document's repair sees. The globs are
+packed onto `CitationOperationScope.excludes` and validated at that boundary: empty, absolute, or
+`..`-escaping patterns are refused **by name** rather than quietly matching nothing.
+
+Two route-level facts follow. **Keyword-only means no existing call changes meaning**, so this is a
+pure addition to the advertised schema rather than a signature change. And the register's rule set
+is reported in the result, so a reader can still see which patterns produced the population even
+when a caller narrowed it.
+
 ## Update History
+
+- 2026-09-17T11:55+02:00 — 260915-CAPS-L14 curator: recorded the additive `exclude` parameter on the registered `citation_fix` tool and what it does at this route's altitude (a per-call narrowing on top of the shared register, validated and refused by name, keyword-only so no existing call changes meaning), in the new section above. The file card for `memory.py` gained the matching service section, a corrected reference table and its own history entry. Verification metadata is left at its recorded value; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
+
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
   `ar/260915-caps-l4`, base `b00a4ac2`): refreshed this route section against the settled candidate.
   **Removed the round-1 rejection banner** and recorded the settled transport instead: the route now

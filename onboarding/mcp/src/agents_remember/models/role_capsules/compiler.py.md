@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/compiler.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `e9300687218205ec1c4b0b86f96d3ac7c2f344d3` |
-| lastVerifiedCommitDate | 2026-09-16T09:41:55+02:00|
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -112,13 +112,13 @@ None recorded.
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. | `compile_admitted_capsule`; `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:46-88 |
 | The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest. | `CapsuleManifest`; `CapsuleSourceRecord`; `CapsuleRejection` | mcp/src/agents_remember/models/role_capsules/diagnostics.py:105-217; mcp/src/agents_remember/models/role_capsules/diagnostics.py:38-58; mcp/src/agents_remember/models/role_capsules/diagnostics.py:73-96 |
@@ -135,11 +135,13 @@ No sibling-repository contract is consumed. The reference implementation studied
 was eve's dynamic resolver; that is a design input recorded in the leaf's requirement packet,
 not a runtime boundary of this module, and no eve code is imported.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 
 - 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which added a real skill-reference producer. The pipeline is now **seven** steps: `skill_references` (this module, previously absent) builds one content-addressed reference per declared skill, and `semantic_digest` gained a `skills` parameter, so the digest document now carries a `skill <origin> <identity> <revision>` line per reference. Added the explicit statement that the two capability channels enter the digest differently and neither is a grant — tool ids are policy-narrowed, skill references are carried and never policy-checked — plus an invariant forbidding the "narrowed/permitted/granted" description of a skill reference, and a new reference row for the carried channel. Every line range in this card was refreshed (the module grew 431 → 506 lines), and the refusal row now names all three current subclasses. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
 

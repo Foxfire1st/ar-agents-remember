@@ -6,9 +6,9 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `3054af87fdf0e21e9ec7132a5d62ba0d514600ba`|
-| lastVerifiedCommitDate | 2026-09-16T08:23:52+02:00|
-| governingOverview | `../../../../../overview.md` |
+| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03`|
+| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
 
@@ -108,6 +108,8 @@ the stable authority, generation, projection, snapshot, candidate, and validatio
 The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
 
 ## Update History
+
+- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
   canonical curator brief gained the single-source marker naming `../roles/curator.md`,
