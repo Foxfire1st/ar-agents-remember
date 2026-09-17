@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T01:48+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated            | 2026-09-17T19:30+02:00 |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l20-ar` uncommitted source; base `621db8981aba09a6f17880d2138cf76a37332c6c` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -80,6 +81,50 @@ cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_
 
 None recorded.
 
+## 260915-CAPS-L20 The Dead Governing Overview Becomes A Gated Finding
+
+This leaf closed `D3`/`D16`'s **product** half and the consumer it feeds. Until it, the product
+validated that a source *has* a card and never that the card's declared route *resolves*, so a card
+whose `governingOverview` field — or whose `## Governing Overview` body link — pointed at a file that
+does not exist passed every check the product runs and reported clean.
+
+`_attach_curator_checklist` now calls `check_governing_overview_resolution(scope.onboarding_root)` and
+publishes its summary on the **response** under `governingOverviewResolution`: the five counters
+(`cardsWalked`, `cardsFlagged`, `unresolvedFieldCount`, `unresolvedLinkCount`, `sectionAbsentCount`),
+the findings, and the observations. Two placements are deliberate rather than incidental. The summary
+is attached to `response`, not to `payload`, because `response` is composed from `**payload` *before*
+this function runs — a key added to `payload` here would never be published. And it stays **out of**
+`response["checks"]`, because that mapping is the closed `AVAILABLE_CHECKS` population the
+certification catalog is validated against, and a key outside that population would be a catalog item
+with no planned identity.
+
+The findings then join the gated set:
+
+```python
+repair_findings.extend(row.to_dict() for row in governing_overviews.findings)
+```
+
+`.findings`, never `.observations`, and that distinction carries the whole doctrine boundary. The 96
+cards that declare a live field but carry no body link to resolve are **observations**: `ok` is
+`not findings`, so a pure-observation tree is green and the 96 cannot reach
+`curatorActionableCount`. Making them gated would create 96 new obligations layer-wide and change
+shipped doctrine, so this leaf observes them and declines to decide whether each *should* carry a
+link — that is the developer's call, recorded rather than taken.
+
+**What the gating reaches, stated with its condition.** The findings reach the **curator's completion
+loop** today: the full contract-scoped operation (no `checks` subset, which is what
+`publish_curator_report` requires) publishes the count the curator iterates against. The
+closeout-admission consumer is the *designed* one and is behind `D32`: the readiness comparison lives
+inside `require_current_curator_coherence`, which the checklist only consults once the raw status is
+`ready-for-closeout`, and no leaf on this master has ever reached it. Both statements are true, and
+stating only the first would understate the fix while stating only the second would overstate today's
+reach.
+
+The standalone runner is the half an operator can drive without pytest:
+`python -m agents_remember.memory_quality.integrity.governing_overview_resolution --onboarding-root
+<root>` prints the five counters and one row per finding, and exits **non-zero** while any declaration
+is dead. Before this leaf no command in the product could fail on a dead governing overview.
+
 ## Docs References
 
 No configured Domain Documentation source applies; the controller contract is repository-internal.
@@ -138,6 +183,7 @@ executor compares it with the attested final catalog.
 Prepared candidate quality execution now uses the scope's quality code root and quality context, and withholds the unstamped fallback when a prepared code view is present; checklist missing-onboarding and route-index projections use the same quality input. This keeps quality evidence tied to the frozen candidate while preserving the controller's typed sync/start/poll and final-catalog boundaries.
 
 ## Update History
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: recorded this leaf's controller change — the governing-overview resolution summary is published on the response (not `payload`, not `checks`) and its findings are extended into the gated curator repair set, so a dead declaration now reaches the loop the curator completes against instead of reporting clean. The consumer boundary is stated with it: the curator loop binds today, while the closeout-admission consumer sits behind `D32` because the raw status has never reached `ready-for-closeout` on this master. Verification metadata advanced to this leaf's frozen code base.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Prepared candidate quality execution now uses the scope's quality code root and quality context, and withholds the unstamped fallback when a prepared code view is present; checklist missing-onboarding and route-index projections use the same quality input. This keeps quality evidence tied to the frozen candidate while preserving the controller's typed sync/start/poll and final-catalog boundaries.
 - 2026-09-08T14:45:44+00:00: CCR-L24 preparation reviewed `_attach_final_full_catalog`, `_curator_candidate_inputs`, and `_require_same_curator_candidate` against the current L38-composed code candidate; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
 - 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-627. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.

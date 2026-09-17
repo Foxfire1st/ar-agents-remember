@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
-| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
+| lastUpdated            | 2026-09-17T19:30+02:00 |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 | governingOverview | `overview.md` |
@@ -51,6 +51,45 @@ at this tip as at the clean base (`test_eve_adapter`, `test_eve_protocol`,
 `test_role_capsule_admission`, `test_role_capsule_compiler`, `test_role_instruction_corpus`,
 `test_task_projection`). The `test_install_runtime.py` mention at `:74` is pre-existing context
 for the catalog consumer proof, not a row this leaf added.
+
+## 260915-CAPS-L20 Lane Row — The Governing-Overview Guard
+
+This leaf added the module its change set created to the existing `unit-regression` lane, one row, so
+the fail-closed loader still names no module at all:
+
+```toml
+  "mcp/tests/test_governing_overview_resolution.py",
+```
+
+The lane is the behaviour-preserving one rather than a judgement call: the module writes only into a
+`TemporaryDirectory`, drives no real repository, no boundary process and no network, and its whole
+subject is one pure function over a six-file synthetic tree. It is a focused hermetic suite, which is
+what the default delivery lane is for.
+
+**Measured at this leaf's frozen candidate, through the product's own loader rather than by reading
+this file** (`load_lane_manifest(Path('.'))` in the candidate worktree):
+
+```
+lane rows = 244
+digest    = 4354cc9f2cca2e33cd1f9e6bb31c8ef4742f61782bf9da9ce9b23cefcd922cdc
+new module registered = True -> unit-regression
+distribution = unit-regression 147 · integration 64 · architecture-fitness 17 ·
+               provider-conformance 14 · public-contract 2
+validate_lane_registry() = None
+```
+
+`244` is `243 + 1`: `D9` was already complete at this leaf's base — L11 left **243 modules / 243 rows
+/ 0 unregistered, 0 stale** — so this leaf's obligation is the one new row and nothing else. The
+**digest is unchanged from the base** (`4354cc9f…`, the value the owning seat and L20's reviewer both
+read at `621db898`), and that is the expected result rather than a stale read: the manifest digest
+covers the declared lane *structure*, and a row added to an existing lane leaves it as it was.
+
+**Why one row is the whole obligation.** `load_lane_manifest` derives the repository's actual test
+modules and refuses a manifest that omits one, so an unregistered module is a **hard load failure**
+rather than a silent gap — the same fail-closed property `260831-LOCR-L30` repaired a manifest for.
+`test_governing_overview_resolution.py` and the extended `test_memory_quality_runs.py` are therefore
+both collectable into lanes by construction, and the delivery graph's lane-based selection sees the
+regression guards this leaf added.
 
 ## Governing Overview
 
@@ -737,6 +776,7 @@ No separate cross-repository authority is established by this file.
 
 ## Update History
 
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: recorded this leaf's row addition — `tests/test_governing_overview_resolution.py` is registered in `test-evidence-lanes.toml`, so the new module is collectable into a lane rather than failing the fail-closed loader. `D9`'s loader was already complete at this leaf's base (243 modules / 243 rows); this leaf adds the 244th module and its row together. Verification metadata was already at this leaf's frozen code base.
 - 2026-09-17T16:00+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): recorded this leaf's **six added rows** — the `D9` family the fail-closed loader had been naming since before this master (`test_eve_adapter`, `test_eve_protocol`, `test_role_capsule_admission`, `test_role_capsule_compiler`, `test_role_instruction_corpus`, `test_task_projection`), all `unit-regression`, with the loader now silent at **243 files / 0 overrides** and the six asserted to collect (**198** unit, **0** integration). Recorded the per-row lane reasoning, the `S-D9-lane-row-removed` seed that makes the loader **refuse by name**, and the method lesson from this leaf: **the registry digest must be asked of the product, never rebuilt by hand** (a hand-rebuilt `bfbd21af…` described the script's own rendering; the product's value is `61f9fba8…`). **Re-anchored every range in this card**, because the row insertions in three places moved them: 44 occurrences of a changed range were corrected to the line that now carries the named module or lane. Two `style.update_history.history_order` findings on this card are **not repaired here and must not be**: they are the cross-leaf stamp collision the ledger records as structural — each curator stamps with its own clock, so entries written into this *shared* card by two leaves can sort a later stamp below an earlier one, and satisfying the checker would need an invented future stamp, which the rules forbid. Every earlier entry, including L15's and L17's, is preserved as the dated record it is; no other leaf's entry was re-stamped or reordered.
 
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded this leaf's **one** added row

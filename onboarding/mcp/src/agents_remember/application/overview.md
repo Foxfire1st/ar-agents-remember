@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-17T09:55+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastUpdated            | 2026-09-17T19:30+02:00 |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -184,6 +184,34 @@ Three facts a reader of this route needs:
 | The declared exports that make the new names this route's public surface. | `CapsuleSeatAddress`; `routed_admission_for` | mcp/src/agents_remember/application/skill_resources/__init__.py:20-31; mcp/src/agents_remember/application/skill_resources/__init__.py:66-95 |
 | The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. | `role_capsule_compile_tool`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` | mcp/src/agents_remember/application/skill_resources/operation.py:1-120; mcp/tests/test_capsule_launch_wiring.py:975-1022 |
 | The two production launch points that reach this member through the port. | `_spawn_launch_request`; `_open_terminal_response`; `resolve_launch_capsule` | mcp/src/agents_remember/application/terminal_tools.py:740-784; mcp/src/agents_remember/serving/_app_terminal_routes.py:239-348; mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
+
+## 260915-CAPS-L20 The Gate A Dead Declaration Now Reaches
+
+This route's `memory_quality/controller.py` gained one consumer this leaf, and the consumer is the
+point of the change rather than a detail of it.
+
+`_attach_curator_checklist` now calls the memory-quality route's new
+`check_governing_overview_resolution(scope.onboarding_root)` and publishes its summary on the
+operation **response** under `governingOverviewResolution`: five counters, the findings, and the
+observations. The findings then join the gated set through
+`repair_findings.extend(row.to_dict() for row in governing_overviews.findings)` — `.findings`, never
+`.observations` — so a dead governing declaration reaches the curator's completion loop instead of
+being reported clean. That is `D3`/`D16`'s actual defect: the product checked that a source has a card
+and never that the card's declared route resolves.
+
+Two placements in the published summary are deliberate. It is attached to `response` rather than to
+`payload`, because `response` is composed from `**payload` before this function runs and a key added
+to `payload` here would never be published. And it stays out of `response["checks"]`, because that
+mapping is the closed `AVAILABLE_CHECKS` population the certification catalog is validated against,
+so a key outside that population would be a catalog item with no planned identity.
+
+**The reach, stated with its condition.** The consumer that binds today is the curator's completion
+loop: the full contract-scoped operation — `publish_curator_report` requires no `checks` subset —
+publishes the count the curator iterates against. The closeout-admission consumer is the designed one
+and sits behind `D32`: the readiness comparison lives inside `require_current_curator_coherence`,
+which the checklist consults only after the raw status reaches `ready-for-closeout`, and no leaf on
+this master has ever reached it. Both statements are true; stating only the first would overstate
+today's reach and stating only the second would understate the fix.
 
 ## Purpose
 
@@ -736,6 +764,7 @@ longer the only caller, and neither half should be read as the other.
 
 ## Update History
 
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: added the section above — `memory_quality/controller.py` now consumes the new governing-overview check and extends its findings into the gated repair set, with the publication placements (`response`, not `payload`; outside the closed `AVAILABLE_CHECKS` mapping) recorded as deliberate. Verification metadata advanced to this leaf's frozen code base.
 - 2026-09-17T11:40+02:00 — 260915-CAPS-L14 curator: recorded this route's share of the leaf's change. `application/prepared_certification.py` (one of this leaf's 13 modified tracked paths) now acquires its citation source index through the new **`_admitted_source_index`**, which converts a `SourceIndexError` into a named `CertificationContractError` (`citation-source-index-unavailable`) carrying the cause and the operator move — so the closeout gate cannot be bricked by an index it did not choose, while satisfiable caps still skip and report. `application/memory_tools.py` gained `_citation_trees` and the `excludes` field on `CitationOperationScope`, the one construction point that carries a caller's own excludes plus the memory layer's settings into all four citation operations. Added the two reference rows above. Also **moved the `prepared_certification.py` file card** to this route: the source left `worktrees/integration/closeout/` in `806649b9` and the card had been left behind, so it resolved to a file that no longer exists. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 - 2026-09-17T09:55+02:00 — 260915-CAPS-L15 curator: **the produce side gained the production caller this
   route recorded as missing, so the body was corrected rather than annotated.** The L7 section's closing

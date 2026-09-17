@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/kernel/eve_runtime_readiness.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
-| governingOverview | `../../overview.md` |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
+| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
-[MCP package overview](../../overview.md)
+[MCP package overview](../../../overview.md)
 
 ## Purpose
 
@@ -138,6 +138,7 @@ application under `eve_runtime/`, built on the pinned third-party `eve` package.
 
 ## Update History
 
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **both governing declarations repaired.** The field named `../../overview.md` and the body link named `../../overview.md`; each resolved card-relatively to nothing, and they did not agree with each other. Both now name `../../../overview.md`, the route-local overview of this card's own directory. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
 - 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: created this card for a file added by the eve
   product-integration change set. Records the readiness predicate (application root plus a usable Node
   at or above the floor), the order that makes a refusal name the first real failure, the bounded

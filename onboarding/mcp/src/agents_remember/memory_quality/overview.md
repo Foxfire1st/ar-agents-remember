@@ -5,15 +5,51 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastUpdated            | 2026-09-17T19:30+02:00 |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260915-CAPS-L20 The Dead Governing Declaration Becomes Visible
+
+This route gained the check that closes `D3`/`D16`'s product gap, and gained it in the same shape as
+the route's other integrity checks: a read-only module that reports, plus a wiring that makes the
+report reach the loop a curator completes against.
+
+`integrity/governing_overview_resolution.py` resolves every card's declared governing overview and
+reports the ones that do not. Until this leaf the product validated that a source **has** a card and
+never that the card's declared route **resolves**, so a card whose `governingOverview` field — or
+whose `## Governing Overview` body link — pointed at a file that does not exist passed every check the
+product runs. Two declarations are graded per card, and they are graded **independently**, because a
+card can be broken in both and reporting only the first one found would understate the family. The
+field is tried under three bases (the card's own directory, the onboarding root, and the root's
+parent) because two authoring conventions ship; the body link is held to the card-relative resolution
+a reader clicking it actually gets.
+
+A card that declares the field but carries no body link to resolve — no `## Governing Overview`
+section at all, or a section with no markdown link in it — is **observed, not failed**, and `ok` is
+derived from the findings tuple alone. That boundary is doctrine rather than convenience: making those
+cards gated would create 96 new obligations layer-wide, so this leaf reports the shape and declines to
+decide it.
+
+The check's own discrimination is pinned by
+`tests/test_governing_overview_resolution.py`, whose single case seeds both dead declaration forms
+beside a clean card and both observation forms **in the same tree**, so a checker that flagged
+everything could not pass. The wiring is pinned separately, in `test_memory_quality_runs.py`, because
+the silence was the defect: a correct checker whose findings never reach `repair_findings` still
+reports clean.
+
+**What the route's own curator reads.** `application/memory_quality/controller.py` publishes
+`governingOverviewResolution` on the operation response and extends its findings into the gated
+curator repair set, so the count a curator iterates now moves when a declaration is dead. The
+closeout-admission consumer is behind `D32` — the readiness comparison is only reached once the raw
+status is `ready-for-closeout`, which no leaf on this master has reached — and that condition belongs
+in any statement of the fix's reach.
 
 ## Purpose
 
@@ -75,7 +111,7 @@ dependency on the closeout plane.
   non-certifying `finalFullCatalog` readiness projection through the application controller;
   the certification API requires the R21 certificates and R07 affected-closure plan for green.
   No production closeout caller currently supplies those inputs or invokes that API.
-- `style/update_history/` checks that onboarding `## Update History` bullets
+- `style/update_history/` checks that onboarding `## Update History
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
 
@@ -514,6 +550,7 @@ dependency.
 
 ## Update History
 
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: added the section above and recorded this route's share of the leaf — the new `integrity/governing_overview_resolution.py` check, its two-base resolution rule, its observation boundary, the wiring that carries its findings into the gated curator repair set, and the `D32` condition on the closeout-admission consumer. Verification metadata advanced to this leaf's frozen code base.
 - 2026-09-17T11:20+02:00 — 260915-CAPS-L14 curator: added **The Shared Exclusion Register, And The Ruled Caps** as a current-intent section, because this leaf makes the register a contract on this route rather than a detail. Records the three sources feeding one register and where each lives, the `matches_any` semantics shared with the storage resolver and the drift check, the register's **deliberate and pinned divergence from Git** on a negated file under an excluded directory, the developer's 2026-08-20 cap numbers with the skip-and-report rule (never a silent omission, never a whole-tree refusal), the refusal-by-name discipline for a malformed `onboarding.citationIndex`, and the closeout gate's own typed refusal through `_admitted_source_index`. Corrects the **stale `schema-9` claim** in *Exact Git Candidate Source-Index Composition* to the v10 manifest that now carries the register and states that a v9 manifest is refused and rebuilt, and adds the one-authority-per-root parity between the two acquisition routes. Repointed the *L34 Preparation Ownership* link to the card's real home after the adapter's second move (`806649b9`) to the application rank. Records that the register, the caps and the settings key are **mode-independent**. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented cache-independent candidate pair identity and citation content snapshots. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.

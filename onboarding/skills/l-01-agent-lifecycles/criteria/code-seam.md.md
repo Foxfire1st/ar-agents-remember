@@ -6,13 +6,13 @@
 | path | `skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `overview.md` |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[skills/l-01-agent-lifecycles overview](overview.md)
+[skills/l-01-agent-lifecycles overview](../overview.md)
 
 ## Purpose
 
@@ -81,6 +81,7 @@ No meaningful cross-repo references found.
 
 
 ## Update History
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **both governing declarations repaired.** The field named `overview.md` and the body link named `overview.md`; each resolved card-relatively to nothing, and they did not agree with each other. Both now name `../overview.md`, the route-local overview of this card's own directory. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.

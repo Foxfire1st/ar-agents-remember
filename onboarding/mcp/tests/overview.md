@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `621db8981aba09a6f17880d2138cf76a37332c6c` |
-| lastVerifiedCommitDate | 2026-09-17T15:54:01+02:00|
+| lastUpdated            | 2026-09-17T19:30+02:00 |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
 
@@ -155,6 +155,34 @@ honest.
 | The two independent-SDK-client exchanges, including both extension methods and the `-32602` refusal. | `test_a_real_client_and_server_exchange_over_the_installed_sdk`; `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1195-1195; mcp/tests/test_capsule_serving.py:1268-1268 |
 | The case that keeps the seeded-mutation evidence honest. | `test_the_mutation_harness_can_actually_fail` | mcp/tests/test_capsule_serving.py:1301-1301 |
 | The lane row that selects this module into the unit population. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:19-19 |
+
+## 260915-CAPS-L20 The Governing-Overview Guard And Its Wiring
+
+This route gained one module and one case, and they protect two halves of one defect that were
+separately invisible.
+
+`tests/test_governing_overview_resolution.py` guards
+`memory_quality/integrity/governing_overview_resolution.py`'s **discrimination**. Its single case
+seeds, in one temporary tree, a card with a live field and a dead body link (`D3`'s shape), a card
+whose field resolves under no base and which is broken in the body too (`D16`'s shape — the card the
+per-declaration rule exists for), and both observation shapes, beside a clean card and a route
+overview that must stay green. It asserts the **identity** of the finding set as `(card, code)` pairs
+rather than a total, because a count cannot show that both representations were reported, and it
+asserts `unresolvedField` and `unresolvedLink` separately so a first-match-wins regression cannot hide
+behind a sum. It also pins the walk population, so a widened root would red it.
+
+The second half lives in `tests/test_memory_quality_runs.py`, because the silence was the product
+defect: `test_a_dead_governing_overview_reaches_the_gated_repair_set` drives
+`_attach_curator_checklist` with a real onboarding tree holding one card whose body link resolves to
+nothing, and asserts the finding arrives in the gated repair set the curator's loop reads — its code
+exactly `["governing-overview-link-unresolved"]`, and the published `unresolvedLinkCount` beside it. A
+correct checker whose findings never reach `repair_findings` still reports a clean
+`curatorActionableCount`, which is exactly how 41 dead declarations passed every gate.
+
+Both new modules are registered in this route's `test-evidence-lanes.toml`, so the fail-closed lane
+loader stays complete: the new test module is its own row, and the extended module keeps its existing
+one. The unit population moved 11 → 12 cases in `test_memory_quality_runs.py` and gained this leaf's
+one new module case — a net **+2** against the leaf's measured base.
 
 ## Purpose
 
@@ -1231,6 +1259,7 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: added the section above — the route's new governing-overview guard and the wiring case beside it, the two halves of one defect, plus the lane row that keeps the fail-closed loader complete. Verification metadata advanced to this leaf's frozen code base.
 - 2026-09-17T16:02+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): **this route's `D9` residual is closed.** L11 registered the six historical modules the fail-closed loader had been naming — `test_eve_adapter`, `test_eve_protocol`, `test_role_capsule_admission`, `test_role_capsule_compiler`, `test_role_instruction_corpus`, `test_task_projection` — all `unit-regression`; the loader now returns `LANE-REGISTRY-OK 243 0` and each module collects (198 unit / 0 integration). The new section above records that, the `S-D9-lane-row-removed` seed proving the rows are load-bearing, and the route-level lesson that a manifest fingerprint must be asked of the product rather than rebuilt by hand. This entry exists because the route body itself changed: the three governed sources on this route (`test-evidence-lanes.toml`, `test_capsule_launch_wiring.py`, `test_role_capsule_admission.py`) all moved, and an external-memory refresh requires updated route content rather than a metadata-only stamp. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. The earlier entries below are left exactly as written, including L10's and L19's field-model entries, whose ordering is a dated record rather than an assertion of current doctrine.
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`)** in the CAPS-L18 section — `ready-for-closeout` is never a value of the combined `checklistStatus`; the curator repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). **No test-surface change:** this leaf's code delta is zero, it adds no module and touches no lane row, so this route's population, its budgets and its `D9` residual are unchanged (`D9` remains L11's six historical modules). Verification metadata is left alone: the candidate is uncommitted and the governed closeout stamps the real code commit.
