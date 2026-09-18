@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
-| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
+| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
+| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -143,7 +143,29 @@ The following current source owns the changed behavior; no external domain sourc
 | --- | --- | --- |
 | Door source facts use current Git and task authority. | `_declare_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:381-475 |
 
+## 260915-KS-L15 The Assessment Evidence Destination
+
+This route gains one module: `curator_assessment_evidence.py`, which owns the one destination an
+assessment's cited bytes publish to, `<task_root>/notes/reports/evidence/<assessment_id>/<filename>`,
+and the read-back that proves they survived. Three properties chose that destination and each is a
+measurement rather than a preference: it is the shipped durable precedent for exactly this property
+(the curator-coherence authority's own route onto the coordination task root), it is **outside** the
+worktree group terminal cleanup removes, and the terminal enclosure archive **cannot** hold it — that
+archive's scanner admits a fixed artifact set and refuses an unclassifiable canonical-root file.
+
+The publication path was extended in the same leaf:
+`curator_coherence_publication.py` gained `_exact_review_assessments`, which stamps authorship from the
+**authenticated caller** rather than from submission text, and `_published_evidence_bytes`, which
+publishes each cited byte and then opens every one again by its recorded path and digest before it
+returns. A failed read-back is a blocked terminal state carrying the destination, the expected digest
+and the observed state; it is never repaired by a second copy, never re-homed into the terminal
+archive, and never reported as published. `curator_coherence.py` gained the read projection and the
+record-side edge recomputation. The shipped exact-coverage obligation is untouched: the assessment
+collection is content beside `judgments`, and publishing one does not disturb it.
+
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `curator_assessment_evidence.py` and two publication extensions; the body records the evidence-byte destination and its three measured reasons, the read-back that makes survival proven rather than asserted, and that the shipped exact-coverage obligation is untouched. The reference rows were re-derived from the current files: `require_current_curator_coherence` is `:327-385` and `curator_coherence_evidence` `:487-488`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+
 - 2026-09-18T03:30+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded, for this route's nearest-governed change, that `prepare` composes its summary from the request model's publication declaration and therefore states the complete `publish` input set — the judgments, all nine members, and the two identities it does not derive — instead of only the judgments. The section states the defect that produced (`notes/DISCLOSURES.md` D-11, where the undocumented members were reported twice as an impassable tool defect), that the text is derived rather than copied, and that nothing else in the module changed: `prepare` invents no identity and `_publish` is untouched. Only the preparation/publication material in this route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.

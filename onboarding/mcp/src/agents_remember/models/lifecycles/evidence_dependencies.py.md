@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
+| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ cit:([`build_evidence_dependencies`, `require_evidence_dependencies`], mcp/src/a
 while treating edges to records outside the supplied set as external roots — no historical file scan
 cit:([`validate_evidence_dependency_graph`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:287-322).
 `dependency` and `canonical_sha256` are the two builder helpers every domain uses to construct edges
-cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-223; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-329).
+cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:243-252; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358).
 
 ### Conventions
 
@@ -110,7 +110,26 @@ No separate cross-repository implementation claim is made.
 | --- | --- | --- |
 | No external implementation source applies. | — | — |
 
+## KS-R15@v1 Assessment Policy And The Coherence Record's Own Edge
+
+Two entries changed, and neither widens the closed kind vocabulary. The kind `review-record` already
+existed here; what this leaf adds is the **permission** for the `curator-coherence/v1` policy to use
+it. That permission is what lets the coherence record declare a typed edge to each stored assessment,
+so a reader can resolve an assessment from the record without parsing a payload. The record's own edge
+to the assessment is the only direction: the assessment does not declare the record it lives in,
+because a record citing itself is the self-invalidating sequence the design exists to avoid.
+
+The new `review-assessment/v1` policy requires exactly the inputs `KS-R15@v1` §5.1 enumerates and
+nothing else: `candidate-state` is the exact knowledge snapshot identity, `code-tree` and the optional
+`memory-tree` are the source trees, `semantic-topology` is the registered-scope manifest,
+`task-intent` is the task/requirement identity pair, `evidence-bytes` is the cited bytes, and
+`validator` is the resolver/policy version pair. `review-record` is deliberately **not** required
+there, for the direction reason above. This entry therefore adds one policy and no kind, which is the
+additive kind of change a new record type is supposed to make in this module.
+
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): **re-read this card against the changed source and recorded the two entries the leaf added.** The `curator-coherence/v1` policy gained the `review-record` optional **permission** (the kind already existed) so the coherence record can declare a typed edge to each stored assessment, and a new `review-assessment/v1` policy requires exactly the clause-five inputs. The body above states both, states that no kind vocabulary was widened, and states why `review-record` is deliberately not required inside the assessment. The reference rows this card carries were re-derived from the current file while re-reading it, because the leaf's insertions moved every anchor below them: `EvidenceDependencies` is now `:99-119`, `dependency` `:243-252`, `require_evidence_dependencies` `:267-302` and `canonical_sha256` `:354-358`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Retired the ledger-provenance kind and mandatory closeout-door edge. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

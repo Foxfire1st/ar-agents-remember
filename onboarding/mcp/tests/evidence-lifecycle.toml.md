@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
+| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `overview.md` |
 
@@ -270,7 +270,7 @@ Source declarations and test assertions are distinguished from execution and acc
 | **The node that makes that contract's closedness claim real: a WAL-resident batch is published whole while a main-file copy is not.** | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 |  The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-73  |
 | The one-to-one card for the batch harness, which records what it builds through the real seam. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:1-40 |
-| The snapshot harness card, which records the registered owner and the exact consumer set. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1111-1111; mcp/tests/evidence-lifecycle.toml:1119-1119; mcp/tests/evidence-lifecycle.toml:1127-1127; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
+| The snapshot harness card, which records the registered owner and the exact consumer set. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1112-1112; mcp/tests/evidence-lifecycle.toml:1119-1119; mcp/tests/evidence-lifecycle.toml:1127-1127; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
 | The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools" | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
 
 ## Cross-Repo References
@@ -282,7 +282,21 @@ No additional configured external or sibling-repository evidence is claimed.
 | --- | --- | --- |
 | No additional configured cross-repository evidence. | — | — |
 
+## KS-R15@v1 Consumer Row
+
+One consumer row was added: `mcp/tests/test_curator_review_assessment_publication.py` is now declared a
+consumer of the shared support module owned by `curator-coherence-test-port`. No contract and no
+artifact was added, so the catalogue's counts are unchanged at 13 contracts and 54 artifacts while its
+digest moves — the guard validates that direction explicitly, and the pin lives in
+`mcp/tests/test_dependency_ownership_ast_helpers.py`.
+
+The insertion shifted every line below it by one, so the contract and artifact rows this card cites
+were re-derived from the current file: `id = "knowledge-snapshot-lifecycle-cases"` is at `:1112`,
+`contract:knowledge-diff-cases` at `:1274` and `contract:knowledge-read-scope-cases` at `:1294`.
+
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): **re-read this card against the changed manifest and recorded the one consumer row the leaf added.** `mcp/tests/test_curator_review_assessment_publication.py` is now a declared consumer of the shared support module owned by `curator-coherence-test-port`; no contract and no artifact was added, so the counts stay at 13 contracts and 54 artifacts while the digest moves, and the pin lives in `mcp/tests/test_dependency_ownership_ast_helpers.py`. The insertion shifted every line below it by one, so the contract and artifact rows cited in this card were re-derived from the current file: `id = "knowledge-snapshot-lifecycle-cases"` is at `:1112`, `contract:knowledge-diff-cases` at `:1274` and `contract:knowledge-read-scope-cases` at `:1294`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+
 - 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): recorded the **consumer change that is this leaf's whole catalog footprint**, and re-measured the file rather than carrying the previous numbers. The new Purpose paragraph states it plainly: two `consumers` rows (`mcp/tests/test_knowledge_detection_runs.py` at `:1278` on `diff_scope_test_support.py` and at `:1298` on `read_scope_test_support.py`), **no new contract, no new artifact**, populations unchanged at **13 contracts / 54 artifacts**, and the deliberately re-pinned catalog digest `c6956899947b0435e5cdd8cd77ba3121db77e3dbf4676bee11406c3baf03ec68` with the reason written beside the constant in `test_dependency_ownership_ast_helpers.py` rather than widened to force a green run. It also records the measured file sha256 on this candidate and that the two consumer rows are the whole of the byte change, so a later reader can check the claim by re-hashing. The older per-leaf counts in the Purpose remain as the different states of one merged line they are. Verification metadata advances to the leaf's base commit `4264dcc9` because the body was re-read against the current catalog; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): measured the catalog rather than carrying the L8 numbers — **54 artifacts and thirteen contracts** (`54 [[artifact]]`, `13 [[contract]]`), with the file's sha256 re-measured as `19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa` — against **53 / 12** at `KS-L10` (`9b057632…`) and **52 / 11** at `KS-L8`. It records the one contract/artifact pair this leaf added — `knowledge-facet-cases` for `mcp/tests/facet_test_support.py`, `unit-regression` / `in-process`, with exactly one declared consumer, `mcp/tests/test_knowledge_facets.py` — and the wording-only change to the existing `knowledge-generation-cases` row, whose source and permanence statements now describe every registered generation instead of generation 1 alone. The three-registry-touch-point rule the card states is paid in full for the new module (lane row, its path in the artifact's own consumers list, and the catalog re-pin). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 

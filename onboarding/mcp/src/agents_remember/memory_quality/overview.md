@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
+| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -75,7 +75,28 @@ dependency on the closeout plane.
   non-certifying `finalFullCatalog` readiness projection through the application controller;
   the certification API requires the R21 certificates and R07 affected-closure plan for green.
   No production closeout caller currently supplies those inputs or invokes that API.
-- `style/update_history/` checks that onboarding `## Update History` bullets
+- `style/update_history/` checks that onboarding `## 260915-KS-L15 The Factual Knowledge-Review Section
+
+This route gains a new module and one new section in its existing artifact, and the route's governing
+boundary is stated once here because it is the property a later reader is most likely to get wrong:
+**the `knowledgeReview` section is report-only.** `memory_quality/knowledge_review.py` renders it;
+`curator_checklist.py` gained one defaulted input field and appends the rendered lines after the
+report-only findings; and none of it reaches `actionable_count`, which is still
+`len(repair) + len(missing) + len(stale)`. An unresolved, stale or partial-scope assessment changes the
+section's counted limitations and changes nothing about the gate, the status line, or the arithmetic
+the attestation binds.
+
+The section renders into the **same** `curator-memory-quality.md` artifact the shipped renderer already
+atomically replaces, so this route still has one checklist, one attestation and one count. Its three
+limitation codes are facts about the collection — `unresolved` counts authors who could not conclude,
+`stale` counts bindings that moved, `partial-scope` counts records with no comparison or scope
+reference — and a subject with no assessment is not rendered as a disposition at all.
+
+The route also carries a capacity fact recorded rather than worked around:
+`mcp/tests/test_final_full_memory_coherence_certification.py` stands at 1199 of its 1200-line limit
+after this leaf's re-scope, so the next leaf that must edit it has to split it first.
+
+## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
 
@@ -397,7 +418,7 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
-| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:553-553 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:565-565 |
 | Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
 
 ## Exact Git Candidate Source-Index Composition
@@ -445,6 +466,7 @@ dependency.
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `knowledge_review.py` and one defaulted input plus one rendered section in `curator_checklist.py`; the section is **report-only** and the arithmetic is unchanged, which the body now states where the module's own comparison sentence lives rather than leaving it to a reader to infer. The reference rows were re-derived from the current files: `_append_drift` is `:319-350`, `_render` `:204-266`, `write_curator_checklist` `:100-180`, `_tracked_onboarding_paths` `:183-189`, and the controller rows moved to `:317-337`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented cache-independent candidate pair identity and citation content snapshots. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
