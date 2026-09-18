@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover_authority.py`           |
 | doc_type               | `file-level-onboarding`                                          |
 | lastUpdated            | 2026-07-31T00:00+02:00                                           |
-| lastVerifiedCommitHash |                                                                  `b281bcd68261866be306cc80a48241921b6dd0d2`|
-| lastVerifiedCommitDate |                                                                  2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash |                                                                  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate |                                                                  2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                                           |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ grounded in the package settings parser, this raw preflight, and its current app
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority. | `_apply_carryover_for_request`, `_refresh_target_route_indexes` | mcp/src/agents_remember/memory/carryover.py:636-670; mcp/src/agents_remember/memory/carryover.py:759-852 |
+| The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority. | `_apply_carryover_for_request`, `_refresh_target_route_indexes` | mcp/src/agents_remember/memory/carryover.py:636-670; mcp/src/agents_remember/memory/carryover.py:759-852; mcp/src/agents_remember/memory/carryover.py:701-794 |
 | The raw preflight exposes the required target storage authority. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 
 ## Cross-Repo References

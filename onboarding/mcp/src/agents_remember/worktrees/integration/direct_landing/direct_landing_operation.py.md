@@ -80,8 +80,8 @@ the current working-candidate behavior; historical entries below retain their or
 | --- | --- | --- |
 | The runtime validates and publishes progress, completion, and input-required evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
 | Request-owned generation construction and memory-only output reconciliation. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py) |
-| Recovery cells are derived from authoritative mutation evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py](mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py) |
-| The classifier supplies exact memory output evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+| Recovery cells are derived from authoritative mutation evidence. | "from authoritative mutation evidence" | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:1-1 |
+| The classifier supplies exact memory output evidence. | `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
 
 ## Cross-Repo References
 

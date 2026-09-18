@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_eve_capsule_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ was available for this file.
 | The role authority table the write-surface cases assert against. | `ROLE_WRITE_SURFACES`; `write_scopes_for`; `WORKER_WRITE_SURFACES`; `CURATOR_WRITE_SURFACES` | mcp/src/agents_remember/application/eve_capsule/__init__.py:79-93; mcp/src/agents_remember/application/eve_capsule/__init__.py:327-365 |
 | The fixture world supplying the real repositories, worktrees, corpus and task documents. | `FixtureWorld`; `build_world` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:457-549 |
 | The runtime cases that execute the shipped TypeScript for the same seam, which no Python case can observe. | `test_runtime_verifier_refuses_each_declared_defect` | mcp/tests/test_eve_capsule_runtime.py:267-288 |
-| The live native fixture that proves the same binding against a real eve process. | `capsule-binding` scenario | mcp/tests/live_eve_native_fixture.py |
+| The live native fixture that proves the same binding against a real eve process. | "capsule-binding" | mcp/tests/live_eve_native_fixture.py:1137-1137 |
 
 ## Cross-Repo References
 

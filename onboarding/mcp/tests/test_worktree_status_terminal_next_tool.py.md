@@ -97,7 +97,7 @@ surface (`TaskDocResponse.model_validate(...).nextTool == "session_retire"`).
 | The advertised roster the validator enforces membership against. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
 | The terminal-archive refusal producer that makes the protected state reachable. | `terminal_archive_required_result` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:86-150 |
 | The projector whose write this file protects. | `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:463-505 |
-| The non-public name that must stay non-public on the worktree surface, and the registry row that still registers it. | "\"session_retire\","; "\"session_retire\": SessionRetireResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:134-134; mcp/src/agents_remember/models/tools/tool_registry.py:158-158 |
+| The non-public name that must stay non-public on the worktree surface, and the registry row that still registers it. | "\"session_retire\","; "\"session_retire\": SessionRetireResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:134-134; mcp/src/agents_remember/models/tools/tool_registry.py:158-158; mcp/src/agents_remember/models/tools/tool_registry.py:140-140; mcp/src/agents_remember/models/tools/tool_registry.py:164-164 |
 
 ## Cross-Repo References
 

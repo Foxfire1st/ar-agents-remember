@@ -96,7 +96,7 @@ The current source seams include `parse_json_stdout`, `command_status`, `command
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | n/a | [mcp/src/agents_remember/worktrees/modules/cli.py](mcp/src/agents_remember/worktrees/modules/cli.py) |
+| The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | `command_status` | mcp/src/agents_remember/worktrees/modules/cli.py:37-40 |
 
 ## Cross-Repo References
 

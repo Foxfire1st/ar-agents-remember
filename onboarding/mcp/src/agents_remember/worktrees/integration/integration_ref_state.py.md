@@ -57,9 +57,9 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Observed objects and public conflict/interruption payloads. | n/a | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
+| Observed objects and public conflict/interruption payloads. | `observed_objects` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:156-156 |
 | Exact accepted/intended state classification uses the actual memory output. | n/a | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
-| Canonical ref reading preserves stable failure categories. | n/a | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
+| Canonical ref reading preserves stable failure categories. | `_read_ref` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:171-205 |
 
 ## Cross-Repo References
 

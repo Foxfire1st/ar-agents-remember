@@ -94,10 +94,10 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The driver validates choices and routes retained or new transactions. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
-| Dirty work admission and parking use complete typed side records. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
+| Dirty work admission and parking use complete typed side records. | `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:632-638 |
 | Currentness and continuation use Git facts and content-only conflicts. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction.py](mcp/src/agents_remember/worktrees/sync_transaction.py) |
 | The delegated Git owner excludes only the memory cache while retaining exact native merge proofs. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
-| Pinned authority and parked-work restoration remain separate owners. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Pinned authority and parked-work restoration remain separate owners. | `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
 | Terminal finalization/cancellation and damaged-journal recovery are delegated. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_recovery.py](mcp/src/agents_remember/worktrees/sync_transaction_recovery.py) |
 
 ## Cross-Repo References

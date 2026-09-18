@@ -120,7 +120,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The implementation produces/reuses memory content before refreshing its cache. | n/a | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
+| The implementation produces/reuses memory content before refreshing its cache. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
 
 ## R39 Design Evidence Disposition
 

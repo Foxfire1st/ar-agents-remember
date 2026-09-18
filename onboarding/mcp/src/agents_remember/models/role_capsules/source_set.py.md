@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/source_set.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -30,13 +30,13 @@ for, so the check could not fail.* Instead the plan is locked first
 (cit:([`CapsuleDeclaredInstruction`], mcp/src/agents_remember/models/role_capsules/sources.py:32-49)), the admitted paths are supplied explicitly, and
 cit:([`admit_source_set`], mcp/src/agents_remember/models/role_capsules/source_set.py:91-108) proves the two agree both ways through five gates:
 
-| Gate | Direction | Refuses |
-| --- | --- | --- |
-| cit:([`_require_manifest_admitted`], mcp/src/agents_remember/models/role_capsules/source_set.py:109-136) | manifest → admitted | the manifest itself was not admitted |
-| cit:([`_require_identities_agree`], mcp/src/agents_remember/models/role_capsules/source_set.py:137-173) | admitted → declared | a path admitted as an identity the manifest does not route it from, or read from the wrong composition root |
-| cit:([`_require_declared_present`], mcp/src/agents_remember/models/role_capsules/source_set.py:174-194) | manifest → admitted | a path the manifest routes **to** that was never admitted — the missing mandatory block |
-| cit:([`_require_declared_skills_present`], mcp/src/agents_remember/models/role_capsules/source_set.py:195-228) | manifest → admitted | a **declared skill whose root file was never admitted**, so its revision would be a fiction |
-| cit:([`_require_specializations_admitted`], mcp/src/agents_remember/models/role_capsules/source_set.py:229-250) | binding → admitted | a repository specialization selected without being admitted on the binding |
+| Gate | Source | Direction | Refuses |
+| --- | --- | --- | --- |
+| `_require_manifest_admitted` | mcp/src/agents_remember/models/role_capsules/source_set.py:109-136 | manifest → admitted | the manifest itself was not admitted |
+| `_require_identities_agree` | mcp/src/agents_remember/models/role_capsules/source_set.py:137-173 | admitted → declared | a path admitted as an identity the manifest does not route it from, or read from the wrong composition root |
+| `_require_declared_present` | mcp/src/agents_remember/models/role_capsules/source_set.py:174-194 | manifest → admitted | a path the manifest routes **to** that was never admitted — the missing mandatory block |
+| `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 | manifest → admitted | a **declared skill whose root file was never admitted**, so its revision would be a fiction |
+| `_require_specializations_admitted` | mcp/src/agents_remember/models/role_capsules/source_set.py:229-250 | binding → admitted | a repository specialization selected without being admitted on the binding |
 
 The skill gate is checked for **every declared skill, not only the selected seat's**, because a
 skill file is a declared source like any other and admitting an incomplete source set is the
@@ -92,7 +92,7 @@ No external or domain documentation is configured for this memory root
 | The compiler step that runs this validation before resolution. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:90-153 |
 | The YAML-free source of the declared plan: the parsed canonical manifest. | `parse_composition_manifest` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216 |
 | Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted. | `test_missing_mandatory_material_is_refused_rather_than_omitted`; `test_a_source_the_manifest_does_not_declare_is_refused`; `test_a_source_read_from_the_wrong_composition_root_is_refused`; `test_repository_specialization_must_be_admitted_on_the_binding` | mcp/tests/test_role_capsule_compiler.py:557-566; mcp/tests/test_role_capsule_compiler.py:567-573; mcp/tests/test_role_capsule_compiler.py:574-583; mcp/tests/test_role_capsule_compiler.py:584-591 |
-| **The declared-skill gate** and its two directions: an incomplete admitted set refuses, and a referenced-but-missing skill refuses. | `_require_declared_skills_present`; `test_a_skill_reference_whose_root_file_is_not_admitted_is_refused`; `test_a_source_set_with_no_admitted_bytes_is_refused` | mcp/src/agents_remember/models/role_capsules/source_set.py:195-228; mcp/tests/test_role_capsule_admission.py:1034-1057; mcp/tests/test_role_capsule_admission.py:939-964 |
+| **The declared-skill gate** and its two directions: an incomplete admitted set refuses, and a referenced-but-missing skill refuses. | `_require_declared_skills_present`; `test_a_skill_reference_whose_root_file_is_not_admitted_is_refused`; `test_a_source_set_with_no_admitted_bytes_is_refused` | mcp/src/agents_remember/models/role_capsules/source_set.py:195-228; mcp/tests/test_role_capsule_admission.py:1034-1057; mcp/tests/test_role_capsule_admission.py:939-964; mcp/tests/test_role_capsule_admission.py:1070-1091; mcp/tests/test_role_capsule_admission.py:975-998 |
 
 ## Cross-Repo References
 

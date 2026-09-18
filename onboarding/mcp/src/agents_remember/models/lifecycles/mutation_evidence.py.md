@@ -67,9 +67,9 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
 | The four-state vocabulary is closed and explicit. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| Snapshot identity includes reflog, index, candidate, and status facts. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| Snapshot identity includes reflog, index, candidate, and status facts. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
 | State-specific proof is model validated. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
 
 ## Cross-Repo References
@@ -88,7 +88,7 @@ The current source seams include `GitMutationSnapshot`, `GitMutationEvidence`. C
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
 
 ## Update History
 

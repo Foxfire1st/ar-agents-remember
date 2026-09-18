@@ -171,7 +171,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pending HEAD attribution requires a genuinely attributed ancestor and never reads the cache file. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py](mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py) |
+| Pending HEAD attribution requires a genuinely attributed ancestor and never reads the cache file. | `_mapping_pending_for_code_head` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:613-638 |
 | Defines the class `LocalSource`. | `LocalSource` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:102-108 |
 | Defines the class `Candidate`. | `Candidate` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:111-115 |
 | Defines the class `CurrentFiles`. | `CurrentFiles` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:118-125 |
@@ -186,14 +186,14 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `local_changes`. | `local_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:416-449 |
 | Defines the function `anchor_change`. | `anchor_change` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:452-508 |
 | Defines the function `dependency_changes`. | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:581-610 |
-| Defines the function `evaluate_claim` — now threads the document's lines to `surfaced_finding`. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py](mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py) |
-| Defines the function `check_onboarding_root` — Compare every complete claim against its own historical provenance, group each document's lines with its claims, and pass retained predecessor-chain anchors into `Histories`. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py](mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py) |
-| The generated `Update History` bullet header and range clause the projection writes and this check reads back. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py](mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py) |
-| The bounded scan for the bullets that record a mechanical repair of THIS claim's range. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py](mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py) |
-| The review item that stops asserting currency and asks the support question when a projected range is detected. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py](mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py) |
-| The review item that reads the generated bullets first and returns `error` for the projected variant and `warning` otherwise. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py](mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py) |
+| Defines the function `evaluate_claim` — now threads the document's lines to `surfaced_finding`. | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:657-700 |
+| Defines the function `check_onboarding_root` — Compare every complete claim against its own historical provenance, group each document's lines with its claims, and pass retained predecessor-chain anchors into `Histories`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:703-798 |
+| The generated `Update History` bullet header and range clause the projection writes and this check reads back. | "Update History" | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:80-82 |
+| The bounded scan for the bullets that record a mechanical repair of THIS claim's range. | `generated_repair_bullets` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:288-300 |
+| The review item that stops asserting currency and asks the support question when a projected range is detected. | `_projected_review_message` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:315-338 |
+| The review item that reads the generated bullets first and returns `error` for the projected variant and `warning` otherwise. | `surfaced_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:341-385 |
 | The generated bullet shape this check parses, and the section bound it scans within. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py](mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py) |
-| The executor that pins the enforced projected item, the fail-closed no-git-view path, and the unchanged warning for a non-projected change. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| The executor that pins the enforced projected item, the fail-closed no-git-view path, and the unchanged warning for a non-projected change. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:474-503 |
 
 
 ## Cross-Repo References

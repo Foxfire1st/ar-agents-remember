@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/source_index.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ None.
 | The walk's exclusion decisions, split so a directory rule and a file rule are asked separately. | `WalkScope`; `excluded_directory`; `excluded_file` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:864-887 |
 | The fallback walk that descends when a negation exists instead of pruning the directory. | `_walked_files` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:915-931 |
 | The authority recorded for the ignore file: Git applied it, the register did, or there is none. | `_gitignore_authority` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:934-950 |
-| The Git population this walk asks for, and the bounded executor it uses. | `run_git`; `GitRunnerOptions`; `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py |
+| The Git population this walk asks for, and the bounded executor it uses. | `run_git`; `GitRunnerOptions`; `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:150-214; mcp/src/agents_remember/kernel/git_command.py:116-129; mcp/src/agents_remember/kernel/git_command.py:95-95 |
 
 ### The register this walk consumes (260915-CAPS-L14)
 

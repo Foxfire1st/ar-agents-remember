@@ -77,11 +77,11 @@ contract is supported by the implementation and the authorized cache-retirement 
 | --- | --- | --- |
 | The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
 | The `$defs` block contains all reusable projection schema definitions. | `$defs` | dashboard/src/types/projection.schema.json:2-2 |
-| `ActionAvailability` declares reducer-decided action safety for the cockpit. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| `AgentPickupNode` declares a pending unacked dashboard response. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The generated `task-intent/v1` identity definition with closed schema and digest pattern. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
+| `ActionAvailability` declares reducer-decided action safety for the cockpit. | `ActionAvailability` | dashboard/src/types/projection.schema.json:3-46 |
+| `AgentPickupNode` declares a pending unacked dashboard response. | `AgentPickupNode` | dashboard/src/types/projection.schema.json:47-304 |
+| The generated `task-intent/v1` identity definition with closed schema and digest pattern. | "task-intent/v1" | dashboard/src/types/projection.schema.json:4125-4145 |
 | The optional task-intent reference on the lifecycle operation projection. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
+| The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. | `members` | dashboard/src/types/projection.schema.json:634-634 |
 
 ## L23 Source-Lineage Schema
 
@@ -114,7 +114,7 @@ authority to the dashboard or to the disposable closeout projection.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
-| The generated TypeScript mirror requires the legalControls array on its operation observation. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The generated TypeScript mirror requires the legalControls array on its operation observation. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Contract
 

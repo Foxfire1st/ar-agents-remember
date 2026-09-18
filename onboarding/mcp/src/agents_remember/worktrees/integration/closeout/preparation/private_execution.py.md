@@ -54,13 +54,13 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected leg must still match the retained intent. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
-| The private binding retains the exact selected parent, admitted tree, message, and owner. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
-| The capability reopens selection and actual private policy around commands. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
-| Original commands are selected and their observed terminals retained once. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
+| The selected leg must still match the retained intent. | `_selected_leg` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:37-46 |
+| The private binding retains the exact selected parent, admitted tree, message, and owner. | `private_git_binding` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:49-66 |
+| The capability reopens selection and actual private policy around commands. | `_capability` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:69-92 |
+| Original commands are selected and their observed terminals retained once. | `_terminal_record` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:95-115 |
 | Output observation proves the named committed object and current policy. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
 | Only an unstarted suffix runs; uncertain prior commands are retained for named-output recovery. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
-| The selected intent supports only code and memory-content output legs. | n/a | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
+| The selected intent supports only code and memory-content output legs. | `require_prepared_output_matches_intent` | mcp/src/agents_remember/models/lifecycles/preparation.py:380-414 |
 
 ## Cross-Repo References
 

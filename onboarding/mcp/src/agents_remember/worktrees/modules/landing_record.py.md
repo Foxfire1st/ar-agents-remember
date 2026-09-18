@@ -117,13 +117,13 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | n/a | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | `integration_strategy` | mcp/src/agents_remember/worktrees/worktree_contract.py:264-264 |
 | The landed facts this writer now takes as one frozen record. (`LandedIntegration`) | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
 | The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
 | The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:890-927 |
-| The pull-request route calls the same writer. (`record_landed_integration(`) | n/a | [mcp/src/agents_remember/worktrees/modules/record_landing.py](mcp/src/agents_remember/worktrees/modules/record_landing.py) |
+| The pull-request route calls the same writer. (`record_landed_integration(`) | "record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/record_landing.py:121-121 |
 | Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
-| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | n/a | [mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py](mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py) |
+| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276 |
 
 ## Cross-Repo References
 

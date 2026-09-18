@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_mode_removal.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:25+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l12`; code candidate landed as `b281bcd68261866be306cc80a48241921b6dd0d2` |
 | governingOverview | `../overview.md` |
 
@@ -112,7 +112,7 @@ migration-boundary and instruction-corpus assertions.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The three pinned properties, each named with the failure it prevents. | `"""The removed ``internal`` memory mode: refused by name, reported, never substituted.` | mcp/tests/test_memory_mode_removal.py:1-20 |
+| The three pinned properties, each named with the failure it prevents. | "memory mode: refused by name, reported, never substituted." | mcp/tests/test_memory_mode_removal.py:1-1 |
 | The expected supported set is written literally, not imported, so a vocabulary change must be made twice. | `EXPECTED_MODES` | mcp/tests/test_memory_mode_removal.py:90-90 |
 | The declared vocabulary holds no removed member. | `test_the_declared_vocabulary_has_no_removed_member` | mcp/tests/test_memory_mode_removal.py:119-122 |
 | A removed token is refused by name while an unknown token stays an invalid-argument error. | `test_require_supported_topology_keeps_unknown_tokens_distinct_from_the_removal` | mcp/tests/test_memory_mode_removal.py:137-142 |
@@ -125,7 +125,7 @@ migration-boundary and instruction-corpus assertions.
 | Both flag narrowers distinguish a typo from a removal. | `test_the_flag_narrowers_do_not_report_a_typo_as_a_removal` | mcp/tests/test_memory_mode_removal.py:673-685 |
 | Thirteen corpus and documentation surfaces are guarded against re-teaching the removed default. | `CORRECTED_SURFACES` | mcp/tests/test_memory_mode_removal.py:701-785 |
 | The generated skill copy must equal the canonical tree it is generated from. | `test_the_generated_skill_copy_carries_the_canonical_correction` | mcp/tests/test_memory_mode_removal.py:802-809 |
-| The module's evidence lane is declared under `unit-regression`. | `test_memory_mode_removal.py` | mcp/tests/test-evidence-lanes.toml:78 |
+| The module's evidence lane is declared under `unit-regression`. | "test_memory_mode_removal.py" | mcp/tests/test-evidence-lanes.toml:94-94 |
 | The module is declared in two evidence-lifecycle consumer lists. | `test_memory_mode_removal.py` | mcp/tests/evidence-lifecycle.toml:368 |
 
 ## Cross-Repo References

@@ -88,10 +88,10 @@ an unchanged interruption resumes the exact publication path without rerunning g
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Finalization order contains code, external memory, and contract publication only. | n/a | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| The exact-candidate observation is the admission boundary's owner-produced input. | n/a | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| Prior-red corrective and recovery records bind digests to semantic envelopes. | n/a | [mcp/src/agents_remember/models/certification/corrective.py](mcp/src/agents_remember/models/certification/corrective.py); [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | n/a | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
-| Certificate identities and creation provenance are imported from the R21 certificate owners. | n/a | [mcp/src/agents_remember/certification/certificate_models.py](mcp/src/agents_remember/certification/certificate_models.py) |
+| The exact-candidate observation is the admission boundary's owner-produced input. | `ExactCandidateObservation` | mcp/src/agents_remember/certification/lifecycle_models.py:46-79 |
+| Prior-red corrective and recovery records bind digests to semantic envelopes. | `PriorRedDispositionSemanticEnvelope` | mcp/src/agents_remember/certification/lifecycle_models.py:82-100 |
+| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | `_require_ordered_progress` | mcp/src/agents_remember/certification/lifecycle_models.py:220-240 |
+| Certificate identities and creation provenance are imported from the R21 certificate owners. | `CreationProvenance` | mcp/src/agents_remember/certification/certificate_models.py:77-82 |
 
 ## Cross-Repo References
 

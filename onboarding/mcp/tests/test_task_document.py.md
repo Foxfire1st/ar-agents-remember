@@ -67,7 +67,7 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The leaf-operation fixture's master prerequisite: every `_create` ensures a parent master exists before authoring its leaf, which is the authoring flow the plane allows. | `_create`; `_ensure_parent_master`; `_create_parent_master` | mcp/tests/test_task_document.py:476-496; mcp/tests/test_task_document.py:498-501; mcp/tests/test_task_document.py:503-520 |
+| The leaf-operation fixture's master prerequisite: every `_create` ensures a parent master exists before authoring its leaf, which is the authoring flow the plane allows. | `_create`; `_ensure_parent_master`; `_create_parent_master` | mcp/tests/test_task_document.py:476-496; mcp/tests/test_task_document.py:498-501; mcp/tests/test_task_document.py:503-520; mcp/tests/test_task_document.py:581-601; mcp/tests/test_task_document.py:608-625 |
 | Progress counts every declared parent and child | `test_progress_counts_every_declared_parent_and_child` | mcp/tests/test_task_document.py:126-146 |
 | Current step prefers active then first unfinished then none | `test_current_step_prefers_active_then_first_unfinished_then_none` | mcp/tests/test_task_document.py:148-159 |
 | Golden small light doc | `test_golden_small_light_doc` | mcp/tests/test_task_document.py:336-411 |

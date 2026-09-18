@@ -61,7 +61,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py) |
+| The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. | `PublicEvidencePair` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:15-18 |
 
 ## Cross-Repo References
 

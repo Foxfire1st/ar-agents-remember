@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T05:55+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ No configured Domain Documentation source applies; this is a repository-owned li
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | One admitted contract executes the coherence action and translates the complete domain family. | `curator_coherence_tool`; `_domain_refusal`; `_configured_refusal` | mcp/src/agents_remember/application/curator_coherence.py:19-37; mcp/src/agents_remember/application/curator_coherence.py:40-53; mcp/src/agents_remember/application/curator_coherence.py:56-77 |
-| Configured admission is the shared lower-level API rather than repeated exception lists. | `admit_configured_contract`; `execute_configured_contract_operation` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:314-323 |
+| Configured admission is the shared lower-level API rather than repeated exception lists. | `admit_configured_contract`; `execute_configured_contract_operation` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:314-323; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:391-400 |
 
 ## Cross-Repo References
 

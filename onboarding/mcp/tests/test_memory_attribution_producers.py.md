@@ -93,12 +93,12 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one-definition guard and explicit five-producer census. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The hostile-body case preserves the message and parses the final attribution. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The public carryover case verifies one commit and no extra repeat commit with absent cache. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The one-definition guard and explicit five-producer census. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-138 |
+| The hostile-body case preserves the message and parses the final attribution. | `test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final` | mcp/tests/test_memory_attribution_producers.py:141-163 |
+| The public carryover case verifies one commit and no extra repeat commit with absent cache. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:238-300 |
+| The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch` | mcp/tests/test_memory_attribution_producers.py:303-387 |
 | The kernel owns the key and the single writer. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| Closeout-shaped producers reach that writer through the effective input model. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Closeout-shaped producers reach that writer through the effective input model. | `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
 
 ## Cross-Repo References
 

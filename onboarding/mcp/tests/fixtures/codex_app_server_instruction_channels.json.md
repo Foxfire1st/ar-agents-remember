@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/codex_app_server_instruction_channels.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
-| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `../overview.md` |
 
@@ -67,8 +67,8 @@ No Domain Documentation entries are configured in the resolved source registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The per-request instruction fields are recorded, with `turn/start` deliberately empty. | `"instructionFields"` | mcp/tests/fixtures/codex_app_server_instruction_channels.json:5-19 |
-| The thread-open response's own observation field is recorded. | `"threadOpenResponseInstructionFields"` | mcp/tests/fixtures/codex_app_server_instruction_channels.json:20-22 |
+| The per-request instruction fields are recorded, with `turn/start` deliberately empty. | "\"instructionFields\"" | mcp/tests/fixtures/codex_app_server_instruction_channels.json:5-5 |
+| The thread-open response's own observation field is recorded. | "\"threadOpenResponseInstructionFields\"" | mcp/tests/fixtures/codex_app_server_instruction_channels.json:20-20 |
 | The fixture supplies the case that pins the delivered instruction parameter. | `test_instruction_channel_is_the_schema_supported_thread_open_field` | mcp/tests/test_codex_capsule_delivery.py:296-315 |
 
 ## Cross-Repo References

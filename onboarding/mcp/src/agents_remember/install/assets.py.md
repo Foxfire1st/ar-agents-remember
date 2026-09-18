@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/assets.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                      |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                      |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ a relative path against the current working directory before applying the prefix
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Runtime install uses packaged assets unless tests pass an explicit source root. | "def install_runtime_from_config("; "if request.source_root is not None:"; "with packaged_source_root() as packaged_root:" | mcp/src/agents_remember/install/runtime.py:556-589 |
+| Runtime install uses packaged assets unless tests pass an explicit source root. | "def install_runtime_from_config("; "if request.source_root is not None:"; "with packaged_source_root() as packaged_root:" | mcp/src/agents_remember/install/runtime.py:556-589; mcp/src/agents_remember/install/runtime.py:829-829 |
 | Skill installation reads package-owned runtime skills through the shared asset root. | `install_skills`; `packaged_source_root`; `skills_root` | mcp/src/agents_remember/install/skills.py:58-106; mcp/src/agents_remember/install/skills.py:72-73 |
 | Benchmark tooling resolves packaged benchmark cases through the same package-data root. | `benchmark_root_context`; `packaged_source_root` | mcp/src/agents_remember/benchmarks/runner_modules/roots.py:10-17 |
 

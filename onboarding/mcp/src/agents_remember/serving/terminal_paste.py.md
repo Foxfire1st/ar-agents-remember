@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
@@ -177,7 +177,7 @@ rows below are retained only as historical provenance for the superseded L3 mech
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Tier 3 preserved: the historical row says `spawn_agent_session` pastes a worker/draft context packet, but the current spawn contract returns `spawned-unbriefed` and refuses legacy context/submit inputs before durable brief delivery. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:764-873 |
-| `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | `api_terminal_paste`, "def _paste_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:532-532; mcp/src/agents_remember/serving/_app_terminal_routes.py:747-759 |
+| `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | `api_terminal_paste`, "def _paste_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:532-532; mcp/src/agents_remember/serving/_app_terminal_routes.py:747-759; mcp/src/agents_remember/serving/_app_terminal_routes.py:791-803; mcp/src/agents_remember/serving/_app_terminal_routes.py:576-576 |
 | It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. | `pasteAndConfirm`, `bracketedPaste`, `sanitizeForInjection` | dashboard/src/data/terminal.ts:87-89; dashboard/src/data/terminal.ts:99-107; dashboard/src/data/terminal.ts:174-188 |
 
 | Tier 3 preserved: the historical row says inbox hosted push records a pane-capture tail, while the current protocol delivery records adapter correlation/detail and never invokes the pane paster. | `deliver_inbox_entry`, `_record_reconciliation` | mcp/src/agents_remember/serving/inbox_delivery.py:170-228; mcp/src/agents_remember/serving/inbox_delivery.py:293-325 |

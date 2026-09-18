@@ -56,8 +56,8 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
-| The exact raw HEAD tree is checked before projected content is inspected. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | `head_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:42-42 |
+| The exact raw HEAD tree is checked before projected content is inspected. | `content_tree` | mcp/src/agents_remember/kernel/git_command.py:472-472 |
 | Only root memory.md is removed when proving equality with a required memory certificate subject. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
 | The closed record hashes the raw and certified identities separately. | n/a | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
 | The shared exact Git pathspec names only the derived root cache. | n/a | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |

@@ -203,8 +203,8 @@ Current working-candidate evidence for this route:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | A ledger view is derived from Git and cache write failure is only an availability result. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Existing preparation retains actual Git binding and allows a distinct memory content view. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Baseline adoption commits memory content and returns a cache observation. | n/a | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| Existing preparation retains actual Git binding and allows a distinct memory content view. | `ExistingGitPreparationBinding` | mcp/src/agents_remember/kernel/git_preparation.py:33-44 |
+| Baseline adoption commits memory content and returns a cache observation. | `memory_content_commit` | mcp/src/agents_remember/memory/baseline.py:233-240 |
 
 ## Purpose
 
@@ -692,8 +692,8 @@ resolution depends on. The evidence for both halves is
 | The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
 | The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
 | D13's repair, on the registered operation's own resolution path. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202 |
-| The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. | `LIBRARY_REOPEN_LEGACY_REASON`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/tests/test_capsule_launch_wiring.py:761-801 |
-| The production chain read at the consumer's own gate and at the live runtime's system block. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
+| The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. | `LIBRARY_REOPEN_LEGACY_REASON`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:805-844 |
+| The production chain read at the consumer's own gate and at the live runtime's system block. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
 
 ## 260915-CAPS-L6 Native eve Session Adapter Route Impact
 
@@ -1741,6 +1741,7 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
 ## Update History
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the capsule chain's measured result and its live limit reach this route.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation measurable (delivered `orientation` capsule **11,828** vs a **5,928** baseline, **+5,900**; like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE** and no IAS landing authorized. That section also carries the delivery result that did hold (the started eve session's own system block holds the capsule exactly once — second call, after compaction, after clear and after resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, and the explicit statement that the L1 restructure, the L2 compiler properties and the L9 cutover are **structure, correctness and design intent — not a measured context reduction**. **Qualified the L9 cutover section with the measurement's finding `F-6`:** the withholding is complete inside the coordination root but **not** on the machine — the install does not manage the harness's own skill root and **both** measured arms read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`, so no card may claim the legacy corpus is off (owner L9 / harness-surface). **Corrected a landed defect (`D35`):** the CAPS-L18 section named `checklistStatus=ready-for-closeout` as the repair loop's termination condition, which is never a value of the combined field; the raw `qualityChecklistStatus` is the gate, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **route impact recorded rather than a no-impact marker** —
   the section above states the experimental packaging and cutover boundary, including the two
   claims this route must not invent (the legacy corpus is *not* fully deduplicated; C6/C7's
@@ -1751,7 +1752,6 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
   path) and that the leaf is entirely unlanded. Verification metadata is left at the leaf's base
   commit; the candidate is deliberately uncommitted, so the governed closeout stamps the real
   code commit.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T11:35+02:00 — 260915-CAPS-L14 curator: **route impact recorded rather than a no-impact marker** for the citation source-index surface this package exposes. Adds the section above (the shared exclusion register and its three sources, the additive caller-exclude surface on the MCP tool and the CLI, the reported-skip cap mechanics under the developer's 2026-08-20 ruling with the v10 manifest and the v9 rebuild, the typed refusals on the quality surface and at the closeout gate, and the mode-independence of all three). **Repairs a stale claim**: the final memory adapter citation still pointed at
   `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. The adjacent `PreparedCloseoutContinuation` range start is corrected to the class's real declaration line. Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
@@ -1765,6 +1765,19 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
   wired path for an eve seat launching end to end. Six reference rows added. Verification metadata moves
   to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
   stamps the real code commit and no hash or fingerprint was invented here.
+
+
+- 2026-09-16T11:50+02:00 — 260915-CAPS-L4 curator, **post-verdict correction**: the independent
+  baseline review landed (`260915-CAPS-L4-verdict-baseline.md`, recommendation **BLOCK**,
+  `CAPS-R04@v1` `rejected`) and refuted the spec claim the entry above rested on. The final SEP-2640
+  introduces **three protocol methods** and makes `skills/list` + `skills/get` mandatory for any server
+  declaring the extension — the declaration *is* the commitment — while this server answers neither
+  (`-32602`); the handoff's "no new protocol methods" was a **misquotation** (`F-L4-06`, `F-L4-05`).
+  Added the rejection banner to this route's inventory section, removed the sentence asserting the
+  false claim, and recorded that the 66-name agreement, the three advertised tools and the 85-resource
+  registration are all real and independently reproduced while the **conformance** claim is not. **The
+  onboarding describing this transport must not be treated as settled current intent, and must be
+  refreshed when fix leaf F1 repairs the surface.**
 
 
 - 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
@@ -1781,26 +1794,19 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
   the lineage it was and now says it held until this change. Verification metadata remains
   closeout-owned; no acceptance claim.
 
-- 2026-09-16T11:50+02:00 — 260915-CAPS-L4 curator, **post-verdict correction**: the independent
-  baseline review landed (`260915-CAPS-L4-verdict-baseline.md`, recommendation **BLOCK**,
-  `CAPS-R04@v1` `rejected`) and refuted the spec claim the entry above rested on. The final SEP-2640
-  introduces **three protocol methods** and makes `skills/list` + `skills/get` mandatory for any server
-  declaring the extension — the declaration *is* the commitment — while this server answers neither
-  (`-32602`); the handoff's "no new protocol methods" was a **misquotation** (`F-L4-06`, `F-L4-05`).
-  Added the rejection banner to this route's inventory section, removed the sentence asserting the
-  false claim, and recorded that the 66-name agreement, the three advertised tools and the 85-resource
-  registration are all real and independently reproduced while the **conformance** claim is not. **The
-  onboarding describing this transport must not be treated as settled current intent, and must be
-  refreshed when fix leaf F1 repairs the surface.**
-
-
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Native eve Session Adapter Route Impact, recording the seven new `serving/eve_*.py` modules, the one existing registry that changes (`BUILTIN_PROTOCOL_HARNESSES` now includes `eve`), the deliberate non-change in `kernel/harnesses.py` and why the two registries answer different questions, the repository-root runtime tree, and the five-module test population. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the packaged lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured, which records the 14 new and 17 rewritten files under `package_data/runtime/skills/l-01-agent-lifecycles/**`, the generated-never-authored boundary (`skills/` canonical; `scripts/sync-skills.py --check` proves byte-identity), and the consequence that this generated `mcp/**` copy is the governed onboarding surface for a canonical tree that sits outside this memory root's path rules. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: No route impact: this change set is five paths inside `mcp/src/agents_remember/serving/` and `mcp/tests/`, and it changes the state-signal posting/recovery contract, not the package boundary this overview owns (public tool roster, activation/admission, certification, memory preparation, structural agent boundary, route model). The package-level statements above stand as written; the affected contract is recorded on `serving/overview.md`, the three serving file cards, and the tests route.
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-15T06:37:50+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
@@ -1818,12 +1824,6 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
   plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
   Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
   verification stamp advanced.
-
-- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
-
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
   under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve

@@ -176,7 +176,7 @@ its candidate-bound evidence.
 | The deterministic provider discovers tools from the real request and validates the public dispatch schema. | `ScriptedResponses` | scripts/e2e_harness/responses_server.py:47-127; scripts/e2e_harness/responses_server.py:329-381 |
 | Controlled malformed advertisements must fail through the same canonical validator as the live advertisement. | `dispatch_rejection_sentinels` | scripts/e2e_harness/dispatch_sentinels.py:23-95 |
 | The fresh-user acceptance's disposable fixtures, created from nothing under one run root. | `create_fresh_user_fixture` | scripts/e2e_harness/fresh_user_fixture.py:79-177 |
-| The fresh-user flow, one `StepRecord` per product call. | `run_fixture_scenario`; `run_fresh_user_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:579-807; scripts/e2e_harness/fresh_user_scenario.py:1111-1195 |
+| The fresh-user flow, one `StepRecord` per product call. | `run_fixture_scenario`; `run_fresh_user_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:579-807; scripts/e2e_harness/fresh_user_scenario.py:1111-1195; scripts/e2e_harness/fresh_user_scenario.py:1099-1183 |
 | The free agent's capsule, read back from the launch token the session was started with. | `free_agent_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:936-1039 |
 | The fresh-user acceptance entry point and its transcript. | `main`; `REPORT_DIRECTORY` | scripts/e2e_harness/run_fresh_user.py:32-32; scripts/e2e_harness/run_fresh_user.py:47-82 |
 | The consumer of record that keeps the three modules' lifecycle rows honest. | `test_every_governed_harness_module_this_suite_answers_for_exists` | mcp/tests/test_fresh_user_harness.py:218-222 |

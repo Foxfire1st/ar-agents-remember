@@ -51,7 +51,7 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Selection is an ordered prefix of at most two preparations: code followed by memory content. | n/a | [mcp/src/agents_remember/models/lifecycles/preparation_state.py](mcp/src/agents_remember/models/lifecycles/preparation_state.py) |
+| Selection is an ordered prefix of at most two preparations: code followed by memory content. | `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
 | `PreparationCommandTerminal` owns the corresponding behavior described above. | `PreparationCommandTerminal` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:22-40 |
 | `PreparationCommand` owns the corresponding behavior described above. | `PreparationCommand` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:43-75 |
 | `OperationPreparationState` owns the corresponding behavior described above. | `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |

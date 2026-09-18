@@ -60,11 +60,11 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Independent activation, private content, and sibling leaf landing. | n/a | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
-| Release and conflicting publication preserve sibling state. | n/a | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| Independent activation, private content, and sibling leaf landing. | `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible` | mcp/tests/test_cross_master_concurrency.py:409-456 |
+| Release and conflicting publication preserve sibling state. | `test_a_conflicting_publication_cannot_overwrite_master_b` | mcp/tests/test_cross_master_concurrency.py:473-507 |
 | Ordinary resume/reconciliation/completion preserves actual histories. | n/a | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
 | The stopped interval is represented by snapshots, not a pause-tool call. | n/a | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
-| Checkpoint and authored/absent dependency behavior remain distinct. | n/a | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
+| Checkpoint and authored/absent dependency behavior remain distinct. | `test_explicit_checkpoint_landing_remains_available_when_requested` | mcp/tests/test_cross_master_concurrency.py:685-718 |
 | Fixture commits are two actual outputs with Git-owned attribution. | n/a | [mcp/tests/test_cross_master_concurrency.py](mcp/tests/test_cross_master_concurrency.py) |
 
 ## Cross-Repo References

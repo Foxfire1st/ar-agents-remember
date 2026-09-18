@@ -212,8 +212,8 @@ Current production closeout refuses missing or unsupported source sidecars befor
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) | n/a | [mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py](mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py); [mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py](mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
-| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) | n/a | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py); [mcp/src/agents_remember/kernel/route_index_census.py](mcp/src/agents_remember/kernel/route_index_census.py) |
+| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) | `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-395 |
+| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 
 | Sidecar and route-overview attestations are checked independently and aggregated before refresh publication. (`validate_memory_refresh_attestations`) | L867-L942 | [mcp/src/agents_remember/worktrees/modules/onboarding.py](mcp/src/agents_remember/worktrees/modules/onboarding.py) |
 

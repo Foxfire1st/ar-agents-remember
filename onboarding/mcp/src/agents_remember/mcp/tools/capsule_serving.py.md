@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/mcp/tools/capsule_serving.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `ff97072c2d816dc6bc15d55bf8578db7fdd376b8` |
-| lastVerifiedCommitDate | 2026-09-16T12:47:44+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l4` uncommitted source; base `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
 | governingOverview | `overview.md` |
 
@@ -74,7 +74,7 @@ after checking live sources.
 | The registrations that call these builders, which pass no corpus override. | `_register_skill_tools` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:120-139 |
 | The application entry points these builders forward to. | `role_capsule_compile_tool`; `skill_catalog_list_tool`; `skill_catalog_read_tool` | mcp/src/agents_remember/application/skill_resources/operation.py:68-107 |
 | The response-model registry rows that make these names returnable. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:155-238 |
-| The test module that drives the corpus override these builders expose. | `_synthetic_corpus`; `World` | mcp/tests/test_capsule_serving.py:279-279; mcp/tests/test_capsule_serving.py:370-370 |
+| The test module that drives the corpus override these builders expose. | `_synthetic_corpus`; `World` | mcp/tests/test_capsule_serving.py:279-279; mcp/tests/test_capsule_serving.py:370-370; mcp/tests/test_capsule_serving.py:312-420; mcp/tests/test_capsule_serving.py:423-551 |
 
 ## Cross-Repo References
 

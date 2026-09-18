@@ -88,10 +88,10 @@ that proves the guard can red, are in `mcp/tests/test_role_instruction_corpus.py
 | --- | --- | --- |
 | The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:76-205 |
 | The required-rule table names the exact form each canonical surface must state, keyed by shipped path. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:34-34; mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:207-254 |
-| The nine generated copies are the sweep targets, and the canonical tree is sweep target zero. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:38-51 |
-| The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half. | n/a | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:261-333 |
-| The consuming cases and the seeded re-insertion that proves the guard can fail. | n/a | mcp/tests/test_role_instruction_corpus.py:640-773 |
-| The nine copies are produced from the canonical tree by the generator whose `--check` proves currency. | n/a | scripts/sync-skills.py:43-50; scripts/sync-skills.py:204-228 |
+| The nine generated copies are the sweep targets, and the canonical tree is sweep target zero. | `GENERATED_SKILL_COPIES` | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:49-59 |
+| The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half. | `CURATION_COMPLETENESS_STATEMENTS` | mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py:251-298 |
+| The consuming cases and the seeded re-insertion that proves the guard can fail. | `test_one_seeded_old_sentence_is_observed_to_fail_the_guard` | mcp/tests/test_role_instruction_corpus.py:786-803 |
+| The nine copies are produced from the canonical tree by the generator whose `--check` proves currency. | "--check" | scripts/sync-skills.py:67-67 |
 
 ## Cross-Repo References
 

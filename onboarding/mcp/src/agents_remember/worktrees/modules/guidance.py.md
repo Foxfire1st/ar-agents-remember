@@ -64,10 +64,10 @@ These current source spans identify the implementation owners and the specific a
 | --- | --- | --- |
 | Typed payloads and separate lifecycle/recovery builders. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | Carryover completion is a real two-repository ancestry proof. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| Phase precedence, finalization guidance, and the still-working checkpoint branch. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Phase precedence, finalization guidance, and the still-working checkpoint branch. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:215-225 |
 | Freshness, consumer paths, identity fields, and interactive/projected observation. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | The canonical lifecycle wire vocabularies. | n/a | [mcp/src/agents_remember/models/worktree.py](mcp/src/agents_remember/models/worktree.py) |
-| External completion remains valid with damaged caches and rejects unlanded commits. | n/a | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
+| External completion remains valid with damaged caches and rejects unlanded commits. | `test_external_completion_proves_landed_commits_without_reading_the_cache` | mcp/tests/test_post_integration_cleanup_guidance.py:84-119 |
 
 ## Cross-Repo References
 

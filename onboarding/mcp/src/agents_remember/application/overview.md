@@ -495,7 +495,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Application message transport contains only code and memory. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Application message transport contains only code and memory. | `memory_commit_message` | mcp/src/agents_remember/application/worktree_tool_requests.py:76-76 |
 | Landing input carries the actual two outputs. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
 
 ## 260731-EFA-L4 — Typed Seams Where An Application Entry Point Meets A Producer
@@ -757,7 +757,7 @@ longer the only caller, and neither half should be read as the other.
 | The launch-time proof and the in-process reader that consume the carrier this route produces. | `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; eve_runtime/agent/lib/capsule.ts:109-149 |
 | The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits. | `_compile_eve_task`; `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
 | The test fixture that supplied this seam's inputs before a production caller existed. | `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:565-620 |
-| The production-chain evidence: the consumer's own gate accepts the launch point's carrier, and the live runtime's system block carries it. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
+| The production-chain evidence: the consumer's own gate accepts the launch point's carrier, and the live runtime's system block carries it. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
 
 | The closeout certification's own source index, or a named refusal with the operator move. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:415-437 |
 | The candidate route that index is acquired over, so the gate sees the register the route records. | `_run` | mcp/src/agents_remember/application/prepared_certification.py:440-554 |

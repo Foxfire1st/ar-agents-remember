@@ -85,8 +85,8 @@ The source file itself is the current evidence for this file-specific contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
+| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration` | mcp/src/agents_remember/models/lifecycles/door.py:89-142 |
+| The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | `_RETIRED_DOOR_CONTRACT_DIGEST_FIELDS` | mcp/src/agents_remember/models/lifecycles/door.py:232-236 |
 | The R03 door dependency vocabulary owned by this record type. | n/a | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
 
 ## Cross-Repo References

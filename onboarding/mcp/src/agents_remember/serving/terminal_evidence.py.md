@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_evidence.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-09-08T14:39+02:00                                        |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`                                    |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                    |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ persists through `seat_turn_truth`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The per-vendor projector registry and strict `HarnessProjector` protocol the lift reuses. | `class HarnessProjector`; `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:26-47; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:115-123 |
+| The per-vendor projector registry and strict `HarnessProjector` protocol the lift reuses. | `class HarnessProjector`; `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:26-47; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:115-123; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:136-137 |
 | The bounded evidence-page and native-page read seams. | `read_control_evidence`; `read_control_native_page` | mcp/src/agents_remember/serving/harness_control_client.py:351-371; mcp/src/agents_remember/serving/harness_control_client.py:375-407 |
 | The catalog cursor fields and liveness failure containment this module feeds. | `terminal_evidence_sequence`; `terminal_native_cursor`; `_terminal_evidence` | mcp/src/agents_remember/models/terminal_catalog.py:182-183; mcp/src/agents_remember/serving/terminal_liveness.py:455-469 |
 | The focused tests pin the no-loss envelope, unsupported-harness, bounded-Pi, and failure-containment cases. | `ReadEntryTerminalEvidenceTests`; `PiCursorContinuationTests` | mcp/tests/test_terminal_evidence_cursors.py:153-360 |

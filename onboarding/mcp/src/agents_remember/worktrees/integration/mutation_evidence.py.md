@@ -82,11 +82,11 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Only enabled code/memory legs receive mutation cells. | n/a | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| Intent, expected-output binding, and commit proof retain their order. | n/a | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
+| Only enabled code/memory legs receive mutation cells. | `initial_closeout_mutation_evidence` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:60-81 |
+| Intent, expected-output binding, and commit proof retain their order. | `bind_expected_output_tree` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:246-267 |
 | Interrupted attempts are reconciled from actual Git evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| Cache-excluded snapshots retain actual object/ref identity. | n/a | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| The snapshot model declares the separate content comparison tree. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| Cache-excluded snapshots retain actual object/ref identity. | `ephemeral_git_mutation_snapshot` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:410-473 |
+| The snapshot model declares the separate content comparison tree. | `contentHeadTree` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:26-26 |
 
 ## Cross-Repo References
 

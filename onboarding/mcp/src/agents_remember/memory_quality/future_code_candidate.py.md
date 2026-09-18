@@ -72,7 +72,7 @@ low-level Git algorithm remains separately owned.
 | The frozen strict route model prohibits mutation and undeclared identity fields. | `FutureCodeCandidateIdentity` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22 |
 | Capture observes HEAD around the one canonical isolated-index add-all tree calculation. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
 | Reuse requires exact equality of the complete bound route identity. | `require_current_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68 |
-| Each capture gives the canonical helper its own enclosure-local temporary index. | `_candidate_tree` | mcp/src/agents_remember/memory_quality/future_code_candidate.py:71-78 |
+| Each capture gives the canonical helper its own enclosure-local temporary index. | `_candidate_tree` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:71-78 |
 | Capture and stale-input outcomes use the package's central typed error family. | `FutureCodeCandidateError` | mcp/src/agents_remember/errors.py:168-173 |
 | The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:32-56 |
 

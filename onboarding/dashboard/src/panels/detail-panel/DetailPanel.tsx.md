@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -309,7 +309,7 @@ master leg of the drill-down).
 | The selected-series derivation: `selectedIsRootTask`, `selectedSeries`, `seriesAsMasterDoc`, `seriesSliceDocs`. | "selectedIsRootTask: boolean"; "const selectedSeries = resolveSelectedSeries("; "? seriesSliceDocs(allDocs, master.docPath)"; ": seriesAsMasterDoc(selectedSeries);" | dashboard/src/panels/detail-panel/state.ts:75-76; dashboard/src/panels/detail-panel/state.ts:131-137; dashboard/src/panels/detail-panel/lifecycleBody.tsx:67-67; dashboard/src/panels/detail-panel/lifecycleBody.tsx:87-87 |
 | Lifecycle-bound selected masters render `MasterOverview` with sibling docs from the full projected task-document pool, so master rows can open authored leaves that are not sidebar rows. | "import { MasterOverview, TaskReader } from \"./taskReader\";"; "export function taskDocsForLifecycle(" | dashboard/src/data/taskIdentity.ts:281-281; dashboard/src/panels/detail-panel/taskDocPanels.tsx:15-15 |
 | Direct taskdoc and active lifecycle leaf selections use `parentTaskLinkForDoc` to show a sticky parent/root backlink without changing leaf content selection. | "import { parentTaskLinkForDoc } from \"../../data/taskHierarchy\";"; "export function parentTaskLinkForDoc("; "export function TaskContent({" | dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/taskDocPanels.tsx:1-1; dashboard/src/panels/detail-panel/taskReader.tsx:107-107 |
-| `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and reports its `qualifiedLeafKey` up via effect (L5 fix 1). | "import { displayedLeafDoc, displayedReaderDoc, docPathForTaskRef } from './model';"; "export function displayedLeafDoc({"; "const viewedLeafDoc = displayedLeafDoc({"; "export function qualifiedLeafKey(" | dashboard/src/data/taskIdentity.ts:65-65; dashboard/src/panels/detail-panel/model.ts:136-136; dashboard/src/panels/detail-panel/state.ts:21-21; dashboard/src/panels/detail-panel/state.ts:152-152 |
+| `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and reports its `qualifiedLeafKey` up via effect (L5 fix 1). | "import { displayedLeafDoc, displayedReaderDoc, docPathForTaskRef } from './model';"; "export function displayedLeafDoc({"; "const viewedLeafDoc = displayedLeafDoc({"; "export function qualifiedLeafKey(" | dashboard/src/data/taskIdentity.ts:65-65; dashboard/src/panels/detail-panel/model.ts:136-136; dashboard/src/panels/detail-panel/state.ts:21-21; dashboard/src/panels/detail-panel/state.ts:152-152; dashboard/src/panels/detail-panel/model.ts:137-137 |
 | The task reader derives the displayed leaf key and places it on the rendered content wrapper. | "export function TaskReader({" | dashboard/src/panels/detail-panel/taskReader.tsx:638-674 |
 | The shared qualified key is repo/master/leaf-id and requires all three parts. | "export function qualifiedLeafKey(" | dashboard/src/data/taskIdentity.ts:65-71 |
 | Selection attribution looks for the closest task-leaf wrapper. | "function leafKeyForAnchor(" | dashboard/src/data/selection.ts:34-36 |

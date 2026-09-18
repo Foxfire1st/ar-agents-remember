@@ -89,11 +89,11 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| The actual two-ref apply regression retains the original rescue tip. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| The actual two-ref apply regression retains the original rescue tip. | `test_the_rescue_ref_holds_the_original_tip_before_the_rewrite` | mcp/tests/test_memory_backfill.py:579-596 |
 | Runtime proof uses the ordinary Git-only reader. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
-| Historical table read/carry and real CLI boundaries stay covered. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| Historical table read/carry and real CLI boundaries stay covered. | `test_the_carried_table_validates_and_reads_with_no_exclusion` | mcp/tests/test_memory_backfill.py:753-764 |
 | The production target-update stream emits exactly one newline between commands. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
-| The existing CLI case applies two named refs and retries the same target set. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| The existing CLI case applies two named refs and retries the same target set. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:853-909 |
 | The committed implementation uses native reversed topological traversal. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
 
 ## Cross-Repo References
@@ -107,7 +107,7 @@ No additional configured external or sibling-repository evidence is claimed.
 
 ## Update History
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the module gained the multi-target ref

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/capsule_delivery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
-| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `overview.md` |
 
@@ -123,14 +123,14 @@ No Domain Documentation entries are configured in the resolved source registry.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The instruction parameter and the refresh-report key are named constants, chosen against the vendor's own base prompt. | `INSTRUCTION_PARAM`; `REFRESH_REPORT_KEY` | mcp/src/agents_remember/serving/capsule_delivery.py:44-52 |
-| The delivery value refuses an empty instruction stream and a non-`sha256:` digest at construction. | `CodexCapsuleDelivery.__post_init__` | mcp/src/agents_remember/serving/capsule_delivery.py:182-190 |
+| The delivery value refuses an empty instruction stream and a non-`sha256:` digest at construction. | "sha256:" | mcp/src/agents_remember/serving/capsule_delivery.py:182-190 |
 | The wire form returns `None` for an unusable value instead of raising, leaving refusal policy to the transport boundary. | `CodexCapsuleDelivery.from_json` | mcp/src/agents_remember/serving/capsule_delivery.py:199-236 |
 | The binding identity refuses blank or untrimmed fields and can be read back from a published report. | `CapsuleBindingIdentity`; `from_report` | mcp/src/agents_remember/serving/capsule_delivery.py:91-165; mcp/src/agents_remember/serving/capsule_delivery.py:117-136 |
 | The compilation converter reads L2's frozen shapes structurally and copies the rendered stream verbatim. | `capsule_delivery_from`; `_seat_role` | mcp/src/agents_remember/serving/capsule_delivery.py:304-368; mcp/src/agents_remember/serving/capsule_delivery.py:287-301 |
 | The refresh decision returns a supported boundary or an explicit refusal; a refusal yields no parameters. | `plan_refresh`; `thread_instruction_params` | mcp/src/agents_remember/serving/capsule_delivery.py:399-440; mcp/src/agents_remember/serving/capsule_delivery.py:443-457 |
 | The legacy-chain switch is scoped to a capsule launch and names what the host actually loaded. | `legacy_instruction_switch`; `LegacyInstructionSwitch`; `LEGACY_PROJECT_DOC_KEY` | mcp/src/agents_remember/serving/capsule_delivery.py:500-531; mcp/src/agents_remember/serving/capsule_delivery.py:472-497; mcp/src/agents_remember/serving/capsule_delivery.py:460-470 |
 | The seam consumes this value from the session settings, which the production factory fills. | `CodexAppServerSettings`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/codex_app_server_session.py:73-119; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
-| The wire form travels the encoded launch configuration, emitted only when a capsule is present. | `control_runner_command`; `_optional_capsule_delivery` | mcp/src/agents_remember/serving/harness_control_runner.py:64-87; mcp/src/agents_remember/serving/harness_control_runner.py:120-133 |
+| The wire form travels the encoded launch configuration, emitted only when a capsule is present. | `control_runner_command`; `_optional_capsule_delivery` | mcp/src/agents_remember/serving/harness_control_runner.py:64-87; mcp/src/agents_remember/serving/harness_control_runner.py:120-133; mcp/src/agents_remember/serving/harness_control_runner.py:115-141; mcp/src/agents_remember/serving/harness_control_runner.py:174-187 |
 | The frozen shapes this conversion depends on are asserted against the real landed types by this leaf's tests. | `test_the_frozen_shapes_this_conversion_depends_on`; `test_delivery_consumes_a_genuine_compilation_result` | mcp/tests/test_codex_capsule_delivery.py:448-482 |
 
 ## Cross-Repo References
@@ -140,7 +140,7 @@ fixture rather than trusted from a recorded snapshot.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The instruction fields per thread-open request and the absence of a turn-level field are fixture evidence generated from the installed app-server. | `"instructionFields"` | mcp/tests/fixtures/codex_app_server_instruction_channels.json:4-22 |
+| The instruction fields per thread-open request and the absence of a turn-level field are fixture evidence generated from the installed app-server. | "\"instructionFields\"" | mcp/tests/fixtures/codex_app_server_instruction_channels.json:5-5 |
 
 ## Update History
 

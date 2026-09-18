@@ -101,8 +101,8 @@ seat and revision on a refusal too.
 - Nothing here writes to the task, memory or skills trees. `test_the_capsule_operation_writes_nothing_to_the_tree_it_reads`
   is the executor.
 - This module owns no compilation semantics: routing, dedup, conflict and digest rules belong to
-  `models/role_capsules/**` and `application/role_capsules/**` (L2), and task projection to
-  `application/task_projection/**` (L3).
+  `models/role_capsules/**` and `application/role_capsules/**` (layer rank 2), and task projection to
+  `application/task_projection/**` (layer rank 3).
 - **The repository root has one derivation per compile.** A caller-supplied `code_repository_root` wins
   when present; otherwise the named contract's `code_repo_path` is the authority. Nothing re-derives a
   root beside it, and the value the projection receives is the value the admission used.
@@ -137,7 +137,7 @@ sources.
 | The tool policy is a snapshot of the published roster, so a capsule requests tools and never grants them. | `admitted_tool_policy` | mcp/src/agents_remember/application/skill_resources/capsule.py:446-461 |
 | The advertised roster the tool policy snapshots. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-90 |
 | The corpus root, its manifest and its publishing origin travel together as one admission. | `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:50-63 |
-| The composition manifest that routes the admitted source set. | `"schema": "ar-role-capsule-composition/v1"` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json:1-30 |
+| The composition manifest that routes the admitted source set. | "\"schema\": \"ar-role-capsule-composition/v1\"" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json:2-2 |
 | The consumer the operation compiles through. | `compile_admitted_capsule`; `CapsuleAdmissionRequest` | mcp/src/agents_remember/application/role_capsules/__init__.py:11-11; mcp/src/agents_remember/application/role_capsules/__init__.py:14-14 |
 | The projection consumer. | `resolve_task_projection_scope`; `TaskProjectionSource` | mcp/src/agents_remember/application/task_projection/__init__.py:58-67 |
 

@@ -56,7 +56,7 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bounded legacy proof retains unfinished memory intent after verified code without a ledger message. | n/a | [mcp/src/agents_remember/models/lifecycles/legacy.py](mcp/src/agents_remember/models/lifecycles/legacy.py) |
+| The bounded legacy proof retains unfinished memory intent after verified code without a ledger message. | `LegacyCloseoutMigrationProof` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-52 |
 | The module defines `LegacyCloseoutMigrationProof` as its public seam. | `LegacyCloseoutMigrationProof` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-52 |
 
 ## Cross-Repo References

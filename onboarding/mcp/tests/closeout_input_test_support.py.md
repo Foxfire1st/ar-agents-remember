@@ -78,7 +78,7 @@ Source declarations and test assertions are distinguished from execution and acc
 | --- | --- | --- |
 | The recorder verifies typed progress transitions. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
 | Canonical setup passes only enabled code/memory messages. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
-| Finalization publishes code/memory recovery cells. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| Finalization publishes code/memory recovery cells. | `publish_closeout_finalization` | mcp/tests/closeout_input_test_support.py:352-379 |
 | Input and WorktreeArgs builders share production normalization. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
 | Evidence builders retain the explicit durable states. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
 

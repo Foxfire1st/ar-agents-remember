@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/selection.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ No external or domain documentation is configured for this memory root
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The frozen vocabularies membership is tested against. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS`; `capsule_role_or_none` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89; mcp/src/agents_remember/models/role_capsules/vocabulary.py:108-121 |
+| The frozen vocabularies membership is tested against. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS`; `capsule_role_or_none` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89; mcp/src/agents_remember/models/role_capsules/vocabulary.py:108-121; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-108; mcp/src/agents_remember/models/role_capsules/vocabulary.py:133-144 |
 | The three selection refusals this module's callers branch on. | `STATUS_UNKNOWN_ROLE`; `STATUS_UNKNOWN_OPERATION`; `STATUS_OPERATION_NOT_APPLICABLE` | mcp/src/agents_remember/models/role_capsules/statuses.py:11-13 |
 | The parsed manifest and its per-role applicability entries. | `CapsuleCompositionManifest`; `CapsuleRoleEntry`; `CapsuleLauncherEntry` | mcp/src/agents_remember/models/role_capsules/manifest.py:120-167; mcp/src/agents_remember/models/role_capsules/manifest.py:63-82; mcp/src/agents_remember/models/role_capsules/manifest.py:83-93 |
 | The compiler step that calls this selection first. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:90-153 |

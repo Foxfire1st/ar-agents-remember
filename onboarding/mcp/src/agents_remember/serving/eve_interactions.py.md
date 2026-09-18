@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_interactions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,8 +77,8 @@ pass was available for this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The projected pending shape and the structured question page are AR's existing control-wire types, not eve-shaped types. | `PendingInteraction`; `InteractionQuestion`; `InteractionQuestionOption` | mcp/src/agents_remember/models/conversations/control_wire.py:1-200 |
-| The mapper is the only writer: `input.requested` enqueues, `input.resolved` resolves, `authorization.*` retains and clears a challenge. | `EveEventMapper._interaction_requested`; `EveEventMapper._interaction_resolved`; `EveEventMapper._authorization_required` | mcp/src/agents_remember/serving/eve_events.py:379-435 |
-| The mapper builds the strict `inputResponses` entry — an `optionId` when the response names one of the request's own choices, otherwise free text. | `EveEventMapper.response_payload` | mcp/src/agents_remember/serving/eve_events.py:205-220 |
+| The mapper is the only writer: `input.requested` enqueues, `input.resolved` resolves, `authorization.*` retains and clears a challenge. | "EveEventMapper._interaction_requested" | mcp/src/agents_remember/serving/eve_events.py:695-695 |
+| The mapper builds the strict `inputResponses` entry — an `optionId` when the response names one of the request's own choices, otherwise free text. | `inputResponses` | mcp/src/agents_remember/serving/eve_events.py:223-223 |
 | A pending request also refuses further ordinary delivery until it is answered. | `EveSessionAdapter.preflight_operation` | mcp/src/agents_remember/serving/eve_adapter.py:342-363 |
 | Cases cover the request becoming a pending interaction, the response targeting it, and free text versus option ids with unknown ids refused. | `EveAdapterSubmissionTests` | mcp/tests/test_eve_adapter.py:371-603 |
 

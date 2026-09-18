@@ -88,7 +88,7 @@ live sources.
 | The publishing origin is both the URI prefix and the identity half that keeps two servers' same-named skills distinct. | `SHIPPED_SKILL_ORIGIN` | mcp/src/agents_remember/application/skill_resources/provider.py:26-26 |
 | The packaging helper both managers open, which may materialize the package data for the duration of the call. | `packaged_source_root` | mcp/src/agents_remember/install/assets.py:35-47 |
 | The generated package-data copy the served tree is read from. | `composition-manifest.json` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json:1-30 |
-| The canonical skills source tree the package copy is generated from. | `name: l-01-agent-lifecycles` | skills/l-01-agent-lifecycles/SKILL.md:1-3 |
+| The canonical skills source tree the package copy is generated from. | "name: l-01-agent-lifecycles" | skills/l-01-agent-lifecycles/SKILL.md:2-2 |
 | The consumer obligation stated for a caller supplying a corpus root without its origin. | `CapsuleSourceSelectionRequest` | mcp/src/agents_remember/application/skill_resources/capsule.py:156-170 |
 | The case that keeps same-named skills from two servers distinct. | `test_same_named_skills_from_two_servers_remain_distinct` | mcp/tests/test_capsule_serving.py:862-879 |
 | The case that demonstrates removing the origin/identity pairing breaks distinctness (coordination-root relative). | `M2-resource-read-grants-a-tool-permission` | tasks/agents-remember/260915_role-capsules-and-native-eve/notes/reports/caps-l4-mutation-probe.json |

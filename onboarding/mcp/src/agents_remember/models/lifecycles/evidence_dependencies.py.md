@@ -95,11 +95,11 @@ matrix in the evidence-dependency test suite fixes the contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. | n/a | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
-| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | n/a | [mcp/src/agents_remember/models/lifecycles/curator_coherence.py](mcp/src/agents_remember/models/lifecycles/curator_coherence.py) |
-| The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. | n/a | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | n/a | [mcp/src/agents_remember/worktrees/route_review.py](mcp/src/agents_remember/worktrees/route_review.py) |
+| The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. | `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
+| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | `MEMORY_QUALITY_ATTESTATION_VALIDATOR` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:40-40 |
+| The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. | `require_closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:199-226 |
+| Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | `LifecycleOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:334-337 |
+| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `require_current_route_review_task_intent` | mcp/src/agents_remember/worktrees/route_review.py:392-415 |
 
 
 ## Cross-Repo References

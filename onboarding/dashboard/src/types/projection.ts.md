@@ -80,15 +80,15 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | The lifecycle phase union mirrors the code/memory-only vocabulary. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 | Structural analytics fields use the shared task-document reference. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Generated task documents carry real hierarchy and optional runtime attachment. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Execution nodes name their kind, leaf-id segment and task reference. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| An execution endpoint carries a task reference and optional leaf id. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Generated task documents carry real hierarchy and optional runtime attachment. | `taskDocuments` | dashboard/src/types/projection.ts:104-104 |
+| Execution nodes name their kind, leaf-id segment and task reference. | `TaskExecutionNodeView` | dashboard/src/types/projection.ts:730-741 |
+| An execution endpoint carries a task reference and optional leaf id. | `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:710-713 |
+| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | `TaskExecutionPredecessorNode` | dashboard/src/types/projection.ts:743-748 |
 | The graph contains typed node and edge arrays. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Workspace projection remains the generated top-level wire contract. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The optional canonical task-intent identity on lifecycle operations. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated `task-intent/v1` identity interface. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:840-854 |
+| The optional canonical task-intent identity on lifecycle operations. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:750-754 |
+| The generated `task-intent/v1` identity interface. | "task-intent/v1" | dashboard/src/types/projection.ts:753-753 |
+| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | `members` | dashboard/src/types/projection.ts:144-144 |
 
 ## Cross-Repo References
 
@@ -124,7 +124,7 @@ they do not make the dashboard or disposable closeout projection an operation au
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 

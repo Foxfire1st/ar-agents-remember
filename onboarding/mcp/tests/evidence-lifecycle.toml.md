@@ -154,6 +154,16 @@ and never restored from a historical figure.
   4 contracts / 54 artifacts on the merged catalog) and never restored from a historical figure. The
   section above records what the two rows mean rather than only that they exist. Verification metadata
   remains closeout-owned: the candidate is uncommitted.
+- 2026-09-17T10:50+02:00 — 260915-CAPS-L15 curator: **consumer rows only, and the byte pin moved for
+  that alone.** This leaf's new acceptance module reaches three governed artifacts through the shared
+  test support it imports, so three `consumers` lists each gained one entry; nothing was registered,
+  removed or re-identified, and the populations stayed at 4 contracts / 51 artifacts while the pin went
+  `812211e9… → 3342a249…`. The body states that shape and adds two invariants — a consumer row is a
+  catalog change, and consumer rows are accounting rather than acceptance. Verification metadata moves
+  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
+
+
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **consumer rows only again, and the pin re-derived
   against the MERGED catalog — which is this leaf's own obligation.** The leaf's new test module
   `mcp/tests/test_eve_effort_runtime.py` starts the shipped runtime, so it consumes three
@@ -184,16 +194,6 @@ and never restored from a historical figure.
   51. Verification metadata moves to the synced base `d8ed8c21`; the candidate is deliberately
   uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint
   was invented here.
-
-- 2026-09-17T10:50+02:00 — 260915-CAPS-L15 curator: **consumer rows only, and the byte pin moved for
-  that alone.** This leaf's new acceptance module reaches three governed artifacts through the shared
-  test support it imports, so three `consumers` lists each gained one entry; nothing was registered,
-  removed or re-identified, and the populations stayed at 4 contracts / 51 artifacts while the pin went
-  `812211e9… → 3342a249…`. The body states that shape and adds two invariants — a consumer row is a
-  catalog change, and consumer rows are accounting rather than acceptance. Verification metadata moves
-  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
-  stamps the real code commit and no hash or fingerprint was invented here.
-
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **one artifact row added, one shared-support row
   extended, population re-measured.** The leaf's new `mcp/tests/eve_capsule_test_support.py` is

@@ -6,8 +6,8 @@
 | path | `dashboard/src/test/fixtures/eveConversationCapture.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -98,10 +98,10 @@ pass was available. The shape is the repository's own wire model, which is repo-
 | --- | --- | --- |
 | The decoder that reads this file through the wire mirror's own unions and throws on an undeclared token. | `eveConversationItems`; `eveConversationStatus` | dashboard/src/test/fixtures/eveConversationCapture.ts:376-376; dashboard/src/test/fixtures/eveConversationCapture.ts:379-379 |
 | The mounted case that renders the decoded capture through the shipped surface and asserts rendered text. | `ConversationSurface.eve.test.tsx` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx:1-148 |
-| The Python side pins this exact file against what the projector produces today, so it cannot drift from the projection it renders. | `test_the_projection_matches_the_capture_the_mounted_ui_renders`; `test_the_capture_shows_the_states_the_packet_names` | mcp/tests/test_eve_product_integration.py:1445-1452; mcp/tests/test_eve_product_integration.py:1454-1485 |
+| The Python side pins this exact file against what the projector produces today, so it cannot drift from the projection it renders. | `test_the_projection_matches_the_capture_the_mounted_ui_renders`; `test_the_capture_shows_the_states_the_packet_names` | mcp/tests/test_eve_product_integration.py:1445-1452; mcp/tests/test_eve_product_integration.py:1454-1485; mcp/tests/test_eve_product_integration.py:1706-1713; mcp/tests/test_eve_product_integration.py:1715-1746 |
 | The projector rule that makes the operator row producer-less, which this file's first record carries. | `_item`; `unknown_input_provenance` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:825-860 |
 | The wire base the production capture path serializes through. | `WireModel` | mcp/src/agents_remember/models/conversations/primitives.py:15-23 |
-| The capture path itself: the real projector page and the payload dump this file is the output of. | `eve_conversation_page`; `capture_payload` | mcp/tests/test_eve_product_integration.py:1414-1423; mcp/tests/test_eve_product_integration.py:1426-1439 |
+| The capture path itself: the real projector page and the payload dump this file is the output of. | `eve_conversation_page`; `capture_payload` | mcp/tests/test_eve_product_integration.py:1414-1423; mcp/tests/test_eve_product_integration.py:1426-1439; mcp/tests/test_eve_product_integration.py:1675-1684; mcp/tests/test_eve_product_integration.py:1687-1700 |
 
 ## Cross-Repo References
 

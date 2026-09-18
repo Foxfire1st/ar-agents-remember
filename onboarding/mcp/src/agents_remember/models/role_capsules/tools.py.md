@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ No external or domain documentation is configured for this memory root
 | The admitted policy snapshot and the request/`ToolId` shapes this module works with. | `CapsuleToolPolicy`; `CapsuleToolRequest`; `CapsuleToolId` | mcp/src/agents_remember/models/role_capsules/types.py:182-197; mcp/src/agents_remember/models/role_capsules/types.py:435-450 |
 | The refusal code for a request outside the admitted snapshot. | `STATUS_TOOL_REQUEST_NOT_PERMITTED` | mcp/src/agents_remember/models/role_capsules/statuses.py:22-23 |
 | The compiler step that narrows requests before sealing the digest. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:90-153 |
-| The per-role `tools` arrays in the canonical manifest that supply the declared identities. | `"tools"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
+| The per-role `tools` arrays in the canonical manifest that supply the declared identities. | `tools` | skills/l-01-agent-lifecycles/composition-manifest.json:161-478 |
 | A request inside the policy is carried but not granted; one outside it is refused; every declared id exists in the public tool roster. | `test_a_tool_request_inside_the_policy_is_carried_but_not_granted`; `test_a_tool_request_outside_the_admitted_policy_is_refused`; `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` | mcp/tests/test_role_capsule_compiler.py:777-788; mcp/tests/test_role_capsule_compiler.py:789-803; mcp/tests/test_role_capsule_admission.py:219-228 |
 
 ## Cross-Repo References

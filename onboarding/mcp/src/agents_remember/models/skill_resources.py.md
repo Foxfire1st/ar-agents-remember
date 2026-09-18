@@ -126,7 +126,7 @@ extension specification, SEP-2640).
 | What `skills/get` answers from: the skill whose `SKILL.md` URI is given, listed or not. | `skill_for_root_uri` | mcp/src/agents_remember/models/skill_resources.py:177-187 |
 | This server's own listing surfaces hand out metadata only and cannot reach a body. | `discovery_metadata` | mcp/src/agents_remember/models/skill_resources.py:200-221 |
 | This server's own index keeps the Agent Skills discovery shape and is explicitly not the enumeration result. | `index_document` | mcp/src/agents_remember/models/skill_resources.py:223-250 |
-| Identity is origin plus name, which keeps two servers' same-named skills distinct. | `SkillResourceEntry.identity` | mcp/src/agents_remember/models/skill_resources.py:100-104 |
+| Identity is origin plus name, which keeps two servers' same-named skills distinct. | `identity` | mcp/src/agents_remember/models/skill_resources.py:100-104 |
 | A declared tool set is normalized as an observation and applied by no code path. | `declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:270-285 |
 | Provenance and the constant trust statement every served file carries. | `skill_meta`; `SKILL_META_PREFIX` | mcp/src/agents_remember/models/skill_resources.py:253-267; mcp/src/agents_remember/models/skill_resources.py:43-43 |
 | The frontmatter reader that fills the verbatim map, refusing constructs it does not implement. | `_MappingReader` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:97-100 |
@@ -134,7 +134,7 @@ extension specification, SEP-2640).
 | The two mandatory methods that return these entries. | `_skills_list_handler`; `_skills_get_handler` | mcp/src/agents_remember/mcp/registration/skills_extension.py:243-280 |
 | The response contracts that project these values onto this server's own tool surface. | `SkillCatalogEntryPayload`; `SkillCatalogReadResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:118-127; mcp/src/agents_remember/models/role_capsule_resources.py:153-167 |
 | The same no-`mcp`-import constraint recorded for the roster leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-90 |
-| The cases that execute the entry completeness, verbatim-frontmatter and no-grant guarantees. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`; `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` | mcp/tests/test_capsule_serving.py:1040-1040; mcp/tests/test_capsule_serving.py:811-811 |
+| The cases that execute the entry completeness, verbatim-frontmatter and no-grant guarantees. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`; `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` | mcp/tests/test_capsule_serving.py:1040-1040; mcp/tests/test_capsule_serving.py:811-811; mcp/tests/test_capsule_serving.py:1044-1075; mcp/tests/test_capsule_serving.py:815-849 |
 | The case that pins this server's own index as the Agent Skills discovery shape. | `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` | mcp/tests/test_capsule_serving.py:1012-1041 |
 
 ## Cross-Repo References

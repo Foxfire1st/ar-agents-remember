@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_memory_branch_authority.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ No external or domain documentation governs this repository-local check.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own statement of the property, the four seams, and the two-sides rule. | `The memory repository is founded on a chosen code branch, not on ``main``.` | mcp/tests/test_memory_branch_authority.py:1-17 |
+| The module's own statement of the property, the four seams, and the two-sides rule. | "The memory repository is founded on a chosen code branch, not on" | mcp/tests/test_memory_branch_authority.py:1-1 |
 | Group 1 — minting, inheriting and refusing to invent a branch. | `test_memory_init_mints_and_records_the_named_initial_branch`; `test_memory_init_inherits_the_code_repositorys_current_branch_by_default`; `test_memory_init_refuses_rather_than_inventing_a_branch_when_it_has_no_answer` | mcp/tests/test_memory_branch_authority.py:109-125; mcp/tests/test_memory_branch_authority.py:127-144; mcp/tests/test_memory_branch_authority.py:146-164 |
 | Group 1 — the repair path, the name narrowing, and the recorded spelling. | `test_the_unborn_repair_path_accepts_the_configured_branch_instead_of_main`; `test_the_unborn_repair_path_still_refuses_a_repository_that_already_has_refs`; `test_an_initial_branch_that_is_not_one_local_branch_name_is_refused`; `test_the_recorded_refs_heads_spelling_is_accepted_and_normalized` | mcp/tests/test_memory_branch_authority.py:166-185; mcp/tests/test_memory_branch_authority.py:187-204; mcp/tests/test_memory_branch_authority.py:206-215; mcp/tests/test_memory_branch_authority.py:217-228 |
 | Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it. | `test_baseline_adoption_follows_the_configured_branch`; `test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record`; `test_the_memory_default_branch_validates_the_recorded_name_against_its_refs`; `test_the_memory_default_branch_still_refuses_a_recorded_name_with_no_ref` | mcp/tests/test_memory_branch_authority.py:230-261; mcp/tests/test_memory_branch_authority.py:263-283; mcp/tests/test_memory_branch_authority.py:285-300; mcp/tests/test_memory_branch_authority.py:302-316 |
@@ -121,7 +121,7 @@ No external or domain documentation governs this repository-local check.
 | The taskless admission the second and fourth groups hold. | `TASKLESS_SEAT_ROLES`; `_binding_refusal` | mcp/src/agents_remember/serving/task_binding.py:60-83; mcp/src/agents_remember/serving/task_binding.py:126-152 |
 | The exclusion policy the third group pins. | `MEMORY_CONTENT_EXCLUDES` | mcp/src/agents_remember/models/memory_content_excludes.py:32-35 |
 | The staging helper the third group's failure mode lives in. | `_excluded_pathspec`; `stage_worktree_content`; `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:34-35; mcp/src/agents_remember/worktrees/modules/git.py:191-198; mcp/src/agents_remember/worktrees/modules/git.py:200-208 |
-| The lane row that keeps the fail-closed evidence registry loading clean. | `test_memory_branch_authority.py` | mcp/tests/test-evidence-lanes.toml:72-72 |
+| The lane row that keeps the fail-closed evidence registry loading clean. | "test_memory_branch_authority.py" | mcp/tests/test-evidence-lanes.toml:87-87 |
 
 ## Cross-Repo References
 

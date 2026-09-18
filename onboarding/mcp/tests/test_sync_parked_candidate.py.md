@@ -58,8 +58,8 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Code and memory WIP return, with cache excluded from the memory candidate. | n/a | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Genuine reapply conflict and cancellation preserve candidate content. | n/a | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
+| Code and memory WIP return, with cache excluded from the memory candidate. | `test_parked_memory_candidate_is_carried_and_returned` | mcp/tests/test_sync_parked_candidate.py:56-78 |
+| Genuine reapply conflict and cancellation preserve candidate content. | `test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it` | mcp/tests/test_sync_parked_candidate.py:80-115 |
 | Crash recovery and retained-source continuation return parked work. | n/a | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
 | Pre-existing genuine conflicts remain a refusal. | n/a | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
 | Production parked-content boundary and exact restore proof. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |

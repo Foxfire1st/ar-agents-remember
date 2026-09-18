@@ -69,8 +69,8 @@ The following current source owns the changed behavior; no external domain sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Accepted closeout message input contains only code and memory. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| The effective two-leg input renders memory attribution through the kernel. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Accepted closeout message input contains only code and memory. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:47-53 |
+| The effective two-leg input renders memory attribution through the kernel. | `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
 
 ## Update History
 

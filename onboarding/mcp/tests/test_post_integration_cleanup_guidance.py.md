@@ -58,9 +58,9 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Finalization and retired cleanup-vocabulary assertions. | n/a | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
-| External completion depends on landed commits, never cache text. | n/a | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
-| Checkpoint guidance remains still-working. | n/a | [mcp/tests/test_post_integration_cleanup_guidance.py](mcp/tests/test_post_integration_cleanup_guidance.py) |
-| Production completion and post-integration guidance owner. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| External completion depends on landed commits, never cache text. | `test_external_completion_proves_landed_commits_without_reading_the_cache` | mcp/tests/test_post_integration_cleanup_guidance.py:84-119 |
+| Checkpoint guidance remains still-working. | `test_a_checkpointed_series_keeps_working_instead_of_being_told_to_integrate` | mcp/tests/test_post_integration_cleanup_guidance.py:122-148 |
+| Production completion and post-integration guidance owner. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:245-328 |
 
 ## Cross-Repo References
 

@@ -62,9 +62,9 @@ These current source spans identify the implementation owners and the specific a
 | --- | --- | --- |
 | Named acceptance-tool prohibition and real failing-hook probes. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
 | One code/memory commit, cache absence from the committed tree, and both trailer readers. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| Interrupted public closeout resumes only its exact accepted code identity. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| Integration publishes accepted refs or refuses source movement before publication. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
-| A recloseout after sync records the actual memory head. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
+| Interrupted public closeout resumes only its exact accepted code identity. | `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
+| Integration publishes accepted refs or refuses source movement before publication. | `test_public_integration_ref_movement_refuses_before_pair_merge` | mcp/tests/test_transaction_only_worktree_delivery.py:507-560 |
+| A recloseout after sync records the actual memory head. | `test_recloseout_after_a_sync_records_the_memory_head_as_content_commit` | mcp/tests/test_transaction_only_worktree_delivery.py:574-607 |
 | Cache materialization preserves both repositories' refs/commit objects and real content. | n/a | [mcp/tests/test_transaction_only_worktree_delivery.py](mcp/tests/test_transaction_only_worktree_delivery.py) |
 
 ## Cross-Repo References

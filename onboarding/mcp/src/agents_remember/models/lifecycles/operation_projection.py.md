@@ -80,8 +80,8 @@ No configured external Domain Documentation source governs these internal wire c
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Running, direct, and input-required phase sets use the canonical code/memory-only publication vocabulary. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| The atomic public envelope and its per-kind state matrix. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
+| Running, direct, and input-required phase sets use the canonical code/memory-only publication vocabulary. | `_INPUT_REQUIRED_PHASES` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:95-104 |
+| The atomic public envelope and its per-kind state matrix. | "the atomic public envelope" | mcp/src/agents_remember/models/lifecycles/operation_projection.py:5-6 |
 | CCR-R15 meaningful-state cursor on the envelope. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
 | Envelope coherence refusals keep observations internally valid. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
 | The durable record whose meaningful revision the envelope projects. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |

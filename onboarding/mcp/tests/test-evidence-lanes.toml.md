@@ -745,14 +745,14 @@ The exact source declarations below establish the current behavior; this invento
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs. The range moved by +2 when this change set and L4 each inserted one row additively into the same list. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:(5, 151)-(5, 151) |
-| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:(157, 221)-(157, 221) |
-| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:(223, 240)-(223, 240) |
-| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:(242, 256)-(242, 256) |
-| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:(260, 261)-(260, 261); mcp/tests/test-evidence-lanes.toml:(260, 261)-(260, 261) |
-| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:(157, 221)-(157, 221) |
-| The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:(5, 151)-(5, 151) |
-| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:(258, 258)-(258, 258) |
+| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs. The range moved by +2 when this change set and L4 each inserted one row additively into the same list. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-151 |
+| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:157-221 |
+| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:223-240 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:242-256 |
+| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:262-265 |
+| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:157-221 |
+| The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-151 |
+| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:4-265 |
 | LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
 | The checkpoint landing forcing suite is registered in the unit-regression lane by the same leaf that created it. | "mcp/tests/test_checkpoint_landing.py" | mcp/tests/test-evidence-lanes.toml:27-27 |
 | The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 184 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:222-222 |
@@ -766,10 +766,10 @@ The exact source declarations below establish the current behavior; this invento
 | The L7 capacity-refusal classification suite is registered in the integration lane by the same change set that created it (entry row 138 now, after the L8 and L3 insertions) — it composes the real `QueueFixture` over temporary Git repositories and drives the production graph admission and projection path, so that is its behaviour-preserving lane. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:172-172 |
 | The L8 terminal-blocker suite is registered in the integration lane by the same change set that created it (entry row 178 now, after the L3 insertion) — it builds a real landed leaf over disposable repositories and drives the public finalization route, so that is its behaviour-preserving lane. | "mcp/tests/test_terminal_blocker_reasons.py" | mcp/tests/test-evidence-lanes.toml:215-215 |
 | The L3 memory-backfill suite is registered in the unit-regression lane by the same change set that created it (entry row 69) — its cases drive the backfill plan and apply paths against disposable `tempfile` repositories without an integration marker, so it is a unit-regression member. | "mcp/tests/test_memory_backfill.py" | mcp/tests/test-evidence-lanes.toml:86-86 |
-| The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value. | "integration_case_budget = 250" | pyproject.toml:159-159 |
+| The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value. | "integration_case_budget = 300" | pyproject.toml:170-176 |
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-142 |
 | The L4 capsule-and-skill-serving suite is registered in the unit-regression lane by the same change set that created it (entry row 19) — 19 of its 21 cases are hermetic over a disposable coordination root and a synthetic skills corpus and only its two real-process exchanges carry the integration marker, so that is its behaviour-preserving lane. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:21-21 |
-| The unit collected-case ceiling. **Corrected by 260915-CAPS-L8:** it read 1000 and the default selection had outgrown it (1053 collected at the base, so `pytest mcp/tests` refused collection before any case executed); the developer ruled the raise and this leaf executes it, so the declaration now reads 1500 and the default selection runs. Superseded, not deleted — the condition it recorded was real and is what caused the ruling. | "unit_case_budget = 1500" | pyproject.toml:158-158 |
+| The unit collected-case ceiling. **Corrected twice:** it read 1000 and the default selection had outgrown it (1053 collected at the base, so `pytest mcp/tests` refused collection before any case executed); 260915-CAPS-L8 executed the developer's raise to 1500, and the merged line's 2026-09-17 ruling raised it again to **2000**, which is what the declaration reads now. Superseded twice, never deleted — the condition it recorded was real and is what caused each ruling. | "unit_case_budget = 2000" | pyproject.toml:165-168 |
 ## Cross-Repo References
 
 No separate cross-repository authority is established by this file.

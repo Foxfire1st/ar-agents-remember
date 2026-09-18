@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 
 ## Purpose
 
@@ -45,7 +45,7 @@ This bundle copy is the shape the frame hands a successor at a takeover spawn or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Conversation-Handover-Packet Template` | skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md:1-54 |
-| The frame's job-selection contact point hands this packet to a takeover-spawned successor so it onboards from state, not the transcript. | `## The Minimal Frame (the only machinery every session shares)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:140-174 |
+| The frame's job-selection contact point hands this packet to a takeover-spawned successor so it onboards from state, not the transcript. | "## Companion Files" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:126-144 |
 | The worker respawn use continues a leaf handed over by the worker job. | `# Lifecycle — Worker` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:1-154 |
 | The master-handover use is the manager's completed-master seat hand-off. | `# Lifecycle — Manager` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-242 |
 

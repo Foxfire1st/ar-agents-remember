@@ -58,13 +58,13 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bundle has code and memory outputs only. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| The bundle has code and memory outputs only. | "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:202-202 |
 | Created memory uses the one renderer; no-write intent has no message or private root. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Memory attribution is appended to the caller's body by one shared renderer. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
+| Memory attribution is appended to the caller's body by one shared renderer. | `MemoryAttributionError` | mcp/src/agents_remember/kernel/memory_attribution.py:95-96 |
 | Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
+| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | `actual_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:227-227 |
 | The stored normalized message becomes the private commit message. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py) |
-| The committed census checks that every listed producer reaches the shared renderer. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The committed census checks that every listed producer reaches the shared renderer. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-138 |
 
 ## Cross-Repo References
 

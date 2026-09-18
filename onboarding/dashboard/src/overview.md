@@ -471,7 +471,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public lifecycle recovery commits contain only real code and memory outputs. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
+| Public lifecycle recovery commits contain only real code and memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
 
 ## 260718-CHATS-L5I Current Route Impact
 

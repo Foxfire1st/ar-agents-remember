@@ -70,9 +70,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
-| Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
-| The wire now carries the canonical intent identity when present. (`_coherent_operation_projection`; `_incoherent_operation_projection`) | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py) |
+| Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) | `_operation_cancellable` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:568-576 |
+| Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) | `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:592-627 |
+| The wire now carries the canonical intent identity when present. (`_coherent_operation_projection`; `_incoherent_operation_projection`) | `_coherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:172-219 |
 
 ## Cross-Repo References
 

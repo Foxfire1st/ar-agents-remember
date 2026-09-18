@@ -55,10 +55,10 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
-| Mutation history and irreversible boundary require exact proof. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
-| Recovery commits cannot contradict commit proof. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
-| Worker binding and termination evidence are one authority. | n/a | [mcp/tests/test_lifecycle_operation_model_helpers.py](mcp/tests/test_lifecycle_operation_model_helpers.py) |
+| Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions. | `test_recovery_commits_cannot_contradict_commit_proof` | mcp/tests/test_lifecycle_operation_model_helpers.py:62-74 |
+| Mutation history and irreversible boundary require exact proof. | `test_mutation_history_and_irreversible_boundary_require_exact_proof` | mcp/tests/test_lifecycle_operation_model_helpers.py:36-59 |
+| Recovery commits cannot contradict commit proof. | `test_recovery_commits_cannot_contradict_commit_proof` | mcp/tests/test_lifecycle_operation_model_helpers.py:62-74 |
+| Worker binding and termination evidence are one authority. | `test_worker_binding_and_termination_evidence_are_one_authority` | mcp/tests/test_lifecycle_operation_model_helpers.py:77-121 |
 
 ## Cross-Repo References
 

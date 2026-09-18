@@ -64,8 +64,8 @@ These current source spans identify the implementation owners and the specific a
 | --- | --- | --- |
 | Ordinary admission requires the accepted code/memory work heads and substantive cleanliness. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
 | Source snapshots and replay/lineage decisions retain current Git facts. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Checkpoint capture, route output selection, and shared memory ancestry. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Addressed handover gates and publication preserve the operation's real identity. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
+| Checkpoint capture, route output selection, and shared memory ancestry. | `_require_memory_ancestry` | mcp/src/agents_remember/worktrees/modules/integrate.py:473-486 |
+| Addressed handover gates and publication preserve the operation's real identity. | `handover_gates` | mcp/src/agents_remember/worktrees/modules/integrate.py:131-131 |
 | Final and checkpoint result publication differ without performing reclamation. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
 | The shared writer records the two accepted output commits. | n/a | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
 

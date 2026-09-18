@@ -87,10 +87,10 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Ref/repository identity and transport-safe errors have shared implementations. | n/a | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
-| Candidate trees use private indices and exact derived-path exclusions. | n/a | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
-| Filtered status and staging/commit APIs share the exclusion contract. | n/a | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| Candidate trees use private indices and exact derived-path exclusions. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:38-68 |
+| Filtered status and staging/commit APIs share the exclusion contract. | `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/git.py:221-236 |
 | The exact cache pathspec is defined beside the consumer filename. | n/a | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
-| Changed-file reporting preserves its distinct deletion/rename/count semantics. | n/a | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| Changed-file reporting preserves its distinct deletion/rename/count semantics. | `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:309-348 |
 
 ## Cross-Repo References
 

@@ -236,9 +236,9 @@ Closeout readiness and recovery bind the actual code/memory candidate, task inte
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The cache derives only attributed history. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Cache write failure is reported without a Git publication. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| The source reader does not import cached rows. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| The cache derives only attributed history. | `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
+| Cache write failure is reported without a Git publication. | `refresh_memory_cache`; `prepare_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:65-91; mcp/src/agents_remember/kernel/memory_cache.py:44-62 |
+| The source reader does not import cached rows. | `read_ledger_source` | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249 |
 
 ### Sprint Closeout Queue
 
@@ -280,7 +280,7 @@ The ledger cache is not an enabledness choice or an input message. Disabled memo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The normalized input and message vocabulary contain only code/memory. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| The normalized input and message vocabulary contain only code/memory. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:47-53 |
 
 ### Curator Coherence Authority
 
@@ -322,9 +322,9 @@ CCR cumulative source verification: The journal now separates recordRevision, ad
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw Git facts and the filtered memory-content head are separate fields. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| The recovery tuple contains only actual code and memory outputs. | n/a | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Recovery verifies refs/ancestry before cache refresh. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
+| Raw Git facts and the filtered memory-content head are separate fields. | `contentHeadTree` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:26-26 |
+| The recovery tuple contains only actual code and memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+| Recovery verifies refs/ancestry before cache refresh. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:39-55 |
 
 ### Memory Baseline Adoption
 
@@ -345,8 +345,8 @@ CCR cumulative source verification: The journal now separates recordRevision, ad
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Adoption creates the memory-content output and refreshes its cache. | n/a | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
-| Adoption status is derived from Git attribution. | n/a | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
+| Adoption creates the memory-content output and refreshes its cache. | `memory_content_commit` | mcp/src/agents_remember/memory/baseline.py:233-240 |
+| Adoption status is derived from Git attribution. | `ledger_status` | mcp/src/agents_remember/memory/baseline.py:258-267 |
 
 ### Branch-Gated Cross-Repo Source
 
@@ -607,8 +607,8 @@ CCR cumulative source verification: Current contract publication additionally re
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract stores the actual two outputs and informational cache location. | n/a | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| One normalizer/validator owns contract serialization. | n/a | [mcp/src/agents_remember/worktrees/worktree_contract.py](mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The contract stores the actual two outputs and informational cache location. | `code_commit`; `memory_content_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:261-261; mcp/src/agents_remember/worktrees/worktree_contract.py:262-262 |
+| One normalizer/validator owns contract serialization. | `parse_contract_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:470-477 |
 
 ### Worktree Integration
 
@@ -665,8 +665,8 @@ CCR cumulative source verification: Current execution routes the repository-owne
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Admission checks actual sources, ancestry and content before refs move. | n/a | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
-| Carryover/cleanup readiness proves both outputs reached their official sources. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Admission checks actual sources, ancestry and content before refs move. | `prepare_integration_ref_move`; `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
+| Carryover/cleanup readiness proves both outputs reached their official sources. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
 
 ## Ownership Notes
 
@@ -693,11 +693,10 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
 
 ## Update History
 
-- 2026-09-17T10:52+02:00 — 260915-CAPS-L17 curator: **no entity row added or removed, and one L6-era description re-read and RETAINED because this candidate makes it true again.** The leaf gives eve's pinned application a real `AR_EVE_EFFORT` consumer and the adapter therefore publishes the effort axis, so `mcp/src/agents_remember/serving/eve_adapter.py` changed meaning while remaining the same implementation of the adapter/capability boundary. Two rows intersect the change and are the census's `entity-evidence-intersection` pair: **Harness Capability Snapshot** (whose evidence set carries `eve_adapter.py` and `harness_capability_catalog.py`) and **Harness Submission Authority** (whose set carries `eve_adapter.py`). The description the snapshot's row must not contradict is the L6 note's "including the honest `session_settable: False` model/effort shape that a catalog reader must see" — **it said that while the axis was withheld (L8) and says it again now that the axis is published**, since every published effort option is `launch_settable=True` / `session_settable=False`; the sentence is left exactly as written rather than annotated, because it is accurate at this tip. `CAPS-R17`'s own split is recorded here for the next reader: the menu is the accepted launch vocabulary, and an in-session `set_effort` stays `unsupported`. **No fingerprint was hand-advanced.** `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, and this candidate is uncommitted with staged changes to `eve_adapter.py`, so a value computed now would bake in base bytes; the governed closeout recomputes both rows against the real code commit, exactly as the L6/L12/L14 entries already require. The drift check reports both rows drifted and that is the expected uncommitted-candidate signature, not a prose defect.
-
 - 2026-09-17T12:00+02:00 — 260915-CAPS-L14 curator: extended the **Memory Quality Control** entity with its citation-index contract. Added a `Source References` extension naming `exclusion_register.py` and `citation_index_settings.py`, and a new **Citation-Index Contract (260915-CAPS-L14)** row recording the shared exclusion register and its three sources, the reported-skip cap mechanics under the developer's 2026-08-20 ruling, and that the register, the caps and the settings key are mode-independent. **The `git-blob-set-v1` fingerprint row was deliberately NOT re-signed.** The leaf's source is uncommitted, so `rev-parse HEAD:<path>` cannot resolve a blob for a file that does not exist at HEAD and a fingerprint computed now would bake in the base bytes of the modified files and empty hashes for the new ones — a stamp advanced onto an uncommitted tree. I verified the algorithm by reproducing this entity's recorded fingerprint `sha256:9a65d5e5…` from its current evidence set before declining to overwrite it; the governed closeout recomputes the row against the real code commit. Verification metadata remains closeout-owned; no stamp was advanced and no commit hash was invented.
 
-- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **two current-tense rows corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`); no entity row was added or removed, because the removal changed a vocabulary member and an alias's home rather than introducing or retiring a load-bearing cross-layer entity. Row 1: the **Documentation Artifact** catalog's `Current Naming Drift` no longer claims "None recorded after the external-memory terminology alignment" with an `ar-memory/` internal-memory branch — it now states the `ar-memory-*` schema identifiers as historical wire contracts, names external memory repos as the only supported topology, and records the removal plus `repo-sidecar` as a per-artifact placement rather than a topology. Row 2: the **Coordination Context** entity's `Description` said the resolved context and the contract "share one declaration of `internal`/`external`/`disabled`" and that "the three values are unchanged" — it now reads **two** values, `external` and `disabled`, records that the declaration moved to `kernel/memory_mode.py` out of `kernel/coordination_context/models.py`, and names the typed refusal; the same entity's `Current Naming Drift` row was updated from "None recorded" to the moved alias. Fingerprint rows were **not** hand-edited: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the governed closeout recomputes them against the real code commit. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+- 2026-09-17T10:52+02:00 — 260915-CAPS-L17 curator: **no entity row added or removed, and one L6-era description re-read and RETAINED because this candidate makes it true again.** The leaf gives eve's pinned application a real `AR_EVE_EFFORT` consumer and the adapter therefore publishes the effort axis, so `mcp/src/agents_remember/serving/eve_adapter.py` changed meaning while remaining the same implementation of the adapter/capability boundary. Two rows intersect the change and are the census's `entity-evidence-intersection` pair: **Harness Capability Snapshot** (whose evidence set carries `eve_adapter.py` and `harness_capability_catalog.py`) and **Harness Submission Authority** (whose set carries `eve_adapter.py`). The description the snapshot's row must not contradict is the L6 note's "including the honest `session_settable: False` model/effort shape that a catalog reader must see" — **it said that while the axis was withheld (L8) and says it again now that the axis is published**, since every published effort option is `launch_settable=True` / `session_settable=False`; the sentence is left exactly as written rather than annotated, because it is accurate at this tip. `CAPS-R17`'s own split is recorded here for the next reader: the menu is the accepted launch vocabulary, and an in-session `set_effort` stays `unsupported`. **No fingerprint was hand-advanced.** `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, and this candidate is uncommitted with staged changes to `eve_adapter.py`, so a value computed now would bake in base bytes; the governed closeout recomputes both rows against the real code commit, exactly as the L6/L12/L14 entries already require. The drift check reports both rows drifted and that is the expected uncommitted-candidate signature, not a prose defect.
+
 - 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: judged the Codex capsule-delivery seam against this
   catalog's own criteria and added **no entity row** — it is a new implementation of the existing
   adapter instruction-channel boundary, not a new cross-layer entity. Recorded the two entities whose
@@ -708,6 +707,7 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
   be derived from this deliberately uncommitted candidate, and the governed closeout recomputes both
   rows against the real code commit.
 
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **two current-tense rows corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`); no entity row was added or removed, because the removal changed a vocabulary member and an alias's home rather than introducing or retiring a load-bearing cross-layer entity. Row 1: the **Documentation Artifact** catalog's `Current Naming Drift` no longer claims "None recorded after the external-memory terminology alignment" with an `ar-memory/` internal-memory branch — it now states the `ar-memory-*` schema identifiers as historical wire contracts, names external memory repos as the only supported topology, and records the removal plus `repo-sidecar` as a per-artifact placement rather than a topology. Row 2: the **Coordination Context** entity's `Description` said the resolved context and the contract "share one declaration of `internal`/`external`/`disabled`" and that "the three values are unchanged" — it now reads **two** values, `external` and `disabled`, records that the declaration moved to `kernel/memory_mode.py` out of `kernel/coordination_context/models.py`, and names the typed refusal; the same entity's `Current Naming Drift` row was updated from "None recorded" to the moved alias. Fingerprint rows were **not** hand-edited: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the governed closeout recomputes them against the real code commit. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass, same uncommitted candidate, same two rows): re-read the L6 entity judgment against the A2 revision and it **stands unchanged** — the adapter remains an implementation of the existing adapter/capability boundary rather than a new cross-layer entity, so no third row was added and the two evidence-path sets were not widened further. Added an A2 note to the impact section recording what the round strengthened (acceptance proved from the durable record rather than a delivery id; the queued policy on create *and* follow-up; a single replay-window owner), so the next reader does not have to rediscover it. Both fingerprints stay at the prior committed baseline and were again **not** hand-edited: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the refreshed value cannot be derived from this uncommitted candidate, and the governed closeout recomputes both rows against the real code commit. The pass also restored this section's newest-first order by moving the leaf's 09:00 entry above the 08:01 entry it had been appended after; no entry was rewritten or dropped.
 
 - 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: the native eve session adapter is a new
@@ -752,7 +752,10 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
   record shapes as well). No inventory prose changed, no evidence path set changed.
   Verification metadata remains closeout-owned; no acceptance claim.
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-15T01:15:02+00:00 — LCA working-candidate entity curation: corrected External Memory Ledger, Closeout Effective Input, Closeout Mutation Evidence, Memory Baseline Adoption, Worktree Contract and Worktree Integration to Git-derived consumer cache and two-output authority. Added exact current source evidence and the shared cache owner. Preserved all prior fingerprints/verification fields pending a real source commit, all prior history and unrelated entity bodies. Repaired the already-truncated baseline row only; moved its unrelated surviving fragment to an explicitly historical ownership note without reconstructing the catalog. Source review only, no live history migration or aggregate acceptance claim.
+
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): the **External Memory Ledger** entry's
@@ -770,9 +773,6 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
   Verification metadata remains closeout-owned; no acceptance claim is made.
 
 - 2026-09-15T03:43 UTC — Closed pending fingerprint wording for the 11 entities in the recorded refresh from committed `7cbda30d9a9a4c2944382fbef46ac58b85329935`. Confirmed all 11 stored values against the refresh receipt, including the cache-owner evidence set; fingerprint/evidence-path values, unrelated entity prose, global verification fields, and prior history were preserved. Scoped receipt/prose closure only, not full-catalog certification.
-
-
-- 2026-09-15T01:15:02+00:00 — LCA working-candidate entity curation: corrected External Memory Ledger, Closeout Effective Input, Closeout Mutation Evidence, Memory Baseline Adoption, Worktree Contract and Worktree Integration to Git-derived consumer cache and two-output authority. Added exact current source evidence and the shared cache owner. Preserved all prior fingerprints/verification fields pending a real source commit, all prior history and unrelated entity bodies. Repaired the already-truncated baseline row only; moved its unrelated surviving fragment to an explicitly historical ownership note without reconstructing the catalog. Source review only, no live history migration or aggregate acceptance claim.
 
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the gate reports two

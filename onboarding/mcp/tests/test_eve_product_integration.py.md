@@ -216,7 +216,7 @@ sibling produces.
 | The asset and credential boundary. | `EveAssetAndCredentialBoundaryTests` | mcp/tests/test_eve_product_integration.py:1965-2034 |
 | The provenance census and the falsifiable label case over it. | `_PINNED_RUN_CENSUS`; `_RECORDED_PROVENANCE`; `test_every_scripted_frame_carries_an_honest_provenance_label` | mcp/tests/test_eve_product_integration.py:364-390; mcp/tests/test_eve_product_integration.py:391-409; mcp/tests/test_eve_product_integration.py:1481-1496 |
 | The real executable the probe actually runs, and the module's honest statement of the environment's limit. | `_stub_interpreter` | mcp/tests/test_eve_product_integration.py:279-294 |
-| The module's own lane row, which the fail-closed loader requires. | `unit-regression` | mcp/tests/test-evidence-lanes.toml:52-52 |
+| The module's own lane row, which the fail-closed loader requires. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 | The authored consumer the source-shape case parses, and the launch input it reads. | `PROVIDER_DEFAULT_EFFORT`; `reasoning`; `EFFORT_ENV` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35; mcp/src/agents_remember/serving/eve_runtime_launch.py:87-87 |
 | The production projector the projector cases drive. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:147-159 |
 | The readiness probe the registry cases drive. | `eve_runtime_readiness` | mcp/src/agents_remember/kernel/eve_runtime_readiness.py:89-128 |

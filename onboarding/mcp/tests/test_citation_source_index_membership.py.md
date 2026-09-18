@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_citation_source_index_membership.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,10 +78,10 @@ was available for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The acquisition rule and its caps, which these cases exercise. | `_tree_state`; `_git_candidate_paths`; `_indexed_file`; `_walkable_directory` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:810-857; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:718-749 |
-| The caps themselves, owned by the state module the index imports them from. | `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_BYTES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py |
+| The acquisition rule and its caps, which these cases exercise. | `_tree_state`; `_git_candidate_paths`; `_indexed_file`; `_walkable_directory` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:810-857; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:718-749; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:953-1030 |
+| The caps themselves, owned by the state module the index imports them from. | `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_BYTES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:23-23; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:22-22 |
 | The landed citation cases that the rejected "skip every untracked path" reading re-reds — the reason the uncommitted-but-unignored half is retained. | `test_memory_citation_fix_scopes.py`; `test_memory_citation_grammars.py` | mcp/tests/test_memory_citation_fix_scopes.py; mcp/tests/test_memory_citation_grammars.py |
-| The lane row this module carries. | `unit-regression` | mcp/tests/test-evidence-lanes.toml:26-26 |
+| The lane row this module carries. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References
 

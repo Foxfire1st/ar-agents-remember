@@ -82,11 +82,11 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The single key, log format, renderer, and attribution value. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
+| The single key, log format, renderer, and attribution value. | `_LOG_FORMAT` | mcp/src/agents_remember/kernel/memory_attribution.py:56-56 |
 | The history walk and message/value parsers define the actual read behavior. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
 | Row conversion and optional object validation. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
 | Runtime ledger derivation never consults cache text. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| The source census and behavioral renderer case keep the producer seam visible. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The source census and behavioral renderer case keep the producer seam visible. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-138 |
 
 ## Cross-Repo References
 
@@ -99,7 +99,7 @@ No additional configured external or sibling-repository evidence is claimed.
 
 ## Update History
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
   set, `ar/260913_ledger-commit-attribution`, base `bb65a207`): anchor repoint only, no claim

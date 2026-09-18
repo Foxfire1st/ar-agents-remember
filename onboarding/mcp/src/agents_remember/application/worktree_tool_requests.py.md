@@ -70,13 +70,13 @@ contracts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw closeout/control messages and landed commits contain only code/memory values. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
+| Raw closeout/control messages and landed commits contain only code/memory values. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:110-115 |
 | Task-start concepts and shared defaults have one definition. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
 | Lifecycle control reconstructs only canonical typed public values. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
 | Closeout approval, messages, and finalization documents remain separate concepts. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
 | Start consumes its extracted request type. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Operation control consumes its extracted request type. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Closeout apply consumes its extracted request type. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Operation control consumes its extracted request type. | `_operation_control_request_refusal` | mcp/src/agents_remember/application/worktree_tools.py:557-585 |
+| Closeout apply consumes its extracted request type. | `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:353-368 |
 
 ## Cross-Repo References
 

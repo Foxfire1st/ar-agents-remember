@@ -62,7 +62,7 @@ The following current source boundaries establish the ledger-retirement behavior
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Proposed commit payloads separate leaf mutation from exact series recording. (`proposed_closeout_commits`) | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-67 |
-| Summary and ordering publish the same lifecycle altitude. (`closeout_summary`; `closeout_order`) | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_preview.py](mcp/src/agents_remember/worktrees/queue/closeout_preview.py) |
+| Summary and ordering publish the same lifecycle altitude. (`closeout_summary`; `closeout_order`) | `closeout_order` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:84-102 |
 
 ## Docs References
 

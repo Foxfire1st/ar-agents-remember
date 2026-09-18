@@ -90,8 +90,8 @@ No Domain Documentation source is configured. The repository sources are direct 
 | --- | --- | --- |
 | The open service, bounded ledger, and record model under test. | "class ConversationOpenService" | mcp/src/agents_remember/serving/conversation/library/open_service.py:258-258 |
 | The ASGI open/status/reconcile surface mapping the same outcomes to HTTP. | "class LibraryApiTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_conversation_library_api.py:310-503 |
-| The helper host's own entry table, which the gate consults instead of a hardcoded harness pair. | `HELPER_ENTRY_BY_HARNESS`; `HelperHarness`; `ConversationLibraryHelperHost` | mcp/src/agents_remember/serving/conversation/library/helper_host.py |
-| The gate registry whose routing these cases pin, and the probes they substitute. | `LibraryGateRegistry`; `GateProbes`; `history_capabilities` | mcp/src/agents_remember/serving/conversation/library/gates.py |
+| The helper host's own entry table, which the gate consults instead of a hardcoded harness pair. | `HELPER_ENTRY_BY_HARNESS`; `HelperHarness`; `ConversationLibraryHelperHost` | mcp/src/agents_remember/serving/conversation/library/helper_host.py:37-40; mcp/src/agents_remember/serving/conversation/library/helper_host.py:35-35; mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-221 |
+| The gate registry whose routing these cases pin, and the probes they substitute. | `LibraryGateRegistry`; `GateProbes`; `history_capabilities` | mcp/src/agents_remember/serving/conversation/library/gates.py:190-348; mcp/src/agents_remember/serving/conversation/library/gates.py:173-184; mcp/src/agents_remember/serving/conversation/library/gates.py:212-221 |
 | The two classes this leaf added: the named refusal for an unserved harness, and the authority of the derived table over a hardcoded pair. | `UnservedHarnessRefusalTests`; `HelperRouteAuthorityTests`; `_NeverCalledHelperHost` | mcp/tests/test_conversation_library_open.py:1191-1234; mcp/tests/test_conversation_library_open.py:1235-1297; mcp/tests/test_conversation_library_open.py:1148-1161 |
 
 ## Cross-Repo References

@@ -81,8 +81,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The door context binds an authored graph once and returns the sprint carrying that immutable graph generation. (`door_task_context`; `DoorSourceContext`) | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
-| Generation declaration includes the R03 dependency set and policy provenance resolution. (`_declare_generation`; `_door_policy_provenance`) | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/door_source.py](mcp/src/agents_remember/worktrees/integration/closeout/door_source.py) |
+| The door context binds an authored graph once and returns the sprint carrying that immutable graph generation. (`door_task_context`; `DoorSourceContext`) | `door_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:65-90 |
+| Generation declaration includes the R03 dependency set and policy provenance resolution. (`_declare_generation`; `_door_policy_provenance`) | `_declare_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:381-475 |
 | Transitions re-require the declared dependencies. (`_transitioned_generation`) | `_transitioned_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:309-340 |
 
 ## Cross-Repo References

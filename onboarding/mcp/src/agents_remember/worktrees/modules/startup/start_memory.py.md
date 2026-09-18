@@ -57,7 +57,7 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Source state, named-branch admission, and informational Git-derived metadata. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
+| Source state, named-branch admission, and informational Git-derived metadata. | `memory_branch_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:48-48 |
 | Mtime reuse and divergence handling preserve the current indexing behavior. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
 | Missing external repository and explicit disabled-memory outcomes. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/start_memory.py](mcp/src/agents_remember/worktrees/modules/startup/start_memory.py) |
 | The informational ledger is reconstructed from commit attribution without a cache read. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |

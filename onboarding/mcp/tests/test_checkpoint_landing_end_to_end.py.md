@@ -61,10 +61,10 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Initial live-pair capture, source merge, and source divergence. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Retry, continued work, and final-route completion semantics. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Ordinary leaf cache absence and code-only checkpoint publication. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Source-cache damage does not block; real approval/master/race guards survive. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
-| Checkpoint publication remains distinct from pause. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
+| Retry, continued work, and final-route completion semantics. | `test_retry_is_idempotent_and_continued_work_checkpoints_again` | mcp/tests/test_checkpoint_landing_end_to_end.py:165-201 |
+| Ordinary leaf cache absence and code-only checkpoint publication. | `test_the_ordinary_leaf_route_lands_without_a_cache_file` | mcp/tests/test_checkpoint_landing_end_to_end.py:278-302 |
+| Source-cache damage does not block; real approval/master/race guards survive. | `test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint` | mcp/tests/test_checkpoint_landing_end_to_end.py:412-431 |
+| Checkpoint publication remains distinct from pause. | `CheckpointPausesAnUnfinishedMasterTests` | mcp/tests/test_checkpoint_landing_end_to_end.py:41-479 |
 
 ## Cross-Repo References
 

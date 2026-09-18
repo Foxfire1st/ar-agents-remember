@@ -59,8 +59,8 @@ These current source spans identify the implementation owners and the specific a
 | --- | --- | --- |
 | The door candidate contains only real candidate/base and review/memory facts. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
 | Current source bases and cache-excluding memory tree capture. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Review and task evidence remain independently validated. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Cache changes leave memory candidate identity stable while real content changes it. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Review and task evidence remain independently validated. | `_door_task_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:250-266 |
+| Cache changes leave memory candidate identity stable while real content changes it. | `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:213-245 |
 
 ## Cross-Repo References
 

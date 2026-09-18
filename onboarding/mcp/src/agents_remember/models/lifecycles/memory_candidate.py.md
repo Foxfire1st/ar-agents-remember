@@ -65,7 +65,7 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The frozen pair identity retains ledgerPath as information excluded from its authority digest. | n/a | [mcp/src/agents_remember/models/lifecycles/memory_candidate.py](mcp/src/agents_remember/models/lifecycles/memory_candidate.py) |
+| The frozen pair identity retains ledgerPath as information excluded from its authority digest. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
 | The strict frozen pair wire contract declares every required authority cell. | n/a | [mcp/src/agents_remember/models/lifecycles/memory_candidate.py](mcp/src/agents_remember/models/lifecycles/memory_candidate.py) |
 | The resolver is the sole producer of this identity. | n/a | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
 

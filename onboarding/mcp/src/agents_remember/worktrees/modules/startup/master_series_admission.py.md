@@ -75,9 +75,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed admission evidence and bounded refusal projection. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
+| Typed admission evidence and bounded refusal projection. | `_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:100-159 |
 | Existing contracts are classified before the separate edge checks. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
-| External memory is checked through real repository/worktree identity without a ledger-path argument. | n/a | [mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py](mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py) |
+| External memory is checked through real repository/worktree identity without a ledger-path argument. | `_same_master_repository_edge` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:253-269 |
 
 ## Cross-Repo References
 

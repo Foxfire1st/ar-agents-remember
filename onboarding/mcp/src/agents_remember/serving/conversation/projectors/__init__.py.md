@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f`|
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ harnesses through `projector_for`.
 | The eve projector bound here, and the three flags that make the durable stream its only evidence surface. | `_EveProjector`; `uses_native_pages`; `uses_transcript_echo`; `eager_native_continuation` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:115-125 |
 | The per-harness mapper module the registration binds. | `map_evidence_frame`; `map_native_frame`; `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:147-159; mcp/src/agents_remember/serving/conversation/projectors/eve.py:347-351; mcp/src/agents_remember/serving/conversation/projectors/eve.py:354-362 |
 | The harness union a registered projector's `harness_id` is typed with, widened so eve could register. | `HarnessId` | mcp/src/agents_remember/models/conversations/identity.py:10-10 |
-| The cases: every registered harness id has a projector, and the eve projector declares stream-only evidence. | `test_every_registered_harness_id_has_a_projector`; `test_the_eve_projector_declares_stream_only_evidence` | mcp/tests/test_eve_product_integration.py:1109-1112; mcp/tests/test_eve_product_integration.py:1114-1120 |
+| The cases: every registered harness id has a projector, and the eve projector declares stream-only evidence. | `test_every_registered_harness_id_has_a_projector`; `test_the_eve_projector_declares_stream_only_evidence` | mcp/tests/test_eve_product_integration.py:1109-1112; mcp/tests/test_eve_product_integration.py:1114-1120; mcp/tests/test_eve_product_integration.py:1369-1372; mcp/tests/test_eve_product_integration.py:1374-1380 |
 
 ## Cross-Repo References
 

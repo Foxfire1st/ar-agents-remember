@@ -43,7 +43,7 @@ This bundle copy is written by fan-out sub-agents and consumed by the orchestrat
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Impact-Analysis Template` | skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52 |
-| The orchestrator's portfolio integrity bulwark consumes this report, written by its own loop or a dispatched seat while AR mutations stay in the orchestrator main loop. | `# Lifecycle — Orchestrator`; "portfolio integrity after the design returns" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:383-383 |
+| The orchestrator's portfolio integrity bulwark consumes this report, written by its own loop or a dispatched seat while AR mutations stay in the orchestrator main loop. | `# Lifecycle — Orchestrator`; "portfolio integrity after the design returns" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:383-383; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:385-385 |
 | The frame's artifact-obligation doctrine keeps AR mutations in the main loop while sub-agents write templated reports. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-180 |
 
 ## Cross-Repo References

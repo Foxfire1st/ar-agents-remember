@@ -161,7 +161,7 @@ The following current source owns the changed behavior; no external domain sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery proves the accepted code and memory outputs without a cache lookup. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_recovery.py](mcp/src/agents_remember/worktrees/queue/closeout_recovery.py) |
+| Recovery proves the accepted code and memory outputs without a cache lookup. | `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
 
 ## Update History
 

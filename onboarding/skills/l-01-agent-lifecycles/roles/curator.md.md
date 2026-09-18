@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -80,11 +80,11 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The seat definition names the three-way reconciliation and onboarding-only boundary. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
-| Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, and durable reports. | "### 1 — Intake" | skills/l-01-agent-lifecycles/roles/curator.md:63-87 |
-| Inspection classifies contract disposition rather than equating test-green with intent-green. | "### 2 — Inspect" | skills/l-01-agent-lifecycles/roles/curator.md:89-101 |
-| Current intent, evidence, and semantic history are separate information planes. | "### 3 — Write Onboarding Only" | skills/l-01-agent-lifecycles/roles/curator.md:103-143 |
-| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
+| The seat definition names the three-way reconciliation and onboarding-only boundary. | "## 1 — Purpose And Authority" | skills/l-01-agent-lifecycles/roles/curator.md:14-48 |
+| Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, and durable reports. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/curator.md:49-66 |
+| Inspection classifies contract disposition rather than equating test-green with intent-green. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/curator.md:67-99 |
+| Current intent, evidence, and semantic history are separate information planes. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/curator.md:67-99 |
+| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/curator.md:67-99 |
 
 ## 260821-DAGQC-L2 Quality Invocation
 

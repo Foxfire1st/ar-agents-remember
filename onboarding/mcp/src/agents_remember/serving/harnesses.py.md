@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harnesses.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,14 +109,14 @@ path owns dynamic native selection.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The launch module validates native model and model-local effort against dynamic advertise. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:80-121; mcp/src/agents_remember/serving/harness_launch.py:175-208 |
-| The adapter factory constructs builtin protocol adapters and leaves unknown/custom ids unsupported. | `BUILTIN_PROTOCOL_HARNESSES`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:33-33; mcp/src/agents_remember/serving/harness_control_factories.py:56-102 |
+| The adapter factory constructs builtin protocol adapters and leaves unknown/custom ids unsupported. | `BUILTIN_PROTOCOL_HARNESSES`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:33-33; mcp/src/agents_remember/serving/harness_control_factories.py:56-102; mcp/src/agents_remember/serving/harness_control_factories.py:35-35; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
 | The settings loader builds the effective registry for explicit custom mappings. | "def _parse_harnesses("; "def _parse_harness_entry(" | mcp/src/agents_remember/kernel/_agentic_settings_harness.py:26-26; mcp/src/agents_remember/kernel/_agentic_settings_harness.py:92-92 |
 | Detection delegates here: the registry resolves the probe-declaring row through its probe rather than `PATH`, and returns the probe's own sentence as the detail. | `harness_availability_detail`; `harness_runtime_verdict`; `is_harness_available`; `register_runtime_probe` | mcp/src/agents_remember/kernel/harnesses.py:50-57; mcp/src/agents_remember/kernel/harnesses.py:71-79; mcp/src/agents_remember/kernel/harnesses.py:82-103; mcp/src/agents_remember/kernel/harnesses.py:106-139 |
 | The one probe-declaring row and the probe name it carries. | `EVE_RUNTIME_PROBE`; `HARNESSES` | mcp/src/agents_remember/kernel/harnesses.py:144-144; mcp/src/agents_remember/kernel/harnesses.py:187-212 |
 | The probe implementation detection now asks, including the bounded interpreter execution and the floor it owns. | `eve_runtime_readiness`; `MINIMUM_NODE_MAJOR` | mcp/src/agents_remember/kernel/eve_runtime_readiness.py:55-55; mcp/src/agents_remember/kernel/eve_runtime_readiness.py:89-128 |
 | The settings override path carries the builtin row's probe across an override instead of dropping it. | `_merged_harness` | mcp/src/agents_remember/kernel/_agentic_settings_harness.py:133-182 |
 | The terminal opener is the consumer that must ask the narrower launchability question. | `_require_launchable_harness`; `resolve_terminal_launch` | mcp/src/agents_remember/serving/terminal_opener.py:252-296; mcp/src/agents_remember/serving/terminal_opener.py:299-319 |
-| The cases pin that the eve row consults its probe and never `PATH`, and that the path harnesses keep the ordinary lookup. | `EveRegistryTests`; `EveTerminalLaunchTests` | mcp/tests/test_eve_product_integration.py:575-629; mcp/tests/test_eve_product_integration.py:632-707 |
+| The cases pin that the eve row consults its probe and never `PATH`, and that the path harnesses keep the ordinary lookup. | `EveRegistryTests`; `EveTerminalLaunchTests` | mcp/tests/test_eve_product_integration.py:575-629; mcp/tests/test_eve_product_integration.py:632-707; mcp/tests/test_eve_product_integration.py:751-859 |
 
 ## Cross-Repo References
 

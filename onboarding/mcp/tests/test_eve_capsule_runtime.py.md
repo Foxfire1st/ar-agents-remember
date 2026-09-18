@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_eve_capsule_runtime.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,10 +94,10 @@ was available for this file.
 | --- | --- | --- |
 | The shipped modules under test: the in-process carrier verifier and the git-workspace comparison. | `loadVerifiedCapsule`; `admitWritePath`; `verifyAdmittedWorkspace` | eve_runtime/agent/lib/capsule.ts:109-149; eve_runtime/agent/lib/capsule.ts:164-178; eve_runtime/agent/lib/git-workspace.ts:47-68 |
 | The git metadata reader the workspace comparison is built on, and the linked-worktree `.git`-file shape it must handle. | `readGitHead`; `gitDirectory` | eve_runtime/agent/lib/git-workspace.ts:23-45; eve_runtime/agent/lib/git-workspace.ts:70-95 |
-| The production Node resolver these cases use, so the interpreter under test is the one a launch would pick. | `resolve_node_executable` | mcp/src/agents_remember/serving/eve_runtime_launch.py |
+| The production Node resolver these cases use, so the interpreter under test is the one a launch would pick. | `resolve_node_executable` | mcp/src/agents_remember/serving/eve_runtime_launch.py:605-635 |
 | The Python half of the same seam, which asserts the format and the launch-time verification these cases complement. | `verify_capsule_binding`; `test_launch_verification_refuses_every_declared_defect` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; mcp/tests/test_eve_capsule_binding.py:364-395 |
 | The fixture world supplying the real repositories, worktrees and task documents. | `FixtureWorld`; `build_world` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:457-549 |
-| The live native fixture, which is the only artifact that proves the binding end to end against a real eve process. | `capsule-binding` scenario | mcp/tests/live_eve_native_fixture.py |
+| The live native fixture, which is the only artifact that proves the binding end to end against a real eve process. | "capsule-binding" | mcp/tests/live_eve_native_fixture.py:1137-1137 |
 
 ## Cross-Repo References
 

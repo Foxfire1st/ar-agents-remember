@@ -85,7 +85,7 @@ Source declarations and test assertions are distinguished from execution and acc
 | Flags, request resolution, and mode/directory refusal define the adapter scope. | n/a | [mcp/src/agents_remember/cli/memory_backfill.py](mcp/src/agents_remember/cli/memory_backfill.py) |
 | Planning and apply status/output remain separate. | n/a | [mcp/src/agents_remember/cli/memory_backfill.py](mcp/src/agents_remember/cli/memory_backfill.py) |
 | The kernel owns loss-aware planning and the explicit apply transaction. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
-| Actual branch-name invocation and retry behavior are tested through the CLI. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| Actual branch-name invocation and retry behavior are tested through the CLI. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:853-909 |
 
 ## Cross-Repo References
 

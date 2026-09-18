@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -116,7 +116,7 @@ initialize/state helpers.
 | Native Codex payload shape failures become typed library-store errors rather than fabricated history. | `_shape_error` | mcp/src/agents_remember/serving/conversation/library/codex.py:715-718 |
 | Native agent rows require their actual parent and grouping evidence; no unproven agent identity is fabricated. | `_agent_row` | mcp/src/agents_remember/serving/conversation/library/codex.py:558-608 |
 | Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
-| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-162; mcp/src/agents_remember/serving/codex_app_server_state.py:561-566; mcp/src/agents_remember/serving/codex_app_server_state.py:585-588; mcp/src/agents_remember/serving/codex_app_server_state.py:595-599; mcp/src/agents_remember/serving/codex_app_server_state.py:602-606 |
+| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-162; mcp/src/agents_remember/serving/codex_app_server_state.py:561-566; mcp/src/agents_remember/serving/codex_app_server_state.py:585-588; mcp/src/agents_remember/serving/codex_app_server_state.py:595-599; mcp/src/agents_remember/serving/codex_app_server_state.py:602-606; mcp/src/agents_remember/serving/codex_app_server_state.py:592-597; mcp/src/agents_remember/serving/codex_app_server_state.py:633-637 |
 
 ## Cross-Repo References
 

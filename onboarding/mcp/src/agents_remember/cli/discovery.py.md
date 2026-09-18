@@ -73,7 +73,7 @@ over three named helpers that carry that totality explicitly:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()", "except (ConfigDiscoveryError" | mcp/src/agents_remember/cli/dashboard.py:217-217; mcp/src/agents_remember/cli/dashboard.py:219-219 |
+| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()", "except (ConfigDiscoveryError" | mcp/src/agents_remember/cli/dashboard.py:217-217; mcp/src/agents_remember/cli/dashboard.py:219-219; mcp/src/agents_remember/cli/dashboard.py:239-239; mcp/src/agents_remember/cli/dashboard.py:241-241 |
 | The settings loader the discovered path feeds (`load_config`). | `load_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167 |
 | Unit tests: convention/registration hits, precedence, nearest-wins, malformed tolerance, template skip, miss error. | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
 

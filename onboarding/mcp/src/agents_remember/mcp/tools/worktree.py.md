@@ -123,10 +123,10 @@ The source itself and its governing route are sufficient for this thin payload a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration payloads forward contract, strategy, and preview choice without ledger intent. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| Integration payloads forward contract, strategy, and preview choice without ledger intent. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:110-118 |
 | Start, sync, attach, pause, and status payload builders preserve typed application inputs. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:159-174 |
+| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | `worktree_pause_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:88-95 |
 
 ## Cross-Repo References
 
@@ -152,7 +152,7 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:56-73 |
 
 ## 260831-CCR-L15 Status-Wait Payload Export
 

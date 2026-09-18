@@ -89,7 +89,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. (`launch_detached_worker`) | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:946-1041 |
-| R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`) | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py); [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py) |
+| R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`) | `queued_operation_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71 |
 
 ## Cross-Repo References
 

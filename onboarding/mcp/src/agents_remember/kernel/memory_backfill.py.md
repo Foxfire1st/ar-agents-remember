@@ -95,10 +95,10 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Typed request and plan reporting distinguish work, losses, and an empty plan. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
-| Selection preserves available memory attributions and reports unrepresentable claims. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| Selection preserves available memory attributions and reports unrepresentable claims. | `SKIP_MEMORY_COMMIT_CLAIMED` | mcp/src/agents_remember/kernel/memory_backfill.py:84-84 |
 | Apply orders digest/rescue/rewrite/publication and frames every target update correctly. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
 | Historical table reads/carry remain explicit migration helpers. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
-| The apply regression now moves two named refs and verifies the rescue tip. | n/a | [mcp/tests/test_memory_backfill.py](mcp/tests/test_memory_backfill.py) |
+| The apply regression now moves two named refs and verifies the rescue tip. | `test_the_rescue_ref_may_not_be_one_of_the_refs_the_run_moves` | mcp/tests/test_memory_backfill.py:624-634 |
 | Native topological traversal visits parents before their children during replay. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
 
 ## Cross-Repo References
@@ -112,7 +112,7 @@ No additional configured external or sibling-repository evidence is claimed.
 
 ## Update History
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the multi-branch migration is fixed.**

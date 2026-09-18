@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,7 +109,7 @@ pass was available for this file. It asserts the repository's own rendered surfa
 | The shipped surface this case mounts, and the store it seeds. | `ConversationSurface`; `activeConversationStore`; `emptyProjection` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-269; dashboard/src/data/conversation/store.ts:207-207; dashboard/src/data/conversation/reducer.ts:68-68 |
 | The decoder that supplies the items and status with no cast. | `eveConversationItems`; `eveConversationStatus` | dashboard/src/test/fixtures/eveConversationCapture.ts:376-376; dashboard/src/test/fixtures/eveConversationCapture.ts:379-379 |
 | The guard the no-cast discipline satisfies. | `wireFixtureGuard` | dashboard/src/test/wireFixtureGuard.ts:1-1; dashboard/src/test/wireFixtureGuard.test.ts:1-1 |
-| The Python cases that pin the same capture against the live projector and assert the states it must show. | `test_the_projection_matches_the_capture_the_mounted_ui_renders`; `test_the_capture_shows_the_states_the_packet_names`; `test_live_frames_and_replayed_frames_project_identically`; `test_a_reconnect_replays_evidence_without_duplicating_items` | mcp/tests/test_eve_product_integration.py:1445-1452; mcp/tests/test_eve_product_integration.py:1454-1485; mcp/tests/test_eve_product_integration.py:1496-1514; mcp/tests/test_eve_product_integration.py:1516-1532 |
+| The Python cases that pin the same capture against the live projector and assert the states it must show. | `test_the_projection_matches_the_capture_the_mounted_ui_renders`; `test_the_capture_shows_the_states_the_packet_names`; `test_live_frames_and_replayed_frames_project_identically`; `test_a_reconnect_replays_evidence_without_duplicating_items` | mcp/tests/test_eve_product_integration.py:1445-1452; mcp/tests/test_eve_product_integration.py:1454-1485; mcp/tests/test_eve_product_integration.py:1496-1514; mcp/tests/test_eve_product_integration.py:1516-1532; mcp/tests/test_eve_product_integration.py:1706-1713; mcp/tests/test_eve_product_integration.py:1715-1746; mcp/tests/test_eve_product_integration.py:1757-1775; mcp/tests/test_eve_product_integration.py:1777-1793 |
 | The turn-boundary rendering the cancelled case reads (the amber interrupted line and the notice row). | `TurnResultItem` | dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-82 |
 | The interaction row the question and authorization cases read. | `InteractionItem` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101 |
 | The harness-agnostic sibling mount this file sits beside. | `ConversationSurface.test.tsx` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:1-1 |

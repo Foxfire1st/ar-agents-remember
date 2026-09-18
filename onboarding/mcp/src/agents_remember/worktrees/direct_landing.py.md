@@ -87,7 +87,7 @@ the current working-candidate behavior; historical entries below retain their or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Policy, normalized request, exact code proof, and read-only preview. | n/a | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
-| Memory admission captures the prepared content snapshot and typed candidate. | n/a | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
+| Memory admission captures the prepared content snapshot and typed candidate. | `_direct_memory_admission_snapshot` | mcp/src/agents_remember/worktrees/direct_landing.py:310-353 |
 | Generation creation and action-required public projection. | n/a | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
 | The application owns configured admission and execution serialization. | n/a | [mcp/src/agents_remember/application/lifecycle/direct_landing.py](mcp/src/agents_remember/application/lifecycle/direct_landing.py) |
 | The focused integration scenario verifies cache-independent publication and recovery. | n/a | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |

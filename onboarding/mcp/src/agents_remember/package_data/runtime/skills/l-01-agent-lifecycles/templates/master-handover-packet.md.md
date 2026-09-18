@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c` |
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ This bundle copy is the shape the manager job posts at master exit; it reference
 | The manager posts this packet to the orchestrator at master exit; the manager's durable handoff artifact is this packet, validated by the orchestrator. | `# Lifecycle — Manager`; `## Which artifact each seat hands over, and who validates` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-16; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
 | The required verdict slot references the independent master-exit adversarial verdict artifact bound to the proposed candidate. | `# Verdict Template (adversarial reviewer)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:1-188 |
 | The router lists the master-handover packet among the templates the spawning seats compile from. | `## Companion Files` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:125-142 |
-| This template and `verdict.md` are the manager's two artifact templates in the composition manifest. | `composition-manifest.json` — `roles.manager.templates` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1 |
+| This template and `verdict.md` are the manager's two artifact templates in the composition manifest. | "verdict.md" | skills/l-01-agent-lifecycles/composition-manifest.json:414-418 |
 
 ## Cross-Repo References
 

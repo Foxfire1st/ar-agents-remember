@@ -78,7 +78,7 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture owns real temporary code/memory refs and an admitted series contract. | n/a | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
+| The fixture owns real temporary code/memory refs and an admitted series contract. | `_series_fixture` | mcp/tests/test_direct_landing.py:92-153 |
 | The retained scenario proves one content commit and reads its attribution from Git. | n/a | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 | Recovery rejects real drift and accepts cache misses without extra commits. | n/a | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 | The lifecycle recovery owner performs the required same-generation resumption. | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py) |

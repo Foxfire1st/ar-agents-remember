@@ -88,11 +88,11 @@ the current working-candidate behavior; historical entries below retain their or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Data round-trip and current-versus-historical lookup semantics. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Unattributed and partially attributed histories cannot inherit cached pairs. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| Invalid targets are reported and superseding order comes from actual history. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The real writer/reader round trip and merged-in attribution stay covered. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The runtime projection under test separates computed mappings from cache observations. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | `test_cache_misses_preserve_contract_and_named_ref_history` | mcp/tests/test_memory_ledger.py:338-360 |
+| Unattributed and partially attributed histories cannot inherit cached pairs. | `test_unattributed_history_does_not_inherit_pairs_from_committed_tables` | mcp/tests/test_memory_ledger.py:499-519 |
+| Invalid targets are reported and superseding order comes from actual history. | `test_invalid_source_and_branch_code_attributions_are_reported` | mcp/tests/test_memory_ledger.py:529-547 |
+| The real writer/reader round trip and merged-in attribution stay covered. | `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:754-784 |
+| The runtime projection under test separates computed mappings from cache observations. | `inspect_ledger_projection` | mcp/src/agents_remember/worktrees/ledger_projection.py:276-287 |
 
 ## Cross-Repo References
 
@@ -106,7 +106,7 @@ source is configured for this file's claims.
 
 ## Update History
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the module gained the two cases that pin

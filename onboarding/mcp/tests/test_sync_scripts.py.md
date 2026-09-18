@@ -83,11 +83,11 @@ repository-owned files.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection mechanism whose behavior this module pins. | `TARGETS`; `sync-skills.py --check` | scripts/sync-skills.py |
+| The projection mechanism whose behavior this module pins. | `TARGETS` | scripts/sync-skills.py:43-56 |
 | The certified generated-input declaration the target list must equal. | `generated-skills` | mcp/certification-profile-v1.json |
 | The boundary clauses this module re-asserts across canonical plus the nine copies, quoted from the doctrine guard. | `PROJECTED_BOUNDARY_CLAUSES`; `BoundaryClause`; `boundary_locations`; `boundary_surface_texts`; `missing_clause_locations` | mcp/tests/test_sync_scripts.py:101-129; mcp/tests/test_sync_scripts.py:184-214 |
 | The doctrine guard that owns which clauses each surface owes, whose wording this table quotes. | `OWED_STATEMENTS`; `COMPLETION_TRUTH_ROSTER` | mcp/tests/test_lifecycle_turn_truth_doctrine.py:112-127; mcp/tests/test_lifecycle_turn_truth_doctrine.py:478-529 |
-| The doctrine surface the whole-boundary clause now ships at, and the copy family that must carry it. | `core/acceptance.md`; `roles/worker.md`; `templates/turn-report.md` | skills/l-01-agent-lifecycles/core/acceptance.md; skills/l-01-agent-lifecycles/roles/worker.md |
+| The doctrine surface the whole-boundary clause now ships at, and the copy family that must carry it. | "templates/turn-report.md" | skills/l-01-agent-lifecycles/roles/worker.md:158-158 |
 
 ## Cross-Repo References
 

@@ -63,8 +63,8 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Real code/memory SHAs are separate from optional ledgerCache diagnostics. | n/a | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
-| The response model shape for the direct landing operation. | n/a | [mcp/src/agents_remember/models/direct_landing.py](mcp/src/agents_remember/models/direct_landing.py) |
-| Registered as the `direct_landing` tool response model. | n/a | [mcp/src/agents_remember/models/tools/tool_registry.py](mcp/src/agents_remember/models/tools/tool_registry.py) |
+| The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
+| Registered as the `direct_landing` tool response model. | `direct_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:216-226 |
 | Produced by the admitted direct-landing coordinator. | n/a | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
 | Memory-content execution and same-generation recovery are journaled below the coordinator. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
 

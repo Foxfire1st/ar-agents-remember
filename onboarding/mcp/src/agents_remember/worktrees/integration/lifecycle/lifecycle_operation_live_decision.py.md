@@ -61,7 +61,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py) |
+| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | `immutable_recovery_refusal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:75-116 |
 
 ## Cross-Repo References
 

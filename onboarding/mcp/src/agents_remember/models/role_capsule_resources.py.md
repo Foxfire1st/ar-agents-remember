@@ -104,7 +104,7 @@ extension specification, SEP-2640).
 | The constant trust statement every served file declares. | `SERVER_SUPPLIED_CONTENT_TRUST` | mcp/src/agents_remember/models/role_capsule_resources.py:32-32 |
 | The registry rows that make these three names returnable. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:155-239 |
 | The builder that fills these contracts from owner-produced values only. | `role_capsule_response`; `_fill_manifest` | mcp/src/agents_remember/application/skill_resources/responses.py:34-55; mcp/src/agents_remember/application/skill_resources/responses.py:58-119 |
-| The requested-versus-granted boundary the compiler narrows against: the policy type is declared in the `models` leaf, and the operation snapshots the published roster into it. | `CapsuleToolPolicy`; `admitted_tool_policy` | mcp/src/agents_remember/models/role_capsules/types.py:182-182; mcp/src/agents_remember/application/skill_resources/capsule.py:394-409 |
+| The requested-versus-granted boundary the compiler narrows against: the policy type is declared in the `models` leaf, and the operation snapshots the published roster into it. | `CapsuleToolPolicy`; `admitted_tool_policy` | mcp/src/agents_remember/models/role_capsules/types.py:182-182; mcp/src/agents_remember/application/skill_resources/capsule.py:394-409; mcp/src/agents_remember/application/skill_resources/capsule.py:446-461 |
 | The case that executes the no-grant guarantee on a served skill's declared tools. | `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` | mcp/tests/test_capsule_serving.py:811-845 |
 
 ## Cross-Repo References

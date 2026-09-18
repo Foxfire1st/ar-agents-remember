@@ -76,7 +76,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Historical memory provenance derives once from reachable attribution and validates the selected commit. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Historical memory provenance derives once from reachable attribution and validates the selected commit. | `memory_commit` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:138-147 |
 | Defines the class `Read`. | `Read` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:43-46 |
 | Defines the class `LockedVersion`. | `LockedVersion` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:49-53 |
 | Defines the class `GitHistory`. | `GitHistory` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:56-114 |
@@ -88,7 +88,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `requirement_versions`. | `requirement_versions` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:237-278 |
 | Defines the function `package_lock_versions`. | `package_lock_versions` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:281-296 |
 | Defines the function `package_from_path`. | `package_from_path` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:299-303 |
-| Defines the function `ecosystem_from_path` — The one resolved-version namespace capable of proving ``path``'s identity.. | n/a | [mcp/src/agents_remember/memory_quality/style/citations/provenance.py](mcp/src/agents_remember/memory_quality/style/citations/provenance.py) |
+| Defines the function `ecosystem_from_path` — The one resolved-version namespace capable of proving ``path``'s identity.. | `ecosystem_from_path` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:306-314 |
 | Defines the function `normalised_package`. | `normalised_package` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:317-318 |
 | Defines the function `_git_error`. | `_git_error` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:321-323 |
 

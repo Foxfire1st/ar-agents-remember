@@ -50,7 +50,7 @@ while announcing phases (GitHub #53).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The provider setup facade re-exports these helpers for existing callers and tests. | "re-exports only the narrow set of symbols callers and tests still use" | onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:15-18; onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:41-46 |
+| The provider setup facade re-exports these helpers for existing callers and tests. | "re-exports only the narrow set of symbols callers and tests still use" | onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:15-18; onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:41-46; onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:48-48 |
 | Lifecycle calls are dispatched through the direct lifecycle facade. | "Callers import this facade directly" | onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:19-22; onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:36-39 |
 
 ## Update History

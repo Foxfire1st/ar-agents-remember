@@ -149,27 +149,27 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. | n/a | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
-| Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. | n/a | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
+| Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. | "ledgers" | dashboard/src/fixtures/snapshot.json:592-609 |
+| Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. | "commit-approval-pending" | dashboard/src/fixtures/snapshot.json:380-380 |
 | `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. | `None` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering the six represented states and phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | n/a | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
+| Six lifecycles covering the six represented states and phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | "evidenceRefs" | dashboard/src/fixtures/snapshot.json:1791-1928 |
 | Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
 | `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1929-1940 |
-| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | n/a | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
+| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `expectationRows` | dashboard/src/fixtures/snapshot.json:575-575 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
-| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | n/a | [mcp/src/agents_remember/observer/projection.py](mcp/src/agents_remember/observer/projection.py) |
-| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | n/a | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
+| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | "extra=\"forbid\"" | mcp/src/agents_remember/observer/projection.py:54-323 |
+| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "served ⊇ mirror" | dashboard/src/test/contract.test.ts:40-40 |
 | The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:289-454 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:225-249 |
 | `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
-| The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. | n/a | [dashboard/src/test/fixtures/wire.ts](dashboard/src/test/fixtures/wire.ts); [scripts/sync-projection-types.py](scripts/sync-projection-types.py) |
+| The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. | `check`; `demandServed` | scripts/sync-projection-types.py:46-54; dashboard/src/test/fixtures/wire.ts:73-76 |
 | `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
-| The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | n/a | [dashboard/src/test/servedProjection.ts](dashboard/src/test/servedProjection.ts) |
-| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | n/a | [dashboard/src/data/store.test.ts](dashboard/src/data/store.test.ts) |
-| Production e2e consumer, which reads this manual sample off disk and states that it is checked against the generated mirror while the projection generator/stale gate hold that mirror to the Pydantic schema. | n/a | [dashboard/e2e-production/cockpit.production.spec.ts](dashboard/e2e-production/cockpit.production.spec.ts) |
+| The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | "as unknown as" | dashboard/src/test/servedProjection.ts:1-43 |
+| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | `withHeartbeat` | dashboard/src/data/store.test.ts:170-170 |
+| Production e2e consumer, which reads this manual sample off disk and states that it is checked against the generated mirror while the projection generator/stale gate hold that mirror to the Pydantic schema. | "while the projection generator" | dashboard/e2e-production/cockpit.production.spec.ts:14-15 |
 
 ## Cross-Repo References
 

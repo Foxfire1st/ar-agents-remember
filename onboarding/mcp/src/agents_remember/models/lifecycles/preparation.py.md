@@ -51,7 +51,7 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. | n/a | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
+| Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. | `certifiedContentTree` | mcp/src/agents_remember/models/lifecycles/preparation.py:52-52 |
 | `_canonical_preparation_path` owns the corresponding behavior described above. | `_canonical_preparation_path` | mcp/src/agents_remember/models/lifecycles/preparation.py:30-40 |
 | `ExistingMemoryPreparationProof` owns the corresponding behavior described above. | `ExistingMemoryPreparationProof` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-69 |
 | `_one_header` owns the corresponding behavior described above. | `_one_header` | mcp/src/agents_remember/models/lifecycles/preparation.py:331-338 |

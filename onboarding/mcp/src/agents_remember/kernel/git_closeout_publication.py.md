@@ -54,12 +54,12 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | `allow_memory_cache` | mcp/src/agents_remember/kernel/git_closeout_publication.py:44-44 |
+| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | `expected_old_commit` | mcp/src/agents_remember/kernel/git_closeout_publication.py:38-38 |
 | Capability use reopens the caller-owned authority. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
-| Result records preserve before/after observations and any actual Git command result. | n/a | [mcp/src/agents_remember/kernel/git_closeout_publication.py](mcp/src/agents_remember/kernel/git_closeout_publication.py) |
+| Result records preserve before/after observations and any actual Git command result. | `GitCloseoutPublicationResult` | mcp/src/agents_remember/kernel/git_closeout_publication.py:105-109 |
 | The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
-| Publication issues one expected-old CAS and does not rerun already-new or existing output. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| Publication issues one expected-old CAS and does not rerun already-new or existing output. | `closeout_publication_command` | mcp/src/agents_remember/kernel/git_command.py:749-757 |
 
 ## Cross-Repo References
 

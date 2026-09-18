@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_events.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ pass was available for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The translated event set is eve's published durable stream contract at the pinned release. | supported stream versions; event-type sets | mcp/src/agents_remember/serving/eve_protocol.py:32-56 |
+| The translated event set is eve's published durable stream contract at the pinned release. | `EveStreamEvent` | mcp/src/agents_remember/serving/eve_protocol.py:66-97 |
 
 ## Update History
 

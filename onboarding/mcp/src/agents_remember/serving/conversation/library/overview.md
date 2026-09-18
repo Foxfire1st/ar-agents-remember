@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-09-17T11:10+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 
 ## What This Area Is
 
@@ -180,7 +180,7 @@ the thread lifecycle.
 | The declared reason and the explicit legacy declaration on the launch. | `LIBRARY_REOPEN_LEGACY_REASON`; `legacy_launch_capsule` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/src/agents_remember/serving/conversation/library/open_service.py:475-478 |
 | The refresh plan that makes a capsule-carrying reopen a fresh thread. | `_capsule_refresh_plan`; `FRESH_THREAD` | mcp/src/agents_remember/serving/capsule_delivery.py:1-531 |
 | The identity proof the reopen exists for, which the exclusion protects. | `_settle_observation` | mcp/src/agents_remember/serving/conversation/library/open_service.py:535-571 |
-| The cases pinning the declaration and the whole-site enumeration. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:761-801 |
+| The cases pinning the declaration and the whole-site enumeration. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:847-856 |
 
 ## Load-Bearing Files
 

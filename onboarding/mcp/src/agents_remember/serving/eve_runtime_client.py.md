@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_runtime_client.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `8997e184efe67e853a60780912ef5ac21844a323` |
-| lastVerifiedCommitDate | 2026-09-16T20:51:44+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -113,8 +113,8 @@ pass was available for this file.
 | Routes, status codes, headers and the queue policy constant are declared once in the wire module and imported here. | `EVE_HEALTH_PATH`; `TURN_POLICY_QUEUE`; `parse_session_acceptance`; `parse_stream_version` | mcp/src/agents_remember/serving/eve_protocol.py:20-60; mcp/src/agents_remember/serving/eve_protocol.py:147-230 |
 | Both request bodies are built here from that one literal, which is what pins the queued policy on the wire rather than only in a comment. | `create_session_body`; `follow_up_body`; `cancel_turn_body` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89 |
 | Frame decoding from one transport read is the cursor decoder's job, not this module's. | `EveNdjsonDecoder` | mcp/src/agents_remember/serving/eve_stream_cursor.py:18-69 |
-| Node resolution is owned by the launch module so the client never guesses an interpreter, and the caller's choice arrives on the launch it is handed. | `resolve_node_executable`; `EveRuntimeLaunch.node_executable` | mcp/src/agents_remember/serving/eve_runtime_launch.py:101-124; mcp/src/agents_remember/serving/eve_runtime_launch.py:406-453 |
-| The native fixture subclasses this client to trace traffic, which is why the route surface must stay observable and every sent body is recorded for assertion. | `TracingEveRuntime` | mcp/tests/live_eve_native_fixture.py:89-103; mcp/tests/live_eve_native_fixture.py:584-670 |
+| Node resolution is owned by the launch module so the client never guesses an interpreter, and the caller's choice arrives on the launch it is handed. | `resolve_node_executable`; `EveRuntimeLaunch.node_executable` | mcp/src/agents_remember/serving/eve_runtime_launch.py:101-124; mcp/src/agents_remember/serving/eve_runtime_launch.py:406-453; mcp/src/agents_remember/serving/eve_runtime_launch.py:605-635 |
+| The native fixture subclasses this client to trace traffic, which is why the route surface must stay observable and every sent body is recorded for assertion. | `TracingEveRuntime` | mcp/tests/live_eve_native_fixture.py:89-103; mcp/tests/live_eve_native_fixture.py:584-670; mcp/tests/live_eve_native_fixture.py:123-169 |
 | The deterministic conformance suites implement this seam and leave every other layer production. | `FakeEveRuntime` | mcp/tests/eve_adapter_test_support.py:74-278 |
 | The two session controls this client gained, and why they matter to the trusted-instruction claim: clear does not rerun resolvers, compaction may summarize user-role history. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-101; mcp/src/agents_remember/serving/eve_runtime_client.py:242-268 |
 | The trusted instructions are applied in the system role so they survive turn boundaries, compaction and clear. | `ROLE_INSTRUCTION_CHANNEL`; `TASK_CONTEXT_CHANNEL` | mcp/src/agents_remember/models/eve_capsule_carrier.py:46-58 |

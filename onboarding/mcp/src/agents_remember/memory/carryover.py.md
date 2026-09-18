@@ -91,10 +91,10 @@ the current working-candidate behavior; historical entries below retain their or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Candidate comparison and explicit review selection. | n/a | [mcp/src/agents_remember/memory/carryover.py](mcp/src/agents_remember/memory/carryover.py) |
-| Apply owns one content commit and preserves exact leaf/repository authority. | n/a | [mcp/src/agents_remember/memory/carryover.py](mcp/src/agents_remember/memory/carryover.py) |
+| Apply owns one content commit and preserves exact leaf/repository authority. | `memory_content_commit` | mcp/src/agents_remember/memory/carryover.py:780-784 |
 | Target storage is established from effective explicit settings. | n/a | [mcp/src/agents_remember/memory/carryover_authority.py](mcp/src/agents_remember/memory/carryover_authority.py) |
 | Shared committing explicitly excludes the consumer cache. | n/a | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
-| The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. | n/a | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
+| The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:238-300 |
 
 ## Cross-Repo References
 

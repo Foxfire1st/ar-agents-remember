@@ -203,15 +203,15 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | n/a | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py) |
+| Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | `_register_direct_landing_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:45-89 |
 | The payload builders these forward to. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The checkpoint-landing tool declaration and the payload builder it forwards to. | n/a | [mcp/src/agents_remember/mcp/registration/closeout.py](mcp/src/agents_remember/mcp/registration/closeout.py); [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Refuse to stage anywhere except a task's own throwaway worktree. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| Refuse before staging when the checkout has unresolved conflicts. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| Prepare and certify a fresh candidate through the ordinary gate entry point. | n/a | [mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py](mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py) |
-| The case that pins the checkpoint description as a partial publication and denies it is the pause. | n/a | [mcp/tests/test_tools.py](mcp/tests/test_tools.py) |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | n/a | [mcp/src/agents_remember/worktrees/modules/quality/gate.py](mcp/src/agents_remember/worktrees/modules/quality/gate.py) |
+| The checkpoint-landing tool declaration and the payload builder it forwards to. | `worktree_checkpoint_landing_payload`; `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/tools/worktree.py:159-174; mcp/src/agents_remember/mcp/registration/closeout.py:172-199 |
+| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:131-136 |
+| Refuse to stage anywhere except a task's own throwaway worktree. | "Refuse to stage anywhere except a task's own throwaway worktree." | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:26-26 |
+| Refuse before staging when the checkout has unresolved conflicts. | `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:44-56 |
+| Prepare and certify a fresh candidate through the ordinary gate entry point. | "Prepare and certify a fresh candidate through the ordinary gate entry point" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:145-145 |
+| The case that pins the checkpoint description as a partial publication and denies it is the pause. | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:287-309 |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:149-192 |
 
 ## Historical R39 Integration Tool Contract
 

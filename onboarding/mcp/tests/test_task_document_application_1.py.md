@@ -96,7 +96,7 @@ to removed methods are superseded by this current inventory.
 | Read steps returns the checklist and changes nothing | `test_read_steps_returns_the_checklist_and_changes_nothing` | mcp/tests/test_task_document_application_1.py:492-529 |
 | Skip step is exact audited and does not cascade | `test_skip_step_is_exact_audited_and_does_not_cascade` | mcp/tests/test_task_document_application_1.py:531-574 |
 | The restamp decision table: both derived fields absent and only the series path absent both produce a candidate; a fresh lifecycle still overwrites a stale binding; the one exact no-op is everything bound and current. | `LeafDocMasterLinkBindingTests`; `test_binds_only_the_derived_fields_that_are_absent` | mcp/tests/test_task_document_application_1.py:577-663; mcp/tests/test_task_document_application_1.py:602-663 |
-| The class-local helpers that author the pre-contract state directly and plan against it. | `_leaf_doc_path`; `_rewrite_leaf_doc`; `_plan` | mcp/tests/test_task_document_application_1.py:589-590; mcp/tests/test_task_document_application_1.py:592-596; mcp/tests/test_task_document_application_1.py:598-600 |
+| The class-local helpers that author the pre-contract state directly and plan against it. | `_leaf_doc_path`; `_rewrite_leaf_doc`; `_plan` | mcp/tests/test_task_document_application_1.py:589-590; mcp/tests/test_task_document_application_1.py:592-596; mcp/tests/test_task_document_application_1.py:598-600; mcp/tests/test_task_document_application_1.py:603-604; mcp/tests/test_task_document_application_1.py:606-610; mcp/tests/test_task_document_application_1.py:612-614 |
 
 ## Cross-Repo References
 

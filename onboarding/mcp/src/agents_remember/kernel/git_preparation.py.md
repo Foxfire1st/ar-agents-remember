@@ -56,11 +56,11 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Existing observations bind raw HEAD/tree and the additional memory-content subject. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Private paths, object identities, hook policy, and operation identity are validated before capability use. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| Existing observations bind raw HEAD/tree and the additional memory-content subject. | `memory_content_tree` | mcp/src/agents_remember/kernel/git_preparation.py:44-44 |
+| Private paths, object identities, hook policy, and operation identity are validated before capability use. | `PrivateGitPreparationCapability` | mcp/src/agents_remember/kernel/git_preparation.py:88-98 |
 | The sealed private capability revalidates the binding and invokes its live owner. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
 | File modes and exact no-follow blob bytes are checked, including replacement during observation. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Only explicit memory observations omit root memory.md from physical membership. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| Only explicit memory observations omit root memory.md from physical membership. | `require_physical_tree` | mcp/src/agents_remember/kernel/git_preparation.py:162-211 |
 | The runner requires a memory content subject and proves its entries against the actual raw tree. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Cross-Repo References

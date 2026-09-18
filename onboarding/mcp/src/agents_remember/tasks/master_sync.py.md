@@ -74,9 +74,9 @@ scope; this file implements an internal coordination contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Same-root parent resolution and master-plan construction. | `plan_master_sync`; `_master_json_path`; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:35-89; mcp/src/agents_remember/tasks/master_sync.py:144-148; mcp/src/agents_remember/tasks/master_sync.py:151-161 |
+| Same-root parent resolution and master-plan construction. | `plan_master_sync`; `_master_json_path`; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:35-89; mcp/src/agents_remember/tasks/master_sync.py:144-148; mcp/src/agents_remember/tasks/master_sync.py:151-161; mcp/src/agents_remember/tasks/master_sync.py:172-182 |
 | Deterministic leaf-to-row mapping with manual scope preservation. | `subtask_ref_from_leaf` | mcp/src/agents_remember/tasks/master_sync.py:92-102 |
-| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-121; mcp/src/agents_remember/tasks/master_sync.py:119-125 |
+| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-121; mcp/src/agents_remember/tasks/master_sync.py:119-125; mcp/src/agents_remember/tasks/master_sync.py:140-146 |
 | Existing-row path validation. | `_validate_existing_row_path` | mcp/src/agents_remember/tasks/master_sync.py:149-162 |
 | Parent document loading uses the exact accepted JSON snapshot. | "master = TaskDocument.model_validate_json(source_snapshot.json_bytes)" | mcp/src/agents_remember/tasks/master_sync.py:46-46 |
 

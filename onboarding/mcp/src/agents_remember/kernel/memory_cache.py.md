@@ -78,12 +78,12 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Terminal removal discards only the root memory cache. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Terminal removal discards only the root memory cache. | `discard_memory_cache_changes` | mcp/src/agents_remember/kernel/memory_cache.py:94-111 |
 | Derivation reads Git attribution and computes current/base metadata. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Preparation excludes the cache and refresh reports materialization outcomes. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Preparation excludes the cache and refresh reports materialization outcomes. | `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
 | Committed attribution and row mapping have one reader. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
 | The consumer representation supports empty derived history. | n/a | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
-| Cache independence and exact local-ref derivation are exercised by the retained projection tests. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Cache independence and exact local-ref derivation are exercised by the retained projection tests. | `test_cache_misses_preserve_contract_and_named_ref_history` | mcp/tests/test_memory_ledger.py:338-360 |
 
 ## Cross-Repo References
 
@@ -96,7 +96,7 @@ No additional configured external or sibling-repository evidence is claimed.
 
 ## Update History
 
-- 2026-09-15 — LCA L9 terminal delivery: `discard_memory_cache_changes` is used only before an authorized memory-worktree removal. It restores a tracked root cache from HEAD or removes its staged/untracked representation. Ordinary non-forced Git removal still checks all real content. This function creates no commit and moves no ref.
+- 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: `discard_memory_cache_changes` is used only before an authorized memory-worktree removal. It restores a tracked root cache from HEAD or removes its staged/untracked representation. Ordinary non-forced Git removal still checks all real content. This function creates no commit and moves no ref.
 
 
 - 2026-09-15T01:02 UTC — Created the paired sidecar for the new computed-cache owner, documenting derivation, explicit staging preparation, best-effort materialization, and the absence of ledger commit/ref authority. Working candidate verified by source inspection; commit metadata records real committed history only.

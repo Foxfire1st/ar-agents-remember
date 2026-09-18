@@ -83,8 +83,8 @@ the current working-candidate behavior; historical entries below retain their or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Execution publishes or reuses real memory output and refreshes the cache afterward. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
-| Prepared attempts preserve repository and exact pre-commit tree evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
-| Shared mutation intent and proof retain actual object checks. | n/a | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
+| Prepared attempts preserve repository and exact pre-commit tree evidence. | `_require_prepared_direct_attempt` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:261-290 |
+| Shared mutation intent and proof retain actual object checks. | `_publish_mutation_intent` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:137-154 |
 | The lifecycle recovery owner resumes the generation before execution. | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py) |
 | Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | n/a | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 

@@ -57,7 +57,7 @@ No external domain source governs this synchronized projection.
 | --- | --- | --- |
 | The packaged packet carries the same one-call launcher contract. | `# Template — Architect Brief` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:1-10 |
 | The hosted child-authority and no-fallback boundary is embedded in the brief. | "This architect seat is now plane-hosted." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:61-61 |
-| The canonical skill tree is synchronized into package data and harness mirrors. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:195-203 |
+| The canonical skill tree is synchronized into package data and harness mirrors. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:195-203; scripts/sync-skills.py:204-212 |
 
 ## Cross-Repo References
 

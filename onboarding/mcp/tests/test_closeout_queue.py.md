@@ -83,13 +83,13 @@ The retained source anchors below support the fixture roles and assertion bounda
 | Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. | `task_doc` | mcp/tests/test_closeout_queue.py:105-154 |
 | Judgment row. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
 | Priority row. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
-| Judgment table. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
-| Priority table. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Judgment table. | `_judgment_table` | mcp/tests/test_closeout_queue.py:169-170 |
+| Priority table. | `_priority_table` | mcp/tests/test_closeout_queue.py:173-174 |
 | Grade. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
 | Queuefixture. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
-| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
-| Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
-| Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | n/a | [mcp/tests/test_closeout_queue.py](mcp/tests/test_closeout_queue.py) |
+| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | `start_leaf` | mcp/tests/test_closeout_queue.py:371-441 |
+| Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | `start_leaf` | mcp/tests/test_closeout_queue.py:371-441 |
+| Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | `declare_leaf` | mcp/tests/test_closeout_queue.py:626-655 |
 
 ## Cross-Repo References
 

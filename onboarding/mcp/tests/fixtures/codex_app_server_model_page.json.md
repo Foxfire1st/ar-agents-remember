@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/codex_app_server_model_page.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
-| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `../overview.md` |
 
@@ -56,7 +56,7 @@ No Domain Documentation entries are configured in the resolved source registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The captured page is a single complete row with a null cursor, the shape the session's model reader validates. | `"data"`; `"nextCursor"` | mcp/tests/fixtures/codex_app_server_model_page.json:2-2; mcp/tests/fixtures/codex_app_server_model_page.json:60-61 |
+| The captured page is a single complete row with a null cursor, the shape the session's model reader validates. | "\"data\"" | mcp/tests/fixtures/codex_app_server_model_page.json:2-2 |
 | The live case opens its thread with the model this page describes. | `test_live_app_server_observes_instruction_sources_and_accepts_the_capsule` | mcp/tests/test_codex_capsule_delivery.py:1208-1256 |
 
 ## Cross-Repo References
@@ -65,7 +65,7 @@ Captured from the external Codex CLI app-server `model/list` method.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The row carries the vendor's own model id, display name and reasoning-effort list. | `"id"`; `"displayName"`; `"supportedReasoningEfforts"` | mcp/tests/fixtures/codex_app_server_model_page.json:4-4; mcp/tests/fixtures/codex_app_server_model_page.json:9-9; mcp/tests/fixtures/codex_app_server_model_page.json:13-13 |
+| The row carries the vendor's own model id, display name and reasoning-effort list. | "\"displayName\"" | mcp/tests/fixtures/codex_app_server_model_page.json:9-9 |
 
 ## Update History
 

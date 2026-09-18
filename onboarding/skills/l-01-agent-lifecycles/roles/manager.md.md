@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -101,12 +101,12 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
-| Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:48-48 |
-| The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-272 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Optional Master-exit Review"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:330-341; skills/l-01-agent-lifecycles/roles/manager.md:342-352 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:359-359 |
-| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:108-108 |
+| One manager owns one canonical master and the complete leaf closeout chain. | "## 1 — Purpose And Authority" | skills/l-01-agent-lifecycles/roles/manager.md:17-42 |
+| Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/manager.md:67-278 |
+| The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/manager.md:67-278 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/manager.md:67-278 |
+| Structural parent/child messages are the role's communication path. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/manager.md:67-278 |
+| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/manager.md:67-278 |
 
 ## L23 Manager And Leaf Admission
 

@@ -54,8 +54,8 @@ Current working-candidate evidence for this route:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The selected bundle contains code and one memory-content output. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py) |
-| Existing memory reuse binds raw Git facts and a separately certified content tree. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py) |
-| Final publication proves and publishes the pair, then refreshes the cache. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py) |
+| Existing memory reuse binds raw Git facts and a separately certified content tree. | `observe_existing_memory_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:19-63 |
+| Final publication proves and publishes the pair, then refreshes the cache. | `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
 
 ## Integrated IAS Recovery Contract
 

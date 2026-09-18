@@ -88,7 +88,7 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged curator declares the same seat, authority boundary, and three-way responsibility as the canonical source. | `## 1 — Purpose And Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:14-48 |
-| The role opens by naming the shared sources it composes with rather than restating them. | `**Inherits:**` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:12-12 |
+| The role opens by naming the shared sources it composes with rather than restating them. | "**Inherits:**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:12-12 |
 | The curation procedure — inputs, workflow, authority gates, failure handling, handoff — has one home outside the role file. | `# Operation — Curation`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:121-128 |
 | The role declares the readable order and the knob block after the handoff section. | `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:154-185 |
 | The canonical source is the doctrine owner. | `# Lifecycle — Curator` | skills/l-01-agent-lifecycles/roles/curator.md:1-12 |

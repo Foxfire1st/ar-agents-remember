@@ -69,7 +69,7 @@ substring of each guard's message rather than the full string.
 | The two guards under test live in the application layer. | `require_repo`; `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:16-24; mcp/src/agents_remember/kernel/authority.py:27-35 |
 | AuthorityError is the typed repository/path refusal used by application guards. | "class AuthorityError(" | mcp/src/agents_remember/errors.py:110-117 |
 | All such domain errors inherit ValueError through AgentsRememberError. | "class AgentsRememberError(" | mcp/src/agents_remember/errors.py:18-19 |
-| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:77-81; mcp/src/agents_remember/kernel/primitives/runtime_config.py:125-147; mcp/src/agents_remember/kernel/primitives/runtime_config.py:738-743 |
+| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:77-81; mcp/src/agents_remember/kernel/primitives/runtime_config.py:125-147; mcp/src/agents_remember/kernel/primitives/runtime_config.py:738-743; mcp/src/agents_remember/kernel/primitives/runtime_config.py:749-754 |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-09-06T21:54:05+00:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`     |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`     |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -117,7 +117,7 @@ No meaningful cross-repo references found.
 | The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. | "def register_notes_routes(app: FastAPI", `mount_static` | mcp/src/agents_remember/serving/notes.py:171-171; mcp/src/agents_remember/serving/static.py:112-129 |
 | The `confine_rel` realpath confinement this module reuses for reads. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
 | The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
-| `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. | `McpRuntimeConfig`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-154; mcp/src/agents_remember/kernel/primitives/runtime_config.py:738-743 |
+| `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. | `McpRuntimeConfig`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-154; mcp/src/agents_remember/kernel/primitives/runtime_config.py:738-743; mcp/src/agents_remember/kernel/primitives/runtime_config.py:749-754 |
 | `language_for` supplies the listing and read `language` field. | `language_for` | mcp/src/agents_remember/serving/scope.py:71-73 |
 | The changeset route's single-segment master confinement helper. | `_master_task_root` | mcp/src/agents_remember/serving/changeset.py:145-149 |
 | The browser client for these endpoints. | `notes` | dashboard/src/data/notes.ts:19-19 |

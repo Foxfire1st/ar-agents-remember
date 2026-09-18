@@ -105,9 +105,9 @@ No external or domain documentation is configured for this memory root
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The frozen vocabulary this parser is validated against. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89 |
-| The canonical authored metadata this module parses. | `"schema": "ar-role-capsule-composition/v1"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
-| The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner. | `ar-role-capsule-composition/v1` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
+| The frozen vocabulary this parser is validated against. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-108 |
+| The canonical authored metadata this module parses. | "\"schema\": \"ar-role-capsule-composition/v1\"" | skills/l-01-agent-lifecycles/composition-manifest.json:2-2 |
+| The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner. | "ar-role-capsule-composition/v1" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json:2-2 |
 | Tool identities declared here are narrowed against the admitted policy, never granted. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
 | **Skill references declared here are carried, not narrowed** — no `tool_policy`/`permits` call is made for them. | `skill_references` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193 |
 | The skill identity helper and the skill entry a reference is built from. | `skills_declared_identity`; `CapsuleSkillEntry` | mcp/src/agents_remember/models/role_capsules/sources.py:126-138; mcp/src/agents_remember/models/role_capsules/manifest.py:94-110 |

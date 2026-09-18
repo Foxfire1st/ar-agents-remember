@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_stream_cursor.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,7 @@ repo-specific external contract.
 | --- | --- | --- |
 | The decoder delegates every frame to the protocol module's schema-exact parser and inherits its refusals. | `parse_event_frame`; `EveStreamEvent` | mcp/src/agents_remember/serving/eve_protocol.py:192-222 |
 | Replay protection is not this module's and now has exactly one owner beside the wire contract. | `EveEventDeduplicator`; `EVE_REPLAY_WINDOW` | mcp/src/agents_remember/serving/eve_protocol.py:224-268 |
-| One stream connection in the transport client feeds this decoder and reconnects from the index the caller persisted. | `EveRuntimeProcess.stream` | mcp/src/agents_remember/serving/eve_runtime_client.py:198-238 |
+| One stream connection in the transport client feeds this decoder and reconnects from the index the caller persisted. | "reconnects from the index" | mcp/src/agents_remember/serving/eve_runtime_client.py:274-274 |
 | The adapter persists the advanced index and uses it as the only resume position. | `EveSessionAdapter._translate`; `EveSessionAdapter._event_stream` | mcp/src/agents_remember/serving/eve_adapter.py:579-644 |
 | Cursor-arithmetic cases cover a frame split across reads, keep-alive blanks, a trailing frame without a newline, and the oversized-frame refusal. | `EveCursorTests` | mcp/tests/test_eve_protocol.py:195-253 |
 

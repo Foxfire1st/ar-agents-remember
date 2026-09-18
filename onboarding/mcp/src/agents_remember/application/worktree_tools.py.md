@@ -295,22 +295,22 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:425-463 |
 | Public status observes the stable journal through the canonical locator and preserves it in the result. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
-| Stable sync projection is read from the enclosure-root journal. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_state.py](mcp/src/agents_remember/worktrees/sync_transaction_state.py) |
+| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `_configured_control_refusal` | mcp/src/agents_remember/application/worktree_tools.py:588-612 |
+| The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:425-463 |
+| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:770-778 |
+| Stable sync projection is read from the enclosure-root journal. | `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:108-115 |
 | Worktree service behavior is owned by the worktree manager and modules. | n/a | [mcp/src/agents_remember/worktrees/git_worktree_manager.py](mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | n/a | [mcp/src/agents_remember/models/worktree.py](mcp/src/agents_remember/models/worktree.py) |
-| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py); [mcp/src/agents_remember/worktrees/route_review.py](mcp/src/agents_remember/worktrees/route_review.py) |
-| Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | n/a | [mcp/src/agents_remember/kernel/authority.py](mcp/src/agents_remember/kernel/authority.py) |
+| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:459-463 |
+| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `route_review_refusal_projection` | mcp/src/agents_remember/worktrees/route_review.py:183-250 |
+| Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-28 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | n/a | [mcp/src/agents_remember/worktrees/modules/finalize.py](mcp/src/agents_remember/worktrees/modules/finalize.py) |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py); [mcp/src/agents_remember/kernel/primitives/runtime_config.py](mcp/src/agents_remember/kernel/primitives/runtime_config.py) |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | `reload_provider_authority`; `provider_setup_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:193-218; mcp/src/agents_remember/application/worktree_tools.py:143-154 |
 | `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
-| Manual retire eligibility/role policy remains owned by `retire_policy.py`. | n/a | [mcp/src/agents_remember/serving/retire_policy.py](mcp/src/agents_remember/serving/retire_policy.py) |
+| Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `RetirePolicyError` | mcp/src/agents_remember/serving/retire_policy.py:21-22 |
 | `log_landed_event`, called once per landed entry after a successful auto-land. | `log_landed_event` | mcp/src/agents_remember/serving/seat_events.py:56-80 |
-| `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. | n/a | [mcp/src/agents_remember/serving/terminal_catalog.py](mcp/src/agents_remember/serving/terminal_catalog.py) |
+| `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:65-431 |
 | `RetirementSettings`/`config.retirement` gating the two auto-land hooks. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:114-125 |
 
 ## Series-Contract Notes

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -154,7 +154,7 @@ guards that hold this file's declarations true.
 | --- | --- | --- |
 | The manifest resolves every role and operation source and keeps the registry at ten roles. | `test_manifest_resolves_every_role_and_operation_source`; `ROLE_ORDER`; `OPERATION_KEYS` | mcp/tests/test_role_instruction_corpus.py:248-300; mcp/tests/test_role_instruction_corpus.py:32-43; mcp/tests/test_role_instruction_corpus.py:59-69 |
 | A manifest entry pointing at a missing source, an unknown operation, an unknown core block, or a missing criteria catalog is reported instead of silently accepted. | `test_manifest_reports_a_missing_source_instead_of_accepting_it` | mcp/tests/test_role_instruction_corpus.py:468-507 |
-| The canonical source of this metadata plane. | `"schema": "ar-role-capsule-composition/v1"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
+| The canonical source of this metadata plane. | "\"schema\": \"ar-role-capsule-composition/v1\"" | skills/l-01-agent-lifecycles/composition-manifest.json:2-2 |
 | Declared tool identities are **requests** narrowed against the admitted policy snapshot, never grants; an id outside it is refused. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
 | **The declared skill registry and the skill entry shape** — the parser that turns `skills.<name>` into `CapsuleSkillEntry`. | `CapsuleSkillEntry`; `_parse_skills` | mcp/src/agents_remember/models/role_capsules/manifest.py:94-110; mcp/src/agents_remember/models/role_capsules/manifest.py:455-478 |
 | **Skill references are carried, not narrowed.** | `skill_references`; `skills_declared_identity` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193; mcp/src/agents_remember/models/role_capsules/sources.py:126-138 |
@@ -163,7 +163,7 @@ guards that hold this file's declarations true.
 | Every tool id this plan declares exists in the published roster — the guard that makes a typo an error rather than an inert request. | `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` | mcp/tests/test_role_capsule_admission.py:221-230 |
 | The plan still parses and compiles for every role with `tools`/`skills` absent, and the launcher refusal is `operation-not-applicable` when `launcher.operations` is empty. | `test_every_shipped_role_compiles_deterministically_under_every_declared_operation`; `test_launcher_is_refused_an_operation_no_role_inherits_to_it`; `test_emptying_the_launcher_operations_refuses_instead_of_compiling` | mcp/tests/test_role_capsule_admission.py:520-602; mcp/tests/test_role_capsule_compiler.py:548-560; mcp/tests/test_role_capsule_admission.py:765-818 |
 | The carried skill channel against the shipped corpus: one reference per declaration, revision follows the admitted bytes. | `test_every_shipped_role_that_declares_a_skill_carries_one_reference_per_declaration`; `test_the_skill_revision_follows_the_admitted_skill_bytes` | mcp/tests/test_role_capsule_admission.py:605-655; mcp/tests/test_role_capsule_admission.py:659-694 |
-| The L13 additions as the compiler reads them: the tenth role's source, altitude and single-carrier operation. | `"altitude": "free-agent"`; `"applies_to_roles"` | skills/l-01-agent-lifecycles/composition-manifest.json:451-477; skills/l-01-agent-lifecycles/composition-manifest.json:127-135 |
+| The L13 additions as the compiler reads them: the tenth role's source, altitude and single-carrier operation. | "\"altitude\": \"free-agent\"" | skills/l-01-agent-lifecycles/composition-manifest.json:453-453 |
 
 ## Cross-Repo References
 

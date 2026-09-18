@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_mode_refusal.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:25+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l12`; code candidate landed as `b281bcd68261866be306cc80a48241921b6dd0d2` |
 | governingOverview | `../../../overview.md` |
 
@@ -108,10 +108,10 @@ transport-shape and evidence-envelope contracts, not external library behaviour.
 | The reconstruction rebuilds the refusal text from the vocabulary rather than trusting a carried copy. | `memory_mode_refusal_message` | mcp/src/agents_remember/kernel/memory_mode.py:78-86 |
 | Surface 1 of 7 catches the typed refusal ahead of its generic clause. | `except MemoryModeUnsupportedError` | mcp/src/agents_remember/application/worktree_status.py:98 |
 | Surface 2 publishes the refusal through the reporter rather than the generic failure path. | `memory_mode_refusal_evidence` | mcp/src/agents_remember/application/worktree_status.py:410-425 |
-| Surfaces 3 and 4 classify a configured contract's removal on both admission paths. | `except MemoryModeUnsupportedError` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:287-318 |
-| Surface 5 carries the refusal into the direct-landing answer. | `except MemoryModeUnsupportedError` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:226-265 |
-| Surface 6 reports the removal as its own fact in the unstarted-evidence answer. | `except MemoryModeUnsupportedError` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:276-292 |
-| Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause. | `except MemoryModeUnsupportedError` | mcp/src/agents_remember/worktrees/modules/start.py:151-167 |
+| Surfaces 3 and 4 classify a configured contract's removal on both admission paths. | `configured_contract_reread_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:374-388 |
+| Surface 5 carries the refusal into the direct-landing answer. | "except MemoryModeUnsupportedError" | mcp/src/agents_remember/application/lifecycle/direct_landing.py:226-226 |
+| Surface 6 reports the removal as its own fact in the unstarted-evidence answer. | "except MemoryModeUnsupportedError" | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:276-276 |
+| Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause. | "except MemoryModeUnsupportedError" | mcp/src/agents_remember/worktrees/modules/start.py:151-151 |
 
 ## Cross-Repo References
 

@@ -54,11 +54,11 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The running-owner observation reloads the selected output and builds a bound physical view. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
+| The running-owner observation reloads the selected output and builds a bound physical view. | `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
 | The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
 | Selected record and intent currentness are rechecked around observation. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
 | The execution view binds the exact output bytes, raw commit/tree, and logical pair. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
-| Preparation precedes a fresh observation when the caller requests a prepared view. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
+| Preparation precedes a fresh observation when the caller requests a prepared view. | `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
 
 ## Cross-Repo References
 

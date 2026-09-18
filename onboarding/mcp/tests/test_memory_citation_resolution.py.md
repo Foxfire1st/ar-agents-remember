@@ -78,9 +78,9 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Grammar and path boundaries retain their dedicated assertion classes. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
-| Selected/full validation and missing-code-root reporting. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
-| Retained prepared history and cache-independent memory provenance. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
-| Mechanical projection prompts the support question rather than asserting currency. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Selected/full validation and missing-code-root reporting. | `test_full_and_selected_walks_share_canonical_document_validation` | mcp/tests/test_memory_citation_resolution.py:217-237 |
+| Retained prepared history and cache-independent memory provenance. | `RetainedPreparedProvenanceTests` | mcp/tests/test_memory_citation_resolution.py:249-381 |
+| Mechanical projection prompts the support question rather than asserting currency. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:474-503 |
 
 ## Cross-Repo References
 

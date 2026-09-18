@@ -62,8 +62,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract census observes actual code/memory and integrated output evidence, with no cache requirement. | n/a | [mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
-| The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard. | n/a | [mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
+| The contract census observes actual code/memory and integrated output evidence, with no cache requirement. | `_EvidenceCensus` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:94-98 |
+| The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard. | `_operation_facts` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:320-398 |
 
 ## Cross-Repo References
 

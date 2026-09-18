@@ -87,7 +87,7 @@ No external documentation is needed for these package-local data models.
 | --- | --- | --- |
 | `MissingMemoryError` subclasses the typed `AgentsRememberError` base. | `MissingMemoryError` | mcp/src/agents_remember/kernel/coordination_context/models.py:10-29 |
 | `AgentsRememberError` remains a `ValueError`-compatible base. | `AgentsRememberError` | mcp/src/agents_remember/errors.py:18-19 |
-| Resolver assembly returns `CoordinationContext` instances defined here, reading `contract.memory_mode` straight into the field and falling back to the topology only when there is no contract. | `build_coordination_context`; `_memory_mode` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-313; mcp/src/agents_remember/kernel/coordination_context/resolver.py:342-343 |
+| Resolver assembly returns `CoordinationContext` instances defined here, reading `contract.memory_mode` straight into the field and falling back to the topology only when there is no contract. | `build_coordination_context`; `_memory_mode` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-313; mcp/src/agents_remember/kernel/coordination_context/resolver.py:342-343; mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-308 |
 | `MemoryMode` is the three-member memory vocabulary declaration (kernel-owned since L9). | "MemoryMode =" | mcp/src/agents_remember/kernel/coordination_context/models.py:209-209 |
 | The wire face of the same value imports and uses the shared alias for `memory.mode`. | `MemorySummary` | mcp/src/agents_remember/models/context_packet.py:79-86 |
 | Serialization converts these models to JSON-safe dictionaries. | `context_to_dict` | mcp/src/agents_remember/kernel/coordination_context/serialize.py:69-98 |

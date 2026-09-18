@@ -133,7 +133,7 @@ No external or domain documentation governs this repository-local corpus check.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The resolver under test and the six shipped cases. | n/a | mcp/tests/test_role_instruction_corpus.py:141-156; mcp/tests/test_role_instruction_corpus.py:244-268; mcp/tests/test_role_instruction_corpus.py:350-399; mcp/tests/test_role_instruction_corpus.py:400-463; mcp/tests/test_role_instruction_corpus.py:464-504; mcp/tests/test_role_instruction_corpus.py:505-528; mcp/tests/test_role_instruction_corpus.py:573-598 |
+| The resolver under test and the six shipped cases. | "the resolver under test" | mcp/tests/test_role_instruction_corpus.py:151-151 |
 | The declared corpus contract the cases enforce. | n/a | mcp/tests/test_role_instruction_corpus.py:32-42; mcp/tests/test_role_instruction_corpus.py:44-52; mcp/tests/test_role_instruction_corpus.py:53-53; mcp/tests/test_role_instruction_corpus.py:56-65; mcp/tests/test_role_instruction_corpus.py:103-111; mcp/tests/test_role_instruction_corpus.py:87-102; mcp/tests/test_role_instruction_corpus.py:112-116 |
 | The manifest this module resolves, and the corpus it governs. | n/a | skills/l-01-agent-lifecycles/composition-manifest.json:1-1; skills/l-01-agent-lifecycles/SKILL.md:1-22 |
 | Generated copies are checked by the propagation owner, not by this module. | n/a | scripts/sync-skills.py:15-15; scripts/sync-skills.py:179-203 |

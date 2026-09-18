@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/vocabulary.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ No external or domain documentation is configured for this memory root
 | The independent role census this module's runtime tuple is compared against. | `SHIPPED_ROLES`; `SHIPPED_OPERATIONS` | mcp/tests/test_role_capsule_admission.py:76-87; mcp/tests/test_role_capsule_admission.py:89-98 |
 | The parser that is handed this vocabulary and refuses a manifest that disagrees. | `parse_composition_manifest`; `MANIFEST_VOCABULARY_MISMATCH` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216; mcp/src/agents_remember/models/role_capsules/manifest.py:39-39 |
 | The narrowing helpers that turn an untrusted string into a role or refuse it. | `narrow_operation`; `narrow_role` | mcp/src/agents_remember/models/role_capsules/selection.py:176-188; mcp/src/agents_remember/models/role_capsules/selection.py:191-213 |
-| The canonical authored metadata that must agree with these tuples. | `"role_order"` | skills/l-01-agent-lifecycles/composition-manifest.json:6-17 |
+| The canonical authored metadata that must agree with these tuples. | "\"role_order\"" | skills/l-01-agent-lifecycles/composition-manifest.json:6-6 |
 | The settings registry kept in step with this vocabulary, so a published role is configurable. | `KNOWN_ROLES` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:78-94 |
 | The free-agent shape the tenth role carries, and the exclusion list it must not be added to. | `CAPSULE_ROLES`; `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-96; mcp/src/agents_remember/serving/task_binding.py:60-83 |
 

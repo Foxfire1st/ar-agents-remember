@@ -64,10 +64,10 @@ These current source spans identify the implementation owners and the specific a
 | --- | --- | --- |
 | Exact refs, worktree identity, and authority-safe cleanup. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
 | Typed dirty/WIP and restore proof exclude only the memory cache. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
-| Content-domain conflicts and narrowly scoped cache state handling. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+| Content-domain conflicts and narrowly scoped cache state handling. | `content_conflicts` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:285-292 |
 | Native merge, exact continuation, and cache-free merge output. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
-| Rollback and created-head proof retain exact operation ownership. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
-| Public regression covers cache-only success, true content conflict/continue, and preserved WIP. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Rollback and created-head proof retain exact operation ownership. | `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:491-499 |
+| Public regression covers cache-only success, true content conflict/continue, and preserved WIP. | `test_memory_merge_discards_only_cache_conflicts_and_preserves_content_conflicts` | mcp/tests/test_worktree_sync.py:330-411 |
 
 ## Cross-Repo References
 

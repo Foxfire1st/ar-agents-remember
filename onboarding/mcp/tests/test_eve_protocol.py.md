@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_eve_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,7 +109,7 @@ No external repository boundary is implemented by this test.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The protocol shapes under test are the pinned published `eve` package's contract, not a sibling repository's. | supported stream versions | mcp/src/agents_remember/serving/eve_protocol.py:32-40 |
+| The protocol shapes under test are the pinned published `eve` package's contract, not a sibling repository's. | `eve` | mcp/src/agents_remember/serving/eve_protocol.py:32-40 |
 
 ## Update History
 

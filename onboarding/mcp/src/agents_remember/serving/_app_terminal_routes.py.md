@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_app_terminal_routes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-17T09:40+02:00 |
-| lastVerifiedCommitHash | `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
-| lastVerifiedCommitDate | 2026-09-17T09:06:38+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview      | `overview.md`                                          |
 
@@ -105,7 +105,7 @@ No Domain Documentation source is configured.
 | Task assignment delegates validation and generalized mutation. | `_attach_task_response` | mcp/src/agents_remember/serving/_app_terminal_routes.py:392-451 |
 | The wired launch point: the capsule is resolved before any host side effect, a refusal is HTTP 400 `capsule-unavailable`, the workspace comes from the one rule, and the per-run record rides the response as `instructionMode`. | `_open_terminal_response`; `resolve_launch_capsule`; `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/_app_terminal_routes.py:239-348; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
 | The application-rank compiler is injected here rather than imported, because `serving` ranks below `application`. | `ServingCollaborators.capsule_launch`; `serving_collaborators` | mcp/src/agents_remember/serving/_app_common.py:455-462; mcp/src/agents_remember/cli/dashboard.py:67-83 |
-| The route's launchability question and the pre-existing reason an adapter-owned harness is refused here. | `session_backend`; `terminal_launch_detail` | mcp/src/agents_remember/serving/terminal_opener.py:163-173; mcp/src/agents_remember/serving/harnesses.py:110-124 |
+| The route's launchability question and the pre-existing reason an adapter-owned harness is refused here. | `session_backend`; `terminal_launch_detail` | mcp/src/agents_remember/serving/terminal_opener.py:163-173; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
 | The cases: a free agent reads its capsule out of its own first prompt through this route, and an un-compilable role refuses before any host effect. | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:529-574; mcp/tests/test_capsule_launch_wiring.py:577-607; mcp/tests/test_capsule_launch_wiring.py:816-872 |
 
 ## Cross-Repo References

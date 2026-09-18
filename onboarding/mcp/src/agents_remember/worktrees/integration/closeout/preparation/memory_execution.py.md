@@ -56,10 +56,10 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Candidate construction explicitly excludes memory.md and reobserves the selected code view. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
+| Candidate construction explicitly excludes memory.md and reobserves the selected code view. | `observe_prepared_memory_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:27-52 |
 | Cache setup is conditional on real non-cache changes before invoking the registered producer. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
 | The selected fifth terminal must bind the actual cache-free tree and logical pair. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py) |
-| The memory reuse record carries distinct raw and certified tree identities. | n/a | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
+| The memory reuse record carries distinct raw and certified tree identities. | `certifiedContentTree` | mcp/src/agents_remember/models/lifecycles/preparation.py:52-52 |
 
 ## Cross-Repo References
 

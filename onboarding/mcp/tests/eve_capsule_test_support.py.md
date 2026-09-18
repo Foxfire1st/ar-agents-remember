@@ -6,8 +6,8 @@
 | path | `mcp/tests/eve_capsule_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,7 +119,7 @@ was available for this file.
 | The production producer this fixture drives, and the carrier type its result is handed back as. | `materialize_eve_binding`; `EveBoundLaunch`; `carrier_digest` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-291 |
 | The environment names the fixture renders, imported into the launch module from the carrier module so the fixture cannot invent a spelling the launch does not read. | `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV`; `CAPSULE_PATH_ENV`; `WORKSPACE_ROOT_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:34-37; mcp/src/agents_remember/serving/eve_runtime_launch.py:41-48 |
 | The compiler and projection inputs this fixture supplies for real. | `compile_task_capsule`; `resolve_task_projection_scope` | mcp/src/agents_remember/application/skill_resources/__init__.py; mcp/src/agents_remember/application/task_projection/__init__.py |
-| The lifecycle catalog row for this support module, including its four consumers and its replacement contract. | `path = "mcp/tests/eve_capsule_test_support.py"` row | mcp/tests/evidence-lifecycle.toml:715-726 |
+| The lifecycle catalog row for this support module, including its four consumers and its replacement contract. | "path = \"mcp/tests/eve_capsule_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:724-724 |
 | The focused cases that consume this world, and the runtime cases that execute the shipped TypeScript against it. | `world` fixture; `test_runtime_verifier_accepts_the_admitted_carrier_and_workspace` | mcp/tests/test_eve_capsule_binding.py:59-61; mcp/tests/test_eve_capsule_runtime.py:182-203 |
 | The live native fixture that compiles a capsule from this world and launches the real eve runtime against it. | `build_world` consumer | mcp/tests/live_eve_native_fixture.py:87-95; mcp/tests/live_eve_native_fixture.py:1175-1175 |
 

@@ -74,7 +74,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam. | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py) |
+| The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam. | `prove_cancellable_git` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:34-83 |
 
 ## Cross-Repo References
 

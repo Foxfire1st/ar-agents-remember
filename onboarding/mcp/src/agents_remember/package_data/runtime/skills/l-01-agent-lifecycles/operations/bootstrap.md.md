@@ -112,13 +112,13 @@ No external or domain documentation governs this repository-local operation bloc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical source this package-data copy is sync-propagated from. | `# Operation — Session Bootstrap` | skills/l-01-agent-lifecycles/operations/bootstrap.md:1-1 |
-| Selection rule, carrier start route, and the one-carrier table. | `When it is selected:`; `How the carrier is started:`; `Who carries it, and their job` | skills/l-01-agent-lifecycles/operations/bootstrap.md:8-8; skills/l-01-agent-lifecycles/operations/bootstrap.md:14-14; skills/l-01-agent-lifecycles/operations/bootstrap.md:21-21 |
-| Required inputs, including the three developer decisions. | `Required inputs` | skills/l-01-agent-lifecycles/operations/bootstrap.md:31-45 |
-| The seven-step ordered workflow, each step naming its owner. | `Normal workflow` | skills/l-01-agent-lifecycles/operations/bootstrap.md:47-76 |
-| The seven-row failure inventory a new user actually hits. | `The failure states a new user actually hits` | skills/l-01-agent-lifecycles/operations/bootstrap.md:78-91 |
-| The conformance standard: re-derivability, no independent acceptor, failures reported as failures. | `How conformance is evidenced` | skills/l-01-agent-lifecycles/operations/bootstrap.md:93-111 |
-| The authority gates, including the absent-altitude-is-the-shape rule. | `Authority gates` | skills/l-01-agent-lifecycles/operations/bootstrap.md:113-129 |
-| The two known failure-handling rows, including the capsule-delivery gap. | `Failure handling` | skills/l-01-agent-lifecycles/operations/bootstrap.md:130-152 |
+| Selection rule, carrier start route, and the one-carrier table. | "When it is selected:" | skills/l-01-agent-lifecycles/operations/bootstrap.md:8-8 |
+| Required inputs, including the three developer decisions. | "Required inputs" | skills/l-01-agent-lifecycles/operations/bootstrap.md:31-31 |
+| The seven-step ordered workflow, each step naming its owner. | "Normal workflow" | skills/l-01-agent-lifecycles/operations/bootstrap.md:47-47 |
+| The seven-row failure inventory a new user actually hits. | "The failure states a new user actually hits" | skills/l-01-agent-lifecycles/operations/bootstrap.md:78-78 |
+| The conformance standard: re-derivability, no independent acceptor, failures reported as failures. | "How conformance is evidenced" | skills/l-01-agent-lifecycles/operations/bootstrap.md:93-93 |
+| The authority gates, including the absent-altitude-is-the-shape rule. | "Authority gates" | skills/l-01-agent-lifecycles/operations/bootstrap.md:113-113 |
+| The two known failure-handling rows, including the capsule-delivery gap. | "Failure handling" | skills/l-01-agent-lifecycles/operations/bootstrap.md:130-130 |
 | The manifest entry binding this operation to its single carrier. | `"applies_to_roles"` | skills/l-01-agent-lifecycles/composition-manifest.json:127-135 |
 | The operation vocabulary extension that publishes `bootstrap` as the ninth operation. | `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-110 |
 | The role card this operation is the procedure for. | `# Lifecycle — Bootstrap` | skills/l-01-agent-lifecycles/roles/bootstrap.md:6-231 |

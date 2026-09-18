@@ -113,21 +113,21 @@ The cases, the fixture value objects that vary one fact at a time, and the seam 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture world and the two spec value objects that keep a failure attributable. | `World`; `ContractSpec`; `BindingSpec` | mcp/tests/test_task_projection.py:303-472; mcp/tests/test_task_projection.py:225-232; mcp/tests/test_task_projection.py:290-300 |
+| The fixture world and the two spec value objects that keep a failure attributable. | `World`; `ContractSpec`; `BindingSpec` | mcp/tests/test_task_projection.py:303-472; mcp/tests/test_task_projection.py:225-232; mcp/tests/test_task_projection.py:290-300; mcp/tests/test_task_projection.py:255-263 |
 | The generated enclosure contract, and the external-memory topology the fixture must reproduce. | `_contract` | mcp/tests/test_task_projection.py:235-286 |
 | The two sibling leaves the isolation cases project against. | `ALPHA_SPEC`; `BETA_SPEC` | mcp/tests/test_task_projection.py:587-598 |
-| The structural import-surface case: no writer, no transport, no task-JSON reader. | `test_the_projection_modules_import_no_writer_transport_or_task_json_reader`; `_WRITE_OR_TRANSPORT_MARKERS` | mcp/tests/test_task_projection.py:738-764; mcp/tests/test_task_projection.py:719-736 |
+| The structural import-surface case: no writer, no transport, no task-JSON reader. | `test_the_projection_modules_import_no_writer_transport_or_task_json_reader`; `_WRITE_OR_TRANSPORT_MARKERS` | mcp/tests/test_task_projection.py:738-764; mcp/tests/test_task_projection.py:719-736; mcp/tests/test_task_projection.py:1118-1144 |
 | The read-only case: the task tree is byte-identical after a success and after every refusal. | `test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical` | mcp/tests/test_task_projection.py:1079-1096 |
 | The altitude case: sprint history reaches an orchestrator but never a leaf. | `test_sprint_decision_history_reaches_orchestrator_but_never_a_leaf` | mcp/tests/test_task_projection.py:716-766 |
 | The failure-taxonomy case: each unresolvable input has its own status. | `test_every_unresolvable_input_returns_its_own_source_resolution_status` | mcp/tests/test_task_projection.py:834-997 |
-| The seam case: the provider satisfies the compiler protocol, and the knowledge channel is optional. | `test_the_provider_serves_the_compiler_protocol_and_the_knowledge_seam_is_optional`; `_RecordingExpansion` | mcp/tests/test_task_projection.py:853-897; mcp/tests/test_task_projection.py:838-850 |
+| The seam case: the provider satisfies the compiler protocol, and the knowledge channel is optional. | `test_the_provider_serves_the_compiler_protocol_and_the_knowledge_seam_is_optional`; `_RecordingExpansion` | mcp/tests/test_task_projection.py:853-897; mcp/tests/test_task_projection.py:838-850; mcp/tests/test_task_projection.py:1232-1287 |
 | The package the cases exercise, whose read plan they pin. | `read_plan`; `read_documents` | mcp/src/agents_remember/application/task_projection/scope.py:420-435; mcp/src/agents_remember/application/task_projection/selection.py:175-197 |
 | The compiler seam these cases verify through, including its digest refusal. | `compile_admitted_capsule` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-120 |
 | The fail-closed loader this module currently fails: it raises for any test file without an explicit lane. | `load_lane_manifest`; `LaneManifestError` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-142; mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:22-23 |
 | The missing-lane finding that names exactly this module. | "test files without an explicit lane" | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:120-130 |
-| The lane manifest of record, which has no row for this module yet. A row belongs in the `unit-regression` list, whose alphabetical neighbours are `test_task_intent_identity.py` (`:111`) and `test_telemetry_store.py` (`:112`). | `unit-regression` | mcp/tests/test-evidence-lanes.toml:5-122 |
+| The lane manifest of record, which has no row for this module yet. A row belongs in the `unit-regression` list, whose alphabetical neighbours are `test_task_intent_identity.py` (`:111`) and `test_telemetry_store.py` (`:112`). | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 | The `pytest` hook that runs the loader on every collection, so an unlisted module is a collection failure. | `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py:200-225 |
-| The population setting that makes every module under `mcp/tests/` part of the expected set. | "testpaths" | pyproject.toml:171-171 |
+| The population setting that makes every module under `mcp/tests/` part of the expected set. | "testpaths" | pyproject.toml:181-181 |
 
 ## Cross-Repo References
 
@@ -138,6 +138,7 @@ No sibling-repository contract is exercised by these cases.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-18T01:52:52+00:00: Generated citation repair: "testpaths" repointed to pyproject.toml:181-181. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b549a05c7448b2578454675e173eaf65501170ee85e72dbbfb2c4a4132b3242; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `ALPHA_SPEC`; `BETA_SPEC` repointed to mcp/tests/test_task_projection.py:587-592; mcp/tests/test_task_projection.py:593-598. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical` repointed to mcp/tests/test_task_projection.py:1079-1096. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `test_sprint_decision_history_reaches_orchestrator_but_never_a_leaf` repointed to mcp/tests/test_task_projection.py:716-766. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

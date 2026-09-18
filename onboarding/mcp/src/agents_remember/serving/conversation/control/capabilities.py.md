@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash |  `c1dbebf883f22710b71d40a66ec92c1ac134918f`|
-| lastVerifiedCommitDate |  2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -107,7 +107,7 @@ asset limits come from the L2E substrate; the L1 page-level view is the conserva
 | eve's telemetry declaration: every metric absent with a reason naming the stream, never borrowed. | `_eve_telemetry` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:345-359 |
 | eve's own fixture id, runtime pin and observation time, distinct from the other three harnesses'. | `_EVE_FIXTURE`; `_EVE_RUNTIME`; `_EVE_OBSERVED_AT` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:47-47; mcp/src/agents_remember/serving/conversation/control/capabilities.py:55-55; mcp/src/agents_remember/serving/conversation/control/capabilities.py:59-59 |
 | The adapter capability that decides the asset rows: no `submit_with_assets`, so no supported kind. | `EveSessionAdapter` | mcp/src/agents_remember/serving/eve_adapter.py:144-865 |
-| The cases: the asset-carrying submission is refused by the authority, and eve's telemetry is declared absent rather than borrowed. | `test_an_asset_carrying_submission_is_refused_by_the_authority`; `test_the_eve_adapter_is_not_asset_submit_capable`; `test_eve_telemetry_is_declared_absent_not_borrowed` | mcp/tests/test_eve_product_integration.py:1098-1103; mcp/tests/test_eve_product_integration.py:1706-1709; mcp/tests/test_eve_product_integration.py:1711-1745 |
+| The cases: the asset-carrying submission is refused by the authority, and eve's telemetry is declared absent rather than borrowed. | `test_an_asset_carrying_submission_is_refused_by_the_authority`; `test_the_eve_adapter_is_not_asset_submit_capable`; `test_eve_telemetry_is_declared_absent_not_borrowed` | mcp/tests/test_eve_product_integration.py:1098-1103; mcp/tests/test_eve_product_integration.py:1706-1709; mcp/tests/test_eve_product_integration.py:1711-1745; mcp/tests/test_eve_product_integration.py:1973-2007; mcp/tests/test_eve_product_integration.py:1968-1971; mcp/tests/test_eve_product_integration.py:1282-1287 |
 
 ## Cross-Repo References
 

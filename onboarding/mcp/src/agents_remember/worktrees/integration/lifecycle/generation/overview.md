@@ -52,7 +52,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration generation authority follows the actual publication pair. | n/a | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py) |
+| Integration generation authority follows the actual publication pair. | `snapshot_integration_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:74-137 |
 
 ## Docs And Cross-Repo References
 

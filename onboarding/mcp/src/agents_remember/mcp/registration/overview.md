@@ -232,7 +232,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical closeout input rejects a ledger message field. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| Canonical closeout input rejects a ledger message field. | `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:77-85 |
 
 ## Historical 260731-EFA-L17 Change
 

@@ -70,7 +70,7 @@ the current working-candidate behavior; historical entries below retain their or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The reader derives attribution at the explicit normalized local branch. | n/a | [mcp/src/agents_remember/worktrees/named_ref_memory.py](mcp/src/agents_remember/worktrees/named_ref_memory.py) |
-| Local ref normalization and ledger derivation have shared owners. | n/a | [mcp/src/agents_remember/worktrees/modules/git.py](mcp/src/agents_remember/worktrees/modules/git.py) |
+| Local ref normalization and ledger derivation have shared owners. | `local_branch_ref` | mcp/src/agents_remember/worktrees/modules/git.py:79-85 |
 | The kernel derives rows and current/base metadata from committed attribution. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
 | A tag sharing the source branch name cannot redirect the read, even with a damaged cache. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
 

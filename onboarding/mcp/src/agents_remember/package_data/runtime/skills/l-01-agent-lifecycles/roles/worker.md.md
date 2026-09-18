@@ -80,7 +80,7 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged worker declares its seat purpose, authority boundary, and no-commit contract. | `## 1 — Purpose And Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:16-50 |
-| The role opens by naming the shared sources it composes with rather than restating them. | `**Inherits:**` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:12-14 |
+| The role opens by naming the shared sources it composes with rather than restating them. | "**Inherits:**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:12-12 |
 | The build procedure the worker follows has one home outside the role file. | `# Operation — Implementation`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/implementation.md:1-1; skills/l-01-agent-lifecycles/operations/implementation.md:69-80 |
 | The targeted-check contract the worker owes its owner has one home outside the role file. | `## The targeted-check contract (what closeout consumes as evidence)` | skills/l-01-agent-lifecycles/operations/closeout.md:22-42 |
 | The role declares the readable order and the knob block after the handoff section. | `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:146-193 |

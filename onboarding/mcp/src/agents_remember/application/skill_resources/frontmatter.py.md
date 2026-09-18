@@ -106,7 +106,7 @@ extension specification, SEP-2640).
 | Unimplemented YAML constructs are refused by value prefix rather than guessed. | `_reject_unsupported`; `_UNSUPPORTED_PREFIXES` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:32-33; mcp/src/agents_remember/application/skill_resources/frontmatter.py:174-185 |
 | The scalar and flow forms the reader does implement. | `_scalar`; `_flow_mapping`; `_split_flow`; `_unquote` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:187-249 |
 | The consumer that turns a frontmatter refusal into a recorded unreadable skill and carries the verbatim map onto the entry. | `_read_skill` | mcp/src/agents_remember/application/skill_resources/catalog.py:181-213 |
-| The frontmatter-derived tool names that reach the registry as declared, never granted. | `SkillResourceEntry.declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:96-96 |
+| The frontmatter-derived tool names that reach the registry as declared, never granted. | `declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:270-285 |
 | The case that executes the verbatim-frontmatter requirement end to end. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter` | mcp/tests/test_capsule_serving.py:1044-1075 |
 
 ## Cross-Repo References

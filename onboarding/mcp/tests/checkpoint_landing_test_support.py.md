@@ -59,7 +59,7 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Leaf and accumulated-master pairs are built from real code/memory commits. | n/a | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
+| Leaf and accumulated-master pairs are built from real code/memory commits. | `commit_memory_content` | mcp/tests/checkpoint_landing_test_support.py:104-115 |
 | Temporary branch ownership and real source-content reconciliation. | n/a | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
 | Public checkpoint and canonical master status helpers. | n/a | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
 | The public boundary scenarios consume the shared builders. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |

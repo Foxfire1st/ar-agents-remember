@@ -68,9 +68,9 @@ from the production chain's own captured cwd and env.
 | --- | --- | --- |
 | The acceptance pair, read out of each started session's own first prompt. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | mcp/tests/test_capsule_launch_wiring.py:483-526; mcp/tests/test_capsule_launch_wiring.py:529-574 |
 | The production-chain pair that replaced the hand-supplied case. | `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts`; `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace` | mcp/tests/test_capsule_launch_wiring.py:816-872; mcp/tests/test_capsule_launch_wiring.py:874-918 |
-| The refusal before any host effect, the mode gate, the byte-identical legacy payload, the single-carrier bound and the site enumeration. | `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`; `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class`; `test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload`; `test_the_delivered_payload_carries_the_capsule_once_and_no_task_context`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:577-607; mcp/tests/test_capsule_launch_wiring.py:615-657; mcp/tests/test_capsule_launch_wiring.py:659-710; mcp/tests/test_capsule_launch_wiring.py:712-759; mcp/tests/test_capsule_launch_wiring.py:761-801 |
-| The declared legacy exclusion, the free agent's admission, and the two defect pins. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema`; `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:919-944; mcp/tests/test_capsule_launch_wiring.py:945-968; mcp/tests/test_capsule_launch_wiring.py:975-1022; mcp/tests/test_capsule_launch_wiring.py:1028-1059 |
-| The production-chain evidence the module's in-process cases complement. | `L15 FIX ROUND 1 — E8: THE PRODUCTION CHAIN` | notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt:1-41 |
+| The refusal before any host effect, the mode gate, the byte-identical legacy payload, the single-carrier bound and the site enumeration. | `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`; `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class`; `test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload`; `test_the_delivered_payload_carries_the_capsule_once_and_no_task_context`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:577-607; mcp/tests/test_capsule_launch_wiring.py:615-657; mcp/tests/test_capsule_launch_wiring.py:659-710; mcp/tests/test_capsule_launch_wiring.py:712-759; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:805-844 |
+| The declared legacy exclusion, the free agent's admission, and the two defect pins. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema`; `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:919-944; mcp/tests/test_capsule_launch_wiring.py:945-968; mcp/tests/test_capsule_launch_wiring.py:975-1022; mcp/tests/test_capsule_launch_wiring.py:1028-1059; mcp/tests/test_capsule_launch_wiring.py:847-856; mcp/tests/test_capsule_launch_wiring.py:1072-1104 |
+| The production-chain evidence the module's in-process cases complement. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
 
 ## 260915-CAPS-L5 Codex Capsule-Delivery Test Population
 
@@ -148,11 +148,11 @@ honest.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture world and the synthetic corpus every hermetic case is built from. | `World`; `_synthetic_corpus` | mcp/tests/test_capsule_serving.py:308-308; mcp/tests/test_capsule_serving.py:419-419 |
-| The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree. | `test_a_caller_changing_the_role_string_cannot_acquire_another_role`; `test_the_manifest_decides_the_source_set_not_the_caller`; `test_the_capsule_operation_writes_nothing_to_the_tree_it_reads` | mcp/tests/test_capsule_serving.py:639-639; mcp/tests/test_capsule_serving.py:651-651; mcp/tests/test_capsule_serving.py:690-690 |
-| The guards the repairs pinned, each driven directly by its own case. | `test_a_catalog_record_that_escapes_its_skill_directory_is_refused`; `test_the_index_reader_refuses_while_a_skill_cannot_be_served`; `test_the_extension_declaration_is_installed_once_per_server`; `test_a_nested_skill_is_published_flat_like_any_other` | mcp/tests/test_capsule_serving.py:1321-1321; mcp/tests/test_capsule_serving.py:1348-1348; mcp/tests/test_capsule_serving.py:1389-1389; mcp/tests/test_capsule_serving.py:1489-1489 |
-| The SEP entry contract, asserted separately from this server's own index shape. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`; `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` | mcp/tests/test_capsule_serving.py:1008-1008; mcp/tests/test_capsule_serving.py:1040-1040 |
-| The two independent-SDK-client exchanges, including both extension methods and the `-32602` refusal. | `test_a_real_client_and_server_exchange_over_the_installed_sdk`; `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1195-1195; mcp/tests/test_capsule_serving.py:1268-1268 |
+| The fixture world and the synthetic corpus every hermetic case is built from. | `World`; `_synthetic_corpus` | mcp/tests/test_capsule_serving.py:308-308; mcp/tests/test_capsule_serving.py:419-419; mcp/tests/test_capsule_serving.py:423-551 |
+| The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree. | `test_a_caller_changing_the_role_string_cannot_acquire_another_role`; `test_the_manifest_decides_the_source_set_not_the_caller`; `test_the_capsule_operation_writes_nothing_to_the_tree_it_reads` | mcp/tests/test_capsule_serving.py:639-639; mcp/tests/test_capsule_serving.py:651-651; mcp/tests/test_capsule_serving.py:690-690; mcp/tests/test_capsule_serving.py:655-673; mcp/tests/test_capsule_serving.py:694-706; mcp/tests/test_capsule_serving.py:643-652 |
+| The guards the repairs pinned, each driven directly by its own case. | `test_a_catalog_record_that_escapes_its_skill_directory_is_refused`; `test_the_index_reader_refuses_while_a_skill_cannot_be_served`; `test_the_extension_declaration_is_installed_once_per_server`; `test_a_nested_skill_is_published_flat_like_any_other` | mcp/tests/test_capsule_serving.py:1321-1321; mcp/tests/test_capsule_serving.py:1348-1348; mcp/tests/test_capsule_serving.py:1389-1389; mcp/tests/test_capsule_serving.py:1489-1489; mcp/tests/test_capsule_serving.py:1325-1349; mcp/tests/test_capsule_serving.py:1352-1367; mcp/tests/test_capsule_serving.py:1393-1407; mcp/tests/test_capsule_serving.py:1496-1542 |
+| The SEP entry contract, asserted separately from this server's own index shape. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`; `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` | mcp/tests/test_capsule_serving.py:1008-1008; mcp/tests/test_capsule_serving.py:1040-1040; mcp/tests/test_capsule_serving.py:1044-1075; mcp/tests/test_capsule_serving.py:1012-1041 |
+| The two independent-SDK-client exchanges, including both extension methods and the `-32602` refusal. | `test_a_real_client_and_server_exchange_over_the_installed_sdk`; `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1195-1195; mcp/tests/test_capsule_serving.py:1268-1268; mcp/tests/test_capsule_serving.py:1198-1268; mcp/tests/test_capsule_serving.py:1271-1302 |
 | The case that keeps the seeded-mutation evidence honest. | `test_the_mutation_harness_can_actually_fail` | mcp/tests/test_capsule_serving.py:1305-1317 |
 | The lane row that selects this module into the unit population. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:21-21 |
 
@@ -1172,7 +1172,7 @@ obligation under an explicit transfer.
 | The launch-binding fixture that makes the adapter suite's launches verifiable. | `fixture_launch_binding` | mcp/tests/eve_adapter_test_support.py:407-436 |
 | The trace's effective-prompt key, which the live capsule scenarios assert against. | `FixturePlan.trace` | mcp/tests/eve_fixture_model.py:63-88 |
 | The live end-to-end capsule scenarios, which are the whole-seam proof rather than a unit claim. | `_scenario_capsule_binding`; `_scenario_capsule_execution` | mcp/tests/live_eve_native_fixture.py:1758-1813; mcp/tests/live_eve_native_fixture.py:1680-1757 |
-| The lifecycle catalog registration for the shared support module, with its four derived consumers. | `path = "mcp/tests/eve_capsule_test_support.py"` row | mcp/tests/evidence-lifecycle.toml:714-724 |
+| The lifecycle catalog registration for the shared support module, with its four derived consumers. | "path = \"mcp/tests/eve_capsule_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:724-724 |
 
 ## 260915-CAPS-L11 `D9`'s Six Historical Modules Register, And The Route Closes Its Own Gap
 
@@ -1212,8 +1212,8 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The citation index's exclusion register, its ruled caps and its reported-skip behaviour, defended case by case. | `TheExclusionRegisterIsHonouredFromEachSourceIndependently`; `TheRuledCapsSkipAndReportRatherThanRefuse`; `TheQualitySurfaceCannotBeBricked`; `TheRegisteredCitationSurfaceCarriesTheCallerExcludes`; `TheCapsThatStayAsTheyWere` | mcp/tests/test_citation_index_resilience.py:207-415; mcp/tests/test_citation_index_resilience.py:418-557; mcp/tests/test_citation_index_resilience.py:560-665; mcp/tests/test_citation_index_resilience.py:668-707; mcp/tests/test_citation_index_resilience.py:710-720 |
 | The divergence between the register's re-inclusion rule and Git's, measured on both sides. | `test_the_register_admits_a_negated_file_under_an_excluded_directory_where_git_does_not` | mcp/tests/test_citation_index_resilience.py:334-374 |
 | The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins. | `FreshUserFixtureShapeTests`; `FreshUserScenarioContractTests` | mcp/tests/test_fresh_user_harness.py:110-186; mcp/tests/test_fresh_user_harness.py:189-235 |
-| The lane rows that admit both L14 modules to the `unit-regression` lane. | "mcp/tests/test_citation_index_resilience.py"; "mcp/tests/test_fresh_user_harness.py" | mcp/tests/test-evidence-lanes.toml:27-27; mcp/tests/test-evidence-lanes.toml:62-62 |
-| The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. | `path = "scripts/e2e_harness/fresh_user_fixture.py"`; `path = "scripts/e2e_harness/fresh_user_scenario.py"`; `path = "scripts/e2e_harness/run_fresh_user.py"` | mcp/tests/evidence-lifecycle.toml:1266-1285; mcp/tests/evidence-lifecycle.toml:1286-1304; mcp/tests/evidence-lifecycle.toml:1305-1320 |
+| The lane rows that admit both L14 modules to the `unit-regression` lane. | "mcp/tests/test_citation_index_resilience.py"; "mcp/tests/test_fresh_user_harness.py" | mcp/tests/test-evidence-lanes.toml:27-27; mcp/tests/test-evidence-lanes.toml:62-62; mcp/tests/test-evidence-lanes.toml:29-29; mcp/tests/test-evidence-lanes.toml:67-67 |
+| The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. | "path = \"scripts/e2e_harness/fresh_user_fixture.py\"" | mcp/tests/evidence-lifecycle.toml:1272-1272 |
 | The live public-surface inventory contract for the advertised MCP tool tuple. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-341 |
 | The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
 | The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-329; mcp/src/agents_remember/models/worktree.py:355-363 |
@@ -1224,7 +1224,7 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:180-180 |
 | The L37 stop boundary proof: the public pause, the measured world, the ten independently-failing cases and the four refusal shapes. Its never-selected case asserts the already-vacant success rather than a refusal, and the two L38 cases added after it pin the unreadable record and the vacant foreign record. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`; `test_an_unreadable_record_is_refused_not_reported_stopped`; `test_a_record_naming_another_master_is_refused_not_released` | mcp/tests/test_pause_stop_only_end_to_end.py:86-556; mcp/tests/test_pause_stop_only_end_to_end.py:150-168; mcp/tests/test_pause_stop_only_end_to_end.py:203-234; mcp/tests/test_pause_stop_only_end_to_end.py:236-263; mcp/tests/test_pause_stop_only_end_to_end.py:265-317; mcp/tests/test_pause_stop_only_end_to_end.py:445-471; mcp/tests/test_pause_stop_only_end_to_end.py:473-526 |
 | The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:170-170; mcp/tests/test-evidence-lanes.toml:205-205 |
+| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:170-170; mcp/tests/test-evidence-lanes.toml:205-205; mcp/tests/test-evidence-lanes.toml:199-199; mcp/tests/test-evidence-lanes.toml:235-235 |
 | The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. | `LifecyclePlaythroughTests`; `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173; mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-173 |
 | The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:193-193 |
 | The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:85-85 |
@@ -1273,6 +1273,7 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 - 2026-09-17T16:02+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): **this route's `D9` residual is closed.** L11 registered the six historical modules the fail-closed loader had been naming — `test_eve_adapter`, `test_eve_protocol`, `test_role_capsule_admission`, `test_role_capsule_compiler`, `test_role_instruction_corpus`, `test_task_projection` — all `unit-regression`; the loader now returns `LANE-REGISTRY-OK 243 0` and each module collects (198 unit / 0 integration). The new section above records that, the `S-D9-lane-row-removed` seed proving the rows are load-bearing, and the route-level lesson that a manifest fingerprint must be asked of the product rather than rebuilt by hand. This entry exists because the route body itself changed: the three governed sources on this route (`test-evidence-lanes.toml`, `test_capsule_launch_wiring.py`, `test_role_capsule_admission.py`) all moved, and an external-memory refresh requires updated route content rather than a metadata-only stamp. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. The earlier entries below are left exactly as written, including L10's and L19's field-model entries, whose ordering is a dated record rather than an assertion of current doctrine.
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`)** in the CAPS-L18 section — `ready-for-closeout` is never a value of the combined `checklistStatus`; the curator repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). **No test-surface change:** this leaf's code delta is zero, it adds no module and touches no lane row, so this route's population, its budgets and its `D9` residual are unchanged (`D9` remains L11's six historical modules). Verification metadata is left alone: the candidate is uncommitted and the governed closeout stamps the real code commit.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: this route gained **one module** —
   `test_capsule_experiment_install.py`, 19 cases — plus two rows in `test_sync_runtime.py`. The
   section above records what the population protects, that the module is not a seventh `D9` row,
@@ -1280,7 +1281,6 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   Verification metadata is left at this leaf's synced base `933b011b`; the candidate is
   deliberately uncommitted.
 
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T11:50+02:00 — 260915-CAPS-L14 curator: this route gained **two modules** and the reference rows and lane/catalog citations that go with them. `test_citation_index_resilience.py` defends the citation index's shared exclusion register per source, the ruled caps' skip-and-report behaviour, and the quality surface's reported states — with the register's deliberate divergence from Git measured on both sides; `test_fresh_user_harness.py` is the **consumer of record** for the three new `scripts/e2e_harness` governed artifacts and pins the fixture shape and the scenario contract (a step that cannot run is `blocked` by name, never `completed`). Added the corresponding rows, the two `unit-regression` lane rows, and the three `[[artifact]]` rows the leaf registers. **Repaired two stale claims on this route**: the final memory adapter citation still pointed at `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained three modules and two fixture
@@ -1298,6 +1298,43 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   explicit transfer. Verification metadata moves to the leaf's synced base `23cc7a72`; the candidate is
   deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
   fingerprint was invented here.
+- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: **route meaning changed**, so this overview gained a
+  section rather than a no-impact entry. Added the L5 test population — `test_codex_capsule_delivery.py`
+  at **28 collected cases and no `integration` marker**, registered under **`provider-conformance`** at
+  entry row 216 — plus the two expiry fixtures it reads (`codex_app_server_instruction_channels.json`
+  and `codex_app_server_model_page.json`), naming the `turn/start` instruction-field absence the
+  lifetime design rests on and why a captured `model/list` page replaced hand-written drafts. Recorded
+  the module's two deliberate doublings (transport, transient discoverer) and the live case's
+  skip-not-pass guard. Verification metadata stays pinned to the last committed source (`c1dbebf8`).
+
+- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: refreshed this route section
+  against the settled candidate. Corrected the population from 21 to **30 collected items (28 unit + 2
+  integration)**, re-derived every fixture and case line number against the current 1,535-line module,
+  and named the cases the two repair rounds added — the SEP entry contract, this server's own index
+  shape asserted separately from the enumeration surface, and the four previously-unpinned guards each
+  driven by its own case. Recorded that the exchange case now exercises **both extension methods**,
+  including `skills/get` on an absent URI refused `-32602`, and dropped the reference to a helper the
+  module no longer carries. Verification metadata remains closeout-owned; no acceptance claim is made.
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
+  base `b00a4ac2`): **route body updated** — added § 260915-CAPS-L4 Capsule And Skill-Serving Test
+  Population, placing the new `test_capsule_serving.py` in this route and stating the properties it
+  protects (19 hermetic admission/serving cases over a `World` fixture and a synthetic corpus, 2
+  real-process exchanges driven by the installed SDK's own client, and 3 shipped-corpus cases that
+  would catch packaging drift between the canonical root `skills/` tree and the served copy). A new
+  card was created for the module in this route. Recorded that the module is registered in
+  `test-evidence-lanes.toml` under `unit-regression` at entry row 19, and that the default unit
+  selection on this branch refuses collection at 1083 collected cases against a 1000 ceiling (64 of
+  that overage predating this leaf) — a current-state fact about the route's verification population,
+  left un-repaired because raising a declared budget is an owner decision. Verification metadata
+  remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was
+  invented.
+
+- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: **route body updated** for the task-context projection's coverage module. Added § 260915-CAPS-L3 Task-Context Projection Coverage: the new module and its 9 collected cases, the anti-vacuity rule its docstring states as contract, the three cases that carry more weight than their size (the structural import-surface walk, the byte-identical non-mutation case, and the two-way compiler-seam case), the remaining six properties, the fixture-topology trap that took three rounds to mirror (`CAPS-L3-EV5`–`EV7`, chiefly that an internal memory root silently wins over an external coordination hint), the task-local `M01`–`M20` falsifiability probe and its self-caught vacuous seed (`CAPS-L3-EV10`), and the pre-existing pytest-unresolvable pyright condition. **Also recorded a scoped blocker for the owning seat**: this module has no evidence-lane row, and `load_lane_manifest` is fail-closed, so the manifest does not load as the candidate stands; the same gap exists for the three modules from `CAPS-R01@v1`/`CAPS-R02@v1`, making the correct repair a four-row change. That finding is derived from the loader's source, not executed — this seat has Python 3.10 and the repository requires `>=3.13,<3.14`. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve adapter's test population. Added § 260915-CAPS-L6 Native eve Adapter Test Population, which states the distinction this route now depends on: two of the five new modules are pytest-collected suites and three are support or explicit-run scripts, so "the suite protects this scenario" is proved by collection for the former and by a `--report-dir` artifact for the live fixture. Also records the A2 strengthening (the production client driven through a mock transport, the bounded replay window, the request-shaped cancel observation) and the `_knob_values` env carrier that holds the launch-vocabulary contract at four harnesses. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Role-Instruction Corpus Contract, which places the new shipped module `test_role_instruction_corpus.py` in this route and states the properties it protects (nine-role registry, the six-section readable order, the frozen eight-operation vocabulary, a prose-free manifest, every cited relative path resolving, a missing manifest source reported rather than accepted, and the `SANCTIONED_SIBLING_REFERENCES` independence rule). A new card was created for the module in this route. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+
 - 2026-09-15T21:40+02:00 — 260831-LOCR-L05 curator, **re-dispatch** (uncommitted change set on
   `ar/260831-locr-l05`, pair code base `67c91534`, memory base `309110f8`): the route gained the
   worker-role wake, so the retained-route table was extended rather than annotated. New row for
@@ -1316,26 +1353,6 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   leaf did not cause: the L4 census module's lane row is at `:69`, not the `:68` the row recorded
   after L06's own insertion moved it. Records source documentation only; it makes no execution,
   acceptance or certification claim, and verification metadata remains closeout-owned.
-
-- 2026-09-15T21:21+02:00 — 260831-LOCR-L06 curator, **re-dispatch** (uncommitted change set on
-  `ar/260831-locr-l06`, pair code base `e9678c56`, memory base `ee93a0fc`): the route gained the
-  reviewer role's own relay proof, so the retained-route table was extended rather than annotated.
-  New row for `test_lifecycle_owned_completion_relay_reviewer.py` — canonical reviewer terminal truth
-  produced by observation wakes the current manager as one durable row with no completion post; the
-  eligibility boundary that refuses liveness, control readiness and a self-reporting pane; the
-  `interrupted` outcome preserved as itself; addressing by current occupancy past a departed manager
-  generation; one signal per evidence identity; and the `failed` negative control that keeps the
-  eligible set (`completed`/`interrupted`) a claim rather than an accident. The inserted row lands
-  inside the alphabetical unit-regression run **above** the manifest rows this card's reference table
-  cites, so nine citations here were re-derived against the candidate rather than carried:
-  `test_memory_attribution_producers.py` `:68` → `:69`, `test_memory_backfill.py` `:69` → `:70`,
-  `test_terminal_liveness_registration_order.py` `:121` → `:122`, `test_cross_master_concurrency.py`
-  `:151` → `:152`, `test_leaf_doc_master_link_binding.py` `:159` → `:160`,
-  `test_lifecycle_playthrough_end_to_end.py` `:162` → `:163`, the two L37 registrations `:164` → `:169`
-  and `:197` → `:204`, and `test_terminal_blocker_reasons.py` `:184` → `:185`. The manifest population
-  is now **215** modules (122 unit-regression / 2 public-contract / 62 integration /
-  16 architecture-fitness / 13 provider-conformance), not the 214 this card carried. Verification
-  metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-15T21:25+02:00 — 260831-LOCR-L04 curator (uncommitted change set on `ar/260831-locr-l04`,
   base `e9678c56`, `mcp/tests/test-evidence-lanes.toml` +1/−0 and three new test-side modules): this
@@ -1360,6 +1377,26 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   preservation requirement: `mcp/src` is byte-unchanged by this change set, and no case budget is quoted
   or raised — `pyproject.toml` is the authority. Verification metadata remains closeout-owned; no stamp
   advanced.
+
+- 2026-09-15T21:21+02:00 — 260831-LOCR-L06 curator, **re-dispatch** (uncommitted change set on
+  `ar/260831-locr-l06`, pair code base `e9678c56`, memory base `ee93a0fc`): the route gained the
+  reviewer role's own relay proof, so the retained-route table was extended rather than annotated.
+  New row for `test_lifecycle_owned_completion_relay_reviewer.py` — canonical reviewer terminal truth
+  produced by observation wakes the current manager as one durable row with no completion post; the
+  eligibility boundary that refuses liveness, control readiness and a self-reporting pane; the
+  `interrupted` outcome preserved as itself; addressing by current occupancy past a departed manager
+  generation; one signal per evidence identity; and the `failed` negative control that keeps the
+  eligible set (`completed`/`interrupted`) a claim rather than an accident. The inserted row lands
+  inside the alphabetical unit-regression run **above** the manifest rows this card's reference table
+  cites, so nine citations here were re-derived against the candidate rather than carried:
+  `test_memory_attribution_producers.py` `:68` → `:69`, `test_memory_backfill.py` `:69` → `:70`,
+  `test_terminal_liveness_registration_order.py` `:121` → `:122`, `test_cross_master_concurrency.py`
+  `:151` → `:152`, `test_leaf_doc_master_link_binding.py` `:159` → `:160`,
+  `test_lifecycle_playthrough_end_to_end.py` `:162` → `:163`, the two L37 registrations `:164` → `:169`
+  and `:197` → `:204`, and `test_terminal_blocker_reasons.py` `:184` → `:185`. The manifest population
+  is now **215** modules (122 unit-regression / 2 public-contract / 62 integration /
+  16 architecture-fitness / 13 provider-conformance), not the 214 this card carried. Verification
+  metadata remains closeout-owned; no stamp advanced.
 
 - 2026-09-15T21:19+02:00 — 260831-LOCR-L07 curator (uncommitted change set on `ar/260831-locr-l07`,
   base `e9678c56`): the route gained the curator turn owner wake (`LOCR-R07@v1`), so the
@@ -1430,6 +1467,17 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   lane membership is unchanged and its lane row did not move; the detail lives on
   `test_serving_observation_loop.py.md`. Verification metadata remains closeout-owned.
 
+- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
+  base `67b21aeb`): this route gained one integration member, so the `## Retained Behavioral Routes`
+  table gained the row *Terminal catalog reads are side-effect free* for
+  `test_serving_terminal_catalog_read.py` — the route-projection purity proof, with both of its
+  instrument limits stated in the row rather than left implicit. The card's `lastVerifiedCommitHash`
+  stays pinned: the candidate is uncommitted and verification metadata is closeout-owned. The facts
+  this route already carried — `GET /api/terminal/sessions` and `GET /api/harnesses` are the two
+  handlers whose `response_model` is live FastAPI validation, and the exact 52-key AST pin behind
+  them — are unchanged and were re-read: the new module asserts the same declaration and the same
+  conditional key set, so those historical entries stand as written.
+
 - 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator, **citation repair in an edited document** (same
   change set): corrected the L36 cross-master forcing row's six case ranges, which had drifted
   (`test_cross_master_concurrency.py:131-162;465-512;529-563;565-620;752-780;784-852` →
@@ -1480,30 +1528,6 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   version-controlled test source, not a governed evidence artifact. Membership remains selection and
   cost classification only: it is not execution, certification or acceptance evidence, and this
   route's verification metadata remains closeout-owned.
-- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
-  `ar/260831-locr-l38`, base `67b21aeb`): route impact for the two changed modules, both already in
-  this route's table. `test_pause_stop_only_end_to_end.py` went from eight cases to ten and the
-  stop route row now records the ten independently-failing cases and the **four** refusal shapes it
-  keeps apart — a leaf contract, a record this contract does not own, an unreadable record, and a
-  vacant record naming another master (`selected-contract-mismatch`) — plus the guard-order fact that
-  an *active* foreign record is refused one step earlier by the observation, so the two foreign cases
-  prove different guards. The `test_tools.py` route row gained the description-pin half it was
-  missing: both registered descriptions are pinned as text, and the stop's now also pins the removed
-  `atomic-series-activation-selection-missing` refusal **out** while keeping the release it does
-  perform pinned in. Reference rows re-derived for both modules (the pause proof is now
-  `86-556` with the ten case ranges, `_world` `150-168`, the two new cases `445-471` and `473-526`;
-  `PublicSurfaceInventoryTests` is `220-341`). **Three pre-existing out-of-bounds citations in this
-  document were recorded by that pass as left-as-found and reported, not repaired**, because they
-  belong to other leaves' modules and were outside that change set: the recorded flake note
-  (`test_checkpoint_landing_end_to_end.py:835-835`, file now 479 lines), the L36 cross-master forcing
-  row (`test_cross_master_concurrency.py:784-852`, file now 847) and an L8 evidence-registry row
-  (`evidence-lifecycle.toml:1038-1038`, file now 1029). **Update (260831-LOCR-L27 curator): the L36
-  row has since been repaired** — it was an `error`-severity finding against *this* document, which
-  this leaf was editing, so it was corrected here rather than carried. All six of its ranges were
-  re-derived from the module and the module-level `_checkpoint_with_candidate` was dropped as an
-  anchor, since it is a helper rather than a test the row claims. The other two remain unrepaired and
-  reported: neither names this document, so they stay with their owning leaves. Verification metadata
-  remains closeout-owned; no verification stamp advanced and no acceptance claim.
 - 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
   base `67b21aeb`): the route gained the leaf's hermetic `test_serving_observation_loop.py`, so the
   retained-behavioral-routes table gained a row for the serving-owned steady-state observation proof
@@ -1531,56 +1555,38 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   shape it was missing. Lane membership is classification only, not
   execution or acceptance evidence; verification metadata remains closeout-owned and no stamp
   advanced.
+- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
+  `ar/260831-locr-l38`, base `67b21aeb`): route impact for the two changed modules, both already in
+  this route's table. `test_pause_stop_only_end_to_end.py` went from eight cases to ten and the
+  stop route row now records the ten independently-failing cases and the **four** refusal shapes it
+  keeps apart — a leaf contract, a record this contract does not own, an unreadable record, and a
+  vacant record naming another master (`selected-contract-mismatch`) — plus the guard-order fact that
+  an *active* foreign record is refused one step earlier by the observation, so the two foreign cases
+  prove different guards. The `test_tools.py` route row gained the description-pin half it was
+  missing: both registered descriptions are pinned as text, and the stop's now also pins the removed
+  `atomic-series-activation-selection-missing` refusal **out** while keeping the release it does
+  perform pinned in. Reference rows re-derived for both modules (the pause proof is now
+  `86-556` with the ten case ranges, `_world` `150-168`, the two new cases `445-471` and `473-526`;
+  `PublicSurfaceInventoryTests` is `220-341`). **Three pre-existing out-of-bounds citations in this
+  document were recorded by that pass as left-as-found and reported, not repaired**, because they
+  belong to other leaves' modules and were outside that change set: the recorded flake note
+  (`test_checkpoint_landing_end_to_end.py:835-835`, file now 479 lines), the L36 cross-master forcing
+  row (`test_cross_master_concurrency.py:784-852`, file now 847) and an L8 evidence-registry row
+  (`evidence-lifecycle.toml:1038-1038`, file now 1029). **Update (260831-LOCR-L27 curator): the L36
+  row has since been repaired** — it was an `error`-severity finding against *this* document, which
+  this leaf was editing, so it was corrected here rather than carried. All six of its ranges were
+  re-derived from the module and the module-level `_checkpoint_with_candidate` was dropped as an
+  anchor, since it is a helper rather than a test the row claims. The other two remain unrepaired and
+  reported: neither names this document, so they stay with their owning leaves. Verification metadata
+  remains closeout-owned; no verification stamp advanced and no acceptance claim.
 - 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: recorded the route's new state-signal crash/restart recovery executor (`test_state_signal_restart_recovery.py`, unit-regression row `:101`) — a route-table row plus a section carrying the durable order it forces, the seven cases, the non-vacuity witness, and the review verdict's coverage limit that the fence's reachable route is the boundary drain rather than the generic finder. Route purpose, lane membership accounting and every other module's coverage claim are unchanged by this leaf.
-- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
-  base `67b21aeb`): this route gained one integration member, so the `## Retained Behavioral Routes`
-  table gained the row *Terminal catalog reads are side-effect free* for
-  `test_serving_terminal_catalog_read.py` — the route-projection purity proof, with both of its
-  instrument limits stated in the row rather than left implicit. The card's `lastVerifiedCommitHash`
-  stays pinned: the candidate is uncommitted and verification metadata is closeout-owned. The facts
-  this route already carried — `GET /api/terminal/sessions` and `GET /api/harnesses` are the two
-  handlers whose `response_model` is live FastAPI validation, and the exact 52-key AST pin behind
-  them — are unchanged and were re-read: the new module asserts the same declaration and the same
-  conditional key set, so those historical entries stand as written.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: **route meaning changed**, so this overview gained a
-  section rather than a no-impact entry. Added the L5 test population — `test_codex_capsule_delivery.py`
-  at **28 collected cases and no `integration` marker**, registered under **`provider-conformance`** at
-  entry row 216 — plus the two expiry fixtures it reads (`codex_app_server_instruction_channels.json`
-  and `codex_app_server_model_page.json`), naming the `turn/start` instruction-field absence the
-  lifetime design rests on and why a captured `model/list` page replaced hand-written drafts. Recorded
-  the module's two deliberate doublings (transport, transient discoverer) and the live case's
-  skip-not-pass guard. Verification metadata stays pinned to the last committed source (`c1dbebf8`).
+- 2026-09-15T06:37:50+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: refreshed this route section
-  against the settled candidate. Corrected the population from 21 to **30 collected items (28 unit + 2
-  integration)**, re-derived every fixture and case line number against the current 1,535-line module,
-  and named the cases the two repair rounds added — the SEP entry contract, this server's own index
-  shape asserted separately from the enumeration surface, and the four previously-unpinned guards each
-  driven by its own case. Recorded that the exchange case now exercises **both extension methods**,
-  including `skills/get` on an absent URI refused `-32602`, and dropped the reference to a helper the
-  module no longer carries. Verification metadata remains closeout-owned; no acceptance claim is made.
 
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
-  base `b00a4ac2`): **route body updated** — added § 260915-CAPS-L4 Capsule And Skill-Serving Test
-  Population, placing the new `test_capsule_serving.py` in this route and stating the properties it
-  protects (19 hermetic admission/serving cases over a `World` fixture and a synthetic corpus, 2
-  real-process exchanges driven by the installed SDK's own client, and 3 shipped-corpus cases that
-  would catch packaging drift between the canonical root `skills/` tree and the served copy). A new
-  card was created for the module in this route. Recorded that the module is registered in
-  `test-evidence-lanes.toml` under `unit-regression` at entry row 19, and that the default unit
-  selection on this branch refuses collection at 1083 collected cases against a 1000 ceiling (64 of
-  that overage predating this leaf) — a current-state fact about the route's verification population,
-  left un-repaired because raising a declared budget is an owner decision. Verification metadata
-  remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was
-  invented.
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Rewrote current test-route expectations for cache independence and preserved old scenario histories as historical; removed stale assertion citations. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
-- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: **route body updated** for the task-context projection's coverage module. Added § 260915-CAPS-L3 Task-Context Projection Coverage: the new module and its 9 collected cases, the anti-vacuity rule its docstring states as contract, the three cases that carry more weight than their size (the structural import-surface walk, the byte-identical non-mutation case, and the two-way compiler-seam case), the remaining six properties, the fixture-topology trap that took three rounds to mirror (`CAPS-L3-EV5`–`EV7`, chiefly that an internal memory root silently wins over an external coordination hint), the task-local `M01`–`M20` falsifiability probe and its self-caught vacuous seed (`CAPS-L3-EV10`), and the pre-existing pytest-unresolvable pyright condition. **Also recorded a scoped blocker for the owning seat**: this module has no evidence-lane row, and `load_lane_manifest` is fail-closed, so the manifest does not load as the candidate stands; the same gap exists for the three modules from `CAPS-R01@v1`/`CAPS-R02@v1`, making the correct repair a four-row change. That finding is derived from the loader's source, not executed — this seat has Python 3.10 and the repository requires `>=3.13,<3.14`. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve adapter's test population. Added § 260915-CAPS-L6 Native eve Adapter Test Population, which states the distinction this route now depends on: two of the five new modules are pytest-collected suites and three are support or explicit-run scripts, so "the suite protects this scenario" is proved by collection for the former and by a `--report-dir` artifact for the live fixture. Also records the A2 strengthening (the production client driven through a mock transport, the bounded replay window, the request-shaped cancel observation) and the `_knob_values` env carrier that holds the launch-vocabulary contract at four harnesses. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Role-Instruction Corpus Contract, which places the new shipped module `test_role_instruction_corpus.py` in this route and states the properties it protects (nine-role registry, the six-section readable order, the frozen eight-operation vocabulary, a prose-free manifest, every cited relative path resolving, a missing manifest source reported rather than accepted, and the `SANCTIONED_SIBLING_REFERENCES` independence rule). A new card was created for the module in this route. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): the route's L3 section, the
@@ -1606,12 +1612,6 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   434-453 → 435-454, 456-485 → 457-486, 597-603 → 673-679, 606-622 → 682-698, 625-648 → 701-724,
   651-663 → 727-739, 666-695 → 742-771, 698-733 → 774-809 and 736-766 → 812-842. Verification
   metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
-
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Rewrote current test-route expectations for cache independence and preserved old scenario histories as historical; removed stale assertion citations. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the test-inventory
   changes are the frozen ones. Re-read the overview and re-checked its cited ranges: they hold, and

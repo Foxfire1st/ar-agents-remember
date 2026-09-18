@@ -71,9 +71,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current generation and explicit retired digest names define the test input. | n/a | [mcp/tests/test_retired_door_publication_fields.py](mcp/tests/test_retired_door_publication_fields.py) |
-| The model read drops only the named retired fields and still rejects unknown fields. | n/a | [mcp/tests/test_retired_door_publication_fields.py](mcp/tests/test_retired_door_publication_fields.py) |
-| Store and terminal-archive reads exercise the persisted legacy record. | n/a | [mcp/tests/test_retired_door_publication_fields.py](mcp/tests/test_retired_door_publication_fields.py) |
+| The current generation and explicit retired digest names define the test input. | `test_door_publication_drops_retired_digests_but_refuses_other_unknown_keys` | mcp/tests/test_retired_door_publication_fields.py:115-126 |
+| The model read drops only the named retired fields and still rejects unknown fields. | `test_door_publication_drops_retired_digests_but_refuses_other_unknown_keys` | mcp/tests/test_retired_door_publication_fields.py:115-126 |
+| Store and terminal-archive reads exercise the persisted legacy record. | `test_operation_store_and_cleanup_terminal_archive_read_a_legacy_record` | mcp/tests/test_retired_door_publication_fields.py:129-153 |
 
 ## Cross-Repo References
 

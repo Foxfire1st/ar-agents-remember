@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -94,14 +94,14 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The worker is one leaf-scoped builder whose terminal state is checks plus report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
-| Intake binds writes to the named code worktree and report path. | "### 1 — Intake" | skills/l-01-agent-lifecycles/roles/worker.md:35-42 |
-| Orientation requires current worktree reads and coding guidelines before edits. | "### 2 — Orient (paired reads before edits)" | skills/l-01-agent-lifecycles/roles/worker.md:58-58 |
-| Build produces implementation plus evidence for the separate curator. | "### 3 — Build" | skills/l-01-agent-lifecycles/roles/worker.md:73-73 |
-| The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. | `### 6 — The Turn Report (mandatory, your last act)` | skills/l-01-agent-lifecycles/roles/worker.md:193-207 |
-| Tool authority excludes lifecycle, gates, task state, and memory writes. | "## Tool Surface (positive statement — this is all of it)" | skills/l-01-agent-lifecycles/roles/worker.md:208-208 |
-| The worker records the complete acceptance envelope once for every stable requirement ID. | "### 4 — Per-Requirement Acceptance Envelope" | skills/l-01-agent-lifecycles/roles/worker.md:75-99 |
-| Checks have their own explicit reportable step. | "### 5 — Targeted Checks (before you report)" | skills/l-01-agent-lifecycles/roles/worker.md:157-192 |
+| The worker is one leaf-scoped builder whose terminal state is checks plus report. | "## 1 — Purpose And Authority" | skills/l-01-agent-lifecycles/roles/worker.md:16-50 |
+| Intake binds writes to the named code worktree and report path. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/worker.md:51-87 |
+| Orientation requires current worktree reads and coding guidelines before edits. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/worker.md:51-87 |
+| Build produces implementation plus evidence for the separate curator. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/worker.md:88-101 |
+| The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. | "## 6 — Completion And Handoff" | skills/l-01-agent-lifecycles/roles/worker.md:146-175 |
+| Tool authority excludes lifecycle, gates, task state, and memory writes. | "## 4 — Permitted Writes And Actions" | skills/l-01-agent-lifecycles/roles/worker.md:102-129 |
+| The worker records the complete acceptance envelope once for every stable requirement ID. | "## 6 — Completion And Handoff" | skills/l-01-agent-lifecycles/roles/worker.md:146-175 |
+| Checks have their own explicit reportable step. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/worker.md:51-87 |
 
 ## R39 Generic Worker Doctrine
 

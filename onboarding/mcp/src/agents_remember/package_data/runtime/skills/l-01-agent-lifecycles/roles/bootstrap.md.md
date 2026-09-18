@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -125,13 +125,13 @@ No external or domain documentation governs this repository-local role file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical source this package-data copy is sync-propagated from. | `# Lifecycle — Bootstrap` | skills/l-01-agent-lifecycles/roles/bootstrap.md:6-6 |
-| The `**Inherits:**` line declaring the core blocks and operations this role composes from. | `**Inherits:**` | skills/l-01-agent-lifecycles/roles/bootstrap.md:12-13 |
-| The ruling, the one-call start, and the absent-altitude statement. | `How this agent is started: one call, no task.`; `It has no task altitude, deliberately.` | skills/l-01-agent-lifecycles/roles/bootstrap.md:41-41; skills/l-01-agent-lifecycles/roles/bootstrap.md:66-66 |
-| The seat is correctly outside the task-dispatch transaction, and that is stated as its shape rather than a gap. | `Not reachable by`; `and that is not a gap.` | skills/l-01-agent-lifecycles/roles/bootstrap.md:71-79 |
-| The capsule-is-the-only-instruction-source statement, including the not-yet-delivered half. | `Its instructions are its capsule, and nothing else.` | skills/l-01-agent-lifecycles/roles/bootstrap.md:57-65 |
+| The `**Inherits:**` line declaring the core blocks and operations this role composes from. | "**Inherits:**" | skills/l-01-agent-lifecycles/roles/bootstrap.md:12-12 |
+| The ruling, the one-call start, and the absent-altitude statement. | "How this agent is started: one call, no task." | skills/l-01-agent-lifecycles/roles/bootstrap.md:41-41 |
+| The seat is correctly outside the task-dispatch transaction, and that is stated as its shape rather than a gap. | "Not reachable by" | skills/l-01-agent-lifecycles/roles/bootstrap.md:71-71 |
+| The capsule-is-the-only-instruction-source statement, including the not-yet-delivered half. | "Its instructions are its capsule, and nothing else." | skills/l-01-agent-lifecycles/roles/bootstrap.md:57-57 |
 | The permitted-write surface, the stop/escalation cases, and the report template the seat writes. | `## 4 — Permitted Writes And Actions`; `## 5 — Stop And Escalation Cases`; `## 6 — Completion And Handoff`; `# Bootstrap Report — <repository>` | skills/l-01-agent-lifecycles/roles/bootstrap.md:116-116; skills/l-01-agent-lifecycles/roles/bootstrap.md:142-142; skills/l-01-agent-lifecycles/roles/bootstrap.md:159-159; skills/l-01-agent-lifecycles/roles/bootstrap.md:183-183 |
 | The operation block the role carries: workflow, failure inventory and authority gates. | `# Operation — Session Bootstrap` | skills/l-01-agent-lifecycles/operations/bootstrap.md:1-1 |
-| The manifest entry declaring the free-agent altitude, its five tools and its three operations. | `"altitude": "free-agent"`; `"bootstrap"` | skills/l-01-agent-lifecycles/composition-manifest.json:451-477 |
+| The manifest entry declaring the free-agent altitude, its five tools and its three operations. | "\"altitude\": \"free-agent\"" | skills/l-01-agent-lifecycles/composition-manifest.json:453-453 |
 | The named taskless-seat admission this role's existence depends on. | `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/serving/task_binding.py:60-83 |
 | The second reader of the same set, so the policy has one spelling. | `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/serving/terminal_task_assignment.py:12-12; mcp/src/agents_remember/serving/terminal_task_assignment.py:159-161 |
 | The frozen vocabulary extension that publishes the role and its operation. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-96; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-111 |

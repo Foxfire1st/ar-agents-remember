@@ -95,10 +95,10 @@ the current working-candidate behavior; historical entries below retain their or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Source reads derive only Git attribution and recompute retained revision metadata. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
-| Contract projection resolves actual memory history independently of cache availability. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
-| Expected mappings and informational differences are built from the selected Git history. | n/a | [mcp/src/agents_remember/worktrees/ledger_projection.py](mcp/src/agents_remember/worktrees/ledger_projection.py) |
+| Contract projection resolves actual memory history independently of cache availability. | `contract_ledger_projection` | mcp/src/agents_remember/worktrees/ledger_projection.py:290-312 |
+| Expected mappings and informational differences are built from the selected Git history. | "the selected Git history" | mcp/src/agents_remember/worktrees/ledger_projection.py:284-284 |
 | The kernel walks committed attribution without reading a ledger file. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Cache forgery/misses and invalid attributed targets have focused regression coverage. | n/a | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+| Cache forgery/misses and invalid attributed targets have focused regression coverage. | `test_cache_misses_preserve_contract_and_named_ref_history` | mcp/tests/test_memory_ledger.py:338-360 |
 
 ## Cross-Repo References
 
@@ -120,7 +120,7 @@ claims about the working candidate. Their former table-union interpretation is s
 
 ## Update History
 
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the projection now asks the code half of

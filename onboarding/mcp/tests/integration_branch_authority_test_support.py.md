@@ -59,10 +59,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed external leaves are backed by two actual commits and a disposable cache. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| Closed external leaves are backed by two actual commits and a disposable cache. | `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:48-91 |
 | Optional lifecycle admission precedes fixture finalization. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
 | Configured repository, profile, protected branches, and task topology. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
-| Consumers retain ownership, cache-independence, and CAS scenarios. | n/a | [mcp/tests/test_integration_branch_authority.py](mcp/tests/test_integration_branch_authority.py) |
+| Consumers retain ownership, cache-independence, and CAS scenarios. | `test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race` | mcp/tests/test_integration_branch_authority.py:80-170 |
 
 ## Cross-Repo References
 
