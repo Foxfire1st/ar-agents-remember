@@ -6,8 +6,8 @@
 | path | `mcp/tests/diff_scope_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5` |
-| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `overview.md` |
 
@@ -142,12 +142,12 @@ repository source and package-local evidence only.
 | **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** | `_require` | mcp/tests/diff_scope_test_support.py:509-516 |
 | **The baseline fixture this module builds on.** | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-283 |
 | The fixture value the baseline side is read from. | `ReadScopeFixture` | mcp/tests/read_scope_test_support.py:174-239 |
-|**The contract this module's artifact row is registered under.**|"contract:knowledge-diff-cases"| mcp/tests/evidence-lifecycle.toml:1278-1278 |
-|**The artifact row that registers this module: the leaf that introduced it, and the replacement contract the record declares.**|"260915-KS-L8"; "contract:knowledge-diff-cases"| mcp/tests/evidence-lifecycle.toml:1275-1275; mcp/tests/evidence-lifecycle.toml:1278-1278 |
-| The unit-lane row that keeps the scope module in the certifying collection path. | "mcp/tests/test_knowledge_diff_scope.py" | mcp/tests/test-evidence-lanes.toml:83-83 |
-| The integration-lane row that keeps the boundary module in the certifying collection path. | "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:168-168 |
-|The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).|"contract:knowledge-read-scope-cases"| mcp/tests/evidence-lifecycle.toml:1298-1298 |
-|The two artifact rows on which the scope module is declared as a consumer, one per record it consumes (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`).|"contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases"| mcp/tests/evidence-lifecycle.toml:1278-1278; mcp/tests/evidence-lifecycle.toml:1298-1298 |
+|**The contract this module's artifact row is registered under.**|"contract:knowledge-diff-cases"| mcp/tests/evidence-lifecycle.toml:1283-1283 |
+|**The artifact row that registers this module: the leaf that introduced it, and the replacement contract the record declares.**|"260915-KS-L8"; "contract:knowledge-diff-cases"| mcp/tests/evidence-lifecycle.toml:1280-1280; mcp/tests/evidence-lifecycle.toml:1283-1283; mcp/tests/evidence-lifecycle.toml:1262-1262 |
+| The unit-lane row that keeps the scope module in the certifying collection path. | "mcp/tests/test_knowledge_diff_scope.py" | mcp/tests/test-evidence-lanes.toml:84-84 |
+| The integration-lane row that keeps the boundary module in the certifying collection path. | "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:170-170 |
+|The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).|"contract:knowledge-read-scope-cases"| mcp/tests/evidence-lifecycle.toml:1303-1303 |
+|The two artifact rows on which the scope module is declared as a consumer, one per record it consumes (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`).|"contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases"| mcp/tests/evidence-lifecycle.toml:1262-1262; mcp/tests/evidence-lifecycle.toml:1267-1267; mcp/tests/evidence-lifecycle.toml:1283-1283; mcp/tests/evidence-lifecycle.toml:1303-1303 |
 | **The evidence node the contract names: the removed realization keeps its baseline source in the union.** | "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:309-342 |
 
 ## Cross-Repo References
@@ -159,8 +159,19 @@ repository's history.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured cross-repository evidence is claimed. | — | — |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1283-1283 |
+| **The artifact row that registers this module, and the replacement contract it declares.** | "260915-KS-L8"; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1280-1280; mcp/tests/evidence-lifecycle.toml:1283-1283 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1303-1303 |
+| The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1303-1303; mcp/tests/evidence-lifecycle.toml:1273-1298 |
 
 ## Update History
+- 2026-09-18T05:29:42+00:00: Generated citation repair: "contract:knowledge-diff-cases" repointed to mcp/tests/evidence-lifecycle.toml:1283-1283. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:29:42+00:00: Generated citation repair: "mcp/tests/test_knowledge_diff_scope.py" repointed to mcp/tests/test-evidence-lanes.toml:84-84. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:29:42+00:00: Generated citation repair: "mcp/tests/test_knowledge_diff_boundaries.py" repointed to mcp/tests/test-evidence-lanes.toml:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:29:42+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1303-1303. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:29:42+00:00: Generated citation repair: "contract:knowledge-diff-cases" repointed to mcp/tests/evidence-lifecycle.toml:1283-1283. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:29:42+00:00: Generated citation repair: "260915-KS-L8"; "contract:knowledge-diff-cases" repointed to mcp/tests/evidence-lifecycle.toml:1280-1280; mcp/tests/evidence-lifecycle.toml:1283-1283. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:29:42+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1303-1303. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T04:55:18+00:00: Generated citation repair: "contract:knowledge-diff-cases" repointed to mcp/tests/evidence-lifecycle.toml:1278-1278. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T04:55:18+00:00: Generated citation repair: "mcp/tests/test_knowledge_diff_boundaries.py" repointed to mcp/tests/test-evidence-lanes.toml:168-168. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T04:55:18+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1298-1298. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.

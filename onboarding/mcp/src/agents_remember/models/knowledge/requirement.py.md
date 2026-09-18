@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/requirement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:15+02:00 |
-| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5` |
-| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l19` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -151,7 +151,7 @@ No domain documentation source is configured for this repository (`system/source
 |The shared state/acceptance consistency rule this payload delegates to rather than restating.|`require_consistent_acceptance`| mcp/src/agents_remember/models/knowledge/base.py:40-58 |
 |The strict, extra-forbidding, frozen base that makes an undeclared field a refusal by construction — the reason the absence claims need no denylist.|`KnowledgeModel`| mcp/src/agents_remember/models/knowledge/base.py:34-39 |
 |The owner's own reference shape, which this module deliberately re-spells rather than translates.|`ApprovedRequirementPacketRef`| mcp/src/agents_remember/models/task_intent/__init__.py:22-38 |
-| The registry this payload shape is admitted through, and the derived kind set that names its group. | `PAYLOAD_MODELS`; `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:93-113; mcp/src/agents_remember/memory/knowledge/record_envelope.py:130-132 |
+| The registry this payload shape is admitted through, and the derived kind set that names its group. | `PAYLOAD_MODELS`; `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:93-113; mcp/src/agents_remember/memory/knowledge/record_envelope.py:150-150; mcp/src/agents_remember/memory/knowledge/record_envelope.py:149-149 |
 | **The falsifiable absence at the payload plane: four forbidden operative-obligation names, each refused with the name in the detail.** | "test_a_payload_carrying_an_operative_obligation_field_is_refused" | mcp/tests/test_knowledge_requirement_reference_contract.py:294-310 |
 | The falsifiable absence at the schema plane: the re-derived column census over every registered generation, and the fact that the kind is not a table. | "test_no_registered_generation_declares_a_column_for_the_forbidden_set" | mcp/tests/test_knowledge_requirement_reference_contract.py:311-333 |
 | The task-authority absence, and the hand-sealed forbidden row that cannot be decoded. | "test_a_payload_carrying_a_forbidden_task_authority_field_is_refused"; "test_a_stored_payload_carrying_a_forbidden_field_could_not_be_decoded" | mcp/tests/test_knowledge_requirement_reference_contract.py:277-293; mcp/tests/test_knowledge_requirement_reference_contract.py:334-365 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_schema_generations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T22:00+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,7 +118,7 @@ No domain documentation source is configured for this repository (`system/source
 | An unchanged version-1 dataset reproduces its own body and identity, and the same rows under generation 2 are a different dataset. | `test_a_generation_1_dataset_keeps_its_own_body_under_generation_1` | mcp/tests/test_knowledge_schema_generations.py:207-240 |
 | A version-1 file opened by generation-2 code validates and reports generation 1. | `test_a_generation_1_dataset_is_still_validated_by_the_registry_it_declares` | mcp/tests/test_knowledge_schema_generations.py:243-258 |
 | Every generation's key and typed-JSON registries, and the no-`ALTER TABLE` rule over the create statements. | `test_every_supported_generation_declares_its_own_key_and_json_registries` | mcp/tests/test_knowledge_schema_generations.py:400-422 |
-| The symbols the cases drive, including the pinned constant and the gate. | `GENERATION_1_FINGERPRINT`; `require_pinned_generation_unchanged`; `generation_of_database`; `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:155-155; mcp/src/agents_remember/memory/knowledge/schema_generations.py:285-295; mcp/src/agents_remember/memory/knowledge/schema_generations.py:304-307; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-327 |
+| The symbols the cases drive, including the pinned constant and the gate. | `GENERATION_1_FINGERPRINT`; `require_pinned_generation_unchanged`; `generation_of_database`; `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:161-161; mcp/src/agents_remember/memory/knowledge/schema_generations.py:321-331; mcp/src/agents_remember/memory/knowledge/schema_generations.py:340-343; mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363|
 | The encoder whose table mapping and digest the generation cases measure. | `logical_body`; `logical_digest`; `logical_body_from_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:80; mcp/src/agents_remember/memory/knowledge/logical.py:74; mcp/src/agents_remember/memory/knowledge/logical.py:95 |
 | The creation and inspection paths the cases call. | `create_or_validate_schema`; `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:88; mcp/src/agents_remember/memory/knowledge/connection.py:111 |
 | The shared support that builds a genuine version-1 dataset for the generation-1 cases. | "def create_generation_1_store(database_path: Path, repository_id: str) -> OpenedKnowledgeStore:" | mcp/tests/generation_test_support.py:67-70 |

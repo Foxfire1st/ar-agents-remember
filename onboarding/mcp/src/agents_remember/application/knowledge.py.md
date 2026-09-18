@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4`|
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -140,7 +140,7 @@ No domain documentation source is configured for this repository (`system/source
 | The candidate context resolution and its pure sealing step — the only way a batch's dataset precondition is built from this seam. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
 | The batch operation that takes the destination's authorship rather than the payload's. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
 | The graph request builders, all attaching the destination's authorship and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:327-338; mcp/src/agents_remember/application/knowledge.py:351-361; mcp/src/agents_remember/application/knowledge.py:363-372; mcp/src/agents_remember/application/knowledge.py:374-387 |
-| The anchor-endpoint parameter that keeps naming an anchor distinct from recording one. | `admitted_claim_request`; `NewAnchor`; `AnchorReference` | mcp/src/agents_remember/application/knowledge.py:374-386; mcp/src/agents_remember/models/knowledge/result.py:293-297; mcp/src/agents_remember/models/knowledge/result.py:300-308 |
+| The anchor-endpoint parameter that keeps naming an anchor distinct from recording one. | `admitted_claim_request`; `NewAnchor`; `AnchorReference` | mcp/src/agents_remember/application/knowledge.py:374-386; mcp/src/agents_remember/models/knowledge/result.py:316-316; mcp/src/agents_remember/models/knowledge/result.py:309-309; mcp/src/agents_remember/models/knowledge/result.py:308-308; mcp/src/agents_remember/models/knowledge/result.py:315-315 |
 | The graph operations that open, delegate and close in a `finally`. | `create_knowledge_family`; `create_knowledge_family_revision`; `create_knowledge_anchor`; `remove_knowledge_anchor`; `create_knowledge_family_member`; `remove_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-433; mcp/src/agents_remember/application/knowledge.py:435-445; mcp/src/agents_remember/application/knowledge.py:447-457; mcp/src/agents_remember/application/knowledge.py:459-469; mcp/src/agents_remember/application/knowledge.py:471-481; mcp/src/agents_remember/application/knowledge.py:483-493; mcp/src/agents_remember/application/knowledge.py:495-505; mcp/src/agents_remember/application/knowledge.py:507-516 |
 | The store operation this seam delegates to. | `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:231-265 |
 | The batch operation and the lane rules the seam's entry point reaches. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |

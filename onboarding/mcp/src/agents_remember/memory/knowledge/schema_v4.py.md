@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/schema_v4.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastUpdated | 2026-09-18T06:05+02:00 |
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -137,8 +137,8 @@ No domain documentation source is configured for this repository (`system/source
 | **The two immutability triggers, with the shared `immutable_revision:` prefix and the two distinct refusals they raise.** | `APPENDED_TRIGGERS`; "immutable_revision: a recorded detection sequence cannot be reordered" | mcp/src/agents_remember/memory/knowledge/schema_v4.py:101-116 |
 | The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:118-123 |
 | **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** | `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:232-258 |
-| The registry whose last entry is the newest supported generation, and the created generation it names. | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:264-282 |
-| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:86-100 |
+| **The registry whose last entry is the newest supported generation — generation 5 since `KS-R18@v1`, so the created store declares 5 while a generation-4 dataset keeps declaring 4 — and the created generation it names.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-305; mcp/src/agents_remember/memory/knowledge/schema_generations.py:318-318 |
+| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:103-132 |
 | The write path that inserts the sequence rows under this table's composite keys. | `_write_run` | mcp/src/agents_remember/memory/knowledge/detection.py:316-348 |
 | **The case that measures the additive rule, the append order, the `STRICT` shape, the key tuple and the two triggers.** | "test_generation_4_appends_only_and_the_first_twenty_names_are_generation_3_s" | mcp/tests/test_knowledge_detection_signals.py:724-751 |
 
@@ -151,4 +151,6 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T07:45+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `PAYLOAD_MODELS`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
+- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): **re-read the registry claim against the construct as it now stands.** `KS-R18@v1` appends generation 5, so `GENERATIONS[-1]` — the entry a created store declares — is generation 5 rather than generation 4, and the claim now states that consequence explicitly instead of leaving the reader to infer it. The one range the mechanical pass had left naming a single line twice is corrected to name the registry's own lines and the assignment's, so each row's anchor resolves to one extent. No other row of this card was changed. Verification metadata advances to the leaf's base commit `e963a01c` because the claim was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): created this one-to-one card for generation 4's appended table. It records the one-table append and why: the detection payload shapes are registered in the record envelope, so what the envelope cannot express — the *sequence* — is the only thing this generation stores. It records `ordinal` in the primary key together with `UNIQUE (repository_id, run_id, signal_id)` as the two constraints that make the declared total order over signal identity a table property rather than a write-path habit, the two composite foreign keys to `knowledge_record` that keep attribution structural, the two immutability triggers with their shared `immutable_revision:` prefix and their two distinct messages, the declared-but-empty typed-JSON mapping and feature tuple (absences stated rather than inferred), and the prefix equality `GENERATION_4.tables[: len(GENERATION_3.tables)] == GENERATION_3.tables` that is the whole additive rule. Verification metadata is the leaf's base commit `4264dcc9`: the code commit does not exist yet and closeout owns that stamp.

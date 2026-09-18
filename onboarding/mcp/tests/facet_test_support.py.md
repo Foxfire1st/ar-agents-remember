@@ -6,8 +6,8 @@
 | path | `mcp/tests/facet_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4`|
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `overview.md` |
 
@@ -125,7 +125,7 @@ No domain documentation source is configured for this repository (`system/source
 | The one valid payload per subtype and the one noun per endpoint kind. | `MINIMAL_PAYLOADS`; `ENDPOINT_NOUNS` | mcp/tests/facet_test_support.py:132-169 |
 | The twelve shipped command kinds as data, so the widened union is measured against a stated set. | `SHIPPED_COMMAND_KINDS` | mcp/tests/facet_test_support.py:115-130 |
 | **The governed artifact and its contract, with its one declared consumer.** | `knowledge-facet-cases`; "path = \"mcp/tests/facet_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1192-1212 |
-| The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:129-136; mcp/src/agents_remember/memory/knowledge/schema_generations.py:175-194 |
+| The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:141-147; mcp/src/agents_remember/memory/knowledge/schema_generations.py:208-208|
 | The cases this harness exists for, and the byte-identity node that reads the measured constants. | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:986-1035; mcp/tests/test_knowledge_facets.py:935-979 |
 
 ## Cross-Repo References

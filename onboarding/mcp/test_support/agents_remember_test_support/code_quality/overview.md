@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -49,6 +49,18 @@ Use the generated adjacent route index for existing source/sidecar membership af
 ## Historical Context
 
 The original PDLS/CCR entries explain exact-scope, retry and publication repairs. Their historical exact consumer counts and old coverage enforcement are not current policy. Current source and the diagnostic policy below govern; history is retained for provenance.
+## The Two Registries A New Test Module's Path Literals Reach
+
+`dependency_ownership.py` owns the source-derived test-consumer graph, and one fact about it is load-bearing
+enough to state here rather than leave in a card: **a path *string* in a test is a dependency edge, and it is
+derived twice for two different consumers.** The evidence **census** is served by
+`mcp/tests/evidence-lifecycle.toml`'s `consumers` lists, while the **selection** graph for the ambient role
+runner is served by `REPOSITORY_TEST_INPUT_CONSUMERS[AMBIENT_ROLE_RUNNER_PATH]`, and that constant
+**overrides** the catalog for selection rather than restating it. Both derivations therefore have to be
+satisfied — one does not stand in for the other. `260915-KS-L18` is a worked example: its two
+citation-binding test modules each quote a real corpus key that the e2e generator's run report is written
+about, which registered them in **both** registries without a single import creating the edge.
+
 ## Development And Certification Policy
 
 Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
@@ -78,6 +90,17 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): this route's source `dependency_ownership.py` changed — two modules joined
+  `REPOSITORY_TEST_INPUT_CONSUMERS[AMBIENT_ROLE_RUNNER_PATH]` — so the overview gained the section that makes
+  the change legible instead of a no-impact note. It states the fact the change demonstrates: **a path
+  *string* in a test is a dependency edge derived twice**, once for the evidence census (through
+  `evidence-lifecycle.toml`'s `consumers` lists) and once for the selection graph (through
+  `REPOSITORY_TEST_INPUT_CONSUMERS`), with the constant overriding the catalog for selection rather than
+  restating it — so a module's path literal has to be registered in both, and one derivation does not stand
+  in for the other. The leaf's two citation-binding test modules quote a real corpus key that the e2e
+  generator's run report is written about, which is how they reached both registries with no import creating
+  the edge. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read
+  against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T08:16:00+00:00 — 260915-KS-L9 curator (memory-quality closure): re-pointed this route's citation for the final memory certification adapter from `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py` to `mcp/src/agents_remember/application/prepared_certification.py`, which is where that file now lives; the construct did not move within it (`PreparedMemoryCertificationAdapter` is still declared at 721-785, a pure move). No claim wording changed. Recorded because a re-pointed source is a body update.
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `projection_types.py` +30/−11): this route's generator changed, so a body section was

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/merge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
-| lastVerifiedCommitDate | 2026-09-16T14:02:05+02:00 |
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ No domain documentation source is configured for this repository (`system/source
 | The two coverage records that separate "changed" from "carried an operation" and cover every canonical table. | `TableCoverage`; `MergeCoverage` | mcp/src/agents_remember/models/knowledge/merge.py:218-240; mcp/src/agents_remember/models/knowledge/merge.py:243-284 |
 | The conflict record's two shapes, the old-side key rule and the deliberately absent foreign-key row and count. | `MergeConflict` | mcp/src/agents_remember/models/knowledge/merge.py:293-346 |
 | The outcome that carries identities, coverage and publication state and no verdict. | `MergeOutcome` | mcp/src/agents_remember/models/knowledge/merge.py:349-391 |
-| The two operation names and twelve refusal codes this vocabulary is keyed by. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:66-111 |
+| The two operation names and twelve refusal codes this vocabulary is keyed by. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:117-117; mcp/src/agents_remember/models/knowledge/result.py:116-116 |
 | The node that confirms the published result carries no forbidden field and reports the coverage record. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:248-312 |
 | The boundary node that holds the conflict record to the engine's own row identity. | "test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:165-184 |
 

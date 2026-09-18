@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/schema_generations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastUpdated | 2026-09-18T06:05+02:00 |
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 ## Purpose
 
 **A schema generation is data, and selecting one is a read of the dataset.** This module owns the
-registry of supported `(schema name, user_version)` generations — four of them since `KS-R14@v1` — the
+registry of supported `(schema name, user_version)` generations — five of them since `KS-R18@v1` — the
 pinned generation-1 record with its fingerprint constant and its drift gate, and the three dispatch
 functions that resolve a dataset's generation from the dataset itself.
 
@@ -53,18 +53,22 @@ owns which generations exist and how one is chosen.
 - `GENERATION_2` is **composed** from generation 1 as an explicit append —
   `GENERATION_1.tables + schema_v2.APPENDED_TABLES` with the per-table maps merged — and its
   `fingerprint` is *computed* from the composed record rather than recorded. Generation 1's is a
-  constant; generation 2's, 3's and 4's are derived. `GENERATIONS` is ordered oldest first, so the
+  constant; generations 2's through 5's are derived. `GENERATIONS` is ordered oldest first, so the
   newest supported generation is its last entry rather than a second literal that could drift from
   the tuple — and `CURRENT_GENERATION = GENERATIONS[-1]` is that entry, which is why a *created* store
-  declares version 4 while a generation-3 dataset keeps declaring 3.
-- **Three generations compose by the same explicit append, and the append is the whole additive
+  declares version **5** while an existing generation-4 dataset keeps declaring 4.
+- **Four generations compose by the same explicit append, and the append is the whole additive
   rule.** `_compose_generation_3` puts `schema_v3.APPENDED_TABLES` (four authored-judgment tables)
-  after generation 2's sixteen, and `_compose_generation_4` puts `schema_v4.APPENDED_TABLES` (the one
-  detection-sequence table) after generation 3's twenty — each merging the appended columns, primary
-  keys and typed-JSON sets into the predecessor's maps and concatenating the index and feature tuples.
-  The composed result satisfies `GENERATION_4.tables[: len(GENERATION_3.tables)] ==
-  GENERATION_3.tables` with generation 3's columns, keys and JSON registries for every inherited name,
-  which is why no `ALTER TABLE` against an earlier generation's table exists anywhere in the package.
+  after generation 2's sixteen, `_compose_generation_4` puts `schema_v4.APPENDED_TABLES` (the one
+  detection-sequence table) after generation 3's twenty, and `_compose_generation_5` puts
+  `schema_v5.APPENDED_TABLES` (the one citation-binding table) after generation 4's twenty-one — each
+  merging the appended columns, primary keys and typed-JSON sets into the predecessor's maps and
+  concatenating the index and feature tuples. The composed result satisfies
+  `GENERATION_5.tables[: len(GENERATION_4.tables)] == GENERATION_4.tables` with generation 4's columns,
+  keys and JSON registries for every inherited name, which is why no `ALTER TABLE` against an earlier
+  generation's table exists anywhere in the package. **The idiom is now five instances of one shape**,
+  and it is stated once here rather than re-derived by each new leaf: explicit append, prefix equality
+  asserted by the generation it descends from, `ALTER TABLE` nowhere.
 - `structure_manifest` and `structure_fingerprint` are functions **of a record**, not of the build.
   That is what lets generation 1's recorded data be recomputed against its constant instead of
   against the code that produced it, and it is the one fingerprint definition in the package.
@@ -91,7 +95,7 @@ owns which generations exist and how one is chosen.
 
 - The module contains **no SQL text at all**. It carries the registry and the dispatch; every DDL
   string it fingerprints comes from `schema.py` (generation 1), `schema_v2.py` (generation 2),
-  `schema_v3.py` (generation 3) or `schema_v4.py` (generation 4).
+  `schema_v3.py` (generation 3), `schema_v4.py` (generation 4) or `schema_v5.py` (generation 5).
 - Expected failures have two different shapes and they are not interchangeable. A **missing
   generation** is a returned `KnowledgeRefusal` on the artifact path (`unsupported_schema`, built by
   `export_refusals.unsupported_schema_refusal`), because a caller supplied a document; an **unknown
@@ -116,7 +120,7 @@ owns which generations exist and how one is chosen.
 - **Additive-only, structurally, and asserted per generation.** Generation 2's manifest begins with
   generation 1's ten tables in generation 1's order and generation 2's columns for each of the first ten
   names are generation 1's; generation 3's begins with generation 2's sixteen; generation 4's begins with
-  generation 3's twenty. A generation that reorders, renames, retypes, drops or weakens an earlier
+  generation 3's twenty; generation 5's begins with generation 4's twenty-one. A generation that reorders, renames, retypes, drops or weakens an earlier
   generation's declaration is a schema divergence and is escalated, not expressed here — which is why the
   governing-route association lives in generation-2 tables rather than as a column appended to a
   generation-1 table, and why the detection record group's payload shapes live in the envelope registry
@@ -153,17 +157,17 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL. | `SchemaGeneration` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:54-79 |
-| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:155-155 |
-| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:201-201 |
-| **Generation 3 composed as an explicit append over generation 2, and generation 4 as the same append over generation 3 — the prefix equality that is the additive rule.** | `GENERATION_3`; `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:230-230; mcp/src/agents_remember/memory/knowledge/schema_generations.py:232-256; mcp/src/agents_remember/memory/knowledge/schema_generations.py:258-258 |
-| **The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:264-269; mcp/src/agents_remember/memory/knowledge/schema_generations.py:282-282 |
-| The schema name generation 4 declares, and the three names before it. | `GENERATION_4_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:158-160 |
-| The only place a build's own generation decides anything, and it decides only what a created store declares. | `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:304-307 |
-| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:285-295 |
+| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:161-161 |
+| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:185-208 |
+| **Generations 3, 4 and 5 each composed as the same explicit append over their predecessor — the prefix equality that is the additive rule, now four instances of one shape.** | `GENERATION_3`; `_compose_generation_4`; `GENERATION_4`; `_compose_generation_5`; `GENERATION_5` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:214-230; mcp/src/agents_remember/memory/knowledge/schema_generations.py:232-256; mcp/src/agents_remember/memory/knowledge/schema_generations.py:258-267; mcp/src/agents_remember/memory/knowledge/schema_generations.py:274-291; mcp/src/agents_remember/memory/knowledge/schema_generations.py:293-293 |
+| **The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-305; mcp/src/agents_remember/memory/knowledge/schema_generations.py:318-318 |
+| The schema name generation 4 declares, the three names before it, and the name generation 5 declares. | `GENERATION_4_SCHEMA_NAME`; `GENERATION_5_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:166-166; mcp/src/agents_remember/memory/knowledge/schema_generations.py:167-167 |
+| **The only place a build's own generation decides anything, and it decides only what a created store declares — generation 5 since this leaf.** | `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:340-343 |
+| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:321-331 |
 | The one fingerprint definition, now a function of a record rather than of the running build. | `structure_manifest` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:92-103 |
-| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-327 |
-| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:445-478 |
-| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:336-362 |
+| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363 |
+| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:481-514 |
+| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:372-398 |
 | Generation 1's declared tables, columns, keys, JSON columns, DDL, triggers and features — the declarations this module delegates to and never restates. | `CANONICAL_TABLES` | mcp/src/agents_remember/memory/knowledge/schema.py:29-42 |
 | Generation 2's appended tables, which `GENERATION_2` is composed from. | `APPENDED_TABLES`; `APPENDED_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49; mcp/src/agents_remember/memory/knowledge/schema_v2.py:51-76 |
 | The open path that calls this module's dispatch and the creation path that declares a generation. | `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:91-121 |
@@ -172,6 +176,7 @@ No domain documentation source is configured for this repository (`system/source
 | The shipped code the artifact dispatch returns, and the type-strict rendering it preserves. | `unsupported_schema_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:78-102 |
 | The pin, its dispatch and the generation-2 digest behaviour, exercised in both directions. | `test_the_pinned_generation_1_fingerprint_recomputes_to_its_recorded_constant`; `test_a_version_1_merge_on_the_generation_2_build_selects_generation_1` | mcp/tests/test_knowledge_schema_generations.py:1-283; mcp/tests/test_knowledge_merge_generations_and_envelope.py:1-311 |
 | The test support that builds a real generation-1 dataset from generation 1's own recorded DDL, for cases that must observe a generation-1 fact. | `create_generation_1_store` | mcp/tests/generation_test_support.py:1-77 |
+| **The generation-5 append measured by the generation it descends from, and the registry sequence checked as a structural fact — contiguous `1..N` with `ar-knowledge-sqlite/vN` names in register order — rather than as a hand-written list.** | `test_generation_5_appends_to_generation_4_without_touching_its_twenty_one_tables`; `test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged` | mcp/tests/test_knowledge_citation_bindings.py:118-135; mcp/tests/test_knowledge_facets.py:911-960 |
 
 ## Cross-Repo References
 
@@ -183,5 +188,6 @@ and a dataset's identity deliberately excludes Git commits, ledger rows and chec
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): **re-read this card against the current source and moved every number the leaf moved.** `KS-R18@v1` appends generation 5, so the body's registry count is now **five** and the append paragraph names all four composed successors — `_compose_generation_3`, `_compose_generation_4` and `_compose_generation_5` are five instances of one shape (explicit append, prefix equality asserted by the generation it descends from, `ALTER TABLE` nowhere), which the card now states once instead of re-deriving per generation. `CURRENT_GENERATION = GENERATIONS[-1]` is recorded as *why* a created store now declares version **5** while an existing generation-4 dataset keeps declaring 4, and the additive-only invariant gains generation 5's prefix over generation 4's twenty-one names. Ten citation ranges were **re-cited by hand** against the working tree — `GENERATION_1_FINGERPRINT` `:155-161` → `:161-161`, `GENERATION_2` `:201-208` → `:185-208`, the composition row re-split across `:214-230` / `:232-256` / `:258-267` with generation 5's own `:274-291` / `:293-293`, `GENERATION_4_SCHEMA_NAME` split so generation 5's name is named rather than absorbed, `generation_of_new_store` `:297-307` → `:340-343`, `require_pinned_generation_unchanged` `:285-321` → `:321-331`, `generation_of_database` `:310-346` → `:346-363`, `generation_of_artifact` `:445-481` → `:481-514`, `declared_columns_for` `:336-372` → `:372-398` — and one range the mechanical pass had left naming one line twice (`GENERATIONS`; `CURRENT_GENERATION` at `:318-318`) was corrected to name the registry's own lines and the assignment's. One new row records the leaf's generation-5 append case and the L11 registry case this leaf re-scoped additively. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read every citation this card carries against the current source, corrected the ones the leaf moved, and replaced six generated projection bullets with this entry.** The body now states the registry as **four** generations and the append idiom once for all three successors: generations 2, 3 and 4 are each composed by the same explicit append, each predecessor's columns, primary keys and typed-JSON registries surviving for every inherited name — which is the additive rule the leaf's generation 4 must satisfy, and the reason the detection payload shapes live in the envelope registry instead of as columns generation 4 would have had to add to an earlier generation's table. `CURRENT_GENERATION = GENERATIONS[-1]` is recorded as *why* a created store declares version 4 while an existing generation-3 dataset keeps declaring 3. Six rows were **re-cited by hand** rather than machine-projected — `GENERATION_1_FINGERPRINT` (:149 → :155), `GENERATION_2` (:194 → :201), `generation_of_new_store` (:227 → :304), `require_pinned_generation_unchanged` (:245 → :285), `generation_of_database` (:270 → :310), `generation_of_artifact` (:405 → :445) and `declared_columns_for` (:296 → :336) — and the five projection bullets that had produced those ranges, plus the one for `APPENDED_TABLES` on the schema_v2 row, are removed: a mechanically projected range is unverified evidence, and an agent has now read each declaration it points at. Two new rows record generations 3 and 4 with the registry and the created-generation definition. Verification metadata advances to the leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): created this one-to-one card for the generation registry. It records the three things a reader must not get wrong — a generation is a frozen record rather than the running build, dispatch reads the dataset (version alone for an open file, the type-strict pair for an artifact) while only *creation* declares a generation, and the pin fails rather than warns and is never re-pinned to whatever the code now computes. It records the two different expected-failure shapes (returned refusal on the artifact path, raised error on the open path and for drift), the additive-only rule that decides where the governing-route association may live, and generation 1's fingerprint constant with the revision it was measured at. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

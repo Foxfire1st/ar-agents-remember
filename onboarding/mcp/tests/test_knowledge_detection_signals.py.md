@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_detection_signals.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastUpdated | 2026-09-18T06:05+02:00 |
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4`|
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -153,7 +153,7 @@ No domain documentation source is configured for this repository (`system/source
 | The one valid signal the cases vary, and the helper set that builds the sides and the recorded input set. | `signal`; `recorded_input_set`; `input_side`; `both_sides`; `snapshot` | mcp/tests/test_knowledge_detection_signals.py:134-183; mcp/tests/test_knowledge_detection_signals.py:110-132; mcp/tests/test_knowledge_detection_signals.py:83-96; mcp/tests/test_knowledge_detection_signals.py:77-81 |
 | The manifest helper whose retention answer the manifest cases assert — re-cited at its own extent. | `manifest` | mcp/tests/test_knowledge_detection_signals.py:98-108 |
 | The production record whose construction boundary these cases measure. | `DetectionSignalPayload`; `DetectionScopeManifest`; `conclusion_bearing_fields` | mcp/src/agents_remember/models/knowledge/detection.py:635-753; mcp/src/agents_remember/models/knowledge/detection.py:417-458; mcp/src/agents_remember/models/knowledge/detection.py:268-283 |
-| **The generation this module's rule is about, and the generation builder/registry it is measured against.** | `REQUIRED_DETECTION_GENERATION`; `create_schema_statements`; `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/detection.py:84-86; mcp/src/agents_remember/memory/knowledge/schema_generations.py:135-141; mcp/src/agents_remember/memory/knowledge/schema_generations.py:264-269 |
+| **The generation this module's rule is about, and the generation builder and registry it is measured against — the registry now holding five generations since `KS-R18@v1` appended generation 5, which is why a case here measures the sequence structurally rather than as a literal list.** | `REQUIRED_DETECTION_GENERATION`; `create_schema_statements`; `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/detection.py:84-86; mcp/src/agents_remember/memory/knowledge/schema_generations.py:141-163; mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-305 |
 | The lane row this module is registered under. | "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References
@@ -165,4 +165,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): **re-read the registry claim against the construct as it now stands.** `KS-R18@v1` appends generation 5, so the registry this case measures holds **five** members rather than four, and the row now says so and names why the case measures the sequence structurally (contiguous `1..N` with `ar-knowledge-sqlite/vN` names in register order) rather than as a hand-written list — a literal list would have gone stale exactly here. Each anchor now resolves to its own extent: the builder's declaration and the registry's own lines are cited separately instead of one range being repeated for both. No other row of this card was changed. Verification metadata advances to the leaf's base commit `e963a01c` because the claim was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): created this one-to-one card for the new unit-regression suite over the detection *signal*. It records the one-valid-record helper that makes every case name the field it varied, the nine-parameter construction table, the two halves of "a conclusion must not be representable" (an extra field and a verdict written into the prose field), the closed and versioned condition vocabulary, the granularity refusal that makes a whole-file change unable to stand for a span change, the three declared input sets with their three distinct refusals, one side as a complete fact with the unread-side over-claim refused, the declaration/omission agreement checked in both directions, the retention answer that refuses a destination that cannot retain and names what would resolve an unresolved reference, currentness that marks stale without relabelling, the named-constant policy identities, the predating-dataset refusal with both generation numbers as facts, and generation 4's additive rule asserted as a prefix equality. Verification metadata is the leaf's base commit `4264dcc9`: the code commit does not exist yet and closeout owns that stamp.
