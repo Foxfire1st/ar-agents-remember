@@ -1,0 +1,90 @@
+# mcp/src/agents_remember/mcp/registration/knowledge.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/mcp/registration/knowledge.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00 |
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| governingOverview | `mcp/src/agents_remember/mcp/registration/overview.md` |
+
+## Governing Overview
+
+[mcp/registration route overview](overview.md)
+
+## Purpose
+
+The knowledge operation family module: the one `register_knowledge_tools(server, config)` that declares its family against the server it is handed and delegates every operation to the payload builders in `agents_remember.mcp.tools.knowledge`. It is "**appended** to `TOOL_REGISTRARS`, never inserted: FastMCP publishes tools in registration order, so every existing name keeps the position it was advertised at." It declares the five operation families "spelled as ``Doc13:181-187`` spells them" — `knowledge_read`, `knowledge_change`, `knowledge_diff`, `knowledge_integrity_check` and `knowledge_project`. **It deliberately performs no domain reasoning and mounts nothing for the reviewer**: "``KS-R22@v1`` owns the Intent Reviewer, the cockpit route and the browser client. What this module publishes is the interface L22 mounts -- the five operations, the review-matrix view and the typed models behind them -- and it adds no panel, no route and no client." It also holds no state, validates nothing itself and opens no dataset; the runtime configuration supplies it exactly one thing — "the workspace root a read resolves recorded source anchors against when the caller names none" — while "Everything else a handler needs -- the dataset path, the namespace and the destination -- is caller-supplied, because the substrate decides nothing about which dataset or which vault is meant."
+
+## Code Commentary
+
+### Logic
+
+**One entry point, five private registrar functions, called in declared order.** `register_knowledge_tools(server, config)` is the family's whole public surface, and its body is the five calls `_register_knowledge_read(server, config)`, `_register_knowledge_change(server)`, `_register_knowledge_diff(server)`, `_register_knowledge_integrity_check(server)` and `_register_knowledge_project(server)` — read, then change, then diff, then integrity, then projection. Only the read registrar takes the config, because only the read operation resolves recorded source anchors against the workspace root; the other four take the server alone, which is the call shape making that boundary visible. The package docstring's rule that a family module's `_register_*` calls are never reordered applies here with the same force as `TOOL_REGISTRARS` itself.
+
+**Each handler validates its wire request, delegates, and returns the typed shape the response model declares.** Every `@server.tool()` body is one construction of a request value object from the flat keyword arguments followed by one call into `mcp/tools/knowledge.py`: `knowledge_read` builds a `ReadToolRequest`, `knowledge_change` a `ChangeToolRequest`, `knowledge_diff` a `DiffToolRequest`, and `knowledge_project` a `ProjectToolRequest`. `knowledge_integrity_check` is the one handler whose builder takes keyword arguments directly. No handler computes a classification, infers an effect label, authors a draft or judges a rationale — the module docstring says the surface "performs no domain reasoning", and the code shape is what makes that true rather than aspirational.
+
+**The published docstrings are the operations' own contracts, and each states what it does not do.** `knowledge_read`'s docstring names the five views and states that a value that cannot be classified "is reported as an unresolved limitation rather than returned with an empty class". `knowledge_change`'s states that "the content is never drafted and its rationale is never judged" and that the operation "adds no gate, no approval and no new authority". `knowledge_diff`'s states that semantic effect labels "are included only when supplied by an identified agent or assessment, never inferred from the diff". `knowledge_integrity_check`'s states that "`compatible` is absent by design, not omitted by accident, and an unresolved assessment stays unresolved". `knowledge_project`'s states that authored explanations "are never invented or reassessed", that Markdown and JSON are sibling views and a JSON projection is not a portable export, and that an externally edited file "is reported and preserved unless the caller authorizes an overwrite for that exact path" — the surface-level spelling of the behaviour the builders and the writer enforce.
+
+**The runtime configuration supplies exactly one value into this family, and it is the workspace root.** `_register_knowledge_read(server, config)` passes `repositoryRoot if repositoryRoot is not None else str(config.workspace_root)` into the `ReadToolRequest`, so the config is the fallback root a read resolves recorded source anchors against and never a default dataset, namespace or destination. `_register_knowledge_change`, `_register_knowledge_diff`, `_register_knowledge_integrity_check` and `_register_knowledge_project` receive no config at all, which is the structural statement that nothing else in this family is configured.
+
+**The five operations are the interface another leaf mounts, and the reviewer surface is not here.** The review-matrix view is reachable through `knowledge_read`'s `view` argument — the module docstring's phrasing is that what this module publishes is "the five operations, the review-matrix view and the typed models behind them" — and the typed response models behind them are the strict `ToolResponse` subclasses in `models/tools/knowledge_responses.py`, registered by name in `models/tools/tool_registry.py`. The Intent Reviewer, its cockpit route and its browser client belong to `KS-R22@v1`; this module declares no FastMCP resource, no route, no panel and no client, and its only MCP effect is the five `@server.tool()` registrations.
+
+**The registration order is part of the advertised contract, and this family is appended at the tail.** `registration/__init__.py` imports `register_knowledge_tools` and places it as the last entry of `TOOL_REGISTRARS`, after `register_capsule_and_skill_tools`, making it the fourteenth registrar; `models/tools/public_roster.py` gained the five names at its own tail, in the same read-change-diff-integrity-projection order, and `models/tools/tool_registry.py` gained the five response-model rows in the same order. The three surfaces must agree, so the family's position in the tuple, the roster's tail order and the registry's tail order are one decision recorded in three places rather than three independent choices.
+
+### Conventions
+
+The family module follows the package door's contract exactly: one `register_*_tools(server, config)` public function, one private `_register_*` per operation, and every `@server.tool()` definition inside a private registrar — the shape `registration/__init__.py`'s docstring declares for every family module. Requests are assembled by importing the request value objects from the builders module rather than by re-declaring their fields here, so the wire argument names are spelled once in `mcp/tools/knowledge.py` and this module only maps them onto the value objects. Copies of another leaf's vocabulary are imports: `McpRuntimeConfig` comes from `kernel/primitives/runtime_config.py` and `FastMCP` from the SDK, and nothing here restates a view name list, a change-kind tuple, a refusal code or a format tuple. The five published docstrings are the contract carriers — each names what its operation returns and what it refuses to produce — and no module-level constant, `__all__` or helper exists beyond the six functions, so the file's whole surface is the family declaration itself.
+
+### Invariants And Boundaries
+
+- **The family is appended, never inserted.** `register_knowledge_tools` is the last entry of `TOOL_REGISTRARS` (the fourteenth), so no existing tool's advertised registration position moved when this family was mounted.
+- **The registration order is read, change, diff, integrity, projection.** Both the five `_register_*` calls in the entry point and the five `@server.tool()` definitions appear in that order, matching the roster tail and the registry tail.
+- **The surface performs no domain reasoning.** Every handler validates its wire request, delegates to a payload builder and returns; no classification, effect label, draft, rationale judgement or compatibility verdict is produced here.
+- **The runtime configuration supplies exactly one value.** Only the read registrar consumes `config`, and only for the workspace root used when the caller names no `repositoryRoot`; every other handler takes the server alone.
+- **Nothing for the reviewer is mounted.** No resource, route, panel or client is declared; the reviewer surface belongs to `KS-R22@v1`, and what this module publishes is the interface that leaf mounts.
+- **No state, no validation and no I/O.** The module holds no module-level mutable value, opens no dataset and reads no file; every operation's work happens inside the builder it calls.
+- **The default dataset, namespace and destination are always caller-supplied.** No handler falls back to a configured dataset path, repository id or destination root — only the anchor-resolution root has a configured fallback.
+
+## Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The family module's own statement of its scope — appended rather than inserted, the five operation families in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose five `_register_*` calls are made in the declared read, change, diff, integrity, projection order. | `register_knowledge_tools`; `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/knowledge.py:1-23; mcp/src/agents_remember/mcp/registration/knowledge.py:44-57 |
+| The statement that the runtime configuration supplies exactly one thing to this family — the workspace root a read resolves recorded source anchors against — and the configuration type whose `workspace_root` is that value. | `workspace_root`; `McpRuntimeConfig` | mcp/src/agents_remember/mcp/registration/knowledge.py:44-51; mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-135 |
+| The five registered handlers: the read registrar that resolves anchors against the configured workspace root when the caller names none, and the four registrars that take the server alone because nothing else in this family is configured. | `_register_knowledge_read`; `_register_knowledge_change`; `_register_knowledge_diff`; `_register_knowledge_integrity_check`; `_register_knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:60-98; mcp/src/agents_remember/mcp/registration/knowledge.py:101-123; mcp/src/agents_remember/mcp/registration/knowledge.py:126-148; mcp/src/agents_remember/mcp/registration/knowledge.py:151-168; mcp/src/agents_remember/mcp/registration/knowledge.py:171-201 |
+| The published read contract: the five views, the attributed records, and the rule that an unclassifiable value is an unresolved limitation rather than an empty class. | `knowledge_read` | mcp/src/agents_remember/mcp/registration/knowledge.py:63-82 |
+| The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. | `register_knowledge_tools` | mcp/src/agents_remember/mcp/registration/knowledge.py:44-53 |
+| The record registrar, whose docstring states that the content is never drafted, the rationale never judged, and no gate, approval or new authority added. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:101-123 |
+| The comparison registrar, whose docstring states that semantic effect labels are included only when an identified source supplied them. | `_register_knowledge_diff`; `knowledge_diff` | mcp/src/agents_remember/mcp/registration/knowledge.py:126-148 |
+| The report registrar, whose docstring records that `compatible` is absent by design rather than by accident and that an unresolved assessment stays unresolved. | `_register_knowledge_integrity_check`; `knowledge_integrity_check`; "absent by design, not" | mcp/src/agents_remember/mcp/registration/knowledge.py:151-168 |
+| The projection registrar, whose docstring records sibling Markdown and JSON views, the non-export JSON projection, and the externally edited file that is preserved unless its exact path is authorized. | `_register_knowledge_project`; `knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:171-201 |
+| The request value objects and payload builders this module delegates to, imported rather than re-declared here. | `knowledge_read_payload`; `ReadToolRequest` | mcp/src/agents_remember/mcp/registration/knowledge.py:31-41 |
+| The registry the family is appended to, where the import and the fourteenth tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster. | `TOOL_REGISTRARS`; `register_knowledge_tools`; `test_live_registration_matches_the_public_inventory_in_order` | mcp/src/agents_remember/mcp/registration/__init__.py:27-27; mcp/src/agents_remember/mcp/registration/__init__.py:38-53; mcp/tests/test_tools.py:235-245 |
+| The five advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in. | `knowledge_read`; `knowledge_integrity_check` | mcp/src/agents_remember/models/tools/public_roster.py:91-96 |
+| The five response-model rows that validate these operations' payloads, added at the registry's own tail. | `knowledge_read`; `knowledge_project` | mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
+| The strict response types behind the five operations, including the read payload travelling as the view payload's own JSON and `compatible` typed `None`. | `KnowledgeReadResponse`; `KnowledgeIntegrityCheckResponse`; `compatible: None = None` | mcp/src/agents_remember/models/tools/knowledge_responses.py:35-52; mcp/src/agents_remember/models/tools/knowledge_responses.py:85-104 |
+| The review-matrix view this module makes reachable through the read operation's view argument, defined where the view payloads live rather than here. | `ReviewMatrixView` | mcp/src/agents_remember/models/knowledge/view.py:796-800; mcp/src/agents_remember/application/knowledge_views.py:58-58; mcp/src/agents_remember/application/knowledge_views.py:281-281; mcp/src/agents_remember/models/knowledge/view.py:956-956; mcp/src/agents_remember/models/knowledge/view.py:956-960 |
+| The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:16-18 |
+
+## Cross-Repo References
+
+No cross-repository behavior is implemented in this file. It declares one tool family against the MCP server instance it is handed, and every operation it publishes addresses a caller-supplied dataset, namespace or destination through payload builders that live in this repository.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
+## Update History
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the knowledge operation family module. It records that `register_knowledge_tools(server, config)` is appended to `TOOL_REGISTRARS` as the fourteenth entry and never inserted, because FastMCP publishes in registration order and every existing name keeps its advertised position; that the five operation families are spelled as the design spells them and registered read, change, diff, integrity, projection; that the surface performs no domain reasoning and each handler validates, delegates and returns; and that the runtime configuration supplies exactly one thing — the workspace root a read resolves recorded source anchors against. The reviewer surface is stated as a deliberate absence: what this module publishes is the interface another leaf mounts (five operations, the review-matrix view and the typed models behind them), and it adds no panel, no route and no client. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

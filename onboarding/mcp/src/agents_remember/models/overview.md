@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
-| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -338,11 +338,11 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 | The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-328; mcp/src/agents_remember/models/worktree.py:355-364 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:243-247 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:255-259 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
 | The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:478-478 |
 | The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:459-459 |
-| The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:191-191; mcp/src/agents_remember/models/tools/tool_registry.py:192-192; mcp/src/agents_remember/models/tools/tool_registry.py:198-198; mcp/src/agents_remember/models/tools/tool_registry.py:199-199 |
+| The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:191-191; mcp/src/agents_remember/models/tools/tool_registry.py:192-192; mcp/src/agents_remember/models/tools/tool_registry.py:198-198; mcp/src/agents_remember/models/tools/tool_registry.py:199-199; mcp/src/agents_remember/models/tools/tool_registry.py:205-205; mcp/src/agents_remember/models/tools/tool_registry.py:206-206 |
 | Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:190-434 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
@@ -634,7 +634,7 @@ the coherent lifecycle projection. It introduces no public worker PID or private
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:393-393 |
-| Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:193-193 |
+| Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:200-200 |
 
 ## Integrated IAS Recovery Contract
 
@@ -1551,7 +1551,77 @@ inferred a new refusal vocabulary would be reading the wrong fact. That absence 
 left to a diff, because "this leaf needed no new refusal code" and "this leaf's refusal vocabulary was never
 reviewed" must not read alike.
 
+## 260915-KS-L20 The Five Query Views, The Closed Provenance Class, And The Projection Manifest
+
+`KS-R20@v1` adds five modules to this route and **no record kind of its own**, which is the property worth
+stating first: the views render the kinds `KS-R10@v1` through `KS-R19@v1` already store, and nothing here
+mints an identity, a table or a content address.
+
+**`models/knowledge/classification.py` is the whole answer to `Doc13:243`'s prohibition, and the answer is
+data rather than vigilance.** The class set is closed at two members — `authored`, a stored record a named
+author wrote carrying its author and its rationale, or `mechanical`, computed by a named versioned rule from
+stored facts — and there is no `unknown`, no `null`, no `mixed` and no default. A value that cannot be
+classified is **not emitted with an empty class**: the view layer reports it as an
+`UnresolvedLimitation`. The rule set is closed and versioned: `MECHANICAL_RULES` is the registry,
+`mechanical_rule` is the only way to obtain a rule, and a candidate rule that is not registered **raises**
+rather than producing a classification, so no inline comparator can acquire a class by being spelled like
+one. `Provenance` refuses a value carrying both an author and a rule, one carrying neither, and an authored
+value whose stated reason is a mechanical rule — requirement 2.3's "the mechanical determination never
+writes an authored record, and an authored determination never cites a mechanical rule as its reason" made
+unrepresentable rather than documented. What the module deliberately does **not** have is as load-bearing as
+what it has: no ordering comparator, no sort key, no score, no rank, no weight, no severity, no percentage,
+and no field a caller could read as an assessment. `REGISTERED_ROLE_ORDER` is read from the vocabulary's own
+declaration (`get_args(RealizationRole)`) rather than hand-copied, so a role added to the vocabulary cannot
+silently acquire a position.
+
+**`models/knowledge/view.py` declares the five views and makes three dishonest shapes unconstructible.**
+`VIEW_NAMES` is `Doc13:235-239`'s list in that order — source context, invariant, family, review matrix,
+curation queue — with no synonym, no sixth view and no view assembled at a caller's convenience, and the
+payload's own `view` field says which one the caller got. Every row that orders or qualifies a value
+carries a `Provenance` as a **sibling** field of that value (requirement 2.6), so a consumer can tell an
+authored finding from a mechanical observation without knowing which renderer produced the payload; there is
+no field anywhere below for a score, a rank, a weight, a severity, a percentage, a summary or a conclusion,
+so a view cannot acquire one by accident. `ViewPayload._require_honest_bounding` refuses a payload that
+returned a first page without a continuation **and** one that declares itself complete while carrying a
+token, which is the structural form of "a bounded response never presents its first page as the entire
+registered scope"; `ViewCompleteness` is scoped to the four inputs `Doc13:227` names and its field is
+spelled `complete_within_declared_scope` so no reader can take it for a statement about the project's
+semantics. `ViewCounts` carries all nine named quantities, each `counted` or `not_applicable` **with its
+reason**, so a quantity with no meaning for a view says so instead of reporting a zero. And
+`KnowledgeViewReader` is a runtime-checkable `Protocol` that is the only way this vocabulary obtains a row:
+a view module has no path, no connection and no candidate tree, so "a view that opens the database directly
+has left the contract" is a property of the type rather than a rule to remember.
+
+**`models/knowledge/projection_manifest.py` is the vocabulary the managed writer is judged against.** The
+manifest is the only authority on ownership, so `ManagedOutput` and `RetainedOutput` are the two ways a
+path can be owned and `ProjectionManifest._require_one_entry_per_path` refuses two owners for one path.
+Every produced output records its stable identity, its source snapshot, its renderer version, its digest
+**algorithm** and its byte count — a projection artifact without all of them is not constructible, which is
+requirement 4.3 in shape. The refusal vocabulary is a closed seven-member list (`destination_escape`,
+`destination_collision`, `escaping_link`, `unresolved_projection_input`, `manifest_unreadable`,
+`destination_unavailable`, `unauthorized_overwrite`), the four discrepancy kinds are distinguished because
+they call for different caller action, and the retention reasons are a closed five-member list. Confinement
+is a pure function here (`require_confined_relative_path`) and collision detection is one
+(`detect_destination_collisions`) so the writer can refuse **before** either output is written rather than
+discovering the collision mid-publish. `DIGEST_ALGORITHM` is `sha256` because `SHA256_PATTERN` already
+governs every digest that crosses the knowledge boundary; the manifest's digest is projection bookkeeping
+about a file on disk, it is not a knowledge identity, it confers none, and nothing in the substrate reads it
+as one.
+
+**`models/tools/knowledge_responses.py` is the wire half, and its whole point is that it is one shape
+rather than five.** Requirement 6.8 says a mounted tool's response payload is the same view payload
+requirements 2 and 3 define, "not a second shape", so `knowledge_read` carries the view payload's own JSON
+and this module adds only the envelope around it — a tool that re-rendered a view in its own format would be
+a second renderer and therefore a second place for the classification rule to be violated. Each of the five
+is a strict `ToolResponse` carrying a two-state discriminator (`view`/`result` or `refused`) with refusal
+fields that name the offending input, so a handler cannot translate a refusal into an empty result or a
+default; `KnowledgeIntegrityCheckResponse` carries `compatible: null` beside an explicit `unresolved` list
+instead of manufacturing a verdict from a passing test.
+
 ## Update History
+- 2026-09-18T13:36:47+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:255-259. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T13:36:47+00:00: Generated citation repair: "\"worktree_sync\": WorktreeSyncResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:200-200. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the five modules `KS-R20@v1` contributes to this route and the property that it adds no record kind of its own; the closed two-member provenance class and the closed versioned rule registry (with `mechanical_rule` raising rather than classifying an unregistered rule, and `Provenance` refusing both mixtures); the three dishonest shapes `view.py` makes unconstructible (an unbounded-without-continuation payload, a complete-with-a-token payload, and a quantity reported as zero where it has no meaning); the reader port as the only data path; and the projection-manifest vocabulary whose seven refusal codes, four discrepancy kinds and five retention reasons are closed, plus the one-shape response contract that keeps the classification rule at a single implementation. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T12:07:24+00:00: Generated citation repair: `SetInvariantLabelResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:598-618. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T12:07:24+00:00: Generated citation repair: `invalid_payload` repointed to mcp/src/agents_remember/models/knowledge/result.py:162-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the two vocabularies `KS-R16@v1` contributes to this route (the registered review scope's declaration and the family-review pipeline's records), the five scope properties that are enforced by record shape, the four pipeline properties that keep five status owners separate and refuse to carry a conclusion, and the **two operations added to the union with no refusal code added beside them**. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.

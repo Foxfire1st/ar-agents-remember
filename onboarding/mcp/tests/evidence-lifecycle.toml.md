@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
-| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -400,7 +400,37 @@ The one thing a reader should not take from the leaf's own prose is a count: the
 beside that pin says "thirteen and fifty-four", which the declarations beside it contradict. Each insertion
 shifted every line below it, which is the drift the routes citing this file carry.
 
+## KS-R20@v1 Consumer Row
+
+`KS-R20@v1` adds **no contract and no artifact**, and its whole footprint in this catalogue is **one
+consumer row**. The leaf's integration acceptance module,
+`mcp/tests/test_knowledge_projection_vault_safety.py`, builds its dataset through the registered
+`shared-support` fixture `mcp/tests/read_scope_test_support.py`, so that artifact's
+`consumers` list gained the module —
+`"mcp/tests/test_knowledge_projection_vault_safety.py",` at
+`mcp/tests/evidence-lifecycle.toml:1408` — and nothing else in the file changed.
+
+The reason a consumer row is **mandatory** rather than polite is the artifact's own declaration:
+`mcp/tests/read_scope_test_support.py` carries `consumer_scope = "exact"`, so the validator requires its
+`consumers` list to equal the *source-derived* consumer set. A new module that imports the fixture without
+being listed makes that equality false **without touching this file at all** — which is exactly the
+invisible-failure shape the L19 precedent records, and why the row had to be added here rather than
+discovered by a later leaf.
+
+**One row, one count that does not move, one digest that does.** A `consumers` addition belongs *inside* its
+existing list, where the ordering lives, so it shifts every line below it; that shift is the drift the
+routes citing this file carry, and it is inherent to the registry rather than a mistake. The two block
+counts therefore stay **14 contracts and 64 artifacts** — measured here by counting the file's own
+declarations (`64 [[artifact]]` and `14 [[contract]]`), which is the same reading
+`mcp/tests/test_dependency_ownership_ast_helpers.py`'s `LIFECYCLE_CONTRACT_COUNT` and
+`LIFECYCLE_ARTIFACT_COUNT` carry — while the catalogue's bytes move to
+`1aef5f9b928055d3762df13d8042f1719d8614de8c0141c71bd0e0209bc91df7`, which re-hashing this file reproduces
+and which the same module's `LIFECYCLE_CATALOG_SHA256` now pins. **The counts and the digest are
+measurements of one candidate, not constants**: a later leaf that registers its own artifact moves the
+counts, and every leaf moves the digest.
+
 ## Update History
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the one `consumers` row this leaf appended to the already-registered `shared-support` artifact `mcp/tests/read_scope_test_support.py`, why that row is mandatory rather than polite (the artifact declares `consumer_scope = "exact"`, so a module that imports the fixture without being listed falsifies the equality **without touching this file**), and the two measurements that move differently for a consumer-only change: the block counts stay at **14 contracts / 64 artifacts** — re-counted here from the declarations (`64 [[artifact]]`, `14 [[contract]]`) rather than carried from prose — while the digest is re-measured to `1aef5f9b…`, which re-hashing the file reproduces and which the pin constant carries. It also records that a `consumers` insertion lands mid-list by necessity and therefore shifts every line below it, which is the drift the routes citing this file carry. **No contract and no artifact was added**; the body changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the three consumer rows this leaf appended to two existing `shared-support` artifacts, the fact that no contract and no artifact was added (so the populations stay at the 14 contracts / 64 artifacts the pin constants read), and the catalogue's new digest measured by re-hashing this file. It also records, where a successor will meet it, that the leaf's own provenance paragraph states a "thirteen and fifty-four" count the declarations beside it contradict, and that the counts here are the declarations' rather than the prose's.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "closeout_fixture_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:315-315. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "closeout_input_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:333-333. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.

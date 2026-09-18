@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash |  `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
-| lastVerifiedCommitDate |  2026-09-18T14:21:49+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash |  `a7076008db4772554123794392f84b51143004ec`|
+| lastVerifiedCommitDate |  2026-09-18T16:14:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -1108,11 +1108,11 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:618-650; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:656-656 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:192-192 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:194-194 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:192-192 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:194-194 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 | The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1198,7 +1198,54 @@ less than it declared would make every later "the run examined the scope" claim 
 are the module's own and they reuse the **shipped** refusal codes rather than adding vocabulary, which is
 why this leaf extends no `KnowledgeRefusalCode` member.
 
+## 260915-KS-L20 The Managed Projection Writer, And The Reader Port That Decides Nothing
+
+`KS-R20@v1` §5 turns `Doc13:269`'s eight vault-safety clauses and §1's reader requirement into the two
+modules this route gains, and both are deliberately **dull where a decision could hide**. Nothing here
+stores a record, mints an identity or reads the candidate tree.
+
+**`memory/knowledge/managed_projection.py` is the `ProjectionWriter` implementation, and clause by clause
+it is eight refusals rather than eight best efforts.** The manifest is the only authority on ownership:
+every deletion decision is taken from it and the destination is **never enumerated**, so a file the
+manifest does not list — the packet's own `user-notes/` example — is not reachable by any code path in the
+module. That is also clause 7: there is no recursive clean, and there is no `rmtree` anywhere in the file.
+Confinement is **resolved, not string-matched**: `resolve_inside_destination` resolves the real path of the
+output's parent directory and proves it lies inside the resolved destination root, so a `..` segment, a
+symlinked directory and a case-folded alias are all caught by one comparison, and a path that escapes is
+`destination_escape` naming the path and the resolved root with nothing staged. Collisions are reported
+**before either output is written**, with both paths and both identities: the substrate does not pick one,
+does not overwrite one with the other and does not invent a disambiguating suffix. An escaping link is
+never followed, for a write or for a delete; it is reported and the remaining outputs continue, so one
+hostile entry does not block the rest. Publication is a **rename**: every artifact is rendered into a
+staging directory inside the destination and moved into place, so an interruption leaves the prior
+generation intact rather than a half-written mixture. A deletion needs **both halves** of the unchanged
+test — the path in the prior manifest *and* the file on disk still matching what that manifest recorded.
+And an externally edited file is reported by one of four discrepancy kinds and preserved; the only route to
+an overwrite is an explicit per-path caller authorization, which the resulting manifest entry records.
+
+**Retention is a state with memory, not an omission.** `RetainedOutput.recorded` carries the prior
+generation's whole `ManagedOutput`, so a path retained at one generation and produced again at the next is
+recognised as owned instead of being overwritten, and a retention the next generation does not re-produce
+is carried forward rather than falling out of the manifest. Both defects were found by the acceptance case
+in the worker's own implementation and fixed in the writer rather than worked around; they are the two
+file-loss bugs §5 exists to prevent. `ProjectionHooks.before_publish` is the module's only test seam: it
+runs after every output is staged and before the first rename, which makes checkpoint 4's interruption
+deterministically inducible without a sleep, a thread or a signal.
+
+**`memory/knowledge/view_source.py` is the reader port's implementation, and it performs no selection,
+no ordering and no classification.** It reads the envelope and revision tables the R10 generation pair owns,
+decodes each stored payload through the shipped typed-JSON decoder, and hands the view layer flat
+`ViewSourceRow` values. That division is the contract rather than a style choice: if this module ordered
+anything, the ordering would carry no provenance class and gap A-G5 would be open again, one layer lower and
+harder to see. It is **read-only by handle, not by discipline** — `open_view_reader` opens the database
+through `open_read_only_database`, so a refused view leaves the dataset byte-identical as a property of the
+handle rather than as a rollback someone has to remember — and the snapshot it reports is the identity the
+dataset actually holds, so a view cannot be handed a snapshot it did not read.
+
 ## Update History
+- 2026-09-18T13:36:47+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T13:36:47+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the two modules this route gained for `KS-R20@v1`, the eight vault-safety clauses as eight refusals (manifest-only ownership and no enumerated destination, resolved confinement, collision before either write, an escaping link never followed, stage-then-rename publication, the two halves of the unchanged test, no recursive clean and no `rmtree`, and an externally edited file reported and preserved), retention as a state with memory (`RetainedOutput.recorded`), the `before_publish` hook that makes the interruption checkpoint inducible, and the reader port that decides nothing so the ordering cannot lose its provenance class one layer down. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T12:07:24+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T12:07:24+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the one module this route gained, the four ordered steps of the registered-scope construction, the three absences that are as load-bearing as the steps (the retrieval read never consulted, membership never inferred, an unresolvable input refused by name rather than trimmed), and the reuse of `KS-R17@v1`'s own traversal instead of a second walk. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.

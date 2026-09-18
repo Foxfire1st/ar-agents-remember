@@ -5,10 +5,10 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
@@ -556,7 +556,43 @@ which is likewise not the extension's enumeration result.
 | The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. | `install_extension_methods` | mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153 |
 | This server's own index resource, kept deliberately distinct from that method. | `index_resource` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:228-251 |
 
+## 260915-KS-L20 The Five Knowledge Payload Builders, And Where A Handler Refuses To Decide
+
+`mcp/tools/knowledge.py` adds one builder per mounted `knowledge_*` operation family, and its defining
+property is what it does **not** do: no classification is computed, no effect label is inferred, no draft is
+authored, no rationale is judged, no ambiguity is resolved by choosing, no missing assessment is filled, and
+no compatibility verdict is produced. Where a handler would have to decide something, it returns the
+unresolved state instead, and the module's brevity is the measurement of that rule rather than an accident
+of scope. Two of the five are quoted at requirement level and their builders are the reason: `knowledge_read`
+returns "recorded claims and assessments as attributed records", and the payload it returns **is the view
+payload itself**, so the classification rule has exactly one implementation instead of a second renderer
+here; `knowledge_diff` includes "semantic effect labels ... only when supplied by an identified
+agent/assessment, not inferred from the diff", so `_supplied_effect_labels` collects the labels the
+comparison already carries and never derives one.
+
+**Four request records and one builder that takes none.** `ReadToolRequest`, `ChangeToolRequest`,
+`DiffToolRequest` and `ProjectToolRequest` are the wire shapes, and each field they declare is an input the
+caller must supply rather than a default the substrate chooses — the dataset path, the namespace, the
+destination, the view name, the ordering input, the limit, the continuation, the authorized overwrites.
+`knowledge_integrity_check_payload` takes no request at all, which is the honest shape for an operation
+whose answer is "here are the recorded conditions and here is what could not be resolved":
+`_recorded_conditions` reads the shipped detection run for the named scope, `_no_detection_run` reports the
+absence as a state rather than as an empty condition list, and `_condition_report` carries each matched
+fact beside the condition that matched it.
+
+**Two refusal builders exist so that a refusal never becomes a default.** `_refused_read` returns the
+typed refusal naming the offending view and the code, and `_refused_project` names the destination and the
+code, so a caller can always tell "nothing was selected" from "the selection was refused" — a distinction
+the response models' `state` discriminator preserves on the wire. `ADMITTED_CHANGE_KINDS` is the two-member
+tuple of kinds that already have a shipped admitted operation (`evidence_claim`,
+`verification_observation`); a kind outside it returns the shipped `registration_absent` refusal naming the
+absent admitted operation, because inventing a second write path here is exactly the authority the
+requirement forbids this route to add. `_projection_requests` builds one view request per requested view so
+the projection builder reads each view through the same seam a direct read does, rather than through a
+second selection path.
+
 ## Update History
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the five builders for the five mounted `knowledge_*` families and the rule that keeps them short (nothing is decided here; where a handler would have to decide it returns the unresolved state); the two requirement-level quotations and why `knowledge_read` returns the view payload itself; the four request records plus the one operation that takes none; and the two refusal builders plus `ADMITTED_CHANGE_KINDS`, which is why an unadmitted record kind refuses with `registration_absent` instead of acquiring a second write path. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_checkpoint_landing`; `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/public_roster.py:64-64; mcp/src/agents_remember/models/tools/public_roster.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_pause` repointed to mcp/src/agents_remember/models/tools/public_roster.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

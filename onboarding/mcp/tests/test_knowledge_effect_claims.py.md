@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_effect_claims.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
-| lastVerifiedCommitDate |  2026-09-18T14:21:49+02:00|
+| lastVerifiedCommitHash |  `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate |  2026-09-18T16:14:01+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l13` uncommitted staged source; base `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -163,7 +163,7 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts no field of the mechanical comparison can hold an authored meaning. | `test_no_field_of_the_mechanical_comparison_can_hold_an_authored_meaning` | mcp/tests/test_knowledge_effect_claims.py:954-968 |
 | The case that asserts the record group's own operation vocabulary declares the read and no write path beside the batch. | `test_the_record_groups_own_operation_vocabulary_declares_the_read_and_nothing_else` | mcp/tests/test_knowledge_effect_claims.py:971-981 |
 | The case that asserts a stored requirement revision is written by the requirement module's own operation and left untouched, with this record group's change-set list empty. | `test_a_stored_requirement_revision_is_untouched_by_this_record_group` | mcp/tests/test_knowledge_effect_claims.py:984-1004 |
-| The lane row placing this module in the unit population. | "mcp/tests/test_knowledge_effect_claims.py" | mcp/tests/test-evidence-lanes.toml:164-164; mcp/tests/test-evidence-lanes.toml:177-184; mcp/tests/test-evidence-lanes.toml:186-186 |
+| The lane row placing this module in the unit population. | "mcp/tests/test_knowledge_effect_claims.py" | mcp/tests/test-evidence-lanes.toml:164-164; mcp/tests/test-evidence-lanes.toml:177-184; mcp/tests/test-evidence-lanes.toml:186-186; mcp/tests/test-evidence-lanes.toml:188-188 |
 | The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_effect_claims.py"` | mcp/tests/evidence-lifecycle.toml:1093-1098; mcp/tests/evidence-lifecycle.toml:1116-1116; mcp/tests/evidence-lifecycle.toml:28-35 |
 | The registration listing this module among the exact consumers of the shared earlier-generation case support. | "knowledge-generation-cases"; `"mcp/tests/test_knowledge_effect_claims.py"` | mcp/tests/evidence-lifecycle.toml:1170-1175; mcp/tests/evidence-lifecycle.toml:1203-1203; mcp/tests/evidence-lifecycle.toml:43-50 |
 

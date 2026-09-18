@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/__init__.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-09-12T22:55+02:00                                       |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                   |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec`                   |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -27,14 +27,16 @@ Two public names:
 
 - `ToolRegistrar = Callable[[FastMCP, McpRuntimeConfig], None]` — the shape of a family module's
   `register_*_tools`.
-- `TOOL_REGISTRARS: tuple[ToolRegistrar, ...]` — the **thirteen** registrars in advertise order: core,
+- `TOOL_REGISTRARS: tuple[ToolRegistrar, ...]` — the **fourteen** registrars in advertise order: core,
   sessions, memory, providers, code_search, worktrees, closeout, tasks, benchmarks, lifecycle,
-  gates, orchestration, capsule-and-skill-serving.
+  gates, orchestration, capsule-and-skill-serving, knowledge.
 
-The newest entry is `register_capsule_and_skill_tools` from `capsule_serving.py`, **appended** last so
-no existing tool's registration order moved — registration order is part of the advertised contract,
-and the advertised tuple `PUBLIC_TOOLS` therefore gained its three names at its own tail as well
-(`role_capsule_compile`, `skill_catalog_list`, `skill_catalog_read`; 63 → 66 names).
+The newest entry is `register_knowledge_tools` from `knowledge.py`, **appended** last so no existing
+tool's registration order moved — registration order is part of the advertised contract, and the
+advertised tuple `PUBLIC_TOOLS` therefore gained its five names at its own tail as well
+(`knowledge_read`, `knowledge_change`, `knowledge_diff`, `knowledge_integrity_check`,
+`knowledge_project`; 66 → 72 names). The entry immediately before it, `register_capsule_and_skill_tools`
+from `capsule_serving.py`, was appended the same way in 260915-CAPS-L4.
 
 `__all__` exports both. The module docstring states the division this package exists to enforce:
 `create_server` owns process wiring (the compact-content shim, the ambient lifecycle, the `FastMCP`
@@ -48,7 +50,7 @@ instance) and nothing else; every `@server.tool()` definition lives in a family 
   new registrar inserted in the middle would renumber every later tool's advertised position, so the
   two surfaces that compare order (`PUBLIC_TOOLS` and the live-inventory suite) would both report a
   violation that is really a reordering.
-- `PUBLIC_TOOLS` (defined at `mcp/src/agents_remember/models/tools/public_roster.py:22-90`,
+- `PUBLIC_TOOLS` (defined at `mcp/src/agents_remember/models/tools/public_roster.py:22-97`,
   re-exported by `mcp/tools/base.py`)
   is the authority on the advertised name set; `mcp/tests/test_tools.py` compares it against a live
   server's `list_tools()` and against `server_info`'s exact list. The comparison is against a **live**
@@ -64,12 +66,14 @@ instance) and nothing else; every `@server.tool()` definition lives in a family 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `create_server` consumer iterates `TOOL_REGISTRARS`. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The advertised tool-name list's one definition, re-exported unchanged by the adapter. | `PUBLIC_TOOLS`; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-90; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
-| The newest registrar, appended last so no existing registration order moved. | `register_capsule_and_skill_tools` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90 |
-| The three advertised names the new registrar publishes, at the tail of both surfaces. | `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` | mcp/src/agents_remember/models/tools/public_roster.py:88-90 |
+| The advertised tool-name list's one definition, re-exported unchanged by the adapter. | `PUBLIC_TOOLS`; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-97; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
+| The registrar appended last so no existing registration order moved. | `register_knowledge_tools` | mcp/src/agents_remember/mcp/registration/knowledge.py:44-57 |
+| The five advertised names the appended registrar publishes, at the tail of both surfaces. | `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project` | mcp/src/agents_remember/models/tools/public_roster.py:92-96 |
+| The registrar appended immediately before it, which established the same append-only precedent. | `register_capsule_and_skill_tools` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90 |
 | The live registered-order comparison that makes a registrar-without-roster-name a surface violation. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-281 |
 
 ## Update History
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): recorded the fourteenth registrar, `register_knowledge_tools` from the new `knowledge.py` family module, **appended** last so no existing tool's registration order moved; the advertised tuple accordingly gained `knowledge_read` / `knowledge_change` / `knowledge_diff` / `knowledge_integrity_check` / `knowledge_project` at its own tail (66 → 72 names, extent now `L22-L97`). Corrected the body's thirteen-registrar enumeration to fourteen and restated which entry is newest (the capsule/skill registrar was the newest until this leaf and is now the one immediately before it); repointed the `PUBLIC_TOOLS` extent in the invariant prose and the reference row, and added the appended-registrar and roster-tail rows. **No content impact** on the ordering rule itself: the append-only discipline and the live-inventory comparison are unchanged, which is exactly why this change cost no reorder. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `register_capsule_and_skill_tools` repointed to mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` repointed to mcp/src/agents_remember/models/tools/public_roster.py:88-88; mcp/src/agents_remember/models/tools/public_roster.py:89-89; mcp/src/agents_remember/models/tools/public_roster.py:90-90. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 

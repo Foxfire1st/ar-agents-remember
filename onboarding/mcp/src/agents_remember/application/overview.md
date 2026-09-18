@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
-| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -1307,7 +1307,66 @@ the only pointer to the evidence that interprets it. The destination is `<task_r
 outside the enclosure root and outside the worktree group by construction — and the module neither widens
 that set nor writes into an enclosure's own `reports/` directory, which cleanup removes.
 
+## 260915-KS-L20 The View Seam, The Renderer, And The Projection That Writes No Canonical Byte
+
+`KS-R20@v1` adds the route's eighth, ninth and tenth application seams, and all three follow the discipline
+the existing seven set: they resolve their own context, decide no authority, hold no durable state, and
+return a typed payload rather than a second shape.
+
+**`application/knowledge_views.py` is the seam, and its two load-bearing acts are both refusals of
+convenience.** The snapshot a view declares comes from the shipped `open_read_context`, which reads the
+identity the dataset at that path actually holds -- so a view cannot be handed a snapshot a caller wrote
+down, and the three comparisons the other seams make (bound namespace, declared generation, declared logical
+digest) are made here for the same reason. And the continuation is checked **before any row is read**:
+`require_continuation_snapshot` refuses a token presented against another snapshot with both identities
+named, and the caller receives no page at all -- there is no re-resolution and no partial answer. `_RENDERERS`
+and `_PAYLOADS` are two tables keyed by the same five names on purpose: one says which renderer produces a
+view's rows and the other says which payload class validates them, so a view whose renderer and payload
+disagree fails at construction rather than at a reader. `VIEW_RENDERER_VERSION` is the one renderer version a
+view and a projection both record, and `RECORDED_GRAPH` and `TRAVERSAL_POLICY` name two of the four inputs
+`ViewCompleteness` is scoped to, as values rather than as prose.
+
+**`application/knowledge_view_render.py` is where the five views are actually decided, and four properties
+are enforced together because a renderer satisfying three of them is a renderer that will lose the
+fourth.** Ordering comes from one of the four admitted inputs and it is named: `order_candidates` is the only
+ordering path, it dispatches through the registry, and it reports per position which input produced it and
+whether that input is authored or mechanical -- there is no comparator that is not a registered rule and **no
+fallback**, because an input the registry does not admit raises `UnadmittedOrderingInput`. A value that
+cannot be classified is **withheld, not emitted**: `_classified` returns `None` when a candidate has neither
+a recorded author nor a registered mechanical rule and the caller turns that into an
+`UnresolvedLimitation`, which is how requirement 2.1's forbidden third class, null and default are all
+unrepresentable rather than merely absent. The declared tiebreak is the **only** lexical order -- when every
+declared key ties, positions are assigned by record identity ascending under `ordering.declared-tiebreak`
+and that is reported `mechanical` -- and nothing here reads a symbol name's spelling, a path prefix, a
+directory depth, a file extension or a repository location, nor another view's result. Two runs at one
+snapshot are byte-identical, because every input is a recorded value or a registered constant and nothing is
+read from the clock, the environment, the filesystem or a live count a page boundary could move. The
+authored side arrives through `CR20-6`'s intake decision: an authored no-consequence claim must be a stored
+record while the packet's Exclusions forbid a new canonical record kind, so it is carried inside an
+already-registered kind -- the `decision` facet of `KS-R11@v1`, whose `decider` is the author, whose `reason`
+is the rationale and whose `outcome` carries the determination -- and a facet whose declared priority is not
+the canonical decimal spelling is **not** read as a priority; the row it would have ordered is reported as
+an unresolved limitation instead.
+
+**`application/knowledge_projection.py` renders Markdown and JSON as sibling views from the same resolved
+records, and it places authored text without producing any.** There is no model call, no summary, no score
+and no reassessment in it: a displayed disposition is the recorded disposition, a displayed status is the
+stored status, and an unassessed claim renders as unassessed rather than as favourably assessed, so
+requirement 4.4's "renderers do not call an LLM to invent fresh explanation" is true of this module by
+construction rather than by review. Every artifact it emits carries the three recorded values -- stable
+identity, source snapshot and renderer/profile version -- and a payload whose snapshot cannot be read is
+**not projected at all**: it is reported as an unresolved projection input, because requirement 4.3 forbids
+an artifact without all three. `PROJECTION_NOT_AN_EXPORT` is written into the rendered file itself, so the
+distinction between a projection and `KS-R06@v1`'s portable export is a fact on disk rather than a
+convention. The Markdown renderer writes an invariant's essential conditions **before** the statement's
+prose and writes an explicit omission line when the view could not carry them (requirement 4.8: a compact
+projection may shorten prose it is licensed to shorten and may not drop the conditions under which the
+invariant applies), and a detection signal and an authored description stay separately attributed as two
+blocks with their own provenance lines and **no merged field** combining them (requirement 4.9). It writes
+nothing itself: `project_knowledge` builds a plan and hands it to the injected writer.
+
 ## Update History
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** -- the three seams this route gains for `KS-R20@v1`; the view seam's two refusals of convenience (the snapshot resolved from the dataset rather than declared, and the continuation checked before any row is read with no partial answer); the four properties the renderer enforces together (a named ordering input with no fallback, an unclassifiable value withheld rather than emitted with an empty class, the declared tiebreak as the only lexical order, and byte-identical runs at one snapshot); the `CR20-6` intake decision that carries the authored claim inside an already-registered `decision` facet; and the projection seam that places authored text without producing any, records all three values or refuses to project, and keeps conditions and attributions separate. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the route's one new module and its single end-to-end operation, the two status owners the request must carry verbatim and the refusal that keeps the pipeline from inventing them, the counts the report carries with no field that could make it a gate, and the retention proof that publishes to `<task_root>/notes/reports/` and reads the bytes back from the exact destination. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:40+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand** — `generation_of_database`, `CURRENT_GENERATION`, `worktree_status_packet`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
 

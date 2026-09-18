@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ No configured Domain Documentation source applies.
 | --- | --- | --- |
 | Real code/memory SHAs are separate from optional ledgerCache diagnostics. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
 | The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
-| Registered as the `direct_landing` tool response model. | `DirectLandingResponse`; `direct_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:214; mcp/src/agents_remember/models/tools/tool_registry.py:216-226 |
+| Registered as the `direct_landing` tool response model. | `DirectLandingResponse`; `direct_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:214; mcp/src/agents_remember/models/tools/tool_registry.py:216-226; mcp/src/agents_remember/models/tools/tool_registry.py:31-31; mcp/src/agents_remember/models/tools/tool_registry.py:228-228 |
 | Produced by the admitted direct-landing coordinator. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:113-125 |
 | Memory-content execution and same-generation recovery are journaled below the coordinator. | `execute_direct_landing` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:42-75 |
 | None | `codeCommit`; `memoryContentCommit`; `ledgerCache` | mcp/src/agents_remember/models/direct_landing.py:38-40 |
