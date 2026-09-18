@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/record_envelope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
-| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastUpdated | 2026-09-18T17:00+02:00 |
+| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -26,21 +26,30 @@ of knowledge would have cost a new identity design. This module is the mechanism
 envelope's "typed" half real: a shape registry, a single validation entry point, and one refusal code
 covering every inadmissible payload.
 
-**The registry now holds four disjoint record groups, and each new one registered through the seam the
-one before it established.** The internal conformance kind; the eight authored-judgment facet kinds;
-since `KS-R14@v1` the two mechanical-detection kinds `detection_signal` and `detection_run`; and since
-`KS-R19@v1` the requirement-revision kind `requirement_revision`, which resolves to
-`RequirementRevisionPayload` in `models/knowledge/requirement.py`. The registry went from 12 kinds over
-12 entries to **13 over 13** on that leaf, and it grew again the same way on the L19 change set. The
-module docstring named `DetectionSignal` as a later leaf's registration point and that leaf has landed;
-`EvidenceClaim` is the concrete non-facet category still outstanding.
+**The registry now holds twenty-two `(kind, schema)` pairs across the record groups that registered through
+this one seam, and every later group registered the way the one before it did.** The internal conformance
+kind; the eight authored-judgment facet kinds; since `KS-R14@v1` the two mechanical-detection kinds
+`detection_signal` and `detection_run`; since `KS-R19@v1` the requirement-revision kind
+`requirement_revision`, which resolves to `RequirementRevisionPayload` in
+`models/knowledge/requirement.py`; the citation-binding kind; the two supporting-record kinds
+(`evidence_claim` and `verification_observation`); the three authored-effect member kinds with their
+`semantic_change_set`; and — the registration this card's candidate records — the truth-coverage census's
+three kinds, `census_inventory_row`, `census_claim` and `census_disposition`, unpacked from
+`CENSUS_PAYLOAD_MODELS` in `models/knowledge/census.py`. The counts this card used to carry (12 over 12,
+then 13 over 13) are superseded: the registry is **22 over 22**, and the module docstring's deferred name
+`DetectionSignal` landed several leaves ago while `EvidenceClaim` landed as one of the supporting-record
+pair.
 
-**Four families, one seam, and the same reason each time.** None of these groups became a table or a
+**Every family, one seam, and the same reason each time.** None of these groups became a table or a
 generation column: the frozen payload model *is* the shape, so a signal's required field set, its closed
 vocabularies and its construction refusals stay declared **once**, in the model module that owns them.
-A second declaration as SQL columns would be a second place for the same field set to drift, and
-`REQUIREMENT_PAYLOAD_MODELS` is unpacked into `PAYLOAD_MODELS` rather than restated here for exactly
-that reason — the registry and the vocabulary cannot disagree about which pairs exist.
+A second declaration as SQL columns would be a second place for the same field set to drift, and every
+family whose pair set is declared beside its own model — `REQUIREMENT_PAYLOAD_MODELS`, the supporting-record
+and authored-effect mappings, and now `CENSUS_PAYLOAD_MODELS` — is **unpacked** into `PAYLOAD_MODELS` rather
+than restated here for exactly that reason: the registry and the vocabulary cannot disagree about which pairs
+exist. The census group shows the rule at its clearest, because its three shapes carry closed vocabularies of
+their own (an inventory row's parse outcome, a claim's claim-kind and applicability, a disposition's kind)
+that the seam enforces without this module naming a value of any of them.
 
 ## Code Commentary
 
@@ -73,24 +82,31 @@ that reason — the registry and the vocabulary cannot disagree about which pair
 
 **The two kinds that complete the deferred set are registered.** `(evidence_claim, evidence-claim/v1)` and `(verification_observation, verification-observation/v1)` resolve to the frozen payload models the supporting-record vocabulary declares, so both record groups reach the typed seam every other record passes through rather than a second decision point beside it — and a field that is not declared has nowhere to be stored. `EVIDENCE_RECORD_KINDS` is derived from those declarations beside `FACET_RECORD_KINDS` and `DETECTION_RECORD_KINDS`, so a caller naming what the registry holds names four groups whose disjointness is a property of a kind being one string. **The claim's subject and its claimed coverage are deliberately not payload fields.** They are resolved relations, so they live in generation 5's typed join tables, where endpoint-kind compatibility is a constraint of the schema rather than a value this seam validates at runtime.
 
+**The truth-coverage census's three kinds are the newest registration, and they arrive the same way.** `CENSUS_PAYLOAD_MODELS` is unpacked into `PAYLOAD_MODELS` as the last entry of the mapping, so `(census_inventory_row, census-inventory-row/v1)`, `(census_claim, census-claim/v1)` and `(census_disposition, census-disposition/v1)` resolve through this seam rather than through a second decision point beside it. **Nothing in those three shapes can hold a semantic verdict.** The inventory row carries its parse outcome, the claim its closed claim-kind and applicability vocabularies, the disposition its kind and its links — so a category, a status derived from import success or a mismatch class is not a value this registry could store *and* not a value it could refuse for the wrong reason: every one of them is simply "this payload does not validate", because no field of these three shapes could carry one. The census's own record group reads the seam's answer the same way every group does: it resolves the payload through this call, writes the envelope row and its one sealed revision from what came back, and keeps what the envelope cannot express — the record's own identity column and the relations a claim or a disposition declares — in its own tables, written only as part of the aggregate that owns them.
+
 ### Conventions
 
-- **One internal conformance kind, eight facet kinds, two detection kinds and the requirement kind.** `INTERNAL_CONFORMANCE_KIND`
+- **The internal conformance kind, the eight facet kinds, the two detection kinds, and one entry set per later family — the requirement revision, the citation binding, the supporting-record pair, the authored-effect kinds and the census's three.** `INTERNAL_CONFORMANCE_KIND`
   (`internal_conformance`) with `INTERNAL_CONFORMANCE_SCHEMA` (`internal-conformance/v1`) and its
   minimal `ConformancePayload` exist only to exercise the seam, so the typed half of the envelope has
   a mechanism rather than a promise. It is marked internal, it is **not** a knowledge category, and
   the later leaves that add the real categories (`EvidenceClaim`, …) add them
-  *beside* it rather than replacing it. The detection pair was added that way:
+  *beside* it rather than replacing it — `EvidenceClaim` has since landed as one of the supporting-record
+  pair. The detection pair was added that way:
   `(detection_signal, detection-signal/v1)` and `(detection_run, detection-run/v1)` are two ordinary
   registry entries whose models are the frozen payload models, and `DETECTION_RECORD_KINDS` is derived
-  from the same declarations the entries are built from rather than restated — so the three groups are
-  disjoint by construction, because a kind is one string.
+  from the same declarations the entries are built from rather than restated — so the groups are
+  disjoint by construction, because a kind is one string. The census's three kinds joined by that
+  route: one unpacked mapping, three ordinary entries, and no value of the vocabularies they carry
+  named anywhere in this module.
 - **A caller that must name what the registry holds uses the derived sets, not the mapping's keys.**
-  `FACET_RECORD_KINDS`, `DETECTION_RECORD_KINDS` and `REQUIREMENT_RECORD_KINDS` are each derived from
-  their own entries, and `KIND_SCHEMAS` is derived from the whole registry, so no group's membership
-  can drift from the registry it is a view of. The requirement group goes one step further: its pair
-  set is declared next to its payload model and merely **unpacked** here, so the registry cannot hold
-  a requirement kind the vocabulary does not declare.
+  `FACET_RECORD_KINDS`, `DETECTION_RECORD_KINDS`, `REQUIREMENT_RECORD_KINDS`, `EVIDENCE_RECORD_KINDS`
+  and `CITATION_BINDING_RECORD_KINDS` are each derived from their own entries, and `KIND_SCHEMAS` is
+  derived from the whole registry, so no group's membership can drift from the registry it is a view
+  of. Every group whose pair set is declared next to its own payload model goes one step further: it is
+  merely **unpacked** here, so the registry cannot hold a kind that vocabulary does not declare — the
+  requirement revision, the supporting-record pair, the authored-effect family and, newest, the
+  census's `CENSUS_PAYLOAD_MODELS`.
 - The refusal is built through the package's shared `refusal(...)` factory with `RefusalFacts`, so
   this module contributes a code, a detail, facts and a next action — never a bespoke error shape.
 - The module performs **no storage I/O at all**: it imports no connection type and takes no
@@ -121,10 +137,12 @@ that reason — the registry and the vocabulary cannot disagree about which pair
 
 ### Todos
 
-None recorded. `EvidenceClaim` remains the concrete non-facet category still outstanding; this card
-records the seam a later leaf will register it into, and the four families that have registered through
-it so far (the internal conformance kind, the eight facet kinds, the two detection kinds and the
-requirement-revision kind).
+None recorded. `EvidenceClaim` is no longer outstanding — it registered as one of the supporting-record
+pair — and the registry now holds **22** `(kind, schema)` pairs over the families that have passed through
+this seam: the internal conformance kind, the eight facet kinds, the two detection kinds, the
+requirement-revision kind, the citation-binding kind, the evidence-claim and observation pair, the
+authored-effect member kinds with their change set, and the census's inventory row, claim and disposition.
+The standing open item is the refusal's known gap above, not a missing family.
 
 ## Docs References
 
@@ -139,24 +157,27 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280 |
-| The marked-internal conformance kind and the minimal frozen shape that exercises the seam. | `INTERNAL_CONFORMANCE_KIND`; `ConformancePayload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:71-78; mcp/src/agents_remember/memory/knowledge/record_envelope.py:82-96; mcp/src/agents_remember/memory/knowledge/record_envelope.py:81-81; mcp/src/agents_remember/memory/knowledge/record_envelope.py:104-104; mcp/src/agents_remember/memory/knowledge/record_envelope.py:110-117 |
-| **The registry every typed payload shape is registered in — six family groups now, with the requirement, supporting-record and authored-effect pairs unpacked from their own modules rather than restated here.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178 |
-| The derived two-kind set that names the detection group without restating it. | `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-189 |
-| The derived requirement-kind set, derived from the same declarations its registry entry is built from. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:195-197 |
+| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:245-289 |
+| The marked-internal conformance kind and the minimal frozen shape that exercises the seam. | `INTERNAL_CONFORMANCE_KIND`; `ConformancePayload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:105-105; mcp/src/agents_remember/memory/knowledge/record_envelope.py:111-118 |
+| **The registry every typed payload shape is registered in — the internal kind, the eight facet kinds, the detection pair, the requirement revision, the citation binding, the supporting-record pair, the authored-effect family and, newest, the census's three kinds unpacked from `CENSUS_PAYLOAD_MODELS`. Twenty-two pairs in all.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
+| The derived two-kind set that names the detection group without restating it. | `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-198 |
+| The derived requirement-kind set, derived from the same declarations its registry entry is built from. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:204-206 |
 | The requirement kind and its frozen shape, declared once in the vocabulary module the registry unpacks. | `REQUIREMENT_REVISION_KIND`; `REQUIREMENT_REVISION_SCHEMA` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84 |
-| The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold. | `KIND_SCHEMAS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:228-233 |
-| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280 |
-|The marked-internal conformance kind and the minimal frozen shape that exercises the seam.|`INTERNAL_CONFORMANCE_KIND`| mcp/src/agents_remember/memory/knowledge/record_envelope.py:104-133 |
-| **The registry the two detection payload shapes are registered in, and the derived two-kind set that names them without restating them.** | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197 |
-| The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold. | `KIND_SCHEMAS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:228-233 |
+| The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold. | `KIND_SCHEMAS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:237-242 |
+| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:245-289 |
+|The marked-internal conformance kind and the minimal frozen shape that exercises the seam.|`INTERNAL_CONFORMANCE_KIND`| mcp/src/agents_remember/memory/knowledge/record_envelope.py:105-118 |
+| **The registry the two detection payload shapes are registered in, and the derived two-kind set that names them without restating them.** | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-198 |
+| The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold. | `KIND_SCHEMAS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:237-242 |
 | The frozen, strict, extra-forbidding base that makes a validated payload a value. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
 | The requirement family this registry gained, its own declaration of the pair, and the payload model the pair resolves to. | `RequirementRevisionPayload`; `REQUIREMENT_REVISION_KIND` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84; mcp/src/agents_remember/models/knowledge/requirement.py:172-213 |
-| The case that pins the registry as the union of all four groups, so a group the registry does not declare cannot be admitted without that line changing. | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes" | mcp/tests/test_knowledge_facets.py:183-247 |
+| The case that pins the registry as the union of all the declared groups, so a group the registry does not declare cannot be admitted without that line changing. | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes" | mcp/tests/test_knowledge_facets.py:183-247 |
 | `invalid_payload` as a member of the shipped refusal vocabulary, and the shared refusal factory this module builds through. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:162-162 |
 | The envelope table this seam validates payloads for: no identity-valued column, `record_schema` alongside `kind`, a nullable governing route. | `record_schema`; `kind` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:53-72 |
 | The typed-JSON payload column and the immutability triggers that seal a validated revision. | `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:103-204 |
 | The envelope and payload cases, including the five inadmissible inputs refused with `invalid_payload`. | `test_a_version_1_merge_on_the_generation_2_build_selects_generation_1` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:1-311 |
+| **The census mapping the registry unpacks as its last entry — three `(kind, schema)` pairs declared beside the census's commands and payload models, so the registry cannot hold a census kind that vocabulary does not declare.** | `CENSUS_PAYLOAD_MODELS` | mcp/src/agents_remember/models/knowledge/census.py:346-350 |
+| **The site in this module where the census's three kinds join the one payload seam, with no value of their closed vocabularies named here.** | `CENSUS_PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:179-186 |
+| **The three frozen census payload shapes the census pairs resolve to, each declared once in the vocabulary module the registry unpacks.** | `CensusInventoryRowPayload`; `CensusClaimPayload`; `CensusDispositionPayload` | mcp/src/agents_remember/models/knowledge/census.py:147-192; mcp/src/agents_remember/models/knowledge/census.py:195-219; mcp/src/agents_remember/models/knowledge/census.py:222-236 |
 
 ## Cross-Repo References
 
@@ -165,11 +186,12 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-| **The registry the detection and citation-binding payload shapes are registered in, and the two derived sets that name them without restating them.** | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS`; `CITATION_BINDING_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197; mcp/src/agents_remember/memory/knowledge/record_envelope.py:202-202 |
+| **The registry the detection and citation-binding payload shapes are registered in, and the two derived sets that name them without restating them.** | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS`; `CITATION_BINDING_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-198; mcp/src/agents_remember/memory/knowledge/record_envelope.py:211-211 |
 | **The citation-binding payload model this seam resolves the new kind to, and the binding facts that are payload rather than columns.** | `CitationBindingPayload`; `BINDING_RECORD_KIND`; `BINDING_RECORD_SCHEMA` | mcp/src/agents_remember/models/knowledge/citation.py:353-374; mcp/src/agents_remember/models/knowledge/citation.py:127-128 |
 | **The case that measures the seam's membership after this leaf's registration: the kind union named in the seam registry, and its second additive re-scope that names this leaf's own group constant instead of trimming the expectation back.** | `test_the_seam_registry_is_exactly_the_eight_declared_subtypes` | mcp/tests/test_knowledge_facets.py:183-246 |
 
 ## Update History
+- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **re-read every citation this card carries against the staged working candidate and recorded the census record group's registration at the payload seam.** The leaf unpacks `**CENSUS_PAYLOAD_MODELS` into `PAYLOAD_MODELS` as the mapping's last entry, so the registry now holds **twenty-two** `(kind, schema)` pairs rather than the "13 over 13" and "four families" this card still stated; the Purpose registry paragraph, the "four families, one seam" paragraph, the group convention and the Todos line were each **rewritten to the current families by name** — the internal conformance kind, the eight facet kinds, the detection pair, the requirement revision, the citation binding, the supporting-record pair, the authored-effect family and the census's three — and the stale claim that `EvidenceClaim` is still outstanding was corrected, since it registered as one of the supporting-record pair. A new Logic paragraph records what the census registration buys: the three pairs resolve to `CensusInventoryRowPayload`, `CensusClaimPayload` and `CensusDispositionPayload`, and no value of their closed vocabularies (a parse outcome, a claim kind, an applicability, a disposition kind) is named in this module, so a category or an import-derived status is not something the seam could store *or* refuse for the wrong reason. The derived-sets convention now names all five group constants plus `KIND_SCHEMAS`, and the unpacking rule is stated for every family that declares its pair set beside its own model rather than for the requirement group alone. Nine rows whose cited ranges this leaf's import line and registry entry had moved were **re-cited by hand to each construct's declaration extent** — `validate_record_payload` (both copies), `INTERNAL_CONFORMANCE_KIND`/`ConformancePayload`, `PAYLOAD_MODELS` (three rows), `DETECTION_RECORD_KINDS`, `REQUIREMENT_RECORD_KINDS` and `KIND_SCHEMAS` — and three rows were added for the census mapping, this module's registration site and the three frozen census payload shapes. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T12:07:24+00:00: Generated citation repair: `invalid_payload` repointed to mcp/src/agents_remember/models/knowledge/result.py:162-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: `validate_record_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: `DETECTION_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-189. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.

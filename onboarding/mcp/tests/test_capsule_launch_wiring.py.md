@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_capsule_launch_wiring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T09:15+02:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 | governingOverview | `overview.md` |
 
@@ -164,7 +164,7 @@ No Domain Documentation source is configured in the resolved source registry for
 | D20: a refused stage refuses again in the same process, never passing. | `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:1072-1104 |
 | The two boundary doubles: the vendor-process recorder and the tmux host. | `RecordingTransport`; `_FakeHost` | mcp/tests/test_capsule_launch_wiring.py:133-277; mcp/tests/test_capsule_launch_wiring.py:279-478 |
 | The lane row D9's fail-closed loader requires for every new test module. | "mcp/tests/test_capsule_launch_wiring.py" | mcp/tests/test-evidence-lanes.toml:23-23 |
-| The three governed-artifact consumer rows this module added, which re-derived the catalog's byte pin at this leaf's tip without changing the populations. | `consumers` | mcp/tests/evidence-lifecycle.toml:38-38; mcp/tests/evidence-lifecycle.toml:58-58; mcp/tests/evidence-lifecycle.toml:77-77; mcp/tests/evidence-lifecycle.toml:88-88 |
+| The three governed-artifact consumer rows this module added, which re-derived the catalog's byte pin at this leaf's tip without changing the populations. | `consumers` | mcp/tests/evidence-lifecycle.toml:38-38; mcp/tests/evidence-lifecycle.toml:58-58; mcp/tests/evidence-lifecycle.toml:77-77; mcp/tests/evidence-lifecycle.toml:88-88; mcp/tests/evidence-lifecycle.toml:92-92 |
 | The pin is a byte contract at one tip and re-derives again for whoever changes the catalog last. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45 |
 | The launch points this module drives, and the modules whose wiring it pins. | `spawn_agent_session_tool`; `_open_terminal_response`; `resolve_launch_capsule`; `compile_launch_capsule` | mcp/src/agents_remember/application/terminal_tools.py:822-931; mcp/src/agents_remember/serving/_app_terminal_routes.py:239-334; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
 | **Superseded evidence pointer, kept for the record** — `L15`'s round-1 production-chain transcript no longer exists at this path (`citation_source_vanished`; the enclosing `notes/reports/` tree holds only the master's own artifacts, and L15's evidence directory was never carried into this memory repo). The **live** equivalent claimed by the module is `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` below, plus `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace`. Do not re-cite the deleted file. | `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:860-916 |

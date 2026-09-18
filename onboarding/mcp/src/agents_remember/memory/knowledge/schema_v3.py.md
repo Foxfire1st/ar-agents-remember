@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/schema_v3.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -146,13 +146,13 @@ No domain documentation source is configured for this repository (`system/source
 | The eleven reverse-direction indexes, one per declared lookup direction. | `APPENDED_INDEX_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v3.py:243-263 |
 | **The seven immutability triggers, with the two deliberate absences stated in the comment above them.** | `APPENDED_TRIGGERS`; "immutable_revision: an attachment cannot be repointed in place" | mcp/src/agents_remember/memory/knowledge/schema_v3.py:265-312 |
 | **The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred.** | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v3.py:314-319 |
-| The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact. | `GENERATION_3`; `_compose_generation_3` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:287-295; mcp/src/agents_remember/memory/knowledge/schema_generations.py:298-306; mcp/src/agents_remember/memory/knowledge/schema_generations.py:16-16 |
-| **The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so "the newest supported generation" is generation 8 rather than generation 7.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434 |
-| The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact. | `GENERATION_3`; `_compose_generation_3` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:295-303; mcp/src/agents_remember/memory/knowledge/schema_generations.py:306-306; mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-313 |
-| **The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so "the newest supported generation" is generation 8 rather than generation 4.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434 |
+| The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact. | `GENERATION_3`; `_compose_generation_3` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:287-295; mcp/src/agents_remember/memory/knowledge/schema_generations.py:298-306; mcp/src/agents_remember/memory/knowledge/schema_generations.py:16-16; mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-313 |
+| **The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so "the newest supported generation" is generation 8 rather than generation 7.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466 |
+| The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact. | `GENERATION_3`; `_compose_generation_3` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:295-303; mcp/src/agents_remember/memory/knowledge/schema_generations.py:306-306; mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-313; mcp/src/agents_remember/memory/knowledge/schema_generations.py:324-324 |
+| **The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so "the newest supported generation" is generation 8 rather than generation 4.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466 |
 | The generation-2 tables this module appends after and never touches. | `APPENDED_TABLES` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49 |
 | The write path that inserts these rows, and the row codecs that populate the checked groups. | `apply_add_facet`; `attachment_endpoint_columns` | mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/facet_records.py:277-301 |
-| **The case that measures the additive rule, the append order, the `STRICT` shape and the two deliberate trigger absences.** | "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" | mcp/tests/test_knowledge_facets.py:1045-1045 |
+| **The case that measures the additive rule, the append order, the `STRICT` shape and the two deliberate trigger absences.** | "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" | mcp/tests/test_knowledge_facets.py:1065-1065 |
 
 ## Cross-Repo References
 
@@ -163,6 +163,9 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `GENERATIONS` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `GENERATIONS` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" repointed to mcp/tests/test_knowledge_facets.py:1065-1065. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" repointed to mcp/tests/test_knowledge_facets.py:1045-1045. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" repointed to mcp/tests/test_knowledge_facets.py:1009-1009. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:21:19+00:00: Generated citation repair: `GENERATION_3`; `_compose_generation_3` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:306-306; mcp/src/agents_remember/memory/knowledge/schema_generations.py:295-303. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.

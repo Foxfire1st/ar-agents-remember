@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash |  `a7076008db4772554123794392f84b51143004ec`|
-| lastVerifiedCommitDate |  2026-09-18T16:14:01+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastUpdated | 2026-09-18T17:00+02:00 |
+| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 
 ## What This Area Is
 
-The route owns two distinct responsibilities, and they are deliberately not the same thing:
+The route owns three distinct responsibilities, and they are deliberately not the same thing:
 
 1. **Memory-repository lifecycle** (`baseline.py`, `carryover.py`, `carryover_authority.py`) — initializing a
    memory repository, adopting an existing onboarding tree as a first ledgered baseline, and carrying richer
@@ -27,9 +27,17 @@ The route owns two distinct responsibilities, and they are deliberately not the 
    `Route` scope entity and the typed record envelope. Added by 260915-KS-L1 as an experimental increment and
    extended by every leaf through 260915-KS-L10; it is a durable record store, so it ranks here with the record
    stores rather than with the application layer that admits its writes.
+3. **Staged legacy migration and measurement** (`migration/`, added by 260915-KS-L21) — the scope inventory, the
+   legacy-artifact parser, the explicit mapping registry, reference resolution with its three recorded states,
+   the truth-coverage census's accounting and slices, and the cutover's criteria, plan and proposal. It
+   **reads** the Markdown-era onboarding corpus and describes it against a frozen baseline; the only write path
+   it uses is the shipped candidate batch operation, through `knowledge/census_records.py`.
 
-The two responsibilities share a package rank and a charter paragraph, not a mechanism: nothing in the
+The three responsibilities share a package rank and a charter paragraph, not a mechanism: nothing in the
 lifecycle modules imports `knowledge/`, and nothing in `knowledge/` reads, writes or migrates Markdown onboarding.
+`migration/` reads that corpus but never writes it, and it reaches the store only through the candidate batch
+operation the storage package owns — it opens no transaction of its own, mints no identity of its own and
+switches nothing live.
 
 ## Purpose
 
@@ -1108,11 +1116,11 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:618-650; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:656-656 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:194-194 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:195-195 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:194-194 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:195-195 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 | The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1242,7 +1250,138 @@ through `open_read_only_database`, so a refused view leaves the dataset byte-ide
 handle rather than as a rollback someone has to remember — and the snapshot it reports is the identity the
 dataset actually holds, so a view cannot be handed a snapshot it did not read.
 
+## 260915-KS-L21 The Census Apparatus, Generation 9, And The Cutover That Is Prepared And Not Executed
+
+`KS-R21@v1` is the knowledge substrate's **measurement** leaf, and it is the first thing in this route that reads
+the Markdown-era onboarding corpus rather than writing a knowledge dataset. It adds a subpackage of nine modules
+(`memory/migration/`), one record group (`knowledge/census_records.py`), one generation declaration
+(`knowledge/schema_v9.py`) and the payload vocabulary the three census record kinds cross the wire as
+(`models/knowledge/census.py`). **Nothing in the leaf switches anything live**: the cutover's three artifacts are
+data and an evaluation, with no trigger, no flag, no scheduled activation and no side effect.
+
+**The package states its own boundary in its first paragraph, and the boundary is what a reader must not lose.**
+`memory/migration/__init__.py` records that the package *reads* the corpus and **writes nothing to it**: an
+artifact is read, parsed into claims and dispositions, and reported against a frozen baseline. The one write path
+it uses is the shipped candidate batch operation, through this route's own census record group. Its docstring also
+records why it is a subpackage of `memory` rather than a new top-level package — it ranks with the thing it
+measures — and that **nothing here interprets**: the parser reports what it read, a mapping names where a read
+artifact goes, a reference resolves to one of three recorded states, and a mismatch is reported as the mechanical
+fact it is. Semantic categories, verdicts and mismatch classes are authored by a curator, in record kinds other
+leaves own.
+
+**The baseline is frozen by identity, not by ref.** `memory/migration/baseline.py` records a baseline as **two
+exact Git tree ids** — the code revision and the memory revision the corpus was read at — because a baseline whose
+code side is a branch name is not frozen at all, and because "mechanical mismatch at the baseline" has to be a
+checkable statement rather than a moving target. It is resolved and passed in, never inferred from `HEAD`, so a
+baseline cannot silently move when somebody commits. The baseline travels *inside* every census record's
+provenance rather than as a parameter of the run that produced it, which is what makes two artifacts examined at
+two baselines two observations. Both refusals on this path are filed under one operation name —
+`BASELINE_OPERATION` = `read_knowledge_scope` — because reading a baseline is not one of the candidate write
+operations.
+
+**The parser reports structure, and its sharpest edge is where a card's front matter ends.** `parse.py`
+classifies nothing: no keyword test, no scoring, no heading-to-topic mapping and no branch whose condition is a
+statement about meaning. It declares the formats it admits, each with a reason, and the unsupported form is **an
+entry in that list** rather than an exception — the generated bootstrap artifact, whose leading table is not a
+card's front matter. Its one correctness detail is measured rather than hypothetical: the metadata reader
+continues **only while a row's key is a name of the declared front-matter vocabulary**, so the evidence inventory
+a legacy card carries in its body cannot be absorbed as front matter the card never declared. Every artifact gets
+one of four outcomes (`parsed`, `unparsed`, `unsupported`, `unreadable`); the reader never raises for a bad
+artifact, and stored text is bounded by the payload's declared width as the artifact's own prefix — never a
+truncation marker, because a marker would be this parser writing into a field that means "what the artifact said".
+
+**The inventory is taken over the scope, and that direction is the whole reason `inventory.py` exists.** A
+corpus-derived list can only enumerate the sources that already have a card, so the sources with **no onboarding**
+— the ones a coverage question is asked about — are exactly the ones it cannot see. Here a missing card is a
+recorded row with `inventory_state="absent"` rather than an omission, and a card whose declared source is gone
+still gets a row. A row's route is derived from the scope's own layout by matching **whole path segments** against
+the declared route directories (`mcp/src/x.py` belongs to `mcp`; `mcpfoo/x.py` belongs to none, where a bare
+string prefix would have filed the second under the first), and it is recorded as an observation about the layout
+— deliberately *not* the knowledge substrate's route axis. An unreadable or non-UTF-8 artifact is a row carrying
+its outcome and a capped prefix of the content it could not read, because a silent skip and a clean read are
+indistinguishable in a count.
+
+**The mapping registry is data a reviewer can read, and the absence of a scoring function is the design.**
+`mappings.py` selects an entry by an equality test on a **declared** field of the artifact and returns `None`
+where nothing matches; `UNMAPPED` is a named state, not an error. It does not construct a best-fit mapping, does
+not choose a target kind by name similarity and does not create a record so a row looks complete — those are the
+three things §2.2 forbids, and a "closest" mapping would be an inference with a distance metric on it. Each
+entry's declared fields are checked against the payload model the target kind actually requires, so a mapping
+cannot claim to supply a field the record kind does not have and a target kind whose required field nothing
+supplies is discovered **here** rather than after a partial import. The registry carries its own version
+(`MAPPING_REGISTRY_VERSION`) beside every outcome, so a re-run at a changed mapping is a difference to report
+rather than a silent second import.
+
+**Resolution has exactly three states, all reportable, and nothing is repaired by resemblance.**
+`resolution.py` compares exact spellings against a caller-supplied candidate set and returns `resolved`,
+`unresolved` or `ambiguous`; there is no fuzzy match, no prefix fallback and no canonicalisation step, and no
+function that creates a row to receive a dangling reference. The mismatch report states the mechanical fact —
+which artifact, which reference, which baseline, what contradicted what — and has **no field that could hold a
+semantic verdict**, because `Doc13:460`'s four-way distinction belongs to a curator and §3.4 requires the
+pipeline to report *that* something is contradicted and *where*, never *which* of the four it is.
+
+**The accounting keeps its cells apart, and one of them it refuses to compute.** `census_measures.py` states the
+eligibility rule once — a claim enters the cohort exactly when its record kind is `census_claim`, its
+applicability is `assessable` and it carries a claim text — which is what makes `Doc12`'s Example 3 and
+requirement 5.2 read alike. `T`, `F` and `U` come from a curator's authored assessment and from nothing else:
+there is no code path from an import outcome to any of the three, and `unassessed` is derivable only as "no
+assessment exists". The six measures are reported **together** and never composed into one number, a zero
+denominator is `not_applicable` with its counts beside it rather than a perfect score, and a ratio that could be
+read as a verdict is paired with the counts that qualify it. `K` is **never read here**: the coverage measure
+takes the reference inventory's size as an argument, because a `K` this module could compute would be derived
+from the corpus being measured.
+
+**The census is a read, and its one deliberate absence is the denominator.** `census.py` computes nothing the
+record kinds do not already carry. `reference_inventory` returns the independently reviewed inventory with its
+review state, `coverage_is_publishable` is the one predicate that decides whether a `C / K` figure may be
+reported at all, and it **refuses rather than warns** — `CR21-6` makes a missing reviewer seat a *blocked*
+condition, not a figure to publish with a placeholder. The review must be by someone other than the inventory's
+author, which is why `C / K` is `not_measurable` until that seat is settled.
+
+**The cutover is three artifacts and an evaluation, and its non-execution is structural.** `cutover.py` carries
+the six criteria, the seven-step plan with its rollback story, its archival step and its point of no return, and
+the proposal with the exact quoted escalation boundary (`ESCALATION_BOUNDARY` = `design/storage-design.md:465`,
+`ESCALATION_ITEM` = "starts migration/cutover"). `evaluate_criteria` returns the exact measures that fall short
+rather than a boolean, so a criterion that cannot be met is reported unmet with its observed value and is never
+narrowed until it passes — "cutover is not yet justified" is a **conforming** output. `ProposalDecision` has no
+value that means "approved": the decision state is `absent`, and its absence is the state. There is no function
+in the module that writes anything.
+
+**Generation 9 is the ninth explicit append, and it appends three records and three relations rather than one
+wide table.** `knowledge/schema_v9.py` declares the inventory row, the assessable claim and the migration
+disposition, plus the three relations `Doc12` names as relations rather than fields — a claim's evidence, a
+claim's realization attribution, and the records a disposition links to. `schema_generations.py` composes it with
+the same generic append generations 2 to 8 use, so `GENERATION_9.tables[:len(GENERATION_8.tables)] ==
+GENERATION_8.tables` and generation 9's columns for each of generation 8's thirty-four names are the generation
+it descends from; `CURRENT_GENERATION` is now generation 9, so a *new* store declares version 9 while an existing
+generation-8 dataset keeps declaring 8 and is read through generation 8's own record. **No census table carries a
+content-address, a logical digest or a fingerprint column**, and none is added: "no second identity authority" is
+a property of the declared columns, and the content digest stays on `record_revision` where the envelope puts it.
+Three columns are recorded facts rather than derivations — `observed_doc_type` (what the parser read, so the
+cardinality rule's input is auditable), `claim_kind` (whose closed vocabulary admits `unclassified` as a
+**value**, never a NULL a reader could take for "not yet read") and `applicability` (the field the eligibility
+rule reads). Every table is sealed against update and delete by the same trigger pair the earlier generations use.
+
+**The record group joins the batch rather than opening its own transaction.** `knowledge/census_records.py` owns
+the row codecs and the in-transaction write step, and reuses the two owners that already exist: the generic
+envelope/revision codec from `facet_records` (so a stored revision's seal is verified against the one digest
+definition) and the envelope seam for payload admissibility. It declares the `(kind, record_schema)` triples and
+nothing else about admissibility. Its step is an `apply_*` function taking the caller's open store, because the
+batch owns the transaction. In the batch, `batch_preconditions.require_census_generation` refuses a census
+command against a dataset that predates the census's tables — the dataset's own generation is read from the open
+store, so the refusal carries both numbers as facts — and the census dispatch entry validates the closed record
+kind and the declared shape **before any row exists**, through the envelope seam, so an unregistered kind or an
+undeclared field is the shipped `invalid_payload` refusal rather than a storage error. Reference resolution is
+deliberately not there: it belongs to the record group's own write step, which runs in command order, so a
+disposition that links to a claim the same batch creates resolves once that claim's command has run.
+`candidate_records` adds the group's three record tables to the writable union and its three row digests to the
+reader table, and deliberately omits its three relation tables — each is written only as part of the aggregate
+that owns it, so no command addresses one and no expectation could name a state a command could produce.
+
 ## Update History
+- 2026-09-18T15:12:32+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:195-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:195-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **added the L21 section and rewrote `## What This Area Is` from two responsibilities to three**, because the route gained the census apparatus and the statement that it owned exactly two was no longer true. The new section records the nine-module `migration/` subpackage's own boundary (reads the corpus, writes nothing to it, reaches the store only through the shipped candidate batch operation), the baseline frozen as two Git tree ids rather than a ref, the parser's metadata-table stop rule as a measured failure mode of this corpus, the inventory taken over the scope so the sources with no onboarding are visible rows, the mapping registry with no scoring function anywhere, the three reportable resolution states with no repair by resemblance, the `N = T + F + U + P` accounting whose `K` is an argument rather than a derivation, the census read with `coverage_is_publishable` refusing rather than warning, the cutover's three artifacts plus an evaluation and the absence of any side effect, generation 9's additive composition and its deliberate absence of a second identity authority, and the record group's participation in the batch rather than in a transaction of its own. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the two modules this route gained for `KS-R20@v1`, the eight vault-safety clauses as eight refusals (manifest-only ownership and no enumerated destination, resolved confinement, collision before either write, an escaping link never followed, stage-then-rename publication, the two halves of the unchanged test, no recursive clean and no `rmtree`, and an externally edited file reported and preserved), retention as a state with memory (`RetainedOutput.recorded`), the `before_publish` hook that makes the interruption checkpoint inducible, and the reader port that decides nothing so the ordering cannot lose its provenance class one layer down. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.

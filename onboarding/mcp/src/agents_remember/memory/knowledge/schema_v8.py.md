@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/schema_v8.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T10:22+02:00 |
-| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00 |
+| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l13` uncommitted staged source; base `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -110,7 +110,7 @@ No domain documentation source is configured for this repository (`system/source
 | The reverse-direction index — "which change sets supersede this one" — and the no-update / no-delete triggers that seal a recorded succession. | `APPENDED_INDEX_DDL`; `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v8.py:109-112; mcp/src/agents_remember/memory/knowledge/schema_v8.py:117-127 |
 | The declared-empty feature tuple: generation 8 requires nothing generation 7 did not already require. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v8.py:134-134 |
 | The generation this one is composed onto, by name, and the composition that names this module as generation 8's append. | `GENERATION_7`; `_compose_generation_8`; `GENERATION_8` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:396-396; mcp/src/agents_remember/memory/knowledge/schema_generations.py:408-417; mcp/src/agents_remember/memory/knowledge/schema_generations.py:419-419 |
-| The schema name generation 8 declares, and the registry whose last entry is now the created generation. | `GENERATION_8_SCHEMA_NAME`; `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:215-215; mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447 |
+| The schema name generation 8 declares, and the registry whose last entry is now the created generation. | `GENERATION_8_SCHEMA_NAME`; `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:215-215; mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447; mcp/src/agents_remember/memory/knowledge/schema_generations.py:225-225; mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-456; mcp/src/agents_remember/memory/knowledge/schema_generations.py:479-479 |
 | The generation the write path and the read both require before any authored-effect row may exist or be served. | `REQUIRED_EFFECT_GENERATION`; `require_effect_generation` | mcp/src/agents_remember/memory/knowledge/effects.py:116-116; mcp/src/agents_remember/memory/knowledge/effects.py:339-360 |
 | The shared acyclic walk the longer cycle is found by, over this table, inside the successor's own transaction. | `require_acyclic_successions`; `cycle_vertices` | mcp/src/agents_remember/memory/knowledge/effects.py:484-507; mcp/src/agents_remember/memory/knowledge/lineage.py:207-227 |
 | The record group's declared writable tables — exactly the two envelope tables, so this generation adds nothing to the mutable union. | `EFFECT_WRITABLE_TABLES` | mcp/src/agents_remember/models/knowledge/effect.py:312-315 |

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/schema_generations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastUpdated | 2026-09-18T17:00+02:00 |
+| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -18,9 +18,9 @@
 ## Purpose
 
 **A schema generation is data, and selecting one is a read of the dataset.** This module owns the
-registry of supported `(schema name, user_version)` generations — five of them since `KS-R18@v1` — the
-pinned generation-1 record with its fingerprint constant and its drift gate, and the three dispatch
-functions that resolve a dataset's generation from the dataset itself.
+registry of supported `(schema name, user_version)` generations — **nine** of them, generation 9 being
+the newest — the pinned generation-1 record with its fingerprint constant and its drift gate, and the
+three dispatch functions that resolve a dataset's generation from the dataset itself.
 
 It exists because the shipped shape could not hold two generations honestly. `SCHEMA_USER_VERSION`,
 `CANONICAL_TABLES` and `schema_fingerprint()` described the *running build*, every reader compared a
@@ -53,22 +53,25 @@ owns which generations exist and how one is chosen.
 - `GENERATION_2` is **composed** from generation 1 as an explicit append —
   `GENERATION_1.tables + schema_v2.APPENDED_TABLES` with the per-table maps merged — and its
   `fingerprint` is *computed* from the composed record rather than recorded. Generation 1's is a
-  constant; generations 2's through 5's are derived. `GENERATIONS` is ordered oldest first, so the
+  constant; generations 2's through 9's are derived. `GENERATIONS` is ordered oldest first, so the
   newest supported generation is its last entry rather than a second literal that could drift from
   the tuple — and `CURRENT_GENERATION = GENERATIONS[-1]` is that entry, which is why a *created* store
-  declares version **5** while an existing generation-4 dataset keeps declaring 4.
-- **Four generations compose by the same explicit append, and the append is the whole additive
-  rule.** `_compose_generation_3` puts `schema_v3.APPENDED_TABLES` (four authored-judgment tables)
-  after generation 2's sixteen, `_compose_generation_4` puts `schema_v4.APPENDED_TABLES` (the one
-  detection-sequence table) after generation 3's twenty, and `_compose_generation_5` puts
+  declares version **9** while an existing generation-8 dataset keeps declaring 8.
+- **Every generation from 2 to 9 composes by the same explicit append, and the append is the whole
+  additive rule.** `_compose_generation_3` puts `schema_v3.APPENDED_TABLES` (four authored-judgment
+  tables) after generation 2's sixteen, `_compose_generation_4` puts `schema_v4.APPENDED_TABLES` (the
+  one detection-sequence table) after generation 3's twenty, and `_compose_generation_5` puts
   `schema_v5.APPENDED_TABLES` (the one citation-binding table) after generation 4's twenty-one — each
   merging the appended columns, primary keys and typed-JSON sets into the predecessor's maps and
   concatenating the index and feature tuples. The composed result satisfies
-  `GENERATION_5.tables[: len(GENERATION_4.tables)] == GENERATION_4.tables` with generation 4's columns,
+  `GENERATION_9.tables[: len(GENERATION_8.tables)] == GENERATION_8.tables` with generation 8's columns,
   keys and JSON registries for every inherited name, which is why no `ALTER TABLE` against an earlier
-  generation's table exists anywhere in the package. **The idiom is now five instances of one shape**,
-  and it is stated once here rather than re-derived by each new leaf: explicit append, prefix equality
-  asserted by the generation it descends from, `ALTER TABLE` nowhere.
+  generation's table exists anywhere in the package. **The idiom is now eight instances**, and seven of
+  them are one-line calls to the one shared helper: `_compose_generation_2`, `_3`, `_4`, `_6`, `_7`,
+  `_8` and `_9` each call `_append_generation(base=…, schema_name=…, user_version=…, appended=…)`,
+  while `_compose_generation_5` still spells its own composition out field by field. The rule is
+  stated once here rather than re-derived by each new leaf: explicit append, prefix equality asserted
+  by the generation it descends from, `ALTER TABLE` nowhere.
 - `structure_manifest` and `structure_fingerprint` are functions **of a record**, not of the build.
   That is what lets generation 1's recorded data be recomputed against its constant instead of
   against the code that produced it, and it is the one fingerprint definition in the package.
@@ -122,7 +125,10 @@ owns which generations exist and how one is chosen.
 - **Additive-only, structurally, and asserted per generation.** Generation 2's manifest begins with
   generation 1's ten tables in generation 1's order and generation 2's columns for each of the first ten
   names are generation 1's; generation 3's begins with generation 2's sixteen; generation 4's begins with
-  generation 3's twenty; generation 5's begins with generation 4's twenty-one. A generation that reorders, renames, retypes, drops or weakens an earlier
+  generation 3's twenty; generation 5's begins with generation 4's twenty-one; generation 6's begins with
+  generation 5's twenty-two; generation 7's begins with generation 6's twenty-eight; generation 8's begins
+  with generation 7's thirty-three; and generation 9's begins with generation 8's thirty-four, gaining the
+  census's six tables — its three record kinds and the three relations they resolve through. A generation that reorders, renames, retypes, drops or weakens an earlier
   generation's declaration is a schema divergence and is escalated, not expressed here — which is why the
   governing-route association lives in generation-2 tables rather than as a column appended to a
   generation-1 table, and why the detection record group's payload shapes live in the envelope registry
@@ -144,6 +150,35 @@ owns which generations exist and how one is chosen.
   performs no symlink resolution, so that clause of the confinement claim has no implementation in
   this package. Recorded here rather than silently dropped; whether resolution belongs at authoring
   time or at comparison time is an open design question for a later leaf.
+
+### 260915-KS-L21 — Generation 9, And The Registry That Now Holds Nine
+
+**The truth-coverage census registered as generation 9, by the composed append this module already had.**
+`GENERATION_9_SCHEMA_NAME` is `ar-knowledge-sqlite/v9`; `_compose_generation_9()` is the same one-line call
+to `_append_generation` generations 2, 3, 4, 6, 7 and 8 are, over `base=GENERATION_8`, `user_version=9` and
+`appended=schema_v9`; and `GENERATION_9 = _compose_generation_9()`. The six tables the census's own module
+appends are its three record kinds (`census_inventory_row`, `census_claim`, `census_disposition`) and the
+three relations they resolve through (`census_claim_evidence`, `census_claim_realization`,
+`census_disposition_link`), so generation 7's thirty-three tables become generation 8's thirty-four and
+generation 9's **forty**, with `GENERATION_9.tables[: len(GENERATION_8.tables)] == GENERATION_8.tables` and
+generation 8's columns, primary keys and typed-JSON sets for every inherited name. The census's payload
+shapes are registered in the record envelope for the same reason the authored-effect group's are: what the
+envelope cannot express is a *relation* between records, which is why this generation appends relations and
+not a wide table.
+
+**The registry's last entry moved, and nothing else about selection did.** `GENERATIONS` is now
+`(GENERATION_1 … GENERATION_9)`, so `CURRENT_GENERATION = GENERATIONS[-1]` is generation 9 and
+`generation_of_new_store()` declares `ar-knowledge-sqlite/v9` at `user_version = 9` — while a
+generation-8 dataset that already exists keeps declaring 8 and is read through generation 8's own record,
+exactly as every earlier generation is. There is still no second "new store" literal to drift from the
+tuple, and this module still contains no migration or cutover operation.
+
+**The module docstring's generation list moved with it.** Its `GENERATION_9` bullet is new and states the
+six-table append and the created-generation fact; the `GENERATION_8` bullet was rewritten into the past
+tense and now describes what generation 8 *was*, the way the bullets before it already read. The L17
+section below records the registry as it stood when that leaf landed — six members and a created store at
+`v6` — and that is that leaf's landing record; the registry this card states in its Logic section is the
+nine-member one generation 9 closes.
 
 ### 260915-KS-L17 — One Composition Function, And The Registry That Now Holds Six Generations
 
@@ -184,29 +219,33 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL. | `SchemaGeneration` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:115-140 |
-| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:206-206 |
-| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299 |
-| **Generation 3 composed as an explicit append over generation 2, and generation 4 as the same append over generation 3 — the prefix equality that is the additive rule.** | `GENERATION_3`; `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:306-306; mcp/src/agents_remember/memory/knowledge/schema_generations.py:309-317; mcp/src/agents_remember/memory/knowledge/schema_generations.py:320-320; mcp/src/agents_remember/memory/knowledge/schema_generations.py:327-327 |
-| **The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal — eight generations since `KS-R13@v1` renumbered its append to generation 8, so `CURRENT_GENERATION` is generation 8 while a generation-7 dataset keeps declaring 7.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447 |
-| The schema name generation 4 declares, and the three names before it. | `GENERATION_4_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:211-211 |
-| The only place a build's own generation decides anything, and it decides only what a created store declares. | `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:469-472 |
-| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:450-460 |
-| The one fingerprint definition, now a function of a record rather than of the running build. | `structure_manifest` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:143-153 |
-| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:475-492 |
-| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:610-643 |
-| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:501-527 |
-| The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL. | `SchemaGeneration` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:115-140 |
-| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:206-206 |
-| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299 |
-| **Generation 3 composed as an explicit append over generation 2, and generation 4 as the same append over generation 3 — the prefix equality that is the additive rule.** | `GENERATION_3`; `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:205-230; mcp/src/agents_remember/memory/knowledge/schema_generations.py:232-256; mcp/src/agents_remember/memory/knowledge/schema_generations.py:258-320; mcp/src/agents_remember/memory/knowledge/schema_generations.py:16-20 |
-| **The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447 |
-| The schema name generation 4 declares, and the three names before it. | `GENERATION_4_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:211-211 |
-| The only place a build's own generation decides anything, and it decides only what a created store declares. | `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:469-472 |
-| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:198-322 |
-| The one fingerprint definition, now a function of a record rather than of the running build. | `structure_manifest` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:143-153 |
-| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:475-492 |
-| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:610-643 |
-| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:501-527 |
+| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:205-216 |
+| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-310 |
+| **Generation 3 composed as an explicit append over generation 2, and generation 4 as the same append over generation 3 — the prefix equality that is the additive rule.** | `GENERATION_3`; `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-324; mcp/src/agents_remember/memory/knowledge/schema_generations.py:327-338 |
+| **The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal — nine generations since the census's append registered generation 9, so `CURRENT_GENERATION` is generation 9 while a generation-8 dataset keeps declaring 8.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466; mcp/src/agents_remember/memory/knowledge/schema_generations.py:479-479 |
+| The schema name generation 4 declares, and the three names before it. | `GENERATION_4_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:221-221 |
+| The only place a build's own generation decides anything, and it decides only what a created store declares. | `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:501-504 |
+| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:482-492 |
+| The one fingerprint definition, now a function of a record rather than of the running build. | `structure_manifest` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:153-163 |
+| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:507-524 |
+| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:642-675 |
+| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:533-559 |
+| The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL. | `SchemaGeneration` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:126-150 |
+| Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion. | `GENERATION_1_FINGERPRINT` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:205-216 |
+| Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-310 |
+| **Generation 3 composed as an explicit append over generation 2, and generation 4 as the same append over generation 3 — the prefix equality that is the additive rule.** | `GENERATION_3`; `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-324; mcp/src/agents_remember/memory/knowledge/schema_generations.py:327-338 |
+| **The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466; mcp/src/agents_remember/memory/knowledge/schema_generations.py:479-479 |
+| The schema name generation 4 declares, and the three names before it. | `GENERATION_4_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:221-221 |
+| The only place a build's own generation decides anything, and it decides only what a created store declares. | `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:501-504 |
+| The drift gate that fails rather than warns, and the generation-1 wrapper. | `require_pinned_generation_unchanged` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:482-492 |
+| The one fingerprint definition, now a function of a record rather than of the running build. | `structure_manifest` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:153-163 |
+| Open-path dispatch by version alone, and the hard refusal of an unregistered version. | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:507-524 |
+| Artifact-path dispatch by pair, type-strict on the version before the lookup. | `generation_of_artifact` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:642-675 |
+| The registry-wide column frame the portable canonical-form gate needs for an unregistered document. | `declared_columns_for` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:533-559 |
+| **Generation 9 composed by the same generic append generations 2, 3, 4, 6, 7 and 8 use, over generation 8 and `schema_v9`'s six census tables.** | `_compose_generation_9`; `GENERATION_9` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:439-450 |
+| **The schema name generation 9 declares — `ar-knowledge-sqlite/v9`, the name a created store now carries.** | `GENERATION_9_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:226-226 |
+| **The six tables generation 9 appends: the census's three record kinds and the three relations they resolve through, appended after generation 8's thirty-four.** | `APPENDED_TABLES` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:61-68 |
+| **The shared append itself, and the published predicate that states the additive rule: the appended-tables prefix plus every inherited name keeping its exact column tuple, primary key and typed-JSON set.** | `_append_generation`; `descends_from` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:248-270; mcp/src/agents_remember/memory/knowledge/schema_generations.py:273-296 |
 | Generation 1's declared tables, columns, keys, JSON columns, DDL, triggers and features — the declarations this module delegates to and never restates. | `CANONICAL_TABLES` | mcp/src/agents_remember/memory/knowledge/schema.py:29-42 |
 | Generation 2's appended tables, which `GENERATION_2` is composed from. | `APPENDED_TABLES`; `APPENDED_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49; mcp/src/agents_remember/memory/knowledge/schema_v2.py:51-76 |
 | The open path that calls this module's dispatch and the creation path that declares a generation. | `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:91-121 |
@@ -227,6 +266,7 @@ and a dataset's identity deliberately excludes Git commits, ledger rows and chec
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **re-read every citation this card carries against the staged working candidate and recorded generation 9 and the registry that now holds nine.** The leaf added `GENERATION_9_SCHEMA_NAME`, `_compose_generation_9()`, `GENERATION_9` and the registry entry, so `CURRENT_GENERATION = GENERATIONS[-1]` is generation 9 and `generation_of_new_store()` declares `ar-knowledge-sqlite/v9` while a generation-8 dataset keeps declaring 8; the Purpose count, the created-generation sentence, the composition bullet and the additive-only invariant were each **rewritten to that fact**, and the invariant now walks every prefix (generation 5's twenty-two, 6's twenty-eight, 7's thirty-three, 8's thirty-four and 9's forty) instead of stopping at generation 5. A new per-leaf section in this card's own register records the append itself — the same one-line `_append_generation` call generations 2, 3, 4, 6, 7 and 8 use, over `schema_v9`'s six census tables — and the docstring's bullet change, where a `GENERATION_9` bullet was added and the `GENERATION_8` bullet became past tense. One long-standing claim was **corrected rather than repeated**: the card said the composition collapsed into five one-line calls, but `_compose_generation_5` still spells its own composition out field by field, so the body now states the idiom as **eight instances** of which seven call the shared helper. Twenty rows whose cited ranges this leaf's insertions had moved were **re-cited by hand to each construct's declaration extent** — `SchemaGeneration`, `GENERATION_1_FINGERPRINT`, `GENERATION_2`, the `GENERATION_3`/`_compose_generation_4`/`GENERATION_4` pair, the registry and `CURRENT_GENERATION` (both copies), `GENERATION_4_SCHEMA_NAME`, `generation_of_new_store`, `require_pinned_generation_unchanged`, `structure_manifest`, `generation_of_database`, `generation_of_artifact` and `declared_columns_for` — and four rows were added for generation 9's composition, its schema name, `schema_v9`'s appended tables and the shared append plus `descends_from`. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: `SchemaGeneration` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:115-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: `GENERATION_1_FINGERPRINT` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:206-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.

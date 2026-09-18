@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastUpdated | 2026-09-18T17:00+02:00 |
+| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -940,19 +940,19 @@ vocabulary is the *result state*, and a consumer must not branch on the code.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:107-107; mcp/src/agents_remember/models/knowledge/candidate.py:109-111; mcp/src/agents_remember/models/knowledge/candidate.py:117-119 |
-| The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:182-223 |
-|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:265-265  |
+| The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:236-277 |
+|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:280-280  |
 | The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:302-324 |
 | **The closed union with no promotion, approval or SQL member — twenty-two members after this leaf's four composition command kinds joined the eighteen**, and the members are the operation's entire reach. | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:596-626 |
-| The alias a batch's commands travel under, and the construct that makes the union's membership checkable in one place. | `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:628-635 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:638-655 |
+| The alias a batch's commands travel under, and the construct that makes the union's membership checkable in one place. | `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:646-646 |
+| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:656-673 |
 | The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:239-262; mcp/src/agents_remember/models/knowledge/candidate.py:518-543; mcp/src/agents_remember/models/knowledge/candidate.py:546-589; mcp/src/agents_remember/models/knowledge/candidate.py:658-729; mcp/src/agents_remember/models/knowledge/candidate.py:278-299 |
 | The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:99-99; mcp/src/agents_remember/models/knowledge/candidate.py:101-111; mcp/src/agents_remember/models/knowledge/candidate.py:117-119 |
 | The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:221-262 |
-|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:265-265  |
+|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:280-280  |
 | The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:302-324 |
-| The closed union with no promotion, approval or SQL member; the twenty-two kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:596-626; mcp/src/agents_remember/models/knowledge/candidate.py:628-635 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:638-655 |
+| The closed union with no promotion, approval or SQL member; the twenty-two kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:596-626; mcp/src/agents_remember/models/knowledge/candidate.py:628-635; mcp/src/agents_remember/models/knowledge/candidate.py:646-646 |
+| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:656-673 |
 | The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:278-299; mcp/src/agents_remember/models/knowledge/candidate.py:658-683; mcp/src/agents_remember/models/knowledge/candidate.py:686-729 |
 | The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:101-171 |
 | The served operation union the candidate-boundary leaf joined. | `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-96 |
@@ -1332,12 +1332,12 @@ change set.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The one closed list and the declarations derived from it. | `FACET_KINDS`; `FacetPayload`; `FACET_RECORD_SCHEMAS` | mcp/src/agents_remember/models/knowledge/facet.py:68-77; mcp/src/agents_remember/models/knowledge/facet.py:183-193; mcp/src/agents_remember/models/knowledge/facet.py:209-211 |
-| **The six authored commands and the union they join, which is the operation's widened reach.** | `FacetCommand`; "ProposedCommand = Annotated[" | mcp/src/agents_remember/models/knowledge/candidate.py:628-635; mcp/src/agents_remember/models/knowledge/candidate.py:596-596; mcp/src/agents_remember/memory/knowledge/facets.py:88-88 |
+| **The six authored commands and the union they join, which is the operation's widened reach.** | `FacetCommand`; "ProposedCommand = Annotated[" | mcp/src/agents_remember/models/knowledge/candidate.py:628-635; mcp/src/agents_remember/models/knowledge/candidate.py:596-596; mcp/src/agents_remember/memory/knowledge/facets.py:88-88; mcp/src/agents_remember/models/knowledge/candidate.py:611-611 |
 | **The standalone request and the receipt that carries no approval, endorsement or judgement field.** | `FacetWriteRequest`; `FacetWriteResult` | mcp/src/agents_remember/models/knowledge/facet.py:512-529; mcp/src/agents_remember/models/knowledge/facet.py:560-585 |
 | **The facet selection's own policy, the complete-or-refused bound and the page whose completeness is not a settable flag.** | `FACET_SELECTION_POLICY_VERSION`; `FACET_SELECTION_ITEM_LIMIT`; `FacetReadPage` | mcp/src/agents_remember/models/knowledge/facet_read.py:56-56; mcp/src/agents_remember/models/knowledge/facet_read.py:61-61; mcp/src/agents_remember/models/knowledge/facet_read.py:332-354 |
 | The two seed kinds and the six item kinds as closed unions. | `FacetReadSeed`; `FacetReadItem` | mcp/src/agents_remember/models/knowledge/facet_read.py:182-185; mcp/src/agents_remember/models/knowledge/facet_read.py:241-249 |
 | The eight subtypes' payload models and the two nonempty-tuple meanings. | `ScenarioPayload`; `LimitationPayload` | mcp/src/agents_remember/models/knowledge/facet.py:132-143; mcp/src/agents_remember/models/knowledge/facet.py:146-152 |
-| **The nodes that hold the closure, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:306-343; mcp/tests/test_knowledge_facets.py:408-415 |
+| **The nodes that hold the closure, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:306-343; mcp/tests/test_knowledge_facets.py:408-415; mcp/tests/test_knowledge_facets.py:228-228; mcp/tests/test_knowledge_facets.py:427-427 |
 | **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-90; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 
 ## 260915-KS-L14 The Detection Vocabulary, And The Two Operations It Adds
@@ -1408,16 +1408,16 @@ three are frequently empty, so a signal that observed nothing *states* that rath
 | **The currentness answer that carries the recorded versions beside the current ones and cannot hold a re-interpreted signal.** | `DetectionRunCurrentness` | mcp/src/agents_remember/models/knowledge/detection.py:942-987 |
 | The one typed outcome per detection operation, serving its signals in the run's recorded order. | `DetectionRunResult` | mcp/src/agents_remember/models/knowledge/detection.py:990-1014 |
 | **The two operations and the one refusal code this leaf added to the shared vocabulary.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-96; mcp/src/agents_remember/models/knowledge/result.py:101-171 |
-| The envelope registry every typed payload pair is registered under — six family groups now — and the two-kind set derived from the detection entries. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197 |
+| The envelope registry every typed payload pair is registered under — six family groups now — and the two-kind set derived from the detection entries. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-198 |
 | **The requirement-revision family this route gained: its frozen payload vocabulary, the pair it declares in the envelope's kind vocabulary, and the kind set derived from it.** | `RequirementRevisionPayload` | mcp/src/agents_remember/models/knowledge/requirement.py:172-213 |
 | The pair that family declares in the envelope's typed kind vocabulary. | `REQUIREMENT_REVISION_KIND`; `REQUIREMENT_REVISION_SCHEMA` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84 |
-| The kind set derived from the registry entries that pair is built from. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:195-197 |
+| The kind set derived from the registry entries that pair is built from. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:204-206 |
 | **The recorded quotation-degree ruling, and the absence it turns on: no payload field is the operative obligation.** | "test_a_payload_carrying_an_operative_obligation_field_is_refused" | mcp/tests/test_knowledge_requirement_reference_contract.py:294-310 |
 | The two operation members the requirement record group added, and the fact that no refusal code was added with them. | `record_requirement_revision`; `read_requirement_revisions` | mcp/src/agents_remember/models/knowledge/result.py:114-114; mcp/src/agents_remember/models/knowledge/result.py:113-113 |
-| The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197 |
+| The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-198 |
 | **The cases that hold the field-set review, the three declared input sets and the retention answer.** | "test_the_signal_field_set_is_required_and_carries_no_conclusion_bearing_field"; "test_the_declared_input_set_vocabulary_is_exactly_three_members_each_with_its_own_discriminator"; "test_a_manifest_may_not_be_reported_retained_at_a_destination_that_cannot_retain_it" | mcp/tests/test_knowledge_detection_signals.py:185-222; mcp/tests/test_knowledge_detection_signals.py:346-360; mcp/tests/test_knowledge_detection_signals.py:527-569 |
 | The eight graph operations and the anchor-endpoint union the request vocabulary gained, each cited at its own declaration. | `AnchorReference`; `AnchorEndpoint`; `NewAnchor`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:300-316; mcp/src/agents_remember/models/knowledge/result.py:307-315; mcp/src/agents_remember/models/knowledge/result.py:483-498; mcp/src/agents_remember/models/knowledge/result.py:327-327; mcp/src/agents_remember/models/knowledge/result.py:316-316; mcp/src/agents_remember/models/knowledge/result.py:326-326; mcp/src/agents_remember/models/knowledge/result.py:342-353; mcp/src/agents_remember/models/knowledge/result.py:325-325; mcp/src/agents_remember/models/knowledge/result.py:332-335; mcp/src/agents_remember/models/knowledge/result.py:508-518; mcp/src/agents_remember/models/knowledge/result.py:361-361; mcp/src/agents_remember/models/knowledge/result.py:526-540; mcp/src/agents_remember/models/knowledge/result.py:371-376; mcp/src/agents_remember/models/knowledge/result.py:360-370 |
-| The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197 |
+| The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-198 |
 
 ## 260915-KS-L12 The Supporting-Record Vocabulary
 
@@ -1618,7 +1618,56 @@ fields that name the offending input, so a handler cannot translate a refusal in
 default; `KnowledgeIntegrityCheckResponse` carries `compatible: null` beside an explicit `unresolved` list
 instead of manufacturing a verdict from a passing test.
 
+## 260915-KS-L21 The Truth-Coverage Census Vocabulary, And Three Commands Added To The Closed Union
+
+`KS-R21@v1` contributes one module to this route — `models/knowledge/census.py` — and edits one line-shaped
+fact in `models/knowledge/candidate.py`. The route still adds **no record kind of its own**: the census's three
+kinds are envelope records, and this module owns only their payload shapes.
+
+**Three record kinds, and every prohibition on the vocabulary is a property of the declared fields.** The
+inventory row, the assessable claim and the migration disposition are the three shapes. There is **no field that
+could hold an inference**: no classification the parser could have computed, no verdict, no mismatch class and no
+status derived from import success. `claim_kind` admits `unclassified` beside the four kinds `Doc12:65-70`
+closes the taxonomy at, and `disposition` admits `imported`, `unmapped`, `unsupported`, `unreadable`, `retired`,
+`historical` and `non_claim` — and **none of those is a verdict about whether a claim is true**. A semantic
+status such as *supported*, *contradicted* or *unresolved* is a curator's authored `ReviewAssessment`, read by
+the census and never written by it. `extra="forbid"` on the shared base is what refuses a payload arriving with
+one.
+
+**Provenance is a required stored value, not a report note.** `CensusProvenance` carries the artifact, the
+location within it and the frozen baseline the artifact was read at, and **all three records require it** — a
+record that could omit its provenance is a record whose claim is no longer addressable to its original text.
+The baseline is a `SnapshotIdentity` rather than two loose strings, because the frozen baseline *is* one: the
+packet requires an exact code revision and an exact memory revision recorded by identity, and `SnapshotIdentity`
+is the shipped shape that records exactly that pair. Two artifacts examined at two baselines are two
+observations, which is why the baseline is part of the record rather than a parameter of the run.
+
+**No record carries an identity of its own beyond its key.** There is no content address, no logical digest and
+no fingerprint field in this vocabulary, and the generation that declares these tables declares no such column
+either: the census mints no second identity authority, and the content digest stays on `record_revision` where
+the record envelope puts it. A case in this leaf's own suite inspects the declared columns for exactly that
+absence.
+
+**Three commands join the closed union, and the union is still closed.** `CensusInventoryRowCommand`,
+`CensusClaimCommand` and `CensusDispositionCommand` are appended to `ProposedCommand`'s discriminated union in
+`candidate.py`, and the six census tables are appended to `MutableRecordTable` — an inventory row, an
+assessment-free claim, a migration disposition and the three relations they resolve through are each written by
+a batch command, so an expectation, a duplicate check and a receipt all address one of these rows by its own
+primary key. The command models are imported late, beside the other command modules, for the one-directional
+reason that block already states: an import at this position resolves one way while the other side's own
+annotation resolves the other. The module's own derived sets — `CENSUS_RECORD_KINDS`, `CENSUS_COMMAND_KINDS`,
+`CENSUS_WRITABLE_TABLES` — are what the seam registry and the dispatch tables name, so the census answers for
+its own membership rather than a count being edited in a test.
+
 ## Update History
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `KnowledgeContext` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:236-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:280-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `ChangeCommand` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:646-646. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:656-673. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:280-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:656-673. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:204-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **added the L21 section** — the one module `KS-R21@v1` contributes to this route and the property that the route still adds no record kind of its own; the three census payload shapes and the fields each refuses to have (no inference, no verdict, no mismatch class, no derived status); `CensusProvenance` as a required stored value carrying a `SnapshotIdentity` baseline rather than two loose strings; the deliberate absence of any second identity authority in both the vocabulary and the declared columns; and the three commands appended to `ProposedCommand`'s closed union with the six census tables appended to `MutableRecordTable`, named through the module's own derived sets so the group answers for its own membership. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:255-259. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: "\"worktree_sync\": WorktreeSyncResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:200-200. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the five modules `KS-R20@v1` contributes to this route and the property that it adds no record kind of its own; the closed two-member provenance class and the closed versioned rule registry (with `mechanical_rule` raising rather than classifying an unregistered rule, and `Provenance` refusing both mixtures); the three dishonest shapes `view.py` makes unconstructible (an unbounded-without-continuation payload, a complete-with-a-token payload, and a quantity reported as zero where it has no meaning); the reader port as the only data path; and the projection-manifest vocabulary whose seven refusal codes, four discrepancy kinds and five retention reasons are closed, plus the one-shape response contract that keeps the classification rule at a single implementation. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.

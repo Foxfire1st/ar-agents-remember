@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/registered_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:02+02:00 |
-| lastVerifiedCommitHash |  `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
-| lastVerifiedCommitDate |  2026-09-18T14:21:49+02:00|
+| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -167,7 +167,7 @@ No domain documentation source is configured for this repository (`system/source
 | The two states a manifest refuses: an edge attributed to a side the scope did not declare, and a composition edge naming a policy other than the scope's own. | `_require_every_edge_to_name_a_declared_side`; `_require_one_policy_for_every_followed_composition_edge` | mcp/src/agents_remember/models/knowledge/registered_scope.py:314-326; mcp/src/agents_remember/models/knowledge/registered_scope.py:328-339 |
 | The refusal naming the exact missing input, the validator that keeps its typed half naming the same input, and the advertised next action. | `ScopeConstructionRefusal`; `_require_the_refusal_to_name_the_same_input`; `next_action` | mcp/src/agents_remember/models/knowledge/registered_scope.py:349-361; mcp/src/agents_remember/models/knowledge/registered_scope.py:363-376; mcp/src/agents_remember/models/knowledge/registered_scope.py:378-381 |
 | The one ordinary function: a declared changed path is refused unless it is a plain repository-relative spelling within the shipped path bound. | `scope_path_is_recorded`; "if len(cleaned) > PATH_MAX_LENGTH:" | mcp/src/agents_remember/models/knowledge/registered_scope.py:384-403; mcp/src/agents_remember/models/knowledge/base.py:27-27 |
-| The frozen, extra-forbidding base every shape derives from, the snapshot identity a side is declared as, and the shipped typed refusal the construction wrapper carries. | `model_config`; `SnapshotIdentity`; `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/base.py:34-37; mcp/src/agents_remember/models/knowledge/candidate.py:185-194; mcp/src/agents_remember/models/knowledge/result.py:235-245 |
+| The frozen, extra-forbidding base every shape derives from, the snapshot identity a side is declared as, and the shipped typed refusal the construction wrapper carries. | `model_config`; `SnapshotIdentity`; `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/base.py:34-37; mcp/src/agents_remember/models/knowledge/candidate.py:185-194; mcp/src/agents_remember/models/knowledge/result.py:235-245; mcp/src/agents_remember/models/knowledge/candidate.py:195-195 |
 | The read path's own selection counts — including items remaining and advertised expansions — none of which any record in this module has a slot for. | `KnowledgeReadCounts`; `primary_items_remaining` | mcp/src/agents_remember/models/knowledge/read.py:404-429 |
 | The sibling pipeline vocabulary that consumes a scope, and which states in its own docstring that it redefines none of the records it composes. | "redefines none of theirs" | mcp/src/agents_remember/models/knowledge/family_review.py:1-6 |
 

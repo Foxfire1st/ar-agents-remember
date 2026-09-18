@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/facet_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -140,7 +140,7 @@ No domain documentation source is configured for this repository (`system/source
 | The explanation revision's seal and the encoder that stores it. | `explanation_revision_digest`; `explanation_revision_row` | mcp/src/agents_remember/memory/knowledge/facet_records.py:611-627; mcp/src/agents_remember/memory/knowledge/facet_records.py:588-608 |
 | **The six stored-value readers a caller's expectation comes straight from a read through.** | `attachment_endpoint_digest`; `record_revision_content_digest`; `explanation_record_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:680-688; mcp/src/agents_remember/memory/knowledge/facet_records.py:698-702; mcp/src/agents_remember/memory/knowledge/facet_records.py:716-720 |
 | The write path that owns every statement this module converts rows for. | `apply_remove_facet_attachment`; `apply_designate_explanation` | mcp/src/agents_remember/memory/knowledge/facets.py:419-457; mcp/src/agents_remember/memory/knowledge/facets.py:589-639 |
-| **The cases that hold the removal guard, the recomputed seal and the damaged-store refusal.** | "test_removing_an_attachment_names_its_row_and_deletes_that_row_only"; "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:455-491; mcp/tests/test_knowledge_facets.py:1037-1141; mcp/tests/test_knowledge_facets.py:557-564; mcp/tests/test_knowledge_facets.py:1239-1246 |
+| **The cases that hold the removal guard, the recomputed seal and the damaged-store refusal.** | "test_removing_an_attachment_names_its_row_and_deletes_that_row_only"; "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:455-491; mcp/tests/test_knowledge_facets.py:1037-1141; mcp/tests/test_knowledge_facets.py:557-564; mcp/tests/test_knowledge_facets.py:1239-1246; mcp/tests/test_knowledge_facets.py:576-576; mcp/tests/test_knowledge_facets.py:1266-1266 |
 
 ## Cross-Repo References
 

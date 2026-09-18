@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_change_sets.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate |  2026-09-18T16:14:01+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l13` uncommitted staged source; base `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
+| lastUpdated | 2026-09-18T17:00+02:00 |
+| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -69,10 +69,27 @@ whose primary key is the ordered triple `repository_id`, `successor_change_set_i
 `predecessor_change_set_id` — and every one of generation 7's **thirty-three** names keeps its columns and
 its primary key. So generation 8's **thirty-four** tables are thirty-three inherited plus one appended.
 The case also asserts the suffix is that one table, that generation 8's trigger set and index set are
-strict supersets of generation 7's, that `CURRENT_GENERATION is GENERATION_8`, that the appended table
-carries no `content_digest` column, and that no registered generation's DDL contains `ALTER TABLE` — so a
-later renumber changes two operand names and nothing else. A fresh store declares the current generation
-and is served by the record group's own read.
+strict supersets of generation 7's, that the appended table carries no `content_digest` column, and that
+no registered generation's DDL contains `ALTER TABLE` — so a later renumber changes two operand names and
+nothing else. A fresh store declares the current generation and is served by the record group's own read.
+
+**One assertion in that case was re-scoped by `260915-KS-L21`, which appends generation 9.** The line read
+`assert CURRENT_GENERATION is GENERATION_8`; the registry's tip is now generation 9, so that was a false
+statement about the tree and it became `assert CURRENT_GENERATION.user_version > GENERATION_8.user_version`
+(`mcp/tests/test_knowledge_change_sets.py:683`), with the source comment above it recording why
+(`:678-682`). The case's property is unchanged and is now stated against the generation that actually
+carries the authored-effect group's table: the generation-8 prefix, columns, primary keys, trigger and
+index sets and the `ALTER TABLE` sweep are all asserted exactly as before, and the new form says the
+registry's tip lies **beyond** generation 8 rather than **at** it — which is the stronger reading, because
+it stays true for every later generation while the identity form had to be edited by each one. The
+`CURRENT_GENERATION is GENERATIONS[-1]`-style "newest registered" naming this card already records
+elsewhere in the suite is the same move the facet module made for its own generation case. Nothing was
+deleted, skipped, deselected or weakened, and no case was added here: the full generation-9 descent — that
+generation 9 appends to generation 8 with only its own census tables and that every generation-8 table keeps
+its columns and primary keys — is asserted in the census module's own
+`test_the_census_record_kinds_join_a_registered_generation_that_appends_to_its_predecessor`
+(`mcp/tests/test_migration_census.py:360-369`), which is the generation this module's record group descends
+through.
 
 **The closed vocabularies are asserted as exact sets, and they pin rather than union.** The three member
 kinds map to exactly three frozen models of three different types, with neither payload type a subclass of
@@ -106,7 +123,10 @@ every assertion naming the part, member or reference it is about.
   `wrote_nothing()`, so a check that fell through would fail on the refusal's facts as well as on the row
   count.
 - **The generation contract is asserted against the generation actually landed on rather than a literal**,
-  which is why the case carries its own `RENUMBERED for the sync` note.
+  which is why the case carries its own `RENUMBERED for the sync` note. `260915-KS-L21` appended
+  generation 9, so the case's registry-tip assertion was re-scoped in the same pass to the ordering fact
+  it was standing in for; the source comment beside it records that a re-scoped assertion is the
+  correction, not a weakening.
 - **Nothing in this module writes outside a temporary root**, and the change set's own read is derived: two
   reads over unchanged rows are equal and dump to the same JSON.
 
@@ -140,7 +160,8 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts a self-named predecessor is refused as the shipped lineage cycle with nothing written. | `test_a_change_set_naming_itself_as_predecessor_is_refused_as_lineage_cycle` | mcp/tests/test_knowledge_change_sets.py:576-591 |
 | The case that asserts the appended generation's triggers seal the edge against an update and a delete. | `test_the_succession_edge_table_is_sealed_against_update_and_delete` | mcp/tests/test_knowledge_change_sets.py:594-622 |
 | The case that asserts two successors of one predecessor are two records and neither edits the other. | `test_a_second_successor_of_one_predecessor_is_a_separate_record` | mcp/tests/test_knowledge_change_sets.py:625-642 |
-| The generation-8 append: generation 7's thirty-three names keep their columns and primary keys and exactly one table is appended. | `def test_generation_eight_appends_one_table_to_the_generation_it_descends_from()`; "generation 7's thirty-three"; `"change_set_predecessor"` | mcp/tests/test_knowledge_change_sets.py:649-682; mcp/tests/test_knowledge_change_sets.py:654-654; mcp/tests/test_knowledge_change_sets.py:670-670 |
+| The generation-8 append: generation 7's thirty-three names keep their columns and primary keys and exactly one table is appended. **Re-scoped by `260915-KS-L21`:** the registry-tip identity assertion became an ordering assertion, so the case now records where generation 8 sits in the registry instead of asserting it is the tip. | `def test_generation_eight_appends_one_table_to_the_generation_it_descends_from()`; "generation 7's thirty-three"; `"change_set_predecessor"`; `CURRENT_GENERATION.user_version > GENERATION_8.user_version` | mcp/tests/test_knowledge_change_sets.py:649-682; mcp/tests/test_knowledge_change_sets.py:654-654; mcp/tests/test_knowledge_change_sets.py:670-670; mcp/tests/test_knowledge_change_sets.py:676-687 |
+| **Generation 9, appended by `260915-KS-L21`, is why that assertion was re-scoped: generation 9's tables are generation 8's with only the census tables appended, and every generation-8 table keeps its columns and primary keys.** | `test_the_census_record_kinds_join_a_registered_generation_that_appends_to_its_predecessor` | mcp/tests/test_migration_census.py:360-369 |
 | The case that asserts a new store declares the current generation and is served by this record group's read. | `test_a_new_store_declares_the_generation_that_carries_this_leafs_table` | mcp/tests/test_knowledge_change_sets.py:685-698 |
 | The case that asserts a requirement-revision reference is stored verbatim, reported unresolved with its holder, and fabricates no requirement record. | `test_a_requirement_revision_reference_is_stored_verbatim_and_reported_unresolved` | mcp/tests/test_knowledge_change_sets.py:705-738 |
 | The case that asserts near-miss spellings round-trip byte-identically and stay distinct, so nothing canonicalises them. | `test_a_requirement_revision_reference_is_never_parsed_or_canonicalised` | mcp/tests/test_knowledge_change_sets.py:741-753 |
@@ -154,8 +175,8 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts the payload registers under exactly one kind and one schema. | `test_the_change_set_payload_registers_under_one_kind_and_one_schema` | mcp/tests/test_knowledge_change_sets.py:919-932 |
 | The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists. | `test_the_read_projection_reports_every_unresolved_reference_verbatim_with_its_holder` | mcp/tests/test_knowledge_change_sets.py:935-966 |
 | The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON. | `test_the_read_is_derived_and_a_rebuild_reproduces_it_byte_for_byte` | mcp/tests/test_knowledge_change_sets.py:969-983 |
-| The lane row placing this module in the unit population. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:163-163; mcp/tests/test-evidence-lanes.toml:176-183; mcp/tests/test-evidence-lanes.toml:185-185; mcp/tests/test-evidence-lanes.toml:187-187 |
-| The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1093-1098; mcp/tests/evidence-lifecycle.toml:1115-1115; mcp/tests/evidence-lifecycle.toml:28-35 |
+| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:188-188; mcp/tests/test-evidence-lanes.toml:128-128 |
+| The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1224-1242; mcp/tests/evidence-lifecycle.toml:1241-1241; mcp/tests/evidence-lifecycle.toml:34-37 |
 
 ## Cross-Repo References
 
@@ -167,4 +188,5 @@ under a temporary root and construct no process, publication or Git object.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): re-read this card's generation claim and the one assertion the census leaf re-scoped, and corrected both rather than annotating them. `CURRENT_GENERATION is GENERATION_8` became `CURRENT_GENERATION.user_version > GENERATION_8.user_version` (`mcp/tests/test_knowledge_change_sets.py:683`), so the card's Logic now states that the registry's tip lies beyond generation 8 while the generation-8 prefix, columns, primary keys, trigger and index sets and the `ALTER TABLE` sweep are asserted exactly as before, and the source comment at `:678-682` is cited for why. Generation 9 is recorded substantively as the generation this record group descends through, with the census module's own `test_the_census_record_kinds_join_a_registered_generation_that_appends_to_its_predecessor` (`mcp/tests/test_migration_census.py:360-369`) named as the case that asserts the full descent. Three citations were re-derived against the current files: the lane row now cites `mcp/tests/test-evidence-lanes.toml:188-188` (the leaf's one-line insertion at `:128` had moved it off the four ranges the row carried) and the candidate-batch harness registration now cites `mcp/tests/evidence-lifecycle.toml:1224-1242` with the consumer path at `:1241`. No claim was deleted and no case was weakened. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:20+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the change-set record group's 29 cases. It records the succession rule at the case level (a new record with a predecessor edge, written inside the successor's own creation batch, sealed against update and delete, and forkable), the two-plane absence assertions for task authority and verdict probes, the by-name generation argument that generation 8 appends exactly one table to generation 7's thirty-three, the exact-set vocabularies that pin rather than union, and the derived read that reports unresolved references verbatim. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.
