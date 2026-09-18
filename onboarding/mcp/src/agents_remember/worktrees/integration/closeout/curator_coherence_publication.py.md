@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,13 +17,20 @@
 ## Purpose
 
 Owns status, prepare, publish, and validate dispatch plus crash-safe, idempotent compare-and-swap
-publication of curator-coherence generations and optional attempt snapshots.
+publication of curator-coherence generations and optional attempt snapshots. Since KS-R24@v1 the
+`prepare` response also **states the complete publication input set**, derived from the request model's
+own member declaration rather than from a second handwritten list.
 
 ## Code Commentary
 
 ### Logic
 
-`prepare` returns all current identities and the raw stable-authority predecessor digest.
+`prepare` returns all current identities and the raw stable-authority predecessor digest, and its
+summary is `publication_input_statement()` read from the request model's declaration: it names the
+per-candidate judgments and every publication member, and marks the two members it does not derive
+(`semantic_requirement_revision`, `delivery_attempt`) as caller-supplied delivery identities. The text
+is a pure function of that declaration, so a member appended to it reaches this response with no edit
+here. `prepare` still invents neither identity and the response still carries no value for either.
 `publish` validates caller-supplied expectations and exact judgments before entering the short task
 publication lock. Inside the lock it rereads the contract, rechecks predecessor, source identities,
 and evidence bytes, atomically installs a deterministic content-addressed record/report directory,
@@ -51,7 +58,10 @@ currentness validator re-derives them.
 - Malformed predecessor bytes are replaceable only through an exact prepared digest.
 - No clock value enters canonical content, preserving retry identity.
 - Snapshot naming uses delivery attempt plus record digest; it cannot version the requirement.
-- Publication never invents semantic judgments.
+- Publication never invents semantic judgments, and `prepare` never invents a delivery identity: it
+  states that the caller must supply them.
+- The `prepare` text is derived from the request model's `PUBLICATION_MEMBERS` declaration, never from a
+  copy that can drift out of step with the validator.
 - The declared dependency set is part of the generation installed under CAS: it binds the published
   record to the exact candidate, topology, intent, attestation, and evidence inputs, and no
   unrelated change can stale it.
@@ -72,11 +82,13 @@ No external documentation governs this local transaction.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public action dispatcher keeps one tool surface. | `curator_coherence_action` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:56-66 |
-| Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. | `_publish` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:128-208 |
-| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:451-486 |
-| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:489-522 |
-| R03 record construction binds the declared dependency set. | `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:221-313 |
+| The public action dispatcher keeps one tool surface. | `curator_coherence_action` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:64-74 |
+| **The prepare response composes its summary from the request model's publication declaration, so it states every publication input.** | `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:121-136 |
+| **The statement `prepare` carries, defined on the request-model route rather than here.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:342-367 |
+| Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. | `_publish` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:144-219 |
+| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:452-487 |
+| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:490-523 |
+| R03 record construction binds the declared dependency set. | `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:222-314 |
 
 ## Cross-Repo References
 
@@ -98,7 +110,29 @@ Publication now stamps the record's `curator-coherence/v1` dependency declaratio
 observed inputs before CAS installation (worker handover:
 notes/reports/260902-CCR-L03-worker-delivery.md).
 
+## KS-R24@v1 Prepare States The Publication Inputs
+
+`_prepare` composes its summary from `publication_input_statement()`, so the prepared response states
+the inputs `publish` requires instead of only the judgments. The shipped sentence named the judgments
+and stopped; a caller who followed the documented `prepare` → supply a judgment per candidate →
+`publish` flow supplied the seven members `prepare` echoes, was refused, re-read `prepare`, learned
+nothing, and could only discover the ninth and tenth members by reading the validator — which is how
+two leaves of this master recorded a wrong impossibility claim against the tool
+(`notes/DISCLOSURES.md` D-11).
+
+Two properties of the text matter and both are asserted by cases in
+`mcp/tests/test_final_full_memory_coherence_certification.py`:
+
+- **It is derived, not copied.** The statement reads the request model's `PUBLICATION_MEMBERS` at call
+  time; a member appended to that declaration appears in the response with no second edit here.
+- **It attributes the two identities to the caller.** `semantic_requirement_revision` and
+  `delivery_attempt` are statements about the delivery attempt and stay the caller's to author, so the
+  text marks them as caller-supplied delivery identities `prepare` does not derive from the observation
+  it returns. `_prepare` still returns no value for either and cannot publish on its own; `_publish` is
+  untouched by this requirement and only the summary string changed in this module.
+
 ## Update History
+- 2026-09-18T03:15+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read this card against the changed source and recorded what `prepare` now says.** `_prepare` composes its summary from `publication_input_statement()` — the request model's own declaration — so the prepared response names the per-candidate judgments **and** all nine publication members and marks the two it does not derive; the Purpose, Logic and Invariants sections of this card say so, and a new section states the two properties that carry the requirement (derived rather than copied, and the identities still the caller's to author) together with the wrong-impossibility record (`notes/DISCLOSURES.md` D-11) that the shipped sentence produced twice. The reference table was re-derived from the current file while re-reading it: `curator_coherence_action` is `:64-74`, `_publish` `:144-219`, `_publish_generation` `:452-487`, `_publish_snapshot` `:490-523` and `_record` `:222-314`, each corrected from the pre-leaf coordinates this card carried, and `_prepare` gained its own row. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_publish_generation` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:451-486. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_publish_snapshot` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:489-522. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_record` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:221-313. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

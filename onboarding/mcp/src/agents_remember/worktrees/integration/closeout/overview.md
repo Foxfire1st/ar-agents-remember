@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -69,6 +69,21 @@ were not removed by that commit.
 
 [The selected certification overview](certification/overview.md) follows actual frozen admission, explicit predecessor/publication readback, journal CAS and suffix execution. It also explains retained red evidence, current Gate-5 observations and the narrowly proven code-output recovery comparison. These responsibilities extend the existing door/coherence/journal separation; they do not make queue state own certification or themselves establish memory/finalization execution.
 
+## KS-R24@v1 Prepare States The Publication Inputs
+
+`curator_coherence_publication.py::_prepare` now composes its summary from
+`publication_input_statement()` — read from the request model's `PUBLICATION_MEMBERS` declaration — so
+the prepared response states the complete input set `publish` requires: the per-candidate judgments
+**and** all nine publication members, with `semantic_requirement_revision` and `delivery_attempt`
+marked as caller-supplied delivery identities `prepare` does not derive from the observation it
+returns. Before this, the summary mentioned only the judgments, so a caller following the documented
+`prepare` → supply a judgment per candidate → `publish` flow was refused without ever being told the
+last two members existed; that is the message defect two leaves of this master recorded as an
+impassable tool defect (`notes/DISCLOSURES.md` D-11). The text is a pure function of the declaration, so
+an appended member reaches this response with no edit here. `prepare` still invents neither identity,
+returns no value for either, and `_publish` is untouched: the only change in this module is the summary
+string.
+
 ## Local Invariants And Traps
 
 - Door publication authorizes entry; the operation journal owns running and terminal evidence.
@@ -129,6 +144,7 @@ The following current source owns the changed behavior; no external domain sourc
 | Door source facts use current Git and task authority. | `_declare_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:381-475 |
 
 ## Update History
+- 2026-09-18T03:30+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded, for this route's nearest-governed change, that `prepare` composes its summary from the request model's publication declaration and therefore states the complete `publish` input set — the judgments, all nine members, and the two identities it does not derive — instead of only the judgments. The section states the defect that produced (`notes/DISCLOSURES.md` D-11, where the undocumented members were reported twice as an impassable tool defect), that the text is derived rather than copied, and that nothing else in the module changed: `prepare` invents no identity and `_publish` is untouched. Only the preparation/publication material in this route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Removed deleted ledger recovery routing and documented cache-independent door evidence. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.

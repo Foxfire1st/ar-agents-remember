@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-18T05:05:00+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview      | `../../../../overview.md`                  |
 
@@ -51,10 +51,16 @@ MCAR-L02 adds the strict curator-coherence lifecycle family under
 `models/lifecycles/curator_coherence.py`. It keeps the semantic requirement revision, worker
 delivery attempt, exact source candidates, agent-owned judgments, immutable record generation,
 stable live authority, optional attempt snapshot, and public request/response as separate typed
-identities. The request exposes one closed `status|prepare|publish|validate` action vocabulary;
-publication fields are forbidden on read-only actions, while publish requires every expected
-source identity, predecessor digest, and declared caller. Record validation requires unique exact
-coverage of the structured source-candidate set rather than accepting partial or extra judgments.
+identities. The request exposes one closed `status|prepare|publish|validate` action vocabulary.
+What `publish` requires is now **one declaration**: the nine publication members live in
+`PUBLICATION_MEMBERS` beside the request model, and the validator, the `publish` refusal and the
+`prepare` text all read it, so a member appended there is checked, named and stated with no second
+edit. A `publish` refusal names every missing member by its request field name, a
+`status`/`prepare`/`validate` refusal names the publication-only field it received, and the
+`prepare` response states the complete input set — including the two members it does not derive
+(`semantic_requirement_revision`, `delivery_attempt`), which stay the caller's own delivery
+identities. Record validation requires unique exact coverage of the structured source-candidate set
+rather than accepting partial or extra judgments.
 
 `TaskDocumentRef` is the shared repository-qualified work identity. `models/structural/agent.py` and
 `models/structural/gates.py` define the agent-facing request/response families without runtime
@@ -286,7 +292,7 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:478-478 |
 | The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:459-459 |
 | The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:191-191; mcp/src/agents_remember/models/tools/tool_registry.py:192-192 |
-| Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:236-247; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:250-256; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-315 |
+| Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:190-434 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
 | Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:14-39 |
@@ -1196,6 +1202,7 @@ change set.
 
 ## Update History
 - 2026-09-18T04:55+02:00 — 260915-KS-L11 owning seat (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this route's union claim against the source and re-cited it by hand, replacing a generated projection.** The row and the section above it said *twelve* members; `ProposedCommand` admits **eighteen** after this leaf, which this route's own L11 section already states. Row and prose now agree with `models/knowledge/candidate.py:372-392`, so the citation is an agent's read of the declaration rather than a projected range.
+- 2026-09-18T03:05+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read the curator-coherence paragraph and the row this candidate falsified, and recorded what the tool now says.** The "publication fields are forbidden on read-only actions, while publish requires every expected source identity, predecessor digest, and declared caller" sentence described the rule the defect was made of: it names three prose categories while the two members that actually caused the refusal belong to none of them, and the shipped refusal said exactly the same thing. The paragraph now states the single `PUBLICATION_MEMBERS` declaration beside the request model, the named-missing-member refusal, the named-supplied-member sibling refusal, and the `prepare` statement that includes the two delivery identities `prepare` does not derive. The reference row's four `:189-233; :236-247; :250-256; :259-315` ranges no longer held `CuratorCoherenceRequest` (it moved to `:370-434` when the declaration was inserted above it); the row now cites **one** range over the whole coherence identity family it names, because this card's own `citation_fix` declines a multi-range cell for it (`projection_no_resolved_extent`). No other row of this 1 600-line route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read the older union row in this route against the source and recorded a contradiction instead of softening it.** The row at `:811` reading "The closed eighteen-member union ... the eighteen kinds are the operation's entire reach" is **no longer true**, and this leaf's own section below says so: `ProposedCommand` now admits **eighteen** members (the shipped twelve plus the six facet commands) and the union row's citation was re-pointed to `372-392` accordingly. The row's *counts* were not rewritten, because a claim's meaning belongs to the owning seat rather than to the citation curator; the correction owed is `twelve` → `eighteen` in both places in that row. This entry also records where the leaf's own route-review entry lives: it was written one section too high (under `## Invariants And Boundaries`) and this round moved it into this section, where the review rail can see it. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T22:33:10+00:00: Generated citation repair: `KnowledgeLane`; `CANDIDATE_LANES` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:99-99; mcp/src/agents_remember/models/knowledge/candidate.py:101-101. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T22:33:10+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:207-207. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.

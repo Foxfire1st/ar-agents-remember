@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `../overview.md` |
 
@@ -1564,8 +1564,11 @@ the repository's own record forbids a KS leaf from raising it, so the per-subtyp
 variants are driven *inside* the case that owns their property, with every assertion naming the subtype or
 kind it is about. What that costs is independent failure attribution between variants of one property; what
 it preserves is every clause, and a population that runs at all — an over-budget population raises
-`UsageError` and executes zero tests. The population is now **1250 unit cases against
-`unit_case_budget = 1250`**, and integration stands at 322.
+`UsageError` and executes zero tests. The population was then **1250 unit cases against the
+`unit_case_budget = 1250`** ceiling, with integration at 322 — the measurement taken at this leaf's own
+candidate. The master's owning seat has since raised the pair to `unit_case_budget = 1500` and
+`integration_case_budget = 400` at the later `260915-KS-L24` candidate, so the ceiling this section is
+titled after no longer reads the same; see that section below.
 
 **This leaf is the one that renders the earlier leaves' byte-identity claim checkable.** The recorded fixture
 is built from generation 2's own recorded DDL with fixed identities and a fixed authorship instant, and the
@@ -1597,10 +1600,55 @@ support module. Missing any one of them is a hard collection error rather than a
 | **The governed contract and artifact this leaf registered, with its one declared consumer.** | "id = \"knowledge-facet-cases\"" | mcp/tests/evidence-lifecycle.toml:1192-1212 |
 | The catalog digest re-pin a new test module obliges. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-46 |
 | The lane row this module is registered under. | "mcp/tests/test_knowledge_facets.py" | mcp/tests/test-evidence-lanes.toml:71-71 |
-| **The ceiling the suite was written against, and the budget variable it is declared in.** | `unit_case_budget` | pyproject.toml:286-286 |
+| **The unit ceiling this route's suites collect against, cited as the pinned key and value — the L11 suite was written against 1250 and the master's owning seat raised it to this at the `260915-KS-L24` candidate.** | "unit_case_budget = 1500" | pyproject.toml:304-304 |
 | **The refusal an over-budget population raises, which is why the loops live inside their cases.** | `UsageError` | mcp/tests/conftest.py:104-140 |
 
+## 260915-KS-L24 The Coherence Tool States Its Own Publication Inputs
+
+This route's final-certification module is where the curator-coherence request contract is pinned, and
+this leaf is the one that made the tool state its own inputs:
+
+- **18 new cases in `mcp/tests/test_final_full_memory_coherence_certification.py`**, which grows 943 ->
+  1190 lines. Nine parametrized items drive one omitted publication member each, so no member is
+  accidentally satisfied by another's presence; one case drives all nine omitted; a positive control
+  asserts the declaration equals the request model's own field order **and** that a nine-member request
+  validates; one case drives the real `_prepare` and asserts its summary text; one extends the shared
+  declaration in a scratch request model and asserts the new member reaches **both** messages with
+  neither text edited; three parametrized items cover `status`/`prepare`/`validate`, plus one
+  multi-field forbidden refusal that includes `judgments`; and one pins the byte-identical
+  `freeze_snapshot` message.
+
+- **What the cases protect is a message, and the message is the requirement.** `publish` required nine
+  non-`None` request members while two of them (`semantic_requirement_revision`, `delivery_attempt`)
+  were declared `default=None`, were **not** returned by `prepare`, and were **not** named by the
+  refusal. Two leaves of this master read that refusal as an impassable tool defect and carried an
+  unpublished coherence authority as an external blocker (`notes/DISCLOSURES.md` D-11). The request
+  model now refuses by naming the missing members and the read actions name the publication-only field
+  they received, so these cases are what stops the message from drifting back.
+
+- **The suite stayed inside the budget raise this master's owning seat made.** This candidate collects
+  **1268 unit cases against `unit_case_budget = 1500`** and **322 integration cases against
+  `integration_case_budget = 400`**; the raise is the owning seat's change and not this leaf's delivery,
+  and the 18 cases consume 18 of the 250 unit slots it added. The module is at 1190 of the repository's
+  1200-line rail, so the next leaf that adds curator-coherence cases there must split it first.
+
+- **The card's own `_affected_plan` / `_coherence` / `_evidence` coordinates moved by this leaf.** The
+  three import insertions shifted every definition below them by nine lines; the module's card now
+  carries the measured extents rather than the pre-leaf ones.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The publish refusal names the one omitted member, for each of the nine. | "test_publish_refusal_names_the_one_missing_publication_member" | mcp/tests/test_final_full_memory_coherence_certification.py:1059-1076 |
+| The all-nine refusal names every member in declaration order. | "test_publish_refusal_without_any_member_names_all_nine_in_declaration_order" | mcp/tests/test_final_full_memory_coherence_certification.py:1079-1089 |
+| The positive control binds the declaration to the request model's own field order. | "test_publish_with_every_publication_member_validates" | mcp/tests/test_final_full_memory_coherence_certification.py:1092-1108 |
+| The prepare text is asserted from the real `_prepare` path. | "test_prepare_states_the_complete_publication_input_set" | mcp/tests/test_final_full_memory_coherence_certification.py:1111-1124 |
+| A member added to the declaration reaches both messages with neither text edited. | "test_a_member_added_to_the_declaration_reaches_both_messages" | mcp/tests/test_final_full_memory_coherence_certification.py:1127-1147 |
+| The sibling refusal names the supplied member for each read action. | "test_non_publish_actions_name_the_publication_member_they_received" | mcp/tests/test_final_full_memory_coherence_certification.py:1150-1163 |
+| The multi-field refusal names every supplied field in model order, `judgments` included. | "test_non_publish_refusal_names_every_supplied_field_in_model_order" | mcp/tests/test_final_full_memory_coherence_certification.py:1166-1180 |
+| The freeze branch keeps its own named refusal. | "test_freeze_snapshot_keeps_its_own_named_refusal" | mcp/tests/test_final_full_memory_coherence_certification.py:1183-1190 |
+
 ## Update History
+- 2026-09-18T03:00+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded the **certification suite's 18 new publication-input cases and the budget pair this candidate moved**, because this route is the nearest governor of the changed test module. The section states what the cases protect and why a message is the requirement — `publish` demanded nine non-`None` members while `semantic_requirement_revision` and `delivery_attempt` looked optional, were not echoed by `prepare`, and were not named by the refusal, which is the defect two earlier leaves of this master read as an impassable blocker (`notes/DISCLOSURES.md` D-11) — and it names the file-size rail the module is now close to (1190/1200). It also re-read the two budget-dependent claims this candidate falsified: the L11 section's present-tense "1250 against `unit_case_budget = 1250`" is now marked as that leaf's own measurement with the current pair named, and the ceiling row cites the pinned `"unit_case_budget = 1500"` literal, because **`unit_case_budget` occurs four times in `pyproject.toml`** (three inside the comments explaining the raises) and cannot anchor a unique claim. Nothing else in this 2900-line route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the **facet suite and the governed harness it shares** — `test_knowledge_facets.py` (unit-regression, `:71`, **17 hermetic nodes** over in-process databases built through the production seam) and `facet_test_support.py` (artifact `knowledge-facet-cases`, one exact consumer, owning one **admitted** candidate and one **recorded** generation-2 dataset whose page and result digests were measured on the base revision before this leaf existed). The section states plainly that **the case ceiling is why the module carries loops rather than parametrizations** — the unit population had twenty slots left and the repository's record forbids a KS leaf from raising it — with the cost named (no independent failure attribution between variants of one property) and the population measured (**1250 against `unit_case_budget = 1250`**, integration 322). It records that this leaf is what makes the earlier byte-identity claim checkable as a before/after observation rather than self-consistency, the **three registry touch-points** a new test module obliges (lane row, artifact consumer list, catalog digest re-pin `19ed0525…` at **13 contracts / 54 artifacts**) plus the new artifact's contract row, and the **two honest limits** that travel with the suite: the combined run needs this host's documented `-W "ignore::DeprecationWarning"` override (the pre-existing D-7 defect routed to L9) with both facts stated rather than one, and the contract-scoped memory-quality operation and `--certify` were not run. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the **comparison half's two suites and the governed support artifact they share** — `test_knowledge_diff_scope.py` (unit-regression, `:76`, 13 hermetic nodes over two in-process snapshots and two local committed trees) and `test_knowledge_diff_boundaries.py` (integration, `:159`, 15 nodes that **drive the production Git probe**, a real candidate write and the serialized response), with `diff_scope_test_support.py` registered as the artifact `knowledge-diff-cases`. The paragraph states the **three registry touch-points a new test module obliges** — all three paid twice, plus the two consumer rows the read-scope artifact gained — and the measured merged numbers: **52 artifacts / 11 contracts** (digest `4cf81f10…`) and **243 declared lane entries against 243 modules on disk**. **The coverage-rule reason is recorded with the direction each rule was measured in** (rule 1 load-bearing alone; rule 2 a short-circuit whose family half is unexercised because the fixture authors 0 family edges — a stated gap; rule 3 load-bearing in the forced-present direction, with variant `C` surviving 28/28 and the `2 failed` belonging to `G`), together with the statement that **collapsing the rules turns a missing selection into a real absence** — the reverse of the leaf's first claim. It also carries the **three evidence rules this leaf's history teaches** and states the four non-kill classes as disclosures with their closers, so a reader never reads the comparison as fully covered. **The `M25`/`M26` citations in this route's cards are the measured ones for the frozen 779-line module, and the card says explicitly that the ledger is authoritative for the contested pair** and that the leaf's documentation debt was carried to `KS-R09`/`L9` (ledger **A9**/**A10**). Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the **read half's three suites and the governed support artifact they share**. The section gives the lane and the reason for each module (the unit module hermetic over in-process databases; the boundaries module over a real committed Git tree and a real published database; the paths module measuring Git's own `ls-tree` behavior with its own subprocess calls), names the split as a **file-size decision** — fix round 2 pushed the boundaries module past the 1 200-line limit and the cases moved rather than the limit being waived — and states the three registry touch-points a new test module obliges, all of which this leaf paid (lane row, support-artifact `consumers` list, catalog digest re-pin `461121ca…` with counts 10/51), because missing any one is a **hard collection error rather than a quiet gap**. **The path contract is recorded in the form the review corrected it**: pathspec magic is the leading-`:` family plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and NUL, while `*`, `?` and `[` are **literal characters** to `ls-tree` and a legitimate anchor containing them must be authorable, seedable and resolvable — round 1's over-broad refusal reported a file the tree really holds as `path_absent`. **Two honest limits travel with the suites and neither is coverage**: the **withdrawn** mutation claim over `_tree_entry`'s non-zero-exit branch, which stays an explicitly disclosed unasserted defensive branch (L9 **A6**), and `_manifest_digest`'s composition as a reachable covered gap (L9 **A4**). The entry also records the rule about what a survivor means — **a sweep must run on the frozen bytes it describes** — and the forward constraint that **L8 must split the 1 163-line unit module before adding cases**. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

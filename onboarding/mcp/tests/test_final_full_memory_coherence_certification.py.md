@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_final_full_memory_coherence_certification.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T18:14:20+02:00|
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,29 +33,51 @@ lifecycle metadata. The suite is explicitly registered in the `integration` lane
 ### Logic
 
 The scaffold builds a complete synthetic R21 chain from production model literals only (no
-test-support module, no fixture-repo files): `_inline_profile` (159-240),
-`_scenario` (435-474) compiles admission/plan/profile, `_green_prefix` (585-597)
+test-support module, no fixture-repo files): `_inline_profile` (169-249),
+`_scenario` (444-483) compiles admission/plan/profile, `_green_prefix` (594-606)
 compiles the exact green Gate 1-4 certificates, and the R07 affected-closure fixture builds the
-same synthetic scope as the R07 leaf tests (`_r07_candidate` 626-678, `_r07_admission`
-733-762, `_affected_plan` 779-785). `_pair` (793-795), `_coherence` (798-829) and
-`_passing_checks` (832-837) supply the remaining authorities, and `_EvidenceSpec`
-(848-855) / `_evidence` (858-885) compose any scenario, including failing checks and
+same synthetic scope as the R07 leaf tests (`_r07_candidate` 635-686, `_r07_admission`
+742-771, `_affected_plan` 788-794). `_pair` (802-804, the module-level factory), `_coherence` (807-838) and
+`_passing_checks` (841-846) supply the remaining authorities, and `_EvidenceSpec`
+(856-864) / `_evidence` (867-894) compose any scenario, including failing checks and
 missing coherence.
 
 The five module-level tests then pin result assembly:
 
-- `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` (888-904) - a green
+- `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` (897-913) - a green
   certification is finalization-eligible with a fully passing attestation, reused gates 1-4,
   and Gate-5 inputs bound to the exact memory tree and pair authority.
-- `test_final_certification_red_blocks_finalization` (907-917) - a failing executed check or
+- `test_final_certification_red_blocks_finalization` (916-926) - a failing executed check or
   missing onboarding yields red, no Gate-5 inputs, and no finalization.
-- `test_final_certification_blocked_when_full_only_rerun_not_consumed` (920-927) - the
+- `test_final_certification_blocked_when_full_only_rerun_not_consumed` (929-936) - the
   affected-closure item is blocked when the supplied full-only rerun flag is false.
-- `test_final_certification_refuses_without_current_coherence` (930-935) -
+- `test_final_certification_refuses_without_current_coherence` (939-944) -
   `gate-five-coherence-blocked`.
-- `test_final_certification_refuses_stale_prefix_before_any_catalog_work` (938-945) - a code
+- `test_final_certification_refuses_stale_prefix_before_any_catalog_work` (947-954) - a code
   input change invalidates the prefix with `gate-five-prefix-invalidated` before any catalog
   work.
+
+### KS-R24@v1: The Publication Input Cases
+
+Everything below `test_final_certification_refuses_stale_prefix_before_any_catalog_work` (the section
+opened at `:957`) is this leaf's addition: **18 collected items** (23 in the module against 5 before)
+that pin the curator-coherence request's own messages. They do not touch the certification library —
+they assert what the tool says:
+
+- one parametrized case per publication member omitted alone (9 items), each asserting the refusal's
+  entire detail string, so no member is accidentally satisfied by another's presence;
+- one case omitting all nine, asserting the names in declaration order;
+- the positive control, which also asserts the declaration equals the request model's own field order
+  and that a nine-member request validates;
+- one case driving the real `_prepare` and asserting its summary carries the judgments phrase, all nine
+  names in order, and the delivery-identity callout;
+- one case that extends the declaration in a scratch request model and asserts the new member reaches
+  **both** the refusal and the `prepare` text with neither text edited;
+- three parametrized `status`/`prepare`/`validate` items, one multi-field forbidden refusal that
+  includes `judgments`, and one case pinning the unchanged `freeze_snapshot` message.
+
+The module is **1190 lines**, ten under the repository's 1200-line rail: the next leaf that adds
+curator-coherence cases here must split the module first.
 
 ### Conventions
 
@@ -81,15 +103,18 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The scenario builds the configured disposable code/memory pair. | "def _scenario(" | mcp/tests/test_final_full_memory_coherence_certification.py:433-472 |
-| The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:777-783 |
-| The coherence fixture binds the exact candidate pair and memory inputs. | "def _coherence(" | mcp/tests/test_final_full_memory_coherence_certification.py:796-827 |
-| The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:856-883 |
-| The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:886-902 |
-| A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:905-915 |
+| The scenario builds the configured disposable code/memory pair. | "def _scenario(" | mcp/tests/test_final_full_memory_coherence_certification.py:444-483 |
+| The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:788-794 |
+| The coherence fixture binds the exact candidate pair and memory inputs. | "def _coherence(" | mcp/tests/test_final_full_memory_coherence_certification.py:807-838 |
+| The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:867-894 |
+| The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:897-913 |
+| A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-926 |
+| **The single declaration the new cases assert on, and the two members `prepare` does not derive.** | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:260-288 |
+| **The refusal every omission case drives, and the statement the prepare case drives.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:309-333; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:342-367 |
 | The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:57-57 |
 
 ## Update History
+- 2026-09-18T03:20+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read this card against the module the leaf grew and recorded the 18 publication-input cases.** The leaf inserted three import lines below the top of the module and a 236-line section at its end, so every scaffold coordinate this card carried was nine to eleven lines low — `_inline_profile` is `169-249`, `_scenario` `444-483`, `_r07_candidate` `635-686`, `_r07_admission` `742-771`, `_affected_plan` `788-794`, `_coherence` `807-838`, `_evidence` `867-894`, and the five module-level tests `897-913` / `916-926` / `929-936` / `939-944` / `947-954`; the Logic section and the reference table now carry the measured extents, and the two mechanical generated bullets for `"def _affected_plan("` and `"def test_final_certification_red_blocks_finalization("` are retired here because this pass re-read and re-cited those rows itself. A new subsection states what the 18 cases protect and why a message is the requirement, and records the module's position against the 1200-line rail (**1190**), so the next leaf that adds curator-coherence cases here knows it must split first. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:57-57. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T01:06:15+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:54-54. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.

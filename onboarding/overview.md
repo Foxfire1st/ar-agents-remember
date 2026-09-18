@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 
 > **Status:** active baseline
@@ -16,13 +16,22 @@
 
 Memory quality is useful before gate admission: a contract-scoped full request observes the exact code/memory pair and candidate trees, runs quality checks, and builds an enclosure-local curator worklist covering repair findings, commit-owned findings, missing onboarding, stale route indexes and source drift. Use that worklist to perform the authorized semantic onboarding updates before entering the expensive certification sequence. It is not necessary to obtain code-gate certificates merely to discover the memory work.
 
+The tool surface those steps use states its own inputs. The curator-coherence request now refuses by
+naming the exact missing member: `publish` requires nine non-`None` request members, two of which
+(`semantic_requirement_revision`, `delivery_attempt`) `prepare` does not derive and does not echo, and
+the refusal names them instead of naming a prose category. `prepare` states the complete input set from
+the same declaration, and a `status`/`prepare`/`validate` refusal names the publication-only field it
+received. This matters to this repository's own record rather than only to callers: two leaves of the
+`260915-KS` master read the old refusal as an impassable tool defect and carried an unpublished
+coherence authority as an external blocker (`notes/DISCLOSURES.md` D-11).
+
 Preparation does not grant a final certificate. The interactive catalog projection explicitly lacks affected-closure and code-prefix authority. The existing prepared-memory adapter consumes the selected four original code terminals and exact prepared candidate, runs the final memory producer, publishes its physical result and selects Gate 5 through the normal owner. Finalization requires that selected original fifth certificate and its bound memory inputs. MCAR continues from these existing owners; this overview does not declare the unfinished master accepted or create a second final proof path.
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the ledger path is informational and excluded from candidate authority. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of **1,500 unit and 400 integration** parametrized collected cases (`unit_case_budget` / `integration_case_budget` in `pyproject.toml`, raised to those values by the `260915-KS` master's owning seat because its own leaves had filled the previous 1,250 / 340 pair). Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -5516,7 +5525,7 @@ of scope.
 
 ## Build And Development Reference
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of **1,500 unit and 400 integration** parametrized collected cases (`unit_case_budget` / `integration_case_budget` in `pyproject.toml`, raised to those values by the `260915-KS` master's owning seat because its own leaves had filled the previous 1,250 / 340 pair). Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -5746,6 +5755,7 @@ behaviour, both carried for the owning seat.
 | The leaf's independent review, whose final round returned PASS with an empty remaining set: task report `260915-KS-L1-review-fix-verification-2.md`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Update History
+- 2026-09-18T03:35+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **this overview governs `pyproject.toml`, and this candidate changed it.** The declared case budgets are now **1,500 unit and 400 integration** (raised by the master's owning seat from 1,250 / 340 because the increment's own leaves had filled the ceiling and an over-budget unit population makes `pytest_collection_finish` run no tests at all), so the "1,000 unit and 150 integration" sentence this card carried **in two places** — already two raises stale — was corrected in both to the current pair with the raise attributed. The card also now states that the curator-coherence tool names its own required inputs: the `publish` refusal lists the missing members, `prepare` states the complete input set, and the read-action refusal names the publication-only field it received, which is what removes the failure class two leaves of this master recorded as an impassable tool defect (`notes/DISCLOSURES.md` D-11). Only these claims were re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the experimental knowledge-storage increment at repository scope — the new
