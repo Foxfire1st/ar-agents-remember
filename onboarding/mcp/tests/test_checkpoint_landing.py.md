@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_checkpoint_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -60,7 +60,7 @@ These current source spans identify the implementation owners and the specific a
 | Checkpoint versus final durable integration cells. | `IntegrationCellRecordingTests` | mcp/tests/test_checkpoint_landing.py:169-204 |
 | The checkpoint result retains the pre-existing cleanup state. | `test_checkpoint_result_publishes_without_running_cleanup` | mcp/tests/test_checkpoint_landing.py:217-238 |
 | Completion and stale candidate publication refusals. | `test_publication_refuses_a_candidate_that_moved_after_its_capture` | mcp/tests/test_checkpoint_landing.py:290-305 |
-| The landed-master abandon guard remains enforced. | n/a | [mcp/tests/test_checkpoint_landing.py](mcp/tests/test_checkpoint_landing.py) |
+| The landed-master abandon guard remains enforced. | `SeriesAbandonGuardTests` | mcp/tests/test_checkpoint_landing.py:308-347 |
 | Production checkpoint capture and publication authority. | `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
 
 ## Cross-Repo References
@@ -71,6 +71,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed the dummy ledger member from the checkpoint result input while retaining all nine lifecycle-cell, candidate, completion, and abandon-guard scenarios. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

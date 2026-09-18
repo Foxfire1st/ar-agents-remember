@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_observer_health.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ repository-owned serving contract, so no external domain claim is needed.
 | The lifespan starts this serving lifetime's accumulator immediately before the prime, and derives the served cutoff from the configured sweep cadence. | `_terminal_observer_health_payload` | mcp/src/agents_remember/serving/_app_lifespan.py:288-352; mcp/src/agents_remember/serving/_app_lifespan.py:376-394 |
 | One shared publisher on one observer root and one serving clock, read by the routes and written by the lifespan. | `_ServingRuntime`; `_build_serving_runtime` | mcp/src/agents_remember/serving/_app_common.py:458-479; mcp/src/agents_remember/serving/app.py:198-198; mcp/src/agents_remember/serving/app.py:242-242; mcp/src/agents_remember/serving/app.py:165-251 |
 | The additive, omissive fourth tail key on the served workspace projection. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:50-66; mcp/src/agents_remember/serving/served_state.py:68-75; mcp/src/agents_remember/serving/served_state.py:81-109 |
-| The generated mirror declares this payload and keeps its nulls, and the schema's supported refinement set states the counter ceiling. | `TerminalObserverHealth`; `MAXIMUM`; `SCHEMA_REFINEMENT_KEYWORDS` | dashboard/src/types/projection.ts:802-824; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:35-59 |
+| The generated mirror declares this payload and keeps its nulls, and the schema's supported refinement set states the counter ceiling. | "export interface TerminalObserverHealth {"; `NULL_PRESERVING_MODELS`; `SCHEMA_REFINEMENT_KEYWORDS` | dashboard/src/types/projection.ts:802-824; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:48-50; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:52-60 |
 | The module's executable contract: sixteen cases over the record, the writer, publication, and the served tail. | `TerminalObserverHealthRecordTests`; `TerminalObserverHealthLifespanTests`; `TerminalObserverHealthServedTailTests` | mcp/tests/test_terminal_observer_health.py:220-617; mcp/tests/test_terminal_observer_health.py:619-732; mcp/tests/test_terminal_observer_health.py:734-931 |
 
 ## Cross-Repo References
@@ -144,6 +144,7 @@ payload crosses a process boundary (browser), not a repository one.
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
   base `99534dc5`, 13 paths, `git diff | sha256sum` = `b75a785d…`): created this file card for the

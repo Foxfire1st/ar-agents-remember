@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -60,10 +60,10 @@ This bundle copy is the shape the adversarial-reviewer job writes at each seam; 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Verdict Template (adversarial reviewer)` | skills/l-01-agent-lifecycles/templates/verdict.md:1-142 |
-| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence, and each seam's blocking rule returns fix leaves to its owner. | `### MASTER-EXIT — Manager Before Orchestrator Handover`; `### SUPER-EXIT — Orchestrator Before Architect/Developer Handover` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:184-199; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:200-215 |
+| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence, and each seam's blocking rule returns fix leaves to its owner. | "Master-exit (before manager → orchestrator handover)."; "Super-exit (before orchestrator → architect handover)."; "Blocking rule, both seams:" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:99-122 |
 | The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence. | "# Adversarial Verdict — master-exit"; `# Impact-Analysis Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241 |
 | The master-exit onboarding lens names a backing onboarding-coherency report. | "# Adversarial Verdict — master-exit"; `# Onboarding-Coherency Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-54; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241 |
-| The two seams and the evidence-not-decision doctrine now live in `core/loop.md` and `operations/review.md`; the block-decomposes-into-fix-leaves doctrine lives in the reviewer role. | `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`; `# Operation — Review`; "**Verdicts are evidence, not decisions.**" | skills/l-01-agent-lifecycles/core/loop.md:1-1; skills/l-01-agent-lifecycles/operations/review.md:1-1; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:38-38 |
+| The two seams and the evidence-not-decision doctrine now live in `core/loop.md` and `operations/review.md`; the block-decomposes-into-fix-leaves doctrine lives in the reviewer role. | `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`; `# Operation — Review`; "**Verdicts are evidence, not decisions.**" | skills/l-01-agent-lifecycles/core/loop.md:1-115; skills/l-01-agent-lifecycles/operations/review.md:1-120 |
 
 As of cycle 4 the decider rows are ruled: master-exit = orchestrator (delegated master-handover-approval; serious issues escalate to the developer); super-exit = developer (human review concentrates at the super gate); the reviewer role file reference is roles/reviewer.md.
 
@@ -114,6 +114,8 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`; `# Operation — Review`; "**Verdicts are evidence, not decisions.**" repointed to skills/l-01-agent-lifecycles/core/loop.md:1-115; skills/l-01-agent-lifecycles/operations/review.md:1-120; skills/l-01-agent-lifecycles/operations/review.md:77-77. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `# Impact-Analysis Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `# Onboarding-Coherency Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-54; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 

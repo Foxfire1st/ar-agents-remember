@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -204,7 +204,7 @@ contract is supported by the implementation and the authorized cache-retirement 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | `_register_direct_landing_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:45-89 |
-| The payload builders these forward to. | n/a | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+| The payload builders these forward to. | `worktree_closeout_preview_payload`; `worktree_closeout_apply_payload`; `worktree_integrate_payload`; `worktree_checkpoint_landing_payload`; `worktree_record_landing_payload`; `worktree_operation_control_payload`; `worktree_cleanup_payload`; `worktree_abandon_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:110-238 |
 | The checkpoint-landing tool declaration and the payload builder it forwards to. | `worktree_checkpoint_landing_payload`; `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/tools/worktree.py:159-174; mcp/src/agents_remember/mcp/registration/closeout.py:172-199 |
 | `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:131-136 |
 | Refuse to stage anywhere except a task's own throwaway worktree. | "Refuse to stage anywhere except a task's own throwaway worktree." | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:26-26 |
@@ -257,6 +257,7 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Documented the removed public ledger arguments and the surviving two-output publication contract. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_eve_effort_runtime.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
@@ -115,7 +115,7 @@ was available for this module.
 | The real runtime process the cases start, and the launch environment the selected level is carried into. | `EveRuntimeProcess`; `resolve_runtime_spec`; `EveLaunchSelection`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_client.py:133-372; mcp/src/agents_remember/serving/eve_runtime_launch.py:312-347; mcp/src/agents_remember/serving/eve_runtime_launch.py:90-372 |
 | The recording provider boundary and the staged application root, which are what make the body the evidence. | `RecordedModelRequest`; `serve_recording_provider`; `staged_runtime_root`; `EVE_APPLICATION_ROOT`; `require_installed_eve_application` | mcp/tests/eve_adapter_test_support.py:440-465; mcp/tests/eve_adapter_test_support.py:467-574; mcp/tests/eve_adapter_test_support.py:580-599; mcp/tests/eve_adapter_test_support.py:37-37; mcp/tests/eve_adapter_test_support.py:42-61 |
 | The complete verified capsule binding the runtime refuses to start without, built through the capsule seam's own fixture support. | `FixtureCarrierRequest`; `fixture_carrier_for`; `binding_env`; `repository_with_commit` | mcp/tests/eve_capsule_test_support.py:559-572; mcp/tests/eve_capsule_test_support.py:573-628; mcp/tests/eve_capsule_test_support.py:630-641; mcp/tests/eve_capsule_test_support.py:155-171 |
-| The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning`; `defineAgent` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35; eve_runtime/agent/agent.ts:48-48 |
+| The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35 |
 | The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. | `_capability_snapshot`; `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it` | mcp/src/agents_remember/serving/eve_adapter.py:699-748; mcp/tests/test_eve_product_integration.py:1151-1191 |
 | The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests` | mcp/tests/test_eve_product_integration.py:1315-1361 |
 | The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:148-148; mcp/tests/test-evidence-lanes.toml:173-173; mcp/tests/test-evidence-lanes.toml:161-161 |
@@ -127,9 +127,10 @@ a dependency rather than a sibling Agents Remember repository.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pinned runtime the cases start, and the machine-local install both the guard and the staged root name. | exact dependency pins; `EVE_INSTALL_COMMAND` | eve_runtime/package.json:14-20; eve_runtime/README.md:25-25 |
+| The pinned runtime the cases start, the exact dependency pins, and the machine-local install command that the README documents and the guard enforces. | `EveEffortConsumerTests`; `_one_level` | eve_runtime/package.json:15-20; eve_runtime/README.md:25-25; mcp/tests/test_eve_effort_runtime.py:175-215; mcp/tests/test_eve_effort_runtime.py:108-163 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: created this card for the module this leaf adds. It
   is the leaf's **executed** half of `CAPS-R17@v1` behaviour 1: no Python case can observe a TypeScript

@@ -6,8 +6,8 @@
 | path | `mcp/tests/closeout_input_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,11 +76,11 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The recorder verifies typed progress transitions. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
-| Canonical setup passes only enabled code/memory messages. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| The recorder verifies typed progress transitions. | `MutationEvidenceRecorder` | mcp/tests/closeout_input_test_support.py:64-94 |
+| Canonical setup passes only enabled code/memory messages. | `start_closeout_operation` | mcp/tests/closeout_input_test_support.py:97-140 |
 | Finalization publishes code/memory recovery cells. | `publish_closeout_finalization` | mcp/tests/closeout_input_test_support.py:352-379 |
-| Input and WorktreeArgs builders share production normalization. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
-| Evidence builders retain the explicit durable states. | n/a | [mcp/tests/closeout_input_test_support.py](mcp/tests/closeout_input_test_support.py) |
+| Input and WorktreeArgs builders share production normalization. | `closeout_operation_input`; `closeout_worktree_args` | mcp/tests/closeout_input_test_support.py:390-414; mcp/tests/closeout_input_test_support.py:417-438 |
+| Evidence builders retain the explicit durable states. | `with_mutation_intent`; `with_commit_proven`; `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:441-463; mcp/tests/closeout_input_test_support.py:466-497; mcp/tests/closeout_input_test_support.py:500-512 |
 
 ## Cross-Repo References
 
@@ -92,6 +92,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Reconciled shared fixture inputs, waiting-generation fields, and finalization cells with code/memory-only outputs; retained explicit scheduling bypass scope, profile defaults, and evidence-state builders. Working candidate verified by source inspection; commit metadata records real committed history only.
 

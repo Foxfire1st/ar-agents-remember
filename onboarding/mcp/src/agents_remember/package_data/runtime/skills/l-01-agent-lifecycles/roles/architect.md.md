@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846`|
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -162,16 +162,16 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| This package-data artifact contains the synchronized architect lifecycle, in the corpus's readable order. | `# Lifecycle — Architect`; `## 1 — Purpose And Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:14-52 |
-| The role names the shared sources it composes with instead of restating them. | "**Inherits:**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:12-12 |
-| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | `### Spool-up — the chain is self-driving`; `### Mandatory Requirement-Compilation Gate — before task topology` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:89-114; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:115-156 |
-| Master attachment keeps graph-node equality conditional on graph presence and states that the graph-less default serializes nothing. | `### Adding a master to a running sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:171-201 |
-| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | `### Event routing` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:202-217 |
-| The shipped architect role still names the graph-less default rather than the removed source-pair-selected wording. | "where nothing serializes the masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:188-189 |
-| The architect is the one seat that may wear another role's hat, and the corpus permits exactly that one sibling reference. | `SANCTIONED_SIBLING_REFERENCES`; `## Knobs, Tool Surface, And Dispatch Authority` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:366-383; mcp/tests/test_role_instruction_corpus.py:110-114 |
+| This package-data artifact contains the synchronized architect lifecycle, in the corpus's readable order. | `# Architect`; `## Inputs`; `## Process` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:6-30 |
+| The role is a self-contained capsule — its dispatch brief is its session start — and it declares no inherited shared sources. | "Your brief is your session start." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:9-11 |
+| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run."; "Never dispatch the strategist without the developer's yes."; "On a sanctioned skip the orchestrator must author the same reasoned plan"; "a graph-less choice is allowed, an unreasoned default is not" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:70-77 |
+| Master attachment is one atomic attach_master call that writes the typed subTasks row, the orchestrates membership, and — on a sprint with a graph — the graph node, refusing a partial attach. | `attach_master`; "on a sprint with a graph — the graph node, refusing a partial attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:82-86 |
+| The attachment carries the master's explicit ruled executionNature, and size alone never makes a master atomic. | `executionNature`; "size alone never makes a master atomic" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:86-87 |
+| The shipped architect role still names the graph-less default rather than the removed source-pair-selected wording. | "a reviewed graph-less atomic-sequential choice whose assumptions still hold" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:73-74 |
+| The architect is the one seat that may wear another role's hat, and the corpus permits exactly that one sibling reference. | `SANCTIONED_SIBLING_REFERENCES`; `## The one hat-collapse this lifecycle allows, and its limit` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:215-223; mcp/tests/test_role_instruction_corpus.py:110-114 |
 | The router's registry still names architect as the developer-facing owner seat. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:71-71 |
-| The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-15 |
-| The canonical source owns this doctrine. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-14 |
+| The design hat the architect wears inline: with no designer chat, the architect performs this same method inline. | `# Designer`; "With no designer chat, the architect performs this same method inline." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:6-11 |
+| The canonical source owns this doctrine. | `# Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-14 |
 
 ## Cross-Repo References
 
@@ -262,6 +262,7 @@ verified requirement contradiction to developer-approved semantic revision. Work
 classification never rewrites the canonical packet.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `SANCTIONED_SIBLING_REFERENCES`; `## Knobs, Tool Surface, And Dispatch Authority` repointed to mcp/tests/test_role_instruction_corpus.py:110-114; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:366-383. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "design conversation, decision-item relay, and drawing board" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:71-71. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 

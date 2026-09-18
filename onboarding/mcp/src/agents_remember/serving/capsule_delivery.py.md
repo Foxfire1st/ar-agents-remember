@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/capsule_delivery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | governingOverview | `overview.md` |
 
@@ -124,7 +124,7 @@ No Domain Documentation entries are configured in the resolved source registry.
 | --- | --- | --- |
 | The instruction parameter and the refresh-report key are named constants, chosen against the vendor's own base prompt. | `INSTRUCTION_PARAM`; `REFRESH_REPORT_KEY` | mcp/src/agents_remember/serving/capsule_delivery.py:44-52 |
 | The delivery value refuses an empty instruction stream and a non-`sha256:` digest at construction. | "sha256:" | mcp/src/agents_remember/serving/capsule_delivery.py:182-190 |
-| The wire form returns `None` for an unusable value instead of raising, leaving refusal policy to the transport boundary. | `CodexCapsuleDelivery.from_json` | mcp/src/agents_remember/serving/capsule_delivery.py:199-236 |
+| None | "an error so the caller decides: the runner refuses it at its own boundary, which keeps this value type free of transport policy." | mcp/src/agents_remember/serving/capsule_delivery.py:199-236 |
 | The binding identity refuses blank or untrimmed fields and can be read back from a published report. | `CapsuleBindingIdentity`; `from_report` | mcp/src/agents_remember/serving/capsule_delivery.py:91-165; mcp/src/agents_remember/serving/capsule_delivery.py:117-136 |
 | The compilation converter reads L2's frozen shapes structurally and copies the rendered stream verbatim. | `capsule_delivery_from`; `_seat_role` | mcp/src/agents_remember/serving/capsule_delivery.py:304-368; mcp/src/agents_remember/serving/capsule_delivery.py:287-301 |
 | The refresh decision returns a supported boundary or an explicit refusal; a refusal yields no parameters. | `plan_refresh`; `thread_instruction_params` | mcp/src/agents_remember/serving/capsule_delivery.py:399-440; mcp/src/agents_remember/serving/capsule_delivery.py:443-457 |
@@ -143,6 +143,7 @@ fixture rather than trusted from a recorded snapshot.
 | The instruction fields per thread-open request and the absence of a turn-level field are fixture evidence generated from the installed app-server. | "\"instructionFields\"" | mcp/tests/fixtures/codex_app_server_instruction_channels.json:5-5 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: created onboarding for the capsule-delivery value
   type, the refresh decision and the legacy-chain switch, recording the three-channel authority

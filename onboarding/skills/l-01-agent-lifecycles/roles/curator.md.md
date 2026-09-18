@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -80,11 +80,11 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The seat definition names the three-way reconciliation and onboarding-only boundary. | "## 1 — Purpose And Authority" | skills/l-01-agent-lifecycles/roles/curator.md:14-48 |
-| Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, and durable reports. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/curator.md:49-66 |
-| Inspection classifies contract disposition rather than equating test-green with intent-green. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/curator.md:67-99 |
-| Current intent, evidence, and semantic history are separate information planes. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/curator.md:67-99 |
-| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/curator.md:67-99 |
+| The seat definition names the three-way reconciliation and onboarding-only boundary. | "**You run one leaf's coherence pass and you write onboarding.**" | skills/l-01-agent-lifecycles/roles/curator.md:8-9 |
+| Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, and durable reports. | "## Inputs" | skills/l-01-agent-lifecycles/roles/curator.md:11-29 |
+| Inspection classifies contract disposition rather than equating test-green with intent-green. | "Do not confuse **test-green with intent-green**" | skills/l-01-agent-lifecycles/roles/curator.md:56-59 |
+| Current intent, evidence, and semantic history are separate information planes. | "Reconcile three ways before writing anything" | skills/l-01-agent-lifecycles/roles/curator.md:33-37 |
+| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "Run the complete curation operation at intake and after every repair" | skills/l-01-agent-lifecycles/roles/curator.md:42-46 |
 
 ## 260821-DAGQC-L2 Quality Invocation
 
@@ -94,6 +94,7 @@ followed by `mode: poll` carrying only repository and run id. Capacity refusal m
 retry; it does not authorize an alternate runner or compatibility call.
 
 ## Update History
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified curator as target-only plus explicit

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,14 +61,14 @@ These same-repository owners preserve exact journal, pair, task and ref authorit
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Repair evidence is persisted at the exact failed-operation seam. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| None | `record_organizational_completion_repair` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:150-171 |
 | The durable reset identity contains the code/memory pair and exact contract hashes. | `_write_reset_contract` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:383-391 |
 | Preparation proves cancelled ownership, matching pair/task binding and exact reset state. | `_require_matching_repair_binding` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:288-304 |
-| Operation and code/memory source authorities are revalidated. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| None | `_require_operation_identity`; `_require_code_operation_authority`; `_require_memory_operation_authority` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:440-452; mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:480-520 |
 | The repair tuple contains the exact code candidate and memory-content commit. | `_repair_commits` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:595-614 |
 | The reset clears only the accepted closed pair/state and creates the waiting successor. | `_successor_repair_door` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:667-684 |
 | Publication requires unchanged integration refs, unmoved sources and accepted/reset contract bytes. | `_write_reset_contract` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:383-391 |
-| The actual code and memory source branches must remain at their recorded bases. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| None | `_require_sources_unmoved` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:694-699 |
 
 ## Cross-Repo References
 
@@ -92,7 +92,7 @@ The current source seams include `OrganizationalRepairPublicationError`, `Organi
 | --- | --- | --- |
 | Reset publication failures retain exact expected/observed state. | `OrganizationalRepairPublicationError` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:49-75 |
 | Classification describes accepted, reset or conflicting contract state. | `_write_reset_contract` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:383-391 |
-| The public classifier uses the retained journal repair evidence. | n/a | [mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py](mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py) |
+| None | `classify_organizational_completion_repair` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:114-123 |
 
 ## 260821-CLIVE Repair Successor Publication
 
@@ -111,6 +111,7 @@ This change preserves the file's existing authority boundary. No threshold excep
 fallback, or compatibility reader was added.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Reconciled two-commit repair identity, unchanged task/source/ref checks and deterministic reset publication; moved current reference sections before the preserved historical entries. Source SHA-256 `1d203a8eb3543c23ccea6f31fef3238bfc1022057a28823b2746c1fb2b467171`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 

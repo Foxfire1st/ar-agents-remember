@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/eve_capsule/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `../overview.md` |
 
@@ -131,7 +131,7 @@ was available for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one compiler and the one projection this module transports from, unchanged and not re-implemented. | `compile_task_capsule`; `CapsuleCompileRequest`; `resolve_task_projection_scope`; `project_task_context` | mcp/src/agents_remember/application/skill_resources/__init__.py; mcp/src/agents_remember/application/task_projection/__init__.py |
+| The one compiler and the one projection this module transports from, unchanged and not re-implemented. | `compile_task_capsule`; `CapsuleCompileRequest`; `project_task_context`; "def resolve_task_projection_scope(" | mcp/src/agents_remember/application/skill_resources/capsule.py:91-108; mcp/src/agents_remember/application/skill_resources/capsule.py:205-236; mcp/src/agents_remember/application/task_projection/projection.py:78-90; mcp/src/agents_remember/application/task_projection/scope.py:334-417 |
 | The carrier format and the environment names are declared in the models tier, so the producer and the consumer share one spelling. | `EveCapsuleCarrier`; `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-42; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231 |
 | The reader half that proves a carrier before a process exists, and the git-identity check behind it. | `verify_capsule_binding`; `_require_admitted_git_worktree` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; mcp/src/agents_remember/serving/eve_runtime_launch.py:518-546 |
 | The in-process reader that applies the carrier the launch verified. | `loadVerifiedCapsule`; `admitWritePath` | eve_runtime/agent/lib/capsule.ts:109-149; eve_runtime/agent/lib/capsule.ts:164-178 |
@@ -150,6 +150,7 @@ compiler it calls is AR's own.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T10:00+02:00 — 260915-CAPS-L15 curator: **the seam gained its production caller, so the
   invariant that said it had none was corrected in place.** `application/role_capsules/launch.py::_compile_eve_task`

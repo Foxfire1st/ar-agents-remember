@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -100,13 +100,13 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | "**Job P — Portfolio (streamline + plan).**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:102-102 |
+| The synchronized role reads the ruled plan for its requirement-corpus references, the reasoned topology choice, every commanded master's executionNature, and any executionGraph. | `executionNature`; `executionGraph`; "the reasoned topology choice" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:19-21 |
 | The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; "## Topology Choice And Canonical executionGraph Adoption Payload" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-72; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:127-168 |
 | Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
-| The shipped role now states the graph-less default directly: canonical commanded order is the stable tie-break and nothing serializes its masters. | "nothing serializes its masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:264-267 |
-| The shipped role now states that per-contract activation records each master's own `reconciling -> active` transition and serializes nothing across masters. | "Per-contract activation records each master's own" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:345-347 |
-| The shipped role's closeout queue observes each contract's own activation facts instead of a paused former master. | "Queue rows only project each contract's own" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:350-351 |
-| The shipped topology diagram shows each atomic master on its own branch with one landing into super. | "atomic master B branch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:269-269 |
+| The shipped role states that independent ready masters run in parallel up to the configured maximum, and that only an atomic master waits for its explicit graph predecessors. | `maxParallelMasters`; "waits for its explicit graph predecessors" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:111-112 |
+| Each release and landing is per execution nature, and the seat releases only the exact first-ready generation the projection admits. | "Release and land per execution nature"; "You release only the exact first-ready generation the projection admits" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:67-68 |
+| The shipped role selects from current truth rather than a queue row, and it never mutates an old queue row. | "selecting from current truth rather than a queue row"; "never mutate an old queue row" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:36-36; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:179-180 |
+| The shipped topology rule gives only an atomic master an intermediate integration branch off super, and its completed block lands on super once. | "owns an intermediate integration branch"; "its leaves branch from that block, and the completed block lands on super once" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:55-62 |
 
 ## Cross-Repo References
 
@@ -235,6 +235,7 @@ earlier shipped-source debt note is therefore removed — a repo-wide grep for `
 and source-pair activation wording returns 0 hits in the code worktree.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "atomic master B branch" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:269-269. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/lifecycle_models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ an unchanged interruption resumes the exact publication path without rerunning g
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Finalization order contains code, external memory, and contract publication only. | n/a | [mcp/src/agents_remember/certification/lifecycle_models.py](mcp/src/agents_remember/certification/lifecycle_models.py) |
+| None | `FinalizationLeg` | mcp/src/agents_remember/certification/lifecycle_models.py:32-36 |
 | The exact-candidate observation is the admission boundary's owner-produced input. | `ExactCandidateObservation` | mcp/src/agents_remember/certification/lifecycle_models.py:46-79 |
 | Prior-red corrective and recovery records bind digests to semantic envelopes. | `PriorRedDispositionSemanticEnvelope` | mcp/src/agents_remember/certification/lifecycle_models.py:82-100 |
 | The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | `_require_ordered_progress` | mcp/src/agents_remember/certification/lifecycle_models.py:220-240 |
@@ -102,6 +102,7 @@ No cross-repository implementation boundary is owned here.
 | No cross-repository implementation is referenced. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Retired the ledger finalization leg while preserving ordered durable output and contract evidence. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

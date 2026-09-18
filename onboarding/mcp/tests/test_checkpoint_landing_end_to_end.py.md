@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_checkpoint_landing_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -60,7 +60,7 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Initial live-pair capture, source merge, and source divergence. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
+| None | `test_an_unfinished_master_checkpoints_its_own_refs_end_to_end`; `test_a_master_line_that_merged_its_source_still_checkpoints`; `test_source_memory_divergence_still_blocks_preview_and_apply` | mcp/tests/test_checkpoint_landing_end_to_end.py:67-122; mcp/tests/test_checkpoint_landing_end_to_end.py:124-147; mcp/tests/test_checkpoint_landing_end_to_end.py:149-163 |
 | Retry, continued work, and final-route completion semantics. | `test_retry_is_idempotent_and_continued_work_checkpoints_again` | mcp/tests/test_checkpoint_landing_end_to_end.py:165-201 |
 | Ordinary leaf cache absence and code-only checkpoint publication. | `test_the_ordinary_leaf_route_lands_without_a_cache_file` | mcp/tests/test_checkpoint_landing_end_to_end.py:278-302 |
 | Source-cache damage does not block; real approval/master/race guards survive. | `test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint` | mcp/tests/test_checkpoint_landing_end_to_end.py:412-431 |
@@ -74,6 +74,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced cache-row/refusal matrices with two-output publication, source-content divergence, cache-damaged checkout, and code-without-attribution scenarios; retained public checkpoint, retry, approval, completion, and ref-race behavior. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

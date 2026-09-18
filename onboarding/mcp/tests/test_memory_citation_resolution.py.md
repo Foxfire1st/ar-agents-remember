@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Grammar and path boundaries retain their dedicated assertion classes. | n/a | [mcp/tests/test_memory_citation_resolution.py](mcp/tests/test_memory_citation_resolution.py) |
+| Grammar and path boundaries retain their dedicated assertion classes. | `ProseGrammarTests`; `DeletedClassTests` | mcp/tests/test_memory_citation_resolution.py:151-181; mcp/tests/test_memory_citation_resolution.py:201-211 |
 | Selected/full validation and missing-code-root reporting. | `test_full_and_selected_walks_share_canonical_document_validation` | mcp/tests/test_memory_citation_resolution.py:217-237 |
 | Retained prepared history and cache-independent memory provenance. | `RetainedPreparedProvenanceTests` | mcp/tests/test_memory_citation_resolution.py:249-381 |
 | Mechanical projection prompts the support question rather than asserting currency. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:474-503 |
@@ -92,6 +92,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Added the Git memory-provenance scenario to the card: valid/missing/malformed caches preserve provenance and repository HEADs, while real policy-source changes reopen the citation. Retained grammar, source isolation, and mechanical-projection evidence boundaries. Working candidate verified by source inspection; commit metadata records real committed history only.
 

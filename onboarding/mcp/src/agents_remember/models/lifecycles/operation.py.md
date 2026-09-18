@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -113,8 +113,8 @@ The operation model owns strict serialization and cross-field identity checks. T
 | Attestation, passing result, comparison base and memory policy are checked together. | `memory_policy` | mcp/src/agents_remember/models/lifecycles/operation.py:297-297 |
 | Completed proof must match the selected operation generation, references and integration code authority. | `IntegrationOperationAuthority` | mcp/src/agents_remember/models/lifecycles/operation.py:170-186 |
 | Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `_MEANINGFUL_STATE_FIELDS` | mcp/src/agents_remember/models/lifecycles/operation.py:521-548 |
-| The public projection intentionally omits private execution identifiers. | n/a | [mcp/src/agents_remember/models/lifecycles/operation_projection.py](mcp/src/agents_remember/models/lifecycles/operation_projection.py) |
-| The R03 dependency vocabulary is shared by these record types. | n/a | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection`; `LifecycleWorkerObservation` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393; mcp/src/agents_remember/models/lifecycles/operation_projection.py:314-321 |
+| The R03 dependency vocabulary is shared by these record types. | `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
 
 ## Cross-Repo References
 
@@ -208,6 +208,7 @@ The operation record separately retains private preparation state. Original comm
 | `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | mcp/src/agents_remember/models/lifecycles/operation.py:981-1016 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed third-commit input/recovery/authority cells while preserving exact output and publication checks. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

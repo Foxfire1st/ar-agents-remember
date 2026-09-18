@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_projection/rendering.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T10:30+02:00 |
-| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
-| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ The render entry point, the binding block that makes a projection self-locating,
 | The closure: expansion references and gaps, so "not injected" is visible rather than silent. | `_closure` | mcp/src/agents_remember/application/task_projection/rendering.py:234-258 |
 | The channel vocabulary and its renderer table. | `_CHANNEL_RENDERERS`; `_CHANNEL_ORDER`; `ProjectionChannel` | mcp/src/agents_remember/application/task_projection/rendering.py:261-271; mcp/src/agents_remember/application/task_projection/rendering.py:27-36; mcp/src/agents_remember/application/task_projection/types.py:45-57 |
 | The value the rendered bytes are digested into, which is why the revision is not in the prose twice. | `task_context_of` | mcp/src/agents_remember/application/task_projection/provider.py:37-52 |
-| The case that proves an owned obligation is carried verbatim into the rendered document. | `test_every_owned_obligation_is_carried_verbatim_and_a_missing_section_is_a_gap` | mcp/tests/test_task_projection.py:801-830 |
+| The case that proves an owned obligation is carried verbatim into the rendered document. | `test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim` | mcp/tests/test_task_projection.py:1152-1209 |
 
 ## Cross-Repo References
 
@@ -107,6 +107,7 @@ No sibling-repository contract consumes this renderer.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: created this card for the Markdown renderer added
   by the scoped-task-context leaf (`CAPS-R03@v1`). Records the fixed channel order and renderer

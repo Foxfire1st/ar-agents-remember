@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_attribution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -83,9 +83,9 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The single key, log format, renderer, and attribution value. | `_LOG_FORMAT` | mcp/src/agents_remember/kernel/memory_attribution.py:56-56 |
-| The history walk and message/value parsers define the actual read behavior. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| Row conversion and optional object validation. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| Runtime ledger derivation never consults cache text. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| None | `attributed_commits`; `parse_code_commit_trailer`; `_trailer_value_from` | mcp/src/agents_remember/kernel/memory_attribution.py:127-140; mcp/src/agents_remember/kernel/memory_attribution.py:143-174; mcp/src/agents_remember/kernel/memory_attribution.py:186-199 |
+| None | `AttributedCommit`; `code_commit_exists`; `ledger_rows_from_attribution` | mcp/src/agents_remember/kernel/memory_attribution.py:99-124; mcp/src/agents_remember/kernel/memory_attribution.py:202-205; mcp/src/agents_remember/kernel/memory_attribution.py:208-227 |
+| None | `derive_memory_ledger`; "without consulting a cached file or a ledger commit" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 | The source census and behavioral renderer case keep the producer seam visible. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-138 |
 
 ## Cross-Repo References
@@ -98,6 +98,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

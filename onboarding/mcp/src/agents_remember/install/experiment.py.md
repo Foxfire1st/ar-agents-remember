@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/experiment.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -125,9 +125,10 @@ and checkable.
 | One run record per run, in the packet's shape plus the mode, reason, selection source and capability detail. | `ExperimentRunRecord`; `build_run_record` | mcp/src/agents_remember/install/experiment.py:568-609; mcp/src/agents_remember/install/experiment.py:633-665 |
 | The rendered undo rows for the unmodified configuration, and the labelled skills-install row. | `experiment_rollback_plan`; `rollback_payload` | mcp/src/agents_remember/install/experiment.py:713-769; mcp/src/agents_remember/install/experiment.py:770-773 |
 | The installer consumes an already-resolved selection and refuses an unselected scope. | `resolve_experiment_install`; `install_experimental_runtime` | mcp/src/agents_remember/install/runtime.py:564-614; mcp/src/agents_remember/install/runtime.py:654-670 |
-| The compiler resolves its corpus from the packaged tree, not the coordination root's copy. | `packaged_source_root` | mcp/src/agents_remember/application/skill_resources/operation.py:1-120 |
+| The compiler resolves its corpus from the packaged tree, not the coordination root's copy. | `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:50-63 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created.** This candidate adds the module
   (773 lines, untracked on `ar/260915-caps-l9-ar`), so the card documents the selection

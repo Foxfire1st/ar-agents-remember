@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,9 +55,9 @@ These source owners establish the behavior and boundaries above. Citation ranges
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The running-owner observation reloads the selected output and builds a bound physical view. | `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
-| The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
-| Selected record and intent currentness are rechecked around observation. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
-| The execution view binds the exact output bytes, raw commit/tree, and logical pair. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py) |
+| The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. | `observe_selected_prepared_code_view`; "Reprove a selected code output without requiring a live worker lease." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
+| Selected record and intent currentness are rechecked around observation. | `_require_selected_code_current` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:166-186; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:135-135; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:150-150 |
+| The execution view binds the exact output bytes, raw commit/tree, and logical pair. | `_PreparedCodeViewBuild`; "logicalPair"; "codeCommit" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:53-62; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:208-223 |
 | Preparation precedes a fresh observation when the caller requests a prepared view. | `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
 
 ## Cross-Repo References
@@ -69,6 +69,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Documented strict existing-code bindings in both live-worker and selected-record views, preserving the physical-root/logical-pair distinction. Source SHA-256 `afc00f38d2cee203d28a9a2bdc35d61a641d5b73ea818f66c3d4d6f2ba811705`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 

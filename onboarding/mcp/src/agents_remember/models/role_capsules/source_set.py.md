@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/source_set.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -89,10 +89,10 @@ No external or domain documentation is configured for this memory root
 | --- | --- | --- |
 | The locked plan and admitted-source shapes this module compares. | `CapsuleDeclaredInstruction`; `CapsuleSource` | mcp/src/agents_remember/models/role_capsules/sources.py:32-49; mcp/src/agents_remember/models/role_capsules/sources.py:50-95 |
 | The refusals this module raises. | `STATUS_MISSING_REQUIRED_INSTRUCTION`; `STATUS_SOURCE_NOT_DECLARED`; `STATUS_SOURCE_ROOT_MISMATCH`; `STATUS_SPECIALIZATION_NOT_ADMITTED` | mcp/src/agents_remember/models/role_capsules/statuses.py:14-21 |
-| The compiler step that runs this validation before resolution. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:90-153 |
+| The compiler step that runs this validation before resolution. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:89-145 |
 | The YAML-free source of the declared plan: the parsed canonical manifest. | `parse_composition_manifest` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216 |
-| Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted. | `test_missing_mandatory_material_is_refused_rather_than_omitted`; `test_a_source_the_manifest_does_not_declare_is_refused`; `test_a_source_read_from_the_wrong_composition_root_is_refused`; `test_repository_specialization_must_be_admitted_on_the_binding` | mcp/tests/test_role_capsule_compiler.py:557-566; mcp/tests/test_role_capsule_compiler.py:567-573; mcp/tests/test_role_capsule_compiler.py:574-583; mcp/tests/test_role_capsule_compiler.py:584-591 |
-| **The declared-skill gate** and its two directions: an incomplete admitted set refuses, and a referenced-but-missing skill refuses. | `_require_declared_skills_present`; `test_a_skill_reference_whose_root_file_is_not_admitted_is_refused`; `test_a_source_set_with_no_admitted_bytes_is_refused` | mcp/src/agents_remember/models/role_capsules/source_set.py:195-228; mcp/tests/test_role_capsule_admission.py:1034-1057; mcp/tests/test_role_capsule_admission.py:939-964; mcp/tests/test_role_capsule_admission.py:1070-1091; mcp/tests/test_role_capsule_admission.py:975-998 |
+| Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted. | `test_missing_mandatory_material_is_refused_rather_than_omitted`; `test_a_source_the_manifest_does_not_declare_is_refused`; `test_a_source_read_from_the_wrong_composition_root_is_refused`; `test_repository_specialization_must_be_admitted_on_the_binding` | mcp/tests/test_role_capsule_compiler.py:583-606; mcp/tests/test_role_capsule_compiler.py:609-613; mcp/tests/test_role_capsule_compiler.py:616-623; mcp/tests/test_role_capsule_compiler.py:626-631 |
+| **The declared-skill gate** and its two directions: an incomplete admitted set refuses, and a referenced-but-missing skill refuses. | `_require_declared_skills_present`; `test_a_skill_reference_whose_root_file_is_not_admitted_is_refused`; `test_a_source_set_with_no_admitted_bytes_is_refused` | mcp/src/agents_remember/models/role_capsules/source_set.py:195-226; mcp/tests/test_role_capsule_admission.py:1040-1063; mcp/tests/test_role_capsule_admission.py:1135-1156 |
 
 ## Cross-Repo References
 
@@ -103,6 +103,8 @@ No sibling-repository contract defines this validation.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `compile_role_capsule` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:89-145. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 

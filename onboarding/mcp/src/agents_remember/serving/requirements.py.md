@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/requirements.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ No Domain Documentation source is configured.
 | Task-context root selection and the registered-root guard. | `_selected_root`; `_registered_root` | mcp/src/agents_remember/serving/requirements.py:45-72; mcp/src/agents_remember/serving/requirements.py:75-87 |
 | The stricter no-symlink confinement reused by read. | `confine_non_symlink_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:52-92 |
 | The declared models + shared scoped-read refusal table. | `RequirementRow`; `RequirementsListing`; `RequirementContents`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:767-798; mcp/src/agents_remember/serving/response_contract.py:1103-1109 |
-| Composition: the app registers this surface. | `register_requirements_routes` | mcp/src/agents_remember/serving/app.py:283-284 |
+| Composition: the app registers this surface. | `create_app` | mcp/src/agents_remember/serving/app.py:254-315 |
 
 
 ## Cross-Repo References
@@ -99,6 +99,7 @@ No cross-repository implementation boundary is owned here.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-05T08:27+02:00 — L31 native curator: Removed the leaked diff-marker bullet after checking root selection; retained the GET-only requirement-packet contract and refreshed the scoped-read refusal-table evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 

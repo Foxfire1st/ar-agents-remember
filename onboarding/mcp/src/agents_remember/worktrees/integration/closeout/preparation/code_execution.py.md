@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,9 +54,9 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Existing code uses a strict typed binding, while enabled code delegates to the private executor. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py) |
-| Prepared or existing raw code output is retained through the shared selected-output owner. | n/a | [mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py](mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py) |
-| The kernel rechecks actual HEAD/ref/tree and physical output around the raw commit read. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| None | `observe_code_output`; `prepare_code_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:20-36; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:39-48 |
+| None | `prepare_code_output`; "retain_code_output(selected, raw)" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:39-48 |
+| None | `inspect_existing_git_preparation`; `_require_existing_preparation`; `_require_preparation_index` | mcp/src/agents_remember/kernel/git_command.py:390-427; mcp/src/agents_remember/kernel/git_command.py:451-465; mcp/src/agents_remember/kernel/git_command.py:489-498 |
 
 ## Cross-Repo References
 
@@ -67,6 +67,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Reconciled the typed existing-code binding and its deliberately strict code domain; private execution and raw-output retention remain unchanged. Source SHA-256 `3dc4afdacd6deb7c741ba3a9419e3778ea0bfc9132a8ba20594ec8b1205d4f71`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 

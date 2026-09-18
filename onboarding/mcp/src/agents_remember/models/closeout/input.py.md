@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/closeout/input.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,8 +64,8 @@ requirement remains, with its ledger leg retired by the authorized LCA-L9 change
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. | `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
-| Raw observations and typed refusal vocabulary are public data. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| Effective legs are a discriminated union. | n/a | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+| None | `CloseoutMessageInput`; `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:47-53; mcp/src/agents_remember/models/closeout/input.py:77-85 |
+| None | `EffectiveCloseoutLeg` | mcp/src/agents_remember/models/closeout/input.py:122-125 |
 | Only enabled legs can return a raw commit message; this stays the public echo. | `CloseoutPublicMessageField` | mcp/src/agents_remember/models/closeout/input.py:35-38 |
 | The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. | `CODE_COMMIT_TRAILER_KEY` | mcp/src/agents_remember/kernel/memory_attribution.py:51-51 |
 | The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. | `kernel` | layers.toml:78-84 |
@@ -82,6 +82,7 @@ No meaningful cross-repository reference applies.
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

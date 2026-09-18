@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,9 +68,9 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| The four-state vocabulary is closed and explicit. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| The four-state vocabulary is closed and explicit. | "MutationEvidenceState = Literal[" | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:10-15 |
 | Snapshot identity includes reflog, index, candidate, and status facts. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| State-specific proof is model validated. | n/a | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+| State-specific proof is model validated. | `_require_state_evidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:47-63 |
 
 ## Cross-Repo References
 
@@ -91,6 +91,7 @@ The current source seams include `GitMutationSnapshot`, `GitMutationEvidence`. C
 | The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Bounded mutation legs to code/memory and documented the separate cache-free HEAD content tree. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

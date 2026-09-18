@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -62,12 +62,12 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ordinary admission requires the accepted code/memory work heads and substantive cleanliness. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Source snapshots and replay/lineage decisions retain current Git facts. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
+| Ordinary admission requires the accepted code/memory work heads and substantive cleanliness. | `validate_integrate_contract`; `validate_integrate_memory_contract` | mcp/src/agents_remember/worktrees/modules/integrate.py:168-190; mcp/src/agents_remember/worktrees/modules/integrate.py:193-213 |
+| Source snapshots and replay/lineage decisions retain current Git facts. | `_integration_lineage_block`; `_integration_source_state_block`; `_replay_requirements` | mcp/src/agents_remember/worktrees/modules/integrate.py:216-238; mcp/src/agents_remember/worktrees/modules/integrate.py:268-274; mcp/src/agents_remember/worktrees/modules/integrate.py:283-314 |
 | Checkpoint capture, route output selection, and shared memory ancestry. | `_require_memory_ancestry` | mcp/src/agents_remember/worktrees/modules/integrate.py:473-486 |
 | Addressed handover gates and publication preserve the operation's real identity. | `handover_gates` | mcp/src/agents_remember/worktrees/modules/integrate.py:131-131 |
-| Final and checkpoint result publication differ without performing reclamation. | n/a | [mcp/src/agents_remember/worktrees/modules/integrate.py](mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| The shared writer records the two accepted output commits. | n/a | [mcp/src/agents_remember/worktrees/modules/landing_record.py](mcp/src/agents_remember/worktrees/modules/landing_record.py) |
+| Final and checkpoint result publication differ without performing reclamation. | `_integrated_result`; `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607; mcp/src/agents_remember/worktrees/modules/integrate.py:890-927 |
+| The shared writer records the two accepted output commits. | `LandedIntegration`; `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Retired ledger candidate/output fields and mapping projection gates; preserved two-output ancestry, exact ref CAS, handover/ownership checks, checkpoint capture, and finalization separation. Superseded obsolete active-body acceptance and hard-reset rollback claims. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

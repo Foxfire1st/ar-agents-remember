@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/memory_candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash |  `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate |  2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,8 +66,8 @@ contract is supported by the implementation and the authorized cache-retirement 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The frozen pair identity retains ledgerPath as information excluded from its authority digest. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
-| The strict frozen pair wire contract declares every required authority cell. | n/a | [mcp/src/agents_remember/models/lifecycles/memory_candidate.py](mcp/src/agents_remember/models/lifecycles/memory_candidate.py) |
-| The resolver is the sole producer of this identity. | n/a | [mcp/src/agents_remember/memory_quality/memory_candidate_pair.py](mcp/src/agents_remember/memory_quality/memory_candidate_pair.py) |
+| The strict frozen pair wire contract declares every required authority cell. | "Every contract cell that selects one worktree-backed memory candidate pair." | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
+| The resolver is the sole producer of this identity. | `resolve_memory_candidate_pair` | mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:48-131 |
 
 ## Cross-Repo References
 
@@ -79,6 +79,7 @@ both repository addresses.
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Separated the retained ledger-path consumer field from candidate-pair authority. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -61,9 +61,9 @@ No Domain Documentation source is configured for these repository-owned test fix
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | n/a | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
-| External-memory fixture supplies real isolated Git repositories and current contract inputs. | n/a | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
-| The base class provides helper methods rather than collected test cases. | n/a | [mcp/tests/test_worktree_support.py](mcp/tests/test_worktree_support.py) |
+| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | `seed_memory_ledger`; `init_repo` | mcp/tests/test_worktree_support.py:138-148; mcp/tests/test_worktree_support.py:93-113 |
+| External-memory fixture supplies real isolated Git repositories and current contract inputs. | `open_external_contract_fixture` | mcp/tests/test_worktree_support.py:395-483 |
+| The base class provides helper methods rather than collected test cases. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:708-783 |
 
 
 ## Cross-Repo References
@@ -75,6 +75,7 @@ Temporary fixture repositories do not establish a live cross-repository integrat
 | No separate external implementation source applies. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
 

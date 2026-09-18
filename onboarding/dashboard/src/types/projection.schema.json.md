@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -75,12 +75,12 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
+| The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. | "memory-refresh"; "direct-memory-commit" | dashboard/src/types/projection.schema.json:1972-1999 |
 | The `$defs` block contains all reusable projection schema definitions. | `$defs` | dashboard/src/types/projection.schema.json:2-2 |
 | `ActionAvailability` declares reducer-decided action safety for the cockpit. | `ActionAvailability` | dashboard/src/types/projection.schema.json:3-46 |
 | `AgentPickupNode` declares a pending unacked dashboard response. | `AgentPickupNode` | dashboard/src/types/projection.schema.json:47-304 |
 | The generated `task-intent/v1` identity definition with closed schema and digest pattern. | "task-intent/v1" | dashboard/src/types/projection.schema.json:4125-4145 |
-| The optional task-intent reference on the lifecycle operation projection. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
+| The optional task-intent reference on the lifecycle operation projection. | "taskIntent" | dashboard/src/types/projection.schema.json:2084-2094 |
 | The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. | `members` | dashboard/src/types/projection.schema.json:634-634 |
 
 ## L23 Source-Lineage Schema
@@ -113,7 +113,7 @@ authority to the dashboard or to the disposable closeout projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. | n/a | [dashboard/src/types/projection.schema.json](dashboard/src/types/projection.schema.json) |
+| The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. | "One coherent, task-addressed lifecycle journal observation."; "incoherent" | dashboard/src/types/projection.schema.json:1830-2116 |
 | The generated TypeScript mirror requires the legalControls array on its operation observation. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Contract
@@ -168,6 +168,7 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed the retired ledger-commit phases from the documented generated projection vocabulary. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

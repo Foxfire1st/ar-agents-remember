@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_attribution_producers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:16 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ the current working-candidate behavior; historical entries below retain their or
 | The hostile-body case preserves the message and parses the final attribution. | `test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final` | mcp/tests/test_memory_attribution_producers.py:141-163 |
 | The public carryover case verifies one commit and no extra repeat commit with absent cache. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:238-300 |
 | The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch` | mcp/tests/test_memory_attribution_producers.py:303-387 |
-| The kernel owns the key and the single writer. | n/a | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
+| The kernel owns the key and the single writer. | `render_memory_content_message`; "CODE_COMMIT_TRAILER_KEY = \"Code-Commit\"" | mcp/src/agents_remember/kernel/memory_attribution.py:51-51; mcp/src/agents_remember/kernel/memory_attribution.py:67-92 |
 | Closeout-shaped producers reach that writer through the effective input model. | `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
 
 ## Cross-Repo References
@@ -111,6 +111,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:16 UTC — Documented the added assertions inside the existing public baseline case: unborn ready status, unavailable ancestry from a missing-parent commit, failed status/adoption results, and unchanged refs. No new test definition or case budget is claimed. Working candidate verified against the formatted source; real commit metadata and earlier history remain unchanged.
 

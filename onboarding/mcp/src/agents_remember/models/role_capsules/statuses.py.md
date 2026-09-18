@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/statuses.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ No external or domain documentation is configured for this memory root
 | The typed refusal that carries a status, its detail, a remedy, and structured conflict rows. `CapsuleBindingError` was removed on the A3 candidate and must not be cited. | `CapsuleCompilationError`; `CapsuleManifestError`; `CapsuleSourceError` | mcp/src/agents_remember/errors.py:464-507; mcp/src/agents_remember/errors.py:508-511; mcp/src/agents_remember/errors.py:512-513 |
 | The equality-conflict case that stops compilation instead of choosing by accident. | `_require_one_identity`; `_supersessions` | mcp/src/agents_remember/models/role_capsules/resolution.py:221-261; mcp/src/agents_remember/models/role_capsules/resolution.py:262-284 |
 | The source-admission codes raised outside this tuple, in the application layer. | `_require_root`; `_read`; `_require_confined_relative` | mcp/src/agents_remember/application/role_capsules/sources.py:107-123; mcp/src/agents_remember/application/role_capsules/sources.py:124-159; mcp/src/agents_remember/application/role_capsules/sources.py:169-196 |
-| **`source-not-utf8`** and the revision/blank-content refusals, raised in the value layer rather than the application layer. | `CapsuleSource` | mcp/src/agents_remember/models/role_capsules/sources.py:50-95 |
+| **`source-not-utf8`** and the revision/blank-content refusals, raised in the value layer rather than the application layer. | `CapsuleSource` | mcp/src/agents_remember/models/role_capsules/sources.py:49-118 |
 | The tool-policy refusal raised when a request falls outside the admitted snapshot. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
 
 ## Cross-Repo References
@@ -113,6 +113,7 @@ compiler.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 

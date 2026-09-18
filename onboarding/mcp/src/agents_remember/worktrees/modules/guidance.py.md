@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -62,11 +62,11 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed payloads and separate lifecycle/recovery builders. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| Carryover completion is a real two-repository ancestry proof. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| Typed payloads and separate lifecycle/recovery builders. | `NextGuidance`; `recovery_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:56-67; mcp/src/agents_remember/worktrees/modules/guidance.py:145-168 |
+| Carryover completion is a real two-repository ancestry proof. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
 | Phase precedence, finalization guidance, and the still-working checkpoint branch. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:215-225 |
-| Freshness, consumer paths, identity fields, and interactive/projected observation. | n/a | [mcp/src/agents_remember/worktrees/modules/guidance.py](mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| The canonical lifecycle wire vocabularies. | n/a | [mcp/src/agents_remember/models/worktree.py](mcp/src/agents_remember/models/worktree.py) |
+| Freshness, consumer paths, identity fields, and interactive/projected observation. | `WorktreeStatusFacts`; `base_freshness` | mcp/src/agents_remember/worktrees/modules/guidance.py:83-121; mcp/src/agents_remember/worktrees/modules/guidance.py:378-428 |
+| The canonical lifecycle wire vocabularies. | `WorktreePhase`; `NextOperation`; `NextTool` | mcp/src/agents_remember/models/worktree.py:40-49; mcp/src/agents_remember/models/worktree.py:50-58; mcp/src/agents_remember/models/worktree.py:59-74 |
 | External completion remains valid with damaged caches and rejects unlanded commits. | `test_external_completion_proves_landed_commits_without_reading_the_cache` | mcp/tests/test_post_integration_cleanup_guidance.py:84-119 |
 
 ## Cross-Repo References
@@ -77,6 +77,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced official-ledger carryover detection with accepted code/memory ancestry; corrected the vocabulary-owner description and retained phase precedence, checkpoint/finalization semantics, and projected-status distinctions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

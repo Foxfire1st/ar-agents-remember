@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/worktree_tool_requests.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,10 +71,10 @@ contracts.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Raw closeout/control messages and landed commits contain only code/memory values. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:110-115 |
-| Task-start concepts and shared defaults have one definition. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Lifecycle control reconstructs only canonical typed public values. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Closeout approval, messages, and finalization documents remain separate concepts. | n/a | [mcp/src/agents_remember/application/worktree_tool_requests.py](mcp/src/agents_remember/application/worktree_tool_requests.py) |
-| Start consumes its extracted request type. | n/a | [mcp/src/agents_remember/application/worktree_tools.py](mcp/src/agents_remember/application/worktree_tools.py) |
+| Task-start concepts and shared defaults have one definition. | `TaskIdentity`; `TaskBases`; `StartExecution` | mcp/src/agents_remember/application/worktree_tool_requests.py:17-30; mcp/src/agents_remember/application/worktree_tool_requests.py:34-48; mcp/src/agents_remember/application/worktree_tool_requests.py:52-57 |
+| Lifecycle control reconstructs only canonical typed public values. | `OperationControlRequest`; `__post_init__` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107 |
+| Closeout approval, messages, and finalization documents remain separate concepts. | `CloseoutCommitMessages`; `CloseoutApproval`; `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tool_requests.py:110-115; mcp/src/agents_remember/application/worktree_tool_requests.py:131-136; mcp/src/agents_remember/application/worktree_tool_requests.py:143-149 |
+| The start tool consumes the request types this module extracts. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-109 |
 | Operation control consumes its extracted request type. | `_operation_control_request_refusal` | mcp/src/agents_remember/application/worktree_tools.py:557-585 |
 | Closeout apply consumes its extracted request type. | `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:353-368 |
 
@@ -87,6 +87,7 @@ No cross-repository boundary is owned here.
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | N/A | N/A |
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed ledger subjects and landed-ledger identities from the documented request concepts. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

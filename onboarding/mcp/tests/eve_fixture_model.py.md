@@ -6,8 +6,8 @@
 | path | `mcp/tests/eve_fixture_model.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ pass was available for this file.
 | --- | --- | --- |
 | The live fixture starts this stub and points the runtime at it, and is the only consumer. | `LiveFixture`; `_plan` | mcp/tests/live_eve_native_fixture.py:177-363; mcp/tests/live_eve_native_fixture.py:534-740 |
 | The runtime application reads the provider base URL, name and key from the adapter-owned launch environment. | `createOpenAICompatible`; `AR_EVE_PROVIDER_BASE_URL` | eve_runtime/agent/agent.ts:1-25; mcp/src/agents_remember/serving/eve_runtime_launch.py:67-76 |
-| The adapter's launched runtime is what actually consumes this provider, so the stub never appears on a production path. | `EveRuntimeProcess.start` | mcp/src/agents_remember/serving/eve_runtime_client.py:127-157 |
+| The adapter's launched runtime is what actually consumes this provider, so the stub never appears on a production path. | `EveRuntimeProcess` | mcp/src/agents_remember/serving/eve_runtime_client.py:133-200 |
 
 ## Cross-Repo References
 
@@ -99,6 +99,7 @@ pass was available for this file.
 | The stub imitates the OpenAI-compatible chat-completions API, and the runtime reaches it through the pinned `@ai-sdk/openai-compatible` provider. | "@ai-sdk/openai-compatible" | eve_runtime/package.json:16-16 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the trace now records the provider's own
   `messages` view.** Added beside the four original keys, which are unchanged, so a consumer can read

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/lib/capsule.ts` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../../../../../overview.md`         |
 
 ## Governing Overview
@@ -38,10 +38,11 @@ supplies the compiled capsule through the harness's own carrier.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The compiler owns capsule compilation and resolves its corpus from the packaged skills tree. | `packaged_source_root` | mcp/src/agents_remember/application/skill_resources/operation.py:1-120 |
+| The compiler owns capsule compilation and resolves its corpus from the packaged skills tree. | "Yield the shipped skills tree for the duration of one server's registration." | mcp/src/agents_remember/application/skill_resources/provider.py:40-47 |
 | The generator declares the `eve-runtime` target with its per-target ignore set. | `TARGETS` | scripts/sync-runtime.py:61-78 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created** for the packaged mirror this leaf
   adds as a generator target. The card records generated content and names the authored source as the

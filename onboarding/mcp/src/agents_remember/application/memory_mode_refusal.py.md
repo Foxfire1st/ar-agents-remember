@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_mode_refusal.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:25+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l12`; code candidate landed as `b281bcd68261866be306cc80a48241921b6dd0d2` |
 | governingOverview | `../../../overview.md` |
 
@@ -106,7 +106,7 @@ transport-shape and evidence-envelope contracts, not external library behaviour.
 | The same facts are available as a boundary-owned payload, with the artifact when one exists. | `memory_mode_refusal_payload` | mcp/src/agents_remember/application/memory_mode_refusal.py:44-63 |
 | The inverse direction rebuilds the operator fields and returns `None` for a non-removal failure. | `removed_memory_mode_fields_from_evidence` | mcp/src/agents_remember/application/memory_mode_refusal.py:66-104 |
 | The reconstruction rebuilds the refusal text from the vocabulary rather than trusting a carried copy. | `memory_mode_refusal_message` | mcp/src/agents_remember/kernel/memory_mode.py:78-86 |
-| Surface 1 of 7 catches the typed refusal ahead of its generic clause. | `except MemoryModeUnsupportedError` | mcp/src/agents_remember/application/worktree_status.py:98 |
+| Surface 1 of 7 catches the typed refusal ahead of its generic clause in the worktree-status contract read; the surrounding function is `worktree_status_packet`. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:72-99 |
 | Surface 2 publishes the refusal through the reporter rather than the generic failure path. | `memory_mode_refusal_evidence` | mcp/src/agents_remember/application/worktree_status.py:410-425 |
 | Surfaces 3 and 4 classify a configured contract's removal on both admission paths. | `configured_contract_reread_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:374-388 |
 | Surface 5 carries the refusal into the direct-landing answer. | "except MemoryModeUnsupportedError" | mcp/src/agents_remember/application/lifecycle/direct_landing.py:226-226 |
@@ -121,6 +121,7 @@ No cross-repository implementation evidence is required for these local reportin
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 
 - 2026-09-16T14:25+02:00 — 260915-CAPS-L12 curator (closeout-gate follow-up): the two verification fields above, which this card's creation entry left un-advanced, were populated on the closeout gate's refusal — `external-memory closeout requires onboarding verification metadata before memory commit`. They follow the canonical file-level model (`file-level-onboarding-workflow.md` § Metadata Rules: "use the latest commit that touched the source file once the content has been verified") and now read hash `b281bcd68261866be306cc80a48241921b6dd0d2`, date `2026-09-16T14:24:58+02:00` — the `[260915-CAPS-L12]` code commit that actually contains this source file, matching the value closeout's own `refresh_onboarding_metadata_for_context` writes for every required card. An earlier revision of this entry named the pre-commit base `c1dbebf8`, which does not contain this file; that value was replaced rather than retained, and no earlier history entry was rewritten. The creation entry's sentence that no stamp was advanced is superseded here, added rather than edited because `Update History` is append-only. Closeout re-stamps both fields authoritatively at the real commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/sources.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 | governingOverview      | `../overview.md`                           |
 
@@ -40,7 +40,7 @@ exactly the defect class the compiler must be able to report.
 
 - its declared `revision` must equal the digest of its own bytes, or the value is refused — a
   source whose revision is not content-addressed breaks determinism at its root;
-- cit:([`CapsuleSource.text`], mcp/src/agents_remember/models/role_capsules/sources.py:74-103) decodes the bytes as UTF-8 and refuses
+- cit:(["except UnicodeDecodeError as error:"], mcp/src/agents_remember/models/role_capsules/sources.py:85-101) decodes the bytes as UTF-8 and refuses
   **`source-not-utf8`** when they do not decode; and
 - a source that decodes to nothing but whitespace is refused as **`source-empty`**, a typed
   `CapsuleSourceError` on the same boundary — *not* a bare `ValueError` escaping
@@ -53,13 +53,13 @@ exactly the defect class the compiler must be able to report.
   the shipped corpus rather than a fixture.
 
 **The identity helpers are one vocabulary, and they cover skills as well as blocks.**
-cit:([`instruction_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:105-110) renders a block identity as `"<root>:<name>"`;
-cit:([`specializations_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:111-134) resolves a nested
+cit:([`instruction_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:145-148) renders a block identity as `"<root>:<name>"`;
+cit:([`specializations_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:151-172) resolves a nested
 `specializations/<group>/<name>.md` to the same identity regardless of grouping folder;
-cit:([`skills_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:135-147) renders a **skill** identity as `"<origin>#<skill>"` —
+cit:([`skills_declared_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:175-185) renders a **skill** identity as `"<origin>#<skill>"` —
 the origin is part of the identity because a bare skill name collides across servers, so the same
-name from two servers is deliberately two different references; cit:([`shared_core_reference`], mcp/src/agents_remember/models/role_capsules/sources.py:165-181) names a
-shared core block; and cit:([`root_of_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:148-164) answers which composition root an identity belongs to
+name from two servers is deliberately two different references; cit:([`shared_core_reference`], mcp/src/agents_remember/models/role_capsules/sources.py:205-208) names a
+shared core block; and cit:([`root_of_identity`], mcp/src/agents_remember/models/role_capsules/sources.py:188-202) answers which composition root an identity belongs to
 **for both shapes** — `<root>:<name>` carries its root, while a skill identity does not and is
 recognised by its separator instead. Having exactly one function answer that is what keeps the
 admitted-root agreement check and the identity index from disagreeing about skill identities.
@@ -115,9 +115,9 @@ No external or domain documentation is configured for this memory root
 | The admission boundary that reads the bytes these values carry. | `admit_capsule_sources`; `CapsuleAdmissionRequest` | mcp/src/agents_remember/application/role_capsules/sources.py:78-94; mcp/src/agents_remember/application/role_capsules/sources.py:38-77 |
 | The module that proves the admitted set agrees with this declared plan in both directions, including every declared skill root. | `admit_source_set`; `_require_declared_present`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/source_set.py:91-108; mcp/src/agents_remember/models/role_capsules/source_set.py:174-194; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
 | The resolution step that reduces each declared identity to one block. | `gather_candidates`; `resolve_instructions` | mcp/src/agents_remember/models/role_capsules/resolution.py:93-134; mcp/src/agents_remember/models/role_capsules/resolution.py:135-191 |
-| The carried skill reference built from `skills_declared_identity`. | `skill_references`; `CapsuleSkillReference` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193; mcp/src/agents_remember/models/role_capsules/types.py:414-434 |
+| The identity helper the carried skill reference is built from: `skills_declared_identity` renders the skill identity, and the compiler's `skill_references` calls it once per skill the seat declares. | `skills_declared_identity` | mcp/src/agents_remember/models/role_capsules/sources.py:175-185 |
 | Admission preserves content-addressed revisions and refuses a missing source. | `test_admission_reads_every_requested_source_with_its_content_digest`; `test_admission_refuses_a_missing_source_instead_of_skipping_it` | mcp/tests/test_role_capsule_admission.py:275-289; mcp/tests/test_role_capsule_admission.py:311-319 |
-| The three value guards, including the non-UTF-8 refusal. | `test_a_source_whose_revision_is_not_its_own_digest_is_refused`; `test_a_source_that_decodes_to_nothing_is_refused`; `test_a_source_that_is_not_utf8_text_is_refused`; `test_a_source_with_a_blank_identity_or_path_is_refused` | mcp/tests/test_role_capsule_compiler.py:931-945; mcp/tests/test_role_capsule_compiler.py:946-956; mcp/tests/test_role_capsule_compiler.py:957-972; mcp/tests/test_role_capsule_compiler.py:1132-1141 |
+| The value guards for this module's declared `CapsuleSource.text`, including the non-UTF-8 refusal. | `test_a_source_whose_revision_is_not_its_own_digest_is_refused`; `test_a_source_that_decodes_to_nothing_is_refused`; `test_a_source_that_is_not_utf8_text_is_refused`; `test_a_source_with_a_blank_identity_or_path_is_refused` | mcp/tests/test_role_capsule_compiler.py:973-985; mcp/tests/test_role_capsule_compiler.py:988-996; mcp/tests/test_role_capsule_compiler.py:999-1012; mcp/tests/test_role_capsule_compiler.py:1174-1181 |
 
 ## Cross-Repo References
 
@@ -128,6 +128,12 @@ No sibling-repository contract defines these values.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `instruction_identity` repointed to mcp/src/agents_remember/models/role_capsules/sources.py:145-148. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `specializations_declared_identity` repointed to mcp/src/agents_remember/models/role_capsules/sources.py:151-172. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `skills_declared_identity` repointed to mcp/src/agents_remember/models/role_capsules/sources.py:175-185. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `shared_core_reference` repointed to mcp/src/agents_remember/models/role_capsules/sources.py:205-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `root_of_identity` repointed to mcp/src/agents_remember/models/role_capsules/sources.py:188-202. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T15:50+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): repaired this card's citation ranges against the L11 candidate (`a29a20c6` + the five declared paths) and recorded the **D25 repair** the candidate delivers. `CapsuleSource.text` now refuses an emptied source as a typed **`CapsuleSourceError(status="source-empty")`** instead of raising a bare `ValueError` that `compile_admitted_capsule` does not catch — one refusal shape for the non-UTF-8 and empty-source defects, stated in the body and in the invariants, with the new `source-empty` case ranging to `mcp/tests/test_role_capsule_admission.py`. Advance, not rewrite: `CapsuleSource` 50-95 → **50-104**, `text` 74-93 → **74-103**, `instruction_identity` 96-101 → **105-110**, `specializations_declared_identity` 102-125 → **111-134**, `skills_declared_identity` 126-138 → **135-147**, `root_of_identity` 139-155 → **148-164**, `shared_core_reference` 156-172 → **165-181**, and the types row 81-86 → **52-86** so it holds the `CapsuleBlockIdentity` anchor it names. The L14 curator's D7 table-shape repair above is untouched, as is every earlier entry and every verification stamp.
 

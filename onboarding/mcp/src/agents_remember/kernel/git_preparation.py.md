@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/git_preparation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -58,10 +58,10 @@ These source owners establish the behavior and boundaries above. Citation ranges
 | --- | --- | --- |
 | Existing observations bind raw HEAD/tree and the additional memory-content subject. | `memory_content_tree` | mcp/src/agents_remember/kernel/git_preparation.py:44-44 |
 | Private paths, object identities, hook policy, and operation identity are validated before capability use. | `PrivateGitPreparationCapability` | mcp/src/agents_remember/kernel/git_preparation.py:88-98 |
-| The sealed private capability revalidates the binding and invokes its live owner. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| File modes and exact no-follow blob bytes are checked, including replacement during observation. | n/a | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
+| The sealed private capability revalidates the binding and invokes its live owner. | `PrivateGitPreparationCapability`; `require_authority` | mcp/src/agents_remember/kernel/git_preparation.py:88-98 |
+| File modes and exact no-follow blob bytes are checked, including replacement during observation. | `_physical_blob`; `require_physical_tree` | mcp/src/agents_remember/kernel/git_preparation.py:133-159; mcp/src/agents_remember/kernel/git_preparation.py:162-211 |
 | Only explicit memory observations omit root memory.md from physical membership. | `require_physical_tree` | mcp/src/agents_remember/kernel/git_preparation.py:162-211 |
-| The runner requires a memory content subject and proves its entries against the actual raw tree. | n/a | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+| The runner requires a memory content subject and proves its entries against the actual raw tree. | `_existing_preparation_entries`; `inspect_existing_git_preparation` | mcp/src/agents_remember/kernel/git_command.py:468-486; mcp/src/agents_remember/kernel/git_command.py:489-498 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 | No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Documented the typed existing-output binding, strict code/private proof, and exact memory-cache projection with an independently asserted content tree. Source SHA-256 `da69f0edb15f0013510e79062f54bf213d3dac633a7b448d7f0498e208e17392`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 

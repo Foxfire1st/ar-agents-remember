@@ -6,8 +6,8 @@
 | path | `mcp/tests/eve_adapter_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
@@ -187,7 +187,7 @@ pass was available for this file.
 | The capsule binding this double's launches now carry, built through the capsule seam's own fixture support rather than hand-written environment values. | `fixture_launch_binding`; `fixture_carrier_for`; `binding_env`; `repository_with_commit` | mcp/tests/eve_adapter_test_support.py:336-364; mcp/tests/eve_capsule_test_support.py:565-620; mcp/tests/eve_adapter_test_support.py:407-436 |
 | The launch path that verifies the declared carrier before a process exists, which is why a partial binding would be refused before any protocol behaviour is observed. | `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
 | The live native fixture is the only artifact that proves the *live runtime* half of the same seam; it drives a real eve process rather than this double. | `TracingEveRuntime`; `_scenario_capsule_binding` | mcp/tests/live_eve_native_fixture.py:123-170; mcp/tests/live_eve_native_fixture.py:1758-1813 |
-| The two session-control members this double had to gain, declared by the production protocol. | `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89 |
+| None | "async def compact_session(self, session_id: str) -> Mapping[str, object]: ..."; "async def clear_session(self, session_id: str) -> Mapping[str, object]: ..." | mcp/src/agents_remember/serving/eve_runtime_client.py:124-126 |
 | The cases that pin the two members statically and behaviourally, so a member that exists and does nothing also fails. | `EveRuntimeTransportFakeContractTests` | mcp/tests/test_eve_adapter.py:1182-1232 |
 | The named environment guard, its call sites, and the install it names. The two suites were cited as **bare paths** until this pass, so the three anchors could not resolve; they now carry the real ranges. | `require_installed_eve_application`; `_started`; `_start_eve`; `_evidence_frames` | mcp/tests/eve_adapter_test_support.py:44-62; mcp/tests/test_eve_adapter.py:256-277; mcp/tests/test_eve_product_integration.py:682-691; mcp/tests/test_eve_product_integration.py:1547-1567; eve_runtime/README.md:25 |
 | The recording provider boundary this module gained: the raw request body kept verbatim, and the instrument's own drop that models a boundary losing the value. | `RecordedModelRequest`; `serve_recording_provider`; `drop_reasoning_effort`; `_sse_frame` | mcp/tests/eve_adapter_test_support.py:440-465; mcp/tests/eve_adapter_test_support.py:467-574; mcp/tests/eve_adapter_test_support.py:467-473; mcp/tests/eve_adapter_test_support.py:576-578 |
@@ -203,6 +203,7 @@ No external repository boundary is implemented by this support module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the module gained a second, non-double boundary —
   a real recording provider — and a staged application root.** Recorded in Logic: `RecordedModelRequest`

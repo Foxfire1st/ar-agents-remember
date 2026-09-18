@@ -6,8 +6,8 @@
 | path | `mcp/tests/checkpoint_landing_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -60,9 +60,9 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Leaf and accumulated-master pairs are built from real code/memory commits. | `commit_memory_content` | mcp/tests/checkpoint_landing_test_support.py:104-115 |
-| Temporary branch ownership and real source-content reconciliation. | n/a | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
-| Public checkpoint and canonical master status helpers. | n/a | [mcp/tests/checkpoint_landing_test_support.py](mcp/tests/checkpoint_landing_test_support.py) |
-| The public boundary scenarios consume the shared builders. | n/a | [mcp/tests/test_checkpoint_landing_end_to_end.py](mcp/tests/test_checkpoint_landing_end_to_end.py) |
+| None | `branch_checkout`; `absorb_source_into_master_line` | mcp/tests/checkpoint_landing_test_support.py:47-56; mcp/tests/checkpoint_landing_test_support.py:133-139 |
+| None | `checkpoint`; `master_status`; `set_master_status` | mcp/tests/checkpoint_landing_test_support.py:148-156; mcp/tests/checkpoint_landing_test_support.py:159-165; mcp/tests/checkpoint_landing_test_support.py:168-184 |
+| None | `checkpoint_landing_test_support` | mcp/tests/test_checkpoint_landing_end_to_end.py:23-37 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced shared three-commit builders with actual attributed memory outputs; removed unused cache-row mutations/readers and retained the three consumers' shared APIs. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

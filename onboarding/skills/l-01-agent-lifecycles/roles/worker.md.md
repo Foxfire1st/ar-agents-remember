@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -94,14 +94,14 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The worker is one leaf-scoped builder whose terminal state is checks plus report. | "## 1 — Purpose And Authority" | skills/l-01-agent-lifecycles/roles/worker.md:16-50 |
-| Intake binds writes to the named code worktree and report path. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/worker.md:51-87 |
-| Orientation requires current worktree reads and coding guidelines before edits. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/worker.md:51-87 |
-| Build produces implementation plus evidence for the separate curator. | "## 3 — Normal Workflow" | skills/l-01-agent-lifecycles/roles/worker.md:88-101 |
-| The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. | "## 6 — Completion And Handoff" | skills/l-01-agent-lifecycles/roles/worker.md:146-175 |
-| Tool authority excludes lifecycle, gates, task state, and memory writes. | "## 4 — Permitted Writes And Actions" | skills/l-01-agent-lifecycles/roles/worker.md:102-129 |
-| The worker records the complete acceptance envelope once for every stable requirement ID. | "## 6 — Completion And Handoff" | skills/l-01-agent-lifecycles/roles/worker.md:146-175 |
-| Checks have their own explicit reportable step. | "## 2 — Required Inputs" | skills/l-01-agent-lifecycles/roles/worker.md:51-87 |
+| The worker builds one leaf in one session and delivers one scoped change set plus one report. | "**You build one leaf.**" | skills/l-01-agent-lifecycles/roles/worker.md:8-9 |
+| Intake binds writes to the named code worktree and report path. | "Where your inputs live." | skills/l-01-agent-lifecycles/roles/worker.md:30-34 |
+| Orientation requires current worktree reads and coding guidelines before edits. | "**Before your first edit:**" | skills/l-01-agent-lifecycles/roles/worker.md:22-24 |
+| Build produces implementation plus evidence for the separate curator. | "## Process" | skills/l-01-agent-lifecycles/roles/worker.md:36-49 |
+| The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. | "**The requirement attempt record**" | skills/l-01-agent-lifecycles/roles/worker.md:83-86 |
+| Tool authority excludes lifecycle, gates, task state, and memory writes. | "## What you must not do" | skills/l-01-agent-lifecycles/roles/worker.md:112-126 |
+| The worker records the complete acceptance envelope once for every stable requirement ID. | "the one Requirement Acceptance Envelope for your owned primary" | skills/l-01-agent-lifecycles/roles/worker.md:76-82 |
+| Checks have their own explicit reportable step. | "### The checks you owe" | skills/l-01-agent-lifecycles/roles/worker.md:50-66 |
 
 ## R39 Generic Worker Doctrine
 
@@ -125,6 +125,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `### 6 — The Turn Report (mandatory, your last act)` repointed to skills/l-01-agent-lifecycles/roles/worker.md:193-207. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "## Tool Surface (positive statement — this is all of it)" repointed to skills/l-01-agent-lifecycles/roles/worker.md:208-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

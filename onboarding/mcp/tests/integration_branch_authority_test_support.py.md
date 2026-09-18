@@ -6,8 +6,8 @@
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -60,8 +60,8 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Closed external leaves are backed by two actual commits and a disposable cache. | `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:48-91 |
-| Optional lifecycle admission precedes fixture finalization. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
-| Configured repository, profile, protected branches, and task topology. | n/a | [mcp/tests/integration_branch_authority_test_support.py](mcp/tests/integration_branch_authority_test_support.py) |
+| None | `_publish_completed_closeout_fixture` | mcp/tests/integration_branch_authority_test_support.py:94-126 |
+| None | `_authority_fixture` | mcp/tests/integration_branch_authority_test_support.py:129-286 |
 | Consumers retain ownership, cache-independence, and CAS scenarios. | `test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race` | mcp/tests/test_integration_branch_authority.py:80-170 |
 
 ## Cross-Repo References
@@ -72,6 +72,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 
 - 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The 2026-08-16 fixture-repair entry described code-only authority fixtures as modelling "configured internal memory explicitly", which the removal made false; the entry keeps its historical date and now records the supersession — the fixture declares `external` when `external_memory` is true and the supported `disabled` otherwise (`line 138`). Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.

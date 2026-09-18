@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_projection/declarations.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T10:30+02:00 |
-| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
-| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ The declarations readers, the refusal they map, and the owners that decide packe
 | The task-intent owner that confines a declared packet path, reads it and verifies its header. | `task_intent_projection`; `task_intent_master_projection`; `TaskIntentRequirementPacket`; `TaskIntentRequirementText` | mcp/src/agents_remember/tasks/task_intent.py:132-177; mcp/src/agents_remember/tasks/task_intent.py:196-222; mcp/src/agents_remember/tasks/task_intent.py:52-56; mcp/src/agents_remember/tasks/task_intent.py:47-49 |
 | The task-root-relative packet confinement the exact-text route reuses rather than reimplements. | `confine_non_symlink_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:52-88 |
 | The section role vocabulary a gap is reported against. | `PacketSectionRole`; `PACKET_SECTION_HEADINGS` | mcp/src/agents_remember/application/task_projection/packets.py:43-50; mcp/src/agents_remember/application/task_projection/packets.py:64-81 |
-| The case that proves every owned obligation is carried verbatim and a missing section is a gap. | `test_every_owned_obligation_is_carried_verbatim_and_a_missing_section_is_a_gap` | mcp/tests/test_task_projection.py:801-830 |
+| The case that proves every owned obligation is carried verbatim and a missing section is a gap. | `test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim` | mcp/tests/test_task_projection.py:1152-1209 |
 
 ## Cross-Repo References
 
@@ -103,6 +103,7 @@ No sibling-repository contract consumes this declarations reader.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: created this card for the requirement-declaration
   reader added by the scoped-task-context leaf (`CAPS-R03@v1`). Records both admissible routes (the

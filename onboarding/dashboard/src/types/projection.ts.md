@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -78,13 +78,13 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle phase union mirrors the code/memory-only vocabulary. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Structural analytics fields use the shared task-document reference. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The lifecycle phase union mirrors the code/memory-only vocabulary. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
+| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:698-701 |
 | Generated task documents carry real hierarchy and optional runtime attachment. | `taskDocuments` | dashboard/src/types/projection.ts:104-104 |
 | Execution nodes name their kind, leaf-id segment and task reference. | `TaskExecutionNodeView` | dashboard/src/types/projection.ts:730-741 |
 | An execution endpoint carries a task reference and optional leaf id. | `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:710-713 |
 | Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | `TaskExecutionPredecessorNode` | dashboard/src/types/projection.ts:743-748 |
-| The graph contains typed node and edge arrays. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The graph contains typed node and edge arrays. | `TaskExecutionGraphNode` | dashboard/src/types/projection.ts:715-718 |
 | Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:840-854 |
 | The optional canonical task-intent identity on lifecycle operations. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:750-754 |
 | The generated `task-intent/v1` identity interface. | "task-intent/v1" | dashboard/src/types/projection.ts:753-753 |
@@ -153,7 +153,7 @@ changes: the panel still renders whatever rows the producer serves.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | n/a | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | `members`; `reasons`; "sourceProblems: CloseoutProjectionProblemNode[]" | dashboard/src/types/projection.ts:143-152; dashboard/src/types/projection.ts:124-133 |
 
 ## 260824-PDLS Invalidation Outcome Mirror
 
@@ -205,6 +205,7 @@ dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-ch
 returns on snapshots.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, generated `projection.ts` +25/−0): the mirror gained the
   `TerminalObserverHealth` interface and the optional `terminalObserverHealth?` property on

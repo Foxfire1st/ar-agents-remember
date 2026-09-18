@@ -6,8 +6,8 @@
 | path | `dashboard/src/test/fixtures/eveConversationCapture.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ pass was available. The shape is the repository's own wire model, which is repo-
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The decoder that reads this file through the wire mirror's own unions and throws on an undeclared token. | `eveConversationItems`; `eveConversationStatus` | dashboard/src/test/fixtures/eveConversationCapture.ts:376-376; dashboard/src/test/fixtures/eveConversationCapture.ts:379-379 |
-| The mounted case that renders the decoded capture through the shipped surface and asserts rendered text. | `ConversationSurface.eve.test.tsx` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx:1-148 |
+| The mounted case that renders the decoded capture through the shipped surface and asserts rendered text. | "mounted eve conversation (behaviour 3)" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx:1-148 |
 | The Python side pins this exact file against what the projector produces today, so it cannot drift from the projection it renders. | `test_the_projection_matches_the_capture_the_mounted_ui_renders`; `test_the_capture_shows_the_states_the_packet_names` | mcp/tests/test_eve_product_integration.py:1445-1452; mcp/tests/test_eve_product_integration.py:1454-1485; mcp/tests/test_eve_product_integration.py:1706-1713; mcp/tests/test_eve_product_integration.py:1715-1746 |
 | The projector rule that makes the operator row producer-less, which this file's first record carries. | `_item`; `unknown_input_provenance` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:825-860 |
 | The wire base the production capture path serializes through. | `WireModel` | mcp/src/agents_remember/models/conversations/primitives.py:15-23 |
@@ -112,6 +112,7 @@ No cross-repo boundary is involved: the file is produced and consumed inside thi
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: created this card for a file added by the eve
   product-integration change set. Records that it is production-serialized output rather than a

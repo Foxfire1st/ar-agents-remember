@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_stream_cursor.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ repo-specific external contract.
 | The decoder delegates every frame to the protocol module's schema-exact parser and inherits its refusals. | `parse_event_frame`; `EveStreamEvent` | mcp/src/agents_remember/serving/eve_protocol.py:192-222 |
 | Replay protection is not this module's and now has exactly one owner beside the wire contract. | `EveEventDeduplicator`; `EVE_REPLAY_WINDOW` | mcp/src/agents_remember/serving/eve_protocol.py:224-268 |
 | One stream connection in the transport client feeds this decoder and reconnects from the index the caller persisted. | "reconnects from the index" | mcp/src/agents_remember/serving/eve_runtime_client.py:274-274 |
-| The adapter persists the advanced index and uses it as the only resume position. | `EveSessionAdapter._translate`; `EveSessionAdapter._event_stream` | mcp/src/agents_remember/serving/eve_adapter.py:579-644 |
+| The adapter persists the advanced index and uses it as the only resume position. | `_translate`; `_event_stream` | mcp/src/agents_remember/serving/eve_adapter.py:590-624; mcp/src/agents_remember/serving/eve_adapter.py:626-645 |
 | Cursor-arithmetic cases cover a frame split across reads, keep-alive blanks, a trailing frame without a newline, and the oversized-frame refusal. | `EveCursorTests` | mcp/tests/test_eve_protocol.py:195-253 |
 
 ## Cross-Repo References
@@ -94,6 +94,7 @@ repo-specific external contract.
 | The durable NDJSON record and its absolute event-index semantics are eve's published stream contract at the pinned release. | `EVE_SUPPORTED_STREAM_VERSIONS`; stream-version header gate | mcp/src/agents_remember/serving/eve_protocol.py:32-40; eve_runtime/README.md:10-22 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **no content impact from the A2
   revision.** This file is byte-identical between the A1 and A2 candidates of the same change set, so

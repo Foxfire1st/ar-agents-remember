@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_role_capsule_compiler.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -108,15 +108,15 @@ No external or domain documentation is configured for this memory root
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test and its pipeline. | `compile_role_capsule`; `semantic_digest` | mcp/src/agents_remember/models/role_capsules/compiler.py:90-153; mcp/src/agents_remember/models/role_capsules/compiler.py:225-272 |
-| The carried skill channel these cases pin. | `skill_references`; `CapsuleSkillReference` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193; mcp/src/agents_remember/models/role_capsules/types.py:414-434 |
+| The module under test and its pipeline. | `compile_role_capsule`; "The capsule identity: admitted facts plus the bytes that were composed." | mcp/src/agents_remember/models/role_capsules/compiler.py:89-145; mcp/src/agents_remember/models/role_capsules/compiler.py:224-269 |
+| The carried skill channel these cases pin. | "One reference per skill the selected seat declares, in declaration order."; "One optional skill reference with its origin." | mcp/src/agents_remember/models/role_capsules/compiler.py:153-190; mcp/src/agents_remember/models/role_capsules/types.py:414-431 |
 | The `source-not-utf8` and revision/blank-content refusals the source-value cases pin. | `CapsuleSource` | mcp/src/agents_remember/models/role_capsules/sources.py:50-95 |
 | The refusal codes the refusal cases assert. | `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/statuses.py:27-41 |
 | The identity-resolution outcomes the duplicate and override cases pin. | `resolve_instructions`; `_require_one_identity` | mcp/src/agents_remember/models/role_capsules/resolution.py:135-191; mcp/src/agents_remember/models/role_capsules/resolution.py:221-261 |
 | The tool-policy narrowing the tool cases pin. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
 | The outcome shape whose exactly-one-of rule the two outcome cases pin. | `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:46-88 |
-| The admission cases live in the sibling module, not here. | `test_every_shipped_role_compiles_to_the_routing_its_own_role_file_declares` | mcp/tests/test_role_capsule_admission.py:469-518 |
-| The corpus test this leaf was required to preserve; it was not edited and still passes. | `ROLE_ORDER`; `OPERATION_KEYS` | mcp/tests/test_role_instruction_corpus.py:32-42; mcp/tests/test_role_instruction_corpus.py:56-64 |
+| The admission cases live in the sibling module, not here, where the capsule composes only the operations its own role declares and the independently compared routing side is retired. | `test_a_role_capsule_composes_only_operations_the_role_declares` | mcp/tests/test_role_capsule_admission.py:490-517 |
+| The corpus test this leaf was required to preserve; it was not edited and still passes. | `ROLE_ORDER`; `OPERATION_KEYS` | mcp/tests/test_role_instruction_corpus.py:35-46; mcp/tests/test_role_instruction_corpus.py:66-76 |
 
 The falsifiability probe that exercised these cases (seeds M01–M10, `all 10 seeded mutations were
 caught`) is **not** a product artifact and is deliberately not promoted into `mcp/tests/`. It lives
@@ -135,6 +135,7 @@ No sibling-repository contract is exercised by these cases.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -67,10 +67,10 @@ This bundle copy is the shape the manager job posts at master exit; it reference
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Master-Handover-Packet Template` | skills/l-01-agent-lifecycles/templates/master-handover-packet.md:1-77 |
-| The manager posts this packet to the orchestrator at master exit; the manager's durable handoff artifact is this packet, validated by the orchestrator. | `# Lifecycle — Manager`; `## Which artifact each seat hands over, and who validates` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-16; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
+| The manager posts this packet to the orchestrator at master exit; the manager's durable handoff artifact is this packet, validated by the orchestrator. | `# Manager`; `## Which artifact each seat hands over, and who validates` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:144-147; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
 | The required verdict slot references the independent master-exit adversarial verdict artifact bound to the proposed candidate. | `# Verdict Template (adversarial reviewer)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:1-188 |
 | The router lists the master-handover packet among the templates the spawning seats compile from. | `## Companion Files` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:125-142 |
-| This template and `verdict.md` are the manager's two artifact templates in the composition manifest. | "verdict.md" | skills/l-01-agent-lifecycles/composition-manifest.json:414-418 |
+| This template and `verdict.md` are both declared among the manager's templates in the composition manifest. | "master-handover-packet.md\", \"verdict.md" | skills/l-01-agent-lifecycles/composition-manifest.json:331-337 |
 
 ## Cross-Repo References
 
@@ -98,6 +98,7 @@ candidate. Missing, stale, unresolvable, or candidate-mismatched evidence blocks
 summary prose cannot override it.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the handoff-evidence boilerplate sentence, which still presented full memory quality as an explicit request, with the completed-curation rule; `onboarding-coherency` already carries the full-operation check block this leaf's template now names.
 - 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_sync.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -62,9 +62,9 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | `test_terminal_removal_discards_only_the_memory_cache` | mcp/tests/test_worktree_sync.py:247-289 |
 | The real Git fixture and attributed official memory update. | `map_official_memory` | mcp/tests/test_worktree_sync.py:107-119 |
-| Fast-forward and retained code conflict behavior. | n/a | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+| Fast-forward and retained code conflict behavior. | `test_pure_fast_forward_sync_advances_both_sides_and_contract`; `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:126-146; mcp/tests/test_worktree_sync.py:148-183 |
 | Cache-independent source admission, start, and candidate identity. | `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:213-245 |
 | Native cache-only success, real conflict continuation, and resumed staged-content validation. | `test_memory_merge_discards_only_cache_conflicts_and_preserves_content_conflicts` | mcp/tests/test_worktree_sync.py:330-411 |
 | Nonregular journal quarantine preserves the outside target. | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:448-467 |
@@ -77,6 +77,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: The terminal-removal case uses the real Git fixture for tracked, missing, staged and untracked cache states. It verifies cache-free terminal preflight and actual non-forced memory-worktree removal. A neighboring `memory.md.other` file and a code-side `memory.md` remain protected. This adds one collected integration case using the existing fixture; no new test support or budget change is needed.
 

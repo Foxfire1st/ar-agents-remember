@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_citation_source_index_membership.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ was available for this file.
 | --- | --- | --- |
 | The acquisition rule and its caps, which these cases exercise. | `_tree_state`; `_git_candidate_paths`; `_indexed_file`; `_walkable_directory` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:810-857; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:718-749; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:953-1030 |
 | The caps themselves, owned by the state module the index imports them from. | `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_BYTES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:23-23; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:22-22 |
-| The landed citation cases that the rejected "skip every untracked path" reading re-reds — the reason the uncommitted-but-unignored half is retained. | `test_memory_citation_fix_scopes.py`; `test_memory_citation_grammars.py` | mcp/tests/test_memory_citation_fix_scopes.py; mcp/tests/test_memory_citation_grammars.py |
+| The landed citation cases that the rejected "skip every untracked path" reading re-reds — the reason the uncommitted-but-unignored half is retained. | `TypeScriptPureMoveTests`; `LiveCitedFileRetargetTests` | mcp/tests/test_memory_citation_grammars.py:26-90; mcp/tests/test_memory_citation_fix_scopes.py:14-110 |
 | The lane row this module carries. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References
@@ -93,6 +93,7 @@ the case's temporary directory.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: created this card for the module this leaf added to
   make D18's repair falsifiable. Records the four boundary directions the cases pin (ignored-oversized

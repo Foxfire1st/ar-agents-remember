@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/role_capsules/compilation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -86,11 +86,11 @@ No external or domain documentation is configured for this memory root
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between. | `compile_role_capsule`; `refused_manifest`; `manifest_for_error` | mcp/src/agents_remember/models/role_capsules/compiler.py:84-140; mcp/src/agents_remember/models/role_capsules/compiler.py:342-357; mcp/src/agents_remember/models/role_capsules/compiler.py:358-372; mcp/src/agents_remember/models/role_capsules/compiler.py:417-430; mcp/src/agents_remember/models/role_capsules/compiler.py:433-445 |
+| The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between. | `compile_role_capsule`; `refused_manifest`; `manifest_for_error` | mcp/src/agents_remember/models/role_capsules/compiler.py:89-145; mcp/src/agents_remember/models/role_capsules/compiler.py:416-429; mcp/src/agents_remember/models/role_capsules/compiler.py:432-444 |
 | The admission step whose refusal is converted into the same outcome shape. | `admit_capsule_sources`; `CapsuleAdmissionRequest` | mcp/src/agents_remember/application/role_capsules/sources.py:78-94; mcp/src/agents_remember/application/role_capsules/sources.py:38-77 |
-| The task-projection seam accepted here and verified inside the compiler. | `CapsuleTaskProjectionSource`; `CapsuleTaskContext`; `verified_task_context` | mcp/src/agents_remember/models/role_capsules/types.py:318-331; mcp/src/agents_remember/models/role_capsules/types.py:303-316; mcp/src/agents_remember/models/role_capsules/compiler.py:141-171; mcp/src/agents_remember/models/role_capsules/types.py:333-346; mcp/src/agents_remember/models/role_capsules/compiler.py:194-217 |
+| The task-projection seam accepted here and verified inside the compiler. | `compile_admitted_capsule`; `verified_task_context` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-120; mcp/src/agents_remember/models/role_capsules/compiler.py:193-216 |
 | The typed refusal carried as a value. | `CapsuleCompilationError` | mcp/src/agents_remember/errors.py:464-506 |
-| A supplied projection is carried in its own channel, an unverifiable one is refused, and no projection yields no context with a stable digest. | `test_a_supplied_task_projection_is_carried_in_its_own_channel`; `test_a_projection_whose_bytes_do_not_match_its_digest_is_refused`; `test_no_projection_means_no_task_context_and_a_stable_digest` | mcp/tests/test_role_capsule_compiler.py:804-821; mcp/tests/test_role_capsule_compiler.py:822-836; mcp/tests/test_role_capsule_compiler.py:837-850 |
+| A supplied projection is carried in its own channel, an unverifiable one is refused, and no projection yields no context with a stable digest. | `test_a_supplied_task_projection_is_carried_in_its_own_channel`; `test_a_projection_whose_bytes_do_not_match_its_digest_is_refused`; `test_no_projection_means_no_task_context_and_a_stable_digest` | mcp/tests/test_role_capsule_compiler.py:846-861; mcp/tests/test_role_capsule_compiler.py:864-876; mcp/tests/test_role_capsule_compiler.py:879-885 |
 
 ## Cross-Repo References
 
@@ -102,6 +102,7 @@ consumed by a later leaf inside this master, not by another repository.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `render_explanation` repointed to mcp/src/agents_remember/application/role_capsules/compilation.py:81-86. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.

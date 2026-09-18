@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T03:43 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -94,12 +94,12 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed request and plan reporting distinguish work, losses, and an empty plan. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| Typed request and plan reporting distinguish work, losses, and an empty plan. | "class MemoryBackfillRequest"; "class MemoryBackfillPlan" | mcp/src/agents_remember/kernel/memory_backfill.py:227-242; mcp/src/agents_remember/kernel/memory_backfill.py:144-224 |
 | Selection preserves available memory attributions and reports unrepresentable claims. | `SKIP_MEMORY_COMMIT_CLAIMED` | mcp/src/agents_remember/kernel/memory_backfill.py:84-84 |
-| Apply orders digest/rescue/rewrite/publication and frames every target update correctly. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
-| Historical table reads/carry remain explicit migration helpers. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| Apply orders digest/rescue/rewrite/publication and frames every target update correctly. | "def apply_memory_backfill"; "def _move_targets" | mcp/src/agents_remember/kernel/memory_backfill.py:625-661; mcp/src/agents_remember/kernel/memory_backfill.py:837-879 |
+| Historical table reads/carry remain explicit migration helpers. | `carry_ledger_cells`; "def ledger_rows_at" | mcp/src/agents_remember/kernel/memory_backfill.py:901-924; mcp/src/agents_remember/kernel/memory_backfill.py:927-968 |
 | The apply regression now moves two named refs and verifies the rescue tip. | `test_the_rescue_ref_may_not_be_one_of_the_refs_the_run_moves` | mcp/tests/test_memory_backfill.py:624-634 |
-| Native topological traversal visits parents before their children during replay. | n/a | [mcp/src/agents_remember/kernel/memory_backfill.py](mcp/src/agents_remember/kernel/memory_backfill.py) |
+| Native topological traversal visits parents before their children during replay. | "def _rewrite_history"; "def _walk" | mcp/src/agents_remember/kernel/memory_backfill.py:755-781; mcp/src/agents_remember/kernel/memory_backfill.py:784-791 |
 
 ## Cross-Repo References
 
@@ -111,6 +111,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

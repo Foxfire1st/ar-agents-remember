@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -59,10 +59,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Side planning and exact source-pair reads. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Side planning and exact source-pair reads. | `side_record`; `source_pair` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:39-75; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:110-118 |
 | Pinned ref authority and reconstruction require exact identities. | `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
 | Contract identity and base-transition constraints. | `require_contract_bases_unchanged` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:245-252 |
-| Parked-content restoration and settlement retain the exact stash until safe. | n/a | [mcp/src/agents_remember/worktrees/sync_transaction_authority.py](mcp/src/agents_remember/worktrees/sync_transaction_authority.py) |
+| Parked-content restoration and settlement retain the exact stash until safe. | `restore_parked_wip`; `settle_resolved_parked_wip` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:316-356; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:380-401 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed official-pair ledger admission and connected parked-candidate settlement to memory-domain content conflict handling while retaining pinned-ref and contract/base proof. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

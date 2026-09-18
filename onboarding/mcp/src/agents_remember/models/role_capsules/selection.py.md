@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/selection.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ cit:([`_require_operation_allowed`], mcp/src/agents_remember/models/role_capsule
 Two refusals carry most of the weight here, and they are deliberately **distinct** because they
 have distinct remedies:
 
-- cit:([`narrow_role`], mcp/src/agents_remember/models/role_capsules/selection.py:191-213) and cit:([`narrow_operation`], mcp/src/agents_remember/models/role_capsules/selection.py:176-190) refuse an unknown role or operation by **exact
+- cit:([`narrow_role`], mcp/src/agents_remember/models/role_capsules/selection.py:191-213) and cit:([`narrow_operation`], mcp/src/agents_remember/models/role_capsules/selection.py:194-206) refuse an unknown role or operation by **exact
   membership** in the frozen vocabulary, so a caller-controlled string can never acquire a role;
 - `_require_operation_allowed` refuses an operation the selected role cannot run rather than
   replacing it with a neighbouring one, *because silently substituting a different operation is
@@ -77,11 +77,11 @@ No external or domain documentation is configured for this memory root
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The frozen vocabularies membership is tested against. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS`; `capsule_role_or_none` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89; mcp/src/agents_remember/models/role_capsules/vocabulary.py:108-121; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-108; mcp/src/agents_remember/models/role_capsules/vocabulary.py:133-144 |
+| The frozen vocabularies membership is tested against: `capsule_role_or_none` answers by exact membership in the frozen registry. | "exact membership in the frozen registry" | mcp/src/agents_remember/models/role_capsules/vocabulary.py:171-183 |
 | The three selection refusals this module's callers branch on. | `STATUS_UNKNOWN_ROLE`; `STATUS_UNKNOWN_OPERATION`; `STATUS_OPERATION_NOT_APPLICABLE` | mcp/src/agents_remember/models/role_capsules/statuses.py:11-13 |
 | The parsed manifest and its per-role applicability entries. | `CapsuleCompositionManifest`; `CapsuleRoleEntry`; `CapsuleLauncherEntry` | mcp/src/agents_remember/models/role_capsules/manifest.py:120-167; mcp/src/agents_remember/models/role_capsules/manifest.py:63-82; mcp/src/agents_remember/models/role_capsules/manifest.py:83-93 |
-| The compiler step that calls this selection first. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:90-153 |
-| The unknown-role, unknown-operation, non-applicable-operation and launcher cases. | `test_unknown_role_is_refused_and_never_acquires_a_capsule`; `test_unknown_operation_is_refused_instead_of_falling_back`; `test_operation_the_role_cannot_run_is_refused_instead_of_substituted`; `test_launcher_seat_composes_its_own_core_and_is_not_a_tenth_role`; `test_launcher_is_refused_an_operation_no_role_inherits_to_it` | mcp/tests/test_role_capsule_compiler.py:500-518; mcp/tests/test_role_capsule_compiler.py:519-526; mcp/tests/test_role_capsule_compiler.py:527-534; mcp/tests/test_role_capsule_compiler.py:535-543; mcp/tests/test_role_capsule_compiler.py:544-556 |
+| The compiler step that calls this selection first. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:89-145 |
+| The unknown-role, unknown-operation, non-applicable-operation and launcher cases. | `test_unknown_role_is_refused_and_never_acquires_a_capsule`; `test_unknown_operation_is_refused_instead_of_falling_back`; `test_operation_the_role_cannot_run_is_refused_instead_of_substituted`; `test_launcher_seat_composes_its_own_core_and_is_not_a_role`; `test_launcher_is_refused_an_operation_no_role_inherits_to_it` | mcp/tests/test_role_capsule_compiler.py:526-543; mcp/tests/test_role_capsule_compiler.py:545-551; mcp/tests/test_role_capsule_compiler.py:553-558; mcp/tests/test_role_capsule_compiler.py:561-567; mcp/tests/test_role_capsule_compiler.py:570-575 |
 
 ## Cross-Repo References
 
@@ -92,6 +92,9 @@ No sibling-repository contract defines this selection rule.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `compile_role_capsule` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:89-145. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `narrow_operation` repointed to mcp/src/agents_remember/models/role_capsules/selection.py:194-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
 

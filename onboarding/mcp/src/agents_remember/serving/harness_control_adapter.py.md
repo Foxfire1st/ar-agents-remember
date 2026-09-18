@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `609756111eb3c239d0563d8631bfd564645bc9d1` |
-| lastVerifiedCommitDate | 2026-09-16T10:25:13+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ separate consumer of the adapter protocol.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately. | `CapabilitySnapshot`; `LaunchKnobs`; `SetResult` | mcp/src/agents_remember/serving/harness_capabilities.py:75-133; mcp/src/agents_remember/serving/harness_capabilities.py:136-148; mcp/src/agents_remember/serving/harness_capabilities.py:151-159 |
-| The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | `_prepare_controlled_launch` | mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
+| The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | `_prepare_controlled_launch` | mcp/src/agents_remember/serving/harness_control_runner.py:282-331 |
 | The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
 | The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. | "InterruptCapableAdapter):" | mcp/src/agents_remember/serving/harness_control_bridge.py:293-293 |
 | The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt. | `_invoke_adapter` | mcp/src/agents_remember/serving/harness_submission_authority.py:729-757 |
@@ -119,6 +119,7 @@ unsupported implementation and reducer callback preserve exact refs so adapters 
 by FIFO or request id alone.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **No content impact from the A2
   revision.** This file is byte-identical between the A1 and A2 candidates of the same change set, so

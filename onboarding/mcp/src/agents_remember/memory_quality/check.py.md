@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -106,7 +106,7 @@ caps never reach this branch — they skip and report.
 | `memory_quality_check` MCP tool builds drift context and calls this runner. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | Update-history ordering is the first style checker. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
 | Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
-| The declaration of the packet's status vocabulary and its `NotRequired` keys. | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19 |
+| The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 | The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
 | Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface. | `StyleCheckInputs` | mcp/src/agents_remember/memory_quality/check.py:40-55 |
 | The guarded entry point that reports an unusable source index instead of raising. | `run_check` | mcp/src/agents_remember/memory_quality/check.py:146-163 |
@@ -119,6 +119,7 @@ caps never reach this branch — they skip and report.
 | The case pinning the closeout gate's own declared check group degrading the same way. | `test_the_closeout_gates_own_check_group_degrades_the_same_way` | mcp/tests/test_citation_index_resilience.py:631-656 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T12:45+02:00 — 260915-CAPS-L14 curator: recorded the **reported-state guard** this leaf adds — `run_check` wrapping `_run_check` so a `SourceIndexError` becomes a `citation-source-index-unavailable` result with the cause and the two operator levers, instead of a bare tool error out of the surface that is supposed to describe a broken memory layer. Added the `source_index_unavailable_result` / `_run_check` / `run_drift_quality_check` rows and the corresponding invariant. **Flattened the legacy citation form**: four body cells using an inline `cit:([…], path:a-b)` wrapper and every `cit:(…)` in this card's history are now the required `| Finding | Anchor | Source |` rows plus plain `path:start-end`; the historical entries keep their wording, identifiers and meaning, with only the wrapper and their stale ranges re-expressed. **Re-derived every range against the 296-line source** (the runner moved from `:103-130` to `:112-143` and `run_drift_quality_check` from `:171-212` to `:216-257`). Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/open_service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T11:05+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ outcome→status surface end-to-end.
 | Idempotent replay, conflicts, stale digests, retirement, timeout reconcile, ledger bounds, and untouched foreign rows. | `test_open_proves_exact_identity_and_replays_idempotently`; `test_changed_fingerprint_conflicts_without_launching`; `test_stale_expected_digest_fails_before_launch`; `test_identity_mismatch_retires_and_reports`; `test_timeout_unknown_stays_reconcilable_and_opens_later`; `test_ledger_full_of_live_operations_refuses`; `test_ready_without_vendor_identity_stays_reconcilable_not_retired`; `test_existing_catalog_rows_are_never_touched` | mcp/tests/test_conversation_library_open.py:742-792; mcp/tests/test_conversation_library_open.py:794-834; mcp/tests/test_conversation_library_open.py:854-866; mcp/tests/test_conversation_library_open.py:900-934; mcp/tests/test_conversation_library_open.py:936-982; mcp/tests/test_conversation_library_open.py:984-1012; mcp/tests/test_conversation_library_open.py:1051-1078; mcp/tests/test_conversation_library_open.py:1080-1109 |
 | The tracked opener absorbs identical replays through the live catalog row and carries `resume_thread_id` codex-only. | `_live_open_result`; `_session_command`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:439-474; mcp/src/agents_remember/serving/terminal_opener.py:564-598; mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
 | The declared legacy decision this route makes, and the reason it cannot carry a capsule. | `LIBRARY_REOPEN_LEGACY_REASON`; `legacy_launch_capsule` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/src/agents_remember/serving/conversation/library/open_service.py:475-478 |
-| The refresh plan that makes a capsule-carrying reopen a fresh thread, which is why the exclusion is a real trade rather than a gap. | `_capsule_refresh_plan`; `FRESH_THREAD` | mcp/src/agents_remember/serving/capsule_delivery.py:1-531 |
+| The refresh plan that makes a capsule-carrying reopen a fresh thread, which is why the exclusion is a real trade rather than a gap. | "def _capsule_refresh_plan"; "class RefreshPlan" | mcp/src/agents_remember/serving/codex_app_server_session.py:435-474; mcp/src/agents_remember/serving/capsule_delivery.py:383-440 |
 | The cases pinning the declaration and the launch-point enumeration. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:847-856 |
 
 
@@ -140,6 +140,7 @@ Idempotency, conflict detection and the minted session identity are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T11:05+02:00 — 260915-CAPS-L15 curator: **this route is the one launch point left on the
   legacy chain, and the body now says so with its reason.** `LIBRARY_REOPEN_LEGACY_REASON` was added and

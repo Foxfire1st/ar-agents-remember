@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -83,10 +83,10 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Format constants, row types, and the exact cache-exclusion expression. | n/a | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
-| Structural parsing and validation distinguish empty and nonempty representations. | n/a | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
-| Serialization and data lookup stay independent from Git publication. | n/a | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
-| The runtime cache owner derives data rather than trusting a serialized table. | n/a | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
+| Format constants, row types, and the exact cache-exclusion expression. | `MEMORY_CACHE_EXCLUDE`; `LedgerRow` | mcp/src/agents_remember/kernel/memory_ledger.py:24-33 |
+| Structural parsing and validation distinguish empty and nonempty representations. | `parse_ledger_text_unvalidated`; `validate_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:68-132; mcp/src/agents_remember/kernel/memory_ledger.py:173-184 |
+| Serialization and data lookup stay independent from Git publication. | `write_ledger`; `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:229-236; mcp/src/agents_remember/kernel/memory_ledger.py:253-255; mcp/src/agents_remember/kernel/memory_ledger.py:258-266 |
+| The runtime cache owner derives data rather than trusting a serialized table. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 
 ## Cross-Repo References
 
@@ -98,6 +98,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 

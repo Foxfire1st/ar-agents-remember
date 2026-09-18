@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_runtime_client.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -124,9 +124,10 @@ pass was available for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The session routes, the `x-eve-stream-*` headers and the `turnPolicy` vocabulary are the pinned published package's contract. | dependency pins | eve_runtime/package.json:14-20; eve_runtime/README.md:1-22 |
+| The session routes, the `x-eve-stream-*` headers and the `turnPolicy` vocabulary are the pinned published package's contract. | `## Pinned dependency` | eve_runtime/package.json:14-20; eve_runtime/README.md:1-22 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the client gained eve's two session controls.**
   `compact_session` and `clear_session` were added to the transport seam and its production

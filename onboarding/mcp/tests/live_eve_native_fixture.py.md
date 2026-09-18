@@ -6,8 +6,8 @@
 | path | `mcp/tests/live_eve_native_fixture.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -149,7 +149,7 @@ pass was available for this file.
 | The request bodies the scenarios assert against are the production builders, so a policy change breaks the live proof too. | `create_session_body`; `follow_up_body`; `cancel_turn_body` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89 |
 | The deterministic provider this fixture starts as the model backend. | `FixturePlan`; `serve` | mcp/tests/eve_fixture_model.py:39-80; mcp/tests/eve_fixture_model.py:255-277 |
 | The deterministic counterpart that proves the same contract without a process, and why both exist. | `FakeEveRuntime` | mcp/tests/eve_adapter_test_support.py:80-288 |
-| The runtime application this fixture launches, including the workspace-confined tools whose write the protocol scenario asserts. | `ar_workspace_write`; `resolveWorkspacePath` | eve_runtime/agent/lib/workspace.ts:10-12 |
+| None | "Write one UTF-8 text file inside a surface this seat was admitted to write"; `resolveWorkspacePath` | eve_runtime/agent/tools/ar_workspace_write.ts:6-31; eve_runtime/agent/lib/workspace.ts:3-12 |
 | Node resolution and the runtime root the fixture relies on are the adapter's own launch module, and the interpreter override it seeds is read as given there. | `resolve_node_executable`; `resolve_runtime_root`; `AR_EVE_NODE` | mcp/src/agents_remember/serving/eve_runtime_launch.py:40-41; mcp/src/agents_remember/serving/eve_runtime_launch.py:140-173; mcp/src/agents_remember/serving/eve_runtime_launch.py:406-453; mcp/src/agents_remember/serving/eve_runtime_launch.py:605-635; mcp/src/agents_remember/serving/eve_runtime_launch.py:53-53 |
 The blocked-artifact contract covers every start-failure shape and records the failure class. | `START_FAILURES`; `failureType` | mcp/tests/live_eve_native_fixture.py:98-116; mcp/tests/live_eve_native_fixture.py:1855-1870 |
 | The capsule scenario and the observation that makes the forging claim falsifiable: nine labels read from the first effective prompt's binding block. | `_scenario_capsule_binding`; `_observe_admitted_identity`; `bindingBlockFields` | mcp/tests/live_eve_native_fixture.py:1758-1813; mcp/tests/live_eve_native_fixture.py:1394-1453 |
@@ -166,6 +166,7 @@ The blocked-artifact contract covers every start-failure shape and records the f
 | The runtime under test is the pinned published `eve` package and its Node engine requirement, not a sibling repository. | exact pins; `engines` | eve_runtime/package.json:6-20; eve_runtime/README.md:10-29 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the fixture gained the two capsule scenarios**
   (~770 lines). The capsule binding cannot be proved by a unit double — it is applied by the shipped

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/compiler.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ admitted.
 
 ### Logic
 
-cit:([`compile_role_capsule`], mcp/src/agents_remember/models/role_capsules/compiler.py:90-153) is the whole pipeline, and its step order is the
+cit:([`compile_role_capsule`], mcp/src/agents_remember/models/role_capsules/compiler.py:89-145) is the whole pipeline, and its step order is the
 contract:
 
 1. cit:([`parse_composition_manifest`], mcp/src/agents_remember/models/role_capsules/manifest.py:168-216) — parse the authored metadata;
@@ -34,14 +34,14 @@ contract:
 3. cit:([`sources_by_path`, `identity_index`], mcp/src/agents_remember/models/role_capsules/source_set.py:50-64; mcp/src/agents_remember/models/role_capsules/source_set.py:65-90) and cit:([`admit_source_set`], mcp/src/agents_remember/models/role_capsules/source_set.py:91-108) — prove the admitted files match the locked plan;
 4. cit:([`gather_candidates`, `resolve_instructions`], mcp/src/agents_remember/models/role_capsules/resolution.py:93-134; mcp/src/agents_remember/models/role_capsules/resolution.py:135-191) — reduce each identity to one block and stop on an unresolved contradiction;
 5. cit:([`narrow_tool_requests`], mcp/src/agents_remember/models/role_capsules/tools.py:24-58) — narrow the requested **tool ids** to the admitted policy;
-6. cit:([`skill_references`], mcp/src/agents_remember/models/role_capsules/compiler.py:154-193) — build one reference per declared skill. This step is **not** a narrowing step: no policy is consulted, and the reference is content-addressed from the admitted skill root file;
-7. cit:([`semantic_digest`], mcp/src/agents_remember/models/role_capsules/compiler.py:225-272) — the seal.
+6. cit:([`skill_references`], mcp/src/agents_remember/models/role_capsules/compiler.py:153-190) — build one reference per declared skill. This step is **not** a narrowing step: no policy is consulted, and the reference is content-addressed from the admitted skill root file;
+7. cit:([`semantic_digest`], mcp/src/agents_remember/models/role_capsules/compiler.py:224-269) — the seal.
 
 The work is split across sibling modules so each part can be understood and tested alone. What
 *this* module owns is the seal: the semantic digest and the diagnostic manifest.
 
 **The digest covers admitted facts and the composed bytes, and nothing else.**
-cit:([`semantic_digest`], mcp/src/agents_remember/models/role_capsules/compiler.py:225-272) builds a canonical `\t`-separated document from
+cit:([`semantic_digest`], mcp/src/agents_remember/models/role_capsules/compiler.py:224-269) builds a canonical `\t`-separated document from
 the seat kind, seat key, role, operation, repository, work branch, task reference and its
 document digest, the requirement identities, the specializations **actually composed**, one
 `block` line per composed block with its revision, one `tool` line per requested tool id, one
@@ -49,7 +49,7 @@ document digest, the requirement identities, the specializations **actually comp
 context's origin/revision/digest. It deliberately excludes unselected sources, refusal
 detail, wall-clock values, and the diagnostic manifest itself — so the identity of a
 compilation does not move when only diagnostics do. Note the asymmetry that carries real
-weight: cit:([`_selected_specializations`], mcp/src/agents_remember/models/role_capsules/compiler.py:294-297) contributes only specializations that
+weight: cit:([`_selected_specializations`], mcp/src/agents_remember/models/role_capsules/compiler.py:293-294) contributes only specializations that
 were **composed**; an admitted-but-unselected specialization changes the diagnostics and must
 not change the capsule.
 
@@ -59,21 +59,21 @@ Requested **tool ids** appear as sorted `tool` lines after being policy-narrowed
 a pointer to separately delivered content, so the only thing that can invalidate it is a missing
 or unadmitted skill root file — which is refused upstream, not here.
 
-The task-context channel is separate and verified: cit:([`verified_task_context`], mcp/src/agents_remember/models/role_capsules/compiler.py:194-224)
+The task-context channel is separate and verified: cit:([`verified_task_context`], mcp/src/agents_remember/models/role_capsules/compiler.py:193-216)
 re-digests the supplied markdown and refuses (`task-context-digest-mismatch`) when it does not
 match the digest the projection declared, because an unverifiable projection must not be
 carried into a capsule.
 
-The diagnostic half is built by cit:([`compiled_manifest`], mcp/src/agents_remember/models/role_capsules/compiler.py:388-416), with two refusal-side
-builders: cit:([`refused_manifest`], mcp/src/agents_remember/models/role_capsules/compiler.py:417-432) for a refusal reached before the manifest could be
-parsed, and cit:([`manifest_for_error`], mcp/src/agents_remember/models/role_capsules/compiler.py:433-447) when the admitted facts were already known.
-cit:([`UNREAD_REVISION`], mcp/src/agents_remember/models/role_capsules/compiler.py:87-87) is the deliberately-not-a-content-digest revision
+The diagnostic half is built by cit:([`compiled_manifest`], mcp/src/agents_remember/models/role_capsules/compiler.py:387-413), with two refusal-side
+builders: cit:([`refused_manifest`], mcp/src/agents_remember/models/role_capsules/compiler.py:416-429) for a refusal reached before the manifest could be
+parsed, and cit:([`manifest_for_error`], mcp/src/agents_remember/models/role_capsules/compiler.py:432-444) when the admitted facts were already known.
+cit:([`UNREAD_REVISION`], mcp/src/agents_remember/models/role_capsules/compiler.py:86-86) is the deliberately-not-a-content-digest revision
 recorded for a declared source whose bytes were never admitted.
 
 ### Conventions
 
 A refusal is a typed exception, never a partially filled capsule. The module-level schema
-cit:([`MANIFEST_SCHEMA`], mcp/src/agents_remember/models/role_capsules/compiler.py:83-83) (`ar-role-capsule-manifest/v1`) names the diagnostic manifest
+cit:([`MANIFEST_SCHEMA`], mcp/src/agents_remember/models/role_capsules/compiler.py:82-82) (`ar-role-capsule-manifest/v1`) names the diagnostic manifest
 format and is itself part of the digest document.
 
 ### Invariants And Boundaries
@@ -122,11 +122,11 @@ No external or domain documentation is configured for this memory root
 | --- | --- | --- |
 | The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. | `compile_admitted_capsule`; `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:46-88 |
 | The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest. | `CapsuleManifest`; `CapsuleSourceRecord`; `CapsuleRejection` | mcp/src/agents_remember/models/role_capsules/diagnostics.py:105-217; mcp/src/agents_remember/models/role_capsules/diagnostics.py:38-58; mcp/src/agents_remember/models/role_capsules/diagnostics.py:73-96 |
-| **The carried skill channel** — one content-addressed reference per declared skill, built with no policy call. | `skill_references`; `CapsuleSkillReference`; `skills_declared_identity` | mcp/src/agents_remember/models/role_capsules/compiler.py:154-193; mcp/src/agents_remember/models/role_capsules/types.py:414-434; mcp/src/agents_remember/models/role_capsules/sources.py:126-138 |
-| The determinism cases: identical input to identical content and digest, order as identity, and a real binding change moving the digest. | `test_identical_input_compiles_to_identical_ordered_content_and_digest`; `test_reordering_the_composed_blocks_changes_the_semantic_digest`; `test_a_real_binding_change_does_move_the_semantic_digest` | mcp/tests/test_role_capsule_compiler.py:377-388; mcp/tests/test_role_capsule_compiler.py:422-446; mcp/tests/test_role_capsule_compiler.py:447-460 |
-| Ephemeral diagnostics do not move identity, while an applicable block change does; an unrelated role never reaches another role's capsule. | `test_a_declared_but_unselected_specialization_changes_diagnostics_not_identity`; `test_changing_an_applicable_operation_block_changes_that_capsule`; `test_changing_an_unrelated_role_leaves_the_worker_capsule_untouched` | mcp/tests/test_role_capsule_compiler.py:400-421; mcp/tests/test_role_capsule_compiler.py:472-483; mcp/tests/test_role_capsule_compiler.py:461-471 |
-| Composition requires neither model nor network, and no network client is imported. | `test_composition_succeeds_with_network_and_model_access_denied`; `test_the_compiler_modules_import_no_network_client` | mcp/tests/test_role_capsule_compiler.py:868-889; mcp/tests/test_role_capsule_compiler.py:890-930 |
-| A refusal still produces an explanation manifest carrying its remedy, and an unverifiable projection is refused. | `test_a_refusal_still_produces_an_explanation_manifest`; `test_a_projection_whose_bytes_do_not_match_its_digest_is_refused` | mcp/tests/test_role_capsule_compiler.py:851-867; mcp/tests/test_role_capsule_compiler.py:822-836 |
+| **The carried skill channel** — one content-addressed reference per declared skill, built with no policy call. | `skill_references` | mcp/src/agents_remember/models/role_capsules/compiler.py:153-190 |
+| The determinism cases: identical input to identical content and digest, order as identity, and a real binding change moving the digest. | `test_identical_input_compiles_to_identical_ordered_content_and_digest`; `test_reordering_the_composed_blocks_changes_the_semantic_digest`; `test_a_real_binding_change_does_move_the_semantic_digest` | mcp/tests/test_role_capsule_compiler.py:381-390; mcp/tests/test_role_capsule_compiler.py:436-458; mcp/tests/test_role_capsule_compiler.py:461-467 |
+| Ephemeral diagnostics do not move identity, while an applicable block change does; an unrelated role never reaches another role's capsule. | `test_a_declared_but_unselected_specialization_changes_diagnostics_not_identity`; `test_changing_an_applicable_operation_block_changes_that_capsule`; `test_changing_an_unrelated_role_leaves_the_worker_capsule_untouched` | mcp/tests/test_role_capsule_compiler.py:414-433; mcp/tests/test_role_capsule_compiler.py:486-495; mcp/tests/test_role_capsule_compiler.py:475-483 |
+| Composition requires neither model nor network, and no network client is imported. | `test_composition_succeeds_with_network_and_model_access_denied`; `test_the_compiler_modules_import_no_network_client` | mcp/tests/test_role_capsule_compiler.py:910-929; mcp/tests/test_role_capsule_compiler.py:932-961 |
+| A refusal still produces an explanation manifest carrying its remedy, and an unverifiable projection is refused. | `test_a_refusal_still_produces_an_explanation_manifest`; `test_a_projection_whose_bytes_do_not_match_its_digest_is_refused` | mcp/tests/test_role_capsule_compiler.py:893-907; mcp/tests/test_role_capsule_compiler.py:864-876 |
 | The typed refusal this module raises for every defect class. | `CapsuleCompilationError`; `CapsuleManifestError`; `CapsuleSourceError` | mcp/src/agents_remember/errors.py:464-507; mcp/src/agents_remember/errors.py:508-511; mcp/src/agents_remember/errors.py:512-513 |
 
 ## Cross-Repo References
@@ -140,6 +140,18 @@ not a runtime boundary of this module, and no eve code is imported.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `compile_role_capsule` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:89-145. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `skill_references` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:153-190. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `semantic_digest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:224-269. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `semantic_digest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:224-269. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `_selected_specializations` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:293-294. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `verified_task_context` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:193-216. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `compiled_manifest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:387-413. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `refused_manifest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:416-429. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `manifest_for_error` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:432-444. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `UNREAD_REVISION` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `MANIFEST_SCHEMA` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:82-82. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `UNREAD_REVISION` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `MANIFEST_SCHEMA` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 

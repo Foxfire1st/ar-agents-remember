@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/eve_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
@@ -178,7 +178,7 @@ pass was available for this file.
 | The capability snapshot this adapter publishes: both axes are real, and the effort menu is the accepted vocabulary with its default. | `_capability_snapshot`; `supports_effort`; `effort_options`; `default_effort` | mcp/src/agents_remember/serving/eve_adapter.py:699-748 |
 | The AR sentinel, the accepted reasoning vocabulary mirrored from eve's own union, and the setter that validates against it without echoing it back. | `PROVIDER_DEFAULT_EFFORT`; `REASONING_EFFORTS`; `set_effort` | mcp/src/agents_remember/serving/eve_adapter.py:91-91; mcp/src/agents_remember/serving/eve_adapter.py:100-110; mcp/src/agents_remember/serving/eve_adapter.py:312-334 |
 | The capability catalog consumes this snapshot, so the published axis is what the dashboard actually reads. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
-| The authored consumer that makes the axis real: the application reads the effort input and applies it through eve's own agent definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning`; `defineAgent` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35; eve_runtime/agent/agent.ts:48-48 |
+| The authored consumer that makes the axis real: the application reads the effort input and applies it through eve's own agent definition, omitting the property for the sentinel. | "AR_EVE_EFFORT"; "provider-default"; "export default defineAgent({"; "reasoning === PROVIDER_DEFAULT_EFFORT ? {} : { reasoning }" | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35; eve_runtime/agent/agent.ts:37-37; eve_runtime/agent/agent.ts:48-48 |
 | The launch input the consumer reads, and the two places the selection is carried into the child environment rather than re-derived. | `EFFORT_ENV`; `build_runtime_env`; `eve_launch_knobs` | mcp/src/agents_remember/serving/eve_runtime_launch.py:87-87; mcp/src/agents_remember/serving/eve_runtime_launch.py:351-375; mcp/src/agents_remember/serving/eve_runtime_launch.py:404-404; mcp/src/agents_remember/serving/eve_runtime_launch.py:392-407 |
 | Cases pin the published axis in both directions: the pinned runtime consumes the effort input and the catalog publishes the axis the client would read, and the setter refuses every candidate including its own vocabulary. | `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it`; `test_the_effort_setter_refuses_every_candidate_including_its_own_vocabulary`; `test_no_advertised_control_lacks_a_runtime_consumer` | mcp/tests/test_eve_product_integration.py:1151-1191; mcp/tests/test_eve_product_integration.py:1193-1221; mcp/tests/test_eve_product_integration.py:1222-1261 |
 
@@ -186,9 +186,10 @@ pass was available for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The controlled application is the pinned published `eve` package, unmodified; nothing is forked or vendored. | exact dependency pins; "the runtime is the unmodified published `eve` package" | eve_runtime/package.json:14-20; eve_runtime/README.md:3-8 |
+| The controlled application is the pinned published `eve` package, unmodified; nothing is forked or vendored. | "the runtime is the unmodified published" | eve_runtime/package.json:15-20; eve_runtime/README.md:3-8 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **corrected in place: the effort axis is no longer
   retired.** This leaf's candidate gives the pinned application a real `AR_EVE_EFFORT` consumer
   (`eve_runtime/agent/agent.ts` reads it and applies it through `defineAgent({ reasoning })`, omitting
