@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_record_integrity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:58+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastVerifiedCommitHash | `a135150459f8499ba309faf0373cc3b4bf7ff852` |
+| lastVerifiedCommitDate | 2026-09-18T19:58:12+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l3-ar` uncommitted source (this file was L2's addition and is now **1140 lines, 37 cases**, sha256 `86c785b4eea752a55fe41885c850466e584eb39379b7658b9916e74fd8c6cc47`, 55,356 bytes); base `a12c511f6e76bd1188719cad0a9104d78d46920c` |
 | governingOverview | `overview.md` |
 
@@ -191,7 +191,7 @@ durable memory. Every range was derived against the current 1140-line source.
 | A prose figure is compared with its source at the revision the prose describes. | `DeclaredFigureCurrencyTests` | mcp/tests/test_record_integrity.py:668-1012 |
 | Every comparison states its two populations, and the CLI writes nothing. | `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:1015-1140 |
 | The module whose four comparisons these cases pin. | `check_leaf_document_against_contract`; `check_master_rows_against_leaf_documents`; `check_register_row_ownership`; `check_declared_figure_currency` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:441-955 |
-| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" | mcp/tests/test-evidence-lanes.toml:248-248 |
+| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" | mcp/tests/test-evidence-lanes.toml:249-249 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_leaf_doc_master_link_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82`|
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastVerifiedCommitHash | `a135150459f8499ba309faf0373cc3b4bf7ff852`|
+| lastVerifiedCommitDate | 2026-09-18T19:58:12+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -124,7 +124,7 @@ repository's own source, the real `task_doc` plane and real Git objects.
 | The focused restamp decision-table class in the sibling module, which this module's docstring points at. | `LeafDocMasterLinkBindingTests` | mcp/tests/test_task_document_application_1.py:577-663 |
 | The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363; mcp/tests/evidence-lifecycle.toml:330-330 |
 | The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:191-191 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:192-192 |
 
 ## Cross-Repo References
 

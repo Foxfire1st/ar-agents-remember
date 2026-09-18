@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_eve_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:56+02:00 |
-| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
-| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
+| lastVerifiedCommitHash | `a135150459f8499ba309faf0373cc3b4bf7ff852` |
+| lastVerifiedCommitDate | 2026-09-18T19:58:12+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ pass was available for this file.
 | The bounded replay window whose occupancy and eviction these cases pin. | `EveEventDeduplicator`; `EVE_REPLAY_WINDOW`; `retained` | mcp/src/agents_remember/serving/eve_protocol.py:224-268 |
 | The production request builders and the transport these wire cases drive. | `create_session_body`; `follow_up_body`; `cancel_turn_body`; `EveRuntimeProcess` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89; mcp/src/agents_remember/serving/eve_runtime_client.py:118-372 |
 | The adapter cases that consume this same wire layer one level up. | `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests` | mcp/tests/test_eve_adapter.py:661-907 |
-| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:725-745; onboarding/mcp/tests/overview.md:747-749 |
+| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:767-787; onboarding/mcp/tests/overview.md:789-791 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_response_conformance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82`|
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastVerifiedCommitHash | `a135150459f8499ba309faf0373cc3b4bf7ff852`|
+| lastVerifiedCommitDate | 2026-09-18T19:58:12+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source (new file, **864 lines / 15 cases**); base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview | `overview.md` |
 
@@ -71,7 +71,7 @@ early return fails instead of passing quietly. The deleted sweep was also
   executed payload for every registered model needs the fixture infrastructure the deleted sweep
   had, and that infrastructure is what rotted (11 rot sites; it does not collect verbatim).
 - **No `-m` override and no marker**: lane membership is `architecture-fitness`
-  (`mcp/tests/test-evidence-lanes.toml:244`), which is what keeps these cases in the default lane.
+  (`mcp/tests/test-evidence-lanes.toml:245`), which is what keeps these cases in the default lane.
 - Importing `test_agent_notifier` for its fixtures means this module shares that module's world
   builder; it does not re-run or certify it.
 
@@ -106,7 +106,7 @@ they make no acceptance claim.
 | A queued operator post must still report `entryId`, `state`, `messageKind`, `deliveryState`. | `test_a_queued_operator_inbox_post_still_must_report_its_entry` | mcp/tests/test_tool_response_conformance.py:757-793 |
 | `session_retire` reports the stranded row after the seat is already gone. | `test_session_retire_reports_the_stranded_row_after_the_seat_is_gone` | mcp/tests/test_tool_response_conformance.py:794-826 |
 | The structural delivery projection is declared on the shared base every consumer inherits. | `test_the_structural_delivery_projection_is_declared_on_every_consumer` | mcp/tests/test_tool_response_conformance.py:827-860 |
-| The lane row that keeps this module in the default lane. | "mcp/tests/test_tool_response_conformance.py" | mcp/tests/test-evidence-lanes.toml:244-244 |
+| The lane row that keeps this module in the default lane. | "mcp/tests/test_tool_response_conformance.py" | mcp/tests/test-evidence-lanes.toml:245-245 |
 | The choke point whose guarantee this module moves into the suite. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The registry whose models the structural layer sweeps. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:243-247 |
 | The advertised public roster the surface layer checks against. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-22 |

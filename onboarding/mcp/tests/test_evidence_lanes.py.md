@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_evidence_lanes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82`|
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastVerifiedCommitHash | `a135150459f8499ba309faf0373cc3b4bf7ff852`|
+| lastVerifiedCommitDate | 2026-09-18T19:58:12+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview | `overview.md` |
 
@@ -79,7 +79,7 @@ outright — `ERROR: test evidence lanes have 1 finding(s): … no tests ran` �
 on *before* the row existed gives `INTERNALERROR> AssertionError … crashitem`, which is the
 symptom `T48` recorded.
 
-**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:231`),
+**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:232`),
 recorded by `260831-LOCR-L07`.
 
 ## Update History
