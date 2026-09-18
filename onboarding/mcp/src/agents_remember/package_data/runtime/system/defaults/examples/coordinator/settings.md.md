@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 
 ## Purpose
 
@@ -28,7 +28,7 @@ Docker-wrapped providers/backends and must not require host-level PostgreSQL,
 FalkorDB, Ollama, OS services, launch agents, package-manager services, Python
 virtual environments, or global user daemons for normal managed mode.
 
-The GrepAI guidance says one `grepai-memory` provider can declare multiple memory roots in workspace mode, covering both external memory repos and repo-internal `ar-memory/` roots with explicit `{ projectId, path }` entries. Managed lifecycle tooling indexes those live roots in place and git-ignores GrepAI's per-root `.grepai/` working directory so generated GrepAI artifacts stay out of memory commits. GrepAI config, state, cache, home files, and provider state live under `providers/runners/grepai/`; operator logs live under `logs/providers/grepai/`; all memory roots share one lifecycle-owned Docker network, PostgreSQL/pgvector container with durable state under `providers/data/grepai/postgres/`, and Ollama container for embeddings. GrepAI itself runs from the Docker runner container, so managed mode must not install GrepAI or Ollama into host user space. A `.grepai/` directory inside any indexed memory root is runtime artifact output rather than durable memory.
+The GrepAI guidance says one `grepai-memory` provider can declare multiple memory roots in workspace mode, covering the configured external memory repos with explicit `{ projectId, path }` entries; the former repo-internal `ar-memory/` roots were removed from the product and are no longer an indexing target. Managed lifecycle tooling indexes those live roots in place and git-ignores GrepAI's per-root `.grepai/` working directory so generated GrepAI artifacts stay out of memory commits. GrepAI config, state, cache, home files, and provider state live under `providers/runners/grepai/`; operator logs live under `logs/providers/grepai/`; all memory roots share one lifecycle-owned Docker network, PostgreSQL/pgvector container with durable state under `providers/data/grepai/postgres/`, and Ollama container for embeddings. GrepAI itself runs from the Docker runner container, so managed mode must not install GrepAI or Ollama into host user space. A `.grepai/` directory inside any indexed memory root is runtime artifact output rather than durable memory.
 
 The CodeGraphContext guidance says one `codegraphcontext-code` provider can
 declare multiple code repository roots. Lifecycle tooling expands those roots
@@ -84,6 +84,8 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The GrepAI guidance claimed one provider covers "both external memory repos and repo-internal `ar-memory/` roots"; the removed root is no longer an indexing target, so the claim now names the configured external memory repos only. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: removed empty placeholder findings and split
   coordinator, provider-authority, GrepAI, and CGC claims onto their exact example source.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -82,10 +82,10 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Flags, request resolution, and mode/directory refusal define the adapter scope. | `add_arguments` | mcp/src/agents_remember/cli/memory_backfill.py:41-73 |
-| Planning and apply status/output remain separate. | `run` | mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
-| The kernel owns loss-aware planning and the explicit apply transaction. | `MemoryBackfillPlan` | mcp/src/agents_remember/kernel/memory_backfill.py:144-224 |
-| Actual branch-name invocation and retry behavior are tested through the CLI. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:844-895 |
+| Flags, request resolution, and mode/directory refusal define the adapter scope. | `add_arguments`; `_request_from`; `_refusal_for` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:117-150 |
+| Planning and apply status/output remain separate. | `run`; `_apply` | mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
+| The kernel owns loss-aware planning and the explicit apply transaction. | `MemoryBackfillPlan`; `plan_memory_backfill`; `apply_memory_backfill` | mcp/src/agents_remember/kernel/memory_backfill.py:144-224; mcp/src/agents_remember/kernel/memory_backfill.py:257-308 |
+| Actual branch-name invocation and retry behavior are tested through the CLI. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:853-909 |
 
 ## Cross-Repo References
 
@@ -97,6 +97,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:06 UTC — Corrected the post-apply guidance to reconcile selected worktrees/contract bases and rebuild an uncommitted trailer-derived cache; retained flags and kernel ownership, and clarified the actual contract checks and exit-status scope. Working candidate verified by source inspection; commit metadata records real committed history only.
 

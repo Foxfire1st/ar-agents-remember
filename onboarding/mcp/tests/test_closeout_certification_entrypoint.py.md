@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_certification_entrypoint.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09 |
-| lastVerifiedCommitHash | `8133b6a9de2f787cb6c4527621a70123357aff31` |
-| lastVerifiedCommitDate | 2026-09-08T13:24:49+02:00 |
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

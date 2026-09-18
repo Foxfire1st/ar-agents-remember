@@ -64,4 +64,3 @@ This file creates no cross-repository protocol. It composes local citation and f
 ## Update History
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Created the one-to-one package-marker card and routed readers to its concrete transaction owner. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
-

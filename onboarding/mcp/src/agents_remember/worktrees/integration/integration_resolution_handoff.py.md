@@ -70,4 +70,3 @@ No meaningful cross-repository boundary is owned by this file.
 - 2026-09-10T15:06+02:00 — Recorded the source-drift recovery rewording: the handoff summary and cancel note now route through `worktree_sync` plus a new targeted closeout, while the refusal sentence and protected-ref/door classification are unchanged. Re-derived the public-surface anchor against the current working tree. Verification metadata remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

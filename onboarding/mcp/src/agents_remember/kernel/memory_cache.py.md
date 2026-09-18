@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_cache.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -79,10 +79,10 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Terminal removal discards only the root memory cache. | `discard_memory_cache_changes` | mcp/src/agents_remember/kernel/memory_cache.py:94-111 |
-| Derivation reads Git attribution and computes current/base metadata. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
-| Preparation excludes the cache and refresh reports materialization outcomes. | `prepare_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62 |
-| Committed attribution and row mapping have one reader. | `attributed_commits` | mcp/src/agents_remember/kernel/memory_attribution.py:143-174 |
-| The consumer representation supports empty derived history. | `validate_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:173-184 |
+| Derivation reads Git attribution and computes current/base metadata. | `derive_memory_ledger`; "def derive_memory_ledger" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
+| Preparation excludes the cache and refresh reports materialization outcomes. | `prepare_memory_cache`; `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
+| Committed attribution and row mapping have one reader. | `attributed_commits`; `ledger_rows_from_attribution` | mcp/src/agents_remember/kernel/memory_attribution.py:143-174; mcp/src/agents_remember/kernel/memory_attribution.py:208-227 |
+| The consumer representation supports empty derived history. | `validate_ledger`; "class MemoryLedger"; "an empty memory ledger cannot claim a current mapping" | mcp/src/agents_remember/kernel/memory_ledger.py:36-45; mcp/src/agents_remember/kernel/memory_ledger.py:173-184 |
 | Cache independence and exact local-ref derivation are exercised by the retained projection tests. | `test_cache_misses_preserve_contract_and_named_ref_history` | mcp/tests/test_memory_ledger.py:338-360 |
 
 ## Cross-Repo References
@@ -95,9 +95,11 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: `discard_memory_cache_changes` is used only before an authorized memory-worktree removal. It restores a tracked root cache from HEAD or removes its staged/untracked representation. Ordinary non-forced Git removal still checks all real content. This function creates no commit and moves no ref.
+- 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: `discard_memory_cache_changes` is used only before an authorized memory-worktree removal. It restores a tracked root cache from HEAD or removes its staged/untracked representation. Ordinary non-forced Git removal still checks all real content. This function creates no commit and moves no ref.
 
 
 - 2026-09-15T01:02 UTC — Created the paired sidecar for the new computed-cache owner, documenting derivation, explicit staging preparation, best-effort materialization, and the absence of ledger commit/ref authority. Working candidate verified by source inspection; commit metadata records real committed history only.

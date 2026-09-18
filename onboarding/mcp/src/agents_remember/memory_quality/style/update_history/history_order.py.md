@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../../overview.md`               |
+
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## Purpose
 

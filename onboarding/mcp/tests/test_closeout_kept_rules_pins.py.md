@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_kept_rules_pins.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,9 +73,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The enabled plan and message checks cover code and memory only. | `_enabled_plan` | mcp/tests/test_closeout_kept_rules_pins.py:61-69 |
+| The enabled plan and message checks cover code and memory only. | `_enabled_plan`; `test_r2_each_enabled_leg_requires_a_nonblank_commit_message` | mcp/tests/test_closeout_kept_rules_pins.py:72-94 |
 | Both content messages are required without a ledger leg. | `test_r1_the_enabled_content_pair_requires_both_messages_without_a_ledger_leg` | mcp/tests/test_closeout_kept_rules_pins.py:141-167 |
-| Real ancestry covers base, checkpoint head, and unrelated movement. | `test_r3_closeout_ancestry_passes_when_the_source_is_still_at_the_recorded_base` | mcp/tests/test_closeout_kept_rules_pins.py:203-211 |
+| Real ancestry covers base, checkpoint head, and unrelated movement. | `test_r3_closeout_ancestry_passes_when_the_source_is_still_at_the_recorded_base`; `test_r3_closeout_accepts_the_source_head_a_checkpoint_landed` | mcp/tests/test_closeout_kept_rules_pins.py:203-211; mcp/tests/test_closeout_kept_rules_pins.py:214-234 |
 | Replay uses Git facts and the retired recovery API remains absent. | `test_r4_integration_replay_requirement_is_git_ancestry_not_a_record` | mcp/tests/test_closeout_kept_rules_pins.py:250-269 |
 
 ## Cross-Repo References

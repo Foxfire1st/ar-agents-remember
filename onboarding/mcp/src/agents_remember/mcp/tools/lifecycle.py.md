@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                      |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 

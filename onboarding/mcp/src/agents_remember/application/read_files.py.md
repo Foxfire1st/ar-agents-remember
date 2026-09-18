@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/application/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -170,7 +174,6 @@ ever appears it is honored once.
 | `ROUTE_OVERVIEW_NAME` consumed read-only for the front-door route derivation. | `ROUTE_OVERVIEW_NAME` | mcp/src/agents_remember/kernel/route_index.py:17-17 |
 | The ambient lifecycle: `read.packet` emission and the served-onboarding dedup ledger consumed here. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
-
 
 ## Update History
 

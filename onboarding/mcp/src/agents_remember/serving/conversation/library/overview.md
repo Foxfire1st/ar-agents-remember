@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/library/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-17T11:10+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 
 ## What This Area Is
 
@@ -154,6 +154,34 @@ family.
    absorbed foreign sessions fail honest `launch-failed` and are never retired; otherwise
    `timeout-unknown` (202), reconcilable by status/reconcile.
 
+## 260915-CAPS-L15 The Reopen Is The Declared Legacy Launch Point
+
+The route's exact open is the **one production launch point that deliberately does not carry a role
+capsule**, and `260915-CAPS-L15` made that a stated decision instead of an absent field.
+`open_service.py` declares `LIBRARY_REOPEN_LEGACY_REASON` and passes
+`legacy_launch_capsule(env.get("AR_SPAWN_ROLE"), LIBRARY_REOPEN_LEGACY_REASON)` on the launch request, so
+the instruction mode this route records is `legacy` **with its reason** on every run.
+
+**The reason is a measured behaviour trade, not styling.** This route exists to reopen one exact native
+conversation and to prove the identity it resumed (`_settle_observation` compares the vendor identity it
+observed with the one the record names). L5's refresh plan resolves *any* resume this session did not
+itself open to `FRESH_THREAD`, dropping `threadId` — so delivering a capsule here would convert the
+reopen into a fresh thread and destroy the identity proof the route exists for. Excluding the capsule
+keeps the route's own contract intact; the alternative is a different route, not more wiring.
+
+**What a reader must not conclude.** The exclusion is *this* route's; every other production launch point
+is wired, and `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` fails if
+any `TerminalLaunchRequest(` site has neither disposition or if the set of sites changes. Owner of any
+future capsule-carrying reopen: the final-verification leaf, with the harness delivery leaves that own
+the thread lifecycle.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The declared reason and the explicit legacy declaration on the launch. | `LIBRARY_REOPEN_LEGACY_REASON`; `legacy_launch_capsule` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/src/agents_remember/serving/conversation/library/open_service.py:475-478 |
+| The refresh plan that makes a capsule-carrying reopen a fresh thread. | `plan_refresh`; `FRESH_THREAD` | mcp/src/agents_remember/serving/capsule_delivery.py:399-440; mcp/src/agents_remember/serving/capsule_delivery.py:56-72 |
+| The identity proof the reopen exists for, which the exclusion protects. | `_settle_observation` | mcp/src/agents_remember/serving/conversation/library/open_service.py:535-571 |
+| The cases pinning the declaration and the whole-site enumeration. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:847-856 |
+
 ## Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
@@ -214,7 +242,7 @@ the live gates and both real open E2Es.
 | --- | --- | --- |
 | The dormant library read port defines scoped list, historical read, and server-private resume-target resolution. | `ConversationLibraryPort` | mcp/src/agents_remember/serving/ports.py:93-118 |
 | The L0 request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:738-791 |
+| The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
 | The locked Claude and Pi helpers dispatch list, read, and resume operations through their request handlers. | `handleClaude`; `handlePi` | mcp/native_helpers/conversation_library/src/claude.ts:65-78; mcp/native_helpers/conversation_library/src/pi.ts:54-67 |
 
 | The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | `api_library_list`; `api_library_read`; `api_library_open`; `api_library_open_status`; `api_library_open_reconcile`; `_OPEN_STATUS_BY_OUTCOME`; `_error_response`; `_ERROR_STATUS_TABLE` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:109-130; mcp/src/agents_remember/serving/conversation/library/api.py:133-158; mcp/src/agents_remember/serving/conversation/library/api.py:169-199; mcp/src/agents_remember/serving/conversation/library/api.py:202-221; mcp/src/agents_remember/serving/conversation/library/api.py:224-243; mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305 |
@@ -374,6 +402,24 @@ with a recorded reason.
 The library child routes now import the page/history wire contracts from `models/conversations/history.py` and the canonical library port from `serving/ports.py` after the L9 monolith split. Library behavior is unchanged.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+
+- 2026-09-17T11:10+02:00 — 260915-CAPS-L15 curator: **route meaning changed: this route is now the
+  *declared* legacy launch point, so the body was updated rather than annotated.** The exact open passes
+  `legacy_launch_capsule(role, LIBRARY_REOPEN_LEGACY_REASON)` explicitly, recording `legacy` with its
+  reason on every run instead of leaving the mode to an absent field. A current-intent section records
+  the measured trade — the route proves the vendor identity it resumed, while a capsule on a thread this
+  session did not open resolves as a bounded fresh thread — and states what a reader must not conclude
+  (the exclusion is this route's alone; every other production launch point is wired, and the enumeration
+  case fails if a site has neither disposition). Three reference rows added, and **two citation ranges
+  in this overview's own existing tables were re-read and repaired by hand** because this leaf's
+  insertions shifted the constructs they point at: the tracked-opener row's `open_terminal_session`
+  `738-791` → **`821-879`**, and the suite-population row's `# mcp/tests` target
+  `onboarding/mcp/tests/overview.md:1-2095` → **`1-2669`**. The sanctioned per-document `citation_fix`
+  is unreachable in a leaf worktree (D14), so both were rebind by reading the candidate. Verification metadata moves
+  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
+
 - 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes Codex executable selection a native-PATH resolver seam and treats the initialize server product as diagnostic rather than authority. Exact Agents Remember client suffix and version agreement remain mandatory, and resolution failures surface as typed store errors. Verification provenance remains closeout-owned.

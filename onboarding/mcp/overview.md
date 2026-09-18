@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastUpdated | 2026-09-17T10:20:31+00:00 |
 | lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00 |
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview      | `../overview.md`                           |
 
@@ -26,11 +26,46 @@ cannot pass as the code under review.
 260831-LOCR-L37 added one advertised name to that inventory — `worktree_pause`, the stop-only pause
 registered by the working-half worktree registrar and carried by `PUBLIC_TOOLS` and
 `TOOL_RESPONSE_MODELS` in the same leaf — so the ordered inventory, the live registration and the
-response-model registry still agree at 63 names. The verb publishes nothing: it releases one atomic
+response-model registry agreed at 63 names from that leaf until 260915-CAPS-L4 raised the count. The
+verb publishes nothing: it releases one atomic
 master's activation selection and hands the turn back, and the explicitly requested publication of an
 unfinished master remains the separate `worktree_checkpoint_landing`. This package route owns the
 advertisement of both; the semantics live on the `registration/`, `tools/` and `worktrees/` child
 routes.
+
+260915-CAPS-L4 added three more advertised names — `role_capsule_compile`, `skill_catalog_list` and
+`skill_catalog_read` — so the three surfaces still agree at **66** names. They are declared by the new
+`mcp/registration/capsule_serving.py` family (the thirteenth registrar), reached through the new
+`mcp/tools/capsule_serving.py` payload builders, and carried by `RoleCapsuleResponse`,
+`SkillCatalogListResponse` and `SkillCatalogReadResponse` in `models/role_capsule_resources.py`. All
+three names were **appended** to `TOOL_REGISTRARS`, `PUBLIC_TOOLS` and `TOOL_RESPONSE_MODELS` together,
+so no existing tool's advertised position moved.
+
+That same family also made this package advertise **MCP resources** for the first time, and it carries
+the SEP-2640 skills transport: every file of the 14 shipped skills plus this server's own
+`skill://index.json` resource (85 registered resources), the `io.modelcontextprotocol/skills` capability
+declared in the `initialize` result, and the extension's **two mandatory protocol methods**
+`skills/list` and `skills/get`. The methods are implemented in
+`mcp/registration/skills_extension.py` as bounded explicit method support, because the pinned
+`mcp==1.29.1` SDK has no skills affordance at all (zero case-insensitive `skill` matches, no
+`extensions` field on `ServerCapabilities`, and an unmodelled method refused with `-32602`).
+`skill_catalog_list` and `skill_catalog_read` are this server's own tool reads over the same registry
+for a client that is not resource-aware. The resources are read from the package's generated
+`package_data/runtime/skills/` copy rather than the canonical root `skills/` tree, which is what makes
+a served revision reproducible.
+
+Two distinctions a reader of this route must not flatten:
+
+- **The declaration is a commitment.** SEP-2640 §Capability Declaration: *"declaring the extension
+  itself commits the server to `skills/list` and `skills/get`."* The capability is therefore installed
+  in the same function that installs the methods, so the advertisement cannot outrun the implementation.
+  A round-1 candidate declared the capability and answered neither; that gap is what the review blocked
+  on and what the shipped code closes.
+- **`skill://index.json` is this server's own convenience resource, not the extension's enumeration
+  surface.** SEP-2640 enumerates through `skills/list`, whose entries carry verbatim frontmatter and
+  per-file digests; the index keeps the Agent Skills well-known-discovery shape and its wire description
+  says so.
+
 
 The same canonical dispatch-advertisement validator is reusable at real-client boundaries that
 expose only one deferred tool-search result. The Codex clean-room proof therefore records the exact
@@ -160,16 +195,16 @@ These current source and policy ranges establish the development/certification d
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785; mcp/src/agents_remember/application/prepared_certification.py:749-813 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
 Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A ledger view is derived from Git and cache write failure is only an availability result. | `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
-| Existing preparation retains actual Git binding and allows a distinct memory content view. | `ExistingGitPreparationBinding` | mcp/src/agents_remember/kernel/git_preparation.py:34-44 |
-| Baseline adoption commits memory content and returns a cache observation. | `adopt_initial_baseline` | mcp/src/agents_remember/memory/baseline.py:172-227 |
+| A ledger view is derived from Git and cache write failure is only an availability result. | `refresh_memory_cache`; `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
+| Existing preparation retains actual Git binding and allows a distinct memory content view. | `ExistingGitPreparationBinding` | mcp/src/agents_remember/kernel/git_preparation.py:33-44 |
+| Baseline adoption commits memory content and returns a cache observation. | `adopt_initial_baseline`; `memory_content_commit` | mcp/src/agents_remember/memory/baseline.py:172-227; mcp/src/agents_remember/memory/baseline.py:233-240 |
 
 ## Purpose
 
@@ -507,6 +542,282 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 ## Hot Path Summary
 
 The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
+
+## 260915-CAPS-L10 Measured Result — The Capsule Did Not Reduce Startup Context (adoption FAILED)
+
+**This section is the measured truth about the capsule chain the rest of this package builds, and it is
+negative.** Every other section on this route describes **structure, correctness and design intent**;
+none of them is evidence of a context reduction, and this section says so explicitly so a reader cannot
+infer one.
+
+- **The delivered capsule is larger than the legacy chain at the one elevation measurable.** `CAPS-R10@v1`
+  behaviour 6 requires a demonstrated reduction in AR-added startup material for matched worker, manager
+  and architect cases. At the **worker** elevation the measured run's **delivered** `orientation` capsule
+  is **11,828 tokens against a 5,928 baseline — +5,900**; the like-for-like `implementation` capsule is
+  **11,645** (**+5,717**). The delivered figure governs.
+- **Manager (`coordination`) and architect (`planning`) are UNMEASURED** — `refused`,
+  `binding-unresolved`, because the frozen world carries no series contract at the master or sprint
+  altitude. They are unmeasured elevations **inside** the adoption failure, not passes.
+- **Obligation preservation is intact: 36/36** across **ten** declared roles plus launcher routing, with
+  the E1 falsification observed. The failure is on the reduction half alone.
+- **The two sides are different kinds of object.** The capsule side is a role- and operation-selected
+  payload; the baseline side is an **unscoped** chain identical for every role and operation. No "saving"
+  across them is claimed anywhere on this route.
+- **Adoption acceptance FAILED; the disposition is REVISE** — a recommendation to the owner, not a
+  decision. A complete report recommends revise/discard and stays a failed adoption acceptance; it never
+  closes an unresolved functional requirement and never weakens mandatory native-eve functionality. **No
+  IAS landing is authorized** by this leaf or by any green result, and the 4k-in-a-32k-window figure
+  remains a stretch direction, never a truncation rule and never an achieved result.
+
+**What the same evidence positively supports — this package's delivery claim, which did hold.** A started
+session really does receive its compiled capsule, and the evidence class is the started session's own
+state:
+
+- **Native eve:** the started session's **own system block** carries the capsule **exactly once** — on the
+  second call, after **compaction**, after **clear** and after **resume**. A **forged** delivery never
+  reached the system block. An **edited carrier** was **refused** (`carrier-digest-mismatch`) and made
+  **no model call**; the seat wrote only its admitted workspace, and an unbound launch was refused with no
+  model call. Scenario summary **8 / 8**. The runtime process was staged from the builder's own worktree
+  and asserted **byte-equal** to the authored tree (`agent.ts` sha256 `287dbbf0…`), with `AR_EVE_EFFORT`
+  present.
+- **Codex:** the capsule arm completed a real representative code leaf end to end — the repair landed in
+  the **admitted** worktree and the fixture check went `1 failed, 2 passed` → **`3 passed`, exit 0**.
+- **Boundary:** the eve arm's model is the fixture's deterministic local provider; what is native is the
+  runtime process, the HTTP transport, the durable event stream and the adapter. `--real-model` was **NOT
+  run** (no hosted credential) and is **UNRUN**, not a pass. The matched **Codex baseline completion is
+  UNRUN-AS-MATCHED** — the legacy chain fails closed without the plane-injected `AR_HOSTED_SESSION_ID`,
+  and a matched baseline therefore needs a **production-control-plane** launch, an owning-seat action.
+
+**Unobservable stays unobservable.** Peak context occupancy is unobservable on **both** harnesses —
+Codex's stream carries cumulative usage only, and `serving/eve_events.py::EveEventMapper._HANDLERS` maps
+no usage frame. Cumulative usage is unobservable on eve. Occupancy and cumulative usage were reported in
+separate columns and **never summed**; the baseline arm's compilation cost is `not-applicable`, an honest
+absence rather than a zero in a total.
+
+**What this result does NOT say.** It is not a claim that the capsule is worse for a real session: the
+legacy figure counts the always-injected routing layer only, while the skill corpus it routes to is read
+on demand and deliberately excluded from the measure — a fair total-instruction-read comparison is a
+session-level measurement that does not exist yet. It is also **not** attributed to the compiler, because
+the two arms differ in installation mechanism as well as in content.
+
+**Design intent, labelled as intent rather than as a measured saving.** The L1 corpus restructure
+(`SKILL.md` 620 → 179 lines) is a **single-source restructuring**; the L2 compiler's determinism,
+refusal-as-value and one-block-per-identity properties are **correctness** properties; and the L9
+installation cutover is an **installation** change whose measured effect on startup material was, at the
+one elevation measured, the **opposite** of a reduction.
+
+**Frozen artifacts.** Method `notes/reports/caps-l10-measurement-method.md` (digest
+`sha256:902676a630075f34b21c70e412eecee51bf8acc42488f3d1fc35a5b4b81ce528`); frozen evidence
+`notes/reports/260915-CAPS-L10-evidence/` (991 entries, index digest `sha256:c6581df2…`); builder report,
+disposition and both verdicts under `notes/reports/260915-CAPS-L10-*` and `notes/reports/caps-l10-*`.
+Both review rounds closed with no open findings; clearing six findings did **not** convert the negative
+result into a pass.
+
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`.
+
+**The two status fields are different fields, and a reader who merges them loops forever** (`D35`, a
+landed-defect repair recorded by 260915-CAPS-L10). Read the **raw** `qualityChecklistStatus` to decide
+whether the repair loop can end. Once it reaches `ready-for-closeout`, the **combined** `checklistStatus`
+is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; on the
+success path, where the record is already current, the combined field is not rewritten at all and keeps
+its incoming `ready-for-closeout` value, with `closeoutReady=true`. `ready-for-closeout` therefore *is*
+observable in the combined field, but only once the whole pipeline — repairs and validation — is already
+complete. `application/memory_quality/controller.py` is the authority: `:664` publishes the raw field,
+`:671` gates on it, `:678` publishes the combined `coherence-required`, `:685-687` leave the combined
+field untouched when the record is current and set `closeoutReady` after validation.
+
+**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** This card's `D35` correction originally
+rested on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute
+claim is **literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path
+model above. The field-name correction the sentence supported is still right; only its stated warrant was
+wrong. **Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
+**onboarding cards** that carried the wrong form, and `CAPS-R19` (`260915-CAPS-L19`) corrected the
+**shipped sources** — the five loop-gate carriers, their nine generated copies, the guard registry's own
+docstring — and brought `docs/reference/mcp-tools.md` into both the loop-gate census and the guard's
+`LOOP_GATE_DOCUMENTS`.
+The sentence this section previously carried named the combined field as the loop's termination
+condition; that was wrong in the shipped sources and in the cards that quoted them, and it is corrected
+here and on the other affected cards.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
+
+## 260915-CAPS-L15 Launch-Path Capsule Delivery Route Impact
+
+**Route meaning changed for the launch path this package serves, so this card carries a real route
+impact rather than a bare `No route impact` marker.** The master built and individually proved every link
+of the capsule chain — the compiler (L2), the admission/MCP surface (L4), the Codex instruction seam
+(L5), the eve carrier (L7) — and **no production launch point supplied a capsule to any session**. Two
+of the three production launch points are now wired, and the third is a declared exclusion with its
+reason:
+
+| Launch point | State | What supplies the instructions |
+| --- | --- | --- |
+| `application/terminal_tools.py::_spawn_launch_request` (the primitive `dispatch_agent` drives) | **wired** | the capsule compiled at the launch from the role and the admitted binding, on the launch request; `instructionMode` published per run; `capsule-unavailable` refuses by name before any host side effect |
+| `serving/_app_terminal_routes.py::_open_terminal_response` (the dashboard opener — the only production point that starts a **free agent**) | **wired** | the same gate through the injected application-rank port; HTTP 400 `capsule-unavailable`; `instructionMode` on the response |
+| `serving/conversation/library/open_service.py` (the library reopen) | **declared-excluded** | `LIBRARY_REOPEN_LEGACY_REASON` — the route proves the vendor identity it resumed, and a capsule would resolve as a fresh thread |
+
+**The launch runs where its capsule admits.** The admitted workspace is read back out of the carrier the
+runtime re-verifies, so the session cwd, the settings selection the runner itself requires to equal the
+cwd, and the child's `AR_WORKSPACE_ROOT` are **one value** — no launch may be described as running at the
+server's workspace root unconditionally any more.
+
+**Two limitations carried, not smoothed.** A role-configured **eve** seat still cannot be dispatched:
+the capsule gate passes and the next refusal is the inherited settings-chain effort gate (`D22`, owner
+**L17**). And the dashboard route cannot start the *shipped* eve row (it does not set
+`session_backend`), which is pre-existing and also **L17**'s.
+
+**The D13 repair is on this package's registered surface.** `role_capsule_compile` now resolves a
+repository through the schema it actually registers, and a case fails if that schema loses the field the
+resolution depends on. The evidence for both halves is
+`notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt` and
+`mcp/tests/test_capsule_launch_wiring.py`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one decision point every launch point calls, with its three answers and named refusals. | `resolve_launch_capsule`; `LaunchCapsuleMode` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:73-80 |
+| The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
+| The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
+| D13's repair, on the registered operation's own resolution path. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202 |
+| The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. | `LIBRARY_REOPEN_LEGACY_REASON`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:805-844 |
+| The production chain read at the consumer's own gate and at the live runtime's system block. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
+
+## 260915-CAPS-L6 Native eve Session Adapter Route Impact
+
+The `mcp` route gains a native **eve** protocol adapter (`CAPS-R06@v1`). The structural change a
+future reader must know about:
+
+- `serving/` gains seven modules: `eve_adapter.py` (the adapter), `eve_protocol.py` (the wire contract,
+  route builders, the one `TURN_POLICY_QUEUE` literal, and the single `EveEventDeduplicator`),
+  `eve_events.py` (event translation and normalized state), `eve_interactions.py` (the bounded pending
+  interaction queue), `eve_runtime_client.py` (the HTTP transport and its request-body builders),
+  `eve_runtime_launch.py` (application-root resolution, staging and launch environment), and
+  `eve_stream_cursor.py` (the absolute-index NDJSON decoder).
+- `serving/harness_control_factories.py` is the one seam that changes an existing registry:
+  `BUILTIN_PROTOCOL_HARNESSES` is now `claude`, `codex`, `pi`, **`eve`**, and `_LAUNCH_KNOBS` maps eve
+  to its environment-only launch vocabulary.
+- `kernel/harnesses.py` is **unchanged in behaviour** — its curated `HARNESSES` tuple still holds three
+  rows and its docstring now records why. The two registries answer different questions:
+  terminal-launchable `PATH` harnesses versus constructible hosted protocol adapters. An `eve` harness
+  id resolves through the protocol factory only, and terminal-harness exposure remains the
+  capability-catalog/packaging leaf's decision.
+- The runtime application itself is a **repository-root** tree (`eve_runtime/`) rather than a package
+  under `mcp/`; see the root overview's route-impact note for its onboarding boundary.
+- `mcp/tests/` gains the five-module eve test population (two collected suites, three support or
+  explicit-run scripts); the route-level account is on `mcp/tests/overview.md`.
+
+Route consequence: the adapter boundary, the capability port and the interrupt port are all AR's
+existing seams. This leaf adds an implementation of them, not a new plane — so no new service,
+registry or orchestration layer appears in this route.
+
+## 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured
+
+**Read this section as STRUCTURE, not as a saving.** The consolidation was a design intent — one
+single-source, role-addressed corpus — and it is **not** a measured context reduction: the doctrine
+moved into the new `core/` · `operations/` · `reference/` siblings rather than disappearing, and the one
+measurement that exists (§ 260915-CAPS-L10 Measured Result above) reports the assembled capsule
+**larger** than the legacy startup chain at the worker elevation (**11,828** vs **5,928** tokens, +5,900),
+with adoption acceptance **FAILED**.
+
+The packaged runtime skill tree under `mcp/src/agents_remember/package_data/runtime/skills/` gained 14
+files and had 17 rewritten in 260915-CAPS-L1 (`CAPS-R01@v1`), because the canonical
+`skills/l-01-agent-lifecycles/` corpus was consolidated and `scripts/sync-skills.py` propagated it. For
+this route the load-bearing facts are:
+
+- **The packaged copy is generated, never authored.** `SKILL.md` is now a 179-line router (was 620) and
+  carries no doctrine; the rules it used to hold live in the new `core/` (six blocks), `operations/`
+  (eight blocks), and `reference/` (two files) siblings, with `composition-manifest.json` holding the
+  prose-free routing metadata a future deterministic compiler selects from. Editing any packaged file
+  directly is drift — the canonical tree is `skills/`, and `scripts/sync-skills.py --check` proves the
+  copy byte-identical.
+- **The nine packaged role files were rewritten into one readable order** and now declare their shared
+  sources with `**Inherits:**` rather than restating them. A packaged role file names a sibling role file
+  only to wear that hat or dispatch that seat.
+- **That readable order is itself superseded — the packaged role files now carry the function shape.**
+  leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote all **ten** packaged role files
+  (`package_data/runtime/skills/l-01-agent-lifecycles/roles/{architect,orchestrator,strategist,designer,manager,worker,reviewer,curator,system-specialist,bootstrap}.md`)
+  into `# <Role>` + `## Inputs` + `## Process` + `## Outputs` + `## What you may do` +
+  `## What you must not do` + a closing `## Stop and …` section. The numbered L1 sections, the
+  `## Knobs, Tool Surface, And Dispatch Authority` block and the `**Inherits:**` line are gone from every
+  one of them, so a card on this route that still cites one of those headings is stale; the canonical
+  `skills/l-01-agent-lifecycles/roles/` sources were rewritten first and this copy was propagated by
+  `scripts/sync-skills.py`, so the packaged and canonical copies remain byte-identical.
+- **This route's cards are the corpus's governed onboarding.** The canonical `skills/**` tree is outside
+  this memory root's `pathRules` include set, so this generated `mcp/**` copy is the mapped surface: it
+  gained 18 new cards (the manifest, `core/` ×6, `operations/` ×8, `reference/` ×2) and 17 existing cards
+  were updated in the body.
+
+## 260915-CAPS-L2 Deterministic Role-Capsule Compiler And Its Cross-Leaf Manifest Change
+
+`mcp/src/agents_remember/models/role_capsules/` and
+`mcp/src/agents_remember/application/role_capsules/` are **new packages** on this route: one pure,
+harness-independent compiler that turns admitted AR facts plus canonical instruction sources into
+an ordered role capsule, and one application-tier boundary that does the file I/O the compiler
+refuses to do. The split is the route's load-bearing structure — `models` holds the frozen value
+types, the manifest parser, selection, resolution and the seal; `application` holds admitted-context
+resolution and source reading. Nothing in the `models` half opens a file, reaches a network, or
+calls a model, and two shipped cases assert that composition succeeds with model and network access
+denied and that no network client is imported at all.
+
+The compiler is deterministic by construction: fixed composition order (core → role → operation →
+specialization) that is itself part of the semantic digest, one block per canonical instruction
+identity, sorted tool ids, no timestamps and no diagnostics inside the digest, and no concurrency
+(eve's concurrent resolver was deliberately **not** adopted, because resolution timing would make
+the composed order nondeterministic). Identical admitted facts and source bytes produce identical
+ordered content and the same digest; the nine shipped roles compile from disk twice to one digest
+each, and they compile to nine **different** digests.
+
+Two properties are worth carrying forward. First, **a refusal is a value, not an exception that
+escapes**: `CapsuleCompilationOutcome` is exactly one of a capsule or a refusal, a refusal still
+carries the admitted-facts half of the diagnostic manifest so a failure explains itself, and
+`mcp/src/agents_remember/errors.py` gained the `CapsuleCompilationError` family to type it (two
+subclasses today — `CapsuleManifestError` and `CapsuleSourceError`; a third, `CapsuleBindingError`,
+was removed by this leaf's review repairs). Second, **a required block's absence is falsifiable**:
+the admitted file set is validated against the locked plan in both directions, because a loader that
+only fetched what the manifest asked for could never report that something mandatory was never
+admitted.
+
+**A third property matters because it is the easiest to get wrong: the two capability channels are
+not the same shape.** Requested **tool ids** are narrowed against the admitted `CapsuleToolPolicy`
+snapshot, and a request outside it is refused. Declared **skill references** are **carried**, not
+narrowed: `compiler.skill_references` builds one content-addressed reference per declaration
+(`identity`/`origin`/`uri`/`revision`) and consults no policy at all, because a skill reference
+points at separately delivered content rather than asking for a capability. Saying the compiler
+"narrows tool identities and skill references against the permission policy" is false for skills —
+and the shipped cases assert the two channels separately precisely so that a merged description
+cannot pass.
+
+**Cross-leaf effect on this route's packaged corpus.** This leaf extended L1's
+`skills/l-01-agent-lifecycles/composition-manifest.json` with per-role `tools[]` and `skills[]`
+plus `launcher.operations[]`, and the governed generated copy under
+`mcp/src/agents_remember/package_data/runtime/skills/` moved with it (all ten copies share one
+sha256). The change is purely additive — 38 keys added, 0 removed, 0 values changed — and it is
+**not** a permission model: the manifest declares what a role *asks for*, the admitted
+`CapsuleToolPolicy` snapshot decides what is *permitted*, and the compiler refuses a request
+outside it. `launcher.operations` changing from `[]` to `["orientation","coordination"]` is the one
+addition with a behavioral consequence; reverting it makes every launcher compilation refuse
+`operation-not-applicable` by design. The owning seat ruled the change ACCEPTED on 2026-09-16 after
+independently reproducing the structural diff, L1's unedited corpus test (6 passed) and
+`scripts/sync-skills.py --check` (exit 0).
+
+**Layer contract status.** `layers.toml` declares a target order and deliberately fails against the
+current tree; measured on this candidate the tree reports 16 pre-existing violations (all
+`worktrees -> memory_quality` and its siblings). None names a role-capsule module, every internal
+import from the new modules points at a strictly lower rank, and there are 0 undeclared imports. Do
+not read the layer contract as currently satisfied.
 
 ## Detailed Route Context
 
@@ -1337,9 +1648,13 @@ are exact, "104 duplicate rows" is 55, "513 trailers" is 419 there and 428 at th
 two name no object at all.
 
 ## 260915-KS-L1 Experimental Knowledge Storage Route
+## 260915-CAPS-L14 Route Impact — The Citation Index's Shared Exclusion Register
 
 This package gained one experimental storage route and one kernel primitive; it gained no public surface and no
 new authority.
+**Route impact recorded rather than a no-impact marker.** The citation surface this package exposes
+changed meaning: the source index now consumes a **shared exclusion register** fed by three sources,
+and the CLI gained a caller-supplied `--exclude`.
 
 `mcp/src/agents_remember/memory/knowledge/` (six modules) is the concrete APSW-backed SQLite candidate holding
 repository, invariant and revision identity. Its route overview is
@@ -1347,11 +1662,35 @@ repository, invariant and revision identity. Its route overview is
 `models/knowledge/` (nine modules, governed by the
 [models route](src/agents_remember/models/overview.md)), and its only consumer is
 `application/knowledge.py`, the composition seam.
+- **One register, three sources.** `pathRules.exclude` (`onboarding.pathRules.exclude.paths` in the
+  memory layer's `settings.json`), the code repository's `.gitignore`, and optional caller-supplied
+  excludes now reduce to one answer and one **record**: the rule set is serialized onto the manifest
+  of every published generation, so a reader sees which rules produced the population. Inside a Git
+  work tree Git remains the authority and the register records the patterns; outside one a bounded
+  matcher applies them.
+- **The caller-exclude surface is additive and scoped.** `citation_fix` (MCP) declares
+  `exclude: list[str] | None`, and `agents-remember-memory-citations` declares a repeatable
+  `--exclude GLOB`. Both narrow **one call's** population on top of the register; a pattern that
+  cannot mean anything (empty, absolute, or escaping the code root) is refused by name.
+- **Exceeding a cap is reported, never a whole-tree refusal.** Per the developer's 2026-08-20
+  ruling: an oversized file is **skipped with a report entry naming it and its size**, the aggregate
+  default is 512 MiB applied to the post-exclusion/post-skip set, caps are settings-overridable
+  through `onboarding.citationIndex`, and a hard stop remains only past ~2 GiB, reported with
+  offenders and a `nextStep`. The manifest schema is now **v10**; a v9 manifest is refused and
+  rebuilt rather than read as "no register".
+- **The quality surface and the closeout gate both refuse by name.** A capped index is `checked`
+  with its skip list; an unbuildable index is a reported `citation-source-index-unavailable` state;
+  and the closeout certification's `_admitted_source_index` raises a typed
+  `CertificationContractError` instead of letting a bare `ValueError` out of the gate.
+- **The register, the caps and the settings key are mode-independent** — nothing on this surface
+  branches on the memory storage mode.
 
 `mcp/src/agents_remember/kernel/canonical_json.py` is the package's single canonical JSON encoder for
 content-addressed digests: sorted keys, compact separators, literal Unicode, `allow_nan=False`, plus a decoder that
 refuses duplicate keys. It sits in `kernel` (rank 1) so both `models` (rank 2) and `memory` (rank 12) may import it
 downward.
+Full account on the [memory_quality route](src/agents_remember/memory_quality/overview.md); the
+governed-artifact rows the leaf adds are on the [tests route](tests/overview.md).
 
 `mcp/pyproject.toml`, `mcp/requirements.txt` and `mcp/uv.lock` gained an exact `apsw==3.53.4.0` pin. APSW is the
 repository's first binary-wheel runtime dependency whose capability is a **build-time SQLite option**: the session
@@ -1360,15 +1699,22 @@ module exposes neither session nor changeset, and the release is pinned exactly 
 proven per platform rather than assumed from the upstream project. The declared Linux wheel (`cp313` manylinux
 x86_64) was exercised by the leaf's spike; macOS remains unexecuted and is carried as an unresolved acceptance item
 for the owning seat.
+## 260915-CAPS-L9 Route Impact — The Experimental Packaging And Cutover Boundary
 
 `layers.toml` gained one charter **wording** paragraph inside `[package.memory]`; no rank, order or sequencing
 entry moved. It records the storage home and the import direction: consumers that rank below `memory` — `worktrees`
 and `memory_quality` among them — receive `models/knowledge` values or an already-prepared result from
 `application`, and never import the storage package.
+This leaf packages the capsule experiment and owns the **experimental installation**, and it records
+three boundaries this overview must carry because a reader who misses them will over-read it.
 
 Scope this route does **not** claim: L2 family/anchor/relation behaviour, L3's admitted batch contract, L4 snapshot
 publication, L5 Git merging, L6 export/import and the read/diff surfaces. This is an experimental increment on the
 master's branch pair only, with no IAS landing implied, and legacy Markdown remains operational authority.
+**1. The cutover is an INSTALLATION cutover, and the residual is not settled here.** In `capsule` mode
+the installer does not write the four coordinator `AGENTS.md` targets and **removes** any copy an
+earlier install left, so an opted-in installation injects no legacy startup chain; the disabled run is
+its own positive control.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -1379,11 +1725,93 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
 | The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:16-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
 | The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:207-222 |
 | The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-3 |
+**Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
+withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
+install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms
+read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`. So the cutover withholds the coordination root's
+chain while the harness's copy of the same corpus stays readable — the duplicate-corpus path the cutover's
+own docstring says it exists to prevent. Until that surface is decided, **no card and no report may claim
+the legacy corpus is off**, and the surviving read is an **E-harness** effect, never a compiler benefit.
+The duplicate-corpus claim itself was already forbidden (audit `C6`/`C7`); this paragraph adds the
+*measured* reason. Owner: **L9 / the harness-surface owner**, not this leaf.
+
+ The installed coordinator `skills/` tree is still installed, and it is the
+**authored copy the coordination root carries** — what a human, the dashboard or a curator reads —
+**not** the compiler's input. In production the compiler resolves its corpus from the *packaged* tree
+(`application/skill_resources` → `packaged_source_root()/runtime/skills`), so the installed copy is
+never injected and never compiled; it is not a second delivery of the corpus. **Do not write that "the
+legacy corpus is fully deduplicated."** The traceability audit named **C6** (this leaf's cutover and
+L5's adapter boundary both claimed "no duplicate legacy corpus" with no single acceptance point) and
+**C7** (L5's fresh session per operation boundary versus this leaf's startup cutover are two routes to
+instruction replacement). This leaf's evidence settles the **installation/cutover route** for the four
+`AGENTS.md` targets; the session-start hook surface and the adapter-side prompt construction are the
+residual, and adjudicating the union is **L11's**, not this leaf's.
+
+**2. The selection is recorded per run, and the no-global-switch proof is root-scoped.** The primary
+production input is the registered `runtime_install` tool's own `experiment` parameter; the ambient
+`AR_EXPERIMENT` variable is a documented fallback for a short-lived CLI/developer route, and the run
+record's `selectionSource` says which one won. A selected run whose capsule path is unavailable is
+**refused before its first write** — never quietly `legacy`. The proof that no global switch is left on
+is the root-scoped reading: every regular file under the coordination root is searched as bytes and
+every hit must be a **byte-identical authored asset** (the corpus legitimately names the experiment),
+with a control that the scan found something at all. **Do not write that the experiment is simply
+"on".** There is no persistent switch to leave on, and a deselected run restores the unmodified
+installation.
+
+**3. Nothing here is a production cutover.** The whole leaf is local and unlanded: no commit, no stage,
+no push, no release, no protected branch moved, and no user-level harness configuration written. An eve
+seat **launches** with a real effort consumer since L17 landed, but the **dashboard** route still cannot
+start the shipped eve row because it does not set `session_backend`, so no card may present a
+dashboard-started eve row as a live seat.
+
+**What the route changed.** `install/experiment.py` is new (selection, the three-answer delivery
+decision, the blocking probes, the run record, the rollback plan). `install/runtime.py` gains
+`RuntimeInstallScope` (whose `selection` is a required **resolved** value), a second entry point
+`install_experimental_runtime` over the same private `_install_runtime`, `_capsule_cutover` /
+`WITHHELD_STARTUP_TARGETS`, `_install_assets`, and `install_eve_application`.
+`RuntimeInstallRequest` gains `experiment`. `scripts/sync-runtime.py` gains a fifth target,
+`eve_runtime/` → `package_data/runtime/eve-runtime/`, with a **per-target** ignore set and a
+`source_missing` refusal; that packaged mirror is **generated content, never hand-edited**, and the only
+currency proof is the generator's read-only `--check`. The installed application lands at
+`<coordination_root>/runtime/eve-agent`, reachable through the documented `AR_EVE_RUNTIME_ROOT`
+override; the launch path's packaged probe (`runtime/eve-agent` inside the package) is deliberately left
+unpopulated in a checkout, because populating it would repoint every checkout launch at a
+dependency-less copy. The per-card detail is on the `install` route's cards and the
+[tests route](tests/overview.md).
 
 ## Update History
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the packaged role files' current shape reaches this route.** The CAPS-L1 section still described the packaged role files as carrying the L1 readable order and an `**Inherits:**` declaration line. leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote all **ten** files under `package_data/runtime/skills/l-01-agent-lifecycles/roles/` into the **function shape** — `# <Role>`, `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do`, and a closing `## Stop and …` section — so the numbered sections, the knob block and the `**Inherits:**` line no longer exist there and any card citing one is stale. The canonical `skills/` tree was rewritten first and `scripts/sync-skills.py` propagated it, so canonical and packaged copies stay byte-identical. Body updated as above; no verification stamp advanced because the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 6 generated projection bullet(s) by hand** — `create_knowledge_revision`, `worktree_closeout_apply_payload`, `task_reopen`, `PreparedMemoryCertificationAdapter`, `_attach_final_full_catalog`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
+- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the capsule chain's measured result and its live limit reach this route.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation measurable (delivered `orientation` capsule **11,828** vs a **5,928** baseline, **+5,900**; like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE** and no IAS landing authorized. That section also carries the delivery result that did hold (the started eve session's own system block holds the capsule exactly once — second call, after compaction, after clear and after resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, and the explicit statement that the L1 restructure, the L2 compiler properties and the L9 cutover are **structure, correctness and design intent — not a measured context reduction**. **Qualified the L9 cutover section with the measurement's finding `F-6`:** the withholding is complete inside the coordination root but **not** on the machine — the install does not manage the harness's own skill root and **both** measured arms read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`, so no card may claim the legacy corpus is off (owner L9 / harness-surface). **Corrected a landed defect (`D35`):** the CAPS-L18 section named `checklistStatus=ready-for-closeout` as the repair loop's termination condition, which is never a value of the combined field; the raw `qualityChecklistStatus` is the gate, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **route impact recorded rather than a no-impact marker** —
+  the section above states the experimental packaging and cutover boundary, including the two
+  claims this route must not invent (the legacy corpus is *not* fully deduplicated; C6/C7's
+  union is L11's residual, this leaf settles the installation/cutover route only) and the
+  per-run selection with its root-scoped no-global-switch proof. It also records what the route
+  changed (the new `install/experiment.py`, the two entry points over one private installer, the
+  cutover, the packaged mirror and its generator target, and the installed `runtime/eve-agent`
+  path) and that the leaf is entirely unlanded. Verification metadata is left at the leaf's base
+  commit; the candidate is deliberately uncommitted, so the governed closeout stamps the real
+  code commit.
+- 2026-09-17T11:35+02:00 — 260915-CAPS-L14 curator: **route impact recorded rather than a no-impact marker** for the citation source-index surface this package exposes. Adds the section above (the shared exclusion register and its three sources, the additive caller-exclude surface on the MCP tool and the CLI, the reported-skip cap mechanics under the developer's 2026-08-20 ruling with the v10 manifest and the v9 rebuild, the typed refusals on the quality surface and at the closeout gate, and the mode-independence of all three). **Repairs a stale claim**: the final memory adapter citation still pointed at
+  `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. The adjacent `PreparedCloseoutContinuation` range start is corrected to the class's real declaration line. Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
+
+- 2026-09-17T11:15+02:00 — 260915-CAPS-L15 curator: **route impact recorded rather than a no-impact
+  marker.** The launch path this package serves changed meaning: two of the three production launch
+  points now compile and supply the capsule (the spawn primitive and the dashboard opener), the third is
+  a declared exclusion with its measured reason, the launch runs where its capsule admits (one workspace
+  value across cwd, settings selection and `AR_WORKSPACE_ROOT`), and the D13 repair makes the registered
+  `role_capsule_compile` surface usable. Two limitations are carried with their owner (`D22`'s eve
+  dispatch gate and the dashboard route's `session_backend` gap, both **L17**) so no reader takes the
+  wired path for an eve seat launching end to end. Six reference rows added. Verification metadata moves
+  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
+
 
 - 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+
 
 - 2026-09-17T01:31:11+00:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T13:15+02:00; `lastVerifiedCommitHash` `a5f5380badf357622daf1965a7a0e3caf91b51ff`; `lastVerifiedCommitDate` 2026-09-16T08:34:21+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
 
@@ -1391,7 +1819,38 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
 
 - 2026-09-16T21:50:00+00:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **No route impact:** reviewed this overview as the nearest governing route above the experimental knowledge substrate, whose meaning changed one level down. The change set adds the selective recorded-scope read inside `memory/knowledge/` (four modules), its vocabulary in `models/knowledge/read.py`, its composition seam in `application/knowledge_read.py`, and three test modules with one governed support artifact. None of that adds, moves or retires an MCP-package responsibility, a charter paragraph or a boundary at **this** altitude: the sub-route's own overviews carry the substantive account, and the package's route table is unchanged. The knowledge substrate's own section below (260915-KS-L1) remains the L1 as-of record and is not extended here.
 
+- 2026-09-16T11:50+02:00 — 260915-CAPS-L4 curator, **post-verdict correction**: the independent
+  baseline review landed (`260915-CAPS-L4-verdict-baseline.md`, recommendation **BLOCK**,
+  `CAPS-R04@v1` `rejected`) and refuted the spec claim the entry above rested on. The final SEP-2640
+  introduces **three protocol methods** and makes `skills/list` + `skills/get` mandatory for any server
+  declaring the extension — the declaration *is* the commitment — while this server answers neither
+  (`-32602`); the handoff's "no new protocol methods" was a **misquotation** (`F-L4-06`, `F-L4-05`).
+  Added the rejection banner to this route's inventory section, removed the sentence asserting the
+  false claim, and recorded that the 66-name agreement, the three advertised tools and the 85-resource
+  registration are all real and independently reproduced while the **conformance** claim is not. **The
+  onboarding describing this transport must not be treated as settled current intent, and must be
+  refreshed when fix leaf F1 repairs the surface.**
+
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
+  base `b00a4ac2`): corrected this route's top-level inventory claim — the ordered `PUBLIC_TOOLS`
+  inventory, the live registration and the response-model registry now agree at **66** names, not 63,
+  after this change appended `role_capsule_compile`, `skill_catalog_list` and `skill_catalog_read`
+  through the new thirteenth registrar `mcp/registration/capsule_serving.py`. Recorded the second,
+  larger route-level fact: this package now advertises **MCP resources** for the first time (85: every
+  file of the 14 shipped skills plus `skill://index.json`) through the SEP-2640 skills transport, and
+  the two new `skill_catalog_*` tools are this server's own reads over
+  the same registry for a client that is not resource-aware. Also recorded that the
+  served corpus is the generated `package_data/runtime/skills/` copy rather than the canonical root
+  `skills/` tree, which is what makes a served revision reproducible. The 63-name sentence is kept as
+  the lineage it was and now says it held until this change. Verification metadata remains
+  closeout-owned; no acceptance claim.
 - 2026-09-16T09:30:00+00:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **No route impact:** reviewed this overview as the nearest governing route for `kernel/atomic_write.py`, whose only change is one added helper. `fsync_file` extends the module's existing durability contract (the file-data half, for a producer that wrote the file through another owner) without adding, moving or retiring a route responsibility, and the module's own card carries the disclosure that its directory fsync runs after `os.replace`. The kernel route therefore has no new pillar, no new charter wording and no boundary change to record here; the substantive account lives in `mcp/src/agents_remember/kernel/atomic_write.py.md` and in the `memory/` route overview's L4 section.
+
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Native eve Session Adapter Route Impact, recording the seven new `serving/eve_*.py` modules, the one existing registry that changes (`BUILTIN_PROTOCOL_HARNESSES` now includes `eve`), the deliberate non-change in `kernel/harnesses.py` and why the two registries answer different questions, the repository-root runtime tree, and the five-module test population. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the packaged lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured, which records the 14 new and 17 rewritten files under `package_data/runtime/skills/l-01-agent-lifecycles/**`, the generated-never-authored boundary (`skills/` canonical; `scripts/sync-skills.py --check` proves byte-identity), and the consequence that this generated `mcp/**` copy is the governed onboarding surface for a canonical tree that sits outside this memory root's path rules. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+
 
 - 2026-09-15T20:40:00+00:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
@@ -1401,6 +1860,12 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   remains closeout-owned.
 
 - 2026-09-15T11:15:00+00:00 — 260831-LOCR-L10 curator: No route impact: this change set is five paths inside `mcp/src/agents_remember/serving/` and `mcp/tests/`, and it changes the state-signal posting/recovery contract, not the package boundary this overview owns (public tool roster, activation/admission, certification, memory preparation, structural agent boundary, route model). The package-level statements above stand as written; the affected contract is recorded on `serving/overview.md`, the three serving file cards, and the tests route.
+
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-15T06:37:50+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+
+- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
@@ -1426,6 +1891,7 @@ master's branch pair only, with no IAS landing implied, and legacy Markdown rema
   verification stamp advanced.
 
 - 2026-09-14T18:00:00+00:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
+- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
   under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
   consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
   the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the

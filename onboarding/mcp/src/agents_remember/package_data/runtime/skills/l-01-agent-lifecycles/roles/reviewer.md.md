@@ -5,19 +5,40 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
+| governingOverview | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
-This is the portable **adversarial reviewer** job file the `l-01-agent-lifecycles` frame houses at the
-review seams. Like every job file it carries **both axes in one file** — the **role** (review the
-accumulated change set at a seam) and the **lens** (refute-or-confirm across three review lenses) — plus
-an opening move, duties, artifact obligations, a comms protocol, and a harness-agnostic knob block. The
-central doctrine the card must protect: **verdicts are evidence, not decisions**, a **blocking verdict
-must decompose into fix leaves**, and the reviewer uses different rubrics at master-exit and
-super-exit because those seams review different accumulated change sets.
+This is the packaged runtime artifact synchronized exactly from canonical
+`skills/l-01-agent-lifecycles/roles/reviewer.md`: the portable **adversarial reviewer** lifecycle the
+corpus houses at the requested review seams. The central doctrine the card must protect is unchanged:
+**verdicts are evidence, not decisions**, a **blocking verdict must decompose into fix leaves**, and the
+reviewer uses different rubrics at master-exit and super-exit because those seams review different
+accumulated change sets.
+
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
+with `**Inherits:**` rather than restating them (`core/authority.md`, `core/invariants.md`,
+`core/loop.md`, `core/acceptance.md`, `operations/orientation.md`, `operations/review.md`). The exact
+mode contract — what a `reviewMode=baseline` seals, what a successor may verify, how the verdict is
+recorded and consumed — now lives once in `operations/review.md`; the loop doctrine, tiers, and
+three-round convergence rule live once in `core/loop.md`; and per-ID adjudication with completion truth
+lives once in `core/acceptance.md`.
+
+Attitude is now stated as a seam binding: the reviewer binds the exact leaf, master, or sprint document
+its seam adjudicates, and an atomic child leaf receives **no** separate route-review verdict — that
+review is checked on the canonical master at master-to-parent integration. Review itself is **opt-in and
+explicit**: it runs only when the developer or the approved task/role brief requests it, and closeout and
+integration neither require nor launch it. Independence requires **another agent**; the reviewing seat is
+never the author/implementer seat.
 
 ## Code Commentary
 
@@ -81,7 +102,7 @@ No task-independent TODO is declared by this job file.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ### Docs References
 
@@ -119,6 +140,10 @@ The reviewer job file is its own source authority for the seat, lenses, seams, d
 | The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. | "The verdict artifact is the durable handoff; terminal/finalizer truth attests only that this turn ended" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:366-367 |
 | Stdin is not a driver for the reviewer. | "Stdin push" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:369-369 |
 | The role's tools are the review surface. | "review surface" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:385-385 |
+| The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:12-12; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:48-48; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:83-83 |
+| The exact baseline / fix-verification mode contract has one home outside the role file. | `# Operation — Review`; `## Required inputs` | skills/l-01-agent-lifecycles/operations/review.md:1-1; skills/l-01-agent-lifecycles/operations/review.md:22-34 |
+| The role keeps the two seam rubrics and the three review lenses. | "all three lenses (completion against task docs · scoped implementation evidence · onboarding against code)"; "Master-exit (before manager → orchestrator handover)."; "Super-exit (before orchestrator → architect handover)." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:56-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:101-101; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:113-113 |
+| The reviewer names `roles/manager.md` only to return fix leaves to the seat it reports to, which is this role's one sanctioned sibling reference. It appears in the role's own description at `:3`. | `SANCTIONED_SIBLING_REFERENCES`; `description:` | mcp/tests/test_role_instruction_corpus.py:114-116; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:3-3 |
 
 ## Cross-Repo References
 
@@ -127,6 +152,22 @@ No sibling repository evidence is needed for this orchestration job file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
+
+## 260915-CAPS-L1 Citation Rebase (read this before the preserved sections below)
+
+The rewrite of `roles/reviewer.md` kept its rule set but changed every heading and sentence the older
+citation rows pointed at, so **21 rows whose anchor strings no longer resolve were removed** rather than
+repointed to a lookalike. Their claims are still true of the current file; read them through these
+current anchors:
+
+| Former claim | Current anchor |
+| --- | --- |
+| Short-lived, self-contained seat; brief is its session start; dashboard-owned sessions stay reviewer and refuse a pasted brief | `## 1 — Purpose And Authority` — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:15-59` |
+| Refute-or-confirm posture; criteria are not made up on the spot; the baseline runs its type's standing catalog with the exploratory mandate | `## 3 — Normal Workflow` — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:100-139` |
+| The three lenses (completion, code quality, onboarding-vs-code) and the two seam rubrics | `## 3 — Normal Workflow`; `### MASTER-EXIT …`; `### SUPER-EXIT …` — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:100-139`, `:184-199`, `:200-215` |
+| Fix leaves return to the owning manager (master-exit) or the orchestrator (super-exit) | `### MASTER-EXIT …`; `### SUPER-EXIT …` — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:195-195`, `:210-210` |
+| The verdict artifact is the completion signal and the seat authors no duplicate completion row | `## 6 — Completion And Handoff` — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:216-233` |
+| Communications use structural parent messaging, not a runtime address; stdin is not a work driver | `## Knobs, Tool Surface, And Dispatch Authority` — `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:234-251` |
 
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
@@ -171,8 +212,31 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `SANCTIONED_SIBLING_REFERENCES` repointed to mcp/tests/test_role_instruction_corpus.py:114-116. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule. Hand-repaired one citation finding this leaf's own source edit drifted (D14): the `SANCTIONED_SIBLING_REFERENCES` range to the test module's current :110.
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "Stdin push" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:369-369. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "review surface" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:385-385. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.**
+  The canonical reviewer role was rewritten (251 lines) into the corpus's readable order and declares
+  its inherited sources with `**Inherits:**`. Updated Purpose into the packaged-synchronized framing:
+  readable order, inherited sources, where the mode contract and loop doctrine now live, the seam
+  bindings (leaf/master/sprint; atomic children defer to the canonical master), and the explicit opt-in
+  nature of review. Repo-Internal References: **22 rows whose anchor strings no longer resolve in the
+  rewritten source were removed** (the file kept its rule set but none of those literal anchor strings),
+  and three current rows plus a `SANCTIONED_SIBLING_REFERENCES` row were added. The preserved
+  task-delta sections below still describe rules in force at their new homes in `operations/review.md`
+  and `core/acceptance.md`. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the three lens rows against the rewritten criteria text; the code-quality and onboarding-vs-code anchors now name the sentences the lenses actually carry. Verification metadata remains closeout-owned.
 
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "stays reviewer" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:51-51. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.

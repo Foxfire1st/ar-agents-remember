@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -55,7 +55,7 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Final output authority is the contract's exact accepted pair. | `require_authorized_integration_commits` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:9-30 |
-| Source and ref proof remain at the prepared movement boundary. | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160 |
+| Source and ref proof remain at the prepared movement boundary. | `prepare_integration_ref_move`; "Perform every refusing read before the lifecycle marks the move irreversible." | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160 |
 
 ## Cross-Repo References
 
@@ -65,6 +65,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Reduced exact candidate comparison to code and actual memory output; removed the retired ledger-commit member while preserving mismatch refusal. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 - 2026-09-11T23:05:00+00:00: Repaired three claims against the current source. The card claimed a journaled operation admission (`require_plane_integration_operation`) binding the requested key to one durable authority record and a stored source-tip revalidation (`require_current_integration_sources`); both functions are deleted, the module is now the 31-line `require_authorized_integration_commits` that compares the landing output with the contract's recorded closeout commits, and the moved-source refusal lives in the pure-Git replay requirements of `prepare_integration_ref_move`.

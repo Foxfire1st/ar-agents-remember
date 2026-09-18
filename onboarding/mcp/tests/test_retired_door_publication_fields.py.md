@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_retired_door_publication_fields.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current generation and explicit retired digest names define the test input. | `RETIRED_DIGEST_FIELDS` | mcp/tests/test_retired_door_publication_fields.py:47-51 |
+| The current generation and explicit retired digest names define the test input. | `RETIRED_DIGEST_FIELDS`; `test_door_publication_drops_retired_digests_but_refuses_other_unknown_keys` | mcp/tests/test_retired_door_publication_fields.py:115-126 |
 | The model read drops only the named retired fields and still rejects unknown fields. | `test_door_publication_drops_retired_digests_but_refuses_other_unknown_keys` | mcp/tests/test_retired_door_publication_fields.py:115-126 |
 | Store and terminal-archive reads exercise the persisted legacy record. | `test_operation_store_and_cleanup_terminal_archive_read_a_legacy_record` | mcp/tests/test_retired_door_publication_fields.py:129-153 |
 

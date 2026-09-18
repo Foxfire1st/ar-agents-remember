@@ -71,4 +71,3 @@ No meaningful cross-repo references.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
   pinned to the pre-commit source history until closeout.
-

@@ -6,15 +6,40 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose
 
-This route owns canonical lifecycle doctrine: the session router, shared frame, role registry,
-role-specific loops, dispatch briefs, durable reports, review criteria, and authority templates.
-Generated package/harness trees mirror this route and never define independent behavior.
+This route owns canonical lifecycle doctrine: the session router, the shared `core/` blocks, the role
+registry, the nine self-contained role lifecycles, the eight `operations/` procedure blocks, the
+reference-only rationale and rulings, the composition manifest, dispatch briefs, durable reports, review
+criteria, and authority templates. Generated package/harness trees mirror this route and never define
+independent behavior.
+
+260915-CAPS-L1 restructured this route: `SKILL.md` is now a **thin router with no doctrine** (620 → 179
+lines), `core/` · `operations/` · `reference/` · `composition-manifest.json` are new, and all nine role
+files were rewritten into one readable order (purpose/authority → required inputs → normal workflow →
+permitted writes → stop/escalation → completion/handoff, then the knob block) with an `**Inherits:**`
+line naming their shared sources. A role file now names a sibling role file only to wear that hat or
+dispatch that seat.
+
+**That restructure is a structural change, NOT a measured context reduction** (labelled by
+260915-CAPS-L10, which measured the capsule this corpus feeds). The `620 → 179` line count describes the
+**router**, and the doctrine it used to carry moved into the new sibling layers rather than disappearing:
+the corpus a session reads is now selected per role and per operation by the deterministic compiler, and
+nothing in that arrangement was measured to be smaller. The one measurement that exists points the other
+way — at the worker elevation the delivered capsule is **11,828** tokens against a **5,928** token legacy
+startup chain (**+5,900**; like-for-like `implementation` capsule 11,645, **+5,717**), the manager and
+architect elevations are **UNMEASURED** (`binding-unresolved`), and **adoption acceptance FAILED** with
+disposition **REVISE**. Obligation preservation is intact (**36/36** across ten declared roles plus
+launcher routing), so the failure is on the reduction half alone. Full account, frozen artifacts and the
+residuals with their owners: `notes/reports/260915-CAPS-L10-worker-report.md`,
+`notes/reports/caps-l10-disposition.md` and the measurement method
+`notes/reports/caps-l10-measurement-method.md` (digest `sha256:902676a6…`). **No card may describe this
+corpus, the compiler or the cutover as saving context**; the design intent was a single-source,
+role-addressed corpus, and that intent is what this route may claim.
 
 ## Hot Path Summary
 
@@ -149,13 +174,14 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:492-499; skills/l-01-agent-lifecycles/SKILL.md:422-422; skills/l-01-agent-lifecycles/SKILL.md:466-466; skills/l-01-agent-lifecycles/SKILL.md:473-473; skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:448-448 |
-| The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. | "nothing serializes a graph-less"; "nothing serializes its masters" | skills/l-01-agent-lifecycles/roles/orchestrator.md:266-266; skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-172 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls"; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## Delegated series authority`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:24-24; skills/l-01-agent-lifecycles/SKILL.md:422-422; skills/l-01-agent-lifecycles/SKILL.md:448-448; skills/l-01-agent-lifecycles/SKILL.md:466-466; skills/l-01-agent-lifecycles/SKILL.md:473-473; skills/l-01-agent-lifecycles/SKILL.md:492-499; skills/l-01-agent-lifecycles/core/authority.md:50-52; skills/l-01-agent-lifecycles/core/authority.md:149-149; skills/l-01-agent-lifecycles/core/loop.md:1-1 |
+| The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. | "nothing serializes a graph-less"; "nothing serializes its masters"; "serializes the masters" | skills/l-01-agent-lifecycles/criteria/plan-review.md:65-68; skills/l-01-agent-lifecycles/roles/orchestrator.md:266-266; skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174 |
 | The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
-| Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
-| Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
+| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Repair Affected Onboarding, Then Publish"; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
+| Manager owns one real master and its leaf closeout chain. | "## What This Seat Is"; `# Manager`; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:6-11; skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
+| Worker owns one real leaf's implementation and durable report. | "## What This Seat Is"; `# Worker`; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:6-9; skills/l-01-agent-lifecycles/roles/worker.md:7-17; skills/l-01-agent-lifecycles/roles/worker.md:72-78 |
 | The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:321-321 |
+| Core acceptance doctrine defines the mandatory per-ID worker envelope and the independent reviewer's adjudication. | `## Acceptance is per stable ID and version, never aggregate`; "The independent reviewer inspects the owned primary packet revision" | skills/l-01-agent-lifecycles/core/acceptance.md:44-77 |
 
 Current working-candidate evidence for this route:
 
@@ -197,6 +223,50 @@ The `templates/orchestration-task.md` heading was restored to `## Canonical exec
 No lifecycle topology or authority changed. The curator brief now demonstrates the canonical
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`. The **combined** `checklistStatus` is rewritten to
+`coherence-required` **only when the coherence record is then missing or stale** — that is the coherence
+gate, cleared by publishing the `curator_coherence` authority with `prepare` → `publish` → `validate`.
+
+**Field-name correction (`D35`, made by 260915-CAPS-L10).** The sentences above and in the shipped
+sources previously named `checklistStatus=ready-for-closeout` as the loop's termination condition. The
+loop's gate is the **raw** `qualityChecklistStatus`; the **combined** `checklistStatus` is rewritten to
+`coherence-required` **only when the coherence record is then missing or stale**, which is the coherence
+gate that `prepare` → `publish` → `validate` must clear. On the success path, where the record is already
+current, the combined field is **not rewritten** and keeps its incoming `ready-for-closeout` value, with
+`closeoutReady=true`; so `ready-for-closeout` *is* a value the combined field can hold, but only once the
+whole pipeline is already complete. Read the raw field to decide whether the repair loop can end, and the
+combined field to decide whether the coherence gate applies; `closeoutReady` is `true` only after the
+coherence authority validates (`application/memory_quality/controller.py:664`, `:671`, `:678`,
+`:685-687`). A curator following the old wording watches the combined field sit at `action-required` while
+repairs are outstanding and then flip to `coherence-required` at the exact moment they finish — the gate
+it waits on is unsatisfiable precisely while the wait matters, and the next required action is not a
+repair at all.
+
+**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** The `D35` correction above originally rested
+on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute claim is
+**literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path model now
+stated here. The field-name correction it supported still holds; only its stated warrant was wrong.
+**Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
+**onboarding cards** that carried the wrong form, while `CAPS-R19` corrected the **shipped sources** — the
+five loop-gate carriers, their nine generated copies, and the guard registry's own docstring — and brought
+`docs/reference/mcp-tools.md` into both the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
+
 ## Ungoverned Mirror Status (known defect)
 
 This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's
@@ -210,11 +280,31 @@ deliberately left untouched pending a follow-up decision on whether this mirror 
 removed. That mismatch between the declared path rules and the enforced checking scope is itself the
 recorded defect.
 
+**260915-CAPS-L1 decision, recorded rather than implied.** This leaf rewrote the canonical route (the
+router became a thin router; `core/` · `operations/` · `reference/` · `composition-manifest.json` were
+added; all nine role files were rewritten), so a contract-scoped quality pass reports this route's
+unmodified bodies. The curator updated **this overview**, because route meaning genuinely changed and the
+overview is the right home for it. It deliberately did **not** refresh the legacy role/criteria/template
+sidecars under `onboarding/skills/l-01-agent-lifecycles/**`: they sit outside `pathRules.include`, they are
+already declared knowingly stale by this section, and a partial hand-refresh would leave them
+inconsistent with each other while duplicating the governed cards that do exist — the 18 new and 17
+updated cards on the tracked generated copy under
+`onboarding/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/**`. The follow-up
+decision this section already asks for (govern or remove the mirror) also determines whether those cards
+should be refreshed or deleted, so resolving it now by hand would prejudge it. No fingerprint or
+verification stamp was advanced.
+
 ## Update History
+- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the corpus restructure is labelled as structure, not as a measured saving.** Added the measured qualification to Purpose: the `620 → 179` router change moved doctrine into the new sibling layers rather than removing it, the one measurement that exists points the other way at the worker elevation (delivered capsule **11,828** vs a **5,928** legacy chain, **+5,900**; like-for-like 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE**. Also **corrected a landed defect (`D35`)** in the CAPS-L18 section: `ready-for-closeout` is never a value of the combined `checklistStatus`; the repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp or fingerprint advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "nothing serializes a graph-less"; "nothing serializes its masters" repointed to skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-172; skills/l-01-agent-lifecycles/roles/orchestrator.md:266-266. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:321-321. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `## Delegated Series Authority` in the row 152 of this card from skills/l-01-agent-lifecycles/SKILL.md:13-13 to skills/l-01-agent-lifecycles/SKILL.md:448, the extent of the construct the claim is about (the checker named line(s) [448] as its live location); re-pointed `Caller kind comes only from process context` in the row 152 of this card from skills/l-01-agent-lifecycles/SKILL.md:448 to skills/l-01-agent-lifecycles/SKILL.md:492, the extent of the construct the claim is about (the checker named line(s) [492] as its live location); re-pointed `Every launcher or role that dispatches a hosted role calls` in the row 152 of this card from skills/l-01-agent-lifecycles/SKILL.md:492 to skills/l-01-agent-lifecycles/SKILL.md:499, the extent of the construct the claim is about (the checker named line(s) [499] as its live location)
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual 260915-CAPS-L1 shape (thin router + `core/` + nine role files + eight `operations/` blocks + `reference/` + `composition-manifest.json`), and the Ungoverned Mirror Status section records this pass's explicit decision: the overview is updated because route meaning changed, while the legacy `onboarding/skills/l-01-agent-lifecycles/**` sidecars are deliberately left untouched because they are outside `pathRules.include`, already declared knowingly stale, and a partial hand-refresh would duplicate the governed cards on the tracked generated `mcp/**` copy without resolving the govern-or-remove question this section already raises. No verification stamp or fingerprint was advanced.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned role/template handoff doctrine with two outputs and non-authoritative cache status. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 - 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: rewrote the planning/runtime

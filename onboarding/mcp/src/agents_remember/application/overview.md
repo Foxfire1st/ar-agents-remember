@@ -5,15 +5,56 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-17T03:15+02:00 |
+| lastUpdated | 2026-09-17T19:30+02:00 |
 | lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00 |
 | reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary
+
+This route gained one package, `skill_resources/`, which is the application half of the AR MCP surface
+for **role capsules** and **reusable skills**. It carries two deliberately separate surfaces, and the
+separation is the contract:
+
+- **The capsule operation** (`capsule.py`, `operation.py`) is one narrow read-only call: admitted task
+  binding in, typed capsule or a refusal-with-remedy out. It resolves the worktree enclosure, derives
+  the seat from the task document's **own altitude** and validates the caller's `role` string against
+  it — so the role argument is an input to a check and never the source of the seat — projects the task
+  context through `application/task_projection/`, admits exactly the source files the canonical
+  composition manifest routes, and compiles through `application/role_capsules/`. It reads no
+  caller-named path and writes nothing.
+- **The skills transport's reading half** (`catalog.py`, `frontmatter.py`, `provider.py`) builds the
+  host discovery registry and serves the bytes one `skill://` resource addresses. Discovery and
+  delivery are kept apart: a listing hands out metadata and cannot reach a body, one selected file is
+  re-read on demand, containment inside the skill's own directory is proven **before** any byte is
+  read, and the bytes are re-checked against the revision the catalog recorded.
+
+Two cross-route facts a reader of this route should carry:
+
+- **A refusal is a value, not an exception.** `CapsuleCompilationError` and `TaskProjectionSourceError`
+  carry a stable status, an operator-legible detail and a named remedy, and `CapsuleCompileOutcome`
+  keeps the binding it established in **both** shapes, so an operator always sees which seat and which
+  revision the operation addressed.
+- **The corpus is the packaged skills copy.** The default tree is the package's own generated
+  `package_data/runtime/skills/` copy rather than the canonical root `skills/` tree, because publishing
+  the packaged copy is what makes a served revision reproducible. A corpus root, its manifest and its
+  publishing `origin` are admitted together.
+
+The route's ordinary boundary holds unchanged: no MCP or protocol types are read at this layer, and the
+`mcp` registration layer owns turning these values into tools and resources.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The capsule operation's four refusal-capable steps, each returning a value rather than raising. | `compile_task_capsule`; `CapsuleCompileOutcome` | mcp/src/agents_remember/application/skill_resources/capsule.py:111-216 |
+| The seat is derived from the task document and the declared role is validated against it. | `_admitted_facts` | mcp/src/agents_remember/application/skill_resources/capsule.py:272-330 |
+| Discovery is separated from delivery: the listing carries no body and one read is re-checked. | `build_skill_catalog`; `read_served_file` | mcp/src/agents_remember/application/skill_resources/catalog.py:72-92; mcp/src/agents_remember/application/skill_resources/catalog.py:114-145 |
+| The served tree is the packaged runtime skills copy, and a corpus travels with its origin. | `shipped_skill_tree`; `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:39-63 |
+| The application entry points the registration layer calls. | `role_capsule_compile_tool`; `skill_catalog_list_tool`; `skill_catalog_read_tool` | mcp/src/agents_remember/application/skill_resources/operation.py:68-107 |
 
 ## IAS Per-Contract Activation Application Boundary
 
@@ -95,6 +136,83 @@ door adapter and the `application/lifecycle/legacy_operation_tool.py`,
 `lifecycle_enclosure_tools.py` and `lifecycle_status_wait.py` entry points were deleted by the same
 cut. There is no detached worker composition root or worker-execution mode on this route.
 
+## 260915-CAPS-L15 The Launch Compiler Connects This Route To Production
+
+**Route meaning changed: this route gained the member that makes the capsule chain exist in
+production.** Before it, the compiler (L2), the admission/MCP surface (L4), the Codex carrier (L5) and
+the eve carrier (L7) were each individually proven and **no production launch point supplied a capsule
+to any session** — a dispatched seat and a free agent both launched with no instructions, and every
+green test hand-supplied the intermediate value.
+
+`application/role_capsules/launch.py` is the new member. It adds **no second routing rule**: a
+task-attached seat goes through `compile_task_capsule` — the same operation the registered
+`role_capsule_compile` MCP tool answers — and a taskless seat through `compile_admitted_capsule` with
+the source set built by `routed_admission_for`, the same manifest rule `routed_admission_request` uses.
+The operation is `orientation`, the registered operation's own default. It is reached from the
+`serving`-rank launch points through the `LaunchCapsuleResolver` port (`serving/launch_capsule.py`),
+filled at the composition root, because `serving` (17) may not import `application` (21) — the same
+precedent `register_inbox_execution_evidence` set. The edge count between those layers is **0** and
+stays 0.
+
+Three facts a reader of this route needs:
+
+1. **The free agent's absent task plane is minted here, once.** `FreeAgentSeatAdmission` is the only
+   producer of a taskless `CapsuleAdmittedFacts`; the frozen DTO has no typed absence (all four identity
+   fields are non-blank strings), so the absence is *named* — `task_reference = "free-agent:<role>"` —
+   and deliberately does not parse as a task reference, so the task layer's own parser refuses it
+   loudly rather than resolving it to a document that does not exist. The digest covers the admission
+   the launch actually performed. This is convention **(B)** from the leaf's ruling; the typed-absence
+   end state **(A)** is a successor obligation carried to the final-verification ledger, not done here.
+2. **D13's second half lives in `skill_resources/capsule.py`.** The repair reads the code repository
+   root out of the enclosure contract the caller already names (`_declared_repository_root`) — the
+   registered tool exposes no repository field, so the contract is the authority rather than a second
+   value smuggled in beside it — and carries the same resolved root onto `AdmittedEnclosure` so the task
+   projection resolves against it instead of re-deriving (or failing to derive) one of its own. Without
+   that second half the projection refused with `projection-binding-unresolved` in any tree whose
+   repository does not sit directly under the workspace.
+3. **`skill_resources` gained a seat-addressed routing entry point**, `CapsuleSeatAddress` +
+   `routed_admission_for`, for a caller that has no task document and therefore no
+   `CapsuleCompileRequest` to hand over — and must still use the one routing rule.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. | `compile_launch_capsule`; `_compile_admitted_task`; `_compile_free_agent` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:297-360; mcp/src/agents_remember/application/role_capsules/launch.py:407-448 |
+| The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it. | `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
+| The free agent's named absence and its own content address; the only producer of a taskless admitted-facts value. | `FreeAgentSeatAdmission`; `free_agent_seat_admission`; `workspace_identity` | mcp/src/agents_remember/application/role_capsules/launch.py:126-196; mcp/src/agents_remember/application/role_capsules/launch.py:199-230; mcp/src/agents_remember/application/role_capsules/launch.py:233-247 |
+| D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root`; `_projection`; `_enclosure` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202; mcp/src/agents_remember/application/skill_resources/capsule.py:262-289; mcp/src/agents_remember/application/skill_resources/capsule.py:364-417 |
+| The seat-addressed routing rule and its address type, for a caller with no task document. | `CapsuleSeatAddress`; `routed_admission_for`; `routed_admission_request` | mcp/src/agents_remember/application/skill_resources/capsule.py:174-184; mcp/src/agents_remember/application/skill_resources/capsule.py:515-554; mcp/src/agents_remember/application/skill_resources/capsule.py:491-512 |
+| The declared exports that make the new names this route's public surface. | `CapsuleSeatAddress`; `routed_admission_for` | mcp/src/agents_remember/application/skill_resources/__init__.py:20-31; mcp/src/agents_remember/application/skill_resources/__init__.py:66-95 |
+| The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. | `role_capsule_compile_tool`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` | mcp/src/agents_remember/application/skill_resources/operation.py:1-120; mcp/tests/test_capsule_launch_wiring.py:975-1022 |
+| The two production launch points that reach this member through the port. | `_spawn_launch_request`; `_open_terminal_response`; `resolve_launch_capsule` | mcp/src/agents_remember/application/terminal_tools.py:740-784; mcp/src/agents_remember/serving/_app_terminal_routes.py:239-348; mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
+
+## 260915-CAPS-L20 The Gate A Dead Declaration Now Reaches
+
+This route's `memory_quality/controller.py` gained one consumer this leaf, and the consumer is the
+point of the change rather than a detail of it.
+
+`_attach_curator_checklist` now calls the memory-quality route's new
+`check_governing_overview_resolution(scope.onboarding_root)` and publishes its summary on the
+operation **response** under `governingOverviewResolution`: five counters, the findings, and the
+observations. The findings then join the gated set through
+`repair_findings.extend(row.to_dict() for row in governing_overviews.findings)` — `.findings`, never
+`.observations` — so a dead governing declaration reaches the curator's completion loop instead of
+being reported clean. That is `D3`/`D16`'s actual defect: the product checked that a source has a card
+and never that the card's declared route resolves.
+
+Two placements in the published summary are deliberate. It is attached to `response` rather than to
+`payload`, because `response` is composed from `**payload` before this function runs and a key added
+to `payload` here would never be published. And it stays out of `response["checks"]`, because that
+mapping is the closed `AVAILABLE_CHECKS` population the certification catalog is validated against,
+so a key outside that population would be a catalog item with no planned identity.
+
+**The reach, stated with its condition.** The consumer that binds today is the curator's completion
+loop: the full contract-scoped operation — `publish_curator_report` requires no `checks` subset —
+publishes the count the curator iterates against. The closeout-admission consumer is the designed one
+and sits behind `D32`: the readiness comparison lives inside `require_current_curator_coherence`,
+which the checklist consults only after the raw status reaches `ready-for-closeout`, and no leaf on
+this master has ever reached it. Both statements are true; stating only the first would overstate
+today's reach and stating only the second would understate the fix.
+
 ## Purpose
 
 `application/` owns operation-level MCP composition. Application entry points translate
@@ -107,6 +225,107 @@ abandon now also ends the ambient lifecycle it anchors).
 ## Hot Path Summary
 
 `worktree_tool_requests.py` carries only code/memory commit messages and landed commits. `worktree_tools.py` forwards that pair unchanged; `memory_tools.py` exposes baseline/carryover cache observations without a ledger commit argument. Adapters do not recreate retired guards or synthesize a third output.
+
+## 260915-CAPS-L2 Role-Capsule Admission And Compile Boundary
+
+`mcp/src/agents_remember/application/role_capsules/` is a **new package** on this route and the
+only role-capsule code that touches the filesystem. It exists because the pure compiler in
+`models/role_capsules/` deliberately opens no file: reading sources, resolving a confined root, and
+turning a refusal into a value all belong here.
+
+`compile_admitted_capsule(binding, request, projection=None)` is the whole surface. It admits via
+`admit_capsule_sources`, recovers the manifest bytes from the admitted set, and calls the pure
+compiler — converting a typed `CapsuleCompilationError` into a returned outcome rather than letting
+it escape. `CapsuleCompilationOutcome` is **exactly one** of a compiled capsule or a refusal (its
+`__post_init__` raises if neither or both are present), carries the manifest in both shapes, and
+reports `semantic_digest` as `None` for a refusal because a refusal has no identity. A source tree
+that cannot be read at all produces the same refusal shape as a selection defect, carrying the
+admitted-facts half of the manifest, since those facts were true regardless.
+
+Admission itself is **explicit rather than eager**: the caller names every path it wants read, and
+the boundary proves containment **before any byte is read**, so a traversal attempt fails without
+the root being probed outside itself. Requested paths are root-relative POSIX paths; the manifest
+path is read but is not an instruction block, so it carries the reserved metadata identity
+`meta:composition-manifest` and is composed into no capsule. The admitted order is fixed — manifest,
+then `core`/`role`/`operation`/`specialization`, each alphabetical — so two admissions of one tree
+are directly comparable.
+
+**Decoding is not this layer's job.** This boundary records each source's bytes and their content
+digest; the value layer (`models/role_capsules/sources.py`) is where a source is decoded and where
+**`source-not-utf8`** is raised. Do not look for that code here, and do not add lenient decoding to
+this boundary — a source that does not decode is a defect, not a file to be coerced.
+
+The admitted set is proven against the locked plan by `models/role_capsules/source_set.py`, which
+also requires **every declared skill's root file** to have been admitted — a skill reference without
+admitted bytes has a fictional revision.
+
+This package is also the **L3 seam for the later task projection**: it accepts any
+`CapsuleTaskProjectionSource` and passes it through untouched. Task state is never read, rendered,
+or rewritten at this boundary; verifying a projection's bytes against its declared digest happens
+inside the pure compiler. **That projection is the task-context projection, not the closeout-queue
+projection** — the two share a word and no owner, and the section below states the distinction.
+
+## 260915-CAPS-L3 Task-Context Projection Boundary
+
+`mcp/src/agents_remember/application/task_projection/` is a **new package** on this route and the
+implementation of the seam the L2 boundary above only declared. It computes the smallest complete
+task projection the bound role and operation need, from authority that already exists, and returns a
+value: ten modules, 2,431 lines, and no writer anywhere in the package.
+
+**Naming disambiguation — "projection" names two unrelated things in this repository.** This
+package's *projection* is a **task-context projection**: one task document, its declared requirement
+packets and its admitted worktree/branch binding, rendered as model-visible Markdown. The
+**closeout-queue projection** is a different owner entirely — `tasks/document_refs.py::projection_sprints_affected_by_master`
+and the closeout-queue writers compute *which sprints a write affects* so the disposable queue can
+be rebuilt. The two share the word and nothing else: different inputs, different outputs, different
+consumers, no shared type, no call path in either direction. A card or a reader that conflates them
+is wrong; the new file-level cards under this package each carry the same disambiguation.
+
+The package's whole shape follows from one requirement — the projection is **either complete or
+refused**. There is no partial projection, no fallback branch, no nearest task match and no silent
+scope widening. The sixteen `projection-*` refusal codes are declared by
+`agents_remember.errors.TaskProjectionSourceError`, which subclasses `AgentsRememberError` directly
+rather than the capsule family, because a projection failure happens *before* any capsule
+compilation.
+
+**The consumer contract (L4/L5/L7).** One resolution per admitted binding, one projection per
+operation: `resolve_task_projection_scope` binds the admitted facts against the enclosure contract,
+the coordination context and the task topology; `project_task_context` assembles the value;
+`task_context_of` converts it into the compiler's frozen `CapsuleTaskContext`; and
+`TaskProjectionSource` is that same thing behind the compiler's one-method protocol. The delivered
+`markdown` carries its own binding block and revision, so an adapter delivers it verbatim instead of
+re-rendering or re-ordering it.
+
+**Two consumer obligations, both admissions rather than guesses.** The admitted task reference must
+be the task layer's canonical key, `"<repository>/<path-under-tasks/<repository>>"`. A requirement
+the bound task document declares as **exact text** needs an admitted, version-addressed packet
+location — and the preferred route is to declare the packet on the task document as an
+`approved-requirement-packet` reference, which the task-intent owner verifies and which needs no
+consumer input. That typed route is the **standardized policy** (owner ruling of 2026-09-16T10:15 on
+the L3 leaf document): requiring every consumer to supply a packet location would spread task
+knowledge into transport adapters and turn a missing packet into a runtime surprise.
+
+**The read plan is the requirement, not an optimisation.** `selection._READ_ALTITUDES` is a total
+table over `(own altitude, parent bucket)` with no default branch, and one rule is load-bearing: a
+leaf-altitude seat **never** reads a sprint-altitude ancestor. A leaf reads its own document plus
+its immediate parent when that parent is a master; when the parent is a sprint, the leaf reads its
+own document only and the sprint arrives as an expansion reference carrying its entry count. Only the
+bound document's own decisions are injected, so "the smallest complete task projection" cannot
+become "the whole series history".
+
+**Nothing is clipped and nothing is silently dropped.** Every obligation, negative constraint and
+failure obligation is carried verbatim from the packet that declares it — no length budget exists
+anywhere in the package — and material deliberately not injected is named under "Expansion
+references", so "referenced" is a visible decision with a link rather than an omission.
+
+**Read-only is asserted, not claimed.** Nothing in the package imports a writer, a transport or a
+task-JSON reader; a structural AST case walks every module and fails on any of them, and the live
+probe digests the real task tree before and after both a successful projection and every refusal,
+byte-identical. No cache write, status stamp or "helpful" repair belongs on this read path.
+
+The Knowledge Substrate master is **not** a dependency: a later knowledge view plugs in through the
+`TaskKnowledgeExpansionSource` protocol, no implementation ships, and with no source the projection
+reports the channel as unadmitted instead of quietly omitting it.
 
 ## Detailed Route Context
 
@@ -226,7 +445,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:148-148; mcp/src/agents_remember/mcp/tools/task_doc.py:35-35 |
+| The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:146-146; mcp/src/agents_remember/mcp/tools/task_doc.py:35-35 |
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:66-88 |
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. | `MemoryScopeIdentity`; `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:27-143 |
@@ -276,8 +495,8 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Application message transport contains only code and memory. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-115 |
-| Landing input carries the actual two outputs. | `LandedCommits` | mcp/src/agents_remember/application/worktree_tool_requests.py:119-128 |
+| Application message transport contains only code and memory. | `CloseoutCommitMessages`; `memory_commit_message` | mcp/src/agents_remember/application/worktree_tool_requests.py:76-76; mcp/src/agents_remember/application/worktree_tool_requests.py:111-115 |
+| Landing input carries the actual two outputs. | `LandedCommits` | mcp/src/agents_remember/application/worktree_tool_requests.py:118-128 |
 
 ## 260731-EFA-L4 — Typed Seams Where An Application Entry Point Meets A Producer
 
@@ -491,10 +710,16 @@ than comment. The preview/apply parity invariant that produced this repair is in
 `worktrees/overview.md` route and in `memory_quality/overview.md`.
 
 ## 260915-KS-L1 Knowledge Composition Seam
+## 260915-CAPS-L7 The Eve Capsule Produce Side
 
 This route gained one module, `application/knowledge.py`, and no new authority. It is the composition seam between
 admitted authority and the concrete knowledge store, and it is the **only** consumer of
 `memory.knowledge` (rank 12) from this layer (rank 21).
+This route gained one package, `eve_capsule/`, which is the **produce side** of the eve
+capsule/workspace binding seam. It is deliberately not a second compiler: it calls the L4 capsule
+surface and the L3 task projection and **transports a decided value** into the carrier file one bound
+eve runtime reads before its first model call. It orders nothing, selects nothing and re-renders
+nothing.
 
 What it does: `write_authorship` assigns the provenance envelope's `operation_id` and `recorded_at` rather than
 accepting them; `admitted_knowledge_destination` binds a resolved path, namespace and envelope into the typed
@@ -502,15 +727,41 @@ handle a storage operation receives; `admitted_revision_request` attaches a draf
 is **not** a parameter; `initialize_knowledge_namespace` refuses an occupied destination as a resume attempt;
 `open_admitted_knowledge_store` opens read-only; and `create_knowledge_revision` delegates the insert and closes in
 a `finally`.
+The load-bearing boundary for a reader of this route:
 
 What it deliberately does not do: it holds no schema and no durable state, it performs no admission check of its
 own (`admitted_knowledge_destination` confers no authority by itself — it exists so the store receives a typed
 handle rather than a bare path), and it exposes **no acceptance or promotion operation**. The store manufactures no
 acceptance; `state_at_origin` and `acceptance_ref` remain authored data.
+- **Admission precedes execution.** `materialize_eve_binding` returns the compiler's or projection's
+  own refusal and writes **no carrier** on any refusal path, so a runtime that cannot be bound correctly
+  is never handed something to run. It also reads the carrier back and requires it to parse equal.
+- **The projection is re-derived and compared, not trusted.** The compile outcome does not carry the
+  projection it read, so the module resolves the same scope and requires the task context to be
+  **byte-identical** to the one the capsule carries; a disagreement is refused rather than silently
+  becoming the carrier's task facts.
+- **Write surfaces are role authority, and the fallback is the smallest set.** A worker gets the
+  workspace and its report surface, a curator adds the memory surface, and an undeclared role gets the
+  worker's set — so a role whose scope nobody declared cannot inherit the memory write. A surface the
+  role's table names but nobody admitted is a refusal, not a silent narrowing.
+- **The carrier lives outside the admitted workspace**, in a caller-admitted epoch directory, because
+  the runtime's own file tools are confined to the workspace root and the instructions it applies must
+  not be a file the model can rewrite.
 
 The direction is the point and it is what the `layers.toml` charter paragraph records: a lower-ranked owner —
 `worktrees` (10) and `memory_quality` (11) among them — receives `models.knowledge` values or an already-prepared
 result from this layer, and never imports the storage package.
+**The seam's other half is not in this route.** The format is `models/eve_capsule_carrier.py`; the
+launch-time proof is `serving/eve_runtime_launch.py::verify_capsule_binding`; and the in-process reader
+is `eve_runtime/agent/lib/capsule.ts`. **The produce side now has a production caller** (since
+`260915-CAPS-L15`): `application/role_capsules/launch.py::_compile_eve_task` calls
+`materialize_eve_binding` for a wired launch point, and the carrier it writes is verified by the
+runtime's own gate from the launch's own captured cwd and env, then read at the live runtime's system
+block (`notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt`). The `L7R-4` transfer
+that asked for this is therefore discharged on the **produce** side — "the produce side has a
+production caller, verified at the consumer's gate" — while the **live-seat** half for a dispatched eve
+seat still waits on the inherited settings-chain gate (**D22**, owner **L17**). The test fixture is no
+longer the only caller, and neither half should be read as the other.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -521,6 +772,14 @@ result from this layer, and never imports the storage package.
 | The read open and the delegating insert, both closing in a `finally`. | `open_admitted_knowledge_store`; `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:193-204; mcp/src/agents_remember/application/knowledge.py:207-221 |
 | The layer charter paragraph that fixes the one-way direction this seam implements. | "[package.memory]" | layers.toml:206-222 |
 | The storage operation this seam delegates to. | `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:255-289 |
+| The produce side added to this route, and the read-back-equals-written and no-carrier-on-refusal rules. | `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206 |
+| The projection agreement check that makes the re-derivation a check rather than a second opinion. | `_admitted_projection`; `_require_matching_task_context` | mcp/src/agents_remember/application/eve_capsule/__init__.py:228-279 |
+| The role-authority write surfaces and the smallest-set fallback. | `write_scopes_for`; `ROLE_WRITE_SURFACES` | mcp/src/agents_remember/application/eve_capsule/__init__.py:79-93; mcp/src/agents_remember/application/eve_capsule/__init__.py:327-365 |
+| The capsule surface this package consumes and does not re-implement. | `compile_task_capsule` | mcp/src/agents_remember/application/skill_resources/capsule.py:205-236 |
+| The launch-time proof and the in-process reader that consume the carrier this route produces. | `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; eve_runtime/agent/lib/capsule.ts:109-149 |
+| The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits. | `_compile_eve_task`; `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
+| The test fixture that supplied this seam's inputs before a production caller existed. | `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:565-620 |
+| The production-chain evidence: the consumer's own gate accepts the launch point's carrier, and the live runtime's system block carries it. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
 
 ## 260915-KS-L2 The Graph Operations Join The Seam
 
@@ -543,14 +802,50 @@ that will consume it is `KS-R03`'s.
 | The eight graph operations, each open-delegate-close. | `create_knowledge_family`; `create_knowledge_anchor`; `create_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-438; mcp/src/agents_remember/application/knowledge.py:447-462; mcp/src/agents_remember/application/knowledge.py:471-486; mcp/src/agents_remember/application/knowledge.py:495-504; mcp/src/agents_remember/application/knowledge.py:507-522 |
 | The graph modules the new operations delegate to. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/anchors.py:49-68; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81 |
 | The composed-path case that drives admit -> create -> reopen -> read through this seam. | "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:566-680 |
+| The closeout certification's own source index, or a named refusal with the operator move. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:415-437 |
+| The candidate route that index is acquired over, so the gate sees the register the route records. | `_run` | mcp/src/agents_remember/application/prepared_certification.py:440-554 |
 
 ## 260915-KS-L3 The Candidate-Write Boundary Joins The Seam
+## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "def skills_install_payload("; "def task_reopen_payload(" repointed to mcp/src/agents_remember/mcp/tools/core.py:146-146; mcp/src/agents_remember/mcp/tools/task_doc.py:35-35. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 The same module gained the candidate-write boundary, and the seam's contract still did not change: every new
 entry point opens the admitted destination, delegates and closes in a `finally`, and provenance keeps coming from
 the destination rather than from the payload.
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: added the section above — `memory_quality/controller.py` now consumes the new governing-overview check and extends its findings into the gated repair set, with the publication placements (`response`, not `payload`; outside the closed `AVAILABLE_CHECKS` mapping) recorded as deliberate. Verification metadata advanced to this leaf's frozen code base.
+- 2026-09-17T11:40+02:00 — 260915-CAPS-L14 curator: recorded this route's share of the leaf's change. `application/prepared_certification.py` (one of this leaf's 13 modified tracked paths) now acquires its citation source index through the new **`_admitted_source_index`**, which converts a `SourceIndexError` into a named `CertificationContractError` (`citation-source-index-unavailable`) carrying the cause and the operator move — so the closeout gate cannot be bricked by an index it did not choose, while satisfiable caps still skip and report. `application/memory_tools.py` gained `_citation_trees` and the `excludes` field on `CitationOperationScope`, the one construction point that carries a caller's own excludes plus the memory layer's settings into all four citation operations. Added the two reference rows above. Also **moved the `prepared_certification.py` file card** to this route: the source left `worktrees/integration/closeout/` in `806649b9` and the card had been left behind, so it resolved to a file that no longer exists. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
+- 2026-09-17T09:55+02:00 — 260915-CAPS-L15 curator: **the produce side gained the production caller this
+  route recorded as missing, so the body was corrected rather than annotated.** The L7 section's closing
+  paragraph said "the produce side has no production caller yet — the only caller is the test fixture"
+  and routed the wiring to `CAPS-R15@v1`. That wiring now exists:
+  `application/role_capsules/launch.py::_compile_eve_task` calls `materialize_eve_binding` for a wired
+  launch point, the runtime's **own** gate accepts the carrier from the launch's own captured cwd and env,
+  and the live runtime's system block carries it (`E8`). The paragraph now states which half of the
+  `L7R-4` transfer is discharged — **the produce side has a production caller, verified at the
+  consumer's gate** — and which half is not: a dispatched eve seat still cannot start, because the next
+  refusal is the inherited settings-chain gate (`D22`, owner **L17**). The reference table gained the
+  production caller, the production-chain evidence row, and the corrected `verify_capsule_binding` range,
+  and the fixture row no longer stands in for the missing caller. Verification metadata moves to this
+  leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the
+  real code commit and no hash or fingerprint was invented here.
 
 Three additions matter to a later reader:
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained `eve_capsule/`, the **produce
+  side** of the eve capsule/workspace binding seam, recorded in the new
+  `## 260915-CAPS-L7 The Eve Capsule Produce Side` section. It is not a second compiler: it calls the
+  L4 capsule surface and the L3 projection and transports a decided value into the carrier one bound eve
+  runtime reads. The section names the load-bearing boundaries a reader of this route needs — admission
+  precedes execution (no carrier is written on any refusal path, and the written carrier is read back and
+  required to parse equal); the projection is re-derived and required to be byte-identical to the
+  capsule's task context rather than trusted; write surfaces follow the role authority table with the
+  **smallest** set as the fallback so an undeclared role cannot inherit the memory write; and the carrier
+  lives outside the admitted workspace so the instructions are not a file the model can rewrite. It also
+  states where the seam's other half lives (models carrier format, serving launch proof, TypeScript
+  in-process reader) and that **the produce side has no production caller yet** — wiring one is
+  `CAPS-R15@v1`'s obligation under an explicit transfer, not a closure. Verification metadata moves to
+  the leaf's synced base `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
 
 - **`resolve_candidate_context` / `build_candidate_context` are the only way a batch's dataset precondition is
   built.** The application opens the destination read-only, reads the identity the candidate actually holds
@@ -562,6 +857,18 @@ Three additions matter to a later reader:
   authority is the admission's.
 - **The two label operations** (`set_knowledge_invariant_label`, `set_knowledge_family_label`) are the same
   open/delegate/close shape over the two guarded label edits.
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
+  base `b00a4ac2`): added the `skill_resources/` package to this route and recorded its two
+  deliberately separate surfaces — the narrow read-only capsule operation (seat derived from the task
+  document's altitude, role string validated and never authoritative, source set routed by the
+  canonical composition manifest, no caller-named path) and the skills transport's reading half
+  (discovery registry separated from delivery, containment proven before the read, bytes re-checked
+  against the recorded revision). Recorded two facts a reader of this route needs: a refusal is a typed
+  **value** carrying status, detail and remedy with the binding preserved in both shapes, and the served
+  corpus is the **packaged** `package_data/runtime/skills/` copy rather than the canonical root
+  `skills/` tree (a corpus root, its manifest and its publishing origin are admitted together). Stated
+  that the route's ordinary boundary is unchanged: no MCP or protocol types are read at this layer.
+  Verification metadata remains closeout-owned; no acceptance claim is made.
 
 **The boundary that did not move, and that a later reader most needs: this module still has no non-test importer
 in `mcp/src`.** Adding `change_knowledge_candidate` inside `application/knowledge.py` does not give the module an
@@ -980,6 +1287,8 @@ facet response — which is why their serialized pages stay unchanged.
 
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the second composition seam — `application/knowledge_snapshot.py` — and why the lifecycle/publication half is its own module rather than more entry points on `application/knowledge.py`: each entry point stays readable as one intent. The card records the derived write destination (so write and publish cannot name different files), the two publication entry points sharing one install contract, and the read-side gate being exposed rather than decided. **Two non-claims are stated rather than left to inference**: the seam creates no Git commit (capturing a published file into a memory tree is the existing candidate-tree owner's operation) and no IAS landing is reachable from it. The wiring boundary is re-recorded because it did not move: like `application/knowledge.py`, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.
 
+- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: route body updated for the task-context projection package (`CAPS-R03@v1`), which **implements the seam the L2 section above only declared** — L2 accepted any `CapsuleTaskProjectionSource` and passed it through; this package is the thing that fills it. Added the `260915-CAPS-L3 Task-Context Projection Boundary` section: the complete-or-refused rule and why the refusal family sits outside the capsule family, the L4/L5/L7 consumer contract, the two admissions with the **typed `approved-requirement-packet` route as the standardized policy** (owner ruling 2026-09-16T10:15), the total read plan with its never-read-a-sprint-ancestor rule, the no-clipping and referenced-is-not-omitted rules, and read-only as an asserted property. **Records the naming disambiguation explicitly**: this route now owns a *task-context* projection, which is not the *closeout-queue* projection owned by `tasks/document_refs.py::projection_sprints_affected_by_master` and the closeout writers — same word, unrelated owners, inputs, outputs and consumers. Also added the disambiguation sentence to the L2 section's L3-seam paragraph so a reader arriving there is not left to guess. Verification metadata remains closeout-owned; no acceptance claim is made.
+
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
 
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
@@ -989,7 +1298,6 @@ facet response — which is why their serialized pages stay unchanged.
   recorded the boundary that did not move: the seam still has **no non-test importer in `mcp/src`**, so its
   composed-path test is behaviour evidence and not wiring evidence, and the consuming write boundary is `KS-R03`'s.
   Verification metadata remains closeout-owned.
-
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the new `application/knowledge.py` composition seam — assigned rather than parameterized
   provenance, the typed admitted-destination handle that confers no authority, the occupied-destination refusal, the

@@ -64,4 +64,3 @@ No meaningful cross-repository boundary is owned by this file.
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that the `door` field left `IntegrationOperationObservation` and the `not door.valid` branch left the decision order. Verification metadata remains pinned because only the cut-affected claim was reconciled; source documentation only, no acceptance claim.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

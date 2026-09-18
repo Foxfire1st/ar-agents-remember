@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,11 +90,11 @@ The source separates pair/ancestry proof from task-byte publication. The product
 | --- | --- | --- |
 | The retained completion plan binds the actual code/memory pair and sibling facts. | `organizational_completion_plan` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:123-171 |
 | Scope validation pins execution nature, owning master and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:174-204 |
-| Sibling contracts require exact identities, code ancestry and any external-memory proof. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:455-476 |
-| External memory must name the same repository and exact accepted/integrated content commit. | `_require_sibling_memory_identity` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:547-569 |
+| Sibling contracts require exact identities, code ancestry and any external-memory proof. | `_require_landed_sibling`; `_require_sibling_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:455-476; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:572-593 |
+| External memory must name the same repository and exact accepted/integrated content commit. | `_require_sibling_memory_identity`; `memory_content_commit` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:547-569 |
 | The sibling memory commit must descend from its base and reach the completing source base. | `_require_sibling_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:572-593 |
 | Task-byte preparation binds accepted and intended JSON/Markdown. | `prepare_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:250-301 |
-| Publication accepts only the exact journaled before/after task byte states. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:304-338 |
+| Publication accepts only the exact journaled before/after task byte states. | `publish_organizational_master_completion`; `OrganizationalCompletionPublicationState` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:304-338; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:50-73 |
 | The helper requires Completed status, with a distinct abandonment refusal. | `require_published_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:404-420 |
 | The live integration classifier reads retained organizational publication state. | `classify_integration_operation` | mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:39-81 |
 
@@ -119,8 +119,8 @@ The current source seams include `OrganizationalCompletionError`, `Organizationa
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Pair or ownership failures use the completion error family. | `OrganizationalCompletionError` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:30-31 |
-| Publication conflicts retain exact expected/observed evidence. | `OrganizationalCompletionPublicationError` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:34-47 |
-| Classification distinguishes convergent, published and conflicting task bytes. | `OrganizationalCompletionPublicationState` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:50-73 |
+| Publication conflicts retain exact expected/observed evidence. | `OrganizationalCompletionPublicationError`; `OrganizationalCompletionPublicationState` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:34-47; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:50-73 |
+| Classification distinguishes convergent, published and conflicting task bytes. | `OrganizationalCompletionPublicationState`; `classify_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:341-401 |
 
 ## 260821-CLIVE Door-Based Completion Proof
 
@@ -140,6 +140,7 @@ This change preserves the file's existing authority boundary. No threshold excep
 fallback, or compatibility reader was added.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Replaced ledger/mapping authority with the exact sibling code/memory pair and ancestry; distinguished retained historical completion proposals from the current source status/byte checks and refreshed references. Source SHA-256 `47d50a539d4fb0446c80f9790d743c635759bbc88485a5c2dde000a818652806`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: `require_published_organizational_master_completion` now refuses an `abandoned` master with a distinct reason ("abandoned, not completed") instead of the generic not-durably-published message. Added the invariant and its source row. Content change, not a range repoint.

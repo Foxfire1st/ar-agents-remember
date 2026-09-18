@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,14 +54,14 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `completed_integration_reopen` evaluates the two actual output commits against their source branches. | `completed_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:49-54 |
-| `_completed_memory_is_unlanded` tests changed memory content and ancestry of that same content commit. | `_completed_memory_is_unlanded` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:94-98 |
+| `completed_integration_reopen` evaluates the two actual output commits against their source branches. | `completed_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:49-76 |
+| `_completed_memory_is_unlanded` tests changed memory content and ancestry of that same content commit. | `_completed_memory_is_unlanded` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:94-112 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Preview distinguishes prospective code and memory reopen effects. (`preview_integration_reopen`) | `preview_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:13-18 |
-| Completed output is evaluated per code and memory leg. (`completed_integration_reopen`) | `completed_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:49-54 |
-| Memory reopening requires changed content and an unlanded memory-content commit. (`_completed_memory_is_unlanded`) | `_completed_memory_is_unlanded` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:94-98 |
+| Preview distinguishes prospective code and memory reopen effects. (`preview_integration_reopen`) | `preview_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:13-46 |
+| Completed output is evaluated per code and memory leg. (`completed_integration_reopen`) | `completed_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:49-76 |
+| Memory reopening requires changed content and an unlanded memory-content commit. (`_completed_memory_is_unlanded`) | `_completed_memory_is_unlanded` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:94-112 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/setting_values.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -49,8 +49,8 @@ No external documentation is needed for these local parsing helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| JSON settings parsing delegates shared value validation to this module. | `clean_scalar` | mcp/src/agents_remember/kernel/coordination_context/json_settings.py:17-130 |
-| Cross-repo runtime resolution consumes parsed allow entries. | `CrossRepoAllowEntry` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:41-116 |
+| None | `parse_json_storage_settings` | mcp/src/agents_remember/kernel/coordination_context/json_settings.py:38-49 |
+| Cross-repo runtime resolution consumes parsed allow entries. | `resolve_cross_repo_settings`; `resolve_cross_repo_entry` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:53-61; mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:64-85 |
 
 ## Cross-Repo References
 
@@ -61,6 +61,7 @@ No cross-repository evidence is needed for format-neutral value parsing.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-06T22:15:27+00:00 — Preserved actual asset/context semantics from retired test onboarding; verification pins unchanged.
 

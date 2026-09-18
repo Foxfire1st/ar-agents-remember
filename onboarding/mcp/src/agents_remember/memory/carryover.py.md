@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -90,10 +90,10 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Candidate comparison and explicit review selection. | `CarryoverRefs` | mcp/src/agents_remember/memory/carryover.py:222-237 |
-| Apply owns one content commit and preserves exact leaf/repository authority. | `_apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:698-791 |
+| Candidate comparison and explicit review selection. | `CarryoverRefs`; `selected_candidates` | mcp/src/agents_remember/memory/carryover.py:222-237; mcp/src/agents_remember/memory/carryover.py:226-240; mcp/src/agents_remember/memory/carryover.py:614-627 |
+| Apply owns one content commit and preserves exact leaf/repository authority. | `_apply_carryover_for_request`; `memory_content_commit` | mcp/src/agents_remember/memory/carryover.py:698-791 |
 | Target storage is established from effective explicit settings. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Shared committing explicitly excludes the consumer cache. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
+| Shared committing explicitly excludes the consumer cache. | `stage_worktree_content`; `commit_if_dirty`; `_excluded_pathspec` | mcp/src/agents_remember/worktrees/modules/git.py:34-35; mcp/src/agents_remember/worktrees/modules/git.py:191-197; mcp/src/agents_remember/worktrees/modules/git.py:200-207 |
 | The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:238-300 |
 
 ## Cross-Repo References
@@ -107,6 +107,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
 

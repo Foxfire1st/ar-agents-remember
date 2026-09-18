@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -146,7 +146,7 @@ regression suite below prove the ordering rather than relying on timing observat
 | --- | --- | --- |
 | The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | "def _publish_projection(" | mcp/src/agents_remember/serving/projector.py:292-292 |
 | Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" | mcp/src/agents_remember/serving/projector.py:346-346; mcp/src/agents_remember/serving/projector.py:354-354 |
-| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. | "async with contextlib.aclosing(projector.subscribe())"; "is permitted; handwritten tail keys or another" | mcp/src/agents_remember/serving/_app_common.py:143-143; mcp/src/agents_remember/serving/_app_common.py:146-146; mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py:12-13 |
+| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. | "async with contextlib.aclosing(projector.subscribe())"; "is permitted; handwritten tail keys or another"; "payload.update(" | mcp/src/agents_remember/serving/_app_common.py:146-146; mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py:12-13 |
 
 | The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | "VOLATILE_AGE_FIELDS = frozenset("; "def diff_projection(" | mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:109-109 |
 | The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
@@ -198,6 +198,7 @@ drained, preventing a late atomic projection write from racing temporary
 worktree cleanup while preserving cancellation as the public outcome.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `async with contextlib.aclosing` in the row 149 of this card from mcp/src/agents_remember/serving/_app_common.py:136-136 to mcp/src/agents_remember/serving/_app_common.py:143, the extent of the construct the claim is about (the checker named line(s) [143] as its live location)
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source

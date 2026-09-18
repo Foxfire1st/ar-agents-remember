@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -142,7 +142,6 @@ The following current source owns the changed behavior; no external domain sourc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Door source facts use current Git and task authority. | `_declare_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:381-475 |
-
 ## 260915-KS-L15 The Assessment Evidence Destination
 
 This route gains one module: `curator_assessment_evidence.py`, which owns the one destination an
@@ -164,6 +163,7 @@ record-side edge recomputation. The shipped exact-coverage obligation is untouch
 collection is content beside `judgments`, and publishing one does not disturb it.
 
 ## Update History
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `curator_assessment_evidence.py` and two publication extensions; the body records the evidence-byte destination and its three measured reasons, the read-back that makes survival proven rather than asserted, and that the shipped exact-coverage obligation is untouched. The reference rows were re-derived from the current files: `require_current_curator_coherence` is `:327-385` and `curator_coherence_evidence` `:487-488`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 
 - 2026-09-18T03:30+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded, for this route's nearest-governed change, that `prepare` composes its summary from the request model's publication declaration and therefore states the complete `publish` input set — the judgments, all nine members, and the two identities it does not derive — instead of only the judgments. The section states the defect that produced (`notes/DISCLOSURES.md` D-11, where the undocumented members were reported twice as an impassable tool defect), that the text is derived rather than copied, and that nothing else in the module changed: `prepare` invents no identity and `_publish` is untouched. Only the preparation/publication material in this route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.

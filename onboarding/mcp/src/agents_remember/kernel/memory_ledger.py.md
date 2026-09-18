@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -83,9 +83,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Format constants, row types, and the exact cache-exclusion expression. | `LEDGER_RELATIVE_PATH` | mcp/src/agents_remember/kernel/memory_ledger.py:24 |
-| Structural parsing and validation distinguish empty and nonempty representations. | `parse_ledger_text_unvalidated` | mcp/src/agents_remember/kernel/memory_ledger.py:68-132 |
-| Serialization and data lookup stay independent from Git publication. | `ledger_to_text` | mcp/src/agents_remember/kernel/memory_ledger.py:187-212 |
+| Format constants, row types, and the exact cache-exclusion expression. | `LEDGER_RELATIVE_PATH`; `MEMORY_CACHE_EXCLUDE`; `LedgerRow` | mcp/src/agents_remember/kernel/memory_ledger.py:24-33 |
+| Structural parsing and validation distinguish empty and nonempty representations. | `parse_ledger_text_unvalidated`; `validate_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:68-132; mcp/src/agents_remember/kernel/memory_ledger.py:173-184 |
+| Serialization and data lookup stay independent from Git publication. | `ledger_to_text`; `write_ledger`; `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:187-212; mcp/src/agents_remember/kernel/memory_ledger.py:229-236; mcp/src/agents_remember/kernel/memory_ledger.py:253-255; mcp/src/agents_remember/kernel/memory_ledger.py:258-266 |
 | The runtime cache owner derives data rather than trusting a serialized table. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 
 ## Cross-Repo References
@@ -98,11 +98,13 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
   set, `ar/260913_ledger-commit-attribution`, base `bb65a207`): anchor repoint only, no claim change.
@@ -260,4 +262,3 @@ No additional configured external or sibling-repository evidence is claimed.
 
 
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.
-

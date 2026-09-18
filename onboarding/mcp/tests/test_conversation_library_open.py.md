@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_open.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash |  `c4fc0ee2418ccef5a02de3823141a82092b84080`|
-| lastVerifiedCommitDate |  2026-09-13T11:55:12+02:00|
+| lastUpdated | 2026-09-16T22:19+02:00 |
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,8 +33,30 @@ exact-identity proof with idempotent replay; changed-fingerprint conflict withou
 unsupported resume never launching; stale expected digest and stale native resolve mapping;
 launch-failure 503 shape with no identity; identity-mismatch retirement and reporting;
 timeout-unknown staying reconcilable and opening later; ledger-full-of-live refusal; LRU
-terminal eviction; ready-without-vendor-identity staying reconcilable; and pre-existing catalog
+terminal eviction; ready-without-vendor-identity staying reconciliable; and pre-existing catalog
 rows never being touched.
+
+Two further classes carry the history gate's own routing contract, over a **live**
+`LibraryGateRegistry` whose only substituted surface is `which` (1173, `_gate_registry`):
+
+- **`UnservedHarnessRefusalTests` (1191)** — a harness the locked helper host does not serve is
+  refused **by name**, not crashed on. This experiment extended `HarnessId` to include `"eve"` and
+  registered an `eve` row while `HelperHarness`/`HELPER_ENTRY_BY_HARNESS` still name only
+  `claude`/`pi`, so a gate that sent every non-codex harness to the helper path indexed that table
+  directly — a `KeyError` out of a capability query whose whole job is to fail closed and visibly. The
+  shipped `eve` row's argv is not a PATH program, so a default install returns
+  `harness not installed: 'eve'` before the helper is consulted and the crash path is **latent**; it
+  becomes live as soon as an `eve`-id harness resolves to an executable, which the registry's own
+  header permits. The case is therefore the resolvable one, and it asserts the refusal's named reason
+  and that no helper process is spawned; the unresolvable sibling keeps its distinct
+  not-installed reason.
+- **`HelperRouteAuthorityTests` (1235)** — the route follows the **helper host's own entry table**.
+  `_NeverCalledHelperHost` (1148) fails loudly if it is reached, so a case can prove the helper route
+  was *not* taken; emptying the derived ids is what a hardcoded pair cannot survive, because a table
+  member must then be refused by name instead of routed.
+
+Both classes exist because the gate's refusal is a claim about *which* harness reached *which* owner,
+and neither half is observable from the outcome alone.
 
 ### Conventions
 
@@ -66,8 +88,11 @@ No Domain Documentation source is configured. The repository sources are direct 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The open service, bounded ledger, and record model under test. | "class ConversationOpenService" | mcp/src/agents_remember/serving/conversation/library/open_service.py:242-242 |
+| The open service, bounded ledger, and record model under test. | "class ConversationOpenService" | mcp/src/agents_remember/serving/conversation/library/open_service.py:258-258 |
 | The ASGI open/status/reconcile surface mapping the same outcomes to HTTP. | "class LibraryApiTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_conversation_library_api.py:310-503 |
+| The helper host's own entry table, which the gate consults instead of a hardcoded harness pair. | `HELPER_ENTRY_BY_HARNESS`; `HelperHarness`; `ConversationLibraryHelperHost` | mcp/src/agents_remember/serving/conversation/library/helper_host.py:37-40; mcp/src/agents_remember/serving/conversation/library/helper_host.py:35-35; mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-221 |
+| The gate registry whose routing these cases pin, and the probes they substitute. | `LibraryGateRegistry`; `GateProbes`; `history_capabilities` | mcp/src/agents_remember/serving/conversation/library/gates.py:190-348; mcp/src/agents_remember/serving/conversation/library/gates.py:173-184; mcp/src/agents_remember/serving/conversation/library/gates.py:212-221 |
+| The two classes this leaf added: the named refusal for an unserved harness, and the authority of the derived table over a hardcoded pair. | `UnservedHarnessRefusalTests`; `HelperRouteAuthorityTests`; `_NeverCalledHelperHost` | mcp/tests/test_conversation_library_open.py:1191-1234; mcp/tests/test_conversation_library_open.py:1235-1297; mcp/tests/test_conversation_library_open.py:1148-1161 |
 
 ## Cross-Repo References
 
@@ -78,6 +103,23 @@ No neighboring repository participates in this open suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "class ConversationOpenService" repointed to mcp/src/agents_remember/serving/conversation/library/open_service.py:258-258. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: recorded the two classes this leaf added to the
+  history gate's own routing contract, which extends this module's subject beyond the open service.
+  `UnservedHarnessRefusalTests` pins that a harness the locked helper host does not serve is refused
+  **by name** rather than crashing on the entry table — the latent `KeyError` path this experiment's
+  `HarnessId` extension to `"eve"` created, reachable as soon as an `eve`-id harness resolves to an
+  executable — and keeps the distinct `harness not installed` reason for the unresolvable case.
+  `HelperRouteAuthorityTests` pins that the route follows the helper host's own derived entry table,
+  which a hardcoded `("claude", "pi")` pair cannot survive. Both drive a **live** `LibraryGateRegistry`
+  with only `which` substituted, and `_NeverCalledHelperHost` proves the helper route was not taken.
+  The cases cost no catalog row and no lane row because they went into an existing module; the D15
+  production repair they cover was verified by the independent reviewer, not closed by this pass.
+  Verification metadata moves to this leaf's synced base `8997e184`; the candidate is deliberately
+  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint was
+  invented here.
+
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `LibraryApiTests` repointed to mcp/tests/test_conversation_library_api.py:310-503. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/paths.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ No external documentation is needed for this package-local path policy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Resolver selection uses these path primitives for topology and settings discovery. | `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:74-83; mcp/src/agents_remember/kernel/coordination_context/resolver.py:86-101; mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164 |
+| Resolver selection uses these path primitives for topology and settings discovery. | `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:74-83; mcp/src/agents_remember/kernel/coordination_context/resolver.py:86-101; mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164; mcp/src/agents_remember/kernel/coordination_context/resolver.py:129-145; mcp/src/agents_remember/kernel/coordination_context/resolver.py:85-94 |
 
 ## Cross-Repo References
 

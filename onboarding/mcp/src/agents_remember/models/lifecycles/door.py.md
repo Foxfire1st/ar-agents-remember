@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/door.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,10 +84,10 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | `_decode_legacy_missing_intent` | mcp/src/agents_remember/models/lifecycles/door.py:89-142 |
-| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration` | mcp/src/agents_remember/models/lifecycles/door.py:89-90 |
+| Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | `_decode_legacy_missing_intent`; `CloseoutDoorGeneration`; `closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:89-142; mcp/src/agents_remember/models/lifecycles/door.py:158-196 |
+| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration` | mcp/src/agents_remember/models/lifecycles/door.py:89-142 |
 | The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | `_RETIRED_DOOR_CONTRACT_DIGEST_FIELDS` | mcp/src/agents_remember/models/lifecycles/door.py:232-236 |
-| The R03 door dependency vocabulary owned by this record type. | `_edges_are_unique_and_canonical` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118 |
+| The R03 door dependency vocabulary owned by this record type. | `_edges_are_unique_and_canonical`; `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
 
 ## Cross-Repo References
 
@@ -114,6 +114,7 @@ owners recompute it from the exact candidate tree, topology, intent, and provena
 currentness time (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed ledger identities and provenance dependencies from the documented door generation. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

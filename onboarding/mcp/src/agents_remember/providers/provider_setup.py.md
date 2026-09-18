@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -179,7 +183,7 @@ provider stack is POSIX-hosted anyway.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:983-1020; mcp/src/agents_remember/worktrees/modules/start.py:1133-1165 |
+| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:983-1020; mcp/src/agents_remember/worktrees/modules/start.py:1133-1165; mcp/src/agents_remember/worktrees/modules/start.py:1186-1218 |
 | Benchmark preparation calls package-local provider setup instead of a source script. | `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Provider lifecycle calls are captured through package-local command capture. | `run_package_main` | mcp/src/agents_remember/kernel/primitives/command_capture.py:12-39 |
 | CGC seed orchestration and bundle rewriting now live outside the facade. | "def cgc_seed_bundle("; "def rewrite_cgc_bundle_paths(" | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
@@ -187,7 +191,6 @@ provider stack is POSIX-hosted anyway.
 | Setup payload summaries and failed-phase compaction live in the setup reporting module. | `finalize_setup_payload` | mcp/src/agents_remember/providers/setup_reporting.py:45-66 |
 
 | The index-state metrics rows the catch-up stage records best-effort. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
-
 
 ## Update History
 

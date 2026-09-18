@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -57,8 +57,9 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Observed objects and public conflict/interruption payloads. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:18-32 |
-| Exact accepted/intended state classification uses the actual memory output. | `classify_integration_refs` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:118-124 |
+| Observed objects and public conflict/interruption payloads. | `IntegrationRefObservation`; `observed_objects` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:18-32; mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:156-156 |
+| Exact accepted/intended state classification uses the actual memory output. | `classify_integration_refs`; `classify_integration_authority_refs` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:118-124; mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:127-168 |
+| The total live classifier reads the actual memory output to decide accepted versus intended state. | `classify_integration_refs`; `classify_integration_authority_refs` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:118-124; mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:127-168 |
 | Canonical ref reading preserves stable failure categories. | `_read_ref` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:171-205 |
 
 ## Cross-Repo References
@@ -69,6 +70,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Changed intended memory-ref classification from retired ledgerCommit to memoryContentCommit; retained missing/unreadable and torn-pair distinctions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

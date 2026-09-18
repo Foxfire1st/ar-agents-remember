@@ -5,14 +5,30 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56`|
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
+| governingOverview | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
 Packaged runtime copy of the complete worker dispatch brief. The canonical template owns the packet;
 the sync process installs this exact artifact.
+**Single-source marker (260915-CAPS-L1).** The canonical template now states its own boundary
+explicitly: **this template feeds inputs; it does not author rules.** Where a value here disagrees with
+the seat's role file, the operation block, or the core truth boundary, those files win. The packaged
+copy carries that marker verbatim through `scripts/sync-skills.py`, so installed runtimes cannot read a
+template value as doctrine.
+
+The canonical template now names the same single homes the marker points at, and installed runtimes see
+them: `../roles/worker.md` for the seat's own duties, `../operations/implementation.md` and
+`../operations/closeout.md` for the build procedure and the targeted-check contract, and
+`../core/acceptance.md` for the acceptance envelope, attempt lineage, and completion truth. The rows in
+the packet carry this leaf's *values* for those contracts.
 
 ## Code Commentary
 
@@ -47,7 +63,7 @@ None recorded.
 
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
 
 ## Cross-Repo Evidence
 
@@ -109,6 +125,16 @@ a malformed handed-off attempt requires independent rejection before successor h
 The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
 
 ## Update History
+
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
+- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the handoff-evidence boilerplate sentence, which still presented full memory quality as an explicit request, with the completed-curation rule; `onboarding-coherency` already carries the full-operation check block this leaf's template now names.
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical worker brief gained the single-source marker naming the four files that own the rules the
+  packet only carries values for; the packaged copy now records that marker and the exact sources it
+  names. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
 

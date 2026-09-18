@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,9 @@ the current working-candidate behavior; historical entries below retain their or
 | --- | --- | --- |
 | The accepted input contains code/memory identity and validates route plus intent. | `_accepted_direct_plan_is_exact` | mcp/src/agents_remember/models/lifecycles/direct_landing.py:14-39 |
 | The shared snapshot keeps actual object identity and optional content-only comparison. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| The coordinator captures the accepted candidate from actual Git facts. | `_prepare_direct_landing_candidate` | mcp/src/agents_remember/worktrees/direct_landing.py:425-457 |
+| The coordinator captures the accepted candidate from actual Git facts. | `_prepare_direct_landing_candidate`; `candidateTree` | mcp/src/agents_remember/worktrees/direct_landing.py:425-457 |
+| The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. | `_accepted_direct_plan_is_exact` | mcp/src/agents_remember/models/lifecycles/direct_landing.py:34-39 |
+| The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled. | `_require_state_evidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:47-63 |
 | Recovery checks the typed facts against the current repositories and refs. | `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:77-134 |
 
 ## Cross-Repo References
@@ -85,10 +87,10 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51 UTC — Removed the ledger byte/path/digest fields and DirectLandingLedgerIntent from the documented vocabulary; retained strict code/memory shapes and clarified the boundary between model validation and actual Git proof. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
 
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input model package relocation; direct-landing accepted-input and ledger-intent contracts are unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

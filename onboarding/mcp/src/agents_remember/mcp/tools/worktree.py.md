@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -123,8 +123,8 @@ The source itself and its governing route are sufficient for this thin payload a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration payloads forward contract, strategy, and preview choice without ledger intent. | `worktree_integrate_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:141-156 |
-| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-53 |
+| Integration payloads forward contract, strategy, and preview choice without ledger intent. | `worktree_integrate_payload`; `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:110-118; mcp/src/agents_remember/mcp/tools/worktree.py:141-156 |
+| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_pause_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-107 |
 | The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:159-174 |
 | The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | `worktree_pause_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:88-95 |
 
@@ -152,7 +152,7 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-49 |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload`; `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-49; mcp/src/agents_remember/mcp/tools/worktree.py:56-73 |
 
 ## 260831-CCR-L15 Status-Wait Payload Export
 
@@ -161,6 +161,7 @@ served were removed; this module exports no wait payload today and the name appe
 worktree payload surface. Recorded so the L15 paragraph above is not read as current.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed the ledger-message parameter from the documented integration payload forwarding. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation_kinds.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ None recorded.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `LifecycleOperationPhase` boundary implements the preparation contract above. | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15 |
+| The current `LifecycleOperationPhase` boundary implements the preparation contract above. | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15-38 |
 
 ## Docs References
 
@@ -66,6 +66,8 @@ The source file itself is the current evidence for this file-specific contract.
 | --- | --- | --- |
 | The canonical phase union excludes both retired ledger-commit phases. | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15-38 |
 | The module defines the closed module vocabulary as its public seam. | `LifecycleOperationKind` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:5 |
+| None | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15-38 |
+| None | `LifecycleOperationKind` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:5-46 |
 
 ## Cross-Repo References
 
@@ -93,6 +95,7 @@ The state matrix in `models/lifecycles/operation_projection.py` consumes these s
 The closed `LifecycleControlAction` vocabulary now names `resume` in place of `revise`; `retry`, `recover`, `cancel`, `retire`, and `supersede` remain the other actions. Callers use `resume` for the successor path.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed the two retired ledger-commit phases from the canonical phase vocabulary. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 
@@ -105,4 +108,3 @@ The closed `LifecycleControlAction` vocabulary now names `resume` in place of `r
 
 - 2026-08-26T10:44:52+02:00 — Documented the newly centralized closed lifecycle-control action vocabulary alongside operation kinds.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

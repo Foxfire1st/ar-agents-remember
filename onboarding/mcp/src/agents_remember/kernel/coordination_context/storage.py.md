@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/storage.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ No external documentation is needed for this package-local storage policy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| JSON settings parsing produces the storage settings and path-rule models. | `parse_json_storage_settings`; `parse_json_path_rules` | mcp/src/agents_remember/kernel/coordination_context/json_settings.py:43-56; mcp/src/agents_remember/kernel/coordination_context/json_settings.py:86-93 |
+| JSON settings parsing produces the storage settings and path-rule models. | `parse_json_storage_settings`; `parse_json_path_rules` | mcp/src/agents_remember/kernel/coordination_context/json_settings.py:43-56; mcp/src/agents_remember/kernel/coordination_context/json_settings.py:86-93; mcp/src/agents_remember/kernel/coordination_context/json_settings.py:38-49 |
 | The storage resolver consumes `StorageSettings` path rules to select storage for a source. | `resolve_storage_for_source` | mcp/src/agents_remember/kernel/coordination_context/storage.py:103-114 |
 | Missing-onboarding checks call the storage resolver through the public facade. | `missing_onboarding_for_source` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:88-108 |
 | Drift checks classify source onboarding storage through the public facade. | `classify_source` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:161-195 |

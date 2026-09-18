@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -78,10 +78,10 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The runtime validates and publishes progress, completion, and input-required evidence. | `progress` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:51-89 |
-| Request-owned generation construction and memory-only output reconciliation. | `direct_landing_record` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:157-199 |
-| Recovery cells are derived from authoritative mutation evidence. | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-48 |
-| The classifier supplies exact memory output evidence. | `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:77-134 |
+| The runtime validates and publishes progress, completion, and input-required evidence. | `progress`; `DirectLandingRuntime` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:43-150 |
+| Request-owned generation construction and memory-only output reconciliation. | `direct_landing_record`; `reconcile_direct_landing` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:157-199; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:202-248 |
+| Recovery cells are derived from authoritative mutation evidence. | `derive_closeout_recovery_commits`; "from authoritative mutation evidence" | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-48; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:1-1 |
+| The classifier supplies exact memory output evidence. | `classify_direct_landing_recovery`; `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:77-134; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
 
 ## Cross-Repo References
 
@@ -94,6 +94,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51 UTC — Retired ledger-intent publication and ledger recovery cells from direct runtime coordination; retained canonical journal ownership, request-only admission, bounded reconciliation, and same-generation attempt history. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
 

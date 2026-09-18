@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,11 +62,11 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. | `MemoryCloseoutOutcome` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:28-32 |
-| `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:39-41 |
-| `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. | `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-59 |
-| `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:84-88 |
-| `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:144-150 |
+| `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. | `MemoryCloseoutOutcome` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:27-36 |
+| `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:39-55 |
+| `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. | `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
+| `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:84-141 |
+| `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:144-160 |
 
 The current recovery primitives below establish exact two-output proof and cache-independent resumption.
 

@@ -177,4 +177,3 @@ No meaningful cross-repo references found.
   fail-loud one-liner past the staleness cutoff). Consumed by the MCP tool choke point
   (`mcp/tools/base.py`) and the dashboard header payload (`app.py`'s `/api/state` + SSE snapshot).
   Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
-

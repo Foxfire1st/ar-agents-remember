@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -165,8 +165,8 @@ later reader does not have to reconstruct it from a report.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic. | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
-| Root pytest configuration selects four workers by default. | "-n=4" | pyproject.toml:164 |
-| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:28-29 |
+| Root pytest configuration selects four workers by default. | "-n=4" | pyproject.toml:164; pyproject.toml:186-186 |
+| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3"; "tiktoken>=0.12,<1" | mcp/pyproject.toml:22-23; mcp/pyproject.toml:28-29 |
 | The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26 |
 | The same exact pin in the checkout requirements manifest, which must agree with this file. | "apsw==3.53.4.0" | mcp/requirements.txt:2-2 |
 | The locked resolution carries the pin as a direct requirement plus the platform wheel set the exact pin selects. | "{ name = \"apsw\", specifier = \"==3.53.4.0\" }"; `apsw` | mcp/uv.lock:43-43; mcp/uv.lock:102-111 |
@@ -174,9 +174,9 @@ later reader does not have to reconstruct it from a report.
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
 | MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
-| `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:593-593 |
+| `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:880-880 |
 | The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build"; "mcp/.venv/bin/python scripts/sync-dashboard.py"; ".venv/bin/python -m build"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:82-82; .github/workflows/publish-mcp-to-pypi.yml:91-91; .github/workflows/publish-mcp-to-pypi.yml:95-95; .github/workflows/publish-mcp-to-pypi.yml:111-111 |
-| The placement step whose output this recursive glob picks up at build time. | "TARGET = REPO_ROOT", "def sync() -> int:" | scripts/sync-dashboard.py:38-38; scripts/sync-dashboard.py:138-138; scripts/sync-dashboard.py:153-153 |
+| The placement step whose output this recursive glob picks up at build time. | "TARGET = REPO_ROOT"; "def sync() -> int:" | scripts/sync-dashboard.py:38-38; scripts/sync-dashboard.py:46-46; scripts/sync-dashboard.py:138-138; scripts/sync-dashboard.py:153-153; scripts/sync-dashboard.py:227-227 |
 | Both generated dashboard paths are git-ignored, with the reason recorded inline. | "/mcp/src/agents_remember/package_data/dashboard/", "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:26-27 |
 | An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | "no built cockpit bundle in this installation", "No dashboard bundle at %s; serving 503 on the static surface. Build it with: %s" | mcp/src/agents_remember/serving/static.py:73-73; mcp/src/agents_remember/serving/static.py:123-123 |
 | The Ruff `target-version` that must track the supported minor declared here lives in the repository-root project file. | "py313" | pyproject.toml:4-4 |
@@ -184,6 +184,9 @@ later reader does not have to reconstruct it from a report.
 
 
 ## Update History
+- 2026-09-18T01:52:52+00:00: Generated citation repair: "-n=4" repointed to pyproject.toml:186-186. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b549a05c7448b2578454675e173eaf65501170ee85e72dbbfb2c4a4132b3242; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "-n=4" repointed to pyproject.toml:176-176. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `runtime_install` repointed to mcp/src/agents_remember/install/runtime.py:880-880. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `sync` in the row 179 of this card from scripts/sync-dashboard.py:38-38 to scripts/sync-dashboard.py:153-154, the extent of the construct the claim is about (the checker named line(s) [153] as its live location)
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `-n=4` in the row 168 of this card from pyproject.toml:160-160 to pyproject.toml:164, the extent of the construct the claim is about (the checker named line(s) [164, 267, 280] as its live location); re-pointed `TARGET = REPO_ROOT` in the row 179 of this card from scripts/sync-dashboard.py:153-154 to scripts/sync-dashboard.py:38, the extent of the construct the claim is about (the checker named line(s) [38] as its live location)
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): recorded the new `apsw==3.53.4.0` runtime dependency — the knowledge store's SQLite binding, the only declared binding that exposes SQLite's session/changeset machinery, exact-pinned because session support is a build-time SQLite option (`ENABLE_SESSION`) rather than a property of the version line. Documented the three places that must agree (this file, `mcp/requirements.txt`, `mcp/uv.lock`), what the leaf's spike actually proved (a prebuilt `cp313` manylinux x86_64 wheel, changeset apply, an aborting conflict, a consistent backup) and what it did not (no macOS execution, carried as an unresolved acceptance item). Corrected the Pydantic/tiktoken citation range, which the six-line insertion shifted from `:22-23` to `:28-29`, and added the pin's three evidence rows. Verification metadata remains closeout-owned.

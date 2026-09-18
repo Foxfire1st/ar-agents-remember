@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_support_tests_1.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,9 +70,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture queue and early refusal helpers retain typed inputs and exact bindings. | `_publish_and_read_leaf_queue` | mcp/tests/test_worktree_support_tests_1.py:44-124 |
+| The fixture queue and early refusal helpers retain typed inputs and exact bindings. | `_publish_and_read_leaf_queue`; `_assert_early_closeout_binding_refusals` | mcp/tests/test_worktree_support_tests_1.py:44-124; mcp/tests/test_worktree_support_tests_1.py:127-174 |
 | The retained lifecycle scenario preserves the parent through start/attach/abandon. | `test_master_start_and_abandon_preserve_parent_series` | mcp/tests/test_worktree_support_tests_1.py:178-343 |
-| Shared closeout arguments normalize the two real content messages. | `closeout_worktree_args` | mcp/tests/closeout_input_test_support.py:417-438 |
+| Shared closeout arguments normalize the two real content messages. | `closeout_worktree_args`; `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:417-438; mcp/tests/closeout_input_test_support.py:390-414 |
 
 ## Cross-Repo References
 
@@ -84,6 +84,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Documented the queue helper input after ledger-message retirement while retaining the one start/attach/refusal/abandon scenario and exact parent-series preservation checks. Working candidate verified by source inspection; commit metadata records real committed history only.
 

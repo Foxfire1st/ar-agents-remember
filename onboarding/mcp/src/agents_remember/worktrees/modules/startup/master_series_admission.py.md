@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -75,9 +75,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed admission evidence and bounded refusal projection. | `MasterSeriesContractSpecLike` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:27-55 |
+| Typed admission evidence and bounded refusal projection. | `MasterSeriesContractSpecLike`; `_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:100-159 |
 | Existing contracts are classified before the separate edge checks. | `_existing_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215 |
-| External memory is checked through real repository/worktree identity without a ledger-path argument. | `_repository_root` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:376-384 |
+| External memory is checked through real repository/worktree identity without a ledger-path argument. | `_repository_root`; `_same_master_repository_edge` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:253-385; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:253-269 |
 
 ## Cross-Repo References
 
@@ -89,6 +89,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Removed the documented ledger-path equality requirement from the series memory edge; retained real Git-root/worktree, task, memory-mode, branch, and bounded-refusal behavior. Working candidate verified by source inspection; commit metadata records real committed history only.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,14 +54,14 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `MigratedLifecycleClassification` reports proven code and memory output without a ledger-proof field. | `MigratedLifecycleClassification` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:25-33 |
-| `classify_migrated_lifecycle` classifies the retained migration proof without inventing new outputs. | `classify_migrated_lifecycle` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:117-119 |
+| `MigratedLifecycleClassification` reports proven code and memory output without a ledger-proof field. | `MigratedLifecycleClassification` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:24-57 |
+| `classify_migrated_lifecycle` classifies the retained migration proof without inventing new outputs. | `classify_migrated_lifecycle` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:117-126 |
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. | `PublicEvidencePair` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:16-18 |
+| The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. | `PublicEvidencePair` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:15-18 |
 
 ## Cross-Repo References
 

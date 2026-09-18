@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_transaction_only_worktree_delivery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -60,12 +60,12 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Named acceptance-tool prohibition and real failing-hook probes. | `_forbid_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:120-146 |
-| One code/memory commit, cache absence from the committed tree, and both trailer readers. | `_assert_memory_attribution` | mcp/tests/test_transaction_only_worktree_delivery.py:176-208 |
-| Interrupted public closeout resumes only its exact accepted code identity. | `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` | mcp/tests/test_transaction_only_worktree_delivery.py:321-448 |
-| Integration publishes accepted refs or refuses source movement before publication. | `test_public_integration_merges_prepared_pair_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:451-504 |
+| Named acceptance-tool prohibition and real failing-hook probes. | `_forbid_acceptance_tools`; `_install_failing_pre_commit_hooks` | mcp/tests/test_transaction_only_worktree_delivery.py:120-146; mcp/tests/test_transaction_only_worktree_delivery.py:149-173 |
+| One code/memory commit, cache absence from the committed tree, and both trailer readers. | `_assert_memory_attribution`; `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
+| Interrupted public closeout resumes only its exact accepted code identity. | `test_closeout_recovery_attributes_the_memory_commit_it_still_owed`; `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:321-448; mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
+| Integration publishes accepted refs or refuses source movement before publication. | `test_public_integration_merges_prepared_pair_without_acceptance_tools`; `test_public_integration_ref_movement_refuses_before_pair_merge` | mcp/tests/test_transaction_only_worktree_delivery.py:451-504; mcp/tests/test_transaction_only_worktree_delivery.py:507-560 |
 | A recloseout after sync records the actual memory head. | `test_recloseout_after_a_sync_records_the_memory_head_as_content_commit` | mcp/tests/test_transaction_only_worktree_delivery.py:574-607 |
-| Cache materialization preserves both repositories' refs/commit objects and real content. | `assert_content_unchanged` | mcp/tests/test_transaction_only_worktree_delivery.py:610-679 |
+| Cache materialization preserves both repositories' refs/commit objects and real content. | `assert_content_unchanged`; `git_state`; `test_cache_refresh_preserves_current_bytes_and_materializes_a_missing_cache`; `test_cache_refresh_repairs_malformed_forged_and_reordered_data_from_git` | mcp/tests/test_transaction_only_worktree_delivery.py:610-679; mcp/tests/test_transaction_only_worktree_delivery.py:682-702; mcp/tests/test_transaction_only_worktree_delivery.py:705-743 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Kept seven collected scenarios while removing retired ledger imports/outputs and third commits; public malformed/missing-cache delivery and cache-only materialization now prove two-output, hook, ref, trailer, and zero-Git-mutation behavior. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base

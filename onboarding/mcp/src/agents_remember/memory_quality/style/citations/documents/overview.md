@@ -49,4 +49,3 @@ No external Domain Documentation source is configured. This route composes repos
 ## Update History
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Created the focused route for the new transaction package at actual private C b34f4a59; no delivery or aggregate acceptance is asserted.
-

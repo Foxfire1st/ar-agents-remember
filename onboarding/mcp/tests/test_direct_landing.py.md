@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ the current working-candidate behavior; historical entries below retain their or
 | --- | --- | --- |
 | The fixture owns real temporary code/memory refs and an admitted series contract. | `_series_fixture` | mcp/tests/test_direct_landing.py:92-153 |
 | The retained scenario proves one content commit and reads its attribution from Git. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
-| Recovery rejects real drift and accepts cache misses without extra commits. | `_recover_after_interrupted_receipt` | mcp/tests/test_direct_landing.py:274-314 |
+| Recovery rejects real drift and accepts cache misses without extra commits. | `_recover_after_interrupted_receipt`; `_assert_clean_memory_reused` | mcp/tests/test_direct_landing.py:274-314; mcp/tests/test_direct_landing.py:316-340 |
 | The lifecycle recovery owner performs the required same-generation resumption. | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
 
 ## Cross-Repo References
@@ -94,6 +94,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51 UTC — Replaced separate ledger-publication assertions with the retained one-content-commit scenario, interrupted receipt recovery, real drift refusals, malformed/absent cache checks, and clean-memory reuse; no collected-case increase. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
 

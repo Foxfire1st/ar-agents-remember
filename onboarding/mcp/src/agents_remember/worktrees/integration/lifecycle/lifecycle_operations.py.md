@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,15 +81,15 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_require_series_recording_only` refuses enabled code or memory writes for recording-only series closeout. | `_require_series_recording_only` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:245-248 |
-| `start_or_observe_closeout_operation` composes closeout admission through the journal-owned lifecycle route. | `start_or_observe_closeout_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:210-216 |
+| `_require_series_recording_only` refuses enabled code or memory writes for recording-only series closeout. | `_require_series_recording_only` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:245-256 |
+| `start_or_observe_closeout_operation` composes closeout admission through the journal-owned lifecycle route. | `start_or_observe_closeout_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:210-242 |
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. (`launch_detached_worker`) | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:946-947 |
-| R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`) | `queued_operation_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-39; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:33-71 |
+| Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. (`launch_detached_worker`) | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:946-1041 |
+| R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`) | `queued_operation_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:33-71 |
 
 ## Cross-Repo References
 

@@ -176,4 +176,3 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 
 - 2026-06-29T15:30+02:00 — Created for operations-integration L3: extracted the shared browse-scope layer out of `serving/files.py` — `FileScope`, `resolve_scope`, the `run_scoped` error mapper (was `files._run`), `language_for`/`_LANG_BY_EXT` (was `files._language_for`), the `_iter_repo_contracts`/`_find_enclosure_contract` active-enclosure enumeration, and `_resolve_within` — so the L3 change-set backend (`serving/changeset.py`) reuses one resolver + one 404/400 error map. Behavior is identical to L1; `files.py` re-imports these. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
-

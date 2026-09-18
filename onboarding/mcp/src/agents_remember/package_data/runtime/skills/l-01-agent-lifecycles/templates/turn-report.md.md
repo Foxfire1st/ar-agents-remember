@@ -5,13 +5,26 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T11:51+02:00 |
-| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff`|
-| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| governingOverview | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
-This template is the **mandatory worker hand-off artifact** of the `l-01-agent-lifecycles` report-template library. A worker fills it at **every** hand-off so a leaf's work survives session death and a respawned successor onboards from **state, not the transcript**. It is the leaf's single artifact of record; a missing turn report is nudged by the HFX2-L2 agent-notifier sweep, never by a manager watching for it (uniform-mechanism ruling 2026-07-07).
+This template is the **mandatory worker hand-off artifact** of the `l-01-agent-lifecycles` report-template library. A worker fills it at **every** hand-off so a leaf's work survives session death and a respawned successor onboards from **state, not the transcript**. It is the leaf's single artifact of record.
+
+**The relay does not inspect it.** 260915-CAPS-L1 reconciled this template's wording with the shipped
+truth boundary: the lifecycle-owned relay derives and delivers the worker's mechanical turn-ended state
+signal, the owner is woken with it, and **the manager** then detects a missing or malformed report and
+nudges — never a seat-local watcher, and never an artifact-inspecting notifier (uniform-mechanism
+ruling 2026-07-07). The truth boundary itself is authored once in `../core/acceptance.md`, and the
+check duty this report records is authored in `../operations/closeout.md` § The targeted-check
+contract. The template now says so in its own header.
 
 ## Code Commentary
 
@@ -39,7 +52,7 @@ No TODO markers are present in this report template.
 
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
 
 ### Docs References
 
@@ -55,9 +68,10 @@ This bundle copy is the shape the worker job writes at every hand-off; the frame
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | `# Turn-Report Template` | skills/l-01-agent-lifecycles/templates/turn-report.md:1-57 |
-| The worker writes the turn report in the main loop at every hand-off; it is the leaf's single artifact of record. | `# Lifecycle — Worker` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:1-154 |
-| The frame lists the mandatory worker turn report among the per-role artifact obligations. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
+| Sync-propagated bundle copy of the canonical templates source. | `# Turn-Report Template` | skills/l-01-agent-lifecycles/templates/turn-report.md:1-15 |
+| The worker writes the turn report in its main loop and never delegates it; the template governs its shape. | `# Worker`; `## Outputs`; "The turn report" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:72-91 |
+| The truth boundary this template obeys has one home. | `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`; `## Which artifact each seat hands over, and who validates` | skills/l-01-agent-lifecycles/core/acceptance.md:1-1; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
+| The check duty this report records has one home. | `## The targeted-check contract (what closeout consumes as evidence)` | skills/l-01-agent-lifecycles/operations/closeout.md:22-42 |
 
 ## Cross-Repo References
 
@@ -93,6 +107,25 @@ a malformed handed-off attempt requires independent rejection before successor h
 The turn-report template now requires review mode, sealed baseline and outstanding IDs, fixed/unfixed subset dispositions, and a clear separation between worker diagnostic checks and review or certification round accounting.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Replaced the shared handoff-evidence boilerplate sentence with the completed-curation rule.
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.**
+  This card still said a missing turn report is nudged by the agent-notifier sweep; the canonical
+  template was corrected in this leaf to state the shipped boundary — the relay derives only the
+  mechanical turn-ended signal and never inspects an artifact, and the **manager** detects a missing
+  report after that wake. The body now records that correction, names `../core/acceptance.md` as the
+  truth boundary and `../operations/closeout.md` as the targeted-check contract, and replaces three
+  citations whose anchors or ranges no longer resolve (`SKILL.md:6-416`; `roles/worker.md:1-154`). **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The turn-report template now requires review mode, sealed baseline and outstanding IDs, fixed/unfixed subset dispositions, and a clear separation between worker diagnostic checks and review or certification round accounting.
 

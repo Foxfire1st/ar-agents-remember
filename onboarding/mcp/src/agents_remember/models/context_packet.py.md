@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/models/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -33,7 +37,7 @@ orchestration models already followed:
   a retyped copy here would let a new degrade path reach pydantic before it
   reaches a reviewer.
 - `MemorySummary.mode` (cit:(["mode: MemoryMode"], mcp/src/agents_remember/models/context_packet.py:84-84)) is `MemoryMode`, from
-  `kernel.coordination_context.models` since L9 (cit:(["MemoryMode = Literal["], mcp/src/agents_remember/kernel/coordination_context/models.py:209-209)). It **was**
+  `kernel.memory_mode` since L9 (cit:(["MemoryMode = Literal["], mcp/src/agents_remember/kernel/memory_mode.py:35-35)). It **was**
   `Literal["internal", "external"]` and was the only copy in the package missing
   `disabled` — `CoordinationContext.memory_mode` has always been able to carry it
   and `WorktreeSummary.memoryMode` in the *same response* declared it correctly,
@@ -87,10 +91,11 @@ reports why instead of raising.
 | Provider readiness in the packet uses compact provider summary models. | `ProviderSummary` | mcp/src/agents_remember/models/providers.py:75-93 |
 | `RepoState` (L22) and its `VALID_REPO_STATES` (L26); `git_facts_to_packet` (L104-L115) is the untyped dict `RepoSummary` validates. | `RepoState`; `VALID_REPO_STATES`; `git_facts_to_packet` | mcp/src/agents_remember/kernel/git_facts.py:23-23; mcp/src/agents_remember/kernel/git_facts.py:27-27; mcp/src/agents_remember/kernel/git_facts.py:107-118 |
 | `FreshnessState` (L29-L38) and `VALID_FRESHNESS_STATES` (L41); `freshness_to_packet` (L158-L169). | `FreshnessState`; `VALID_FRESHNESS_STATES`; `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:30-39; mcp/src/agents_remember/kernel/git_freshness.py:42-42; mcp/src/agents_remember/kernel/git_freshness.py:167-178 |
-| `MemoryMode` (L209) — the one declaration `memory.mode` and `worktree.memoryMode` now share (kernel-owned since L9). | "MemoryMode = Literal[" | mcp/src/agents_remember/kernel/coordination_context/models.py:209-209 |
+| `MemoryMode` (L209) — the one declaration `memory.mode` and `worktree.memoryMode` now share (kernel-owned since L9). | "MemoryMode = Literal[" | mcp/src/agents_remember/kernel/memory_mode.py:35-35 |
 | `worktree_status_packet` (L65-L152) returns `WorktreeSummary` directly, so this packet's `worktree` block is constructed, not validated. | "def worktree_status_packet(" | mcp/src/agents_remember/application/worktree_status.py:61-143 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 7
   claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this

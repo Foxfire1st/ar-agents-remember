@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,14 +25,14 @@ the coordination-context resolver.
 
 The module defines missing-memory errors, storage/path-rule model types,
 cross-repo allow state, coordination selection, and the final
-`CoordinationContext` dataclass (cit:(["class CoordinationContext"], mcp/src/agents_remember/kernel/coordination_context/models.py:179-179)).
+`CoordinationContext` dataclass (cit:(["class CoordinationContext"], mcp/src/agents_remember/kernel/coordination_context/models.py:189-189)).
 
 `CoordinationContext.memory_mode` uses the shared `MemoryMode` alias declared here by
-260731-EFA-L9 (cit:(["MemoryMode = Literal"], mcp/src/agents_remember/kernel/coordination_context/models.py:209-209))
-and used by the field declaration (cit:(["memory_mode: MemoryMode"], mcp/src/agents_remember/kernel/coordination_context/models.py:201-201)).
+260731-EFA-L9 (cit:(["MemoryMode = Literal"], mcp/src/agents_remember/kernel/memory_mode.py:35-35))
+and used by the field declaration (cit:(["memory_mode: MemoryMode"], mcp/src/agents_remember/kernel/coordination_context/models.py:211-211)).
 The resolver assembly is named by **`build_coordination_context`** and selects the contract's mode
 when a contract exists, otherwise calling `_memory_mode(roots.topology)` as its fallback
-(cit:(["memory_mode = contract.memory_mode if contract is not None else _memory_mode(roots.topology)"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:299-299)).
+(cit:(["memory_mode = contract.memory_mode if contract is not None else _memory_mode(roots.topology)"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:279-279)).
 
 Since 260731-EFA-L2 it also owns the **four frozen parameter objects the resolver's public API is
 signed on**. They are the vocabulary of coordination-context resolution; a caller building one is
@@ -62,7 +62,7 @@ All four are re-exported from the `kernel.coordination_context_resolver` facade.
 
 - Models should stay behavior-light and importable by parser, resolver, and
   serialization modules.
-- **`memory_mode` uses the shared vocabulary.** `MemoryMode`, cit:(["MemoryMode ="], mcp/src/agents_remember/kernel/coordination_context/models.py:209-209), is the kernel-side declaration (moved from `worktrees.worktree_contract` by L9), and `resolver.build_coordination_context`, cit:(["def build_coordination_context"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-272), is the current assembly entry point.
+- **`memory_mode` uses the shared vocabulary.** `MemoryMode`, cit:(["MemoryMode ="], mcp/src/agents_remember/kernel/memory_mode.py:35-35), is the kernel-owned declaration this module imports for its `memory_mode` field, and `resolver.build_coordination_context`, cit:(["def build_coordination_context"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-252), is the current assembly entry point.
 - The four parameter objects are frozen and fully defaulted, so a resolver call that supplies
   neither `hints` nor `selector` still resolves — `None` is replaced by an empty instance rather
   than branching on absence.
@@ -87,8 +87,8 @@ No external documentation is needed for these package-local data models.
 | --- | --- | --- |
 | `MissingMemoryError` subclasses the typed `AgentsRememberError` base. | `MissingMemoryError` | mcp/src/agents_remember/kernel/coordination_context/models.py:10-29 |
 | `AgentsRememberError` remains a `ValueError`-compatible base. | `AgentsRememberError` | mcp/src/agents_remember/errors.py:18-19 |
-| Resolver assembly returns `CoordinationContext` instances defined here, reading `contract.memory_mode` straight into the field and falling back to the topology only when there is no contract. | `build_coordination_context`; `_memory_mode` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-313; mcp/src/agents_remember/kernel/coordination_context/resolver.py:342-343 |
-| `MemoryMode` is the three-member memory vocabulary declaration (kernel-owned since L9). | "MemoryMode =" | mcp/src/agents_remember/kernel/coordination_context/models.py:209-209 |
+| Resolver assembly returns `CoordinationContext` instances defined here, reading `contract.memory_mode` straight into the field and falling back to the topology only when there is no contract. | `build_coordination_context`; `_memory_mode` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-313; mcp/src/agents_remember/kernel/coordination_context/resolver.py:342-343; mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-308 |
+| `MemoryMode` is the two-member memory vocabulary declaration (`external`, `disabled`), declared in the kernel memory-mode module. | "MemoryMode =" | mcp/src/agents_remember/kernel/memory_mode.py:35-35; mcp/src/agents_remember/kernel/memory_mode.py:7-8 |
 | The wire face of the same value imports and uses the shared alias for `memory.mode`. | `MemorySummary` | mcp/src/agents_remember/models/context_packet.py:79-86 |
 | Serialization converts these models to JSON-safe dictionaries. | `context_to_dict` | mcp/src/agents_remember/kernel/coordination_context/serialize.py:69-98 |
 
@@ -101,6 +101,11 @@ No cross-repository evidence is needed for local model declarations.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "class CoordinationContext" repointed to mcp/src/agents_remember/kernel/coordination_context/models.py:189-189. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "memory_mode: MemoryMode" repointed to mcp/src/agents_remember/kernel/coordination_context/models.py:211-211. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "memory_mode = contract.memory_mode if contract is not None else _memory_mode(roots.topology)" repointed to mcp/src/agents_remember/kernel/coordination_context/resolver.py:279-279. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "def build_coordination_context" repointed to mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-252. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D18 by binding the resolver prose to the operative contract-or-topology conditional call; rechecked this card through the locked exact-document fixer/check.
 

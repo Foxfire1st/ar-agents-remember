@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,15 +60,15 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_resume` checks retained generation and exact publication evidence before worker relaunch. | `_resume` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:330-337 |
-| `_resume_arguments` retains the admitted code/memory messages in the successor correction. | `_resume_arguments` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:916-919 |
-| `_closeout_resume_admission` combines current candidate evidence with code/memory input for resume. | `_closeout_resume_admission` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:944-947 |
+| `_resume` checks retained generation and exact publication evidence before worker relaunch. | `_resume` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:330-367 |
+| `_resume_arguments` retains the admitted code/memory messages in the successor correction. | `_resume_arguments` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:916-941 |
+| `_closeout_resume_admission` combines current candidate evidence with code/memory input for resume. | `_closeout_resume_admission` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:944-980 |
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LifecycleControlCommand`; `control_operation` as its public seam. | `LifecycleControlCommand` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128 |
+| The module defines `LifecycleControlCommand`; `control_operation` as its public seam. | `LifecycleControlCommand`; `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-222 |
 
 ## Cross-Repo References
 

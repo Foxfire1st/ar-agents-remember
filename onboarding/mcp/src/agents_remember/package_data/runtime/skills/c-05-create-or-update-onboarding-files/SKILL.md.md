@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
 | lastUpdated            | 2026-07-08T00:00+02:00                     |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`                                |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`                                |
+| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
 
 ## Purpose
 
@@ -49,7 +49,7 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current contract: curators update affected sidecars, route overviews, indexes, and entity records from current source, preserving body plus history and reporting scoped check results honestly. Closeout consumes that prepared memory leg as a Git transaction; it does not turn onboarding maintenance into an automatic full-memory or certification gate.
+Current contract: curators update affected sidecars, route overviews, indexes, and entity records from current source, preserving body plus history and reporting every check result honestly. Curation is always complete: the curator runs the full `memory_quality_check` operation for the leaf and publishes the coherence authority when the checklist requires it. Closeout consumes that prepared memory leg, including the completed curation, as a Git transaction; it does not rerun the operation and does not turn onboarding maintenance into an automatic certification gate.
 
 ### Docs References
 
@@ -84,6 +84,7 @@ No external domain documentation applies to the repository-local onboarding main
 | No meaningful cross-repo references found for current skill semantics. | n/a | n/a |
 
 ## Update History
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Updated the current-contract paragraph: the curator's handoff is the complete one and closeout consumes it, including the full memory-quality result, rather than rerunning it.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 9 citation claims; scoped recheck clean (0 findings).

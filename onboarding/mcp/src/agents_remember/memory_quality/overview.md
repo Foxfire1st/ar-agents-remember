@@ -5,15 +5,51 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
+| lastUpdated | 2026-09-17T19:30+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260915-CAPS-L20 The Dead Governing Declaration Becomes Visible
+
+This route gained the check that closes `D3`/`D16`'s product gap, and gained it in the same shape as
+the route's other integrity checks: a read-only module that reports, plus a wiring that makes the
+report reach the loop a curator completes against.
+
+`integrity/governing_overview_resolution.py` resolves every card's declared governing overview and
+reports the ones that do not. Until this leaf the product validated that a source **has** a card and
+never that the card's declared route **resolves**, so a card whose `governingOverview` field — or
+whose `## Governing Overview` body link — pointed at a file that does not exist passed every check the
+product runs. Two declarations are graded per card, and they are graded **independently**, because a
+card can be broken in both and reporting only the first one found would understate the family. The
+field is tried under three bases (the card's own directory, the onboarding root, and the root's
+parent) because two authoring conventions ship; the body link is held to the card-relative resolution
+a reader clicking it actually gets.
+
+A card that declares the field but carries no body link to resolve — no `## Governing Overview`
+section at all, or a section with no markdown link in it — is **observed, not failed**, and `ok` is
+derived from the findings tuple alone. That boundary is doctrine rather than convenience: making those
+cards gated would create 96 new obligations layer-wide, so this leaf reports the shape and declines to
+decide it.
+
+The check's own discrimination is pinned by
+`tests/test_governing_overview_resolution.py`, whose single case seeds both dead declaration forms
+beside a clean card and both observation forms **in the same tree**, so a checker that flagged
+everything could not pass. The wiring is pinned separately, in `test_memory_quality_runs.py`, because
+the silence was the defect: a correct checker whose findings never reach `repair_findings` still
+reports clean.
+
+**What the route's own curator reads.** `application/memory_quality/controller.py` publishes
+`governingOverviewResolution` on the operation response and extends its findings into the gated
+curator repair set, so the count a curator iterates now moves when a declaration is dead. The
+closeout-admission consumer is behind `D32` — the readiness comparison is only reached once the raw
+status is `ready-for-closeout`, which no leaf on this master has reached — and that condition belongs
+in any statement of the fix's reach.
 
 ## Purpose
 
@@ -97,6 +133,7 @@ The route also carries a capacity fact recorded rather than worked around:
 after this leaf's re-scope, so the next leaf that must edit it has to split it first.
 
 ## Update History` bullets
+- `style/update_history/` checks that onboarding `## Update History
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
 
@@ -179,7 +216,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory candidate identity excludes consumer cache availability. | — | — |
+| Memory candidate identity excludes consumer cache availability. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
 
 ## Historical 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
@@ -418,17 +455,83 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
-| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:565-565 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:565-565; mcp/src/agents_remember/application/memory_quality/controller.py:583-600 |
 | Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
+
+## The Shared Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
+
+One register, **three sources**, all reduced to one answer — *is this path outside the candidate
+population, and which rule said so*. The register is a **record** as much as a filter: it is
+serialized onto the manifest of every published generation, so a later reader sees which rule set
+produced an index instead of reconstructing it from the checkout.
+
+| Source | Where it comes from | How it is matched |
+| --- | --- | --- |
+| `pathRules.exclude` | `onboarding.pathRules.exclude.paths` in the memory layer's `system/settings.json` — the register the exclusion review agrees with the user **before** closeout | the same `matches_any` the storage resolver and the drift check already use |
+| `gitignore` | the code repository's own `.gitignore` | inside a Git work tree **Git is the authority** (`ls-files --exclude-standard` already removed them) and the register records the patterns; outside a work tree `FallbackIgnoreMatcher` applies them |
+| `caller` | `exclude=` on the `citation_fix` MCP tool and `--exclude` on the CLI, scoped to that one call | exactly like `pathRules.exclude` |
+
+`exclusion_register.py` owns the register; `citation_index_settings.py` owns the two settings keys
+(`onboarding.pathRules.exclude` and the optional `onboarding.citationIndex`) and accepts both at the
+`onboarding` level **or** the document root. The register, the caps and the settings key are
+**mode-independent**: nothing on this route branches on the memory storage mode.
+
+**The register's `.gitignore` rule deliberately diverges from Git, and the divergence is pinned.**
+Git does not re-include a file whose parent directory is excluded; the register does, because its
+contract answers *"did the exclusion review's rules admit this file?"* rather than *"what would
+`git add` do?"*. The direction is the safe one — the register admits a file, it never silently drops
+one Git would have kept — and
+`test_the_register_admits_a_negated_file_under_an_excluded_directory_where_git_does_not` measures
+both sides so a future reader cannot mistake it for an accident.
+
+**Exceeding a cap is a reported skip naming the file and its size — never a silent omission and
+never a whole-tree refusal.** The developer's 2026-08-20 ruling sets the numbers, all verifiable as
+module constants in `source_index_state.py`: `MAX_SOURCE_FILE_BYTES` 4 MiB (per-file skip),
+`MAX_SOURCE_BYTES` 512 MiB (aggregate, applied to the **post-exclusion, post-skip** set),
+`MAX_SOURCE_HARD_STOP_BYTES` 2 GiB (the bound past which no index is built at all — a reported,
+actionable error naming offenders), `MAX_SOURCE_FILES` 100 000, and `MAX_DATABASE_BYTES` 256 MiB. A
+malformed `onboarding.citationIndex` value is refused **by name** rather than falling back to a
+default, because a cap that silently ignores its configuration is the failure mode the ruling exists
+to prevent.
+
+**The quality surface cannot be bricked by either.** A capped index is `checked` with its skip list;
+an unreadable source is named with its path; an unbuildable index is a reported state
+(`citation-source-index-unavailable`) carrying offenders and a `nextStep`. The closeout gate's own
+admission refuses by name too: `_admitted_source_index` in
+`application/prepared_certification.py` raises a typed `CertificationContractError`
+(`citation-source-index-unavailable`) instead of letting a bare `ValueError` out.
+
+**The manifest schema moved 9 → 10** for the register. An old v9 manifest is **refused and rebuilt**
+rather than being read as "no register" — a rebuilt index must not silently lose the rules that
+produced its population.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one construction point folding settings, ignore file and call into one register. | `resolve_exclusion_register` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:196-226 |
+| The two settings keys, and the refusal-by-name discipline for a malformed value. | `read_citation_index_settings` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:56-85 |
+| The bounded non-Git matcher and its pinned divergence from Git. | `FallbackIgnoreMatcher` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:253-297 |
+| A caller exclude that cannot mean anything is refused by name. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
+| The ruled numbers, the skip vocabulary and the status vocabulary. | `MAX_SOURCE_BYTES`; `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_HARD_STOP_BYTES`; `SKIP_REASONS`; `STATUS_CAPPED`; `STATUS_WITHIN_CAPS` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:18-43 |
+| The register's three sources and recorded authority values. | `EXCLUSION_SOURCES`; `GITIGNORE_AUTHORITIES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:45-61 |
+| The closeout gate refuses by name rather than letting a bare error out. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:415-437 |
+| The caller-exclude surface on the registered tool and the CLI. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-124 |
+| One root gives one authority on both acquisition routes. | `test_one_root_gives_one_gitignore_authority_on_both_acquisition_routes` | mcp/tests/test_citation_index_resilience.py:376-406 |
 
 ## Exact Git Candidate Source-Index Composition
 
 Citation `Trees` selects an explicit Git candidate tree when R06/R07 require immutable candidate
-membership. The source index binds that selection separately from the content snapshot: schema-9
-manifest/readiness and SQLite metadata distinguish a Git candidate from ordinary filesystem
-selection. Candidate census includes eligible tracked build/ignored paths, excludes Git metadata
-and refuses unavailable, unsafe or byte-mismatched candidate members. Ordinary filesystem use
-continues to observe eligible dirty and untracked files under its existing traversal policy.
+membership. The source index binds that selection separately from the content snapshot: the manifest
+schema (now v10, carrying the exclusion register; a v9 manifest is refused and rebuilt, not read as
+"no register") and SQLite metadata distinguish a Git candidate from ordinary filesystem selection.
+Candidate census includes eligible tracked build/ignored paths, excludes Git metadata and refuses
+unavailable, unsafe or byte-mismatched candidate members. Ordinary filesystem use continues to
+observe eligible dirty and untracked files under its existing traversal policy.
+
+**One root gives one `gitignoreAuthority` on both acquisition routes.** The default walk records the
+authority it actually had, and the explicit candidate route reports the same value for the same root
+and settings (`"git"` where Git's membership applied the rules, `"register"` where the fallback
+matcher did, `"absent"` where the root has no ignore file), so the record never says "these patterns
+exist but nothing applied them" while Git was applying them.
 
 R06 checks the candidate-bound lease, ready record, manifest, census and member content. R07
 validates the lease against its exact unit tree before running the selected-document range checker
@@ -445,11 +548,13 @@ composition does not close the production execution gap recorded above or replac
 
 The closeout-facing certification adapter that composed the actual affected closure, full memory
 checks, missing-onboarding/index observations and curator coherence against a proved private code
-view no longer lives here: commit `deb032fb` moved it to
-[worktrees/integration/closeout/prepared_certification.py](../worktrees/integration/closeout/prepared_certification.py.md)
-because a pre-closeout quality service must not depend on the closeout plane. The closeout plane may
-depend on this route; not the reverse. Red results remain evidence and cannot authorize memory-content output
-preparation.
+view no longer lives here: commit `deb032fb` moved it out of this route because a pre-closeout
+quality service must not depend on the closeout plane. It went to
+`worktrees/integration/closeout/` and then **on to the application rank** in commit `806649b9`, so
+its card now sits at
+[application/prepared_certification.py](../application/prepared_certification.py.md). The closeout
+plane may depend on this route; not the reverse. Red results remain evidence and cannot authorize
+memory-content output preparation.
 
 ## Memory-Candidate Roots Relocated In
 
@@ -467,6 +572,11 @@ dependency.
 
 ## Update History
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `knowledge_review.py` and one defaulted input plus one rendered section in `curator_checklist.py`; the section is **report-only** and the arithmetic is unchanged, which the body now states where the module's own comparison sentence lives rather than leaving it to a reader to infer. The reference rows were re-derived from the current files: `_append_drift` is `:319-350`, `_render` `:204-266`, `write_curator_checklist` `:100-180`, `_tracked_onboarding_paths` `:183-189`, and the controller rows moved to `:317-337`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:583-583. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: added the section above and recorded this route's share of the leaf — the new `integrity/governing_overview_resolution.py` check, its two-base resolution rule, its observation boundary, the wiring that carries its findings into the gated curator repair set, and the `D32` condition on the closeout-admission consumer. Verification metadata advanced to this leaf's frozen code base.
+- 2026-09-17T11:20+02:00 — 260915-CAPS-L14 curator: added **The Shared Exclusion Register, And The Ruled Caps** as a current-intent section, because this leaf makes the register a contract on this route rather than a detail. Records the three sources feeding one register and where each lives, the `matches_any` semantics shared with the storage resolver and the drift check, the register's **deliberate and pinned divergence from Git** on a negated file under an excluded directory, the developer's 2026-08-20 cap numbers with the skip-and-report rule (never a silent omission, never a whole-tree refusal), the refusal-by-name discipline for a malformed `onboarding.citationIndex`, and the closeout gate's own typed refusal through `_admitted_source_index`. Corrects the **stale `schema-9` claim** in *Exact Git Candidate Source-Index Composition* to the v10 manifest that now carries the register and states that a v9 manifest is refused and rebuilt, and adds the one-authority-per-root parity between the two acquisition routes. Repointed the *L34 Preparation Ownership* link to the card's real home after the adapter's second move (`806649b9`) to the application rank. Records that the register, the caps and the settings key are **mode-independent**. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented cache-independent candidate pair identity and citation content snapshots. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.

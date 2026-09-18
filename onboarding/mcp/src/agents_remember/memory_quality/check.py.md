@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -56,13 +60,23 @@ placement that deadlocked this leaf's own closeout with 115 unresolvable finding
 
 `run_drift_quality_check(drift_context)` branches on the packet's
 status first: anything other than `checked` returns `ok: False` with one synthetic
-`onboarding_drift_check_failed` finding built from `packet.get("error", ...)`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:171-212).
+`onboarding_drift_check_failed` finding built from `packet.get("error", ...)`
+(`mcp/src/agents_remember/memory_quality/check.py:216-257`).
 Only past that guard does it read the checked-status keys. Since
 260731-EFA-L4 `run_drift_summary` returns the typed `DriftSummaryPacket`, whose
 `count`/`reportPath`/`actionableCount` are `NotRequired`, so those three reads are
-`.get` rather than `[...]`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:171-212) — the guard has established the status, but
+`.get` rather than `[...]` — the guard has established the status, but
 the TypedDict cannot carry that narrowing across the branch. No emitted value
 changed: `summarize_rows` always sets all three on a `checked` packet.
+
+**A check that cannot acquire its source index reports rather than raising (260915-CAPS-L14).**
+`run_check` wraps `_run_check` and converts a `SourceIndexError` into
+`source_index_unavailable_result`: a `status: "citation-source-index-unavailable"` result carrying
+one `error`-severity finding (`citation_source_index_unavailable`) whose message is the cause and
+whose `nextStep` names the two operator levers (`onboarding.pathRules.exclude`,
+`onboarding.citationIndex`). The raw exception must never escape to a client as a bare tool error,
+because that turns the surface that *describes* memory into the surface that blocks it. Satisfiable
+caps never reach this branch — they skip and report.
 
 ### Invariants And Boundaries
 
@@ -72,9 +86,12 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 - The top-level finding count uses each checker result's declared
   `findingCount`, so bounded drift samples can report fewer concrete findings
   than the total count. `run_memory_quality_check` coerces it with
-  `int(result.get("findingCount", 0))`: cit:([`run_memory_quality_check`, "result.get(\"findingCount\", 0)"], mcp/src/agents_remember/memory_quality/check.py:103-130), which assumes a checker never puts
-  a literal `None` under that key — the drift checker's `.get` reads are safe only
-  because the `checked` guard above guarantees the key is present.
+  `int(result.get("findingCount", 0))` (`mcp/src/agents_remember/memory_quality/check.py:112-143`),
+  which assumes a checker never puts a literal `None` under that key — the drift checker's `.get`
+  reads are safe only because the `checked` guard above guarantees the key is present.
+- **An unusable source index is a reported check result, never a raised exception out of this
+  runner.** The quality surface must remain able to describe a broken memory layer rather than
+  becoming the thing that blocks work.
 - **The drift packet's shape is owned by `onboarding_drift_check/models.py`.**
   This runner narrows on `status` and reads the status-conditional keys
   defensively; it must not re-declare the status vocabulary or assume a key that
@@ -89,11 +106,22 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 | `memory_quality_check` MCP tool builds drift context and calls this runner. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | Update-history ordering is the first style checker. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
 | Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
-| The declaration of the packet's status vocabulary (in `models/drift.py`) and its `NotRequired` keys. | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
+| The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 | The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
-| Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface. | `StyleCheckInputs`; `run_check` | mcp/src/agents_remember/memory_quality/check.py:37-76; mcp/src/agents_remember/memory_quality/check.py:144-162 |
+| Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface. | `StyleCheckInputs` | mcp/src/agents_remember/memory_quality/check.py:40-55 |
+| The guarded entry point that reports an unusable source index instead of raising. | `run_check` | mcp/src/agents_remember/memory_quality/check.py:146-163 |
+| The status a reported unusable source index carries. | `SOURCE_INDEX_UNAVAILABLE_STATUS` | mcp/src/agents_remember/memory_quality/check.py:33-33 |
+| An unusable source index becomes a reported result with the cause and the operator levers. | `source_index_unavailable_result` | mcp/src/agents_remember/memory_quality/check.py:193-213 |
+| The inner runner the guard wraps. | `_run_check` | mcp/src/agents_remember/memory_quality/check.py:166-190 |
+| The typed error the guard converts. | `SourceIndexError` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:64-65 |
+| The checked-status reads and their `NotRequired` guard. | `run_drift_quality_check` | mcp/src/agents_remember/memory_quality/check.py:216-257 |
+| The case pinning the reported state when an index cannot be built at all. | `test_an_index_that_cannot_be_built_is_a_reported_state_with_a_next_step` | mcp/tests/test_citation_index_resilience.py:613-629 |
+| The case pinning the closeout gate's own declared check group degrading the same way. | `test_the_closeout_gates_own_check_group_degrades_the_same_way` | mcp/tests/test_citation_index_resilience.py:631-656 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+
+- 2026-09-17T12:45+02:00 — 260915-CAPS-L14 curator: recorded the **reported-state guard** this leaf adds — `run_check` wrapping `_run_check` so a `SourceIndexError` becomes a `citation-source-index-unavailable` result with the cause and the two operator levers, instead of a bare tool error out of the surface that is supposed to describe a broken memory layer. Added the `source_index_unavailable_result` / `_run_check` / `run_drift_quality_check` rows and the corresponding invariant. **Flattened the legacy citation form**: four body cells using an inline `cit:([…], path:a-b)` wrapper and every `cit:(…)` in this card's history are now the required `| Finding | Anchor | Source |` rows plus plain `path:start-end`; the historical entries keep their wording, identifiers and meaning, with only the wrapper and their stale ranges re-expressed. **Re-derived every range against the 296-line source** (the runner moved from `:103-130` to `:112-143` and `run_drift_quality_check` from `:171-212` to `:216-257`). Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 
 - 2026-09-10T04:35+02:00 — CCR-L42 final predecessor-history curation: documented the retained
   code-history tuple flowing through `StyleCheckInputs`, `DriftCheckContext`, and `run_check()`
@@ -121,11 +149,11 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
   and the finding-normalization but never described `run_drift_quality_check`'s own result shape,
   which is what this leaf changed. Verified against the diff and the current source: the three
   checked-status reads `packet["count"]`/`packet["reportPath"]`/`packet["actionableCount"]` are
-  now `.get`, because `run_drift_summary` returns the new `DriftSummaryPacket` TypedDict: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170)
-  whose keys are `NotRequired` — the `status != "checked"` guard above establishes them: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170),
+  now `.get`, because `run_drift_summary` returns the new `DriftSummaryPacket` TypedDict (mcp/src/agents_remember/memory_quality/check.py:216-257).
+  whose keys are `NotRequired` — the `status != "checked"` guard above establishes them (mcp/src/agents_remember/memory_quality/check.py:216-257),
   but the type cannot carry that narrowing across the branch. Emitted values are unchanged.
   Documented the guard and the branch, sharpened the `findingCount` invariant to name the
-  `int(result.get("findingCount", 0))` coercion: cit:([`run_memory_quality_check`], mcp/src/agents_remember/memory_quality/check.py:86-113), which depends on those keys actually being
+  `int(result.get("findingCount", 0))` coercion (mcp/src/agents_remember/memory_quality/check.py:112-143), which depends on those keys actually being
   present, and added an invariant that the packet shape is owned by
   `onboarding_drift_check/models.py`. Added one reference row and citations for the two existing
   drift rows; the Repo-Internal References header was two columns and is now three.

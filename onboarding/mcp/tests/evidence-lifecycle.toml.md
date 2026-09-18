@@ -74,6 +74,20 @@ three registry touch-points, and this leaf paid all three for each of its two mo
 `mcp/tests/test-evidence-lanes.toml` (`:76` and `:159`), its path in the relevant artifact's `consumers` list, and
 the catalog digest re-pin. Miss any one and collection fails for the whole catalog rather than for the module.
 
+exact consumers. The catalog currently contains **54 artifact records** and four executable replacement
+contracts; those declarations are not records that a test ran. 260915-CAPS-L9 adds **two consumer
+rows and no artifact row**: `mcp/tests/test_capsule_experiment_install.py` and
+`mcp/tests/test_install_runtime.py` join the `mcp/tests/fixtures/repository_profiles/node/package-lock.json`
+artifact's `consumers` list, because the new module reads the pinned application's committed
+lockfile through the installer it drives and `test_install_runtime.py` inherits the same reach
+through the module it imports. The artifact set has moved since (L14 and L17 land into the same
+file, and the merged pin is re-derived on the merged catalog — never restored from another
+leaf's figure).
+
+The count is re-derived from the file rather than carried: it stood at 43 when an earlier version of
+this paragraph was written, measures **50 at this leaf's synced base `23cc7a72`**, and measures 51 with
+this leaf's one added row.
+
 ## Code Commentary
 
 ### Logic
@@ -220,6 +234,29 @@ in `integration` (rows 140-141) — because the unit population sits exactly at 
 
 **One new contract and one new artifact, and the pin they moved.** The leaf registers `contract:knowledge-evidence-cases` with `mcp/tests/evidence_test_support.py` as its owner and evidence node `mcp/tests/test_knowledge_evidence_claims.py::test_a_claim_reads_back_with_every_field_including_an_empty_limitations`, and one `[[artifact]]` row for that support module — kind `shared-support`, authority `internal-canonical`, category `unit-regression`, fidelity `in-process`, cadence `affected`, `introduced_by = "260915-KS-L12"`, lifetime `permanent`, `consumer_scope = "exact"` with exactly its two consuming modules named. The catalog's own validator passes and the pinned identity is re-pinned to what this candidate measures: **14 contracts and 55 artifacts**. The permanence rationale is the fixture's own reason for existing — an evidence claim resolves four links across two subject kinds and two coverage kinds, so a per-module copy of that topology would let the two modules disagree about which identity is the facet revision and which is the invariant revision, which is exactly the property the refusal cases assert. **The registered count and digest are measurements of this candidate, not constants**: a later leaf that registers its own artifact moves both, and the module docstring's re-pin precedent is the record of how.
 
+**260915-CAPS-L15 added consumer rows only, and that is what moved the byte pin.** The new
+`mcp/tests/test_capsule_launch_wiring.py` reaches three governed artifacts through the shared test
+support it imports, so three `consumers` lists gained one entry each
+(`mcp/tests/evidence-lifecycle.toml:351`, `:624`, `:1257`) — the same shape 260915-CAPS-L7 used. **No
+artifact was registered, no row was removed, and no artifact's identity moved**: the populations are
+unchanged at **4 contracts / 51 artifacts**, while the byte pin in
+`mcp/tests/test_dependency_ownership_ast_helpers.py` moved `812211e9… → 3342a249…` because the file's
+bytes changed. A consumer row is a catalog change; the pin is re-derived from the file, never maintained
+by hand.
+
+**`consumers` is a derived test population, and the loader enforces it.** For `consumer_scope = "exact"`
+the loader re-derives the test modules that reach the artifact from the source graph and reports any
+difference from the declared list, so a row's `consumers` cell is a checkable claim rather than prose.
+The eve capsule row added by this leaf lists exactly the four test modules the loader derives for it —
+one of which reaches the support only **transitively** through another support module. That transitivity
+is why a row's `consumers` and its `permanence_rationale` can describe different things without either
+being wrong: the list is the mechanical test population, the rationale is the artifact's semantic role.
+
+Because the rows are derived from the graph, they are also what a base move invalidates. The merge that
+produced this leaf's base re-derived every catalog consumer proof it touched, and **verifying that
+re-derivation is a separate leaf's obligation**; a row that disagrees with the graph is a loader finding
+to be repaired by its owner, not a tolerated inconsistency.
+
 ### Conventions
 
 The catalog is a policy/configuration input and is not counted as an artifact inside itself.
@@ -234,6 +271,12 @@ supersede historical per-leaf consumer positions and population counts retained 
   question from whether the module exists and is imported.
 - Registry consistency and permanent-support rationale do not claim execution or certification.
 - Ledger retirement changes the closeout replacement node, not unrelated artifact ownership.
+- **A consumer row is a catalog change.** Adding an importer to a `consumers` list moves the file's
+  bytes and therefore the pin in `test_dependency_ownership_ast_helpers.py`, even when no artifact is
+  registered or removed. The pin is re-derived at the changing leaf's own tip.
+- **Consumer rows are accounting, never acceptance.** A row states that a test module reaches a
+  support artifact; it does not claim the artifact's fidelity, that a test ran, or that a boundary was
+  exercised in production.
 
 ### 260915-KS-L17 Three More Consumer Rows — No New Artifact, No New Contract
 
@@ -285,7 +328,7 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema version and the large-fixture discovery threshold remain explicit. | `schema_version`; `large_fixture_bytes` | mcp/tests/evidence-lifecycle.toml:1-2 |
+| The schema version and the large-fixture discovery threshold remain explicit. | `schema_version`; `large_fixture_bytes`; "ar-test-evidence-lifecycle/v3"; "large_fixture_bytes = 25000" | mcp/tests/evidence-lifecycle.toml:1-2 |
 | The four retained knowledge contracts and their evidence nodes. | "id = \"ar-durable-store/1.0-process-race-evidence\""; "id = \"conversation-control-public-route-contract\""; "id = \"next-supported-pi-rpc-activity-recording\""; "id = \"synthetic-test-evidence-candidate\"" | mcp/tests/evidence-lifecycle.toml:4-22 |
 |  Closeout fixture support names the retained code/memory transaction replacement. | "closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:264-281  |
 |  Closeout-input support declares the cleanup-guidance consumer. | "closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-308  |
@@ -302,7 +345,10 @@ Source declarations and test assertions are distinguished from execution and acc
 |  The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-73  |
 | The one-to-one card for the batch harness, which records what it builds through the real seam. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:1-40 |
 |The snapshot harness card, which records the registered owner and the exact consumer set.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:1118-1118; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
-| The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools" | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
+| The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools"; `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
+| None | "mcp/tests/closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:265-276 |
+| Closeout-input support names the same retained code/memory transaction replacement node. | "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-294 |
+| None | "mcp/tests/curator_coherence_test_support.py"; "mcp/tests/test_post_integration_cleanup_guidance.py" | mcp/tests/evidence-lifecycle.toml:330-373 |
 
 ## Cross-Repo References
 
@@ -325,10 +371,21 @@ The insertion shifted every line below it by one, so the contract and artifact r
 were re-derived from the current file: `id = "knowledge-snapshot-lifecycle-cases"` is at `:1112`,
 `contract:knowledge-diff-cases` at `:1274` and `contract:knowledge-read-scope-cases` at `:1294`.
 
+## 260915-CAPS-L9 Consumer Rows
+
+The two added rows state reach that is real rather than decorative: the experiment module installs
+and probes the pinned application by reading `package.json` and `package-lock.json`, and the
+pre-existing `test_install_runtime.py` inherits the reach because it imports the installer module
+that now does. Nothing was registered, no row was removed, and the populations are unchanged by
+this leaf apart from its own two consumers. The byte pin over this file is re-derived **at this
+leaf's tip** by the runbook recipe (`31c6983d…`, 4 contracts / 54 artifacts at the merged tip)
+and never restored from a historical figure.
+
 ## Update History
 - 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand while resolving the memory sync** — `id = \`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
 - 2026-09-18T05:00:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): added the **L17 registration rows and recorded the one thing a reader of this file most needs: its registrations are consumer-only.** Three `consumers` lists gained this leaf's two modules — `knowledge-facet-cases` (both), `knowledge-generation-cases` (both) and `knowledge-read-scope-cases` (the boundary module) — so **no artifact and no contract was added and the counts stay 13 contracts / 54 artifacts**. The section also records what a reader should measure rather than assume: this file's own sha256 on this candidate is `2505cc7dd6eb52f9ab96bb61b25bf11ed1de50db72371d058524290c419d9eeb`, which is exactly what `test_dependency_ownership_ast_helpers.LIFECYCLE_CATALOG_SHA256` carries — **the leaf's own report names a different, stale digest that appears nowhere in the tree**, so the file's bytes, not the report, are the authority. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.
+
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 4 generated projection bullet(s) by hand** — `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/closeout_input_test_support.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
 
@@ -342,6 +399,57 @@ were re-derived from the current file: `id = "knowledge-snapshot-lifecycle-cases
 
 - 2026-09-17T23:18:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): measured the catalog rather than carrying the L8 numbers — **54 artifacts and thirteen contracts** (`54 [[artifact]]`, `13 [[contract]]`), with the file's sha256 re-measured as `19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa` — against **53 / 12** at `KS-L10` (`9b057632…`) and **52 / 11** at `KS-L8`. It records the one contract/artifact pair this leaf added — `knowledge-facet-cases` for `mcp/tests/facet_test_support.py`, `unit-regression` / `in-process`, with exactly one declared consumer, `mcp/tests/test_knowledge_facets.py` — and the wording-only change to the existing `knowledge-generation-cases` row, whose source and permanence statements now describe every registered generation instead of generation 1 alone. The three-registry-touch-point rule the card states is paid in full for the new module (lane row, its path in the artifact's own consumers list, and the catalog re-pin). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **consumer rows only** — `mcp/tests/test_capsule_experiment_install.py`
+  and `mcp/tests/test_install_runtime.py` join the
+  `mcp/tests/fixtures/repository_profiles/node/package-lock.json` artifact's `consumers` list, because the
+  new module reads the pinned application's committed lockfile through the installer it drives and the
+  pre-existing `test_install_runtime.py` inherits the same reach through the module it imports. Nothing was
+  registered and no row was removed; the catalog's population delta on this leaf's own branch is zero rows
+  at the artifact level. The byte pin over this file is re-derived at this leaf's tip (`31c6983d…`,
+  4 contracts / 54 artifacts on the merged catalog) and never restored from a historical figure. The
+  section above records what the two rows mean rather than only that they exist. Verification metadata
+  remains closeout-owned: the candidate is uncommitted.
+- 2026-09-17T10:50+02:00 — 260915-CAPS-L15 curator: **consumer rows only, and the byte pin moved for
+  that alone.** This leaf's new acceptance module reaches three governed artifacts through the shared
+  test support it imports, so three `consumers` lists each gained one entry; nothing was registered,
+  removed or re-identified, and the populations stayed at 4 contracts / 51 artifacts while the pin went
+  `812211e9… → 3342a249…`. The body states that shape and adds two invariants — a consumer row is a
+  catalog change, and consumer rows are accounting rather than acceptance. Verification metadata moves
+  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
+  stamps the real code commit and no hash or fingerprint was invented here.
+
+
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **consumer rows only again, and the pin re-derived
+  against the MERGED catalog — which is this leaf's own obligation.** The leaf's new test module
+  `mcp/tests/test_eve_effort_runtime.py` starts the shipped runtime, so it consumes three
+  already-governed artifacts and each `consumers` list gained one entry:
+  `mcp/tests/fixtures/repository_profiles/node/package-lock.json` (L649),
+  `mcp/tests/eve_capsule_test_support.py` (L736) and `mcp/tests/test_eve_adapter_test_support.py`
+  (L1186). **Nothing was registered, no row was removed and no artifact's identity moved**, so the
+  populations stay at **4 contracts / 51 artifacts**. The pin is **`563582a0…`**, and it is neither
+  L15's `3342a249…` nor the `22ce7027…` this leaf measured before L15 landed: L15 landed first, so this
+  value covers the **merged** artifact set. Re-derived and independently recomputed this pass —
+  `sha256sum mcp/tests/evidence-lifecycle.toml` = `563582a0542f4a8721d1f717a48e92440c53fdf63a26b68fb43624c56ad90506`,
+  matching the constant at `mcp/tests/test_dependency_ownership_ast_helpers.py:46` (counts 51 / 4 at
+  `:44-:45`). The card's Purpose sentence attributing 51 to "this leaf's one added row" describes the
+  L15 pass and is left as history; **the value, not the sentence, is the claim**, and the rule that a
+  consumer row is a catalog change is what makes this re-derivation mandatory at each changing leaf.
+  **Checker result (post-sync, verbatim).** The refusal this entry first recorded was resolved
+  by the leaf's `worktree_sync`: the pair is now `leaf-candidate` / `acceptanceEligible:true` on
+  code base `d8ed8c21`, and the contract-scoped `memory_quality_check` ran against this
+  worktree. Headline: `ok:false`, `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding and one
+  `style.update_history.history_order` "not newest-first" finding, the latter caused by the
+  future-dated `10:50` stamp on the L15 entry below this one and not by this entry's content
+  (see the `serving/overview.md` entry for the same attribution). The pin above was additionally
+  recomputed directly and independently — it is `e3651d6f…` at **4 contracts / 54 artifacts**
+  after L14 landed its fifty-fourth artifact, not the `563582a0…` this leaf measured pre-sync at
+  51. Verification metadata moves to the synced base `d8ed8c21`; the candidate is deliberately
+  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint
+  was invented here.
+
 - 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 
 - 2026-09-17T01:31:11+00:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T01:02; `lastVerifiedCommitHash` `88784fb26aab810c8a284f1e73e6f9bd727a5963`; `lastVerifiedCommitDate` 2026-09-16T08:31:51+02:00.
@@ -349,6 +457,21 @@ were re-derived from the current file: `id = "knowledge-snapshot-lifecycle-cases
 - 2026-09-17T01:15:00+00:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **measured the catalog and recorded the one contract/artifact pair this leaf added, the one consumer list it extended, and the re-pin that came with them.** Counted on the frozen candidate: **52 artifact records and eleven contracts** (`52 [[artifact]]`, `11 [[contract]]`), with the file's sha256 re-measured as `4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747` — the exact value re-pinned at `mcp/tests/test_dependency_ownership_ast_helpers.py:46`. Against **51 / 10** after L7, **50 / 9** on the merged base `4eb2b199` and **48 / 9** at the pre-sync `KS-L6` base: four states of one merged line, recorded as such rather than as competing counts. The new rows are the contract `knowledge-diff-cases` (`:1198-1201`) and its artifact `mcp/tests/diff_scope_test_support.py` (`:1208-1225`, `integration` / `local-composition`), declared with an exact two-consumer list, and its evidence node is the node that owns the packet's first non-conforming example rather than the first node alphabetically. The **`read_scope_test_support.py` row gained two consumer entries** (`:1242-1243`) because the diff fixture builds on the read fixture — a consumer change, so that artifact's `introduced_by` stays `260915-KS-L7` — and the card keeps the three-touch-point obligation a new test module carries, now paid twice over (lane rows `:76` and `:159`). Every earlier count in this card is retained as the as-of record of the state it measured. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 
 - 2026-09-16T21:50:00+00:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **measured the catalog and recorded the one contract/artifact pair this leaf added, together with the three-way registry obligation that pair carries.** Counted on the frozen candidate: **51 artifact records and ten contracts** (`51 [[artifact]]`, `10 [[contract]]`), against **50 / 9** on the merged base `4eb2b199` and **48 / 9** at the pre-sync `KS-L6` base — three states of one merged line, recorded as such rather than as competing counts, because the two registry sidecars and several route overviews had carried the merged numbers as pending. The new rows are the contract `knowledge-read-scope-cases` (`:1198-1201`) and its artifact `mcp/tests/read_scope_test_support.py` (`:1203-1221`), with an exactly-declared three-consumer list that fix round 2 extended by one module after splitting the over-limit integration module — a **consumer change, not a new artifact**, so the counts stay ten and fifty-one. The card also states the obligation a new test module carries and this leaf paid in full: its lane row, its path in this artifact's `consumers`, and the catalog digest re-pin (`293a187f…` → `461121ca…`) in `mcp/tests/test_dependency_ownership_ast_helpers.py`; miss any one and the whole catalog refuses rather than the module failing. Every earlier count in this card is retained as the as-of record of the state it measured. Verification metadata remains empty until closeout stamps the code commit.
+
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **one artifact row added, one shared-support row
+  extended, population re-measured.** The leaf's new `mcp/tests/eve_capsule_test_support.py` is
+  registered as `shared-support` / `unit-regression`, owned by
+  `mcp/src/agents_remember/application/eve_capsule/__init__.py`, with `consumer_scope = "exact"` and
+  exactly the four consumers the loader derives for it; the two new L7 suites were added as exact
+  consumers of the existing `mcp/tests/test_eve_adapter.py`-adjacent shared-support row. The declared
+  population is corrected in the Purpose paragraph: **51 artifacts** at the candidate, of which 50 are
+  the synced base `23cc7a72` and one is this leaf's — the previous 43 was stale and is now stated with
+  the measurement it came from rather than silently replaced. A new paragraph records that `consumers`
+  is a graph-derived population the loader enforces, which is why a transitively-derived consumer can
+  appear in a list whose rationale describes a different role, and that verifying the merge's
+  re-derivation of every touched consumer proof belongs to a separate leaf. Verification metadata moves
+  to the leaf's synced base `23cc7a72`; the candidate is deliberately uncommitted, so the governed
+  closeout stamps the real code commit and no hash or fingerprint was invented here.
 
 - 2026-09-16T15:45:00+00:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): measured the catalog rather than carrying the L5 numbers — **48 artifacts and 9 contracts**, unchanged by this leaf — and recorded what this leaf actually did to it: **no new contract and no new artifact**, only two new consumer declarations across three existing lists (both portable modules in the branching-fixture row and in the `common-base-merge-cases` row, and the **boundary module only** in the `knowledge-snapshot-lifecycle-cases` row, because the roundtrip module does not import that harness). The card states why that is a contract obligation rather than bookkeeping: the validator derives each artifact's real test importers and refuses a declared set that differs, so leaving them out would refuse the catalog for any input. It also records that the three insertions moved the knowledge blocks — now `:1031-1059`, `:1061-1084`, `:1086-1108`, `:1110-1133` and `:1135-1159` — and re-derived the two long-stale block ranges this card still carried from 2026-09-13 (`closeout_input_test_support.py` `282-341` → `282-308`, `curator_coherence_test_support.py` `342-401` → `329-390`, both re-measured against the working file rather than shifted). Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 

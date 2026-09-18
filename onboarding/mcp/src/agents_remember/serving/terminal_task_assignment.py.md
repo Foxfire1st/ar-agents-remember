@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_task_assignment.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T23:19+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5`|
+| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

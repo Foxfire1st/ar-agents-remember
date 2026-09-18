@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -295,23 +295,26 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:371-422 |
+| Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. | `worktree_integrate_tool`; `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:371-422; mcp/src/agents_remember/application/worktree_tools.py:425-463 |
 | Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:277-300 |
-| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:319-336 |
+| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool`; `_configured_control_refusal` | mcp/src/agents_remember/application/worktree_tools.py:319-336; mcp/src/agents_remember/application/worktree_tools.py:588-612 |
 | The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:425-463 |
-| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool` | mcp/src/agents_remember/application/worktree_tools.py:466-495 |
-| Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
+| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool`; `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:466-495; mcp/src/agents_remember/application/worktree_tools.py:770-778 |
+| Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation`; `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:108-115; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | Worktree service behavior is owned by the worktree manager and modules. | `agents_remember` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:34 |
-| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:233-287 |
-| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `_worktree_closeout` | mcp/src/agents_remember/application/worktree_tools.py:914-956; mcp/src/agents_remember/worktrees/route_review.py:549 |
-| Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-21 |
+| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`; `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:233-287; mcp/src/agents_remember/models/worktree.py:459-463 |
+| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `_worktree_closeout`; `route_review_refusal_projection` | mcp/src/agents_remember/application/worktree_tools.py:914-956; mcp/src/agents_remember/worktrees/route_review.py:183-250; mcp/src/agents_remember/worktrees/route_review.py:549 |
+| Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-28 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-200; mcp/src/agents_remember/kernel/primitives/runtime_config.py:103-200 |
-| `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-19 |
-| Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority` | mcp/src/agents_remember/serving/retire_policy.py:36-85 |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | `worktree_start_tool`; `reload_provider_authority`; `provider_setup_config` | mcp/src/agents_remember/application/worktree_tools.py:103-200; mcp/src/agents_remember/kernel/primitives/runtime_config.py:103-200; mcp/src/agents_remember/kernel/primitives/runtime_config.py:193-218 |
+| `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
+| Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority`; `RetirePolicyError` | mcp/src/agents_remember/serving/retire_policy.py:21-22; mcp/src/agents_remember/serving/retire_policy.py:36-85 |
 | `log_landed_event`, called once per landed entry after a successful auto-land. | `log_landed_event` | mcp/src/agents_remember/serving/seat_events.py:56-80 |
-| `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:65-68 |
-| `RetirementSettings`/`config.retirement` gating the two auto-land hooks. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121 |
+| `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:65-431 |
+| `RetirementSettings`/`config.retirement` gating the two auto-land hooks. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121; mcp/src/agents_remember/kernel/primitives/runtime_config.py:114-125 |
+| None | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:277-300 |
+| None | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
+| Worktree service behavior is owned by the worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
 
 ## Series-Contract Notes
 
@@ -354,6 +357,7 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The facade's start entry point consumes the extracted task-start request types at this boundary. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-200 |
+| None | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-200 |
 
 ## 260821-CLIVE Final Public Worktree Boundary
 
@@ -386,6 +390,7 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/worktrees/route_review.py:550 to mcp/src/agents_remember/worktrees/route_review.py:549, the range the cited construct now occupies
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Aligned closeout, control, integration, checkpoint, and PR-recording adapters with code/memory outputs only. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_blocker_reasons.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -134,7 +134,7 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public abandon preview is non-mutating and does not invent a removal failure. | "would-abandon" | mcp/tests/test_terminal_blocker_reasons.py:116-170 |
+| Public abandon preview is non-mutating and does not invent a removal failure. | "would-abandon"; `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:116-170 |
 | The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:116-170 |
 | The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry. | `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:173-229 |
 | The exact L6 input — `{"removed": False}` with no reason — is answered in operator language instead of becoming a null reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` | mcp/tests/test_terminal_blocker_reasons.py:232-252 |
@@ -150,7 +150,7 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 | The producer whose reason the refusal carries, including the post-reclaim branch this module forces. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
 | The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:54-96; mcp/src/agents_remember/application/worktree_services.py:203-211 |
 | The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:855-886 |
-| The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:48-53; mcp/tests/test_transaction_only_worktree_delivery.py:59-60; mcp/tests/integration_branch_authority_test_support.py:129-288 |
+| The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:129-296; mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/test_transaction_only_worktree_delivery.py:59-83 |
 | The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:128-198 |
 | The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. | "REPOSITORY_TEST_INPUT_CONSUMERS: dict[Path, frozenset[Path]]" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-184 |
 
@@ -162,9 +162,12 @@ routes run at all. No production cross-repository authority is claimed by this f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The landing world each whole-tool case builds is a real temporary repository pair. | `_authority_fixture`; `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/integration_branch_authority_test_support.py:129-288 |
+| The landing world each whole-tool case builds is a real temporary repository pair. | `_authority_fixture`; `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:129-296; mcp/tests/integration_branch_authority_test_support.py:48-91 |
 
 ## Update History
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `lifecycle_finalize_task_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:855-886. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `_authority_fixture`; `_closed_external_leaf_worktrees` repointed to mcp/tests/integration_branch_authority_test_support.py:129-288; mcp/tests/integration_branch_authority_test_support.py:48-91. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T06:49:47+00:00: Generated citation repair: `lifecycle_finalize_task_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:855-886. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
@@ -183,6 +186,8 @@ routes run at all. No production cross-repository authority is claimed by this f
 
 
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: The existing first-call finalization case also calls public abandon preview before integration. It verifies `would-abandon`, an empty blocker list and an intact worktree, reproducing the omitted preview flag without adding a collected test case.
+
+- 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: The existing first-call finalization case also calls public abandon preview before integration. It verifies `would-abandon`, an empty blocker list and an intact worktree, reproducing the omitted preview flag without adding a collected test case.
 
 
 
@@ -216,4 +221,3 @@ routes run at all. No production cross-repository authority is claimed by this f
   all ownership accounting only, not execution or acceptance evidence. The metadata table records
   the branch base this card was derived against; no commit contains this file yet, closeout owns the
   real stamp, and no acceptance claim is made.
-

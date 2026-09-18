@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -69,8 +69,8 @@ The following current source owns the changed behavior; no external domain sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Accepted closeout message input contains only code and memory. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:46-52 |
-| The effective two-leg input renders memory attribution through the kernel. | `memory_content_message` | mcp/src/agents_remember/models/closeout/input.py:127-165 |
+| Accepted closeout message input contains only code and memory. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:46-52; mcp/src/agents_remember/models/closeout/input.py:47-53 |
+| The effective two-leg input renders memory attribution through the kernel. | `memory_content_message`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:127-165; mcp/src/agents_remember/models/closeout/input.py:128-166 |
 
 ## Update History
 

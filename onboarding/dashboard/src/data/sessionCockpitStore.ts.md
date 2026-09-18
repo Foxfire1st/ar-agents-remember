@@ -179,4 +179,3 @@ leaf base; closeout owns commit stamping.
   queue with alt+↑ supersession, poll-health beats with the 3-miss stale cutoff, the persisted
   orchestration-tree toggle, one-way view mirrors, and the refcounted catalog mirror.
   Verification metadata pinned to the leaf base until closeout stamps the L2 code commit.
-

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_atomic_master_review_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T22:11+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2`|
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

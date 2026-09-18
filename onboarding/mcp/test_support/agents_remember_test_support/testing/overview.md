@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098`|
+| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -74,8 +74,79 @@ It must be rebuilt from current source, never copied from a retired route census
 | Certifying setup admits Dagger before candidate preparation. | `prepare_certifying_pytest_bootstrap` | mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:27-39 |
 | Retry execution retains exact explicit affected modules. | `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:63-79 |
 
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+This route gained `curation_doctrine.py`, the retired-sentence registry and required-rule table the
+shipped-corpus guard reads. CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`. The **combined** `checklistStatus` is rewritten to
+`coherence-required` **only when the coherence record is then missing or stale** — that is the coherence
+gate, cleared by publishing the `curator_coherence` authority with `prepare` → `publish` → `validate`.
+On the success path, where the record is already current, the combined field is **not rewritten** at all
+and keeps its incoming `ready-for-closeout` value, with `closeoutReady=true`; `ready-for-closeout` is
+therefore observable in the combined field once the whole pipeline is already complete. **Field-name
+correction (`D35`, made by 260915-CAPS-L10):** this sentence previously named
+`checklistStatus=ready-for-closeout` as the loop's termination condition; read the raw field to end the
+loop and the combined field to decide the coherence gate
+(`application/memory_quality/controller.py:664`, `:671`, `:678`, `:685-687`).
+
+**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** The `D35` correction above originally rested
+on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute claim is
+**literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path model now
+stated here. The field-name correction it supported still holds; only its stated warrant was wrong.
+**Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
+**onboarding cards** that carried the wrong form, while `CAPS-R19` corrected the **shipped sources** — the
+five loop-gate carriers, their nine generated copies, and the guard registry's own docstring — and brought
+`docs/reference/mcp-tools.md` into both the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`.
+
+**And on this route the wrong field name was not only in prose — it was pinned by the guard, and that
+obstacle has since been repaired.** This route's `curation_doctrine.py` owns
+`CURATION_COMPLETENESS_STATEMENTS`, the required-form table the shipped-corpus guard reads, and at the
+base its `skills/l-01-agent-lifecycles/roles/curator.md` row **required** the fragments
+`"curatorActionableCount=0"` and `"checklistStatus=ready-for-closeout"`.
+`missing_completeness_statements` and `test_role_instruction_corpus.py::CurationIsCompleteOnEveryLeafTests::
+test_every_canonical_source_states_the_complete_curation_rule` match those fragments on
+`normalize_statement`'s reading, which strips emphasis and collapses whitespace but does **not** change
+case. So a repair that rewrites the sentence to `qualityChecklistStatus=ready-for-closeout` removes the
+lowercase-`c` fragment and turns the guard **red**. `D35`'s repair therefore had to move the declared
+fragment with the sentence, in the canonical source and in this table together, or the guard would fail
+on the repair itself.
+
+**Repaired by `CAPS-R19` (leaf `260915-CAPS-L19`), verified in the code worktree at this leaf's tip.**
+`260915-CAPS-L10` recorded this obstacle but did not repair it, because the table is code and that seat
+writes onboarding only. `CAPS-R19` is the leaf that moved the fragment: the retired pairing is no longer
+a *required* fragment anywhere in the table — it became the guard's own retired-form constant
+`RETIRED_LOOP_GATE_FIELD_PAIRING` (`curation_doctrine.py:222`), paired with the positive
+`LOOP_GATE_CORRECTED_FIELDS = ("qualityChecklistStatus", "closeoutReady")` (`:229`) now attached to the
+`roles/curator.md`, `operations/curation.md` and `templates/curator-brief.md` rows. `LOOP_GATE_DOCUMENTS` became a **path → required-field-names
+mapping** (`:237-240`, covering `docs/reference/drift-c02.md` and `docs/reference/mcp-tools.md`), and the
+new reader `missing_loop_gate_statements` (`:382`) asserts the positive half inside the **existing**
+census case `test_the_census_ranges_over_the_canonical_tree_and_every_generated_copy`
+(`test_role_instruction_corpus.py:685`) — no case was added, so the unit case delta is 0. Re-inserting the
+wrong pairing now reds the suite from three axes, measured by seeded experiment rather than asserted.
+
+**What the guard still does not do, stated rather than implied:** it is a **fragment matcher** with a
+declared blind spot — a wrong gate restated in fresh vocabulary that never writes the exact pairing is
+invisible to it — and it does not read the running tool. Coverage of this leaf's subject is therefore
+real but bounded, and no card may claim the guard catches every restatement.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
+
 ## Update History
 
+- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Also corrected the card's guard-obstacle paragraph, which L10 recorded as "not repaired": `CAPS-R19` **did** repair it — the retired pairing is no longer a required fragment, it is the guard's `RETIRED_LOOP_GATE_FIELD_PAIRING` (`curation_doctrine.py:222`) beside the positive `LOOP_GATE_CORRECTED_FIELDS` (`:229`) and the `LOOP_GATE_DOCUMENTS` mapping (`:237-240`), asserted by `missing_loop_gate_statements` (`:382`) inside the existing census case (`test_role_instruction_corpus.py:685`).
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) and recorded the obstacle its repair will hit on this route.** The `CAPS-L18` section now names the **raw** `qualityChecklistStatus` as the repair loop's gate and the combined `checklistStatus=coherence-required` as the coherence gate (`application/memory_quality/controller.py:664,671,678,687`). Added the source-backed statement that this route's `curation_doctrine.py::CURATION_COMPLETENESS_STATEMENTS` **requires** the fragment `"checklistStatus=ready-for-closeout"` for `roles/curator.md`, and that `normalize_statement` is case-preserving, so rewriting the sentence to `qualityChecklistStatus=…` would turn `test_every_canonical_source_states_the_complete_curation_rule` red unless the declared fragment moves with it. Recorded, not repaired — the table is code and this seat writes onboarding only.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/test_support/agents_remember_test_support/testing`, so no route/member/prose/invariant change is required. route-member-count=20; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
 - 2026-08-28T10:03:40+02:00 — Added the complete observed failure-family ownership split and the

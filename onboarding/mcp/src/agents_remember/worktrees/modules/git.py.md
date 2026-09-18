@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,11 +86,11 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ref/repository identity and transport-safe errors have shared implementations. | `_transport_safe_git_diagnostic` | mcp/src/agents_remember/worktrees/modules/git.py:20-23 |
-| Candidate trees use private indices and exact derived-path exclusions. | `_excluded_pathspec` | mcp/src/agents_remember/worktrees/modules/git.py:34-35 |
-| Filtered status and staging/commit APIs share the exclusion contract. | `_status_args` | mcp/src/agents_remember/worktrees/modules/git.py:112-116 |
-| The exact cache pathspec is defined beside the consumer filename. | `LEDGER_RELATIVE_PATH` | mcp/src/agents_remember/kernel/memory_ledger.py:24 |
-| Changed-file reporting preserves its distinct deletion/rename/count semantics. | `committed_changed_paths` | mcp/src/agents_remember/worktrees/modules/git.py:282-293 |
+| Ref/repository identity and transport-safe errors have shared implementations. | `_transport_safe_git_diagnostic`; `require_git`; `local_branch_ref`; `repository_identity` | mcp/src/agents_remember/worktrees/modules/git.py:20-31; mcp/src/agents_remember/worktrees/modules/git.py:79-85; mcp/src/agents_remember/worktrees/modules/git.py:100-109 |
+| Candidate trees use private indices and exact derived-path exclusions. | `_excluded_pathspec`; `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:38-68 |
+| Filtered status and staging/commit APIs share the exclusion contract. | `_status_args`; `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/git.py:112-116; mcp/src/agents_remember/worktrees/modules/git.py:221-236 |
+| The exact cache pathspec is defined beside the consumer filename. | `LEDGER_RELATIVE_PATH`; `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:24-27 |
+| Changed-file reporting preserves its distinct deletion/rename/count semantics. | `committed_changed_paths`; `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:309-348 |
 
 ## Cross-Repo References
 
@@ -102,6 +102,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Documented explicit cache exclusions in status, candidate capture, staging, ordinary commits, and verified-index commits; preserved guarded-runner, real-index isolation, hook separation, and changed-path semantics. Working candidate verified by source inspection; commit metadata records real committed history only.
 

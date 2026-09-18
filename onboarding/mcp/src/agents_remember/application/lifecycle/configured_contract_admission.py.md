@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T05:55+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

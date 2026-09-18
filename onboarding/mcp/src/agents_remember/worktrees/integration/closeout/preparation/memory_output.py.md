@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,11 +58,11 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bundle has code and memory outputs only. | `PreparedMemoryOutputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:44-48 |
+| The bundle has code and memory outputs only. | `PreparedMemoryOutputs`; "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:44-48; mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:202-202 |
 | Created memory uses the one renderer; no-write intent has no message or private root. | `_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:59-122 |
-| Memory attribution is appended to the caller's body by one shared renderer. | `render_memory_content_message` | mcp/src/agents_remember/kernel/memory_attribution.py:67-92 |
-| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | `reobserve` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:159-198 |
-| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | `prepare_memory_outputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:201-236 |
+| Memory attribution is appended to the caller's body by one shared renderer. | `render_memory_content_message`; `MemoryAttributionError` | mcp/src/agents_remember/kernel/memory_attribution.py:67-92; mcp/src/agents_remember/kernel/memory_attribution.py:95-96 |
+| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | `reobserve`; `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:159-198 |
+| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | `prepare_memory_outputs`; `actual_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:201-236 |
 | The stored normalized message becomes the private commit message. | `private_git_binding` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:49-66 |
 | The committed census checks that every listed producer reaches the shared renderer. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:119-137 |
 
@@ -75,6 +75,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 | No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Retired ledger-output preparation and documented two-output selection, real trailer attribution, raw/certified tree separation, disabled-write no-op reuse, and exact cache-excluding staging. Source SHA-256 `2ee68ae731e22bddf20478e1181247c758e145c097ebf86fa7aca1386711f886`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 

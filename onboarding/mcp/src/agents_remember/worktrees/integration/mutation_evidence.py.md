@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,10 +83,10 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Only enabled code/memory legs receive mutation cells. | `initial_closeout_mutation_evidence` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:60-81 |
-| Intent, expected-output binding, and commit proof retain their order. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:84-105 |
+| Intent, expected-output binding, and commit proof retain their order. | `begin_git_mutation`; `bind_expected_output_tree` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:84-105; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:246-267 |
 | Interrupted attempts are reconciled from actual Git evidence. | `reconcile_closeout_mutations` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:304-360 |
-| Cache-excluded snapshots retain actual object/ref identity. | `snapshot_is_clean_at_head` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:42-57 |
-| The snapshot model declares the separate content comparison tree. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
+| Cache-excluded snapshots retain actual object/ref identity. | `snapshot_is_clean_at_head`; `ephemeral_git_mutation_snapshot` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:42-57; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:410-473 |
+| The snapshot model declares the separate content comparison tree. | `GitMutationSnapshot`; `contentHeadTree` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
 
 ## Cross-Repo References
 
@@ -98,6 +98,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Reconciled the evidence owner with code/memory-only legs, contentHeadTree and cache-excluded memory observations; removed stale ledger-intent exceptions while preserving actual ref/tree/parent proof and ambiguity handling. Working candidate verified by source inspection; commit metadata records real committed history only.
 

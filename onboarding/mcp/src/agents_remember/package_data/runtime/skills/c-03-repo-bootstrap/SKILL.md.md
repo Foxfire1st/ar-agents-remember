@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 
 ## Purpose
 
@@ -21,7 +21,7 @@ This skill describes repository onboarding bootstrap. It defines a minimum root-
 
 ### Conventions
 
-Internal bootstrap uses `ar-memory/`; external-memory bootstrap uses the selected per-repo memory repo under `ar-coordination/memory-repos/ar-<repo-name>/`, and the skill describes those repositories as external-memory repositories. Durable route-local overview files belong in the mirrored onboarding hierarchy directly under the resolved onboarding root, while `bootstrap/` artifacts are promotion, review, and handoff artifacts. Generated `overview.index.json` files live beside overviews and include coverage plus `hotPath` fields.
+Bootstrap no longer branches on an internal bootstrap mode: the skill resolves its memory root through `c-08-ar-coordination-context-resolver` and works under the resolved `onboarding_root`, which is the selected per-repo memory repo at `ar-coordination/memory-repos/ar-<repo-name>/`. The repo-local `ar-memory/` root was **removed from the product** (`CAPS-R12@v1`) and the generated skill text no longer names it; the skill's own `topology` input is an optional pass-through hint, not a mode selector. Durable route-local overview files belong in the mirrored onboarding hierarchy directly under the resolved onboarding root, while `bootstrap/` artifacts are promotion, review, and handoff artifacts. Generated `overview.index.json` files live beside overviews and include coverage plus `hotPath` fields.
 
 ### Invariants And Boundaries
 
@@ -64,6 +64,9 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The Logic section claimed "Internal bootstrap uses `ar-memory/`; external-memory bootstrap uses the selected per-repo memory repo", a branch the corrected generated skill no longer contains — it resolves `onboarding_root` through `c-08-ar-coordination-context-resolver` and takes `topology` only as an optional pass-through hint. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 - 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 14 citation findings; scoped check passed.
 
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the trigger table row now names l-01-agent-lifecycles. Verification metadata pinned until closeout stamps the L9 commit.

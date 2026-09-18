@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,9 +86,9 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Policy, normalized request, exact code proof, and read-only preview. | `DirectLandingRequest` | mcp/src/agents_remember/worktrees/direct_landing.py:86-100 |
+| Policy, normalized request, exact code proof, and read-only preview. | `DirectLandingRequest`; `require_direct_landing_enabled`; `_verify_code_commit`; `_direct_landing_preview` | mcp/src/agents_remember/worktrees/direct_landing.py:86-136; mcp/src/agents_remember/worktrees/direct_landing.py:196-254; mcp/src/agents_remember/worktrees/direct_landing.py:287-307 |
 | Memory admission captures the prepared content snapshot and typed candidate. | `_direct_memory_admission_snapshot` | mcp/src/agents_remember/worktrees/direct_landing.py:310-353 |
-| Generation creation and action-required public projection. | `_create_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:460-494 |
+| Generation creation and action-required public projection. | `_create_direct_landing`; `_direct_landing_observation` | mcp/src/agents_remember/worktrees/direct_landing.py:460-494; mcp/src/agents_remember/worktrees/direct_landing.py:497-514 |
 | The application owns configured admission and execution serialization. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:55-104 |
 | The focused integration scenario verifies cache-independent publication and recovery. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
 
@@ -103,6 +103,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51 UTC — Replaced the memory-plus-ledger admission narrative with exact code/content evidence and one memory publication; recorded reversible cache preparation, typed input retirement, retained request-owned generation admission, and the nearer worktrees overview. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
 

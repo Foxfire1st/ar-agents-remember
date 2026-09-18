@@ -6,14 +6,13 @@
 | path | mcp/src/agents_remember/serving/terminal_catalog_lock.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
 
-Governing overview: mcp/src/agents_remember/serving/overview.md
-
+[overview.md](overview.md)
 ## Purpose
 
 Cross-process catalog writers are fully serialized across one read, sweep body, and one write; list/get are lock-free atomic readers.
@@ -43,4 +42,3 @@ No meaningful cross-repo references.
 ## Update History
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-

@@ -6,8 +6,8 @@
 | path                   | `dashboard/e2e-production/cockpit.production.spec.ts`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T10:45+02:00                                 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`             |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`             |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -159,7 +159,7 @@ server routes those mirror — so both are cited, along with the config that dec
 | `TerminalCatalogRow` — `harness`, `lifecycleId`, `leafKey` and `seatRole` are optional, which is why the row's conditional spreads stay valid. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-93 |
 | `testDir: "./e2e-production"` and the `npm run preview` web server on `127.0.0.1:4173` — the built bundle, no daemon. | "./e2e-production" | dashboard/playwright.production.config.ts:7-7 |
 | `dashboard.fingerprint` is gitignored, so the file this spec reads at import does not exist in a working tree. | "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:27-27 |
-| `source_fingerprint` — the release-path writer of that file, byte-for-byte the algorithm the bundle carries. | `FINGERPRINT_FILE`; `source_fingerprint` | scripts/sync-dashboard.py:45-45; scripts/sync-dashboard.py:91-104 |
+| `source_fingerprint` — the release-path writer of that file, byte-for-byte the algorithm the bundle carries. | `FINGERPRINT_FILE`; `source_fingerprint` | scripts/sync-dashboard.py:45-45; scripts/sync-dashboard.py:91-104; scripts/sync-dashboard.py:53-53 |
 
 ## Cross-Repo References
 

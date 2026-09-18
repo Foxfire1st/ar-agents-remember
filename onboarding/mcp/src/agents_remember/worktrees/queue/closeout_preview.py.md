@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_preview.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,14 +55,14 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `proposed_closeout_commits` separates code/memory Git intent from informational ledger_cache output. | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-14 |
-| `closeout_summary` describes named-ref series recording or leaf content and cache refresh. | `closeout_summary` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:70-71 |
-| `closeout_order` orders real Git outputs, cache refresh, and contract publication without a ledger commit. | `closeout_order` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:84-85 |
+| `proposed_closeout_commits` separates code/memory Git intent from informational ledger_cache output. | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-67 |
+| `closeout_summary` describes named-ref series recording or leaf content and cache refresh. | `closeout_summary` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:70-81 |
+| `closeout_order` orders real Git outputs, cache refresh, and contract publication without a ledger commit. | `closeout_order` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:84-102 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Proposed commit payloads separate leaf mutation from exact series recording. (`proposed_closeout_commits`) | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-14 |
-| Summary and ordering publish the same lifecycle altitude. (`closeout_summary`; `closeout_order`) | `closeout_summary` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:70-71 |
+| Proposed commit payloads separate leaf mutation from exact series recording. (`proposed_closeout_commits`) | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-67 |
+| Summary and ordering publish the same lifecycle altitude. (`closeout_summary`; `closeout_order`) | `closeout_summary`; `closeout_order` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:70-71; mcp/src/agents_remember/worktrees/queue/closeout_preview.py:84-102 |
 
 ## Docs References
 

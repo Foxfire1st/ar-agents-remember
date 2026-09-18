@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,14 +54,14 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `raise_live_evidence_decision` dispatches genuine publication and Git contradictions without inspecting ledger bytes. | `raise_live_evidence_decision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:32-37 |
-| `immutable_recovery_refusal` turns immutable-evidence contradictions into bounded recovery refusals. | `immutable_recovery_refusal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:75-79 |
+| `raise_live_evidence_decision` dispatches genuine publication and Git contradictions without inspecting ledger bytes. | `raise_live_evidence_decision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:32-72 |
+| `immutable_recovery_refusal` turns immutable-evidence contradictions into bounded recovery refusals. | `immutable_recovery_refusal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:75-116 |
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | `raise_live_evidence_decision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:32-37 |
+| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | `raise_live_evidence_decision`; `immutable_recovery_refusal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:32-37; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:75-116 |
 
 ## Cross-Repo References
 

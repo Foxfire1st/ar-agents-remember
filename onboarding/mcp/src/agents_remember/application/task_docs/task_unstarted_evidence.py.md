@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash |  `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate |  2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,8 +62,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract census observes actual code/memory and integrated output evidence, with no cache requirement. | `_contract_fact` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297 |
-| The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard. | `_contract_fact` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297 |
+| The contract census observes actual code/memory and integrated output evidence, with no cache requirement. | `_contract_fact`; `_EvidenceCensus` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:94-98; mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297 |
+| The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard. | `_contract_fact`; `_operation_facts` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297; mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:320-398 |
 
 ## Cross-Repo References
 

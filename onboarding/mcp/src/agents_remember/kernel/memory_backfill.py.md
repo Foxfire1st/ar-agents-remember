@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/memory_backfill.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T03:43 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -94,12 +94,12 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed request and plan reporting distinguish work, losses, and an empty plan. | `MemoryBackfillRequest` | mcp/src/agents_remember/kernel/memory_backfill.py:227-242 |
-| Selection preserves available memory attributions and reports unrepresentable claims. | `_choose_trailers` | mcp/src/agents_remember/kernel/memory_backfill.py:327-387 |
-| Apply orders digest/rescue/rewrite/publication and frames every target update correctly. | `apply_memory_backfill` | mcp/src/agents_remember/kernel/memory_backfill.py:625-661 |
-| Historical table reads/carry remain explicit migration helpers. | `ledger_rows_at` | mcp/src/agents_remember/kernel/memory_backfill.py:901-924 |
-| The apply regression now moves two named refs and verifies the rescue tip. | `test_the_rescue_ref_holds_the_original_tip_before_the_rewrite` | mcp/tests/test_memory_backfill.py:579-596 |
-| Native topological traversal visits parents before their children during replay. | `_rewrite_history` | mcp/src/agents_remember/kernel/memory_backfill.py:755-781 |
+| Typed request and plan reporting distinguish work, losses, and an empty plan. | `MemoryBackfillRequest`; "class MemoryBackfillRequest"; "class MemoryBackfillPlan" | mcp/src/agents_remember/kernel/memory_backfill.py:144-224; mcp/src/agents_remember/kernel/memory_backfill.py:227-242 |
+| Selection preserves available memory attributions and reports unrepresentable claims. | `_choose_trailers`; `SKIP_MEMORY_COMMIT_CLAIMED` | mcp/src/agents_remember/kernel/memory_backfill.py:84-84; mcp/src/agents_remember/kernel/memory_backfill.py:327-387 |
+| Apply orders digest/rescue/rewrite/publication and frames every target update correctly. | `apply_memory_backfill`; "def apply_memory_backfill"; "def _move_targets" | mcp/src/agents_remember/kernel/memory_backfill.py:625-661; mcp/src/agents_remember/kernel/memory_backfill.py:837-879 |
+| Historical table reads/carry remain explicit migration helpers. | `ledger_rows_at`; `carry_ledger_cells`; "def ledger_rows_at" | mcp/src/agents_remember/kernel/memory_backfill.py:901-924; mcp/src/agents_remember/kernel/memory_backfill.py:927-968 |
+| The apply regression now moves two named refs and verifies the rescue tip. | `test_the_rescue_ref_holds_the_original_tip_before_the_rewrite`; `test_the_rescue_ref_may_not_be_one_of_the_refs_the_run_moves` | mcp/tests/test_memory_backfill.py:579-596; mcp/tests/test_memory_backfill.py:624-634 |
+| Native topological traversal visits parents before their children during replay. | `_rewrite_history`; "def _rewrite_history"; "def _walk" | mcp/src/agents_remember/kernel/memory_backfill.py:755-781; mcp/src/agents_remember/kernel/memory_backfill.py:784-791 |
 
 ## Cross-Repo References
 
@@ -111,9 +111,11 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
   `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the multi-branch migration is fixed.**

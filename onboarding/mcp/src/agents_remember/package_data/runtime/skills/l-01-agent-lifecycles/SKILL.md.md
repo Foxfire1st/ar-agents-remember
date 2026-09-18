@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -16,55 +16,84 @@
 
 ## Purpose
 
-Packaged runtime copy of the unified lifecycle router and shared frame. The canonical source at
-`skills/l-01-agent-lifecycles/SKILL.md` owns doctrine; `scripts/sync-skills.py` replaces and checks
-this artifact byte-for-byte for installed runtimes.
+Packaged runtime copy of the consolidated lifecycle **router**. The canonical source at
+`skills/l-01-agent-lifecycles/SKILL.md` owns the routing contract; `scripts/sync-skills.py` replaces
+and checks this artifact byte-for-byte for installed runtimes.
+
+The artifact's own boundary is load-bearing: **this file routes and does not carry doctrine.** It
+holds the three routing conditions, the ten-role registry, the composition map, and the diagnostic
+pointer sections; every doctrine rule now lives in exactly one other file — `core/` (shared, authored
+once), `roles/<role>.md` (one self-contained lifecycle per seat), `operations/` (the nine
+operation-scoped procedures), `composition-manifest.json` (routing metadata, no prose), and
+`reference/` (rationale, provenance, superseded rulings). At 180 lines it is the thin router the
+consolidation requires, down from the 620-line spine that used to double as the doctrine home.
 
 ## Code Commentary
 
 ### Logic
 
-The synchronized M40@v2/M44@v2 doctrine distinguishes developer-approved semantic revisions,
-formal review-handoff attempts, and internal protocol events. Attempts are lightweight,
-requirement-specific records linked to content-addressed expanded evidence; summaries exclude
-protocol events and remain rebuildable/non-gating.
+The router selects exactly one of three conditions, in order: plane-injected `AR_SPAWN_ROLE` →
+`roles/<value>.md`; a fresh session whose first message is a `templates/*-brief.md`-shaped role brief
+→ that role's lifecycle; otherwise the developer-facing **ambient launcher**, which is routing
+condition 3 and deliberately not a role (its own obligations are `core/launcher.md`). The registry
+row this leaf added is `bootstrap` — the new user's first-hour seat for one repository, reachable
+before any task document exists and stating so when it is not reachable; it is a **free agent**, so
+it is a registry member reached through condition 1, not a fourth condition.
 
-The router selects exactly one role from plane-injected `AR_SPAWN_ROLE`, a fresh role brief, or the
-unbound free-chat launcher. For ordinary role-shaped work, free chat compiles the canonical
-architect brief and calls `dispatch_agent` once on the sprint document; an explicit
-developer-declared task-seat takeover targets the named role at its canonical altitude. A hosted spawning role uses the same public request
-under plane identity and direct-child scope. Caller kind is process-derived and absent from the
-request. The control plane creates the child, proves readiness, persists the exact initial brief,
-and returns only structural delivery state. A stale, invalid, mismatched, unbound, or unauthorized
-plane identity never falls back to ambient. Models never handle occupant, lifecycle, readiness,
-inbox-address, or attachment identifiers. Ordered source-lineage sync remains resumable through
-advertised conflict continuation, and role-table dispatch/tool rows are structural descriptions,
-not settings keys. An explicit takeover converges idempotently on the canonical seat: a viable
-occupant or durable queued brief is reused, and the launcher never manually replaces an incumbent.
+For ordinary role-shaped work the launcher compiles `templates/architect-brief.md` from current
+durable sprint truth and calls `dispatch_agent` once on the canonical sprint document; an explicit
+developer-declared task-seat takeover targets the named role at its canonical altitude instead. The
+one-call contract, the two dispatcher caller kinds, the idempotent retry, and the
+`source-lineage-stale` / `source-lineage-unavailable` recovery moved to `core/authority.md`; the
+router carries only the state-back summary and points there.
 
-Unknown `AR_SPAWN_ROLE` values and role environments without plane-injected hosted identity fail
-closed; they never fall through to a pasted brief or free-chat launch. Reviewers bind the exact
-leaf, master, or sprint under review, and their manager/architect/orchestrator parent is stamped on
-the generation so a shared sprint reviewer address cannot blur plan and super authority.
+Edge cases are decided in the router itself: an unresolvable `AR_SPAWN_ROLE`, a role env without its
+matching plane-injected hosted identity, or hosted identity without its matching role is malformed
+plane identity and fails closed — it never falls through to a pasted brief or free-chat routing. A
+valid role-env session whose brief never arrives announces itself and waits rather than improvising a
+task. `AR_SPAWN_ROLE=orchestrator` is valid only as a spawned backend seat or a backend takeover
+chair: the developer still talks to the architect. The spool-up chain is self-driving, and only two
+spool-up decisions return to the developer (the propose-first strategist pass and the short root).
+
+The router's `## Composition Map` is the human-readable counterpart of `composition-manifest.json`:
+assembled order is **core → role → operation → explicitly admitted repository specialization**, task
+facts travel as a separate context channel, the operation vocabulary is frozen at nine names and an
+unknown operation is an explicit error, and composition invariants forbid truncating a required
+obligation to meet a size target.
+
+The `## settings.json Orchestration Block` section deliberately no longer restates a worked JSON
+example; it states the layering and precedence and points at `docs/reference/settings-json.md` and
+`docs/reference/harnesses.md` for the typed shape, with the seat-visible rules in
+`core/invariants.md` § Knob resolution and capability doctrine.
 
 ### Conventions
 
 Edit the canonical skill and run the sync process; never hand-author independent packaged doctrine.
-Role files remain self-contained and the shared frame stays limited to routing, lifecycle signals,
-and cross-role invariants.
+The corpus has exactly one source per instruction: `core/` is authored once and a role file states
+only its own seat's side of a shared rule. Adding a rule to this router re-creates the duplication
+the consolidation removed, so a new doctrine rule belongs in `core/`, `roles/`, or `operations/` and
+this file keeps only the pointer.
 
 ### Invariants And Boundaries
 
 - This artifact must remain byte-identical to the canonical lifecycle SKILL.
-- Task-document-plus-role is seat identity; runtime occupant identity stays plane-private.
+- The router carries no doctrine: every rule resolves through exactly one `core/`, `roles/`,
+  `operations/`, or `reference/` file.
+- The role registry is exactly ten roles, and the ambient launcher stays routing condition 3 rather
+  than an invented role. `bootstrap` is the tenth and is the only free agent among them: it is
+  reached through condition 1 and carries no task altitude, which is its shape rather than a gap.
+- `bootstrap` is not a fourth routing condition. The router still selects exactly one of three, and
+  a reader must not add a condition to make the free agent easier to reach.
+- No role is defined by reference to another role's lifecycle, and no role file sends its reader to a
+  sibling's prose to learn its own obligations. A sanctioned sibling reference exists only for wearing
+  that hat or dispatching that seat, and `mcp/tests/test_role_instruction_corpus.py` fails on any
+  other one.
+- Task-document-plus-role is seat identity; runtime occupant identity stays plane-private, and the
+  full dispatch/takeover/recovery contract lives in `core/authority.md`.
 - A queued structural dispatch is durable and follows the notifier retry path without duplicate
   briefs or respawn.
-- Ambient bootstrap and plane-hosted child dispatch are disjoint authority modes of the same
-  transaction; no public session primitive or compatibility fallback exists.
-- Installed runtimes receive the same doctrine as the canonical tree, not a compatibility variant.
 - Malformed hosted role identity is a refusal, not an ambient/free-chat fallback.
-- Reviewer routing and retirement use the validated generation parent, never an occupant id or
-  first-role guess.
+- Installed runtimes receive the same doctrine as the canonical tree, not a compatibility variant.
 
 ### Todos
 
@@ -73,7 +102,7 @@ None recorded.
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
+Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run the complete memory-quality operation with honest failed or not-run status, repairing or escalating every curator-actionable finding with its exact returned code. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Curation is never deferred: the curator always runs the full operation and its completed result is carried as a closeout and integration prerequisite, while full code quality, full tests, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
 
 ## Docs References
 
@@ -88,7 +117,12 @@ No external domain documentation is configured for this repository-local lifecyc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
-| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:204-205 |
+| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `sync_targets`; `TARGETS`; `sync_target`; `check_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-55; scripts/sync-skills.py:136-177; scripts/sync-skills.py:179-191; scripts/sync-skills.py:204-205 |
+| The packaged source carries the launcher, approval-gated strategist, and parallel-by-default invariants as pointers, not as doctrine. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:24-24; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:67-67 |
+| The router declares its own boundary — it routes, and every rule lives in exactly one other file — and names the ten-role registry plus the ambient launcher as a routing condition rather than an invented role. | `This file routes. It does not carry doctrine.`; `## Composition Map (how a capsule is assembled)`; `Exactly ten roles.` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:13-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:89-89; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:82-82 |
+| The tenth registry row this leaf added, and the reachability sentence it carries. | "**bootstrap**"; "reachable before any task document exists" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:80-80 |
+| Doctrine moved out of the router: shared rules to `core/`, procedures to `operations/`, rationale and superseded rulings to `reference/`, and routing metadata to the prose-free manifest. | `## Companion Files`; `## settings.json Orchestration Block` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:126-144; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:162-175 |
+| The enabled corpus stays self-contained: the shipped check fails on a role that leaks a sibling's duties, on a manifest that names a missing source, and on any relative path the corpus cites that does not resolve. | `SANCTIONED_SIBLING_REFERENCES`; `test_every_role_source_is_a_capsule_shaped_function`; `test_manifest_reports_a_missing_source_instead_of_accepting_it`; `test_every_relative_path_the_corpus_cites_resolves` | mcp/tests/test_role_instruction_corpus.py:105-116; mcp/tests/test_role_instruction_corpus.py:409-494; mcp/tests/test_role_instruction_corpus.py:495-535; mcp/tests/test_role_instruction_corpus.py:536-559 |
 
 ## Cross-Repo References
 
@@ -178,9 +212,63 @@ a malformed handed-off attempt requires independent rejection before successor h
 
 The lifecycle doctrine now distinguishes baseline from fix-verification review, seals issue IDs, forbids outside-list review resets, and places atomic-child route review at canonical-master integration. Three rounds are the ordinary maximum; any extra round requires explicit developer authorization.
 
-## Update History
+## 260915-CAPS-L1 Consolidation — Where The Former Router Sections Went
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation scripts/sync-skills.py:204-205 in the row 91 of this card; the repetition added no pooled evidence
+The router was rewritten from a 620-line spine that doubled as the doctrine home into a 179-line
+router. This card's older task-delta sections below are **preserved as history**, not deleted; each
+one's live rule is still in force and now resolves to a new single home. Read them against this
+table rather than as separate current doctrine:
+
+| Former section in this card | Live rule, current home |
+| --- | --- |
+| `## CCR-R12@v5 Transaction Boundary`; `## L23 Final Candidate Disposition`; `## M38 Per-Requirement Acceptance Projection`; `## M40-M45 Requirement Attempt Journal Projection`; `## 2026-08-27 Attempt Boundary Clarification` | `core/acceptance.md` — completion truth vs owner acceptance, the per-seat handoff-artifact table, per-ID acceptance envelopes, attempt lineage, the durable-evidence promotion hold point |
+| `## CCR-L42 current candidate`; `## 260815-DAG-L15 Review-Doctrine` | `core/loop.md` (loop doctrine, tiers, rounds and convergence, criteria catalogs) and `operations/review.md` (the exact baseline / fix-verification mode contract, including atomic-child deferral) |
+| `## L23 Dispatch Admission`; `## 260712-TRH-L4 Generated-Copy Doctrine` | `core/authority.md` § Dispatch is one structural transaction, and § Developer-declared task-seat takeover |
+| `## 260713-TES-L5 Current Delta — Fact-Relay Supervision Doctrine` | `core/authority.md` § Notify-and-stop is safe by design, and `core/invariants.md` |
+| `## 260815-DAG-L2 Synchronized Execution Topology` | `core/invariants.md` (the task-doc → branch → worktree spine) and `roles/orchestrator.md` (the topology, which that role file owns and only there) |
+| `### 260713-PHA-L5 Reviewed Hosted Cutover Impact` | Superseded in relevance: the hosted-session readiness/delivery contract is plane-owned and the corpus no longer describes adapter-level liveness |
+
+Note that a card section can stay true while its **cited anchor** stops resolving — that is what the
+citation re-open findings on this document report. Where a section above still carried a citation into
+the old router body, the citation was rebased to the new home or dropped as superseded.
+
+## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the lifecycle-contract paragraph so the curator's duty reads as the complete memory-quality operation carried as a prerequisite rather than scoped checks.
+- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the tenth role this leaf added**
+  (`CAPS-R13@v1`). The registry is now ten roles and nine operations: the Purpose's registry and
+  operation counts, the Logic's launcher sentence ("not a tenth role" → "not a role") and the frozen
+  operation-vocabulary count, and the Invariants' registry count were all updated, and the new
+  `bootstrap` row is recorded — the new user's first-hour seat for one repository, reachable before
+  any task document exists, and a **free agent** rather than a fourth routing condition. Added the
+  invariant that `bootstrap` must not become a fourth condition and that its absent task altitude is
+  its shape. Every Repo-Internal range was re-derived against the 180-line router (the previous ranges
+  were measured against the 179-line pre-extension file, and the `Exactly nine roles.` anchor no longer
+  existed at all — it now reads `Exactly ten roles.`), which also cleared this card's
+  `citation_anchor_absent_from_range` family. Verification metadata is left at the leaf base commit
+  because the source is uncommitted — the governed closeout stamps the real code commit.
+- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: **governing-link repair, and a correction of the L1 entry below.** This card's `governingOverview` and its `## Governing Overview` link had been changed by 260915-CAPS-L1 from `../../../../../../overview.md` (six steps) to `../../../../../overview.md` (five), reasoning that the shorter path reached the nearest route-local overview. Both paths were tested against the filesystem on this pass and the reasoning is inverted: `onboarding/mcp/src/agents_remember/package_data/runtime/` is the directory that exists — the `skills/` segment does not — so this card's directory is **five** real levels below `onboarding/`, and the six-step path resolves to `onboarding/mcp/overview.md`, which is exactly what the link text names. The five-step path resolves to `onboarding/mcp/src/overview.md`, which does not exist. Metadata field and link are both corrected back to `../../../../../../overview.md`. Found while creating this leaf's cards for the same `l-01-agent-lifecycles` directory, whose governing links carried the identical defect. No body content changed and no verification stamp advanced — the source is uncommitted, so the stamp stays closeout-owned.
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body rewritten for the corpus consolidation.**
+  The canonical `skills/l-01-agent-lifecycles/SKILL.md` became a 179-line router (was 620) and gave up
+  all doctrine: `core/` (six shared blocks), `operations/` (eight operation blocks),
+  `reference/rationale.md` + `reference/rulings.md`, and the prose-free `composition-manifest.json`
+  now hold the rules this card used to describe through the router. Updated Purpose (the
+  routes-but-carries-no-doctrine boundary), Logic (three routing conditions, the decision edge cases,
+  the composition map and its frozen eight-operation vocabulary, the settings section's deliberate
+  removal of the worked JSON example), Conventions (adding a rule here re-creates the removed
+  duplication), Invariants (nine-role registry, no cross-role reading, the shipped check that fails on
+  a leaked sibling reference), and Repo-Internal References (the old `:6-416` citation replaced by
+  current anchors plus rows for `mcp/tests/test_role_instruction_corpus.py` and the sync-script
+  targets). Added the consolidation map above so the preserved task-delta sections resolve to their
+  live homes. **Metadata repair:** this card's `governingOverview` pointed at
+  `../../../../../../overview.md`, which resolves to the repository root overview while its own link
+  text said "MCP package overview"; corrected to `../../../../../overview.md`
+  (`onboarding/mcp/overview.md`, the actual nearest route-local overview for this generated tree).
+  Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced
+  and no commit hash was invented.
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): corrected the range
   quoted in this card's own earlier entry — the added super-branch note occupies `:596-598`, not
   `:592-595`. The substantive router/registry citation (`:6-416`) still holds. Verification metadata

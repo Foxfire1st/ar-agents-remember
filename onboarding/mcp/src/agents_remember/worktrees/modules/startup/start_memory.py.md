@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/startup/start_memory.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `../overview.md` |
 
@@ -57,10 +57,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Source state, named-branch admission, and informational Git-derived metadata. | `_memory_source_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:19-32 |
-| Mtime reuse and divergence handling preserve the current indexing behavior. | `_sync_worktree_memory_mtimes` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:74-113 |
-| Missing external repository and explicit disabled-memory outcomes. | `_disabled_memory_choice` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:132-135 |
-| The informational ledger is reconstructed from commit attribution without a cache read. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
+| Source state, named-branch admission, and informational Git-derived metadata. | `_memory_source_state`; `memory_branch_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:19-32; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:48-48 |
+| Mtime reuse and divergence handling preserve the current indexing behavior. | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:72-111; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:74-113 |
+| Missing external repository and explicit disabled-memory outcomes. | `_disabled_memory_choice`; `_missing_memory_repo_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:136-144 |
+| The informational ledger is reconstructed from commit attribution without a cache read. | `derive_memory_ledger`; "without consulting a cached file or a ledger commit" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 
 ## Cross-Repo References
 
@@ -70,6 +70,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed the cached-file read and exact-row admission gate; retained repository/source validation, derived informational metadata, worktree creation, and mtime behavior. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

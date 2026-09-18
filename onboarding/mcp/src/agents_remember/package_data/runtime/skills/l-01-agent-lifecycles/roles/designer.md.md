@@ -5,15 +5,33 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated            | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
+| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| governingOverview | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
 Packaged runtime copy of the optional sprint-bound designer lifecycle. The canonical
 `skills/l-01-agent-lifecycles/roles/designer.md` owns the role; the sync process publishes this
 exact artifact without a separate packaged interpretation.
+
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
+with `**Inherits:**` rather than restating them (`core/authority.md`, `core/invariants.md`,
+`core/loop.md`, `core/acceptance.md`, `operations/orientation.md`, `operations/planning.md`). The
+reframing and evidence-first design method it applies now lives once in `operations/planning.md`, and
+its altitude is stated structurally: the designer is **a HAT the architect pulls inline**, with a
+separate sprint chair optional, and it produces task/design artifacts without a worktree.
+
+**This role file names no sibling role file.** The corpus forbids learning one's own obligations from
+another seat's prose; only wearing a hat or dispatching that seat may cite `roles/<other>.md`, and the
+shipped check fails on any other reference.
 
 ## Code Commentary
 
@@ -55,6 +73,21 @@ No sibling repository evidence is needed for this doctrine file.
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 ## Update History
+
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
+- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical designer role was rewritten (129 lines) into the corpus's readable order and declares its
+  inherited sources with `**Inherits:**`. Updated Purpose with the readable order, the inherited sources,
+  the structural hat/no-worktree boundary, and where the design method now lives; added the
+  no-sibling-role-reference rule the shipped check enforces; and replaced the canonical-source range
+  (which pointed at the pre-rewrite file). **Metadata repair:** `governingOverview` was absent from this
+  card (the c-05 content model requires the field and its `## Governing Overview` section); added as
+  `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this
+  generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp
+  was advanced and no commit hash invented.
+
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced stale Operations creation with
   architect-owned dispatch, separated explicit ambient takeover, and fixed structural-row

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -82,11 +82,11 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Execution publishes or reuses real memory output and refreshes the cache afterward. | `execute_direct_landing` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:42-75 |
-| Prepared attempts preserve repository and exact pre-commit tree evidence. | `_require_accepted_memory_prestate` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:239-255 |
-| Shared mutation intent and proof retain actual object checks. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:84-105 |
-| The lifecycle recovery owner resumes the generation before execution. | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
-| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | `_recover_after_interrupted_receipt` | mcp/tests/test_direct_landing.py:274-314 |
+| Execution publishes or reuses real memory output and refreshes the cache afterward. | `execute_direct_landing`; "ledgerCache" | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:42-75 |
+| Prepared attempts preserve repository and exact pre-commit tree evidence. | `_require_accepted_memory_prestate`; `_require_prepared_direct_attempt` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:239-255; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:261-290 |
+| Shared mutation intent and proof retain actual object checks. | `begin_git_mutation`; `_publish_mutation_intent` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:84-105 |
+| The lifecycle recovery owner resumes the generation before execution. | `recover_direct_landing_under_authority`; "lifecycle-generation-changed" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
+| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | `_recover_after_interrupted_receipt`; `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
 
 ## Cross-Repo References
 
@@ -99,6 +99,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
 

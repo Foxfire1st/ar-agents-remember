@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -48,6 +49,182 @@ This identity is diagnostic and acceptance evidence, not package-update policy. 
 registrations continue to launch `uvx --refresh-package agents-remember-mcp
 agents-remember-mcp@latest`; the disposable ARSPAWN acceptance runner launches exact local source
 only so it cannot accidentally certify a stale published artifact.
+
+## 260915-CAPS-L5 Codex Capsule Delivery
+
+> **Superseded in part by `260915-CAPS-L15` (see the L15 section).** The chain below is still exactly
+> right, but the field it starts from is no longer the only source: the launch point now resolves the
+> capsule and the opener reads `TerminalLaunchRequest.capsule` first, falling back to
+> `launch.control.capsule_delivery` (L5's own caller seam) second. L5's two invariants and its declared
+> limits stand unchanged.
+
+**One new route member and five touched ones, and the capsule is a value the whole way.** The new
+module is `capsule_delivery.py`: the delivery value type (`CodexCapsuleDelivery` over a
+`CapsuleBindingIdentity`), the refresh decision (`plan_refresh`), and the legacy-chain switch
+(`legacy_instruction_switch`). It sits at `serving` rank deliberately — the compiler (L2) and the
+admission surface (L4) rank **above** `serving`, so the capsule arrives as an admitted value this rank
+may consume but must not import. It defines what the seam consumes over `models`-rank imports only.
+
+The carrier chain, which is the route-level fact:
+
+```
+TerminalLaunchRequest.control.capsule_delivery   terminal_opener.py (caller-facing field)
+  -> RunnerConfig.capsule_delivery               harness_control_runner.py
+  -> payload key "capsuleDelivery"               ONLY when a capsule is present
+  -> parse_runner_config                         (malformed value REFUSES)
+  -> both factory calls in _prepare_controlled_launch
+  -> create_harness_protocol_adapter(capsule_delivery=...)
+  -> CodexAppServerSettings.capsule_delivery     codex_app_server_session.py
+```
+
+Two invariants of this route must survive any later edit, and both are measured rather than asserted:
+
+1. **The capsule-free wire is byte-identical to base.** The payload key is *omitted*, not null: the
+   base module and the candidate module produce the same eight keys, the same 344-character encoded
+   token and the same token sha256. Anything that makes the key unconditional breaks every existing
+   launch path.
+2. **A malformed or channel-less capsule refuses.** `_optional_capsule_delivery` raises rather than
+   dropping it, and `_require_capsule_channel` refuses a capsule for any harness other than `codex`.
+   A caller that asked for a capsule must never receive a capsule-free process.
+
+**Lifetime.** The installed app-server (measured `codex-cli 0.151.0`) exposes instruction fields on
+`thread/start`, `thread/resume` and `thread/fork` and **none** on `turn/start`, so an ordinary message
+cannot re-apply the role corpus. The seam therefore applies one capsule per admitted binding at a
+thread-open boundary, re-states identical bytes on the same digest, and for a changed revision opens a
+bounded fresh thread (or a fork when the caller offers one) instead of stacking a second revision — an
+unsupported refresh is reported through the plan's reason, never faked. The host's own
+`instructionSources` list is published verbatim as observation, and the legacy startup chain is
+suppressed per launch through the existing thread `config` key `project_doc_max_bytes: 0`.
+
+**Declared limits on this route, stated as limits.** The vendor-side effect of re-sending
+`developerInstructions` on `thread/resume` is unmeasured (0.151.0 persists no rollout until a real turn
+runs), so `IN_PLACE` is schema- and unit-proven only; `FORK_THREAD` has no production caller; no live
+spawn through `terminal_opener` was exercised; and the delivered payload is bounded by nothing here —
+the largest shipped capsule measures **120,536 chars, 92.0 % of Linux `MAX_ARG_STRLEN` (131,072)** with
+~10 KB headroom, and past that the spawn fails with `E2BIG` before any AR surface can report it
+(defect `D12`, routed to the final-verification leaf with a required bound and pre-encoding refusal).
+
+## 260915-CAPS-L15 The Launch Paths Compile And Supply The Capsule
+
+**Route meaning changed for the whole launch path, and this section is the current account of it.**
+Before this change set, the capsule chain was built and individually proven at every link — the
+compiler (L2), the admission/MCP surface (L4), the Codex instruction seam (L5), the eve carrier (L7) —
+and **no production launch point supplied a capsule to any session**. A dispatched seat and a free
+agent both launched with no instructions at all, and every green test hand-supplied the intermediate
+value, which is why no leaf's suite could see the gap.
+
+**One decision point, three answers.** `serving/launch_capsule.py` is new and is the only place a
+launch decides its instruction mode: `capsule` | `legacy` | `refused`. Every launch point calls
+`resolve_launch_capsule` **before any host side effect**; the compile itself crosses an injected port
+(`LaunchCapsuleResolver`, filled by `cli/dashboard.py::serving_collaborators`) because `serving` ranks
+below `application` in `layers.toml` and may not import the compiler. A second place that decides a mode
+is the severed chain again, one level up.
+
+**One workspace authority, and it is read out of the artifact.** A launch whose capsule admits a
+workspace runs **there**: `session_workspace(capsule, server_workspace=…)` is the single rule and
+`selection_for_workspace` moves the settings selection's workspace to match, because
+`harness_control_runner.py:175` refuses a launch whose selection names another workspace. The value
+itself is read back out of the carrier the consumer re-verifies
+(`application/role_capsules/launch.py::_compile_eve_task` →
+`LaunchCapsule.session_workspace`), so the session cwd, `ResolvedLaunch.workspace` and the child's
+`AR_WORKSPACE_ROOT` are **one value by construction** rather than three that have to agree. Only an eve
+carrier admits a workspace; the Codex instruction carrier has none, so **no Codex launch's cwd moves**,
+and free agents and legacy launches keep `config.workspace_root` unchanged.
+
+**The three production launch points, per point:**
+
+| # | Launch point | State after this change |
+| --- | --- | --- |
+| 1 | `application/terminal_tools.py::_spawn_launch_request` (the primitive `dispatch_agent` drives) | **wired** — resolves the capsule before any host side effect, passes it on the request, publishes `instructionMode`; refuses `capsule-unavailable` **by name** |
+| 2 | `serving/_app_terminal_routes.py::_open_terminal_response` (the dashboard opener — the only production point that starts a **free agent**) | **wired** — same gate through the port; refusal is HTTP 400 `capsule-unavailable`; the per-run record rides the response |
+| 3 | `serving/conversation/library/open_service.py` (the conversation-library reopen) | **declared-excluded** — `LIBRARY_REOPEN_LEGACY_REASON`; see that card. Owner of any future capsule-carrying reopen: the final-verification leaf, with the thread-lifecycle leaves |
+
+**What each harness receives, and through its own chain.** `codex` gets the capsule on the app-server's
+own `developerInstructions` field: `LaunchCapsule.codex_delivery` →
+`terminal_opener._codex_capsule_delivery` → `RunnerConfig.capsule_delivery` → the conditionally emitted
+`capsuleDelivery` payload key → the adapter settings (**L5's chain, unchanged**). `eve` gets it as the
+launch environment its runtime verifies per request (`LaunchCapsule.eve_env` →
+`terminal_opener._eve_capsule_env` → the child environment → `launch_spec_binding` →
+`verify_capsule_binding` → the runtime's own gate). **The Codex field stays `None` for eve**, so
+`harness_control_factories.py:113`'s codex-only guard was *not* relaxed — the boundary is real, and no
+change to it was needed. Any other harness (`claude`, `pi`, a settings-defined id) has **no verified
+channel** and runs the legacy chain **by declared decision**, with the reason recorded per run.
+
+**The acceptance evidence is the consumer's own first prompt.** A task-attached seat and a free agent
+were each started through a production launch point, the runner argv the launch point itself built was
+parsed back out of the base64 the child would exec, and the capsule was read from the `thread/start`
+request the session sent to the vendor boundary — compared against the compiler's own result, never a
+hand-built expectation (`mcp/tests/test_capsule_launch_wiring.py`). For eve, the launch point's own
+captured cwd **and** env were fed to the consumer's own gate (`launch_spec_binding` →
+`verify_capsule_binding` → **ACCEPTED**) and a live eve runtime started from those same values carries the
+carrier block and its semantic digest in its own system block
+(`notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt`).
+
+## 260915-CAPS-L17 The settings-chain eve Seat Dispatches, And The Route Exclusion Is Declared
+
+**The limitation this route carried is now closed for the seat path.** The section above recorded that a
+role-configured eve seat could not be dispatched: the capsule gate passed and the **next** refusal was
+inherited and downstream, because `application/terminal_tools.py::_resolve_harness_dispatch` requires
+model **and** effort from the settings chain while eve's honest capability catalogue advertised no
+launch-settable effort (`supports_effort=False`). That was defect **D22**, developer ruling route
+**(A)**. This leaf discharges it by making the capability real rather than by relaxing the gate that
+noticed its absence: the pinned application now consumes `AR_EVE_EFFORT` through eve's own
+`defineAgent({ reasoning })`, and `serving/eve_adapter.py::_capability_snapshot` therefore publishes the
+effort axis with its default. A settings file naming harness `eve`, a model and an effort for a role now
+resolves through the real dispatch, the runner's PREPARE accepts, the adapter starts the pinned runtime,
+and the model request the runtime issues carries the configured level — read at the provider boundary,
+in the request body a recording provider received, **not** asserted from the catalogue
+(`notes/reports/260915-CAPS-L17-evidence/s2-*-provider-requests.jsonl`; the settings-chain launch is
+`s5-settings-chain.json`).
+
+**No file in this chain moved, and that is the point.** `serving/harness_launch.py`,
+`application/terminal_tools.py` and `serving/_app_terminal_routes.py` are **unchanged** by this leaf;
+what changed is that the catalogue stopped refusing, so `validate_launch_selection` now has a
+launch-settable effort to validate against instead of an empty menu. `harness_launch.py`'s
+settings-chain policy and this route's capsule gate are the same code they were.
+
+**The dashboard route's inability to start the *shipped* eve row is a declared, owned limitation, not
+a repair.** The route deliberately never sets `TerminalLaunchRequest.session_backend`, so
+`resolve_terminal_launch` asks the terminal-program question, and eve's runtime is the AR-owned
+application the session adapter starts itself rather than a `PATH` program. Four requests through the
+real dashboard app measure the outcome exactly (`notes/reports/260915-CAPS-L17-evidence/s6-s7.json`):
+
+| Case | Answer |
+| --- | --- |
+| shipped row, role-configured open | **400 `capsule-unavailable`** at the eve carrier gate |
+| shipped row, roleless open | **400 `bad-kind`**, naming the terminal-program decision |
+| operator-taught row (`orchestration.harnesses.eve` naming a real PATH program), role-configured open | **400 `capsule-unavailable`** at the same gate |
+| operator-taught row, roleless open | **200 `running`**, `instructionMode: legacy` |
+
+**Reason:** an adapter-owned harness has nothing for this route to exec; the caller that asks for a
+session backend is `application/terminal_tools.py` (`session_backend=True`, :765) and this route
+deliberately does not. **The last row is the hazard and is named rather than smoothed:** an
+operator-taught PATH row makes a roleless open return a green `running` session with `legacy`
+instructions — an `eve` session that is **not** the AR runtime. That is the pre-existing teach-a-TUI
+feature, and it is the one route by which the dashboard reports success for `eve` while nothing
+adapter-owned runs. **Owner: the serving/route surface — whichever leaf next owns
+`serving/_app_terminal_routes.py`** — carried in the master's obligation ledger by the
+final-verification leaf. Product pin:
+`mcp/tests/test_eve_product_integration.py::EveTerminalLaunchTests::test_the_declared_exclusion_belongs_to_the_route_and_is_owned`.
+
+**Behaviour 6 — the legacy path — is measured, not asserted.** Three legacy launch shapes (no role, a
+`chat` seat, a worker on `claude`) are **byte-identical** on both trees: the capsule-free payload is the
+same eight keys, no `capsuleDelivery` key appears, and diffing the two transcripts is empty.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. | `resolve_launch_capsule`; `LaunchCapsule`; `LaunchCapsuleMode`; `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:108-159; mcp/src/agents_remember/serving/launch_capsule.py:73-80; mcp/src/agents_remember/serving/launch_capsule.py:233-249; mcp/src/agents_remember/serving/launch_capsule.py:251-273 |
+| The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
+| The runner's own agreement check, which makes the rule product-enforced rather than test-enforced. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:144-171 |
+| The two channels that exist, named as the only two. | `CAPSULE_CARRIER_HARNESSES` | mcp/src/agents_remember/serving/launch_capsule.py:60-70 |
+| The compiler behind the port, and the workspace read back out of the carrier the consumer re-verifies. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
+| The opener's two carrier readers, and the defensive refusal beside them. | `_codex_capsule_delivery`; `_eve_capsule_env`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:542-554; mcp/src/agents_remember/serving/terminal_opener.py:556-562; mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
+| The codex-only guard that stayed untouched, because the eve carrier does not use the Codex field. | `_require_capsule_channel`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:110-119; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
+| The enumeration guard: every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the set cannot change silently. | `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:805-844 |
+| The declared legacy exclusion, with its reason. | `LIBRARY_REOPEN_LEGACY_REASON` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124 |
+| The two acceptance transcripts read from each started session's own first prompt, and the production-chain eve case. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:483-526; mcp/tests/test_capsule_launch_wiring.py:529-574; mcp/tests/test_capsule_launch_wiring.py:816-872 |
+| The production-chain evidence: the consumer's own gate from the launch point's own cwd and env, the live system-block read, and the negative control. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
+| The two limitations, with their owner and the evidence that measures them. | `_resolve_harness_dispatch`; `session_backend` | mcp/src/agents_remember/application/terminal_tools.py:386-438; mcp/src/agents_remember/serving/terminal_opener.py:163-173 |
 
 ## Purpose
 
@@ -518,7 +695,7 @@ each model; running adapters serve their retained startup catalog while transien
 only the native protocol handshake/catalog path. The ACP Sense 1 projection uses the `model` and
 `thought_level` category shape; unknown current values are omitted rather than fabricated.
 
-Claude, Codex, and Pi built-ins negotiate the structured fields their adapters
+Claude, Codex, Pi, and eve built-ins negotiate the structured fields their adapters
 consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is
 limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the
 daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. Resource
@@ -665,6 +842,29 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   selectors and `SetResult` establishes the setter evidence boundary. The combined launchable adapter
   seam joins synchronous cached advertise, transient native discovery, and native launch knobs. No
   ACP transport, global effort enum, or composer-paste fallback belongs in this port.
+  `BUILTIN_PROTOCOL_HARNESSES` names four ids (`claude`, `codex`, `pi`, `eve`); this is the
+  **protocol-adapter** registry and it is deliberately separate from the kernel's developer-curated
+  terminal harness set, which still carries no `eve` row.
+
+- `eve_adapter.py` with `eve_events.py`, `eve_protocol.py`, `eve_stream_cursor.py`,
+  `eve_interactions.py`, `eve_runtime_client.py` and `eve_runtime_launch.py` — the native eve
+  session adapter (260915-CAPS-L6), and the only built-in whose native process is an **AR-owned
+  application** rather than a `PATH` command. It speaks eve's documented HTTP session protocol
+  exclusively: health-derived readiness, a durable session id bound to one bridge epoch, and the
+  NDJSON event stream consumed on an **absolute event-index cursor** (`meta.id` deduplicates an
+  overlapping replay but is never the resume position). Acceptance is reported separately from turn
+  completion and from session retirement; ordinary deliveries are queued explicitly rather than
+  inheriting eve's cancellation-backed `steer`; a lost submit response reconciles
+  accepted/rejected/unresolved from durable evidence and is never repeated; `interrupt` is
+  turn-addressed, replayed once per observed pair, and reports acceptance only because eve's cancel is
+  cooperative and settles later on the stream. Session identity and the stream cursor are published on
+  the existing `AdapterSnapshot` (`vendor_session_id`, `raw["streamCursor"]`), so no second
+  orchestration registry exists. The adapter **carries** `AR_BINDING_REF` / `AR_CAPSULE_DIGEST` /
+  `AR_WORKSPACE_ROOT` to the runtime but compiles and selects no capsule — that seam belongs to the
+  capsule/workspace route — and its model/effort setters report `unsupported` honestly because eve's
+  model is a compiled application value. The controlled application itself lives in the repo-root
+  `eve_runtime/` tree, which sits outside this route and outside the repository's onboarding
+  `pathRules`.
 
 - `harness_capability_catalog.py` — the pre-session discovery authority. It resolves only the
   built-in native registry rows, fingerprints effective argv plus the canonical executable/stat
@@ -686,7 +886,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   discovery, validate against the live model/model-local effort catalog, construct a fresh
   configured adapter, and preserve exact failure evidence over IPC. The daemon request can now
   supply an optional complete pair through this same launch path; a selectionless request still
-  lets the native authenticated catalog choose its default without creating a second authority.
+  lets the native authenticated catalog choose its default without creating a second authority. Since
+  260915-CAPS-L5 the same path also carries one optional admitted role capsule
+  (`capsule_delivery`) from the launch boundary to the adapter settings, through a payload key that is
+  emitted **only** when a capsule is present — so a capsule-free launch is byte-identical to base — and
+  the factory refuses a capsule for any harness without a verified instruction channel. The
+  resolved-selection factory call now passes its selection as one `LaunchSelection` pair, a
+  no-exemption answer to `PLR0913` rather than a behaviour change.
 
 - `claude_stream_capabilities.py`, `claude_stream_protocol.py`, `claude_stream_startup.py`, and
   `harness_control_claude.py` — correlate `control_request/list_models` before the steady-state
@@ -703,7 +909,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
   readiness; later turns reuse the resolved effort. Initialize identity accepts a product-agnostic
   server-product/version followed by optional diagnostics ending in the exact clientInfo name/version suffix, while the
-  primary product version must still agree with thread evidence.
+  primary product version must still agree with thread evidence. When a role capsule is delivered
+  (260915-CAPS-L5), this session occupies the schema-supported `developerInstructions` field at the
+  thread-open boundary only — there is no turn-level instruction field — compares the **recorded**
+  binding identity and semantic digest before re-stating identical bytes, drops `threadId` and opens a
+  bounded fresh thread for a changed revision or an unknown one, publishes the host's own
+  `instructionSources` verbatim, and suppresses the host's project-document load per launch through
+  `project_doc_max_bytes: 0`. A capsule-free open is unchanged.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
   `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
@@ -968,9 +1180,200 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | The shared naming primitive appends the same physical lock suffix. | `lock_path_for` | mcp/src/agents_remember/kernel/file_lock.py:36-38 |
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
+## 260915-CAPS-L7 The Eve Capsule Launch Proof
+
+The eve adapter's route now **proves** the capsule binding it carries, before a process exists. This is
+a route-meaning change for `eve_runtime_launch.py`: it was a pass-through for the binding's environment
+values and is now an all-or-nothing admission gate.
+
+- **`verify_capsule_binding` runs first in `resolve_runtime_spec`** — ahead of staging an application
+  root or reserving a port — so a launch that cannot be bound correctly is never given a model. Six
+  refusals each name a distinct defect: a partly declared binding (`AR_BINDING_REF`, `AR_CAPSULE_PATH`
+  and `AR_CAPSULE_DIGEST` must arrive together), an unreadable carrier, a carrier whose bytes are not
+  the declared digest, a carrier written for another binding, a carrier whose workspace is not this
+  launch's workspace, and a workspace that is not the admitted git worktree.
+- **An entirely undeclared binding stays unbound** and returns `None`. It is started without a binding
+  and refused by the runtime's own session routes rather than executing without admitted instructions —
+  the gate does not invent a default.
+- **The workspace check reads git metadata, not the path.** `_require_admitted_git_worktree` requires
+  `HEAD` to be the admitted work branch, or the admitted base commit when detached. A directory that
+  exists at the admitted path is not the admitted worktree: a sibling task's checkout, a copied tree and
+  a detached checkout all satisfy "the path exists" while executing somewhere nobody admitted.
+- **Ambient binding names no longer survive into a child.** `build_runtime_env` pops `AR_BINDING_REF`,
+  `AR_CAPSULE_PATH` and `AR_CAPSULE_DIGEST` alongside the existing `AR_EVE_RUNTIME_ROOT`/`AR_EVE_NODE`
+  pops, because the runtime treats a complete set of those names as an admitted capsule. They are re-set
+  strictly from the binding this launch declares, and `launch_spec_binding` reads **only** the launch
+  spec — an ambient value in the server's own environment is not this launch's binding.
+- **The session controls send no body.** `eve_runtime_client.py` gained `compact_session` and
+  `clear_session`, both ID-addressed routes. They matter here because a cleared or compacted session
+  does **not** rerun instruction resolvers, which is why the mandatory capsule is applied at the route
+  gate in the system role rather than through a per-turn resolver.
+
+The produce side of this seam is **not** in this route: it is
+`application/eve_capsule/__init__.py::materialize_eve_binding`, and since `260915-CAPS-L15` it **has a
+production caller** — `application/role_capsules/launch.py::_compile_eve_task` materializes the carrier
+for a wired launch point (see the L15 section above). The `L7R-4` transfer that asked for that wiring is
+discharged on the **produce** side ("the produce side has a production caller, verified at the
+consumer's gate"); the **live-seat** half was open at L15's tip and is **closed by
+`260915-CAPS-L17`** — see the `## 260915-CAPS-L17` section above, which records the settings-chain
+launch and the provider-boundary measurement rather than the catalogue's word (D22, discharged by
+L17).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The launch-time proof, its six refusals and its unbound case. | `verify_capsule_binding`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
+| The git-identity requirement that distinguishes the admitted worktree from a directory at the same path. | `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527; mcp/src/agents_remember/serving/eve_runtime_launch.py:529-560 |
+| The ambient-binding pops and the launch-spec-only reader. | `launch_spec_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463 |
+| The two body-less session controls and the resolver-not-rerun fact behind the system-role choice. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-101; mcp/src/agents_remember/serving/eve_runtime_client.py:242-268 |
+| The channel-level binder that refuses an unbound launch before any model work, guarding every session route. | `arCapsuleAuth` | eve_runtime/agent/channels/eve.ts:26-62 |
+| The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
+
+## 260915-CAPS-L11 The Argv Bound Is Stated, Enforced, And Measured
+
+`harness_control_runner.py` on this route now carries **D12's bound** as three constants and one
+refusal, and the route's contract is that the check runs where the encoded token first exists —
+**before any caller can spawn it**:
+
+| Symbol | Value | What it is |
+| --- | --- | --- |
+| `MAX_ARGV_TOKEN_BYTES` | `131072` | Linux `MAX_ARG_STRLEN`, the limit on **one** `execve` argument |
+| `ARGV_TOKEN_SAFETY_MARGIN_BYTES` | `2048` | the declared margin held under the kernel limit |
+| `ARGV_TOKEN_BOUND_BYTES` | `129024` | the enforced bound = limit − margin |
+| `_refuse_over_bound_token` | — | refuses by name, before any spawn |
+
+**The whole launch configuration travels as one base64 token** (`argv[3]`), which is why
+`MAX_ARG_STRLEN` — not `ARG_MAX`, which bounds argv and environment together — is the limit that
+binds this mechanism. Past it `execve` fails with `E2BIG` **at spawn**, before this process can
+report anything: otherwise AR-invisible, and indistinguishable from a runtime that crashed on start.
+
+**The refusal names the measured size, the bound, the kernel limit it is derived from, and the seat
+the capsule was compiled for**, because "the session did not start" is not an operator message. The
+margin is deliberately small: the check measures the same byte string the kernel counts, so the
+margin does not have to absorb an approximation, and a larger one would refuse capsules the kernel
+accepts.
+
+**Current width, and the reason the figure is a report rather than a guarantee.** The largest shipped
+pair measures **126,096 B** with the settings-resolved launch a real launch always carries (2,928 B
+under the bound; 126,352 B at the widest realistic shape, where an eve carrier binds the admitted
+worktree to a 102-character cwd — 2,672 B under). At roughly 96 % of the limit the margin is thin,
+and the route to the bound is a **path length** as much as a capsule: the token grows ~1.3320 encoded
+bytes per `cwd` character — the base64 4/3 expansion, so it is the encoding's property rather than
+this capsule's — first crossing the bound about 2,297 characters beyond the server workspace root.
+**Any pair measured over 129024 is a bound re-derivation that stops the loop, never a silent
+re-bound.**
+
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `parse_runner_config` repointed to mcp/src/agents_remember/serving/harness_control_runner.py:144-171. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` repointed to mcp/tests/test_capsule_launch_wiring.py:805-844. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `launch_spec_binding` repointed to mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T16:05+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): this route's `harness_control_runner.py` changed, so the body gained the section above rather than a no-impact entry. It states **D12's** delivered contract — the three constants (`MAX_ARGV_TOKEN_BYTES` 131072, `ARGV_TOKEN_SAFETY_MARGIN_BYTES` 2048, `ARGV_TOKEN_BOUND_BYTES` **129024**) and `_refuse_over_bound_token` refusing **before any spawn** — together with the two facts the leaf measured: the bound is **enforced** (refused by name at a `PATH_MAX` cwd), and the route to it is a path length as much as a capsule (~1.3320 encoded bytes per `cwd` character, first crossing ~2,297 characters beyond the server workspace root), so **a headroom figure is only meaningful with its inputs named**. The card's stale forward-routing line ("routed to the final-verification leaf, not to this seam") and L15's superseded 120,536 B / 92.0 % headline were replaced with the measured values. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Earlier entries are preserved exactly as written.
+- 2026-09-17T11:00+02:00 — 260915-CAPS-L15 curator: **route meaning changed for the entire launch path,
+  so the body was updated rather than given a no-impact entry.** The new
+  `## 260915-CAPS-L15 The Launch Paths Compile And Supply The Capsule` section is the current account:
+  one decision point with three answers, one workspace authority read back out of the carrier the
+  consumer re-verifies, each harness supplied through **its own** chain (Codex unchanged from L5, eve
+  through its launch environment, the codex-only guard real and untouched), the per-launch-point table
+  (two wired, one declared-excluded with its reason), and the acceptance evidence read from each started
+  session's own first prompt plus `E8`'s production chain. It stated **two limitations rather than
+  smoothing them**: a role-configured eve seat could not be dispatched because the next refusal was
+  the inherited settings-chain effort gate (`D22`, owner **L17**), and the dashboard route could not start
+  the *shipped* eve row (pre-existing, measured here, owner **L17**). Behaviour 6 is recorded as measured
+  (three legacy launch shapes byte-identical, no `capsuleDelivery`, packet behaviour 6). The L7 section's
+  closing paragraph was **corrected in place**: it said the produce side "still has no production
+  caller" — the candidate falsifies it, and the paragraph now names which half of `L7R-4` is discharged
+  and which is not. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is
+  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
+  fingerprint was invented here.
+- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the route's own `D22` limitation is discharged
+  by this leaf, so the body was corrected rather than given a no-impact entry.** The L15 section's
+  "two limitations" block was rewritten into a `## 260915-CAPS-L17` section that states what is now
+  true: the pinned application consumes `AR_EVE_EFFORT` through eve's own `defineAgent({ reasoning })`
+  and the adapter publishes the axis, so a settings-file eve seat for a role resolves through the real
+  dispatch and the effort reaches the model request the runtime issues — measured at the provider
+  boundary, not read from the catalogue. Recorded that **no file in this chain moved**
+  (`harness_launch.py`, `terminal_tools.py`, `_app_terminal_routes.py` are all unchanged by this leaf;
+  what changed is that the catalogue stopped refusing), and kept the dashboard route's exclusion as a
+  **declared, owned** limitation with its reason, its four measured answers (including the
+  operator-taught PATH row that returns `200 running` with `legacy` instructions — a green `eve`
+  session that is not the AR runtime) and its owner. Two earlier sentences that this change falsified
+  were corrected where they were claims rather than history: the L7 section's "limitation 1 … D22,
+  owner L17" pointer, and the L15 entry's present-tense "still cannot be dispatched", which now reads
+  as the past-tense state that entry described. **Checker result (post-sync, verbatim).** The
+  refusal this entry first recorded was resolved by the leaf's `worktree_sync`: the pair is now
+  `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the contract-scoped
+  `memory_quality_check` ran against this worktree. Headline: `ok:false`,
+  `checklistStatus:"action-required"`,
+  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
+  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
+  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding, plus
+  **three** `style.update_history.history_order` "not newest-first" findings. The ordering ones
+  are **not** this entry's content: this entry is stamped with the real wall-clock time of the
+  edit while the entry immediately below it claims `2026-09-17T11:00`, a **future** stamp
+  inherited from the L15 pass, and no honest stamp of mine can sort above a future one —
+  satisfying the check would require inventing a future stamp, which this leaf's rules forbid.
+  Reported as an attributed residual rather than papered over. Verification metadata moves to
+  the synced base `d8ed8c21`; the candidate is deliberately uncommitted, so the governed
+  closeout stamps the real code commit and no hash or fingerprint was invented here.
+
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): **No route impact:** This route's governed sources under `mcp/src/agents_remember/serving/` are byte-identical to the leaf's code base `c22beb0121946c0637e113ec4cf29da29fd4aec7` (`git diff` over that directory is empty), so no source this overview documents moved in this leaf. The only edits this task made to the document were to its own Update History bodies, restored verbatim from the memory baseline `4b4e4271` after a repair pass had deleted them; no route prose, no invariant and no ownership statement was rewritten, and every citation still resolves inside the range it names.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **route meaning changed for the eve adapter, so the
+  body was updated rather than given a no-impact entry.** The new
+  `## 260915-CAPS-L7 The Eve Capsule Launch Proof` section records that `eve_runtime_launch.py` stopped
+  being a pass-through for the capsule binding's environment values and became an **all-or-nothing
+  admission gate that runs before a process exists**: `verify_capsule_binding` is called first in
+  `resolve_runtime_spec`, with six refusals each naming a distinct defect, an entirely undeclared binding
+  staying **unbound** rather than defaulting, and the workspace requirement reading git metadata because
+  a directory at the admitted path is not the admitted worktree. Also recorded: `build_runtime_env` now
+  pops the three ambient binding names alongside the existing `AR_EVE_RUNTIME_ROOT`/`AR_EVE_NODE` pops so
+  an inherited shell value cannot become a binding nobody verified; `launch_spec_binding` reads only the
+  launch spec; `eve_runtime_client.py` gained two body-less ID-addressed session controls, which matter
+  here because a cleared or compacted session does not rerun instruction resolvers; and the channel-level
+  `arCapsuleAuth` refuses an unbound launch before any model work. The section also states where the
+  produce side lives and that it **still has no production caller** — that wiring is `CAPS-R15@v1`'s
+  obligation under an explicit transfer. Verification metadata moves to the leaf's synced base
+  `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
+- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: **route meaning changed for one new member plus five
+  touched ones, so the body was updated rather than given a no-impact entry.** Added
+  `capsule_delivery.py` (the delivery value type, the refresh decision, the legacy-chain switch) and
+  the carrier chain that now runs `TerminalLaunchRequest.control.capsule_delivery` → `RunnerConfig` →
+  the **conditionally** emitted `capsuleDelivery` payload key → parse → both factory calls →
+  `CodexAppServerSettings.capsule_delivery`. Recorded the two invariants a later editor must not break —
+  the capsule-free wire is byte-identical to base (same eight keys, 344-char token, same sha256) and a
+  malformed or channel-less capsule **refuses** rather than dropping — plus the lifetime rule the
+  installed protocol forces (no `turn/start` instruction field, one capsule per admitted binding, a
+  changed revision opens a bounded fresh thread) and the three declared limits (unmeasured vendor
+  `thread/resume` effect, `FORK_THREAD` without a production caller, the `D12` payload bound at 92.0 %
+  of `MAX_ARG_STRLEN` with an `E2BIG` failure mode). Updated the two Route Model bullets the change
+  reaches. Verification metadata stays pinned to the last committed source (`c1dbebf8`); the candidate
+  is uncommitted and closeout owns the stamp.
+
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **No route impact from the A2
+  revision.** The route meaning recorded at 09:00 below is unchanged — the A2 round repaired and
+  strengthened the same seven modules without adding, removing or repurposing a route member. Three A2
+  corrections are recorded on the file cards rather than as route changes, because each stays inside
+  one module's contract: the two launch selectors (`AR_EVE_RUNTIME_ROOT`, `AR_EVE_NODE`) became live
+  rather than documented-but-inert; the queued `turnPolicy` is now spelled on the **follow-up** as well
+  as the create, from the wire module's one literal; and the replay window has a single owner
+  (`EveEventDeduplicator`) after the inline copy was deleted. Verification metadata remains
+  closeout-owned; the source is uncommitted and no stamp was advanced.
+
+- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: **route meaning changed**, so this overview's body
+  was updated rather than given a no-impact entry. Added the native eve session adapter to the Route
+  Model with its load-bearing properties (absolute event-index cursor over stable envelope ids;
+  acceptance distinct from turn completion and session retirement; explicit queued ordinary delivery
+  instead of eve's cancellation-backed `steer`; reconcile that never repeats a possibly accepted
+  write; turn-addressed replay-once interrupt reporting acceptance only; session identity and cursor
+  published on the existing `AdapterSnapshot`, no second registry; carries a capsule binding without
+  compiling or selecting one; honest `unsupported` model/effort setters). Corrected the built-in
+  harness roster from three to four ids and recorded that the protocol-adapter registry is separate
+  from the kernel's developer-curated terminal harness set, which still has no `eve` row. Bounded the
+  route explicitly: the controlled `eve_runtime/` application sits at the repository root, outside
+  this route and outside the onboarding `pathRules`. Verification metadata stays pinned to the last
+  committed source until closeout stamps the candidate commit.
+
+
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `_app_lifespan.py` +63/−2 with the new `terminal_observer_health.py`): the startup
   contract changed again, so the body was corrected rather than annotated. The lifespan order this

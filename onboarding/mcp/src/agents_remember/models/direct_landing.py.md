@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,9 +64,12 @@ No configured Domain Documentation source applies.
 | --- | --- | --- |
 | Real code/memory SHAs are separate from optional ledgerCache diagnostics. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
 | The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
-| Registered as the `direct_landing` tool response model. | `DirectLandingResponse` | mcp/src/agents_remember/models/tools/tool_registry.py:214 |
+| Registered as the `direct_landing` tool response model. | `DirectLandingResponse`; `direct_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:214; mcp/src/agents_remember/models/tools/tool_registry.py:216-226 |
 | Produced by the admitted direct-landing coordinator. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:113-125 |
 | Memory-content execution and same-generation recovery are journaled below the coordinator. | `execute_direct_landing` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:42-75 |
+| None | `codeCommit`; `memoryContentCommit`; `ledgerCache` | mcp/src/agents_remember/models/direct_landing.py:38-40 |
+| None | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:113-125 |
+| None | `execute_or_require_direct_landing_recovery`; `_direct_memory_commit` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:81-138; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:178-239 |
 
 ## Cross-Repo References
 
@@ -91,7 +94,7 @@ The current source seams include `DirectLandingResponse`. The response vocabular
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `DirectLandingResponse` at this ownership boundary. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-21 |
+| The current module exposes `DirectLandingResponse` at this ownership boundary. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
 
 ## 260821-DAGQC-L2 Closed Outcome Vocabulary
 
@@ -103,6 +106,7 @@ once carried was removed by the closeout-door cut (commit `fad9808e`); a direct 
 carries or reports a door generation.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Distinguished actual output SHAs from optional ledger-cache diagnostics in direct landing responses. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

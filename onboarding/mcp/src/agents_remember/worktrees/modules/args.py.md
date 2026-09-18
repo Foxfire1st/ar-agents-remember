@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Purpose
@@ -93,15 +93,15 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `WorktreeArgs` carries normalized closeout input and actual landed code/memory facts. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-80 |
-| `report_operation_progress` publishes progress through the exact worker-owned callback. | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:113-114 |
+| `WorktreeArgs` carries normalized closeout input and actual landed code/memory facts. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-111 |
+| `report_operation_progress` publishes progress through the exact worker-owned callback. | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:114-117 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public sync choice and resolution-action vocabularies are owned once by the worktree model. (`MemorySyncChoice`; `SyncResolutionAction`) | `MemorySyncChoice` | mcp/src/agents_remember/models/worktree.py:80 |
-| Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:36-43 |
-| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. (`build_parser`) | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:130-131 |
-| Gate delegation policy model (kernel-owned since L9). (`GatePolicy`; `DEFAULT_GATE_POLICY = GatePolicy()`) | `GatePolicy` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-57 |
+| Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:35-43 |
+| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. (`build_parser`) | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:132-195 |
+| Gate delegation policy model (kernel-owned since L9). (`GatePolicy`; `DEFAULT_GATE_POLICY = GatePolicy()`) | `GatePolicy` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:53-63 |
 
 ## Series-Contract Notes
 
@@ -125,8 +125,8 @@ The current source seams include `WorktreeArgs`, `report_operation_progress`. Th
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-80 |
-| Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:113-114 |
+| Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-111 |
+| Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:114-117 |
 
 ## Current Landed Composition
 

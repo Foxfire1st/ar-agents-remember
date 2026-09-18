@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tools/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -58,13 +58,15 @@ No external domain source governs this repository-local registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141 |
-| The complete registry includes structural agent and gate responses alongside internal exact models. | "\"dispatch_agent\": DispatchAgentResponse,"; "\"gate_decide\": GateDecideResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:150-231 |
-| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:233-237 |
-| The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. | `worktree_checkpoint_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:191-191 |
-| The stop tool's response model is registered immediately after its sync sibling, matching the advertised order. | `worktree_pause` | mcp/src/agents_remember/models/tools/tool_registry.py:187-187 |
-| The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:192-192 |
+| The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:126-147 |
+| The complete registry includes structural agent and gate responses alongside internal exact models. | "\"dispatch_agent\": DispatchAgentResponse,"; "\"gate_decide\": GateDecideResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:155-238 |
+| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:241-244 |
+| The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. | `worktree_checkpoint_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:198-198 |
+| The stop tool's response model is registered immediately after its sync sibling, matching the advertised order. | `worktree_pause` | mcp/src/agents_remember/models/tools/tool_registry.py:194-194 |
+| The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:199-199 |
+| The three rows the capsule-and-skill registrar needs, at the mapping's tail to match their appended roster position. | `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` | mcp/src/agents_remember/models/tools/tool_registry.py:238-240 |
 | The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
+| The three strict contracts the new rows map to, including the shared success/refusal capsule envelope. | `RoleCapsuleResponse`; `SkillCatalogListResponse`; `SkillCatalogReadResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115; mcp/src/agents_remember/models/role_capsule_resources.py:137-150; mcp/src/agents_remember/models/role_capsule_resources.py:153-167 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -87,7 +89,7 @@ The current source seams include the module-level vocabulary. The model change k
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the module-level vocabulary at this ownership boundary. | "INTERNAL_COMPAT_TOOL_NAMES = frozenset("; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {" | mcp/src/agents_remember/models/tools/tool_registry.py:121-148; mcp/src/agents_remember/models/tools/tool_registry.py:233-237 |
+| The current module exposes the module-level vocabulary at this ownership boundary. | "INTERNAL_COMPAT_TOOL_NAMES = frozenset("; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {" | mcp/src/agents_remember/models/tools/tool_registry.py:121-148; mcp/src/agents_remember/models/tools/tool_registry.py:233-237; mcp/src/agents_remember/models/tools/tool_registry.py:243-243 |
 
 ## 260821-CLIVE Strict Door Response
 
@@ -149,7 +151,46 @@ name, so a missing row raises `KeyError` inside the handler instead of returning
 envelope it maps to is the one whose only own field is `paused`, which the stop's route claims and a
 publication's envelope cannot express.
 
+## 260915-CAPS-L4 Capsule And Skill Registration Rows
+
+`TOOL_RESPONSE_MODELS` now maps the three names the new `mcp/registration/capsule_serving.py` family
+publishes, each to a strict model imported from `models.role_capsule_resources`:
+
+| Name | Response model |
+| --- | --- |
+| `role_capsule_compile` | `RoleCapsuleResponse` |
+| `skill_catalog_list` | `SkillCatalogListResponse` |
+| `skill_catalog_read` | `SkillCatalogReadResponse` |
+
+All three rows and all three advertised names were added in one change, together with the registrar
+that declares them, so the roster, the registrar and this registry never disagreed — the L29 rule
+applied by construction for the third time. The rows are mandatory for the reason this card already
+records: `finalize_tool_response` indexes this mapping by tool name, so a name FastMCP advertises but
+this registry omits raises `KeyError` inside the handler instead of returning a payload. The three new
+names sit at the tail of the mapping (`:236-238`), matching their appended position at the tail of
+`PUBLIC_TOOLS`.
+
+`RoleCapsuleResponse` is also the first strict response on this registry whose **refusal** is the same
+envelope as its success (`ok` false plus a typed `refusalStatus`), so the row covers both shapes without
+a second model.
+
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_checkpoint_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:198-198. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_pause` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:199-199. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:238-238; mcp/src/agents_remember/models/tools/tool_registry.py:239-239; mcp/src/agents_remember/models/tools/tool_registry.py:240-240. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`, base
+  `b00a4ac2`): registered the three response-model rows the new capsule-and-skill-serving registrar
+  needs — `role_capsule_compile` → `RoleCapsuleResponse`, `skill_catalog_list` →
+  `SkillCatalogListResponse`, `skill_catalog_read` → `SkillCatalogReadResponse`, imported from
+  `models.role_capsule_resources` and placed at the mapping's tail (`:236-238`) to match the appended
+  tail position of the three names in `PUBLIC_TOOLS`. Recorded that the roster rows, the registrar
+  declaration and these registry rows all landed in one change, and that the new capsule envelope
+  carries its refusal as the same envelope rather than a second model. Re-derived this card's registry
+  ranges against the current source: `INTERNAL_COMPAT_TOOL_NAMES` 120-141 → **126-147**,
+  `TOOL_RESPONSE_MODELS` 150-231 → **155-238** and `PUBLIC_TOOL_RESPONSE_MODELS` 233-237 → **241-244**;
+  the removal of the `closeout_door` row and this leaf's three additions both moved them. Verification
+  metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_checkpoint_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:191-191. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical

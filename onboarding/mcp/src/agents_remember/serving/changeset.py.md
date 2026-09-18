@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`     |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`     |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -164,7 +164,7 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | `FileScope`; `run_scoped`; `language_for` | mcp/src/agents_remember/serving/scope.py:71-73; mcp/src/agents_remember/serving/scope.py:102-113; mcp/src/agents_remember/serving/scope.py:216-236 |
-| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:94-97; mcp/src/agents_remember/worktrees/modules/git.py:255-258; mcp/src/agents_remember/worktrees/modules/git.py:309-348 |
+| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:309-348; mcp/src/agents_remember/worktrees/modules/git.py:94-97; mcp/src/agents_remember/worktrees/modules/git.py:255-258 |
 | Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe. | "def route_sidecar_status(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:91-106 |
 | Shared path confinement resolves the requested path and refuses repository escape. | "def confine_rel(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-49 |
 | The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". `slugify` is now defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/tasks/task_paths.py:25-28; mcp/src/agents_remember/worktrees/task_resolver.py:16-27 |
@@ -283,4 +283,3 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   Verification metadata pinned until closeout stamps the L4 follow-up commit.
 
 - 2026-06-29T15:30+02:00 — Created for operations-integration L3: the read-only change-set API — `GET /api/changeset/{task,file-diff,master}` (registered before the static mount), computing a task's `base → current` code + memory change-set with insertion/deletion counts + A/M/D/R status + `hasSidecar`, BEFORE/AFTER file content for the L4 MergeView, and the master's accumulation across leaf enclosures (active leaf → worktree, completed leaf → integrated commit; dedup by path, sum counts). Reuses `serving/scope.py` + the L1 posture; mainline has no base → 404. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
-

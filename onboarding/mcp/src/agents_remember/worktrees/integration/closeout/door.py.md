@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/door.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,16 +83,16 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `successor_waiting_door` binds successor identity to code/memory and task provenance without a ledger dependency. | `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-122 |
-| `_require_door_transition` preserves the exact door identity and legal publication transitions. | `_require_door_transition` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:302-305 |
+| `successor_waiting_door` binds successor identity to code/memory and task provenance without a ledger dependency. | `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-172 |
+| `_require_door_transition` preserves the exact door identity and legal publication transitions. | `_require_door_transition` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:302-360 |
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:32-36 |
-| The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. | `live_closeout_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:203-206 |
-| Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`) | `door_generation_for_operation` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-85 |
+| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure`; `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:32-36; mcp/src/agents_remember/worktrees/integration/closeout/door.py:61-76 |
+| The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. | `live_closeout_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:203-232 |
+| Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`) | `door_generation_for_operation`; `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-85; mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-172 |
 
 ## Cross-Repo References
 

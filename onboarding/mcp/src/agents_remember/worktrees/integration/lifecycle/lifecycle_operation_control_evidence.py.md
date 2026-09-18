@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ Cancellation of retained private preparation first reopens the contract and veri
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `_cancellable_closeout_facts` boundary implements the preparation contract above. | `_cancellable_closeout_facts` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:126-130 |
+| The current `_cancellable_closeout_facts` boundary implements the preparation contract above. | `_cancellable_closeout_facts` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:126-191 |
 
 ## Docs References
 
@@ -67,14 +67,14 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_reconciled_closeout_record` reconciles actual mutations and derives their two recovery commit cells. | `_reconciled_closeout_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:86-88 |
-| `_cancellable_closeout_facts` combines protected-output and private-preparation facts for cancellation. | `_cancellable_closeout_facts` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:126-130 |
+| `_reconciled_closeout_record` reconciles actual mutations and derives their two recovery commit cells. | `_reconciled_closeout_record` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:86-123 |
+| `_cancellable_closeout_facts` combines protected-output and private-preparation facts for cancellation. | `_cancellable_closeout_facts` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:126-191 |
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam. | `prove_cancellable_git` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:34-39 |
+| The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam. | `prove_cancellable_git` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:34-83 |
 
 ## Cross-Repo References
 

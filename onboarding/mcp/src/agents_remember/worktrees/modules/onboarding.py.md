@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -203,8 +203,8 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. | `contract_memory_verified_commit` | mcp/src/agents_remember/worktrees/modules/onboarding.py:55-56 |
-| `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. | `_changed_memory_paths` | mcp/src/agents_remember/worktrees/modules/onboarding.py:60-61 |
+| `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. | `contract_memory_verified_commit` | mcp/src/agents_remember/worktrees/modules/onboarding.py:55-57 |
+| `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. | `_changed_memory_paths` | mcp/src/agents_remember/worktrees/modules/onboarding.py:60-71 |
 
 Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:826-864). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:1069-1081). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:121-147); the downstream cache is derived from attributed Git history and is not a body-review baseline. These contracts are source-backed; the removed support slices are not current test evidence.
 
@@ -212,8 +212,8 @@ Current production closeout refuses missing or unsupported source sidecars befor
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) | `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-341; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-342 |
-| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-191; mcp/src/agents_remember/kernel/route_index_census.py:184-235 |
+| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) | `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-395 |
+| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 
 | Sidecar and route-overview attestations are checked independently and aggregated before refresh publication. (`validate_memory_refresh_attestations`) | L867-L942 | [mcp/src/agents_remember/worktrees/modules/onboarding.py](mcp/src/agents_remember/worktrees/modules/onboarding.py) |
 

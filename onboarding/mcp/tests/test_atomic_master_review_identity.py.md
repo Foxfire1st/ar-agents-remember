@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_atomic_master_review_identity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:10+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2`|
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

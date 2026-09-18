@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/legacy.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,8 +56,8 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bounded legacy proof retains unfinished memory intent after verified code without a ledger message. | `_require_exact_original_bytes` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-52 |
-| The module defines `LegacyCloseoutMigrationProof` as its public seam. | `LegacyCloseoutMigrationProof` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-13 |
+| The bounded legacy proof retains unfinished memory intent after verified code without a ledger message. | `_require_exact_original_bytes`; `LegacyCloseoutMigrationProof` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-52 |
+| The module defines `LegacyCloseoutMigrationProof` as its public seam. | `LegacyCloseoutMigrationProof` | mcp/src/agents_remember/models/lifecycles/legacy.py:12-52 |
 
 ## Cross-Repo References
 
@@ -73,4 +73,3 @@ No meaningful cross-repository boundary is owned by this file.
 
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

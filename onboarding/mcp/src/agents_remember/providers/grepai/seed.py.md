@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                         |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| governingOverview      | `overview.md`                     |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -57,10 +61,9 @@
 | GrepAI setup calls clone before refresh when seed options are present. | `prepare_enabled_provider` | mcp/src/agents_remember/providers/grepai/setup.py:56-71 |
 | Provider setup threads source/target settings into GrepAI seed options for worktrees (benchmarks pass none). | `GrepaiSeedOptions` | mcp/src/agents_remember/providers/provider_setup.py:105-112 |
 
-
-
 ## Update History
 
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead `governingOverview` field repaired.** This card's field named `../../../overview.md`, which resolves under no base — not relative to the card, the onboarding root, or the root's parent — so the route the card declares did not exist. The field now names `overview.md`, the route-local overview of this card's own directory. The card carries no `## Governing Overview` section, so no body link existed to repair and none was invented. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 10 citations (citation_anchor_missing=5, citation_prose_not_in_cit_form=0, citation_source_malformed=5); final scoped citation check clean.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0913` armed with no
   exemptions): extracted `_clone_inputs` (+ the `_CloneInputs` NamedTuple), introduced the frozen

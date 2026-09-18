@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tools/public_roster.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the 63 tool
-names the MCP server advertises as its public surface (62 until 260831-LOCR-L37 added
+`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **66** tool
+names the MCP server advertises as its public surface (63 until 260915-CAPS-L4 added
+`role_capsule_compile`, `skill_catalog_list` and `skill_catalog_read`; 62 until 260831-LOCR-L37 added
 `worktree_pause`). It is a **zero-runtime-import leaf**: it
 imports nothing, defines nothing else, and exists only so a `models` response model can read the
 roster without importing `mcp`.
@@ -27,7 +28,10 @@ it. The relocation changed the object's home and nothing else — same tuple, sa
 consumer is unchanged and `agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the identical
 object. The tuple held 62 unique names from L30 until 260831-LOCR-L37 added `worktree_pause`
 immediately after `worktree_sync`, which is a membership change made here and in
-`mcp/registration/worktrees.py` in the same leaf.
+`mcp/registration/worktrees.py` in the same leaf. 260915-CAPS-L4 made the next membership change: three
+names **appended at the tail**, together with the new `capsule_serving.py` registrar and its three
+`TOOL_RESPONSE_MODELS` rows in one change, so the roster, the registrar and the registry never
+disagreed.
 
 ## Code Commentary
 
@@ -39,11 +43,14 @@ The module body is one module docstring and one literal:
 PUBLIC_TOOLS = (
     "ping",
     ...
-    "message_child",
+    # The capsule operation and the skill discovery/read surface.
+    "role_capsule_compile",
+    "skill_catalog_list",
+    "skill_catalog_read",
 )
 ```
 
-`PUBLIC_TOOLS` spans **L22-L86**; the file is 86 lines. The only other statement is
+`PUBLIC_TOOLS` spans **L22-L90**; the file is 90 lines. The only other statement is
 `from __future__ import annotations` at L20 — no imports, no helpers, no package-level side effects.
 
 ### Conventions
@@ -94,19 +101,36 @@ violations with no `models → mcp` edge and no new cycle.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The roster's single definition, 63 ordered names, in a module that imports nothing. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
-| The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:58-58 |
+| The roster's single definition, 66 ordered names, in a module that imports nothing. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-90 |
+| The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:59-59 |
+| The three newest advertised names, appended at the tail with the registrar and registry rows that publish them. | `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` | mcp/src/agents_remember/models/tools/public_roster.py:88-90 |
 | The adapter re-exports this object through `__all__` instead of declaring its own tuple. | "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 | The response model that reads the roster to enforce the worktree surface's next-move vocabulary. | `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-369 |
-| The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. | `TOOL_RESPONSE_MODELS`; `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-139; mcp/src/agents_remember/models/tools/tool_registry.py:147-225 |
+| The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. | `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:126-147; mcp/src/agents_remember/models/tools/tool_registry.py:155-238 |
 | The live registered-order comparison that treats this tuple as the advertised authority. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-281 |
 | The executor that pins the worktree surface's enforcement of this roster in both directions. | `test_next_tool_must_name_a_registered_public_tool`; `test_the_worktree_surface_refuses_a_registered_but_non_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:231-278 |
+| The registrar that publishes the three newest names, whose order the tuple must match. | `register_capsule_and_skill_tools` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this repository-local tuple.
 
 ## Update History
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_pause` repointed to mcp/src/agents_remember/models/tools/public_roster.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` repointed to mcp/src/agents_remember/models/tools/public_roster.py:88-88; mcp/src/agents_remember/models/tools/public_roster.py:89-89; mcp/src/agents_remember/models/tools/public_roster.py:90-90. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `register_capsule_and_skill_tools` repointed to mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`, base
+  `b00a4ac2`): the advertised tuple gained three names **appended at the tail** —
+  `role_capsule_compile`, `skill_catalog_list` and `skill_catalog_read`, with the comment that names
+  the pair of surfaces they serve — bringing 63 ordered names to **66** and the extent from `L22-L86`
+  to `L22-L90`. Unlike the previous membership changes, this one appended rather than inserting, so no
+  existing name's advertised position moved; the three names went into the roster, the new
+  `mcp/registration/capsule_serving.py` registrar and `TOOL_RESPONSE_MODELS` in the same change, which
+  is the L29 lesson applied by construction. Corrected the Purpose count and extent, the Logic
+  literal's tail, and the two registry ranges on this card (`INTERNAL_COMPAT_TOOL_NAMES` 120-139 →
+  126-147 and `TOOL_RESPONSE_MODELS` 147-225 → 155-238, both shifted by this leaf's own three registry
+  rows and by earlier additions this card had not re-measured), and added the roster-tail and
+  registrar reference rows. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: the advertised tuple gained `worktree_pause` (63 ordered
   names, extent `L22-L86`, the name at `:58` immediately after `worktree_sync`) in the same leaf that
   registered the tool and gave it a response model, so the roster, the registrar and the registry never

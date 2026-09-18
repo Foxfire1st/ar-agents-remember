@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `closeout_preview_args` renders contract-addressed preview arguments with enabled code/memory messages. | `closeout_preview_args` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py:8-9 |
+| `closeout_preview_args` renders contract-addressed preview arguments with enabled code/memory messages. | `closeout_preview_args` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py:8-17 |
 
 ## Update History
 

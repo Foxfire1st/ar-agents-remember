@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/preparation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,13 +51,13 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. | `PreparationLeg` | mcp/src/agents_remember/models/lifecycles/preparation.py:26 |
-| `_canonical_preparation_path` owns the corresponding behavior described above. | `_canonical_preparation_path` | mcp/src/agents_remember/models/lifecycles/preparation.py:30-31 |
-| `ExistingMemoryPreparationProof` owns the corresponding behavior described above. | `ExistingMemoryPreparationProof` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-44 |
-| `_one_header` owns the corresponding behavior described above. | `_one_header` | mcp/src/agents_remember/models/lifecycles/preparation.py:331-332 |
-| `_identity_date` owns the corresponding behavior described above. | `_identity_date` | mcp/src/agents_remember/models/lifecycles/preparation.py:341-342 |
-| `_require_output_headers` owns the corresponding behavior described above. | `_require_output_headers` | mcp/src/agents_remember/models/lifecycles/preparation.py:357-359 |
-| `require_prepared_output_matches_intent` owns the corresponding behavior described above. | `require_prepared_output_matches_intent` | mcp/src/agents_remember/models/lifecycles/preparation.py:380-382 |
+| Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. | `PreparationLeg`; `certifiedContentTree` | mcp/src/agents_remember/models/lifecycles/preparation.py:26; mcp/src/agents_remember/models/lifecycles/preparation.py:52-52 |
+| `_canonical_preparation_path` owns the corresponding behavior described above. | `_canonical_preparation_path` | mcp/src/agents_remember/models/lifecycles/preparation.py:30-40 |
+| `ExistingMemoryPreparationProof` owns the corresponding behavior described above. | `ExistingMemoryPreparationProof` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-69 |
+| `_one_header` owns the corresponding behavior described above. | `_one_header` | mcp/src/agents_remember/models/lifecycles/preparation.py:331-338 |
+| `_identity_date` owns the corresponding behavior described above. | `_identity_date` | mcp/src/agents_remember/models/lifecycles/preparation.py:341-354 |
+| `_require_output_headers` owns the corresponding behavior described above. | `_require_output_headers` | mcp/src/agents_remember/models/lifecycles/preparation.py:357-377 |
+| `require_prepared_output_matches_intent` owns the corresponding behavior described above. | `require_prepared_output_matches_intent` | mcp/src/agents_remember/models/lifecycles/preparation.py:380-414 |
 
 ## Cross-Repo References
 

@@ -88,4 +88,3 @@ among its fragments; the generator inserts the constant conditionally.
   independent session-start hook copies into one checked definition (requirement L2-R12).
   Verification metadata is pinned to the leaf's reformat commit until closeout stamps the
   code commit.
-

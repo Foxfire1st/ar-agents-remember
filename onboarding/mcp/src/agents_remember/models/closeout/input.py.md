@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/closeout/input.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,15 +63,17 @@ requirement remains, with its ledger leg retired by the authorized LCA-L9 change
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. | `CloseoutCommitLegName` | mcp/src/agents_remember/models/closeout/input.py:32 |
+| Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. | `CloseoutCommitLegName`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:32; mcp/src/agents_remember/models/closeout/input.py:128-166 |
 | Raw observations and typed refusal vocabulary are public data. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:46-52 |
 | Effective legs are a discriminated union. | `_require_normalized_message` | mcp/src/agents_remember/models/closeout/input.py:96-111 |
-| Only enabled legs can return a raw commit message; this stays the public echo. | `message_for` | mcp/src/agents_remember/models/closeout/input.py:138-142 |
-| The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. | `memory_content_message` | mcp/src/agents_remember/models/closeout/input.py:144-162; mcp/src/agents_remember/kernel/memory_attribution.py:144-162 |
-| The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. | `rule` | layers.toml:25 |
+| Only enabled legs can return a raw commit message; this stays the public echo. | `message_for`; `CloseoutPublicMessageField` | mcp/src/agents_remember/models/closeout/input.py:35-38; mcp/src/agents_remember/models/closeout/input.py:138-142 |
+| The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. | `memory_content_message`; `CODE_COMMIT_TRAILER_KEY` | mcp/src/agents_remember/kernel/memory_attribution.py:51-51; mcp/src/agents_remember/kernel/memory_attribution.py:144-162; mcp/src/agents_remember/models/closeout/input.py:144-162 |
+| The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. | `rule`; `kernel` | layers.toml:25; layers.toml:78-84 |
 | The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. | `test_the_rendered_trailer_is_the_one_the_reader_parses` | mcp/tests/test_memory_ledger.py:717-751 |
-| The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module` | mcp/tests/test_memory_attribution_producers.py:86-116 |
-| The worktree and direct routes render attributed memory messages at their real commit seams; no ledger commit is produced. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:79-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:79-110 |
+| The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:86-116; mcp/tests/test_memory_attribution_producers.py:120-138 |
+| The worktree and direct routes render attributed memory messages at their real commit seams; no ledger commit is produced. | `_commit_memory_content`; `_direct_memory_commit` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:79-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:178-239; mcp/src/agents_remember/worktrees/modules/closeout_external.py:79-110 |
+| None | `CloseoutMessageInput`; `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:47-53; mcp/src/agents_remember/models/closeout/input.py:77-85 |
+| None | `EffectiveCloseoutLeg` | mcp/src/agents_remember/models/closeout/input.py:122-125 |
 
 ## Cross-Repo References
 
@@ -82,10 +84,15 @@ No meaningful cross-repository reference applies.
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | — | — |
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock; stamped the untimestamped Update History entries with this document's own commit clock
 
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
+- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Narrowed public/effective closeout input to code and memory while preserving the shared attribution renderer. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Narrowed public/effective closeout input to code and memory while preserving the shared attribution renderer. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
@@ -143,4 +150,3 @@ No meaningful cross-repository reference applies.
 
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; verification metadata remains blank until governed closeout stamps the landed code commit.
-

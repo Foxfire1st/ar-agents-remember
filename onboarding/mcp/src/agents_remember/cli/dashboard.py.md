@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-09-07T00:42+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080`   |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastUpdated            | 2026-09-17T10:35+02:00 |
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -171,7 +171,7 @@ against the same coordination root as a live MCP server. Closing it means declar
 | The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
 | The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
 | The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:283-376 |
-| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:84-158; mcp/src/agents_remember/cli/dashboard.py:211-232; mcp/src/agents_remember/cli/dashboard.py:246-267; mcp/src/agents_remember/cli/dashboard.py:270-297 |
+| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:84-158; mcp/src/agents_remember/cli/dashboard.py:211-232; mcp/src/agents_remember/cli/dashboard.py:246-267; mcp/src/agents_remember/cli/dashboard.py:270-297; mcp/src/agents_remember/cli/dashboard.py:308-335 |
 | Discovery unit tests (hits, precedence, template skip, miss error). | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
 | The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:137-148 |
@@ -194,7 +194,39 @@ rows. This is the production dependency-injection boundary; omitted test seams r
 for task-bound deletion rather than using a compatibility reader.
 
 
+## 260915-CAPS-L15 Capsule-Compiler Composition Root
+
+`serving_collaborators(config)` builds the collaborator record **bound to the configuration this
+dashboard serves**, and every `create_app` call in this module goes through it — the reload factory,
+the live app and the sim app alike. Its first job is the capsule compiler: `compile_launch_capsule`
+is an `application`-rank callable and `serving` may not import it, so this composition root — the one
+place that already knows which configuration the app serves — binds it with `partial(...)`. A partial
+rather than a zero-arg factory is the point: the port hands the serving gate a callable that already
+carries the config, so the serving rank never sees a `McpRuntimeConfig` it has no business resolving.
+
+The rule this section exists to state: **a dashboard process can never serve a role-configured launch
+with no compiler behind it.** `EXECUTION_REGISTRATION_COLLABORATORS` remains the config-free base
+record; `serving_collaborators` is a `dataclasses.replace` over it, so a future collaborator added to
+the base is not silently dropped by this composition.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-83; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:112-115; mcp/src/agents_remember/cli/dashboard.py:287-303; mcp/src/agents_remember/cli/dashboard.py:86-116; mcp/src/agents_remember/cli/dashboard.py:281-305 |
+| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:430-462 |
+
 ## Update History
+
+- 2026-09-17T10:35+02:00 — 260915-CAPS-L15 curator: **this file became the composition root for the
+  capsule compiler.** Added `serving_collaborators(config)`, a `dataclasses.replace` over the
+  config-free base record that binds the `application`-rank `compile_launch_capsule` into the serving
+  port, and pointed every `create_app` call in the module at it — so no dashboard process can serve a
+  role-configured launch with no compiler behind it. Added a current-intent section, three reference
+  rows and the reason the bound callable is a `partial`. Verification metadata moves to this leaf's base
+  `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
+  commit and no hash or fingerprint was invented here.
+
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-07T00:42+02:00 — Removed remaining obsolete suite-proof citations; current production invariants and historical records remain preserved.
 

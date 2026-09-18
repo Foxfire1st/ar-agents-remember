@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,10 +57,10 @@ These source owners establish the behavior and boundaries above. Citation ranges
 | The selected leg must still match the retained intent. | `_selected_leg` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:37-46 |
 | The private binding retains the exact selected parent, admitted tree, message, and owner. | `private_git_binding` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:49-66 |
 | The capability reopens selection and actual private policy around commands. | `_capability` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:69-92 |
-| Original commands are selected and their observed terminals retained once. | `_run_once` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:118-183 |
+| Original commands are selected and their observed terminals retained once. | `_run_once`; `_terminal_record` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:118-183 |
 | Output observation proves the named committed object and current policy. | `observe_private_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:186-200 |
 | Only an unstarted suffix runs; uncertain prior commands are retained for named-output recovery. | `prepare_private_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:203-237 |
-| The selected intent supports only code and memory-content output legs. | `PreparationLeg` | mcp/src/agents_remember/models/lifecycles/preparation.py:26 |
+| The selected intent supports only code and memory-content output legs. | `PreparationLeg`; `require_prepared_output_matches_intent` | mcp/src/agents_remember/models/lifecycles/preparation.py:26; mcp/src/agents_remember/models/lifecycles/preparation.py:380-414 |
 
 ## Cross-Repo References
 
@@ -71,6 +71,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 | No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Clarified the two supported output legs while preserving the executor's create/materialize/commit ordering, strict private proof, and no-rerun behavior. Source SHA-256 `1a789fe8836353b0fdf58dfac8cde1c1cef5b7266664a6194c7801918bb82798`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
 

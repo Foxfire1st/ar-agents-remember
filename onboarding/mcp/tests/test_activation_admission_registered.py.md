@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_activation_admission_registered.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T19:24:00+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
+| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

@@ -98,4 +98,3 @@ No cross-repository implementation evidence is required for these local test and
 
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Created the production-owner transaction regression card, preserving exact interference, refusal and accounting boundaries without claiming OS-level compare-and-swap. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
-

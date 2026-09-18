@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T20:00+02:00 |
 | lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
+| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,15 +82,15 @@ No configured external documentation applies; the schemas are repository-owned.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:66-92 |
-| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:190-234 |
-| The discriminated action request separates read actions from publication CAS input. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:370-434 |
+| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-91; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:66-92 |
+| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-235 |
+| The discriminated action request separates read actions from publication CAS input. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-317; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:370-434 |
 | **The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.** | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:298-310; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:316-326 |
 | **The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.** | `publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:353-377 |
 | **The sibling refusal that names the publication-only field a read action received.** | `forbidden_publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:380-383 |
 | **The statement of the complete publication input set, read from the declaration at call time.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:386-411 |
 | **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** | `_publication_inputs_supplied`; `_action_has_one_input_shape` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:464-478; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:480-494 |
-| The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`, `dependency`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-223; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273 |
+| The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`; `dependency`; `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-223; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:216-227; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277 |
 
 ## Cross-Repo References
 

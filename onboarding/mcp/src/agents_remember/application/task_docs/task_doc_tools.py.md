@@ -472,4 +472,3 @@ or removed.
 - 2026-06-14T00:16+02:00 — Slice 3c commit 3: added master ops `set_subtask` (upsert `SubTaskRef` by number) + `set_section` (upsert freeform `Section` by heading), master `create` handling (skips `lifecycleId`), and kind guards (`set_step` rejects a master; `set_subtask`/`set_section` reject a non-master). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
 
 - 2026-06-13T22:34+02:00 — Created for slice 3c commit 1: the `task_doc` authoring controller (op-dispatch + contract lifecycle pickup). Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
-

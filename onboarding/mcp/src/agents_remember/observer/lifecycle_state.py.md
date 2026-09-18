@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/observer/lifecycle_state.py` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-08-01T10:40+02:00                               |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`           |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`           |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `overview.md`                                        |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -91,7 +95,7 @@ than defaulting it.
 ### Current module boundaries
 
 cit:(["Phase = Literal["], mcp/src/agents_remember/models/lifecycles/responses.py:20-27) — the session-lifecycle skill's heading vocabulary,
-orthogonal to state. cit:(["system-owned"], mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:183-183) binds the paused and
+orthogonal to state. cit:(["system-owned"], mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/lifecycle-frame.md:19-19) binds the paused and
 awaiting-developer classification: `paused` is system-owned (no model signal),
 while `awaiting-developer` is the turn-end notification state on the live half.
 cit:([`await_developer`, `resume_from_await`], mcp/src/agents_remember/observer/ambient.py:205-221; mcp/src/agents_remember/observer/ambient.py:223-241)
@@ -150,6 +154,7 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
 | The design note is historical context only; current lifecycle behavior is owned by this module and its focused tests. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

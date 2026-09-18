@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff` |
-| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
+| lastUpdated            | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,17 @@
 Packaged runtime copy of the sprint-bound backend orchestrator lifecycle. The canonical
 `skills/l-01-agent-lifecycles/roles/orchestrator.md` owns doctrine; the sync process installs this
 exact artifact.
+
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
+with `**Inherits:**` rather than restating them: all five shared blocks (`core/authority.md`,
+`core/invariants.md`, `core/lifecycle-frame.md`, `core/loop.md`, `core/acceptance.md`) plus
+`operations/orientation.md`, `operations/planning.md`, `operations/coordination.md`,
+`operations/review.md`, `operations/closeout.md`, and `operations/recovery.md`. **This role file is
+the one home of the super-integration-branch topology** — the router now carries only an orientation
+diagram and sends the canonical graph, execution-nature classification, ready-frontier recomputation,
+landing procedures, conflict routing, and leaf moves here.
 
 ## Code Commentary
 
@@ -64,6 +75,10 @@ role, then synchronize.
   invalidated and rebuilt after planning changes.
 - The queue observes activation and owns no lifecycle, commit, or selection evidence.
 - This packaged artifact must remain byte-identical to the canonical role.
+- The orchestrator is the only home of the super-integration topology; the router deliberately keeps
+  an orientation diagram instead of restating it.
+- The orchestrator names `roles/strategist.md` and `roles/designer.md` only to dispatch those seats,
+  which are this role's sanctioned sibling references.
 
 ### Todos
 
@@ -72,7 +87,7 @@ None recorded.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Docs References
 
@@ -85,13 +100,13 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `## Job P — Portfolio (streamline + plan)`; `## Job O — Orchestrate (execute the plan)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:183-277; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:278-506 |
+| The synchronized role reads the ruled plan for its requirement-corpus references, the reasoned topology choice, every commanded master's executionNature, and any executionGraph. | `executionNature`; `executionGraph`; "the reasoned topology choice" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:19-21 |
 | The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; "## Topology Choice And Canonical executionGraph Adoption Payload" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-72; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:127-168 |
 | Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
-| The shipped role now states the graph-less default directly: canonical commanded order is the stable tie-break and nothing serializes its masters. | "nothing serializes its masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:264-267 |
-| The shipped role now states that per-contract activation records each master's own `reconciling -> active` transition and serializes nothing across masters. | "Per-contract activation records each master's own" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:345-347 |
-| The shipped role's closeout queue observes each contract's own activation facts instead of a paused former master. | "Queue rows only project each contract's own" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:350-351 |
-| The shipped topology diagram shows each atomic master on its own branch with one landing into super. | "atomic master B branch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:454-456 |
+| The shipped role states that independent ready masters run in parallel up to the configured maximum, and that only an atomic master waits for its explicit graph predecessors. | `maxParallelMasters`; "waits for its explicit graph predecessors" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:111-112 |
+| Each release and landing is per execution nature, and the seat releases only the exact first-ready generation the projection admits. | "Release and land per execution nature"; "You release only the exact first-ready generation the projection admits" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:67-68 |
+| The shipped role selects from current truth rather than a queue row, and it never mutates an old queue row. | "selecting from current truth rather than a queue row"; "never mutate an old queue row" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:36-36; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:179-180 |
+| The shipped topology rule gives only an atomic master an intermediate integration branch off super, and its completed block lands on super once. | "owns an intermediate integration branch"; "its leaves branch from that block, and the completed block lands on super once" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:55-62 |
 
 ## Cross-Repo References
 
@@ -220,6 +235,34 @@ earlier shipped-source debt note is therefore removed — a repo-wide grep for `
 and source-pair activation wording returns 0 hits in the code worktree.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "atomic master B branch" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:269-269. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule.
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: Repaired citations this leaf falsified: the canonical lifecycle corpus was consolidated (the router shrank 620 → 179 lines; all nine role files and several templates were rewritten), so the cited anchors and ranges no longer resolved. No behavioral claim changed — the cited rule was re-pointed at its current home. Verification metadata remains closeout-owned. The `Job P — Portfolio (streamline + plan)` / `Job O — Orchestrate (execute the plan)` row now cites the real (bold-lead, not `##`) anchors at `:102-163` and `:164-306`; the previous `:278-506` exceeded the rewritten file's 459 lines.
+
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical orchestrator role was rewritten (457 lines) into the corpus's readable order and declares
+  its eleven inherited sources with `**Inherits:**`. Updated Purpose to record the readable order, the
+  inherited sources, and the load-bearing consequence of the consolidation for this file: the
+  super-integration-branch topology now has exactly one home here, while the router keeps only an
+  orientation diagram. Added two Invariants: that the router deliberately does not restate the
+  topology, and that this role's two sibling references (`roles/strategist.md`, `roles/designer.md`)
+  are sanctioned dispatch references only. **Metadata repair:** `governingOverview` pointed at
+  `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP
+  package overview"; corrected to `../../../../../overview.md`, and the missing blank line between the
+  metadata table and `## Governing Overview` was restored. Verification metadata remains
+  closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
   shipped-source debt row and debt paragraph and replaced them with the corrected shipped ranges —
   the role's graph-less paragraph now says "nothing serializes its masters" `:264-267`, per-contract

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`|
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ Preparation is meaningful operation state and belongs only to the exact closeout
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The current `_require_altitude_authority` boundary implements the preparation contract above. | `_require_altitude_authority` | mcp/src/agents_remember/models/lifecycles/operation.py:592-641 |
-| The current `_require_cancellation_evidence` boundary implements the preparation contract above. | `_require_cancellation_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:909-910 |
+| The current `_require_cancellation_evidence` boundary implements the preparation contract above. | `_require_cancellation_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:909-927 |
 
 ## Docs References
 
@@ -106,15 +106,15 @@ The operation model owns strict serialization and cross-field identity checks. T
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery and integration authority retain real code/memory outputs and validate those outputs against accepted publication. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
-| Closeout input retains the contract, effective input, approval, policy and corrective dispositions. | `CloseoutOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:311-320 |
-| The durable record carries both selected certification states and the completed quality proof. | `_decode_legacy_missing_intent` | mcp/src/agents_remember/models/lifecycles/operation.py:340-435 |
-| Completed integration requires an exact original full code prefix and a matching result digest. | `IntegrationQualityCertification` | mcp/src/agents_remember/models/lifecycles/operation.py:208-245 |
-| Attestation, passing result, comparison base and memory policy are checked together. | `_require_quality_certification_attestation` | mcp/src/agents_remember/models/lifecycles/operation.py:260-274 |
-| Completed proof must match the selected operation generation, references and integration code authority. | `_require_integration_certification_authority` | mcp/src/agents_remember/models/lifecycles/operation.py:566-589 |
-| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `closeoutFinalizedContractSha256` | mcp/src/agents_remember/models/lifecycles/operation.py:521-548 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393 |
-| The R03 dependency vocabulary is shared by these record types. | `EvidenceRecordType` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-30 |
+| Recovery and integration authority retain real code/memory outputs and validate those outputs against accepted publication. | `LifecycleOperationRecoveryCommits`; `_require_integration_publication` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72; mcp/src/agents_remember/models/lifecycles/operation.py:957-978 |
+| Closeout input retains the contract, effective input, approval, policy and corrective dispositions. | `CloseoutOperationInput`; `_require_legacy_effective_input` | mcp/src/agents_remember/models/lifecycles/operation.py:311-320; mcp/src/agents_remember/models/lifecycles/operation.py:806-829 |
+| The durable record carries both selected certification states and the completed quality proof. | `_decode_legacy_missing_intent`; `IntegrationQualityCertification` | mcp/src/agents_remember/models/lifecycles/operation.py:208-245; mcp/src/agents_remember/models/lifecycles/operation.py:340-435 |
+| Completed integration requires an exact original full code prefix and a matching result digest. | `IntegrationQualityCertification`; "original full code prefix" | mcp/src/agents_remember/models/lifecycles/operation.py:208-245 |
+| Attestation, passing result, comparison base and memory policy are checked together. | `_require_quality_certification_attestation`; `memory_policy` | mcp/src/agents_remember/models/lifecycles/operation.py:260-274; mcp/src/agents_remember/models/lifecycles/operation.py:297-297 |
+| Completed proof must match the selected operation generation, references and integration code authority. | `_require_integration_certification_authority`; `IntegrationOperationAuthority` | mcp/src/agents_remember/models/lifecycles/operation.py:170-186; mcp/src/agents_remember/models/lifecycles/operation.py:566-589 |
+| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `closeoutFinalizedContractSha256`; `_MEANINGFUL_STATE_FIELDS` | mcp/src/agents_remember/models/lifecycles/operation.py:521-548 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection`; `LifecycleWorkerObservation` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:314-321; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393 |
+| The R03 dependency vocabulary is shared by these record types. | `EvidenceRecordType`; `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-30; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
 
 ## Cross-Repo References
 
@@ -146,9 +146,9 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery evidence records the exact code and memory-content commits. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+| Recovery evidence records the exact code and memory-content commits. | `LifecycleOperationRecoveryCommits`; `_require_recovery_commit_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72; mcp/src/agents_remember/models/lifecycles/operation.py:729-737 |
 | Organizational publication intent records and validates accepted/intended task-document bytes and digests. | `OrganizationalTaskPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:75-104 |
-| Integration publication intent captures the claimed source operation and checks completeness of that identity. | `_source_identity_is_complete` | mcp/src/agents_remember/models/lifecycles/operation.py:107-148 |
+| Integration publication intent captures the claimed source operation and checks completeness of that identity. | `_source_identity_is_complete`; `IntegrationPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:107-148 |
 
 ## 260821-CLIVE Journal-Owned Source And Door Evidence
 
@@ -200,14 +200,15 @@ The operation record separately retains private preparation state. Original comm
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `LifecycleOperationRecoveryCommits` owns the corresponding behavior described above. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-67 |
-| `OrganizationalTaskPublicationIntent` owns the corresponding behavior described above. | `OrganizationalTaskPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:75-76 |
-| `_require_cancellation_evidence` owns the corresponding behavior described above. | `_require_cancellation_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:909-910 |
-| `_require_organizational_repair_evidence` owns the corresponding behavior described above. | `_require_organizational_repair_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:930-931 |
-| `_require_integration_publication` owns the corresponding behavior described above. | `_require_integration_publication` | mcp/src/agents_remember/models/lifecycles/operation.py:957-958 |
-| `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | mcp/src/agents_remember/models/lifecycles/operation.py:981-985 |
+| `LifecycleOperationRecoveryCommits` owns the corresponding behavior described above. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+| `OrganizationalTaskPublicationIntent` owns the corresponding behavior described above. | `OrganizationalTaskPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:75-104 |
+| `_require_cancellation_evidence` owns the corresponding behavior described above. | `_require_cancellation_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:909-927 |
+| `_require_organizational_repair_evidence` owns the corresponding behavior described above. | `_require_organizational_repair_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:930-954 |
+| `_require_integration_publication` owns the corresponding behavior described above. | `_require_integration_publication` | mcp/src/agents_remember/models/lifecycles/operation.py:957-978 |
+| `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | mcp/src/agents_remember/models/lifecycles/operation.py:981-1016 |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed third-commit input/recovery/authority cells while preserving exact output and publication checks. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

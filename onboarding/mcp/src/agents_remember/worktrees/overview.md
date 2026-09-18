@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `f031314345b674d0733c4619fe34d78c1b02ba26` |
+| lastVerifiedCommitDate | 2026-09-18T10:15:50+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../../../overview.md` |
 
@@ -216,7 +216,7 @@ memory-carryover vehicle.
 | --- | --- | --- |
 | Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:111-128; mcp/src/agents_remember/worktrees/services.py:131-141; mcp/src/agents_remember/worktrees/services.py:144-151 |
 | The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
-| The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. | `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149; mcp/src/agents_remember/worktrees/modules/pause.py:152-169; mcp/src/agents_remember/worktrees/modules/pause.py:172-189; mcp/src/agents_remember/worktrees/modules/pause.py:192-208 |
+| The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. | `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:131-151 |
 | The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
 | The stop cannot reach a publication, asserted structurally over the module's import closure. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
 | Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. | `observe_atomic_series`; `_require_record_identity`; "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142 |
@@ -232,7 +232,7 @@ Current working-candidate evidence for this route:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. | `capture_series_checkpoint_refs` | mcp/src/agents_remember/worktrees/series_closeout.py:104-122 |
-| Consumer source rows are derived only from Git attribution. | `read_ledger_source` | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249 |
+| Consumer source rows are derived only from Git attribution. | `read_ledger_source`; "Only committed Code-Commit attribution contributes mappings." | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249; mcp/src/agents_remember/worktrees/ledger_projection.py:1-5 |
 | Real memory source ancestry remains a landing requirement. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
 
 ## Cross-Repo References
@@ -751,6 +751,9 @@ message last. Before this the only thing said about that state was the refused p
 complaint, which named neither the stuck contract nor what it was doing.
 
 ## Update History
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:399-411; mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` repointed to mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149; mcp/src/agents_remember/worktrees/modules/pause.py:152-169; mcp/src/agents_remember/worktrees/modules/pause.py:172-189; mcp/src/agents_remember/worktrees/modules/pause.py:192-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `sync_contract_under_authority`; `_continue_resolution` repointed to mcp/src/agents_remember/worktrees/sync_transaction.py:82-110; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:399-411; mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
@@ -761,6 +764,7 @@ complaint, which named neither the stuck contract nor what it was doing.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/worktrees/modules/pause.py:192-197 in the row 219 of this card; the repetition added no pooled evidence; kept one copy of the repeated citation mcp/src/agents_remember/worktrees/sync_transaction.py:82-87 in the row 225 of this card; the repetition added no pooled evidence
 
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced source-table union and ledger-based admission invariants; historical milestone accounts are explicitly superseded. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

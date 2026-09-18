@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_checkpoint_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -57,11 +57,11 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Checkpoint versus final durable integration cells. | `test_final_landing_still_records_completed_and_marks_cleanup_pending` | mcp/tests/test_checkpoint_landing.py:169-204 |
+| Checkpoint versus final durable integration cells. | `test_final_landing_still_records_completed_and_marks_cleanup_pending`; `IntegrationCellRecordingTests` | mcp/tests/test_checkpoint_landing.py:169-204 |
 | The checkpoint result retains the pre-existing cleanup state. | `test_checkpoint_result_publishes_without_running_cleanup` | mcp/tests/test_checkpoint_landing.py:207-238 |
 | Completion and stale candidate publication refusals. | `test_publication_refuses_a_candidate_that_moved_after_its_capture` | mcp/tests/test_checkpoint_landing.py:241-305 |
-| The landed-master abandon guard remains enforced. | `test_abandon_guard_still_refuses_a_completed_master` | mcp/tests/test_checkpoint_landing.py:308-347 |
-| Production checkpoint capture and publication authority. | `capture_series_checkpoint_refs` | mcp/src/agents_remember/worktrees/series_closeout.py:104-122 |
+| The landed-master abandon guard remains enforced. | `test_abandon_guard_still_refuses_a_completed_master`; `SeriesAbandonGuardTests` | mcp/tests/test_checkpoint_landing.py:308-347 |
+| Production checkpoint capture and publication authority. | `capture_series_checkpoint_refs`; `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:104-122; mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
 
 ## Cross-Repo References
 
@@ -71,6 +71,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed the dummy ledger member from the checkpoint result input while retaining all nine lifecycle-cell, candidate, completion, and abandon-guard scenarios. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

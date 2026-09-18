@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:05 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,11 +94,11 @@ Source declarations and test assertions are distinguished from execution and acc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The driver validates choices and routes retained or new transactions. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110 |
-| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides` | mcp/src/agents_remember/worktrees/sync_transaction.py:387-402 |
-| Currentness and continuation use Git facts and content-only conflicts. | `_already_current_result` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359 |
-| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs. | `worktree_dirty_paths` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:117-141 |
-| Pinned authority and parked-work restoration remain separate owners. | `pin_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126 |
-| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92 |
+| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides`; `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:387-402; mcp/src/agents_remember/worktrees/sync_transaction.py:632-638 |
+| Currentness and continuation use Git facts and content-only conflicts. | `_already_current_result`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction.py:539-594 |
+| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs. | `worktree_dirty_paths`; `_content_pathspec`; `discard_memory_cache_changes`; `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:117-141; mcp/src/agents_remember/worktrees/sync_transaction_git.py:281-308; mcp/src/agents_remember/worktrees/sync_transaction_git.py:491-499 |
+| Pinned authority and parked-work restoration remain separate owners. | `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
+| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-283 |
 
 ## Cross-Repo References
 
@@ -110,6 +110,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:05 UTC — Reconciled the stable sync driver after ledger admission removal and native cache-conflict repair: typed side records now drive WIP exclusion, content_conflicts filters memory-side cache entries, and moving-side admission still refuses an unrelated active merge. Preserved pinned authority, real content conflict, restore, and exact merge recovery boundaries. Working candidate verified by source inspection; commit metadata records real committed history only.
 

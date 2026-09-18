@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/record_landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,19 +118,19 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `record_landing_result` validates the recorded code landing and forwards the actual code/memory facts. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:58-59 |
+| `record_landing_result` validates the recorded code landing and forwards the actual code/memory facts. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:58-142 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-41 |
-| The local route that already recorded its own landing. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-580 |
-| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/record_landing.py:70 |
-| The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) | `checkpointed` | mcp/src/agents_remember/worktrees/modules/record_landing.py:80 |
-| Cleanup refuses until the cell this route sets reads completed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
-| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) | `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:97-98 |
-| The MCP tool and payload that expose this operation. (`worktree_record_landing`) | `worktree_record_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:202-208 |
-| The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:498-504 |
-| The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) | — | — |
+| The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
+| The local route that already recorded its own landing. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
+| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) | `integration_status`; "already-recorded" | mcp/src/agents_remember/worktrees/modules/record_landing.py:70; mcp/src/agents_remember/worktrees/modules/record_landing.py:76-76 |
+| The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) | `checkpointed`; "This contract already records a checkpointed integration" | mcp/src/agents_remember/worktrees/modules/record_landing.py:80 |
+| Cleanup refuses until the cell this route sets reads completed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
+| The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) | `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:97-154 |
+| The MCP tool and payload that expose this operation. (`worktree_record_landing`) | `worktree_record_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:201-224 |
+| The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:498-531 |
+| The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) | `worktree_record_landing` | system/git-workflow.md:50-50 |
 
 ## Cross-Repo References
 

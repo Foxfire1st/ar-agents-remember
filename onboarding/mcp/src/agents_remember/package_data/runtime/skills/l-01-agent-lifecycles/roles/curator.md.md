@@ -1,13 +1,13 @@
-# mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md
+# l-01-agent-lifecycles/roles/curator.md
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff`|
-| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -20,51 +20,80 @@ This file is the packaged runtime artifact synchronized exactly from canonical
 `skills/l-01-agent-lifecycles/roles/curator.md`. It carries the same curator lifecycle into installed
 runtimes and owns no independent doctrine.
 
-## Logic
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. Shared rules are declared, not
+restated: the file opens with `**Inherits:**` naming `core/authority.md`, `core/invariants.md`,
+`core/acceptance.md`, `operations/orientation.md`, `operations/curation.md`, and
+`operations/recovery.md`. The long curation procedure lives once in `operations/curation.md`, so this
+role states its own seat's side of the workflow instead of carrying the whole procedure inline.
 
-The synchronized caller matrix keeps curator target-only: only the owning manager is its ordinary
-plane-hosted caller, while an identity-free launcher may target it only for explicit
-developer-declared takeover. Dispatch/tools rows remain structural documentation, not settings
-keys.
+## Code Commentary
 
-Because synchronization replaces the complete canonical skill tree, the packaged curator has the
-same leaf-scoped onboarding-only seat, three-way intent reconciliation, current/evidence/history
-separation, and the single enclosure-checklist intake/repair loop as the canonical source. The
-full scoped call combines missing-onboarding, quality, stale indexes, source-change candidates, and
-noteworthy evidence; the curator reruns it until the zeroable count clears. Changes must be made
-canonically and propagated; editing this artifact independently creates drift.
+### Logic
 
-The synchronized intake also requires exact approved stable-ID + version packets and the
-reviewer's per-revision adjudication. Rejected or worker-blocked revisions remain blockers and
-cannot become packaged current intent.
+The synchronized role keeps curator at **leaf altitude**: one fresh seat per leaf coherence pass,
+spawned after builder code and, when review was requested, the review evidence. Its authority boundary
+is stated in the file itself — reconcile intended/current/implemented meaning and maintain affected
+memory, with no source-code implementation and no transaction ownership.
 
-## Conventions
+The three-way reconciliation is the role's responsibility while the file-writing duty is only its
+mechanism: current intent (source, tests, onboarding contracts, entity boundaries, durable incident
+lessons) against ruled change intent (task, developer decisions, approved design, builder report,
+reviewer verdict) against implemented reality (the complete fed change set and its evidence). The pass
+succeeds only when the three agree or every material divergence is surfaced to the owning manager, and
+earned understanding is a ratchet — later work may extend or deliberately supersede a contract but may
+not make a settled invariant fluid merely because attention moved.
+
+Two curator-specific judgments are stated as prohibitions: do not confuse **test-green with
+intent-green**, and do not promote a historical oddity to a permanent invariant without checking its
+causal applicability and reconsideration condition. A discovered incident, opportunity, alternative
+frame, or forward-learning hypothesis is marked `capture-candidate` with explicit evidence rather than
+silently becoming current intent.
+
+The routing rule rejects both overview-dumping and task-log-dumping: each change-set and notes item
+goes to the specific sidecar, or to the overview whose subject it actually is, and a notes item with no
+file, route, or entity home routes to the L3 Operational-Notes target as a last resort only.
+
+A seat that never touches a mutating AR tool never instantiates a lifecycle. Where this seat does
+mutate, it runs its own lifecycle; the dispatch/takeover/recovery contract it follows is
+`core/authority.md`, and completion truth vs acceptance is `core/acceptance.md` — a curator hands over
+the structured coherence record and its generated projection, validated by the owning manager.
+
+### Conventions
 
 - Treat canonical `skills/` as the sole doctrine owner.
 - Keep this artifact byte-identical through `scripts/sync-skills.py`.
 - Describe packaged behavior only as synchronized canonical behavior.
 - Verification provenance remains specific to this packaged source path.
 
-## Invariants And Boundaries
+### Invariants And Boundaries
 
 - Package installation must not alter curator authority or workflow.
 - This artifact cannot introduce a compatibility lifecycle or task-specific override.
 - Curator still writes onboarding only and communicates through structural parent messaging/report.
-- The synchronized curator cannot report completion with an enforced curator-actionable finding.
+- The curator never writes code, decides gates, mutates task-doc state, performs closeout,
+  integration, or finalization, runs the closeout preview, or repairs transaction conflicts.
+- **This role file names no sibling role file.** The corpus forbids learning one's own obligations
+  from another seat's prose; only wearing a hat or dispatching that seat may cite
+  `roles/<other>.md`, and the shipped check fails on any other reference.
 
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged curator contains the same current seat definition and three-way responsibility. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
-| The synchronized check loop requires complete curator-actionable repair before structured authority publication. | "### 4 — Repair Affected Onboarding, Then Publish" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
-| The canonical source is the doctrine owner. | "# Lifecycle — Curator" | skills/l-01-agent-lifecycles/roles/curator.md:1-47 |
-| MCP package data is an explicit synchronization target. | "mcp package data" | scripts/sync-skills.py:43-47 |
+| The packaged curator declares the same seat, authority boundary, and three-way responsibility as the canonical source. | "You run one leaf's coherence pass and you write onboarding."; "Reconcile three ways before writing anything" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:8-9; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:33-33 |
+| The role is a self-contained capsule: its brief is its session start, and it declares no inherited shared sources. | "Your brief is your session start" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:9-9 |
+| The curation procedure — inputs, workflow, authority gates, failure handling, handoff — has one home outside the role file. | `# Operation — Curation`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:121-128 |
+| The role declares the readable order — Inputs, Process, Outputs — with no operator-knob block. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:11-11; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:31-31; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:66-66 |
+| The canonical source is the doctrine owner. | `# Curator` | skills/l-01-agent-lifecycles/roles/curator.md:1-12 |
+| A non-sanctioned sibling-role reference fails the shipped corpus check, which is why this role file names none. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:114-116 |
+| MCP package data is an explicit synchronization target. | `TARGETS` | scripts/sync-skills.py:43-47 |
 | Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## L23 Final Candidate Disposition
@@ -92,6 +121,36 @@ structured authority. Generated Markdown is returned as projection evidence only
 Curator intake now binds the route-review requirement to altitude: standalone and organizational leaves require a leaf route-review record, while atomic child leaves defer route adjudication to canonical-master integration and retain their other task, code, memory, ledger, and coherence gates.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T05:26:45+00:00: Generated citation repair: `SANCTIONED_SIBLING_REFERENCES` repointed to mcp/tests/test_role_instruction_corpus.py:114-116. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:154-167; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:168-185. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule. Hand-repaired four citation findings this leaf's own source edit drifted (per-document `citation_fix` is refused in a leaf worktree; D14): `operations/curation.md` `## Handoff / exit` re-pointed to :121-128, the role's `## Knobs, Tool Surface, And Dispatch Authority` range to :165-182, and two `SANCTIONED_SIBLING_REFERENCES` ranges to the test module's current :110.
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical curator role was rewritten into the corpus's readable order (§ 1 purpose/authority → § 2
+  required inputs → § 3 normal workflow → § 4 permitted writes → § 5 stop/escalation → § 6
+  completion/handoff, plus the knob block) and now declares its shared sources with `**Inherits:**`
+  instead of restating them. Updated Purpose (the role's readable order and its inherited sources),
+  Logic (leaf altitude, the authority boundary, three-way reconciliation, the test-green-vs-intent-green
+  and historical-oddity prohibitions, the capture-candidate rule, the last-resort L3 note target, and
+  where dispatch/acceptance doctrine now lives), Invariants (the explicit never-writes-code /
+  never-decides-gates / never-touches-the-transaction boundary, and the no-sibling-role-reference rule
+  the shipped check enforces), and Repo-Internal References (the two citations whose anchors no longer
+  exist — `## What This Seat Is` and `### 4 — Repair Affected Onboarding, Then Publish` — replaced by
+  current anchors, plus rows for `operations/curation.md` and `SANCTIONED_SIBLING_REFERENCES`). The
+  preserved task-delta sections below still describe rules that remain in force at their new homes in
+  `operations/curation.md` and `core/acceptance.md`. **Metadata repair:** `governingOverview` pointed at
+  `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP
+  package overview"; corrected to `../../../../../overview.md`. Verification metadata remains
+  closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Curator intake now binds the route-review requirement to altitude: standalone and organizational leaves require a leaf route-review record, while atomic child leaves defer route adjudication to canonical-master integration and retain their other task, code, memory, ledger, and coherence gates.
 

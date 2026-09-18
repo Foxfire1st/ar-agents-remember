@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -172,28 +172,29 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Pending HEAD attribution requires a genuinely attributed ancestor and never reads the cache file. | `_mapping_pending_for_code_head` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:613-638 |
-| Defines the class `LocalSource`. | `LocalSource` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:103-108 |
-| Defines the class `Candidate`. | `Candidate` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:112-115 |
-| Defines the class `CurrentFiles`. | `CurrentFiles` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:119-120 |
-| Defines the class `SourceViews` — Parsed source revisions shared by every claim in one gate run.. | `SourceViews` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:129-134 |
-| Defines the class `Evaluation`. | `Evaluation` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:171-180 |
-| Defines the function `claims_in`. | `claims_in` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:224-225 |
-| Defines the function `finding`. | `finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:241-246 |
-| Defines the function `provenance_finding`. | `provenance_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:257-262 |
-| Defines the function `changed_finding`. | `changed_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:274-278 |
-| Defines the function `selected_current`. | `selected_current` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:388-392 |
-| Defines the function `selected_historical`. | `selected_historical` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:402-406 |
-| Defines the function `local_changes`. | `local_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:416-422 |
-| Defines the function `anchor_change`. | `anchor_change` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:452-458 |
-| Defines the function `dependency_changes`. | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:581-584 |
-| Defines the function `evaluate_claim` — now threads the document's lines to `surfaced_finding`. | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:657-662 |
-| Defines the function `check_onboarding_root` — Compare every complete claim against its own historical provenance, group each document's lines with its claims, and pass retained predecessor-chain anchors into `Histories`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:703-709 |
-| The generated `Update History` bullet header and range clause the projection writes and this check reads back. | `PROJECTION_BULLET` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:84 |
+| Defines the class `LocalSource`. | `LocalSource` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:102-108 |
+| Defines the class `Candidate`. | `Candidate` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:111-115 |
+| Defines the class `CurrentFiles`. | `CurrentFiles` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:118-125 |
+| Defines the class `SourceViews` — Parsed source revisions shared by every claim in one gate run.. | `SourceViews` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:128-167 |
+| Defines the class `Evaluation`. | `Evaluation` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:170-221 |
+| Defines the function `claims_in`. | `claims_in` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:224-238 |
+| Defines the function `finding`. | `finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:241-254 |
+| Defines the function `provenance_finding`. | `provenance_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:257-271 |
+| Defines the function `changed_finding`. | `changed_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:274-285 |
+| Defines the function `selected_current`. | `selected_current` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:388-399 |
+| Defines the function `selected_historical`. | `selected_historical` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:402-413 |
+| Defines the function `local_changes`. | `local_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:416-449 |
+| Defines the function `anchor_change`. | `anchor_change` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:452-508 |
+| Defines the function `dependency_changes`. | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:581-610 |
+| Defines the function `evaluate_claim` — now threads the document's lines to `surfaced_finding`. | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:657-700 |
+| Defines the function `check_onboarding_root` — Compare every complete claim against its own historical provenance, group each document's lines with its claims, and pass retained predecessor-chain anchors into `Histories`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:703-798 |
+| The generated `Update History` bullet header and range clause the projection writes and this check reads back. | `PROJECTION_BULLET`; "Update History" | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:80-82; mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:84 |
 | The bounded scan for the bullets that record a mechanical repair of THIS claim's range. | `generated_repair_bullets` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:288-300 |
 | The review item that stops asserting currency and asks the support question when a projected range is detected. | `_projected_review_message` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:315-338 |
 | The review item that reads the generated bullets first and returns `error` for the projected variant and `warning` otherwise. | `surfaced_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:341-385 |
 | The generated bullet shape this check parses, and the section bound it scans within. | `history_bullet` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:129-150 |
 | The executor that pins the enforced projected item, the fail-closed no-git-view path, and the unchanged warning for a non-projected change. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:384-522 |
+| The canonical Update History section line whose presence bounds the generated-bullet scan. | `history_section_line` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:116-126 |
 
 
 ## Cross-Repo References
@@ -205,6 +206,7 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Rebased pending-current-code citation handling on attributed ancestor commits without cache authority. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

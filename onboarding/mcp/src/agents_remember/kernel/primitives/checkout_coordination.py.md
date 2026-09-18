@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:28+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ No external Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Runtime config asks this checkout policy before selecting the synthetic leaf configuration. | "checkout_coordination.checkout_cli_location()"; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:748-748; mcp/src/agents_remember/kernel/primitives/runtime_config.py:771-800 |
+| Runtime config asks this checkout policy before selecting the synthetic leaf configuration. | "checkout_coordination.checkout_cli_location()"; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:748-748; mcp/src/agents_remember/kernel/primitives/runtime_config.py:771-800; mcp/src/agents_remember/kernel/primitives/runtime_config.py:759-759 |
 | Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard. | `exclusive_access`; `_prepare_append_target`; `_require_rewrite_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:431-433; mcp/src/agents_remember/controlplane/durable_store.py:436-438 |
 | MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | `main`; `begin_pytest_process` | mcp/src/agents_remember/mcp/server.py:77-99; mcp/test_support/agents_remember_test_support/testing/global_state.py:61-66 |
 

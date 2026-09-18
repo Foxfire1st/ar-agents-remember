@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/actions.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-02T01:05+02:00                       |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`   |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`   |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ repo-level one-shot signal. The UI is still never the gate *enforcement*.
 | --- | --- | --- |
 | The precomputed availability + node shapes validated against. | `ActionAvailability`, `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:49-62; mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The `Actor` provenance literal reused for attribution. | `Actor` | mcp/src/agents_remember/observer/events.py:31-31 |
-| The app that routes `POST /api/actions/{action}` to this and executes the gate write. | "def _action_response(runtime: _ServingRuntime", "def _register_action_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_routes.py:396-397; mcp/src/agents_remember/serving/_app_routes.py:396-396; mcp/src/agents_remember/serving/_app_routes.py:316-316 |
+| The app that routes `POST /api/actions/{action}` to this and executes the gate write. | "def _action_response(runtime: _ServingRuntime", "def _register_action_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_routes.py:316-316; mcp/src/agents_remember/serving/_app_routes.py:396-397 |
 | The control-plane gate write path the router calls for a gate-decision verb (slice 6b). | `record_gate_decision`, `record_lifecycle_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:83-128; mcp/src/agents_remember/controlplane/gate_decisions.py:131-156 |
 | The compact acknowledgement store used for lifecycle attention dismissals. | `AttentionDismissalStore`, `dismiss` | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-135 |
 | `_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift. | `_dismiss_action_outcome` | mcp/src/agents_remember/serving/actions.py:170-219 |

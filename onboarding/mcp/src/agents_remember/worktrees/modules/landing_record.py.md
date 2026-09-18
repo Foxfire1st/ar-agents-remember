@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing_record.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ behind this one function is what stops the two routes drifting into two differen
 "landed".
 
 The three replaced fields are declared on the contract
-cit:([`integration_strategy`, `integrated_code_commit`, `integrated_memory_content_commit`], mcp/src/agents_remember/worktrees/worktree_contract.py:259-259; mcp/src/agents_remember/worktrees/worktree_contract.py:260-260; mcp/src/agents_remember/worktrees/worktree_contract.py:261-261).
+cit:([`integration_strategy`, `integrated_code_commit`, `integrated_memory_content_commit`], mcp/src/agents_remember/worktrees/worktree_contract.py:264-264; mcp/src/agents_remember/worktrees/worktree_contract.py:265-265; mcp/src/agents_remember/worktrees/worktree_contract.py:266-266).
 The memory-content commit defaults to `""` because a landing may be recorded before C-11 carryover has run;
 the cleanup guard checks carryover separately and refuses until it is done, so an empty memory-content commit
 here is not an assertion that memory was carried.
@@ -112,18 +112,18 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `LandedIntegration` contains strategy, code commit, and optional memory-content commit. | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:28-33 |
-| `record_landed_integration` writes the same actual outputs for final and checkpoint landing states. | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-41 |
+| `LandedIntegration` contains strategy, code commit, and optional memory-content commit. | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
+| `record_landed_integration` writes the same actual outputs for final and checkpoint landing states. | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | `integration_strategy` | mcp/src/agents_remember/worktrees/worktree_contract.py:259 |
-| The landed facts this writer now takes as one frozen record. (`LandedIntegration`) | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:28-33 |
-| The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-580 |
-| The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:890-894 |
-| The pull-request route calls the same writer. (`record_landed_integration(`) | `updated` | mcp/src/agents_remember/worktrees/modules/record_landing.py:121 |
-| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
-| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-237 |
+| The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | `integration_strategy` | mcp/src/agents_remember/worktrees/worktree_contract.py:264-264 |
+| The landed facts this writer now takes as one frozen record. (`LandedIntegration`) | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
+| The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
+| The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:890-927 |
+| The pull-request route calls the same writer. (`record_landed_integration(`) | `updated`; "record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/record_landing.py:121 |
+| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
+| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276 |
 
 ## Cross-Repo References
 
@@ -135,6 +135,7 @@ there is no cross-repository protocol to cite.
 | No additional cross-repository evidence applies. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=4db2c4475bc64fafbcf231bdeb2c00f0a7d60bf84b9337add2ef413b2a24bfc5. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
 

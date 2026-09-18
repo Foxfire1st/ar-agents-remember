@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff` |
-| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
+| lastUpdated            | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,21 @@
 Packaged runtime copy of the optional sprint-bound strategist lifecycle. The canonical
 `skills/l-01-agent-lifecycles/roles/strategist.md` owns doctrine; the sync process publishes this
 exact runtime artifact.
+
+The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
+authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
+cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
+with `**Inherits:**` rather than restating them (`core/authority.md`, `core/invariants.md`,
+`core/loop.md`, `core/acceptance.md`, `operations/orientation.md`, `operations/planning.md`); the
+planning method, the requirement-compilation precedence, and the loop's review-round rules now live
+once in `operations/planning.md` and `core/loop.md`.
+
+Its boundary is unchanged and re-stated structurally: **reader, not mutator** — the strategist reads
+the whole in-flight portfolio, proves it coherent, resolves dependency chains, establishes blast
+radius and priority, chooses the topology explicitly, and delivers the orchestration-task draft. It
+never edits task docs, raises gates, mutates Git, or addresses an orchestrator occupant. This role
+file names `roles/manager.md` only to name the seat it hands to, which is its one sanctioned sibling
+reference.
 
 ## Code Commentary
 
@@ -69,7 +84,7 @@ None recorded.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Docs References
 
@@ -85,12 +100,14 @@ adoption.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-263 |
-| The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:119-136; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:218-421 |
-| The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-619 |
+| Canonical source this bundle copy is sync-propagated from. | `# Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-16 |
+| The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:14-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:32-32; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:87-87 |
+| The reader-not-mutator boundary the role must preserve. | "Reader, not mutator."; `dispatch_agent` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:117-121 |
+| The strategist names `roles/manager.md` only to name the seat it hands to, which is its one sanctioned sibling reference. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:110-114 |
+| The router's role registry still names the strategist row, and the loop doctrine now has its single home in `core/`. | `## The Role Registry`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:67-86; skills/l-01-agent-lifecycles/core/loop.md:1-1 |
+| The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Orchestrator`; "or the record of a developer-sanctioned skip" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:19-21 |
 | The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-215 |
 | The plan-review criteria re-derive effective priority and validate either topology choice. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-140 |
-| The shipped strategist role now states the graph-less default correctly: canonical commanded-master order is the stable tie-break and nothing serializes the masters. | "nothing serializes the masters" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:133-136 |
 
 ## Cross-Repo References
 
@@ -152,6 +169,29 @@ If an explicit graph is later chosen, complete every master attachment first and
 A successor strategy review now carries the sealed issue list, fixed/unfixed dispositions, and subset rule; it cannot perform a new portfolio sweep, add a lens or route, or turn an outside-list observation into a finding. Three rounds remain the ordinary maximum and further work requires developer authorization.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `SANCTIONED_SIBLING_REFERENCES` repointed to mcp/tests/test_role_instruction_corpus.py:110-114. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Replaced the shared transaction-boundary boilerplate sentence, which presented full memory quality as an explicit request, with the completed-curation rule.
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.**
+  The canonical strategist role was rewritten (197 lines) into the corpus's readable order and declares
+  its inherited sources with `**Inherits:**`. Updated Purpose with the readable order, the inherited
+  sources, where the planning method and loop rules now live, and the re-stated **reader, not mutator**
+  boundary plus its one sanctioned sibling reference. Repo-Internal References: two citations were
+  repointed because their targets moved (`## The Three-Party Loop …` left `SKILL.md` for
+  `core/loop.md`; the orchestrator range `:1-619` no longer exists and is now `:1-14`), the canonical
+  range was corrected, and the `"nothing serializes the masters"` row was **removed** — the rewritten
+  strategist file no longer carries that literal anchor string (the rule is preserved in the role's own
+  topology text and in `reference/rulings.md`). **Metadata repair:** `governingOverview` pointed at `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP package overview"; corrected to `../../../../../overview.md`, and the missing blank line between the metadata table and `## Governing Overview` was restored. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction (real body update for
   this changed source): removed the stale source-pair-selected/source-pair-activation prose from the
   Logic paragraph, the 260815-DAG-L2 topology paragraph ("selecting another master may logically

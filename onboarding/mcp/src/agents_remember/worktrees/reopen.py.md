@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -61,8 +61,8 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Terminal preflight, accepted memory ancestry, and integrated source-position checks. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:313-385 |
-| Contract reset preserves identity while clearing two-output provenance. | `_reopened_contract` | mcp/src/agents_remember/worktrees/reopen.py:187-213 |
-| Frozen observation, task plans, and canonical publication remain coordinated. | `_clear_frozen_landing` | mcp/src/agents_remember/worktrees/reopen.py:388-404 |
+| Contract reset preserves identity while clearing two-output provenance. | `_reopened_contract` | mcp/src/agents_remember/worktrees/reopen.py:187-214 |
+| Frozen observation, task plans, and canonical publication remain coordinated. | `_clear_frozen_landing`; `_ReopenPublication` | mcp/src/agents_remember/worktrees/reopen.py:506-565 |
 | Parent lineage compares exact prestart output positions to the configured parent source. | `parent_source_lineage` | mcp/src/agents_remember/worktrees/source_lineage.py:79-91 |
 
 ## Cross-Repo References
@@ -73,6 +73,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced terminal ledger mapping and integrated ledger base with the accepted memory output and real ancestry; retained exact terminal/parent lineage, typed reset cells, frozen-observation clearing, and rollback-safe task publication. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

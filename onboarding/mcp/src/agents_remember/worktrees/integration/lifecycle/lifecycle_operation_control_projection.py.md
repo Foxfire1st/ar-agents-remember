@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,16 +65,16 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier. | `_recovery_evidence_controls` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:147-150 |
-| `_resume_control` requests fresh messages for enabled code and memory legs. | `_resume_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:531-534 |
-| `_integration_control` constructs integration arguments with no ledger commit subject. | `_integration_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:548-552 |
-| `_direct_successor_control` constructs a direct successor from code identity and the memory-content message. | `_direct_successor_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:566-569 |
+| `_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier. | `_recovery_evidence_controls` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:147-157 |
+| `_resume_control` requests fresh messages for enabled code and memory legs. | `_resume_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:531-545 |
+| `_integration_control` constructs integration arguments with no ledger commit subject. | `_integration_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:548-563 |
+| `_direct_successor_control` constructs a direct successor from code identity and the memory-content message. | `_direct_successor_control` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:566-588 |
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Missing-intent closeout/direct-landing recovery and retry controls are withheld. (`_without_legacy_generation_reuse`) | `_without_legacy_generation_reuse` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:114-117 |
+| Missing-intent closeout/direct-landing recovery and retry controls are withheld. (`_without_legacy_generation_reuse`) | `_without_legacy_generation_reuse` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py:114-122 |
 
 ## Cross-Repo References
 

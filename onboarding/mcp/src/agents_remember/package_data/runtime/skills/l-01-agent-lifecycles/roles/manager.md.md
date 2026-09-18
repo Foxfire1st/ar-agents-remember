@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `36f5787d02f1171e1ca96647ff08abd381092cff`|
-| lastVerifiedCommitDate | 2026-09-15T22:01:19+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -64,16 +64,16 @@ fallback. A constrained lifecycle environment alone explicitly opts into `memory
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged manager is one master-scoped owner of the leaf closeout chain. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
-| Its hosted child dispatch uses structural task document and role. | "## Hosted Role Dispatch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:48-48 |
-| Curator dispatch carries exact approved packets and per-revision reviewer adjudication. | "Curator onboarding handoff." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:244-254 |
-| The canonical source owns this doctrine. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
+| The packaged manager is one master-scoped owner of the leaf closeout chain. | `# Manager`; "You drive exactly one master's leaf sequence from dispatch to handover." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:6-11 |
+| Its hosted child dispatch uses structural task document and role. | "Dispatch is one structural transaction."; `dispatch_agent` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:41-45 |
+| Curator dispatch carries the exact requirement packets, and a reviewer adjudication only when review was requested. | "Hand the curator its brief"; "exact requirement packets"; "reviewer adjudication only when review was requested" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:109-111 |
+| The canonical source owns this doctrine. | `# Manager` | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## L23 Manager And Leaf Admission
@@ -150,6 +150,33 @@ revision, delivery attempt, and content digest separate and states that memory r
 closeout admission consume the same validator. Historical Markdown cannot satisfy the handoff.
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: "Curator onboarding handoff." repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:187-187. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule.
+- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
+  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
+  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
+  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
+  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
+  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
+  missing file while its own text claimed the MCP package overview. No content claim changed; only
+  the path. Verification metadata is unchanged and stays closeout-owned.
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical manager role was rewritten (356 lines) into the corpus's readable order and declares its
+  eleven inherited sources with `**Inherits:**`. Updated Purpose (readable order, inherited sources,
+  and where the leaf-loop procedure and closeout transaction now live) and added the owner-side truth
+  boundary — the manager validates the builder report, the reviewer verdict when requested, and the
+  curator handoff before advancing state, while the relay supplies only the mechanical turn-ended
+  signal. Repo-Internal References: the three citations whose anchors no longer exist —
+  `## What This Seat Is`, `## Hosted Role Dispatch`, `Curator onboarding handoff.` — were replaced by
+  current anchors, plus rows for `**Inherits:**`, `operations/closeout.md`, and the four leaf-altitude
+  criteria catalogs this seat's reviewer verdicts bind to. **Metadata repair:** `governingOverview`
+  pointed at `../../../../../../../overview.md` (the repository root overview) while its link text said
+  "MCP package overview"; corrected to `../../../../../overview.md`, and the missing blank line between
+  the metadata table and `## Governing Overview` was restored. Verification metadata remains
+  closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`

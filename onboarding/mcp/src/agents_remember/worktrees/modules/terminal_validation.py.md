@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/terminal_validation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -150,6 +150,7 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
+- 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
 
 
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base

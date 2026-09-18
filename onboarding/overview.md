@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-15T22:40+02:00 |
+| lastUpdated | 2026-09-17T10:20:31+00:00 |
 | lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00 |
 | reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 
 > **Status:** active baseline
@@ -45,7 +45,7 @@ The earlier frontend milestone introduced broader static measurement and a chang
 
 `agents-remember` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, MCP tools, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. Durable memory is reached through three retrieval substrates routed by `c-04-retrieval-strategy-router` skill: **by path** (a source file's deterministic one-to-one onboarding unit, verified against Git history), **by meaning** (semantic memory search over the onboarding), and **by relationship** (a code-relationship graph). By-path notes are the core and need no provider; meaning and relationship are served by opt-in Docker providers (GrepAI, CodeGraphContext) and return candidate routing evidence, not proof. Overviews and entity catalogs use route scopes or curated evidence fingerprints before an agent relies on them. The earlier sidecar-only, anti-retrieval positioning (no embeddings / no vector store) predated those providers and has been retired from the public spine and from this overview's framing.
 
-The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. `c-08-ar-coordination-context-resolver` skill exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`; `c-09-git-worktree-manager` skill owns worktree lifecycle mutation, ordinary series integration back to source branches, and the narrowly policy-gated branch-addressed landing of an explicitly selected leaf implemented without an enclosure. It also documents `task_reopen` — reopening a fully landed leaf task in place under its exact leaf id — while `c-10-adopt-memory-baseline` skill provides the adoption path for existing external-memory onboarding that needs adoption into attributed memory history.
+The current checked-in guidance places durable memory in a **memory repository of its own** and keeps `ar-coordination/` as local coordination. Selective external memory repos under `ar-coordination/memory-repos/ar-<repo>/` are the only supported topology, with `disabled` available for a task that carries no memory lane; the former repo-local `ar-memory/` internal mode was **removed from the product** and is now refused by name with its exact artifact rather than substituted or defaulted. `c-08-ar-coordination-context-resolver` skill exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`; `c-09-git-worktree-manager` skill owns worktree lifecycle mutation, ordinary series integration back to source branches, and the narrowly policy-gated branch-addressed landing of an explicitly selected leaf implemented without an enclosure. It also documents `task_reopen` — reopening a fully landed leaf task in place under its exact leaf id — while `c-10-adopt-memory-baseline` skill provides the adoption path for existing external-memory onboarding that needs adoption into attributed memory history.
 
 The provider runtime guidance now routes through the MCP/package boundary:
 MCP settings outside the coordinator are authority, coordinator files can only
@@ -72,7 +72,7 @@ onboarding pass.
 | Feature | What It Offers | Primary Surface |
 | --- | --- | --- |
 | Path-derived onboarding memory | Deterministic Markdown memory beside source files, plus route overviews and repo entity catalogs for larger scopes. | `README.md`, `onboarding/`, `c-05-create-or-update-onboarding-files` skill |
-| Internal and external memory roots | Repo-local `ar-memory/` by default, selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/`, and computed `memory.md` consumer caches derived from committed code/memory attribution. | `c-00-initialize-memory-repo` skill, `c-08-ar-coordination-context-resolver` skill, `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `kernel/memory_ledger.py` |
+| External memory roots (and the disabled mode) | Selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/` are the **only supported topology**, plus `disabled` for a task that carries no memory lane and computed `memory.md` consumer caches derived from committed code/memory attribution. The former repo-local `ar-memory/` internal mode was **removed from the product**; a contract, settings file or memory root that still records it is reported with its exact artifact and refused with status `memory-mode-unsupported`, naming the supported set and the route out — never substituted with `external` and never migrated automatically. `repo-sidecar` survives only as a per-artifact storage placement, not as a memory topology. | `c-00-initialize-memory-repo` skill, `c-08-ar-coordination-context-resolver` skill, `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `kernel/memory_mode.py`, `kernel/memory_ledger.py` |
 | Context resolution and startup packets | Resolved code, coordination, memory, onboarding, task, temp, ledger, storage, path-rule, cross-repo, provider-summary, worktree, Git, and optional drift facts through compact `ContextPacketV2`; detailed provider state is intentionally excluded. | `c-08-ar-coordination-context-resolver` skill, `resolve_context`, `context_packet`, `ContextPacketV2` |
 | Memory quality control | Task-start drift classification, closeout memory quality, new-file missing-onboarding checks, overview/entity fingerprint checks, and update-history style checks. | `c-02-memory-quality-control` skill, `drift_check`, `memory_quality_check`, `check_missing_onboarding` |
 | Retrieval routing | Semantics, Relationship, and Intent routing across provider accelerators, route indexes, onboarding, and bounded source confirmation. | `c-04-retrieval-strategy-router` skill, `overview.index.json`, GrepAI tools, CGC tools |
@@ -222,9 +222,77 @@ workspace ar-coordination/
 | Package dependency contract | [layers.toml](agents-remember/layers.toml) | Declares one fail-closed top-level package order and one charter per package. The repository-neutral `certification` contract is rank 3 between wire models and the stateful control plane; later integer ranks shift without changing their package charters or runtime behavior. |
 | MCP package          | [mcp](agents-remember/mcp)                                                                                                                                                       | Package-managed MCP server exposing context, runtime install, skills install, provider, worktree, memory, benchmark, settings-derived lifecycle, and memory quality tools. |
 | Core skills (C-*)    | [mcp/src/agents_remember/package_data/runtime/skills](agents-remember/mcp/src/agents_remember/package_data/runtime/skills)                                                                                                           | Resolver, memory quality control, repo bootstrap, onboarding maintenance, and related support skills — flat directly under `skills/`. |
-| Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles (router + minimal frame + per-role lifecycles), and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
+| Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles — now a **thin router** plus a shared `core/`, nine self-contained role files, eight `operations/` blocks, a prose-free `composition-manifest.json`, and reference-only rationale/rulings — and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
 | Runtime AGENTS templates | [mcp/src/agents_remember/package_data/runtime/agents-md-files](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files)                                                                                                        | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
 | System defaults      | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples)                                                                                          | Example settings, sources, and tools files used as scaffolding material.                                       |
+
+### 260915-CAPS-L6 Route Impact — A Native eve Session Adapter, And A Root Tree Outside The Path Rules
+
+`260915-CAPS-L6` (`CAPS-R06@v1`) adds a native eve session adapter to the repository. Two facts belong
+at repository altitude because they change the shape of the tree rather than the behaviour of one
+module:
+
+1. **The controlled application is a new repository-root tree, `eve_runtime/`.** It is an AR-owned eve
+   application (`package.json`, `package-lock.json`, `README.md`, `agent/**`), not a package under
+   `mcp/`, and the adapter launches it as a child process instead of shelling out to a `PATH` command.
+   **This tree is outside this memory root's `pathRules` and deliberately has no sidecars.** Its
+   authored surface is documented where it is consumed: the launch module's card owns root resolution,
+   staging and the launch environment; the wire module's card owns the queue policy the authored
+   channel mirrors; the live fixture's card owns the workspace-confined tool contract. Inventing
+   sidecars for an ungoverned tree would create onboarding no rule maintains, and the canonical
+   `skills/**` tree is the standing precedent for the same boundary.
+2. **The adapter is an implementation of existing seams, not a new plane.** It registers in
+   `serving/harness_control_factories.py`'s built-in protocol set (now four ids) while the kernel's
+   developer-curated terminal harness set keeps three rows. No new service, scheduler, registry or
+   approval surface appears, and the requirement's exclusions (no production cutover, no global
+   configuration change, no replacement agent loop) are preserved.
+
+Machine-local build products the change set introduces (`eve_runtime/.eve/`, `node_modules/`,
+`.output/`) are ignored by the `.gitignore` entries the same change set adds; they are not repository
+content and are never onboarded.
+
+### 260915-CAPS-L1 Route Impact — Lifecycle Corpus Restructured And Made Single-Source
+
+The `l-01-agent-lifecycles` instruction corpus was consolidated across the whole repository route in
+260915-CAPS-L1 (requirement `CAPS-R01@v1`). The structural change future readers must know about:
+
+**Read this section as STRUCTURE, not as a saving.** It was always a design intent — one
+single-source, role-addressed corpus — and it is **not** a measured context reduction. The one
+measurement that exists (§ 260915-CAPS-L10 Measured Result) reports the assembled capsule **larger**
+than the legacy startup chain at the worker elevation, and no line-count change is evidence about
+tokens a session reads: the doctrine moved into the new layers below rather than disappearing.
+
+- **The entrypoint is now a router and carries no doctrine.** `SKILL.md` went from 620 to 179 lines and
+  contains only the three routing conditions, the nine-role registry, the composition map, an
+  orientation diagram of the super-integration topology, and pointers.
+- **Four new layers hold what the entrypoint used to carry**: `core/` (six shared blocks — authority,
+  invariants, lifecycle-frame, loop, acceptance, launcher), `operations/` (eight operation-scoped
+  procedure blocks on a frozen vocabulary), `reference/` (rationale and the durable-rulings index), and
+  `composition-manifest.json` (prose-free routing metadata for the deterministic capsule compiler).
+- **All nine role files were rewritten into one readable order** — purpose/authority → required inputs →
+  normal workflow → permitted writes → stop/escalation → completion/handoff, then the knob block — and
+  each declares its shared sources with `**Inherits:**` instead of restating them. A role file may name a
+  sibling role file only for wearing that hat or dispatching that seat.
+- **The canonical tree is `skills/`; every other tree is generated.** `scripts/sync-skills.py` writes the
+  MCP package-data runtime copy and the eight harness starter trees, and `--check` proves them
+  byte-identical. Editing a generated copy is drift.
+- **The role files' readable order was itself superseded.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote
+  all **ten** role files under `skills/l-01-agent-lifecycles/roles/` — and their byte-identical package-data
+  copies — into the **function shape**: `# <Role>`, `## Inputs`, `## Process`, `## Outputs`,
+  `## What you may do`, `## What you must not do`, and a closing `## Stop and …` section, with a per-role
+  extra only where the role has one. The numbered `## 1 — Purpose And Authority` … `## 6 — Completion And
+  Handoff` sections, the `## Knobs, Tool Surface, And Dispatch Authority` block and the `**Inherits:**`
+  line are gone from every one of them, so any card or overview that still cites one is stale. The ten
+  files now total **1,578** lines.
+
+**Onboarding consequence, recorded because it is a boundary rather than a defect:** the canonical
+`skills/**` tree sits **outside this memory root's `pathRules` include set** (`mcp/**`, `dashboard/src/**`,
+`scripts/**`, `installer/**`, `runtime/**`, `examples/mcp/**`, `AGENTS.md`, `README.md`), so the canonical
+corpus has no sidecars of its own. The sidecars for this corpus live on its tracked generated copy under
+`mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/**`, which is governed — that
+tree gained 18 new cards in this pass (the manifest, `core/` ×6, `operations/` ×8, `reference/` ×2) and 17
+existing cards were updated in the body. The legacy `onboarding/skills/l-01-agent-lifecycles/**` tree is
+outside the current path rules and is retained as history.
 
 ## Functional Areas
 
@@ -247,7 +315,7 @@ service rather than the lowest domain contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4. | "order = ["; "[package.certification]"; "[package.controlplane]" | layers.toml:19-59; layers.toml:105-126 |
-| The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction. | `load_contract`; `undeclared_dirs`; `build_report` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:63-68; mcp/test_support/agents_remember_test_support/code_quality/layering.py:122-141; mcp/test_support/agents_remember_test_support/code_quality/layering.py:280-340 |
+| The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction. | `load_contract`; `undeclared_dirs`; `build_report` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:62-68; mcp/test_support/agents_remember_test_support/code_quality/layering.py:118-139; mcp/test_support/agents_remember_test_support/code_quality/layering.py:280-293 |
 
 ### Public Documentation
 
@@ -455,6 +523,143 @@ completion is not chat cleanup (ruled design constraint 10); explicit `session_r
 cleanup control are what actually reclaim chat volume. Detail
 lives in the `serving/` + `observer/` + `dashboard/src/` route overviews.
 
+## 260915-CAPS-L18 Complete Curation Reaches This Route
+
+CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
+sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
+certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
+are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
+the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
+curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
+operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
+`qualityChecklistStatus=ready-for-closeout`.
+
+**The two status fields are different fields, and a reader who merges them loops forever** (`D35`, a
+landed-defect repair recorded by 260915-CAPS-L10). Read the **raw** `qualityChecklistStatus` to decide
+whether the repair loop can end. Once it reaches `ready-for-closeout`, the **combined** `checklistStatus`
+is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; on the
+success path, where the record is already current, the combined field is not rewritten at all and keeps
+its incoming `ready-for-closeout` value, with `closeoutReady=true`. `ready-for-closeout` therefore *is*
+observable in the combined field, but only once the whole pipeline — repairs and validation — is already
+complete. `application/memory_quality/controller.py` is the authority: `:664` publishes the raw field,
+`:671` gates on it, `:678` publishes the combined `coherence-required`, `:685-687` leave the combined
+field untouched when the record is current and set `closeoutReady` after validation.
+
+**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** This card's `D35` correction originally
+rested on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute
+claim is **literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path
+model above. The field-name correction the sentence supported is still right; only its stated warrant was
+wrong. **Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
+**onboarding cards** that carried the wrong form, and `CAPS-R19` (`260915-CAPS-L19`) corrected the
+**shipped sources** — the five loop-gate carriers, their nine generated copies, the guard registry's own
+docstring — and brought `docs/reference/mcp-tools.md` into both the loop-gate census and the guard's
+`LOOP_GATE_DOCUMENTS`.
+The sentence this section previously carried named the combined field as the loop's termination
+condition; that was wrong in the shipped sources and in the cards that quoted them, and it is corrected
+here and on the other affected cards.
+
+Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
+transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
+rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
+operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
+leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
+frozen tip.
+
+## 260915-CAPS-L10 Measured Result — The Capsule Did Not Reduce Startup Context (adoption FAILED)
+
+This is the experiment's measured outcome, and it is a **negative result**. It governs every other
+section of this onboarding that describes the role-capsule compiler, the instruction corpus
+restructure, or the experimental cutover: those sections record **structure and design intent**, and
+**none of them is evidence of a context reduction.**
+
+**The measurement.** `CAPS-R10@v1` behaviour 6 requires "a demonstrated reduction in AR-added startup
+material for matched worker, manager and architect cases without missing required obligations." That was
+**not demonstrated.** At the one elevation that could be measured (worker), the capsule is **larger** than
+the legacy chain:
+
+- **The delivered capsule is 11,828 tokens against a 5,928-token baseline — +5,900.** "Delivered" means
+  the `orientation` capsule the measured run actually carried, read back from the consumer's own first
+  prompt and matching it exactly.
+- The like-for-like `implementation` capsule is **11,645** against the same 5,928 (**+5,717**). These are
+  two different compilations, not two measurements of one quantity; the delivered figure is the one that
+  governs, and it makes the gap larger, not smaller.
+- **Manager (`coordination`) and architect (`planning`) are UNMEASURED**, refused with
+  `binding-unresolved` because the frozen world carries no series contract at the master or sprint
+  altitude. They are **unmeasured elevations inside the adoption failure — not passes**, and they are not
+  evidence of a reduction either.
+- **Obligation preservation is intact**: 36/36 cases across **ten** declared roles plus launcher routing,
+  with the E1 falsification observed (a deliberately removed required instruction fails the check). The
+  failure is on the reduction half alone.
+- The two sides are **different kinds of object**: the capsule side is a role- and operation-selected
+  payload (core + this role's block + one operation block); the baseline side is an **unscoped** chain —
+  the same five files for every role and every operation. A "saving" computed across them would compare a
+  selected package with an unselected one, and this onboarding states none.
+
+**The delivery claim that DID hold, and the evidence class that carries it.** Separately from the size
+result, a started session really does receive its compiled capsule:
+
+- On **native eve**, the started session's **own system block** carries the capsule **exactly once** — on
+  the second call, after **compaction**, after **clear** and after **resume**; a **forged** delivery never
+  reached the system block; an **edited carrier** was **refused** (`carrier-digest-mismatch`) and made
+  **no model call**; the seat wrote only its admitted workspace and an unbound launch was refused with no
+  model call. Scenario summary `8 / 8` passed. The runtime process was staged from the builder's own
+  worktree and asserted **byte-equal** to the authored tree (`agent.ts` sha256 `287dbbf0…`).
+- On **Codex**, the capsule arm completed a real representative code leaf end to end: the repair landed in
+  the **admitted** worktree and the fixture check went `1 failed, 2 passed` → **`3 passed`, exit 0**.
+- **Honest boundary:** the eve arm's **model** is the fixture's deterministic local provider. What is
+  native is the runtime process, the HTTP transport, the durable event stream and the adapter.
+  **`--real-model` was NOT run** (no hosted provider credential in this environment) and is recorded
+  **UNRUN**, not as a pass.
+
+**Unobservable values are recorded as unobservable, never estimated.** Peak context occupancy is
+**unobservable on both harnesses** (Codex's stream carries cumulative usage only; eve's
+`serving/eve_events.py::EveEventMapper._HANDLERS` maps no usage frame). Cumulative usage is unobservable
+on eve. Occupancy and cumulative usage were kept in separate columns and **never summed**. The baseline
+arm's compilation cost is `not-applicable`, an honest absence rather than a zero folded into a total.
+
+**The disposition is REVISE, and it is a recommendation to the owner, not a decision.** A complete
+report recommends revise/discard and **remains a failed adoption acceptance**; it never closes an
+unresolved functional requirement, never weakens mandatory native-eve functionality, and **no IAS landing
+is authorized** by this leaf or by any green result. The prior 4k-in-a-32k-window figure stays a **stretch
+direction**, never a hard truncation rule and never a fabricated achieved result.
+
+**Not supportable from this evidence, stated so a reader cannot infer it.** The measurement does **not**
+say the capsule is worse for a real session: the legacy figure counts the always-injected routing layer
+only, and the skill corpus it routes to is read on demand and deliberately excluded from the measure. A
+fair total-instruction-read comparison is a session-level measurement that **does not exist yet**. The
+result is also **not** attributed to the compiler, because the two arms differ in installation mechanism
+as well as in content.
+
+**Frozen artifacts (this section's sources).** Method
+`notes/reports/caps-l10-measurement-method.md` (digest `sha256:902676a630075f34b21c70e412eecee51bf8acc42488f3d1fc35a5b4b81ce528`);
+frozen evidence `notes/reports/260915-CAPS-L10-evidence/` (991 entries, index digest
+`sha256:c6581df2640f2514dde7e51393bcc1c95bb61e92affd62ad79b02906978900d5`); builder report
+`notes/reports/260915-CAPS-L10-worker-report.md`; disposition `notes/reports/caps-l10-disposition.md`;
+verdicts `260915-CAPS-L10-verdict-baseline.md` and `-verdict-fixverify-r2.md`. Both independent review
+rounds closed with no open findings, and clearing six findings did **not** convert this into a pass.
+
+**Design intent is labelled as intent, not as a measured reduction.** Three families of statements
+elsewhere in this onboarding describe real structural changes and must not be read as savings measured by
+this leaf: the `l-01-agent-lifecycles` corpus restructure (`SKILL.md` 620 → 179 lines, doctrine moved into
+`core/` · `operations/` · `reference/`) is a **single-source restructuring**; the L2 compiler's determinism
+and refusal-as-value properties are **correctness** properties; and the L9 installation cutover's
+withholding of the four coordinator `AGENTS.md` targets is an **installation** change whose measured
+effect on startup material was, at the one elevation measured, the opposite of a reduction.
+
+**Residuals carried with owners (recorded, not repaired here).** `F-6`: the install does not manage the
+harness's own skill root — **both measured arms read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`**,
+so the cutover withholds only the coordination root's chain, which is the duplicate-corpus path its own
+docstring says it exists to prevent (owner L9 / harness-surface). `F-5`: a mutation seed is vacuous **by
+construction** because the earlier source read already refuses — a behavioural fact about the compiler's
+refusal order (`models/role_capsules/` owner). **The matched Codex baseline completion is UNRUN**: the
+legacy chain fails closed without the plane-injected `AR_HOSTED_SESSION_ID`, and supplying it by hand
+would hand the product a value its own control plane produces, so a matched baseline needs a launch
+through the **production control plane** — an owning-seat action, not a leaf's. Also filed, not repaired:
+`F-1` (ten roles/nine operations — the code's counts, not the brief's nine/eight), `F-2` (an emptied
+admitted source raises an uncaught `ValueError` instead of the documented refusal shape), `F-3` (launcher
+skill admission), `F-4`/`C4` (`closeout` vs `authorized-closeout`, no reconciliation owner), `F-7` (the
+legacy chain needs the plane's complete identity and fails closed without it) and `D34`/`D35`.
+
 ## Cross-Repo References
 
 This repository is selected into an external coordination workspace by configured path rules, but onboarding content should cite same-repo files for repository behavior and task files only as planning references.
@@ -464,12 +669,12 @@ This repository is selected into an external coordination workspace by configure
 | The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:145-145 |
 | Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP. | `## Code Quality Instructions` | AGENTS.md:150-206 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
-| Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
+| Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:236-249 |
 | GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
 | The staged-quality boundary refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality; the transaction-only closeout no longer imports it. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
 | The staged-quality owner enforces its exact-candidate delivery boundary. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
-| Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy. | `## Quality gates` | CONTRIBUTING.md:63-110 |
-| Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
+| Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy. | `## Quality gates` | CONTRIBUTING.md:64-187 |
+| Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:94-94 |
 | The MCP settings example declares repository and coordination authority. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
 | The memory-repo tools example provides the `Code Quality` section. | "Code Quality" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md:11-11 |
 
@@ -843,8 +1048,8 @@ The committed package layout mirrors those owners: public adapters are under `ap
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:326-364 |
-| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-113; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:473-517 |
+| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:326-364; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:403-461 |
+| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-113; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:79-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:473-517; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:512-556 |
 | Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:155-225 |
 | Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169 |
 
@@ -894,13 +1099,36 @@ target is refused, so the cell cannot be set from a commit that landed nowhere. 
 integration branch also changed: it now requires the master's own terminal task state rather than
 only an enclosure census, because a child that was never started has no enclosure to walk.
 
+## 260915-CAPS-L9 Scripts-Route Note — A New Generated Mirror And Its Generator Target
+
+The root `scripts/` route gained no new script, but the generator it already owned changed shape:
+`scripts/sync-runtime.py` declares a **fifth** target, `eve_runtime/` →
+`mcp/src/agents_remember/package_data/runtime/eve-runtime/`, so a whole new **generated** tree now
+sits under this route's canonical-folder list. Two facts belong at this altitude because they decide
+how the mirror is read anywhere else in the tree: the mirror is **generated content and is never
+hand-edited** (the authored source is `eve_runtime/`, and the generator's read-only `--check` is its
+only currency proof), and the ignore rule that keeps machine-local trees out of it is **per target**
+— only the eve application's own canonical folder carries `node_modules`/`.eve`/`.output`/`.vercel`,
+so no other canonical tree can silently lose a same-named directory. The same script now refuses to
+report a target whose canonical source is absent as "in sync", because an empty comparison is not
+evidence of a synced tree.
+
 ## Update History
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the ten role files' current shape reaches this route.** The CAPS-L1 section below still described the role files as carrying the L1 readable order with an `**Inherits:**` line. leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote all ten files under `skills/l-01-agent-lifecycles/roles/` — and their byte-identical package-data copies — into the **function shape** (`# <Role>`, `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do`, closing `## Stop and …`), so the numbered sections, the `## Knobs, Tool Surface, And Dispatch Authority` block and the `**Inherits:**` line no longer exist there; the ten files total **1,578** lines. Body updated as above. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `sync_targets` repointed to scripts/sync-runtime.py:236-249. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **one stale citation repaired by hand on this card (D14 route).** The evidence-table row `PreparedMemoryCertificationAdapter` cited `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, a path that does not exist at this leaf's code base `304de8e2`; the adapter now lives at the application rank. Re-read at the base: `mcp/src/agents_remember/application/prepared_certification.py` is 813 lines and declares `class PreparedMemoryCertificationAdapter:` at **749**, so the row now reads `application/prepared_certification.py:749-813`. Per-document `citation_fix` is unreachable in a leaf worktree (`D14`), so this is a hand repair and it is recorded here rather than stamped.
+- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the master's measured result reaches this route, and it is negative.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation that could be measured (delivered `orientation` capsule **11,828** tokens against a **5,928** baseline, **+5,900**; the like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), obligation preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED**, with disposition **REVISE**. The section also records the delivery result that *did* hold (a started eve session's own system block carries the capsule exactly once — on the second call, after compaction, clear and resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, the explicit statement that **no IAS landing is authorized**, and the residuals with owners (`F-1`…`F-7`, the UNRUN matched baseline, `D34`, `D35`). **Corrected a landed defect (`D35`):** the CAPS-L18 section told a curator to iterate until `checklistStatus=ready-for-closeout`, which is never a value of the combined field; the loop's termination condition is the **raw** `qualityChecklistStatus`, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` is true only after the coherence authority validates (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: `operation_projection` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
-
 - 2026-09-17T03:31:11+02:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T00:56:17+00:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
 
+- 2026-09-16T12:05:38+00:00: Generated citation repair: "providers/runners/grepai" repointed to mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-16T12:05:38+00:00: Generated citation repair: `operation_projection` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **governing-intent change** — the removal of `internal` memory mode (`CAPS-R12@v1`). Two current-tense claims on this root overview were false the moment the removal landed and are corrected rather than annotated: "What This Repo Is" no longer distinguishes `ar-memory/` as durable internal memory (external memory repos are now the only supported topology, with `disabled` for a task carrying no memory lane, and the removed repo-local mode is **refused by name** with its exact artifact rather than substituted or defaulted), and the Feature Inventory row formerly keyed "Internal and external memory roots" now reads "External memory roots (and the disabled mode)" and states the refusal, the no-silent-migration rule, and that `repo-sidecar` survives as a per-artifact placement rather than a topology. The separate `ar-memory-*` versioned schema identifiers (`ar-memory-ledger/v1`, `ar-memory-candidate-pair/v1`, `ar-memory-census/v1`) are wire contracts and were deliberately left unchanged. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Route Impact, which records the two repository-altitude facts this leaf changes: the controlled application is a new repository-root tree (`eve_runtime/`) that is **outside this memory root's `pathRules` and deliberately has no sidecars** — its authored surface is documented on the cards of the modules that consume it — and the adapter implements AR's existing adapter/capability/interrupt seams rather than introducing a service, scheduler, registry or approval plane. Also records that the machine-local build products the change set introduces are gitignored, not repository content. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 
 
@@ -910,6 +1138,8 @@ only an enclosure census, because a child that was never started has no enclosur
 
 
 
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation (`CAPS-R01@v1`). The Code Structure "Lifecycle + task workflow" row now names the corpus's actual shape (thin router + `core/` + nine role files + eight `operations/` blocks + `composition-manifest.json` + `reference/`) instead of the retired "router + minimal frame + per-role lifecycles" description, and the new § 260915-CAPS-L1 Route Impact section records the structural change, the canonical-vs-generated boundary, and the onboarding consequence that the canonical `skills/**` tree is outside this memory root's path rules while its generated `mcp/**` copy is governed. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled root delivery, baseline, glossary and verification guidance to actual Git outputs and the computed consumer cache. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
@@ -5539,17 +5769,17 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785 |
-| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441; mcp/src/agents_remember/application/memory_quality/controller.py:416-580 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586; mcp/src/agents_remember/application/memory_quality/controller.py:553-600 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785; mcp/src/agents_remember/application/prepared_certification.py:749-813 |
+| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45; mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Git attribution is the source of the consumer ledger. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
-| Closeout writes or reuses one actual memory-content output. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:36-76 |
+| Git attribution is the source of the consumer ledger. | `derive_memory_ledger`; "Read mappings from Git without consulting a cached file or a ledger commit." | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
+| Closeout writes or reuses one actual memory-content output. | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:36-76; mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
 | Integration proves exact memory source ancestry independently of cache rows. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
 
 ## Key Invariants
@@ -5756,6 +5986,10 @@ behaviour, both carried for the owning seat.
 
 ## Update History
 - 2026-09-18T03:35+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **this overview governs `pyproject.toml`, and this candidate changed it.** The declared case budgets are now **1,500 unit and 400 integration** (raised by the master's owning seat from 1,250 / 340 because the increment's own leaves had filled the ceiling and an over-budget unit population makes `pytest_collection_finish` run no tests at all), so the "1,000 unit and 150 integration" sentence this card carried **in two places** — already two raises stale — was corrected in both to the current pair with the raise attributed. The card also now states that the curator-coherence tool names its own required inputs: the `publish` refusal lists the missing members, `prepare` states the complete input set, and the read-action refusal names the publication-only field it received, which is what removes the failure class two leaves of this master recorded as an impassable tool defect (`notes/DISCLOSURES.md` D-11). Only these claims were re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the new generated mirror this route's
+  generator produces (`package_data/runtime/eve-runtime/`, generated and never hand-edited), the
+  per-target ignore rule, and the absent-source refusal. Verification metadata is left at the
+  leaf's base commit; the candidate is deliberately uncommitted.
 
 - 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
   `67b21aeb`): recorded the experimental knowledge-storage increment at repository scope — the new

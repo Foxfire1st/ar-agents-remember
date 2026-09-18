@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/context/materialize.py`   |
 | doc_type               | `file-level-onboarding`                                          |
 | lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                                        |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                                        |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                                                    |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 

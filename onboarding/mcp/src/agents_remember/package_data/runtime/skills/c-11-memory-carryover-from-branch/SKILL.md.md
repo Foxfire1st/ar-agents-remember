@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
 | lastUpdated            | 2026-06-10T10:26+02:00                     |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 
 ## Purpose
 
@@ -62,7 +62,7 @@ No external documentation is needed for this repository-local workflow skill.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | `# c-11-memory-carryover-from-branch Memory Carryover From Branch` | mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md:6-73 |
-| The package service implements the public plan and the configured, leaf-contract-bound internal apply owner described by this skill. | `build_plan_for_request`; `_apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:515-588; mcp/src/agents_remember/memory/carryover.py:698-791 |
+| The package service implements the public plan and the configured, leaf-contract-bound internal apply owner described by this skill. | `build_plan_for_request`; `_apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:515-588; mcp/src/agents_remember/memory/carryover.py:524-598; mcp/src/agents_remember/memory/carryover.py:698-791; mcp/src/agents_remember/memory/carryover.py:701-794; mcp/src/agents_remember/memory/carryover.py:759-852 |
 
 ## Cross-Repo References
 

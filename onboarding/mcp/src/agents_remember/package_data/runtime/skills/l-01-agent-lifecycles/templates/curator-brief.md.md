@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-16T08:01+02:00 |
+| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56`|
+| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ verification contract. It owns no independent doctrine.
 The synchronized template names the exact approved primary/adjacent requirement revisions,
 canonical packet paths, durable corpus ruling, and independent reviewer adjudications. Missing or
 rejected inputs fail closed instead of being written as current intent.
+
+The canonical template gained the single-source marker in 260915-CAPS-L1: **it feeds inputs and does
+not author rules** — the curator's duties live in `../roles/curator.md`, the coherence procedure in
+`../operations/curation.md`, and the truth boundary in `../core/acceptance.md`. It restates the routing
+rule and the tool surface deliberately, because the curator must apply them without leaving its seat,
+but where the wording differs those files win.
 
 ## Logic
 
@@ -66,16 +72,16 @@ moves between preflight and dispatch.
 
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. | "## Task inputs"; "## Three-way intent inputs" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:44-73 |
-| Routing separates current intent, integrity evidence, semantic history, and capture candidates. | "## Routing rule (mgmt-L4 design — apply this before writing anything)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:75-93 |
-| The scoped-checks section requires repairing the affected onboarding, then running `git diff --check` in the memory worktree and every named scoped check and recording each result before handoff. | "## Scoped checks (before you report)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:118-138 |
-| The canonical template is the doctrine owner. | "# Template — Curator Brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-1 |
+| The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. | `# Template — Curator Brief`; `**This template feeds inputs; it does not author rules.**` | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-13; skills/l-01-agent-lifecycles/templates/curator-brief.md:16-21 |
+| The curator's three-way reconciliation procedure has one home outside the brief. | `# Operation — Curation`; `## Normal workflow` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:41-77 |
+| The truth boundary the brief obeys, and the curator's handoff artifact, have one home. | `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`; `## Which artifact each seat hands over, and who validates` | skills/l-01-agent-lifecycles/core/acceptance.md:1-1; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
+| The canonical template is the doctrine owner. | `# Template — Curator Brief` | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-1 |
 | Synchronization replaces package targets and checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## L23 Final Candidate Disposition
@@ -102,6 +108,19 @@ the stable authority, generation, projection, snapshot, candidate, and validatio
 The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
 
 ## Update History
+
+- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
+- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
+- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the handoff-evidence boilerplate sentence, which still presented full memory quality as an explicit request, with the completed-curation rule; `onboarding-coherency` already carries the full-operation check block this leaf's template now names.
+
+- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
+  canonical curator brief gained the single-source marker naming `../roles/curator.md`,
+  `../operations/curation.md`, and `../core/acceptance.md`; this card's Purpose now records it and the
+  deliberate restatement of the routing rule and tool surface. Repo-Internal References: three rows
+  whose anchors no longer resolve in the rewritten brief were replaced by current anchors (the
+  canonical header plus the marker itself), and rows for the curation operation and the acceptance
+  truth boundary were added. **Metadata repair:** `governingOverview` pointed at `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP package overview"; corrected to `../../../../../overview.md`, and the missing blank line between the metadata table and `## Governing Overview` was restored. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
+
 - 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the self-check row: the section is now `## Scoped checks (before you report)` and states the repair-then-check handoff obligation. Verification metadata remains closeout-owned.
 
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "# Template — Curator Brief" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:1-1. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.

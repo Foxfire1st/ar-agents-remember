@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_cross_master_concurrency.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -60,12 +60,12 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Independent activation, private content, and sibling leaf landing. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready` | mcp/tests/test_cross_master_concurrency.py:131-162 |
-| Release and conflicting publication preserve sibling state. | `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible` | mcp/tests/test_cross_master_concurrency.py:409-456 |
-| Ordinary resume/reconciliation/completion preserves actual histories. | `test_master_a_resumes_reconciles_and_completes_after_master_b_landed` | mcp/tests/test_cross_master_concurrency.py:509-568 |
-| The stopped interval is represented by snapshots, not a pause-tool call. | `_private_master_a_facts` | mcp/tests/test_cross_master_concurrency.py:358-389 |
+| Independent activation, private content, and sibling leaf landing. | `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready`; `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible` | mcp/tests/test_cross_master_concurrency.py:131-162; mcp/tests/test_cross_master_concurrency.py:409-456 |
+| Release and conflicting publication preserve sibling state. | `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`; `test_a_conflicting_publication_cannot_overwrite_master_b` | mcp/tests/test_cross_master_concurrency.py:409-456; mcp/tests/test_cross_master_concurrency.py:473-507 |
+| Ordinary resume/reconciliation/completion preserves actual histories. | `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`; "def test_master_a_resumes_reconciles_and_completes_after_master_b_landed" | mcp/tests/test_cross_master_concurrency.py:509-568 |
+| The stopped interval is represented by snapshots, not a pause-tool call. | `_private_master_a_facts`; "def _private_master_a_facts"; "def _require_pause_left_a_private" | mcp/tests/test_cross_master_concurrency.py:358-389; mcp/tests/test_cross_master_concurrency.py:570-586 |
 | Checkpoint and authored/absent dependency behavior remain distinct. | `test_explicit_checkpoint_landing_remains_available_when_requested` | mcp/tests/test_cross_master_concurrency.py:685-718 |
-| Fixture commits are two actual outputs with Git-owned attribution. | `_land_leaf_contract` | mcp/tests/test_cross_master_concurrency.py:224-288 |
+| Fixture commits are two actual outputs with Git-owned attribution. | `_land_leaf_contract`; "def _land_leaf_contract" | mcp/tests/test_cross_master_concurrency.py:224-288 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Migrated leaf and master scenarios to actual code/memory outputs; removed ledger-only reconciliation and cached-row reads, and strengthened retained-history assertions with direct Git ancestry. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 

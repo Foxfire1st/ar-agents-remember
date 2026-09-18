@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/worktree_tool_requests.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,12 +70,13 @@ contracts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw closeout/control messages and landed commits contain only code/memory values. | `OperationControlRequest` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107 |
-| Task-start concepts and shared defaults have one definition. | `TaskIdentity` | mcp/src/agents_remember/application/worktree_tool_requests.py:17-30 |
-| Lifecycle control reconstructs only canonical typed public values. | `OperationControlRequest` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107 |
-| Closeout approval, messages, and finalization documents remain separate concepts. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-115 |
+| Raw closeout/control messages and landed commits contain only code/memory values. | `OperationControlRequest`; `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107; mcp/src/agents_remember/application/worktree_tool_requests.py:110-115 |
+| Task-start concepts and shared defaults have one definition. | `TaskIdentity`; `TaskBases`; `StartExecution` | mcp/src/agents_remember/application/worktree_tool_requests.py:17-30; mcp/src/agents_remember/application/worktree_tool_requests.py:34-48; mcp/src/agents_remember/application/worktree_tool_requests.py:52-57 |
+| Lifecycle control reconstructs only canonical typed public values. | `OperationControlRequest`; `__post_init__` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107 |
+| Closeout approval, messages, and finalization documents remain separate concepts. | `CloseoutCommitMessages`; `CloseoutApproval`; `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tool_requests.py:110-115; mcp/src/agents_remember/application/worktree_tool_requests.py:131-136; mcp/src/agents_remember/application/worktree_tool_requests.py:143-149 |
 | Start consumes its extracted request type. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-200 |
-| Operation control consumes its extracted request type. | `worktree_operation_control_tool` | mcp/src/agents_remember/application/worktree_tools.py:534-554 |
+| Operation control consumes its extracted request type. | `worktree_operation_control_tool`; `_operation_control_request_refusal` | mcp/src/agents_remember/application/worktree_tools.py:534-554; mcp/src/agents_remember/application/worktree_tools.py:557-585 |
+| The start tool consumes the request types this module extracts. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-109 |
 | Closeout apply consumes its extracted request type. | `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:353-368 |
 
 ## Cross-Repo References
@@ -87,6 +88,7 @@ No cross-repository boundary is owned here.
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | — | — |
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed ledger subjects and landed-ledger identities from the documented request concepts. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

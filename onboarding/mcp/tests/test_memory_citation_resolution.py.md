@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,9 +77,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Grammar and path boundaries retain their dedicated assertion classes. | `test_1_a_word_boundary_is_not_satisfied_by_a_longer_identifier` | mcp/tests/test_memory_citation_resolution.py:115-148 |
-| Selected/full validation and missing-code-root reporting. | `test_without_a_code_root_the_result_says_so_instead_of_passing_quietly` | mcp/tests/test_memory_citation_resolution.py:214-246 |
-| Retained prepared history and cache-independent memory provenance. | `test_retained_prepared_commit_accepts_current_tree_and_rejects_other_history` | mcp/tests/test_memory_citation_resolution.py:330-351 |
+| Grammar and path boundaries retain their dedicated assertion classes. | `test_1_a_word_boundary_is_not_satisfied_by_a_longer_identifier`; `ProseGrammarTests`; `DeletedClassTests` | mcp/tests/test_memory_citation_resolution.py:115-148; mcp/tests/test_memory_citation_resolution.py:151-181; mcp/tests/test_memory_citation_resolution.py:201-211 |
+| Selected/full validation and missing-code-root reporting. | `test_without_a_code_root_the_result_says_so_instead_of_passing_quietly`; `test_full_and_selected_walks_share_canonical_document_validation` | mcp/tests/test_memory_citation_resolution.py:214-246 |
+| Retained prepared history and cache-independent memory provenance. | `test_retained_prepared_commit_accepts_current_tree_and_rejects_other_history`; `RetainedPreparedProvenanceTests` | mcp/tests/test_memory_citation_resolution.py:249-381 |
 | Mechanical projection prompts the support question rather than asserting currency. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:474-503 |
 
 ## Cross-Repo References
@@ -92,6 +92,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Added the Git memory-provenance scenario to the card: valid/missing/malformed caches preserve provenance and repository HEADs, while real policy-source changes reopen the citation. Retained grammar, source isolation, and mechanical-projection evidence boundaries. Working candidate verified by source inspection; commit metadata records real committed history only.
 

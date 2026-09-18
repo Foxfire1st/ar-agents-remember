@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -270,7 +270,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:168-208 |
-| The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves. | "parent_series = require_parent_series("; "require_parent_series(contract, operation=\"worktree_start\")" | mcp/src/agents_remember/worktrees/modules/start.py:177-179; mcp/src/agents_remember/worktrees/modules/start.py:703-703 |
+| The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves. | "parent_series = require_parent_series("; "require_parent_series(contract, operation=\"worktree_start\")" | mcp/src/agents_remember/worktrees/modules/start.py:177-179; mcp/src/agents_remember/worktrees/modules/start.py:703-703; mcp/src/agents_remember/worktrees/modules/start.py:205-205; mcp/src/agents_remember/worktrees/modules/start.py:758-758 |
 | The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
 | Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:138-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-445 |
 | The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
@@ -278,7 +278,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:36-47; mcp/src/agents_remember/worktrees/modules/guidance.py:128-142; mcp/src/agents_remember/worktrees/modules/guidance.py:145-168; mcp/src/agents_remember/worktrees/modules/guidance.py:493-495 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:36-168; mcp/src/agents_remember/worktrees/modules/guidance.py:493-495 |
 | `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 
 ## Cross-Repo References
@@ -329,7 +329,7 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:93-102; mcp/src/agents_remember/worktrees/modules/start.py:105-106; mcp/src/agents_remember/worktrees/modules/start.py:109-134 |
+| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:93-102; mcp/src/agents_remember/worktrees/modules/start.py:105-106; mcp/src/agents_remember/worktrees/modules/start.py:109-134; mcp/src/agents_remember/worktrees/modules/start.py:103-112 |
 
 ## 260821-CLIVE Start Reservation And Task-CAS Boundary
 

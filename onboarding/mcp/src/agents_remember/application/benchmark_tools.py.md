@@ -6,9 +6,13 @@
 | path                   | `mcp/src/agents_remember/application/benchmark_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -73,7 +77,6 @@ registration or provider launch.
 | Shared coordination-confinement guard used for benchmark root overrides. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
 | The live-authority reload behind `_live_provider_ids` (containment R1). | `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:137-144 |
 | The workspace-side filter that consumes `allowed_provider_ids`. | `filter_benchmark_provider_ids` | mcp/src/agents_remember/benchmarks/runner_modules/workspace.py:205-238 |
-
 
 ## Update History
 
