@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/lifecycles/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-18T17:02+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,7 +48,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Strict tool response base class is defined here. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:13-13 |
 | Public response registry maps `lifecycle_finalize_task` to this model. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tools/tool_registry.py:217-217 |
-| The finalizer response model is the current wire authority; deleted representative-payload tests provide no current pass. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:14-39 |
+| The finalizer response model is the current wire authority; deleted representative-payload tests provide no current pass. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:18-54 |
 | `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. | "def lifecycle_finalize_task_tool(" | mcp/src/agents_remember/application/worktree_tools.py:855-855 |
 | `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. | "class RetirementSettings:" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:115-115 |
 
@@ -62,7 +63,38 @@ Finalize responses now carry bounded typed task-document projection effects so q
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+## 260918-TSIP-L4 — The Two Atomic-Series Projections Declared (`D53`)
+
+`LifecycleFinalizeTaskResponse` now declares the atomic-series terminal projection it was
+already receiving: `atomicSeriesActivation: AtomicSeriesActivationFact | None` and
+`atomicSeriesActivationRelease: AtomicSeriesActivationReleaseFact | None` (**`:53`**, **`:54`**;
+the class runs **`:18-54`**, file **39 → 54 lines**). `AtomicSeriesActivationReleaseFact` is new
+in `models/worktree.py` and is imported with `AtomicSeriesActivationFact` at **`:12-15`**, which
+is why every line at or below the old `:12` moved `+4`.
+
+**This model was the only strict consumer of that projection and the only one that did not
+declare it**, so the transaction completed and the caller was handed
+`2 validation errors for LifecycleFinalizeTaskResponse` instead of the payload that would have
+told it so. The direction is settled by the product, not by this file:
+`application/worktree_status.py:317` projects `atomicSeriesActivation` on the tool that reads
+status, and both keys are already declared on `WorktreeSummary` (a nested `extra="forbid"` model)
+and on `WorktreeCommandResponse` (the flexible base every worktree response inherits). Deleting
+them here would make the terminal operation the one place a caller cannot learn whether the
+series activation was released.
+
+**The two keys do not arrive together on every arm.** On the success path `_finalized_result`
+copies both from `worktrees/modules/finalize.py:209-210`; on the `activation-release-blocked` arm
+(`:161-177`) the key arrives through `**activation_release.payload`, and only
+`atomicSeriesActivationRelease` is present there, because the bridge writes
+`atomicSeriesActivation` only after a *successful* release
+(`worktrees/activation/atomic_series_activation_terminal.py:49`, against the `except` at `:33-44`).
+Both are optional here for that reason. Pinned by
+`mcp/tests/test_tool_response_conformance.py`, whose
+`test_the_two_atomic_series_keys_are_declared_together` asserts the declaring set is exactly
+`{"lifecycle_finalize_task"}`.
+
 ## Update History
+- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the two atomic-series projections declared (`D53`), with the `+4` shift the import caused. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `lifecycle_finalize_task` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:217-217. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def lifecycle_finalize_task_tool(" repointed to mcp/src/agents_remember/application/worktree_tools.py:855-855. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "class RetirementSettings:" repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

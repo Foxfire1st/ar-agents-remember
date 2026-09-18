@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_evidence_lanes.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-18T17:02+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82`|
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +61,29 @@ No cross-repository implementation evidence is required for these local test and
 | --- | --- | --- |
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
+## 260918-TSIP-L4 — The Armed Hook And The Loader's Verdict (`T48`/`T49`)
+
+Two cases added (**+32 lines**; file **74 → 106 lines**), no existing case touched.
+
+- **`test_the_enforcing_hook_is_registered_and_armed`** asserts the armed state from the plugin
+  manager's own `hasplugin`/`get_hookimpls()` — not from source text — because `evidence_lanes`
+  defines `pytest_collection_modifyitems` and, until this leaf, nothing registered it: the suite
+  passed while the manifest refused.
+- **`test_the_shipped_loader_accepts_this_population`** runs `load_lane_manifest` against this
+  worktree's real population and **pins no count**, so a leaf that adds both a module and its row
+  is green while a leaf that adds only a module is red.
+
+Two-sided evidence: unregistering the hook (`M11`) fails the armed-state case with
+`assert False = hasplugin(...)`; dropping the row with the hook on (`M12`) refuses collection
+outright — `ERROR: test evidence lanes have 1 finding(s): … no tests ran` — and forcing the hook
+on *before* the row existed gives `INTERNALERROR> AssertionError … crashitem`, which is the
+symptom `T48` recorded.
+
+**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:231`),
+recorded by `260831-LOCR-L07`.
+
 ## Update History
+- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): two cases added: the hook's armed state read from the plugin manager, and the shipped loader's verdict on this population (`T48`/`T49`). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

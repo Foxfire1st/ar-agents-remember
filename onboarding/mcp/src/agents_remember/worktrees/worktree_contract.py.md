@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -374,7 +374,7 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 | The `heal-leaf-ids` CLI subcommand (`--coordination-root`, `--dry-run`) is the deliberate invocation seam for the heal. | "heal-leaf-ids" | mcp/src/agents_remember/worktrees/modules/cli.py:186-186 |
 | Load/write/render helpers: `load_contract` (which logs the quarantined cells and passes `path=` to validation), `write_contract`, the heal, and the section renderers through `contract_to_text`. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`. | `_path` | mcp/src/agents_remember/worktrees/worktree_contract.py:874-884 |
-| `WorktreeSummary` consumes the shared vocabulary aliases owned by `models/worktree.py` for its response fields. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:233-287 |
+| `WorktreeSummary` consumes the shared vocabulary aliases owned by `models/worktree.py` for its response fields. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:256-310 |
 | The current `WorktreeStatusFacts` shape imports the same six contract vocabularies, reports `unknown_cells` as `unknown_contract_cells`, and exposes derived source lineage without adding a persisted contract cell. | `WorktreeStatusFacts` | mcp/src/agents_remember/worktrees/modules/guidance.py:83-121 |
 | `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:821-840 |
 | Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. (`ContractBoundaryTests`) | `ContractBoundaryTests` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:28-171 |

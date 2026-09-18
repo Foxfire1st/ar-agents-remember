@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_status_terminal_next_tool.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ surface (`TaskDocResponse.model_validate(...).nextTool == "session_retire"`).
 | The wire envelope declares the three keys the projector writes; nothing rides as an extra. | `test_worktree_status_declares_the_next_move_keys` | mcp/tests/test_worktree_status_terminal_next_tool.py:230-236 |
 | The validator accepts roster members, accepts absence, and refuses an out-of-roster value. | `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
 | The boundary case: a registered-but-non-public tool is refused on the worktree surface and accepted on the `task_doc` surface, which is what makes the rule per-surface. | `test_the_worktree_surface_refuses_a_registered_but_non_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:247-278 |
-| The declarations and the membership validator the cases pin. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:323-323; mcp/src/agents_remember/models/worktree.py:355-364 |
+| The declarations and the membership validator the cases pin. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:346-346; mcp/src/agents_remember/models/worktree.py:378-387 |
 | The advertised roster the validator enforces membership against. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
 | The terminal-archive refusal producer that makes the protected state reachable. | `terminal_archive_required_result` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:86-150 |
 | The projector whose write this file protects. | `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:463-505 |

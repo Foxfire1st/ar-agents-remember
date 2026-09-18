@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-18T17:14+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../overview.md`                         |
 
@@ -151,7 +151,7 @@ with the accepted authority model.
 
 ## Integrated IAS Recovery Contract
 
-`python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and budgets 1,000 unit / 150 integration collected parametrized cases. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
+`python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and the repository declares `unit_case_budget = 2000` / `integration_case_budget = 300` (`pyproject.toml:168,176`). It **superseded** the 1,000 / 150 figures this paragraph carried, which were raised 1000 → 1500 → 2000 (unit) and 150 → 250 → 300 (integration) by `260915-CAPS-L8`, `260831-LOCR-L37` and the 2026-09-17 ruling. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
 
 ## CCR-L42 Review-Authority Route Update
 
@@ -161,7 +161,28 @@ accumulated canonical master review at master-to-parent integration, while stand
 organizational leaves retain their applicable independent route review. The evidence and
 certification model remains unchanged; this update records where the route review is owned.
 
+## 260918-TSIP-L4 — The Bootstrap Note States Its Git Prerequisite, And Its Budget Figure Is Corrected
+
+`docs/design/python-pytest-bootstrap.md` gained a three-line prerequisite (**`:22-24`**, file
+**50 → 53 lines**): *"Every command needs a Git checkout: the evidence-lane hook enumerates the
+test population through `git ls-files`, so an exported (`git archive`/tarball) tree must run
+`git init` and `git add -A` first or collection fails instead of running."*
+
+The requirement is new and it is real: `260918-TSIP-L4` registered
+`agents_remember_test_support.testing.evidence_lanes` in `mcp/tests/conftest.py`, whose
+`pytest_collection_modifyitems` calls `load_lane_manifest`; the loader enumerates the population
+through `git ls-files`, so an exported tree now fails collection with
+`ScopeError … fatal: not a git repository` rather than running. **This route is where an operator
+reads test policy** (`AGENTS.md` routes a seat here for "the current test policy and commands"),
+which is why the statement went here and not only into the comment at the registration site.
+
+**The budget figure in this overview's body was wrong and is corrected in the paragraph above:**
+the repository declares `unit_case_budget = 2000` and `integration_case_budget = 300`
+(`pyproject.toml:168,176`), not 1,000 unit / 150 integration. The superseded values are recorded
+rather than deleted, and this is a `T45` find — no check reads a number in prose.
+
 ## Update History
+- 2026-09-18T17:14+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): **body update, not an annotation** — this route's governed source `python-pytest-bootstrap.md` changed (the Git-checkout prerequisite at `:22-24`), so the section above was added and the paragraph carrying the superseded 1,000/150 budget figure was corrected to `pyproject.toml`'s 2000/300 in the same operation (`T45`). Verification stamps stay at the recorded verification; the candidate is uncommitted and the governed closeout owns the real code commit.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned observable-lifecycle route guidance with separate cache refresh. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated |  2026-09-18T14:56+02:00 |
-| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
-| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                     |
 
@@ -464,6 +464,7 @@ is reported in the result, so a reader can still see which patterns produced the
 when a caller narrowed it.
 
 ## Update History
+- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `mcp/registration/tasks.py` changed one published description clause (`T43`, the refused `'light'` kind); no tool was added, removed or renamed, so this route's inventory and boundaries are unchanged.
 - 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`, base `a12c511f`):
   this route's governed source changed (`mcp/registration/tasks.py`, 248 → 253 lines), so a body
   section was **added rather than annotated** — `## 260918-TSIP-L3 The Published Description Names Its

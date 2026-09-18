@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ No Domain Documentation source is configured for this memory root.
 | The activation projection retains observed state, contract fingerprint, bounded detail, and exact selected identity. | `_admission_activation` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:92-116 |
 | The status action keeps the repository and exact contract path for a read-only `worktree_status` call. | `_admission_status_action` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:119-137 |
 | Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states. | `_admission_retry_precondition` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:140-158 |
-| The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. | "class AtomicSeriesAdmission(StrictResponseModel):"; "class AtomicSeriesAdmissionActivation(StrictResponseModel):" | mcp/src/agents_remember/models/worktree.py:205-218; mcp/src/agents_remember/models/worktree.py:180-192 |
+| The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. | "class AtomicSeriesAdmission(StrictResponseModel):"; "class AtomicSeriesAdmissionActivation(StrictResponseModel):" | mcp/src/agents_remember/models/worktree.py:228-241; mcp/src/agents_remember/models/worktree.py:203-215 |
 | Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail. | "def test_registered_sync_refusal_addresses_only_this_contracts_own_state(self) -> None:"; "def test_registered_status_and_sync_bound_oversized_unreadable_detail(self) -> None:" | mcp/tests/test_activation_admission_registered.py:178-222; mcp/tests/test_activation_admission_registered.py:268-321 |
 
 ## Cross-Repo References

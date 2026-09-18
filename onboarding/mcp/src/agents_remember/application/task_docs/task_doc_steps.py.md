@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_steps.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,8 +119,8 @@ application module.
 | The update-only operation and the fields it may copy. | `set_step` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:153-165 |
 | `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade. | `skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:226-261 |
 | The focused checklist read behind the `read_steps` special operation. | `step_payloads`; `_substep_payload` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:264-275; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:278-279 |
-| The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:689-690; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:693-694; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:697-698; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:701-707 |
-| The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:874-891 |
+| The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:690-691; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:694-695; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:698-699; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:702-708 |
+| The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:875-892 |
 | The schema field that made a top-level `note` storable at all. | `Step` | mcp/src/agents_remember/tasks/document.py:111-129 |
 | The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. | `test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id`; `test_remove_step_deletes_a_done_step_and_repairs_a_completed_document`; `test_read_steps_returns_the_checklist_and_changes_nothing` | mcp/tests/test_task_document_application_1.py:298-332; mcp/tests/test_task_document_application_1.py:413-457; mcp/tests/test_task_document_application_1.py:492-529 |
 

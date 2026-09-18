@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/terminal_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T09:25+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | governingOverview | `overview.md` |
 
@@ -124,11 +124,11 @@ No Domain Documentation source is configured.
 | Exact retire/rename operations remain behind structural resolution. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:1046-1125; mcp/src/agents_remember/application/terminal_tools.py:1214-1228 |
 | The launch request carries the resolved capsule, and takes its workspace from the one rule rather than from the server root unconditionally. | `_spawn_launch_request` | mcp/src/agents_remember/application/terminal_tools.py:740-784 |
 | The application-tier compiler is bound behind the serving-rank port, so this tier calls the compiler directly and the dashboard route does not import it. | `_launch_capsule_resolver` | mcp/src/agents_remember/application/terminal_tools.py:933-946 |
-| The per-run record of the instruction mode this launch selected, present on every spawn payload. | `_spawned_payload`; `instructionMode` | mcp/src/agents_remember/application/terminal_tools.py:948-999; mcp/src/agents_remember/models/terminal.py:135-135 |
+| The per-run record of the instruction mode this launch selected, present on every spawn payload. | "\"instructionMode\": dict(capsule.report),"; "instructionMode: dict[str, Any]" | mcp/src/agents_remember/application/terminal_tools.py:948-999; mcp/src/agents_remember/models/terminal.py:137-137 |
 | The gate itself: the decision, its three modes and the admitted workspace. | `resolve_launch_capsule`; `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
 | The compiler this launch point reaches through the port. | `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
 | The runner refuses a selection whose workspace is not the child's cwd, which is the product-side second axis of the one-workspace rule. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:144-171 |
-| The named refusal the spawn returns, and the acceptance cases that read the capsule out of each started session's own first prompt. | `capsule-unavailable`; `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace` | mcp/src/agents_remember/models/terminal.py:86-86; mcp/tests/test_capsule_launch_wiring.py:483-526; mcp/tests/test_capsule_launch_wiring.py:874-918 |
+| The named refusal the spawn returns, and the acceptance cases that read the capsule out of each started session's own first prompt. | `capsule-unavailable`; `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace` | mcp/src/agents_remember/models/terminal.py:88-88; mcp/tests/test_capsule_launch_wiring.py:483-526; mcp/tests/test_capsule_launch_wiring.py:874-918 |
 
 ## Cross-Repo References
 
