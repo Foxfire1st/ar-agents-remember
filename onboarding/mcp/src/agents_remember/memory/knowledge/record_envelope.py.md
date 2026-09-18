@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/record_envelope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5` |
+| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -26,15 +26,21 @@ of knowledge would have cost a new identity design. This module is the mechanism
 envelope's "typed" half real: a shape registry, a single validation entry point, and one refusal code
 covering every inadmissible payload.
 
-**The registry now holds three disjoint record groups, and the third is the one this leaf's own
-docstring used to defer.** The internal conformance kind, the eight authored-judgment facet kinds, and —
-since `KS-R14@v1` — the two mechanical-detection kinds `detection_signal` and `detection_run`, which
-resolve to the frozen payload models `models/knowledge/detection.py` declares. The docstring named
-`DetectionSignal` as a later leaf's registration point; this is that leaf, so the sentence now names the
-two kinds as registered rather than deferred, and `EvidenceClaim` is the category still outstanding.
-Registering them here rather than as generation-4 columns is what keeps a signal's required field set,
-its closed vocabularies and its construction refusals declared **once**: a second declaration as SQL
-columns would be a second place for the same field set to drift.
+**The registry now holds four disjoint record groups, and each new one registered through the seam the
+one before it established.** The internal conformance kind; the eight authored-judgment facet kinds;
+since `KS-R14@v1` the two mechanical-detection kinds `detection_signal` and `detection_run`; and since
+`KS-R19@v1` the requirement-revision kind `requirement_revision`, which resolves to
+`RequirementRevisionPayload` in `models/knowledge/requirement.py`. The registry went from 12 kinds over
+12 entries to **13 over 13** on that leaf, and it grew again the same way on the L19 change set. The
+module docstring named `DetectionSignal` as a later leaf's registration point and that leaf has landed;
+`EvidenceClaim` is the concrete non-facet category still outstanding.
+
+**Four families, one seam, and the same reason each time.** None of these groups became a table or a
+generation column: the frozen payload model *is* the shape, so a signal's required field set, its closed
+vocabularies and its construction refusals stay declared **once**, in the model module that owns them.
+A second declaration as SQL columns would be a second place for the same field set to drift, and
+`REQUIREMENT_PAYLOAD_MODELS` is unpacked into `PAYLOAD_MODELS` rather than restated here for exactly
+that reason — the registry and the vocabulary cannot disagree about which pairs exist.
 
 ## Code Commentary
 
@@ -67,7 +73,7 @@ columns would be a second place for the same field set to drift.
 
 ### Conventions
 
-- **One internal conformance kind, eight facet kinds and two detection kinds.** `INTERNAL_CONFORMANCE_KIND`
+- **One internal conformance kind, eight facet kinds, two detection kinds and the requirement kind.** `INTERNAL_CONFORMANCE_KIND`
   (`internal_conformance`) with `INTERNAL_CONFORMANCE_SCHEMA` (`internal-conformance/v1`) and its
   minimal `ConformancePayload` exist only to exercise the seam, so the typed half of the envelope has
   a mechanism rather than a promise. It is marked internal, it is **not** a knowledge category, and
@@ -78,9 +84,11 @@ columns would be a second place for the same field set to drift.
   from the same declarations the entries are built from rather than restated — so the three groups are
   disjoint by construction, because a kind is one string.
 - **A caller that must name what the registry holds uses the derived sets, not the mapping's keys.**
-  `FACET_RECORD_KINDS` and `DETECTION_RECORD_KINDS` are each derived from their own entries, and
-  `KIND_SCHEMAS` is derived from the whole registry, so no group's membership can drift from the
-  registry it is a view of.
+  `FACET_RECORD_KINDS`, `DETECTION_RECORD_KINDS` and `REQUIREMENT_RECORD_KINDS` are each derived from
+  their own entries, and `KIND_SCHEMAS` is derived from the whole registry, so no group's membership
+  can drift from the registry it is a view of. The requirement group goes one step further: its pair
+  set is declared next to its payload model and merely **unpacked** here, so the registry cannot hold
+  a requirement kind the vocabulary does not declare.
 - The refusal is built through the package's shared `refusal(...)` factory with `RefusalFacts`, so
   this module contributes a code, a detail, facts and a next action — never a bespoke error shape.
 - The module performs **no storage I/O at all**: it imports no connection type and takes no
@@ -111,8 +119,10 @@ columns would be a second place for the same field set to drift.
 
 ### Todos
 
-None recorded. `EvidenceClaim` and the other concrete non-facet categories remain later leaves; this card
-records the seam they will register into, and the two detection kinds that have now registered through it.
+None recorded. `EvidenceClaim` remains the concrete non-facet category still outstanding; this card
+records the seam a later leaf will register it into, and the four families that have registered through
+it so far (the internal conformance kind, the eight facet kinds, the two detection kinds and the
+requirement-revision kind).
 
 ## Docs References
 
@@ -127,11 +137,16 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:121-165 |
-| The marked-internal conformance kind and the minimal frozen shape that exercises the seam. | `INTERNAL_CONFORMANCE_KIND` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:58-58 |
-| **The registry the two detection payload shapes are registered in, and the derived two-kind set that names them without restating them.** | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:86-109 |
-| The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold. | `KIND_SCHEMAS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:111-118 |
+| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:144-190 |
+| The marked-internal conformance kind and the minimal frozen shape that exercises the seam. | `INTERNAL_CONFORMANCE_KIND`; `ConformancePayload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:65-65; mcp/src/agents_remember/memory/knowledge/record_envelope.py:71-78 |
+| **The registry every typed payload shape is registered in — four families now, with the requirement pair unpacked from its own module rather than restated here.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:93-113 |
+| The derived two-kind set that names the detection group without restating it. | `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:124-124 |
+| The derived requirement-kind set, derived from the same declarations its registry entry is built from. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:130-132 |
+| The requirement kind and its frozen shape, declared once in the vocabulary module the registry unpacks. | `REQUIREMENT_REVISION_KIND`; `REQUIREMENT_REVISION_SCHEMA` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84 |
+| The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold. | `KIND_SCHEMAS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:136-141 |
 | The frozen, strict, extra-forbidding base that makes a validated payload a value. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
+| The requirement family this registry gained, its own declaration of the pair, and the payload model the pair resolves to. | `RequirementRevisionPayload`; `REQUIREMENT_REVISION_KIND` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84; mcp/src/agents_remember/models/knowledge/requirement.py:172-213 |
+| The case that pins the registry as the union of all four groups, so a group the registry does not declare cannot be admitted without that line changing. | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes" | mcp/tests/test_knowledge_facets.py:183-247 |
 | `invalid_payload` as a member of the shipped refusal vocabulary, and the shared refusal factory this module builds through. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:82-147 |
 | The envelope table this seam validates payloads for: no identity-valued column, `record_schema` alongside `kind`, a nullable governing route. | `record_schema`; `kind` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:53-72 |
 | The typed-JSON payload column and the immutability triggers that seal a validated revision. | `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:103-204 |
@@ -146,5 +161,6 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T06:30+02:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **re-read this card against the current source and recorded the fourth family the registry gained, then retired the generated projection bullets by hand.** The body said the registry holds *three* disjoint groups and named only the detection pair as this leaf's own addition; `KS-R19@v1` registers `(requirement_revision, requirement-revision/v1)` resolving to `RequirementRevisionPayload`, so the Purpose and the group convention now state **four** families and record the general rule the middle two share — the unpacked pair set means the registry cannot hold a requirement kind the vocabulary does not declare, and no family became a table or a generation column. The retired bullets are replaced by rows an agent has actually read: `INTERNAL_CONFORMANCE_KIND` is re-cited at its own declaration (`:65`, and the earlier projection to `:65` was the one range the tool got right while its neighbours were stale), `PAYLOAD_MODELS` is now one anchor at `:93-113` instead of a pair sharing a projected range, `DETECTION_RECORD_KINDS` is narrowed to `:124`, and `REQUIREMENT_RECORD_KINDS` with `REQUIREMENT_PAYLOAD_MODELS` is a new row. `KIND_SCHEMAS` and `validate_record_payload` were **re-derived rather than carried**: the module grew its import block and its registry, so the entry point moved to `:144-190` and the derived map to `:136-141`. A row for the registry case that pins the union of all four groups is added, since that case is what makes a fifth group unable to be admitted silently. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read this card against the current source and recorded the change the leaf made to what it claims.** The body's "one internal conformance kind and no product kinds" convention and its Todos line both said the concrete non-facet categories were later leaves; `KS-R14@v1` registers the two mechanical-detection kinds, so both now state the registry's **three disjoint groups** (the internal conformance kind, the eight facet kinds, the two detection kinds) and name `EvidenceClaim` as the category still outstanding. The Purpose records why the detection payload shapes are registry entries rather than generation-4 columns: the frozen payload model *is* the shape, so a second declaration as SQL columns would be a second place for one field set to drift. Both stale citations were **re-cited by hand** rather than machine-projected — `validate_record_payload` moved with the inserted import block (`:69-113` → `:121-165`) and `INTERNAL_CONFORMANCE_KIND` moved with the module docstring (`:43` → `:58`) — and the **generated projection bullet that had produced the second of those ranges was removed**, because a projected range is unverified evidence and an agent has now read the declaration it points at. Two new rows record the registry and the derived kind set this leaf's entries join. Verification metadata advances to the leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): created this one-to-one card for the record envelope's payload seam. It records the pair-keyed registry and why the key is a pair rather than a schema alone, the single entry point that returns a validated value rather than a boolean, the three `invalid_payload` refusals with "no row written and the digest unchanged", the deliberately tiny internal conformance kind that keeps the product categories for later leaves, and the known gap that only a `ValidationError` is caught. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

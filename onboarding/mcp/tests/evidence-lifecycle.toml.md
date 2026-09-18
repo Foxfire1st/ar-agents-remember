@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
+| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5` |
+| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `overview.md` |
 
@@ -270,7 +270,7 @@ Source declarations and test assertions are distinguished from execution and acc
 | **The node that makes that contract's closedness claim real: a WAL-resident batch is published whole while a main-file copy is not.** | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 |  The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-73  |
 | The one-to-one card for the batch harness, which records what it builds through the real seam. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:1-40 |
-| The snapshot harness card, which records the registered owner and the exact consumer set. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1112-1112; mcp/tests/evidence-lifecycle.toml:1119-1119; mcp/tests/evidence-lifecycle.toml:1127-1127; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
+|The snapshot harness card, which records the registered owner and the exact consumer set.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:1114-1114; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
 | The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools" | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
 
 ## Cross-Repo References
@@ -422,7 +422,7 @@ declared population stays 42 shared-support artifacts and four executable replac
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition `test_worktree_support` imports | `mcp/tests/evidence-lifecycle.toml:316` |
+|`mcp/tests/closeout_input_test_support.py`|transitive typed closeout-input/repository-authority composition `test_worktree_support` imports| `mcp/tests/evidence-lifecycle.toml:316` |
 | `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same import | `mcp/tests/evidence-lifecycle.toml:375` |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
@@ -469,14 +469,14 @@ declared population stays 42 shared-support artifacts and four executable replac
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | imported directly by `integration_branch_authority_test_support`, whose landing fixture builds the whole-tool world | `mcp/tests/evidence-lifecycle.toml:331` |
-| `mcp/tests/curator_coherence_test_support.py` | reached through `selected_lifecycle_test_support`, whose closeout-operation input composes it | `mcp/tests/evidence-lifecycle.toml:391` |
+|`mcp/tests/closeout_input_test_support.py`|imported directly by `integration_branch_authority_test_support`, whose landing fixture builds the whole-tool world| `mcp/tests/evidence-lifecycle.toml:331` |
+|`mcp/tests/curator_coherence_test_support.py`|reached through `selected_lifecycle_test_support`, whose closeout-operation input composes it| `mcp/tests/evidence-lifecycle.toml:391` |
 | `mcp/tests/integration_branch_authority_test_support.py` | imported directly: `_authority_fixture` and `_closed_external_leaf_worktrees` build the real landed leaf each whole-tool case starts from | `mcp/tests/evidence-lifecycle.toml:435` |
 | `mcp/tests/repository_profile_test_support.py` | imported directly by the landing fixture (`AGENTS_REMEMBER_PROFILE_REFERENCE`) | `mcp/tests/evidence-lifecycle.toml:565` |
 | `mcp/tests/fixtures/repository_profiles/node/package.json` | the declared profile fixture that same support reads | `mcp/tests/evidence-lifecycle.toml:604` |
 | `mcp/tests/fixtures/repository_profiles/node/package-lock.json` | the declared profile fixture that same support reads | `mcp/tests/evidence-lifecycle.toml:643` |
-| `mcp/tests/gate_certification_test_support.py` | reached through `selected_lifecycle_test_support` → `test_closeout_certification_entrypoint` | `mcp/tests/evidence-lifecycle.toml:955` |
-| `mcp/tests/source_selection_test_support.py` | reached through `repository_profile_test_support`, which imports `source_selection_fixture` | `mcp/tests/evidence-lifecycle.toml:1012` |
+|`mcp/tests/gate_certification_test_support.py`|reached through `selected_lifecycle_test_support` → `test_closeout_certification_entrypoint`| `mcp/tests/evidence-lifecycle.toml:955` |
+|`mcp/tests/source_selection_test_support.py`|reached through `repository_profile_test_support`, which imports `source_selection_fixture`| `mcp/tests/evidence-lifecycle.toml:1012` |
 | `mcp/tests/selected_lifecycle_test_support.py` | imported directly by the landing fixture (`selected_closeout_operation_input`) | `mcp/tests/evidence-lifecycle.toml:1038` |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/labels.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5`|
+| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ No domain documentation source is configured for this repository (`system/source
 | The two result constructors, each producing only the shape its model permits. | `_apply_invariant_label`; `_apply_family_label`; `_invariant_label_refusal`; `_family_label_refusal` | mcp/src/agents_remember/memory/knowledge/labels.py:159-216 |
 | The invariant-label result and its consistency validator. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:538-558 |
 | The family-label result and its consistency validator. | `SetFamilyLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:561-581 |
-| The request models, each naming the row the caller read. | `SetInvariantLabelRequest`; `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:333-344; mcp/src/agents_remember/models/knowledge/result.py:347-353 |
+| The request models, each naming the row the caller read. | `SetInvariantLabelRequest`; `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:341-352; mcp/src/agents_remember/models/knowledge/result.py:355-361 |
 | The stale-caller refusal wording, shared with the removals. | `stale_expected_row_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:531-551 |
 | The batch command that shares these apply steps and omits a receipt row when nothing was written. | `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:497-515; mcp/src/agents_remember/memory/knowledge/batch_commands.py:518-533 |
 | The batch's own copy of the expectation rule, which is why the standalone path needs its own evidence. | `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:414-451 |

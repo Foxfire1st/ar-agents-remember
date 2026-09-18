@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/detection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
-| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5`|
+| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -171,7 +171,7 @@ No domain documentation source is configured for this repository (`system/source
 | The composition this module's generation comes from — one anchor, one source, because a row naming several anchors across several files cannot resolve to a single extent. | `_compose_generation_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:239-256 |
 | **The two immutability triggers that seal a recorded detection sequence — the reason a later code path that forgot the rule still cannot reorder or shorten it.** | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:106-116 |
 | The revision draft, row tuple and digest the detection write and read reuse rather than re-implementing. | `RecordRevisionDraft`; `record_revision_row`; `record_revision_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:86-96; mcp/src/agents_remember/memory/knowledge/facet_records.py:193-207; mcp/src/agents_remember/memory/knowledge/facet_records.py:209-230 |
-| The two operation members and the one refusal code only a detection write can reach. | `record_detection_run`; `read_detection_run`; `detection_self_reference` | mcp/src/agents_remember/models/knowledge/result.py:88-96; mcp/src/agents_remember/models/knowledge/result.py:163-171 |
+| The two operation members and the one refusal code only a detection write can reach. | `record_detection_run`; `read_detection_run`; `detection_self_reference` | mcp/src/agents_remember/models/knowledge/result.py:88-96; mcp/src/agents_remember/models/knowledge/result.py:163-179 |
 | The store the write runs inside, its immediate-transaction helper and its exclusive candidate lock. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:96-120 |
 | **The cases that measure the ordered round trip, the two-place versions, the self-reference refusal and the sealed sequence.** | "test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions"; "test_a_detection_write_into_an_assessed_database_is_refused"; "test_a_recorded_detection_sequence_cannot_be_reordered_or_shortened" | mcp/tests/test_knowledge_detection_runs.py:593-640; mcp/tests/test_knowledge_detection_runs.py:732-768; mcp/tests/test_knowledge_detection_runs.py:769-799 |
 

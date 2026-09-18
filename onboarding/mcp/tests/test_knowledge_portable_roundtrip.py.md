@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_portable_roundtrip.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5`|
+| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l06` uncommitted source; base `7db50f8f4a67e60f9011266110ad6d0156f1a905` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -126,8 +126,9 @@ No domain documentation source is configured for this repository (`system/source
 | The destination-behaviour nodes: replacement only for the admitted identity, and byte preservation with no surviving stage. | "test_a_destination_is_replaced_only_for_the_admitted_identity"; "test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage"; "test_a_successful_import_leaves_no_stage_journal_or_peer_behind"; "test_a_dangling_reference_is_refused_at_commit" | mcp/tests/test_knowledge_portable_roundtrip.py:1023-1080; mcp/tests/test_knowledge_portable_roundtrip.py:1105-1123; mcp/tests/test_knowledge_portable_roundtrip.py:1083-1102; mcp/tests/test_knowledge_portable_roundtrip.py:974-1017 |
 | The node that holds the export's identity admission and its no-Git-ancestry boundary. | "test_exporting_a_moved_or_absent_dataset_is_refused"; "test_an_export_carries_no_git_ancestry_and_a_repeat_import_is_a_no_change" | mcp/tests/test_knowledge_portable_roundtrip.py:1129-1156; mcp/tests/test_knowledge_portable_roundtrip.py:502-524 |
 | The lane row that keeps this module in the certifying collection path. | `integration` | mcp/tests/test-evidence-lanes.toml:138-201 |
-|  The two consumer lists this module is declared in, one per shared support artifact it imports. | "contract:knowledge-identity-branching-fixture"; "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1135-1159  |
-| The boundary module that imports this module's helpers, so the two are one evidence set. | "test_knowledge_portable_boundaries.py" | onboarding/mcp/tests/test_knowledge_portable_boundaries.py.md:1-20 |
+|The branch-fixture record whose consumer list this module is declared in.|"contract:knowledge-identity-branching-fixture"| mcp/tests/evidence-lifecycle.toml:1049-1049 |
+|The merge-cases record whose consumer list this module is also declared in.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1155-1155 |
+| The boundary module that imports this module's helpers, so the two are one evidence set, and the onboarding card that records it. | "# mcp/tests/test_knowledge_portable_boundaries.py" | onboarding/mcp/tests/test_knowledge_portable_boundaries.py.md:1-1 |
 
 ## Cross-Repo References
 
