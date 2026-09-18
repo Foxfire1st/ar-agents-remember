@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_change_sets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00 |
+| lastVerifiedCommitHash |  `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitDate |  2026-09-18T14:21:49+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l13` uncommitted staged source; base `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -154,7 +154,7 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts the payload registers under exactly one kind and one schema. | `test_the_change_set_payload_registers_under_one_kind_and_one_schema` | mcp/tests/test_knowledge_change_sets.py:919-932 |
 | The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists. | `test_the_read_projection_reports_every_unresolved_reference_verbatim_with_its_holder` | mcp/tests/test_knowledge_change_sets.py:935-966 |
 | The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON. | `test_the_read_is_derived_and_a_rebuild_reproduces_it_byte_for_byte` | mcp/tests/test_knowledge_change_sets.py:969-983 |
-| The lane row placing this module in the unit population. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:163-163; mcp/tests/test-evidence-lanes.toml:176-183 |
+| The lane row placing this module in the unit population. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:163-163; mcp/tests/test-evidence-lanes.toml:176-183; mcp/tests/test-evidence-lanes.toml:185-185 |
 | The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1093-1098; mcp/tests/evidence-lifecycle.toml:1115-1115; mcp/tests/evidence-lifecycle.toml:28-35 |
 
 ## Cross-Repo References

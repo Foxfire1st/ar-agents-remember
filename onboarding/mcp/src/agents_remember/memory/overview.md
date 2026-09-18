@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T10:42+02:00 |
-| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l13` uncommitted staged source; base `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
+| lastUpdated | 2026-09-18T14:05+02:00 |
+| lastVerifiedCommitHash |  `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
+| lastVerifiedCommitDate |  2026-09-18T14:21:49+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -1066,7 +1066,7 @@ one leaf's curation pass.
 | The changeset half: the directional delta build, the aborting application, the old-side conflict key and the coverage replay. | `build_delta`; `apply_changeset`; `_conflicting_key`; `replay_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:185-220; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:223-263; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:266-289; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:292-331 |
 | The postcondition half, including the two call sites this leaf recorded as unreachable by a black-box case. | `require_structural_validity`; `require_immutable_revisions_preserved`; `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:73-101; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152; mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211 |
 | The merge's refusal vocabulary, one factory per observable failure point. | `schema_mismatch_refusal`; `conflicting_values_refusal`; `duplicate_identity_refusal`; `delete_reference_conflict_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:21-45; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:70-94; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:97-121; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:124-151 |
-| The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:133-143; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:133-143; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | The measurement the merge reports, and the merge's own third composition seam. | `MergeCoverage`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
 | **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** | `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` | mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:342-352; mcp/src/agents_remember/memory/knowledge/read.py:355-390; mcp/src/agents_remember/memory/knowledge/read.py:469-480 |
 | Whole-item paging over an already-selected scope. | `page_of_scope` | mcp/src/agents_remember/memory/knowledge/read.py:743-797 |
@@ -1100,7 +1100,7 @@ one leaf's curation pass.
 | **The one body constructor the export seals through, so the scan and the artifact cannot define the digest twice.** | `logical_body_from_tables`; `logical_digest_of_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:95-129; mcp/src/agents_remember/memory/knowledge/logical.py:132-135 |
 | **The shared "prove this finished file is a closed database" step the import's stage is closed through.** | `require_closed_database` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-89 |
 | The admission reading the import's destination check uses, exported from publication. | `destination_observation` | mcp/src/agents_remember/memory/knowledge/publication.py:260-270 |
-| The two portable operations and the one code they added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-69; mcp/src/agents_remember/models/knowledge/result.py:72-120; mcp/src/agents_remember/models/knowledge/result.py:116-116; mcp/src/agents_remember/models/knowledge/result.py:133-143; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| The two portable operations and the one code they added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-69; mcp/src/agents_remember/models/knowledge/result.py:72-120; mcp/src/agents_remember/models/knowledge/result.py:116-116; mcp/src/agents_remember/models/knowledge/result.py:133-143; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | The portable wire vocabulary: the request identities, the validation report and the two results. | `ExportRequest`; `ImportRequest`; `PortableValidation`; `ExportResult`; `ImportResult` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:66-98; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:136-176 |
 | The fourth composition seam, its five entry points and its two non-claims. | `export_knowledge_artifact`; `import_knowledge_artifact`; `validate_knowledge_artifact`; `canonical_body_of_artifact` | mcp/src/agents_remember/application/knowledge_export.py:60-63; mcp/src/agents_remember/application/knowledge_export.py:66-74; mcp/src/agents_remember/application/knowledge_export.py:77-96; mcp/src/agents_remember/application/knowledge_export.py:112-126 |
 | **The node the guarantee rests on: the canonical form is the only form the reader accepts, including all seven header types.** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts" | mcp/tests/test_knowledge_portable_boundaries.py:132-258 |
@@ -1108,11 +1108,11 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:618-650; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:656-656 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:190-190 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:192-192 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:190-190 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:192-192 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 | The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1169,7 +1169,39 @@ below did need re-pointing, because this leaf inserted rows into two test manife
 cite; each re-cited row was re-derived from the current manifest while re-reading it. That is a
 citation move, not a route change, and it is recorded as such rather than as new architecture.
 
+## 260915-KS-L16 Constructing The Registered Review Scope From Recorded Links And One Declared Policy
+
+`KS-R16@v1` §1 splits one act across two layers, and this route owns the half that *produces* the scope:
+`memory/knowledge/registered_scope.py` turns a `RegisteredScopeRequest` plus a sequence of
+`ScopeSnapshotSource` values into a `RegisteredScopeResult`, and reports nothing about what a detection run
+over that scope could not resolve — that is `KS-R14@v1`'s half of the split, and neither half is restated in
+the other's output. `CONSTRUCT_SCOPE_OPERATION` names the act for dispatch; `snapshot_source` is how a
+resolved dataset is presented to it.
+
+**The construction is deterministic in the strong sense, because every step is a declared lookup in a
+declared order and every result is sorted by recorded identity** rather than by whatever order rows came
+back in. Four ordered steps: the declared pair is resolved to two exact datasets, and a declaration whose
+snapshot the run cannot produce is refused **by name** rather than approximated from another file; each
+declared changed path is looked up by **exact equality** against the recorded anchor paths, and every hit
+contributes a `source -> invariant` edge carrying the side it was read from; the invariant revisions reached
+on one side contribute that side's own recorded `invariant -> family` memberships, each with its own side;
+and composition edges are followed **only** from the declared seeds and the reached family revisions,
+**only** when the declaration names a policy version, through `KS-R17@v1`'s own
+`follow_composition_scope` — not a second walk and not a re-reading of its rule.
+
+**Three absences are as load-bearing as the four steps.** The R07 retrieval read is never consulted: no
+selection, no page cursor and no advertised expansion enters here, and the module imports nothing from that
+read, so the two axes cannot be conflated by accident. Membership is never inferred from a name, a prefix, a
+folder or a symbol — every member arrives through a recorded row. And an unresolvable declared input is a
+refusal that **names it** (`ScopeConstructionRefusal`), never a partial scope: a scope that quietly held
+less than it declared would make every later "the run examined the scope" claim false. The refusal builders
+are the module's own and they reuse the **shipped** refusal codes rather than adding vocabulary, which is
+why this leaf extends no `KnowledgeRefusalCode` member.
+
 ## Update History
+- 2026-09-18T12:07:24+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T12:07:24+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the one module this route gained, the four ordered steps of the registered-scope construction, the three absences that are as load-bearing as the steps (the retrieval read never consulted, membership never inferred, an unresolvable input refused by name rather than trimmed), and the reuse of `KS-R17@v1`'s own traversal instead of a second walk. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:25-25. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.

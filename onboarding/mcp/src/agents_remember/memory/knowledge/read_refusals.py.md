@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read_refusals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -117,7 +117,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The snapshot-unavailable refusal, which is also what an unreadable schema generation surfaces as.** | `snapshot_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:138-156 |
 | The execution-bound refusal, so a partial selection with an invented total is unrepresentable. | `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:159-177 |
 | The shared factory and facts model this module composes rather than re-declares. | `refusal`; `RefusalFacts` | mcp/src/agents_remember/memory/knowledge/refusals.py:48-55; mcp/src/agents_remember/memory/knowledge/refusals.py:57-77 |
-| **The six codes and the one operation this leaf added to the shared vocabulary.** | `KnowledgeRefusalCode`; `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-143; mcp/src/agents_remember/models/knowledge/result.py:36-72; mcp/src/agents_remember/models/knowledge/result.py:143-143; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| **The six codes and the one operation this leaf added to the shared vocabulary.** | `KnowledgeRefusalCode`; `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-143; mcp/src/agents_remember/models/knowledge/result.py:36-72; mcp/src/agents_remember/models/knowledge/result.py:143-143; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | **The node that measures the persisted-nothing property at a later page as well as at the first.** | "test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged" | mcp/tests/test_knowledge_read_scope.py:1001-1058 |
 | **The node that measures a refused read of a real database leaving the file byte-identical.** | "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" | mcp/tests/test_knowledge_read_boundaries.py:893-941 |
 | The absence nodes, one per absence code. | "test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope"; "test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent" | mcp/tests/test_knowledge_read_scope.py:962-981; mcp/tests/test_knowledge_read_scope.py:982-1000 |

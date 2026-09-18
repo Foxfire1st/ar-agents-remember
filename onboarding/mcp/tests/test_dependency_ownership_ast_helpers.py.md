@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastUpdated | 2026-09-18T14:05+02:00 |
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -146,10 +146,10 @@ The retained source anchors below support the fixture roles and assertion bounda
 | **The contract and artifact blocks the pin counts, added by this leaf, and the consumer list its sibling artifact gained.** | "id = \"knowledge-diff-cases\"" | mcp/tests/evidence-lifecycle.toml:60-60 |
 | Repository inputs reach their supported consumers. | `test_repository_inputs_reach_their_supported_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:232-252 |
 | The catalog pin constants, and the docstring carrying all five deliberate re-pin records beside them. | `LIFECYCLE_SCHEMA`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-43; mcp/tests/test_dependency_ownership_ast_helpers.py:44-44; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:47-109 |
-| The three consumer entries the `260915-CAPS-L17` re-pin added to three governed-artifact rows, the entire reason the digest moved at that re-pin. | "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/eve_capsule_test_support.py"; "mcp/tests/eve_adapter_test_support.py" | mcp/tests/evidence-lifecycle.toml:604-655; mcp/tests/evidence-lifecycle.toml:724-741; mcp/tests/evidence-lifecycle.toml:1178-1193; mcp/tests/evidence-lifecycle.toml:1427-1434; mcp/tests/evidence-lifecycle.toml:1449-1456 |
+| The three consumer entries the `260915-CAPS-L17` re-pin added to three governed-artifact rows, the entire reason the digest moved at that re-pin. | "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/eve_capsule_test_support.py"; "mcp/tests/eve_adapter_test_support.py" | mcp/tests/evidence-lifecycle.toml:604-655; mcp/tests/evidence-lifecycle.toml:724-741; mcp/tests/evidence-lifecycle.toml:1178-1193; mcp/tests/evidence-lifecycle.toml:1427-1434; mcp/tests/evidence-lifecycle.toml:1449-1456; mcp/tests/evidence-lifecycle.toml:1437-1437; mcp/tests/evidence-lifecycle.toml:1459-1459 |
 | The three artifacts those rows belong to, each an already-governed row rather than a new registration. | `path` | mcp/tests/evidence-lifecycle.toml:604-604; mcp/tests/evidence-lifecycle.toml:721-721; mcp/tests/evidence-lifecycle.toml:1175-1175; mcp/tests/evidence-lifecycle.toml:75-75 |
 | The population the pin names, re-derived at this candidate's own tip. | `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-44; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45; mcp/tests/evidence-lifecycle.toml:1-1326 |
-| The three consumer entries the `260915-CAPS-L15` re-pin added to three governed-artifact rows, whose shape the `260915-CAPS-L17` entries repeat. | "mcp/tests/curator_coherence_test_support.py"; "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/fixtures/codex_app_server_model_page.json" | mcp/tests/evidence-lifecycle.toml:329-351; mcp/tests/evidence-lifecycle.toml:603-625; mcp/tests/evidence-lifecycle.toml:1252-1267; mcp/tests/evidence-lifecycle.toml:373-380; mcp/tests/evidence-lifecycle.toml:648-655; mcp/tests/evidence-lifecycle.toml:1524-1531 |
+| The three consumer entries the `260915-CAPS-L15` re-pin added to three governed-artifact rows, whose shape the `260915-CAPS-L17` entries repeat. | "mcp/tests/curator_coherence_test_support.py"; "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/fixtures/codex_app_server_model_page.json" | mcp/tests/evidence-lifecycle.toml:329-351; mcp/tests/evidence-lifecycle.toml:603-625; mcp/tests/evidence-lifecycle.toml:1252-1267; mcp/tests/evidence-lifecycle.toml:373-380; mcp/tests/evidence-lifecycle.toml:648-655; mcp/tests/evidence-lifecycle.toml:1524-1531; mcp/tests/evidence-lifecycle.toml:1534-1534 |
 | **The contract and artifact blocks the pin counts, added by this leaf, and the consumer list its sibling artifact gained.** | "id = \"knowledge-diff-cases\"" | mcp/tests/evidence-lifecycle.toml:60-60 |
 
 ## Cross-Repo References
@@ -174,7 +174,34 @@ records what changed and why. The governed-inventory guard validates the change 
 consumer row inserted into the wrong block is refused by name, which is how this leaf's own misplaced
 first attempt was caught.
 
+## KS-R16@v1 Catalogue Re-Pin — Consumer Rows Only, And Two Records That Disagree With The Tree
+
+`KS-R16@v1`'s three test modules reach the shipped shared support their neighbours already use, so this
+leaf's catalogue change is again a **consumer change only**: `mcp/tests/diff_scope_test_support.py` gained
+one row (`mcp/tests/test_knowledge_family_integrity_pipeline.py`) and
+`mcp/tests/read_scope_test_support.py` gained two
+(`mcp/tests/test_knowledge_family_integrity_pipeline.py` and
+`mcp/tests/test_knowledge_registered_scope.py`). No `[[contract]]` and no `[[artifact]]` was added, so
+`LIFECYCLE_CATALOG_SHA256` was re-pinned to the file's own measured digest —
+`143b0cf5c3a8432450f45072b7351057ba51fe6c386f65eb662c0ec4cb729ce6`, which re-hashing
+`mcp/tests/evidence-lifecycle.toml` on this candidate reproduces exactly — while the two counts are
+unchanged.
+
+**The counts this leaf's own prose states are not the counts the constants carry, and the constants are the
+authority.** `LIFECYCLE_CONTRACT_COUNT` reads **14** and `LIFECYCLE_ARTIFACT_COUNT` reads **64** on this
+candidate (the merge onto the moved super line raised them), while the provenance paragraph the leaf added
+beside them says the counts "stay thirteen and fifty-four". The paragraph is a record of one leaf's
+*consumer-only* shape and its arithmetic is stale against the declarations it sits above; nothing here was
+corrected in the code, which is not this seat's to edit. The leaf's worker report also names the re-pinned
+digest as `b0bedae9071ec992cb011ba3e327ae67ff4c9728d9290bdfcdd50caff1263dd7`, **a value that appears
+nowhere in the tree** — the same class of discrepancy L17's entry already recorded against this pin, and
+the reason this card states the digest by measurement rather than by report. The rule the earlier entries
+state is unchanged: **a catalog change must re-pin deliberately in the same change, with the counts moving
+with the blocks they count**, and the reason written beside the constant is what makes the re-pin auditable
+rather than convenient.
+
 ## Update History
+- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): recorded the **seventh deliberate re-pin of the evidence-catalog identity, again a consumer change only.** `LIFECYCLE_CATALOG_SHA256` moved to **`143b0cf5c3a8432450f45072b7351057ba51fe6c386f65eb662c0ec4cb729ce6`**, re-measured here by hashing `mcp/tests/evidence-lifecycle.toml` on this candidate, with the two counts unchanged at **14 contracts / 64 artifacts** because no contract and no artifact was added: the leaf's three test modules consume the already-registered `diff_scope_test_support` (one row) and `read_scope_test_support` (two rows) artifacts. **Two records of this re-pin disagree with the tree and are recorded as such rather than carried forward:** the provenance paragraph the leaf added beside the constants says the counts "stay thirteen and fifty-four" against constants that read 14 and 64, and the leaf's worker report names the digest `b0bedae9071ec992cb011ba3e327ae67ff4c9728d9290bdfcdd50caff1263dd7`, a value that appears nowhere in the tree. The code was not edited to reconcile either — it is not this seat's to edit — so the discrepancy is named here where a successor will meet it. Verification metadata: the reviewed candidate moved to this leaf; the commit fields are untouched because the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `test_repository_inputs_reach_their_supported_consumers` repointed to mcp/tests/test_dependency_ownership_ast_helpers.py:232-252. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `_assert_the_catalog_kept_its_bytes_and_identities` repointed to mcp/tests/test_dependency_ownership_ast_helpers.py:323-339. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-diff-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:60-60. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.

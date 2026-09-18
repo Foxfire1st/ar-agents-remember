@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T10:44+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l13` uncommitted staged source; base `f031314345b674d0733c4619fe34d78c1b02ba26` |
+| lastUpdated | 2026-09-18T14:05+02:00 |
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -887,8 +887,8 @@ they are content rather than authority and compaction may legitimately summarize
 | The two payload versions and the family payload's sealed field set. | `FAMILY_REVISION_PAYLOAD_VERSION`; `canonical_family_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:26-27; mcp/src/agents_remember/models/knowledge/digest.py:71-90 |
 | The shared accepted/proposed rule both revision aggregates apply at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
 | The extended served surface, including the graph names. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:123-202 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:342-353; mcp/src/agents_remember/models/knowledge/result.py:325-325; mcp/src/agents_remember/models/knowledge/result.py:508-518; mcp/src/agents_remember/models/knowledge/result.py:332-335; mcp/src/agents_remember/models/knowledge/result.py:361-361; mcp/src/agents_remember/models/knowledge/result.py:526-540 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:343-347; mcp/src/agents_remember/models/knowledge/result.py:350-358; mcp/src/agents_remember/models/knowledge/result.py:361-364; mcp/src/agents_remember/models/knowledge/result.py:526-540 |
+| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:342-353; mcp/src/agents_remember/models/knowledge/result.py:325-325; mcp/src/agents_remember/models/knowledge/result.py:508-518; mcp/src/agents_remember/models/knowledge/result.py:332-335; mcp/src/agents_remember/models/knowledge/result.py:361-361; mcp/src/agents_remember/models/knowledge/result.py:526-540; mcp/src/agents_remember/models/knowledge/result.py:371-376; mcp/src/agents_remember/models/knowledge/result.py:360-370 |
+| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:343-347; mcp/src/agents_remember/models/knowledge/result.py:350-358; mcp/src/agents_remember/models/knowledge/result.py:361-364; mcp/src/agents_remember/models/knowledge/result.py:526-540; mcp/src/agents_remember/models/knowledge/result.py:371-376; mcp/src/agents_remember/models/knowledge/result.py:360-370 |
 | The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/store.py:92-510 |
 | The requirement this graph vocabulary belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 | The carrier format added to this route: schema, value types and the on-disk byte contract. | `EVE_CAPSULE_CARRIER_SCHEMA`; `EveCapsuleCarrier`; `to_bytes`; `from_bytes`; `carrier_digest` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-32; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-296 |
@@ -956,7 +956,7 @@ vocabulary is the *result state*, and a consumer must not branch on the code.
 | The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:278-299; mcp/src/agents_remember/models/knowledge/candidate.py:658-683; mcp/src/agents_remember/models/knowledge/candidate.py:686-729 |
 | The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:101-171 |
 | The served operation union the candidate-boundary leaf joined. | `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-96 |
-| The invariant-label result that leaf added to the served vocabulary. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:570-590 |
+| The invariant-label result that leaf added to the served vocabulary. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:598-618 |
 | The operation that consumes this vocabulary. | `change_candidate` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80 |
 | The composition seam that resolves a context from a live candidate and seals it. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
 | The seam entry point that applies a batch under the admitted provenance. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
@@ -1005,7 +1005,7 @@ completed but cannot be confirmed" need different remedies.
 | The destination request whose "expected absent" mode is the only way to overwrite. | `SnapshotDestinationRequest`; `PublishSnapshotRequest` | mcp/src/agents_remember/models/knowledge/snapshot.py:239-249; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256 |
 | The measurement that reports two identities and guesses nothing. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
 | The carried-not-examined authorization reference and the verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
-| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | The facade that re-exports the whole snapshot surface as the served vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:160-288 |
 | The lifecycle and publication operations that produce these values. | `create_candidate`; `publish_candidate_snapshot`; `publication_state` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/materialization.py:34-99 |
 | The second composition seam that admits these values and returns them unchanged. | `admitted_candidate_destination`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
@@ -1061,7 +1061,7 @@ the second names no row.
 | The request that carries the proven resolution, the paths it deliberately keeps out of the resolution, and the optional destination. | `MergeRequest` | mcp/src/agents_remember/models/knowledge/merge.py:189-215 |
 | The base-resolution request and the resolution that records which claim applied. | `MergeBaseRequest`; `MergeBaseResolution` | mcp/src/agents_remember/models/knowledge/merge.py:124-154; mcp/src/agents_remember/models/knowledge/merge.py:157-186 |
 | The per-table coverage fact that separates "changed" from "carried an operation". | `TableCoverage` | mcp/src/agents_remember/models/knowledge/merge.py:218-240 |
-| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | The merge operation that consumes this vocabulary. | `merge_knowledge_datasets` | mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
 | The base resolution that produces the value this vocabulary consumes. | `resolve_merge_base` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105 |
 | The third composition seam that takes these values and returns them unchanged. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
@@ -1108,7 +1108,7 @@ does **not** re-export the portable (or merge) vocabulary, so a consumer reaches
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The portable sub-route module, its three splits and its deliberately absent verdict. | `ExportRequest`; `ImportRequest`; `PortableValidation`; `ExportResult`; `ImportResult` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:66-98; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:136-176 |
-| The one code and the two operations this leaf added to the shared vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| The one code and the two operations this leaf added to the shared vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | The five factories that produce the portable boundary's codes. | `invalid_export_refusal`; `non_canonical_export_refusal`; `unsupported_schema_refusal`; `destination_occupied_refusal`; `destination_absent_refusal`; `import_validation_failed_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:26-50; mcp/src/agents_remember/memory/knowledge/export_refusals.py:53-75; mcp/src/agents_remember/memory/knowledge/export_refusals.py:78-102; mcp/src/agents_remember/memory/knowledge/export_refusals.py:105-126; mcp/src/agents_remember/memory/knowledge/export_refusals.py:129-148; mcp/src/agents_remember/memory/knowledge/export_refusals.py:151-172 |
 | The encoder and reader this vocabulary describes. | `parse_export`; `validate_export`; `encode_export` | mcp/src/agents_remember/memory/knowledge/export_portable.py:490-543; mcp/src/agents_remember/memory/knowledge/export_portable.py:667-712; mcp/src/agents_remember/memory/knowledge/export_portable.py:276-301 |
 | The nodes that hold the round trip and the no-promotion rule to this vocabulary. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_accepted_origin_state_crosses_as_data_and_is_not_promoted" | mcp/tests/test_knowledge_portable_roundtrip.py:401-470; mcp/tests/test_knowledge_portable_roundtrip.py:473-486 |
@@ -1175,7 +1175,7 @@ write path refuses cannot be presented as a seed that is answered with an absenc
 | --- | --- | --- |
 | The read sub-route module: the closed seed union, the context, the page and the cursor. | `KnowledgeReadSeed`; `PathSeed`; `KnowledgeReadContext`; `KnowledgeReadPage`; `KnowledgeReadCursor` | mcp/src/agents_remember/models/knowledge/read.py:204-213; mcp/src/agents_remember/models/knowledge/read.py:144-171; mcp/src/agents_remember/models/knowledge/read.py:216-263; mcp/src/agents_remember/models/knowledge/read.py:451-482; mcp/src/agents_remember/models/knowledge/read.py:514-531 |
 | **The corrected count model and the truncated page that cannot claim completeness.** | `KnowledgeReadCounts`; `KnowledgeReadPage` | mcp/src/agents_remember/models/knowledge/read.py:404-448; mcp/src/agents_remember/models/knowledge/read.py:451-482 |
-| The one operation and six codes this leaf added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| The one operation and six codes this leaf added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | **The shared Git-pathspec rule, with `*`, `?` and `[` admitted as literal characters.** | `require_plain_git_path` | mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | The write path's delegation of its pathspec half to that one rule. | `SourceAnchorDraft` | mcp/src/agents_remember/models/knowledge/source.py:82-127 |
 | **The facade's ninth source, which this leaf did add to `__all__`.** | `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/__init__.py:71-71 |
@@ -1246,7 +1246,7 @@ comparison vocabulary, exactly as it does not re-export the portable or merge vo
 | **The counts that keep the comparison total and the display total apart, and the two closed vocabularies.** | `KnowledgeDiffCounts`; `DiffCoverage`; `DiffRecordTransition` | mcp/src/agents_remember/models/knowledge/diff.py:432-460; mcp/src/agents_remember/models/knowledge/diff.py:118-131; mcp/src/agents_remember/models/knowledge/diff.py:133-140 |
 | The expansion as a value, with the attributed and unattributed changed paths kept apart. | `KnowledgeDiffExpansion` | mcp/src/agents_remember/models/knowledge/diff.py:406-429 |
 | **The comparison's own cursor and its two functions, deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:573-586; mcp/src/agents_remember/models/knowledge/diff.py:589-605; mcp/src/agents_remember/models/knowledge/diff.py:608-621 |
-| **The one operation this leaf added, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| **The one operation this leaf added, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"; "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other" | mcp/tests/test_knowledge_diff_boundaries.py:481-507; mcp/tests/test_knowledge_diff_boundaries.py:510-540 |
 | The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation. | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:678-739; mcp/tests/test_knowledge_diff_scope.py:603-675 |
 
@@ -1273,9 +1273,9 @@ carries a route's identity as a fingerprint.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two operations the route write layer added, so a route refusal names a route operation. | `author_route`; `set_governing_route` | mcp/src/agents_remember/models/knowledge/result.py:36-96 |
-|The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree.|`invalid_payload`| mcp/src/agents_remember/models/knowledge/result.py:134-152; mcp/src/agents_remember/models/knowledge/result.py:117-117 |
+| The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:134-152; mcp/src/agents_remember/models/knowledge/result.py:117-117; mcp/src/agents_remember/models/knowledge/result.py:162-162 |
 | The two operations the route write layer added, so a route refusal names a route operation. | `author_route`; `set_governing_route` | mcp/src/agents_remember/models/knowledge/result.py:43-44 |
-| The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:152-152 |
+| The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:162-162 |
 | The route rules' refusal shapes and the frozen request objects they report on. | `normalize_route_path`; `set_governing_route` | mcp/src/agents_remember/memory/knowledge/routes.py:76-90; mcp/src/agents_remember/memory/knowledge/routes.py:398-480 |
 
 ## 260915-KS-L11 The Authored-Judgment Vocabulary
@@ -1338,7 +1338,7 @@ change set.
 | The two seed kinds and the six item kinds as closed unions. | `FacetReadSeed`; `FacetReadItem` | mcp/src/agents_remember/models/knowledge/facet_read.py:182-185; mcp/src/agents_remember/models/knowledge/facet_read.py:241-249 |
 | The eight subtypes' payload models and the two nonempty-tuple meanings. | `ScenarioPayload`; `LimitationPayload` | mcp/src/agents_remember/models/knowledge/facet.py:132-143; mcp/src/agents_remember/models/knowledge/facet.py:146-152 |
 | **The nodes that hold the closure, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:306-343; mcp/tests/test_knowledge_facets.py:408-415 |
-| **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-90; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
+| **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-90; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 
 ## 260915-KS-L14 The Detection Vocabulary, And The Two Operations It Adds
 
@@ -1416,7 +1416,7 @@ three are frequently empty, so a signal that observed nothing *states* that rath
 | The two operation members the requirement record group added, and the fact that no refusal code was added with them. | `record_requirement_revision`; `read_requirement_revisions` | mcp/src/agents_remember/models/knowledge/result.py:114-114; mcp/src/agents_remember/models/knowledge/result.py:113-113 |
 | The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197 |
 | **The cases that hold the field-set review, the three declared input sets and the retention answer.** | "test_the_signal_field_set_is_required_and_carries_no_conclusion_bearing_field"; "test_the_declared_input_set_vocabulary_is_exactly_three_members_each_with_its_own_discriminator"; "test_a_manifest_may_not_be_reported_retained_at_a_destination_that_cannot_retain_it" | mcp/tests/test_knowledge_detection_signals.py:185-222; mcp/tests/test_knowledge_detection_signals.py:346-360; mcp/tests/test_knowledge_detection_signals.py:527-569 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained, each cited at its own declaration. | `AnchorReference`; `AnchorEndpoint`; `NewAnchor`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:300-316; mcp/src/agents_remember/models/knowledge/result.py:307-315; mcp/src/agents_remember/models/knowledge/result.py:483-498; mcp/src/agents_remember/models/knowledge/result.py:327-327; mcp/src/agents_remember/models/knowledge/result.py:316-316; mcp/src/agents_remember/models/knowledge/result.py:326-326; mcp/src/agents_remember/models/knowledge/result.py:342-353; mcp/src/agents_remember/models/knowledge/result.py:325-325; mcp/src/agents_remember/models/knowledge/result.py:332-335; mcp/src/agents_remember/models/knowledge/result.py:508-518; mcp/src/agents_remember/models/knowledge/result.py:361-361; mcp/src/agents_remember/models/knowledge/result.py:526-540 |
+| The eight graph operations and the anchor-endpoint union the request vocabulary gained, each cited at its own declaration. | `AnchorReference`; `AnchorEndpoint`; `NewAnchor`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:300-316; mcp/src/agents_remember/models/knowledge/result.py:307-315; mcp/src/agents_remember/models/knowledge/result.py:483-498; mcp/src/agents_remember/models/knowledge/result.py:327-327; mcp/src/agents_remember/models/knowledge/result.py:316-316; mcp/src/agents_remember/models/knowledge/result.py:326-326; mcp/src/agents_remember/models/knowledge/result.py:342-353; mcp/src/agents_remember/models/knowledge/result.py:325-325; mcp/src/agents_remember/models/knowledge/result.py:332-335; mcp/src/agents_remember/models/knowledge/result.py:508-518; mcp/src/agents_remember/models/knowledge/result.py:361-361; mcp/src/agents_remember/models/knowledge/result.py:526-540; mcp/src/agents_remember/models/knowledge/result.py:371-376; mcp/src/agents_remember/models/knowledge/result.py:360-370 |
 | The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197 |
 
 ## 260915-KS-L12 The Supporting-Record Vocabulary
@@ -1495,7 +1495,66 @@ to compute, and an empty list means exactly that no member declares the change s
 that resolves to nothing is a reported state and never a refused write, a substitute, or a claim that an
 assessment happened.
 
+## 260915-KS-L16 The Registered-Scope And Family-Review Vocabulary, And Two Operations Added Without A Refusal Code
+
+`KS-R16@v1` composes the family-integrity pipeline over three record leaves and adds **no record kind of
+its own**; what this route gains is the two vocabularies that pipeline speaks. `models/knowledge/registered_scope.py`
+is the §8 registered review scope's declaration — its snapshots, its followed edges with per-side
+provenance, its membership, its manifest and its own construction refusal. `models/knowledge/family_review.py`
+is the pipeline's vocabulary between the detector and the authored record: grouped facts, five separated
+statuses, per-input currentness, the routing report and the one gate-consequence decision. Both are
+**envelope-shaped additions**: neither brings a table, an identity mechanism or a storage contract, and
+neither restates a schema `KS-R14@v1`, `KS-R15@v1` or `KS-R17@v1` already owns.
+
+**The scope's five properties are shapes rather than rules a caller remembers.** `ScopeSnapshotDeclaration`
+names the two sides a scope is declared over, and `FollowedScopeEdge` carries the side each result was read
+from, so a cross-snapshot union is a *recorded lookup for candidate discovery* and never a claim that two
+snapshots' relationships hold at once. Widening is a declared policy or it is nothing: the resolved
+`(policy_id, policy_version_id, declared_version)` triple travels with the scope it produced, and a request
+that declares no policy follows no composition edge. Membership is recorded, never inferred — nothing here
+derives a member from prose, a label, a folder name, a path prefix or a symbol, and a path prefix compared
+against a stored anchor path is a resolution fact this module cannot represent at all;
+`scope_path_is_recorded` is the one path-shaped predicate it carries, and it decides exact recorded
+equality. The registered scope is **not** the R07 read frontier: no field can hold a selected revision set,
+a page cursor, a count of items remaining or an advertised expansion. And construction is total or it is
+`ScopeConstructionRefusal`, naming the exact declared input it could not resolve — there is deliberately no
+partial scope carrying an unresolved-input list, because "what a run over the scope could not resolve" is
+`KS-R14@v1`'s half of the split. `SCOPE_CONSTRUCTION_VERSION` pins the declaration's own version, and **no
+identity is minted here**: the scope is addressed by its declared `scope_id` and carries no content address,
+logical digest or fingerprint of its own, so a `scope_manifest_ref` elsewhere points at that id and at
+nothing derived from it.
+
+**The pipeline vocabulary keeps five owners separate and refuses to carry a conclusion.**
+`FamilyIntegrityFactGroup` declares no name from the detection schema's conclusion-bearing field set —
+`KS-R14@v1`'s own review function is the measurement, and the case that protects it requires the empty
+tuple — while `retains()` is the review that a merge lost nothing: grouping may merge matches, but every
+matched condition and its supporting paths and edges are retained, and no field could hold a dropped match.
+`SeparatedStatusReport` carries exactly one entry per owner in the declared order (`PIPELINE_STATUS_OWNERS`,
+with `STATUS_OWNER_DECLARATIONS` and `STATUS_VOCABULARIES` giving each owner its own closed status
+vocabulary and its own statement of what it does *not* establish), and there is no field anywhere in it for
+one verdict, one badge or one boolean. Missing stays missing: an absent stored record is reported as
+`no-record-recorded` and never as a favourable disposition, because the vocabulary has no "compatible"
+member and no default. `FindingCurrentness` carries the recorded comparison's result, the identities that
+moved and a typed statement that nothing was reinterpreted for the new inputs, and `FamilyReviewRouting`
+carries the shipped actionability formula's three terms **beside** the family-review row count as a separate
+number, with a field whose only admissible value names the validator that actually decides closeout
+readiness (`CLOSEOUT_READINESS_DECIDER`) — a zero actionable count is necessary and never sufficient.
+`FamilyReviewGateDecision` and its recorded instance `RECORDED_GATE_CONSEQUENCE_DECISION` make the gate's
+consequence owned rather than implied. `FACT_GROUPING_POLICY_VERSION` and `FAMILY_REVIEW_ROUTING_SURFACES`
+name the two declared policies the pipeline's composition is bound to.
+
+**Two operations were added and no refusal code was.** `models/knowledge/result.py`'s `KnowledgeOperation`
+union gained exactly two members — `construct_registered_scope` and `compose_family_integrity_report` — each
+with its reason written beside it in the source, and `KnowledgeRefusalCode` was deliberately **not**
+extended: a scope-construction refusal reuses the shipped codes, and a reader who saw the union grow and
+inferred a new refusal vocabulary would be reading the wrong fact. That absence is recorded here rather than
+left to a diff, because "this leaf needed no new refusal code" and "this leaf's refusal vocabulary was never
+reviewed" must not read alike.
+
 ## Update History
+- 2026-09-18T12:07:24+00:00: Generated citation repair: `SetInvariantLabelResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:598-618. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T12:07:24+00:00: Generated citation repair: `invalid_payload` repointed to mcp/src/agents_remember/models/knowledge/result.py:162-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the two vocabularies `KS-R16@v1` contributes to this route (the registered review scope's declaration and the family-review pipeline's records), the five scope properties that are enforced by record shape, the four pipeline properties that keep five status owners separate and refuse to carry a conclusion, and the **two operations added to the union with no refusal code added beside them**. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T10:44+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): **added the L13 section** — the four authored-effect kinds as envelope records, the closed nine-member effect vocabulary and its single cardinality rule, the deliberate absences (no truth verdict, no authorship field, no preservation flag, no generated summary, no acceptance verdict), the preservation claim as its own record with a closed subject union, and the derived read models that report unresolved references rather than resolving them. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: `CreateRevisionResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:422-439. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T08:36:42+00:00: Generated citation repair: `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:361-364; mcp/src/agents_remember/models/knowledge/result.py:350-358; mcp/src/agents_remember/models/knowledge/result.py:343-347; mcp/src/agents_remember/models/knowledge/result.py:526-540. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.

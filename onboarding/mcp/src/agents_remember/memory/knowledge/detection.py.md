@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/detection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -173,8 +173,8 @@ No domain documentation source is configured for this repository (`system/source
 | The composition this module's generation comes from — one anchor, one source, because a row naming several anchors across several files cannot resolve to a single extent. | `_compose_generation_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:316-324 |
 | **The two immutability triggers that seal a recorded detection sequence — the reason a later code path that forgot the rule still cannot reorder or shorten it.** | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:106-116 |
 | The revision draft, row tuple and digest the detection write and read reuse rather than re-implementing. | `RecordRevisionDraft`; `record_revision_row`; `record_revision_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:86-96; mcp/src/agents_remember/memory/knowledge/facet_records.py:193-207; mcp/src/agents_remember/memory/knowledge/facet_records.py:209-230 |
-| The two operation members and the one refusal code only a detection write can reach. | `record_detection_run`; `read_detection_run`; `detection_self_reference` | mcp/src/agents_remember/models/knowledge/result.py:202-212; mcp/src/agents_remember/models/knowledge/result.py:186-186; mcp/src/agents_remember/models/knowledge/result.py:97-97; mcp/src/agents_remember/models/knowledge/result.py:106-106; mcp/src/agents_remember/models/knowledge/result.py:105-105; mcp/src/agents_remember/models/knowledge/result.py:220-220 |
-| The two operation members and the one refusal code only a detection write can reach. | `record_detection_run`; `read_detection_run`; `detection_self_reference` | mcp/src/agents_remember/models/knowledge/result.py:88-106; mcp/src/agents_remember/models/knowledge/result.py:163-212; mcp/src/agents_remember/models/knowledge/result.py:220-220 |
+| The two operation members and the one refusal code only a detection write can reach. | `record_detection_run`; `read_detection_run`; `detection_self_reference` | mcp/src/agents_remember/models/knowledge/result.py:202-212; mcp/src/agents_remember/models/knowledge/result.py:186-186; mcp/src/agents_remember/models/knowledge/result.py:97-97; mcp/src/agents_remember/models/knowledge/result.py:106-106; mcp/src/agents_remember/models/knowledge/result.py:105-105; mcp/src/agents_remember/models/knowledge/result.py:220-220; mcp/src/agents_remember/models/knowledge/result.py:230-230 |
+| The two operation members and the one refusal code only a detection write can reach. | `record_detection_run`; `read_detection_run`; `detection_self_reference` | mcp/src/agents_remember/models/knowledge/result.py:88-106; mcp/src/agents_remember/models/knowledge/result.py:163-212; mcp/src/agents_remember/models/knowledge/result.py:220-220; mcp/src/agents_remember/models/knowledge/result.py:230-230 |
 | The store the write runs inside, its immediate-transaction helper and its exclusive candidate lock. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:96-120 |
 | **The cases that measure the ordered round trip, the two-place versions, the self-reference refusal and the sealed sequence.** | "test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions"; "test_a_detection_write_into_an_assessed_database_is_refused"; "test_a_recorded_detection_sequence_cannot_be_reordered_or_shortened" | mcp/tests/test_knowledge_detection_runs.py:593-640; mcp/tests/test_knowledge_detection_runs.py:732-768; mcp/tests/test_knowledge_detection_runs.py:769-799 |
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/snapshot_lifecycle_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,9 +101,9 @@ No domain documentation source is configured for this repository (`system/source
 | The file-level probes the durability claims rest on. | `journal_peer_names`; `read_journal_mode`; `file_digest`; `byte_copy`; `row_counts`; `logical_identity_of`; `vacuum` | mcp/tests/snapshot_lifecycle_test_support.py:410-418; mcp/tests/snapshot_lifecycle_test_support.py:433-441; mcp/tests/snapshot_lifecycle_test_support.py:404-408; mcp/tests/snapshot_lifecycle_test_support.py:453-459; mcp/tests/snapshot_lifecycle_test_support.py:420-431; mcp/tests/snapshot_lifecycle_test_support.py:443-451; mcp/tests/snapshot_lifecycle_test_support.py:323-331 |
 | The real-process crash probe, which asserts the committed batch survived rather than only reporting it. | `crash_and_abandon`; `CrashOutcome` | mcp/tests/snapshot_lifecycle_test_support.py:477-533; mcp/tests/snapshot_lifecycle_test_support.py:468-475 |
 |  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1253-1253  |
-| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:87-87; mcp/tests/test-evidence-lanes.toml:89-89; mcp/tests/test-evidence-lanes.toml:88-88; mcp/tests/test-evidence-lanes.toml:90-92; mcp/tests/test-evidence-lanes.toml:76-83; mcp/tests/test-evidence-lanes.toml:98-105 |
+| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:87-87; mcp/tests/test-evidence-lanes.toml:89-89; mcp/tests/test-evidence-lanes.toml:88-88; mcp/tests/test-evidence-lanes.toml:90-92; mcp/tests/test-evidence-lanes.toml:76-83; mcp/tests/test-evidence-lanes.toml:98-105; mcp/tests/test-evidence-lanes.toml:107-107 |
 |  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1253-1253  |
-| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:76-92; mcp/tests/test-evidence-lanes.toml:98-105 |
+| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:76-92; mcp/tests/test-evidence-lanes.toml:98-105; mcp/tests/test-evidence-lanes.toml:107-107 |
 | The application seam this harness admits destinations through. | `admitted_candidate_destination`; `create_knowledge_candidate`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
 
 ## Cross-Repo References

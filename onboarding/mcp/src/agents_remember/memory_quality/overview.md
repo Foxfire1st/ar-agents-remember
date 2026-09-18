@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-17T19:30+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-18T14:05+02:00 |
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -570,7 +570,42 @@ dependency.
 | `memory_candidate_pair.py` | [memory_candidate_pair.py.md](memory_candidate_pair.py.md) | covered |
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
+## 260915-KS-L16 The Family-Review Pipeline, And The Actionability Formula Given A Name
+
+`KS-R16@v1` owns the pipeline *between* the record leaves, and this route owns the half that carries a fact
+from one to the next without becoming a second source of any of them: `memory_quality/family_review.py`
+composes, and `curator_checklist.py` gained the one named function that composition calls.
+
+**Four acts, each with one failure it exists to prevent.** `group_detection_facts` deduplicates matches by
+their recorded subject and declared input set and retains **every** matched condition with its supporting
+paths and edges — grouping merges and never drops, and the fact group's own `retains()` is the review that
+measures it. `compose_status_report` reports the five status owners separately, each with its own closed
+vocabulary and its own statement of what it does *not* establish, and no field in the result could hold a
+merged verdict; `detector_status` and `curator_review_status` derive two of the five from what was recorded
+rather than accepting a caller's word for them. `compose_currentness` compares one authored record's
+recorded binding against the caller's measurement of the current world through `KS-R15@v1`'s own comparison:
+it decides no equivalence, a moved input is stale, the record stays readable and reuse is refused, and
+`curator_currentness_status` reduces a sequence of those findings to the one state the route publishes.
+`route_family_review` counts the shipped formula's three terms **once**, beside the family-review row count,
+and reports that family rows moved nothing; `family_review_summaries` and `reported_subject_status` are the
+read-only reductions over the same records.
+
+**The arithmetic has one definition, and it is now a function with one name.**
+`curator_checklist.py`'s shipped `repair + missing + stale` expression — the one `write_curator_checklist`
+already computed inline — was extracted into `curator_actionable_count(repair, missing, stale)`, and the
+checklist writer's one call site calls it. The **value and the behaviour are unchanged**: this leaf's
+`KS-R16@v1` §5.3 requires that the formula gain no fourth term, and naming it is what makes that property a
+property of one definition rather than a convention each consumer restates. The pipeline calls it instead of
+re-implementing the sum, so the routing report cannot drift from the checklist it reports into. The
+`knowledgeReview` section this pipeline renders into is `KS-R15@v1`'s own: there is no second worklist, no
+second reports directory and no second counter on this route.
+
+**The one thing the pipeline refuses to do is invent a conclusion.** Nothing in the module reads a
+rationale, a path's bytes, a label or a count to decide whether a change matters. A caller that finds a stage
+here attaching a verdict has found the defect, and the fix is to remove it rather than to author it in code.
+
 ## Update History
+- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the route's new `family_review.py` with its four acts and the failure each exists to prevent, and the one change this leaf made to a shipped module: the three-term actionability formula extracted into the named `curator_actionable_count`, whose value and behaviour are unchanged and whose one call site is the checklist writer. The section states the two boundaries a reader must not flatten — the pipeline calls the shipped function rather than restating the sum, and it renders into `KS-R15@v1`'s existing `knowledgeReview` section rather than creating a second worklist. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `knowledge_review.py` and one defaulted input plus one rendered section in `curator_checklist.py`; the section is **report-only** and the arithmetic is unchanged, which the body now states where the module's own comparison sentence lives rather than leaving it to a reader to infer. The reference rows were re-derived from the current files: `_append_drift` is `:319-350`, `_render` `:204-266`, `write_curator_checklist` `:100-180`, `_tracked_onboarding_paths` `:183-189`, and the controller rows moved to `:317-337`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:583-583. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

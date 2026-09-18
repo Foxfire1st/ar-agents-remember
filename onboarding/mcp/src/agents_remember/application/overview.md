@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-17T19:30+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastUpdated | 2026-09-18T14:05+02:00 |
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -1275,7 +1275,40 @@ carries rather than on a caller-supplied name, so a caller cannot ask for one ac
 **Nothing in either half touches the two shipped selections.** The evidence selection declares its own
 policy name, has its own seeds and its own item stream, and appears in neither the recorded-scope nor the
 facet response — which is why their serialized pages stay unchanged.
+
+## 260915-KS-L16 The Family-Integrity Pipeline's One Operation, And The Retention It Proves
+
+`KS-R16@v1`'s Normative Requirement asks for **one** operation over the three record leaves, and this route
+owns it: `application/knowledge_family_integrity.py`'s `family_integrity_report` opens a dataset
+**read-only** through the shipped `open_read_only_store`, constructs the registered review scope, reads the
+recorded detection run back, groups its facts, composes the five separated statuses, measures each authored
+record's currentness and routes the groups into the existing curator worklist. `FamilyIntegrityRequest` and
+`FamilyIntegrityReport` are its two value types and `COMPOSE_REPORT_OPERATION` names it for dispatch. Like
+every seam on this route it **decides nothing itself**: each of those acts belongs to the module that owns
+it, and this file is only the seam that puts them in the packet's order.
+
+**Two of the five status owners are not this leaf's to report, and that is enforced rather than
+documented.** `CALLER_REPORTED_STATUS_OWNERS` names the structural validator and the verification runner:
+each reports its own fact, so the request carries their two statuses verbatim and the pipeline **refuses a
+request that omits one** instead of filling it with a plausible value — a pipeline that invented another
+owner's status would be the collapse §4.1 forbids, wearing the other owner's name. The detector's status is
+derived from the signals the run recorded, the curator's from the records that are stored, and the
+authority's from the currentness comparison this leaf measures. The report carries the shipped
+actionability formula's own three terms and the family-review row count beside them, identifies the
+validator that decides closeout readiness, and has **no field that could refuse a merge, block a closeout or
+add a fourth term**: nothing here is a gate.
+
+**The retention half is a proof, not a claim.** `publish_review_evidence` publishes a finding and the
+manifest needed to interpret it through `KS-R18@v1`'s durable route and **reads them back from the exact
+destination**, because the design declined to certify cleanup retention and a destination nobody read back
+is an assumption rather than evidence. `ReviewEvidenceRetention` carries that proof and
+`worklist_row_disposable` is the guard on the other side of it: a worklist row is not disposable while it is
+the only pointer to the evidence that interprets it. The destination is `<task_root>/notes/reports/` —
+outside the enclosure root and outside the worktree group by construction — and the module neither widens
+that set nor writes into an enclosure's own `reports/` directory, which cleanup removes.
+
 ## Update History
+- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the route's one new module and its single end-to-end operation, the two status owners the request must carry verbatim and the refusal that keeps the pipeline from inventing them, the counts the report carries with no field that could make it a gate, and the retention proof that publishes to `<task_root>/notes/reports/` and reads the bytes back from the exact destination. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:40+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand** — `generation_of_database`, `CURRENT_GENERATION`, `worktree_status_packet`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
 
 - 2026-09-18T06:40+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **re-read this route overview against the current source and repaired the citation ranges the leaf's addition moved.** It added the **supporting-record seam** section — the route's seventh application seam and its one read operation — and refreshed the write half's account of where the two supporting-record entry points live. The body above is the substantive update; the route's own source scope moved because the leaf both adds modules to it and appends two entries to the registry it documents.

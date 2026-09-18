@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
+| lastUpdated | 2026-09-18T14:05+02:00 |
+| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,13 +30,13 @@ replaced at `reports/curator-memory-quality.md`.
 repairable findings from the one truthful closeout-only class: missing citation provenance on a
 new, still-untracked onboarding card. It obtains the tracked set from the memory worktree rather
 than treating every missing-provenance row as harmless historical debt
-cit:([`report_path_for`, `split_commit_owned_findings`, `_tracked_onboarding_paths`], mcp/src/agents_remember/memory_quality/curator_checklist.py:74-76; mcp/src/agents_remember/memory_quality/curator_checklist.py:79-97; mcp/src/agents_remember/memory_quality/curator_checklist.py:183-189).
+cit:([`report_path_for`, `split_commit_owned_findings`, `_tracked_onboarding_paths`], mcp/src/agents_remember/memory_quality/curator_checklist.py:74-76; mcp/src/agents_remember/memory_quality/curator_checklist.py:79-97; mcp/src/agents_remember/memory_quality/curator_checklist.py:196-202).
 
 `write_curator_checklist` sorts repair rows, missing sidecars, stale indexes, actionable drift
 candidates, closeout-owned provenance, and noteworthy report-only rows before it derives the
 zeroable curator count. It writes through `atomic_write_text`, so a reader sees the previous
 complete checklist or the next complete checklist, never a partial report
-cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:100-180).
+cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:113-195).
 The renderer preserves the important distinction between a zeroable pre-closeout gate and dirty
 source/real-commit evidence that must remain visible until governed closeout supplies a real
 commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:204-266; mcp/src/agents_remember/memory_quality/curator_checklist.py:319-350).
@@ -44,7 +45,7 @@ Under CCR-R03@v1 `CuratorChecklist` now carries the exact `code_candidate_tree` 
 `memory_candidate_tree`, and the attestation embeds the `memory-quality-attestation/v1` dependency
 declaration built from the pair, both trees, and the rendered-report SHA-256 — so the checklist
 attestation content-addresses exactly the candidate trees it inspected
-cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:36-59; mcp/src/agents_remember/memory_quality/curator_checklist.py:100-180).
+cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:36-59; mcp/src/agents_remember/memory_quality/curator_checklist.py:113-195).
 
 ### Conventions
 
@@ -89,7 +90,7 @@ The application layer decides when the report exists, and worktree cleanup owns 
 | --- | --- | --- |
 | A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:107-131; mcp/src/agents_remember/application/memory_quality/controller.py:317-337; mcp/src/agents_remember/application/memory_quality/controller.py:318-360; mcp/src/agents_remember/application/memory_quality/controller.py:363-441 |
 | Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:532-559 |
-| The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:100-180 |
+| The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:113-195 |
 | R03 attestation dependency declaration source. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |
 
 ## Cross-Repo References
@@ -137,14 +138,38 @@ section renders an explicit "none recorded" state instead of an absent heading;
 `_ChecklistSections.knowledge_review` carries the rendered section, and `_render` appends its lines
 after the report-only findings and before the completion rule.
 
-**The section is report-only, and this module is where that is enforced.** It is not an input to
-`actionable_count`, which is still `len(repair) + len(missing) + len(stale)` — repairable findings,
-missing onboarding and stale route indexes only. A subject whose assessment is unresolved, stale or
-partial-scope therefore changes the section's counted limitations and changes nothing about the gate,
-the status line, or the arithmetic the attestation binds. The comment beside the new field says so,
-and the shape of the function is what makes it true rather than the comment.
+**The section is report-only, and this module is where that is enforced.** It is not an input to the
+curator count, whose three terms are repairable findings, missing onboarding and stale route indexes
+only. A subject whose assessment is unresolved, stale or partial-scope therefore changes the section's
+counted limitations and changes nothing about the gate, the status line, or the arithmetic the
+attestation binds. The comment beside the new field says so, and the shape of the function is what
+makes it true rather than the comment.
+
+## KS-R16@v1 The Actionability Formula Given One Name
+
+`KS-R16@v1` §5.3 requires that the curator's actionability formula gain no fourth term, and the shipped
+answer is that the formula now has exactly one definition with a name. The inline
+`len(repair) + len(missing) + len(stale)` expression `write_curator_checklist` used to compute is
+extracted into `curator_actionable_count(repair, missing, stale)`, and the writer's one call site now
+calls it. **The value and the behaviour are unchanged** — the function is the same sum over the same
+three terms, and `curator_checklist.py:134` is still the only place the count is derived. What changed is
+that a second consumer can *consume* the formula instead of restating it: the family-integrity pipeline's
+routing report calls this function, so the report cannot drift from the checklist it reports into, and
+"gains no fourth term" is a property of one function rather than a convention each caller re-implements.
+The `knowledgeReview` section remains outside it, for the same reason as before.
 
 ## Update History
+- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base
+  `7b1db4e0`): **re-read this card against the changed source and recorded the one-function change the
+  leaf made.** The inline three-term sum became the named `curator_actionable_count` at `:100-110`, with
+  `write_curator_checklist`'s single call site calling it at `:134`; the value and the behaviour are
+  unchanged, and the body paragraph that quoted the inline expression now states the count by its three
+  terms and by the function that defines them, so a successor reading the report-only boundary is not
+  pointed at an expression the file no longer carries. Three citation ranges in the body were repointed in
+  the same pass, because the new function was inserted above the writer and moved every anchor below it:
+  `write_curator_checklist` is now `:113-195`. No claim was deleted or softened, and this card
+  now carries a `reviewedWorkingCandidate` row naming what was actually read: the construct exists only in
+  this leaf's uncommitted candidate, so closeout owns the stamp.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base
   `837961d4`): **re-read this card against the changed source and recorded the factual section the leaf
   added.** `CuratorChecklist` gained the defaulted `knowledge_review` input, `write_curator_checklist`
