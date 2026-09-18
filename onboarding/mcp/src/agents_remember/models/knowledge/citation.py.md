@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/citation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -48,6 +48,16 @@ vocabulary; four of its members are *literally* members of the shipped `ANCHOR_R
 deliberately gains **no** member: the extension is one-directional, so an anchor resolution can never
 acquire a citation fact.
 
+**What the binding stores is one table plus a column, and the payload's own docstring says so.** This
+leaf appends exactly **one** table — `citation_binding` — and the binding's governing route is a
+nullable `governing_route_id` **column on that same row**, a real foreign key into the existing `route`
+entity, rather than a second per-binding association table beside it; no generation-1 or generation-2
+table is altered. The binding's recorded identity, lifecycle and provenance come from the envelope, which
+already carries a governing-route association for `knowledge_record`. The vocabulary module states this
+because the delivered schema is the authority for it: `schema_v5.py` declares one appended table and a
+nullable route column on it, so a reader who took the payload's own prose as the schema would expect a
+second table that generation 5 does not have.
+
 `CitationBindingCounts` refuses a report that omits a declared state or whose per-state counts do not
 partition the declared selected set — that is the mechanism by which an unresolved key cannot be
 dropped from a denominator. `KeyFormCoverage` refuses to leave an uncovered form uncounted, and
@@ -70,7 +80,10 @@ field.
 - **The state vocabulary is closed and exhaustive.** `BINDING_STATES` names every member; a state
   that cannot be populated today is still a counted member with a zero entry.
 - This module holds no store handle and writes nothing: it is the vocabulary the write path, the read
-  path and the closure all speak.
+  path and the closure all speak. The **schema** the binding's payload describes is not declared here:
+  generation 5's append belongs to `memory/knowledge/schema_v5.py`, which is why the payload docstring
+  names the one table and the route column it actually has rather than describing an association table
+  this module does not own.
 
 ### Todos
 
@@ -93,6 +106,7 @@ No domain documentation source is configured for this repository (`system/source
 | The written source the prose itself carries, and the ordered-range refusal that keeps it readable. | `WrittenSource` | mcp/src/agents_remember/models/knowledge/citation.py:194-213 |
 | **Both key forms, the declaration of which form this increment reads, and the one rendering of either.** | `ProseCitationKey`; `TableRowKeyForm`; `KEY_FORMS`; `COVERED_KEY_FORMS`; `render_local_key` | mcp/src/agents_remember/models/knowledge/citation.py:215-255; mcp/src/agents_remember/models/knowledge/citation.py:257-278; mcp/src/agents_remember/models/knowledge/citation.py:282-289; mcp/src/agents_remember/models/knowledge/citation.py:292-299; mcp/src/agents_remember/models/knowledge/citation.py:301-321 |
 | The typed target reference and the authored payload that composes the binding's four facts. | `CitationTargetReference`; `CitationBindingPayload` | mcp/src/agents_remember/models/knowledge/citation.py:323-351; mcp/src/agents_remember/models/knowledge/citation.py:353-374 |
+| **The schema the binding's payload describes: generation 5 appends exactly one table, and the governing route is a nullable column on that same row rather than a second association table.** | `APPENDED_TABLES`; `governing_route_id` | mcp/src/agents_remember/memory/knowledge/schema_v5.py:62-62; mcp/src/agents_remember/memory/knowledge/schema_v5.py:108-108 |
 | **The closed nine-member state vocabulary, the four members that ARE shipped literals, and the one mapping that states which fact each reuses.** | `BINDING_STATES`; `SHIPPED_BINDING_STATES`; `SHIPPED_STATE_FACTS`; `shipped_literal_for` | mcp/src/agents_remember/models/knowledge/citation.py:423-439; mcp/src/agents_remember/models/knowledge/citation.py:441-449; mcp/src/agents_remember/models/knowledge/citation.py:451-457; mcp/src/agents_remember/models/knowledge/citation.py:459-486 |
 | **The counts validator that refuses a report whose per-state counts do not partition the declared selected set, and the coverage record that refuses to leave an uncovered form uncounted.** | `CitationBindingCounts`; `KeyFormCoverage` | mcp/src/agents_remember/models/knowledge/citation.py:554-590; mcp/src/agents_remember/models/knowledge/citation.py:491-518 |
 | The observation, the indivisible closure item, the closure request and the result that carries limitations and no semantic-completeness field. | `CitationBindingObservation`; `CitationBindingItem`; `CitationBindingClosureRequest`; `CitationBindingClosureResult` | mcp/src/agents_remember/models/knowledge/citation.py:520-536; mcp/src/agents_remember/models/knowledge/citation.py:538-552; mcp/src/agents_remember/models/knowledge/citation.py:592-604; mcp/src/agents_remember/models/knowledge/citation.py:606-626 |
@@ -111,4 +125,5 @@ document and a knowledge record, and neither identity space carries a repository
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T19:35+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the schema fact this leaf's own docstring correction settles, because the card's Logic described the vocabulary without ever stating what the binding's row is made of. `CitationBindingPayload`'s docstring (`citation.py:353-374`) previously said the binding's governing route came from the envelope while "this leaf adds its own per-binding association table beside the binding's own table", which generation 5 contradicts: `schema_v5.py:62` declares `APPENDED_TABLES = ("citation_binding",)` — exactly one appended table, generation 4's twenty-one unchanged — and that table's own DDL (`:108`) carries `governing_route_id TEXT`, a nullable foreign key column on the binding's own row. The docstring now states the one-table-plus-column shape, and this card's Logic adds a paragraph and an invariant stating it with the delivered schema named as the authority. One row was added for the generation-5 declarations; no existing row, citation or range was rewritten, and no verification stamp advanced (the source is uncommitted and closeout owns the stamp).
 - 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): created this one-to-one card for the `CitationBinding` vocabulary `KS-R18@v1` introduces. It records the four facts a binding names and the decision that shapes all of them — **the owner revision is referenced, never minted**: the recorded identity is the memory side's own Git blob identity for "these exact recorded bytes", so the read path addresses that object instead of hashing whatever the file now holds. It records that both key forms are declared while only the `cit:` body is *read*, so an uncovered form is a counted state with a named coverage limitation rather than a silent gap; that four of the nine states are *literally* shipped `ANCHOR_RESOLUTIONS` members and that `AnchorResolutionState` deliberately gains no member; and that a binding carries **no** content address, digest or fingerprint, with ambiguity decided by the recorded key text. Verification metadata advances to the leaf's base commit `e963a01c` because every cited construct was re-read against the working tree; the code commit does not exist yet and closeout owns that stamp.

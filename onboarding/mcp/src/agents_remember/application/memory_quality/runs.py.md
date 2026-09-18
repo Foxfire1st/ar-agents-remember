@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_quality/runs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ snapshot copy, and maps wrong-repository lookup to the same absence as an unknow
 | Admission reuses equivalent live work before terminal pruning and hard live-cap refusal. | `start_quality_run` | mcp/src/agents_remember/application/memory_quality/runs.py:70-104 |
 | Polling requires repository ownership and returns a detached snapshot. | `poll_quality_run` | mcp/src/agents_remember/application/memory_quality/runs.py:107-119 |
 | Pruning removes terminal rows only. | `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:140-161 |
-| The typed controller owns public capacity and nondisclosure translations. | `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:111-143; mcp/src/agents_remember/application/memory_quality/controller.py:146-208 |
+| The typed controller owns public capacity and nondisclosure translations. | `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:258-264; mcp/src/agents_remember/application/memory_quality/controller.py:267-273 |
 
 ## Cross-Repo References
 
@@ -80,6 +80,7 @@ same exact code/memory pair instead of reconstructing scope from repository id.
 
 ## Update History
 
+- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two anchors). The row cited `controller.py:111-143` and `146-208`, neither of which holds `start_memory_quality_request` or `poll_memory_quality_request`; the two definitions this leaf's changes left in the controller are at `258-264` and `267-273`, which is what the cell cites now. The claim and both anchors are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller start/poll row (76-144 to 111-143/146-208) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: retained exact admitted scope identity in poll snapshots.

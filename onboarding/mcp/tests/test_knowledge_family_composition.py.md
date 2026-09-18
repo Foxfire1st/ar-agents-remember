@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_composition.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:30+02:00 |
-| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -93,17 +93,17 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The generation case: the six appended names, `descends_from` against generation 4, and the created generation.** | "test_the_registered_generation_appends_the_six_tables_to_the_generation_it_descends_from" | mcp/tests/test_knowledge_family_composition.py:351-351 |
-| **The case that opens genuine generation-2 and generation-4 datasets and refuses a composition write against them — no migration path exists.** | "test_a_dataset_predating_the_composition_tables_refuses_a_composition_write" | mcp/tests/test_knowledge_family_composition.py:386-386 |
-| **The case that proves a wrong endpoint kind is unrepresentable rather than merely rejected, and that the DDL carries exactly two family-revision keys and no target column.** | "test_every_non_family_endpoint_kind_is_unrepresentable_rather_than_merely_rejected" | mcp/tests/test_knowledge_family_composition.py:491-491 |
-| The case that pins the union's membership from the leaf's published constants. | "test_the_composition_commands_are_the_closed_unions_own_members" | mcp/tests/test_knowledge_family_composition.py:244-244 |
-| **The case that drives three authored tables past the write path and proves the database refuses an update and a delete.** | "test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database" | mcp/tests/test_knowledge_family_composition.py:581-581 |
-| **The case that proves the one shared rule judges the composition graph at both check levels, rolling back with its revision ids.** | "test_one_shared_rule_judges_the_composition_graph_at_both_check_levels" | mcp/tests/test_knowledge_family_composition.py:900-900 |
-| **The case that asserts no second cycle walk and no recursive CTE exists beside the shared rule.** | "test_no_second_cycle_implementation_exists_beside_the_shared_rule" | mcp/tests/test_knowledge_family_composition.py:980-980 |
-| The case that proves a context whose subject is not a family revision is refused. | "test_a_context_whose_subject_is_not_a_family_revision_is_refused" | mcp/tests/test_knowledge_family_composition.py:868-868 |
-| The case that proves an edge with no declared policy is stored, readable and not traversable. | "test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable" | mcp/tests/test_knowledge_family_composition.py:428-428 |
+| **The generation case: the six appended names, `descends_from` against generation 4, and the created generation.** | "test_the_registered_generation_appends_the_six_tables_to_the_generation_it_descends_from" | mcp/tests/test_knowledge_family_composition.py:376-376 |
+| **The case that opens genuine generation-2 and generation-4 datasets and refuses a composition write against them — no migration path exists.** | "test_a_dataset_predating_the_composition_tables_refuses_a_composition_write" | mcp/tests/test_knowledge_family_composition.py:411-411 |
+| **The case that proves a wrong endpoint kind is unrepresentable rather than merely rejected, and that the DDL carries exactly two family-revision keys and no target column.** | "test_every_non_family_endpoint_kind_is_unrepresentable_rather_than_merely_rejected" | mcp/tests/test_knowledge_family_composition.py:516-516 |
+| The case that pins the union's membership from the leaf's published constants. | "test_the_composition_commands_are_the_closed_unions_own_members" | mcp/tests/test_knowledge_family_composition.py:245-245 |
+| **The case that drives three authored tables past the write path and proves the database refuses an update and a delete.** | "test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database" | mcp/tests/test_knowledge_family_composition.py:606-606 |
+| **The case that proves the one shared rule judges the composition graph at both check levels, rolling back with its revision ids.** | "test_one_shared_rule_judges_the_composition_graph_at_both_check_levels" | mcp/tests/test_knowledge_family_composition.py:925-925 |
+| **The case that asserts no second cycle walk and no recursive CTE exists beside the shared rule.** | "test_no_second_cycle_implementation_exists_beside_the_shared_rule" | mcp/tests/test_knowledge_family_composition.py:1005-1005 |
+| The case that proves a context whose subject is not a family revision is refused. | "test_a_context_whose_subject_is_not_a_family_revision_is_refused" | mcp/tests/test_knowledge_family_composition.py:893-893 |
+| The case that proves an edge with no declared policy is stored, readable and not traversable. | "test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable" | mcp/tests/test_knowledge_family_composition.py:453-453 |
 | The lane row this module is registered under, and the unit ceiling it is measured against. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-| The one contract whose consumer list this module joined for its admitted candidate. | "contract:knowledge-facet-cases" | mcp/tests/evidence-lifecycle.toml:1329-1329 |
+| The one contract whose consumer list this module joined for its admitted candidate. | "contract:knowledge-facet-cases" | mcp/tests/evidence-lifecycle.toml:1333-1333 |
 
 ## Cross-Repo References
 
@@ -114,6 +114,16 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_the_registered_generation_appends_the_six_tables_to_the_generation_it_descends_from" repointed to mcp/tests/test_knowledge_family_composition.py:376-376. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_dataset_predating_the_composition_tables_refuses_a_composition_write" repointed to mcp/tests/test_knowledge_family_composition.py:411-411. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_every_non_family_endpoint_kind_is_unrepresentable_rather_than_merely_rejected" repointed to mcp/tests/test_knowledge_family_composition.py:516-516. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_the_composition_commands_are_the_closed_unions_own_members" repointed to mcp/tests/test_knowledge_family_composition.py:245-245. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database" repointed to mcp/tests/test_knowledge_family_composition.py:606-606. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_one_shared_rule_judges_the_composition_graph_at_both_check_levels" repointed to mcp/tests/test_knowledge_family_composition.py:925-925. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_no_second_cycle_implementation_exists_beside_the_shared_rule" repointed to mcp/tests/test_knowledge_family_composition.py:1005-1005. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_context_whose_subject_is_not_a_family_revision_is_refused" repointed to mcp/tests/test_knowledge_family_composition.py:893-893. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable" repointed to mcp/tests/test_knowledge_family_composition.py:453-453. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:knowledge-facet-cases" repointed to mcp/tests/evidence-lifecycle.toml:1333-1333. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:knowledge-facet-cases" repointed to mcp/tests/evidence-lifecycle.toml:1329-1329. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "test_one_shared_rule_judges_the_composition_graph_at_both_check_levels" repointed to mcp/tests/test_knowledge_family_composition.py:900-900. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "test_no_second_cycle_implementation_exists_beside_the_shared_rule" repointed to mcp/tests/test_knowledge_family_composition.py:980-980. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_citation_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `overview.md` |
 
@@ -92,9 +92,9 @@ No domain documentation source is configured for this repository (`system/source
 | The dataset's own declared tables holding the binding rows, and a generation-4 dataset refused the binding table rather than widened. | `test_the_binding_rows_live_in_the_datasets_own_declared_tables`; `test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened` | mcp/tests/test_knowledge_citation_boundaries.py:574-611; mcp/tests/test_knowledge_citation_boundaries.py:613-648; mcp/tests/test_knowledge_citation_boundaries.py:550-595 |
 | **The retention cases: a published artifact reads back matched, a missing destination is blocked, changed bytes are mismatched, and the destination is outside the enclosure and the archive by construction.** | `test_a_published_artifact_reads_back_with_its_published_digest`; `test_the_destination_is_outside_the_enclosure_and_the_archive_by_construction`; `test_a_missing_durable_destination_reads_back_as_a_blocked_state`; `test_a_destination_whose_bytes_changed_reads_back_as_mismatched` | mcp/tests/test_knowledge_citation_boundaries.py:635-665; mcp/tests/test_knowledge_citation_boundaries.py:667-685; mcp/tests/test_knowledge_citation_boundaries.py:687-707; mcp/tests/test_knowledge_citation_boundaries.py:709-727 |
 | **The uncovered form produced on a real store by a directly written row pair, counted in a denominator of two and asserted distinct from the recorded-blob mismatch.** | `test_an_uncovered_key_form_is_counted_and_reported_on_a_real_store` | mcp/tests/test_knowledge_citation_boundaries.py:714-822 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:192-193; mcp/tests/evidence-lifecycle.toml:953-957; mcp/tests/test-evidence-lanes.toml:196-196; mcp/tests/evidence-lifecycle.toml:197-197; mcp/tests/test-evidence-lanes.toml:197-197 |
-| **The ambient-runner artifact's consumer list, which gained this module's path literal.** | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/evidence-lifecycle.toml:820-820; mcp/tests/evidence-lifecycle.toml:950-957; mcp/tests/evidence-lifecycle.toml:961-961 |
-| **The knowledge contract's consumer list, which gained the same path literal.** | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/evidence-lifecycle.toml:1198-1198; mcp/tests/evidence-lifecycle.toml:820-820; mcp/tests/evidence-lifecycle.toml:950-957; mcp/tests/evidence-lifecycle.toml:961-961 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:192-193; mcp/tests/evidence-lifecycle.toml:953-957; mcp/tests/test-evidence-lanes.toml:196-196; mcp/tests/evidence-lifecycle.toml:197-197; mcp/tests/test-evidence-lanes.toml:197-202 |
+| **The ambient-runner artifact's consumer list, which gained this module's path literal.** | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/evidence-lifecycle.toml:820-820; mcp/tests/evidence-lifecycle.toml:950-957; mcp/tests/evidence-lifecycle.toml:961-965 |
+| **The knowledge contract's consumer list, which gained the same path literal.** | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/evidence-lifecycle.toml:1198-1198; mcp/tests/evidence-lifecycle.toml:820-820; mcp/tests/evidence-lifecycle.toml:950-957; mcp/tests/evidence-lifecycle.toml:961-965 |
 
 ## Cross-Repo References
 
@@ -106,6 +106,7 @@ temporary Git repository local to each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T19:54:57+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (three table rows, the module's own path literal in each). The lane row's last range stopped at `197` (`public-contract = [`) instead of reaching the integration lane entry at `202`; it was widened to `197-202`. Both consumer-list rows stopped at `961-961` while the entry that actually carries the path sits at `965`; each was widened to `961-965`. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `test_a_binding_recorded_against_a_real_document_revision_resolves_to_it` repointed to mcp/tests/test_knowledge_citation_boundaries.py:205-245. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `test_a_rewritten_document_leaves_the_binding_stale_and_never_re_bound` repointed to mcp/tests/test_knowledge_citation_boundaries.py:248-305. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `test_an_owner_revision_the_object_store_cannot_obtain_is_reported_as_unavailable` repointed to mcp/tests/test_knowledge_citation_boundaries.py:353-394. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.

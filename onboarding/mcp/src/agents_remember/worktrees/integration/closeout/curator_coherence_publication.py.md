@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
+| lastUpdated | 2026-09-18T19:26+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +20,10 @@
 Owns status, prepare, publish, and validate dispatch plus crash-safe, idempotent compare-and-swap
 publication of curator-coherence generations and optional attempt snapshots. Since KS-R24@v1 the
 `prepare` response also **states the complete publication input set**, derived from the request model's
-own member declaration rather than from a second handwritten list.
+own member declaration rather than from a second handwritten list. Since KS-R23@v1 it also resolves a
+bare leaf-document caller name against the addressed contract, names the demanded path shape in the
+refusal that rejects one, and copies the bound memory-quality attestation into the surviving task tree
+beside the record.
 
 ## Code Commentary
 
@@ -86,8 +90,8 @@ No external documentation governs this local transaction.
 | **The prepare response composes its summary from the request model's publication declaration, so it states every publication input.** | `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:145-160 |
 | **The statement `prepare` carries, defined on the request-model route rather than here.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:386-411 |
 | Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. | `_publish` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:144-219 |
-| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:593-628 |
-| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:631-664 |
+| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:728-763 |
+| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:766-799 |
 | R03 record construction binds the declared dependency set. | `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:352-451 |
 
 ## Cross-Repo References
@@ -151,7 +155,65 @@ coverage obligation `_judgments_cover_candidates_exactly` exactly as it was: the
 is content beside `judgments`, and the coverage rule still relates judgments to source candidates and
 nothing else.
 
+## KS-R23@v1 The Caller Refusal States The Shape It Demands
+
+D-26 measured the cost of leaving the caller's path shape unsaid: `caller.task_document_ref.path` has to
+be the task-root-relative document path (`<task-slug>/<leaf-document-file>`), and nothing said so — not
+the refusal, not `status`/`prepare`, not the contract — so the only way to learn it was the refused call
+the schema exists to prevent.
+
+Three things changed, and the third is what makes the first two safe.
+
+- `_CALLER_PATH_SHAPE` (`:463-470`) declares the demanded shape once, beside the function that refuses on
+  it. `_caller_refusal_detail` (`:530-546`) composes the refusal from it: the shipped sentence —
+  `publish requires the exact leaf curator or owning sprint architect` — is kept and followed by the
+  shape **and this contract's exact expected value** (the canonical `path` in its `repository`, and the
+  bare file name that is equally acceptable), plus the value actually received, so the correction is
+  readable without a second refused call.
+- `_authorize_publisher` became `_authorized_publisher` (`:473-511`). It no longer authorizes and
+  discards: it returns the **resolved** `DeclaredCaller`, and the refusal it raises carries
+  `expected`/`observed` (role plus both refs), which `application/curator_coherence._domain_refusal`
+  projects onto the wire.
+- `_resolve_caller_ref` (`:513-528`) resolves a **bare** file name (no `/`) against the addressed
+  document, and only when the repository matches and the name is exactly that document's own file name.
+  The contract already identifies the leaf unambiguously, so that name cannot mean another document; a
+  bare name for any other document is refused rather than resolved.
+
+The resolved caller is what the record and the assessments carry: `_publish` passes it to
+`_exact_review_assessments` (`:176`) and to `_record` (`:203`), whose `publishedBy` is
+`f"{caller.role}@{caller.task_document_ref.key}"` built from the **resolved** ref (`:452`) rather than
+the caller's spelling. A successful bare-name publication therefore carries the canonical identity in
+the record and in an assessment's author alike, and `publish` still admits exactly the leaf curator or
+the owning sprint architect.
+
+## KS-R23@v1 The Bound Attestation Survives The Enclosure It Is Bound In
+
+The same cleanup that closes the standalone `validate` window — `lifecycle_finalize_task`'s automatic
+collection of the enclosure root — destroys the evidence a publication binds to: the record's
+`attestationPath` is enclosure-local, `os.path.exists` is False for it on every landed leaf, and
+`attestationSha256` therefore committed to bytes recoverable nowhere.
+
+Publication now copies those exact bytes into the surviving task tree and records the path on the
+record. `_publish_attestation_copy` (`:548-615`) reads the bound file, **re-verifies the bytes against
+`observation.attestation_sha256`**, and writes the content-addressed copy
+(`CuratorCoherencePaths.attestation_copy` — `<leaf>/attestations/<sha256>.json`, the location the
+resolver card names) through `_write_fsynced` + `atomic_replace`, reclaiming the temporary on any
+failure. It runs before the record is built (`:199-201`), its task-relative path rides
+`_RecordPublication.attestation_copy_path`, and it is recorded as
+`CuratorCoherenceRecord.attestationCopyPath`. Three typed refusals guard it, none of which existed
+before: `curator-coherence-attestation-unreadable` (the bound file, or an existing copy, cannot be
+read), `curator-coherence-attestation-stale` (the bytes moved between observation and the copy, reported
+with both digests) and `curator-coherence-content-address-collision` (a content-addressed path already
+holds different bytes).
+
+The record is therefore not asked to stand in for the attestation's content: the bytes a reader would
+have read are still readable, and a second publication over unchanged bytes reuses the same immutable
+copy instead of rewriting it.
+
 ## Update History
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `_publish_generation` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:728-763. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `_publish_snapshot` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:766-799. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:26+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded both changes this leaf made to the publication route, neither of which this card stated.** Item 19 (D-26): `_CALLER_PATH_SHAPE` declares the demanded task-root-relative path shape, `_caller_refusal_detail` composes the refusal from it with this contract's exact expected value and the value received, `_authorize_publisher` became `_authorized_publisher` returning the resolved `DeclaredCaller` (carrying `expected`/`observed`), and `_resolve_caller_ref` resolves a bare leaf-document file name that names the addressed document — with the resolved ref now feeding `publishedBy` and an assessment's author. Item 18's second half: `_publish_attestation_copy` copies the bound memory-quality attestation into the surviving task tree, re-verifying the bytes against the observed digest and refusing `curator-coherence-attestation-unreadable`/`-stale`/`curator-coherence-content-address-collision`, and records `attestationCopyPath` on the record. The Purpose gained both, and the two sections above state them. This card's source is delivered but **uncommitted**, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real code commit; the reference-table ranges this leaf's +152 lines moved are left to the citation-range repair pass that owns them.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): **re-read this card against the changed source and recorded the two extensions the leaf made, then retired the generated projection bullets that were holding its claims open.** `_exact_review_assessments` stamps an assessment's authorship from the authenticated caller, and `_published_evidence_bytes` publishes each cited byte to the task-root destination and opens every one again by its recorded path and digest before it returns, reporting a failed read-back as a blocked state rather than as published. The record's own `review-record` edge per stored assessment is written from this side, which is why the assessment's binding never declares the record it lives in. Every claim in this card whose cited range the leaf's edits moved was re-cited to the construct it is about rather than accepted from the mechanical projection — `curator_coherence_action` `:88-98`, `_prepare` `:145-160`, `publication_input_statement` `:386-411`, `_publish_generation` `:593-628`, `_publish_snapshot` `:631-664` and `_record` `:352-451` — and the body above records the extension rather than only its coordinates. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-18T03:15+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read this card against the changed source and recorded what `prepare` now says.** `_prepare` composes its summary from `publication_input_statement()` — the request model's own declaration — so the prepared response names the per-candidate judgments **and** all nine publication members and marks the two it does not derive; the Purpose, Logic and Invariants sections of this card say so, and a new section states the two properties that carry the requirement (derived rather than copied, and the identities still the caller's to author) together with the wrong-impossibility record (`notes/DISCLOSURES.md` D-11) that the shipped sentence produced twice. The reference table was re-derived from the current file while re-reading it: `curator_coherence_action` is `:64-74`, `_publish` `:144-219`, `_publish_generation` `:452-487`, `_publish_snapshot` `:490-523` and `_record` `:222-314`, each corrected from the pre-leaf coordinates this card carried, and `_prepare` gained its own row. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_publish_generation` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:451-486. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
-| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
+| lastUpdated | 2026-09-18T18:46+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -113,6 +113,7 @@ by that number.
 
 ## Update History
 
+- 2026-09-18T18:46+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this card against its source at code `c5a74a85` and found the body already current; advanced the verification stamp to that revision, which closeout re-stamps.** The whole source delta since the old stamp is one line of a **comment**: `EngineProcessNode.memoryMode`'s inline note changed from `# "external" | "internal" | "disabled"` to `# "external" | "disabled"`, following the product-wide removal of the unsupported internal memory mode in `b281bcd6`. **No content impact:** this card makes no claim about the memory-mode vocabulary and never mentioned the internal member — the field is `str` on the wire in both revisions, so nothing the card asserts changed. The three worktree-existence and drift-provenance rows around `:185` and `:199` were re-read and are unaffected. Verified rather than stamped blind; no claim bytes rewritten.
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
   range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 13 further
   range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations

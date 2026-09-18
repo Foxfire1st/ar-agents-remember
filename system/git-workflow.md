@@ -141,9 +141,16 @@ after an explicit developer request through their existing tools. Their absence 
 otherwise authorized closeout or integration transaction. A requested Dagger operation still owns
 its exact candidate, profile, runtime, and report authority; a host result cannot replace it.
 
-The executable selected-case budgets are **1000 unit /150 integration**, counting parametrized
-items. Consolidate overlap first, protect distinct behavior, and justify any budget increase with
-its protection, case count, support size and runtime tradeoff. Coverage percentages are diagnostic;
+The executable selected-case budgets, counting parametrized items, are the repository root
+`pyproject.toml`'s `[tool.pytest.ini_options]` pair — `unit_case_budget` and
+`integration_case_budget`, the values `pytest_collection_finish` enforces. **Measured on 2026-09-18 in
+the `260915-KS-L23` code worktree (code HEAD `2dcacb27`, where the pair sits at `pyproject.toml:244-245`;
+the file is unmodified there, so these are the committed values): 2300 unit / 400 integration.** That
+pair moves; read it from those two lines and from the dated tradeoff comment block above them, not
+from this file and not from a test-local default (`mcp/pyproject.toml` declares no
+`[tool.pytest.ini_options]`, so pytest's `inifile` is the repository root). Consolidate overlap first,
+protect distinct behavior, and justify any budget increase with its protection, case count, support
+size and runtime tradeoff. Coverage percentages are diagnostic;
 production CRAP 20 is a review trigger, resolved by simpler code, a meaningful behavioral test or
 concise justified acceptance. No percentage floor, ratchet or score exception system is required.
 Actual test failures and artifact integrity failures remain failures.
@@ -231,3 +238,4 @@ gh release create mcp-vX.Y.Z --target main --title "<thematic title>" --notes-fi
 ## Testing Policy Reconciliation
 
 - 2026-09-06T21:35:26+00:00 — Replaced stale host-pytest prohibition and per-leaf acceptance-loop guidance with current IAS bounded diagnostic development policy and master-end full-suite/review ownership. Commit, publication and ledger authority remain unchanged.
+- 2026-09-18 — The selected-case-budget sentence above was restated at the value the repository enforces (`unit_case_budget = 2300`, `integration_case_budget = 400`, root `pyproject.toml:244-245`, measured with `grep -n 'case_budget' pyproject.toml` in the `260915-KS-L23` code worktree at code HEAD `2dcacb27`) and now names that file as the rail rather than stating a bare pair. It had read **1000 unit /150 integration**, which neither the root `pyproject.toml` nor any test-local default enforced. `system/tools.md`'s matching sentence was corrected in the same pass; no rail was lowered and the landing flow above is unchanged.

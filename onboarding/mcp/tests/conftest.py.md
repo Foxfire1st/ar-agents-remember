@@ -6,8 +6,8 @@
 | path | `mcp/tests/conftest.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88`|
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,10 +30,14 @@ live opt-ins, spawn identity and credential variables are scrubbed before tests 
 The lane manifest is read once into an integration-file set. Default `not integration` collection
 skips those files before importing them; collected integration members receive their marker.
 `pytest_collection_finish` counts selected parametrized items directly and raises UsageError for
-invalid or exceeded budgets. Pyproject supplies the operative 1100 unit/300 integration values
-(raised by 260831-LOCR-L24 from 1000/250 on the tradeoff recorded there); the parser’s standalone
-defaults are those same declared values, so a direct `pytest_addoption` read cannot disagree with
-repository policy.
+invalid or exceeded budgets — a budget below `1` is refused by that same guard, so an absent rail fails
+closed instead of running unbounded. **The rails live once**, in the repository-root `pyproject.toml`
+under `[tool.pytest.ini_options]` (`unit_case_budget` / `integration_case_budget`; they were 2300 / 400
+when this was written — read them there, they move), which is the `inifile` pytest actually reads,
+because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]`. `pytest_addoption` therefore only
+**registers** the two ini names with `addini` and carries **no `default=`**: a default here would never
+be in effect and would put a second, contradictory number in the tree for a terminal reader to find
+(D-20), and with no default the `int` type default `0` is exactly what the guard refuses.
 
 `--certify` explicitly requests genuine Dagger admission and then imports the certifying service
 plugin. Ordinary integration tests bind/reset worktree services through their fixture; units request
@@ -59,12 +63,12 @@ The exact source declarations below establish the current behavior; this invento
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Candidate paths and disposable scrubbed environment | `REPOSITORY_ROOT` | mcp/tests/conftest.py:15-68 |
-| Budget config and explicit certification option | `pytest_addoption` | mcp/tests/conftest.py:72-81 |
-| Single lane read and genuine certification admission | `pytest_configure` | mcp/tests/conftest.py:84-107 |
-| Skip integration imports for default units | `pytest_ignore_collect` | mcp/tests/conftest.py:110-117 |
-| Selected item budgets and explicit tradeoff refusal | `pytest_collection_finish` | mcp/tests/conftest.py:127-138 |
-| Explicit bind/reset application composition | `worktree_services` | mcp/tests/conftest.py:151-163 |
-| Restore environment and remove temporary root | `pytest_unconfigure` | mcp/tests/conftest.py:166-170 |
+| Budget config and explicit certification option | `pytest_addoption` | mcp/tests/conftest.py:72-86 |
+| Single lane read and genuine certification admission | `pytest_configure` | mcp/tests/conftest.py:89-112 |
+| Skip integration imports for default units | `pytest_ignore_collect` | mcp/tests/conftest.py:115-122 |
+| Selected item budgets and explicit tradeoff refusal | `pytest_collection_finish` | mcp/tests/conftest.py:132-143 |
+| Explicit bind/reset application composition | `worktree_services` | mcp/tests/conftest.py:156-168 |
+| Restore environment and remove temporary root | `pytest_unconfigure` | mcp/tests/conftest.py:171-175 |
 
 ## Cross-Repo References
 
@@ -72,6 +76,7 @@ No separate cross-repository authority is established by this file.
 
 ## Update History
 
+- 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **corrected the one sentence that stated this file's budget declaration, and re-derived the seven citation ranges the delivery moved.** `260915-KS-L23`'s item 12 (worker W1) removed the two never-effective `default=1100/300` declarations from `pytest_addoption`: the parser now only **registers** `unit_case_budget` and `integration_case_budget` by `addini`, with no `default=`, and the comment beside them states that the rails live once in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` (D-20). The card said the opposite in three ways at once — "Pyproject supplies the operative 1100 unit/300 integration values", "the parser's standalone defaults are those same declared values", "a direct `pytest_addoption` read cannot disagree with repository policy" — and every clause is now false: the values are **2300 / 400**, and there are no parser defaults to agree or disagree with. The paragraph now states the registration/no-default rule, where the pair actually lives, that it moves, and the guard's `budget < 1` half that makes an absent rail fail closed. **The seven reference rows were re-derived by AST from the delivered file** (`pytest_addoption` `:72-86`, `pytest_configure` `:89-112`, `pytest_ignore_collect` `:115-122`, `pytest_collection_finish` `:132-143`, `worktree_services` `:156-168`, `pytest_unconfigure` `:171-175`) — the last of them **was anchor-absent from its old `:166-170` range**, so this repair also clears a live citation finding rather than only a stale number. Content was read against the delivered but **uncommitted** working tree, so **the verification stamp is not advanced**: no commit carries this file's current bytes and closeout stamps the real code commit. No other claim in this card was re-read in this pass.
 - 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
 - 2026-08-28T11:32+02:00 — No content impact: shortened a stale explanatory comment; collection,

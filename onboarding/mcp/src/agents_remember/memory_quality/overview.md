@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
-| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -59,7 +59,7 @@ checks that enforce repository memory conventions.
 
 ## Hot Path Summary
 
-`memory_candidate_pair.py` binds repository/worktree identity, branches, bases, onboarding and contract facts without requiring a cached ledger file or hashing its path into authority. Citation provenance snapshots read substantive memory content while excluding only root `memory.md`; actual source/candidate drift remains detectable.
+`worktrees/modules/memory_candidate_pair.py` — moved out of this route by commit `806649b9` — binds repository/worktree identity, branches, bases, onboarding and contract facts without requiring a cached ledger file or hashing its path into authority. Citation provenance snapshots read substantive memory content while excluding only root `memory.md`; actual source/candidate drift remains detectable.
 
 ## Detailed Route Context
 
@@ -76,9 +76,10 @@ Contract-scoped application calls supply the leaf base as temporary provenance f
 dirty-tree claims; this is comparison input only and never a verification stamp.
 `curator_checklist.py` renders the full scoped result plus missing-onboarding, route-index, drift,
 and report-only detail into the enclosure's one atomically replaced curator worklist.
-`future_code_candidate.py`, `memory_candidate_pair.py`, and `memory_census_scope.py` are this
-route's memory-candidate roots; the closeout-facing preparation adapter was moved out to
-`worktrees/integration/closeout/prepared_certification.py` so this route keeps no inbound
+`memory_census_scope.py` is this route's remaining memory-candidate root. `future_code_candidate.py`
+and `memory_candidate_pair.py` were this route's as well until commit `806649b9` moved both to
+`worktrees/modules/`, and their cards moved with them; the closeout-facing preparation adapter left in
+the same commit, on to the application rank. This route therefore keeps no inbound
 dependency on the closeout plane.
 
 ## Route Model
@@ -204,7 +205,7 @@ exercise the pair, and prefer a single shared eligibility evaluation over two ag
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:110-125; mcp/src/agents_remember/application/memory_quality/controller.py:318-360 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:383-435 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
@@ -455,7 +456,7 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
-| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:565-565; mcp/src/agents_remember/application/memory_quality/controller.py:583-600 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:565-565; mcp/src/agents_remember/application/memory_quality/controller.py:671-707 |
 | Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
 
 ## The Shared Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
@@ -556,18 +557,20 @@ its card now sits at
 plane may depend on this route; not the reverse. Red results remain evidence and cannot authorize
 memory-content output preparation.
 
-## Memory-Candidate Roots Relocated In
+## Memory-Candidate Roots Relocated In, And Two Of Them Out Again
 
-The de-entanglement cut moved this route's candidate-identity roots in rather than out:
-`future_code_candidate.py` and `memory_candidate_pair.py` were relocated from
-`worktrees/integration/closeout/` by commit `0b63d6fc`, and `memory_census_scope.py` from the same
-route by commit `be517eec`. They are the route's own memory-candidate owners and carry no closeout
-dependency.
+The de-entanglement cut moved this route's candidate-identity roots in from
+`worktrees/integration/closeout/`: `future_code_candidate.py` and `memory_candidate_pair.py` by commit
+`0b63d6fc`, and `memory_census_scope.py` by commit `be517eec`. **Commit `806649b9` then moved the
+first two out again to `worktrees/modules/`** as pure renames — both blobs are byte-identical before
+and after — so this route no longer owns them and no longer carries their cards; those cards were
+moved to the moved modules' own route. `memory_census_scope.py` stayed and is still this route's own
+memory-candidate owner. None of the three carries a closeout dependency.
 
 | Source File | Onboarding | Status |
 | --- | --- | --- |
-| `future_code_candidate.py` | [future_code_candidate.py.md](future_code_candidate.py.md) | covered |
-| `memory_candidate_pair.py` | [memory_candidate_pair.py.md](memory_candidate_pair.py.md) | covered |
+| `future_code_candidate.py` | [../worktrees/modules/future_code_candidate.py.md](../worktrees/modules/future_code_candidate.py.md) | **relocated out** by `806649b9`; card moved with it |
+| `memory_candidate_pair.py` | [../worktrees/modules/memory_candidate_pair.py.md](../worktrees/modules/memory_candidate_pair.py.md) | **relocated out** by `806649b9`; card moved with it |
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
 ## 260915-KS-L16 The Family-Review Pipeline, And The Actionability Formula Given A Name
@@ -605,6 +608,8 @@ rationale, a path's bytes, a label or a count to decide whether a change matters
 here attaching a verdict has found the defect, and the fix is to remove it rather than to author it in code.
 
 ## Update History
+- 2026-09-18T19:56:44+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The readiness row cited `controller.py:583-600` for `"def _attach_final_full_catalog("`, whose definition this leaf's changes left at `671-707`; that cell cites it now. (b) and (c) The entry-point row cited `110-125` and `318-360` for `run_memory_quality_request` and `_execute_memory_quality`; the two definitions now span `249-255` and `383-435`, which is what the cell cites. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **repointed this route at the two candidate-identity modules commit `806649b9` moved out to `worktrees/modules/`.** The route's source is unchanged by this pass — the change is that two cards used to be reached from here and now are not, so the `Memory-Candidate Roots Relocated In` section and the two prose mentions of `future_code_candidate.py` / `memory_candidate_pair.py` now say where those modules actually live and link to their cards' new paths. Leaving the old links would have made this overview the last dead reference to the retired `memory_quality/` sidecars. No verification stamp is advanced: this route's own source did not change, and the entry records a documentation move, not a re-read of this route. `memory_census_scope.py` is unaffected and still this route's.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the route's new `family_review.py` with its four acts and the failure each exists to prevent, and the one change this leaf made to a shipped module: the three-term actionability formula extracted into the named `curator_actionable_count`, whose value and behaviour are unchanged and whose one call site is the checklist writer. The section states the two boundaries a reader must not flatten — the pipeline calls the shipped function rather than restating the sum, and it renders into `KS-R15@v1`'s existing `knowledgeReview` section rather than creating a second worklist. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `knowledge_review.py` and one defaulted input plus one rendered section in `curator_checklist.py`; the section is **report-only** and the arithmetic is unchanged, which the body now states where the module's own comparison sentence lives rather than leaving it to a reader to infer. The reference rows were re-derived from the current files: `_append_drift` is `:319-350`, `_render` `:204-266`, `write_curator_checklist` `:100-180`, `_tracked_onboarding_paths` `:183-189`, and the controller rows moved to `:317-337`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

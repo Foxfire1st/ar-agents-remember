@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-18T18:52+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -239,6 +239,7 @@ the record to the assessment only — which is what keeps it out of the self-inv
 no kind vocabulary.
 
 ## Update History
+- 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the L15 landing recorded in the section above (`65e3791b`): the three `review_assessment*` modules, the `CuratorCoherenceRecord.assessments` collection with `MAX_CURATOR_REVIEW_ASSESSMENTS = 256`, the binding's stale-while-readable rule, the `review-assessment/v1` evidence-dependency policy, and `curator_coherence.py`'s own 212-line growth. Each of those is what the body already says, and the five module names in it were re-read against the files. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained three assessment modules and one field on `CuratorCoherenceRecord`; the body records why the collection is separate from `judgments` (a judgment's identity is a source-file triple and exact coverage is unchanged) and what each module owns. The reference rows for the changed modules were re-derived from the current files while re-reading them: `_publication_inputs_supplied` is `:464-478`, `_action_has_one_input_shape` `:480-494`, `publication_refusal` `:353-377`, `publication_input_statement` `:386-411`, `dependency` `:243-252` and `canonical_sha256` `:354-358`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 
 - 2026-09-18T03:25+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded, for this route's nearest-governed change, that the curator-coherence publication set is now **one declaration** (`PUBLICATION_MEMBERS` plus its three readers) and that the refusal and the `prepare` statement name their members instead of a prose category — the defect that made two earlier leaves of this master report an unpublished coherence authority as an impassable tool defect (`notes/DISCLOSURES.md` D-11). The paragraph also states what did **not** change (no member became optional or required, 0 accept/refuse differences over 80 request shapes) and where the `prepare` half is owned. Only the curator-coherence material in this route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.

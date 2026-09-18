@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_final_full_memory_coherence_certification.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T18:14:20+02:00|
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastUpdated | 2026-09-18T19:12+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,11 +23,21 @@ suite supplies check-result dictionaries and modeled authorities; it does not dr
 memory scans, a closeout entrypoint, certificate publication or Git finalization. Per the
 repository file-size-split convention (compare `test_author_execution_graph` importing from
 `test_task_execution_topology`) this module also owns the shared Gate-5 fixture scaffold
-consumed by the sibling modules `test_final_gate_prefix_adapter`,
-`test_final_catalog_plan_attestation`, and `test_final_catalog_readiness_projection`,
-because a second non-test module under `mcp/tests` would be governed evidence requiring
-lifecycle metadata. The suite is explicitly registered in the `integration` lane of
-`test-evidence-lanes.toml`.
+consumed by its sibling `test_final_catalog_plan_attestation` — **the only importer that
+exists**, measured at `260915-KS-L23`: `ls mcp/tests/test_final_*.py` lists
+`test_final_catalog_plan_attestation.py`, `test_final_codex_certificate.py`,
+`test_final_codex_models.py` and this module, and the two names an earlier revision of this
+paragraph carried (`test_final_gate_prefix_adapter`,
+`test_final_catalog_readiness_projection`) are not in the tree. The scaffold stays here rather
+than in a second non-test module under `mcp/tests`, because such a module would be governed
+evidence requiring lifecycle metadata.
+
+**Lane, measured rather than remembered.** The suite's single row is
+`mcp/tests/test-evidence-lanes.toml:69`, inside **`unit-regression`** — the `integration` list
+does not begin until `:201`, and the loader marks only `integration` and `stress-durability`
+members with `pytest.mark.integration` (`mcp/tests/conftest.py:89-130`). An earlier revision of
+this card stated the `integration` lane; that statement was false against the manifest, and the
+correction is recorded in this card's Update History.
 
 ## Code Commentary
 
@@ -57,38 +68,50 @@ The five module-level tests then pin result assembly:
   input change invalidates the prefix with `gate-five-prefix-invalidated` before any catalog
   work.
 
-### KS-R24@v1: The Publication Input Cases
+### `260915-KS-L23` Item 9: The Second Split, On Properties
 
-Everything below `test_final_certification_refuses_stale_prefix_before_any_catalog_work` (the section
-opened at `:957`) is this leaf's addition: **18 collected items** (23 in the module against 5 before)
-that pin the curator-coherence request's own messages. They do not touch the certification library —
-they assert what the tool says:
+The module reached **1199 of the repository's 1200-line hard limit** at `KS-R24@v1`, so item 9 of
+`260915-KS-L23` split it a second time — along the **properties**, never along the line count, and
+without deleting, renaming or re-scoping one case:
 
-- one parametrized case per publication member omitted alone (9 items), each asserting the refusal's
-  entire detail string, so no member is accidentally satisfied by another's presence;
-- one case omitting all nine, asserting the names in declaration order;
-- the positive control, which also asserts the declaration equals the request model's own field order
-  and that a nine-member request validates;
-- one case driving the real `_prepare` and asserting its summary carries the judgments phrase, all nine
-  names in order, and the delivery-identity callout;
-- one case that extends the declaration in a scratch request model and asserts the new member reaches
-  **both** the refusal and the `prepare` text with neither text edited;
-- three parametrized `status`/`prepare`/`validate` items, one multi-field forbidden refusal that
-  includes `judgments`, and one case pinning the unchanged `freeze_snapshot` message.
+| Module | Protected property | Lines |
+| --- | --- | --- |
+| this module (kept) | the Gate-5 `certify_final_full_memory_coherence` orchestration (green / red / blocked / refusal) **and** the shared Gate-5 fixture scaffold its sibling imports | **954** |
+| `mcp/tests/test_curator_coherence_publication_discoverability.py` (new) | `KS-R24@v1`: whether a caller can discover the curator-coherence request's publication inputs from the request, the refusal and the `prepare` text | 283 |
 
-The module is **1190 lines**, ten under the repository's 1200-line rail: the next leaf that adds
-curator-coherence cases here must split the module first.
+The 18 publication-input items this card used to describe — one parametrized case per omitted
+publication member, the all-nine case in declaration order, the positive control that also asserts
+the declaration is the request model's own field order, the real-`prepare` case, the added-member
+case, the three parametrized `status`/`prepare`/`validate` items, the multi-field forbidden refusal
+including `judgments`, and the unchanged `freeze_snapshot` message — **all moved to the new module
+and are unchanged**; that module's own card carries them, and nothing here restates them.
+
+**The scaffold stayed in the module whose name the sibling imports**, so
+`from test_final_full_memory_coherence_certification import _CODE_TREE, _MEMORY_TREE,
+_affected_plan, _coherence, _pair, _passing_checks` still resolves and no sibling import moved. **No
+non-`test_` module was created**: a second support module under `mcp/tests` would be governed
+evidence requiring lifecycle metadata, so the split adds no `[[contract]]` and no `[[artifact]]` row
+and the catalogue's populations stay **15 / 65**.
+
+**Both halves still assert what the whole did — measured by collected node identity, not by line
+count.** The pre-split module was written to a scratch path from `git show HEAD:…`, both halves were
+collected with `--collect-only -q -p no:randomly`, the node names after `::` were sorted on each
+side, and `diff` of the two lists is **empty** over **23** case names. Two factual corrections were
+made to this module's own docstring while splitting it: it named
+`test_final_gate_prefix_adapter` and `test_final_catalog_readiness_projection` as importers, and
+neither module exists in this tree.
 
 ### Conventions
 
 Tests call the production library function with synthetic but byte-deterministic R21/R07
 authorities and supplied check outcomes. The module adds `mcp/src` to `sys.path` so it can
-run against the candidate package. This verifies library composition; the suite's integration
-lane classification does not establish production caller wiring or real checker execution.
+run against the candidate package. This verifies library composition; the suite's
+`unit-regression` lane classification does not establish production caller wiring or real checker
+execution.
 
 ### Invariants And Boundaries
 
-- The module is the shared fixture scaffold for its three sibling split modules; it is the only
+- The module is the shared fixture scaffold for its one existing sibling split module; it is the only
   Gate-5 test module importing the full certification internals.
 - No test-support or fixture-module imports; the evidence-lifecycle catalog therefore records no
   transitive test-support consumer here.
@@ -109,16 +132,17 @@ None.
 | The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:867-894 |
 | The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:897-913 |
 | A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-926 |
-| **The single declaration the new cases assert on, and the two members `prepare` does not derive.** | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:298-310; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:316-326 |
-| **The refusal every omission case drives, and the statement the prepare case drives.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:353-377; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:386-411 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
+| **The single declaration the moved publication-input cases assert on, and the two members `prepare` does not derive.** Those cases now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`. | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:298-310; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:316-326 |
+| **The refusal every omission case drives, and the statement the prepare case drives — both now asserted from the new module.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:353-377; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:386-411 |
+| The suite's own row in the evidence manifest, inside `unit-regression`. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
 | The scenario builds the configured disposable code/memory pair. | "def _scenario(" | mcp/tests/test_final_full_memory_coherence_certification.py:433-472 |
-| The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:790-790 |
+| The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:788-788 |
 | The coherence fixture binds the exact candidate pair and memory inputs. | "def _coherence(" | mcp/tests/test_final_full_memory_coherence_certification.py:796-827 |
 | The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:856-883 |
 | The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:886-902 |
-| A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:918-918 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
+| A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-916 |
+| The same manifest row, which is the module's lane registration. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
+| The second half of the L23 split, which now owns the publication-input cases this card used to describe. | "The curator-coherence request states its own publication inputs" | mcp/tests/test_curator_coherence_publication_discoverability.py:1-14 |
 
 ## KS-R15@v1 Content-Member Assertion Re-Scope
 
@@ -130,12 +154,20 @@ content members from the module's own constants (`JUDGMENTS_MEMBER`, `REVIEW_ASS
 adds a disjointness assertion, so the case also fails if a content member is ever declared as one of
 the nine required publication members.
 
-**Capacity fact for the owning seat, recorded here rather than worked around:** this file stands at
-1199 of its 1200-line hard limit *after* the re-scope (it was at 1190 before; the change added 9 lines
-and recovered 1). This leaf has no headroom left in it and neither does any leaf after it — the next
-leaf that must edit it has to split it first.
+**Capacity fact, now discharged rather than carried.** The file stood at **1199 of its 1200-line hard
+limit** after the re-scope (1190 before; the change added 9 lines and recovered 1), with no headroom
+left in it for this leaf or any leaf after it. `260915-KS-L23` item 9 is exactly the split that fact
+called for: the publication-input cases moved to
+`mcp/tests/test_curator_coherence_publication_discoverability.py` and this module now stands at
+**954** lines. The assertion the paragraph above describes — that the declaration equals the request
+model's own field order and is disjoint from the two content members — **moved with the cases** and is
+asserted at `mcp/tests/test_curator_coherence_publication_discoverability.py:201`; it is recorded here
+because the re-scope's history is this card's, and the case's current home is that one's.
 
 ## Update History
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "def _affected_plan(" repointed to mcp/tests/test_final_full_memory_coherence_certification.py:788-788. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "def test_final_certification_red_blocks_finalization(" repointed to mcp/tests/test_final_full_memory_coherence_certification.py:916-916. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:12+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **re-read this card against the module `260915-KS-L23` item 9 split, and corrected three statements the split (and the tree) had falsified.** (1) The Purpose paragraph named `test_final_gate_prefix_adapter` and `test_final_catalog_readiness_projection` as sibling importers; **neither module exists in this tree** — `test_final_catalog_plan_attestation` is the only importer, which is also why the scaffold stayed here. (2) The card stated the suite is registered in the **`integration`** lane; measured, its single row is `mcp/tests/test-evidence-lanes.toml:69`, inside **`unit-regression`** (the `integration` list begins at `:201`, and only `integration`/`stress-durability` members are marked `pytest.mark.integration`, `mcp/tests/conftest.py:89-130`). The two reference rows that carried the false lane claim were corrected in place, not removed. (3) The `KS-R24@v1: The Publication Input Cases` section described 18 items that **moved out** to `mcp/tests/test_curator_coherence_publication_discoverability.py`; it is replaced by the split's own record — the two subjects, the line counts (954 + 283 against 1199 before), the fact that the scaffold stayed so the sibling's import still resolves, the empty `diff` of **23** collected node names across the two halves, and the fact that no `[[contract]]`/`[[artifact]]` row was added because no non-`test_` module was created. The KS-R15 section records that the content-member assertion moved with the cases and now asserts at the new module's `:201`. **No `lastVerifiedCommitHash`/`lastVerifiedCommitDate` was advanced**: the split exists only in this leaf's uncommitted candidate, so no commit carries the bytes a stamp would claim — the `reviewedWorkingCandidate` row states what was actually read and closeout owns the stamp. The pre-existing reference rows whose cited ranges the split and the earlier insertions moved were **left to the citation-repair engine** (its class, and its designated owner) rather than hand-rewritten here.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:69-69. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:69-69. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:68-68. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.

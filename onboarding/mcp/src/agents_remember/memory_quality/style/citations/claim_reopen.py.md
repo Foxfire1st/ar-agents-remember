@@ -6,8 +6,9 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -82,17 +83,21 @@ review surface, clearing with no commit; only a changed construct whose pointer 
 reopened claim. What changed is that "current citation" is no longer sufficient for the report-only
 bucket when a generated repair wrote the range — that case leaves the report-only bucket entirely.
 
-The rest of the module surface (unchanged by this change; ranges shown are the pre-change values
-and are re-measured only where a row below cites them):
+The rest of the module surface (the entries marked with a description are the ones this change
+touched; ranges shown are the pre-change values and are re-measured only where a row below cites
+them):
 
 - `LocalSource` (class)
 - `Candidate` (class)
 - `CurrentFiles` (class)
 - `SourceViews` (class) — Parsed source revisions shared by every claim in one gate run.
 - `Evaluation` (class)
+- `InvalidReason` (class) — One reason a claim cannot be compared, plus whether any edit could ever
+  clear it; `uneditable=True` marks the anchor-multiplicity class that closeout owns.
 - `claims_in` (function)
 - `finding` (function)
-- `provenance_finding` (function)
+- `provenance_finding` (function) — Carries the finding's `closeout_owned` flag through to
+  `QualityFinding`, so the routing is one structural fact rather than a message match.
 - `changed_finding` (function)
 - `selected_current` (function)
 - `selected_historical` (function)
@@ -101,6 +106,12 @@ and are re-measured only where a row below cites them):
   instead of failing on any absent-at-stamp source.
 - `anchor_change` (function)
 - `dependency_changes` (function)
+- `_closeout_owned_provenance` (function) — Splits the `closeout_owned` rows out of the finding list
+  before the debt demotion runs; `_gate_result` publishes them under `closeoutOwnedFindings`.
+- `_pre_task_revision` (function), `_row_predates_the_task` (function),
+  `_committed_document_lines` (function), `_working_tree_row` (function) — The demotion's
+  pre-task-revision test: the memory worktree's `HEAD`, and the finding's own row looked up by exact
+  text in that revision's copy of its document.
 - `check_onboarding_root` (function) — Compare every complete claim against its own historical
   provenance; selected prepared runs may retain explicit predecessor-chain code anchors while this
   function reads current working-tree bytes.
@@ -111,11 +122,41 @@ because the projection chose the declaration it wrote. That is the whole reason 
 is read first. Detected change splits three ways: absent or ambiguous anchors and unverifiable
 provenance are hard findings; a changed construct with a current citation is the curator's review
 surface, clearing with no commit; only a changed construct whose pointer is stale is an enforced
-reopened claim. Ambiguous provenance in documents the task did not touch demotes to report-only debt
-(`_demote_preexisting_provenance_debt`); in touched documents it stays enforced. This is what lets the
-citation gate run before the code commit at closeout (260731-EFA-L16). The absent-at-stamp rule
-extends to whole source files added after the stamp (260731-EFA-L8): a unique working-tree anchor
-inside a cited range surfaces report-only; absent, ambiguous, or stale constructs stay hard.
+reopened claim. What changed since 260915-KS-L23 is that "current citation" now means the range
+covers the DECLARATION's own line, not the widened extent's start:
+
+- `Extent.declaration` is what `_anchor_in_cited_range` reads for a `DEFINITION` extent
+  (`extents.definitions` populates it from `grammars.bindings`), because a decorated Python
+  definition's extent is widened to cover its decorator. A card citing such a declaration at exactly
+  its own lines used to reopen its own claim while the identical citation one line earlier passed.
+  The reopen rule itself is not relaxed: the range must still begin at or before the declaration and
+  still end at or after it, so a range starting inside the body reopens exactly as before.
+
+Two provenance facts changed with it:
+
+- `_demote_preexisting_provenance_debt` keys on the **row's pre-task revision**, not on document
+  dirtiness. `_pre_task_revision` reads the memory worktree's `HEAD` — the commit the run's working
+  tree started from — and `_row_predates_the_task` reads the finding's row from the working tree at
+  the finding's own line and looks it up **by exact text** in the same document at that revision. A
+  line inserted above the row changes nothing; correcting the row itself makes the row the leaf's
+  own. Every unusable input fails closed: an unreadable document, a path that escapes `onboarding/`,
+  a card this task created, a line past the end of the file, or a blank row all leave the finding
+  enforced. Keying on document dirtiness asked the wrong question, because a curator's correction
+  pass is exactly what makes every document it touches dirty, so the demotion was structurally
+  unreachable for the rows a curator meets (0 of 4 demoted, measured at L18).
+- Anchor multiplicity is **closeout-owned**, not curator debt. The multiplicity reasons are marked at
+  their two creation sites with a typed `InvalidReason(detail, uneditable=True)`, and a claim whose
+  every invalid reason is uneditable is published with `closeout_owned=True`; `_gate_result` splits
+  that bucket before the demotion and reports it as `closeoutOwnedFindings` + `closeoutOwnedCount`.
+  An anchor resolving more than once in the cited FILE cannot be made unique by any edit a curator
+  may write — narrowing changes no occurrence count and splitting adds a row — so the stamp decision
+  is closeout's, and the row leaves `findingCount` and the curator-actionable arithmetic while
+  staying in the report.
+
+This is what lets the citation gate run before the code commit at closeout (260731-EFA-L16). The
+absent-at-stamp rule extends to whole source files added after the stamp (260731-EFA-L8): a unique
+working-tree anchor inside a cited range surfaces report-only; absent, ambiguous, or stale constructs
+stay hard.
 - Closeout may pass `unstamped_code_commit` for dirty cards only. The checker uses that base as
   comparison provenance without writing a verification stamp; committed unstamped debt remains
   hard, and closeout's post-refresh run supplies no fallback.
@@ -141,11 +182,17 @@ Module-level definitions follow the package conventions; names prefixed with `_`
   curator may read past; the accepted cost is that every projected range blocks until it is disposed
   of. Do not restore the warning severity without re-deciding that trade.
 - **Nothing demotes this item.** `_demote_preexisting_provenance_debt` moves only findings whose
-  `code == INVALID` into the debt bucket, so a `citation_claim_reopened` finding is never demoted to
-  pre-existing debt — touched or untouched document alike.
-- **With no git view, every finding stays enforced.** `_modified_onboarding_paths` returns `None`
-  when the memory root is not a Git tree, and the demotion path then returns the enforced findings
-  unchanged — the fail-closed direction. Nothing about the projected item can be swallowed there.
+  `code == INVALID` into the debt bucket, and then only when the row itself is carried by the
+  pre-task revision; a `citation_claim_reopened` finding is never demoted to pre-existing debt —
+  touched or untouched document alike. A `closeout_owned` finding is split out before that call, so
+  it never reaches the debt bucket either.
+- **Provenance debt is decided per ROW, not per document.** A row the task created or corrected is
+  the task's own and stays enforced; a row the document merely carries from the pre-task revision is
+  inherited debt. An anchor-multiplicity row is neither: no curator edit can discharge it, so it is
+  published as closeout-owned rather than billed as repairable debt.
+- **With no git view, every finding stays enforced.** `_pre_task_revision` returns `None` when
+  `git rev-parse HEAD` fails, and the demotion path then returns the enforced findings unchanged —
+  the fail-closed direction. Nothing about the projected item can be swallowed there.
 - The bullet scan is bounded and anchored on purpose: it reads only the canonical `Update History`
   section, only text **before** the bullet's `repointed to` clause (the ranges after it carry file
   paths that could match an anchor sharing a file's name), and only a bullet naming this claim's
@@ -171,29 +218,29 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pending HEAD attribution requires a genuinely attributed ancestor and never reads the cache file. | `_mapping_pending_for_code_head` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:613-638 |
-| Defines the class `LocalSource`. | `LocalSource` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:102-108 |
-| Defines the class `Candidate`. | `Candidate` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:111-115 |
-| Defines the class `CurrentFiles`. | `CurrentFiles` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:118-125 |
+| Pending HEAD attribution requires a genuinely attributed ancestor and never reads the cache file. | `_mapping_pending_for_code_head` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:737-762 |
+| Defines the class `LocalSource`. | `LocalSource` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:117-123 |
+| Defines the class `Candidate`. | `Candidate` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:126-130 |
+| Defines the class `CurrentFiles`. | `CurrentFiles` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:133-140 |
 | Defines the class `SourceViews` — Parsed source revisions shared by every claim in one gate run.. | `SourceViews` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:128-167 |
 | Defines the class `Evaluation`. | `Evaluation` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:170-221 |
-| Defines the function `claims_in`. | `claims_in` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:224-238 |
-| Defines the function `finding`. | `finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:241-254 |
-| Defines the function `provenance_finding`. | `provenance_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:257-271 |
-| Defines the function `changed_finding`. | `changed_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:274-285 |
-| Defines the function `selected_current`. | `selected_current` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:388-399 |
-| Defines the function `selected_historical`. | `selected_historical` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:402-413 |
+| Defines the function `claims_in`. | `claims_in` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:239-253 |
+| Defines the function `finding`. | `finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:256-269 |
+| Defines the function `provenance_finding`. | `provenance_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:272-294 |
+| Defines the function `changed_finding`. | `changed_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:297-308 |
+| Defines the function `selected_current`. | `selected_current` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:411-422 |
+| Defines the function `selected_historical`. | `selected_historical` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:425-436 |
 | Defines the function `local_changes`. | `local_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:416-449 |
 | Defines the function `anchor_change`. | `anchor_change` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:452-508 |
-| Defines the function `dependency_changes`. | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:581-610 |
-| Defines the function `evaluate_claim` — now threads the document's lines to `surfaced_finding`. | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:657-700 |
-| Defines the function `check_onboarding_root` — Compare every complete claim against its own historical provenance, group each document's lines with its claims, and pass retained predecessor-chain anchors into `Histories`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:703-798 |
+| Defines the function `dependency_changes`. | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:703-734 |
+| Defines the function `evaluate_claim` — now threads the document's lines to `surfaced_finding`. | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:781-832 |
+| Defines the function `check_onboarding_root` — Compare every complete claim against its own historical provenance, group each document's lines with its claims, and pass retained predecessor-chain anchors into `Histories`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:835-930 |
 | The generated `Update History` bullet header and range clause the projection writes and this check reads back. | `PROJECTION_BULLET`; "Update History" | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:80-82; mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:84 |
-| The bounded scan for the bullets that record a mechanical repair of THIS claim's range. | `generated_repair_bullets` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:288-300 |
+| The bounded scan for the bullets that record a mechanical repair of THIS claim's range. | `generated_repair_bullets` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:311-323 |
 | The review item that stops asserting currency and asks the support question when a projected range is detected. | `_projected_review_message` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:315-338 |
 | The review item that reads the generated bullets first and returns `error` for the projected variant and `warning` otherwise. | `surfaced_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:341-385 |
 | The generated bullet shape this check parses, and the section bound it scans within. | `history_bullet` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:129-150 |
-| The executor that pins the enforced projected item, the fail-closed no-git-view path, and the unchanged warning for a non-projected change. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:384-522 |
+| The executor that pins the enforced projected item, the fail-closed no-git-view path, and the unchanged warning for a non-projected change. | `test_a_projected_range_is_enforced_with_the_support_question_not_currency` | mcp/tests/test_memory_citation_resolution.py:954-983 |
 | The canonical Update History section line whose presence bounds the generated-bullet scan. | `history_section_line` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:116-126 |
 
 
@@ -206,6 +253,23 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | — | — |
 
 ## Update History
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `_mapping_pending_for_code_head` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:737-762. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `LocalSource` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:117-123. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `Candidate` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:126-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `CurrentFiles` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:133-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `claims_in` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:239-253. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `finding` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:256-269. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `provenance_finding` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:272-294. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `changed_finding` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:297-308. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `selected_current` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:411-422. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `selected_historical` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:425-436. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `dependency_changes` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:703-734. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `evaluate_claim` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:781-832. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `check_onboarding_root` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:835-930. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `generated_repair_bullets` repointed to mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:311-323. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `test_a_projected_range_is_enforced_with_the_support_question_not_currency` repointed to mcp/tests/test_memory_citation_resolution.py:954-983. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): corrected three claims this change falsified. (1) `_anchor_in_cited_range` now reads the `declaration` line of a `DEFINITION` extent instead of the widened extent's start, so a card citing a decorated Python declaration at its OWN lines no longer reopens its own claim (item 14; the recorded 0-based/1-based diagnosis was wrong — every extent producer was already 1-based, and the mechanism is `grammars._widened` growing the extent through `decorated_definition`). The reopen rule itself is unrelaxed: the range must still begin at or before the declaration and end at or after it. (2) `_demote_preexisting_provenance_debt` keys on the ROW's pre-task revision (`_pre_task_revision` reads the memory worktree's `HEAD`; `_row_predates_the_task` looks the finding's own row up by exact text in that revision's copy of its document) instead of on document dirtiness, which made the demotion structurally unreachable for the rows a curator meets. (3) The anchor-multiplicity reasons are marked `InvalidReason(uneditable=True)`, and `_gate_result` splits that population before the demotion and publishes it as `closeoutOwnedFindings` + `closeoutOwnedCount` — reported, out of `findingCount` and out of the curator-actionable arithmetic. Documentation only: no source byte was touched by this pass. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are NOT advanced — these sources are uncommitted, so no commit carries their bytes; the candidate is named in the `reviewedWorkingCandidate` metadata row and the governed closeout owns the real commits.
+
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Rebased pending-current-code citation handling on attributed ancestor commits without cache authority. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

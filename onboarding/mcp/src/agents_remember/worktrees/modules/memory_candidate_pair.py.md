@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/memory_quality/memory_candidate_pair.py
+# mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/memory_candidate_pair.py` |
+| path | `mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
+| lastUpdated | 2026-09-18T18:40+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[memory quality overview](overview.md)
+[worktrees modules overview](overview.md)
 
 ## Purpose
 
@@ -92,6 +92,7 @@ repositories.
 | --- | --- | --- |
 | No separate external implementation source applies to this file. | — | — |
 ## Update History
+- 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **moved this sidecar to the path its source actually has, and advanced the verification stamp to the revision read.** Code commit `806649b9` relocated the module out of `memory_quality/` into `worktrees/modules/` as a **pure rename** — the blob is byte-identical before, at, and after the move (`95544419b0b670b95be5e07d8fae1cdffc3d4c88` at `806649b9^`, at `806649b9`, and at `c5a74a85`) — and the card stayed at the retired path, where `integrity.onboarding_drift_check.summary` reported it `orphaned` while no card existed at the new path at all. Nothing in the body was rewritten: the `Repo-Internal References` rows already cite `worktrees/modules/memory_candidate_pair.py`, and each cited anchor (`resolve_memory_candidate_pair` `:48-131`, `_require_requested_authority` `:132-164`, `_require_branch_plan` `:286-351`) was re-read against the current source in this pass and none moved. What changed is the title, the `path` metadata row, the governing-overview link (now the modules route overview) and this record. The stamp advances to `c5a74a85` because the old stamp predates the new path, so the check would otherwise read the move itself as a source change; closeout re-stamps. No claim bytes were deleted, substituted or weakened.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Made the ledger location informational while retaining exact code/memory pair and ancestry proof. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-18T18:55+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -163,6 +163,7 @@ record-side edge recomputation. The shipped exact-coverage obligation is untouch
 collection is content beside `judgments`, and publishing one does not disturb it.
 
 ## Update History
+- 2026-09-18T18:55+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the `260915-KS-L15` landing the section above already carries (`65e3791b`): the new `curator_assessment_evidence.py` with its one evidence destination and its read-back, `_exact_review_assessments` and `_published_evidence_bytes` in `curator_coherence_publication.py`, and the read projection and record-side edge recomputation in `curator_coherence.py`. Each was re-read against the file rather than trusted, including the three properties that chose the destination and the blocked state a failed read-back produces. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `curator_assessment_evidence.py` and two publication extensions; the body records the evidence-byte destination and its three measured reasons, the read-back that makes survival proven rather than asserted, and that the shipped exact-coverage obligation is untouched. The reference rows were re-derived from the current files: `require_current_curator_coherence` is `:327-385` and `curator_coherence_evidence` `:487-488`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 

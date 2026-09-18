@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` | — |
 | doc_type               | `file-level-onboarding` | — |
 | lastUpdated | 2026-09-15T00:51+00:00 | — |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` | — |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00| — |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` | — |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00| — |
 | governingOverview      | `overview.md` | — |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ wire contract, and stop-only pause remains a separate response.
 cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:233-287) is the strict context-packet shape for the
 `c-09-git-worktree-manager` lifecycle. Its vocabulary fields are typed, and
 **since 260731-EFA-L4 every shared lifecycle vocabulary is imported from the
-module that produces it; only `WorktreeState` remains local** cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:230-230). `WorktreeSummary` itself is declared at
+module that produces it; only `WorktreeState` remains local** cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:237-237). `WorktreeSummary` itself is declared at
 cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:233-287). The command response models
 remain flexible because worktree service results can carry operation-specific
 planning and closeout fields.
@@ -49,7 +49,7 @@ planning and closeout fields.
 | `cleanup` | `CleanupStatus` = `pending \| completed \| abandoned \| reopened` | this file L39 |
 | `phase` | `WorktreePhase` (8 members) | this file L40 |
 | `nextOperation` | `NextOperation` (7 members) | this file L50 |
-| `nextTool` | `NextTool` (7 members) | this file L59 |
+| `nextTool` | `NextTool` (8 members) | this file L59 |
 | `state` | `WorktreeState` — the ONE alias still declared here | this file L229 |
 
 Ranges in this table were re-derived at 260831-LOCR-L36: the contract-scoped activation re-key
@@ -163,7 +163,7 @@ Also not outliers, for the avoidance of doubt: `normalize_closeout_input` and `w
   `PUBLIC_TOOLS` is the enforcement; a literal is not.
 - **`WorktreeSummary.nextAction` was not widened.** Its single producer hard-codes
   `developer-decision`
-  cit:(["developer-decision"], mcp/src/agents_remember/models/worktree.py:278-278), and
+  cit:(["developer-decision"], mcp/src/agents_remember/models/worktree.py:285-285), and
   `WorktreeSummary` is never on this path — it is constructed only inside `worktree_status_packet`'s
   own helpers for the `context_packet` surface (`application/worktree_status.py:79`, `:120`, `:199`,
   `:242`). Its single-value literal is honest where it lives.
@@ -212,7 +212,7 @@ the blocked-start recovery payloads — those keep their own
 a wider `NextOperation` cannot put "requires developer approval" back into the set
 the context packet's `nextOperation` claims to be.
 
-`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:265-265)) is **omitted rather than `[]`** when there is
+`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:272-272)) is **omitted rather than `[]`** when there is
 nothing to supply. `next_guidance` writes the key only when the next call needs a
 caller-supplied argument; the projection now reports what the producer said
 instead of substituting a value for it. This is a stated wire change: measured
@@ -223,7 +223,7 @@ beyond `nextArgs` — and there is no third state to confuse it with. The same r
 now covers `nextTool` and `nextArgs`, where the old substitution had put an
 un-declarable `""` on the wire.
 
-`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:270-270)) is new. It is present only
+`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:277-277)) is new. It is present only
 when the contract file carried a cell outside its declared vocabulary, formatted
 `"<field>=<raw token> read as <fallback>"`. The `state` is still `active` and
 every other field was computed from the substituted values — this field is the
@@ -300,7 +300,7 @@ Wire envelopes mirror their public operation and import shared vocabularies from
 - **The worktree surface's next move must name a registered PUBLIC tool, and this is now declared
   and enforced here (260831-LOCR-L32).** `_project_terminal_contract_status` writes `nextAction` /
   `nextTool` / `nextArgs`; all three are declared on `WorktreeCommandResponse`
-  cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:323-323) and
+  cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:330-330) and
   `_require_registered_public_next_tool`
   cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:356-365)
   refuses a value outside `PUBLIC_TOOLS`. The rule
@@ -350,34 +350,34 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Checkpoint responses record only the real integrated code and memory-content commits. | `WorktreeCheckpointLandingResponse`; `integratedMemoryContentCommit` | mcp/src/agents_remember/models/worktree.py:459-463 |
-| Sync control, side, phase, operation-state, and strict projection shapes are declared together. | `SyncResolutionAction`; `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:79; mcp/src/agents_remember/models/worktree.py:136-149 |
+| Checkpoint responses record only the real integrated code and memory-content commits. | `WorktreeCheckpointLandingResponse`; `integratedMemoryContentCommit` | mcp/src/agents_remember/models/worktree.py:466-470 |
+| Sync control, side, phase, operation-state, and strict projection shapes are declared together. | `SyncResolutionAction`; `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:86; mcp/src/agents_remember/models/worktree.py:143-156 |
 | Series status and command responses carry optional activation facts and bounded admission evidence. | `AtomicSeriesActivationFact` | mcp/src/agents_remember/models/worktree.py:170-178 |
 | The activation fact and the admission envelope are keyed by the addressed contract's `contractFingerprint`, not by a source pair; the nested activation snapshot is the only activation evidence. | `AtomicSeriesAdmission`; `contractFingerprint` | mcp/src/agents_remember/models/worktree.py:206-218 |
-| The deleted blocking vocabulary left no field behind: the admission envelope declares neither `classification`, `blocking` nor a source pair. | `AtomicSeriesAdmission`; `pairField` | mcp/src/agents_remember/models/worktree.py:206-218; mcp/src/agents_remember/models/worktree.py:432-432 |
+| The deleted blocking vocabulary left no field behind: the admission envelope declares neither `classification`, `blocking` nor a source pair. | `AtomicSeriesAdmission`; `pairField` | mcp/src/agents_remember/models/worktree.py:206-218; mcp/src/agents_remember/models/worktree.py:439-439 |
 | The sync response declares recovery guidance without exposing a public operation id. | `WorktreeSyncResponse`; `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:290-365; mcp/src/agents_remember/models/worktree.py:415-426 |
-| The record-landing envelope declares the landing evidence and its operation literal. | `WorktreeRecordLandingResponse` | mcp/src/agents_remember/models/worktree.py:478-482 |
-| The checkpoint-landing envelope declares the two output commits an unfinished master landed and its operation literal. | `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:459-463 |
-| The pause envelope declares the stop's one own field, `paused`, and inherits the ordinary command envelope; only the route that releases the selection claims it. | `WorktreePauseResponse`; `paused` | mcp/src/agents_remember/models/worktree.py:466-475 |
+| The record-landing envelope declares the landing evidence and its operation literal. | `WorktreeRecordLandingResponse` | mcp/src/agents_remember/models/worktree.py:485-489 |
+| The checkpoint-landing envelope declares the two output commits an unfinished master landed and its operation literal. | `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:466-470 |
+| The pause envelope declares the stop's one own field, `paused`, and inherits the ordinary command envelope; only the route that releases the selection claims it. | `WorktreePauseResponse`; `paused` | mcp/src/agents_remember/models/worktree.py:473-482 |
 | The `checkpointed` member the checkpoint writer records and the persisted-contract vocabulary derives. | `IntegrationStatus`; `checkpointed` | mcp/src/agents_remember/models/worktree.py:38; mcp/src/agents_remember/models/worktree.py:38-38 |
 | The two `NextOperation`/`NextTool` members the L31 leaf moved: `finalize` in place of `retry_cleanup`, and `lifecycle_finalize_task` added. | `NextOperation`; `NextTool` | mcp/src/agents_remember/models/worktree.py:50-58; mcp/src/agents_remember/models/worktree.py:59-74 |
 | The L34 addition: `worktree_checkpoint_landing` joined `NextTool` (`:69`) while `NextOperation` was deliberately left at seven members. | `NextTool` | mcp/src/agents_remember/models/worktree.py:59-74 |
 | The producer that keeps `NextTool."worktree_cleanup"` live after `guidance.py` stopped emitting it, and the closed two-member cleanup-operation vocabulary it copies from. | `_project_terminal_contract_status`; `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:72-134; mcp/src/agents_remember/application/worktree_status.py:377-463; mcp/src/agents_remember/models/lifecycles/enclosure.py:367 |
-| The response registry selects WorktreeStatusResponse and the shared response validator validates its envelope. | `WorktreeStatusResponse` | mcp/src/agents_remember/models/tools/tool_registry.py:185; mcp/src/agents_remember/models/tools/tool_response.py:26; mcp/src/agents_remember/models/worktree.py:185; mcp/src/agents_remember/models/worktree.py:376-379 |
+| The response registry selects WorktreeStatusResponse and the shared response validator validates its envelope. | `WorktreeStatusResponse` | mcp/src/agents_remember/models/tools/tool_registry.py:199; mcp/src/agents_remember/models/tools/tool_response.py:26; mcp/src/agents_remember/models/worktree.py:185; mcp/src/agents_remember/models/worktree.py:383-386 |
 | The `extra="allow"` config on the flexible envelope. It is **no longer** what decides the next-move keys' fate: the three keys are declared below, so they are no longer extras. | `model_config`; "extra=\"allow\"" | mcp/src/agents_remember/models/base.py:19-26 |
 | The three next-move keys declared on the command envelope, which is what stops the projector's write from riding as an undeclared extra. | `declared`; `WorktreeCommandResponse`; "# The next-move triple, declared here so the worktree surface's guidance is part of" | mcp/src/agents_remember/models/worktree.py:290-365 |
 | The membership validator that refuses a next move outside the advertised roster — the enforcement half of the invariant, and the reason the roster had to move into `models`. | `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:354-365 |
 | The advertised public roster this model reads, in its zero-import `models` leaf (the tuple's single definition; `mcp/tools/base.py` re-exports it). | `PUBLIC_TOOLS`; `models` | mcp/src/agents_remember/mcp/tools/base.py:22; mcp/src/agents_remember/models/tools/public_roster.py:1-20; mcp/src/agents_remember/models/tools/public_roster.py:22-91 |
 | The registered-but-deliberately-non-public name that must stay outside the worktree invariant, and the `task_doc` surface that legitimately emits it (its `nextTool` is a plain `str \| None`, on a class that is not a `WorktreeCommandResponse`). | `session_retire`; `nextTool` | mcp/src/agents_remember/models/task_doc.py:115-190; mcp/src/agents_remember/models/tools/tool_registry.py:134; mcp/src/agents_remember/models/tools/tool_registry.py:216-226; mcp/src/agents_remember/models/tools/tool_registry.py:140-140; mcp/src/agents_remember/models/tools/tool_registry.py:147-147; mcp/src/agents_remember/models/tools/tool_registry.py:171-171 |
 | The executor for the declared-and-enforced next move: it reaches the archive-ready state through real production calls for both cleanup verbs, binds the emitted args to the real tool signature, and drives the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation` | mcp/tests/test_worktree_status_terminal_next_tool.py:183-227 |
-| The `nextAction` literal this file **does** declare, and which stays honest because its only producer hard-codes it — do not widen it. | `None`; `nextAction` | mcp/src/agents_remember/models/worktree.py:278; mcp/src/agents_remember/models/worktree.py:278-278 |
+| The `nextAction` literal this file **does** declare, and which stays honest because its only producer hard-codes it — do not widen it. | `None`; `nextAction` | mcp/src/agents_remember/models/worktree.py:285; mcp/src/agents_remember/models/worktree.py:285-285 |
 | The reachable terminal state the projector serves once a failed contract amendment is rolled back while the locator stays `terminal-archived`. | `status`; `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:384; mcp/src/agents_remember/application/worktree_status.py:463-505 |
 | The two guarded contract amendments whose rolled-back publication produces that state, for cleanup and abandon respectively. | `_publish_cleanup`; `_publish_abandon`; `_abandon_state`; `_cleanup_state` | mcp/src/agents_remember/worktrees/modules/abandon.py:342-381; mcp/src/agents_remember/worktrees/modules/abandon.py:680-683; mcp/src/agents_remember/worktrees/modules/cleanup.py:596-615; mcp/src/agents_remember/worktrees/modules/cleanup.py:935-976 |
 | The module that should enforce produced == declared for `NextTool` and currently has **zero** test bodies — only this docstring, helpers and "moved verbatim" breadcrumbs remain. | `validates`; "moved verbatim" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:1-14; mcp/tests/test_wire_vocabulary_exhaustiveness.py:183-210 |
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading optional next and activation fields without inventing values. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-68; mcp/src/agents_remember/application/worktree_status.py:72-134 |
 | The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-194; mcp/src/agents_remember/worktrees/worktree_contract.py:184-199 |
 | The guidance state machine imports and writes `WorktreePhase`, `NextOperation` and `NextTool` (declared in this model since L9), plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | `agents_remember`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:9; mcp/src/agents_remember/worktrees/modules/guidance.py:48-53 |
-| Public worktree MCP application entry points delegate to the package worktree manager. | `worktree_status_tool`; "Application entry points for worktree-backed MCP tools."; `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:1-1; mcp/src/agents_remember/application/worktree_tools.py:103-200; mcp/src/agents_remember/application/worktree_tools.py:277-300 |
+| Public worktree MCP application entry points delegate to the package worktree manager. | `worktree_status_tool`; "Application entry points for worktree-backed MCP tools."; `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:1-1; mcp/src/agents_remember/application/worktree_tools.py:103-200; mcp/src/agents_remember/application/worktree_tools.py:305-328 |
 
 ## Series-Contract Notes
 
@@ -468,7 +468,7 @@ read path would reject.
 
 **`WorktreePhase` deliberately did not gain a member for the checkpoint state.** A checkpointed
 contract projects through the existing `worktree-started` phase
-cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:298-298).
+cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:340-340).
 `WorktreePhase` is a closed `Literal` cit:([`WorktreePhase`], mcp/src/agents_remember/models/worktree.py:40-49) whose members the dashboard mirrors at five files / six sites
 cit:([`LIFECYCLE_PHASES`], dashboard/src/panels/EngineRoom.tsx:59-66): `EngineRoom.tsx:59-66`
 (`LIFECYCLE_PHASES`, `"integration-pending"` at `:63`), `BootTimeline.tsx:88` and `:110`,
@@ -484,7 +484,7 @@ lifecycle vocabularies that card lists are declared here cit:([`WorkflowKind`, `
 them.
 
 `WorktreeCheckpointLandingResponse` (operation literal `worktree_checkpoint_landing`) declares the
-checkpoint landing evidence cit:([`WorktreeCheckpointLandingResponse`], mcp/src/agents_remember/models/worktree.py:459-463): `integrationStrategy`, `integratedCodeCommit`,
+checkpoint landing evidence cit:([`WorktreeCheckpointLandingResponse`], mcp/src/agents_remember/models/worktree.py:466-470): `integrationStrategy`, `integratedCodeCommit`,
 `integratedMemoryContentCommit`. It inherits
 `WorktreeCommandResponse`, so it stays flexible for unrelated operation data and exposes no
 operation id, journal address, or Git-mutation authority.
@@ -543,10 +543,30 @@ Note the asymmetry with `NextTool."worktree_cleanup"` above: that member is reta
 producer still emits it, while this one is added because a producer now emits it for the first time on
 the checkpoint route.
 
+## 260915-KS-L23 The Coherence Validate Tool In `NextTool`
+
+`NextTool` gained its **eighth** member, `curator_coherence`, at `:80` (the literal now spans
+`59-81`): the standalone `validate` of a published curator-coherence authority. It is added for the
+same reason as the checkpoint tool above — it is a registered public tool that a producer now emits —
+and for one more that makes it the sharpest case in this vocabulary: **it is the one step whose window
+closes at `lifecycle_finalize_task`.** Finalize's automatic cleanup collects the enclosure root, so a
+leaf that integrates and finalizes without validating can never re-prove what it published (D-25), and
+`worktrees/modules/guidance.py` now routes `closeout-completed` to this tool (action `validate`, with
+the contract's canonical `caller`) whenever the leaf's authority is published.
+
+**`NextOperation` was deliberately NOT widened a third time.** The move is still
+`request_integration_decision`; the validation is its **precondition**, not a new lifecycle phase, so
+adding a member would put a non-phase value into the set `WorktreeSummary` and the context packet
+claim to report — the same reasoning the L34 section above records for the checkpoint tool.
+
+The produced == declared invariant holds in both directions here: the guidance machine emits the name
+and the literal declares it, and `_require_registered_public_next_tool` still admits it because
+`curator_coherence` is a registered public tool.
+
 ## 260831-LOCR-L32 The Next-Move Triple Is Typed And Enforced
 
 `WorktreeCommandResponse` declares `nextAction` / `nextTool` / `nextArgs`
-cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:323-323), and
+cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:330-330), and
 `_require_registered_public_next_tool`
 cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:356-365)
 refuses any `nextTool` outside `PUBLIC_TOOLS` with
@@ -597,6 +617,20 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | — | — |
 
 ## Update History
+- 2026-09-18T17:55:09+00:00: 260915-KS-L23 residue clearance (seat A): re-read each of this card's five reopened rows against the construct its claim is about and repointed the stale range; every claim's wording, anchor set and range shape kept. `SyncResolutionAction` from `mcp/src/agents_remember/models/worktree.py:79` to `:86` (its own `Literal["continue", "cancel"]` declaration) and `SyncOperationProjection` from `:136-149` to `:143-156`; `pairField` from `:432-432` to `:439-439`; `WorktreeStatusResponse` from `mcp/src/agents_remember/models/tools/tool_registry.py:185` to `:199` (the `"worktree_status": WorktreeStatusResponse` registry entry) and its model range from `mcp/src/agents_remember/models/worktree.py:376-379` to `:383-386` (the class declaration); `nextAction` from `:278` and `:278-278` to `:285` and `:285-285` (the one `Literal["developer-decision"]` declaration this card says not to widen, whose neighbours moved but whose own line the literal still occupies); `worktree_status_tool` from `mcp/src/agents_remember/application/worktree_tools.py:277-300` to `:305-328`. `AtomicSeriesAdmission` (`:206-218`), `worktree_start_tool` (`:103-200`), the module-docstring literal (`:1-1`) and every other paired range already held its anchor and is unchanged. Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `WorktreeCheckpointLandingResponse`; `integratedMemoryContentCommit` repointed to mcp/src/agents_remember/models/worktree.py:466-470; mcp/src/agents_remember/models/worktree.py:470-470. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `WorktreeRecordLandingResponse` repointed to mcp/src/agents_remember/models/worktree.py:485-489. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `WorktreeCheckpointLandingResponse` repointed to mcp/src/agents_remember/models/worktree.py:466-470. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `WorktreePauseResponse`; `paused` repointed to mcp/src/agents_remember/models/worktree.py:473-482; mcp/src/agents_remember/models/worktree.py:482-482. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `WorktreeState` repointed to mcp/src/agents_remember/models/worktree.py:237-237. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "developer-decision" repointed to mcp/src/agents_remember/models/worktree.py:285-285. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `nextRequiredArgs` repointed to mcp/src/agents_remember/models/worktree.py:272-272. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `unknownContractCells` repointed to mcp/src/agents_remember/models/worktree.py:277-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:330-330. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "if contract.integration_status == \"checkpointed\":" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `WorktreeCheckpointLandingResponse` repointed to mcp/src/agents_remember/models/worktree.py:466-470. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:330-330. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the **eighth** `NextTool` member, `curator_coherence` (`:80`, literal now `59-81`), which the card's vocabulary table listed as a seven-member alias and therefore did not name. It belongs to the same class as the L34 checkpoint addition — a registered public tool a producer now emits — with the added reason that it is the **only step whose window closes at `lifecycle_finalize_task`**, whose automatic cleanup collects the enclosure root, so a leaf that finalizes without validating can never re-prove what it published (D-25). `NextOperation` was **not** widened: the move stays `request_integration_decision` and validation is its precondition, not a phase — which is why `WorktreeSummary`'s phase set and this card's `NextOperation` row (still seven members at L50) are unaffected. Changed the table row from `(7 members)` to `(8 members)` and added the new section; the `NextTool` reference rows that cite `59-74` were left untouched for the citation pass, which will see the literal's real extent (`59-81`). Nothing else in this card's claims was falsified by the change.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_project_terminal_contract_status` repointed to mcp/src/agents_remember/application/worktree_status.py:463-505. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "amend_contract(contract, ContractCells(cleanup=\"completed\"))" repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:941-941. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

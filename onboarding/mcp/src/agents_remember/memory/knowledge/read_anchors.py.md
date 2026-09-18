@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read_anchors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288`|
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -168,7 +168,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The case that drives the second producer: a Git this process cannot run.** | "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:539-644 |
 | **The case that shows a failed lookup is unavailable rather than absent.** | "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:445-538 |
 | **The case that authors, stores, seeds and resolves a path holding glob characters to its own blob, and measures the Git facts itself.** | "test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob" | mcp/tests/test_knowledge_read_paths.py:256-369 |
-| The non-blob entry case, and the ordinary absent-path case. | "test_a_non_blob_tree_entry_is_reported_as_an_entry_and_never_read_as_source_bytes"; "test_a_path_absent_from_the_requested_tree_keeps_the_claim_and_reports_the_absence" | mcp/tests/test_knowledge_read_boundaries.py:375-464; mcp/tests/test_knowledge_read_boundaries.py:230-252 |
+| The non-blob entry case, and the ordinary absent-path case. | "test_a_non_blob_tree_entry_is_reported_as_an_entry_and_never_read_as_source_bytes"; "test_a_path_absent_from_the_requested_tree_keeps_the_claim_and_reports_the_absence" | mcp/tests/test_knowledge_read_boundaries.py:375-464; mcp/tests/test_knowledge_read_boundaries.py:264-286 |
 
 ## Cross-Repo References
 
@@ -181,4 +181,5 @@ repository root the caller supplied; no second repository, ledger or coordinatio
 
 ## Update History
 
+- 2026-09-18T19:56:02+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The absent-path row cited `test_knowledge_read_boundaries.py:230-252`, an earlier node's body, for `test_a_path_absent_from_the_requested_tree_keeps_the_claim_and_reports_the_absence`; the case itself spans `264-286`, which is what that cell cites now. The non-blob range at `375-464` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): created this one-to-one card for the recorded-anchor observation. It records the **three genuinely different facts** the read path distinguishes — `path_absent` (Git answered and the tree holds nothing there), `unsupported_locator` (the spelling is not addressable, with the cause in `detail`) and `recorded_object_unavailable` (the lookup did not answer) — and the rule behind them: **a refusal must describe the actual cause**, so a caller is never told a path is absent when the real reason is its spelling. That rule is also why the card states the corrected predicate explicitly: pathspec **magic** is the leading-`:` family plus `..`, absolute paths, `~`, drive/UNC spellings, backslashes and NUL, while `*`, `?` and `[` are **literal characters** to `ls-tree` and a legitimate anchor containing them must be authorable, seedable and resolvable — round 1's over-broad glob refusal is recorded as the thing the review corrected. The measured Git table (`git 2.54.0`) is carried with the case that reproduces it, together with the note that `git ls-files` is what globs and is not the command this path is handed to. The card also states the structural-confinement rule (never `confine_rel`, which follows a symlink), the entry-mode-versus-object-kind rule, and the honest limit: `_tree_entry`'s non-zero-exit branch is an explicitly disclosed unasserted defensive branch (L9 ledger **A6**) and is **not** coverage. Verification metadata remains empty until closeout stamps the code commit.

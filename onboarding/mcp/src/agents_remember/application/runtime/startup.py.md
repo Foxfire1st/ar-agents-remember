@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/runtime/startup.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-18T19:24+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +18,9 @@
 ## Purpose
 
 Initializes MCP-process application collaborators and owns the one application-layer gateway that
-hands the MCP adapter its boot-resolved serving-build payload.
+hands the MCP adapter its boot-resolved serving-build payload. Since `260915-KS-L23` it also owns the
+**ruler stamp** the measuring surfaces carry, so a memory-quality or citation count says which build
+produced it.
 
 ## Code Commentary
 
@@ -27,6 +30,16 @@ hands the MCP adapter its boot-resolved serving-build payload.
 log, then installs ambient lifecycle state. `mcp_serving_build_payload` converts the cached serving
 stamp to the strict shared wire model at the application boundary; MCP registration never imports
 the serving domain directly. Dashboard autostart remains a separate startup hook.
+
+`measuring_build_stamp` (`:36-51`) is the second reader of that same process-cached identity, and it
+exists because of the measurement D-33 recorded: the MCP surface answers a tool call from a **fixed**
+serving build while the candidate under curation may carry different code, and until this stamp existed
+a checklist reader could not tell a candidate-ruler count from a serving-build-ruler count. It returns
+`{"servingBuild": <resolved payload as wire JSON>}` — a dict copy of the identity
+`process_serving_build()` resolved once per process, not a probe — with `dirty` riding along so an
+uncommitted serving tree reads as such instead of being taken for the commit it names. Its consumers are
+the memory-quality controller's three public entry points and the two citation tools; the omission of
+`drift_check` is deliberate, because a tree-integrity count is not a curation count.
 
 ### Conventions
 
@@ -61,6 +74,7 @@ No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-09-18T19:24+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the second serving-build reader this leaf's item 26 added, which this card did not mention.** `measuring_build_stamp` (`:36-51`) returns the process's resolved boot identity as `{"servingBuild": …}` wire JSON — a dict copy of the identity `process_serving_build()` caches once per process, `dirty` included — and is consumed by the memory-quality controller's three public entry points and by `citation_fix_tool`/`citation_migrate_tool`; the Purpose and `### Logic` sections now state it and its reason (D-33: a fixed serving build measuring a different candidate, indistinguishable in the output). It is a stamp, not a second resolution, and it does not move `initialize_mcp_application` or `mcp_serving_build_payload`. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp; the reference rows are left to the citation-range repair pass that owns them.
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: added the application-owned serving-build
   payload gateway so MCP transport no longer imports the serving domain directly. Verification
   remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-18T18:58+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -86,10 +86,52 @@ they do not replace this source-paired behavior description.
 
 ## Integrated IAS Recovery Contract
 
-Ordinary isolated host pytest is supported for development; only the certifying bootstrap and delivery wrapper require genuine Dagger admission. Selected parametrized case budgets are 1,000 unit / 250 integration. Production coverage is diagnostic and CRAP20 is a review trigger; lint, typing, structural rules, real test failures and malformed diagnostic artifacts remain enforcing. `catalog_selection.py` resolves changed manifest rows against actual retained consumers. The retired causal/retry route-evidence and route-measurement modules are absent; do not restore their duplicate measurement machinery or infer protection from removed tests.
+Ordinary isolated host pytest is supported for development; only the certifying bootstrap and delivery wrapper require genuine Dagger admission. Production coverage is diagnostic and CRAP20 is a review trigger; lint, typing, structural rules, real test failures and malformed diagnostic artifacts remain enforcing. `catalog_selection.py` resolves changed manifest rows against actual retained consumers. The retired causal/retry route-evidence and route-measurement modules are absent; do not restore their duplicate measurement machinery or infer protection from removed tests.
+
+**The case budgets this package's rails run under are not declared here.** Earlier revisions of this
+overview and of the cards beneath it named a pair (1,000 unit / 150, later 250, integration) as a
+current reading; the enforced pair is the repository root `pyproject.toml`'s
+`[tool.pytest.ini_options]` pair — `unit_case_budget = 2300` and `integration_case_budget = 400` at
+`pyproject.toml:244-245`, measured 2026-09-18 at code `c5a74a85` — and it moves. Read it there, and see
+`system/tools.md` for why the pair is the root file's rather than any test-local default.
+
+## Three Owners That Landed After This Route's Last Review
+
+`code_quality/completion_relay.py` (`d834ee95`, `LOCR-R14`) is the executable form of the one-relay
+rule. The completion relay is `adapter evidence -> catalog -> notifier -> durable inbox -> owner`, and
+`LOCR-R14@v1` requires it to be the **only** progression path: the terminal-liveness sweeper is driven
+by exactly two lifecycle-owned entry points (one startup prime, one recurring steady-state caller), no
+HTTP route may advance observation, and an owner is reached through a durable inbox row rather than by
+a second completion protocol. The module measures six independent facts over `mcp/src/agents_remember`
+— sweeper constructions, sweeper reads, sweeper mutation sites, observation-body references, the
+observation owner, and the entry points that start observation — and names the reviewed set and the
+remedy for each, so "a second observation authority now exists" is a check result rather than a review
+opinion.
+
+`testing/curation_doctrine.py` (`304de8e2`, corrected by `a29a20c6`) owns the reading half of the
+retired optional-curation doctrine: a registry of the retired sentences with the surface each lived on,
+the exact statement every canonical source that must state the rule states it in, and the readers a
+test calls. Matching is normalized — markdown emphasis stripped, line wrapping collapsed — and against
+the whole retired sentence, so a statement re-inserted with different emphasis is still the same
+statement, while doctrine that legitimately survives (an explicit developer request still governs full
+code quality and full tests) cannot read as a regression. It is deliberately free of pytest and of any
+repository constant so a case can point it at a staged or synthetic tree. It is a census, not a
+semantic check: a corpus that denied the rule in fresh vocabulary this registry has never seen would
+pass.
+
+`code_quality/projection_types.py` (`e9678c56`, `LOCR-L17`) follows the served observer-health reading
+into the generated dashboard contract: the `TerminalObserverHealthPayload -> TerminalObserverHealth`
+rename, that payload added to the null-preserving set (it deliberately dumps nulls, so its nullable
+properties stay required `T | null` on the output contract), and `maximum` admitted to the
+schema-refinement keywords — the served row declares both serving-lifetime counts as unsigned 32-bit
+values, and a mirror documenting only `minimum` would understate the field it mirrors.
+`code_quality/dependency_ownership.py` (`15fe8678`, `KS-R18`) adds
+`test_knowledge_citation_bindings.py` and `test_knowledge_citation_boundaries.py` to
+`REPOSITORY_TEST_INPUT_CONSUMERS`.
 
 ## Update History
 
+- 2026-09-18T18:58+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **wrote the three owners this route had gained since its last review, and retired a stale rail claim rather than carrying it forward.** The route grew four files across four landings — `code_quality/completion_relay.py` (`d834ee95`, `LOCR-R14`), `testing/curation_doctrine.py` (`304de8e2`, corrected by `a29a20c6`), `code_quality/projection_types.py` (`e9678c56`, `LOCR-L17`) and two consumer rows in `code_quality/dependency_ownership.py` (`15fe8678`, `KS-R18`) — and the section above states what each owns, read from the modules rather than from their commit subjects. The `## Integrated IAS Recovery Contract` paragraph's **"Selected parametrized case budgets are 1,000 unit / 250 integration"** sentence was **not** a re-read: it was false, and this pass replaced it with the enforced pair (`unit_case_budget = 2300`, `integration_case_budget = 400`, root `pyproject.toml:244-245`, measured 2026-09-18 at code `c5a74a85`) plus the rule that the pair lives in the root file and moves. The 2026-09-14 entry below corrected `150` to `250` and left the sentence as a current claim; it is kept as the state it measured, and the sentence it corrected is no longer asserted here. Verification stamp advanced to `c5a74a85`, the revision read; closeout re-stamps.
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the case-budget sentence
   still read 150 integration cases while `pyproject.toml:149-150` declares 250. Corrected it; the
   earlier entry had claimed this fix without it having landed. Verification metadata remains

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
+| lastUpdated | 2026-09-18T19:00+02:00 |
+| lastVerifiedCommitHash |  `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate |  2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 
 > **Status:** active baseline
 
@@ -225,6 +225,53 @@ workspace ar-coordination/
 | Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles — now a **thin router** plus a shared `core/`, nine self-contained role files, eight `operations/` blocks, a prose-free `composition-manifest.json`, and reference-only rationale/rulings — and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
 | Runtime AGENTS templates | [mcp/src/agents_remember/package_data/runtime/agents-md-files](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files)                                                                                                        | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
 | System defaults      | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples)                                                                                          | Example settings, sources, and tools files used as scaffolding material.                                       |
+
+### 260915-KS-L22 Route Impact — The Intent Reviewer Surface, And The Port That Keeps It Path-Free
+
+`260915-KS-L22` (`KS-R22@v1`) adds the repository's first read-only **Intent Reviewer** surface: one
+HTTP route, the application adapter behind it, a display vocabulary with its prohibitions built into
+its constructors, and the dashboard panes that render it. Four facts belong at repository altitude.
+
+1. **The route cannot be pointed at a dataset.** `GET /api/review/intent`
+   (`mcp/src/agents_remember/serving/review.py`) is GET-only and accepts **no filesystem path**: the
+   query string carries `repo`, `master`, `leaf`, `selectorKind` and `selectorId`, and the candidate
+   whose datasets are compared is resolved behind the route from the canonical task context — the
+   leaf's enclosure contract is located from the recorded task root, never from a caller-supplied
+   path. Current `HEAD` and a guessed worktree path are unavailable as fallbacks, because neither is
+   reachable from the route's inputs.
+2. **Transport is separated from composition by rank, not by taste.** `layers.toml` ranks `serving`
+   below `application`, so the HTTP shim may not import the read, diff and view operations it
+   composes; it takes `KnowledgeReviewPort` — a callable from the typed request to the typed result —
+   the way the launch route takes the capsule compiler. `ServingCollaborators.knowledge_review`
+   (`serving/_app_common.py`) carries it in, `serving/app.py` registers the route, and
+   `cli/dashboard.py`'s `serving_collaborators` builds the application adapter in production. A
+   process that omits the port **refuses the route by name with `503`** rather than serving an empty
+   pane, because an empty pane and an unreachable adapter are different facts. `404` marks a
+   candidate that does not resolve, is not live, or has no dataset; `400` a selector kind the surface
+   does not admit; `200` the typed result serialized once through the model that declares its shape.
+3. **The surface owns no record kind and no conclusion.** `models/knowledge/review.py` defines the
+   vocabulary of what the panes carry: **no** summary, narrative, severity, score, conflict verdict,
+   causal explanation or approval exists anywhere in it, so the display cannot grow one by filling a
+   blank; "unassessed" is the absence of a value rather than a value; a missing operand is a named
+   state rather than an empty string; and a stale payload must carry the submission state that
+   disables submission against it. Every value it renders comes from a record another owner already
+   stores. `application/knowledge_review.py` is the thin adapter over the shipped read, diff and view
+   operations — it selects nothing, computes no scope, widens no frontier and re-resolves no
+   reference; R07's selection policy, R08's comparison result, `Route` as the recorded scope axis and
+   L20's review matrix are consumed exactly as their owners publish them, and every absence is a
+   typed state.
+4. **The dashboard half is a rendering, not a second authority.** `dashboard/src/data/review.ts` and
+   `dashboard/src/panels/review/ReviewSurface.tsx` carry the request/response binding and the panes;
+   `Cockpit.tsx`, `panels/changeset/ChangeSetViewer.tsx` and
+   `panels/detail-panel/changeSetBar.tsx` gained the entry points into them. The surface is
+   read-only end to end, and `mcp/tests/test_knowledge_review_surface.py` is the case that holds its
+   prohibitions: `test_the_whole_payload_schema_has_no_field_a_generated_conclusion_could_occupy`,
+   `test_the_surface_defines_no_record_kind_no_table_and_no_status_of_its_own`,
+   `test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible`,
+   `test_a_missing_side_is_its_own_state_and_never_an_empty_string`,
+   `test_a_stale_comparison_keeps_the_previous_input_and_disables_submission` and
+   `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` would each
+   redden on the corresponding regression. No case was added or replaced by this pass.
 
 ### 260915-CAPS-L6 Route Impact — A Native eve Session Adapter, And A Root Tree Outside The Path Rules
 
@@ -1114,6 +1161,7 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-18T19:56:14+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The interactive-catalog row cited `application/memory_quality/controller.py:553-600` for `_attach_final_full_catalog`; this leaf's changes left the helper's definition at `671-707` (it is also called at `632`), so that cell cites the definition now, exactly as the `memory_quality/overview.md` card does for the same helper. The claim, the anchor and the `550-586` range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **the declared case-budget pair reaches this route, and the two sentences that carried the old one now carry the current one.** `pyproject.toml` declares `unit_case_budget = 2300` / `integration_case_budget = 400`; this leaf raised the unit ceiling 2200 -> 2300 over its own measured 2206-case candidate, six cases past the 2200 wall, past which `pytest_collection_finish` refuses the whole unit population and no unit case runs at all. Both `Build And Development Reference` statements (the one in this route's leading policy section and the one repeated in the closing reference) now read **2,300 unit and 400 integration** and name the three successive raises the line has taken — 1,250 / 340 -> 1,500 / 400 by the master's owning seat, -> 2,000 and -> 2,200 on the merged line, and -> 2,300 by `260915-KS-L21` — rather than the single 1,500 pair they carried. Integration is unchanged and its six remaining cases of headroom are reported, not consumed. No claim was deleted or softened: the earlier pair is retained inside the same sentence as the history it is. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the ten role files' current shape reaches this route.** The CAPS-L1 section below still described the role files as carrying the L1 readable order with an `**Inherits:**` line. leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote all ten files under `skills/l-01-agent-lifecycles/roles/` — and their byte-identical package-data copies — into the **function shape** (`# <Role>`, `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do`, closing `## Stop and …`), so the numbered sections, the `## Knobs, Tool Surface, And Dispatch Authority` block and the `**Inherits:**` line no longer exist there; the ten files total **1,578** lines. Body updated as above. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `sync_targets` repointed to scripts/sync-runtime.py:236-249. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
@@ -5771,7 +5819,7 @@ These current source and policy ranges establish the development/certification d
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441; mcp/src/agents_remember/application/memory_quality/controller.py:416-580 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586; mcp/src/agents_remember/application/memory_quality/controller.py:553-600 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586; mcp/src/agents_remember/application/memory_quality/controller.py:671-707 |
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785; mcp/src/agents_remember/application/prepared_certification.py:749-813 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45; mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
@@ -5986,6 +6034,7 @@ behaviour, both carried for the owning seat.
 | The leaf's independent review, whose final round returned PASS with an empty remaining set: task report `260915-KS-L1-review-fix-verification-2.md`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
 
 ## Update History
+- 2026-09-18T19:00+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **recorded the L22 landing at repository altitude, and it was needed rather than decorative.** The delta since this overview's old stamp is `c5a74a85`'s 15 files and ~3,300 lines: one GET-only HTTP route, its application adapter, a display vocabulary, three dashboard entry points and their panes, and the surface's own case module. This is the first read-only **user-facing review surface** in the repository, so a reader of the root overview could not have learned it existed from anything here. The new section under `## Code Structure` states the four facts that belong at this altitude — the route accepts no filesystem path and cannot be pointed at a dataset; the `serving`/`application` rank split is what makes the port necessary and an omitted port refuses with `503` rather than serving an empty pane; the vocabulary owns no record kind and **no field a conclusion could be assembled in**; and the dashboard half is a rendering that adds no authority. Every one of those was read from the modules and from `mcp/tests/test_knowledge_review_surface.py`'s own case names rather than taken from the leaf's report, and the six cases that hold the prohibitions are named in the section. The `reviewedWorkingCandidate` row moved from the L21 candidate to this one. Verification stamp advanced to `c5a74a85`, the revision read; closeout re-stamps.
 - 2026-09-18T03:35+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **this overview governs `pyproject.toml`, and this candidate changed it.** The declared case budgets are now **1,500 unit and 400 integration** (raised by the master's owning seat from 1,250 / 340 because the increment's own leaves had filled the ceiling and an over-budget unit population makes `pytest_collection_finish` run no tests at all), so the "1,000 unit and 150 integration" sentence this card carried **in two places** — already two raises stale — was corrected in both to the current pair with the raise attributed. The card also now states that the curator-coherence tool names its own required inputs: the `publish` refusal lists the missing members, `prepare` states the complete input set, and the read-action refusal names the publication-only field it received, which is what removes the failure class two leaves of this master recorded as an impassable tool defect (`notes/DISCLOSURES.md` D-11). Only these claims were re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the new generated mirror this route's
   generator produces (`package_data/runtime/eve-runtime/`, generated and never hand-edited), the

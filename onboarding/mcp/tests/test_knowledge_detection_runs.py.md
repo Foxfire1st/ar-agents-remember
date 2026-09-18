@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_detection_runs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `overview.md` |
 
@@ -19,7 +19,7 @@
 
 **`DetectionRun`: the walk over the shipped comparison, its declared order, its write and read paths, its
 reproducibility and currentness, and the refusals that keep a detection write out of the assessed dataset
-— 19 cases.**
+— 20 cases.**
 
 They occupy the `unit-regression` lane (registered in `mcp/tests/test-evidence-lanes.toml`) because what
 they measure is the detection contract's own logic — which recorded facts produce which condition, which
@@ -58,6 +58,20 @@ generation-4 detection store and drives `record_detection_run`/`read_detection_r
   `test_the_walk_consumes_the_shipped_comparison_and_emits_facts_only_signals` runs two real databases and
   two real Git trees through the shipped application seam, then checks every emitted signal for the
   facts-only boundary's properties.
+- **One identity names one signal, measured on the shipped comparison rather than on a synthetic union.**
+  `test_a_run_over_the_shipped_comparison_names_every_signal_once_and_is_recorded` (added by
+  `260915-KS-L23`) walks the real comparison for a fixture whose union holds two realization items that are
+  gone from the after side and speak for **one** claim record, and asserts in one run: the fixture still
+  holds that shape (so the case cannot silently stop exercising the defect), every `signal_id` is unique,
+  one `removed_or_reparented_attribution` signal per removed item with each signal's `observed_changes`
+  naming that item, the same union walked in the **reversed** item order produces the identical ordered
+  identities, and finally that `build_detection_run` + `record_detection_run` accept the walk and
+  `read_detection_run` serves the order back. That last step is what makes the identity a property of the
+  write path rather than of a walk asserted beside it: before the fix the two signals shared one identity
+  and the run builder refused the whole run. Its two helpers are `real_input_sides` (each side named by its
+  **own** dataset's `generation_of_database` + `logical_digest`, so a recorded run names what it read rather
+  than copying one side's snapshot onto the other) and `claim_records_spoken_for_twice` (the union items
+  whose `record_id` is spoken for more than once).
 - **The write/read round trip carries the order and the two-place versions.**
   `test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions`, and
   `test_a_run_records_the_exact_inputs_it_read_as_identities` asserts the snapshots are recorded as
@@ -91,9 +105,14 @@ generation-4 detection store and drives `record_detection_run`/`read_detection_r
   `build_diff_fixture` from the already-registered `mcp/tests/diff_scope_test_support.py` and drives
   `diff_knowledge_scope`/`open_diff_side` from the application layer; this module registers **no** new
   governed evidence artifact and no new contract, which is why the lifecycle catalog's counts stay at
-  thirteen contracts and fifty-four artifacts and only two `consumers` rows were added.
+  thirteen contracts and fifty-four artifacts and only two `consumers` rows were added. The shared-record
+  case added later consumes the same support and nothing else — its other imports are production
+  (`open_read_only_database`, `logical_digest`, `generation_of_database`) — so the module's evidence
+  registration is unchanged by it.
 - **A module-scoped fixture holds the expensive part.** `real_fixture` builds the two-snapshot fixture
-  once for the module, and `run_real_diff` is the one place the shipped comparison is invoked.
+  once for the module, and `run_real_diff` is the one place the shipped comparison is invoked. The
+  shared-record case consumes both and adds no fixture of its own: it opens each side again read-only
+  through `open_read_only_database` to name that side's own dataset identity.
 - **The store fixtures are real.** `detection_store` opens a generation-4 knowledge store and
   `assembled_run` assembles one run from the signals a walk produced, so the write cases drive the
   production entry points rather than a hand-built row.
@@ -141,23 +160,23 @@ No domain documentation source is configured for this repository (`system/source
 | The probe outcome and the omission read from the comparison's own record. | "test_the_walk_declares_the_probe_and_the_omission_the_comparison_actually_recorded" | mcp/tests/test_knowledge_detection_runs.py:421-438 |
 | The two-sided declaration refused rather than widened when one side was read. | "test_a_both_sides_declared_walk_over_one_side_is_refused_rather_than_widened" | mcp/tests/test_knowledge_detection_runs.py:439-453 |
 | **The walk over a real two-snapshot comparison, driven through the shipped application seam.** | "test_the_walk_consumes_the_shipped_comparison_and_emits_facts_only_signals" | mcp/tests/test_knowledge_detection_runs.py:493-540 |
-| **The write/read round trip: the recorded order served back, and the two-place versions.** | "test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions" | mcp/tests/test_knowledge_detection_runs.py:593-640 |
-| Two signals with different declared sets recorded on one run rather than collapsed into a run default. | "test_two_signals_with_different_declared_sets_are_both_recorded_on_one_run" | mcp/tests/test_knowledge_detection_runs.py:641-686 |
-| **The agreement refusal that also asserts zero rows were written.** | "test_a_signal_that_disagrees_with_its_run_is_refused_and_nothing_is_written"; "test_a_run_whose_declared_order_names_other_signals_is_refused" | mcp/tests/test_knowledge_detection_runs.py:687-731 |
-| **Requirement 7.1: a detection write into an assessed database refused, so the measurement cannot invalidate itself.** | "test_a_detection_write_into_an_assessed_database_is_refused" | mcp/tests/test_knowledge_detection_runs.py:732-768 |
-| **The recorded sequence that cannot be reordered or shortened, refused by generation 4's triggers.** | "test_a_recorded_detection_sequence_cannot_be_reordered_or_shortened" | mcp/tests/test_knowledge_detection_runs.py:769-799 |
-| **A re-execution over a changed snapshot as a distinct run naming the difference.** | "test_a_reexecution_over_a_changed_snapshot_is_a_distinct_run_naming_the_difference" | mcp/tests/test_knowledge_detection_runs.py:804-850 |
-| A moved policy version marking the run stale while its signals keep their recorded versions. | "test_a_run_whose_policy_version_moved_is_stale_and_its_signals_keep_their_versions" | mcp/tests/test_knowledge_detection_runs.py:851-876 |
-| **Retention reported through the operation names the destination, and a worktree-local home is not retention.** | "test_a_manifest_reference_reported_through_the_operation_names_its_destination" | mcp/tests/test_knowledge_detection_runs.py:881-906 |
-| The exact inputs recorded as identities rather than as paths. | "test_a_run_records_the_exact_inputs_it_read_as_identities" | mcp/tests/test_knowledge_detection_runs.py:907-930 |
-| **The predating dataset: refused with both generation numbers as facts, migrated nowhere, table still absent.** | "test_a_detection_dataset_predating_generation_4_cannot_be_created_by_migration" | mcp/tests/test_knowledge_detection_runs.py:931-968 |
+| **The write/read round trip: the recorded order served back, and the two-place versions.** | "test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions" | mcp/tests/test_knowledge_detection_runs.py:769-769 |
+| Two signals with different declared sets recorded on one run rather than collapsed into a run default. | "test_two_signals_with_different_declared_sets_are_both_recorded_on_one_run" | mcp/tests/test_knowledge_detection_runs.py:818-818 |
+| **The agreement refusal that also asserts zero rows were written.** | "test_a_signal_that_disagrees_with_its_run_is_refused_and_nothing_is_written"; "test_a_run_whose_declared_order_names_other_signals_is_refused" | mcp/tests/test_knowledge_detection_runs.py:864-864; mcp/tests/test_knowledge_detection_runs.py:892-892 |
+| **Requirement 7.1: a detection write into an assessed database refused, so the measurement cannot invalidate itself.** | "test_a_detection_write_into_an_assessed_database_is_refused" | mcp/tests/test_knowledge_detection_runs.py:909-909 |
+| **The recorded sequence that cannot be reordered or shortened, refused by generation 4's triggers.** | "test_a_recorded_detection_sequence_cannot_be_reordered_or_shortened" | mcp/tests/test_knowledge_detection_runs.py:946-946 |
+| **A re-execution over a changed snapshot as a distinct run naming the difference.** | "test_a_reexecution_over_a_changed_snapshot_is_a_distinct_run_naming_the_difference" | mcp/tests/test_knowledge_detection_runs.py:981-981 |
+| A moved policy version marking the run stale while its signals keep their recorded versions. | "test_a_run_whose_policy_version_moved_is_stale_and_its_signals_keep_their_versions" | mcp/tests/test_knowledge_detection_runs.py:1028-1028 |
+| **Retention reported through the operation names the destination, and a worktree-local home is not retention.** | "test_a_manifest_reference_reported_through_the_operation_names_its_destination" | mcp/tests/test_knowledge_detection_runs.py:1058-1058 |
+| The exact inputs recorded as identities rather than as paths. | "test_a_run_records_the_exact_inputs_it_read_as_identities" | mcp/tests/test_knowledge_detection_runs.py:1084-1084 |
+| **The predating dataset: refused with both generation numbers as facts, migrated nowhere, table still absent.** | "test_a_detection_dataset_predating_generation_4_cannot_be_created_by_migration" | mcp/tests/test_knowledge_detection_runs.py:1108-1108 |
 | The synthetic build of union items, family memberships and anchor resolutions the conditions are provoked from. | `realization_item`; `family_union`; `comparison`; `walk`; `ClaimSpec` | mcp/tests/test_knowledge_detection_runs.py:119-287 |
 | The one anchor-resolution constructor every synthetic item is built through — re-cited at its own extent. | `anchor` | mcp/tests/test_knowledge_detection_runs.py:107-117 |
-| The real store fixture and the run assembled from a walk's signals. | `detection_store`; `assembled_run`; `real_fixture`; `run_real_diff` | mcp/tests/test_knowledge_detection_runs.py:545-592; mcp/tests/test_knowledge_detection_runs.py:458-490 |
+| The real store fixture and the run assembled from a walk's signals. | `detection_store`; `assembled_run`; `real_fixture`; `run_real_diff` | mcp/tests/test_knowledge_detection_runs.py:545-592; mcp/tests/test_knowledge_detection_runs.py:458-490; mcp/tests/test_knowledge_detection_runs.py:721-733; mcp/tests/test_knowledge_detection_runs.py:746-766 |
 | The registered support fixtures this module consumes — **no new artifact and no new contract**. | `DiffFixture`; `build_diff_fixture` | mcp/tests/diff_scope_test_support.py:148-188; mcp/tests/diff_scope_test_support.py:189-215 |
 | The production entry points these cases drive. | `record_detection_run`; `read_detection_run`; `detect_review_conditions`; `build_detection_run` | mcp/src/agents_remember/memory/knowledge/detection.py:263-289; mcp/src/agents_remember/memory/knowledge/detection.py:557-600; mcp/src/agents_remember/memory/knowledge/detection_walk.py:182-247; mcp/src/agents_remember/memory/knowledge/detection.py:144-173 |
 | **The sequence table's two triggers, which are what refuse a reorder or a shortening of a recorded run.** | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:106-116 |
-| The lane row this module is registered under, and the two catalog consumer rows it added. | "unit-regression = ["; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1386-1386; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module is registered under, and the two catalog consumer rows it added. | "unit-regression = ["; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1390-1390; mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References
 
@@ -168,6 +187,19 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T19:53:42+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two anchors). The row names four helpers but carried two ranges: `458-490` (the real-diff walk) and `545-592` (the `run_real_diff` signature), neither of which holds the fixture at `721-733` (`detection_store`) or the assembler at `746-766` (`assembled_run`). Both ranges that carried the other two anchors were kept as they are and the two that carry these anchors were added to the cell, which is the same additive repair this document's own 2026-09-17 entry records for the `status_payload` anchor. The claim, all four anchors and the two original ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions" repointed to mcp/tests/test_knowledge_detection_runs.py:769-769. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_two_signals_with_different_declared_sets_are_both_recorded_on_one_run" repointed to mcp/tests/test_knowledge_detection_runs.py:818-818. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_signal_that_disagrees_with_its_run_is_refused_and_nothing_is_written"; "test_a_run_whose_declared_order_names_other_signals_is_refused" repointed to mcp/tests/test_knowledge_detection_runs.py:864-864; mcp/tests/test_knowledge_detection_runs.py:892-892. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_detection_write_into_an_assessed_database_is_refused" repointed to mcp/tests/test_knowledge_detection_runs.py:909-909. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_recorded_detection_sequence_cannot_be_reordered_or_shortened" repointed to mcp/tests/test_knowledge_detection_runs.py:946-946. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_reexecution_over_a_changed_snapshot_is_a_distinct_run_naming_the_difference" repointed to mcp/tests/test_knowledge_detection_runs.py:981-981. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_run_whose_policy_version_moved_is_stale_and_its_signals_keep_their_versions" repointed to mcp/tests/test_knowledge_detection_runs.py:1028-1028. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_manifest_reference_reported_through_the_operation_names_its_destination" repointed to mcp/tests/test_knowledge_detection_runs.py:1058-1058. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_run_records_the_exact_inputs_it_read_as_identities" repointed to mcp/tests/test_knowledge_detection_runs.py:1084-1084. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_detection_dataset_predating_generation_4_cannot_be_created_by_migration" repointed to mcp/tests/test_knowledge_detection_runs.py:1108-1108. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "unit-regression = ["; "contract:knowledge-diff-cases" repointed to mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/evidence-lifecycle.toml:1390-1390. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:28+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the case this pass added, and corrected the module's case count. The module now holds **20** cases (measured by AST over collected node names: 20 test functions, none parametrized, none marked integration), not the 19 the card stated. The new case is `test_a_run_over_the_shipped_comparison_names_every_signal_once_and_is_recorded` (`test_knowledge_detection_runs.py:597-714`), with helpers `real_input_sides` (`:544-582`) and `claim_records_spoken_for_twice` (`:585-594`); it exercises the duplicate-`signal_id` defect end to end on the shipped comparison — uniqueness, one signal per removed item, identity stability under a reversed item order, and a real `record_detection_run`/`read_detection_run` round trip — and the Logic, the Conventions and the Purpose now state it, including the two facts that make it a delivery case rather than a walk asserted beside one (the fixture precondition is asserted, and both input sides are named by their own datasets' logical digests). The additions are 3 import lines plus 2 helpers plus 1 case; **every existing case's cited range in the table above has therefore shifted**, which is reported rather than patched here because the citation-range repair pass owns those rows. No row, citation or range was rewritten by hand and no verification stamp advanced (the source is uncommitted and closeout owns the stamp).
 - 2026-09-18T15:12:32+00:00: Generated citation repair: "unit-regression = ["; "contract:knowledge-diff-cases" repointed to mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/evidence-lifecycle.toml:1386-1386. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "unit-regression = ["; "contract:knowledge-diff-cases" repointed to mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/evidence-lifecycle.toml:1382-1382. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): created this one-to-one card for the new unit-regression suite over the detection *run*. It records the two halves (a synthetic half that provokes each condition exactly, and a store half that drives the real write and read paths), the scenario/control case that is the responsibility boundary's acceptance shape, the declared order that is total and independent of item order, the unsupported locator as a declared limitation rather than a negative match, the one case that runs a **real** two-snapshot comparison through the shipped application seam, the round trip that serves the recorded order back with the two-place versions, the agreement refusals that also assert nothing was written, requirement 7.1's self-reference refusal, the sequence sealed by generation 4's triggers rather than by the operation alone, the distinct-run re-execution, the stale-but-unreinterpreted run, retention that names its destination, and the predating dataset refused with both generation numbers. It records that this module consumes the already-registered `diff_scope_test_support` fixture and therefore added **no** governed evidence artifact — the catalog's counts stay thirteen contracts and fifty-four artifacts, with two consumer rows added. Verification metadata is the leaf's base commit `4264dcc9`: the code commit does not exist yet and closeout owns that stamp.
