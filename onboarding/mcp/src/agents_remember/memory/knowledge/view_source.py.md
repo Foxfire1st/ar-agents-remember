@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T15:30+02:00 |
 | lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00 |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -181,7 +181,7 @@ re-declares, and the layer where selection, ordering and provenance classificati
 | The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set. | `open_read_only_database` | mcp/src/agents_remember/memory/knowledge/view_source.py:14-17; mcp/src/agents_remember/memory/knowledge/connection.py:52-63 |
 | The snapshot composed from the dataset's own identity rather than a caller's assertion. | `dataset_identity`; `KnowledgeReadSnapshot` | mcp/src/agents_remember/memory/knowledge/view_source.py:19-20; mcp/src/agents_remember/memory/knowledge/logical.py:153-175; mcp/src/agents_remember/models/knowledge/read.py:291-297 |
 | The envelope-and-revision read, with its columns named rather than selected by a star so a later column cannot change what a view sees. | `RECORDS_OF_KIND` | mcp/src/agents_remember/memory/knowledge/view_source.py:48-59 |
-| The two registered totals, each counted from its own table and returned as one counts value. | `REGISTERED_REALIZATIONS`; `REGISTERED_FAMILIES` | mcp/src/agents_remember/memory/knowledge/view_source.py:61-63 |
+| The two registered totals, each counted from its own table and returned as one counts value. | `REGISTERED_REALIZATIONS`; `REGISTERED_FAMILIES` | mcp/src/agents_remember/memory/knowledge/view_source.py:61-63; mcp/src/agents_remember/memory/knowledge/view_source.py:64-64 |
 | Generation 1's own entities read by their own statements instead of being copied into the envelope. | `INVARIANT_REVISIONS`; `FAMILY_REVISIONS` | mcp/src/agents_remember/memory/knowledge/view_source.py:65-88 |
 | One declared statement with no caller and no export: the family-membership read. | `FAMILY_MEMBERS` | mcp/src/agents_remember/memory/knowledge/view_source.py:39-46; mcp/src/agents_remember/memory/knowledge/view_source.py:90-93 |
 | The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. | `REALIZATION_CLAIMS` | mcp/src/agents_remember/memory/knowledge/view_source.py:95-102 |
@@ -189,7 +189,7 @@ re-declares, and the layer where selection, ordering and provenance classificati
 | The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. | `_sequence`; `_provenance_author`; `decode_typed_column` | mcp/src/agents_remember/memory/knowledge/view_source.py:126-151; mcp/src/agents_remember/memory/knowledge/records.py:64-67 |
 | The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers. | `StoreViewReader`; `KnowledgeViewReader` | mcp/src/agents_remember/memory/knowledge/view_source.py:154-173; mcp/src/agents_remember/models/knowledge/view.py:862-881 |
 | The snapshot accessor, the registered counts and the per-kind read with its lifetime cache. | `snapshot`; `registered_counts`; `rows`; `_cache` | mcp/src/agents_remember/memory/knowledge/view_source.py:175-197 |
-| The entity row readers and the attachment read, plus the count helper that refuses an empty count result. | `invariant_rows`; `family_rows`; `realization_rows`; `attachment_rows`; `_count` | mcp/src/agents_remember/memory/knowledge/view_source.py:199-244; mcp/src/agents_remember/memory/knowledge/view_source.py:263-266 |
+| The entity row readers and the attachment read, plus the count helper that refuses an empty count result. | `invariant_rows`; `family_rows`; `realization_rows`; `attachment_rows`; `_count` | mcp/src/agents_remember/memory/knowledge/view_source.py:199-244; mcp/src/agents_remember/memory/knowledge/view_source.py:263-266; mcp/src/agents_remember/memory/knowledge/view_source.py:267-270 |
 | The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. | `anchor_state`; `ViewReaderError` | mcp/src/agents_remember/memory/knowledge/view_source.py:246-259; mcp/src/agents_remember/models/knowledge/view.py:152-158 |
 | The row builders, each naming its record kind and schema and building its payload from named columns. | `_invariant_row`; `_family_row`; `_realization_row`; `_attachment_row`; `_decode_row` | mcp/src/agents_remember/memory/knowledge/view_source.py:274-354 |
 | Both entry points, with the anchor resolver passed in rather than resolved at this layer. | `store_view_reader`; `open_view_reader` | mcp/src/agents_remember/memory/knowledge/view_source.py:357-407 |

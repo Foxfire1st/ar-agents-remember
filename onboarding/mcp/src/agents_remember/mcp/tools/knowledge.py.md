@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T15:30+02:00 |
 | lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00 |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview | `mcp/src/agents_remember/mcp/tools/overview.md` |
 
@@ -67,7 +67,7 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The module's own statement that nothing here decides anything, the list of decisions it refuses to make, and the unresolved-state rule that replaces them. | "no classification is computed, no effect label is inferred, no draft is authored"; "unresolved state instead" | mcp/src/agents_remember/mcp/tools/knowledge.py:1-18 |
 | The public surface: the four request value objects and the five payload builders, one per mounted operation family. | `__all__` | mcp/src/agents_remember/mcp/tools/knowledge.py:43-53 |
-| The closed set of record kinds this surface has an admitted write operation for, with the reason a kind outside it is refused rather than written by a second path. | `ADMITTED_CHANGE_KINDS` | mcp/src/agents_remember/mcp/tools/knowledge.py:55-59; mcp/src/agents_remember/mcp/tools/knowledge.py:63-63 |
+| The closed set of record kinds this surface has an admitted write operation for, with the reason a kind outside it is refused rather than written by a second path. | `ADMITTED_CHANGE_KINDS` | mcp/src/agents_remember/mcp/tools/knowledge.py:55-59; mcp/src/agents_remember/mcp/tools/knowledge.py:63-63; mcp/src/agents_remember/mcp/tools/knowledge.py:66-66 |
 | The flat read request as one frozen value, with the continuation, the two revision selectors and the optional source roots it carries. | `ReadToolRequest` | mcp/src/agents_remember/mcp/tools/knowledge.py:62-80 |
 | The change, diff and project request values, including the per-path overwrite authorization the projection operation consumes. | `ChangeToolRequest`; `DiffToolRequest`; `ProjectToolRequest` | mcp/src/agents_remember/mcp/tools/knowledge.py:83-114 |
 | The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. | `_refused_read` | mcp/src/agents_remember/mcp/tools/knowledge.py:117-125 |
