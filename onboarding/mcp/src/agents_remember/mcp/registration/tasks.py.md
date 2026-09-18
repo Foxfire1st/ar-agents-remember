@@ -5,9 +5,10 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-18T14:54+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l3-ar` uncommitted source (`mcp/src/agents_remember/mcp/registration/tasks.py` **248 → 253 lines**, the `curator_coherence` description only); base `a12c511f6e76bd1188719cad0a9104d78d46920c` |
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -49,7 +50,7 @@ creates exactly one and requires `{id, title}`, refusing an id that already exis
 `read_steps` is the read-only focused checklist read; and all of them address one exact existing unit
 by `step={id, parent?}`, where `parent` selects the namespace. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:114-136).
+explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:119-141).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -140,7 +141,34 @@ canonical, keeps semantic revision/attempt/digest identities separate, requires 
 `code:`/`memory:`/`task:` evidence references for exact candidate judgments, and names the shared
 validator used by memory and closeout. It explicitly forbids historical-filename fallback.
 
+**The description now names every field `publish` requires (260918-TSIP-L3, `T50`).** The enforced
+validator (`models/lifecycles/curator_coherence.py:294-328` `_action_has_one_input_shape`) needs
+**nine** non-null fields: `semantic_requirement_revision`, `delivery_attempt`,
+`expected_predecessor_digest`, `expected_code_candidate_tree`, `expected_memory_candidate_tree`,
+`expected_task_topology_fingerprint`, `expected_task_intent`, `expected_attestation_sha256` and
+`caller`. The published text named the identity classes `prepare` returns and never marked
+`semantic_requirement_revision` or `delivery_attempt` as required, so a caller could satisfy
+everything the registered contract named and still be refused. The text now names all nine, says
+`status`/`prepare`/`validate` forbid them, and the refusal names the absent ones — **the description
+is load-bearing here because the JSON schema cannot carry the constraint**: the request model marks
+only `action` and `contract_path` required, since the requirement is conditional on
+`action == "publish"`. Pinned in `mcp/tests/test_tools.py` (`CuratorCoherencePublishContractTests`)
+against both surfaces at once.
+
 ## Update History
+- 2026-09-18T14:54+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
+  base `a12c511f`): the `curator_coherence` **description** is one of the leaf's five changed paths,
+  so the card gained a **body** update rather than a restamp. The registered text now names all nine
+  fields `publish` requires, says `status`/`prepare`/`validate` forbid them, and the validator's
+  refusal appends `missing: <fields>` (`T50`, both halves). Recorded why the description rather than
+  the schema carries it: `CuratorCoherenceRequest.model_json_schema()["required"]` is
+  `["action","contract_path"]` because the constraint is conditional on `action == "publish"`, and a
+  model-level validator reports `loc: ()`, so the message is the caller's only route to the field.
+  One citation into this file was re-derived against the new bytes — the `skip_step` vocabulary row
+  moved `:114-136 → :119-141` (every one of its six anchors re-read inside the new range) — and the
+  card's other citation rows point at other files and were not moved by this source. `lastUpdated`
+  advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` stay at the recorded
+  verification because the candidate is uncommitted and the governed closeout owns the real code commit.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:144-144. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: the `task_doc` tool **description** now
   advertises the step plane split by intent. Recorded the new operation vocabulary

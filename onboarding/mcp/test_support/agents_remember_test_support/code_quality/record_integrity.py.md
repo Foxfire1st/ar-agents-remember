@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T13:39+02:00 |
-| lastVerifiedCommitHash | `a12c511f6e76bd1188719cad0a9104d78d46920c` |
-| lastVerifiedCommitDate | 2026-09-18T14:03:17+02:00|
+| lastUpdated |  2026-09-18T14:55+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l2-ar` uncommitted source (this file is an addition, **1110 lines**, sha256 `b860e9a2bb2ab1f7a1beb596168644d398f89e23bb858d065232ca43c6e20a90`, 47,642 bytes); base `d9becade1a373f2272501f7451746ccc259ca9ac` |
 | governingOverview | `overview.md` |
 
@@ -179,7 +179,7 @@ certification pass. Every range was derived against the current 1110-line source
 | The coordination root as an input rather than a hard-coded layout, or a refusal naming it. | `COORDINATION_ROOT_ENV`; `coordination_root_from_environment` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:953-1002 |
 | The run that joins the figure comparison only when claims are supplied. | `run_all` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1005-1033 |
 | The runner, its repeatable inputs, and the exit status that reports a finding. | `build_parser`; `main` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1036-1110 |
-| The 37 cases that pin these behaviours against the historical artifacts, in both directions. | `LeafDocumentAgainstContractTests`; `MasterRowAgainstLeafDocumentTests`; `RegisterOwnerArrowTests`; `DeclaredFigureCurrencyTests`; `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:158-1000 |
+| The 37 cases that pin these behaviours against the historical artifacts, in both directions. | `LeafDocumentAgainstContractTests`; `MasterRowAgainstLeafDocumentTests`; `RegisterOwnerArrowTests`; `DeclaredFigureCurrencyTests`; `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:257-1140 |
 | The lane this module's contract suite is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" | mcp/tests/test-evidence-lanes.toml:246-246 |
 
 ## Cross-Repo References
@@ -196,6 +196,7 @@ path and **skips with the reason named** when they are absent.
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+- 2026-09-18T14:55+02:00 — 260918-TSIP-L3 curator (citation repair, `ar/260918-tsip-l3-ar`, base `a12c511f`): The five-class row was re-scoped `:158-1000 → :257-1140`: the leaf's repair round inserted 140 lines inside that extent, so a prefix-preserving move would have ended at `:1012` and missed `RecordIntegrityReportTests` entirely (which now begins at `:1015`). The range is the current extent covering all five class declarations. The claim's wording was re-read against the new bytes and is unchanged — only the range moved, because this leaf's edit to `mcp/tests/test_record_integrity.py` inserted lines above it. `lastUpdated` advances with this repair; `lastVerifiedCommitHash` is deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real code commit.
 
 - 2026-09-18T13:39+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
   base `d9becade`): created this card for the new module the leaf added, so the source file has its

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T13:44+02:00 |
-| lastVerifiedCommitHash | `a12c511f6e76bd1188719cad0a9104d78d46920c` |
-| lastVerifiedCommitDate | 2026-09-18T14:03:17+02:00|
+| lastUpdated | 2026-09-18T14:57+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,8 @@ register's prose census has no honest check, because finding the census means pa
 Markdown and its bucket rule is undeclared; and the contracts with no matching leaf document are
 counted rather than judged.
 
-Its contract suite is `mcp/tests/test_record_integrity.py` (**1000 lines, 37 cases**), registered in
+Its contract suite is `mcp/tests/test_record_integrity.py` (**1140 lines, 37 cases** — 1000 lines when
+it was delivered, and the case count has not moved since), registered in
 the `architecture-fitness` lane of `mcp/tests/test-evidence-lanes.toml` because the module imports
 this package and executes nothing over a real boundary. Fourteen of those cases read the real record
 and **skip** without `AR_COORDINATION_ROOT`, and the `T45` documents are read **by Git object** at
@@ -162,6 +163,17 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-18T14:57+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
+  base `a12c511f`): **a stale number in prose, and no check can see it (`T45`).** This route's own
+  governed sources did not change, so the route-body gate was silent here; but the leaf's `T51` repair
+  round took this route's **contract suite**, `mcp/tests/test_record_integrity.py`, from 1000 to
+  **1140 lines**, and this document still described it as 1000. `style.citations.range_resolution` sees
+  only anchors inside cited ranges and `style.citations.claim_reopen` only re-opens cited claims, so the
+  figure stayed green in every run. The body now reads **1140 lines, 37 cases** with the prior figure
+  recorded as as-of, and the case count is unchanged. Found by grepping the memory tree for the changed
+  file's old size rather than by running the checker — the rule L1 earned. `lastUpdated` advances with
+  this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because
+  the candidate is uncommitted and the governed closeout owns the real code commit.
 - 2026-09-18T13:44+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
   base `d9becade`): this route's governed sources changed, so a body section was **added rather than
   annotated** — `## 260918-TSIP-L2 Record-Integrity Comparisons`, recording that the route gained a

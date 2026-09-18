@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastUpdated |  2026-09-18T14:55+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | The advertised tuple names the structural public surface, and is now defined in the `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
 | The adapter re-exports the roster through `__all__` instead of declaring its own copy. | "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/mcp/tools/base.py:19-19 |
-| The live registration is compared to this tuple, in order, by the inventory suite. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-281 |
+| The live registration is compared to this tuple, in order, by the inventory suite. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:222-283 |
 | The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | Registrars are the only published declaration family. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:36-49 |
 
@@ -191,6 +191,7 @@ is `mcp/tools/base.py`. Read them as history; read the roster's current home fro
 advertised name set", that now means the re-exported object, which is the same object.
 
 ## Update History
+- 2026-09-18T14:55+02:00 — 260918-TSIP-L3 curator (citation repair, `ar/260918-tsip-l3-ar`, base `a12c511f`): `PublicSurfaceInventoryTests` was repointed `:220-281 → :222-283`. The claim's wording was re-read against the new bytes and is unchanged — only the range moved, because this leaf's edit to `mcp/tests/test_tools.py` inserted lines above it. `lastUpdated` advances with this repair; `lastVerifiedCommitHash` is deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real code commit.
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: **`PUBLIC_TOOLS` moved out of this module.** The
   tuple's one definition is now `models/tools/public_roster.py:22-85`; this card's Purpose, Code
   Commentary, Conventions, invariants and reference rows are rewritten to describe a 24-line

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated |  2026-09-18T14:55+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -210,7 +210,7 @@ contract is supported by the implementation and the authorized cache-retirement 
 | Refuse to stage anywhere except a task's own throwaway worktree. | "Refuse to stage anywhere except a task's own throwaway worktree." | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:26-26 |
 | Refuse before staging when the checkout has unresolved conflicts. | `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:44-56 |
 | Prepare and certify a fresh candidate through the ordinary gate entry point. | "Prepare and certify a fresh candidate through the ordinary gate entry point" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:145-145 |
-| The case that pins the checkpoint description as a partial publication and denies it is the pause. | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:287-309 |
+| The case that pins the checkpoint description as a partial publication and denies it is the pause. | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:289-311 |
 | The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:149-192 |
 
 ## Historical R39 Integration Tool Contract
@@ -257,6 +257,7 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | N/A | N/A |
 
 ## Update History
+- 2026-09-18T14:55+02:00 — 260918-TSIP-L3 curator (citation repair, `ar/260918-tsip-l3-ar`, base `a12c511f`): `test_the_checkpoint_description_publishes_rather_than_pausing` was repointed `:287-309 → :289-311`. The claim's wording was re-read against the new bytes and is unchanged — only the range moved, because this leaf's edit to `mcp/tests/test_tools.py` inserted lines above it. `lastUpdated` advances with this repair; `lastVerifiedCommitHash` is deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real code commit.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Documented the removed public ledger arguments and the surviving two-output publication contract. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

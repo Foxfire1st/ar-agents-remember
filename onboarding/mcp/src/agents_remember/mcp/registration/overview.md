@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated |  2026-09-18T14:56+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../../../../../overview.md`                     |
 
@@ -330,6 +330,26 @@ separate, historical Markdown is never searched, and `validate` is the shared ad
 The memory registrar exposes raw `qualityChecklistStatus` separately from combined readiness and
 documents deterministic same-input attestation behavior.
 
+## 260918-TSIP-L3 The Published Description Names Its Nine Fields (`T50`)
+
+`curator_coherence`'s registered description is the load-bearing contract for `publish`, because the
+request schema cannot express the requirement: `CuratorCoherenceRequest.model_json_schema()
+["required"]` is `["action","contract_path"]`, the nine publication fields are conditional on
+`action == "publish"`, and a model-level validator reports `loc: ()`. The description previously named
+the identity classes `prepare` returns without marking `semantic_requirement_revision`,
+`delivery_attempt` or `caller` required, so a caller could supply every field the published text named
+and still be refused with *"publish requires every identity, predecessor, and caller field"*. The
+registered text now names all nine — `semantic_requirement_revision`, `delivery_attempt`,
+`expected_predecessor_digest`, `expected_code_candidate_tree`, `expected_memory_candidate_tree`,
+`expected_task_topology_fingerprint`, `expected_task_intent`, `expected_attestation_sha256`, `caller` —
+and states that `status`/`prepare`/`validate` forbid them, while
+`models/lifecycles/curator_coherence.py`'s refusal appends `missing: <every absent field>`. **The two
+halves are separate surfaces and can regress alone**, so both are pinned in
+`mcp/tests/test_tools.py::CuratorCoherencePublishContractTests`: one `publish` request per omitted
+field, each asserted against `errors()[0]["msg"]` rather than the rendered error (which echoes
+`input_value` and would report "named" for a message that names nothing), with the complete request
+accepted first as the positive control.
+
 ## MCAR-L03 Memory Tool Advertisement
 
 The memory-quality tool schema and description distinguish official diagnostics from exact leaf
@@ -444,6 +464,15 @@ is reported in the result, so a reader can still see which patterns produced the
 when a caller narrowed it.
 
 ## Update History
+- 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`, base `a12c511f`):
+  this route's governed source changed (`mcp/registration/tasks.py`, 248 → 253 lines), so a body
+  section was **added rather than annotated** — `## 260918-TSIP-L3 The Published Description Names Its
+  Nine Fields (`T50`)` — recording that the `curator_coherence` description is the load-bearing
+  contract for `publish` because the request schema cannot carry the conditional requirement, that the
+  text now names all nine fields, and that both halves are pinned through the real registered tool.
+  No citation points into this document, so no sweep was needed here. `lastUpdated` advances with this
+  body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because the
+  candidate is uncommitted and the governed closeout owns the real code commit.
 
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the additive keyword-only `experiment` parameter on
   the registered `runtime_install` tool in the new section above, including that it is a per-call

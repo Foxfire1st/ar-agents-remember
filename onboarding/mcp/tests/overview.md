@@ -5,16 +5,52 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-09-18T13:45+02:00 |
-| lastVerifiedCommitHash | `a12c511f6e76bd1188719cad0a9104d78d46920c` |
-| lastVerifiedCommitDate | 2026-09-18T14:03:17+02:00|
+| lastUpdated            | 2026-09-18T14:55+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
+
+## 260918-TSIP-L3 The Publish Contract, The Mode Pins, And `T51`'s Class Repair
+
+Three of this route's modules changed and **no module was added**. **`mcp/tests/test_tools.py` (364 →
+468 lines, 10 → 12 cases)** gained `CuratorCoherencePublishContractTests`, which pins `T50`'s two
+disagreements separately because either can regress alone: the registered `curator_coherence`
+description must name all nine fields `publish` requires, and a real `publish` request must be
+refused with `missing: <field>` once per omitted field — with the complete request accepted first as
+the positive control, so a mistyped field name cannot make the case pass for an unrelated reason. The
+same case pins that the JSON schema **cannot** carry the requirement
+(`required == ["action","contract_path"]`, because it is conditional on `action == "publish"`), which
+is why the published description is the load-bearing surface.
+
+**`mcp/tests/test_checkout_coordination_isolation.py` (180 → 241 lines, 8 → 10 cases)** gained two
+cases that assert the execution-mode boundary **as it is**: a two-arm case whose arm A is the plane's
+real refusal — the positive control — and whose arm B shows one unauthenticated
+`declare_execution_mode("mcp")` lifting the refusal *and* switching the process to the live authority
+settings, plus a case driving `declare_lifecycle_operation_process()`, a mode the plane reserves in
+words to a plane-owned operation record and which nothing in the product calls. Both are **pins, not
+endorsements**: authentication is deliberately not implemented (`D-L3-1` in `notes/defect-index.md`),
+so the day it is, these cases go red on purpose.
+
+**`mcp/tests/test_record_integrity.py` (1000 → 1140 lines, still 37 cases)** had four live-state reads
+frozen by class (`T51`). `DECLARED_LEAVES` / `DECLARED_LEAF_COUNT` and `_frozen_leaf_snapshot` prune
+the copied master to the two leaves L1 and L2 landed, write their document statuses and reduce the
+master's rows to them, so the subject count, the unmatched-row verdict, the register's `authority`
+count and the CLI's clean-world exit are the case's own rather than the world's. The module's real
+claims held while those counts failed, which is the finding: a fixture that asserts a live population
+is green exactly while the world happens to match it.
+
+**`mcp/tests/test-evidence-lanes.toml` was not touched**, because the two new cases ride
+already-registered modules, so no lane row moved and no citation below one is invalidated. This leaf
+is the first on the master to avoid `T31` by construction rather than by repair, and it paid for that
+in the integration lane's population (274 → 276 of 300) rather than in 212 renumbered manifest lines.
 
 ## 260918-TSIP-L2 Record-Integrity Module And Its Lane Row
 
 This route gained one module and one lane row. `mcp/tests/test_record_integrity.py` (**1000 lines, 37
-cases** — measured on this candidate: 37 `def test_` methods in five classes, **0** module-level
+cases** as the L2 curator measured it on that candidate; the case count still holds, and the file is
+**1140 lines** after L3's `T51` repair — see the section above) — measured on this candidate: 37
+`def test_` methods in five classes, **0** module-level
 cases, **0** parametrisations, and `pytest --collect-only -q` → **`37 tests collected`**, so the
 collected count and the defined count are the same 37) pins the four record comparisons shipped in
 `mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py`, each against the
@@ -1295,7 +1331,7 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins. | `FreshUserFixtureShapeTests`; `FreshUserScenarioContractTests` | mcp/tests/test_fresh_user_harness.py:110-186; mcp/tests/test_fresh_user_harness.py:189-235 |
 | The lane rows that admit both L14 modules to the `unit-regression` lane. | "mcp/tests/test_citation_index_resilience.py"; "mcp/tests/test_fresh_user_harness.py" | mcp/tests/test-evidence-lanes.toml:27-27; mcp/tests/test-evidence-lanes.toml:62-62; mcp/tests/test-evidence-lanes.toml:29-29; mcp/tests/test-evidence-lanes.toml:67-67 |
 | The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. | "path = \"scripts/e2e_harness/fresh_user_fixture.py\"" | mcp/tests/evidence-lifecycle.toml:1272-1272 |
-| The live public-surface inventory contract for the advertised MCP tool tuple. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-341 |
+| The live public-surface inventory contract for the advertised MCP tool tuple. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:222-343 |
 | The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
 | The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:322-329; mcp/src/agents_remember/models/worktree.py:355-363 |
 | The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:175-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
@@ -1340,6 +1376,21 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-18T14:55+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
+  base `a12c511f`): this route's governed sources changed, so a body section was **added rather than
+  annotated** — `## 260918-TSIP-L3 The Publish Contract, The Mode Pins, And `T51`'s Class Repair` —
+  recording the three changed modules and, deliberately, the one that did **not** change:
+  `mcp/tests/test-evidence-lanes.toml` is byte-identical to base, so no lane row moved and no citation
+  below one is invalidated. **Two corrections belong to this pass, both `T45`'s class** — a number a
+  reader takes as current while no check can see it: the L2 section's `**1000 lines**` figure for
+  `mcp/tests/test_record_integrity.py` is now annotated rather than silently left, because this leaf's
+  `T51` repair took the file to **1140 lines** while the case count stayed 37; and **one citation into
+  this document was re-derived from these post-edit bytes rather than from the numbers the edit was
+  planned against** — `onboarding/mcp/tests/test_eve_protocol.py.md`'s two ranges into this file moved
+  with the insertion and were repaired in the same pass, which is `T31`'s rule applied by the seat that
+  made the edit. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash` /
+  `lastVerifiedCommitDate` are deliberately unchanged because the candidate is uncommitted and the
+  governed closeout owns the real code and memory commits.
 - 2026-09-18T13:45+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
   base `d9becade`): this route's governed sources changed, so a body section was **added rather than
   annotated** — `## 260918-TSIP-L2 Record-Integrity Module And Its Lane Row`, recording the new

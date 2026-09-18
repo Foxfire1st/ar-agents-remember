@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_eve_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `a12c511f6e76bd1188719cad0a9104d78d46920c` |
-| lastVerifiedCommitDate | 2026-09-18T14:03:17+02:00|
+| lastUpdated | 2026-09-18T14:56+02:00 |
+| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ pass was available for this file.
 | The bounded replay window whose occupancy and eviction these cases pin. | `EveEventDeduplicator`; `EVE_REPLAY_WINDOW`; `retained` | mcp/src/agents_remember/serving/eve_protocol.py:224-268 |
 | The production request builders and the transport these wire cases drive. | `create_session_body`; `follow_up_body`; `cancel_turn_body`; `EveRuntimeProcess` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89; mcp/src/agents_remember/serving/eve_runtime_client.py:118-372 |
 | The adapter cases that consume this same wire layer one level up. | `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests` | mcp/tests/test_eve_adapter.py:661-907 |
-| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:689-709; onboarding/mcp/tests/overview.md:711-713 |
+| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:725-745; onboarding/mcp/tests/overview.md:747-749 |
 
 ## Cross-Repo References
 
@@ -112,6 +112,15 @@ No external repository boundary is implemented by this test.
 | The protocol shapes under test are the pinned published `eve` package's contract, not a sibling repository's. | `eve` | mcp/src/agents_remember/serving/eve_protocol.py:32-40 |
 
 ## Update History
+- 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
+  base `a12c511f`): **citation repair, no content change.** The row above cites two headings in
+  `onboarding/mcp/tests/overview.md`, and that document gained a body section for this leaf (+36 lines
+  above both headings) — the **second** consecutive leaf whose insertion moved them, which is why the
+  sweep was run against the post-edit bytes rather than against the numbers the edit was planned
+  against. Read back on those bytes: `## Fixture Roles And Claims` `689` → **`725`** and
+  `## Isolation And Collection` `711` → **`747`**, so the row moved `689-709; 711-713` →
+  **`725-745; 747-749`** (each boundary line compared with the line it held before the edit). The
+  anchors and the claim are unchanged and no verification stamp advanced.
 - 2026-09-18T13:46+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
   base `d9becade`): **citation repair, no content change.** The row above cites two headings in
   `onboarding/mcp/tests/overview.md`; that document gained a body section for this leaf's module, which
