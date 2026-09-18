@@ -5,10 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated | 2026-09-15T01:13+00:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00 |
-| governingOverview      | `overview.md`                                              |
+| lastUpdated | 2026-09-18T14:05:00+02:00 
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00| governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
 
@@ -138,6 +137,7 @@ checklist publication moved to `memory_scope.py` and `memory_quality_controller.
 caller from reimplementing the controller's failure vocabulary.
 
 ## Update History
+- 2026-09-18T14:05:00+02:00 — 260915-KS-L13 owning seat: re-read the `CitationOperationScope` claim against the current module: the class is declared at :44 and the cited range :44-55 still holds it, so the wording is unchanged and the range is unchanged; the construct changed structurally since 420669c4 and the claim still states it.
 
 - 2026-09-17T12:40+02:00 — 260915-CAPS-L14 curator: recorded the module's **one citation construction point**. `_citation_trees` builds the citation `Trees` for all four citation operations and carries the caller's own excludes into it, validated through `validate_caller_excludes`; `CitationOperationScope` gained the `excludes` field, so a caller-supplied exclude and the memory layer's `system/settings.json` register are read in one place rather than four, and `Trees` takes them as a value so two operations over one root cannot change each other's population. **Flattened three tables from the legacy `| Finding | Citations | Source Path |` shape to the required `| Finding | Anchor | Source |` form** (the body also carried four inline `cit:([…], path:a-b)` cells, which are now plain `path:start-end`), and **re-derived every range**: the parameter objects cited at `:309-314` / `:322-338` / `:342-345` are now at `:336-348` / `:349-368` / `:369-376`, the route-index range at `:279-315`, and the `memory_scope` row cited a range that neither held `resolve_memory_scope` nor `MemoryScope`. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 

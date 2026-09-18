@@ -5,10 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:16 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00 |
-| governingOverview | `../../../overview.md` |
+| lastUpdated | 2026-09-18T14:05:00+02:00 
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
@@ -128,6 +127,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | n/a | n/a |
 
 ## Update History
+- 2026-09-18T14:05:00+02:00 — 260915-KS-L13 owning seat: re-read the `BaselineRequest` claim against the current module: the class is declared at :46 and the cited range :46-53 still holds it, so the wording and the range are unchanged; the construct changed structurally since 420669c4 and the claim still states it.
 
 - 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the branch-authority and
   content-exclusion changes this leaf made** (`CAPS-R13@v1`, the absorbed `260820` runtime-correctness
