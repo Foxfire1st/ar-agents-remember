@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `f031314345b674d0733c4619fe34d78c1b02ba26` |
+| lastVerifiedCommitDate | 2026-09-18T10:15:50+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
