@@ -5,14 +5,56 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-18T12:32+02:00 |
+| lastVerifiedCommitHash | `d9becade1a373f2272501f7451746ccc259ca9ac` |
+| lastVerifiedCommitDate | 2026-09-18T12:33:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [Python verification infrastructure](../overview.md)
+
+## 260918-TSIP-L1 Instrument-Discipline Helpers
+
+This route gained a fourth verification-helper module, `instrument_discipline.py`, beside
+`citations.py`, `structural_limits.py` and `scope.py`. It is a helper library, not a gate: it exposes
+no CLI, no registry entry and no plan step, and the quality plan does not invoke it.
+
+What it owns is narrower and older than this route's other helpers. Each of its four surfaces makes
+one *measurement admissibility* condition mechanical, so an inadmissible measurement cannot be
+stated at all — and after this leaf's independent review those conditions are strictly stronger than
+the first revision shipped. As the repaired source now states them:
+
+- a count or a zero is returned only after the pattern reproduced a positive witness, refused a
+  negative one, **and is the pattern the probe actually proved**: a proved probe licenses the shape
+  it proved and nothing else;
+- a captured window ends at its unit boundary and reports which boundary closed it, **the line cap
+  included**, so a capped capture is never shaped like a complete one and the lines it left unread
+  stay visible;
+- a pass claim printed after a crash marker is refused as not attributable to a run that completed;
+  an artifact with **no recorded run** — no exit status recorded as one, and no producer transcript —
+  is refused; a run that **exited non-zero and reported no result** is refused as a crash, because
+  that is the shape a crash takes when it leaves no traceback; and a clean result with no stated way
+  to fail is refused as vacuous, where the evidence that the check can fail must be a **non-zero**
+  result rather than the presence of the word `finding` in a disclaimer;
+- a record must name a producer that exists in the package, with a command and a revision, before the
+  producer is accepted as the artifact's source; reproduction is then byte-exact, writes its scratch
+  output **outside the directory holding the evidence it is checking**, and answers `matches=False`
+  rather than raising when the producer exits non-zero or writes nothing.
+
+That places it in the route as *instrument* evidence rather than product evidence. Its contract test
+is `mcp/tests/test_instrument_discipline.py`, registered in the `architecture-fitness` lane of
+`mcp/tests/test-evidence-lanes.toml`; the test imports this package and executes nothing over a real
+boundary, which is why the structural-invariant lane is the behaviour-preserving one for it and
+`unit-regression` is not. The route's own rule that coverage and CRAP are diagnostic applies
+unchanged here: the helper exists to make a number trustworthy, not to raise a metric, and it is
+excluded from production measurement like its siblings.
+
+Because this module is where the previous master's instrument faults became checks, its card carries
+the one fault the check committed against itself — a `\b` that cannot match the plural `findings`,
+which the shipped unit cases passed with. That is recorded on the file card and is deliberately not
+smoothed here: a route that presented its own instrument as faultless would be the class this route
+just shipped a guard against.
 
 ## What This Area Is
 
@@ -78,6 +120,34 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-18T12:32+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
+  `ar/260918-tsip-l1-ar`, base `f0313143`): this route's governor changed under it again. The leaf's
+  independent review returned three blocking findings and the fix worker revised
+  `instrument_discipline.py` **361 → 432 lines**, so the section above was **corrected rather than
+  annotated**: it now states the repaired contract — the pattern-licence binding in `counted_pattern`,
+  the `line cap` closer in `capture_bounded_window`, the narrow recorded-exit rule and the fourth
+  refusal in `check_artifact_refusal`, the non-zero-result vacuity rule, and reproduction that writes
+  into a scratch directory and answers `matches=False` instead of raising. This route carries no
+  counts or line numbers for that module, so nothing here had gone stale *numerically*; what had gone
+  stale was the strength of the contract it described, which a reader would have taken as the shipped
+  one. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate`
+  are deliberately unchanged because the candidate is uncommitted and the governed closeout owns the
+  real code and memory commits.
+
+- 2026-09-18T11:46+02:00 — 260918-TSIP-L1 curator (uncommitted change set on `ar/260918-tsip-l1-ar`,
+  base `f0313143`): this route's governed sources changed, so a body section was **added rather than
+  annotated** — `## 260918-TSIP-L1 Instrument-Discipline Helpers`, recording that the route gained a
+  fourth verification-helper module beside `citations.py`, `structural_limits.py` and `scope.py`. The
+  section states what the module owns (four measurement-admissibility conditions, each refusing
+  rather than returning an unlicensed number), why it lands in this route as *instrument* evidence
+  rather than product evidence, and why its contract test is registered in the
+  `architecture-fitness` lane. It also carries the module's own first-draft fault rather than
+  smoothing it. The loader was re-run at this candidate and is silent — `pytest
+  tests/test_evidence_lanes.py tests/test_suite_budget.py -q` → **4 passed in 0.54 s**. Verification
+  metadata remains closeout-owned: `lastUpdated` tracks this body edit, and
+  `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because the candidate
+  is uncommitted and the governed closeout owns the real code and memory commits.
+
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `projection_types.py` +30/−11): this route's generator changed, so a body section was
   added rather than an annotation. `projection_types.py` now states the current contract: the served

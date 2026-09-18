@@ -5,11 +5,49 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-09-17T19:30+02:00 |
-| lastVerifiedCommitHash | `f031314345b674d0733c4619fe34d78c1b02ba26` |
-| lastVerifiedCommitDate | 2026-09-18T10:15:50+02:00|
+| lastUpdated            | 2026-09-18T12:32+02:00 |
+| lastVerifiedCommitHash | `d9becade1a373f2272501f7451746ccc259ca9ac` |
+| lastVerifiedCommitDate | 2026-09-18T12:33:45+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
+
+## 260918-TSIP-L1 Instrument-Discipline Module And Its Lane Row
+
+This route gained one module and one lane row. `mcp/tests/test_instrument_discipline.py` (**537 lines,
+27 cases** — re-measured on the current candidate: 26 `def test_` methods in five classes plus 1
+module-level `def test_`, with **0** parametrisations and **0** subtests, so `pytest
+--collect-only -q` reports `27 tests collected`) pins the measurement-admissibility conditions shipped
+in `mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py`, each against
+the historical artifact it was written for and in both directions: the shipped function refuses the
+artifact that carried the fault, and accepts the artifact that replaced it. A check asserted in only
+the refusal direction cannot be shown to be non-vacuous, which is the fault the module exists to
+catch.
+
+Its row was inserted in the existing **`architecture-fitness`** lane at `:232`, between
+`test_file_size_detector.py` (`:231`) and `test_layering.py` (`:233`) — the lane that owns structural
+invariants. The module imports the verification package and executes nothing over a real boundary, so
+`unit-regression` and `integration` are both wrong for it. The fail-closed loader is silent at this
+candidate: `pytest tests/test_evidence_lanes.py tests/test_suite_budget.py -q` → **4 passed in
+0.54 s**.
+
+**The insertion moved every later row down by one, and that is the fact a reader of this route needs
+most.** `test_pause_is_not_publication.py` moved `:235` → `:236` and `test_codex_capsule_delivery.py`
+moved `:253` → `:254`. Four memory documents cited the pre-insertion numbers and all four were
+repaired in the same pass — three mechanically through the shipped citation fixer (`ccr-r10@v1`:
+`test-evidence-lanes.toml.md`, `test_codex_capsule_delivery.py.md`,
+`test_pause_is_not_publication.py.md`) and one aggregate row in this document's own
+`Repo-Internal References` by hand, because it mixed two anchors across four cited ranges and the
+fixer declined it. A line number recorded on this route before this leaf must have one added for
+every row at or below `:232`.
+
+**One case skips rather than passes.** The transcriber case re-reads
+`memory-refresh-finding-21-routes.json` under the previous master's task root and skips when that
+package is absent, so a green run in a workspace without it has not checked the transcription. And
+the suite's own recorded limit belongs in this route too: the **then-16** cases passed while the
+module under test still carried a `\b` that cannot match the plural `findings` — a hand-written
+fixture cannot license a pattern, only the real artifact can. (The count is stated in the past tense
+deliberately: it is a fact about the suite as it stood, not about the current 27 cases, which were
+added after the repair.)
 
 ## 260915-CAPS-L9 Experiment-Installation Test Population
 
@@ -1224,7 +1262,7 @@ existing memory preparation surfaces. A citation is source evidence, not a recor
 | The L36 lane registration the fail-closed manifest requires. | "mcp/tests/test_cross_master_concurrency.py" | mcp/tests/test-evidence-lanes.toml:180-180 |
 | The L37 stop boundary proof: the public pause, the measured world, the ten independently-failing cases and the four refusal shapes. Its never-selected case asserts the already-vacant success rather than a refusal, and the two L38 cases added after it pin the unreadable record and the vacant foreign record. | `PauseStopsAnAtomicMasterTests`; `_world`; `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`; `test_an_unreadable_record_is_refused_not_reported_stopped`; `test_a_record_naming_another_master_is_refused_not_released` | mcp/tests/test_pause_stop_only_end_to_end.py:86-556; mcp/tests/test_pause_stop_only_end_to_end.py:150-168; mcp/tests/test_pause_stop_only_end_to_end.py:203-234; mcp/tests/test_pause_stop_only_end_to_end.py:236-263; mcp/tests/test_pause_stop_only_end_to_end.py:265-317; mcp/tests/test_pause_stop_only_end_to_end.py:445-471; mcp/tests/test_pause_stop_only_end_to_end.py:473-526 |
 | The L37 structural half: the pause's import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The L37 lane registrations the fail-closed manifest requires, one per new module (the pause suite's row at `:162` is unaffected by the later insertions; the AST-only guard's row moved `:193` → `:194` → `:195`). | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:170-170; mcp/tests/test-evidence-lanes.toml:205-205; mcp/tests/test-evidence-lanes.toml:199-199; mcp/tests/test-evidence-lanes.toml:235-235 |
+| The L37 lane registrations the fail-closed manifest requires, one per new module, re-derived at this candidate: the pause suite's row at `:199` and the AST-only guard's row at `:236`. `260918-TSIP-L1`'s `test_instrument_discipline.py` row at `:232` pushed the guard's row down by one — it read `:235` before that leaf — while the pause suite's `:199` sits above the insertion point and did not move. | "mcp/tests/test_pause_stop_only_end_to_end.py"; "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:199-199; mcp/tests/test-evidence-lanes.toml:236-236 |
 | The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. | `LifecyclePlaythroughTests`; `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173; mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-173 |
 | The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:193-193 |
 | The L4 census module's lane row, which closed the gap the L4 route section recorded. | "mcp/tests/test_memory_attribution_producers.py" | mcp/tests/test-evidence-lanes.toml:85-85 |
@@ -1259,6 +1297,50 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-18T12:32+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
+  `ar/260918-tsip-l1-ar`, base `f0313143`): the section above carried two numbers that had gone stale,
+  and **neither was reachable by any memory check** — they are prose, not citations, so
+  `style.citations.range_resolution` and `style.citations.claim_reopen` both stayed silent while this
+  route told its readers the suite was 350 lines / 16 cases. Found by grepping this memory tree for
+  the old figures, not by running the checker. Corrected in the body to the **measured** current
+  values (537 lines; **27** cases = 26 `def test_` methods in five classes + 1 module-level
+  `def test_`, 0 parametrisations, 0 subtests; `pytest --collect-only -q` → `27 tests collected`), and
+  the earlier "its 16 cases passed" sentence was re-worded to the past tense rather than renumbered,
+  because 27 cases did not pass with the `\b` bug in place — 16 did. The previous entry on this route
+  is left as the as-of record of the first pass and is **not** rewritten. The lane row at `:232` is
+  unchanged and `test-evidence-lanes.toml` was not touched by the repair, so no citation on this route
+  moved. The lesson this pass cost: **a stale number in prose is invisible to every memory check; only
+  a curator who reads or greps for it will find it.** `lastUpdated` advances with this body edit;
+  `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because the candidate
+  is uncommitted and the governed closeout owns the real code and memory commits.
+
+- 2026-09-18T11:46+02:00 — 260918-TSIP-L1 curator (uncommitted change set on `ar/260918-tsip-l1-ar`,
+  base `f0313143`): this route's governed sources changed, so a body section was **added rather than
+  annotated** — `## 260918-TSIP-L1 Instrument-Discipline Module And Its Lane Row` — and one existing
+  reference row was corrected rather than re-pointed. The new module
+  (`mcp/tests/test_instrument_discipline.py`) was registered in the `architecture-fitness` lane at
+  `:232`; the loader is silent at this candidate (`pytest tests/test_evidence_lanes.py
+  tests/test_suite_budget.py -q` → **4 passed in 0.54 s**) and the shipped case count was measured on
+  this candidate (15 class methods + 1 module-level function = **16**) rather than taken from prose.
+  **The insertion shifted every row at or below `:232` down by one**, which invalidated four citation
+  rows in this memory tree: `test-evidence-lanes.toml.md`, `test_codex_capsule_delivery.py.md` and
+  `test_pause_is_not_publication.py.md` were repaired mechanically by the shipped citation fixer
+  (`ccr-r10@v1`, `:235`→`:236` twice and `:253`→`:254`), and the L37 lane-registration row in this
+  document's own `Repo-Internal References` was corrected by hand because it mixed two anchors across
+  four cited ranges and the fixer declined it as ambiguous. That row now cites the two ranges that
+  actually hold its two named anchors (`:199` and `:236`) instead of four ranges of which two held
+  other modules; its prose was corrected to state the current position rather than deleted.
+  **A further consequence was caught on the next memory-quality pass and repaired here:** inserting
+  the new section at the top of this document moved its own headings down by 35 lines, which
+  invalidated `mcp/tests/test_eve_protocol.py.md:104` — it cited `## Fixture Roles And Claims` at
+  `:608-628` and `## Isolation And Collection` at `:630-632`, and both were repointed to `:643-663`
+  and `:665-667`. The lesson is the same one the lane-row insertion teaches, one level up: **a
+  curator who edits a route overview renumbers that overview's own citations held by other
+  documents**, so the overview edit and the citation sweep are one operation, not two.
+  `lastUpdated` tracks this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are
+  deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real
+  code and memory commits.
+
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `test_the_mutation_harness_can_actually_fail` repointed to mcp/tests/test_capsule_serving.py:1305-1317. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_capsule_serving.py" repointed to mcp/tests/test-evidence-lanes.toml:21-21. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
