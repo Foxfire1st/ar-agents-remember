@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-18T05:15+02:00 |
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,9 +32,15 @@ is a **hard failure** rather than a silent inventory drift. `260915-KS-L11` move
 its catalog edit: **13 contracts, 54 artifacts, digest
 `19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa`** (from `4 / 45 / 293a187f…`, through the
 `KS-L1`–`KS-L11` registrations, from L7's `10 / 51 / 461121ca…`, from L8's `11 / 52 / 4cf81f10…`, and from
-L10's `12 / 53 / 9b057632…`). The comment above the constants says what
-the pin is for and names the digest it supersedes; **a future catalog change must re-pin deliberately, in the
-same change**, and the counts must move with the blocks they count. The pin's own verification is the module's
+L10's `12 / 53 / 9b057632…`).
+**`260915-KS-L14` then moved only the digest — `19ed0525…` →
+`c6956899947b0435e5cdd8cd77ba3121db77e3dbf4676bee11406c3baf03ec68` — with both counts unchanged, and that
+is the shape worth reading.** The detection leaf's catalog change is a **consumer change only**: its two test
+modules use the already-registered `diff_scope_test_support` and `read_scope_test_support` fixtures, so no
+artifact and no contract was added, while the two `consumers` rows it did add changed the file's bytes. The
+counts therefore stay at **13 / 54** and the pin still had to move; the comment above the constant records
+that reason, alongside the standing rule that **a future catalog change must re-pin deliberately, in the
+same change**, and that the counts must move with the blocks they count. The pin's own verification is the module's
 `_assert_the_catalog_kept_its_bytes_and_identities`, which recomputes the file's sha256 and counts both block
 kinds before comparing them to the three constants.
 
@@ -80,6 +86,7 @@ No cross-repository implementation evidence is required for these local test and
 
 ## Update History
 
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): recorded the **fifth deliberate re-pin of the evidence-catalog identity, and the first one where only the digest moved.** `LIFECYCLE_CATALOG_SHA256` `19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa` → **`c6956899947b0435e5cdd8cd77ba3121db77e3dbf4676bee11406c3baf03ec68`** (re-measured by hashing the file), while `LIFECYCLE_CONTRACT_COUNT` stays **13** and `LIFECYCLE_ARTIFACT_COUNT` stays **54** — because this leaf's catalog change is a **consumer change only**: two `consumers` rows for `mcp/tests/test_knowledge_detection_runs.py` on the already-registered `diff_scope_test_support` and `read_scope_test_support` artifacts, no new artifact and no new contract. The body's pin paragraph now states that shape explicitly, so a successor can tell a consumer-only re-pin from a population move, and it keeps the rule the earlier entries stated: **a catalog change must re-pin deliberately in the same change, with the counts moving with the blocks they count** — and the reason written beside the constant in the source is what makes the re-pin auditable rather than convenient. Verification metadata advances to the leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the **fourth deliberate re-pin of the evidence-catalog identity**, moved in the same change as this leaf's catalog rows — `LIFECYCLE_CONTRACT_COUNT` 12 → **13**, `LIFECYCLE_ARTIFACT_COUNT` 53 → **54**, and `LIFECYCLE_CATALOG_SHA256` `9b057632…` → **`19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa`**, measured on the frozen candidate by counting the blocks and hashing the file. The body's pin paragraph now carries the whole chain of states (`4 / 45 / 293a187f…` → … → `12 / 53 / 9b057632…` → `13 / 54 / 19ed0525…`), because a successor must be able to see that every move was deliberate. The catalog change itself is one new contract/artifact pair (`knowledge-facet-cases` for `mcp/tests/facet_test_support.py`) plus a wording-only edit to the existing `knowledge-generation-cases` row. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the **second deliberate re-pin of the evidence-catalog identity** and re-derived the card's citations against the new bytes — `LIFECYCLE_CONTRACT_COUNT` 10 → **11**, `LIFECYCLE_ARTIFACT_COUNT` 51 → **52**, and `LIFECYCLE_CATALOG_SHA256` `461121ca…` → **`4cf81f10dbbd6b941c50887dca45154612e5e46b7135465823af3e6604db3747`** (measured on the frozen candidate by counting the blocks and hashing the file). The card now names the check that makes the pin real — `_assert_the_catalog_kept_its_bytes_and_identities`, which recomputes the file's digest and counts both block kinds before comparing them to the constants — and records that this leaf's catalog change is a **new contract/artifact pair** (`knowledge-diff-cases` for `mcp/tests/diff_scope_test_support.py`) **plus** two consumer rows added to the existing read-scope artifact. It also keeps the rule the L7 entry stated, in the form a successor needs: **a catalog change must re-pin deliberately in the same change, with the counts moving with the blocks they count.** Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the **evidence-catalog pin** this module carries and the deliberate re-pin this leaf made alongside its own catalog row — `LIFECYCLE_CONTRACT_COUNT` 4 → **10**, `LIFECYCLE_ARTIFACT_COUNT` 45 → **51**, and `LIFECYCLE_CATALOG_SHA256` `293a187f…` → **`461121ca16567ab056938b710b19bddb98867581dd4fe3cf7ee2645111d54369`**. The card states why the pin exists in the form a successor needs: any change to `mcp/tests/evidence-lifecycle.toml` that nobody meant becomes a hard failure, and **a catalog change must re-pin deliberately in the same change, with the counts moving with the blocks they count**. It also records that the pin's comment names the digest it supersedes, so the history of the freeze is auditable from the source rather than only from this card. Verification metadata remains empty until closeout stamps the code commit.

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_facets.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastUpdated | 2026-09-18T05:15+02:00 |
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,9 +21,15 @@
 protects one clause group: the closed subtype vocabulary and its payload seam, authorship and lifecycle as
 stored data, the typed attachment contract, the decision's supersession edge, the independently editable
 explanation, the candidate write path, the registered generation, and the read projection beside the shipped
-selection. The module is `unit-regression` (row `mcp/tests/test-evidence-lanes.toml:71`) and is hermetic:
+selection. The module is `unit-regression` (row `mcp/tests/test-evidence-lanes.toml:73`) and is hermetic:
 temporary directories, in-process APSW databases built through the production application seam, and one
 recorded generation-2 fixture.
+
+**Two of its cases were re-scoped by `KS-R14@v1`, and both keep their protected property.** Appending
+generation 4 falsified exactly two assertions here — the two that spelled the *shared* substrate's membership
+as a closed list this leaf legitimately grew — and each gained the replacement fact rather than being deleted,
+skipped or xfailed. Both carry a `RE-SCOPED for KS-R14@v1` paragraph in the case docstring, and the Logic
+section below states what each one now asserts.
 
 Two properties are load-bearing enough that the module docstring names them before the cases:
 
@@ -48,7 +54,13 @@ population that runs at all, since an over-budget population raises `UsageError`
 - **The vocabulary's closure is asserted three ways** in `test_the_seam_registry_is_exactly_the_eight_declared_subtypes`:
   the payload union's member literals equal `FACET_KINDS`; `FACET_RECORD_SCHEMAS` and the seam's
   `FACET_RECORD_KINDS` have the same key set; and `KIND_SCHEMAS` is exactly the eight kinds plus the
-  marked-internal conformance kind. The same case checks the per-kind model's `extra`/`frozen` config, that
+  marked-internal conformance kind. **RE-SCOPED for `KS-R14@v1`:** the registry this asserts against is the
+  *shared* envelope seam, and `KS-R10@v1`'s own docstring named the concrete non-facet categories as later
+  leaves; `KS-R14@v1` registers the mechanical-detection pair through it. The case therefore states the
+  three groups the registry now declares — the internal conformance kind, the eight facet kinds and
+  `DETECTION_RECORD_KINDS` — and states the facet half **more precisely than before** by asserting
+  `KIND_SCHEMAS[kind] == {FACET_RECORD_SCHEMAS[kind]}` for each of the eight, so the facet kinds' admissible
+  schemas are still exactly their declared ones. The same case checks the per-kind model's `extra`/`frozen` config, that
   `PAYLOAD_MODELS[(kind, schema)]` is that model, the derived envelope row's `record_schema`
   (`facet-decision/v1`), the two subject kinds, the two seed models, and the six writable tables.
 - **The per-subtype walk** in `test_every_subtype_refuses_a_bad_shape_a_missing_meaning_and_its_own_provenance`
@@ -106,13 +118,17 @@ population that runs at all, since an over-budget population raises `UsageError`
   unchanged counts, refuses a command presented to another operation's entry point with
   `expected`/`observed` `("add_facet", "attach_facet")`, and refuses a stale batch expectation over a stored
   facet revision with `stale_precondition`.
-- **The generation case measures the registry rather than asserting it**: versions `[1, 2, 3]`, names
-  `ar-knowledge-sqlite/v1|v2|v3`, `CURRENT_GENERATION is GENERATION_3`, generation 1's fingerprint equal to
-  its constant, generation 2's equal to the **pre-leaf** constant, generation 2 at sixteen tables,
-  generation 3's table prefix equal to generation 2's with equal columns and keys per name, the appended
-  four in order, no `ALTER TABLE` in any generation's statements, every appended DDL `STRICT` and without
-  `ON DELETE CASCADE` and with its key columns `NOT NULL`, and `explanation_no_rebind` naming everything
-  except `current_revision_id`.
+- **The generation case measures the registry rather than asserting it**, and **`KS-R14@v1` re-scoped it**:
+  the two assertions that spelled the registry's membership as a closed list of three are replaced by the fact
+  they were standing in for, so the case now asserts versions `[1, 2, 3, 4]` with the four schema names,
+  `GENERATION_3` still a member at `user_version == 3`, and `CURRENT_GENERATION is GENERATIONS[-1]` — i.e. the
+  created generation is named as "the newest registered one" rather than pinned to a literal the next
+  generation would falsify. Generation 1's fingerprint is still asserted equal to its constant, generation 2's
+  to the **pre-leaf** constant, generation 2 at sixteen tables, generation 3's table prefix equal to
+  generation 2's with equal columns and keys per name, the appended four in order, no `ALTER TABLE` in any
+  generation's statements, every appended DDL `STRICT` and without `ON DELETE CASCADE` and with its key
+  columns `NOT NULL`, and `explanation_no_rebind` naming everything except `current_revision_id` — every
+  generation-3-specific assertion is unchanged.
 - **The predating-dataset case** builds a genuine version-2 dataset, refuses a facet write with
   `unsupported_schema` and expected/observed `"3"`/`"2"`, asserts the same facts through
   `require_facet_generation`, asserts a shipped generation-1-table write still works in that dataset, and
@@ -142,12 +158,16 @@ population that runs at all, since an over-budget population raises `UsageError`
 
 ### Invariants And Boundaries
 
-- **The suite is at the declared ceiling with the rest of the unit population** — 17 cases, and the leaf's
-  worker report records the population at 1250 against `unit_case_budget = 1250`. Adding a case without
-  removing or consolidating one is refused by collection rather than by review.
-- **No case was skipped, xfailed or deselected**, and the two checks the worker did not run — the
-  contract-scoped memory-quality operation and `--certify` — are named in the worker report rather than
-  implied by a green suite.
+- **The suite is still 17 cases, and the ceiling claim this card used to carry is corrected rather than
+  carried.** The card said the module sat "at the declared ceiling with the rest of the unit population …
+  1250 against `unit_case_budget = 1250`"; that was true when the L11 leaf measured it and is **not** the
+  current pair. `KS-R14@v1`'s worker report measures the unit population at **1315** and the integration
+  population at **322** against the declared `unit_case_budget = 1500` / `integration_case_budget = 400`, and
+  this leaf added no case here — its two detection suites are separate modules. Adding a case to *this* module
+  without removing or consolidating one is still refused by collection rather than by review.
+- **No case was skipped, xfailed or deselected**, and the two checks the L11 worker did not run — the
+  contract-scoped memory-quality operation and `--certify` — are named in that leaf's worker report rather
+  than implied by a green suite. The two re-scoped cases run in the population that is green on this candidate.
 - **Boundary.** This module protects behavior; it makes no requirement-acceptance claim on its own, and the
   recorded constants it reads are evidence about the *shipped* selection rather than a claim about the new
   one.
@@ -169,7 +189,7 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The closure case: the payload union, the schema map, the seam's kind set and the derived envelope row.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes" | mcp/tests/test_knowledge_facets.py:181-227 |
+| **The closure case: the payload union, the schema map, the seam's three kind groups and the derived envelope row — re-scoped by `KS-R14@v1` and the case that carries the `RE-SCOPED` paragraph.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes" | mcp/tests/test_knowledge_facets.py:182-227 |
 | **The per-subtype walk: a valid shape, an undeclared field, a dropped meaning, three provenance substitutions and the ninth subtype.** | "test_every_subtype_refuses_a_bad_shape_a_missing_meaning_and_its_own_provenance" | mcp/tests/test_knowledge_facets.py:229-280 |
 | The ninth subtype refused through the write path with the table counts unchanged. | "test_an_unknown_ninth_subtype_is_refused_and_never_stored_as_a_generic_facet" | mcp/tests/test_knowledge_facets.py:283-299 |
 | **The receipt's field set, the seven absent verdict words and the stored authorship-versus-decider split.** | "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:306-343 |
@@ -182,12 +202,13 @@ No domain documentation source is configured for this repository (`system/source
 | **The explanation's separability: the designated first revision, the unchanged statement digests, and the closed subject set.** | "test_an_explanation_is_separable_and_editing_it_never_rewrites_the_statement" | mcp/tests/test_knowledge_facets.py:678-785 |
 | **The widened union and the dispatch tables measured against the twelve shipped kinds.** | "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" | mcp/tests/test_knowledge_facets.py:788-806 |
 | **Both entry points, the batch rollback, the wrong-operation refusal and the facet-row expectation.** | "test_the_two_entry_points_agree_and_a_refused_write_writes_nothing" | mcp/tests/test_knowledge_facets.py:809-875 |
-| **The registry, the additive prefix, the `STRICT` idiom and the rebind trigger's named columns.** | "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" | mcp/tests/test_knowledge_facets.py:888-932 |
+| **The registry, the additive prefix, the `STRICT` idiom and the rebind trigger's named columns — re-scoped by `KS-R14@v1` so the created generation is named as the newest registered one.** | "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" | mcp/tests/test_knowledge_facets.py:901-935 |
 | **The dataset that predates the facet tables: refused, unmigrated and still served as its own generation.** | "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:935-979 |
 | **The byte-identity comparison against the pre-leaf page and result digests, with the shipped constants unchanged.** | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy" | mcp/tests/test_knowledge_facets.py:986-1035 |
 | **The exact facet page, the empty-but-real selection, the incompleteness refusal and the damaged-seal refusal.** | "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:1037-1141 |
 | The harness, the measured constants and the production entry points these cases drive. | `write_facet`; `build_recorded_fixture`; `PRE_LEAF_PAGE_DIGEST` | mcp/tests/facet_test_support.py:362-380; mcp/tests/facet_test_support.py:535-658; mcp/tests/facet_test_support.py:96-96 |
-| The lane row this module is registered under, and the governed artifact it imports. | "unit-regression = ["; "id = \"knowledge-facet-cases\"" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/evidence-lifecycle.toml:1192-1212 |
+| The lane row this module is registered under. | "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:5-5 |
+| **The governed artifact this module imports, by its own artifact id, and the two detection consumer rows `KS-R14@v1` added beneath it.** | "id = \"knowledge-facet-cases\"" | mcp/tests/evidence-lifecycle.toml:1192-1192 |
 
 ## Cross-Repo References
 
@@ -198,4 +219,6 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read this card against the current source and recorded the two cases `KS-R14@v1` re-scoped.** Appending generation 4 falsified exactly two assertions in this module — both spelled the *shared* substrate's membership as a closed list the leaf legitimately grew — and the card's Logic now states what each one asserts instead: the seam-registry case states the registry's **three groups** and pins the facet half *more* precisely by asserting each kind's admissible schema set, and the generation case names the created generation as `GENERATIONS[-1]` rather than as a literal the next generation would falsify, with every generation-3-specific assertion unchanged. **One claim this card carried is corrected rather than carried:** its ceiling paragraph said the unit population was 1250 against `unit_case_budget = 1250`; that was the L11 leaf's own measurement, and the current pair is **1315 against 1500** (integration 322 against 400), which is what the paragraph now says. The lane-row pointer moved with the two-line lane insertion (`:71` → `:73`) and the two re-scoped cases' rows were re-cited (`:181-227` → `:182-227`, `:888-932` → `:901-935`). No case was deleted, skipped or xfailed, and no verification stamp is advanced over content that was not re-read: this card's body was re-read against the current source, and the code commit does not exist yet — closeout owns that stamp.
+- 2026-09-18T02:37:44+00:00: Generated citation repair: "id = \"knowledge-facet-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1192-1192. No content impact: mechanical anchor-range projection bound to citation source snapshot d211cfd02f11c0600198b11c621aa5574ac8743db6e0ca1d2c92936e561c5146; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the new unit-regression suite. It records the two properties the module names before its cases (the payload seam as the only payload decision point, and nothing derived), the **case-ceiling reason** a case carries a loop rather than a parametrization with its stated cost, each of the seventeen nodes and the clause group it protects — the closure assertions, the eight-kind refusal walk, stored authorship and lifecycle, accepted-origin refusal at both entry points, the four endpoint kinds in both directions, the one-row removal, the explicit ungoverned and unattached states, the retained superseded decision with its three unchanged digests, the cycle rollback and the four database refusals, the separable explanation with the designated first revision, the widened union and dispatch tables, the two entry points, the registry and additive prefix, the predating dataset, and the two read cases (byte identity against the pre-leaf digests, and the exact facet page with its incompleteness and damaged-seal refusals) — plus the lane row and the governed artifact it is registered under. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

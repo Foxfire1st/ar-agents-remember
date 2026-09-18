@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash |  `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate |  2026-09-18T01:58:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-18T05:15+02:00 |
+| lastVerifiedCommitHash |  `e963a01c6804570d597e451eaa069eaba66bd3ec`|
+| lastVerifiedCommitDate |  2026-09-18T04:45:39+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -59,8 +59,12 @@ row-digest guard, and `knowledge/endpoints.py` owns the shared relation-endpoint
 declaration of generation 1's ten STRICT tables, its fifteen immutability triggers and the structural manifest and
 fingerprint of a *generation record*; `knowledge/schema_generations.py` owns **which generations exist** — generation
 1 pinned as data with its fingerprint constant and drift gate, generation 2 = generation 1 plus `knowledge/schema_v2.py`'s
-six appended tables — and the dispatch that selects one from the dataset rather than from the running build;
-`knowledge/record_envelope.py` owns the one payload-admissibility seam; `knowledge/routes.py` owns the route
+six appended tables, generation 3 = generation 2 plus `knowledge/schema_v3.py`'s four authored-judgment tables, and
+generation 4 = generation 3 plus `knowledge/schema_v4.py`'s one detection-sequence table — and the dispatch that
+selects one from the dataset rather than from the running build;
+`knowledge/record_envelope.py` owns the one payload-admissibility seam and the three disjoint record groups it now
+registers (the internal conformance kind, the eight authored facet kinds and the two mechanical-detection kinds);
+`knowledge/routes.py` owns the route
 confinement rule, the acyclic-hierarchy walk and the route/association write and read operations;
 `knowledge/connection.py` owns the pragma contract, the one-row reader, the read-only connection every identity
 confirmation uses, and the open-time schema validation; `baseline.py` / `carryover.py` / `carryover_authority.py`
@@ -81,7 +85,12 @@ executed once over one snapshot, plus whole-item paging over an already-selected
 `knowledge/read_queries.py` (one statement per lookup, all on the caller's connection), `knowledge/read_anchors.py`
 (the anchor observation against the requested code tree) and `knowledge/read_refusals.py` (the read's refusal
 vocabulary), with `knowledge/logical.py`'s public `cell_value` as the one decoder a read page and the logical
-digest share.
+digest share. **The mechanical-detection half** is `knowledge/detection_walk.py` (the deterministic walk that
+decides which recorded comparison facts match which declared condition and emits facts-only signals in the
+declared total order) and `knowledge/detection.py` (the detection *record*: one run's assembly, its ordered
+write, its verified read, its reproducibility and currentness answers, and the two refusals that keep a
+detection write out of the assessed dataset's own measurement transaction), with `knowledge/schema_v4.py`
+declaring generation 4's one appended table — the recorded order of one run's signals.
 
 ## Detailed Route Context
 
@@ -736,6 +745,64 @@ the only statement about which explanation revision matters is the designation t
 digest-guarded designation and the pre-write reference checks make unreachable on every path this leaf's
 cases drive. A later leaf that makes an empty write reachable meets a `ValidationError`, not a third state.
 
+### 260915-KS-L14 Mechanical Detection, Generation 4, And Where A Detection Record Lives
+
+This route's storage package gained **generation 4** and the detection *record* group, and the leaf's most
+consequential decision is a **negative** one: where a detection record is written.
+
+**A detection record is written into a store that is not the dataset it measured.** Requirement 7.1 is
+enforced structurally rather than promised. The request names the databases the run assessed
+(`DetectionRunRequest.assessed_database_paths`), and `record_detection_run` refuses **before any row is
+written** when the detection store's own real path is one of them, with the code
+`detection_self_reference` — a code only a detection write can reach, added to the shipped
+`KnowledgeRefusalCode` beside the two operation names (`record_detection_run`, `read_detection_run`). The
+reason is stated where the gate is: a detector whose own output moves the logical digest of the dataset it
+just digested has invalidated its own signal. The gate order is scope → generation → separation →
+agreement, and all four run before the store's exclusive candidate lock is taken.
+
+**Generation 4 appends one table and retypes nothing.** `knowledge/schema_v4.py` declares
+`detection_run_signal` with columns `repository_id`, `run_id`, `ordinal`, `signal_id`, the primary key
+`(repository_id, run_id, ordinal)`, `UNIQUE (repository_id, run_id, signal_id)`, `CHECK (ordinal >= 0)`,
+two composite foreign keys to `knowledge_record(repository_id, record_id)` and two immutability triggers,
+and `GENERATION_4` composes it onto generation 3 exactly as generations 2 and 3 compose onto their
+predecessors — so `GENERATION_4.tables[: len(GENERATION_3.tables)] == GENERATION_3.tables` and generation
+4's columns, primary keys and typed-JSON registries for each of generation 3's twenty names are generation
+3's. `ordinal` in the key plus the unique signal key together make the declared total order over signal
+identity a **constraint of the table**; the two triggers are what make "never overwrites the recorded one"
+hold against a later code path that forgot it as well as against this one. The generation is **read at
+intake, not assumed**: the registry is ordered oldest first and `CURRENT_GENERATION = GENERATIONS[-1]`, so a
+*created* store declares version 4 while an existing generation-3 dataset keeps declaring 3 and is read
+through generation 3's own record.
+
+**Why one table and not a record group.** A detection signal and a detection run are typed records the
+`KS-R10@v1` envelope already holds, and their payload shapes are registered in
+`knowledge/record_envelope.py`'s `PAYLOAD_MODELS` under `(detection_signal, detection-signal/v1)` and
+`(detection_run, detection-run/v1)`. That makes the signal's required field set, its closed vocabularies and
+its construction refusals declared **once**, in `models.knowledge.detection`, rather than restated
+as SQL columns; what the envelope cannot express is the *sequence*, which is what generation 4 stores. The
+envelope's registry now holds three disjoint groups — the internal conformance kind, the eight authored
+facet kinds and the two detection kinds — and `DETECTION_RECORD_KINDS` is derived from the same declarations
+the entries are built from rather than restated.
+
+**One cross-store association is deliberately left unset, and nothing became optional.** A detection
+record's governing route names a route in the **assessed** repository's namespace, while the record lives in
+a store that is not the assessed dataset. Binding `knowledge_record.governing_route_id` would require copying
+the assessed route into the detection store, and a second copy of one fact is a second authority — the thing
+the design forbids for a shared knowledge view. The column is therefore written `NULL` for this record group,
+with the reason recorded in the code, and the route stays a **required validated field** on the run and on
+every signal, both of which fail construction without it.
+
+**The write path and the read path are separated by protected property, not by call boundary.**
+`knowledge/detection.py` owns the store's refusals, the one immediate transaction and the verified read;
+`knowledge/detection_walk.py` owns the classification, holds no SQL and re-selects nothing. The walk reads
+R08's recorded comparison facts and never the bytes behind them, derives each signal's identity from the
+recorded group key and orders the sequence by the declared condition vocabulary; the record module writes
+one `detection_run_signal` row per ordinal via `enumerate`, so the recorded order **is** the order the walk
+produced. A read re-derives each stored revision's own content digest and reports a mismatch as a damaged
+store rather than serving it. `compare_detection_runs` and `run_currentness` write nothing: a re-execution
+that differs is reported as two distinct runs, and a moved policy version marks a run **stale** without any
+signal being reinterpreted.
+
 ## Invariants And Boundaries
 
 - **A schema generation is data, and dispatch reads the dataset.** `knowledge/schema_generations.py` owns which
@@ -791,6 +858,14 @@ cases drive. A later leaf that makes an empty write reachable meets a `Validatio
 - **A published write helper assumes the caller's lock and transaction.** The batch forced those helpers public; a
   future caller that invokes one outside a transaction would write an autocommitted row silently. Every shipped call
   site satisfies the precondition, and keeping the rule is what the one-lock/one-transaction invariant rests on.
+- **A measurement never enters the transaction of what it measured.** A detection run is written into a store that
+  is a different database from every assessed snapshot, and the check is the datasets' own resolved file identity
+  rather than a caller's promise — so `detection_self_reference` is a structural refusal, not a documented
+  convention. Nothing on this route migrates a dataset to obtain a writable target either: a dataset that predates
+  generation 4 is refused with both generation numbers as facts.
+- **A recorded order is a sealed fact.** `detection_run_signal` is keyed by ordinal, unique over the signal, and
+  sealed by two triggers, so reordering or shortening a recorded detection sequence is refused by the database and
+  not only by the operation that wrote it.
 
 ## Repo-Internal References
 
@@ -850,7 +925,10 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:618-650; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:656-656 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows and the three exact consumer declarations. | "integration = ["; "id = \"knowledge-identity-branching-fixture\""; "id = \"knowledge-snapshot-lifecycle-cases\""; "id = \"common-base-merge-cases\"" | mcp/tests/test-evidence-lanes.toml:158-158; mcp/tests/evidence-lifecycle.toml:1031-1059; mcp/tests/evidence-lifecycle.toml:1110-1133; mcp/tests/evidence-lifecycle.toml:1135-1159 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:160-160 |
+| The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1032-1032 |
+| The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1111-1111 |
+| The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1136-1136 |
 
 **The pre-L6 rows below remain in the superseded two-column shape** and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside one leaf's curation pass.
 
@@ -894,6 +972,7 @@ checkout, but neither establishes a boundary contract here.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): added the **mechanical-detection** route section and refreshed the two body claims the leaf moved. The new section states the leaf's most consequential decision as the negative one it is — **a detection record is written into a store that is not the dataset it measured**, enforced by resolved file identity with the new `detection_self_reference` code before any row is written, with the four gates ordered scope → generation → separation → agreement and all of them before the candidate lock — plus **generation 4's one-table append** (`detection_run_signal`, `ordinal` in the primary key and a unique signal key making the declared total order a table constraint, two triggers sealing reorder and shortening), why the payload shapes live in the envelope registry rather than in columns, and that the **envelope's governing-route association is deliberately unset** for this record group because the route lives in the assessed namespace and copying it would be a second authority — while the route stays a required validated field on the run and on every signal, so nothing became optional. It also records the walk/record split by protected property (the walk holds no SQL and re-selects nothing; the record module owns the refusals and the one transaction), the read that re-derives each revision's own digest and reports a mismatch as a damaged store, and the two read-only answers (a differing re-execution is two distinct runs; a moved policy version marks a run stale without reinterpreting a signal). The Hot Path Summary now names the detection half and the four composed generations, and two invariant bullets were added: a measurement never enters the transaction of what it measured, and a recorded order is a sealed fact. One stale citation in this overview was **re-read and re-cited by hand** rather than machine-projected: the registry row that carried four anchors across two files and could not resolve to a single extent is split into four rows, one file and one anchor each. Verification metadata advances to this leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded **generation 3 and the facet sub-route** — the route's fourth registered generation, the six-act write path with two entry points per act, and the facet-specific selection that does not extend `KS-R07@v1`'s. The section states the four rules shaping the write path (the payload seam as the only payload decision point; provenance from the admission and `authority_home` from the namespace; proposed-origin-only at **both** entry points with the shipped `promotion_not_supported`; and every reference checked before the row it belongs to), the **union widening from twelve command kinds to eighteen** with the shipped twelve unchanged, and the three shapes that make the requirements structural rather than disciplinary: the **per-kind checked foreign-key group** (the forbidden polymorphic shape has no `endpoint_id` column to land in), the **three-column subject reference** that makes a revision's identity claim a table constraint, and `current_revision_id` as the **one mutable field** with the rebind trigger naming every other column while supersession adds an edge row and nothing else. It records the facet selection's own policy name and its two contract properties (complete-or-refused with no cursor; nothing derived, with the stored designation the only currency statement) and why a shipped seed's page stays byte-identical — no shared code path rather than a guard. It also records **one measured divergence** rather than smoothing it over: `_apply_facet_command` constructs `state="no_change"` while the receipt declares only `applied`/`refused`, unreachable on every path the leaf's cases drive. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 - 2026-09-17T20:39:57+00:00: Generated citation repair: "test_destination_admission_refuses_before_any_staging_work" repointed to mcp/tests/test_knowledge_portable_boundaries.py:656-656. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **reviewed the route because its recorded intent was contradicted, not merely extended.** The leaf removed the premise this route was written on: the schema stopped being one build-time shape whose `SCHEMA_USER_VERSION` moved when the DDL changed, and became a registry of frozen, selectable generations (`knowledge/schema_generations.py` — generation 1 pinned as data with its fingerprint constant and a gate that **fails rather than warns**, generation 2 composed as an append and declared in `knowledge/schema_v2.py`), with dispatch reading the dataset: `PRAGMA user_version` alone for an open file, the type-strict `(schema, userVersion)` pair for an artifact, and creation declaring `CURRENT_GENERATION` because an empty database has no version to read. The body now states that contradiction and retires it explicitly: **`SCHEMA_USER_VERSION = 2` is no longer how a schema change happens**, and **the encoder is no longer derived from `schema.CANONICAL_TABLES`** — it is parameterised over the selected generation, so every digest is total over its own generation's manifest and an unchanged version-1 dataset keeps its version-1 digest byte for byte. It records the additive-only rule and why the governing-route association is three new join tables rather than a column on a generation-1 table (**no `ALTER TABLE` anywhere in the package**), the envelope's payload seam with its one internal conformance kind and the shipped `invalid_payload` code, `Route` as an operable scope axis (nine-entry confinement rule table with normalisation-as-comparison, an acyclicity walk anchored on the edge, `author_route` returning an existing route rather than a second row, `set_governing_route` refusing a different route for an already-governed row, and `find_governing_route`'s `None` as a fact rather than a default), and the mixed-generation merge preflight that refuses before any session exists while **a v1/v1/v1 merge on this build must still pass** under generation 1. The still-unclaimed behaviour narrows from L9 to **L10**, and one honest gap is recorded rather than implied: requirement 4.2's "no escaping symlink at resolution" clause has no implementation — `normalize_route_path` refuses only the lexical forms. Verification metadata: lastUpdated advanced, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

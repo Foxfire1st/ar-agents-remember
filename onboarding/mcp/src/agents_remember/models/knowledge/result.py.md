@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/result.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-18T05:15+02:00 |
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -40,11 +40,16 @@ page of it") and a caller branches on the refusal code, not on which of the two 
 L8 added: `diff_knowledge_scope`** — again one operation rather than two, and for the same reason: a first
 comparison and a continuation are two ways of asking one question ("what does the union of these two
 snapshots' selections hold, and which page of it is this"), and a caller branches on the refusal code
-rather than on which of the two it passed. The measured union is therefore **twenty-six operations**.
-`KnowledgeRefusalCode` declares **forty-four codes** (measured by counting the literal's members; the
+rather than on which of the two it passed. **The measured union is thirty-seven operations**, counted from
+the literal on this candidate rather than carried forward: the L10 route pair (`author_route`,
+`set_governing_route`), L11's six facet acts (`add_facet`, `attach_facet`, `remove_facet_attachment`,
+`author_explanation`, `add_explanation_revision`, `designate_explanation`), L11's own read
+(`read_facet_scope`) and L14's two detection operations (`record_detection_run`, `read_detection_run`) are
+all members now, and the L8 entry's "twenty-six" was a count of the members *that leaf* could see rather
+than a count of the union.
+`KnowledgeRefusalCode` declares **forty-five codes** (re-counted from the literal on this candidate; the
 thirty-seven this card recorded before the L7 pass was already one short of the thirty-eight the union held
-at that leaf's own base):
-`invalid_payload`, `unauthorized_scope`, `unsupported_schema`, `destination_occupied`, `candidate_busy`,
+at that leaf's own base):`invalid_payload`, `unauthorized_scope`, `unsupported_schema`, `destination_occupied`, `candidate_busy`,
 `lock_capability_unavailable`, `missing_expected_row`, `stale_precondition`, `duplicate_identity`,
 `immutable_revision`, `invalid_reference`, `lineage_cycle`, `relationship_constraint`, `unknown_invariant`,
 `unknown_family`, `target_not_candidate`, `promotion_not_supported`, `no_change`, the seven L4 added —
@@ -53,14 +58,27 @@ at that leaf's own base):
 the twelve L5 added (`common_base_unavailable`, `common_base_ambiguous`, `common_base_mismatch`,
 `schema_mismatch`, `missing_required_table`, `conflicting_values`, `duplicate_relationship`,
 `delete_reference_conflict`, `immutable_revision_changed`, `session_unavailable`, `changeset_incomplete`,
-`changeset_postcondition_failed`), the one L6 added (`invalid_export`), and the six L7 added:
+`changeset_postcondition_failed`), the one L6 added (`invalid_export`), the six L7 added:
 `selector_absent`, `registration_absent`, `page_budget_too_small`, `continuation_binding_mismatch`,
-`snapshot_unavailable`, `selection_incomplete`. **L8 added no code at all** — it is the first knowledge leaf
+`snapshot_unavailable`, `selection_incomplete`, and the one L14 added: `detection_self_reference`. **L8 added
+no code at all** — it is the first knowledge leaf
 of this master whose boundary needed no new refusal vocabulary, and that is a fact worth recording rather
 than a silence: the comparison's whole failure surface is R07's own codes plus `selected_input_unavailable`,
-which the L4 publication path already produced. The measured union therefore stays at **forty-four**. A
-comparison's refusals reach the same codes through their own factories and their own `detail` text, and
+which the L4 publication path already produced. **L10 and L11 added none either** — the route operations and
+the six facet acts reuse shipped codes, and `invalid_payload` covers every inadmissible facet payload.
+**L14 added exactly one**, and the reason is the same rule the L3 codes follow: only a detection write can
+reach the self-invalidating sequence it names.
+A comparison's refusals reach the same codes through their own factories and their own `detail` text, and
 `side_absences` carries one side's absence as a **value beside the page** rather than as a refusal.
+
+**`detection_self_reference` is the one member only a detection write can reach.** A detection signal and
+its run are *measurements of an already-existing dataset*, so a write whose target store **is** one of the
+datasets the run assessed would move the logical digest of the dataset it just digested and invalidate its
+own signal. Rather than folding that into a neighbouring storage code, the vocabulary names the fact a
+caller branches on — and the two operations were added as a pair rather than as one member, for the reason
+the read pair and the diff pair are one each: recording a run and reading one back are different acts, and
+the read is the one that must answer with the run's **recorded order** rather than with whatever order rows
+come back in. Neither new member mints a gate, and no result model in this module changed.
 
 **The six L7 codes are the ones only a bounded, continuable selection can reach, and each is a distinct fact
 a caller acts on differently**: a seed that names no recorded identity or revision (`selector_absent` — the
@@ -189,17 +207,20 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared mutating-operation vocabulary, including the six L4 operations, the two L5 merge operations, the two L6 portable operations, **the one L7 read operation** and **the one L8 comparison operation** — twenty-six members, measured. | `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-76 |
-| The declared refusal vocabulary, with each member naming a distinct observable failure — the seven L4 codes, the twelve L5 merge codes, the one L6 portable code and the six L7 read codes; **L8 added none**; forty-four members, measured. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:80-145 |
+| The declared mutating-operation vocabulary, including the six L4 operations, the two L5 merge operations, the two L6 portable operations, the one L7 read operation, the one L8 comparison operation, the two L10 route operations, the seven L11 facet operations and **the two L14 detection operations** — thirty-seven members, re-counted from the literal. | `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-96 |
+| The declared refusal vocabulary, with each member naming a distinct observable failure — the seven L4 codes, the twelve L5 merge codes, the one L6 portable code, the six L7 read codes (L8, L10 and L11 added none) and **the one L14 detection code**; forty-five members, re-counted from the literal. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:101-171 |
 | **The six L7 codes' producers, one factory per observable failure point, each carrying the next action a caller needs.** | `selector_absent_refusal`; `registration_absent_refusal`; `page_budget_too_small_refusal`; `continuation_binding_mismatch_refusal`; `snapshot_unavailable_refusal`; `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-57; mcp/src/agents_remember/memory/knowledge/read_refusals.py:60-79; mcp/src/agents_remember/memory/knowledge/read_refusals.py:82-108; mcp/src/agents_remember/memory/knowledge/read_refusals.py:111-135; mcp/src/agents_remember/memory/knowledge/read_refusals.py:138-156; mcp/src/agents_remember/memory/knowledge/read_refusals.py:159-177 |
 | **The read's own result model, which is a page or a refusal and never both, and the read operation literal it carries.** | `KnowledgeReadResult` | mcp/src/agents_remember/models/knowledge/read.py:485-511 |
-| The refusal value carrying code, operation, offending record and next action. | `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/result.py:163-173 |
-| The two shared outcome-consistency rules every result model calls. | `require_stored_outcome`; `require_removal_outcome` | mcp/src/agents_remember/models/knowledge/result.py:176-201 |
-| The digest-free caller draft that refuses a self-declared predecessor. | `RevisionDraft` | mcp/src/agents_remember/models/knowledge/result.py:189-212 |
-| The two label-edit requests, each naming the row the caller read. | `SetInvariantLabelRequest`; `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:321-341 |
-| The two label-edit results and their `labeled`/`refused` consistency validators. | `SetInvariantLabelResult`; `SetFamilyLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:511-531; mcp/src/agents_remember/models/knowledge/result.py:534-554 |
+| The refusal value carrying code, operation, offending record and next action. | `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/result.py:175-185 |
+| The two shared outcome-consistency rules every result model calls. | `require_stored_outcome`; `require_removal_outcome` | mcp/src/agents_remember/models/knowledge/result.py:188-202; mcp/src/agents_remember/models/knowledge/result.py:205-213 |
+| The digest-free caller draft that refuses a self-declared predecessor. | `RevisionDraft` | mcp/src/agents_remember/models/knowledge/result.py:216-239 |
+| The two label-edit requests, each naming the row the caller read. | `SetInvariantLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:333-344 |
+| The family-label request that names the row the caller read. | `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:347-353 |
+| The invariant-label result and its `labeled`/`refused` consistency validator. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:538-558 |
+| The family-label result and its `labeled`/`refused` consistency validator. | `SetFamilyLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:561-581 |
 | The batch vocabulary that carries the change request and its factual receipt. | `KnowledgeContext`; `ChangeBatch`; `MutationResult`; `RecordIdentity`; `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:137-178; mcp/src/agents_remember/models/knowledge/candidate.py:381-406; mcp/src/agents_remember/models/knowledge/candidate.py:409-452; mcp/src/agents_remember/models/knowledge/candidate.py:194-215; mcp/src/agents_remember/models/knowledge/candidate.py:218-240 |
-| The graph's request vocabulary and the anchor-endpoint union. | `FamilyRequest`; `FamilyRevisionRequest`; `FamilyMemberRequest`; `RealizationClaimRequest`; `AnchorReference`; `NewAnchor` | mcp/src/agents_remember/models/knowledge/result.py:246-311 |
+| The graph's request vocabulary and the anchor-endpoint union. | `FamilyRequest`; `FamilyRevisionRequest`; `FamilyMemberRequest`; `AnchorReference` | mcp/src/agents_remember/models/knowledge/result.py:242-315 |
+| The realization-claim request the graph half added. | `RealizationClaimRequest` | mcp/src/agents_remember/models/knowledge/result.py:317-323 |
 | The eight graph result models that reuse the shared outcome rules. | `CreateFamilyResult`; `CreateFamilyRevisionResult`; `CreateSourceAnchorResult`; `CreateFamilyMemberResult`; `CreateRealizationClaimResult`; `RemoveSourceAnchorResult`; `RemoveFamilyMemberResult`; `RemoveRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:396-523 |
 | The three L1 outcome models the shared rules were extracted from. | `CreateRevisionResult`; `CreateInvariantResult`; `RepositoryCreationResult` | mcp/src/agents_remember/models/knowledge/result.py:360-586 |
 | **The seven factories that produce this leaf's codes, one per observable failure point.** | `selected_input_unavailable_refusal`; `candidate_binding_changed_refusal`; `candidate_snapshot_unpublished_refusal`; `snapshot_incomplete_refusal`; `destination_stale_refusal`; `publication_failed_refusal`; `publication_durability_unconfirmed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-902; mcp/src/agents_remember/memory/knowledge/refusals.py:904-928; mcp/src/agents_remember/memory/knowledge/refusals.py:930-949; mcp/src/agents_remember/memory/knowledge/refusals.py:951-974; mcp/src/agents_remember/memory/knowledge/refusals.py:976-999; mcp/src/agents_remember/memory/knowledge/refusals.py:1001-1018; mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039 |
@@ -219,7 +240,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-- 2026-09-17T22:33:10+00:00: Generated citation repair: `KnowledgeRefusal` repointed to mcp/src/agents_remember/models/knowledge/result.py:163-173. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **extended the vocabulary to the mechanical-detection record group, re-counted both unions from the literal, and replaced the generated projection bullet on this card with this entry.** `KnowledgeOperation` gained **two** members (`record_detection_run`, `read_detection_run`) and `KnowledgeRefusalCode` **one** (`detection_self_reference`). Two operations rather than one for the reason the read pair and the diff pair are one each — recording a run and reading one back are different acts, and the read must answer with the run's *recorded order* rather than with whatever order rows come back in — and one code because only a detection write can reach the self-invalidating sequence it names: a signal is a measurement of an already-existing dataset, so a write whose target store **is** one of the datasets the run assessed would move the digest of the dataset it just digested. **Two measured corrections to this card's own counts, made because the claims were false against the source rather than merely stale:** the operation union is **thirty-seven**, not the twenty-six the L8 entry recorded (that was a count of the members that leaf could see; L10's route pair, L11's seven facet operations and L14's two are members now), and the code union is **forty-five**, not forty-four. The body now says so in place, and the two rows that carried the old numbers were re-cited against the current literal (`:36-96`, `:101-171`). Five further rows were **re-cited by hand** rather than machine-projected — `KnowledgeRefusal` (:163 → :175), the two outcome-consistency rules (:176-201 → :188-202 and :205-213), `RevisionDraft` (:189 → :216), the two label-edit request and result rows (which named two anchors across ranges that no longer held them and are now one anchor per row) and `RealizationClaimRequest` (:246-311 → :317-323) — and the projection bullet that had produced the `KnowledgeRefusal` range was removed, because a mechanically projected range is unverified evidence and an agent has now read each declaration it points at. Verification metadata advances to the leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): No content impact: this leaf changed the *cited* sources, not this file's own source, and the card's claim bytes were re-read against the current anchored construct and retained; only citation ranges were re-derived where a cited file grew. No row, citation or claim was deleted, and the verification metadata is not advanced because the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **extended the operation union to the baseline-to-candidate comparison and re-derived every citation range against the new bytes.** `KnowledgeOperation` gained **one** member, `diff_knowledge_scope` — one rather than two for the same reason the read pair is one: a first comparison and a continuation are two ways of asking one question and a caller branches on the refusal code, not on which of the two it passed. **The measured union is now twenty-six operations, and the code union stays at forty-four: L8 added no refusal code at all.** That is recorded as a fact rather than a silence — the comparison's whole failure surface is R07's own six codes plus `selected_input_unavailable`, which the L4 publication path already produced, and a one-sided absence travels as a **value beside the page** (`side_absences`) rather than as a seventh refusal — and the card says so explicitly, because "this leaf needed no new vocabulary" and "this leaf's vocabulary was never reviewed" must not read alike. Every citation below the operation insertion moved by four lines and was re-measured rather than shifted. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

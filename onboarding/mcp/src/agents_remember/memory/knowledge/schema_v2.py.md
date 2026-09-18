@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/schema_v2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -138,10 +138,11 @@ No domain documentation source is configured for this repository (`system/source
 | The nine reverse-direction indexes, including the governing-route lookup index. | `APPENDED_INDEX_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:205-221 |
 | The eight immutability triggers: sealed revisions cannot be rewritten or deleted, identities cannot be rebound, and a governing association cannot be repointed. | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:222-262 |
 | The one added required feature, which is part of the fingerprint because it is part of the manifest. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:263 |
-| The generation record this module's data is composed into, and the additive composition that keeps generation 1's prefix intact. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:194-194 |
+| The generation record this module's data is composed into, and the additive composition that keeps generation 1's prefix intact. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:201-201 |
 | The shipped generation-1 tables this module appends after and never touches. | `CANONICAL_TABLES` | mcp/src/agents_remember/memory/knowledge/schema.py:29-42 |
 | The write layer that authors a route and attaches a governed row, and the read side that reports an ungoverned row as ungoverned. | `author_route` | mcp/src/agents_remember/memory/knowledge/routes.py:225-279 |
-| The payload seam these envelope tables are read through: one registry, one entry point, the shipped `invalid_payload` code. | `validate_record_payload`; `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:69-113 |
+| **The registry these envelope tables' payloads are admitted through — re-read by hand; since `KS-R14@v1` it holds three groups (the internal conformance kind, the eight facet kinds and the two mechanical-detection kinds), and these tables' columns are unchanged by that.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:86-100 |
+| The one entry point that validates a payload for a kind and schema. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:121-165 |
 | The schema disagreement the preflight refuses before any session exists, and the same-generation merge that must still pass on this build. | `selected_generation` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:110-155 |
 | The envelope, route and governing-association cases, including the route-cycle rollback and the payload refusal. | `test_a_version_1_merge_on_the_generation_2_build_selects_generation_1`; `test_a_confined_path_is_authored_and_its_identity_returned` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:1-311; mcp/tests/test_knowledge_routes.py:1-199 |
 
@@ -154,6 +155,8 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read the payload-seam row against the current envelope and re-cited it by hand, replacing a generated projection.** `PAYLOAD_MODELS` changed structurally in this leaf — it registered the two mechanical-detection kinds beside the internal conformance kind and the eight facet kinds, so the registry holds three groups — and the reopened claim could not be cleared by a projected range, because a mechanically rewritten range is not evidence that the claim still holds. The row is therefore split into one anchor per row at each declaration's current range (`:86-100`, `:121-165`), and the claim records the fact this leaf changed while stating explicitly that **generation 2's own columns are untouched by it**. The generated bullet that produced the previous ranges was removed. This card's own subject — generation 2's six appended tables — is unchanged by `KS-R14@v1`, and no verification stamp is advanced over content that was not re-read.
+- 2026-09-18T02:37:44+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:201-201. No content impact: mechanical anchor-range projection bound to citation source snapshot d211cfd02f11c0600198b11c621aa5574ac8743db6e0ca1d2c92936e561c5146; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T22:33:10+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:39:57+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:189-189. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): created this one-to-one card for generation 2's appended tables. It records the additive prefix rule that makes "generation 2 is generation 1 plus these six" checkable, the exact six table names in serialization order, the deliberate absence of any identity-valued column on the envelope, the typed-JSON payload column that is the reason generation 2 adds `json_functions`, the per-join-table primary key that makes "at most one governing route per governed row" a constraint rather than a convention, and the eight triggers as the database-level backstop. It also records the excluded form (`ALTER TABLE … ADD COLUMN governing_route_id`) with the reason, so a later leaf does not re-propose it. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

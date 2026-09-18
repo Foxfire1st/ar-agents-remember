@@ -5,17 +5,17 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-18T05:15+02:00 |
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
 
-Working candidate verification: source inspected at 2026-09-17T03:15 +02:00 against the uncommitted KS-L8 candidate.
+Working candidate verification: source inspected at 2026-09-18T04:35 +02:00 against the uncommitted KS-L14 candidate.
 The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
 
 ## Purpose
@@ -31,6 +31,20 @@ official line's two extra artifacts), **51 / 10** after `KS-L7` added its one co
 **52 / 11** after `KS-L8` added its own, **53 / 12** after `KS-L10` re-scoped the generation contract's
 source/version statement and re-pinned the digest to `9b057632…`, and **54 / 13** after `KS-L11` added the pair
 below.
+
+**260915-KS-L14 added no contract and no artifact, and re-pinned the catalog digest anyway.** Its two new test
+modules are ordinary test source, and the detection run suite deliberately uses the **already-registered**
+fixtures rather than a third support module: `mcp/tests/diff_scope_test_support.py` and
+`mcp/tests/read_scope_test_support.py` each gained one `consumers` row —
+`mcp/tests/test_knowledge_detection_runs.py` at `:1278` and `:1298` respectively. That is a **consumer change
+only**, so the populations stay at **13 contracts and 54 artifacts** and no artifact's `introduced_by`,
+`lifetime` or `replacement_contract` moved. The catalog digest pinned in
+`mcp/tests/test_dependency_ownership_ast_helpers.py` still had to move with the bytes
+(`19ed0525…` → `c6956899947b0435e5cdd8cd77ba3121db77e3dbf4676bee11406c3baf03ec68`), and it was re-pinned
+**deliberately, with the reason written beside the constant** rather than widened to force a green run. The
+file's own sha256 on this candidate is
+`c6956899947b0435e5cdd8cd77ba3121db77e3dbf4676bee11406c3baf03ec68` (`sha256sum mcp/tests/evidence-lifecycle.toml`),
+and the two consumer rows are the whole of the byte change.
 
 **260915-KS-L11 added the thirteenth contract and the 54th artifact and re-pinned the catalog digest in the
 same change.** The facet suite's shared harness `mcp/tests/facet_test_support.py` is a *governed artifact*
@@ -269,6 +283,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): recorded the **consumer change that is this leaf's whole catalog footprint**, and re-measured the file rather than carrying the previous numbers. The new Purpose paragraph states it plainly: two `consumers` rows (`mcp/tests/test_knowledge_detection_runs.py` at `:1278` on `diff_scope_test_support.py` and at `:1298` on `read_scope_test_support.py`), **no new contract, no new artifact**, populations unchanged at **13 contracts / 54 artifacts**, and the deliberately re-pinned catalog digest `c6956899947b0435e5cdd8cd77ba3121db77e3dbf4676bee11406c3baf03ec68` with the reason written beside the constant in `test_dependency_ownership_ast_helpers.py` rather than widened to force a green run. It also records the measured file sha256 on this candidate and that the two consumer rows are the whole of the byte change, so a later reader can check the claim by re-hashing. The older per-leaf counts in the Purpose remain as the different states of one merged line they are. Verification metadata advances to the leaf's base commit `4264dcc9` because the body was re-read against the current catalog; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): measured the catalog rather than carrying the L8 numbers — **54 artifacts and thirteen contracts** (`54 [[artifact]]`, `13 [[contract]]`), with the file's sha256 re-measured as `19ed0525cd94b57389052a4e19cf1f0dfe83e9c166783ead2598f6a4e0ce8ffa` — against **53 / 12** at `KS-L10` (`9b057632…`) and **52 / 11** at `KS-L8`. It records the one contract/artifact pair this leaf added — `knowledge-facet-cases` for `mcp/tests/facet_test_support.py`, `unit-regression` / `in-process`, with exactly one declared consumer, `mcp/tests/test_knowledge_facets.py` — and the wording-only change to the existing `knowledge-generation-cases` row, whose source and permanence statements now describe every registered generation instead of generation 1 alone. The three-registry-touch-point rule the card states is paid in full for the new module (lane row, its path in the artifact's own consumers list, and the catalog re-pin). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock

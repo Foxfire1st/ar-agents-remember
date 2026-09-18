@@ -6,9 +6,9 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-18T05:05:00+02:00 |
-| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
-| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -726,7 +726,8 @@ absolute, backslash, UNC or parent-escaping path so a stored record never carrie
 | The sealed payload, with the predecessor set inside the digest and the digest field excluded. | `canonical_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:30-52 |
 | The provenance envelope and its normalized-UTC requirement. | `Authorship` | mcp/src/agents_remember/models/knowledge/authorship.py:32-88 |
 | The shared source identity, locator union and the relative-POSIX-path rule — now split into the draft and the stored anchor, with a real `UUID` identity. | `SourceLocator`; `SourceAnchorDraft`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:80-82; mcp/src/agents_remember/models/knowledge/source.py:82-129; mcp/src/agents_remember/models/knowledge/source.py:130-133 |
-| The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot and merge halves have each extended since. | `KnowledgeRefusalCode`; `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:66-115; mcp/src/agents_remember/models/knowledge/result.py:345-362 |
+| The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot, merge, authored-judgment and detection halves have each extended since. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:101-171 |
+| The invariant-creation result whose `operation` field names the operation that produced it. | `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:372-389 |
 |  The storage owner that writes this vocabulary. | "class OpenedKnowledgeStore" | mcp/src/agents_remember/memory/knowledge/store.py:92-510  |
 | The later requirement packets the shared envelope and locator are declared for: requirement packets `KS-R07` and `KS-R08`, which live in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address them. | — | — |
 
@@ -817,7 +818,9 @@ vocabulary is the *result state*, and a consumer must not branch on the code.
 | The closed eighteen-member union with no promotion, approval or SQL member; the eighteen kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:372-392; mcp/src/agents_remember/models/knowledge/candidate.py:394-394 |
 | The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:397-414 |
 | The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:220-488 |
-| The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation`; `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:511-531 |
+| The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:101-171 |
+| The served operation union the candidate-boundary leaf joined. | `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-96 |
+| The invariant-label result that leaf added to the served vocabulary. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:538-558 |
 | The operation that consumes this vocabulary. | `change_candidate` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80 |
 | The composition seam that resolves a context from a live candidate and seals it. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
 | The seam entry point that applies a batch under the admitted provenance. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
@@ -1135,7 +1138,7 @@ carries a route's identity as a fingerprint.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two operations the route write layer added, so a route refusal names a route operation. | `author_route`; `set_governing_route` | mcp/src/agents_remember/models/knowledge/result.py:43-44 |
-| The shipped code an inadmissible record payload is refused with — reused rather than widened. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:96-96 |
+| The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:102-102 |
 | The route rules' refusal shapes and the frozen request objects they report on. | `normalize_route_path`; `set_governing_route` | mcp/src/agents_remember/memory/knowledge/routes.py:76-90; mcp/src/agents_remember/memory/knowledge/routes.py:398-480 |
 
 ## 260915-KS-L11 The Authored-Judgment Vocabulary
@@ -1200,7 +1203,79 @@ change set.
 | **The nodes that hold the closure, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:306-343 |
 | **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-90; mcp/src/agents_remember/models/knowledge/result.py:82-147 |
 
+## 260915-KS-L14 The Detection Vocabulary, And The Two Operations It Adds
+
+The knowledge sub-route gained its **twentieth module** — `models/knowledge/detection.py` — and the
+shared served vocabulary grew by **two operations and one refusal code**: `record_detection_run` and
+`read_detection_run` join `KnowledgeOperation`, and `detection_self_reference` joins
+`KnowledgeRefusalCode`. The operation union therefore stands at **thirty-seven members** and the code
+union at **forty-five**. Two members rather than one, for the reason the read pair and the diff pair are
+one each: recording a run and reading one back are different acts, and the read is the one that must
+answer with the recorded order rather than with whatever order rows come back in.
+
+**No field of either record can hold a conclusion, and the absence is declared rather than inferred.**
+The module's whole vocabulary is built so that a severity, an assessed priority, a conflict or
+compatibility verdict, a causal explanation, a harmlessness label and an authored finding are
+**unrepresentable**: `CONCLUSION_BEARING_FIELD_NAMES` is one closed list of those concepts and
+`conclusion_bearing_fields` is a total, mechanical **review of a model's declared field set** — it reads
+`model_fields`, not an instance, so a field is reported whether or not any payload populates it. The
+shipped base's `extra="forbid"` refuses a payload that supplies one; `observed_basis_detail` refuses a
+verdict written into the prose field by requiring `detail` to *equal* the rendering of the record's own
+recorded basis. Both records also carry the unconditional `no_semantic_assessment_performed` limitation,
+so the absence is a stated fact rather than something a reader infers from a missing field.
+
+**The closed vocabularies are declared as a `Literal` and as a tuple, and a case asserts they agree.**
+`DetectionCondition` / `DETECTION_CONDITIONS` (the five declared conditions), `DeclaredInputSet` /
+`DECLARED_INPUT_SETS` (the three readings), `DetectionChangeGranularity`, `DetectionScopeStatus`,
+`DetectionLimitation` / `DETECTION_LIMITATIONS` and `MANIFEST_DESTINATION_KINDS`. Three published
+identities travel with them: `DETECTION_POLICY_VERSION` (the detection contract's name, in the shipped
+constant idiom), `CONDITION_VOCABULARY_VERSION` (the vocabulary versioned with the policy, so a condition
+the policy does not declare is refused *with the version it was refused against*), and
+`DETECTION_EXTRACTOR_VERSION` — **authored rather than imported**, because the shipped anchor resolver has
+no symbol extractor and returns `unsupported_locator`, so there was no existing constant to cite.
+
+**The declared input set is checked against the member's own recorded discriminator, never by counting
+sides.** `DetectionRecordedInputSet` enforces that `both_sides_declared` records both declared sides each
+under its own selector and context and **no** counterpart-probe outcome, that `union_of_both_sides` records
+both sides *and* the probe's recorded outcome per reported item, and that `trigger_side_only` records
+exactly one side and no probe at all. Each refusal names the member and what was recorded instead, because
+a two-sided condition reported from a one-sided read is the silent-widening shape the requirement exists
+to prevent — and a `trigger_side_only` signal that *asserts* something about the unread side gets its own
+refusal, since the absence of a counterpart is a scope limitation rather than a finding of equality.
+
+**Two shapes carry what the record cannot say.** `DetectionScopeManifest.resolve` reports a reference as
+`retained` only for a resolved durable-publication destination with a recorded identity, and otherwise
+`unresolved` **with what would resolve it** — never as an empty manifest, and never as an error;
+`DetectionManifestResolution`'s validator refuses either half without its required field.
+`DetectionRunCurrentness` carries the recorded and current versions beside the state and **no signal at
+all**: its `signals_unchanged` field is the literal `True`, which is the type saying that this operation
+cannot rewrite what it read. `DetectionRunReproduction` carries both run identities, both ordered
+sequences, every differing input and one verdict that must follow from those facts.
+
+**The record's own field set is all-required.** `DetectionSignalPayload` carries every field requirement
+1.1 lists — signal id, repository, governing route, condition, vocabulary version, declared input set,
+observed changes, relationship paths, the two published versions, the scope manifest, the registered scope
+status, the unmapped paths and the limitations — with the four collection fields required even though
+three are frequently empty, so a signal that observed nothing *states* that rather than defaulting.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The three published identities, including the extractor version authored because no shipped constant exists to cite.** | `DETECTION_POLICY_VERSION`; `DETECTION_EXTRACTOR_VERSION`; `CONDITION_VOCABULARY_VERSION` | mcp/src/agents_remember/models/knowledge/detection.py:96-134 |
+| The five declared conditions and the three declared input sets, each as the validated type beside the tuple a caller enumerates. | `DETECTION_CONDITIONS`; `DECLARED_INPUT_SETS` | mcp/src/agents_remember/models/knowledge/detection.py:124-149 |
+| **The closed conclusion-name list and the declared-field-set review that makes "no conclusion is representable" checkable rather than asserted.** | `CONCLUSION_BEARING_FIELD_NAMES`; `conclusion_bearing_fields` | mcp/src/agents_remember/models/knowledge/detection.py:217-283 |
+| The observed-change granularities, the declared scope status and every declareable limitation. | `DetectionChangeGranularity`; `DetectionScopeStatus`; `DETECTION_LIMITATIONS` | mcp/src/agents_remember/models/knowledge/detection.py:156-209 |
+| **The declared-input-set discriminator contract: two sides and no probe, both sides and the probe, or one side and no probe.** | `DetectionRecordedInputSet` | mcp/src/agents_remember/models/knowledge/detection.py:546-632 |
+| **The manifest reference and its two-state resolution, which reports an unresolvable reference with what would resolve it rather than as an empty manifest.** | `DetectionScopeManifest`; `DetectionManifestResolution` | mcp/src/agents_remember/models/knowledge/detection.py:417-543 |
+| **The all-required signal field set, and the `detail`-equals-rendering rule that refuses a verdict in prose as it refuses a verdict field.** | `DetectionSignalPayload`; `observed_basis_detail` | mcp/src/agents_remember/models/knowledge/detection.py:635-753; mcp/src/agents_remember/models/knowledge/detection.py:1017-1033 |
+| **The run payload: the per-signal declarations not collapsed into a run default, and the declared total order over signal identity.** | `DetectionRunPayload` | mcp/src/agents_remember/models/knowledge/detection.py:756-827 |
+| **The currentness answer that carries the recorded versions beside the current ones and cannot hold a re-interpreted signal.** | `DetectionRunCurrentness` | mcp/src/agents_remember/models/knowledge/detection.py:942-987 |
+| The one typed outcome per detection operation, serving its signals in the run's recorded order. | `DetectionRunResult` | mcp/src/agents_remember/models/knowledge/detection.py:990-1014 |
+| **The two operations and the one refusal code this leaf added to the shared vocabulary.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-96; mcp/src/agents_remember/models/knowledge/result.py:101-171 |
+| The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:86-100; mcp/src/agents_remember/memory/knowledge/record_envelope.py:109-109 |
+| **The cases that hold the field-set review, the three declared input sets and the retention answer.** | "test_the_signal_field_set_is_required_and_carries_no_conclusion_bearing_field"; "test_the_declared_input_set_vocabulary_is_exactly_three_members_each_with_its_own_discriminator"; "test_a_manifest_may_not_be_reported_retained_at_a_destination_that_cannot_retain_it" | mcp/tests/test_knowledge_detection_signals.py:185-222; mcp/tests/test_knowledge_detection_signals.py:346-360; mcp/tests/test_knowledge_detection_signals.py:527-569 |
+
 ## Update History
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): added the **detection vocabulary** section — the route's twentieth knowledge module and the two operations plus one refusal code it contributed to the shared served vocabulary — and re-read three stale rows by hand rather than letting a machine projection re-point them. The section records that neither record can hold a conclusion because the vocabulary makes the concept names unreviewable-by-construction: `conclusion_bearing_fields` reviews a model's **declared** field set, `extra="forbid"` refuses an extra field and `observed_basis_detail` refuses a verdict written into the prose field by requiring equality with the rendering of the record's own recorded basis; the three published identities, including the extractor version that is **authored because the shipped resolver has no symbol extractor to cite**; the declared-input-set discriminator contract checked against the member's own recorded facts rather than by counting sides; the manifest resolution that reports an unresolvable reference with what would resolve it and never as an empty manifest; and the currentness answer whose `signals_unchanged` literal is the type saying it cannot rewrite what it read. **Three rows were corrected against the current source**: the shared typed-contract row carried three ranges that no longer held `CreateRevisionResult` or `SetInvariantLabelResult` and is split into one anchor per row, and the `invalid_payload` row moved with the growing unions (`:96` → `:102`). Two further rows had their anchor sets split for the same reason — a cell naming several anchors across several ranges cannot resolve to one extent, which is why the repair tool declines it. Verification metadata advances to this leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T04:55+02:00 — 260915-KS-L11 owning seat (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this route's union claim against the source and re-cited it by hand, replacing a generated projection.** The row and the section above it said *twelve* members; `ProposedCommand` admits **eighteen** after this leaf, which this route's own L11 section already states. Row and prose now agree with `models/knowledge/candidate.py:372-392`, so the citation is an agent's read of the declaration rather than a projected range.
 - 2026-09-18T03:05+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read the curator-coherence paragraph and the row this candidate falsified, and recorded what the tool now says.** The "publication fields are forbidden on read-only actions, while publish requires every expected source identity, predecessor digest, and declared caller" sentence described the rule the defect was made of: it names three prose categories while the two members that actually caused the refusal belong to none of them, and the shipped refusal said exactly the same thing. The paragraph now states the single `PUBLICATION_MEMBERS` declaration beside the request model, the named-missing-member refusal, the named-supplied-member sibling refusal, and the `prepare` statement that includes the two delivery identities `prepare` does not derive. The reference row's four `:189-233; :236-247; :250-256; :259-315` ranges no longer held `CuratorCoherenceRequest` (it moved to `:370-434` when the declaration was inserted above it); the row now cites **one** range over the whole coherence identity family it names, because this card's own `citation_fix` declines a multi-range cell for it (`projection_no_resolved_extent`). No other row of this 1 600-line route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-18T01:18+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read the older union row in this route against the source and recorded a contradiction instead of softening it.** The row at `:811` reading "The closed eighteen-member union ... the eighteen kinds are the operation's entire reach" is **no longer true**, and this leaf's own section below says so: `ProposedCommand` now admits **eighteen** members (the shipped twelve plus the six facet commands) and the union row's citation was re-pointed to `372-392` accordingly. The row's *counts* were not rewritten, because a claim's meaning belongs to the owning seat rather than to the citation curator; the correction owed is `twelve` → `eighteen` in both places in that row. This entry also records where the leaf's own route-review entry lives: it was written one section too high (under `## Invariants And Boundaries`) and this round moved it into this section, where the review rail can see it. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.

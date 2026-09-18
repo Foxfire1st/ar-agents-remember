@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/facet.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec`|
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -158,7 +158,9 @@ No domain documentation source is configured for this repository (`system/source
 | **The standalone request, the touched-row identity and the receipt whose validator makes a refusal and a write mutually exclusive.** | `FacetWriteRequest`; `FacetWriteIdentity`; `FacetWriteResult` | mcp/src/agents_remember/models/knowledge/facet.py:512-585 |
 | The six canonical tables a facet command writes, and the candidate module's table vocabulary they fold into. | `FACET_WRITABLE_TABLES`; "MutableRecordTable = Literal[" | mcp/src/agents_remember/models/knowledge/facet.py:532-548; mcp/src/agents_remember/models/knowledge/candidate.py:122-134 |
 | The sealed, extra-forbidding base every model here inherits. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
-| The envelope seam that resolves the `(kind, record_schema)` pair, registers these models and refuses an unknown kind. | `validate_facet_payload`; `PAYLOAD_MODELS`; `FACET_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:138-167; mcp/src/agents_remember/memory/knowledge/record_envelope.py:66-90; mcp/src/agents_remember/memory/knowledge/record_envelope.py:71-90 |
+| The facet-specific entry point that resolves the `(kind, record_schema)` pair and refuses an unknown kind. | `validate_facet_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:168-196 |
+| **The registry those models are registered in — which since `KS-R14@v1` holds three groups (the internal conformance kind, these eight facet kinds and the two detection kinds).** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:86-100 |
+| The facet kind set derived from those entries rather than restated. | `FACET_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:103-103 |
 | The closed union these six commands join, and the dispatch tables that must cover every member. | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:372-392 |
 | **The cases that hold the closed vocabulary, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_every_subtype_refuses_a_bad_shape_a_missing_meaning_and_its_own_provenance"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:229-280; mcp/tests/test_knowledge_facets.py:306-343 |
 
@@ -171,4 +173,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read the envelope-seam row and re-cited it by hand, and recorded what the seam now holds.** The row named three anchors across three ranges that no longer held them, so it is now one anchor per row at each declaration's current range, and the registry row states the fact `KS-R14@v1` changed: `PAYLOAD_MODELS` holds **three groups** — the internal conformance kind, these eight facet kinds, and the two mechanical-detection kinds — with `FACET_RECORD_KINDS` still derived from its own entries rather than restated. Nothing about this module's own vocabulary changed, and no verification stamp is advanced for a file this leaf did not modify.
 - 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the closed authored-judgment vocabulary. It records the one closed list and the three declarations derived from it, the eight frozen payload models with the two nonempty-tuple meanings that keep an empty value from satisfying a field, the **two load-bearing properties** (no payload field can be read as provenance, and guidance carries an interpretation plus its limit rather than a verdict), the four closed endpoint kinds with the route's **deliberate absence** from them, the two closed subject sets kept as separate declarations rather than a shared literal, the six authored commands, and `AddFacet`'s mapping payload validated at the envelope seam so an unknown subtype is the typed `invalid_payload` refusal rather than a parse error. It also states the precision that the *command* accepts any nonempty kind name while the closure is enforced one seam later, so a reader does not conclude the ninth subtype is unconstructible. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

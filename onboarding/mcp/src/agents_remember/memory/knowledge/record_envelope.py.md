@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/record_envelope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890` |
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastUpdated | 2026-09-18T05:15+02:00 |
+| lastVerifiedCommitHash | `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitDate | 2026-09-18T04:45:39+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -24,6 +25,16 @@ Before this leaf the substrate had no common envelope for a knowledge record, so
 of knowledge would have cost a new identity design. This module is the mechanism that makes the
 envelope's "typed" half real: a shape registry, a single validation entry point, and one refusal code
 covering every inadmissible payload.
+
+**The registry now holds three disjoint record groups, and the third is the one this leaf's own
+docstring used to defer.** The internal conformance kind, the eight authored-judgment facet kinds, and —
+since `KS-R14@v1` — the two mechanical-detection kinds `detection_signal` and `detection_run`, which
+resolve to the frozen payload models `models/knowledge/detection.py` declares. The docstring named
+`DetectionSignal` as a later leaf's registration point; this is that leaf, so the sentence now names the
+two kinds as registered rather than deferred, and `EvidenceClaim` is the category still outstanding.
+Registering them here rather than as generation-4 columns is what keeps a signal's required field set,
+its closed vocabularies and its construction refusals declared **once**: a second declaration as SQL
+columns would be a second place for the same field set to drift.
 
 ## Code Commentary
 
@@ -56,12 +67,20 @@ covering every inadmissible payload.
 
 ### Conventions
 
-- **One internal conformance kind and no product kinds.** `INTERNAL_CONFORMANCE_KIND`
+- **One internal conformance kind, eight facet kinds and two detection kinds.** `INTERNAL_CONFORMANCE_KIND`
   (`internal_conformance`) with `INTERNAL_CONFORMANCE_SCHEMA` (`internal-conformance/v1`) and its
   minimal `ConformancePayload` exist only to exercise the seam, so the typed half of the envelope has
   a mechanism rather than a promise. It is marked internal, it is **not** a knowledge category, and
-  the later leaves that add the real categories (`EvidenceClaim`, `DetectionSignal`, …) add them
-  *beside* it rather than replacing it.
+  the later leaves that add the real categories (`EvidenceClaim`, …) add them
+  *beside* it rather than replacing it. The detection pair was added that way:
+  `(detection_signal, detection-signal/v1)` and `(detection_run, detection-run/v1)` are two ordinary
+  registry entries whose models are the frozen payload models, and `DETECTION_RECORD_KINDS` is derived
+  from the same declarations the entries are built from rather than restated — so the three groups are
+  disjoint by construction, because a kind is one string.
+- **A caller that must name what the registry holds uses the derived sets, not the mapping's keys.**
+  `FACET_RECORD_KINDS` and `DETECTION_RECORD_KINDS` are each derived from their own entries, and
+  `KIND_SCHEMAS` is derived from the whole registry, so no group's membership can drift from the
+  registry it is a view of.
 - The refusal is built through the package's shared `refusal(...)` factory with `RefusalFacts`, so
   this module contributes a code, a detail, facts and a next action — never a bespoke error shape.
 - The module performs **no storage I/O at all**: it imports no connection type and takes no
@@ -92,8 +111,8 @@ covering every inadmissible payload.
 
 ### Todos
 
-None recorded. The product kinds and their frozen shapes are later leaves; this card records the seam
-they will register into, not the categories themselves.
+None recorded. `EvidenceClaim` and the other concrete non-facet categories remain later leaves; this card
+records the seam they will register into, and the two detection kinds that have now registered through it.
 
 ## Docs References
 
@@ -108,8 +127,10 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:69-113 |
-| The marked-internal conformance kind and the minimal frozen shape that exercises the seam. | `INTERNAL_CONFORMANCE_KIND` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:43-43 |
+| The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:121-165 |
+| The marked-internal conformance kind and the minimal frozen shape that exercises the seam. | `INTERNAL_CONFORMANCE_KIND` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:58-58 |
+| **The registry the two detection payload shapes are registered in, and the derived two-kind set that names them without restating them.** | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:86-109 |
+| The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold. | `KIND_SCHEMAS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:111-118 |
 | The frozen, strict, extra-forbidding base that makes a validated payload a value. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
 | `invalid_payload` as a member of the shipped refusal vocabulary, and the shared refusal factory this module builds through. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:82-147 |
 | The envelope table this seam validates payloads for: no identity-valued column, `record_schema` alongside `kind`, a nullable governing route. | `record_schema`; `kind` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:53-72 |
@@ -125,5 +146,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-- 2026-09-17T22:33:10+00:00: Generated citation repair: `INTERNAL_CONFORMANCE_KIND` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:43-43. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read this card against the current source and recorded the change the leaf made to what it claims.** The body's "one internal conformance kind and no product kinds" convention and its Todos line both said the concrete non-facet categories were later leaves; `KS-R14@v1` registers the two mechanical-detection kinds, so both now state the registry's **three disjoint groups** (the internal conformance kind, the eight facet kinds, the two detection kinds) and name `EvidenceClaim` as the category still outstanding. The Purpose records why the detection payload shapes are registry entries rather than generation-4 columns: the frozen payload model *is* the shape, so a second declaration as SQL columns would be a second place for one field set to drift. Both stale citations were **re-cited by hand** rather than machine-projected — `validate_record_payload` moved with the inserted import block (`:69-113` → `:121-165`) and `INTERNAL_CONFORMANCE_KIND` moved with the module docstring (`:43` → `:58`) — and the **generated projection bullet that had produced the second of those ranges was removed**, because a projected range is unverified evidence and an agent has now read the declaration it points at. Two new rows record the registry and the derived kind set this leaf's entries join. Verification metadata advances to the leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): created this one-to-one card for the record envelope's payload seam. It records the pair-keyed registry and why the key is a pair rather than a schema alone, the single entry point that returns a validated value rather than a boolean, the three `invalid_payload` refusals with "no row written and the digest unchanged", the deliberately tiny internal conformance kind that keeps the product categories for later leaves, and the known gap that only a `ValidationError` is caught. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
