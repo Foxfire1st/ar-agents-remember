@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -127,7 +127,7 @@ No domain documentation source is configured for this repository (`system/source
 | The two edges queries, one per lineage graph. | `invariant_edges`; `family_edges` | mcp/src/agents_remember/memory/knowledge/lineage.py:67-80 |
 | The invariant-side application, which states the rule once above the guard and uses the default wider-edge set. | `require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:674-705 |
 | The family-side application, which reuses this rule rather than restating it. | `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/families.py:238-253 |
-| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:243-327 |
+| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:292-317; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:393-421; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:424-432 |
 | The spy node that asserts the shared rule is reached carrying the batch's declared edges, and the nodes that fail when the rule is neutered or the wider edges are emptied. | "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:605-674; mcp/tests/test_candidate_batch_transaction.py:561-603 |
 | The two-branch refusal wording, shared so the relations cannot describe different rules. | `_lineage_cycle_wording`; `lineage_cycle_refusal`; `family_lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:290-309; mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286 |
 | The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:399-418 |

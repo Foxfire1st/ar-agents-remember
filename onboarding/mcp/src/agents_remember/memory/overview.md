@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash |  `15fe8678fc0f87eaac4606952f179135ebe392c4`|
-| lastVerifiedCommitDate |  2026-09-18T07:49:45+02:00|
+| lastVerifiedCommitHash |  `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate |  2026-09-18T08:36:40+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `../../../overview.md` |
 
@@ -819,6 +819,63 @@ store rather than serving it. `compare_detection_runs` and `run_currentness` wri
 that differs is reported as two distinct runs, and a moved policy version marks a run **stale** without any
 signal being reinterpreted.
 
+### 260915-KS-L17 Family Composition: One Appended Generation And One Authored Record Group
+
+The route gained **generation 5's six appended tables** and the authored composition record group that
+lives in them. Four facts are the whole of it, and each is stated because the plausible misreading is
+the opposite of the truth:
+
+- **Generation 5 is a strict append.** Six tables (`family_composition`,
+  `family_composition_policy`, `family_composition_policy_version`, `family_revision_route`,
+  `family_revision_context`, `family_revision_context_revision`) sit **on top of** generation 4's
+  twenty-one, so a created store declares `ar-knowledge-sqlite/v5` at `user_version = 5` with **27**
+  tables. Nothing redeclares, reorders, renames, retypes or drops an earlier generation's table, **no
+  `ALTER TABLE` appears anywhere in the package**, and every generation is composed by the same one
+  generic `_append_generation` call. `descends_from(generation, base, base.tables)` is the published
+  predicate the generation case uses: the appended tables follow the base's exactly, and every one of
+  the base's names keeps its exact column tuple, primary key and typed-JSON set. **A card that
+  describes generation 5 as replacing or re-declaring an earlier generation is false.**
+- **The declared policy defaults to off.** An edge that names no policy is stored, readable and **not
+  traversable**: there is no resolution to a default, no fallback to the only version stored and no
+  implicit "any declared policy". The policy is validated in **two places on purpose** — at the value
+  boundary (`FamilyCompositionPolicyDraft` refuses a half-declared policy) and at the table's own
+  `CHECK` constraints — so a malformed policy is unrepresentable *and* unwritable.
+- **The projection reports and never traverses.** `family_view.family_revision_view` presents the
+  stored links (with their direction and the policy version they were declared under), the canonical
+  owning route **or** the explicit ungoverned state, and the authored explanatory context with its
+  provenance. A missing link, route or context is reported **absent**; nothing is inferred from a
+  label, a path, a prefix, a shared member or prose, and a revision whose members all live under one
+  route's path but records no owning route is reported **ungoverned**.
+- **The read-side successor is a different operation and a read, not a write.**
+  `composition_traversal.follow_composition_scope` follows declared edges under one declared policy
+  version, bounded by that version's declared depth bound, and reports the policy identity and version
+  it executed under. It does **not** touch the retrieval selection: `KS-R07@v1`'s selected set, counts,
+  ordering, revision groups, advertised frontier and manifest digest are unchanged by this leaf, no
+  shipped read path consults the composition table, and the boundary suite measures that twice — by
+  value and by call-site derivation. A card that implies composition edges are followed **as part of
+  the retrieval selection** is false and is corrected here.
+
+**Two SQLite subtleties this leaf found by executing the DDL, recorded because onboarding exists to
+carry them:**
+
+1. **An index may not carry a table's name.** SQLite refuses a second object under one identifier, so
+   the index over the composition edge's `policy_version_id` is `family_composition_policy_version_edge`
+   rather than named after the `family_composition_policy_version` table it points at.
+2. **A table `UNIQUE` constraint over a nullable column does not enforce uniqueness for `NULL`s.**
+   SQLite treats every `NULL` as distinct in a unique key, so a single constraint over the edge's
+   nullable `policy_id` would not have stopped a second *bare* edge — the default state — from being
+   stored beside the first. The declared unique tuple is therefore **two partial unique indexes**
+   (`… WHERE policy_id IS NOT NULL` and `… WHERE policy_id IS NULL`), and the write path's own
+   duplicate lookup refuses the state with a typed refusal before either is reached.
+
+**One cycle rule, three graphs.** The composition graph is judged by the **shipped shared lineage
+rule** — `find_cycle`, `declared_cycle`, `cycle_vertices` — at the batch's declared-graph level and at
+`require_after_integrity`'s whole-graph level, fed by a third edge source
+(`lineages.composition_edges`, scoped by `repository_id` alone). The ruling is that the rule applies
+**uniformly**, including its branch where a candidate descends from a stored cycle, because a stored
+cycle is a fact about the graph a new edge is being added to. A case asserts that **no second cycle
+implementation exists** beside it.
+
 ## Invariants And Boundaries
 
 - **A schema generation is data, and dispatch reads the dataset.** `knowledge/schema_generations.py` owns which
@@ -899,7 +956,7 @@ one leaf's curation pass.
 | The changeset half: the directional delta build, the aborting application, the old-side conflict key and the coverage replay. | `build_delta`; `apply_changeset`; `_conflicting_key`; `replay_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:185-220; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:223-263; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:266-289; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:292-331 |
 | The postcondition half, including the two call sites this leaf recorded as unreachable by a black-box case. | `require_structural_validity`; `require_immutable_revisions_preserved`; `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:73-101; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152; mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211 |
 | The merge's refusal vocabulary, one factory per observable failure point. | `schema_mismatch_refusal`; `conflicting_values_refusal`; `duplicate_identity_refusal`; `delete_reference_conflict_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:21-45; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:70-94; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:97-121; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:124-151 |
-| The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-62; mcp/src/agents_remember/models/knowledge/result.py:117-117; mcp/src/agents_remember/models/knowledge/result.py:116-116 |
+| The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:133-133 |
 | The measurement the merge reports, and the merge's own third composition seam. | `MergeCoverage`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
 | **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** | `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` | mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:342-352; mcp/src/agents_remember/memory/knowledge/read.py:355-390; mcp/src/agents_remember/memory/knowledge/read.py:469-480 |
 | Whole-item paging over an already-selected scope. | `page_of_scope` | mcp/src/agents_remember/memory/knowledge/read.py:743-797 |
@@ -933,7 +990,7 @@ one leaf's curation pass.
 | **The one body constructor the export seals through, so the scan and the artifact cannot define the digest twice.** | `logical_body_from_tables`; `logical_digest_of_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:95-129; mcp/src/agents_remember/memory/knowledge/logical.py:132-135 |
 | **The shared "prove this finished file is a closed database" step the import's stage is closed through.** | `require_closed_database` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-89 |
 | The admission reading the import's destination check uses, exported from publication. | `destination_observation` | mcp/src/agents_remember/memory/knowledge/publication.py:260-270 |
-| The two portable operations and the one code they added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-69; mcp/src/agents_remember/models/knowledge/result.py:72-120; mcp/src/agents_remember/models/knowledge/result.py:116-116 |
+| The two portable operations and the one code they added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-69; mcp/src/agents_remember/models/knowledge/result.py:72-120; mcp/src/agents_remember/models/knowledge/result.py:116-116; mcp/src/agents_remember/models/knowledge/result.py:133-133 |
 | The portable wire vocabulary: the request identities, the validation report and the two results. | `ExportRequest`; `ImportRequest`; `PortableValidation`; `ExportResult`; `ImportResult` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:66-98; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:136-176 |
 | The fourth composition seam, its five entry points and its two non-claims. | `export_knowledge_artifact`; `import_knowledge_artifact`; `validate_knowledge_artifact`; `canonical_body_of_artifact` | mcp/src/agents_remember/application/knowledge_export.py:60-63; mcp/src/agents_remember/application/knowledge_export.py:66-74; mcp/src/agents_remember/application/knowledge_export.py:77-96; mcp/src/agents_remember/application/knowledge_export.py:112-126 |
 | **The node the guarantee rests on: the canonical form is the only form the reader accepts, including all seven header types.** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts" | mcp/tests/test_knowledge_portable_boundaries.py:132-258 |
@@ -941,7 +998,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:618-650; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:656-656 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:164-164 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:166-166 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1035-1035 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:1118-1118 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:1143-1143 |
@@ -999,12 +1056,12 @@ cite; each re-cited row was re-derived from the current manifest while re-readin
 citation move, not a route change, and it is recorded as such rather than as new architecture.
 
 ## Update History
+- 2026-09-18T06:06:32+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:166-166. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T05:29:42+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:164-164. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1035-1035. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1118-1118. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1143-1143. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1118-1118. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1143-1143. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T07:00+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read this route's knowledge-storage half and added the generation-5 and authored-composition section.** The route gained one appended generation and one authored record group, and the section states the facts a later reader needs to avoid three specific false readings: **generation 5 is a strict append** (six tables on top of generation 4's twenty-one, no `ALTER TABLE`, generations 1–4 byte-identical, and `descends_from(GENERATION_5, GENERATION_4, GENERATION_4.tables)` as the published predicate) rather than a replacement or a re-declaration; the **declared policy defaults to off**, so an edge with no declared policy is stored, readable and not traversable, and the policy is validated in two places (the value boundary and the table's `CHECK`); and the read-side successor is a **different operation** that does not touch the retrieval selection, with the projection reporting rather than traversing. It records the two SQLite subtleties this leaf found by executing the DDL — an index may not carry a table's name, and a table `UNIQUE` over a nullable column does not enforce uniqueness for `NULL`s — and that the composition cycle is judged by the shipped shared lineage rule fed by a third edge source, never by a second rule. Verification metadata is **not** advanced over unreviewed content; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T04:55:18+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:163-163. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T04:55:18+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1033-1033. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T04:55:18+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1114-1114. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.

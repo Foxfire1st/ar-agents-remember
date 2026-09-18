@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/memberships.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -110,9 +110,9 @@ No domain documentation source is configured for this repository (`system/source
 | The forward read (family revision to members). | `list_members` | mcp/src/agents_remember/memory/knowledge/memberships.py:255-268 |
 | The reverse read (invariant revision to families) over the same rows. | `list_families_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/memberships.py:270-285 |
 | The duplicate-pair probe the insert path consults. | `find_membership_by_pair` | mcp/src/agents_remember/memory/knowledge/memberships.py:241-253 |
-| The batch command that composes the draft-sealing insert. | `_add_member` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:451-455 |
+| The batch command that composes the draft-sealing insert. | `_add_member` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:601-605 |
 | The two nodes that keep the concept guard and the database's own tuple separately proven. | "test_a_database_refusal_mid_batch_names_the_command_that_actually_failed"; "test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse" | mcp/tests/test_candidate_batch_transaction.py:993-1060; mcp/tests/test_candidate_batch_transaction.py:1062-1118 |
-| The single definition of a missing relation endpoint, shared with the claim relation. | `require_family_revision_endpoint`; `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:48-79 |
+| The single definition of a missing relation endpoint, shared with the claim relation. | `require_family_revision_endpoint`; `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:75-89; mcp/src/agents_remember/memory/knowledge/endpoints.py:92-106 |
 | The row codec and expected-row digest that make the stale-caller refusal possible. | `member_row`; `member_row_digest`; `decode_member_row` | mcp/src/agents_remember/memory/knowledge/records.py:382-391; mcp/src/agents_remember/memory/knowledge/records.py:392-412; mcp/src/agents_remember/memory/knowledge/records.py:413-428 |
 | The vocabulary this module stores and returns. | `FamilyMemberDraft`; `FamilyMember`; `FamilyMembers`; `InvariantFamilies` | mcp/src/agents_remember/models/knowledge/graph.py:49-56; mcp/src/agents_remember/models/knowledge/graph.py:58-63; mcp/src/agents_remember/models/knowledge/graph.py:96-102; mcp/src/agents_remember/models/knowledge/graph.py:104-109 |
 | The declared `family_member` table, its unique tuple, its index and its no-repoint trigger. | `family_member`; `family_member_invariant_revision`; `family_member_no_repoint` | mcp/src/agents_remember/memory/knowledge/schema.py:280-296; mcp/src/agents_remember/memory/knowledge/schema.py:327-328; mcp/src/agents_remember/memory/knowledge/schema.py:390-394 |

@@ -6,9 +6,9 @@
 | path | `mcp/src/agents_remember/models/knowledge/facet.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
-| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -160,11 +160,11 @@ No domain documentation source is configured for this repository (`system/source
 | The sealed, extra-forbidding base every model here inherits. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
 | The facet-specific entry point that resolves the `(kind, record_schema)` pair and refuses an unknown kind. | `validate_facet_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:191-220 |
 | **The registry those models are registered in — which since `KS-R19@v1` holds four groups (the internal conformance kind, these eight facet kinds, the two detection kinds and the requirement-revision kind).** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:93-113 |
-| The facet kind set derived from those entries rather than restated. | `FACET_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:138-138; mcp/src/agents_remember/memory/knowledge/record_envelope.py:137-137 |
-| The requirement family the registry gained, derived from the entries it unpacks. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:149-151 |
+| The facet kind set derived from those entries rather than restated. | `FACET_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:136-136; mcp/src/agents_remember/memory/knowledge/record_envelope.py:137-137 |
+| The requirement family the registry gained, derived from the entries it unpacks. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:148-150 |
 | The requirement kind and its frozen shape, declared in the vocabulary module rather than restated in the registry. | `REQUIREMENT_REVISION_KIND`; `REQUIREMENT_REVISION_SCHEMA` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84 |
 | **The case that keeps this closure a measurement: the union of all four groups, so a ninth subtype cannot be admitted without that line changing.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes" | mcp/tests/test_knowledge_facets.py:183-247 |
-| The closed union these six commands join, and the dispatch tables that must cover every member. | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:372-392 |
+| The closed union these six commands join, and the dispatch tables that must cover every member. | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:469-493 |
 | **The cases that hold the closed vocabulary, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_every_subtype_refuses_a_bad_shape_a_missing_meaning_and_its_own_provenance"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:229-280; mcp/tests/test_knowledge_facets.py:306-343 |
 
 ## Cross-Repo References
@@ -177,6 +177,8 @@ No cross-repository behavior is implemented in this file.
 | **The registry those models are registered in — which since `KS-R14@v1` holds three groups (the internal conformance kind, these eight facet kinds and the two detection kinds).** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:103-132 |
 
 ## Update History
+- 2026-09-18T08:30+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `ProposedCommand`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
+- 2026-09-18T06:09:03+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:148-150. No content impact: mechanical anchor-range projection bound to citation source snapshot 014df62463362d92ea768ade7d81f0ca0b615347d5c6feed94e130d80244a24d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:45+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `PAYLOAD_MODELS`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
 - 2026-09-18T05:29:42+00:00: Generated citation repair: `FACET_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:137-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T05:29:42+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:149-151. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.

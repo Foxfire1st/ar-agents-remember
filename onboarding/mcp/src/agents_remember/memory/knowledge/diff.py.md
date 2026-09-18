@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/diff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -183,7 +183,7 @@ No domain documentation source is configured for this repository (`system/source
 | The content comparison and the anchor signature the source half is built on. | `_comparable`; `_anchor_signature` | mcp/src/agents_remember/memory/knowledge/diff.py:596-612 |
 | **The source comparison, the four booleans, and `missing_side` as the reason they are all false.** | `_source_change` | mcp/src/agents_remember/memory/knowledge/diff.py:615-656 |
 | The reachability labels and the declared stream order's implementation. | `_reached_via`; `_ordered`; `_first_present` | mcp/src/agents_remember/memory/knowledge/diff.py:659-686 |
-| The existence probes and the predecessor-edge union this module consumes. | `invariant_revision_is_recorded`; `family_revision_is_recorded`; `membership_is_recorded`; `realization_claim_is_recorded`; `fetch_predecessor_edges` | mcp/src/agents_remember/memory/knowledge/read_queries.py:299-369 |
+| The existence probes and the predecessor-edge union this module consumes. | `invariant_revision_is_recorded`; `family_revision_is_recorded`; `membership_is_recorded`; `realization_claim_is_recorded`; `fetch_predecessor_edges` | mcp/src/agents_remember/memory/knowledge/read_queries.py:311-320; mcp/src/agents_remember/memory/knowledge/read_queries.py:323-332; mcp/src/agents_remember/memory/knowledge/read_queries.py:335-342; mcp/src/agents_remember/memory/knowledge/read_queries.py:478-491; mcp/src/agents_remember/memory/knowledge/read_queries.py:455-475 |
 | **The node that owns the union-side property the two rules serve, and the removed-realization node whose failing assertion is the load-bearing `assert 'unchanged' == 'removed'`.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence"; "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:424-530; mcp/tests/test_knowledge_diff_scope.py:309-342 |
 | **The nodes that hold the two change statements apart and measure the record comparison field by field.** | "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"; "test_the_record_comparison_reports_exactly_the_payload_field_that_changed"; "test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed" | mcp/tests/test_knowledge_diff_boundaries.py:510-540; mcp/tests/test_knowledge_diff_boundaries.py:543-597; mcp/tests/test_knowledge_diff_scope.py:177-219 |
 | The fixture's two snapshots and the transitions between them that this module's states are measured against. | `build_diff_fixture`; `DiffFixture` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/diff_scope_test_support.py:148-186 |

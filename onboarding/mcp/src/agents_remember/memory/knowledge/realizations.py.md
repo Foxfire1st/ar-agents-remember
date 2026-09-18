@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/realizations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -112,7 +112,7 @@ No domain documentation source is configured for this repository (`system/source
 | The forward read (invariant revision to claims). | `list_claims_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/realizations.py:271-286 |
 | The reverse read (anchor to claims) over the same rows. | `list_claims_for_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:288-301 |
 | The explicit removal with its expected-row-digest contract, and the in-transaction helper the batch composes. | `remove_realization_claim`; `_delete_claim`; `delete_realization_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:181-201; mcp/src/agents_remember/memory/knowledge/realizations.py:203-210; mcp/src/agents_remember/memory/knowledge/realizations.py:212-244 |
-| The batch command that composes the claim insert and reports its two written rows. | `_add_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:458-480 |
+| The batch command that composes the claim insert and reports its two written rows. | `_add_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:608-630 |
 | The stored anchor construction and narrow write hook the claim transaction reuses. | `source_anchor_from_draft`; `insert_anchor_row` | mcp/src/agents_remember/memory/knowledge/anchors.py:82-97; mcp/src/agents_remember/memory/knowledge/anchors.py:99-119 |
 | The row codec and expected-row digest for the claim relation. | `claim_row`; `claim_row_digest`; `decode_claim_row` | mcp/src/agents_remember/memory/knowledge/records.py:429-440; mcp/src/agents_remember/memory/knowledge/records.py:441-462; mcp/src/agents_remember/memory/knowledge/records.py:463-483 |
 | The closed authored role vocabulary and the explicit unclassified member. | `RealizationRole`; `UNCLASSIFIED_ROLE` | mcp/src/agents_remember/models/knowledge/graph.py:36-44; mcp/src/agents_remember/models/knowledge/graph.py:46-46 |

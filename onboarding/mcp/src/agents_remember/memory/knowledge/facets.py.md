@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/facets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4`|
-| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -157,7 +157,7 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | **The six standalone operations, each naming the act it performs so a refusal is reported under the operation the caller asked for.** | `add_facet`; `attach_facet`; `remove_facet_attachment`; `author_explanation`; `add_explanation_revision`; `designate_explanation` | mcp/src/agents_remember/memory/knowledge/facets.py:153-192 |
 | **The one dispatch the batch path and the standalone driver share, and the alias that documents the split.** | `apply_facet_command`; `PendingIdentities` | mcp/src/agents_remember/memory/knowledge/facets.py:201-215; mcp/src/agents_remember/memory/knowledge/facets.py:667-670 |
-| **The payload seam as the only payload decision point, and the envelope-plus-first-revision write.** | `apply_add_facet`; "def validate_facet_payload(" | mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:217-217; mcp/src/agents_remember/memory/knowledge/record_envelope.py:216-216 |
+| **The payload seam as the only payload decision point, and the envelope-plus-first-revision write.** | `apply_add_facet`; "def validate_facet_payload(" | mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:215-215; mcp/src/agents_remember/memory/knowledge/record_envelope.py:216-216 |
 | **Proposed origin only, refused at both entry points with the shipped code.** | `require_proposed_origin` | mcp/src/agents_remember/memory/knowledge/facets.py:275-285 |
 | **The recorded supersession edge and the shared cycle rule applied to it.** | `_record_supersession`; `require_acyclic_supersessions` | mcp/src/agents_remember/memory/knowledge/facets.py:288-312; mcp/src/agents_remember/memory/knowledge/facets.py:349-364 |
 | The exact earlier decision revision the edge requires, refused by name before any row is written. | `require_decision_revision` | mcp/src/agents_remember/memory/knowledge/facets.py:315-337 |
@@ -174,7 +174,7 @@ No domain documentation source is configured for this repository (`system/source
 | The shipped factories this module reports through, including the four the facet leaf added. | `facet_promotion_not_supported_refusal`; `facet_supersession_cycle_refusal`; `generation_mismatch_refusal`; `explanation_revision_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:1051-1073; mcp/src/agents_remember/memory/knowledge/refusals.py:1074-1130; mcp/src/agents_remember/memory/knowledge/refusals.py:1131-1164; mcp/src/agents_remember/memory/knowledge/refusals.py:1165-1196 |
 | The shared graph rule the third lineage graph is judged by. | `supersession_edges`; `cycle_vertices` | mcp/src/agents_remember/memory/knowledge/lineage.py:83-95; mcp/src/agents_remember/memory/knowledge/lineage.py:207-228 |
 | The pre-write endpoint existence check the attachment reaches. | `require_attachment_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:125-158 |
-| **The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.** | "test_accepted_origin_data_is_refused_at_both_entry_points"; "test_a_supersession_cycle_rolls_back_and_a_sealed_decision_cannot_be_rewritten"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write"; "test_the_two_entry_points_agree_and_a_refused_write_writes_nothing" | mcp/tests/test_knowledge_facets.py:365-388; mcp/tests/test_knowledge_facets.py:608-696; mcp/tests/test_knowledge_facets.py:968-1018; mcp/tests/test_knowledge_facets.py:828-906 |
+| **The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.** | "test_the_two_entry_points_agree_and_a_refused_write_writes_nothing"; "test_accepted_origin_data_is_refused_at_both_entry_points"; "test_a_supersession_cycle_rolls_back_and_a_sealed_decision_cannot_be_rewritten"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:840-875; mcp/tests/test_knowledge_facets.py:363-458; mcp/tests/test_knowledge_facets.py:606-700; mcp/tests/test_knowledge_facets.py:985-1035 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/snapshot_lifecycle_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4`|
-| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ No domain documentation source is configured for this repository (`system/source
 | The file-level probes the durability claims rest on. | `journal_peer_names`; `read_journal_mode`; `file_digest`; `byte_copy`; `row_counts`; `logical_identity_of`; `vacuum` | mcp/tests/snapshot_lifecycle_test_support.py:410-418; mcp/tests/snapshot_lifecycle_test_support.py:433-441; mcp/tests/snapshot_lifecycle_test_support.py:404-408; mcp/tests/snapshot_lifecycle_test_support.py:453-459; mcp/tests/snapshot_lifecycle_test_support.py:420-431; mcp/tests/snapshot_lifecycle_test_support.py:443-451; mcp/tests/snapshot_lifecycle_test_support.py:323-331 |
 | The real-process crash probe, which asserts the committed batch survived rather than only reporting it. | `crash_and_abandon`; `CrashOutcome` | mcp/tests/snapshot_lifecycle_test_support.py:477-533; mcp/tests/snapshot_lifecycle_test_support.py:468-475 |
 |  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1134-1134  |
-| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:87-87; mcp/tests/test-evidence-lanes.toml:89-89; mcp/tests/test-evidence-lanes.toml:88-88 |
+| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:87-87; mcp/tests/test-evidence-lanes.toml:89-89; mcp/tests/test-evidence-lanes.toml:88-88; mcp/tests/test-evidence-lanes.toml:90-90 |
 | The application seam this harness admits destinations through. | `admitted_candidate_destination`; `create_knowledge_candidate`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
 
 ## Cross-Repo References

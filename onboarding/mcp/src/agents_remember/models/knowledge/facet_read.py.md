@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/facet_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -131,7 +131,7 @@ No domain documentation source is configured for this repository (`system/source
 | The shipped recorded-scope policy this selection deliberately does not share. | `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/read.py:87-87 |
 | The frozen, strict, extra-forbidding base that makes every page a value. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
 | The selection that executes these declarations and the application seam that serves them. | "def select_facet_scope("; `read_facet_scope` | mcp/src/agents_remember/memory/knowledge/facet_read.py:109-129; mcp/src/agents_remember/application/knowledge_facets.py:71-121 |
-| **The cases that hold the declared order, the counts' arithmetic, the empty-but-real page and the own-policy result.** | "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact"; "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy" | mcp/tests/test_knowledge_facets.py:1037-1141; mcp/tests/test_knowledge_facets.py:986-1035 |
+| **The cases that hold the declared order, the counts' arithmetic, the empty-but-real page and the own-policy result.** | "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact"; "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy" | mcp/tests/test_knowledge_facets.py:1104-1104; mcp/tests/test_knowledge_facets.py:1053-1053 |
 
 ## Cross-Repo References
 

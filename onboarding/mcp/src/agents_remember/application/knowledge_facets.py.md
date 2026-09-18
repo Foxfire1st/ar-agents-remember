@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_facets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
@@ -129,7 +129,7 @@ No domain documentation source is configured for this repository (`system/source
 | The seed digest and the seed union the request carries. | `facet_seed_digest`; `FacetReadSeed` | mcp/src/agents_remember/models/knowledge/facet_read.py:188-191; mcp/src/agents_remember/models/knowledge/facet_read.py:182-185 |
 | The refusal helpers this seam reports through, including the absence the read owns. | `selector_absent_refusal`; `selection_incomplete_refusal`; `snapshot_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-63; mcp/src/agents_remember/memory/knowledge/read_refusals.py:169-186; mcp/src/agents_remember/memory/knowledge/read_refusals.py:142-168 |
 | The read-only open this seam is built on, and the refusal an absent path earns. | `open_read_only_database`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/connection.py:52-65; mcp/src/agents_remember/memory/knowledge/refusals.py:882-902 |
-| **The cases that hold the seam's own boundaries: its own-policy page, the byte-identical shipped page, and the incompleteness refusal.** | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:986-1035; mcp/tests/test_knowledge_facets.py:1037-1141 |
+| **The cases that hold the seam's own boundaries: its own-policy page, the byte-identical shipped page, and the incompleteness refusal.** | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:1053-1053; mcp/tests/test_knowledge_facets.py:1104-1104 |
 
 ## Cross-Repo References
 

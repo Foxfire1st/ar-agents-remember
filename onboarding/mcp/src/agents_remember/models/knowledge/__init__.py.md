@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash |  `15fe8678fc0f87eaac4606952f179135ebe392c4`|
-| lastVerifiedCommitDate |  2026-09-18T07:49:45+02:00|
+| lastVerifiedCommitHash |  `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate |  2026-09-18T08:36:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -88,6 +88,34 @@ in their owning submodule and imported by the decider, never defined by the deci
   re-export list is the contract.
 - Nothing here imports `memory.knowledge`; the direction is vocabulary first, storage second.
 
+### The Composition Vocabulary Joins The Served Surface (260915-KS-L17)
+
+This leaf added **one more source module** to the facade and, with it, the whole authored-composition
+vocabulary: `models/knowledge/composition.py`, re-exported name by name and listed in `__all__`. The
+names are the closed command kinds and record tables the composition write path publishes
+(`COMPOSITION_COMMAND_KINDS`, `COMPOSITION_WRITABLE_TABLES`), the one registered review scope a
+traversal policy may widen (`REGISTERED_REVIEW_SCOPE`, `WidenedScope`) and the closed direction
+vocabulary (`FOLLOW_DIRECTIONS`, `FollowDirection`), the policy draft and stored version
+(`FamilyCompositionPolicyDraft`, `FamilyCompositionPolicyVersion`, `PolicyIdentity`), the edge and its
+draft (`FamilyComposition`, `FamilyCompositionDraft`), the reported link (`FamilyCompositionLink`) and
+the authored explanatory context with its draft (`FamilyExplanationContext`,
+`FamilyExplanationContextDraft`, `FamilyExplanationContextRevision`).
+
+**Two of the shared unions this facade re-exports grew in the same change**, and this card's own rows
+record both: `KnowledgeOperation` gained `create_composition` and `set_family_revision_route` (the
+operations a *relation write* reports when it is reached directly) and `follow_family_composition` (the
+one act that is **not** a write — following declared composition edges under a versioned traversal
+policy, which is a different operation from `read_knowledge_scope`'s retrieval selection rather than a
+variant of it). The operation union therefore measures **forty-four** members on the merged line while
+the refusal-code union is unchanged at **forty-five**: this leaf minted no new refusal code and reuses
+the shipped ones through three new factories in `memory/knowledge/refusals.py`.
+
+**The counts in this card are measurements, not constants.** `KnowledgeOperation` is counted from the
+literal in `models/knowledge/result.py`; `ProposedCommand` is the discriminated union a batch's
+commands travel under and then held **twenty-two** variants after this leaf's four composition kinds
+joined the eighteen it held before. A later leaf that appends to either union re-counts from the
+declaration rather than editing a number here.
+
 ### Todos
 
 None recorded. Later leaves extend the vocabulary in its owning submodules and re-export here.
@@ -107,9 +135,9 @@ The rows below cite the submodules this facade re-exports and the two consumers 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators and — since this leaf — the whole snapshot vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:146-262 |
-| The eighth source module this leaf added to the facade, re-exported name by name. | `build_candidate_receipt`; `candidate_database_path`; `candidate_receipt_path`; `receipt_digest` | mcp/src/agents_remember/models/knowledge/__init__.py:112-136; mcp/src/agents_remember/models/knowledge/snapshot.py:58-62; mcp/src/agents_remember/models/knowledge/snapshot.py:64-67; mcp/src/agents_remember/models/knowledge/snapshot.py:144-148 |
-| The internal rules deliberately kept off the served surface. | `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56; mcp/src/agents_remember/models/knowledge/result.py:204-204; mcp/src/agents_remember/models/knowledge/result.py:221-221; mcp/src/agents_remember/models/knowledge/result.py:220-220; mcp/src/agents_remember/models/knowledge/result.py:203-203 |
+| The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators, the whole snapshot vocabulary and — since this leaf — the composition vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:160-288 |
+| The eighth source module this leaf added to the facade, re-exported name by name. | `build_candidate_receipt`; `candidate_database_path`; `candidate_receipt_path`; `receipt_digest` | mcp/src/agents_remember/models/knowledge/__init__.py:144-144; mcp/src/agents_remember/models/knowledge/snapshot.py:58-62; mcp/src/agents_remember/models/knowledge/snapshot.py:64-67; mcp/src/agents_remember/models/knowledge/snapshot.py:144-148 |
+| The internal rules deliberately kept off the served surface. | `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56; mcp/src/agents_remember/models/knowledge/result.py:237-237; mcp/src/agents_remember/models/knowledge/result.py:221-221; mcp/src/agents_remember/models/knowledge/result.py:220-220; mcp/src/agents_remember/models/knowledge/result.py:203-203 |
 | The storage owner writes these values rather than defining its own copies — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:92-110 |
 | The composition seams that admit a destination and build every request from this vocabulary. | `admitted_knowledge_destination`; `admitted_revision_request`; `admitted_family_request`; `admitted_claim_request`; `admitted_candidate_destination` | mcp/src/agents_remember/application/knowledge.py:125-140; mcp/src/agents_remember/application/knowledge.py:144-157; mcp/src/agents_remember/application/knowledge.py:327-337; mcp/src/agents_remember/application/knowledge.py:374-386; mcp/src/agents_remember/application/knowledge_snapshot.py:67-82 |
 | The shared branching fixture authors its identity and graph halves from these same models. | `build_branching_knowledge_fixture`; `BranchingKnowledgeFixture` | mcp/tests/knowledge_fixture_test_support.py:203-263; mcp/tests/knowledge_fixture_test_support.py:161-188 |
@@ -124,9 +152,10 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T09:25+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read the `__all__` claim and retired the generated projection bullet that had rewritten its range mechanically.** The generated repair of 2026-09-17T06:49:47+00:00 had repointed `__all__` to `mcp/src/agents_remember/models/knowledge/__init__.py:146-262` — a mechanical anchor-range projection, not a reading: the list now spans `:160-288` (the assignment opening at `__all__ = [` and its closing bracket), because this leaf's composition vocabulary and the snapshot vocabulary the earlier leaves added both sit inside it. The row was re-cited at that extent and its wording completed with the composition source, so the claim now states what the range holds; the projection bullet is retired because a mechanically projected range is unverified evidence. Verification metadata advances to the merged base commit `15fe8678`.
+- 2026-09-18T09:10+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **added the composition-vocabulary section to this card's body and re-read the facade claims this leaf's change set moved.** The card's body now records the tenth source module the facade re-exports (`models/knowledge/composition.py`) and the two shared unions that grew with it — `KnowledgeOperation` gaining `create_composition`, `set_family_revision_route` and `follow_family_composition`, and `ProposedCommand` holding twenty-two variants after this leaf's four composition kinds joined the eighteen it held before — with both counts stated as measurements taken from the declarations rather than constants a later leaf edits. This is a body change, not a metadata refresh: the section is new prose about what the merged facade now serves. Verification metadata advances to the merged base commit `15fe8678`.
 - 2026-09-18T02:37:44+00:00: Generated citation repair: `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` repointed to mcp/src/agents_remember/models/knowledge/result.py:188-202; mcp/src/agents_remember/models/knowledge/result.py:205-213; mcp/src/agents_remember/models/knowledge/base.py:40-56. No content impact: mechanical anchor-range projection bound to citation source snapshot d211cfd02f11c0600198b11c621aa5574ac8743db6e0ca1d2c92936e561c5146; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `require_stored_outcome`; `require_removal_outcome`; `require_consistent_acceptance` repointed to mcp/src/agents_remember/models/knowledge/result.py:161-175; mcp/src/agents_remember/models/knowledge/result.py:178-186; mcp/src/agents_remember/models/knowledge/base.py:40-56. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `__all__` repointed to mcp/src/agents_remember/models/knowledge/__init__.py:146-262. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/src/agents_remember/models/knowledge/result.py:161 to the row 112 of this card as the citation for `require_stored_outcome`: no cited file carried the construct, and the checker named line(s) [161, 359, 377] in this file as its live location
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `require_stored_outcome` in the row 112 of this card from mcp/src/agents_remember/models/knowledge/result.py:178-179 to mcp/src/agents_remember/models/knowledge/result.py:161-162, the extent of the construct the claim is about (the checker named line(s) [161, 359, 377] as its live location)
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `require_removal_outcome` in the row 112 of this card from mcp/src/agents_remember/models/knowledge/result.py:161-162 to mcp/src/agents_remember/models/knowledge/result.py:178-179, the extent of the construct the claim is about (the checker named line(s) [178, 477, 492] as its live location)

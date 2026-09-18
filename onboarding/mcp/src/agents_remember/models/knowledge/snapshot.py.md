@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/snapshot.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ No domain documentation source is configured for this repository (`system/source
 | The factual publication outcome with the previous identity it replaced. | `SnapshotPublicationResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:259-293 |
 | The publication-state measurement that never guesses which side moved. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
 | The closed disposal union, its carried-not-examined authorization reference and its verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposition`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
-| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:99-414 |
+| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:107-107; mcp/src/agents_remember/models/knowledge/candidate.py:158-167; mcp/src/agents_remember/models/knowledge/candidate.py:170-179; mcp/src/agents_remember/models/knowledge/candidate.py:498-515 |
 | The canonical encoder the receipt seal is computed through. | `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:34-38 |
 | The candidate lifecycle in which these shapes are produced. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:100-126; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:129-138; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
 | The publication that installs a prepared stage. | `publish_candidate_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |

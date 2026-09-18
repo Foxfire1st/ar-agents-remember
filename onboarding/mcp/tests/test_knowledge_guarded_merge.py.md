@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_guarded_merge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
-| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ No domain documentation source is configured for this repository (`system/source
 | The harness the cases are built on, and its real three-commit Git scenario. | `build_case`; `GitBranchWorld` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:72-78 |
 | The boundary module that carries the scenarios needing their own world. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | **The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.** | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-| **The lane manifest row that classifies the integration half — the lane header itself.** | "integration" | mcp/tests/test-evidence-lanes.toml:164-164 |
+| **The lane manifest row that classifies the integration half — the lane header itself.** | "integration" | mcp/tests/test-evidence-lanes.toml:166-166 |
 |The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1159-1159 |
 
 ## Cross-Repo References

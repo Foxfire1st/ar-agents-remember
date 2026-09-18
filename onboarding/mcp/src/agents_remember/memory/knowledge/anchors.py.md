@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/anchors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ No domain documentation source is configured for this repository (`system/source
 | The anchor-lifetime read: whether a stored claim still cites this anchor. | `find_claim_citing_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:121-136 |
 | The read surface. | `get_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:138-151 |
 | Explicit removal, with its two refusals both evaluated before the delete. | `remove_source_anchor`; `_delete_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:153-173; mcp/src/agents_remember/memory/knowledge/anchors.py:175-182 |
-| The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request. | `delete_anchor`; `RemoveSourceAnchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:184-206; mcp/src/agents_remember/models/knowledge/candidate.py:328-332 |
+| The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request. | `delete_anchor`; `RemoveSourceAnchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:184-206; mcp/src/agents_remember/models/knowledge/candidate.py:347-351; mcp/src/agents_remember/models/knowledge/candidate.py:328-332 |
 | The anchor-codec row and digest, which derive the canonical identity text at the storage boundary. | `anchor_row`; `anchor_row_digest`; `decode_anchor_row` | mcp/src/agents_remember/memory/knowledge/records.py:226-236; mcp/src/agents_remember/memory/knowledge/records.py:366-381; mcp/src/agents_remember/memory/knowledge/records.py:237-246 |
 | The locator union and the confined relative-path rule this module stores without resolving. | `SourceAnchorDraft`; `SourceAnchor`; `SourceLocator` | mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:130-133; mcp/src/agents_remember/models/knowledge/source.py:76-79 |
 | The refusal factories this module's refusals come from. | `duplicate_anchor_refusal`; `referenced_anchor_refusal`; `missing_expected_row_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:420-441; mcp/src/agents_remember/memory/knowledge/refusals.py:553-567; mcp/src/agents_remember/memory/knowledge/refusals.py:514-530 |

@@ -6,9 +6,9 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
-| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -576,7 +576,7 @@ extension, and the worker report's claim that `KS-R03` "resolved" that observati
 | The two label operations the seam exposes. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-238; mcp/src/agents_remember/application/knowledge.py:240-250 |
 | The context resolution and its pure sealing step. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
 | The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
-| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:163-414 |
+| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:182-223; mcp/src/agents_remember/models/knowledge/candidate.py:498-515 |
 | The lane rules the seam's entry point reaches, and the operation that applies them. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
 | The composed-path case that drives the boundary end to end through this seam. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-109 |
 | The case that proves the operation refuses a context smuggled past the model seal. | "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:1120-1160 |
@@ -837,14 +837,14 @@ lacks.
 | --- | --- | --- |
 | The read-side row counts now resolve the dataset's own generation instead of the build's table list. | `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:587-603 |
 | The diff-side row counts do the same, so coverage describes the dataset it measured. | `diff_row_counts` | mcp/src/agents_remember/application/knowledge_diff.py:826-842 |
-| The generation selector both now call, and the declaration a created store makes. | `generation_of_database`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:282-282; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-327; mcp/src/agents_remember/memory/knowledge/schema_generations.py:347-347; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-34 |
-| **The generation selector both now call — which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-34 |
-| **The declaration a created store makes, which is the registry's last entry rather than a second literal — generation 5 since `KS-R18@v1` appended it.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:318-318 |
-| **The generation selector this route's read and diff helpers call, which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-34 |
-| **The declaration a created store makes: the registry's last entry, which is generation 5 since `KS-R18@v1`.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:318-318 |
-| **The registry whose tip that entry is, ordered oldest first so the newest supported generation is its last member rather than a second literal that could drift from the tuple.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-305 |
+| The generation selector both now call, and the declaration a created store makes. | `generation_of_database`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413; |
+| **The generation selector both now call — which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-34; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413 |
+| **The declaration a created store makes, which is the registry's last entry rather than a second literal — generation 5 since `KS-R18@v1` appended it.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385 |
+| **The generation selector this route's read and diff helpers call, which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-34; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413 |
+| **The declaration a created store makes: the registry's last entry, which is generation 5 since `KS-R18@v1`.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385 |
+| **The registry whose tip that entry is, ordered oldest first so the newest supported generation is its last member rather than a second literal that could drift from the tuple.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:365-372 |
 | **The generation gate the binding write applies before any row exists: a dataset that predates the table is refused with the observed generation as a fact, never migrated or widened.** | `require_binding_generation` | mcp/src/agents_remember/memory/knowledge/citations.py:293-314 |
-| **The two members this leaf registered on the shared operation vocabulary.** | "author_citation_binding"; "read_citation_closure" | mcp/src/agents_remember/models/knowledge/result.py:110-111; mcp/src/agents_remember/models/knowledge/result.py:112-112 |
+| **The two members this leaf registered on the shared operation vocabulary.** | "author_citation_binding"; "read_citation_closure" | mcp/src/agents_remember/models/knowledge/result.py:120-120; mcp/src/agents_remember/models/knowledge/result.py:121-121 |
 
 ## 260915-KS-L11 The Facet Selection Joins As A Sixth Seam
 
@@ -891,8 +891,51 @@ assessment produces no row at all rather than a favourable one. This route remai
 facade: the summaries travel into `CuratorChecklist.knowledge_review`, whose default keeps every
 existing caller unchanged.
 
+## 260915-KS-L17 The Composition Seam
+
+The route gained one module, `application/knowledge_composition.py` — the layer's **fifth read-only
+application seam** beside `knowledge_read.py`, `knowledge_snapshot.py`, `knowledge_merge.py` and
+`knowledge_export.py` — and no new authority. It admits a dataset path and a repository namespace and
+delegates to the two memory modules that own the acts: `follow_composition_scope` for the
+declared-policy traversal and `family_revision_view` for the Family projection.
+
+**The traversal is a read, not a write, and it is not the retrieval read.** This is the one sentence a
+later reader must not flatten. Following declared composition edges under a declared policy version is
+a *different operation* from `read_knowledge_scope`: this seam does not touch that function, its
+selection policy or its advertised frontier, and the operation name it carries
+(`follow_family_composition`) is its own member of the operation vocabulary rather than a variant of
+the read's. A caller that wants the recorded-scope selection asks for that operation; a caller that
+wants declared composition edges followed asks for this one.
+
+Three boundaries the module owns, and the reason each is the shape it is:
+
+- **The read-only handle is how "a refused traversal persisted nothing" is structural.** The
+  connection comes from `open_read_only_database`, so the strongest statement available is a
+  `SELECT`; the property is a fact about the handle rather than a rollback this code remembers, and
+  the boundary case asserts the dataset's bytes are identical before and after a refusal.
+- **The projection reports and never traverses.** `family_view` returns `reported` or `refused`, and a
+  family revision this namespace does not hold is **refused rather than reported empty** — an empty
+  report would be indistinguishable from a revision that genuinely records nothing.
+- **Every modelled failure is a typed refusal inside the result, not an exception.** An unknown policy
+  identity or version, a not-permitted edge, a step past the declared bound and a missing family
+  revision all arrive as `KnowledgeRefusal` values; a traversal that cannot be reported as a
+  *complete* scope returns the refusal rather than a truncated scope.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The traversal seam: it carries its own operation and opens through the read-only handle. | `follow_family_composition` | mcp/src/agents_remember/application/knowledge_composition.py:83-83 |
+| **The projection seam: a family revision this namespace does not hold is refused, not reported empty.** | `family_view` | mcp/src/agents_remember/application/knowledge_composition.py:115-115 |
+| The one open path, whose handle is the shipped read-only connection and whose schema is the one the file declares. | `open_read_only_store` | mcp/src/agents_remember/application/knowledge_composition.py:136-136 |
+| The published seam surface: two operations and their two value types. | `__all__` | mcp/src/agents_remember/application/knowledge_composition.py:49-49 |
+| **The case that stamps the seam: read-only, its own operation, and no movement of the retrieval selection.** | "test_the_application_seam_is_read_only_carries_the_operation_and_moves_no_selection" | mcp/tests/test_knowledge_family_composition_boundaries.py:617-617 |
+
+
 ## Update History
+- 2026-09-18T08:30+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `GENERATIONS`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
+- 2026-09-18T06:06:32+00:00: Generated citation repair: `CURRENT_GENERATION` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T06:06:32+00:00: Generated citation repair: `CURRENT_GENERATION` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:45+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `author_citation_binding`; `read_citation_closure`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
+- 2026-09-18T07:00+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read this route's composition seam and added its section.** The route gained a **fifth read-only application seam** — `knowledge_composition.py` — beside `knowledge_read`, `knowledge_snapshot`, `knowledge_merge` and `knowledge_export`. The section states the three boundaries the seam owns: it opens through the shipped read-only handle so a refused traversal persists nothing and "changed nothing" is a property of the handle rather than a rollback; it carries `follow_family_composition` as its **own operation**, so a caller that wants declared composition edges followed asks for that operation and not for the retrieval selection; and every modelled failure is a typed refusal inside the result rather than an exception. It also records that a family revision this namespace does not hold is refused rather than reported empty. Verification metadata is **not** advanced over unreviewed content; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read the controller this route governs against the changed source and wrote the section above. `application/memory_quality/controller.py` gained `curator_knowledge_review_summaries`, which summarises the already-published curator-coherence authority's assessment collection for the checklist's factual section and decides nothing about it; the route stays a typed operation facade and the summaries are deliberately not an input to `curatorActionableCount`. The reference rows that cite the controller were re-derived from the current file while re-reading it, because the leaf's insertion moved every anchor below it: `MemoryQualityExecution` is now `:93-111`, `_resolve_execution` `:317-337` and `_attach_coherence_readiness` `:714-741`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): added the **citation-binding operations** section and **corrected a stale number this route's body stated as a fact**. The new section records the two things a reader of this route needs: the seam's own contract is unchanged (no authority conferred, the provenance envelope assigned rather than accepted, no acceptance or promotion operation, `application` still the only consumer of `memory.knowledge` from this layer), while two operation members now travel through it — authoring a binding and reading a selected prose view's closure — so both go through the same admitted path as every other knowledge operation rather than a second entry point beside it. It also records the generation gate the binding write applies, a dataset that predates the table being refused with the observed generation as a fact. **The L10 section's body said a dataset created through this seam declares generation 2; that was true when L10 wrote it and is false now**, so it is corrected in place to say the declaration follows the registry's last entry — generation 5 since this leaf appended the citation-binding table — rather than being restated as a literal a later generation would falsify. One corrupted citation cell was also repaired by hand: the row naming `generation_of_database` and `CURRENT_GENERATION` had a range that attempted to cover both declarations at once, which is not one extent, so it is **split into two rows, one anchor each**, with the anchors cited at their own declarations. Re-reading it also let the generated projection bullet that had produced the old range be removed, because a mechanically projected range is unverified evidence and an agent has now read both declarations. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T02:37:44+00:00: Generated citation repair: `generation_of_database`; `CURRENT_GENERATION` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-327; mcp/src/agents_remember/memory/knowledge/schema_generations.py:282-282. No content impact: mechanical anchor-range projection bound to citation source snapshot d211cfd02f11c0600198b11c621aa5574ac8743db6e0ca1d2c92936e561c5146; claim bytes unchanged; generated by ccr-r10@v1.

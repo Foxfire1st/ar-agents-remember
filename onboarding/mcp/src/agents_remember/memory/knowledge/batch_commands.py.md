@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/batch_commands.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `9c12e8b1ec027b8bb07f4c0cc79ef99a655ff890`|
-| lastVerifiedCommitDate | 2026-09-18T01:58:08+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -116,13 +116,18 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The apply loop, the observed failure position and the deferred-foreign-key check at the end of a completed pass. | `apply_commands` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:147-172 |
-| The outcome object that carries what the loop observed. | `BatchApplication`; `observed_failure` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:118-144 |
-| The ledger that produces the receipt and registers batch-created identities. | `BatchLedger`; "def written("; `removed` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:89-119 |
-| The three-family dispatch and the unreachable-kind defect. | `_apply_command`; `_INSERTING_KINDS`; `_LABELING_KINDS`; `_refuse_unreachable` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:192-223; mcp/src/agents_remember/memory/knowledge/batch_commands.py:295-304 |
-| The two receipt entries a claim that records its own anchor produces. | `_add_claim`; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:458-480; mcp/src/agents_remember/memory/knowledge/batch_commands.py:483-494 |
-| The removal steps, each reporting the digest the row had when it was deleted. | `_remove_anchor`; `_remove_member`; `_remove_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:536-551; mcp/src/agents_remember/memory/knowledge/batch_commands.py:554-560; mcp/src/agents_remember/memory/knowledge/batch_commands.py:563-571 |
+| The outcome object that carries what the loop observed. | `BatchApplication`; `observed_failure` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:137-155; mcp/src/agents_remember/memory/knowledge/batch_commands.py:156-166 |
+| The ledger that produces the receipt and registers batch-created identities. | `BatchLedger`; "def written("; `removed` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:103-133 |
+| The three-family dispatch an apply step chooses between. | `_apply_command` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:210-210 |
+| The inserting command kinds the dispatch admits. | `_INSERTING_KINDS` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:250-250 |
+| The labelling command kinds the dispatch admits, which is a different set from the inserting ones. | `_LABELING_KINDS` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:262-262 |
+| The unreachable-kind defect: a command that reaches the dispatch and belongs to no family is refused rather than silently skipped. | `_refuse_unreachable` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:468-468 |
+| The two receipt entries a claim that records its own anchor produces. | `_add_claim`; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:608-632; mcp/src/agents_remember/memory/knowledge/batch_commands.py:633-633 |
+| The removal steps, each reporting the digest the row had when it was deleted. | `_remove_anchor`; `_remove_member`; `_remove_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:686-703; mcp/src/agents_remember/memory/knowledge/batch_commands.py:704-712; mcp/src/agents_remember/memory/knowledge/batch_commands.py:713-727 |
 | The no-op label edit that contributes no receipt entry. | `_apply_label`; `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:290-533 |
-| The after-integrity re-proof: foreign keys, every revision seal, both lineage graphs. | `require_after_integrity`; `_require_sealed_rows`; `_require_acyclic_graph` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:577-722 |
+| The after-integrity re-proof the apply step runs last: foreign keys, every revision seal, both lineage graphs. | `require_after_integrity` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:727-727 |
+| The seal half of the re-proof. | `_require_sealed_rows` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:749-749 |
+| **The graph half of the re-proof, and the composition pass this leaf added to it.** | `_require_acyclic_graph` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:881-881 |
 | The store's two batch-facing primitives, which the apply step calls instead of a nested operation. | `insert_invariant_identity`; `insert_revision_aggregate` | mcp/src/agents_remember/memory/knowledge/store.py:296-325 |
 | The invariant identity and revision insert bodies the same call reaches. | `insert_invariant`; `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:536-572; mcp/src/agents_remember/memory/knowledge/store.py:575-632 |
 | The family half's in-transaction inserts, which the batch composes rather than re-implementing. | `insert_family`; `insert_family_revision` | mcp/src/agents_remember/memory/knowledge/families.py:110-131; mcp/src/agents_remember/memory/knowledge/families.py:173-208 |
@@ -144,6 +149,7 @@ writes no Git object, no ledger row and no second repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T07:00+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read the four claims this leaf's additions moved and re-cited each by hand.** The four composition apply steps joined the dispatch, and the shared endpoint check now names the offending identity in its refusal's `record_id` and the endpoint kind in its `table`; the after-integrity re-proof gained the whole-graph composition cycle pass beside its existing seal and lineage halves. Four rows whose anchors the leaf's insertions had moved — the outcome object, the claim-and-digest pair, the three removal steps, and the three parts of the re-proof — were each split so every anchor sits in a range that actually holds it. No claim was softened or deleted to clear a row. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T22:33:10+00:00: Generated citation repair: `_add_claim`; `_anchor_digest` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:458-480; mcp/src/agents_remember/memory/knowledge/batch_commands.py:483-494. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T22:33:10+00:00: Generated citation repair: `_remove_anchor`; `_remove_member`; `_remove_claim` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:536-551; mcp/src/agents_remember/memory/knowledge/batch_commands.py:554-560; mcp/src/agents_remember/memory/knowledge/batch_commands.py:563-571. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
 

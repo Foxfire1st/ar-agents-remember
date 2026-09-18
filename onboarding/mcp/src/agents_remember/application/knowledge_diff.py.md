@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_diff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
+| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
@@ -179,7 +179,7 @@ No domain documentation source is configured for this repository (`system/source
 | The comparison request, the side that names one snapshot and its selector, and the typed result. | `KnowledgeDiffRequest` | mcp/src/agents_remember/models/knowledge/diff.py:245-253 |
 | The result that is a page or a refusal, never both. | `KnowledgeDiffResult` | mcp/src/agents_remember/models/knowledge/diff.py:501-570 |
 | One side of a comparison: the exact snapshot and the per-side selector. | `KnowledgeDiffSide` | mcp/src/agents_remember/models/knowledge/diff.py:182-205 |
-| **The one operation member this seam's results carry.** | "diff_knowledge_scope" | mcp/src/agents_remember/models/knowledge/result.py:36-78 |
+| **The one operation member this seam's results carry.** | "diff_knowledge_scope" | mcp/src/agents_remember/models/knowledge/result.py:87-87 |
 
 ## Cross-Repo References
 
