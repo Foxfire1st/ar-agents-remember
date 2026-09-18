@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated | 2026-09-18T14:05:00+02:00 
+| lastUpdated | 2026-09-18T14:05:00+02:00 |
 | lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00| governingOverview      | `overview.md`                                              |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 
 ## Governing Overview
 

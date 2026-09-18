@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/governing_overview_resolution.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-18T14:05:00+02:00 
+| lastUpdated | 2026-09-18T14:05:00+02:00 |
 | lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00| reviewedWorkingCandidate | `ar/260915-caps-l20-ar` uncommitted source; base `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
