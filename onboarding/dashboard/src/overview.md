@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -581,7 +581,46 @@ fields; the task-artifact takeover remains independently discriminated by notes/
 
 The generated lifecycle phase union and schema now include `recovering-private-preparation`. This is a server-owned recovery state projected through the existing lifecycle view; it adds no frontend command or recovery authority. Keep the schema and TypeScript mirror generated from the same producer.
 
+## 260915-KS-L22 The Reviewer Takeover Beside The Change-Set Viewer
+
+The cockpit gained a second identity for an existing full-page takeover without gaining a second
+takeover. `ChangeSetTarget` — the value the detail panel and the doc readers hand the shell — now
+carries an optional `review` variant holding the reviewed subject's recorded identity, and
+`ChangeSetTakeover` dispatches on its presence: `target.review` selects `data-view="intent-review"`
+and mounts `panels/review/ReviewSurface` in place of `panels/changeset/ChangeSetViewer`. The
+change-set viewer is therefore never mounted for a review and no change-set request is made from
+one, which is the reason the variant's own declaration gives for it.
+
+The entry that produces such a target is added **beside** the change-set actions, never in their
+place. `DocChangeSetBar` gained optional `selectorKind`/`selectorId` props and renders a third
+`ChangeSetButton` labelled "Intent review" only when its target is a live admitted curator candidate
+and a selector was named (`live && selectorId`) — the same liveness the working change-set action is
+gated on, so the two entries appear and disappear together and a subject with no live candidate
+offers neither. The entry carries an identity rather than a filesystem path, because the browser
+never chooses the candidate: the resolution layer behind the route does.
+
+The shell did not move. The reviewer takeover inherits the change-set takeover's full-bleed body, its
+`viewport` main and its back link, so it is entered and left exactly as the working and committed
+views are; the discriminator is the `data-view` marker, not a new shell mode, navigation item or
+store. Route-shape, takeovers and layer retention are as the L23 and CCR-R18 sections above record
+them, with one more `data-view` value on the same takeover.
+
+The surface itself is display-only and belongs to the `panels/review/` child route; its data comes
+from the read-only client on the `data/` route, which mutates no store. What this route records is
+the dispatch: a review is a change-set target that says it is one, so the cockpit reaches the
+reviewer with no second takeover path.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The target variant that turns the existing takeover into a review. | "review?: { selectorKind: ReviewSelectorKind; selectorId: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:41-41 |
+| The declaration's own reason: the change-set viewer is never mounted for a review. | "never mounted for one, so no change-set request is made from a review" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-40 |
+| The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:572-572 |
+| The surface a review target mounts in the change-set viewer's place. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:575-575 |
+| The reviewer entry, gated on the same liveness as the working action. | "{live && selectorId ? (" | dashboard/src/panels/detail-panel/changeSetBar.tsx:119-119 |
+| The label the entry carries beside the change-set actions. | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:126-126 |
+
 ## Update History
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the reviewer takeover the cockpit reaches through the existing change-set target's `review` variant, the `intent-review` view marker that dispatches it to the `panels/review/` surface, and the "Intent review" entry the change-set bar adds beside its working/committed actions for a live candidate that names a selector. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.

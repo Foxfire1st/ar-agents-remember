@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated            | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -49,6 +50,17 @@ rather than from the notes reader. `NotesTakeover` spreads the whole target onto
 `requirements-reader` for a requirements target. The shell, the shared takeover
 flag, hidden-not-unmounted retention, and the `onOpenNotes` wiring are
 unchanged.
+
+## 260915-KS-L22 Intent-Review Takeover Kind
+
+The change-set takeover now carries a second kind. `ChangeSetTarget` gained an optional
+`review: { selectorKind, selectorId }` member, and `ChangeSetTakeover` reads it: `data-view` is
+`intent-review` when the target carries a review and `changeset` when it does not, and the review
+variant mounts `ReviewSurface` (`dashboard/src/panels/review/ReviewSurface`) in place of
+`ChangeSetViewer`, passing `repo`, `master`, `leaf`, the two selector fields and `onBack`. The review
+surface therefore sits beside `NotesTakeover` and the requirements variant of the task-artifact
+reader as one more takeover the shell dispatches on the target's own shape, and nothing in the
+shell's routing, rails or change-set plumbing changed with it: the target chooses the pane.
 
 ## Code Commentary
 
@@ -231,7 +243,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The body grid bleed variant switches between three railed columns and a single full-width column. | "const bodyGrid = cva({" | dashboard/src/cockpit/Cockpit.tsx:207-223 |
 | Files, Engine Room, Topology, and Chats request the full-bleed layout. | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:447-451 |
-| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:453-453 |
+| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:454-454 |
 | The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:66-73; dashboard/src/cockpit/Cockpit.tsx:75-83 |
 | The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:328-334 |
 | The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
@@ -244,11 +256,11 @@ the reviewed task evidence for any current behavioral claim.
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:48-59; dashboard/src/data/taskIdentity.ts:65-71 |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/detail-panel/state.ts:160-160 |
 | The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
-| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:786-786 |
+| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:801-801 |
 | The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:79-122; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:173-245 |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:715-787 |
 | The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:96-96 |
-| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:693-693 |
+| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:708-708 |
 | Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. | "export interface Metrics extends LifecycleStateCounts {" | dashboard/src/types/projection.ts:460-460 |
 | Every ActiveState maps to a required count field. | "export type LifecycleStateCounts =" | dashboard/src/types/projection.ts:441-441 |
 | The count-field name is derived from the camel-cased state vocabulary. | "export type StateCountField<S extends ActiveState>" | dashboard/src/types/projection.ts:439-439 |
@@ -274,6 +286,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-18T16:13:35+00:00: Generated citation repair: "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" repointed to dashboard/src/cockpit/Cockpit.tsx:454-454. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T16:13:35+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:801-801. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T16:13:35+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:708-708. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 4
   claim(s) whose anchor no longer sat in its cited range and normalised 12 further range(s) in this
@@ -454,3 +469,14 @@ cross-repository implementation source that governs its behavior.
 - 2026-06-15T17:00 — Created for slice 5d: shell layout + status/caution migrated to co-located Panda
   css/cva; the mode bar became the React Aria `ModeBar`. Verification metadata pinned until closeout
   stamps the 5d code commit.
+2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the intent-review takeover kind.** `ChangeSetTakeover` now keys `data-view` on
+`target.review` (`intent-review` / `changeset`) and mounts the new `ReviewSurface` instead of
+`ChangeSetViewer` whenever the target carries the review variant, so one takeover function
+dispatches two kinds without the shell's routing, rails or change-set plumbing moving. The import
+of `ReviewSurface` is the only other change to this file. The new section above states the fact and
+its boundary — the target chooses the pane; the shell does not decide which surface a review gets.
+No reference row was re-cited in this pass: the card's own ranges into this source are left as they
+stand and belong to the citation-reprojection engine. The body was changed substantively and this
+entry is the history record, not a metadata-only refresh. The metadata block above names this
+leaf's uncommitted candidate as what was read, and `lastVerifiedCommitHash` / `lastVerifiedCommitDate`
+are left exactly as the last real verification set them because no commit contains this candidate.

@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
-| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -1368,7 +1368,51 @@ invariant applies), and a detection signal and an authored description stay sepa
 blocks with their own provenance lines and **no merged field** combining them (requirement 4.9). It writes
 nothing itself: `project_knowledge` builds a plan and hands it to the injected writer.
 
+## 260915-KS-L22 The Intent Reviewer's Adapter, And The Tier That Owns The Composition
+
+`application/knowledge_review.py` is this route's new adapter, and it **selects nothing**. It resolves
+the candidate a task context names, calls the shipped comparison and the shipped review-matrix view,
+and assembles their results into the payload the review vocabulary declares. No scope is computed, no
+frontier is widened, no reference is re-resolved and no row is re-diffed here: `diff_knowledge_scope`
+(R08's comparison) and `read_knowledge_view` (L20's review matrix, asked for its five record kinds)
+are consumed exactly as their owners publish them, and every identity, count and ordering the payload
+carries is the shipped operation's own value rather than a second derivation of it.
+
+Where it sits is a rank decision, not a preference. `layers.toml` ranks `serving` below
+`application`, so the HTTP shim may not import the read, diff and view operations this adapter
+composes; the composition therefore lives at this tier and the dashboard reaches it through a port on
+`ServingCollaborators` that the composition root wires — the same shape the launch-capsule compiler
+already uses on this route. One value is shared across the seam: the transport parses
+`ReviewSurfaceRequest` from its query string and this composition consumes that same value, so there
+is one spelling of "what was asked" instead of a wire shape and a domain shape to keep in agreement.
+
+The candidate comes from canonical task context only. A repository, a master and a leaf id are the
+inputs; the leaf's enclosure contract is located from the recorded task root — never from a
+caller-supplied path — and the two datasets are derived from that contract's own recorded worktree
+group, inside the leaf's disposable local root. A path-shaped selector, a leaf with no readable
+contract, and a leaf whose worktree is not live each refuse by name, and an absent candidate dataset
+refuses as `candidate_dataset_absent` rather than substituting another dataset: the current `HEAD`, a
+guessed worktree path and a browser-supplied path are all unreachable from these inputs.
+
+The records the renderer is given come from their owners too. `review_records_for` reads the published
+assessment collection from the curator authority's own publication through the shipped loader, not
+through a second reader of the same bytes, and an absent or unreadable authority is an empty
+collection rather than an error — a candidate with no published assessment is one whose subjects
+display `unassessed`, which the surface must be able to show truthfully. No `current` measurement is
+supplied, so the shipped projection reports an unmeasured assessment stale rather than promoting it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The adapter's one entry point. | "def read_knowledge_review(" | mcp/src/agents_remember/application/knowledge_review.py:253-281 |
+| The shipped comparison it composes and adds nothing to. | `diff_knowledge_scope` | mcp/src/agents_remember/application/knowledge_review.py:376-399 |
+| L20's review-matrix view, asked for the five record kinds. | `read_knowledge_view` | mcp/src/agents_remember/application/knowledge_review.py:316-329 |
+| The candidate resolved from task context, never from a caller's path. | "def resolve_review_candidate(" | mcp/src/agents_remember/application/knowledge_review.py:182-227 |
+| The published assessment collection as the renderer's input. | "def review_records_for(" | mcp/src/agents_remember/application/knowledge_review.py:979-1004 |
+| The rank that puts the composition at this tier rather than in `serving/`. | `application`; `application` | layers.toml:44-56 |
+| The disposable candidate root the two datasets are read from. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/knowledge_review.py:111-111 |
+
 ## Update History
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the thin adapter `application/knowledge_review.py`, its composition of R08's `diff_knowledge_scope` and L20's `read_knowledge_view` with no selection of its own, the `layers.toml` rank that keeps the composition at this tier, and the candidate resolution and published-assessment read from the owners' own paths. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** -- the three seams this route gains for `KS-R20@v1`; the view seam's two refusals of convenience (the snapshot resolved from the dataset rather than declared, and the continuation checked before any row is read with no partial answer); the four properties the renderer enforces together (a named ordering input with no fallback, an unclassifiable value withheld rather than emitted with an empty class, the declared tiebreak as the only lexical order, and byte-identical runs at one snapshot); the `CR20-6` intake decision that carries the authored claim inside an already-registered `decision` facet; and the projection seam that places authored text without producing any, records all three values or refuses to project, and keeps conditions and attributions separate. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the route's one new module and its single end-to-end operation, the two status owners the request must carry verbatim and the refusal that keeps the pipeline from inventing them, the counts the report carries with no field that could make it a gate, and the retention proof that publishes to `<task_root>/notes/reports/` and reads the bytes back from the exact destination. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:40+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand** — `generation_of_database`, `CURRENT_GENERATION`, `worktree_status_packet`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.

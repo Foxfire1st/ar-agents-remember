@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_review_assessment_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T04:20+02:00 |
-| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
-| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l15` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
 | governingOverview | `overview.md` |
 
@@ -85,7 +85,7 @@ the production path to drive.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:166-168; mcp/tests/test-evidence-lanes.toml:236-238; mcp/tests/test-evidence-lanes.toml:238-238; mcp/tests/test-evidence-lanes.toml:255-262; mcp/tests/test-evidence-lanes.toml:183-190; mcp/tests/test-evidence-lanes.toml:264-264; mcp/tests/test-evidence-lanes.toml:192-192; mcp/tests/test-evidence-lanes.toml:194-194; mcp/tests/test-evidence-lanes.toml:266-266; mcp/tests/test-evidence-lanes.toml:267-267; mcp/tests/test-evidence-lanes.toml:195-195 |
+| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:166-168; mcp/tests/test-evidence-lanes.toml:236-238; mcp/tests/test-evidence-lanes.toml:238-238; mcp/tests/test-evidence-lanes.toml:255-262; mcp/tests/test-evidence-lanes.toml:183-190; mcp/tests/test-evidence-lanes.toml:264-264; mcp/tests/test-evidence-lanes.toml:192-192; mcp/tests/test-evidence-lanes.toml:194-194; mcp/tests/test-evidence-lanes.toml:266-266; mcp/tests/test-evidence-lanes.toml:267-267; mcp/tests/test-evidence-lanes.toml:195-195; mcp/tests/test-evidence-lanes.toml:268-268; mcp/tests/test-evidence-lanes.toml:196-196 |
 |The shared support module this module is registered as a consumer of.|"mcp/tests/test_curator_review_assessment_publication.py"| mcp/tests/evidence-lifecycle.toml:360-360; mcp/tests/test-evidence-lanes.toml:240-240; mcp/tests/evidence-lifecycle.toml:403-410; mcp/tests/evidence-lifecycle.toml:414-414 |
 | The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. | `curator_coherence_action`; `_exact_review_assessments`; `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:88-98; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:248-302; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:352-451 |
 | The destination and read-back the survival and blocked cases measure. | `publish_assessment_evidence_bytes`; `read_back_published_bytes`; `AssessmentEvidenceBlockedError` | mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:64-96; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:152-193; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:195-240 |

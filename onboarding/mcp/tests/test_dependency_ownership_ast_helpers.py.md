@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash |  `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`|
+| lastVerifiedCommitDate |  2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -179,10 +179,10 @@ The retained source anchors below support the fixture roles and assertion bounda
 | **The contract and artifact blocks the pin counts, added by this leaf, and the consumer list its sibling artifact gained.** | "id = \"knowledge-diff-cases\"" | mcp/tests/evidence-lifecycle.toml:60-60 |
 | Repository inputs reach their supported consumers. | `test_repository_inputs_reach_their_supported_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:266-286 |
 | The catalog pin constants, and the re-pin narrative the docstring carries beside them — **stale on this candidate, as the L21 record below says: it still reads "fourteen contracts and sixty-four artifacts".** | `LIFECYCLE_SCHEMA`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-43; mcp/tests/test_dependency_ownership_ast_helpers.py:44-44; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:47-109 |
-| The three consumer entries the `260915-CAPS-L17` re-pin added to three governed-artifact rows, the entire reason the digest moved at that re-pin. | "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/eve_capsule_test_support.py"; "mcp/tests/eve_adapter_test_support.py" | mcp/tests/evidence-lifecycle.toml:604-655; mcp/tests/evidence-lifecycle.toml:724-741; mcp/tests/evidence-lifecycle.toml:1178-1193; mcp/tests/evidence-lifecycle.toml:1427-1434; mcp/tests/evidence-lifecycle.toml:1449-1456; mcp/tests/evidence-lifecycle.toml:1437-1437; mcp/tests/evidence-lifecycle.toml:1459-1459; mcp/tests/evidence-lifecycle.toml:1438-1438; mcp/tests/evidence-lifecycle.toml:1460-1460; mcp/tests/evidence-lifecycle.toml:659-659; mcp/tests/evidence-lifecycle.toml:1442-1442; mcp/tests/evidence-lifecycle.toml:1464-1464 |
+| The three consumer entries the `260915-CAPS-L17` re-pin added to three governed-artifact rows, the entire reason the digest moved at that re-pin. | "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/eve_capsule_test_support.py"; "mcp/tests/eve_adapter_test_support.py" | mcp/tests/evidence-lifecycle.toml:604-655; mcp/tests/evidence-lifecycle.toml:724-741; mcp/tests/evidence-lifecycle.toml:1178-1193; mcp/tests/evidence-lifecycle.toml:1427-1434; mcp/tests/evidence-lifecycle.toml:1449-1456; mcp/tests/evidence-lifecycle.toml:1437-1437; mcp/tests/evidence-lifecycle.toml:1459-1459; mcp/tests/evidence-lifecycle.toml:1438-1438; mcp/tests/evidence-lifecycle.toml:1460-1460; mcp/tests/evidence-lifecycle.toml:659-659; mcp/tests/evidence-lifecycle.toml:1442-1442; mcp/tests/evidence-lifecycle.toml:1464-1464; mcp/tests/evidence-lifecycle.toml:1444-1444; mcp/tests/evidence-lifecycle.toml:1466-1466 |
 | The three artifacts those rows belong to, each an already-governed row rather than a new registration. | "mcp/tests/diff_scope_test_support.py"; "mcp/tests/read_scope_test_support.py" | mcp/tests/evidence-lifecycle.toml:604-604; mcp/tests/evidence-lifecycle.toml:721-721; mcp/tests/evidence-lifecycle.toml:1175-1175; mcp/tests/evidence-lifecycle.toml:75-75; mcp/tests/evidence-lifecycle.toml:61-61; mcp/tests/evidence-lifecycle.toml:66-66 |
 | The population the pin names, re-derived at this candidate's own tip — **15 contracts and 65 artifacts**, the values the constants below carry. | `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-44; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45; mcp/tests/evidence-lifecycle.toml:1-1630 |
-| The three consumer entries the `260915-CAPS-L15` re-pin added to three governed-artifact rows, whose shape the `260915-CAPS-L17` entries repeat. | "mcp/tests/curator_coherence_test_support.py"; "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/fixtures/codex_app_server_model_page.json" | mcp/tests/evidence-lifecycle.toml:329-351; mcp/tests/evidence-lifecycle.toml:603-625; mcp/tests/evidence-lifecycle.toml:1252-1267; mcp/tests/evidence-lifecycle.toml:373-380; mcp/tests/evidence-lifecycle.toml:648-655; mcp/tests/evidence-lifecycle.toml:1524-1531; mcp/tests/evidence-lifecycle.toml:1534-1534; mcp/tests/evidence-lifecycle.toml:1535-1535; mcp/tests/evidence-lifecycle.toml:384-384; mcp/tests/evidence-lifecycle.toml:659-659; mcp/tests/evidence-lifecycle.toml:1539-1539 |
+| The three consumer entries the `260915-CAPS-L15` re-pin added to three governed-artifact rows, whose shape the `260915-CAPS-L17` entries repeat. | "mcp/tests/curator_coherence_test_support.py"; "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "mcp/tests/fixtures/codex_app_server_model_page.json" | mcp/tests/evidence-lifecycle.toml:329-351; mcp/tests/evidence-lifecycle.toml:603-625; mcp/tests/evidence-lifecycle.toml:1252-1267; mcp/tests/evidence-lifecycle.toml:373-380; mcp/tests/evidence-lifecycle.toml:648-655; mcp/tests/evidence-lifecycle.toml:1524-1531; mcp/tests/evidence-lifecycle.toml:1534-1534; mcp/tests/evidence-lifecycle.toml:1535-1535; mcp/tests/evidence-lifecycle.toml:384-384; mcp/tests/evidence-lifecycle.toml:659-659; mcp/tests/evidence-lifecycle.toml:1539-1539; mcp/tests/evidence-lifecycle.toml:1541-1541 |
 | **The contract and artifact blocks the pin counts, added by this leaf, and the consumer list its sibling artifact gained.** | "id = \"knowledge-diff-cases\"" | mcp/tests/evidence-lifecycle.toml:60-60 |
 
 ## Cross-Repo References
@@ -267,6 +267,28 @@ opens "fourteen contracts and sixty-four artifacts" and repeats its provenance n
 known text residue the L16 record above already named for the owning builder. The authority is
 `sha256sum mcp/tests/evidence-lifecycle.toml` reproducing `633b03ee…` and the catalog's own blocks counting
 `15 [[contract]]` / `65 [[artifact]]`.
+
+## 260915-KS-L22 Catalogue Re-Pin — The Tenth, Moving Only The Digest
+
+`260915-KS-L22` re-pins the catalogue identity a tenth time, and this is the first re-pin of the
+series whose **counts do not move**. The leaf adds no `[[contract]]` and no `[[artifact]]`; it
+appends one consumer entry to each of two already-governed artifacts
+(`mcp/tests/diff_scope_test_support.py`, `mcp/tests/read_scope_test_support.py`), so the population
+stays at **15 contracts and 65 artifacts** while the file's bytes change and only the digest moves:
+
+| Constant | Was (the L21 value this card carried) | Is now |
+| --- | --- | --- |
+| `LIFECYCLE_CONTRACT_COUNT` | 15 | **15** (unchanged) |
+| `LIFECYCLE_ARTIFACT_COUNT` | 65 | **65** (unchanged) |
+| `LIFECYCLE_CATALOG_SHA256` | `633b03ee16893ce3d0e838659d52f2bc609903f5c75b142eb41ca8c4fdabf5e6` | **`68a64207bd808eafd31f8c6b23856302c5ef2d150a604aa8177427e5906a1012`** |
+
+The new digest is `sha256sum mcp/tests/evidence-lifecycle.toml` on this candidate, and the two
+constants beside it are the file's own block counts (`15 [[contract]]`, `65 [[artifact]]`) — so the
+constant pair and the file agree, and the re-pin is auditable by re-measuring rather than by trusting
+the narrative beside it. That narrative is the one residue this card keeps naming: the
+`LIFECYCLE_CATALOG_SHA256` docstring still repeats its provenance story in two overlapping passages
+and still carries counts older than the values above, which is the owning builder's text to correct
+and not this seat's to edit. **The authority is the declarations.**
 
 ## Update History
 - 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): re-read all three pinned constants against the catalog's bytes and recorded the **tenth deliberate re-pin, the first since `260915-KS-L11` that moves the block counts as well as the digest**. `LIFECYCLE_CONTRACT_COUNT` is **15**, `LIFECYCLE_ARTIFACT_COUNT` is **65** and `LIFECYCLE_CATALOG_SHA256` is re-measured to **`633b03ee16893ce3d0e838659d52f2bc609903f5c75b142eb41ca8c4fdabf5e6`**, which `sha256sum mcp/tests/evidence-lifecycle.toml` reproduces and which the constants carry, because this leaf appends one `[[contract]]` (`migration-census-cases`, owner `mcp/tests/migration_census_test_support.py`, evidence node `mcp/tests/test_migration_census.py::test_the_seed_writes_every_census_record_kind_through_the_shipped_batch_operation`) and one `[[artifact]]` for that same support module, with exactly one declared consumer. Every earlier count this card states — `4 / 45`, `13 / 54`, `14 / 55`, `14 / 64` — is retained as the measurement of the tip that produced it and none was deleted, and the re-pin table now carries a tenth row beside the ninth. **The constant's own docstring still opens "fourteen contracts and sixty-four artifacts" and repeats its provenance narrative twice**, so the record states that the declarations, not the prose, are the authority and leaves the code residue to its owning builder. Two reference rows were re-cited: the pinned-population row now cites `mcp/tests/evidence-lifecycle.toml:1-1630` (was `:1-1326`, the file's previous extent) and the constants' row no longer claims the docstring holds "all five deliberate re-pin records". The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
@@ -394,3 +416,20 @@ known text residue the L16 record above already named for the owning builder. Th
 - 2026-08-25T13:44:00+00:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.
   requirement review. Verification remains closeout-owned.
+2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read all three pinned constants against the catalogue's own bytes and recorded the
+tenth deliberate re-pin — the first that moves the digest alone.** This leaf registers no contract
+and no artifact: it appends a consumer entry to two already-governed artifacts, so
+`LIFECYCLE_CONTRACT_COUNT` stays **15** and `LIFECYCLE_ARTIFACT_COUNT` stays **65**, while
+`LIFECYCLE_CATALOG_SHA256` is re-measured to
+**`68a64207bd808eafd31f8c6b23856302c5ef2d150a604aa8177427e5906a1012`**, which `sha256sum
+mcp/tests/evidence-lifecycle.toml` reproduces and which the two count constants agree with. The new
+section above states the values, keeps `633b03ee…` as the L21 measurement it supersedes, and repeats
+the known text residue in the constant's docstring — it still repeats its provenance narrative and
+carries older counts — while stating that the declarations, not the prose, are the authority. The
+L21 and earlier sections above are retained unchanged as the measurements of the tips that produced
+them. No reference row was touched in this pass; the card's ranges into the catalogue and into the
+manifest are the citation-reprojection engine's to move. The metadata block above names this leaf's
+uncommitted candidate in `reviewedWorkingCandidate`, and `lastVerifiedCommitHash` /
+`lastVerifiedCommitDate` are left exactly as the last real verification set them because no commit
+contains this candidate. The body was changed substantively and this entry is the history record,
+not a metadata-only refresh.

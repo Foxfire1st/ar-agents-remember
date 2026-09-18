@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1779,7 +1779,48 @@ unpopulated in a checkout, because populating it would repoint every checkout la
 dependency-less copy. The per-card detail is on the `install` route's cards and the
 [tests route](tests/overview.md).
 
+## 260915-KS-L22 The Intent-Review Route, Its Port, And The Wiring Behind It
+
+This route gained one read-only HTTP route and the composition seam it is reached through.
+`GET /api/review/intent` (`serving/review.py`) is GET-only and accepts **no filesystem path**: the
+query string carries `repo`, `master`, `leaf`, `selectorKind` and `selectorId` and nothing else, and
+the candidate whose two knowledge datasets are compared is resolved behind the route from that
+canonical task context. A browser therefore cannot address a database the resolution did not select —
+the same path-free property the change-set routes' own selectors establish, applied here to a review
+whose subject is one recorded invariant or family identity.
+
+The route is transport over a port, not a decision. `KnowledgeReviewPort` is a callable from the typed
+request to the typed result, and `ServingCollaborators.knowledge_review` carries it into the app
+through `register_review_routes`. `serving` ranks below `application` in `layers.toml`, so the serving
+module may not import the read, diff and view operations the surface composes; it takes the port the
+way the launch route takes the capsule compiler. A process that omits the port refuses the route by
+name with `503` — the surface is not served rather than served empty, because an empty pane and an
+unreachable adapter are different facts. The other statuses reuse the change-set routes' own idiom:
+`404` for a candidate that does not resolve, is not live, or has no dataset; `400` for a selector kind
+the surface does not admit; `200` for the typed result serialized once through the model that declares
+its shape.
+
+Production wiring lives in the composition root. `cli/dashboard.py`'s `serving_collaborators` builds
+`review_port` — the application adapter called with the candidate's own published assessment
+collection — and passes it as `knowledge_review`. Every `create_app` call in that module goes through
+that function, so a served dashboard either has the adapter or refuses by name; a process that
+assembles collaborators some other way and omits the field gets the refusal rather than a silently
+empty surface.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:49-49 |
+| The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:104-104 |
+| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:59-75 |
+| The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:456-465 |
+| The registration that reads that port. | `register_review_routes(app, config, collaborators.knowledge_review)` | mcp/src/agents_remember/serving/app.py:295-295 |
+| The composition root's adapter function. | "def review_port(request):" | mcp/src/agents_remember/cli/dashboard.py:84-93 |
+| The port passed into the shared collaborators. | `knowledge_review` | mcp/src/agents_remember/cli/dashboard.py:98-98 |
+| The two-shape status idiom the route inherits, `503` included. | "def _status_for(result: KnowledgeReviewResult) -> int:" | mcp/src/agents_remember/serving/review.py:78-89 |
+
 ## Update History
+- 2026-09-18T18:20+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read this card's reopened claim against the construct its range now covers, and RETAINED its wording** — `KNOWLEDGE_REVIEW_ROUTE`, cited at mcp/src/agents_remember/serving/review.py:104-104. The claim says the section's route is registered GET-only, and the cited line is `@app.get(KNOWLEDGE_REVIEW_ROUTE)`; the constant itself is declared at `:49`. The claim is true as written. It reopens because the construct **did not exist at this card's recorded verification commit** — it is this leaf's own addition — so the comparison the checker makes is between a stamp that predates the construct and a tree that carries it. That is the stamp-relative condition this master named at L12, L13, L16, L17, L20 and L21, and it clears when closeout writes the code commit. No range was substituted or deleted and the verification stamp is **not** advanced.
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the GET-only `GET /api/review/intent` route and its path-free query contract, the `knowledge_review` port on `ServingCollaborators` with the rank reason it exists, and the composition-root wiring in `cli/dashboard.py` that supplies the application adapter. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-636. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the packaged role files' current shape reaches this route.** The CAPS-L1 section still described the packaged role files as carrying the L1 readable order and an `**Inherits:**` declaration line. leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote all **ten** files under `package_data/runtime/skills/l-01-agent-lifecycles/roles/` into the **function shape** — `# <Role>`, `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do`, and a closing `## Stop and …` section — so the numbered sections, the knob block and the `**Inherits:**` line no longer exist there and any card citing one is stale. The canonical `skills/` tree was rewritten first and `scripts/sync-skills.py` propagated it, so canonical and packaged copies stay byte-identical. Body updated as above; no verification stamp advanced because the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 6 generated projection bullet(s) by hand** — `create_knowledge_revision`, `worktree_closeout_apply_payload`, `task_reopen`, `PreparedMemoryCertificationAdapter`, `_attach_final_full_catalog`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.

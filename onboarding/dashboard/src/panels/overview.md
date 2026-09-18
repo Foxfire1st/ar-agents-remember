@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -187,12 +188,12 @@ inside agents-remember.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:72-80 |
-| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:777-790 |
-| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:782-790 |
+| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:792-792; dashboard/src/cockpit/Cockpit.tsx:798-798 |
+| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:798-799; dashboard/src/cockpit/Cockpit.tsx:801-801 |
 | Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
 | The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
 | The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:359-383 |
-| `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" | dashboard/src/cockpit/Cockpit.tsx:860-860 |
+| `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" | dashboard/src/cockpit/Cockpit.tsx:875-875 |
 | The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
 | The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 | Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `successful` | dashboard/src/panels/HighlightComposer.tsx:710-780; dashboard/src/panels/HighlightComposer.tsx:244-696; dashboard/src/panels/HighlightComposer.tsx:238-238 |
@@ -325,7 +326,49 @@ viewer change; file-level detail lives in the panel sidecars.
 
 260831-CCR-L18 updated the Hangar render-test fixture so its hand-built `lifecycleOperation` sample carries the new `schemaVersion` and `stateMatrixVersion` literals required by the generated mirror. File-level detail lives in that sidecar.
 
+## 260915-KS-L22 The Review Panel Route And Its Three-Pane Surface
+
+`panels/review/` is this route's new child, and it is one component: `ReviewSurface.tsx`, mounted by
+the cockpit takeover when a change-set target carries the review variant. It renders the Intent
+Reviewer's three panes in one scrolling column — Knowledge, Source, Evidence and assessment — in the
+order the payload declares them, and it is display-only: the module has no control that writes
+anything, no submission button, and no place a conclusion of its own could be assembled. The one
+renderer it reuses is the change-set route's `DiffPane`, fed the two recorded statements the
+comparison published and only when both sides are `present`; a side that is `absent`, `binary` or
+`unresolved` renders as its own named state rather than as an empty diff.
+
+The prohibitions are rendered, not merely intended. Authored effects, preservation claims and
+unresolved questions are listed under their own heading and detection signals under a second one,
+because the payload keeps those two collections apart by element type; a selected path with no
+registered attribution is reported outside any claim instead of being folded into one; a count the
+comparison could not measure prints as not measured with its stated reason rather than as a zero;
+and both lists that could show an assessment print `UNASSESSED — no assessment is recorded against
+this subject.` when the collection is empty, so no pane has a favourable default to fall into.
+
+Failure is a state on this surface too. A typed refusal is rendered with its code, its detail, the
+offending input and the next action, and a transport error is its own line; neither is a degraded
+success, because a refused review shows no panes at all. The submission block states the increment's
+own boundary in the same voice: submission is not offered (or disabled, for a stale comparison) with
+the reason and a next action naming the existing curator authority, and the three dispositions it
+prints are labelled as that authority's vocabulary — none of them publication approval. Every
+rendered state carries a `data-testid`, which is how the surface's cases read each pane back.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The child route's one component. | "export function ReviewSurface({" | dashboard/src/panels/review/ReviewSurface.tsx:339-346 |
+| Pane 1, and the two collections it keeps apart. | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:172-208 |
+| Pane 2, the selected locations and what the selection did not reach. | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:210-250 |
+| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:252-301 |
+| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:203-203 |
+| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:303-323 |
+| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:325-337 |
+| The one renderer it reuses, fed only two present sides. | `DiffPane` | dashboard/src/panels/review/ReviewSurface.tsx:22-22 |
+
 ## Update History
+- 2026-09-18T16:13:35+00:00: Generated citation repair: "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:792-792; dashboard/src/cockpit/Cockpit.tsx:798-798. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T16:13:35+00:00: Generated citation repair: "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:798-798; dashboard/src/cockpit/Cockpit.tsx:799-799; dashboard/src/cockpit/Cockpit.tsx:801-801. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T16:13:35+00:00: Generated citation repair: "export function CockpitShell({ initialView = \"operations\"" repointed to dashboard/src/cockpit/Cockpit.tsx:875-875. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the new `panels/review/` child and its one component, the three panes rendered in the payload's own order, the states each pane prints instead of defaulting (unassessed, none_recorded, not measured, unclassified, refusal), and the reused `DiffPane` fed only two present sides. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "function DetailPanelImpl({"; "export function displayedReaderDoc({"; "export function TaskReader({" repointed to dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/model.ts:103-103; dashboard/src/panels/detail-panel/taskReader.tsx:638-638. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "function DetailPanelImpl({"; "export function displayedReaderDoc({"; "export function TaskReader({" repointed to dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/model.ts:103-103; dashboard/src/panels/detail-panel/taskReader.tsx:638-638. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.

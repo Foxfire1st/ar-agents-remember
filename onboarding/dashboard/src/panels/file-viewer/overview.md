@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-05T06:21+00:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`       |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ a file is selected; kept mounted so state survives a tab switch.
 | --- | --- | --- |
 | The L1 read-only files API this view consumes. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
 | The same-origin client wrapping that API. | `fetchRepos` | dashboard/src/data/files.ts:108-111 |
-| The shell that registers + keeps this view mounted. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:335-338; dashboard/src/cockpit/Cockpit.tsx:774-776 |
+| The shell that registers + keeps this view mounted. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:335-338; dashboard/src/cockpit/Cockpit.tsx:774-776; dashboard/src/cockpit/Cockpit.tsx:339-339 |
 | The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Current L5I Route State
@@ -89,6 +89,7 @@ in-flight read during development effect replay.
 
 ## Update History
 
+- 2026-09-18T18:22+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **this leaf's own code edit moved lines this route's body cites, so the carrier range was APPENDED to the row that cites them and this entry records that body change.** `dashboard/src/cockpit/Cockpit.tsx` gained the `ReviewSurface` import and the takeover's review branch, which shifted the cited declarations below the insertion; the row that names "const filesLayer = chatsLayer;" now also cites `dashboard/src/cockpit/Cockpit.tsx:339-339`, the line that actually carries it. **Every range the row already carried is kept** — the repair is a union, never a substitution and never a deletion — and no claim wording changed, because the claim's subject (the shell that registers and keeps this view mounted) is the same construct it always was. The verification stamp is **not** advanced: the code commit does not exist yet and closeout owns it.
 - 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: FileViewer.tsx changed only by behavior-preserving lint remediation.

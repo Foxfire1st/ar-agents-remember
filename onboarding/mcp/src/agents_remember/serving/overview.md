@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -1262,7 +1262,45 @@ this capsule's — first crossing the bound about 2,297 characters beyond the se
 **Any pair measured over 129024 is a bound re-derivation that stops the loop, never a silent
 re-bound.**
 
+## 260915-KS-L22 The Intent-Review Transport Over An Injected Port
+
+`serving/review.py` is this route's new shim, and it does transport only: it validates a query string,
+builds the one typed request the composition consumes, calls the injected port, and maps the typed
+result onto the change-set routes' own status idiom. `200` serves the review; `503` is returned when no
+adapter is wired into the process, because the surface is not served rather than served empty; `404`
+covers a candidate that does not resolve, is not live, or has no dataset; `400` covers a selector kind
+the surface does not admit and the two path-shaped failures the port's call can raise. The value it
+returns is the port's own typed result serialized once, through the model that declares its shape.
+
+It accepts no path. The route's inputs are a repository, a master, a leaf id and one recorded subject
+selector, and the selector kind is closed at the two identity seeds the read operation declares —
+`invariant` and `family`. Every other seed kind addresses a revision, a membership or a claim rather
+than a subject a curator reviews, so it is refused by name instead of being mapped onto one of the
+two; the refusal carries the offending input, the expected set and the next action. That closure is
+what keeps the browser out of candidate selection: the resolution behind the port chooses which
+dataset is reviewed, and the route cannot be handed one.
+
+Why a port rather than a direct import is a rank fact: `layers.toml` ranks `serving` below
+`application`, so this module may not import the read, diff and view operations the review composes.
+It takes `KnowledgeReviewPort` the way the launch route takes the capsule compiler, wired by the
+composition root in `cli/dashboard.py`. Registration also carries an ordering constraint its siblings
+share — the route must be registered before the greedy static mount — and the module's own docstring
+records it, alongside the statement that the registrar accepts the runtime config for symmetry and
+resolves nothing from it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The GET-only route handler over the injected port. | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:105-127 |
+| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:54-54 |
+| The query parser that admits only those two. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:59-69 |
+| The status mapping the route inherits from the change-set routes. | "def _status_for(result: KnowledgeReviewResult) -> int:" | mcp/src/agents_remember/serving/review.py:78-89 |
+| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:85-85 |
+| The 400 a selector kind outside the admitted set gets. | `status_code` | mcp/src/agents_remember/serving/review.py:141-141 |
+| The 404 for a candidate that does not resolve. | `status_code` | mcp/src/agents_remember/serving/review.py:148-148 |
+| The registration that must precede the static mount. | "def register_review_routes(" | mcp/src/agents_remember/serving/review.py:92-100 |
+
 ## Update History
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the transport module `serving/review.py`, its 200/400/404/503 status idiom, the two selector kinds it admits and refuses by name, and the `KnowledgeReviewPort` it takes because `serving` ranks below `application`. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `parse_runner_config` repointed to mcp/src/agents_remember/serving/harness_control_runner.py:144-171. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` repointed to mcp/tests/test_capsule_launch_wiring.py:805-844. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `launch_spec_binding` repointed to mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,10 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-09-17T10:35+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated            | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -140,6 +141,23 @@ letting an undeclared process count as owner — "a CLI or test run is nobody's 
 (`durable_store.StoreOwnership.is_compaction_owner`) — because a `--reload` dashboard can be running
 against the same coordination root as a live MCP server. Closing it means declaring the role inside
 `_dev_app()` as well; nothing else about this file would change.
+
+## 260915-KS-L22 Reviewer-Adapter Composition Root
+
+`serving_collaborators` now binds a second application-tier callable beside the capsule compiler.
+It imports `read_knowledge_review` and `review_records_for` from
+`agents_remember.application.knowledge_review` at function scope, defines the local `review_port`,
+and places it on the collaborator record as `knowledge_review` — so every `create_app` call in this
+module, live, reload, sim and daemon alike, resolves the reviewer adapter through the one function
+that already knows which configuration the app serves. The adapter is composed with its published
+records: `review_port` calls
+`read_knowledge_review(config, request, review_records_for(config, request))`, reading the
+assessment collection from the curator authority's own publication for the candidate the request
+resolves to. A candidate with no published assessment supplies an empty collection, which the
+surface displays as `unassessed` rather than inventing an assessment — the honest state, and the one
+a reviewer needs to see. Supplying the port is also what decides the route's behaviour: the serving
+layer refuses the review route by name when this field is absent, because an empty pane and an
+unreachable adapter are different facts.
 
 ## Invariants And Boundaries
 
@@ -320,3 +338,16 @@ the base is not silently dropped by this composition.
 - 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the `dashboard` subcommand adapter
   (config → create_app → uvicorn). Verification metadata pinned until closeout stamps the 4a code
   commit.
+2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **bound the application-tier reviewer adapter into the one composition root.**
+`serving_collaborators` now imports `read_knowledge_review` / `review_records_for` and passes
+`knowledge_review=review_port` into the replaced collaborator record, so the live, reload, sim and
+daemon apps all reach the reviewer through the same config-bound callable that already carries the
+capsule compiler. The adapter is composed with its published records —
+`read_knowledge_review(config, request, review_records_for(config, request))` — and a candidate with
+no published assessment yields an empty collection the surface shows as `unassessed` rather than a
+fabricated one. The new section above records that, and records the consequence the serving layer
+states for itself: an absent port is a named refusal, not an empty surface. No reference row was
+touched; the card's ranges into this source belong to the citation-reprojection engine. The metadata
+block above names this leaf's uncommitted candidate as what was read, and the two verification stamps
+are left exactly as the last real verification set them because no commit holds this candidate. The
+body was changed substantively and this entry is the history record, not a metadata-only refresh.

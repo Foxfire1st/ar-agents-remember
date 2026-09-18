@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash |  `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`|
+| lastVerifiedCommitDate |  2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -1659,7 +1659,56 @@ annotation resolves the other. The module's own derived sets — `CENSUS_RECORD_
 `CENSUS_WRITABLE_TABLES` — are what the seam registry and the dispatch tables name, so the census answers for
 its own membership rather than a count being edited in a test.
 
+## 260915-KS-L22 The Review-Surface Vocabulary, And The Record Kind It Does Not Define
+
+`models/knowledge/review.py` is this route's new vocabulary module, and the property that matters
+most about it is a non-property: **it defines no record kind.** Every value in it renders records
+another owner already stores, or states an absence where no record exists; the one thing it owns is
+the shape of a display. The three pane names are declared once (`REVIEW_PANE_NAMES` = `knowledge`,
+`source`, `evidence`) and `PROPOSED_ASSESSMENT_DISPOSITIONS` publishes the three dispositions the
+existing curator authority accepts — as a statement about that authority rather than as a control of
+this surface's own, so a reviewer can see which judgements are expressible. None of the three is
+publication approval, and the payload's constructor refuses a disposition set that is not theirs.
+
+The prohibitions are constructor checks rather than conventions a renderer is asked to remember.
+`ReviewSideContent` refuses text unless the side is `present`, so a missing operand renders as a named
+state (`absent`, `binary` or `unresolved`) and never as a blank that reads like an empty document.
+`ReviewAssessmentDisplay` refuses an assessment displayed without its author or without the inputs it
+examined, because an anonymous verdict and an assessment that examined nothing are not renderings of
+a recorded assessment at all. `ReviewRemainingCount` refuses an unexplained absent count — `value` is
+`None` exactly when the quantity has no meaning here, and the reason must then be stated — and refuses
+a measured count that also carries a not-applicable reason, which is how a zero that means "none"
+stays distinguishable from a zero that means "not measured".
+
+The stale rule is structural at the payload. `KnowledgeReviewPayload` refuses a stale comparison whose
+submission state is not `disabled_stale`, and refuses a current comparison whose submission claims to
+be disabled for staleness: "an assessment is never submitted against a comparison that has moved" is a
+property of the value rather than a rule a client is asked to honour. The same class keeps the
+knowledge pane's own assessment one of the assessments it displays, and the evidence pane's two states
+matched to the collections they carry — an empty corpus reported as `recorded`, or a populated one
+reported as `none_recorded`, is a false statement about the evidence either way, and `assessed` is
+false the moment there is no assessment to show.
+
+One outcome per result closes the set. `KnowledgeReviewResult` carries either a payload or one typed
+refusal, never both and never neither, so a caller that receives a refusal has no panes and cannot
+read their absence as a review of an empty candidate. The refusals themselves are a closed five-member
+union — the codes for an unresolved candidate, a non-live one, an absent dataset, a refused
+comparison, and an unavailable adapter — each naming its detail, its next action and, where one
+exists, the offending input.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's own non-definition: it defines no record kind. | "This module defines **no record kind**" | mcp/src/agents_remember/models/knowledge/review.py:3-3 |
+| The three pane names, declared once. | `REVIEW_PANE_NAMES` | mcp/src/agents_remember/models/knowledge/review.py:73-73 |
+| The dispositions the existing authority accepts, published rather than owned. | `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge/review.py:78-82 |
+| The present-side-requires-text rule. | "def _require_text_exactly_when_present" | mcp/src/agents_remember/models/knowledge/review.py:122-133 |
+| The author and examined inputs a displayed assessment must carry. | "def _require_the_basis_to_travel" | mcp/src/agents_remember/models/knowledge/review.py:267-286 |
+| The stale/submission coupling, checked at construction. | "def _require_the_submission_state_to_follow_staleness" | mcp/src/agents_remember/models/knowledge/review.py:512-528 |
+| The unassessed-is-an-absence rule for counts. | "def _require_a_stated_state" | mcp/src/agents_remember/models/knowledge/review.py:340-348 |
+| One outcome per result: a payload or one refusal. | "def _require_one_outcome" | mcp/src/agents_remember/models/knowledge/review.py:555-561 |
+
 ## Update History
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the review-surface vocabulary and the record kind it does not define, the three pane names and the published dispositions, and the constructor-enforced prohibitions that carry the surface's rules as properties (present-side-requires-text, an assessment's basis must travel, unassessed is an absence, stale implies disabled submission, one outcome per result). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T15:12:32+00:00: Generated citation repair: `KnowledgeContext` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:236-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T15:12:32+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:280-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T15:12:32+00:00: Generated citation repair: `ChangeCommand` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:646-646. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.

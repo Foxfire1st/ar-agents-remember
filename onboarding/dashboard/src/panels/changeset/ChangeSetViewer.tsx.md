@@ -5,9 +5,10 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-12T12:55+02:00                                 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`             |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`             |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -78,6 +79,16 @@ no-file canvas. `data-testid`s: `changeset-viewer`, `changeset-back`, `changeset
 `pane-placeholder` (now the **error** display only — the no-file empty state is the `EmptyStateBackdrop`,
 whose own `empty-backdrop` testid appears only when motion is enabled), `changeset-open-sidecar`.
 
+**260915-KS-L22** gave `ChangeSetTarget` one more member and deliberately no behaviour: an optional
+`review?: { selectorKind: ReviewSelectorKind; selectorId: string }`, the Intent Reviewer's own
+selector, naming the reviewed subject's recorded identity rather than a filesystem path. The member
+is carried by the *target* and read by the cockpit's takeover dispatch, which is what decides between
+this viewer and `ReviewSurface`; the component itself never reads `review`, and `Cockpit` mounts
+`ChangeSetViewer` only on the branch where `target.review` is absent. That is the invariant to hold
+when reading this file: a review target can reach this module's type without reaching its mount, so
+**no change-set request is ever made from a review**, and the `ReviewSelectorKind` import is a type
+import on that account.
+
 ### Invariants And Boundaries
 
 Read-only over the L3/L4a API; owns its own component state (no store mutation). Every target opens real
@@ -91,17 +102,18 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-167; dashboard/src/panels/changeset/ChangeSetViewer.tsx:295-296; dashboard/src/panels/changeset/ChangeSetViewer.tsx:322-322 |
-| The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:182-183; dashboard/src/panels/changeset/ChangeSetViewer.tsx:442-442; dashboard/src/panels/changeset/ChangeSetViewer.tsx:445-445; dashboard/src/panels/changeset/ChangeSetViewer.tsx:450-450 |
+| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-167; dashboard/src/panels/changeset/ChangeSetViewer.tsx:295-296; dashboard/src/panels/changeset/ChangeSetViewer.tsx:322-322; dashboard/src/panels/changeset/ChangeSetViewer.tsx:300-300; dashboard/src/panels/changeset/ChangeSetViewer.tsx:301-301; dashboard/src/panels/changeset/ChangeSetViewer.tsx:327-327; dashboard/src/panels/changeset/ChangeSetViewer.tsx:171-171; dashboard/src/panels/changeset/ChangeSetViewer.tsx:172-172 |
+| The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:182-183; dashboard/src/panels/changeset/ChangeSetViewer.tsx:442-442; dashboard/src/panels/changeset/ChangeSetViewer.tsx:445-445; dashboard/src/panels/changeset/ChangeSetViewer.tsx:450-450; dashboard/src/panels/changeset/ChangeSetViewer.tsx:447-447; dashboard/src/panels/changeset/ChangeSetViewer.tsx:187-187; dashboard/src/panels/changeset/ChangeSetViewer.tsx:188-188; dashboard/src/panels/changeset/ChangeSetViewer.tsx:455-455 |
 | Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:149-155 |
 | The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-190 |
-| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:393-393; dashboard/src/panels/changeset/ChangeSetViewer.tsx:404-404; dashboard/src/panels/changeset/ChangeSetViewer.tsx:408-408 |
-| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:570-570 |
-| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:392-392; dashboard/src/panels/changeset/ChangeSetViewer.tsx:398-399 |
+| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:393-393; dashboard/src/panels/changeset/ChangeSetViewer.tsx:404-404; dashboard/src/panels/changeset/ChangeSetViewer.tsx:408-408; dashboard/src/panels/changeset/ChangeSetViewer.tsx:398-398; dashboard/src/panels/changeset/ChangeSetViewer.tsx:413-413; dashboard/src/panels/changeset/ChangeSetViewer.tsx:409-409 |
+| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:584-584 |
+| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:392-392; dashboard/src/panels/changeset/ChangeSetViewer.tsx:398-399; dashboard/src/panels/changeset/ChangeSetViewer.tsx:397-397; dashboard/src/panels/changeset/ChangeSetViewer.tsx:404-404 |
 | The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:20-62; dashboard/src/panels/detail-panel/changeSetBar.tsx:69-115 |
 | The loading, back, and master-file NET-diff behavior pinned in the tests. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
 
 ## Update History
+- 2026-09-18T16:13:35+00:00: Generated citation repair: "<ChangeSetViewer" repointed to dashboard/src/cockpit/Cockpit.tsx:584-584. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: "<ChangeSetViewer" repointed to dashboard/src/cockpit/Cockpit.tsx:570-570. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
@@ -133,3 +145,15 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
   back link, column-2 `ChangeSetPane` diff, column-3 code↔sidecar partner), with master mode rendered as
   an accumulated summary (no per-file diff). Verification metadata pinned to the task base until closeout
   stamps the L4 code commit.
+2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **recorded the review member on `ChangeSetTarget` and the boundary that keeps it inert
+here.** The interface gained an optional `review?: { selectorKind: ReviewSelectorKind; selectorId:
+string }` naming the Intent Reviewer's reviewed subject, with the comment stating that the cockpit's
+takeover dispatch is what reads it and that this viewer is never mounted for a review — so a review
+makes no change-set request. The new paragraph above states that boundary in the card's own voice,
+because a reader who saw the field in the type would otherwise have to guess whether this component
+honours it. No target, request, poll or render behaviour inside `ChangeSetViewer` changed, and the
+card's existing Logic, Conventions and reference rows are left as they stand; ranges into this
+source are the citation-reprojection engine's to move, not this pass's. The metadata block above
+names this leaf's uncommitted candidate as what was read, and the two verification stamps are left
+exactly as they were because no commit holds this candidate. The body was changed substantively and
+this entry is the history record, not a metadata-only refresh.
