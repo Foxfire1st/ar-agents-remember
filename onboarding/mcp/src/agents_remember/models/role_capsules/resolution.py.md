@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/resolution.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
+| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
+| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846`|
+| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview

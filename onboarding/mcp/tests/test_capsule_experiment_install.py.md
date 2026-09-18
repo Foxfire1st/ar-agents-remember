@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_capsule_experiment_install.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
+| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
+| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

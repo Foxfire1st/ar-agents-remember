@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_turn_truth_doctrine.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
-| lastVerifiedCommitDate | 2026-09-16T22:28:15+02:00|
+| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
+| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
