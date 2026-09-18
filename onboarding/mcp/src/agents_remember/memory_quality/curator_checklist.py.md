@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash | `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
-| lastVerifiedCommitDate | 2026-09-18T14:21:49+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `overview.md` |
 
@@ -159,6 +159,7 @@ routing report calls this function, so the report cannot drift from the checklis
 The `knowledgeReview` section remains outside it, for the same reason as before.
 
 ## Update History
+- 2026-09-18T20:45:18+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **re-read the reopened claim at :91 and advanced the verification stamp.** The row's `citation_claim_reopened` finding held that its evidence changed after verification — ``write_curator_checklist`` changed structurally from code commit `9f88a6de572dc15bbed1802cf08b77c1193fb24c` to the working tree — and that only a re-read plus a stamp advance clears it; a citation edit cannot. The wording is retained because it still holds against `5e4eb651`: the function is still declared at :113, still replaces the deterministic checklist and its attestation atomically (the enclosure report projection), and still returns the compact wire summary whose `curatorActionableCount` is `curator_actionable_count(repair, missing, stale)` — commit-owned and report-only findings stay outside the actionable arithmetic. The citation is current: `write_curator_checklist` is declared at :113 inside the cited 113-195. No claim, Anchor cell or range was re-worded or dropped; `lastVerifiedCommitHash` advanced to `5e4eb651be0691e2d2a90ea59bc662f92050db25` and `lastVerifiedCommitDate` to `2026-09-18T20:45:18+02:00` — the committed (code, memory) pair that now carries these bytes.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base
   `7b1db4e0`): **re-read this card against the changed source and recorded the one-function change the
   leaf made.** The inline three-term sum became the named `curator_actionable_count` at `:100-110`, with
