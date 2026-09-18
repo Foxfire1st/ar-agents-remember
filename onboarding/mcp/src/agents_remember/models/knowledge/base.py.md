@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/models/knowledge/base.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash |  `1ff1893f44d875073d58af863238501a6be35288`|
-| lastVerifiedCommitDate |  2026-09-16T23:58:57+02:00|
-| governingOverview | `../../../overview.md` |
+| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[models route overview](../../../overview.md)
+[models route overview](../overview.md)
 
 ## Purpose
 

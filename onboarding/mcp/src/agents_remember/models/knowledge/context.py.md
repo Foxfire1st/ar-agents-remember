@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/models/knowledge/context.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash |  `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate |  2026-09-18T09:42:44+02:00|
-| governingOverview | `../../../overview.md` |
+| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[models route overview](../../../overview.md)
+[models route overview](../overview.md)
 
 ## Purpose
 

@@ -6,14 +6,14 @@
 | path | `mcp/src/agents_remember/models/knowledge/projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
-| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
 
-[models route overview](../../../overview.md)
+[models route overview](../overview.md)
 
 ## Purpose
 

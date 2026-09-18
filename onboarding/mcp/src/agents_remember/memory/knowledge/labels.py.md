@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/memory/knowledge/labels.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
-| governingOverview | `../../../overview.md` |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../overview.md)
+[memory route overview](../overview.md)
 
 ## Purpose
 
@@ -95,17 +95,17 @@ No domain documentation source is configured for this repository (`system/source
 | The two result constructors, each producing only the shape its model permits. | `_apply_invariant_label`; `_apply_family_label`; `_invariant_label_refusal`; `_family_label_refusal` | mcp/src/agents_remember/memory/knowledge/labels.py:159-216 |
 | The invariant-label result and its consistency validator. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:570-590 |
 | The family-label result and its consistency validator. | `SetFamilyLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:593-613 |
-| The request models, each naming the row the caller read. | `SetInvariantLabelRequest`; `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:375-389; mcp/src/agents_remember/models/knowledge/result.py:365-365; mcp/src/agents_remember/models/knowledge/result.py:362-362 |
+| The request models, each naming the row the caller read. | `SetInvariantLabelRequest`; `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:375-389; mcp/src/agents_remember/models/knowledge/result.py:365-365; mcp/src/agents_remember/models/knowledge/result.py:362-362; mcp/src/agents_remember/models/knowledge/result.py:397-403 |
 | The stale-caller refusal wording, shared with the removals. | `stale_expected_row_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:531-551 |
-| The batch command that shares these apply steps and omits a receipt row when nothing was written. | `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:668-691; mcp/src/agents_remember/memory/knowledge/batch_commands.py:647-647 |
+| The batch command that shares these apply steps and omits a receipt row when nothing was written. | `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:668-691; mcp/src/agents_remember/memory/knowledge/batch_commands.py:647-647; mcp/src/agents_remember/memory/knowledge/batch_commands.py:801-802; mcp/src/agents_remember/memory/knowledge/batch_commands.py:822-823 |
 | The batch's own copy of the expectation rule, which is why the standalone path needs its own evidence. | `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:528-565 |
 | The standalone operations' entry points in the composition seam. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-255 |
-| The invariant-label result and its consistency validator. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:538-580 |
-| The family-label result and its consistency validator. | `SetFamilyLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:561-603 |
-| The request models, each naming the row the caller read. | `SetInvariantLabelRequest`; `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:333-344; mcp/src/agents_remember/models/knowledge/result.py:347-389 |
+| The invariant-label result and its consistency validator. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:588-608 |
+| The family-label result and its consistency validator. | `SetFamilyLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:611-631 |
+| The request models, each naming the row the caller read. | `SetInvariantLabelRequest`; `SetFamilyLabelRequest` | mcp/src/agents_remember/models/knowledge/result.py:333-344; mcp/src/agents_remember/models/knowledge/result.py:347-389; mcp/src/agents_remember/models/knowledge/result.py:397-403 |
 | The stale-caller refusal wording, shared with the removals. | `stale_expected_row_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:531-551 |
-| The batch command that shares these apply steps and omits a receipt row when nothing was written. | `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:471-515; mcp/src/agents_remember/memory/knowledge/batch_commands.py:518-541 |
-| The batch's own copy of the expectation rule, which is why the standalone path needs its own evidence. | `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:564-601 |
+| The batch command that shares these apply steps and omits a receipt row when nothing was written. | `_set_invariant_label`; `_set_family_label` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:471-515; mcp/src/agents_remember/memory/knowledge/batch_commands.py:518-541; mcp/src/agents_remember/memory/knowledge/batch_commands.py:801-802; mcp/src/agents_remember/memory/knowledge/batch_commands.py:822-823 |
+| The batch's own copy of the expectation rule, which is why the standalone path needs its own evidence. | `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:618-655 |
 | The standalone operations' entry points in the composition seam. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-255 |
 | The store method that delegates here. | `set_invariant_label` | mcp/src/agents_remember/memory/knowledge/store.py:291-294 |
 | The six nodes that drive the standalone entry points, including the stale-expectation case the batch path cannot cover. | "test_a_stale_invariant_label_expectation_refuses_and_leaves_the_row_identical"; "test_a_stale_family_label_expectation_refuses_and_leaves_the_row_identical" | mcp/tests/test_knowledge_label_operations.py:94-140; mcp/tests/test_knowledge_label_operations.py:205-244 |
@@ -120,6 +120,9 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `SetInvariantLabelResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:588-608. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `SetFamilyLabelResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:611-631. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `_require_identity` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:618-655. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:21:19+00:00: Generated citation repair: `_require_identity` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:564-601. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand while resolving the memory sync** — `SetInvariantLabelResult`, `SetFamilyLabelResult`, `_require_identity`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.

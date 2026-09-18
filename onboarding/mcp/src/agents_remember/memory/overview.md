@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash |  `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate |  2026-09-18T09:42:44+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
+| lastUpdated | 2026-09-18T10:42+02:00 |
+| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l13` uncommitted staged source; base `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -912,6 +912,80 @@ at read time and never written back. `read_queries.py` declares the five new tab
 `evidence_refusals.py`, because the shared module sat at 1196 of the repository's 1200-line rail and the
 next record-group leaf cannot extend it either.
 
+### 260915-KS-L13 Generation 8, The Authored-Effect Write Path, And The One Table The Envelope Could Not Express
+**Generation 8** is generation 7, unchanged, plus the one table `schema_v8.py` appends:
+`change_set_predecessor`. The composition is the same explicit append generations 2 to 7 are, so
+`GENERATION_8.tables[: len(GENERATION_7.tables)] == GENERATION_7.tables` and generation 8's columns for
+each inherited name *are* generation 7's; the case asserts
+`GENERATION_8.columns[table] == GENERATION_7.columns[table]` for every one of generation 7's
+thirty-three names, which makes generation 8's manifest thirty-four tables. `GENERATIONS` is now
+`(1, 2, 3, 4, 5, 6, 7, 8)` and `CURRENT_GENERATION` is its last entry rather than a second literal: a new
+store declares version 8 while a generation-7 dataset keeps declaring 7 and is read through generation
+7's own record. There is no `ALTER TABLE` in the module.
+
+**Why one table and not a record group.** The change set, the effect claim, the preservation claim and
+the unresolved question are *typed records*, and the envelope already carries them: `knowledge_record`
+holds the kind, the authority home, the lifecycle and the governing route, and `record_revision` holds the
+frozen payload and its content digest, so their four payload shapes register in `PAYLOAD_MODELS` under
+`(invariant_effect_claim, invariant-effect-claim/v1)`, `(preservation_claim, preservation-claim/v1)`,
+`(unresolved_question, unresolved-question/v1)` and `(semantic_change_set, semantic-change-set/v1)` and
+none is restated as columns here. What the envelope **cannot** express is a record-to-record lineage
+edge: `record_revision.predecessor_revision_id` is a revision-to-revision edge *inside* one record, and
+the shipped envelope has no record-level predecessor at all. Requirement 4.8 makes the change-set
+succession exactly that — the successor is a new `SemanticChangeSet` naming its exact predecessor, and
+the superseded row stays addressable — so the edge is a row in its own table rather than a field on the
+successor. **The schema refuses what it can, so the write path is not the only guard**: the composite
+primary key `(repository_id, successor_change_set_id, predecessor_change_set_id)` stops one successor
+recording the same predecessor twice, `CHECK (successor_change_set_id <> predecessor_change_set_id)`
+refuses the one-node cycle in the DDL, both endpoints are foreign keys onto `knowledge_record`, and two
+triggers raise `immutable_revision` on update and delete. The *longer* cycle is found by the shared
+acyclic walk (`lineage.cycle_vertices`, the same scan the two predecessor graphs and the decision
+supersession edge use) run inside the successor's own creation batch.
+
+**The number and the module's filename are the landing's, and this section states why.** `KS-R13@v1` was
+authored against generation 4 and renumbered to **8** at its sync, because three leaves landed
+generations 5, 6 and 7 first (`KS-R18@v1`'s `citation_binding`, `KS-R17@v1`'s six composition tables,
+`KS-R12@v1`'s five supporting-record tables). The module is an **append-only declaration** — the
+`APPENDED_*` group with no `GENERATION_N` constant and no schema-name string of its own — so its number
+lives in the composition (`GENERATION_8`, `GENERATION_8_SCHEMA_NAME = "ar-knowledge-sqlite/v8"`, the
+descent from `GENERATION_7`), which made the renumber a composition edit plus a file rename from
+`schema_v5.py` to `schema_v8.py`. The append's content is unchanged by it: **a reader taking
+`generation 5` as this record group's number is reading a pre-sync branch state.**
+**The write path resolves before it writes, and refuses by raising so the batch rolls back whole.**
+`effects.py` validates the payload at the envelope seam, resolves references on the **validated** payload
+— an effect claim's inputs and outputs, a member's change set, a change set's predecessors and its
+candidate realization claims, all through `endpoints.py` — and then runs the duplicate scan. Assessment
+references and requirement-revision references are deliberately **not** resolved: they are stored
+verbatim and reported as unresolved, so no second requirement authority is created here. Two facts only
+this group can state get their own factories in `effect_refusals.py`: an inadmissible declared claim
+(`invalid_payload`, built from `cardinality_violation` rather than from a second copy of the predicate)
+and a succession that reaches itself (`lineage_cycle`). **Nothing is derived** — no path computes,
+infers, suggests, ranks or repairs an effect label from a comparison, and none converts an unchanged
+file, row or revision into a preservation claim; those acts are absent from the vocabulary rather than
+refused by it. Two **differently labelled** claims for one comparison are both stored, because that is
+the authored disagreement the design requires to stay visible.
+**The read is derived in full and carries its refusal as a state.** `read_effect_scope` returns a typed
+`EffectReadResult` in the `refused` state when the dataset predates generation 8, rather than raising,
+because a refused read must persist nothing; the scope itself is built by `effect_views.py` from the rows
+the record group's own readers hand it, so deleting it changes no claim, no question and no change set and
+a rebuild over unchanged rows is byte-identical. Membership is the **only** thing computed — read out of
+each member's own stored `change_set_id` — and three *states* become readable there: an unresolved
+assessment reference (no assessment record kind exists in this substrate yet, so every stored one is
+unresolved by construction), an unresolved requirement-revision reference (stored verbatim under the
+opaque-reference clause, never parsed), and an unresolved preservation subject (a per-kind existence
+lookup, so resolution is never a guess). None of the three is refused, substituted or re-pointed, and the
+views are also where the forbidden set is proven absent at the stored plane: every view is built from a
+validated payload model, so a row carrying a truth verdict, a severity or a generated summary could not
+have been decoded into one at all.
+**One ordering rule is this record group's own.** A command that *cites* an identity the same batch also
+creates must appear **after** the command that creates it — the shipped `ChangeBatch` contract, that
+commands are applied in the order given — and a citation arriving first is refused as `invalid_reference`
+naming the identity and the remedy, rather than left to a foreign key to report as an unnamed constraint
+failure. The group contributes **no** table to `MutableRecordTable`: `EFFECT_WRITABLE_TABLES` is exactly
+`knowledge_record` + `record_revision`, because the succession edge is written only as part of the
+aggregate that owns it, on the same shipped rule that keeps the invariant and family predecessor rows out
+of the mutable set.
+
 ## Invariants And Boundaries
 
 - **A schema generation is data, and dispatch reads the dataset.** `knowledge/schema_generations.py` owns which
@@ -992,7 +1066,7 @@ one leaf's curation pass.
 | The changeset half: the directional delta build, the aborting application, the old-side conflict key and the coverage replay. | `build_delta`; `apply_changeset`; `_conflicting_key`; `replay_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:185-220; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:223-263; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:266-289; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:292-331 |
 | The postcondition half, including the two call sites this leaf recorded as unreachable by a black-box case. | `require_structural_validity`; `require_immutable_revisions_preserved`; `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:73-101; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152; mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211 |
 | The merge's refusal vocabulary, one factory per observable failure point. | `schema_mismatch_refusal`; `conflicting_values_refusal`; `duplicate_identity_refusal`; `delete_reference_conflict_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:21-45; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:70-94; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:97-121; mcp/src/agents_remember/memory/knowledge/merge_refusals.py:124-151 |
-| The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:133-143 |
+| The two operations and twelve codes the merge added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:133-143; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
 | The measurement the merge reports, and the merge's own third composition seam. | `MergeCoverage`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
 | **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** | `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` | mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:342-352; mcp/src/agents_remember/memory/knowledge/read.py:355-390; mcp/src/agents_remember/memory/knowledge/read.py:469-480 |
 | Whole-item paging over an already-selected scope. | `page_of_scope` | mcp/src/agents_remember/memory/knowledge/read.py:743-797 |
@@ -1006,7 +1080,7 @@ one leaf's curation pass.
 | The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-602 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
 | The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1136-1136 |
-| The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1135-1159 |
+| The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 
 **The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
 
@@ -1026,7 +1100,7 @@ one leaf's curation pass.
 | **The one body constructor the export seals through, so the scan and the artifact cannot define the digest twice.** | `logical_body_from_tables`; `logical_digest_of_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:95-129; mcp/src/agents_remember/memory/knowledge/logical.py:132-135 |
 | **The shared "prove this finished file is a closed database" step the import's stage is closed through.** | `require_closed_database` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-89 |
 | The admission reading the import's destination check uses, exported from publication. | `destination_observation` | mcp/src/agents_remember/memory/knowledge/publication.py:260-270 |
-| The two portable operations and the one code they added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-69; mcp/src/agents_remember/models/knowledge/result.py:72-120; mcp/src/agents_remember/models/knowledge/result.py:116-116; mcp/src/agents_remember/models/knowledge/result.py:133-143 |
+| The two portable operations and the one code they added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-69; mcp/src/agents_remember/models/knowledge/result.py:72-120; mcp/src/agents_remember/models/knowledge/result.py:116-116; mcp/src/agents_remember/models/knowledge/result.py:133-143; mcp/src/agents_remember/models/knowledge/result.py:151-151 |
 | The portable wire vocabulary: the request identities, the validation report and the two results. | `ExportRequest`; `ImportRequest`; `PortableValidation`; `ExportResult`; `ImportResult` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:66-98; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:136-176 |
 | The fourth composition seam, its five entry points and its two non-claims. | `export_knowledge_artifact`; `import_knowledge_artifact`; `validate_knowledge_artifact`; `canonical_body_of_artifact` | mcp/src/agents_remember/application/knowledge_export.py:60-63; mcp/src/agents_remember/application/knowledge_export.py:66-74; mcp/src/agents_remember/application/knowledge_export.py:77-96; mcp/src/agents_remember/application/knowledge_export.py:112-126 |
 | **The node the guarantee rests on: the canonical form is the only form the reader accepts, including all seven header types.** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts" | mcp/tests/test_knowledge_portable_boundaries.py:132-258 |
@@ -1034,14 +1108,14 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:618-650; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:656-656 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:168-168 |
-| The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1035-1035 |
-|The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:1118-1118 |
-|The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:1143-1143 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:168-168 |
-| The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1035-1035 |
-| The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1118-1118 |
-| The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1143-1143 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:190-190 |
+| The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
+|The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
+|The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:190-190 |
+| The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
+| The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
+| The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 
 **The pre-L6 rows below remain in the superseded two-column shape** and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside one leaf's curation pass.
 
@@ -1083,8 +1157,8 @@ checkout, but neither establishes a boundary contract here.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-| The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1118-1118 |
-| The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1143-1143 |
+| The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
+| The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 
 ## No Route Impact — 260915-KS-L15
 
@@ -1096,6 +1170,26 @@ cite; each re-cited row was re-derived from the current manifest while re-readin
 citation move, not a route change, and it is recorded as such rather than as new architecture.
 
 ## Update History
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:25-25. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:40-40. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:25-25. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:40-40. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:40-40. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:42+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): **added the L13 section** — generation 8's one appended table (`change_set_predecessor`), the four envelope-record kinds whose shapes register in `PAYLOAD_MODELS` instead of becoming columns, the record-to-record lineage edge the envelope cannot express, the schema-level guards (composite key, one-node-cycle `CHECK`, two foreign keys, two sealing triggers) and the shared acyclic walk for the longer cycle. It also records the **renumber to 8** and why: this leaf was authored against generation 4 and three parallel leaves landed generations 5, 6 and 7 first, so reading `generation 5` as this record group's number is a pre-sync branch state. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1120-1120. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1145-1145. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1120-1120. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1145-1145. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1120-1120. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1145-1145. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:25:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **corrected this document for the landing's generation renumber.** `KS-R12@v1` was built in parallel with `KS-R17@v1` and `KS-R18@v1`; all three read the registry as `(1, 2, 3, 4)` and each registered *generation 5* on its own branch. The landing appended them in landing order, so this leaf's five supporting-record tables became **generation 7** and the module authored as `schema_v5.py` landed as **`schema_v7.py`**. The body above now names generation 7, generation 6 as its base, `GENERATIONS` as `(1, 2, 3, 4, 5, 6, 7)` and `CURRENT_GENERATION` as the created generation, and it states that reading `generation 5` as this record group's number is a pre-sync branch state — generation 5 is the citation binding's. The declarations themselves are unchanged by the renumber; only the module's name and its two composition operands moved.
 
 - 2026-09-18T07:21:19+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:168-168. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.

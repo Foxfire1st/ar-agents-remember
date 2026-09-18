@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/snapshot.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ No domain documentation source is configured for this repository (`system/source
 | The factual publication outcome with the previous identity it replaced. | `SnapshotPublicationResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:259-293 |
 | The publication-state measurement that never guesses which side moved. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
 | The closed disposal union, its carried-not-examined authorization reference and its verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposition`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
-| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:107-109; mcp/src/agents_remember/models/knowledge/candidate.py:158-167; mcp/src/agents_remember/models/knowledge/candidate.py:169-193; mcp/src/agents_remember/models/knowledge/candidate.py:498-529 |
+| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:107-109; mcp/src/agents_remember/models/knowledge/candidate.py:158-167; mcp/src/agents_remember/models/knowledge/candidate.py:169-193; mcp/src/agents_remember/models/knowledge/candidate.py:498-529; mcp/src/agents_remember/models/knowledge/candidate.py:638-655; mcp/src/agents_remember/models/knowledge/candidate.py:209-218; mcp/src/agents_remember/models/knowledge/candidate.py:117-117 |
 | The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:83-424 |
 | The canonical encoder the receipt seal is computed through. | `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:34-38 |
 | The candidate lifecycle in which these shapes are produced. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:100-126; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:129-138; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |

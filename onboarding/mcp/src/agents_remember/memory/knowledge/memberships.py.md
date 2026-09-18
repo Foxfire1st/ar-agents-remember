@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/memory/knowledge/memberships.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
-| governingOverview | `../../../overview.md` |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../../overview.md)
+[memory route overview](../overview.md)
 
 ## Purpose
 
@@ -110,12 +110,12 @@ No domain documentation source is configured for this repository (`system/source
 | The forward read (family revision to members). | `list_members` | mcp/src/agents_remember/memory/knowledge/memberships.py:255-268 |
 | The reverse read (invariant revision to families) over the same rows. | `list_families_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/memberships.py:270-285 |
 | The duplicate-pair probe the insert path consults. | `find_membership_by_pair` | mcp/src/agents_remember/memory/knowledge/memberships.py:241-253 |
-| The batch command that composes the draft-sealing insert. | `_add_member` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:601-624 |
+| The batch command that composes the draft-sealing insert. | `_add_member` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:755-759 |
 | The two nodes that keep the concept guard and the database's own tuple separately proven. | "test_a_database_refusal_mid_batch_names_the_command_that_actually_failed"; "test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse" | mcp/tests/test_candidate_batch_transaction.py:993-1060; mcp/tests/test_candidate_batch_transaction.py:1062-1118 |
-| The single definition of a missing relation endpoint, shared with the claim relation. | `require_family_revision_endpoint`; `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:75-89; mcp/src/agents_remember/memory/knowledge/endpoints.py:92-113 |
-| The batch command that composes the draft-sealing insert. | `_add_member` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:436-474 |
+| The single definition of a missing relation endpoint, shared with the claim relation. | `require_family_revision_endpoint`; `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:75-89; mcp/src/agents_remember/memory/knowledge/endpoints.py:92-113; mcp/src/agents_remember/memory/knowledge/endpoints.py:121-122; mcp/src/agents_remember/memory/knowledge/endpoints.py:138-139 |
+| The batch command that composes the draft-sealing insert. | `_add_member` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:755-759 |
 | The two nodes that keep the concept guard and the database's own tuple separately proven. | "test_a_database_refusal_mid_batch_names_the_command_that_actually_failed"; "test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse" | mcp/tests/test_candidate_batch_transaction.py:993-1060; mcp/tests/test_candidate_batch_transaction.py:1062-1118 |
-| The single definition of a missing relation endpoint, shared with the claim relation. | `require_family_revision_endpoint`; `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:48-113 |
+| The single definition of a missing relation endpoint, shared with the claim relation. | `require_family_revision_endpoint`; `require_invariant_revision_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:121-135; mcp/src/agents_remember/memory/knowledge/endpoints.py:138-152 |
 | The row codec and expected-row digest that make the stale-caller refusal possible. | `member_row`; `member_row_digest`; `decode_member_row` | mcp/src/agents_remember/memory/knowledge/records.py:382-391; mcp/src/agents_remember/memory/knowledge/records.py:392-412; mcp/src/agents_remember/memory/knowledge/records.py:413-428 |
 | The vocabulary this module stores and returns. | `FamilyMemberDraft`; `FamilyMember`; `FamilyMembers`; `InvariantFamilies` | mcp/src/agents_remember/models/knowledge/graph.py:49-56; mcp/src/agents_remember/models/knowledge/graph.py:58-63; mcp/src/agents_remember/models/knowledge/graph.py:96-102; mcp/src/agents_remember/models/knowledge/graph.py:104-109 |
 | The declared `family_member` table, its unique tuple, its index and its no-repoint trigger. | `family_member`; `family_member_invariant_revision`; `family_member_no_repoint` | mcp/src/agents_remember/memory/knowledge/schema.py:280-296; mcp/src/agents_remember/memory/knowledge/schema.py:327-328; mcp/src/agents_remember/memory/knowledge/schema.py:390-394 |
@@ -130,6 +130,11 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T10:45:13+00:00: Generated citation repair: `_add_member` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:755-759. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: `_add_member` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:755-759. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `_add_member` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:733-737. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `_add_member` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:733-737. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `require_family_revision_endpoint`; `require_invariant_revision_endpoint` repointed to mcp/src/agents_remember/memory/knowledge/endpoints.py:121-135; mcp/src/agents_remember/memory/knowledge/endpoints.py:138-152. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `_add_member`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
 
 - 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **extended this card for the batch composition it enabled.** The membership insert is now the in-transaction helper `insert_family_member`, and the batch command reaches it through the new `insert_family_member_draft`, which seals the authored draft under the admitted provenance and computes the row digest here so a caller cannot choose it. The card also records that the pair guarantee has two independently evidenced layers — the concept pre-check inside the insert and the declared UNIQUE tuple behind it — because the earlier single "database-caught" node did not discriminate between them. Citation ranges were re-derived; the `governingOverview` link was repaired from `../../overview.md` (the application route) to the three-level path. Verification metadata remains closeout-owned.

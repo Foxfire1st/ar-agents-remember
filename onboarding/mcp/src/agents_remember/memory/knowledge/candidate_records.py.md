@@ -6,14 +6,14 @@
 | path | `mcp/src/agents_remember/memory/knowledge/candidate_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:05:00+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| governingOverview | `../../../overview.md` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../overview.md)
+[memory route overview](../overview.md)
 
 ## Purpose
 
@@ -92,19 +92,19 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The thirteen directly writable tables and the refusal of a table outside them. | `WRITABLE_TABLES`; `stored_record_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:66-68; mcp/src/agents_remember/memory/knowledge/candidate_records.py:74-101 |
-| The per-table readers, each delegating to the owning concept's own read. | "_RECORD_READERS: dict[str, RecordReader] = {"; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:103-130; mcp/src/agents_remember/memory/knowledge/candidate_records.py:206-206; mcp/src/agents_remember/memory/knowledge/candidate_records.py:253-258 |
-| The one-identity-per-kind map, with the two-identity claim command handled separately. | "_WRITTEN_IDENTITY: dict[str, Callable[[Any], tuple[str, str]]] = {"; "def written_identities(command: ChangeCommand) -> IdentityPairs:" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:231-231; mcp/src/agents_remember/memory/knowledge/candidate_records.py:286-356; mcp/src/agents_remember/memory/knowledge/candidate_records.py:286-286 |
-| The commands that address an existing row and therefore create nothing. | "_ADDRESSES_EXISTING: tuple[str, ...] = ("; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:278-278; mcp/src/agents_remember/memory/knowledge/candidate_records.py:324-425 |
-| The batch's declared identity set. | `pending_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:332-433 |
-| **The existence question that admits the declared set: a record counts as present if it is already stored or will be by the time this batch is applied.** | `present` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:341-442 |
-| The thirteen directly writable tables and the refusal of a table outside them. | `WRITABLE_TABLES`; `stored_record_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:39-53; mcp/src/agents_remember/memory/knowledge/candidate_records.py:59-101 |
-| The per-table readers, each delegating to the owning concept's own read. | "_RECORD_READERS: dict[str, RecordReader] = {"; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:106-151; mcp/src/agents_remember/memory/knowledge/candidate_records.py:88-90; mcp/src/agents_remember/memory/knowledge/candidate_records.py:253-258 |
-| The one-identity-per-kind map, with the two-identity claim command handled separately. | "_WRITTEN_IDENTITY: dict[str, Callable[[Any], tuple[str, str]]] = {"; "def written_identities(command: ChangeCommand) -> IdentityPairs:" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:125-151; mcp/src/agents_remember/memory/knowledge/candidate_records.py:166-356; mcp/src/agents_remember/memory/knowledge/candidate_records.py:286-286 |
-| The commands that address an existing row and therefore create nothing. | "_ADDRESSES_EXISTING: tuple[str, ...] = ("; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:155-163; mcp/src/agents_remember/memory/knowledge/candidate_records.py:190-425 |
-| The batch's declared identity set and the existence question that admits it. | `pending_identities`; `present` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:198-204; mcp/src/agents_remember/memory/knowledge/candidate_records.py:207-442 |
+| The writable-table union the refusal reads — the shipped seven, the two envelope tables, and each record group's own set subtracted to its non-envelope remainder, which is where this leaf's authored-effect group contributes nothing. | `WRITABLE_TABLES`; `EFFECT_ONLY_WRITABLE_TABLES` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:104-111; mcp/src/agents_remember/memory/knowledge/candidate_records.py:92-94 |
+| The per-table readers, each delegating to the owning concept's own read. | "_RECORD_READERS: dict[str, RecordReader] = {"; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:103-130; mcp/src/agents_remember/memory/knowledge/candidate_records.py:206-206; mcp/src/agents_remember/memory/knowledge/candidate_records.py:253-258; mcp/src/agents_remember/memory/knowledge/candidate_records.py:146-148; mcp/src/agents_remember/memory/knowledge/candidate_records.py:262-269 |
+| The one-identity-per-kind map, with the two-identity claim command handled separately. | "_WRITTEN_IDENTITY: dict[str, Callable[[Any], tuple[str, str]]] = {"; "def written_identities(command: ChangeCommand) -> IdentityPairs:" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:231-231; mcp/src/agents_remember/memory/knowledge/candidate_records.py:286-356; mcp/src/agents_remember/memory/knowledge/candidate_records.py:286-286; mcp/src/agents_remember/memory/knowledge/candidate_records.py:365-372 |
+| The commands that address an existing row and therefore create nothing. | "_ADDRESSES_EXISTING: tuple[str, ...] = ("; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:278-278; mcp/src/agents_remember/memory/knowledge/candidate_records.py:324-425; mcp/src/agents_remember/memory/knowledge/candidate_records.py:468-473 |
+| The batch's declared identity set. | `pending_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:476-482 |
+| **The existence question that admits the declared set: a record counts as present if it is already stored or will be by the time this batch is applied.** | `present` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:485-492 |
+| The writable-table union the refusal reads, and the digest reader it uses for a stored row. | `WRITABLE_TABLES`; `stored_record_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:104-111; mcp/src/agents_remember/memory/knowledge/candidate_records.py:117-123 |
+| The per-table readers, each delegating to the owning concept's own read. | "_RECORD_READERS: dict[str, RecordReader] = {"; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:106-151; mcp/src/agents_remember/memory/knowledge/candidate_records.py:88-90; mcp/src/agents_remember/memory/knowledge/candidate_records.py:253-258; mcp/src/agents_remember/memory/knowledge/candidate_records.py:262-269 |
+| The one-identity-per-kind map, with the two-identity claim command handled separately. | "_WRITTEN_IDENTITY: dict[str, Callable[[Any], tuple[str, str]]] = {"; "def written_identities(command: ChangeCommand) -> IdentityPairs:" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:125-151; mcp/src/agents_remember/memory/knowledge/candidate_records.py:166-356; mcp/src/agents_remember/memory/knowledge/candidate_records.py:286-286; mcp/src/agents_remember/memory/knowledge/candidate_records.py:365-372 |
+| The commands that address an existing row and therefore create nothing. | "_ADDRESSES_EXISTING: tuple[str, ...] = ("; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:155-163; mcp/src/agents_remember/memory/knowledge/candidate_records.py:190-425; mcp/src/agents_remember/memory/knowledge/candidate_records.py:468-473 |
+| The batch's declared identity set and the existence question that admits it. | `pending_identities`; `present` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:198-204; mcp/src/agents_remember/memory/knowledge/candidate_records.py:207-442; mcp/src/agents_remember/memory/knowledge/candidate_records.py:476-486 |
 | The preconditions that consume these answers. | `require_expected_records`; `require_insertions_absent`; `require_command_targets` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:129-240 |
-| The vocabulary the writable table set mirrors. | "MutableRecordTable = Literal[" | mcp/src/agents_remember/models/knowledge/candidate.py:122-136 |
+| The vocabulary the writable table set mirrors. | "MutableRecordTable = Literal[" | mcp/src/agents_remember/models/knowledge/candidate.py:140-140 |
 | The anchor row digest the anchor reader derives rather than stores. | `anchor_row_digest` | mcp/src/agents_remember/memory/knowledge/records.py:366-381 |
 
 ## Cross-Repo References
@@ -116,6 +116,9 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `pending_identities` repointed to mcp/src/agents_remember/memory/knowledge/candidate_records.py:476-482. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `present` repointed to mcp/src/agents_remember/memory/knowledge/candidate_records.py:485-492. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: "MutableRecordTable = Literal[" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:140-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand while resolving the memory sync** — `_ADDRESSES_EXISTING`, `inserted_identities`, `MutableRecordTable`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
 
 - 2026-09-18T05:00:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read this card's claims against the source and re-cited the rows the leaf's additions moved.** The writable-table tuple is now `WRITABLE_TABLES` — the base seven plus this leaf's six composition tables — with six new digest readers, and the identity set the batch declares is `inserted_identities`, `pending_identities` and `present` (the last of which ends one line earlier than a projected range claimed). The `pending_identities`/`present` row was split so each anchor has its own extent, and the generated repair bullet that had kept `claim_reopen` enforced on it was removed and replaced by this entry. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.

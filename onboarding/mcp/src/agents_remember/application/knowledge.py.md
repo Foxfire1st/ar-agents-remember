@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/application/knowledge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
-| governingOverview | `../overview.md` |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[application route overview](../overview.md)
+[application route overview](overview.md)
 
 ## Purpose
 
@@ -143,12 +143,12 @@ No domain documentation source is configured for this repository (`system/source
 | The batch operation that takes the destination's authorship rather than the payload's. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
 | The graph request builders, all attaching the destination's authorship and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:327-342; mcp/src/agents_remember/application/knowledge.py:351-361; mcp/src/agents_remember/application/knowledge.py:363-372; mcp/src/agents_remember/application/knowledge.py:374-389 |
 | The anchor-endpoint parameter that keeps naming an anchor distinct from recording one. | `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:374-389 |
-| The distinction's two vocabulary members: what a caller may name. | `NewAnchor` | mcp/src/agents_remember/models/knowledge/result.py:332-342 |
-| **What the read side reports back for the same endpoint.** | `AnchorReference` | mcp/src/agents_remember/models/knowledge/result.py:325-335 |
+|The distinction's two vocabulary members: what a caller may name.|`NewAnchor`| mcp/src/agents_remember/models/knowledge/result.py:350-362 |
+|**What the read side reports back for the same endpoint.**|`AnchorReference`| mcp/src/agents_remember/models/knowledge/result.py:343-362 |
 | The graph operations that open, delegate and close in a `finally`. | `create_knowledge_family`; `create_knowledge_family_revision`; `create_knowledge_anchor`; `remove_knowledge_anchor`; `create_knowledge_family_member`; `remove_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-433; mcp/src/agents_remember/application/knowledge.py:435-445; mcp/src/agents_remember/application/knowledge.py:447-457; mcp/src/agents_remember/application/knowledge.py:459-469; mcp/src/agents_remember/application/knowledge.py:471-481; mcp/src/agents_remember/application/knowledge.py:483-493; mcp/src/agents_remember/application/knowledge.py:495-505; mcp/src/agents_remember/application/knowledge.py:507-522 |
 | The batch operation that takes the destination's authorship rather than the payload's. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
 | The graph request builders, all attaching the destination's authorship and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:327-342; mcp/src/agents_remember/application/knowledge.py:351-361; mcp/src/agents_remember/application/knowledge.py:363-372; mcp/src/agents_remember/application/knowledge.py:374-389 |
-| The anchor-endpoint parameter that keeps naming an anchor distinct from recording one. | `admitted_claim_request`; `NewAnchor`; `AnchorReference` | mcp/src/agents_remember/application/knowledge.py:374-389; mcp/src/agents_remember/models/knowledge/result.py:293-297; mcp/src/agents_remember/models/knowledge/result.py:300-342 |
+| The anchor-endpoint parameter that keeps naming an anchor distinct from recording one. | `admitted_claim_request`; `NewAnchor`; `AnchorReference` | mcp/src/agents_remember/application/knowledge.py:374-389; mcp/src/agents_remember/models/knowledge/result.py:293-297; mcp/src/agents_remember/models/knowledge/result.py:300-347; mcp/src/agents_remember/models/knowledge/result.py:350-358 |
 | The graph operations that open, delegate and close in a `finally`. | `create_knowledge_family`; `create_knowledge_family_revision`; `create_knowledge_anchor`; `remove_knowledge_anchor`; `create_knowledge_family_member`; `remove_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-433; mcp/src/agents_remember/application/knowledge.py:435-445; mcp/src/agents_remember/application/knowledge.py:447-457; mcp/src/agents_remember/application/knowledge.py:459-469; mcp/src/agents_remember/application/knowledge.py:471-481; mcp/src/agents_remember/application/knowledge.py:483-493; mcp/src/agents_remember/application/knowledge.py:495-505; mcp/src/agents_remember/application/knowledge.py:507-522 |
 | The store operation this seam delegates to. | `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:231-265 |
 | The batch operation and the lane rules the seam's entry point reaches. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
@@ -165,6 +165,8 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `NewAnchor` repointed to mcp/src/agents_remember/models/knowledge/result.py:350-358. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `AnchorReference` repointed to mcp/src/agents_remember/models/knowledge/result.py:343-347. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand while resolving the memory sync** — `NewAnchor`, `AnchorReference`, `admitted_claim_request`, `test_application_seam_initializes_and_extends_one_namespace`, `test_lower_ranked_owners_do_not_import_the_memory_domain`, `test_the_application_seam_authors_a_graph_through_an_admitted_destination`, `test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
 
 - 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `admitted_claim_request`, `NewAnchor`, `AnchorReference`, `test_application_seam_initializes_and_extends_one_namespace`, `test_lower_ranked_owners_do_not_import_the_memory_domain`, `test_the_application_seam_authors_a_graph_through_an_admitted_destination`, `test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.

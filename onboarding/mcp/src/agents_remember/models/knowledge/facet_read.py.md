@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/facet_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
@@ -131,7 +131,7 @@ No domain documentation source is configured for this repository (`system/source
 | The shipped recorded-scope policy this selection deliberately does not share. | `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/read.py:87-87 |
 | The frozen, strict, extra-forbidding base that makes every page a value. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
 | The selection that executes these declarations and the application seam that serves them. | "def select_facet_scope("; `read_facet_scope` | mcp/src/agents_remember/memory/knowledge/facet_read.py:109-129; mcp/src/agents_remember/application/knowledge_facets.py:71-121 |
-| **The cases that hold the declared order, the counts' arithmetic, the empty-but-real page and the own-policy result.** | "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact"; "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy" | mcp/tests/test_knowledge_facets.py:1104-1119; mcp/tests/test_knowledge_facets.py:1053-1068; mcp/tests/test_knowledge_facets.py:1119-1119 |
+| **The cases that hold the declared order, the counts' arithmetic, the empty-but-real page and the own-policy result.** | "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact"; "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy" | mcp/tests/test_knowledge_facets.py:1104-1119; mcp/tests/test_knowledge_facets.py:1053-1068; mcp/tests/test_knowledge_facets.py:1119-1119; mcp/tests/test_knowledge_facets.py:1239-1246; mcp/tests/test_knowledge_facets.py:1187-1194 |
 
 ## Cross-Repo References
 

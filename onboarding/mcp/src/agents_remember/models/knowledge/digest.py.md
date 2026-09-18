@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/models/knowledge/digest.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash |  `27242ecbefd79f2e8fbc6db32e02013fa8298ba3`|
-| lastVerifiedCommitDate |  2026-09-16T08:41:27+02:00|
-| governingOverview | `../../../overview.md` |
+| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[models route overview](../../../overview.md)
+[models route overview](../overview.md)
 
 ## Purpose
 

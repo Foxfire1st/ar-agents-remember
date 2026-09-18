@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/schema_v7.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T09:20+02:00 |
-| lastVerifiedCommitHash |  `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate |  2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l12` uncommitted source; base `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -119,7 +119,7 @@ No domain documentation source is configured for this repository (`system/source
 | The five tables' DDL and the indexes over the two join tables and the observation's recorded candidate. | `APPENDED_TABLE_DDL`; `APPENDED_INDEX_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v7.py:167-265; mcp/src/agents_remember/memory/knowledge/schema_v7.py:303-324 |
 | The no-rewrite and no-delete triggers that make a second run a second record. | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v7.py:337-378 |
 | The generation this one is composed onto, by name, and the composition that names this module as generation 7's append. | `GENERATION_6`; `_compose_generation_7`; `GENERATION_7` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:377-387; mcp/src/agents_remember/memory/knowledge/schema_generations.py:378-378; mcp/src/agents_remember/memory/knowledge/schema_generations.py:389-389 |
-| The schema name generation 7 declares, and the registry whose last entry is now the created generation. | `GENERATION_7_SCHEMA_NAME`; `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:208-208; mcp/src/agents_remember/memory/knowledge/schema_generations.py:395-403; mcp/src/agents_remember/memory/knowledge/schema_generations.py:416-416 |
+| The schema name generation 7 declares, and the registry whose last entry is now the created generation — generation 8 as of `KS-R13@v1`, so this leaf's own generation stays declared and no longer the tip. | `GENERATION_7_SCHEMA_NAME`; `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:208-208; mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447; mcp/src/agents_remember/memory/knowledge/schema_generations.py:214-214 |
 | The generation the write path requires before any supporting-record row may exist. | `REQUIRED_EVIDENCE_GENERATION` | mcp/src/agents_remember/memory/knowledge/evidence.py:88-88 |
 | The case that asserts the append and the inheritance against the generation this leaf descends from, by name. | "def test_the_observation_generation_appends_and_inherits_by_name(" | mcp/tests/test_knowledge_evidence_observations.py:906-928 |
 | The case that asserts a write against an older generation is refused with both versions as facts. | "def test_an_observation_write_against_an_older_generation_is_refused(" | mcp/tests/test_knowledge_evidence_observations.py:847-870 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` | — |
 | doc_type               | `file-level-onboarding` | — |
 | lastUpdated | 2026-09-15T00:51+00:00 | — |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` | — |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 | — |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` | — |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00| — |
 | governingOverview      | `overview.md` | — |
 
 ## Governing Overview
@@ -368,7 +368,7 @@ contract is supported by the implementation and the authorized cache-retirement 
 | The three next-move keys declared on the command envelope, which is what stops the projector's write from riding as an undeclared extra. | `declared`; `WorktreeCommandResponse`; "# The next-move triple, declared here so the worktree surface's guidance is part of" | mcp/src/agents_remember/models/worktree.py:290-365 |
 | The membership validator that refuses a next move outside the advertised roster — the enforcement half of the invariant, and the reason the roster had to move into `models`. | `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:354-365 |
 | The advertised public roster this model reads, in its zero-import `models` leaf (the tuple's single definition; `mcp/tools/base.py` re-exports it). | `PUBLIC_TOOLS`; `models` | mcp/src/agents_remember/mcp/tools/base.py:22; mcp/src/agents_remember/models/tools/public_roster.py:1-20; mcp/src/agents_remember/models/tools/public_roster.py:22-91 |
-| The registered-but-deliberately-non-public name that must stay outside the worktree invariant, and the `task_doc` surface that legitimately emits it (its `nextTool` is a plain `str \| None`, on a class that is not a `WorktreeCommandResponse`). | `session_retire`; `nextTool` | mcp/src/agents_remember/models/task_doc.py:115-190; mcp/src/agents_remember/models/tools/tool_registry.py:134; mcp/src/agents_remember/models/tools/tool_registry.py:216-226 |
+| The registered-but-deliberately-non-public name that must stay outside the worktree invariant, and the `task_doc` surface that legitimately emits it (its `nextTool` is a plain `str \| None`, on a class that is not a `WorktreeCommandResponse`). | `session_retire`; `nextTool` | mcp/src/agents_remember/models/task_doc.py:115-190; mcp/src/agents_remember/models/tools/tool_registry.py:134; mcp/src/agents_remember/models/tools/tool_registry.py:216-226; mcp/src/agents_remember/models/tools/tool_registry.py:140-140 |
 | The executor for the declared-and-enforced next move: it reaches the archive-ready state through real production calls for both cleanup verbs, binds the emitted args to the real tool signature, and drives the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation` | mcp/tests/test_worktree_status_terminal_next_tool.py:183-227 |
 | The `nextAction` literal this file **does** declare, and which stays honest because its only producer hard-codes it — do not widen it. | `None`; `nextAction` | mcp/src/agents_remember/models/worktree.py:278; mcp/src/agents_remember/models/worktree.py:278-278 |
 | The reachable terminal state the projector serves once a failed contract amendment is rolled back while the locator stays `terminal-archived`. | `status`; `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:384; mcp/src/agents_remember/application/worktree_status.py:463-505 |

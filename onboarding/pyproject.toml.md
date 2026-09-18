@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00 |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -58,11 +58,11 @@ No new configuration or test obligation is introduced here.
 | Type-checker scope and import environments. | "[tool.pyright]" | pyproject.toml:43-66 |
 | Measurement and operational package ownership. | "[tool.coverage.run]" | pyproject.toml:68-88 |
 | Radon reports. | "[tool.radon]" | pyproject.toml:90-119 |
-| The pytest configuration section the budget pair lives in. | "[tool.pytest.ini_options]" | pyproject.toml:121-305 |
-| **The declared budget pair, and the raise this candidate's owning seat executed over it — `unit_case_budget` 1500 -> 1600 because the merged line collects 1506, past which the unit lane exits without running a case.** | "unit_case_budget = 1600"; "integration_case_budget = 400" | pyproject.toml:322-323 |
-| **The dated entry that carries the L7 raise (1100 -> 1250 / 300 -> 340), its merged-line attribution and the command-per-number rule.** | "2026-09-16 -- unit 1100 -> 1250 and integration 300 -> 340" | pyproject.toml:209-285 |
-| Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. | "ignore::starlette.exceptions.StarletteDeprecationWarning" | pyproject.toml:222-261; pyproject.toml:369-369 |
-| Budgets, populations, collection and strictness, including the integration ceiling raise and its tradeoff block. | "[tool.pytest.ini_options]"; `integration_case_budget`; `unit_case_budget` | pyproject.toml:121-150; pyproject.toml:149-150; pyproject.toml:176-176; pyproject.toml:168-168 |
+| The pytest configuration section the budget pair lives in. | "[tool.pytest.ini_options]" | pyproject.toml:121-121 |
+| **The declared budget pair as the merge now declares it — `unit_case_budget` 2200 / `integration_case_budget` 400, the unit axis measured at 2035 on the merged candidate — after this candidate's own owning seat had raised the unit ceiling 1500 -> 1600, past which an over-budget unit lane exits without running a case.** | "unit_case_budget = 2200"; "integration_case_budget = 400" | pyproject.toml:208-215 |
+| **The dated merge entry that carries both lines' raise history verbatim — this master's `unit 1100 -> 1250`, then `1250 -> 1500` and `integration 300 -> 340`, then `1500 -> 1600` — beside the rule that each axis starts from the higher of the two lines' values and is then measured.** | "unit 1100 -> 1250"; "both axes take the higher of the two lines' values" | pyproject.toml:188-202 |
+| Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. | "ignore::starlette.exceptions.StarletteDeprecationWarning" | pyproject.toml:222-261; pyproject.toml:254-261 |
+| Budgets, populations, collection and strictness, including the integration ceiling raise and its tradeoff block. | "[tool.pytest.ini_options]"; `integration_case_budget`; `unit_case_budget` | pyproject.toml:121-150; pyproject.toml:149-150; pyproject.toml:176-176; pyproject.toml:168-168; pyproject.toml:214-215 |
 
 ## Cross-Repo References
 
@@ -71,6 +71,8 @@ No new configuration or test obligation is introduced here.
 | No cross-repository implementation is claimed. | N/A | N/A |
 
 ## Update History
+- 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the two budget rows were re-read against the file as it now stands and re-worded to the facts it declares.** The merged declaration is `unit_case_budget = 2200` / `integration_case_budget = 400` (`:214-215`), so the row that anchored the *current* pair on `unit_case_budget = 1600` now names 2200 and keeps this candidate's own 1500 -> 1600 raise as the history it is. The dated-entry row named `2026-09-16 -- unit 1100 -> 1250 and integration 300 -> 340`, a comment line that no longer exists: the raise history it recorded now lives verbatim inside the 2026-09-18 merge entry (`:188-202`), which carries `unit 1100 -> 1250` and `(both axes take the higher of the two lines' values)`, so the claim was re-worded to that entry and re-cited to it rather than left pointing at a deleted comment. No claim was deleted or softened and no anchor set was dropped. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "[tool.pytest.ini_options]" repointed to pyproject.toml:121-121. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
 - 2026-09-18T07:21:19+00:00: Generated citation repair: "ignore::starlette.exceptions.StarletteDeprecationWarning" repointed to pyproject.toml:369-369. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T01:52:52+00:00: Generated citation repair: "ignore::starlette.exceptions.StarletteDeprecationWarning" repointed to pyproject.toml:222-222. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b549a05c7448b2578454675e173eaf65501170ee85e72dbbfb2c4a4132b3242; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/schema_v4.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -136,12 +136,12 @@ No domain documentation source is configured for this repository (`system/source
 | The one reverse-direction index, covering "which runs recorded this signal". | `APPENDED_INDEX_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:95-99 |
 | **The two immutability triggers, with the shared `immutable_revision:` prefix and the two distinct refusals they raise.** | `APPENDED_TRIGGERS`; "immutable_revision: a recorded detection sequence cannot be reordered" | mcp/src/agents_remember/memory/knowledge/schema_v4.py:101-116 |
 | The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:118-123 |
-| **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** | `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:301-309; mcp/src/agents_remember/memory/knowledge/schema_generations.py:312-314; mcp/src/agents_remember/memory/knowledge/schema_generations.py:320-325 |
-| **The registry whose last entry is the newest supported generation — generation 5 since `KS-R18@v1`, so the created store declares 5 while a generation-4 dataset keeps declaring 4 — and the created generation it names.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-416; mcp/src/agents_remember/memory/knowledge/schema_generations.py:365-365 |
-| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:103-132 |
-| **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** | `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:309-317; mcp/src/agents_remember/memory/knowledge/schema_generations.py:320-320 |
-| The registry whose last entry is the newest supported generation, and the created generation it names. | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:264-416 |
-| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157 |
+| **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** | `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:301-309; mcp/src/agents_remember/memory/knowledge/schema_generations.py:312-324; mcp/src/agents_remember/memory/knowledge/schema_generations.py:320-327 |
+| **The registry whose last entry is the newest supported generation — generation 8 since `KS-R13@v1` renumbered its append, so the created store declares 8 while a generation-7 dataset keeps declaring 7 — and the created generation it names.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447 |
+| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178 |
+| **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** | `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:309-317; mcp/src/agents_remember/memory/knowledge/schema_generations.py:320-320; mcp/src/agents_remember/memory/knowledge/schema_generations.py:327-327 |
+| The registry whose last entry is the newest supported generation, and the created generation it names. | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447 |
+| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178 |
 | The write path that inserts the sequence rows under this table's composite keys. | `_write_run` | mcp/src/agents_remember/memory/knowledge/detection.py:316-348 |
 | **The case that measures the additive rule, the append order, the `STRICT` shape, the key tuple and the two triggers.** | "test_generation_4_appends_only_and_the_first_twenty_names_are_generation_3_s" | mcp/tests/test_knowledge_detection_signals.py:724-751 |
 

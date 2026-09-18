@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -125,13 +125,13 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | --- | --- | --- |
 | The router is exactly three ordered conditions. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | skills/l-01-agent-lifecycles/SKILL.md:13-51 |
 | The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
-| The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)"; `# Core — The Minimal Lifecycle Frame`; "The seat binding is the catalog binding made at dispatch"; "Silence is supervised" | skills/l-01-agent-lifecycles/SKILL.md:140-175; skills/l-01-agent-lifecycles/core/authority.md:181-188; skills/l-01-agent-lifecycles/core/lifecycle-frame.md:1-26 |
-| Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)"; `# Core — Shared Invariants (every role can count on these)`; `# Core — Seat Authority (shared by every role)` | skills/l-01-agent-lifecycles/SKILL.md:229-229; skills/l-01-agent-lifecycles/core/authority.md:1-6; skills/l-01-agent-lifecycles/core/invariants.md:1-11 |
-| Dispatch has two process-derived caller kinds and one shared transaction. | "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls"; "two disjoint caller kinds" | skills/l-01-agent-lifecycles/SKILL.md:473-473; skills/l-01-agent-lifecycles/SKILL.md:492-499; skills/l-01-agent-lifecycles/core/authority.md:50-73 |
+| The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | `# Core — The Minimal Lifecycle Frame`; `# Core — The Minimal Lifecycle Frame`; "The seat binding is the catalog binding made at dispatch"; "Silence is supervised" | skills/l-01-agent-lifecycles/SKILL.md:140-175; skills/l-01-agent-lifecycles/core/authority.md:181-188; skills/l-01-agent-lifecycles/core/lifecycle-frame.md:1-26 |
+| Shared continuity and authority invariants are explicit. | `# Core — Shared Invariants (every role can count on these)`; `# Core — Shared Invariants (every role can count on these)`; `# Core — Seat Authority (shared by every role)` | skills/l-01-agent-lifecycles/core/authority.md:1-6; skills/l-01-agent-lifecycles/core/invariants.md:1-11 |
+| Dispatch has two process-derived caller kinds and one shared transaction. | "two disjoint caller kinds"; "Every launcher or role that dispatches a hosted role calls"; "two disjoint caller kinds" | skills/l-01-agent-lifecycles/core/authority.md:50-73 |
 | Ambient bootstrap compiles and pins one complete architect brief. | "# Template — Architect Brief"; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate."; `## Acceptance is per stable ID and version, never aggregate`; "independent of requirement acceptance" | skills/l-01-agent-lifecycles/SKILL.md:321-321; skills/l-01-agent-lifecycles/core/acceptance.md:44-77; skills/l-01-agent-lifecycles/core/acceptance.md:140-142 |
-| Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | "Requirement revisions and delivery attempts are separate axes."; `## Requirement revisions and delivery attempts are separate axes` | skills/l-01-agent-lifecycles/SKILL.md:346-346; skills/l-01-agent-lifecycles/core/acceptance.md:79-116 |
-| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:387-387; skills/l-01-agent-lifecycles/core/acceptance.md:118-124 |
+| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | `## Acceptance is per stable ID and version, never aggregate`; `## Acceptance is per stable ID and version, never aggregate`; "independent of requirement acceptance" | skills/l-01-agent-lifecycles/core/acceptance.md:44-77; skills/l-01-agent-lifecycles/core/acceptance.md:140-142 |
+| Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | `## Requirement revisions and delivery attempts are separate axes`; `## Requirement revisions and delivery attempts are separate axes` | skills/l-01-agent-lifecycles/core/acceptance.md:79-116 |
+| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/core/acceptance.md:120-120 |
 
 ## L23 Dispatch Admission
 
@@ -163,6 +163,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-18T10:45:13+00:00: Generated citation repair: "The detailed per-leaf worker and reviewer records are authority." repointed to skills/l-01-agent-lifecycles/core/acceptance.md:120-120. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "## The Role Registry" repointed to skills/l-01-agent-lifecycles/SKILL.md:67-67. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "## Shared Invariants (every role can count on these)" repointed to skills/l-01-agent-lifecycles/SKILL.md:229-229. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:321-321. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.

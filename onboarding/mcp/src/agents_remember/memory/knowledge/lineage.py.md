@@ -6,13 +6,13 @@
 | path | `mcp/src/agents_remember/memory/knowledge/lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
-| governingOverview | `../../../overview.md` |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[memory route overview](../../../overview.md)
+[memory route overview](../overview.md)
 
 ## Purpose
 
@@ -127,8 +127,8 @@ No domain documentation source is configured for this repository (`system/source
 | The two edges queries, one per lineage graph. | `invariant_edges`; `family_edges` | mcp/src/agents_remember/memory/knowledge/lineage.py:67-80 |
 | The invariant-side application, which states the rule once above the guard and uses the default wider-edge set. | `require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:674-705 |
 | The family-side application, which reuses this rule rather than restating it. | `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/families.py:238-253 |
-| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:292-319; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:393-429; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:423-449; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:325-328 |
-| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:328-353; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:429-457; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:460-468 |
+| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:292-319; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:393-429; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:423-449; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:325-328; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:361-362; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:462-468 |
+| The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:328-353; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:429-457; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:460-468; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:361-362; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:493-501 |
 | The spy node that asserts the shared rule is reached carrying the batch's declared edges, and the nodes that fail when the rule is neutered or the wider edges are emptied. | "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:605-674; mcp/tests/test_candidate_batch_transaction.py:561-603 |
 | The two-branch refusal wording, shared so the relations cannot describe different rules. | `_lineage_cycle_wording`; `lineage_cycle_refusal`; `family_lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:290-309; mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286 |
 | The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:399-418 |
