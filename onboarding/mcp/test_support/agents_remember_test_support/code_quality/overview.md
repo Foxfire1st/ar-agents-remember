@@ -5,19 +5,61 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T12:32+02:00 |
-| lastVerifiedCommitHash | `d9becade1a373f2272501f7451746ccc259ca9ac` |
-| lastVerifiedCommitDate | 2026-09-18T12:33:45+02:00|
+| lastUpdated | 2026-09-18T13:44+02:00 |
+| lastVerifiedCommitHash | `a12c511f6e76bd1188719cad0a9104d78d46920c` |
+| lastVerifiedCommitDate | 2026-09-18T14:03:17+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [Python verification infrastructure](../overview.md)
 
+## 260918-TSIP-L2 Record-Integrity Comparisons
+
+This route gained a **fifth** verification-helper module, `record_integrity.py` (**1110 lines**),
+beside `citations.py`, `structural_limits.py`, `scope.py` and L1's `instrument_discipline.py`. Like
+its sibling it is a helper library and not a gate: no quality-plan step, no registry entry. It is the
+only module in this route that reads the **task and memory records** rather than the code.
+
+What it owns is the drift shape this master is about — a document that was true when written and
+silently stopped being true. Each of its four comparisons reads a declared value out of one artifact
+and the authoritative value out of another, and reports the rows where they disagree while naming both
+sides and the number of rows compared:
+
+- a leaf document's `status` against its own enclosure contract's `closeout`/`integration` cells;
+- a master's `subTasks[].status` row against the status the shipped rule derives from the leaf
+  document beside it — `Completed` requires the document to be `Completed`, never merely every step
+  marked, which is `D42`'s fix restated as `derived_master_status`;
+- a register row's `→ L<n>` arrow against the leaf ids the owning master actually declares;
+- a **figure written in prose** — a line count or a case count — against the source it describes, at
+  the revision the prose names. This is the comparison the memory layer's own checks cannot make:
+  `range_resolution` looks only inside cited ranges and `claim_reopen` only at cited claims, so a
+  number written as prose is invisible to both. It is recorded as `T45`, and on the previous leaf it
+  was found by grepping the tree rather than by running the checker.
+
+Two properties are the route's business rather than the module's. **Every comparison states the two
+populations it compared** beside its findings, because "0 disagreements" without them is a zero nobody
+can license — the rule L1's `instrument_discipline.py` enforces for a text probe, applied to a record.
+And **every unanswerable question refuses by name** instead of returning a zero: no coordination root,
+a root carrying no `tasks/` tree, a base commit that does not resolve, a source outside any Git tree,
+and a claim whose shape is not `PATTERN:SHAPE:SOURCE:DOCUMENT[:DOCUMENT...]`.
+
+What it deliberately does **not** do is stated on its own card rather than smoothed here: the
+register's prose census has no honest check, because finding the census means parsing free-form
+Markdown and its bucket rule is undeclared; and the contracts with no matching leaf document are
+counted rather than judged.
+
+Its contract suite is `mcp/tests/test_record_integrity.py` (**1000 lines, 37 cases**), registered in
+the `architecture-fitness` lane of `mcp/tests/test-evidence-lanes.toml` because the module imports
+this package and executes nothing over a real boundary. Fourteen of those cases read the real record
+and **skip** without `AR_COORDINATION_ROOT`, and the `T45` documents are read **by Git object** at
+`e116e5ee` rather than from a working tree that moves under the test.
+
 ## 260918-TSIP-L1 Instrument-Discipline Helpers
 
-This route gained a fourth verification-helper module, `instrument_discipline.py`, beside
-`citations.py`, `structural_limits.py` and `scope.py`. It is a helper library, not a gate: it exposes
+This route gained **the fourth** verification-helper module, `instrument_discipline.py`, beside
+`citations.py`, `structural_limits.py` and `scope.py` — **the route's fifth** is
+`record_integrity.py`, recorded in the section above. It is a helper library, not a gate: it exposes
 no CLI, no registry entry and no plan step, and the quality plan does not invoke it.
 
 What it owns is narrower and older than this route's other helpers. Each of its four surfaces makes
@@ -120,6 +162,21 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-18T13:44+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
+  base `d9becade`): this route's governed sources changed, so a body section was **added rather than
+  annotated** — `## 260918-TSIP-L2 Record-Integrity Comparisons`, recording that the route gained a
+  **fifth** verification-helper module, `record_integrity.py` (1110 lines), and what the four
+  comparisons it owns are. The section states the module's two load-bearing properties (both
+  populations stated with every count; every unanswerable question a named refusal rather than a zero)
+  and the two limits it records on its own card rather than hiding. **One correction was made to the
+  section below:** it read *"this route gained a fourth verification-helper module"*, which a reader
+  takes as the route's current ordinal; with `record_integrity.py` the route carries five, so the
+  sentence now reads **the fourth** and names the fifth. This is `T45`'s class — a figure written in
+  prose that no check can see — and it was found by grepping for the ordinal rather than by running
+  the checker. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/
+  `lastVerifiedCommitDate` are deliberately unchanged because the candidate is uncommitted and the
+  governed closeout owns the real code and memory commits.
+
 - 2026-09-18T12:32+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
   `ar/260918-tsip-l1-ar`, base `f0313143`): this route's governor changed under it again. The leaf's
   independent review returned three blocking findings and the fix worker revised

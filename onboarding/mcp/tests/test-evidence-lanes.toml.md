@@ -5,13 +5,75 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-18T11:55+02:00 |
-| lastVerifiedCommitHash | `d9becade1a373f2272501f7451746ccc259ca9ac` |
-| lastVerifiedCommitDate | 2026-09-18T12:33:45+02:00|
+| lastUpdated            | 2026-09-18T13:42+02:00 |
+| lastVerifiedCommitHash | `a12c511f6e76bd1188719cad0a9104d78d46920c` |
+| lastVerifiedCommitDate | 2026-09-18T14:03:17+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l2-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 266 → **267** lines, one row added at `:246`); base `d9becade1a373f2272501f7451746ccc259ca9ac` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l1-ar` uncommitted source (1 modified path); base `f031314345b674d0733c4619fe34d78c1b02ba26` |
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 | governingOverview | `overview.md` |
+
+## 260918-TSIP-L2 Row — The Record-Integrity Module
+
+This leaf adds **one row** to the same `architecture-fitness` lane, at `:246`, as that array's last
+entry — between `mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py` (`:245`) and the lane's
+closing bracket (`:247`):
+
+```toml
+  "mcp/tests/test_record_integrity.py",
+```
+
+`architecture-fitness` is the behaviour-preserving lane for it because the module imports the
+verification package (`agents_remember_test_support.code_quality.record_integrity`) and executes
+nothing over a real boundary: no process, no Node, no temporary repository. The manifest now carries
+**249 module rows**, and the file is **267 lines**.
+
+**The insertion moved every manifest entry below it, and no other position was available.** An
+`architecture-fitness` entry must sit between its own header (`:227`) and the next lane header
+(`provider-conformance`, `:248`), and the array read **18** entries at `228-245` before this leaf, so
+`:246` — the array's last row — is the minimum-displacement position. The one-line shift invalidated
+three citations, and the shift is therefore a memory repair rather than an edit that could be
+avoided:
+
+| Affected citation | Before | After | Disposition |
+| --- | --- | --- | --- |
+| this card's row **"Empty former stress/migration populations"** | `:262-265` | **`:263-266`** | **BROKEN**: `migration = [` moved `265` → `266` and fell out of the range; repaired |
+| this card's row **"The manifest still has no default classification for an unregistered test file"** | `:4-265` | **`:4-266`** | stale end — its anchor still resolved, so **no check reported it**; repaired by reading the file |
+| `onboarding/mcp/tests/test_codex_capsule_delivery.py.md`, its `provider-conformance` lane-row citation | `:254-254` | **`:255-255`** | **BROKEN**: that row's own path moved `:254` → `:255`; repaired |
+| this card's row **"Provider contract classifications"** | `:242-256` | unchanged | **INTACT**: the range still covers `provider-conformance` at `:248` |
+
+**Not every range that moved broke**, which is why those dispositions are a list rather than a rule:
+a range still containing its anchor is not a finding, and only the product's own `range_resolution`
+check separates the two. It reported exactly **two** of them at this candidate — this card's
+`:262-265` and the `test_codex_capsule_delivery.py.md` row. The stale `:4-265` end was found by
+reading the file instead, which is `T45`'s class exactly: a range that no longer reaches the line it
+described renders like a correct one.
+
+**And the loader is not silent at this candidate — a correction to the section below.** The row above
+registers this leaf's module as the fail-closed loader requires, and the manifest is still **one row
+short of the modules it must classify**: `load_lane_manifest(<repository root>)` on this candidate
+refuses with
+
+```
+test evidence lanes have 1 finding(s):
+  - test files without an explicit lane: ['mcp/tests/test_atomic_series_chain_pair_order.py']
+```
+
+That module was added by `260915-CAPS-L25` at `f0313143` and was never registered; the gap is **one
+row at every commit since**, measured `247 entries / 248 modules on disk` at `f0313143`, `248 / 249`
+at `d9becade`, and `249 / 250` here. So this is not this leaf's doing and not this leaf's to repair —
+registering that module is a change to this file and belongs to the lane registry's owner — but two
+claims in the section below are wrong because of it and are corrected here rather than repeated:
+`pytest tests/test_evidence_lanes.py tests/test_suite_budget.py -q` does **not** exercise
+`load_lane_manifest` (its one registry case validates the lane *categories*), so its green says
+nothing about the loader; and the loader was already refusing at the previous leaf's candidate, not
+silent.
+
+After this insertion the lane populations are: unit-regression **150** (`6-155`), public-contract
+**2** (`158-159`), integration **64** (`162-225`), architecture-fitness **19** (`228-246`),
+provider-conformance **14** (`249-262`), with `stress-durability` (`:264`) and `migration` (`:266`)
+still empty — every lane above the insertion is unchanged.
 
 ## 260918-TSIP-L1 Row — The Instrument-Discipline Module
 
@@ -25,9 +87,14 @@ This leaf adds **one row** to the existing `architecture-fitness` lane, at `:232
 `architecture-fitness` is the behaviour-preserving lane for it because the module imports the
 verification package (`agents_remember_test_support.code_quality.instrument_discipline`) and executes
 nothing over a real boundary: no process, no Node, no temporary repository. `unit-regression` and
-`integration` would both misdescribe it. The fail-closed loader is silent at this candidate —
-`pytest tests/test_evidence_lanes.py tests/test_suite_budget.py -q` → **4 passed in 0.54 s** — and the
-module collects into the lane.
+`integration` would both misdescribe it. **Corrected by the `260918-TSIP-L2` curator, and wrong when
+written:** the claim that the fail-closed loader is silent at this candidate rested on
+`pytest tests/test_evidence_lanes.py tests/test_suite_budget.py -q` → **4 passed in 0.54 s**, a run
+that never calls `load_lane_manifest` (its one registry case validates the lane *categories*). Called
+directly, the loader already refused at this candidate — `test files without an explicit lane:
+['mcp/tests/test_atomic_series_chain_pair_order.py']`, an unregistered module from `260915-CAPS-L25`
+that no seat on this master has registered. The module does collect into the lane, which is what the
+row above establishes; the loader's silence was never measured. See the section above.
 
 **The insertion is a one-line change that moved the 27 manifest entries below it, and that is the
 fact to carry forward.** Every entry at or below `:232` gained one line; the entries above it did
@@ -794,10 +861,10 @@ The exact source declarations below establish the current behavior; this invento
 | Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:157-221 |
 | Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:223-240 |
 | Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:242-256 |
-| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:262-265 |
+| Empty former stress/migration populations | "stress-durability"; "migration" | mcp/tests/test-evidence-lanes.toml:263-266 |
 | L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:157-221 |
 | The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-151 |
-| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:4-265 |
+| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:4-266 |
 | LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
 | The checkpoint landing forcing suite is registered in the unit-regression lane by the same leaf that created it. | "mcp/tests/test_checkpoint_landing.py" | mcp/tests/test-evidence-lanes.toml:27-27 |
 | The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 184 now, after the L4, seal-removal, L5, L7, L8 and L3 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/test-evidence-lanes.toml:222-222 |
@@ -820,6 +887,26 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository authority is established by this file.
 
 ## Update History
+- 2026-09-18T13:42+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
+  base `d9becade`, `test-evidence-lanes.toml` **266 → 267 lines**, `+1`): recorded this leaf's one
+  added row — `mcp/tests/test_record_integrity.py` at `:246`, in the existing **`architecture-fitness`**
+  lane, because the module imports the verification package and executes nothing over a real boundary.
+  Added a declared section carrying the row, the lane rationale, the unavailability of any
+  lower-displacement position, and the renumbering it caused; **the insertion moved the 21 entries
+  below it (`:246-266`) by +1 and left every lane above it alone, so the lane populations are now
+  150 / 2 / 64 / **19** / 14 with `stress-durability` and `migration` empty.** Three citations were
+  invalidated and all three are repaired in this same pass, with the ranges **re-derived from the
+  post-edit bytes rather than from the numbers the edit was planned against**: this card's
+  `:262-265` → `:263-266` (the one the product's own `range_resolution` check reported) and `:4-265`
+  → `:4-266` (which no check reported, because its anchor still resolved inside the old range), plus
+  `onboarding/mcp/tests/test_codex_capsule_delivery.py.md` `:254-254` → `:255-255`. This card's
+  `:242-256` row was checked and **left alone** — its prefix still covers `provider-conformance` at
+  `:248`. **Two corrections to the section below, made rather than repeated:** the `:4-265` stale end
+  and the fail-closed-loader claim are both `T45`'s class — a figure a reader takes as current while
+  no check can see it. `lastUpdated` advances with this body edit;
+  `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because the candidate
+  is uncommitted and the governed closeout owns the real code and memory commits.
+
 - 2026-09-18T11:55+02:00 — 260918-TSIP-L1 curator (uncommitted change set on `ar/260918-tsip-l1-ar`,
   base `f0313143`, `test-evidence-lanes.toml` +1): recorded this leaf's **one** added row —
   `mcp/tests/test_instrument_discipline.py` at `:232`, in the existing **`architecture-fitness`**

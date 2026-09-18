@@ -5,11 +5,50 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-09-18T12:32+02:00 |
-| lastVerifiedCommitHash | `d9becade1a373f2272501f7451746ccc259ca9ac` |
-| lastVerifiedCommitDate | 2026-09-18T12:33:45+02:00|
+| lastUpdated            | 2026-09-18T13:45+02:00 |
+| lastVerifiedCommitHash | `a12c511f6e76bd1188719cad0a9104d78d46920c` |
+| lastVerifiedCommitDate | 2026-09-18T14:03:17+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | governingOverview | `../overview.md` |
+
+## 260918-TSIP-L2 Record-Integrity Module And Its Lane Row
+
+This route gained one module and one lane row. `mcp/tests/test_record_integrity.py` (**1000 lines, 37
+cases** — measured on this candidate: 37 `def test_` methods in five classes, **0** module-level
+cases, **0** parametrisations, and `pytest --collect-only -q` → **`37 tests collected`**, so the
+collected count and the defined count are the same 37) pins the four record comparisons shipped in
+`mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py`, each against the
+historical artifact it was written for and in both directions: the check must FAIL on the artifact as
+it stood when the drift was live, and PASS on the artifact that replaced it.
+
+Its row was added in the existing **`architecture-fitness`** lane at `:246`, as that array's last
+entry — between `test_wire_vocabulary_exhaustiveness_boundary.py` (`:245`) and the lane's closing
+bracket (`:247`). `architecture-fitness` is the behaviour-preserving lane for it for the same reason
+as its sibling: the module imports the verification package and executes nothing over a real boundary,
+so `unit-regression` and `integration` are both wrong for it.
+
+**The insertion moved every entry below `:246` by one, and the shift could not be avoided.** An
+`architecture-fitness` entry must sit between its header (`:227`) and the next lane header
+(`provider-conformance`, `:248`); the array read 18 entries at `228-245`, so `:246` — the array's last
+row — is the minimum-displacement position. Three citations were invalidated and all three were
+repaired in the same pass, with the ranges **re-derived from the post-edit bytes rather than from the
+numbers the edit was planned against**: `test-evidence-lanes.toml.md`'s aggregate rows `:262-265` →
+`:263-266` and `:4-265` → `:4-266`, and `test_codex_capsule_delivery.py.md`'s `:254-254` → `:255-255`.
+That card's `:242-256` row was checked and left alone. The product's own `range_resolution` check
+reported two of those three; the stale `:4-265` end was invisible to it, which is `T45`'s class.
+
+**This leaf's own finding about the loader belongs on this route.** `load_lane_manifest(<repository
+root>)` **refuses** at this candidate — `test files without an explicit lane:
+['mcp/tests/test_atomic_series_chain_pair_order.py']` — a module added by `260915-CAPS-L25` at
+`f0313143` and never registered. The gap is one row at every commit since: 247 entries / 248 modules
+on disk at `f0313143`, 248 / 249 at `d9becade`, 249 / 250 here. So it is neither this leaf's doing nor
+this leaf's to repair — registering that module is a change to the lane manifest and belongs to its
+owner — but the route should carry the correction, because the run the section below cites for the
+loader's silence does not exercise the loader at all.
+
+Fourteen of this module's cases read the real record, so they **skip** without
+`AR_COORDINATION_ROOT` and a green default-lane run says nothing about them; the `T45` documents those
+cases assert against are read **by Git object** at `e116e5ee`, the revision that committed them.
 
 ## 260918-TSIP-L1 Instrument-Discipline Module And Its Lane Row
 
@@ -26,9 +65,13 @@ catch.
 Its row was inserted in the existing **`architecture-fitness`** lane at `:232`, between
 `test_file_size_detector.py` (`:231`) and `test_layering.py` (`:233`) — the lane that owns structural
 invariants. The module imports the verification package and executes nothing over a real boundary, so
-`unit-regression` and `integration` are both wrong for it. The fail-closed loader is silent at this
-candidate: `pytest tests/test_evidence_lanes.py tests/test_suite_budget.py -q` → **4 passed in
-0.54 s**.
+`unit-regression` and `integration` are both wrong for it. **Corrected by the `260918-TSIP-L2`
+curator, and wrong when written:** the fail-closed loader is **not** silent at this candidate. The run
+cited here — `pytest tests/test_evidence_lanes.py tests/test_suite_budget.py -q` → **4 passed in
+0.54 s** — never calls `load_lane_manifest`; its one registry case validates the lane *categories*.
+Called directly, the loader already refused at this candidate for the unlisted
+`mcp/tests/test_atomic_series_chain_pair_order.py`, an unregistered module from `260915-CAPS-L25`. The
+module does collect into the lane, which is what the row above establishes. See the section above.
 
 **The insertion moved every later row down by one, and that is the fact a reader of this route needs
 most.** `test_pause_is_not_publication.py` moved `:235` → `:236` and `test_codex_capsule_delivery.py`
@@ -1297,6 +1340,23 @@ Current working-candidate evidence for this route:
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-18T13:45+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
+  base `d9becade`): this route's governed sources changed, so a body section was **added rather than
+  annotated** — `## 260918-TSIP-L2 Record-Integrity Module And Its Lane Row`, recording the new
+  `mcp/tests/test_record_integrity.py` (**1000 lines, 37 cases**) and the lane row it added at `:246`.
+  The section states the lane rationale, that `:246` is the minimum-displacement position, and the
+  three citations that one-line shift invalidated. **Two corrections were made to the section below,
+  and both are `T45`'s class — a claim a reader takes as current while no check can see it:** the
+  sentence asserting the fail-closed loader is silent at the previous candidate was **wrong when
+  written** (the `pytest` run it cites never calls `load_lane_manifest`, and the loader was already
+  refusing for an unregistered module), and it now says so. **One citation into this document was
+  re-derived from these post-edit bytes rather than from the numbers the edit was planned against:**
+  `onboarding/mcp/tests/test_eve_protocol.py.md`'s two ranges into this file moved +43 with the
+  insertion and were repaired in the same pass, which is `T31`'s rule applied by the seat that made
+  the edit. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/
+  `lastVerifiedCommitDate` are deliberately unchanged because the candidate is uncommitted and the
+  governed closeout owns the real code and memory commits.
+
 - 2026-09-18T12:32+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
   `ar/260918-tsip-l1-ar`, base `f0313143`): the section above carried two numbers that had gone stale,
   and **neither was reachable by any memory check** — they are prose, not citations, so
