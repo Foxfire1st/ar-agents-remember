@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
-| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
+| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
+| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -367,7 +367,6 @@ the direct landing operation (L16-R8).
 
 All three task-document writers thread the joined graph titles into the renderer (L12-R1/R4): `task_doc_tools.py` (`_graph_titles_for`/`_batch_graph_titles`), `task_execution_topology.py` (`_authoring_batch_titles`), and `task_sprint_linkage.py` (`_batch_graph_titles`) — publish and preview both label the sprint mermaid diagram with real master/leaf titles; batches without a graph fall back to ref-key labels.
 
-
 ## 260815-DAG-L15 Route Impact
 
 New `application/memory_quality_runs.py` (bounded single-flight background run registry, L15-R7); `memory_tools` gained the async start/poll wrappers (including the `ok`-envelope gate-repair fix); `task_execution_topology`/`task_sprint_linkage` hardened the authoring dialect (served-build preflight, typed judgment-required, move-retargets-edge, node-kind order, `create=False` dry-run locks).
@@ -448,7 +447,6 @@ normal integration publishes a prepared pair under explicit handover/ref authori
 automatically runs strict code quality, memory quality, selected certification, curator coherence,
 or independent review. Full suites remain an explicit developer request.
 
-
 ## Pull-Request Landing Records Through The Same Writer
 
 A pull request lands code on the remote; it never moves refs locally, so `worktree_integrate` cannot
@@ -518,7 +516,7 @@ result from this layer, and never imports the storage package.
 | --- | --- | --- |
 | The provenance envelope is assigned here, not accepted from a payload. | `write_authorship` | mcp/src/agents_remember/application/knowledge.py:102-122 |
 | The admitted-destination constructor that confers no authority by itself. | `admitted_knowledge_destination` | mcp/src/agents_remember/application/knowledge.py:125-141 |
-| Provenance and namespace come from the destination rather than from the request. | `admitted_revision_request` | mcp/src/agents_remember/application/knowledge.py:144-157 |
+| Provenance and namespace come from the destination rather than from the request. | `admitted_revision_request` | mcp/src/agents_remember/application/knowledge.py:144-159 |
 | Initialization refuses an occupied destination as a resume attempt. | `initialize_knowledge_namespace` | mcp/src/agents_remember/application/knowledge.py:160-190 |
 | The read open and the delegating insert, both closing in a `finally`. | `open_admitted_knowledge_store`; `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:193-204; mcp/src/agents_remember/application/knowledge.py:207-221 |
 | The layer charter paragraph that fixes the one-way direction this seam implements. | "[package.memory]" | layers.toml:206-222 |
@@ -541,8 +539,8 @@ that will consume it is `KS-R03`'s.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The graph request builders, all attaching the destination's provenance and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:327-337; mcp/src/agents_remember/application/knowledge.py:351-360; mcp/src/agents_remember/application/knowledge.py:363-371; mcp/src/agents_remember/application/knowledge.py:374-386 |
-| The eight graph operations, each open-delegate-close. | `create_knowledge_family`; `create_knowledge_anchor`; `create_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-432; mcp/src/agents_remember/application/knowledge.py:447-456; mcp/src/agents_remember/application/knowledge.py:471-480; mcp/src/agents_remember/application/knowledge.py:495-504; mcp/src/agents_remember/application/knowledge.py:507-516 |
+| The graph request builders, all attaching the destination's provenance and namespace. | `admitted_family_request`; `admitted_anchor_request`; `admitted_member_request`; `admitted_claim_request` | mcp/src/agents_remember/application/knowledge.py:327-342; mcp/src/agents_remember/application/knowledge.py:351-360; mcp/src/agents_remember/application/knowledge.py:363-371; mcp/src/agents_remember/application/knowledge.py:374-389 |
+| The eight graph operations, each open-delegate-close. | `create_knowledge_family`; `create_knowledge_anchor`; `create_knowledge_family_member`; `create_knowledge_realization_claim`; `remove_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-438; mcp/src/agents_remember/application/knowledge.py:447-462; mcp/src/agents_remember/application/knowledge.py:471-486; mcp/src/agents_remember/application/knowledge.py:495-504; mcp/src/agents_remember/application/knowledge.py:507-522 |
 | The graph modules the new operations delegate to. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/anchors.py:49-68; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81 |
 | The composed-path case that drives admit -> create -> reopen -> read through this seam. | "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:566-680 |
 
@@ -573,10 +571,12 @@ extension, and the worker report's claim that `KS-R03` "resolved" that observati
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two label operations the seam exposes. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-238; mcp/src/agents_remember/application/knowledge.py:240-250 |
+| The two label operations the seam exposes. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-239; mcp/src/agents_remember/application/knowledge.py:240-255 |
 | The context resolution and its pure sealing step. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
-| The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-315 |
-| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:182-223; mcp/src/agents_remember/models/knowledge/candidate.py:498-515 |
+| The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
+| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:182-223; mcp/src/agents_remember/models/knowledge/candidate.py:498-529 |
+| The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
+| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:83-424 |
 | The lane rules the seam's entry point reaches, and the operation that applies them. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
 | The composed-path case that drives the boundary end to end through this seam. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-109 |
 | The case that proves the operation refuses a context smuggled past the model seal. | "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:1120-1160 |
@@ -813,7 +813,6 @@ The wiring boundary did **not** move: like its five siblings, this module has **
 | The four input classes a failed read is mapped onto. | `_reading_failure` | mcp/src/agents_remember/application/knowledge_diff.py:256-279 |
 | **The nodes that drive the real candidate write, the missing side, and the substituted-snapshot refusal through the public seam.** | "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"; "test_a_missing_side_refuses_and_substitutes_no_other_snapshot"; "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page" | mcp/tests/test_knowledge_diff_boundaries.py:325-363; mcp/tests/test_knowledge_diff_boundaries.py:303-322; mcp/tests/test_knowledge_diff_boundaries.py:438-475 |
 
-
 ## 260915-KS-L10 The Generation Registry Reaches The Seam
 
 This leaf changed no authority in this route and added no module, but two of the helpers the seam calls now
@@ -837,14 +836,15 @@ lacks.
 | --- | --- | --- |
 | The read-side row counts now resolve the dataset's own generation instead of the build's table list. | `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:587-603 |
 | The diff-side row counts do the same, so coverage describes the dataset it measured. | `diff_row_counts` | mcp/src/agents_remember/application/knowledge_diff.py:826-842 |
-| The generation selector both now call, and the declaration a created store makes. | `generation_of_database`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413; |
-| **The generation selector both now call — which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-34; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413 |
-| **The declaration a created store makes, which is the registry's last entry rather than a second literal — generation 5 since `KS-R18@v1` appended it.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385 |
-| **The generation selector this route's read and diff helpers call, which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-34; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413 |
-| **The declaration a created store makes: the registry's last entry, which is generation 5 since `KS-R18@v1`.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385 |
-| **The registry whose tip that entry is, ordered oldest first so the newest supported generation is its last member rather than a second literal that could drift from the tuple.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:365-372 |
+| The generation selector both now call, and the declaration a created store makes. | `generation_of_database`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-444; |
+| **The generation selector both now call — which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-46; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413 |
+| **The declaration a created store makes, which is the registry's last entry rather than a second literal — generation 5 since `KS-R18@v1` appended it.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-416 |
+| **The generation selector this route's read and diff helpers call, which reads the dataset's own declared version and refuses an unregistered one rather than widening.** | `generation_of_database` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:34-46; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-413 |
+| **The declaration a created store makes: the registry's last entry, which is generation 5 since `KS-R18@v1`.** | `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-416 |
+| **The registry whose tip that entry is, ordered oldest first so the newest supported generation is its last member rather than a second literal that could drift from the tuple.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:365-395 |
 | **The generation gate the binding write applies before any row exists: a dataset that predates the table is refused with the observed generation as a fact, never migrated or widened.** | `require_binding_generation` | mcp/src/agents_remember/memory/knowledge/citations.py:293-314 |
 | **The two members this leaf registered on the shared operation vocabulary.** | "author_citation_binding"; "read_citation_closure" | mcp/src/agents_remember/models/knowledge/result.py:120-120; mcp/src/agents_remember/models/knowledge/result.py:121-121 |
+| The generation selector both now call, and the declaration a created store makes. | `generation_of_database`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:282-282; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-444 |
 
 ## 260915-KS-L11 The Facet Selection Joins As A Sixth Seam
 
@@ -878,27 +878,22 @@ counts. The module reads that fact (`seed_recorded`) rather than inferring it fr
 a registered tool. `read_facet_scope` is in the module's `__all__`, and no MCP tool name was introduced.
 
 ## 260915-KS-L15 The Assessment Read Joins The Quality Controller
-
 The memory-quality controller gains one read and one input, and the route's shape is otherwise
 unchanged. `curator_knowledge_review_summaries` reads the **already-published** curator-coherence
 authority — the same authority the full scoped run already resolves — and summarises its stored
 assessment collection into the rows the checklist's factual `knowledgeReview` section renders. It is
 the controller's second read of that authority on a full run and not a second resolution, and it
 decides nothing about what it reads.
-
 The read is deliberately **not** an input to `curatorActionableCount`, and a subject with no stored
 assessment produces no row at all rather than a favourable one. This route remains a typed operation
 facade: the summaries travel into `CuratorChecklist.knowledge_review`, whose default keeps every
 existing caller unchanged.
-
 ## 260915-KS-L17 The Composition Seam
-
 The route gained one module, `application/knowledge_composition.py` — the layer's **fifth read-only
 application seam** beside `knowledge_read.py`, `knowledge_snapshot.py`, `knowledge_merge.py` and
 `knowledge_export.py` — and no new authority. It admits a dataset path and a repository namespace and
 delegates to the two memory modules that own the acts: `follow_composition_scope` for the
 declared-policy traversal and `family_revision_view` for the Family projection.
-
 **The traversal is a read, not a write, and it is not the retrieval read.** This is the one sentence a
 later reader must not flatten. Following declared composition edges under a declared policy version is
 a *different operation* from `read_knowledge_scope`: this seam does not touch that function, its
@@ -906,9 +901,7 @@ selection policy or its advertised frontier, and the operation name it carries
 (`follow_family_composition`) is its own member of the operation vocabulary rather than a variant of
 the read's. A caller that wants the recorded-scope selection asks for that operation; a caller that
 wants declared composition edges followed asks for this one.
-
 Three boundaries the module owns, and the reason each is the shape it is:
-
 - **The read-only handle is how "a refused traversal persisted nothing" is structural.** The
   connection comes from `open_read_only_database`, so the strongest statement available is a
   `SELECT`; the property is a fact about the handle rather than a rollback this code remembers, and
@@ -920,7 +913,6 @@ Three boundaries the module owns, and the reason each is the shape it is:
   identity or version, a not-permitted edge, a step past the declared bound and a missing family
   revision all arrive as `KnowledgeRefusal` values; a traversal that cannot be reported as a
   *complete* scope returns the refusal rather than a truncated scope.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The traversal seam: it carries its own operation and opens through the read-only handle. | `follow_family_composition` | mcp/src/agents_remember/application/knowledge_composition.py:83-83 |
@@ -928,40 +920,68 @@ Three boundaries the module owns, and the reason each is the shape it is:
 | The one open path, whose handle is the shipped read-only connection and whose schema is the one the file declares. | `open_read_only_store` | mcp/src/agents_remember/application/knowledge_composition.py:136-136 |
 | The published seam surface: two operations and their two value types. | `__all__` | mcp/src/agents_remember/application/knowledge_composition.py:49-49 |
 | **The case that stamps the seam: read-only, its own operation, and no movement of the retrieval selection.** | "test_the_application_seam_is_read_only_carries_the_operation_and_moves_no_selection" | mcp/tests/test_knowledge_family_composition_boundaries.py:617-617 |
-
-
 ## Update History
-- 2026-09-18T08:30+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `GENERATIONS`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: `CURRENT_GENERATION` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: `CURRENT_GENERATION` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:45+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `author_citation_binding`; `read_citation_closure`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
-- 2026-09-18T07:00+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read this route's composition seam and added its section.** The route gained a **fifth read-only application seam** — `knowledge_composition.py` — beside `knowledge_read`, `knowledge_snapshot`, `knowledge_merge` and `knowledge_export`. The section states the three boundaries the seam owns: it opens through the shipped read-only handle so a refused traversal persists nothing and "changed nothing" is a property of the handle rather than a rollback; it carries `follow_family_composition` as its **own operation**, so a caller that wants declared composition edges followed asks for that operation and not for the retrieval selection; and every modelled failure is a typed refusal inside the result rather than an exception. It also records that a family revision this namespace does not hold is refused rather than reported empty. Verification metadata is **not** advanced over unreviewed content; the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read the controller this route governs against the changed source and wrote the section above. `application/memory_quality/controller.py` gained `curator_knowledge_review_summaries`, which summarises the already-published curator-coherence authority's assessment collection for the checklist's factual section and decides nothing about it; the route stays a typed operation facade and the summaries are deliberately not an input to `curatorActionableCount`. The reference rows that cite the controller were re-derived from the current file while re-reading it, because the leaf's insertion moved every anchor below it: `MemoryQualityExecution` is now `:93-111`, `_resolve_execution` `:317-337` and `_attach_coherence_readiness` `:714-741`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): added the **citation-binding operations** section and **corrected a stale number this route's body stated as a fact**. The new section records the two things a reader of this route needs: the seam's own contract is unchanged (no authority conferred, the provenance envelope assigned rather than accepted, no acceptance or promotion operation, `application` still the only consumer of `memory.knowledge` from this layer), while two operation members now travel through it — authoring a binding and reading a selected prose view's closure — so both go through the same admitted path as every other knowledge operation rather than a second entry point beside it. It also records the generation gate the binding write applies, a dataset that predates the table being refused with the observed generation as a fact. **The L10 section's body said a dataset created through this seam declares generation 2; that was true when L10 wrote it and is false now**, so it is corrected in place to say the declaration follows the registry's last entry — generation 5 since this leaf appended the citation-binding table — rather than being restated as a literal a later generation would falsify. One corrupted citation cell was also repaired by hand: the row naming `generation_of_database` and `CURRENT_GENERATION` had a range that attempted to cover both declarations at once, which is not one extent, so it is **split into two rows, one anchor each**, with the anchors cited at their own declarations. Re-reading it also let the generated projection bullet that had produced the old range be removed, because a mechanically projected range is unverified evidence and an agent has now read both declarations. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-18T02:37:44+00:00: Generated citation repair: `generation_of_database`; `CURRENT_GENERATION` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-327; mcp/src/agents_remember/memory/knowledge/schema_generations.py:282-282. No content impact: mechanical anchor-range projection bound to citation source snapshot d211cfd02f11c0600198b11c621aa5574ac8743db6e0ca1d2c92936e561c5146; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand while resolving the memory sync** — `CURRENT_GENERATION`, `generation_of_database`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
+
+- 2026-09-18T06:30:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `GENERATIONS`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
+
+- 2026-09-18T05:45:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `author_citation_binding`; `read_citation_closure`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
+
+- 2026-09-18T05:00:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read this route's composition seam and added its section.** The route gained a **fifth read-only application seam** — `knowledge_composition.py` — beside `knowledge_read`, `knowledge_snapshot`, `knowledge_merge` and `knowledge_export`. The section states the three boundaries the seam owns: it opens through the shipped read-only handle so a refused traversal persists nothing and "changed nothing" is a property of the handle rather than a rollback; it carries `follow_family_composition` as its **own operation**, so a caller that wants declared composition edges followed asks for that operation and not for the retrieval selection; and every modelled failure is a typed refusal inside the result rather than an exception. It also records that a family revision this namespace does not hold is refused rather than reported empty. Verification metadata is **not** advanced over unreviewed content; the code commit does not exist yet and closeout owns that stamp.
+
+- 2026-09-18T04:05:00+00:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read the controller this route governs against the changed source and wrote the section above. `application/memory_quality/controller.py` gained `curator_knowledge_review_summaries`, which summarises the already-published curator-coherence authority's assessment collection for the checklist's factual section and decides nothing about it; the route stays a typed operation facade and the summaries are deliberately not an input to `curatorActionableCount`. The reference rows that cite the controller were re-derived from the current file while re-reading it, because the leaf's insertion moved every anchor below it: `MemoryQualityExecution` is now `:93-111`, `_resolve_execution` `:317-337` and `_attach_coherence_readiness` `:714-741`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+
+- 2026-09-18T04:05:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): added the **citation-binding operations** section and **corrected a stale number this route's body stated as a fact**. The new section records the two things a reader of this route needs: the seam's own contract is unchanged (no authority conferred, the provenance envelope assigned rather than accepted, no acceptance or promotion operation, `application` still the only consumer of `memory.knowledge` from this layer), while two operation members now travel through it — authoring a binding and reading a selected prose view's closure — so both go through the same admitted path as every other knowledge operation rather than a second entry point beside it. It also records the generation gate the binding write applies, a dataset that predates the table being refused with the observed generation as a fact. **The L10 section's body said a dataset created through this seam declares generation 2; that was true when L10 wrote it and is false now**, so it is corrected in place to say the declaration follows the registry's last entry — generation 5 since this leaf appended the citation-binding table — rather than being restated as a literal a later generation would falsify. One corrupted citation cell was also repaired by hand: the row naming `generation_of_database` and `CURRENT_GENERATION` had a range that attempted to cover both declarations at once, which is not one extent, so it is **split into two rows, one anchor each**, with the anchors cited at their own declarations. Re-reading it also let the generated projection bullet that had produced the old range be removed, because a mechanically projected range is unverified evidence and an agent has now read both declarations. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
+
+## 260915-KS-L12 The Supporting-Record Read Joins As A Seventh Seam
+`KS-R12@v1` adds the route's seventh application seam, `application/knowledge_evidence.py`, beside the
+knowledge, snapshot, merge, export, read, facet and detection surfaces. It exposes exactly one operation,
+`read_evidence_scope`: one explicit context, one seed, one complete page. Like every seam here it decides
+no authority and holds no durable state — it admits a context, delegates selection to the memory layer,
+and returns the typed result unchanged.
+Two properties are worth a reader's attention, because each is the reason a whole family of failures is
+not reachable. **The read is read-only by construction**: the connection is opened through the shipped
+read-only opener, so the strongest statement available to the operation is a `SELECT`, and 'a refused
+evidence read left the file byte-identical' is a property of the handle rather than a rollback the code
+has to remember. **The declared snapshot is verified before anything is selected**: the file must be bound
+to the requested namespace, must implement the generation the context declares, and must hold the declared
+logical dataset — the same three comparisons the recorded-scope read and the facet read make, so a context
+describing another dataset is refused by name rather than answered from whatever bytes the path holds. The
+artifact resolution is a read-time fact and never a rewrite: a caller may declare a local artifact root so
+a recorded repository-relative path resolves against real bytes, and the stored record is served exactly
+as written whatever the resolution says.
+The route's *write* half does not get a new seam name. `application/knowledge.py` gains the supporting-record
+half — `admitted_evidence_request` and `write_knowledge_evidence` — because the write already had one seam
+and this is one more act through it, not a second boundary. The dispatch is on the command the request
+carries rather than on a caller-supplied name, so a caller cannot ask for one act and submit another.
+**Nothing in either half touches the two shipped selections.** The evidence selection declares its own
+policy name, has its own seeds and its own item stream, and appears in neither the recorded-scope nor the
+facet response — which is why their serialized pages stay unchanged.
+## Update History
+- 2026-09-18T06:40+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand** — `generation_of_database`, `CURRENT_GENERATION`, `worktree_status_packet`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
+
+- 2026-09-18T06:40+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **re-read this route overview against the current source and repaired the citation ranges the leaf's addition moved.** It added the **supporting-record seam** section — the route's seventh application seam and its one read operation — and refreshed the write half's account of where the two supporting-record entry points live. The body above is the substantive update; the route's own source scope moved because the leaf both adds modules to it and appends two entries to the registry it documents.
+
 - 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the route's **sixth composition seam**, `application/knowledge_facets.py` — one context, one seed, one complete page, under its own declared policy `authored-judgment-facets/v1`. The body states the three boundaries the module owns (the **read-only handle** that makes "a refused read persisted nothing" structural; the **three snapshot comparisons** run before any selection, each naming expected and observed; and the **complete-or-refused** selection with no cursor), the distinction a reader must not flatten (**a seed naming nothing is `selector_absent`, while a recorded record with no attachments is a real page with zero counts**, read from `seed_recorded` rather than inferred from an empty list), and gives the seam its correct position in the running count, since the module's own docstring numbers it the fifth while naming five predecessors. The wiring boundary is re-recorded because it did **not** move: no non-tool importer in `mcp/src`, no MCP tool name, and no shared code path with `KS-R07@v1`'s selection — which is why a shipped seed's serialized page stays byte-identical. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
+
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **route meaning changed for two helpers, with no new authority.** `read_row_counts` and `diff_row_counts` no longer iterate the pinned generation-1 table list: they resolve the **selected generation from the dataset they open** and iterate that generation's tables, so a generation-2 dataset's coverage and row counts describe the dataset rather than the build. The body records that the seam's own contract is unchanged (no authority conferred, provenance assigned rather than accepted, no acceptance or promotion operation, still the only consumer of `memory.knowledge` from this layer), that a namespace initialized through this seam now declares **generation 2** so it carries six more tables than the generation-1 files earlier leaves produced, and that opening either kind works because the open path selects the generation from the file's own `PRAGMA user_version` while a **mixed-generation** comparison refuses before any session exists. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
+
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+
 - 2026-09-17T03:31:11+02:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T00:56:17+00:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
+
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the route's **sixth composition seam**, `application/knowledge_diff.py` — one comparison of two named knowledge snapshots and two named code trees — and the four boundaries it owns: **R07's selection run twice** with the per-side exact-revision address as the only addition to the selection contract; **the binding as the invalidation** (a candidate whose bytes moved presents another `after` identity and is refused rather than continued, so the invalidation is not a check someone has to remember to write); **a missing side refuses with no `HEAD` substituted**; and **one side's absence reported rather than raised**, with the operation refusing outright only when neither side selected anything. It records the two properties that make the ordered body safe (**both sides verified before either is selected**; the request-level cursor checks decided **before** the comparison binding, so a caller who changed the question is told that), the three separate snapshot comparisons per side, the page arithmetic that keeps the comparison total and the display's two numbers apart, the four typed failure classes the read maps, `open_diff_side` as the constructor that stops a caller hand-writing a side's identity, and `diff_row_counts` as the measurement half of the persisted-nothing property. It carries the module's own non-claim in the requirement's words — the comparison has **no field that could** rank, score, approve or decide neutrality, which the boundary module measures over the serialized response — and records that the wiring boundary did **not** move: like its five siblings the seam has **no non-test importer in `mcp/src`** and introduces no MCP tool name. Every storage-layer citation in the L7 section above was re-derived, because the L8 docstring insertion moved `read.py`'s anchors. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
+
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the route's **fifth composition seam**, `application/knowledge_read.py`, and the three boundaries it owns: the **read-only handle** that makes "a refused read persisted nothing" structural (with `read_row_counts` as the measurement half), the **task-free baseline read** that never fabricates a leaf, and the **cursor as a binding** whose request-level checks run before the file is opened while its manifest and position checks run where the selection exists — with no cursor refusal ever returning a partial page. The card records the ordered sequence and the three separate snapshot comparisons (namespace, schema generation, logical dataset) where the schema check is its own statement rather than a corollary of the digest, the two absence codes with the recorded-but-empty selection served rather than refused, and `open_read_context` as the constructor that stops a caller hand-writing the snapshot a read is verified against. It carries the seam's two non-claims in the module's own terms (every modelled failure is a typed refusal, while a caller passing a non-model object is a programming error at the call site; and a caller must be able to tell an absence from a malformed input) and records that the wiring boundary did **not** move — like its four siblings the seam has no non-test importer in `mcp/src`. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
+
 - 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the fourth composition seam — `application/knowledge_export.py` — and why the portable export/import boundary is its own module rather than more entry points on any sibling: the four seams now divide the knowledge surface into the write, the lifecycle-and-publication, the merge, and the portable artifact, so each entry point stays readable as one intent. The card records the five entry points (two pure delegations, the read-only validation that produces **no database at all**, the value-or-refusal file reader whose two failures carry different codes, and the body that is handed out only for an artifact the validator accepted), the two non-claims the ruled intent made explicit (an export is not a filtered read response or a Markdown projection; an import creates no Git commit and restores no Git ancestry), and the wiring boundary that did **not** move: like its three siblings, this module has no non-test importer in `mcp/src`. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
+
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the third composition seam — `application/knowledge_merge.py` — and why the guarded common-base merge is its own module rather than more entry points on either sibling: the three seams now divide the knowledge surface into the write, the lifecycle-and-publication, and the merge, so each entry point stays readable as one intent. The card records the resolve-then-merge pair returning the storage layer's typed values unchanged, the carried absence of any compatibility verdict, and the non-claim the ruled design made explicit: **the adapter is callable rather than wired** — no Git merge driver, attribute or commit exists on this path, and activation is an explicit later change. The wiring boundary is re-recorded because it did not move: like its two siblings, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.
+
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the second composition seam — `application/knowledge_snapshot.py` — and why the lifecycle/publication half is its own module rather than more entry points on `application/knowledge.py`: each entry point stays readable as one intent. The card records the derived write destination (so write and publish cannot name different files), the two publication entry points sharing one install contract, and the read-side gate being exposed rather than decided. **Two non-claims are stated rather than left to inference**: the seam creates no Git commit (capturing a published file into a memory tree is the existing candidate-tree owner's operation) and no IAS landing is reachable from it. The wiring boundary is re-recorded because it did not move: like `application/knowledge.py`, this module has no non-test importer in `mcp/src`. Verification metadata remains closeout-owned.
+
 - 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
 
-
-
-
-
-
-  `27242ecb`): recorded the candidate-write boundary joining the seam — the context resolution that reads the live
-  dataset identity and seals it (the only way a batch's precondition is built, because `CandidateResolution` has no
-  dataset-identity field), the batch operation that takes `destination.authorship` so a payload cannot supply
-  provenance, and the two label operations — and re-recorded the boundary that did **not** move: the seam still has
-  no non-test importer in `mcp/src`, adding a function inside the module does not create one, and the worker
-  report's "resolved" claim about that observation was withdrawn in review. Verification metadata remains
-  closeout-owned.
 - 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
   `60e0820e`): recorded the graph operations joining the seam — eight builders that attach the destination's
   provenance and namespace exactly as the revision builder does, eight open-delegate-close operations, and the one
@@ -987,40 +1007,45 @@ Three boundaries the module owns, and the reason each is the shape it is:
   on that path, and that it is the counterpart of `worktree_checkpoint_landing_tool` on the opposite
   side of the pause/publication split. Verification metadata remains closeout-owned; no acceptance
   claim.
+
 - 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected the IAS application
   boundary from one source-pair activation authority to the per-contract activation record — each
   canonical series contract owns its record, sibling masters sharing a protected source pair never
   wait on one another, and the only waiting reason is `atomic-series-reconciling` — with no shipped
   document quoted by this route claim. Source documentation only; verification metadata remains
   closeout-owned and no acceptance or test claim is made.
+
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+
 - 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded the corrected `worktree_checkpoint_landing_tool`
   docstring on this route — the published text had omitted the completed-closeout requirement, which
   was the reason the route was unreachable — and pointed to the preview/apply parity invariant
   inventory on the worktrees route overview and in `memory_quality/overview.md`. Content change, not a
   range repoint; verification metadata remains closeout-owned and no acceptance claim is made.
+
 - 2026-09-12T02:55+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the new
   `worktree_checkpoint_landing_tool` entry point on this route, its admission/argument/delegation
   shape, why it runs no completion-edge work, and why it is a separate public tool rather than a flag
   on `worktree_integrate`. Content change, not a range repoint; verification metadata remains
   closeout-owned.
+
 - 2026-09-11T23:05:00+00:00: Pull-request landing curation: recorded the new `worktree_record_landing_tool` entry point and its `LandedCommits` parameter object, and why it shares the single landed-integration writer with `worktree_integrate` instead of writing the integration cell itself. Content change, not a range repoint.
+
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: rewrote the "Durable Lifecycle Application Boundary" section from the deleted detached worker to the in-process synchronous route, removed the deleted legacy-repair and closeout-door adapters from the hot-path summary, and recorded the deletions of `application/closeout_door.py` and the `application/lifecycle/` worker, legacy-tool, enclosure-tool and status-wait entry points. Only cut-affected claims were reconciled; this route's other claims were not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
+
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
+
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the unified route-review refusal boundary across application start/admission, certification, and direct closeout. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `worktree_status_packet` repointed to mcp/src/agents_remember/application/worktree_status.py:61-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-
 
 - 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected task/memory package paths and semantic invalidation; recorded exact tree revalidation, profile service composition, and remaining R05/R16/R07/R08 gaps. Verification records source review, not execution or acceptance.
+
 - 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
 
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the `bound_next_step` task-address guard in `tool_response.py`.
 
-
 - 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller row of the application overview (run/start/poll/attach to 98-108/111-143/146-208/363-441) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
-
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: documented exact-pair admission, async revalidation, and
   closeout application reporting. Verification remains closeout-owned.
@@ -1050,7 +1075,6 @@ Three boundaries the module owns, and the reason each is the shape it is:
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added the canonical quality scope/controller route and authoritative direct-landing outcome projection. Verification metadata remains pinned until architect-owned closeout.
 
-
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `application/lifecycle/` package layout, repointed current source evidence, and verified the governed L2 route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
@@ -1061,10 +1085,7 @@ Three boundaries the module owns, and the reason each is the shape it is:
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: the task-doc authoring modules moved to the new `application/task_docs` sub-route. Verified at code commit e5cb139f.
 
-
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: new memory_quality_runs registry, async start/poll quality wrappers, preflight + typed-refusal authoring dialect, create=False dry-run locks. Verified at code commit de3a0fd9.
-
-
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 title threading across the task-doc, topology-authoring, and sprint-linkage writers (publish + preview). Verified at code commit b7f2c8e2.
 
@@ -1073,12 +1094,10 @@ Three boundaries the module owns, and the reason each is the shape it is:
   `application/task_doc_route_review.py`; `application/direct_landing.py` added. Verified at code
   commit a9d50e08.
 
-
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: new `application/task_sprint_linkage.py`
   owns the atomic sprint↔master linkage operations; `task_doc_tools` routes them and carries
   `linkageFacts`; `task_execution_topology` shares the judgment verifier. Verified at code commit
   8071a644.
-
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `task_doc` dropped the removed
   `migrate_execution_topology` operation (`author_execution_graph` now bootstraps graph-less
@@ -1086,12 +1105,15 @@ Three boundaries the module owns, and the reason each is the shape it is:
   validation, and structural manager dispatch surfaces an atomic-sequential lane-blocked series
   bootstrap as a `StructuralOutcome` payload; the application-route model is unchanged.
   Verification remains closeout-owned.
+
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11 route impact: `task_reopen_tool` moved from
   `task_doc_tools.py` into the new `application/task_reopen.py` module (facade re-export keeps the
   surface stable), and `task_doc` gained the `author_execution_graph` operation dispatched to
   `task_execution_topology.py`; the application-route model is unchanged. Verification remains
   closeout-owned.
+
 - 2026-08-18T12:00:00+00:00 — No route impact: L9 adds `inventory_execution_topology` (read-only pre-migration enumeration) to `task_execution_topology.py`; the application-route model is unchanged.
+
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 extended the lifecycle-operation worker with repair evidence; the application-layer purpose is unchanged.
@@ -1101,9 +1123,11 @@ Three boundaries the module owns, and the reason each is the shape it is:
 - 2026-08-15T11:25+02:00 — L3 static-gate route impact: extracted task-doc queue-scope
   classification into a focused application owner while retaining the dispatcher as the sole
   locked publication entry point.
+
 - 2026-08-15T11:07+02:00 — L3 Dagger repair: task publication now derives queue governance from
   commanded graph scope while leaving genuinely standalone/light documents ungoverned; lifecycle
   diagnostics retain typed queue refusal status.
+
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded ambient queue authorization and
   lifecycle-operation correlation as application-owned translations. Verification remains
   closeout-owned.
@@ -1112,25 +1136,32 @@ Three boundaries the module owns, and the reason each is the shape it is:
   explicit migration fail-closed and now has forcing proof for invalid migration envelopes,
   unresolved or wrong-kind targets, and out-of-repository authoring. An unreachable duplicate
   validation translation was removed rather than exempted from coverage.
+
 - 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: the application policy now treats
   master aliases as cross-document authority, revalidating every affected sprint on supported
   identity edits or master-kind replacement and returning structured migration classifications
   through the same owner.
+
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: `task_execution_topology.py` is the new
   application owner for exact cross-document topology validation and finite atomic migration;
   `task_doc_tools.py` delegates rather than duplicating that policy.
+
 - 2026-08-14T06:25+02:00 — L23 final candidate review: task/worktree entry points now enforce
   candidate-bound route review and transitive source lineage at admission and exit while the
   detached lifecycle worker remains the sole long-operation application composition root.
   Verification provenance remains closeout-owned.
+
 - 2026-08-13T08:47+02:00 — L23 integration-gate repair: routed startup/runtime-install/skill-install through the new cohesive `application/runtime/` child overview and preserved direct domain imports instead of a facade. Verification metadata remains closeout-owned.
 
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented the detached lifecycle-operation declaration before service/config loading and its deliberate non-daemon boundary. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+
 - 2026-08-12T20:20+02:00 — L23 curator: documented application ownership of lineage refusal/status translation; verification remains closeout-owned.
+
 - 2026-08-12T16:52+02:00 — 260731-EFA-L23 packaged-worker route review: the detached CLI now owns
   default worktree-service composition before task-addressed dispatch, closing the installed-worker
   unbound-service failure while preserving the application/worktree port split. Verification
   provenance remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: added the detached durable lifecycle application owner and exact recovery boundary; verification provenance remains closeout-owned.
 
 - 2026-08-11T14:40+02:00 — Recorded the current pre-closeout memory-quality boundary: a leaf-scoped
@@ -1154,7 +1185,9 @@ Three boundaries the module owns, and the reason each is the shape it is:
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 6 citation rows and 1 prose citation with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: route moved. `mcp/src/agents_remember/controllers/` was renamed to `application/` and `worktrees/status.py` moved in as `application/worktree_status.py`, so this route overview and all 14 child sidecars moved with the source. Adopted the leaf's vocabulary throughout: the package is "the application layer" and one function is "an application entry point". Route model, tool surface and behavior are unchanged — the old name was MVC vocabulary that described nothing about the contents. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** Added the route-impact
   section above for the two changed controllers, plus two invariants the route now follows but did
   not state: pass through a collaborator's already-checked value instead of re-validating its dump
@@ -1170,17 +1203,21 @@ Three boundaries the module owns, and the reason each is the shape it is:
   `test_wire_vocabulary_exhaustiveness.py`'s module docstring, which is where it is measured; the
   vocabulary repair itself is a `models/` route fact and is documented there. Added three reference
   rows to the 2-column table. Verification metadata pinned until closeout stamps the L4 commit.
+
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: added the **Parameter Objects** section — the new
   `task_ref.py` module and the concept types each controller now defines — and corrected the Route
   Model's transport line: the `@server.tool()` declarations left `server.py` for the new
   `mcp/registration/` package. Verification metadata pinned until closeout stamps the L2 code
   commit.
+
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: `memory_tools.py` now forwards the resolved code
   repository identity and storage/path-rule authority into deterministic route-index generation.
+
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: controller overview now documents
   `_auto_land_completed_seats`, `serving.landing.land_seats_for_leaf`, the `auto_land_on_*` gates,
   and `autoLandedSeats`; successful completion lands chats for archive inspection instead of
   retiring them. Verification metadata pinned until closeout stamps the HFX2-L11 commit.
+
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issue #12): `worktree_tools.py`'s integrate/finalize controllers gained a completion-edge
   auto-retire composition (`_auto_retire_completed_seats`, config-gated default ON, best-effort —
@@ -1188,6 +1225,7 @@ Three boundaries the module owns, and the reason each is the shape it is:
   can never fail an already-succeeded edge) returning `autoRetiredSeats` on both tool results. The
   controller still stays a typed operation facade — retire mechanics live in `serving/retire.py`, this
   is composition only. Verification metadata pinned until closeout stamps the HFX-L8 commit.
+
 - 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (provider containment R1): `provider_tools.py`
   gates launch-capable watcher actions and query tools on the live on-disk authority
   (`require_provider_launch_authority`, fail-closed; stop/status/shutdown-all ungated),
@@ -1199,53 +1237,96 @@ Three boundaries the module owns, and the reason each is the shape it is:
 - 2026-07-06T23:59:58+02:00 — L14 route impact (body): task_doc_tools carries the additive master-only `orchestrates` field end-to-end. Verification metadata pinned until closeout stamps the L14 commit.
 
 - 2026-07-06T23:59:30+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `task_doc_tools.py` added `orchestrates` to the `set_field` whitelist (`_MUTABLE_FIELDS`) — a flat string list, master-only via the schema backstop. Verification metadata pinned until closeout stamps the L14 commit.
+
 - 2026-07-06T03:20+02:00 — No route impact: 260703-L9 reuses `_guards.require_repo` unchanged as the repo allow-list boundary for the new `serving/notes.py` API; no controller changed.
+
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `worktree_integrate_tool` now threads `config.orchestration.gate_policy` into integrate `WorktreeArgs` (mirroring the closeout path), so the integrate-side master-handover guard evaluates the configured policy instead of the all-human dataclass default. Verification metadata pinned until closeout stamps the L8 commit.
+
 - 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only threads
   `config.orchestration.gate_policy` through `worktree_tools.py` into closeout
   args; controller boundaries and public controller responsibilities are
   unchanged. Verification metadata pinned until closeout stamps the L4 commit.
+
 - 2026-07-03T00:35+02:00 — L11 route impact: task_reopen_tool joins task_doc_tools (task domain); worktree_abandon_tool ends its anchored ambient lifecycle.
+
 - 2026-07-02T18:35+02:00 — No route impact: operations-integration L7 fixed the native argv inside the
   typed `cgc_dependencies` wrapper (`provider_tools.py`) from the stale `analyze dependencies` to the
   current `analyze deps` subcommand. The controller surface, tool names, and response envelope are
   unchanged, so the route model this overview describes is unaffected (detail in the file sidecar).
   Verification metadata pinned until closeout stamps the L7 commit.
+
 - 2026-06-29T22:57+02:00 — No route impact: `task_doc_tools.py` gained the `remove_subtask` op (CRUD
   delete: drop the master row + delete the leaf doc unless `keep_file`); the controller stays a typed
   operation facade, so the route model is unchanged (detail in the task_doc_tools.py file sidecar; task
   260629_post-landing-cleanup L2).
+
 - 2026-06-29T21:24+02:00 — No route impact: `task_doc_tools.py` now refuses `kind="light"` and defaults
   an absent `kind` context-awarely (subTask under a leaf contract, else master); the controller stays a
   typed operation facade, so the route model this overview describes is unchanged (detail in the
   task_doc_tools.py file sidecar; task 260628_post-landing-cleanup).
+
 - 2026-06-28T22:41+02:00 — No route impact: operations-integration L1 extracted `read_files.py`'s path-confinement + sidecar-pairing helpers into `kernel/sidecar_pairing.py` (behavior-preserving; `read_ar_files` re-imports them under their former private names). `read_files.py` stays a typed operation facade and no controller signature/surface changed, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the L1 code commit.
+
 - 2026-06-26T20:18+02:00 — Task 21 route impact: `task_doc_tools.py` remains the task-document authoring
   controller and now also composes same-root leaf-to-master row sync through the task service layer.
   Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-26T16:15+02:00 — No route impact: re-verified `task_doc_tools.py`
   against the source-branch `replace` controller (`_replace` preserves the existing JSON path and
   refuses slug/kind path drift); lifecycle-gate API consolidation does not change the controller
   route model.
+
 - 2026-06-26T15:33+02:00 — No route impact: task 25 preserves `task_doc_tools.py`'s
   source-branch `replace` operation; lifecycle-gate API consolidation does not change the controller
   route model, and operation-level detail remains in file sidecars. Verification metadata pinned until
   closeout stamps the code commit.
+
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: controllers now route `parent_task` and `leaf_id` through context/worktree operations, and `task_doc_tools.py` creates `seriesContractPath` plus `enclosures[]` references instead of the retired `contractPath`. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-23T23:04+02:00 — Dashboard task 14 adds `lifecycle_finalize_task_tool` to `worktree_tools.py`. The controller remains a typed operation facade: it confines coordination paths, builds `FinalizeArgs`, and delegates branch-edge proof, cleanup verification, and task-document reconciliation to `worktrees/modules/finalize.py`.
+
 - 2026-06-23T01:40+02:00 — No route impact: slice 07b v1, `read_files.py` now passes `repo.repo_id` to `emit_read_packet` so the `read.packet` carries `data.repoId`; the controller stays a typed operation facade delegating emission to the `observer` service, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the slice-07b code commit.
+
 - 2026-06-23T00:53+02:00 — No route impact: slice 07 S5 retargets the `read_files.py` compact-reset docstring only — the `compact-reset.json` producer is deferred to the post-3.0 agentic-control-plane (no session-hook producer), with the consumer (`_maybe_reset_served`) + `refresh=true` kept as defensive scaffolding; no controller signature or behavior changed, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the slice-07 code commit.
+
 - 2026-06-22T22:33+02:00 — Slice 07: added `read_files.py`, the `read_ar_files` controller (paired source+onboarding batch reads of ≤5 repo-relative paths, with its own path-confinement guard, route-index onboarding lookup, session-deduped overview front-door, and facts-only `read.packet`); added it to the Hot Path Summary. It stays a typed operation facade — resolution lives in the controller so a later dashboard `GET /api/files` route can reuse it — so the route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the slice-07 code commit.
+
 - 2026-06-19T07:23+02:00 — No route impact: slice 3c R5 adds a `dry_run` param + a `_preview` helper to `task_doc_tools.py` (renders + diffs the would-be doc and returns `rendered`/`diff`/`wouldLose` without writing); the controller stays a typed operation facade, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T06:03+02:00 — No route impact: slice 3c R4 adds `statusNote` to `_MUTABLE_FIELDS` and drops the master-only guard on `set_section` (a leaf may upsert freeform sections; the schema validator backstops) in `task_doc_tools.py`; the controller stays a typed operation facade, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T05:15+02:00 — No route impact: slice 3c R3 adds `codeExamplesNote` to `_MUTABLE_FIELDS` in `task_doc_tools.py` so `set_field` can record the deferred-examples note; the controller stays a typed operation facade, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-14T00:16+02:00 — No route impact: slice 3c commit 3 adds master ops (`set_subtask`/`set_section`) + master `create` handling to `task_doc_tools.py`; the controllers stay typed operation facades, so the route model this overview describes is unchanged (detail in the file sidecar).
+
 - 2026-06-13T22:34+02:00 — Slice 3c commit 1: added `task_doc_tools.py`, the op-dispatched controller behind the `task_doc` authoring tool (load/create the `ar-task-document/v1` JSON, apply one edit, re-render the markdown); added it to the Hot Path Summary. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+
 - 2026-06-13T18:45+02:00 — No route impact: slice 2c adds the observer-attribution wiring to `worktree_tools.py` (`_attribute_start`/`_attribute_attach` driving `ambient().promote`/`attach`); the controllers stay typed facades delegating behavior to the `observer` service, so the route model this overview describes is unchanged (detail in the file sidecar).
+
 - 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: `worktree_tools.py` dropped the `direct_closeout_*` controllers, so the Hot Path Summary now describes it as the worktree-operations facade only.
+
 - 2026-06-10T09:56+02:00 — No route impact: sub-task D adds `worktree_sync_tool` as another typed worktree operation facade in `worktree_tools.py` (path confinement + forwarding); the route model this overview describes is unchanged (detail in the file sidecar).
+
 - 2026-06-10T09:30+02:00 — No route impact: sub-task B's `worktree_tools.py` change is a plumbing-only forward of `stale_base_choice` into `WorktreeArgs`; the controller surface this overview describes is unchanged (detail in the file sidecar).
+
 - 2026-06-10T08:39+02:00 — GitHub #54 sub-task A: `context_packet.py` gained the opt-in freshness section (`include_freshness`, kernel-backed code/memory branch freshness, `ledgerMapsCodeHead`).
+
 - 2026-06-10T07:40+02:00 — GitHub #53: `worktree_tools.py` start controller hands the temp lifecycle settings file to the background setup thread (skip-unlink on a `starting` result), forwards `retry_provider_setup`, and bounds worktree provider setup by `timeoutCaps.providerSetupSeconds` instead of the docker-control default.
-- 2026-06-06T03:43: Re-verified against the current controller surface (9 files incl. `_guards.py` and per-domain tool modules); corrected `mcp/tools.py` references to the `mcp/tools/` package; re-stamped to `7123da56`.
+
 - 2026-05-28T19:52+02:00: Created after the MCP controller surface split out of the former `skill_tools.py` mega-facade.
+
+  `27242ecb`): recorded the candidate-write boundary joining the seam — the context resolution that reads the live
+
+  dataset identity and seals it (the only way a batch's precondition is built, because `CandidateResolution` has no
+
+  dataset-identity field), the batch operation that takes `destination.authorship` so a payload cannot supply
+
+  provenance, and the two label operations — and re-recorded the boundary that did **not** move: the seam still has
+
+  no non-test importer in `mcp/src`, adding a function inside the module does not create one, and the worker
+
+  report's "resolved" claim about that observation was withdrawn in review. Verification metadata remains
+
+  closeout-owned.
+
+- 2026-06-06T03:43: Re-verified against the current controller surface (9 files incl. `_guards.py` and per-domain tool modules); corrected `mcp/tools.py` references to the `mcp/tools/` package; re-stamped to `7123da56`.

@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b` |
-| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
+| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697` |
+| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l01` uncommitted source; base `67b21aeb66df96a971a33ae431a13992f2528b45` |
 
 > **Status:** active baseline

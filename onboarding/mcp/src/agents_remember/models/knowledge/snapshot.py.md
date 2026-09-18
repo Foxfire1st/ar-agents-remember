@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/snapshot.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
-| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
+| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
+| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,8 @@ No domain documentation source is configured for this repository (`system/source
 | The factual publication outcome with the previous identity it replaced. | `SnapshotPublicationResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:259-293 |
 | The publication-state measurement that never guesses which side moved. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
 | The closed disposal union, its carried-not-examined authorization reference and its verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposition`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
-| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:107-107; mcp/src/agents_remember/models/knowledge/candidate.py:158-167; mcp/src/agents_remember/models/knowledge/candidate.py:170-179; mcp/src/agents_remember/models/knowledge/candidate.py:498-515 |
+| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:107-109; mcp/src/agents_remember/models/knowledge/candidate.py:158-167; mcp/src/agents_remember/models/knowledge/candidate.py:169-193; mcp/src/agents_remember/models/knowledge/candidate.py:498-529 |
+| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:83-424 |
 | The canonical encoder the receipt seal is computed through. | `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:34-38 |
 | The candidate lifecycle in which these shapes are produced. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:100-126; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:129-138; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
 | The publication that installs a prepared stage. | `publish_candidate_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
@@ -153,5 +154,4 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new snapshot vocabulary. It records the two splits the whole contract rests on (working identity read from the database versus published identity installed as a closed representation, compared by digest not bytes; and a receipt versus a verdict, with no field able to carry a judgement), the sealed receipt's deliberate absence of a dataset digest, the two-member closed disposal union with `authorization_ref` carried rather than examined, and the closed result validators that make `state` the only branch a caller needs. Verification metadata remains empty until closeout stamps the code commit.

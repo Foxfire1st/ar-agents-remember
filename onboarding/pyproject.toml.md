@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `4264dcc9decf50e64c863e9c6526ea09117be71b`|
-| lastVerifiedCommitDate | 2026-09-18T02:49:57+02:00|
+| lastVerifiedCommitHash | `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
+| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,9 +59,9 @@ No new configuration or test obligation is introduced here.
 | Measurement and operational package ownership. | "[tool.coverage.run]" | pyproject.toml:68-88 |
 | Radon reports. | "[tool.radon]" | pyproject.toml:90-119 |
 | The pytest configuration section the budget pair lives in. | "[tool.pytest.ini_options]" | pyproject.toml:121-305 |
-| **The declared budget pair, and the raise this candidate's owning seat executed over it.** | "unit_case_budget = 1500"; "integration_case_budget = 400" | pyproject.toml:304-305 |
+| **The declared budget pair, and the raise this candidate's owning seat executed over it — `unit_case_budget` 1500 -> 1600 because the merged line collects 1506, past which the unit lane exits without running a case.** | "unit_case_budget = 1600"; "integration_case_budget = 400" | pyproject.toml:322-323 |
 | **The dated entry that carries the L7 raise (1100 -> 1250 / 300 -> 340), its merged-line attribution and the command-per-number rule.** | "2026-09-16 -- unit 1100 -> 1250 and integration 300 -> 340" | pyproject.toml:209-285 |
-| Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. | "ignore::starlette.exceptions.StarletteDeprecationWarning" | pyproject.toml:351-351 |
+| Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. | "ignore::starlette.exceptions.StarletteDeprecationWarning" | pyproject.toml:369-369 |
 
 ## Cross-Repo References
 
@@ -70,43 +70,49 @@ No new configuration or test obligation is introduced here.
 | No cross-repository implementation is claimed. | N/A | N/A |
 
 ## Update History
-- 2026-09-18T02:50+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read this card against the current source and reconciled the budget pair this candidate moved.** The declared pair is `unit_case_budget = 1500` (`pyproject.toml:304`) and `integration_case_budget = 400` (`pyproject.toml:305`), raised by the master's owning seat through the dated block at `:286-303`; the body sentence and the pair row both still carried the L7 values and the `:286-287` / `:287` coordinates, and the `[tool.pytest.ini_options]` row stopped short of the pair it names, so its range now runs to `:305`. The pair row anchors the two pinned `key = value` lines rather than the bare identifiers because **`unit_case_budget` occurs four times in this file** (three of them inside the comments explaining the raises) and cannot anchor a unique claim — the same reason the warning-exception row below pins its literal. The row that names the raise the L7 leaf executed now says so explicitly, because the pair has moved a second time and "the raise" no longer reads unambiguously. This is the edit that retires the two mechanical generated bullets above (the `:333` -> `:351` projection for the warning exception, whose claim bytes this pass re-read and re-cited itself). Nothing above the pair was re-read; the L7, LOCR and earlier dated entries and the four tradeoff blocks are intact. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
 
-- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **recorded the merged-line budget raise and the rule the raise's own correction produced.** The pinned pair is now **`unit_case_budget = 1250`** and **`integration_case_budget = 340`**, raised by the master's owning seat through the dated entry at `:209-285` because the merged base carried **1138 unit cases against the ceiling of 1100** *before any L7 line* and an over-budget population makes `pytest_collection_finish` raise `UsageError`, so the whole unit run executed zero tests. The card states the attribution as measured so it is not misread as a regression: the official line alone collected 1014/1100 and the KS parent 1003/1100, both green, and this atomic master is the first line carrying both populations — **a merged-line sizing defect, not a defect of either side, and not re-litigated here**. It records that the raise is headroom rather than a target, that the four earlier dated entries are intact, and that L7's 21 unit and 25 integration cases took the populations to 1159 and 304. It also carries the **command-per-number rule** this leaf's round 2 forced, together with the two stale-figure patterns that produced it (line counts and module wall times published after the bytes moved), and corrects this card's stale "1000 unit / 250 integration" pair and its line citations. Verification metadata remains empty until closeout stamps the code commit.
+- 2026-09-18T07:21:19+00:00: Generated citation repair: "ignore::starlette.exceptions.StarletteDeprecationWarning" repointed to pyproject.toml:369-369. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the developer-authorized
+- 2026-09-18T00:50:00+00:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read this card against the current source and reconciled the budget pair this candidate moved.** The declared pair is `unit_case_budget = 1500` (`pyproject.toml:304`) and `integration_case_budget = 400` (`pyproject.toml:305`), raised by the master's owning seat through the dated block at `:286-303`; the body sentence and the pair row both still carried the L7 values and the `:286-287` / `:287` coordinates, and the `[tool.pytest.ini_options]` row stopped short of the pair it names, so its range now runs to `:305`. The pair row anchors the two pinned `key = value` lines rather than the bare identifiers because **`unit_case_budget` occurs four times in this file** (three of them inside the comments explaining the raises) and cannot anchor a unique claim — the same reason the warning-exception row below pins its literal. The row that names the raise the L7 leaf executed now says so explicitly, because the pair has moved a second time and "the raise" no longer reads unambiguously. This is the edit that retires the two mechanical generated bullets above (the `:333` -> `:351` projection for the warning exception, whose claim bytes this pass re-read and re-cited itself). Nothing above the pair was re-read; the L7, LOCR and earlier dated entries and the four tradeoff blocks are intact. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+
+- 2026-09-16T21:50:00+00:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **recorded the merged-line budget raise and the rule the raise's own correction produced.** The pinned pair is now **`unit_case_budget = 1250`** and **`integration_case_budget = 340`**, raised by the master's owning seat through the dated entry at `:209-285` because the merged base carried **1138 unit cases against the ceiling of 1100** *before any L7 line* and an over-budget population makes `pytest_collection_finish` raise `UsageError`, so the whole unit run executed zero tests. The card states the attribution as measured so it is not misread as a regression: the official line alone collected 1014/1100 and the KS parent 1003/1100, both green, and this atomic master is the first line carrying both populations — **a merged-line sizing defect, not a defect of either side, and not re-litigated here**. It records that the raise is headroom rather than a target, that the four earlier dated entries are intact, and that L7's 21 unit and 25 integration cases took the populations to 1159 and 304. It also carries the **command-per-number rule** this leaf's round 2 forced, together with the two stale-figure patterns that produced it (line counts and module wall times published after the bytes moved), and corrects this card's stale "1000 unit / 250 integration" pair and its line citations. Verification metadata remains empty until closeout stamps the code commit.
+
+- 2026-09-13T17:02:00+00:00 — 260831-LOCR-L37: recorded the developer-authorized
   `integration_case_budget` raise 200 -> 250 and the dated tradeoff block that now precedes the key
   (the distinct protection each added case buys, the case count, the support cost — the existing
   `QueueFixture` plus five measurement helpers inside one new module, no new support artifact — and
   the measured runtime). Corrected the stale "1000 unit and 150 integration" statement to the actual
   pinned pair, and re-derived the `filterwarnings` extent (189-222). Verification metadata remains
   closeout-owned; no acceptance claim.
+
 - 2026-09-06T21:48:32+00:00 — Reconciled current IAS testing and configuration policy against source; removed obsolete active coverage, host-refusal and deleted-test claims. Existing verification pins and all prior history remain unchanged.
 
-- 2026-08-29T16:12+02:00 — Replaced the former multi-minor 3.11-floor contract with the single
+- 2026-08-29T14:12:00+00:00 — Replaced the former multi-minor 3.11-floor contract with the single
   supported `py313` line and bounded package range. Historical 3.11 suppression cleanup remains
   history rather than current runtime authority. Verification remains closeout-owned.
 
-- 2026-08-14T11:29+02:00 — R39 curator: reconciled marker documentation with credential semantics
+- 2026-08-14T09:29:00+00:00 — R39 curator: reconciled marker documentation with credential semantics
   and Dagger-only execution. Verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
-- 2026-08-12T00:20+02:00 — Recorded root pytest `addopts` as the single owner of `-n=auto`, with
+- 2026-08-12T13:19:00+00:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
+
+- 2026-08-11T22:20:00+00:00 — Recorded root pytest `addopts` as the single owner of `-n=auto`, with
   `-n=0` reserved for explicit serial diagnosis. Verification metadata remains pinned until
   closeout.
 
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: split the runner command, exact-inventory,
+- 2026-08-04T09:43:39+00:00 — 260731-EFA-L6 S18-B03 curator: split the runner command, exact-inventory,
   and ordinary-`fitness` claims into separately owned anchored rows; bound branch config, the reader's
   validator call, and the refusal body plus real package classifier values, narrowed the quality-test
   claim, and bound runner cardinality/equality to operative code and assertions.
 
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: separated the full registered-marker set from
+- 2026-08-03T21:26:43+00:00 — 260731-EFA-L6 S18-T3: separated the full registered-marker set from
   the environment-gated runner subset. `fitness` remains an ordinary registered marker and is
   intentionally absent from gated commands. New ranges were provisional fixer input only.
 
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 12 citation findings; scoped check passed.
+- 2026-08-02T18:53:56+00:00 — W2-B04 curator: repaired 12 citation findings; scoped check passed.
 
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired this card's claims that the
+- 2026-07-31T14:10:00+00:00 — 260731-EFA-L2 final state. **Retired this card's claims that the
   four complexity codes are held by `quality/complexity-baseline.txt` and that `PLR0913` is
   deliberately off with a named owner.** The baseline is deleted and all four codes are
   enforced by `ruff` directly; `PLR0913` runs at the default of 5 args with 274 of 293
@@ -120,9 +126,11 @@ No new configuration or test obligation is introduced here.
   nothing, so `-m` selected 0 of 3402). Verification metadata is pinned to the leaf's
   reformat commit until closeout stamps the code commit.
 
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 gate honesty (mid-leaf): recorded `C901` selected,
+- 2026-07-31T04:30:00+00:00 — 260731-EFA-L2 gate honesty (mid-leaf): recorded `C901` selected,
   `target-version` reconciled to py311, Pyright `include` widened, the first
   `[tool.coverage.run]`, the Radon `tests/*` exclusion removal, and the first
   `[tool.pytest.ini_options]`.
-- 2026-06-06T12:28+02:00: Re-verified against current HEAD after the Pyright configuration landed; the existing Ruff, Pyright, and Radon commentary still matches.
-- 2026-05-28T19:52+02:00: Created after Pyright was added to source-checkout quality configuration.
+
+- 2026-06-06T10:28:00+00:00: Re-verified against current HEAD after the Pyright configuration landed; the existing Ruff, Pyright, and Radon commentary still matches.
+
+- 2026-05-28T17:52:00+00:00: Created after Pyright was added to source-checkout quality configuration.
