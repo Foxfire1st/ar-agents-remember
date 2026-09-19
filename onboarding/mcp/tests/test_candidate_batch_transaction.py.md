@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_candidate_batch_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec`|
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,7 +119,7 @@ No domain documentation source is configured for this repository (`system/source
 | The admission cases: spoofed provenance, accepted origin, baseline lane, foreign namespace and the task lane. | "test_a_payload_that_claims_its_own_author_and_approval_is_not_an_authority"; "test_an_accepted_origin_state_is_refused_as_a_promotion"; "test_a_baseline_lane_is_refused_as_a_non_candidate_target"; "test_a_batch_from_another_namespace_is_refused"; "test_a_task_candidate_lane_is_refused_until_its_binding_can_be_resolved" | mcp/tests/test_candidate_batch_transaction.py:291-338; mcp/tests/test_candidate_batch_transaction.py:339-373; mcp/tests/test_candidate_batch_transaction.py:374-394; mcp/tests/test_candidate_batch_transaction.py:395-416; mcp/tests/test_candidate_batch_transaction.py:1162-1188 |
 | The completed-graph nodes, including the spy that proves the shared rule receives the batch's edges. | "test_a_batch_may_author_its_lineage_in_any_order"; "test_a_cycle_the_batch_declares_among_its_own_revisions_is_refused_by_name"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet"; "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_a_cycle_among_a_batchs_own_family_revisions_is_refused_by_name" | mcp/tests/test_candidate_batch_transaction.py:470-516; mcp/tests/test_candidate_batch_transaction.py:517-560; mcp/tests/test_candidate_batch_transaction.py:561-604; mcp/tests/test_candidate_batch_transaction.py:605-675; mcp/tests/test_candidate_batch_transaction.py:676-710 |
 | The receipt and removal nodes, including the smuggled-context case. | "test_a_removal_only_batch_of_each_kind_returns_a_typed_result"; "test_a_removal_only_batch_removing_all_three_kinds_at_once_returns_a_typed_result"; "test_a_mixed_batch_reports_both_the_removal_and_the_write"; "test_a_no_op_label_edit_inside_a_mixed_batch_is_not_reported_as_a_write"; "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:933-962; mcp/tests/test_candidate_batch_transaction.py:963-992; mcp/tests/test_candidate_batch_transaction.py:711-776; mcp/tests/test_candidate_batch_transaction.py:799-845; mcp/tests/test_candidate_batch_transaction.py:1120-1161 |
-| The unit-lane row that makes the module's classification explicit. | "mcp/tests/test_candidate_batch_transaction.py" | mcp/tests/test-evidence-lanes.toml:20-20 |
+| The unit-lane row that makes the module's classification explicit. | "mcp/tests/test_candidate_batch_transaction.py" | mcp/tests/test-evidence-lanes.toml:19-19 |
 | The harness whose refusal measurement these cases assert on. | `measure_refusal`; `CandidateHarness` | mcp/tests/candidate_batch_test_support.py:324-344; mcp/tests/candidate_batch_test_support.py:92-235 |
 | The shared lineage rule the spy case instruments. | `find_cycle`; `declared_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:107-131; mcp/src/agents_remember/memory/knowledge/lineage.py:71-105 |
 

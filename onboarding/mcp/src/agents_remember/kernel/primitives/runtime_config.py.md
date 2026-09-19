@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -196,7 +196,7 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. | `load_agentic_settings`; `_parse_orchestration`; "def parse_gate_delegation(" | mcp/src/agents_remember/kernel/_agentic_settings_policy.py:28-28; mcp/src/agents_remember/kernel/agentic_settings.py:209-244; mcp/src/agents_remember/kernel/agentic_settings.py:349-384 |
 | `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. | `parse_orchestration_settings`; `_parse_legacy_authority_gate_delegation` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:538-571; mcp/src/agents_remember/kernel/primitives/runtime_config.py:574-606; mcp/src/agents_remember/kernel/primitives/runtime_config.py:629-661 |
 | `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
-| The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. | `_provider_operation_result`; `ProviderOperation.required_provider` | mcp/src/agents_remember/application/provider_tools.py:736-783 |
+| The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. | `_provider_operation_result`; `ProviderOperation.required_provider` | mcp/src/agents_remember/application/provider_tools.py:961-1008 |
 | Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
 | Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. | `codex_benchmark_prepare_tool`; `codex_benchmark_run_tool`; `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:64-84; mcp/src/agents_remember/application/benchmark_tools.py:137-144; mcp/src/agents_remember/application/benchmark_tools.py:87-134 |
 | Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615; mcp/src/agents_remember/install/runtime.py:633-651; mcp/src/agents_remember/install/runtime.py:829-911 |

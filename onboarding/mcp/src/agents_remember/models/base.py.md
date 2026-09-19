@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/base.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
-| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ key the choke point writes is a key of THIS envelope.** It was previously
 declared nowhere and stamped onto the already-dumped dict, which put the emitted
 object outside its own model — a stale supervisor made every response fail its
 own `model_validate` — and left the advertised token count short by the whole
-`nextStep` object. cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:84-98)
+`nextStep` object. cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:131-145)
 sets both fields on the validated response *before* cit:([`finalize_tool_response`], mcp/src/agents_remember/models/tools/tool_response.py:15-26)
 performs the single model dump and token pass, so `finalize_payload_tokens` counts them. The
 flexible envelope declares it too: `extra="allow"` would have accepted it
@@ -123,7 +123,7 @@ No Domain Documentation source is configured for this memory root.
 | Token serialization helpers accept the shared `ResponseModel` family, including concrete tool-response subclasses. | `ResponseModel` | mcp/src/agents_remember/models/tokens.py:18-18 |
 | Public tool payloads validate through concrete subclasses. | "TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = { \"ping\": PingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:147-225 |
 | The next-step engine that computes `NextStep` for an active lifecycle; `next_step_for` returns the model, not a dump. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
-| The application boundary preserves a producer recovery hint or computes one, rejects contradictory task addresses, writes both banner names, and finalizes once. | `_attach_lifecycle_tail`; `bound_next_step`; `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/application/tool_response.py:84-98 |
+| The application boundary preserves a producer recovery hint or computes one, rejects contradictory task addresses, writes both banner names, and finalizes once. | `_attach_lifecycle_tail`; `bound_next_step`; `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:112-128; mcp/src/agents_remember/application/tool_response.py:58-97; mcp/src/agents_remember/application/tool_response.py:131-145 |
 | The registry whose `dict[str, type[ResponseEnvelope]]` annotation is what `ResponseEnvelope` exists for. | "TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = { \"ping\": PingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:147-225 |
 
 ## 260821-CLIVE-L2 Current Contract

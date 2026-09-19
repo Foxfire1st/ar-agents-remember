@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_graph_reads.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ No domain documentation source is configured for this repository (`system/source
 | The forward and reverse reads the cases compare. | `list_claims_for_invariant_revision`; `list_claims_for_anchor`; `list_members`; `list_families_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/memberships.py:255-267; mcp/src/agents_remember/memory/knowledge/memberships.py:270-284; mcp/src/agents_remember/memory/knowledge/realizations.py:271-285; mcp/src/agents_remember/memory/knowledge/realizations.py:288-300 |
 | The before/after pair builder this module consumes. | `build_removed_relation_successor` | mcp/tests/knowledge_graph_test_support.py:217-265 |
 | The locator union whose kinds the cases vary. | `SymbolLocator`; `FileLocator`; `LineRangeLocator` | mcp/src/agents_remember/models/knowledge/source.py:58-78; mcp/src/agents_remember/models/knowledge/source.py:37-42; mcp/src/agents_remember/models/knowledge/source.py:43-57 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_graph_reads.py" | mcp/tests/test-evidence-lanes.toml:98-98 |
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_graph_reads.py" | mcp/tests/test-evidence-lanes.toml:99-99 |
 |  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1190-1191  |
 
 ## Cross-Repo References

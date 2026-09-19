@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/style/citations/migration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
+| lastUpdated | 2026-09-19T19:52+02:00 |
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -143,7 +143,26 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `parser_dependent` (lines 530-539) — Whether this draft's RANGE came from a parse rather than from literal matching.. | `parser_dependent` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:559-568 |
 | Defines the function `unparsed_target` (lines 542-544) — Whether any cited file is one the extent layer cannot parse today.. | `unparsed_target` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:571-573 |
 
+## 260918-TSIP-L6 `ok` Answers Whether The Call Did What It Set Out To Do
+
+`payload` (`:767-833`) no longer folds three facts into `ok` (`T64`). The old expression was
+`not result.declined and not result.remaining and not dry_run`, which made a **preview** report
+`ok: false` for a plan it had produced completely — while its sibling `citation_fix` answers
+`ok: true` on the equivalent preview of the same family, so the two previews contradicted each
+other and a caller could not tell "nothing to migrate" from "the operation did not happen".
+
+`ok` now means *did this call do what it set out to do* — `not blocked`, where
+`blocked = bool(result.declined) or (not dry_run and bool(result.remaining))`. The two facts that
+used to be folded in are declared separately: `state` (`"refused"` when something was declined,
+`"planned"` on a dry run, `"converted"` on a write) and `outcome` (`"planned"` / `"converted"`).
+`remaining` is a **post-write** measurement — `migrate_onboarding_root` fills it only on the
+non-dry branch — so a dry run must not read it; reading it while previewing would answer
+`ok: false, state: "planned"`, which is `T64`'s symptom returning through the other fact the old
+expression folded in. The truth table, including that dry-run-with-`remaining` row, is pinned by
+`mcp/tests/test_response_address_binding.py:225-291`.
+
 ## Update History
+- 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T64` — `ok` now answers whether the call did what it set out to do, with `state` and `outcome` declared separately and `remaining` no longer read on a dry run. No content impact on the migration grammar itself. Verification metadata stays closeout-owned.
 - 2026-09-13T02:05+02:00 — 260831-LOCR-L33 curator (delta after publish): recorded the source
   comment as a route invariant — `row_paths`/`plan_row` refuse a Source Path naming no existing file
   with the earlier fail-closed `source_unresolvable`, so `repair.plan` on this path can only ever

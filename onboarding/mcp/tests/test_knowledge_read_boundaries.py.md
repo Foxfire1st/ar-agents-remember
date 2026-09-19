@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -109,7 +109,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The continuation-binding nodes, each with its own control, and the manifest node that verifies every page's own cursor.** | "test_a_continuation_presented_with_another_selector_refuses_and_returns_no_partial_page"; "test_a_continuation_presented_under_another_context_or_policy_refuses"; "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping"; "test_a_continuation_whose_declared_snapshot_was_altered_refuses_rather_than_mixing_revisions"; "test_a_continuation_against_its_own_snapshot_continues_the_same_manifest" | mcp/tests/test_knowledge_read_boundaries.py:576-604; mcp/tests/test_knowledge_read_boundaries.py:605-663; mcp/tests/test_knowledge_read_boundaries.py:664-724; mcp/tests/test_knowledge_read_boundaries.py:725-762; mcp/tests/test_knowledge_read_boundaries.py:827-858; mcp/tests/test_knowledge_read_boundaries.py:859-910 |
 | **The read-only property, measured on a real database file.** | "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" | mcp/tests/test_knowledge_read_boundaries.py:944-944 |
 | **The disclosed unasserted defensive branch this module does not count as coverage.** | `_tree_entry`; `_TreeLookupFailed` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:250-281; mcp/src/agents_remember/memory/knowledge/read_anchors.py:298-305 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_boundaries.py" | mcp/tests/test-evidence-lanes.toml:206-206 |
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_boundaries.py" | mcp/tests/test-evidence-lanes.toml:210-210 |
 
 ## Cross-Repo References
 

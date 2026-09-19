@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_paths.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -107,7 +107,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The write-path boundary that applies the shared rule, so a malformed anchor cannot be authored.** | `SourceAnchorDraft` | mcp/src/agents_remember/models/knowledge/source.py:82-127 |
 | **The seed boundary that applies the same rule, so a refused spelling cannot be presented as a seed.** | `PathSeed` | mcp/src/agents_remember/models/knowledge/read.py:144-171 |
 | **The pre-existing sibling node's `detail` assertion, which round 3 added (the fourth worktree edit).** | "the unavailable tree is the producer that answers here, and its detail says which fact it is" | mcp/tests/test_knowledge_read_paths.py:451-542 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_paths.py" | mcp/tests/test-evidence-lanes.toml:208-208 |
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_paths.py" | mcp/tests/test-evidence-lanes.toml:212-212 |
 
 ## Cross-Repo References
 

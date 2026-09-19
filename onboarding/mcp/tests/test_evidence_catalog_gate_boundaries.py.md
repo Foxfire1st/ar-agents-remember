@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_evidence_catalog_gate_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:10+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -119,7 +119,7 @@ No domain documentation source is configured for this repository (`system/source
 | The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files. | `synthetic_repo` | mcp/tests/test_evidence_catalog_gate_boundaries.py:49-65 |
 | The catalog's own digest and declared populations, read rather than pinned. | `populations` | mcp/tests/test_evidence_catalog_gate_boundaries.py:68-76 |
 | **The case: the oracle refuses the doctored tree while the pinned catalog's bytes and populations are identical.** | `test_the_oracle_reddens_while_the_byte_pin_stays_green` | mcp/tests/test_evidence_catalog_gate_boundaries.py:79-118 |
-| The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/test-evidence-lanes.toml:194-194 |
+| The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/test-evidence-lanes.toml:198-198 |
 | The two exact-scope consumer registrations this module obliged. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/evidence-lifecycle.toml:172-172; mcp/tests/evidence-lifecycle.toml:806-806 |
 
 ## Cross-Repo References

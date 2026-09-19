@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_revision_seals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ No domain documentation source is configured for this repository (`system/source
 | The field-isolating family digest node this module's invariant sibling mirrors. | "test_a_family_revision_digest_seals_its_predecessor_set" | mcp/tests/test_knowledge_family_revision.py:150-183 |
 | The payloads that seal the predecessor set, one per revision kind. | `canonical_revision_payload`; `canonical_family_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:30-52; mcp/src/agents_remember/models/knowledge/digest.py:71-90 |
 | The read-path recomputation that turns a tampered edge into a storage defect. | `decode_revision_row`; `decode_family_revision_row` | mcp/src/agents_remember/memory/knowledge/records.py:153-189; mcp/src/agents_remember/memory/knowledge/records.py:327-356 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_revision_seals.py" | mcp/tests/test-evidence-lanes.toml:108-108 |
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_revision_seals.py" | mcp/tests/test-evidence-lanes.toml:109-109 |
 |  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1190-1191  |
 
 ## Cross-Repo References

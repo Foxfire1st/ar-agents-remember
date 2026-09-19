@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_kernel_pure_regressions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:42:13+00:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec`|
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ The Candidate A retirement and replacement measurement are described in
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Seven exact tests preserve the former cohort's unique product assertions. | `test_stable_provider_id_never_returns_empty`; gate/role coercion tests; route-normalization tests | mcp/tests/test_kernel_pure_regressions.py:24-54 |
-| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:83-83 |
+| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:82-82 |
 
 ## Cross-Repo References
 

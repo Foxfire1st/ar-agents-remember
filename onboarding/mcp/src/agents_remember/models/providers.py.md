@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-31T20:30+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ their service payloads can expose provider-specific fields.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider status projection builds these models before returning MCP payloads. | `ProviderStatusProjection` | mcp/src/agents_remember/providers/status.py:38-50 |
-| Provider application entry point functions expose provider status, diagnostics, watcher, GrepAI, and CGC operations. | `provider_status_tool`; `provider_diagnostics_tool`; `provider_watchers_tool`; `grepai_search_tool`; `cgc_symbol_search_tool` | mcp/src/agents_remember/application/provider_tools.py:32-37; mcp/src/agents_remember/application/provider_tools.py:40-45; mcp/src/agents_remember/application/provider_tools.py:48-87; mcp/src/agents_remember/application/provider_tools.py:273-303; mcp/src/agents_remember/application/provider_tools.py:343-356 |
+| Provider application entry point functions expose provider status, diagnostics, watcher, GrepAI, and CGC operations. | `provider_status_tool`; `provider_diagnostics_tool`; `provider_watchers_tool`; `grepai_search_tool`; `cgc_symbol_search_tool` | mcp/src/agents_remember/application/provider_tools.py:32-37; mcp/src/agents_remember/application/provider_tools.py:40-45; mcp/src/agents_remember/application/provider_tools.py:48-87; mcp/src/agents_remember/application/provider_tools.py:470-505; mcp/src/agents_remember/application/provider_tools.py:550-566 |
 
 ## Update History
 

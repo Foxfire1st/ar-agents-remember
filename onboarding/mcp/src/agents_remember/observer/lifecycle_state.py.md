@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/lifecycle_state.py` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-08-01T10:40+02:00                               |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`           |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`           |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ awaiting-developer classification: `paused` is system-owned (no model signal),
 while `awaiting-developer` is the turn-end notification state on the live half.
 cit:([`await_developer`, `resume_from_await`], mcp/src/agents_remember/observer/ambient.py:205-221; mcp/src/agents_remember/observer/ambient.py:223-241)
 shows the ambient signal methods that enter and leave that state, and
-cit:([`resume_from_await`], mcp/src/agents_remember/application/tool_response.py:73-73)
+cit:([`resume_from_await`], mcp/src/agents_remember/application/tool_response.py:120-120)
 shows the next-tool auto-resume choke point for that notification path.
 
 cit:([`LifecycleError`], mcp/src/agents_remember/observer/lifecycle_state.py:130-131) is this domain's family base;

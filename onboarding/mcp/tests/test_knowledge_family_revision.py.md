@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_revision.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ No domain documentation source is configured for this repository (`system/source
 | The two-branch wording node. | "test_both_family_lineage_branches_are_worded_for_the_branch_they_describe" | mcp/tests/test_knowledge_family_revision.py:325-348 |
 | The support builders this module consumes. | `FamilySeed`; `family_draft`; `sealed_family`; `insert_raw_family_revision`; `insert_raw_family_edge`; `table_counts` | mcp/tests/knowledge_graph_test_support.py:65-74; mcp/tests/knowledge_graph_test_support.py:121-135; mcp/tests/knowledge_graph_test_support.py:136-145; mcp/tests/knowledge_graph_test_support.py:185-190; mcp/tests/knowledge_graph_test_support.py:191-201; mcp/tests/knowledge_graph_test_support.py:176-184 |
 | The production module under test. | `create_family`; `create_family_revision`; `get_family_revision`; `family_id_of_revision` | mcp/src/agents_remember/memory/knowledge/families.py:79-94; mcp/src/agents_remember/memory/knowledge/families.py:133-160; mcp/src/agents_remember/memory/knowledge/families.py:267-282; mcp/src/agents_remember/memory/knowledge/families.py:285-301 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:96-96 |
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:97-97 |
 |  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1190-1191  |
 
 ## Cross-Repo References

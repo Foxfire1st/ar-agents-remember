@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_integrity_pipeline.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash |  `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate |  2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash |  `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate |  2026-09-19T20:18:09+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -173,7 +173,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The composed seam, acceptance and refusal in one case: the five separated owners asserted against the declared tuple, and the request that omits one refused by name.** | `test_the_one_operation_composes_the_scope_the_run_the_statuses_and_the_routing`; "assert tuple(entry.owner for entry in report.statuses.entries) == PIPELINE_STATUS_OWNERS"; "assert incomplete.state == \"refused\""; "assert \"verification-runner\" in incomplete.refusal.detail" | mcp/tests/test_knowledge_family_integrity_pipeline.py:547-678 |
 | The declared owner tuple the composed case compares against, defined by the model owner rather than restated here. | `PIPELINE_STATUS_OWNERS` | mcp/src/agents_remember/models/knowledge/family_review.py:95-106 |
 | The shared fixture this module consumes instead of owning, and the artifact row that declares the module a consumer of it. | "def build_diff_fixture"; "kind = \"shared-support\""; "\"mcp/tests/test_knowledge_family_integrity_pipeline.py\"," | mcp/tests/diff_scope_test_support.py:189-196; mcp/tests/evidence-lifecycle.toml:1370-1372; mcp/tests/evidence-lifecycle.toml:1381-1389; mcp/tests/diff_scope_test_support.py:111-111; mcp/tests/evidence-lifecycle.toml:1392-1397; mcp/tests/evidence-lifecycle.toml:1376-1376 |
-| The lane row that selects this module into the integration population. | "\"mcp/tests/test_knowledge_family_integrity_pipeline.py\"" | mcp/tests/test-evidence-lanes.toml:274-274 |
+| The lane row that selects this module into the integration population. | "\"mcp/tests/test_knowledge_family_integrity_pipeline.py\"" | mcp/tests/test-evidence-lanes.toml:279-279 |
 
 ## Cross-Repo References
 

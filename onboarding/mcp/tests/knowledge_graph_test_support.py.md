@@ -6,8 +6,8 @@
 | path | `mcp/tests/knowledge_graph_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,9 +100,9 @@ No domain documentation source is configured for this repository (`system/source
 | The before/after pair builder and the clone it is built on. | `build_removed_relation_successor`; `_clone_closed_database` | mcp/tests/knowledge_graph_test_support.py:217-265; mcp/tests/knowledge_graph_test_support.py:269-286 |
 | The shared L1 fixture this module extends rather than forks. | `BranchingKnowledgeFixture`; `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:160-186; mcp/tests/knowledge_fixture_test_support.py:203-261 |
 |The registry contract and artifact row that declare this module's owner, fidelity and exact consumers.|"contract:knowledge-graph-case-support"| mcp/tests/evidence-lifecycle.toml:1219-1220 |
-| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:96-96 |
+| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:97-97 |
 |  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-graph-case-support" | mcp/tests/evidence-lifecycle.toml:1219-1220  |
-| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:96-96 |
+| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:97-97 |
 
 ## Cross-Repo References
 

@@ -3,12 +3,12 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
+| lastUpdated | 2026-09-17T10:43+02:00 |
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | path | `mcp/tests/test_eve_effort_runtime.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l17-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,7 +118,7 @@ was available for this module.
 | The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35 |
 | The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. | `_capability_snapshot`; `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it` | mcp/src/agents_remember/serving/eve_adapter.py:699-748; mcp/tests/test_eve_product_integration.py:1151-1191 |
 | The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests` | mcp/tests/test_eve_product_integration.py:1315-1361 |
-| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:203-203; mcp/tests/test-evidence-lanes.toml:236-236 |
+| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:205-205 |
 
 ## Cross-Repo References
 
@@ -132,7 +132,6 @@ a dependency rather than a sibling Agents Remember repository.
 ## Update History
 - 2026-09-18T19:54:18+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The lane row's `integration` cell walked the module's neighbours and the previous lane's closing `]` at `196` but stopped short of the lane key itself at `201`; that range was widened to `196-201`. Claim, anchors and the other nine ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
 - 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: created this card for the module this leaf adds. It
   is the leaf's **executed** half of `CAPS-R17@v1` behaviour 1: no Python case can observe a TypeScript
   consumer inside the pinned application, so the three cases start the real runtime per level and read

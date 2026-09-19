@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_citation_bindings.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
-| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `overview.md` |
 
@@ -88,7 +88,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The three projection consequences measured directly.** | `test_a_projection_display_refuses_a_conclusion_without_its_basis`; `test_a_projection_row_renders_a_missing_assessment_as_missing`; `test_a_stale_assessment_is_measured_from_its_examined_inputs_and_never_upgraded` | mcp/tests/test_knowledge_citation_bindings.py:377-431 |
 | **The bound refusal with no items and no counts, and the absent completeness field beside the declared coverage.** | `test_a_bound_closure_refuses_with_selection_incomplete_and_the_bound_reached`; `test_the_closure_states_no_semantic_completeness_and_reports_its_declared_coverage` | mcp/tests/test_knowledge_citation_bindings.py:433-522 |
 | The enumeration returning every recorded binding with exactly one state, and an unresolvable key keeping its recorded key and attribution. | `test_the_enumeration_returns_every_recorded_binding_with_exactly_one_state`; `test_an_unresolvable_key_keeps_its_recorded_key_and_its_attribution` | mcp/tests/test_knowledge_citation_bindings.py:524-679 |
-| **The lane row this module occupies, and the lane it sits in — the unit lane, because every case here is hermetic.** | "mcp/tests/test_knowledge_citation_bindings.py" | mcp/tests/test-evidence-lanes.toml:85-85 |
+| **The lane row this module occupies, and the lane it sits in — the unit lane, because every case here is hermetic.** | "mcp/tests/test_knowledge_citation_bindings.py" | mcp/tests/test-evidence-lanes.toml:84-84 |
 
 ## Cross-Repo References
 

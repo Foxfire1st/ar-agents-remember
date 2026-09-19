@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_next_step_address_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:07+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -131,7 +131,7 @@ it pins.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of D-13 and of the two fixes it pins. | "A next-step hint must describe the task the response addressed, never a process cursor." | mcp/tests/test_next_step_address_binding.py:1-20 |
-| **The binder's one rule: a hint whose arguments contradict the response's own address is omitted; an ambiguous address is a refusal.** | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:30-50 |
+| **The binder's one rule: a hint whose arguments contradict the response's own address is omitted; an ambiguous address is a refusal.** | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:30-58 |
 | The two field tuples the comparison reads. | `_RESPONSE_PATH_FIELDS`; `_ARGUMENT_PATH_FIELDS` | mcp/src/agents_remember/application/tool_response.py:21-22 |
 | **The contract-derived hint, which is why no global cursor can reach a caller.** | `compute_next_step` | mcp/src/agents_remember/application/next_step.py:110-131 |
 | One running lifecycle, so the linear half is the branch under test. | `_live_state` | mcp/tests/test_next_step_address_binding.py:36-45 |
@@ -141,7 +141,7 @@ it pins.
 | The positive control: the omission is a contradiction check, not blanket suppression. | `test_a_hint_naming_the_addressed_contract_is_kept_unchanged` | mcp/tests/test_next_step_address_binding.py:108-119 |
 | **The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.** | `test_two_addressed_contracts_in_sequence_yield_two_different_hints` | mcp/tests/test_next_step_address_binding.py:122-164 |
 | **The stated reach: the one carrier that declares no address keeps its hint, asserted against the model's own fields.** | `test_an_envelope_with_no_address_passes_the_hint_through_unchanged`; `TaskDocResponse` | mcp/tests/test_next_step_address_binding.py:167-198; mcp/src/agents_remember/models/task_doc.py:138-138 |
-| The lane row this module was appended to. | "mcp/tests/test_next_step_address_binding.py" | mcp/tests/test-evidence-lanes.toml:191-191 |
+| The lane row this module was appended to. | "mcp/tests/test_next_step_address_binding.py" | mcp/tests/test-evidence-lanes.toml:195-195 |
 
 ## Cross-Repo References
 
