@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_role_instruction_corpus.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` |
+| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview

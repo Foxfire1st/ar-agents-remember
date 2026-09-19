@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56`|
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
+| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678`|
+| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
