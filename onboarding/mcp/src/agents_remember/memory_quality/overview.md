@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastUpdated | 2026-09-19T23:02+02:00 |
+| lastVerifiedCommitHash | `d9214edf3388ee862f8c8f2ed59cf40af710d8bb` |
+| lastVerifiedCommitDate | 2026-09-19T22:45:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
@@ -626,7 +626,37 @@ fact the old expression folded in. The truth table, including that row, is pinne
 `mcp/tests/test_response_address_binding.py:225-291`; the entry-point sweep's third pin
 (`UNMARKED_NOT_OK`) was emptied in the same change.
 
+## 260918-TSIP-L7 The Definition-Outside-Range Report, And The Escape That Made A Construct Invisible
+
+Two changes land in this route's citation machinery, both report-only in effect and both proven by a
+case in `mcp/tests/test_memory_citation_agreement.py` rather than by a report:
+
+- **`T52` — a construct that moved INSIDE its cited range is now counted.** `range_resolution` asks
+  whether an anchor OCCURS in a cited range, and a construct's name occurs at every call site, so a
+  range the definition has left stays green for as long as anything inside it still spells the name.
+  `definition_outside_range_findings`
+  (`memory_quality/style/citations/range_resolution.py:466-513`) fires only when the anchor is a
+  **symbol**, exactly **one** of its definitions exists across the cited files, that definition is
+  inside **no** cited range, and the name still occurs in one; `check_onboarding_root` (`:650-685`)
+  emits it, and the payload carries it in the new key `definitionsOutsideCitedRanges` (`:718`).
+  `ok` and `findingCount` are unchanged: this is a report, not a gate, and the siblings it belongs
+  with are already report-only.
+- **`T57` — GFM's `\|` escape is resolved where cell text becomes anchor text.** `cells.unescaped`
+  (`memory_quality/style/citations/cells.py:40-53`) is applied to **both** cells, so
+  `` `useEffect(cb, [a \| b])` `` reaches the anchor grammar as the anchor its unescaped spelling
+  yields instead of being silently counted as an *unchecked span* — reading as checked and not being
+  checked. The bound is one literal `\|` → `|` replacement, which is GFM's own reading: with two
+  backslashes the second is the one consumed and the source's `a | b` stays unmatched.
+
+The populations both changes measure on the leaf memory worktree (base `fd1a024e`) are pinned in the
+new module rather than restated here: **120** definition-outside-range rows and an enforced population
+of **283**, with the `T58` wrapped-`cit:` population at **3** constructs in **2** documents. The
+module's own header cites `application/memory_tools.py:100` for `_refuse_official_memory`; in the tree
+it pins, that definition is at **`:105`** (`:100` is `"onboardingRoot": scope.onboarding_root.as_posix(),`)
+— recorded as the leaf's `R2-3`.
+
 ## Update History
+- 2026-09-19T22:58+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **added the L7 section** — the two citation changes this leaf lands under this route (`definition_outside_range_findings` and the `definitionsOutsideCitedRanges` payload key at `range_resolution.py:466-513`/`:650-685`/`:718-718`; `cells.unescaped` at `cells.py:40-53`), each named with the shape it fires on and the bound it does not exceed, and the population the agreement module pins on the leaf memory worktree (120 / 283 / 3 / 2) recorded as a pin held elsewhere rather than restated. It also records the module header's wrong-tree-adjacent line number for `_refuse_official_memory` (`R2-3`: the header says `:100`, the definition is at `:105`). The body changed substantively and this entry is the history record; `lastVerifiedCommitHash` is not advanced because the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
 - 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T64` — `citation_migrate`'s preview answers `ok: true` with `state: planned`, and `remaining` is never read on a dry run; the two facts the old `ok` folded in are now declared separately. Citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
 - 2026-09-18T19:56:44+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The readiness row cited `controller.py:583-600` for `"def _attach_final_full_catalog("`, whose definition this leaf's changes left at `671-707`; that cell cites it now. (b) and (c) The entry-point row cited `110-125` and `318-360` for `run_memory_quality_request` and `_execute_memory_quality`; the two definitions now span `249-255` and `383-435`, which is what the cell cites. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **repointed this route at the two candidate-identity modules commit `806649b9` moved out to `worktrees/modules/`.** The route's source is unchanged by this pass — the change is that two cards used to be reached from here and now are not, so the `Memory-Candidate Roots Relocated In` section and the two prose mentions of `future_code_candidate.py` / `memory_candidate_pair.py` now say where those modules actually live and link to their cards' new paths. Leaving the old links would have made this overview the last dead reference to the retired `memory_quality/` sidecars. No verification stamp is advanced: this route's own source did not change, and the entry records a documentation move, not a re-read of this route. `memory_census_scope.py` is unaffected and still this route's.

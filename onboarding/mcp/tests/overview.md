@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastUpdated | 2026-09-19T23:02+02:00 |
+| lastVerifiedCommitHash | `d9214edf3388ee862f8c8f2ed59cf40af710d8bb` |
+| lastVerifiedCommitDate | 2026-09-19T22:45:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
@@ -893,7 +893,7 @@ removing commit where it can be proven, and never as a silently shorter list.
 The original milestone narratives documented substantially larger cohorts. Their counts, deleted symbols, source-pinning assertions and percentage-driven repair obligations are retired as current guidance. Relevant incident reasoning survives in the retained cards and source comments. The preserved history below records what earlier waves did without instructing future agents to reconstruct those waves.
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. **The budgets are declared once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` — `unit_case_budget` and `integration_case_budget`, 2300 / 400 when this was written — and `mcp/tests/conftest.py` carries no number of its own**: it registers the two ini names with `addini` and no `default=`, because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` and the root file is the `inifile` pytest reads. Read the pair from there; it moves, and the dated tradeoff comment above it records every raise. The 150/200/250 integration ceilings and the 1000/1100/1250/1500 unit ceilings named below are the dated readings of the leaves that raised them, kept as as-of records — none is the current rail. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. **The budgets are declared once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` — `unit_case_budget` = 3000 at `:263` and `integration_case_budget` = 600 at `:264` when this was read — and `mcp/tests/conftest.py` carries no number of its own**: it registers the two ini names with `addini` and no `default=`, because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` and the root file is the `inifile` pytest reads. Read the pair from there; it moves, and the dated tradeoff comment above it records every raise. The 150/200/250 integration ceilings and the 1000/1100/1250/1500 unit ceilings named below are the dated readings of the leaves that raised them, kept as as-of records — none is the current rail. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -4616,3 +4616,37 @@ executes **zero** of them while a `| tail -2` still reads green. All five new mo
 
 ## Update History — 260915-KS-L16
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the three family-integrity suites (14 + 17 unit cases, 7 integration cases) and the failures each pins, the registry touch-points a new test module obliges (two lane rows inserted mid-list, one appended, three `consumers` rows added to **two existing** artifacts) and why the drift they cause is inherent, and the catalogue digest re-pinned to the file's own measured sha256 **with the counts unchanged at 14 / 64** because no artifact and no contract was added. It also records two records that disagree with the tree, so a successor does not carry either forward: the source's own paragraph says "thirteen and fifty-four" against constants that read 14 and 64, and the worker report names a digest that appears nowhere in the tree. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
+
+## 260918-TSIP-L7 The Agreement Module, Its Lane Row, And A Budget Screen At The Declared Pair
+
+Three of this route's files move in the agreement leaf, and the route gains one module.
+
+- **`mcp/tests/test_memory_citation_agreement.py` is new** — 793 lines, 26 cases, sha256
+  `125d9cc414154e1c…` — and it is the durable form of this leaf: the two agreement classes no check in
+  the memory layer can see (`T52`, a construct that moved *inside* its cited range, and `T45`/`T56`, a
+  case budget written in prose), proven on trees the module builds and pinned on the leaf memory
+  worktree by **exact equality** so a repair that is not carried into the pin fails the suite. Its
+  lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:120`), so the default selection
+  collects it; the registry loader is what makes the row load-bearing, since the module was run before
+  its row existed and the loader refused it (*"test files without an explicit lane"*). A card exists
+  at `onboarding/mcp/tests/test_memory_citation_agreement.py.md`.
+- **`mcp/tests/test_suite_budget.py`** now derives its stub from the declared pair instead of
+  restating it (`STUB_UNIT` / `STUB_INTEGRATION`, with a new case tying the stub to `pyproject.toml`),
+  so the screen can never again prove the boundaries of a ceiling nobody uses. Its card is
+  `onboarding/mcp/tests/test_suite_budget.py.md`.
+- **`mcp/tests/test-evidence-lanes.toml`** gains one inserted lane row and nothing else:
+  **323 → 324** file lines, one pure insertion at new line **120**, **204** old file lines
+  renumbered (old 120–323 → new 121–324), and **305 → 306** module entries of which **114** are
+  static (new lines 1–119), **1** is the inserted row and **191** are moved. The consequence for the
+  memory layer is a citation worklist rather than a defect: on the leaf memory worktree **253 rows
+  across 52 documents** cite a range that crosses the insertion, enumerated by
+  `notes/reports/tsip-instruments/l7-lane-citations.py`. Those rows are the next curation pass's
+  worklist; this leaf adds one row and does not rewrite citations outside its own change set.
+- **The declared case-budget pair is now `unit_case_budget = 3000` / `integration_case_budget = 600`**
+  (`pyproject.toml:263-264`), raised from 2300 / 400 by the agreement leaf under a direct developer
+  decision — a **policy** raise, not a measurement. The populations this route collects against it are
+  **2433 / 2454** unit and **411 / 2844** integration, and `## Development And Certification Policy`
+  above now states the pair where it read `2300 / 400 when this was written`.
+
+## Update History — 260918-TSIP-L7
+- 2026-09-19T22:58+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **added the L7 section and re-read this route's statement of the case-budget pair, which this leaf's own raise made false.** The new module `mcp/tests/test_memory_citation_agreement.py` (**793 lines / 26 cases**, sha256 `125d9cc414154e1c…`) gains its file-level card and is recorded with its `unit-regression` lane row and the loader that makes the row load-bearing; `test_suite_budget.py`'s stub now derives from the declared pair instead of restating it; and `test-evidence-lanes.toml`'s one inserted row is recorded in the units the leaf measured (323 → 324 lines, one insertion at new line 120, 204 lines renumbered, 305 → 306 entries: 114 static + 1 inserted + 191 moved) together with the **253-row / 52-document** citation worklist it creates, which is the next curation pass's and not this leaf's. `## Development And Certification Policy` read `2300 / 400 when this was written` and now names the declared pair at `pyproject.toml:263-264`; the two declared numbers are stated as the file states them, and every dated reading below is retained as the reading of the candidate that produced it. `lastVerifiedCommitHash` is deliberately unchanged: the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
