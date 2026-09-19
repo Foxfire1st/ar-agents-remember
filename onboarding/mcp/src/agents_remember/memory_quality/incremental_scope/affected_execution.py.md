@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
+| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/reviewer.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated | 2026-09-19T17:09+02:00 |
+| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
+| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -48,16 +48,30 @@ The append target is the same single physical leaf journal that contains the wor
 reviewer's separately authored verdict links that journal anchor instead of duplicating the
 adjudication as another authority.
 
+Beside the verdict, the reviewer emits **its own curator hand-off list** (`:88-95`) — its verdicts and
+findings in the shape `../templates/curator-handoff-list.md` owns, as data rather than as verdict prose
+for the curator to re-read. Each entry is one finding or one requirement adjudication, carrying the
+source it came from and the place it was found at, and a finding the reviewer minted carries its own
+stable ID; the list is what the curator ingests. It is emitted **in the same list shape the worker
+emits**, because the curator consumes one contract: it names where the thing lives rather than where
+the reviewer looked — the path and the construct inside it come from one resolution act — and carries
+the reviewer's own statement and evidence verbatim rather than re-telling them.
+
 If the manifestation candidate moves before adjudication, the stale attempt is rejected and a
 successor is reviewed. An unrelated later candidate does not reopen an accepted attempt.
 
-The role table classifies reviewer as target-only, but the role is polymorphic across four review
+The rewritten role file carries no role table: the seat's classification and `dispatch`/`tools` rows
+now live in `composition-manifest.json`, where they are structural documentation rather than settings
+keys. The role itself is polymorphic across the review
 contexts: a manager owns leaf and master-exit reviewers, the architect owns the sprint plan
-reviewer, and the orchestrator owns the sprint super-exit reviewer. The plane stamps that exact
+reviewer, and the orchestrator owns the sprint super-exit reviewer; the file's own seam table
+(`:20-27`) fixes five seam rows — standalone/organizational leaf route review, atomic-master
+integration review, master-exit, portfolio plan review and super-exit — and where each verdict goes.
+The plane stamps that exact
 parent document+role onto the reviewer generation. An identity-free launcher may target an
 altitude-valid reviewer for explicit takeover, but a sprint takeover cannot invent architect versus
-orchestrator parentage and parent operations fail closed. The reviewer cannot call
-`dispatch_agent`; its dispatch/tools rows are structural documentation rather than settings keys.
+orchestrator parentage and parent operations fail closed. The reviewer cannot call `dispatch_agent`:
+its `## What you may do` surface (`:132-138`) omits that call.
 
 ### Invariants And Boundaries
 
@@ -85,6 +99,8 @@ Worker envelope, reviewer verdict template, manager exact-set dispatch, and gove
 | --- | --- | --- |
 | Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. | "Adjudicate every requirement revision separately" | skills/l-01-agent-lifecycles/roles/reviewer.md:70-73 |
 | The verdict template structurally repeats one adjudication block per stable ID. | "## Mandatory Requirement Adjudication Block" | skills/l-01-agent-lifecycles/templates/verdict.md:72-72 |
+| The reviewer emits its own curator hand-off list in the shared producer shape. | "Your own curator hand-off list" | skills/l-01-agent-lifecycles/roles/reviewer.md:88-95 |
+| The seat's seam table fixes the five seams and where each verdict goes. | "The seam you are reviewing" | skills/l-01-agent-lifecycles/roles/reviewer.md:18-27 |
 
 ## Cross-Repo References
 
@@ -106,6 +122,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `14582854955223f75588c23c9f29f9d51bde9675`). The diff is eight added lines in `## Outputs` (`:88-95`) adding **the reviewer's own curator hand-off list** — its verdicts and findings in the shape `../templates/curator-handoff-list.md` owns, emitted as data in the same list shape the worker emits, naming where the thing lives rather than where the reviewer looked and carrying its own statement and evidence verbatim. Body: added that output to the Logic and added two Repo-Internal References rows (the hand-off list, `:88-95`; the seat's seam table, `:18-27`). Correction made while re-deriving: the Logic's "the role table classifies reviewer as target-only" and "its dispatch/tools rows are structural documentation" named a table the rewritten role file no longer carries — the classification now lives in `composition-manifest.json` — and the reviewer's inability to dispatch is now stated from its own `## What you may do` surface (`:132-138`). Verified ranges/claims: both pre-existing rows still resolve ("Adjudicate every requirement revision separately" at `:70` inside `:70-73`; the verdict block heading at `templates/verdict.md:72`), and both new rows' anchors resolve inside their extents.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "## Mandatory Requirement Adjudication Block" repointed to skills/l-01-agent-lifecycles/templates/verdict.md:72-72. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "## Mandatory Requirement Adjudication Block" repointed to skills/l-01-agent-lifecycles/templates/verdict.md:67-67. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.

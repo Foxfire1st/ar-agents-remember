@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_routes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T18:47+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc`|
+| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

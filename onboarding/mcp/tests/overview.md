@@ -5,11 +5,6 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-09-18T19:48+02:00 |
-| lastVerifiedCommitHash | `a135150459f8499ba309faf0373cc3b4bf7ff852` |
-| lastVerifiedCommitDate | 2026-09-18T19:58:12+02:00|
-| reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview | `../overview.md` |
 
@@ -4925,3 +4920,8 @@ executes **zero** of them while a `| tail -2` still reads green. All five new mo
 
 ## Update History — 260915-KS-L16
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the three family-integrity suites (14 + 17 unit cases, 7 integration cases) and the failures each pins, the registry touch-points a new test module obliges (two lane rows inserted mid-list, one appended, three `consumers` rows added to **two existing** artifacts) and why the drift they cause is inherent, and the catalogue digest re-pinned to the file's own measured sha256 **with the counts unchanged at 14 / 64** because no artifact and no contract was added. It also records two records that disagree with the tree, so a successor does not carry either forward: the source's own paragraph says "thirteen and fifty-four" against constants that read 14 and 64, and the worker report names a digest that appears nowhere in the tree. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
+| lastUpdated            | 2026-09-18T19:48+02:00 |
+| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
+| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00 |
+| reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
