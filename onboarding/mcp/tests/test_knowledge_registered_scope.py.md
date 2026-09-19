@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_registered_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:25+02:00 |
-| lastVerifiedCommitHash |  `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
-| lastVerifiedCommitDate |  2026-09-18T14:21:49+02:00|
+| lastVerifiedCommitHash |  `a30509587c0456038d616b0ccd1a69ef969eff93`|
+| lastVerifiedCommitDate |  2026-09-20T01:12:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `mcp/tests/overview.md` |
 

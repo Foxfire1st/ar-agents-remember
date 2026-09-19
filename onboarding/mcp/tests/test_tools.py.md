@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-18T14:57+02:00 |
-| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
-| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
+| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93` |
+| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l3-ar` uncommitted source (`mcp/tests/test_tools.py` **364 → 468 lines**, 10 → **12** cases); base `a12c511f6e76bd1188719cad0a9104d78d46920c` |
 | governingOverview | `overview.md` |
 

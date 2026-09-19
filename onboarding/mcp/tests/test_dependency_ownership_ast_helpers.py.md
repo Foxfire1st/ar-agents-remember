@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash |  `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate |  2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash |  `a30509587c0456038d616b0ccd1a69ef969eff93`|
+| lastVerifiedCommitDate |  2026-09-20T01:12:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted change set; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 

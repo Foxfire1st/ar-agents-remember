@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93` |
+| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview      | `../../../../../overview.md`                   |
 

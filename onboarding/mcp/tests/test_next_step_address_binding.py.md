@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_next_step_address_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:07+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93`|
+| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_entry_point_sweep.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93`|
+| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l6-ar` uncommitted source (**1353 lines / 15 cases**, sha256 `c748a345b32b68ee…`, edited by `260918-TSIP-L6`); base `a1351504`. L5's own candidate (**1274 lines / 14 cases**, sha256 `4223c626…`) is recorded in the Update History below. |
 | governingOverview | `overview.md` |
 

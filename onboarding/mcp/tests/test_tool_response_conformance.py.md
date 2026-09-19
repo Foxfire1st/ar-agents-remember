@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_response_conformance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93`|
+| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source (new file, **864 lines / 15 cases**); base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview | `overview.md` |
 
