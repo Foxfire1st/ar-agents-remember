@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `79fa817f8469244de67e11ec4d44b7dfb936e9ba` |
+| lastVerifiedCommitDate | 2026-09-20T00:12:50+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 

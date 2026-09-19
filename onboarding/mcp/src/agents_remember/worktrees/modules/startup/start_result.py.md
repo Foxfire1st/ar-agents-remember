@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/startup/start_result.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `79fa817f8469244de67e11ec4d44b7dfb936e9ba` |
+| lastVerifiedCommitDate | 2026-09-20T00:12:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

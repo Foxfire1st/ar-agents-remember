@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-19T23:02+02:00 |
-| lastVerifiedCommitHash | `eca18fe69b7a8aa4d64911497a210aa256f60222` |
-| lastVerifiedCommitDate | 2026-09-19T23:28:48+02:00|
+| lastVerifiedCommitHash | `79fa817f8469244de67e11ec4d44b7dfb936e9ba` |
+| lastVerifiedCommitDate | 2026-09-20T00:12:50+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
