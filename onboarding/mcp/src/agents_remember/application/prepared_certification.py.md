@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/prepared_certification.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T11:05+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
+| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l14-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
 | governingOverview | `overview.md` |
 
